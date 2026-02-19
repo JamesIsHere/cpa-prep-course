@@ -6,13 +6,13 @@ Full-scope CPA exam prep website — lessons, quizzes, practice exams, and study
 
 | Layer      | Technology                       |
 |------------|----------------------------------|
-| Framework  | Next.js 15 (App Router)          |
-| UI         | React 19 + Tailwind CSS          |
+| Framework  | Next.js 16 (App Router)          |
+| UI         | React 19 + Tailwind CSS v4       |
 | Auth + DB  | Supabase (Auth + Postgres + RLS) |
 | Payments   | Stripe Checkout + Customer Portal|
 | Content    | MDX files in `src/content/`      |
 | Unit tests | Vitest                           |
-| E2e tests  | Playwright                       |
+| E2e tests  | Playwright (not yet installed)   |
 | Hosting    | Vercel                           |
 | Package    | npm                              |
 
@@ -29,14 +29,15 @@ npm run lint         # ESLint
 ## Architecture
 
 - **App Router only** — all routes under `src/app/`, no Pages Router
-- **MDX for content** — lessons are `.mdx` files in `src/content/{section}/`, imported dynamically
-- **Static data layer** — section/lesson metadata in `src/lib/sections.ts`
-- **Server components by default** — client components only where interactivity is required
-- **`mdx-components.tsx`** at `src/` root — custom styled overrides for all MDX elements
-- **Supabase SSR auth** — `@supabase/ssr` with server/client clients and middleware for session refresh
-- **Stripe lazy init** — `getStripe()` function to avoid build-time errors from missing env vars
-- **Stripe webhooks** — subscription status updated server-side via service role client (bypasses RLS)
-- **Auth middleware** — protects `/dashboard`, `/account`, `/exam` routes and gated lesson pages
+- **MDX for content** — lessons are `.mdx` files in `src/content/{section}/`, imported dynamically via `await import(\`@/content/${path}.mdx\`)`
+- **Static data layer** — section/lesson metadata in `src/lib/sections.ts` (not in DB yet)
+- **Server components by default** — client components only where interactivity is required (forms, nav, sidebar)
+- **`mdx-components.tsx`** at `src/` root — custom Tailwind-styled overrides for all MDX elements
+- **Supabase SSR auth** — `@supabase/ssr` with browser client (`src/lib/supabase/client.ts`), server client (`src/lib/supabase/server.ts`), and middleware (`src/lib/supabase/middleware.ts`)
+- **Stripe lazy init** — `getStripe()` in `src/lib/stripe.ts` to avoid build-time errors from missing env vars
+- **Stripe webhooks** — `src/app/api/webhooks/stripe/route.ts` uses service role client (bypasses RLS)
+- **Auth middleware** — `middleware.ts` at project root protects `/dashboard`, `/account`, `/exam` routes and gated lesson pages
+- **Paywall gating** — lesson page (`src/app/sections/[slug]/lessons/[lesson]/page.tsx`) checks `lesson.isFree` and user's `subscription_status` before rendering content
 
 ## File Conventions
 
@@ -44,31 +45,77 @@ npm run lint         # ESLint
 - Routes: Next.js App Router conventions (`page.tsx`, `layout.tsx`, `route.ts`)
 - MDX content: `NN-slug.mdx` with zero-padded order (e.g., `01-intro.mdx`)
 - Tests: `tests/unit/` for Vitest, `tests/e2e/` for Playwright
+- Client components use `"use client"` directive + separate file (e.g., `login-form.tsx` imported by `page.tsx`)
+- `useSearchParams()` must be wrapped in `<Suspense>` (Next.js requirement)
+
+## Key Files
+
+| File                                          | Purpose                                    |
+|-----------------------------------------------|--------------------------------------------|
+| `src/lib/sections.ts`                         | All section + lesson metadata (38 lessons) |
+| `src/lib/stripe.ts`                           | Lazy Stripe client (`getStripe()`)         |
+| `src/lib/supabase/client.ts`                  | Browser Supabase client                    |
+| `src/lib/supabase/server.ts`                  | Server Supabase client                     |
+| `src/lib/supabase/middleware.ts`               | Auth redirect logic                        |
+| `middleware.ts`                                | Next.js middleware entry point             |
+| `src/mdx-components.tsx`                      | MDX component overrides                    |
+| `supabase/migrations/00001_initial_schema.sql` | Full DB schema + seed data                 |
+| `.env.local.example`                          | Required env vars template                 |
+
+## Content Summary
+
+| Section | Code | Lessons | Topics                                            |
+|---------|------|---------|---------------------------------------------------|
+| AUD     | aud  | 12      | Ethics, planning, risk, controls, evidence, sampling, reports, review/compilation, attestation, quality mgmt |
+| FAR     | far  | 13      | Financial statements, revenue, inventory, fixed/intangible assets, leases, bonds, equity, tax, govt, NFP, consolidations |
+| REG     | reg  | 13      | Circular 230, contracts, agency, business structures, basis, gains/losses, 1031, individual tax, credits, C/S corps, partnerships |
+
+## Database Tables
+
+`profiles`, `sections`, `lessons`, `questions`, `quiz_attempts`, `exam_attempts` — all defined in `00001_initial_schema.sql` with RLS policies. Auto-profile trigger creates a profile on user signup.
 
 ## Current Phase
 
 **Phase 1: Scaffold + Static Shell** — complete
 **Phase 2: Auth + Payments** — complete
+**Phase 3: Lesson Content Generation** — complete
+**Phase 4: Quiz Engine** — not started (next up)
 
-Completed (Phase 2):
-- Supabase SSR auth (browser + server clients, middleware)
-- Email/password signup, login, logout
-- Password reset + update password flow
-- Auth callback route for email confirmation
-- Middleware redirects unauthenticated users from protected routes
-- Stripe Checkout session creation ($9.99/mo)
-- Stripe webhook handler (subscription created/updated/deleted)
-- Stripe Customer Portal for subscription management
-- Paywall component on non-free lesson pages
-- First lesson of each section marked `is_free: true`
-- Dashboard page with section cards
-- Account page with subscription status + subscribe/manage buttons
-- Nav shows auth-aware links (dashboard, account, logout)
-- Database migration with all tables, RLS, trigger, seed data
-- `.env.local.example` with all required env vars
-- 13 passing Vitest tests, clean build (21 routes)
+### Phase 4 Acceptance Criteria (from spec)
+- [ ] Quiz configuration page (select section, topic filter, question count)
+- [ ] Generate ~30 multiple-choice questions per section with explanations
+- [ ] Seed `questions` table
+- [ ] Quiz session UI (one question at a time, progress bar)
+- [ ] Answer submission and scoring
+- [ ] Results page with score, correct/incorrect review, explanations
+- [ ] Quiz attempts saved to `quiz_attempts` table
+- [ ] Dashboard shows recent quiz scores per section
+- [ ] Vitest tests for scoring logic
+- [ ] E2e test: start quiz -> answer questions -> see results
+
+### Remaining Phases
+- **Phase 5:** Practice Exams (timed, navigation, flagging)
+- **Phase 6:** PDF Study Frameworks
+- **Phase 7:** Polish + Deploy
+
+## Gotchas Learned
+
+- Stripe client must be lazy-initialized (`getStripe()`) — module-scope `new Stripe()` fails at build time with no env vars
+- `useSearchParams()` requires `<Suspense>` wrapper or build fails
+- React Testing Library v16 needs explicit `cleanup()` in `afterEach` with Vitest — auto-cleanup doesn't work
+- `@next/mdx` requires `mdx-components.tsx` at the `src/` root (not `app/` root) for App Router
+- `generateStaticParams` only pre-renders free lessons; gated lessons are dynamic due to auth check in the page component
 
 ## Spec Reference
 
-Full product specification with all 7 phases, data model, and acceptance criteria lives at:
-`../personal-org/projects/learning-specification/cpa-study-website.md`
+Full product specification with all 7 phases, data model, and acceptance criteria:
+`C:\Users\james\Desktop\personal-org\projects\learning-specification\cpa-study-website.md`
+
+## Git
+
+Repository: https://github.com/JamesIsHere/cpa-prep-course
+Branch: `master`
+Latest commits:
+- `b5cbff7` complete phase 3: generate 38 lessons across AUD, FAR, REG sections
+- `d3208ba` complete phase 2: supabase auth, stripe payments, paywall, dashboard, account page
+- `430debe` complete phase 1: scaffold, landing page, section/lesson pages, MDX content, tests
