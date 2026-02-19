@@ -35,8 +35,9 @@ create table lessons (
   id serial primary key,
   section_id int references sections not null,
   title text not null,
-  slug text unique not null,
+  slug text not null,
   content_path text not null,
+  unique (section_id, slug),
   display_order int not null,
   is_free boolean default false
 );
