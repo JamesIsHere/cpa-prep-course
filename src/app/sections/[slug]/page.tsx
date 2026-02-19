@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { DownloadStudyGuide } from "@/components/download-study-guide";
 import { getSection, sections } from "@/lib/sections";
 
 export function generateStaticParams() {
@@ -51,6 +52,7 @@ export default async function SectionDetailPage({
 				>
 					Practice Exam
 				</Link>
+				<DownloadStudyGuide sectionSlug={section.slug} />
 			</div>
 
 			<h2 className="text-lg font-semibold text-gray-800 mb-4">Lessons</h2>
