@@ -1,10 +1,36 @@
 "use client";
 
+import type { User } from "@supabase/supabase-js";
 import Link from "next/link";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { createClient } from "@/lib/supabase/client";
 
 export default function Nav() {
+	const router = useRouter();
 	const [open, setOpen] = useState(false);
+	const [user, setUser] = useState<User | null>(null);
+
+	useEffect(() => {
+		const supabase = createClient();
+		supabase.auth.getUser().then(({ data }) => setUser(data.user));
+
+		const {
+			data: { subscription },
+		} = supabase.auth.onAuthStateChange((_event, session) => {
+			setUser(session?.user ?? null);
+		});
+
+		return () => subscription.unsubscribe();
+	}, []);
+
+	async function handleLogout() {
+		const supabase = createClient();
+		await supabase.auth.signOut();
+		setUser(null);
+		router.push("/");
+		router.refresh();
+	}
 
 	return (
 		<nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
@@ -22,12 +48,36 @@ export default function Nav() {
 						>
 							Sections
 						</Link>
-						<Link
-							href="/sections"
-							className="bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition-colors"
-						>
-							Get Started
-						</Link>
+						{user ? (
+							<>
+								<Link
+									href="/dashboard"
+									className="text-gray-600 hover:text-emerald-700 transition-colors"
+								>
+									Dashboard
+								</Link>
+								<Link
+									href="/account"
+									className="text-gray-600 hover:text-emerald-700 transition-colors"
+								>
+									Account
+								</Link>
+								<button
+									type="button"
+									onClick={handleLogout}
+									className="text-gray-500 hover:text-gray-700 transition-colors text-sm"
+								>
+									Log out
+								</button>
+							</>
+						) : (
+							<Link
+								href="/login"
+								className="bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition-colors"
+							>
+								Log In
+							</Link>
+						)}
 					</div>
 
 					{/* Mobile menu button */}
@@ -74,13 +124,42 @@ export default function Nav() {
 						>
 							Sections
 						</Link>
-						<Link
-							href="/sections"
-							className="block bg-emerald-600 text-white px-4 py-2 rounded-lg text-center hover:bg-emerald-700"
-							onClick={() => setOpen(false)}
-						>
-							Get Started
-						</Link>
+						{user ? (
+							<>
+								<Link
+									href="/dashboard"
+									className="block text-gray-600 hover:text-emerald-700 py-2"
+									onClick={() => setOpen(false)}
+								>
+									Dashboard
+								</Link>
+								<Link
+									href="/account"
+									className="block text-gray-600 hover:text-emerald-700 py-2"
+									onClick={() => setOpen(false)}
+								>
+									Account
+								</Link>
+								<button
+									type="button"
+									onClick={() => {
+										setOpen(false);
+										handleLogout();
+									}}
+									className="block w-full text-left text-gray-500 hover:text-gray-700 py-2 text-sm"
+								>
+									Log out
+								</button>
+							</>
+						) : (
+							<Link
+								href="/login"
+								className="block bg-emerald-600 text-white px-4 py-2 rounded-lg text-center hover:bg-emerald-700"
+								onClick={() => setOpen(false)}
+							>
+								Log In
+							</Link>
+						)}
 					</div>
 				</div>
 			)}

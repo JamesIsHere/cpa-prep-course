@@ -30,9 +30,13 @@ npm run lint         # ESLint
 
 - **App Router only** — all routes under `src/app/`, no Pages Router
 - **MDX for content** — lessons are `.mdx` files in `src/content/{section}/`, imported dynamically
-- **Static data layer** — section/lesson metadata in `src/lib/sections.ts` (moves to Supabase in Phase 2)
+- **Static data layer** — section/lesson metadata in `src/lib/sections.ts`
 - **Server components by default** — client components only where interactivity is required
 - **`mdx-components.tsx`** at `src/` root — custom styled overrides for all MDX elements
+- **Supabase SSR auth** — `@supabase/ssr` with server/client clients and middleware for session refresh
+- **Stripe lazy init** — `getStripe()` function to avoid build-time errors from missing env vars
+- **Stripe webhooks** — subscription status updated server-side via service role client (bypasses RLS)
+- **Auth middleware** — protects `/dashboard`, `/account`, `/exam` routes and gated lesson pages
 
 ## File Conventions
 
@@ -44,17 +48,25 @@ npm run lint         # ESLint
 ## Current Phase
 
 **Phase 1: Scaffold + Static Shell** — complete
+**Phase 2: Auth + Payments** — complete
 
-Completed:
-- Next.js scaffold with TypeScript, Tailwind, App Router
-- Landing page with hero, features, pricing, section preview
-- Section listing page with AUD/FAR/REG cards
-- Section detail page with lesson list
-- Lesson page with sidebar nav + MDX rendering + prev/next
-- Responsive layout with mobile hamburger nav and collapsible sidebar
-- 1 intro MDX lesson per section (AUD, FAR, REG)
-- 13 passing Vitest tests
-- Clean production build (11 static routes)
+Completed (Phase 2):
+- Supabase SSR auth (browser + server clients, middleware)
+- Email/password signup, login, logout
+- Password reset + update password flow
+- Auth callback route for email confirmation
+- Middleware redirects unauthenticated users from protected routes
+- Stripe Checkout session creation ($9.99/mo)
+- Stripe webhook handler (subscription created/updated/deleted)
+- Stripe Customer Portal for subscription management
+- Paywall component on non-free lesson pages
+- First lesson of each section marked `is_free: true`
+- Dashboard page with section cards
+- Account page with subscription status + subscribe/manage buttons
+- Nav shows auth-aware links (dashboard, account, logout)
+- Database migration with all tables, RLS, trigger, seed data
+- `.env.local.example` with all required env vars
+- 13 passing Vitest tests, clean build (21 routes)
 
 ## Spec Reference
 

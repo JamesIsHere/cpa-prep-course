@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
+import Paywall from "@/components/paywall";
 import { getLesson, sections } from "@/lib/sections";
+import { createClient } from "@/lib/supabase/server";
 import LessonPageClient from "./lesson-page-client";
 
 export function generateStaticParams() {
@@ -29,6 +31,36 @@ export default async function LessonPage({
 	if (!result) notFound();
 
 	const { section, lesson } = result;
+
+	// Check access for non-free lessons
+	if (!lesson.isFree) {
+		const supabase = await createClient();
+		const {
+			data: { user },
+		} = await supabase.auth.getUser();
+
+		if (!user) {
+			return (
+				<LessonPageClient section={section} lesson={lesson}>
+					<Paywall />
+				</LessonPageClient>
+			);
+		}
+
+		const { data: profile } = await supabase
+			.from("profiles")
+			.select("subscription_status")
+			.eq("id", user.id)
+			.single();
+
+		if (profile?.subscription_status !== "active") {
+			return (
+				<LessonPageClient section={section} lesson={lesson}>
+					<Paywall />
+				</LessonPageClient>
+			);
+		}
+	}
 
 	let Content: React.ComponentType;
 	try {
