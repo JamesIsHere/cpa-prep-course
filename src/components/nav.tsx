@@ -51,6 +51,12 @@ export default function Nav() {
 						{user ? (
 							<>
 								<Link
+									href="/exam"
+									className="text-gray-600 hover:text-emerald-700 transition-colors"
+								>
+									Practice Exam
+								</Link>
+								<Link
 									href="/dashboard"
 									className="text-gray-600 hover:text-emerald-700 transition-colors"
 								>
@@ -126,6 +132,13 @@ export default function Nav() {
 						</Link>
 						{user ? (
 							<>
+								<Link
+									href="/exam"
+									className="block text-gray-600 hover:text-emerald-700 py-2"
+									onClick={() => setOpen(false)}
+								>
+									Practice Exam
+								</Link>
 								<Link
 									href="/dashboard"
 									className="block text-gray-600 hover:text-emerald-700 py-2"

@@ -37,6 +37,18 @@ export interface QuizResult {
 	questions: QuizQuestionResult[];
 }
 
+// Per-topic breakdown for exam results
+export interface ExamTopicScore {
+	topic: string;
+	correct: number;
+	total: number;
+}
+
+// Exam result extends quiz result with topic breakdown
+export interface ExamResult extends QuizResult {
+	topicScores: ExamTopicScore[];
+}
+
 /**
  * Score a quiz by comparing user answers against full questions.
  * Pure function — no side effects.
@@ -69,4 +81,32 @@ export function scoreQuiz(
 		total: scored.length,
 		questions: scored,
 	};
+}
+
+/**
+ * Score an exam — same as scoreQuiz but adds per-topic breakdown.
+ * Uses the question's topic field to group results.
+ */
+export function scoreExam(
+	answers: QuizAnswer[],
+	questions: QuizQuestionFull[],
+): ExamResult {
+	const base = scoreQuiz(answers, questions);
+
+	const topicMap = new Map<string, { correct: number; total: number }>();
+
+	for (const q of base.questions) {
+		const full = questions.find((fq) => fq.id === q.id);
+		const topic = full?.topic ?? "Other";
+		const entry = topicMap.get(topic) ?? { correct: 0, total: 0 };
+		entry.total++;
+		if (q.correct) entry.correct++;
+		topicMap.set(topic, entry);
+	}
+
+	const topicScores: ExamTopicScore[] = Array.from(topicMap.entries())
+		.map(([topic, counts]) => ({ topic, ...counts }))
+		.sort((a, b) => a.topic.localeCompare(b.topic));
+
+	return { ...base, topicScores };
 }
