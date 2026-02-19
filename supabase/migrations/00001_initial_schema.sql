@@ -110,8 +110,49 @@ insert into sections (code, title, description, slug, display_order) values
   ('far', 'Financial Accounting and Reporting', 'Financial statement preparation, select transactions, and governmental accounting. The most content-heavy section of the CPA exam.', 'far', 2),
   ('reg', 'Taxation and Regulation', 'Federal taxation for individuals and entities, business law, and ethics. Covers tax compliance, planning, and professional responsibilities.', 'reg', 3);
 
--- Seed lessons
+-- Seed AUD lessons
 insert into lessons (section_id, title, slug, content_path, display_order, is_free) values
   (1, 'Introduction to Auditing and Attestation', '01-intro', 'aud/01-intro', 1, true),
+  (1, 'Ethics and Independence', '02-ethics-and-independence', 'aud/02-ethics-and-independence', 2, false),
+  (1, 'Audit Planning', '03-audit-planning', 'aud/03-audit-planning', 3, false),
+  (1, 'Risk Assessment', '04-risk-assessment', 'aud/04-risk-assessment', 4, false),
+  (1, 'Internal Controls', '05-internal-controls', 'aud/05-internal-controls', 5, false),
+  (1, 'Audit Evidence', '06-audit-evidence', 'aud/06-audit-evidence', 6, false),
+  (1, 'Audit Sampling', '07-sampling', 'aud/07-sampling', 7, false),
+  (1, 'Substantive Procedures', '08-substantive-procedures', 'aud/08-substantive-procedures', 8, false),
+  (1, 'Audit Reports', '09-audit-reports', 'aud/09-audit-reports', 9, false),
+  (1, 'Review and Compilation Engagements', '10-review-compilation', 'aud/10-review-compilation', 10, false),
+  (1, 'Attestation Engagements', '11-attestation-engagements', 'aud/11-attestation-engagements', 11, false),
+  (1, 'Quality Management', '12-quality-management', 'aud/12-quality-management', 12, false);
+
+-- Seed FAR lessons
+insert into lessons (section_id, title, slug, content_path, display_order, is_free) values
   (2, 'Introduction to Financial Accounting and Reporting', '01-intro', 'far/01-intro', 1, true),
-  (3, 'Introduction to Taxation and Regulation', '01-intro', 'reg/01-intro', 1, true);
+  (2, 'Financial Statements', '02-financial-statements', 'far/02-financial-statements', 2, false),
+  (2, 'Revenue Recognition', '03-revenue-recognition', 'far/03-revenue-recognition', 3, false),
+  (2, 'Inventory', '04-inventory', 'far/04-inventory', 4, false),
+  (2, 'Fixed Assets', '05-fixed-assets', 'far/05-fixed-assets', 5, false),
+  (2, 'Intangible Assets', '06-intangible-assets', 'far/06-intangible-assets', 6, false),
+  (2, 'Leases', '07-leases', 'far/07-leases', 7, false),
+  (2, 'Bonds and Debt', '08-bonds-and-debt', 'far/08-bonds-and-debt', 8, false),
+  (2, 'Equity', '09-equity', 'far/09-equity', 9, false),
+  (2, 'Income Taxes', '10-income-taxes', 'far/10-income-taxes', 10, false),
+  (2, 'Governmental Accounting', '11-governmental-accounting', 'far/11-governmental-accounting', 11, false),
+  (2, 'Not-for-Profit Accounting', '12-not-for-profit', 'far/12-not-for-profit', 12, false),
+  (2, 'Consolidations', '13-consolidations', 'far/13-consolidations', 13, false);
+
+-- Seed REG lessons
+insert into lessons (section_id, title, slug, content_path, display_order, is_free) values
+  (3, 'Introduction to Taxation and Regulation', '01-intro', 'reg/01-intro', 1, true),
+  (3, 'Circular 230 and Professional Responsibilities', '02-circular-230', 'reg/02-circular-230', 2, false),
+  (3, 'Business Law: Contracts', '03-business-law-contracts', 'reg/03-business-law-contracts', 3, false),
+  (3, 'Agency and Business Regulation', '04-agency-and-regulation', 'reg/04-agency-and-regulation', 4, false),
+  (3, 'Business Structures', '05-business-structures', 'reg/05-business-structures', 5, false),
+  (3, 'Property Transactions: Basis', '06-property-transactions-basis', 'reg/06-property-transactions-basis', 6, false),
+  (3, 'Property Transactions: Gains and Losses', '07-property-transactions-gains', 'reg/07-property-transactions-gains', 7, false),
+  (3, 'Like-Kind Exchanges', '08-like-kind-exchanges', 'reg/08-like-kind-exchanges', 8, false),
+  (3, 'Individual Taxation: Income', '09-individual-taxation-income', 'reg/09-individual-taxation-income', 9, false),
+  (3, 'Individual Taxation: Credits and AMT', '10-individual-taxation-credits', 'reg/10-individual-taxation-credits', 10, false),
+  (3, 'C Corporations', '11-c-corporations', 'reg/11-c-corporations', 11, false),
+  (3, 'S Corporations', '12-s-corporations', 'reg/12-s-corporations', 12, false),
+  (3, 'Partnerships', '13-partnerships', 'reg/13-partnerships', 13, false);

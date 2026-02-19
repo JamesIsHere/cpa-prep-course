@@ -1,0 +1,118 @@
+# Inventory
+
+## Learning Objectives
+
+- Apply the major cost flow assumptions: FIFO, LIFO, and weighted average
+- Calculate ending inventory and cost of goods sold under each method
+- Apply the lower of cost or net realizable value rule
+- Distinguish between periodic and perpetual inventory systems
+
+## Cost Flow Assumptions
+
+When identical goods are purchased at different prices over time, an entity must select a **cost flow assumption** to determine which costs are assigned to cost of goods sold (COGS) and which remain in ending inventory. The three primary methods are:
+
+**FIFO (First-In, First-Out)** — The oldest costs are assigned to COGS first. Ending inventory reflects the most recent purchase prices. During periods of rising prices, FIFO produces the highest ending inventory, lowest COGS, and highest net income.
+
+**LIFO (Last-In, First-Out)** — The most recent costs are assigned to COGS first. Ending inventory reflects the oldest purchase prices. During periods of rising prices, LIFO produces the lowest ending inventory, highest COGS, and lowest net income (providing a tax advantage). LIFO is permitted under U.S. GAAP but prohibited under IFRS.
+
+**Weighted Average** — A single average cost per unit is computed and applied to both COGS and ending inventory.
+
+> The **LIFO conformity rule** requires that if an entity uses LIFO for tax purposes, it must also use LIFO for financial reporting. This is one of the rare cases where tax and GAAP methods must align.
+
+### Worked Example
+
+A company has the following inventory data for the month:
+
+| Transaction | Units | Cost/Unit |
+|------------|-------|-----------|
+| Beginning inventory | 100 | $10 |
+| Purchase — Mar 10 | 200 | $12 |
+| Purchase — Mar 20 | 150 | $14 |
+
+Total goods available for sale: 450 units. During the month, 300 units were sold.
+
+**FIFO (300 units sold):**
+- 100 units at $10 = $1,000
+- 200 units at $12 = $2,400
+- COGS = **$3,400**
+- Ending inventory: 150 units at $14 = **$2,100**
+
+**LIFO (300 units sold):**
+- 150 units at $14 = $2,100
+- 150 units at $12 = $1,800
+- COGS = **$3,900**
+- Ending inventory: 100 units at $10 + 50 units at $12 = **$1,600**
+
+**Weighted Average:**
+- Total cost = (100 x $10) + (200 x $12) + (150 x $14) = $5,500
+- Weighted average cost = $5,500 / 450 = **$12.22 per unit**
+- COGS = 300 x $12.22 = **$3,666**
+- Ending inventory = 150 x $12.22 = **$1,833**
+
+## Lower of Cost or Net Realizable Value
+
+Under U.S. GAAP, inventory is reported at the **lower of cost or net realizable value (NRV)** for entities using FIFO or weighted average. **Net realizable value** is the estimated selling price in the ordinary course of business, less reasonably predictable costs of completion, disposal, and transportation.
+
+If NRV falls below cost, the inventory is written down with a corresponding loss recognized in the period. Once written down, the new cost basis cannot be written back up under U.S. GAAP.
+
+For entities using **LIFO or the retail inventory method**, the rule is the **lower of cost or market**, where market is defined as current replacement cost, subject to a ceiling (NRV) and a floor (NRV minus normal profit margin).
+
+> The distinction between "lower of cost or NRV" and "lower of cost or market" based on the cost flow method is a common exam trap. Remember: FIFO and weighted average use NRV; LIFO uses market (with ceiling and floor).
+
+## Periodic vs. Perpetual Systems
+
+**Periodic system** — Inventory counts and COGS are determined at the end of the period. No running balance is maintained during the period. Purchases are recorded in a temporary Purchases account.
+
+**Perpetual system** — Inventory and COGS are updated continuously with each transaction. The Inventory account is adjusted directly for every purchase and sale.
+
+Under FIFO, the periodic and perpetual systems produce the same results because the oldest costs flow out first regardless of when the calculation is done. Under LIFO and weighted average, however, results differ because the "most recent" cost depends on whether the calculation is performed transaction by transaction (perpetual) or at period end (periodic).
+
+## Inventory Estimation Methods
+
+When a physical count is not possible, inventory can be estimated using:
+
+- **Gross profit method** — Estimates ending inventory by applying a historical gross profit percentage to sales, then subtracting estimated COGS from goods available for sale
+- **Retail inventory method** — Uses the ratio of cost to retail price to convert ending inventory at retail to its estimated cost basis
+
+These methods are useful for interim reporting and insurance claim calculations but are not acceptable for year-end audited financial statements without a physical count.
+
+## Key Terms
+
+- **Cost flow assumption** — The method used to assign costs to COGS and ending inventory when identical goods are purchased at different prices
+- **Net realizable value (NRV)** — Estimated selling price minus costs of completion, disposal, and transportation
+- **LIFO reserve** — The difference between inventory reported under LIFO and what it would be under FIFO, disclosed in the footnotes
+- **LIFO liquidation** — Occurs when units sold exceed units purchased, dipping into older, lower-cost LIFO layers and artificially inflating income
+- **Goods available for sale** — Beginning inventory plus purchases, the total pool from which COGS and ending inventory are derived
+
+## Practice Problems
+
+**1.** Using the data from the worked example above, what is the cost of goods sold under LIFO if 300 units are sold?
+
+a) $3,400
+b) $3,666
+c) $3,900
+d) $4,200
+
+**Answer:** c) $3,900 — Under LIFO, the most recent costs flow out first: 150 units at $14 ($2,100) + 150 units at $12 ($1,800) = $3,900.
+
+---
+
+**2.** An entity using FIFO has inventory with a cost of $50,000 and a net realizable value of $45,000. The inventory should be reported at:
+
+a) $50,000
+b) $47,500
+c) $45,000
+d) $42,500
+
+**Answer:** c) $45,000 — Under the lower of cost or NRV rule for FIFO, inventory is written down to $45,000 because NRV is below cost.
+
+---
+
+**3.** Which of the following statements about periodic and perpetual inventory systems is correct?
+
+a) FIFO produces different results under periodic and perpetual systems
+b) LIFO produces the same results under periodic and perpetual systems
+c) FIFO produces the same results under periodic and perpetual systems
+d) Weighted average produces the same results under periodic and perpetual systems
+
+**Answer:** c) FIFO produces the same results under periodic and perpetual systems — because the oldest costs always flow out first regardless of timing. LIFO and weighted average can differ between the two systems.

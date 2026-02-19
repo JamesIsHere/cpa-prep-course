@@ -1,0 +1,230 @@
+# S Corporations
+
+## Learning Objectives
+
+- Identify the eligibility requirements and election process for S corporation status
+- Calculate shareholder basis and the ordering of basis adjustments
+- Apply the rules for S corporation distributions and their tax treatment
+- Recognize when the built-in gains tax and other entity-level taxes apply
+
+## S Corporation Eligibility
+
+An **S corporation** is a corporation that has elected pass-through taxation under **Subchapter S** of the Internal Revenue Code. The corporation itself generally pays no federal income tax — instead, income, deductions, gains, losses, and credits pass through to shareholders.
+
+To qualify for S corporation status, the entity must meet **all** of the following requirements:
+
+1. **Domestic corporation** — must be incorporated in the United States
+2. **Eligible shareholders only** — shareholders must be individuals, estates, certain trusts (grantor trusts, qualified Subchapter S trusts, electing small business trusts), and certain tax-exempt organizations. **Not eligible:** partnerships, corporations, and nonresident aliens
+3. **Maximum 100 shareholders** — members of a family (up to six generations) can be treated as a single shareholder for counting purposes
+4. **One class of stock** — only one class of stock is permitted, although differences in **voting rights** are allowed (voting and nonvoting common stock is acceptable)
+5. **Not an ineligible corporation** — certain financial institutions, insurance companies, and domestic international sales corporations cannot elect S status
+
+### Making the Election
+
+The S election is made by filing **Form 2553** signed by all shareholders. The election must be filed:
+
+- By the **15th day of the third month** of the tax year (March 15 for calendar-year corporations) to be effective for the current year
+- At any time during the preceding tax year
+
+If filed late, the election is effective for the following tax year.
+
+> Exam tip: All shareholders must consent to the S election. If a new shareholder acquires stock in an existing S corporation, they do not need to consent — the election continues. But if the election is being made, every current shareholder must sign Form 2553.
+
+### Termination of S Status
+
+S corporation status terminates if:
+
+- **Shareholders revoke** the election (requires shareholders holding more than 50% of shares to consent)
+- An **eligibility requirement is violated** (e.g., a corporation becomes a shareholder, more than 100 shareholders, second class of stock issued)
+- **Passive investment income** exceeds 25% of gross receipts for three consecutive years and the corporation has accumulated C corporation E&P
+
+After involuntary termination, the corporation generally cannot re-elect S status for **five years** without IRS consent.
+
+## Pass-Through Taxation
+
+An S corporation files **Form 1120-S** (informational return) and issues **Schedule K-1** to each shareholder. Items are divided into two categories:
+
+### Separately Stated Items
+
+Certain items must be separately stated because they may affect each shareholder's tax liability differently:
+
+- Capital gains and losses (short-term and long-term)
+- Section 1231 gains and losses
+- Charitable contributions
+- Tax-exempt interest income
+- Investment interest expense
+- Rental income or loss
+- Foreign taxes paid
+- Section 179 deduction
+
+### Nonseparately Stated Income (Ordinary Business Income)
+
+All remaining items of income and deduction are netted into a single figure — **ordinary business income or loss** — which passes through to shareholders.
+
+Items are allocated to shareholders based on their **per-share, per-day ownership** during the tax year. If a shareholder owns stock for only part of the year, their share is prorated.
+
+**Worked Example:**
+
+An S corporation with two equal shareholders has the following results:
+
+| Item | Amount |
+|------|--------|
+| Gross receipts | $500,000 |
+| Operating expenses | ($350,000) |
+| Long-term capital gain | $20,000 |
+| Charitable contributions | $8,000 |
+| Tax-exempt interest | $3,000 |
+
+**Ordinary business income:** $500,000 - $350,000 = $150,000
+Each shareholder reports on their K-1:
+- Ordinary business income: $75,000
+- Long-term capital gain: $10,000
+- Charitable contributions: $4,000
+- Tax-exempt interest: $1,500
+
+## Shareholder Basis
+
+Shareholder basis in S corporation stock is critical because it determines:
+
+- The deductibility of pass-through losses
+- The tax treatment of distributions
+- Gain or loss on sale of stock
+
+### Initial Basis
+
+Basis begins with the shareholder's investment:
+- Cash contributed
+- Adjusted basis of property contributed
+- FMV of stock purchased from another shareholder
+
+### Annual Basis Adjustments
+
+Basis is adjusted annually in a specific order. The ordering matters because losses are limited to basis:
+
+**Increases (in order):**
+1. Income items (ordinary business income and separately stated income items)
+2. Tax-exempt income
+3. Excess depletion
+
+**Decreases (in order):**
+1. Distributions (nontaxable to the extent of basis)
+2. Nondeductible, noncapital expenses (e.g., 50% of meals, penalties, life insurance premiums)
+3. Deductible losses and deductions (limited to remaining basis)
+
+> Exam tip: The ordering of basis adjustments is heavily tested. Basis is increased by all income (including tax-exempt) before it is decreased by distributions and losses. This ordering maximizes the amount of losses a shareholder can deduct.
+
+**Worked Example:**
+
+A shareholder begins the year with a stock basis of $30,000. During the year, the S corporation reports:
+
+| Item | Amount |
+|------|--------|
+| Ordinary business income (share) | $20,000 |
+| Tax-exempt interest (share) | $2,000 |
+| Distribution received | $15,000 |
+| Ordinary business loss (share) | — |
+| Long-term capital loss (share) | ($40,000) |
+
+| Adjustment | Calculation | Basis |
+|-----------|------------|-------|
+| Beginning basis | | $30,000 |
+| Add: ordinary income | | $50,000 |
+| Add: tax-exempt interest | | $52,000 |
+| Less: distribution | | $37,000 |
+| Less: capital loss (limited to basis) | ($40,000, but limited to $37,000) | **$0** |
+| **Suspended loss** | | **$3,000** |
+
+The $3,000 suspended loss carries forward indefinitely and is deductible when the shareholder's basis is restored.
+
+### Debt Basis
+
+Unlike partnerships, S corporation shareholders get basis only from **direct loans** they make to the corporation. Loans from third parties (even those personally guaranteed by the shareholder) do **not** increase shareholder basis.
+
+If stock basis is reduced to zero, losses may be deducted against **debt basis** (the shareholder's basis in loans to the corporation). Distributions, however, cannot reduce debt basis.
+
+## Distributions
+
+S corporation distributions follow specific ordering rules that depend on whether the corporation has accumulated **earnings and profits (E&P)** from a prior C corporation existence.
+
+### S Corporation with No Accumulated E&P
+
+Distributions are treated as:
+1. **Tax-free return of basis** — reduces stock basis (not below zero)
+2. **Capital gain** — any excess is treated as gain from the sale of stock
+
+### S Corporation with Accumulated C Corporation E&P
+
+Distributions are applied against the **Accumulated Adjustments Account (AAA)** first:
+
+1. **AAA** — distributions from AAA are tax-free return of basis (AAA tracks cumulative S corporation income minus distributions)
+2. **Accumulated E&P** — distributions from accumulated E&P are taxed as **dividends**
+3. **Remaining basis** — tax-free return of basis
+4. **Excess** — capital gain
+
+## Built-in Gains Tax
+
+When a C corporation converts to S corporation status, the **built-in gains (BIG) tax** prevents the corporation from avoiding corporate-level tax on appreciation that existed at the time of conversion.
+
+**Application:**
+- Applies to assets held at the time of S election with FMV exceeding basis
+- Triggered when the S corporation sells those assets within the **five-year recognition period** after conversion
+- Tax rate: **21%** (the corporate rate) on the net recognized built-in gain
+- The tax is an entity-level tax paid by the S corporation, reducing the amount that passes through to shareholders
+
+**Worked Example:**
+
+A C corporation with an asset (basis $100,000, FMV $250,000 at conversion) elects S status. Three years later, the S corporation sells the asset for $280,000.
+
+| Item | Amount |
+|------|--------|
+| Selling price | $280,000 |
+| Basis at time of sale | $100,000 |
+| Total gain | $180,000 |
+| Built-in gain at conversion ($250,000 - $100,000) | $150,000 |
+| Post-conversion appreciation ($280,000 - $250,000) | $30,000 |
+| **BIG tax** (21% x $150,000) | **$31,500** |
+
+The $31,500 BIG tax is paid at the entity level. The remaining gain passes through to shareholders.
+
+> Exam tip: The BIG tax only applies when a C corporation converts to an S corporation. A corporation that has always been an S corporation is not subject to this tax. The five-year recognition period is the key window.
+
+## Key Terms
+
+- **Form 2553** — the IRS form filed to elect S corporation status, requiring all shareholders' consent
+- **Schedule K-1** — the form reporting each shareholder's share of S corporation income, deductions, and credits
+- **Accumulated Adjustments Account (AAA)** — an S corporation account tracking cumulative income minus distributions, used to determine tax treatment of distributions when accumulated E&P exists
+- **Built-in gains tax** — a corporate-level tax on pre-conversion appreciation when a C corporation converts to S corporation status
+- **Debt basis** — a shareholder's basis in direct loans to the S corporation, which may allow additional loss deductions beyond stock basis
+
+## Practice Problems
+
+**1.** Which of the following may be a shareholder of an S corporation?
+
+a) A partnership
+b) A nonresident alien
+c) A C corporation
+d) A grantor trust
+
+**Answer:** d) A grantor trust — Grantor trusts, qualified Subchapter S trusts (QSSTs), and electing small business trusts (ESBTs) are eligible S corporation shareholders. Partnerships, C corporations, and nonresident aliens are not eligible.
+
+---
+
+**2.** A shareholder has a stock basis of $25,000 at the beginning of the year. The S corporation reports ordinary income of $10,000 (shareholder's share) and makes a $30,000 distribution. What is the tax treatment of the distribution? (The corporation has no accumulated E&P.)
+
+a) $30,000 tax-free return of capital
+b) $35,000 tax-free, no gain
+c) $25,000 tax-free, $5,000 capital gain
+d) $35,000 tax-free, $0 capital gain (basis increases first)
+
+**Answer:** d) $35,000 tax-free, $0 capital gain — Basis is increased by income ($10,000) before distributions, bringing basis to $35,000. The $30,000 distribution is a tax-free return of basis, reducing basis to $5,000. No gain is recognized.
+
+---
+
+**3.** An S corporation shareholder personally guarantees a $50,000 bank loan to the corporation. Does this increase the shareholder's basis?
+
+a) Yes, by $50,000
+b) Yes, by $25,000
+c) No, only direct loans from the shareholder increase basis
+d) Yes, if the shareholder is a more-than-2% shareholder
+
+**Answer:** c) No, only direct loans increase basis — Unlike partnerships, S corporation shareholders only receive basis from direct loans they make to the corporation. Third-party loans guaranteed by the shareholder do not increase basis.

@@ -11,9 +11,22 @@ describe("sections data", () => {
 		expect(new Set(slugs).size).toBe(slugs.length);
 	});
 
-	it("each section has at least one lesson", () => {
+	it("each section has 10+ lessons", () => {
 		for (const section of sections) {
-			expect(section.lessons.length).toBeGreaterThan(0);
+			expect(section.lessons.length).toBeGreaterThanOrEqual(10);
+		}
+	});
+
+	it("first lesson of each section is free", () => {
+		for (const section of sections) {
+			expect(section.lessons[0].isFree).toBe(true);
+		}
+	});
+
+	it("all lesson slugs are unique within their section", () => {
+		for (const section of sections) {
+			const slugs = section.lessons.map((l) => l.slug);
+			expect(new Set(slugs).size).toBe(slugs.length);
 		}
 	});
 

@@ -1,0 +1,156 @@
+# Income Taxes
+
+## Learning Objectives
+
+- Distinguish between temporary differences and permanent differences
+- Calculate deferred tax assets and deferred tax liabilities under ASC 740
+- Apply the valuation allowance to deferred tax assets
+- Account for income tax expense and understand the rate reconciliation
+
+## Overview of ASC 740
+
+**ASC 740, Income Taxes**, governs how entities account for the tax consequences of events recognized in the financial statements. The fundamental principle is the **asset and liability method**: deferred tax assets and liabilities are recognized for the future tax consequences of temporary differences between the book basis and tax basis of assets and liabilities.
+
+Income tax expense reported on the income statement has two components:
+
+**Income tax expense = Current tax expense + Deferred tax expense (or benefit)**
+
+- **Current tax expense** — The actual tax payable (or refundable) for the current year, based on taxable income on the tax return
+- **Deferred tax expense** — The change in deferred tax assets and liabilities during the year
+
+## Temporary vs. Permanent Differences
+
+Understanding the distinction between temporary and permanent differences is central to income tax accounting.
+
+**Temporary differences** create a difference between book income and taxable income that will **reverse in future periods**. They give rise to deferred tax assets or deferred tax liabilities. Examples include:
+
+| Item | Book vs. Tax | Result |
+|------|-------------|--------|
+| Accelerated tax depreciation | Book expense < Tax expense now (reverses later) | **Deferred tax liability** |
+| Warranty expense accrual | Book expense > Tax expense now (deductible when paid) | **Deferred tax asset** |
+| Unearned revenue | Taxable when received; book revenue recognized later | **Deferred tax asset** |
+| Installment sale gains | Book gain now; taxable as cash is collected | **Deferred tax liability** |
+
+**Permanent differences** cause book income and taxable income to differ, but the difference will **never reverse**. They do not create deferred taxes. Examples include:
+
+- Municipal bond interest (tax-exempt income — never taxable)
+- Fines and penalties (book expense — never deductible)
+- Life insurance premiums on officers (book expense — never deductible)
+- Life insurance proceeds (income on books — never taxable)
+
+> A simple rule: if the difference will reverse in a future period, it is temporary and creates a deferred tax. If it will never reverse, it is permanent and affects only the current period's effective tax rate.
+
+## Deferred Tax Assets and Liabilities
+
+**Deferred tax liability (DTL)** — Arises when taxable income will be **higher** in the future than book income (because a deduction was taken early on the tax return, or revenue was deferred for tax). It represents taxes that will be owed in the future.
+
+**Deferred tax asset (DTA)** — Arises when taxable income will be **lower** in the future than book income (because an expense was recognized on the books before it is deductible for tax, or revenue was recognized for tax before it is recognized on the books). It represents future tax savings.
+
+**Calculation:**
+
+Deferred tax = Temporary difference x Enacted tax rate
+
+The enacted rate used is the rate expected to be in effect when the temporary difference reverses. Deferred taxes are adjusted when enacted rates change, with the effect recognized in income tax expense in the period of the enactment.
+
+### Worked Example
+
+A company purchases equipment for $100,000. For book purposes, it uses straight-line depreciation over 5 years ($20,000/year). For tax purposes, it uses an accelerated method that produces $35,000 of depreciation in Year 1. The tax rate is 25%.
+
+**Year 1:**
+- Book depreciation: $20,000
+- Tax depreciation: $35,000
+- Temporary difference: $35,000 - $20,000 = **$15,000**
+- The tax basis of the asset ($65,000) is less than the book basis ($80,000), meaning more tax depreciation was taken — this creates a **DTL**
+- DTL = $15,000 x 25% = **$3,750**
+
+**Journal entry:**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Income tax expense | $3,750 | |
+| Deferred tax liability | | $3,750 |
+
+(This is just the deferred component. The current tax payable entry would be recorded separately based on the tax return.)
+
+## Valuation Allowance
+
+A **valuation allowance** is recorded against a deferred tax asset when it is **more likely than not** (greater than 50% probability) that some or all of the DTA will not be realized. This reduces the net DTA to the amount expected to be realized.
+
+Factors considered in assessing the need for a valuation allowance:
+
+- **Positive evidence** — Existing contracts, backlog, strong earnings history, appreciated assets
+- **Negative evidence** — Cumulative losses in recent years, history of unused carryforwards, unsettled circumstances
+
+Negative evidence is generally given more weight than positive evidence. A cumulative loss in the three-year period ending on the balance sheet date creates a strong presumption that a valuation allowance is needed.
+
+**Journal entry to establish a valuation allowance:**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Income tax expense | $XX | |
+| Valuation allowance | | $XX |
+
+The valuation allowance is reassessed each reporting period. Adjustments increase or decrease income tax expense.
+
+## Tax Rate Reconciliation
+
+Public entities must disclose a reconciliation between the statutory federal tax rate and the effective tax rate. Common reconciling items include:
+
+- State income taxes
+- Permanent differences (e.g., tax-exempt municipal interest, nondeductible fines)
+- Tax credits
+- Changes in the valuation allowance
+- Changes in enacted tax rates
+- Foreign tax rate differentials
+
+## Intraperiod Tax Allocation
+
+ASC 740 requires that income tax expense be allocated among different components of comprehensive income:
+
+- Income from **continuing operations** — Receives the computed tax expense using the normal calculation
+- **Discontinued operations** — Reported net of its own tax effect
+- **Other comprehensive income** — Each OCI item is reported net of its own tax effect
+- **Prior period adjustments** (retained earnings) — Reported net of tax
+
+This ensures each line item on the financial statements reflects its own tax impact.
+
+## Key Terms
+
+- **Temporary difference** — A difference between the book basis and tax basis of an asset or liability that will reverse in future periods, creating a deferred tax
+- **Permanent difference** — A difference between book and taxable income that will never reverse and does not create a deferred tax
+- **Deferred tax liability** — An obligation for future taxes resulting from temporary differences where taxable income will exceed book income in future periods
+- **Valuation allowance** — A contra-asset that reduces a deferred tax asset to the amount more likely than not to be realized
+- **Enacted tax rate** — The tax rate signed into law that is expected to apply when temporary differences reverse
+
+## Practice Problems
+
+**1.** A company accrues $40,000 in warranty expense for book purposes. The warranty costs are deductible for tax only when paid. The tax rate is 21%. What deferred tax effect results from this accrual?
+
+a) Deferred tax liability of $8,400
+b) Deferred tax asset of $8,400
+c) No deferred tax effect
+d) Deferred tax asset of $40,000
+
+**Answer:** b) Deferred tax asset of $8,400 — The warranty accrual creates a temporary difference: the expense is on the books now but deductible for tax later. This results in future tax savings (DTA) of $40,000 x 21% = $8,400.
+
+---
+
+**2.** Municipal bond interest income of $25,000 is included in book income but is never subject to income tax. This is an example of:
+
+a) A temporary difference that creates a deferred tax liability
+b) A temporary difference that creates a deferred tax asset
+c) A permanent difference
+d) An intraperiod tax allocation item
+
+**Answer:** c) A permanent difference — municipal bond interest is tax-exempt and will never be taxable, so it never reverses. It affects the effective tax rate but does not create a deferred tax.
+
+---
+
+**3.** A company has a deferred tax asset of $150,000. Management determines it is more likely than not that only $90,000 will be realized. What is the required valuation allowance?
+
+a) $150,000
+b) $90,000
+c) $60,000
+d) $0
+
+**Answer:** c) $60,000 — The valuation allowance reduces the DTA to the amount expected to be realized: $150,000 - $90,000 = $60,000.

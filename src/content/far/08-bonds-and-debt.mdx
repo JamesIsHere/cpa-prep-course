@@ -1,0 +1,141 @@
+# Bonds and Debt
+
+## Learning Objectives
+
+- Account for the issuance of bonds at par, at a premium, and at a discount
+- Apply the effective interest method to amortize bond premiums and discounts
+- Record the extinguishment and retirement of debt
+- Understand the accounting for troubled debt restructuring
+
+## Bond Fundamentals
+
+A **bond** is a long-term debt instrument in which the issuer promises to pay the holder periodic interest payments (coupon payments) and repay the principal (face value) at maturity. Bonds are commonly used by corporations and governments to raise capital.
+
+Key terms:
+
+- **Face value (par value)** — The principal amount repaid at maturity
+- **Stated rate (coupon rate)** — The annual interest rate applied to face value to determine cash interest payments
+- **Market rate (effective rate)** — The rate demanded by investors based on prevailing market conditions and the issuer's credit risk
+- **Issue price** — The present value of all future cash flows (interest and principal) discounted at the market rate
+
+The relationship between the stated rate and the market rate determines whether a bond is issued at par, a premium, or a discount:
+
+| Condition | Result |
+|-----------|--------|
+| Stated rate = Market rate | Issued at **par** |
+| Stated rate > Market rate | Issued at a **premium** |
+| Stated rate < Market rate | Issued at a **discount** |
+
+## Bond Issuance
+
+When a bond is issued, the issuer records the cash received, the face value of the bond in Bonds Payable, and any premium or discount.
+
+### Worked Example
+
+A company issues a $100,000 bond with a 6% stated rate, paying interest semiannually, for a 5-year term. The market rate is 8%.
+
+**Step 1 — Calculate the issue price:**
+
+- Semiannual coupon payment = $100,000 x 6% / 2 = **$3,000**
+- Number of periods = 5 x 2 = **10**
+- Market rate per period = 8% / 2 = **4%**
+
+PV of interest payments = $3,000 x PV annuity factor (4%, 10 periods) = $3,000 x 8.1109 = $24,333
+
+PV of principal = $100,000 x PV single sum factor (4%, 10 periods) = $100,000 x 0.6756 = $67,556
+
+**Issue price = $24,333 + $67,556 = $91,889**
+
+The bond is issued at a **discount** of $8,111 ($100,000 - $91,889) because the stated rate (6%) is below the market rate (8%).
+
+**Journal entry at issuance:**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Cash | $91,889 | |
+| Discount on bonds payable | $8,111 | |
+| Bonds payable | | $100,000 |
+
+## Amortization of Premium and Discount
+
+The **effective interest method** is required under U.S. GAAP. Under this method:
+
+1. **Interest expense** = Carrying amount x Market rate per period
+2. **Cash interest paid** = Face value x Stated rate per period
+3. **Amortization** = Difference between interest expense and cash interest
+
+For a **discount**, interest expense exceeds cash paid, so the discount is gradually amortized (carrying amount increases toward face value). For a **premium**, cash paid exceeds interest expense, so the premium is gradually amortized (carrying amount decreases toward face value).
+
+### Amortization Schedule (First 3 periods of the worked example)
+
+| Period | Carrying Amount (Start) | Interest Expense (4%) | Cash Paid (3%) | Amortization | Carrying Amount (End) |
+|--------|------------------------|----------------------|----------------|--------------|----------------------|
+| 1 | $91,889 | $3,676 | $3,000 | $676 | $92,565 |
+| 2 | $92,565 | $3,703 | $3,000 | $703 | $93,268 |
+| 3 | $93,268 | $3,731 | $3,000 | $731 | $93,999 |
+
+Notice that interest expense increases each period as the carrying amount grows. By maturity, the carrying amount converges to $100,000.
+
+> The straight-line method of amortization is acceptable only if the results are not materially different from the effective interest method. The CPA exam generally expects the effective interest method.
+
+## Bond Retirement and Extinguishment
+
+When bonds are retired before maturity, the issuer compares the **reacquisition price** (the amount paid to retire the bond) to the **carrying amount** of the bond at the date of retirement:
+
+- If the reacquisition price > carrying amount, a **loss on extinguishment** is recognized
+- If the reacquisition price < carrying amount, a **gain on extinguishment** is recognized
+
+These gains and losses are reported in income from continuing operations.
+
+**Example:** A bond with a carrying amount of $96,000 is retired at 102 (102% of face value = $102,000). The loss on extinguishment is $102,000 - $96,000 = **$6,000**.
+
+## Troubled Debt Restructuring
+
+A **troubled debt restructuring (TDR)** occurs when a creditor, for economic or legal reasons related to the debtor's financial difficulty, grants a concession it would not otherwise consider. Under ASC 470-60 (for the debtor), TDRs take two forms:
+
+**Transfer of assets or equity** — The debtor transfers assets or equity to the creditor to settle the debt. The debtor recognizes a gain equal to the excess of the carrying amount of the debt over the fair value of the assets or equity transferred. A separate gain or loss is recognized on the assets transferred (fair value vs. carrying amount).
+
+**Modification of terms** — The creditor may reduce the interest rate, extend the maturity, reduce the face amount, or reduce accrued interest. If the total future cash payments under the new terms are less than the carrying amount of the debt, the debtor reduces the liability and recognizes a gain. If total future cash payments exceed the carrying amount, no gain is recognized — a new effective interest rate is computed.
+
+> Note: ASU 2022-02 eliminated TDR-specific guidance for creditors and replaced it with the general loan modification framework. However, debtor-side TDR guidance under ASC 470 remains in effect and is tested on the CPA exam.
+
+## Key Terms
+
+- **Discount** — The amount by which the issue price of a bond is less than its face value, arising when the stated rate is below the market rate
+- **Premium** — The amount by which the issue price exceeds the face value, arising when the stated rate is above the market rate
+- **Effective interest method** — A method of amortizing a bond discount or premium that produces a constant rate of interest expense relative to the carrying amount
+- **Carrying amount** — Face value of a bond adjusted for any unamortized discount or premium
+- **Reacquisition price** — The amount paid to retire bonds before maturity, used to calculate gain or loss on extinguishment
+
+## Practice Problems
+
+**1.** A $200,000 bond is issued at 103. What is the total cash received by the issuer?
+
+a) $200,000
+b) $194,000
+c) $206,000
+d) $203,000
+
+**Answer:** c) $206,000 — Issued at 103 means 103% of face value: $200,000 x 1.03 = $206,000. The $6,000 excess is the premium.
+
+---
+
+**2.** Under the effective interest method, what happens to the interest expense recognized on a bond issued at a discount over the life of the bond?
+
+a) It remains constant each period
+b) It decreases each period
+c) It increases each period
+d) It fluctuates based on market conditions
+
+**Answer:** c) It increases each period — as the discount is amortized, the carrying amount increases, so applying the constant market rate to a larger carrying amount produces increasing interest expense.
+
+---
+
+**3.** A company retires bonds with a carrying amount of $485,000 by paying $470,000. What is the result?
+
+a) Loss of $15,000
+b) Gain of $15,000
+c) No gain or loss
+d) Gain of $485,000
+
+**Answer:** b) Gain of $15,000 — The reacquisition price ($470,000) is less than the carrying amount ($485,000), resulting in a gain of $15,000 on extinguishment.
