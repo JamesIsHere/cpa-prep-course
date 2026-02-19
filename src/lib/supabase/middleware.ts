@@ -7,10 +7,13 @@ function isProtectedRoute(pathname: string): boolean {
 	return PROTECTED_ROUTES.some((route) => pathname.startsWith(route));
 }
 
-function isGatedLesson(pathname: string): boolean {
-	// Lesson pages under /sections/[slug]/lessons/[lesson] are gated
-	// unless the lesson is marked as free (checked at render time)
-	return /^\/sections\/[^/]+\/lessons\/[^/]+$/.test(pathname);
+function isGatedContent(pathname: string): boolean {
+	// Lesson pages and quiz pages under /sections/[slug]/ are gated
+	// Free lessons are checked at render time; quizzes require subscription
+	return (
+		/^\/sections\/[^/]+\/lessons\/[^/]+$/.test(pathname) ||
+		/^\/sections\/[^/]+\/quizzes$/.test(pathname)
+	);
 }
 
 export async function updateSession(request: NextRequest) {
@@ -44,7 +47,7 @@ export async function updateSession(request: NextRequest) {
 	const { pathname } = request.nextUrl;
 
 	// Redirect unauthenticated users away from protected routes
-	if (!user && (isProtectedRoute(pathname) || isGatedLesson(pathname))) {
+	if (!user && (isProtectedRoute(pathname) || isGatedContent(pathname))) {
 		const loginUrl = request.nextUrl.clone();
 		loginUrl.pathname = "/login";
 		loginUrl.searchParams.set("next", pathname);

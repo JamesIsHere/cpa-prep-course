@@ -36,8 +36,9 @@ npm run lint         # ESLint
 - **Supabase SSR auth** — `@supabase/ssr` with browser client (`src/lib/supabase/client.ts`), server client (`src/lib/supabase/server.ts`), and middleware (`src/lib/supabase/middleware.ts`)
 - **Stripe lazy init** — `getStripe()` in `src/lib/stripe.ts` to avoid build-time errors from missing env vars
 - **Stripe webhooks** — `src/app/api/webhooks/stripe/route.ts` uses service role client (bypasses RLS)
-- **Auth middleware** — `middleware.ts` at project root protects `/dashboard`, `/account`, `/exam` routes and gated lesson pages
-- **Paywall gating** — lesson page (`src/app/sections/[slug]/lessons/[lesson]/page.tsx`) checks `lesson.isFree` and user's `subscription_status` before rendering content
+- **Auth middleware** — `middleware.ts` at project root protects `/dashboard`, `/account`, `/exam` routes, gated lesson pages, and quiz pages
+- **Paywall gating** — lesson and quiz pages check user's `subscription_status` before rendering content
+- **Quiz engine** — questions fetched server-side (no answers sent to client), scored on submit via route handler, results stored in `quiz_attempts`
 
 ## File Conventions
 
@@ -59,7 +60,9 @@ npm run lint         # ESLint
 | `src/lib/supabase/middleware.ts`               | Auth redirect logic                        |
 | `middleware.ts`                                | Next.js middleware entry point             |
 | `src/mdx-components.tsx`                      | MDX component overrides                    |
+| `src/lib/quiz.ts`                               | Quiz types + scoring logic                 |
 | `supabase/migrations/00001_initial_schema.sql` | Full DB schema + seed data                 |
+| `supabase/migrations/00002_seed_questions.sql` | 90 quiz questions + RLS update policy      |
 | `.env.local.example`                          | Required env vars template                 |
 
 ## Content Summary
@@ -79,19 +82,7 @@ npm run lint         # ESLint
 **Phase 1: Scaffold + Static Shell** — complete
 **Phase 2: Auth + Payments** — complete
 **Phase 3: Lesson Content Generation** — complete
-**Phase 4: Quiz Engine** — not started (next up)
-
-### Phase 4 Acceptance Criteria (from spec)
-- [ ] Quiz configuration page (select section, topic filter, question count)
-- [ ] Generate ~30 multiple-choice questions per section with explanations
-- [ ] Seed `questions` table
-- [ ] Quiz session UI (one question at a time, progress bar)
-- [ ] Answer submission and scoring
-- [ ] Results page with score, correct/incorrect review, explanations
-- [ ] Quiz attempts saved to `quiz_attempts` table
-- [ ] Dashboard shows recent quiz scores per section
-- [ ] Vitest tests for scoring logic
-- [ ] E2e test: start quiz -> answer questions -> see results
+**Phase 4: Quiz Engine** — complete
 
 ### Remaining Phases
 - **Phase 5:** Practice Exams (timed, navigation, flagging)

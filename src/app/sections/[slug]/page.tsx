@@ -38,6 +38,15 @@ export default async function SectionDetailPage({
 			<h1 className="text-3xl font-bold text-gray-900 mb-2">{section.title}</h1>
 			<p className="text-gray-500 mb-8">{section.description}</p>
 
+			<div className="mb-8">
+				<Link
+					href={`/sections/${section.slug}/quizzes`}
+					className="inline-flex items-center gap-2 bg-emerald-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-emerald-700 transition-colors text-sm"
+				>
+					Take a Quiz
+				</Link>
+			</div>
+
 			<h2 className="text-lg font-semibold text-gray-800 mb-4">Lessons</h2>
 			<ul className="space-y-2">
 				{section.lessons.map((lesson, i) => (
