@@ -48,6 +48,8 @@ supabase/.temp/
 
 # test artifacts
 test-results/
+tests/e2e/.auth/
+playwright-report/
 
 # claude code
 .claude/

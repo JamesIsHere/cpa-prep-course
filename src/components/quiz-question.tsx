@@ -42,6 +42,7 @@ export default function QuizQuestionCard({
 					return (
 						<button
 							key={i}
+							data-testid={`choice-${letter}`}
 							onClick={() => onSelect(i)}
 							className={`w-full text-left flex items-start gap-3 border rounded-lg p-4 transition-all ${
 								isSelected

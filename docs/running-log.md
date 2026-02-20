@@ -1,5 +1,19 @@
 # Running Log
 
+## 2026-02-20 08:16
+1. Fixed Playwright env loading: added `dotenv` dev dependency, configured `playwright.config.ts` to load `.env.local`
+2. Reset e2e test user password via Supabase Admin API (correct user ID `eb473759`, not stale `ae39837b` from screenshot)
+3. Fixed quiz answer button selectors: added `data-testid="choice-{letter}"` to `quiz-question.tsx`, updated tests to use `getByTestId("choice-A")`
+4. Fixed "Next" button strict-mode violation: `name: /next/i` matched Next.js Dev Tools button — changed to `{ name: "Next", exact: true }`
+5. Fixed quiz results text assertion: page shows "N of M correct" not "N out of M"
+6. Fixed review item selector: simplified to find buttons containing numbered items
+7. Added `E2E_TEST_EMAIL` and `E2E_TEST_PASSWORD` placeholders to `.env.local.example`
+8. Suppressed noisy dotenv tips with `quiet: true` in Playwright config
+9. Fixed CI workflow: removed `BASE_URL` override that prevented `webServer` from starting, removed unnecessary `npm run build` step
+10. Updated CLAUDE.md: Playwright marked as installed, added `npm run test:e2e` command
+11. Cleaned up: moved stale session file to `docs/sessions/`, deleted `test-results/` artifacts
+12. Verified all 94 unit tests and 152 e2e tests pass (124 public across 3 browsers + 28 authenticated)
+
 ## 2026-02-20 07:02
 1. Added `data-testid` attributes to homepage stats bar (stat-lessons, stat-questions, stat-sections, stat-frameworks)
 2. Updated e2e smoke test to use `getByTestId` instead of brittle `getByText` for stats bar assertions

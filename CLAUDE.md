@@ -12,7 +12,7 @@ Full-scope CPA exam prep website — lessons, quizzes, practice exams, and study
 | Payments   | Stripe Checkout + Customer Portal|
 | Content    | MDX files in `src/content/`      |
 | Unit tests | Vitest                           |
-| E2e tests  | Playwright (not yet installed)   |
+| E2e tests  | Playwright                       |
 | Hosting    | Vercel                           |
 | Package    | npm                              |
 
@@ -24,6 +24,7 @@ npm run build        # Production build
 npm test             # Vitest unit tests (run)
 npm run test:watch   # Vitest watch mode
 npm run lint         # ESLint
+npm run test:e2e     # Playwright e2e tests (all browsers)
 ```
 
 ## Architecture
