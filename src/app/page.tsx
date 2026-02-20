@@ -13,9 +13,9 @@ export default function Home() {
 						<span className="text-emerald-600"> with confidence</span>
 					</h1>
 					<p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-						Conceptual lessons, practice quizzes, timed exams, and downloadable
-						study frameworks — everything you need for the AUD, FAR, and REG
-						sections.
+						Lessons, quizzes, timed practice exams, and study frameworks for the
+						AUD, FAR, and REG sections. Try intro lessons free — no account
+						required.
 					</p>
 					<div className="flex flex-col sm:flex-row gap-4 justify-center">
 						<Link
@@ -43,21 +43,21 @@ export default function Home() {
 					<div className="bg-white rounded-xl p-6 border border-gray-200">
 						<div className="text-2xl mb-3">📖</div>
 						<h3 className="text-lg font-semibold text-gray-900 mb-2">
-							Comprehensive Lessons
+							Conceptual Lessons
 						</h3>
 						<p className="text-gray-500 text-sm leading-relaxed">
-							In-depth conceptual coverage with worked examples, key terms, and
-							practice problems for every topic.
+							In-depth coverage with worked examples, key terms, and practice
+							problems aligned to the current CPA exam blueprint.
 						</p>
 					</div>
 					<div className="bg-white rounded-xl p-6 border border-gray-200">
 						<div className="text-2xl mb-3">✏️</div>
 						<h3 className="text-lg font-semibold text-gray-900 mb-2">
-							Practice Quizzes
+							Topic-Specific Quizzes
 						</h3>
 						<p className="text-gray-500 text-sm leading-relaxed">
-							Test your knowledge with section-specific quizzes. Filter by topic
-							and review detailed explanations.
+							Filter by section and topic, answer multiple-choice questions, and
+							review detailed explanations for every answer.
 						</p>
 					</div>
 					<div className="bg-white rounded-xl p-6 border border-gray-200">
@@ -66,18 +66,18 @@ export default function Home() {
 							Timed Practice Exams
 						</h3>
 						<p className="text-gray-500 text-sm leading-relaxed">
-							Simulate the real exam experience with full-length, timed practice
-							tests and detailed score reports.
+							Simulate test day with full-length, timed exams. Flag questions
+							for review and get a detailed score breakdown.
 						</p>
 					</div>
 					<div className="bg-white rounded-xl p-6 border border-gray-200">
 						<div className="text-2xl mb-3">📄</div>
 						<h3 className="text-lg font-semibold text-gray-900 mb-2">
-							Study Frameworks
+							PDF Study Frameworks
 						</h3>
 						<p className="text-gray-500 text-sm leading-relaxed">
-							Download PDF study guides with concept maps, decision trees,
-							formula sheets, and mnemonics.
+							Downloadable guides with concept maps, decision trees, formula
+							sheets, and mnemonics for each section.
 						</p>
 					</div>
 				</div>
@@ -105,34 +105,72 @@ export default function Home() {
 						Simple pricing
 					</h2>
 					<p className="text-gray-500 mb-8">
-						Full access to all lessons, quizzes, exams, and study materials.
+						Intro lessons are free. Subscribe to unlock the full course.
 					</p>
 					<div className="max-w-sm mx-auto bg-gray-50 rounded-xl p-8 border border-gray-200">
 						<div className="text-4xl font-bold text-gray-900 mb-2">
 							$9.99
 							<span className="text-lg font-normal text-gray-500">/month</span>
 						</div>
-						<ul className="text-sm text-gray-600 space-y-2 mb-6 text-left">
-							<li>All lessons across AUD, FAR, and REG</li>
-							<li>Unlimited practice quizzes</li>
-							<li>Full-length timed practice exams</li>
-							<li>Downloadable PDF study guides</li>
-							<li>Cancel anytime</li>
+						<ul className="text-sm text-gray-600 space-y-3 mb-6 text-left">
+							<li className="flex items-start gap-2">
+								<span className="text-emerald-600 mt-0.5">✓</span>
+								All lessons across AUD, FAR, and REG
+							</li>
+							<li className="flex items-start gap-2">
+								<span className="text-emerald-600 mt-0.5">✓</span>
+								Unlimited practice quizzes
+							</li>
+							<li className="flex items-start gap-2">
+								<span className="text-emerald-600 mt-0.5">✓</span>
+								Full-length timed practice exams
+							</li>
+							<li className="flex items-start gap-2">
+								<span className="text-emerald-600 mt-0.5">✓</span>
+								Downloadable PDF study frameworks
+							</li>
+							<li className="flex items-start gap-2">
+								<span className="text-emerald-600 mt-0.5">✓</span>
+								Cancel anytime
+							</li>
 						</ul>
 						<Link
-							href="/sections"
+							href="/signup"
 							className="block bg-emerald-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-emerald-700 transition-colors"
 						>
-							Start Free Trial
+							Get Started Free
 						</Link>
+						<p className="text-xs text-gray-400 mt-3">
+							No credit card required to sign up
+						</p>
 					</div>
 				</div>
 			</section>
 
 			{/* Footer */}
 			<footer className="border-t border-gray-200 bg-white">
-				<div className="max-w-4xl mx-auto px-4 py-8 text-center text-sm text-gray-400">
-					CPA Prep Course
+				<div className="max-w-4xl mx-auto px-4 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-400">
+					<span>© {new Date().getFullYear()} Slayer CPA</span>
+					<div className="flex gap-6">
+						<Link
+							href="/sections"
+							className="hover:text-gray-600 transition-colors"
+						>
+							Sections
+						</Link>
+						<Link
+							href="/login"
+							className="hover:text-gray-600 transition-colors"
+						>
+							Log In
+						</Link>
+						<Link
+							href="/signup"
+							className="hover:text-gray-600 transition-colors"
+						>
+							Sign Up
+						</Link>
+					</div>
 				</div>
 			</footer>
 		</main>
