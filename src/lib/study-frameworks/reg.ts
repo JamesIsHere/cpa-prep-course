@@ -165,6 +165,82 @@ export const regFramework: StudyFramework = {
 				],
 			},
 		},
+		{
+			title: "Circular 230 — Enforcement and Penalties",
+			root: {
+				label: "IRS Enforcement Framework",
+				children: [
+					{
+						label: "Practitioner Sanctions (OPR)",
+						children: [
+							{ label: "Censure (public reprimand)" },
+							{ label: "Suspension from practice" },
+							{ label: "Disbarment from practice" },
+							{ label: "Monetary penalty" },
+						],
+					},
+					{
+						label: "Preparer Penalties",
+						children: [
+							{
+								label:
+									"§6694(a): Unreasonable position — $1,000 or 50% of income",
+							},
+							{
+								label: "§6694(b): Willful/reckless — $5,000 or 75% of income",
+							},
+							{ label: "§6695: Failure to sign/PTIN — $50 per return" },
+						],
+					},
+					{
+						label: "Statute of Limitations",
+						children: [
+							{ label: "General: 3 years from filing/due date" },
+							{ label: "25% omission: 6 years" },
+							{ label: "Fraud or no return filed: unlimited" },
+						],
+					},
+				],
+			},
+		},
+		{
+			title: "Passive Activity Loss System",
+			root: {
+				label: "Loss Limitation Tiers (S Corp / Partnership)",
+				children: [
+					{
+						label: "Tier 1 — Basis Limitation",
+						children: [
+							{ label: "S Corp: stock basis + direct loans" },
+							{ label: "Partnership: outside basis (incl. liabilities)" },
+						],
+					},
+					{
+						label: "Tier 2 — At-Risk Limitation (§465)",
+						children: [
+							{ label: "Cash + basis of property contributed" },
+							{ label: "+ Recourse borrowing" },
+							{ label: "+ Qualified nonrecourse real estate financing" },
+						],
+					},
+					{
+						label: "Tier 3 — Passive Activity Limitation (§469)",
+						children: [
+							{ label: "Passive losses offset passive income only" },
+							{ label: "$25K rental allowance (active participation)" },
+							{ label: "Full release on complete disposition" },
+						],
+					},
+					{
+						label: "Tier 4 — Excess Business Loss (§461(l))",
+						children: [
+							{ label: "$305K single / $610K MFJ (2025)" },
+							{ label: "Excess becomes NOL carryforward" },
+						],
+					},
+				],
+			},
+		},
 	],
 	decisionTrees: [
 		{
@@ -226,6 +302,78 @@ export const regFramework: StudyFramework = {
 					no: "Not eligible — exceeds 100-shareholder limit",
 				},
 				no: "Not eligible — must be a domestic corporation",
+			},
+		},
+		{
+			title: "Passive vs. Active vs. Portfolio Income",
+			root: {
+				question:
+					"Is the income from rental activity or a business in which the taxpayer does NOT materially participate?",
+				yes: {
+					question:
+						"Is it rental activity (regardless of participation level)?",
+					yes: {
+						question:
+							"Does the taxpayer qualify as a real estate professional (>750 hrs, >50% of services)?",
+						yes: "Active income if the taxpayer materially participates in each rental; otherwise passive",
+						no: "Passive income — subject to §469 passive loss limits ($25K rental allowance may apply)",
+					},
+					no: "Passive income — losses limited to passive income only",
+				},
+				no: {
+					question:
+						"Is the income from interest, dividends, annuities, or capital gains on investment property?",
+					yes: "Portfolio income — not passive, cannot be offset by passive losses",
+					no: "Active (nonpassive) income — wages, active business income, material participation income",
+				},
+			},
+		},
+		{
+			title: "Involuntary Conversion Deferral (§1033)",
+			root: {
+				question:
+					"Was property destroyed, stolen, seized, or condemned (involuntary conversion)?",
+				yes: {
+					question:
+						"Did the taxpayer receive insurance proceeds or condemnation award exceeding adjusted basis (gain realized)?",
+					yes: {
+						question:
+							"Did the taxpayer reinvest in qualified replacement property within the replacement period?",
+						yes: {
+							question:
+								"Was the full amount reinvested (cost of replacement ≥ amount realized)?",
+							yes: "No gain recognized — full deferral; new basis = cost − deferred gain",
+							no: "Gain recognized = amount realized − cost of replacement (partial deferral)",
+						},
+						no: "Full gain recognized — no deferral available",
+					},
+					no: "No gain to defer — loss may be deductible (casualty loss rules apply)",
+				},
+				no: "§1033 does not apply — consider §1031 or other provisions",
+			},
+		},
+		{
+			title: "UBIT Three-Part Test",
+			root: {
+				question:
+					"Is the activity a trade or business (carried on for the production of income)?",
+				yes: {
+					question:
+						"Is the trade or business regularly carried on (frequency and continuity comparable to commercial activity)?",
+					yes: {
+						question:
+							"Is the trade or business NOT substantially related to the organization's exempt purpose?",
+						yes: {
+							question:
+								"Does a statutory exclusion apply (volunteers, donated goods, passive income, convenience)?",
+							yes: "Excluded from UBIT despite meeting the three-part test",
+							no: "Subject to UBIT — net income taxed at corporate or trust rates",
+						},
+						no: "Not subject to UBIT — activity is related to exempt purpose",
+					},
+					no: "Not subject to UBIT — activity is not regularly carried on",
+				},
+				no: "Not subject to UBIT — not a trade or business",
 			},
 		},
 	],
@@ -313,6 +461,33 @@ export const regFramework: StudyFramework = {
 			name: "AMT Formula",
 			formula:
 				"AMTI − AMT Exemption × 26%/28% = Tentative Minimum Tax; AMT = TMT − Regular Tax (if positive)",
+		},
+		{
+			name: "Foreign Tax Credit Limitation",
+			formula:
+				"(Foreign Source Taxable Income ÷ Worldwide Taxable Income) × U.S. Tax Liability",
+			description:
+				"Computed separately for each basket (general and passive). Excess credits carry back 1 year, forward 10 years.",
+		},
+		{
+			name: "Net Investment Income Tax (NIIT)",
+			formula: "3.8% × Lesser of (Net Investment Income, MAGI − Threshold)",
+			description:
+				"Thresholds: $200K single, $250K MFJ, $125K MFS. Not indexed for inflation.",
+		},
+		{
+			name: "Social Security Taxability",
+			formula:
+				"Provisional Income = AGI + Tax-Exempt Interest + 50% of SS Benefits",
+			description:
+				"Single: <$25K = 0%, $25K–$34K = up to 50%, >$34K = up to 85%. MFJ: <$32K = 0%, $32K–$44K = up to 50%, >$44K = up to 85%.",
+		},
+		{
+			name: "Section 382 NOL Limitation",
+			formula:
+				"Annual Limit = FMV of Loss Corp Stock (pre-change) × Long-Term Tax-Exempt Rate",
+			description:
+				"Triggered by >50 percentage point ownership change in 3-year period. Limits post-change use of pre-change NOLs.",
 		},
 	],
 	referenceTables: [
@@ -411,6 +586,115 @@ export const regFramework: StudyFramework = {
 				],
 			],
 		},
+		{
+			title: "MACRS Recovery Periods — Common Property Classes",
+			headers: ["Class", "Property Examples", "Method", "Convention"],
+			rows: [
+				[
+					"3-year",
+					"Tractor units, racehorses, qualified rent-to-own property",
+					"200% DB",
+					"Half-year",
+				],
+				[
+					"5-year",
+					"Automobiles, computers, office machinery, research equipment",
+					"200% DB",
+					"Half-year",
+				],
+				[
+					"7-year",
+					"Office furniture, fixtures, agricultural structures",
+					"200% DB",
+					"Half-year",
+				],
+				[
+					"15-year",
+					"Land improvements (fences, parking lots, landscaping)",
+					"150% DB",
+					"Half-year",
+				],
+				[
+					"27.5-year",
+					"Residential rental property",
+					"Straight-line",
+					"Mid-month",
+				],
+				[
+					"39-year",
+					"Nonresidential real property (office, warehouse, store)",
+					"Straight-line",
+					"Mid-month",
+				],
+			],
+		},
+		{
+			title: "Seven Material Participation Tests (Reg. §1.469-5T)",
+			headers: ["Test", "Requirement"],
+			rows: [
+				["1", "More than 500 hours during the tax year"],
+				[
+					"2",
+					"Taxpayer's participation constitutes substantially all participation",
+				],
+				["3", "More than 100 hours and no other individual participated more"],
+				[
+					"4",
+					"Significant participation activities (>100 hrs each) aggregate to >500 hrs",
+				],
+				["5", "Materially participated in any 5 of the prior 10 tax years"],
+				[
+					"6",
+					"Personal service activity — materially participated in any 3 prior years",
+				],
+				[
+					"7",
+					"Based on all facts and circumstances, regular, continuous, and substantial participation",
+				],
+			],
+		},
+		{
+			title: "AET vs. PHC Tax Comparison",
+			headers: [
+				"Feature",
+				"Accumulated Earnings Tax",
+				"Personal Holding Company Tax",
+			],
+			rows: [
+				["Rate", "20%", "20%"],
+				[
+					"Trigger",
+					"Accumulating E&P beyond reasonable business needs",
+					"Stock + income tests met",
+				],
+				["Stock test", "None specific", ">50% owned by 5 or fewer individuals"],
+				["Income test", "None specific", "≥60% of AOGI is PHC income"],
+				[
+					"Avoidance",
+					"Demonstrate reasonable business needs or pay dividends",
+					"Pay dividends to reduce undistributed PHC income",
+				],
+				[
+					"Self-assessed",
+					"No — IRS asserts",
+					"Yes — self-reported on Schedule PH",
+				],
+			],
+		},
+		{
+			title: "S Corp AAA Ordering Rules (with Accumulated E&P)",
+			headers: ["Priority", "Source", "Tax Treatment"],
+			rows: [
+				[
+					"1st",
+					"Accumulated Adjustments Account (AAA)",
+					"Tax-free (previously taxed S corp income)",
+				],
+				["2nd", "Accumulated E&P (from C corp years)", "Taxable dividend"],
+				["3rd", "Remaining stock basis", "Tax-free return of capital"],
+				["4th", "Excess over basis", "Capital gain"],
+			],
+		},
 	],
 	mnemonics: [
 		{
@@ -453,6 +737,27 @@ export const regFramework: StudyFramework = {
 				"Salary/wages, Interest, Dividends, Business income, Unemployment comp, Rents/royalties, Notional income (partnerships K-1), Social security (up to 85%)",
 			explanation:
 				"Common items included in gross income. SID BURNS through your money with taxes.",
+		},
+		{
+			acronym: "WATER",
+			expansion:
+				"Wages (administrative expenses first), Alimony/child support, Taxes (federal and state), Employee claims (up to statutory limit), Remaining general unsecured creditors",
+			explanation:
+				"Simplified priority of claims in Chapter 7 bankruptcy distribution. WATER flows downhill — pay from the top.",
+		},
+		{
+			acronym: "BARP",
+			expansion:
+				"Basis limitation, At-risk limitation, (Passive) activity loss rules, (Excess business loss) Post-TCJA cap",
+			explanation:
+				"The four-tier loss limitation order for S corp and partnership losses. Losses must pass each BARP gate before deduction.",
+		},
+		{
+			acronym: "HOT",
+			expansion:
+				"Highly appreciated inventory (>120% of basis), Ordinary income recapture (§1245/§1250 depreciation), Trade receivables (unrealized receivables)",
+			explanation:
+				"Section 751 hot assets in a partnership that trigger ordinary income treatment on sale of a partnership interest.",
 		},
 	],
 };
