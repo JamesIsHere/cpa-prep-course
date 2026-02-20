@@ -222,10 +222,10 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
  'medium'),
 
 (3, 'Property Transactions: Basis',
- 'A taxpayer purchases new manufacturing equipment for $500,000 in 2025. The equipment qualifies for 100% bonus depreciation. What is the first-year depreciation deduction (ignoring Section 179)?',
- '["$100,000", "$250,000", "$500,000", "$71,429"]'::jsonb,
- 2,
- 'Under the TCJA, 100% bonus depreciation (first-year additional depreciation) allows the taxpayer to deduct the full cost of qualifying new or used property in the year it is placed in service. For property placed in service in 2025, the bonus depreciation rate is 80% (phasing down from 100% in 2022). However, if 100% bonus is available, the full $500,000 is deductible in year one.',
+ 'A taxpayer purchases new manufacturing equipment for $500,000 in 2025. Under the TCJA phase-down schedule, what is the first-year bonus depreciation deduction (ignoring Section 179 and regular MACRS)?',
+ '["$100,000", "$200,000", "$500,000", "$300,000"]'::jsonb,
+ 1,
+ 'Under the TCJA, bonus depreciation phases down by 20% per year: 100% (2022), 80% (2023), 60% (2024), 40% (2025), 20% (2026), and 0% after 2026. For equipment placed in service in 2025, the bonus depreciation deduction is 40% x $500,000 = $200,000. The taxpayer would also claim regular MACRS depreciation on the remaining $300,000 basis.',
  'medium'),
 
 (3, 'Property Transactions: Basis',
@@ -555,9 +555,9 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 
 (3, 'Individual Taxation: Credits',
  'The AMT exemption amount for married filing jointly in 2025 is approximately $133,300. At what AMTI level does the exemption begin to phase out?',
- '["$200,000", "$578,150 (approximately)", "$1,000,000", "The exemption never phases out"]'::jsonb,
- 1,
- 'The AMT exemption phases out at 25 cents for each dollar of AMTI above the phase-out threshold. For 2025 MFJ, the phase-out begins at approximately $1,218,700 (these amounts are indexed annually for inflation). The exemption is fully phased out when AMTI exceeds the threshold plus four times the exemption amount. This phase-out effectively creates a higher marginal rate in the phase-out range.',
+ '["$200,000", "$578,150 (approximately)", "$1,218,700 (approximately)", "The exemption never phases out"]'::jsonb,
+ 2,
+ 'The AMT exemption phases out at 25 cents for each dollar of AMTI above the phase-out threshold. For 2025 MFJ, the phase-out begins at approximately $1,218,700 (indexed annually for inflation). The $578,150 figure is the MFS phase-out threshold, not MFJ. The exemption is fully phased out when AMTI exceeds the threshold plus four times the exemption amount ($1,218,700 + 4 x $133,300 = $1,751,900).',
  'hard'),
 
 (3, 'Individual Taxation: Credits',

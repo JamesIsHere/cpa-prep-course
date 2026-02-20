@@ -766,7 +766,7 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
  'Which of the following is NOT an acceptable engagement type for prospective financial statements?',
  '["Examination of a forecast", "Examination of a projection", "Compilation of a forecast", "Review of a forecast"]'::jsonb,
  3,
- 'Practitioners cannot perform a review or compilation of prospective financial statements (forecasts or projections). Only examination engagements are permitted for prospective financial information. This is because the limited procedures of a review or compilation would not provide a reasonable basis for conclusions about forward-looking statements.',
+ 'Under AICPA standards (AT-C Section 305), practitioners may perform examinations, compilations, and agreed-upon procedures on prospective financial statements. Reviews of prospective financial statements are NOT permitted because the limited inquiry and analytical procedures of a review do not provide a sufficient basis for conclusions about forward-looking information.',
  'hard'),
 
 (1, 'Attestation Engagements',

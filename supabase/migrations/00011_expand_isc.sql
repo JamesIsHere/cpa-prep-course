@@ -931,7 +931,7 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 
 (5, 'Incident Response and Recovery',
  'An organization wants to test its incident response plan without disrupting production systems. Which type of exercise is MOST appropriate?',
- '["Full interruption test that shuts down production systems", "Tabletop exercise where team members walk through a simulated scenario", "Immediately deploying the plan during the next real incident", "Hiring an external red team to launch actual attacks against production", ""]'::jsonb,
+ '["Full interruption test that shuts down production systems", "Tabletop exercise where team members walk through a simulated scenario", "Immediately deploying the plan during the next real incident", "Hiring an external red team to launch actual attacks against production"]'::jsonb,
  1,
  'A tabletop exercise is a discussion-based exercise where team members walk through a simulated incident scenario, discussing their roles, decisions, and actions. It tests the plan and team readiness without any impact on production systems. Full interruption tests disrupt operations, waiting for real incidents provides no proactive validation, and red team exercises against production carry risk.',
  'medium'),

@@ -36,9 +36,9 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 
 (4, 'Financial Statement Analysis',
  'Using DuPont analysis, which combination of factors results in a return on equity of 18%?',
- '["Net profit margin 6%, asset turnover 1.5, equity multiplier 2.0", "Net profit margin 9%, asset turnover 1.0, equity multiplier 2.0", "Net profit margin 3%, asset turnover 2.0, equity multiplier 2.5", "Net profit margin 4%, asset turnover 1.5, equity multiplier 3.0"]'::jsonb,
+ '["Net profit margin 6%, asset turnover 1.2, equity multiplier 2.0", "Net profit margin 9%, asset turnover 1.0, equity multiplier 2.0", "Net profit margin 3%, asset turnover 2.0, equity multiplier 2.5", "Net profit margin 5%, asset turnover 1.5, equity multiplier 2.0"]'::jsonb,
  1,
- 'ROE = Profit margin x Asset turnover x Equity multiplier. Option B: 9% x 1.0 x 2.0 = 18%. Option A: 6% x 1.5 x 2.0 = 18% also works. Option D: 4% x 1.5 x 3.0 = 18% also. The question tests the DuPont formula; option B is the most direct calculation.',
+ 'ROE = Profit margin x Asset turnover x Equity multiplier. Option B: 9% x 1.0 x 2.0 = 18%. Option A: 6% x 1.2 x 2.0 = 14.4%. Option C: 3% x 2.0 x 2.5 = 15%. Option D: 5% x 1.5 x 2.0 = 15%. Only option B yields exactly 18%.',
  'medium'),
 
 (4, 'Financial Statement Analysis',
@@ -128,8 +128,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 (4, 'Financial Statement Analysis',
  'A declining current ratio combined with a stable quick ratio most likely indicates:',
  '["Increasing accounts receivable", "Declining inventory levels", "Building up excess inventory", "Declining cash balances"]'::jsonb,
- 2,
- 'The current ratio includes inventory while the quick ratio excludes it. If the current ratio falls but the quick ratio stays stable, inventory is likely building up (increasing current assets but not liquid current assets).',
+ 1,
+ 'The current ratio includes all current assets (including inventory), while the quick ratio excludes inventory. If the current ratio declines but the quick ratio remains stable, the difference — inventory — must be decreasing. Declining inventory reduces total current assets without affecting quick assets, causing the current ratio to fall while the quick ratio holds steady.',
  'hard'),
 
 -- ============================================================
