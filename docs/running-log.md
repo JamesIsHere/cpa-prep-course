@@ -1,5 +1,17 @@
 # Running Log
 
+## 2026-02-22
+1. Applied migrations 00009–00012 to production Supabase (REG expanded questions, BAR/ISC/TCP full builds)
+2. Updated CLAUDE.md to reflect all 8 phases complete with full content stats (73 lessons, ~1,050 questions, 233 framework items)
+3. Cleaned up stale files: archived session file to docs/sessions/, added .claude/ to .gitignore
+4. Ran content QA spot-check across all 6 sections (3 parallel agents reviewing lessons, frameworks, questions)
+5. Fixed 6 critical question errors: AUD prospective financials explanation, REG bonus depreciation rate, REG AMT phase-out threshold, BAR DuPont triple-correct answer, BAR inverted current ratio logic, ISC malformed JSON
+6. Created and applied corrective migration 00013 to production Supabase
+7. Expanded Playwright e2e tests: all 6 section detail pages + free intro lessons, paywall enforcement, auth gate redirects, nav links — 25 passing, 2 skipped (auth-gated)
+8. Added quiz.spec.ts for auth-gated quiz flow testing
+9. Fixed pre-existing stale smoke tests: homepage feature headings, nav link selector, auth redirect tolerance
+10. Verified clean build (107 pages), unit tests (39/39), and e2e tests (25/25)
+
 ## 2026-02-21
 1. Fixed personal-org .gitignore: added *.m4a, *.mp4, vault/books/**/*.pdf; untracked 82MB m4a file
 2. Built 11 ISC lessons (02-12): IT infrastructure, ERP systems, data management, availability, security frameworks, threats, security controls, privacy, incident response, SOC engagements, SOC reporting
