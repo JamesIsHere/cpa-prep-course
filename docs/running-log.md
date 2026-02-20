@@ -1,5 +1,14 @@
 # Running Log
 
+## 2026-02-20 06:45
+1. Session 7: Created REG lesson 17 (Filing Status and Dependents — MFJ/MFS/HOH/QSS, qualifying child/relative tests, tiebreaker rules)
+2. Session 7: Created REG lesson 18 (Tax-Exempt Organizations — 501(c)(3), UBIT, private foundations, Form 990)
+3. Session 7: Created migration 00022 with 20 questions (10 filing status, 10 tax-exempt orgs) + 2 lesson inserts
+4. Session 7: Filled final 2 REG blueprint gaps (reg.4.D and reg.5.E) — 100% lesson coverage achieved
+5. Session 7: Added 4 study framework items (filing status decision tree, tax-exempt concept map, 2 reference tables)
+6. Session 7: Updated stats to 96 lessons, 1,275+ questions, 280 framework items
+7. Session 7: Updated blueprint test assertions (REG 250, 0 lesson gaps, 100% REG coverage)
+
 ## 2026-02-20 06:12
 1. Session 1: Rebranded all UI/metadata from "CPA Prep Course" to "Slayer CPA" (nav, layout, OG image, PDF document)
 2. Session 1: Updated interim stats to 81 lessons, 1,125+ questions, 249 framework items
