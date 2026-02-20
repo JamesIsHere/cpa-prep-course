@@ -1,4 +1,3 @@
-import { renderToBuffer } from "@react-pdf/renderer";
 import { NextResponse } from "next/server";
 import { createElement } from "react";
 import { getStudyFramework } from "@/lib/study-frameworks";
@@ -38,6 +37,7 @@ export async function GET(
 		);
 	}
 
+	const { renderToBuffer } = await import("@react-pdf/renderer");
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const element = createElement(StudyGuidePdf, { framework }) as any;
 	const buffer = await renderToBuffer(element);

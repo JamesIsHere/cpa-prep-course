@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Nav from "@/components/nav";
@@ -19,20 +20,20 @@ export const metadata: Metadata = {
 		template: "%s — CPA Prep Course",
 	},
 	description:
-		"Full-scope CPA exam prep — lessons, quizzes, practice exams, and study frameworks for $9.99/month.",
+		"Full-scope CPA exam prep — 73 lessons, 1,050+ practice questions, timed exams, and study frameworks across all 6 sections for $9.99/month.",
 	metadataBase: new URL("https://www.slayer-cpa.com"),
 	openGraph: {
 		type: "website",
 		siteName: "CPA Prep Course",
 		title: "CPA Prep Course",
 		description:
-			"Lessons, quizzes, practice exams, and study frameworks for the AUD, FAR, and REG sections of the CPA exam.",
+			"73 lessons, 1,050+ questions, timed practice exams, and PDF study frameworks covering AUD, FAR, REG, BAR, ISC, and TCP.",
 	},
 	twitter: {
 		card: "summary_large_image",
 		title: "CPA Prep Course",
 		description:
-			"Lessons, quizzes, practice exams, and study frameworks for the AUD, FAR, and REG sections of the CPA exam.",
+			"73 lessons, 1,050+ questions, timed practice exams, and PDF study frameworks covering AUD, FAR, REG, BAR, ISC, and TCP.",
 	},
 };
 
@@ -48,6 +49,7 @@ export default function RootLayout({
 			>
 				<Nav />
 				{children}
+				<Analytics />
 			</body>
 		</html>
 	);

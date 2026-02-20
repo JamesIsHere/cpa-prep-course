@@ -1,0 +1,193 @@
+# Internal-Use Software and Cloud Computing
+
+## Learning Objectives
+
+- Apply the three-stage capitalization model under ASC 350-40 for internal-use software
+- Identify costs that qualify for capitalization during the application development stage
+- Distinguish cloud computing hosting arrangements that are service contracts from those that include a software license
+- Account for implementation costs in cloud computing arrangements under ASU 2018-15
+- Calculate amortization of capitalized software costs
+
+## ASC 350-40: Internal-Use Software Overview
+
+**Internal-use software** is software acquired, internally developed, or modified solely to meet the entity's internal needs, with no substantive plan to market it externally. ASC 350-40 governs the capitalization of costs incurred to develop or obtain this software.
+
+The standard applies to all entities — public, private, and not-for-profit — and covers both purchased and internally developed software. It does **not** apply to software developed for sale or lease to others (which follows ASC 985-20).
+
+> **Exam tip:** If a company develops software partly for internal use and partly for external sale, ASC 350-40 applies only if internal use is the **primary purpose**. If the entity has a substantive plan to market the software, ASC 985-20 applies instead.
+
+## The Three-Stage Model
+
+ASC 350-40 divides the software development process into three stages with distinct cost treatment:
+
+### Stage 1: Preliminary Project Stage — Expense
+
+All costs incurred during the preliminary project stage are **expensed as incurred**. Activities in this stage include:
+
+- Conceptual formulation and evaluation of alternatives
+- Determining the existence of needed technology
+- Final selection among alternatives for the software
+- Vendor demonstrations and evaluations
+
+### Stage 2: Application Development Stage — Capitalize
+
+Costs incurred during the application development stage are **capitalized** when both conditions are met: (1) management has authorized and committed to funding the project, and (2) it is probable the project will be completed and used as intended.
+
+Capitalizable costs include:
+
+- **External direct costs** — amounts paid to third parties for programming, coding, testing, and installation
+- **Internal payroll costs** — salaries and benefits for employees directly devoted to the project (time must be specifically tracked)
+- **Interest costs** — capitalized under ASC 835-20 if the software qualifies as a qualifying asset
+- **Upgrades and enhancements** — additional functionality capitalized if it is probable the expenditure will result in significant additional capability
+
+Activities that signal the start of this stage: coding, software configuration, installation of hardware for the software, testing (including parallel processing), and data conversion (to the extent it is necessary for the software to function).
+
+### Stage 3: Post-Implementation/Operation Stage — Expense
+
+Once the software is substantially complete and ready for its intended use, all subsequent costs are **expensed as incurred**. These include:
+
+- Training costs
+- Data conversion (routine)
+- Application maintenance
+- Minor bug fixes and patches
+
+| Stage | Activities | Cost Treatment |
+|-------|-----------|----------------|
+| Preliminary project | Evaluate alternatives, vendor demos, conceptual design | **Expense** |
+| Application development | Coding, testing, configuration, data conversion for functionality | **Capitalize** |
+| Post-implementation | Training, maintenance, routine data conversion, minor fixes | **Expense** |
+
+> **Exam tip:** Data conversion costs require careful analysis. Costs to develop or obtain software that **allows access to or conversion of** old data by the new system are capitalizable. Routine data conversion or purging of old data is expensed.
+
+## Amortization and Impairment
+
+Capitalized internal-use software is amortized on a **straight-line basis** over the estimated useful life of the software, beginning when the software is ready for its intended use.
+
+**Impairment** is evaluated under ASC 360-10 (long-lived assets). If the software is no longer expected to provide substantive service potential, it is tested for impairment. Software that is abandoned is written down to its **fair value** (if any).
+
+**Worked Example — Capitalization and Amortization:**
+
+TechCo develops an internal ERP system. Costs incurred:
+
+| Phase | Cost | Treatment |
+|-------|------|-----------|
+| Vendor evaluation and feasibility study | $50,000 | Expense |
+| External coding and configuration | $400,000 | Capitalize |
+| Internal developer salaries (application development) | $250,000 | Capitalize |
+| Testing and quality assurance | $80,000 | Capitalize |
+| Training employees on new system | $30,000 | Expense |
+| Ongoing maintenance (Year 1) | $20,000 | Expense |
+
+Total capitalized: $400,000 + $250,000 + $80,000 = **$730,000**
+
+If the estimated useful life is 5 years:
+
+Annual amortization = $730,000 / 5 = **$146,000 per year**
+
+## Cloud Computing Arrangements (ASU 2018-15)
+
+**ASU 2018-15** (codified in ASC 350-40) provides guidance on accounting for implementation costs incurred in a **cloud computing arrangement (CCA)** that is a service contract (i.e., the customer does not take possession of the software).
+
+### Step 1: Is It a License or a Service?
+
+The first question is whether the hosting arrangement includes a **software license**. A CCA includes a software license if the customer has **both**:
+
+1. **Contractual right to take possession** of the software without significant penalty
+2. **Feasibility** to run the software independently or with an unrelated third-party hosting provider
+
+If **both** conditions are met, the arrangement includes a software license accounted for under ASC 350-40 (capitalize the license) and the hosting element is a separate service.
+
+If **either** condition is not met, the entire arrangement is a **service contract** — there is no software asset on the balance sheet.
+
+### Step 2: Implementation Costs in Service Contracts
+
+Even when the CCA is a service contract (no license), ASU 2018-15 allows capitalization of certain **implementation costs** using the same three-stage model:
+
+| Stage | Treatment for CCA Service Contract |
+|-------|-----------------------------------|
+| Preliminary project stage | **Expense** as incurred |
+| Application development stage | **Capitalize** as a prepaid asset (not as software) |
+| Post-implementation stage | **Expense** as incurred |
+
+Capitalized implementation costs in a service contract CCA are classified as a **prepaid expense** (not an intangible asset) and amortized on a straight-line basis over the **term of the hosting arrangement**, including reasonably certain renewal periods.
+
+> **Exam tip:** The balance sheet classification differs. Internal-use software developed in-house is an **intangible asset**. CCA implementation costs for a service contract are a **prepaid expense** (current or noncurrent based on the hosting term). This distinction is frequently tested.
+
+### Presentation and Disclosure
+
+- Amortization of capitalized CCA implementation costs is reported in the **same income statement line** as the hosting arrangement fees (usually operating expense)
+- Capitalized amounts are presented in the **same balance sheet line** as prepaid amounts for the hosting arrangement
+- Cash payments are classified in the statement of cash flows consistent with the hosting fees (typically **operating activities**)
+
+**Worked Example — Cloud Computing:**
+
+DataCo signs a 4-year SaaS contract (service contract — no right to take possession). Implementation costs:
+
+| Phase | Cost | Treatment |
+|-------|------|-----------|
+| Needs assessment and vendor selection | $25,000 | Expense |
+| Configuration and customization (app dev stage) | $180,000 | Capitalize as prepaid |
+| Data migration required for system functionality | $40,000 | Capitalize as prepaid |
+| User training | $15,000 | Expense |
+
+Total capitalized: $180,000 + $40,000 = **$220,000**
+
+Annual amortization = $220,000 / 4 years = **$55,000 per year**, recognized in operating expense alongside the SaaS subscription fee.
+
+## Internal-Use Software Criteria
+
+For costs to be capitalized under ASC 350-40, the software must meet the definition of **internal-use**:
+
+1. The software is acquired, developed, or modified solely for the entity's internal needs
+2. During the development, there is **no substantive plan** to market the software externally
+3. The entity does not have a plan to sell, lease, or otherwise market the software to external parties
+
+If the entity later decides to market the software, it applies the guidance in ASC 985-20 prospectively from the date the marketing decision is made.
+
+## Key Terms
+
+- **Preliminary project stage** — The initial phase of software development including feasibility studies and alternative evaluation; all costs are expensed
+- **Application development stage** — The phase where coding, testing, and configuration occur; qualifying costs are capitalized
+- **Post-implementation stage** — The phase after software is ready for use; costs including training and maintenance are expensed
+- **ASC 350-40** — The FASB standard governing accounting for costs of internal-use software
+- **ASU 2018-15** — Update requiring entities to apply the same capitalization rules for implementation costs in CCA service contracts
+- **Cloud computing arrangement (CCA)** — A hosting arrangement where software is accessed remotely; may be a service contract or may include a software license
+- **Service contract** — A CCA where the customer does not have the right to take possession of the software and cannot feasibly run it independently
+- **Prepaid expense** — The balance sheet classification for capitalized CCA implementation costs in a service contract
+- **Hosting arrangement** — The agreement with a vendor to access software via the cloud over a specified term
+- **Straight-line amortization** — The required method for amortizing both capitalized internal-use software and CCA implementation costs
+- **Data conversion costs** — Costs to convert data; capitalizable only when necessary for the software to function, otherwise expensed
+- **Qualifying asset** — An asset under ASC 835-20 for which interest costs may be capitalized during the development period
+
+## Practice Problems
+
+**1.** During the development of internal-use software, a company incurs $60,000 for a feasibility study, $300,000 for external coding, and $45,000 for employee training. What amount should be capitalized under ASC 350-40?
+
+a) $405,000
+b) $360,000
+c) $345,000
+d) $300,000
+
+**Answer:** d) $300,000 — The feasibility study ($60,000) is a preliminary project stage cost and is expensed. Training ($45,000) is a post-implementation cost and is expensed. Only the external coding ($300,000) during the application development stage is capitalized.
+
+---
+
+**2.** A company enters a 5-year SaaS contract with no contractual right to take possession of the software. It incurs $200,000 in configuration costs during the application development stage equivalent. How should these costs be reported on the balance sheet?
+
+a) Intangible asset, amortized over useful life
+b) Prepaid expense, amortized over the 5-year hosting term
+c) Expensed immediately as a period cost
+d) Software asset, amortized over 5 years
+
+**Answer:** b) Prepaid expense, amortized over the 5-year hosting term — Under ASU 2018-15, implementation costs for a CCA that is a service contract are capitalized as a prepaid expense and amortized over the term of the hosting arrangement.
+
+---
+
+**3.** Which of the following costs incurred during the application development stage of an internal-use software project should NOT be capitalized?
+
+a) Salaries of programmers directly working on coding
+b) External consultant fees for system configuration
+c) General and administrative overhead allocated to the project
+d) Costs of testing prior to the software going live
+
+**Answer:** c) General and administrative overhead allocated to the project — ASC 350-40 requires capitalization of direct costs only: external direct costs, internal payroll for employees directly devoted to the project, and interest on qualifying assets. General overhead is not a direct cost and must be expensed.

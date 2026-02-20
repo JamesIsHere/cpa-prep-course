@@ -1,0 +1,215 @@
+import { describe, expect, it } from "vitest";
+import {
+	cpaBlueprint,
+	questionCounts,
+	sectionQuestionTotals,
+} from "@/lib/blueprint";
+import {
+	computeGroupQuestionTarget,
+	formatCoverageReport,
+	generateCoverageReport,
+} from "@/lib/blueprint-coverage";
+import { sections } from "@/lib/sections";
+
+describe("blueprint structure", () => {
+	it("has all 6 CPA exam sections", () => {
+		const codes = cpaBlueprint.map((s) => s.code).sort();
+		expect(codes).toEqual(["aud", "bar", "far", "isc", "reg", "tcp"]);
+	});
+
+	it("each section has at least 2 areas", () => {
+		for (const section of cpaBlueprint) {
+			expect(section.areas.length).toBeGreaterThanOrEqual(2);
+		}
+	});
+
+	it("area weights roughly sum to 100% per section", () => {
+		for (const section of cpaBlueprint) {
+			const lowSum = section.areas.reduce((s, a) => s + a.weight[0], 0);
+			const highSum = section.areas.reduce((s, a) => s + a.weight[1], 0);
+			// Low bounds should be under 100, high bounds should be over 100
+			// Midpoints should be near 100
+			const midSum = (lowSum + highSum) / 2;
+			expect(midSum).toBeGreaterThanOrEqual(85);
+			expect(midSum).toBeLessThanOrEqual(115);
+		}
+	});
+
+	it("area weights are valid ranges", () => {
+		for (const section of cpaBlueprint) {
+			for (const area of section.areas) {
+				expect(area.weight[0]).toBeLessThan(area.weight[1]);
+				expect(area.weight[0]).toBeGreaterThanOrEqual(0);
+				expect(area.weight[1]).toBeLessThanOrEqual(100);
+			}
+		}
+	});
+
+	it("has expected group counts per section", () => {
+		const groupCounts: Record<string, number> = {};
+		for (const section of cpaBlueprint) {
+			groupCounts[section.code] = section.areas.reduce(
+				(sum, a) => sum + a.groups.length,
+				0,
+			);
+		}
+		expect(groupCounts.aud).toBe(27);
+		expect(groupCounts.far).toBe(23);
+		expect(groupCounts.reg).toBe(21);
+		expect(groupCounts.bar).toBe(16);
+		expect(groupCounts.isc).toBe(18);
+		expect(groupCounts.tcp).toBe(16);
+	});
+});
+
+describe("blueprint topic IDs", () => {
+	it("all topic IDs are globally unique", () => {
+		const ids: string[] = [];
+		for (const section of cpaBlueprint) {
+			for (const area of section.areas) {
+				for (const group of area.groups) {
+					for (const topic of group.topics) {
+						ids.push(topic.id);
+					}
+				}
+			}
+		}
+		expect(new Set(ids).size).toBe(ids.length);
+	});
+
+	it("topic IDs follow naming convention", () => {
+		for (const section of cpaBlueprint) {
+			for (const area of section.areas) {
+				for (const group of area.groups) {
+					for (const topic of group.topics) {
+						expect(topic.id).toMatch(/^[a-z]{3}\.\d+\.[A-Z]\.\d+$/);
+						expect(topic.id).toContain(`${section.code}.`);
+					}
+				}
+			}
+		}
+	});
+});
+
+describe("lesson slug cross-references", () => {
+	it("all lesson slugs reference valid lessons in sections.ts", () => {
+		const validSlugs = new Set<string>();
+		for (const section of sections) {
+			for (const lesson of section.lessons) {
+				validSlugs.add(lesson.slug);
+			}
+		}
+
+		for (const bpSection of cpaBlueprint) {
+			for (const area of bpSection.areas) {
+				for (const group of area.groups) {
+					for (const slug of group.lessonSlugs) {
+						expect(validSlugs.has(slug)).toBe(true);
+					}
+				}
+			}
+		}
+	});
+
+	it("all question topics reference known topics in questionCounts", () => {
+		for (const section of cpaBlueprint) {
+			for (const area of section.areas) {
+				for (const group of area.groups) {
+					for (const topic of group.questionTopics) {
+						expect(questionCounts[topic]).toBeDefined();
+					}
+				}
+			}
+		}
+	});
+});
+
+describe("question counts", () => {
+	it("section totals match expected values", () => {
+		expect(sectionQuestionTotals.aud).toBe(200);
+		expect(sectionQuestionTotals.far).toBe(230);
+		expect(sectionQuestionTotals.reg).toBe(200);
+		expect(sectionQuestionTotals.bar).toBe(175);
+		expect(sectionQuestionTotals.isc).toBe(170);
+		expect(sectionQuestionTotals.tcp).toBe(150);
+	});
+
+	it("all question count values are positive integers", () => {
+		for (const [topic, count] of Object.entries(questionCounts)) {
+			expect(count).toBeGreaterThan(0);
+			expect(Number.isInteger(count)).toBe(true);
+		}
+	});
+});
+
+describe("computeGroupQuestionTarget", () => {
+	it("computes target based on weight midpoint", () => {
+		// Area with 20-30% weight, 5 groups, 200 total questions
+		// Midpoint = 25%, area target = 50, per group = 10
+		const target = computeGroupQuestionTarget([20, 30], 5, 200);
+		expect(target).toBe(10);
+	});
+
+	it("rounds to nearest integer", () => {
+		const target = computeGroupQuestionTarget([15, 25], 7, 200);
+		// Midpoint = 20%, area target = 40, per group = 40/7 ≈ 5.71 → 6
+		expect(target).toBe(6);
+	});
+});
+
+describe("coverage report", () => {
+	it("generates without errors", () => {
+		const report = generateCoverageReport(
+			cpaBlueprint,
+			questionCounts,
+			sectionQuestionTotals,
+		);
+		expect(report.sections).toHaveLength(6);
+		expect(report.summary.totalGroups).toBe(121);
+		expect(report.summary.totalGaps).toBeGreaterThan(0);
+	});
+
+	it("identifies gaps where lessons are missing", () => {
+		const report = generateCoverageReport(
+			cpaBlueprint,
+			questionCounts,
+			sectionQuestionTotals,
+		);
+		const missingLessonGaps = report.gaps.filter((g) => g.missingLessons);
+		expect(missingLessonGaps.length).toBeGreaterThan(0);
+
+		// AUD Group E (Government Auditing Standards) should be a gap
+		const audGovGap = missingLessonGaps.find(
+			(g) =>
+				g.sectionCode === "aud" && g.groupLetter === "E" && g.areaNumber === 1,
+		);
+		expect(audGovGap).toBeDefined();
+	});
+
+	it("formats report as readable string", () => {
+		const report = generateCoverageReport(
+			cpaBlueprint,
+			questionCounts,
+			sectionQuestionTotals,
+		);
+		const formatted = formatCoverageReport(report);
+		expect(formatted).toContain("AICPA BLUEPRINT COVERAGE REPORT");
+		expect(formatted).toContain("AUD");
+		expect(formatted).toContain("COVERAGE GAPS");
+		expect(formatted).toContain("SUMMARY");
+	});
+
+	it("coverage percentages are between 0 and 100", () => {
+		const report = generateCoverageReport(
+			cpaBlueprint,
+			questionCounts,
+			sectionQuestionTotals,
+		);
+		for (const section of report.sections) {
+			expect(section.lessonCoverage).toBeGreaterThanOrEqual(0);
+			expect(section.lessonCoverage).toBeLessThanOrEqual(100);
+		}
+		expect(report.summary.overallLessonCoverage).toBeGreaterThanOrEqual(0);
+		expect(report.summary.overallLessonCoverage).toBeLessThanOrEqual(100);
+	});
+});

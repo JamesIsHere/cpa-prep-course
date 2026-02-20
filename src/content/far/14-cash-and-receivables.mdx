@@ -1,0 +1,224 @@
+# Cash and Receivables
+
+## Learning Objectives
+
+- Classify cash, cash equivalents, restricted cash, and compensating balances on the balance sheet
+- Prepare a complete bank reconciliation and identify book vs. bank adjustments
+- Account for accounts receivable and apply the allowance method under ASC 326 (CECL)
+- Distinguish between factoring receivables with and without recourse
+- Calculate the allowance for credit losses using expected loss methodologies
+
+## Cash and Cash Equivalents
+
+**Cash** includes currency on hand, demand deposits, and amounts on deposit with financial institutions that are available for immediate withdrawal. **Cash equivalents** are short-term, highly liquid investments that are readily convertible to known amounts of cash and are so near maturity that they present insignificant risk of changes in value — typically original maturities of **three months or less** from the date of purchase.
+
+Examples of cash equivalents: Treasury bills, commercial paper, and money market funds. Examples that are NOT cash equivalents: equity securities (no maturity), certificates of deposit with maturities over three months, and restricted funds.
+
+### Restricted Cash
+
+**Restricted cash** is cash set aside for a specific purpose and not available for general use. Common examples include sinking fund deposits for bond retirement, compensating balances required by loan agreements, and escrow deposits. Restricted cash is classified as current or noncurrent based on when the restriction is expected to be released.
+
+### Compensating Balances
+
+A **compensating balance** is a minimum deposit a borrower must maintain with a lending bank as a condition of a loan. If the compensating balance is legally restricted, it must be reported separately from unrestricted cash. If the related borrowing is short-term, the restricted balance is classified as a current asset; if long-term, it is noncurrent.
+
+## Bank Reconciliations
+
+A bank reconciliation explains the difference between the bank statement balance and the company's book (general ledger) balance of cash at a specific date. The reconciliation adjusts both balances to arrive at the **adjusted (true) cash balance**.
+
+### Reconciling Items
+
+| Item | Adjust Bank or Book? | Add or Subtract? |
+|------|---------------------|------------------|
+| Deposits in transit | Bank | Add |
+| Outstanding checks | Bank | Subtract |
+| Bank errors (overcharges) | Bank | Add |
+| NSF (bounced) checks | Book | Subtract |
+| Bank service charges | Book | Subtract |
+| Interest earned (credited by bank) | Book | Add |
+| Note collected by bank | Book | Add |
+| Book errors (overstated payment) | Book | Depends on error |
+
+> On the CPA exam, the key distinction is: **bank-side adjustments** involve items the company knows about but the bank does not (deposits in transit, outstanding checks). **Book-side adjustments** involve items the bank knows about but the company has not yet recorded (NSF checks, service charges, collections).
+
+### Worked Example — Bank Reconciliation
+
+Maplewood Corp. has a bank statement balance of $47,500 and a book balance of $44,200 on December 31. The following items are identified:
+
+- Deposits in transit: $3,800
+- Outstanding checks: $5,600
+- NSF check from a customer: $1,200
+- Bank service charges: $75
+- Note collected by the bank on Maplewood's behalf: $2,675
+
+**Bank side:**
+$47,500 + $3,800 - $5,600 = **$45,700**
+
+**Book side:**
+$44,200 - $1,200 - $75 + $2,675 = **$45,600**
+
+If the two sides do not match, an error exists that must be investigated. In this case, the $100 difference would indicate a book error or missing reconciling item.
+
+**Journal entries required (book-side adjustments only):**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Accounts Receivable (NSF) | $1,200 | |
+| Cash | | $1,200 |
+| Bank Service Charge Expense | $75 | |
+| Cash | | $75 |
+| Cash | $2,675 | |
+| Notes Receivable | | $2,675 |
+
+Bank-side adjustments require no journal entry — they will clear automatically as the bank processes the items.
+
+## Accounts Receivable
+
+Accounts receivable are amounts owed by customers from the sale of goods or services on credit. They are initially recorded at the **transaction price** under ASC 606. The primary accounting issue is measuring the amount expected to be collected — the **net realizable value**.
+
+### Trade Discounts vs. Cash Discounts
+
+**Trade discounts** reduce the list price and are never recorded — only the net amount is recognized. **Cash (sales) discounts** (e.g., 2/10, n/30) offer a reduction for early payment. Under the gross method, revenue is recorded at full price and the discount is recognized only if taken. Under the net method, revenue is recorded net of the discount.
+
+## Allowance for Credit Losses — ASC 326 (CECL)
+
+**ASC 326, Financial Instruments — Credit Losses**, replaced the incurred loss model with the **current expected credit losses (CECL)** model. Under CECL, entities recognize an allowance for **lifetime expected credit losses** at the time a financial asset is recognized — not when a loss is incurred or probable.
+
+### Key Differences: Incurred Loss vs. CECL
+
+| Feature | Old Model (Incurred Loss) | CECL Model (ASC 326) |
+|---------|--------------------------|----------------------|
+| When losses are recognized | When probable and estimable | At inception, for lifetime expected losses |
+| Forward-looking info | Not required | Required — forecasts, economic conditions |
+| Threshold | Loss must be "probable" | Any expected loss, no probability threshold |
+| Income statement effect | Higher losses later | Higher losses earlier (front-loaded) |
+
+### CECL Methodologies
+
+Entities may use any reasonable methodology to estimate expected credit losses. Common approaches include:
+
+- **Vintage analysis** — Groups receivables by origination year and applies historical loss rates to each vintage
+- **Probability-of-default (PD) method** — Estimates the probability of default multiplied by the loss given default for each category
+- **Discounted cash flow (DCF) method** — Projects expected cash flows and discounts them at the effective interest rate; the difference between amortized cost and the present value of expected cash flows is the allowance
+- **Loss-rate method** — Applies historical loss percentages adjusted for current conditions and forecasts
+
+All methods must incorporate **historical experience, current conditions, and reasonable and supportable forecasts** of future economic conditions.
+
+### Allowance Mechanics
+
+**Allowance for Credit Losses (T-account):**
+
+| | Debit | Credit |
+|---|-------|--------|
+| Beginning balance | | $XX |
+| Write-offs | $XX | |
+| Recoveries | | $XX |
+| Provision (credit loss expense) | | $XX |
+| **Ending balance** | | **$XX** |
+
+**Ending Allowance = Beginning Allowance - Write-offs + Recoveries + Provision**
+
+The **provision** (credit loss expense) is the plug figure — it is the amount needed to bring the allowance to the required balance based on the CECL estimate.
+
+### Worked Example — CECL Allowance
+
+Rivera Inc. has $500,000 in accounts receivable on December 31. The beginning allowance balance is $12,000. During the year, $8,000 of receivables were written off, and $1,500 was recovered. Based on a vintage analysis incorporating current economic forecasts, management estimates that 3.5% of ending receivables are expected to be uncollectible.
+
+- Required ending allowance: $500,000 x 3.5% = **$17,500**
+- Beginning balance: $12,000
+- Less: Write-offs: ($8,000)
+- Plus: Recoveries: $1,500
+- Balance before provision: $5,500
+- **Provision needed: $17,500 - $5,500 = $12,000**
+
+**Journal entries:**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Credit Loss Expense | $12,000 | |
+| Allowance for Credit Losses | | $12,000 |
+
+### Write-offs and Recoveries
+
+When a specific account is deemed uncollectible, it is **written off**:
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Allowance for Credit Losses | $XX | |
+| Accounts Receivable | | $XX |
+
+A write-off does not affect net realizable value or income — it reduces both the gross receivable and the allowance by the same amount. If a previously written-off account is later collected, the **recovery** reverses the write-off, then records the cash receipt.
+
+## Factoring Receivables
+
+**Factoring** is the sale of receivables to a third party (the factor) for immediate cash. The critical accounting issue is whether the transfer is a **sale** or a **secured borrowing**.
+
+### Factoring Without Recourse
+
+The factor assumes the credit risk. The transferor derecognizes the receivables and recognizes a **gain or loss** on the sale. The loss equals the difference between the carrying amount and the proceeds received (factoring fee).
+
+**Example:** A company factors $100,000 of receivables without recourse. The factor charges a 4% fee and withholds 5% as a holdback. Cash received: $100,000 - $4,000 - $5,000 = $91,000.
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Cash | $91,000 | |
+| Due from Factor (holdback) | $5,000 | |
+| Loss on Sale of Receivables | $4,000 | |
+| Accounts Receivable | | $100,000 |
+
+### Factoring With Recourse
+
+The transferor retains the credit risk. If the factor cannot collect, the transferor must reimburse the factor. This is recorded as a sale only if the transferor surrenders control; otherwise, it is a **secured borrowing** (the receivables remain on the books and cash received is a liability).
+
+### Pledging
+
+**Pledging** (assigning) receivables means using receivables as collateral for a loan. The receivables remain on the borrower's balance sheet with a note disclosure. This is not a sale — it is a borrowing arrangement.
+
+## Key Terms
+
+- **Cash equivalents** — Short-term, highly liquid investments with original maturities of three months or less
+- **Restricted cash** — Cash set aside for a designated purpose, not available for general operations
+- **Compensating balance** — A minimum deposit required by a lender as a condition of borrowing
+- **Deposits in transit** — Cash deposits recorded by the company but not yet credited by the bank
+- **Outstanding checks** — Checks issued by the company but not yet cleared by the bank
+- **NSF check** — A check returned by the bank because the maker's account had insufficient funds
+- **CECL** — Current Expected Credit Losses model under ASC 326, requiring recognition of lifetime expected losses at inception
+- **Vintage analysis** — A CECL methodology grouping receivables by origination period and applying historical loss rates
+- **Write-off** — The removal of an uncollectible account from both the receivable and the allowance
+- **Recovery** — The collection of a previously written-off receivable
+- **Factoring** — The sale of receivables to a third party for immediate cash
+- **Recourse** — An obligation to reimburse the factor if the receivable is not collected
+- **Net realizable value** — The gross amount of receivables less the allowance for credit losses
+
+## Practice Problems
+
+**1.** On December 31, a company's bank statement shows a balance of $82,000. Deposits in transit total $6,400, and outstanding checks total $9,100. The adjusted bank balance is:
+
+a) $79,300
+b) $82,000
+c) $88,400
+d) $73,300
+
+**Answer:** a) $79,300 — Adjusted bank balance = $82,000 + $6,400 - $9,100 = $79,300. Deposits in transit are added because the bank has not yet recorded them. Outstanding checks are subtracted because the bank has not yet processed them.
+
+---
+
+**2.** Under the CECL model (ASC 326), when must an entity recognize expected credit losses on trade receivables?
+
+a) Only when a specific account is identified as uncollectible
+b) When losses are both probable and reasonably estimable
+c) At the time the receivable is recognized, based on lifetime expected losses
+d) At the end of each fiscal year, based on the prior year's actual loss rate
+
+**Answer:** c) At the time the receivable is recognized, based on lifetime expected losses — CECL requires recognition of expected credit losses over the life of the asset at inception, incorporating historical data, current conditions, and reasonable forecasts.
+
+---
+
+**3.** A company factors $200,000 of receivables without recourse. The factor charges a 3% fee and withholds 10% as a holdback. What loss on sale should the company recognize?
+
+a) $6,000
+b) $20,000
+c) $26,000
+d) $0
+
+**Answer:** a) $6,000 — The loss on sale equals the factoring fee: $200,000 x 3% = $6,000. The 10% holdback ($20,000) is not a loss — it is a receivable from the factor that will be returned after collection. The total derecognized is $200,000, and the company receives $174,000 cash + $20,000 due from factor, with a $6,000 loss.

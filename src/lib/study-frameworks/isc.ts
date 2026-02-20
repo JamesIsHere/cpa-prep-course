@@ -439,6 +439,49 @@ export const iscFramework: StudyFramework = {
 				],
 			},
 		},
+		{
+			title: "IT General Controls (ITGCs)",
+			root: {
+				label: "IT General Controls",
+				children: [
+					{
+						label: "Logical Access Controls",
+						children: [
+							{ label: "Authentication (passwords, MFA, biometrics)" },
+							{ label: "Authorization (RBAC, least privilege)" },
+							{ label: "Provisioning and deprovisioning" },
+							{ label: "Periodic access recertification" },
+						],
+					},
+					{
+						label: "Program Change Controls",
+						children: [
+							{ label: "Change request and CAB approval" },
+							{ label: "Testing (unit, integration, UAT)" },
+							{ label: "Segregation of dev/test/production" },
+							{ label: "Emergency change retroactive approval" },
+						],
+					},
+					{
+						label: "Computer Operations Controls",
+						children: [
+							{ label: "Job scheduling and batch processing" },
+							{ label: "Backup (full, incremental, differential)" },
+							{ label: "System monitoring and alerting" },
+							{ label: "Capacity and performance management" },
+						],
+					},
+					{
+						label: "System Development Controls",
+						children: [
+							{ label: "SDLC methodology and phases" },
+							{ label: "Version control and code review" },
+							{ label: "Security testing before deployment" },
+						],
+					},
+				],
+			},
+		},
 	],
 	decisionTrees: [
 		{
@@ -531,6 +574,34 @@ export const iscFramework: StudyFramework = {
 						yes: "HIPAA applies — Privacy Rule, Security Rule, Breach Notification Rule; BAAs required with business associates",
 						no: "General data protection best practices apply — monitor for state-specific privacy laws and industry regulations",
 					},
+				},
+			},
+		},
+		{
+			title: "Is This Change Properly Authorized?",
+			root: {
+				question: "Was a formal change request submitted?",
+				yes: {
+					question:
+						"Was the change reviewed and approved by the CAB (or delegated authority)?",
+					yes: {
+						question:
+							"Was the change tested in a non-production environment before deployment?",
+						yes: {
+							question:
+								"Was the migration to production performed by someone other than the developer?",
+							yes: "Properly authorized change — document and close the change ticket",
+							no: "SoD violation — developer should not migrate their own code to production",
+						},
+						no: "Control gap — all changes must be tested before deployment, even if approved",
+					},
+					no: "Unauthorized change — route back through CAB approval process",
+				},
+				no: {
+					question:
+						"Was this an emergency change to address a critical outage?",
+					yes: "Acceptable if retroactively documented, tested, and approved by CAB within the defined timeframe",
+					no: "Unauthorized change — must follow the standard change control process",
 				},
 			},
 		},
@@ -795,6 +866,47 @@ export const iscFramework: StudyFramework = {
 				],
 			],
 		},
+		{
+			title: "IT Governance Frameworks Comparison",
+			headers: ["Dimension", "COBIT 2019", "ITIL 4", "NIST RMF", "COSO"],
+			rows: [
+				[
+					"Primary focus",
+					"IT governance and management",
+					"IT service management",
+					"Information security risk",
+					"Internal control over financial reporting",
+				],
+				[
+					"Issued by",
+					"ISACA",
+					"Axelos/PeopleCert",
+					"NIST (U.S. government)",
+					"COSO (Treadway Commission)",
+				],
+				[
+					"Key structure",
+					"5 domains (EDM, APO, BAI, DSS, MEA)",
+					"Service Value System + 34 practices",
+					"7 steps (Prepare through Monitor)",
+					"5 components (Control environment through Monitoring)",
+				],
+				[
+					"Maturity model",
+					"6 levels (0-5) CMMI-based",
+					"N/A — uses continual improvement",
+					"N/A — uses FIPS 199 categorization",
+					"N/A — uses effectiveness assessment",
+				],
+				[
+					"CPA exam relevance",
+					"IT governance questions",
+					"Service management concepts",
+					"IT risk assessment",
+					"ICFR evaluation (primary framework)",
+				],
+			],
+		},
 	],
 	mnemonics: [
 		{
@@ -847,6 +959,13 @@ export const iscFramework: StudyFramework = {
 			expansion: "Hot site, Warm site, Cold site",
 			explanation:
 				"DR site types from fastest to slowest recovery. Hot = real-time sync, minutes RTO, highest cost. Warm = partial hardware, hours RTO. Cold = empty facility, days RTO, lowest cost.",
+		},
+		{
+			acronym: "APOC",
+			expansion:
+				"Access controls, Program change controls, Operations controls, Creation/development controls",
+			explanation:
+				"The four categories of IT General Controls (ITGCs). All automated application controls depend on these ITGCs being effective.",
 		},
 	],
 };

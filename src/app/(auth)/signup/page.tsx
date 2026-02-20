@@ -12,9 +12,23 @@ export default function SignupPage() {
 				<h1 className="text-2xl font-bold text-gray-900 text-center mb-2">
 					Create your account
 				</h1>
-				<p className="text-gray-500 text-center mb-8">
+				<p className="text-gray-500 text-center mb-6">
 					Start preparing for the CPA exam today.
 				</p>
+				<ul className="text-sm text-gray-500 space-y-2 mb-8">
+					<li className="flex items-start gap-2">
+						<span className="text-emerald-600 mt-0.5">✓</span>
+						Free intro lessons — no payment required
+					</li>
+					<li className="flex items-start gap-2">
+						<span className="text-emerald-600 mt-0.5">✓</span>
+						73 lessons and 1,050+ questions across all 6 sections
+					</li>
+					<li className="flex items-start gap-2">
+						<span className="text-emerald-600 mt-0.5">✓</span>
+						$9.99/month to unlock everything — cancel anytime
+					</li>
+				</ul>
 				<SignupForm />
 			</div>
 		</main>

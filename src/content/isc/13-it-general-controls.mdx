@@ -1,0 +1,237 @@
+# IT General Controls
+
+## Learning Objectives
+
+- Explain the role of logical access controls, including authentication, authorization, and the principle of least privilege
+- Describe program change management controls, including the change lifecycle, testing requirements, and emergency change procedures
+- Identify computer operations controls such as job scheduling, backup and recovery procedures, and system monitoring
+- Evaluate how ITGC deficiencies affect the reliability of application controls and financial reporting
+- Apply segregation of duties principles to IT functions, including development, operations, and security administration
+
+## Logical Access Controls
+
+**Logical access controls** restrict who can access information systems and what actions they can perform. These controls are the first line of defense against unauthorized access to programs and data, and they are among the most heavily tested ITGC categories on the CPA exam.
+
+### Authentication and Authorization
+
+Authentication and authorization are distinct but complementary processes:
+
+| Concept | Definition | Example |
+|---------|-----------|---------|
+| **Authentication** | Verifying the identity of a user, device, or process | Entering a username and password, scanning a fingerprint |
+| **Authorization** | Determining what an authenticated user is permitted to do | A staff accountant can view journal entries but cannot post them |
+
+Authentication confirms **who you are**. Authorization determines **what you can do**. Both must be in place for effective access control. A system that authenticates users but grants all authenticated users the same permissions has an authorization deficiency.
+
+### Principle of Least Privilege
+
+The **principle of least privilege** requires that users, processes, and systems are granted only the minimum access necessary to perform their assigned duties. Granting excessive access increases the risk of unauthorized transactions, data exposure, and fraud.
+
+Implementing least privilege requires:
+
+- **Needs-based provisioning** — Access is granted based on documented job requirements, not by copying another user's profile
+- **Default deny** — New accounts start with no access; permissions are added incrementally as justified
+- **Time-limited access** — Temporary elevated privileges for specific tasks expire automatically
+- **Regular access reviews** — Periodic recertification of user access by management to identify and remove excessive permissions
+
+> **Exam tip:** When the exam describes a scenario where a user has access beyond their job function, the issue is a violation of least privilege. The recommended control is periodic access reviews (recertification) where managers verify that each user's access is appropriate for their current role.
+
+### User Provisioning and Deprovisioning
+
+The **user access lifecycle** spans from initial account creation through modification to eventual removal:
+
+| Phase | Key Controls |
+|-------|-------------|
+| **Provisioning** | Formal access request approved by management, documented authorization, role-based assignment |
+| **Modification** | Updated access request when job duties change, removal of previous role access (no accumulation) |
+| **Deprovisioning** | Timely account disabling upon termination or transfer, coordinated with HR processes |
+
+A common audit finding is **access accumulation** — when employees change roles but retain their previous access rights. Over time, accumulated access violates least privilege and may create segregation of duties conflicts.
+
+### Segregation of Duties in IT
+
+**Segregation of duties (SoD)** ensures that no single individual has the ability to both perpetrate and conceal errors or fraud. In IT environments, three key functions must be separated:
+
+| Function | Responsibility | Risk if Combined |
+|----------|---------------|-----------------|
+| **Development** | Writing and modifying application code | Developer could embed unauthorized logic and move it to production |
+| **Operations** | Running production systems, executing jobs, managing infrastructure | Operator could modify data or programs without oversight |
+| **Security administration** | Managing user accounts, access rights, and security configurations | Administrator could grant themselves unauthorized access |
+
+When organizational size prevents full separation, **compensating controls** include enhanced logging, independent review of privileged activities, and dual-authorization requirements for sensitive operations.
+
+> **Exam tip:** The exam frequently tests IT SoD by presenting a scenario where a developer has direct access to the production environment. The correct concern is that the developer can make unauthorized changes to production programs without independent review or approval.
+
+## Program Change Controls
+
+**Program change controls** govern modifications to application software, system software, and configurations in the production environment. These controls ensure that only authorized, tested, and approved changes are implemented.
+
+### The Change Management Lifecycle
+
+A formal change management process follows a structured lifecycle:
+
+**1. Request** — A change request is submitted documenting the business justification, scope, and impact assessment.
+
+**2. Assessment** — The change is evaluated for risk, resource requirements, dependencies, and potential impact on existing systems.
+
+**3. Approval** — The change is reviewed and approved by the **Change Advisory Board (CAB)** or an authorized manager. High-risk changes may require additional executive approval.
+
+**4. Development and Testing** — The change is developed in a non-production environment and tested to verify that it functions as intended and does not introduce unintended side effects.
+
+**5. Migration** — The tested change is promoted to production through a controlled migration process, typically performed by operations staff (not developers) to maintain SoD.
+
+**6. Post-Implementation Review** — After deployment, the change is monitored for issues and verified against the original requirements.
+
+### Testing Requirements
+
+Testing is a critical gate in the change management process. Changes must be tested in an environment that mirrors production but does not contain live production data:
+
+| Test Type | Purpose |
+|-----------|---------|
+| **Unit testing** | Verify individual code components function correctly |
+| **Integration testing** | Confirm the change works with other system components |
+| **User acceptance testing (UAT)** | Business users verify the change meets functional requirements |
+| **Regression testing** | Ensure the change does not break existing functionality |
+
+> **Exam tip:** The exam tests the concept of environment separation. Development, testing, and production environments must be separate. Using production data in test environments creates data security risks. Allowing developers to deploy directly to production violates SoD. A common question pattern presents a scenario where testing was skipped — the risk is that untested changes introduce errors into financial reporting systems.
+
+### Emergency Changes
+
+**Emergency changes** address urgent issues that require immediate resolution, such as a critical security vulnerability or a system failure affecting financial processing. While emergency changes bypass the normal approval process, they still require controls:
+
+- **After-the-fact documentation** — Emergency changes must be retroactively documented with a formal change request
+- **Post-implementation review** — Management reviews the emergency change within a defined timeframe (typically 48-72 hours)
+- **Retroactive approval** — The CAB reviews and formally approves the change after implementation
+- **Root cause analysis** — Investigate why the emergency occurred and whether process improvements can prevent recurrence
+
+Organizations that rely heavily on emergency changes may have an underlying process weakness. A high ratio of emergency to standard changes is an audit red flag.
+
+### Version Control and Rollback
+
+Effective change management requires the ability to restore the previous version if a change causes problems:
+
+- **Version control systems** maintain a history of all code changes with the ability to revert to any prior version
+- **Rollback plans** must be documented before migration to production, defining the steps to reverse the change
+- **Baseline configurations** are the documented, approved state of each system; all changes are measured against the baseline
+
+## Computer Operations Controls
+
+**Computer operations controls** ensure that IT systems run reliably, data is protected through systematic backup procedures, and system performance is monitored to prevent disruptions.
+
+### Job Scheduling
+
+**Job scheduling** automates the execution of recurring processes such as batch transaction processing, report generation, data transfers, and backup operations.
+
+| Control | Purpose |
+|---------|---------|
+| **Automated scheduling** | Jobs run at predefined times without manual intervention, reducing human error |
+| **Job dependencies** | Sequencing ensures prerequisite jobs complete before dependent jobs execute |
+| **Failure notification** | Automated alerts when a scheduled job fails, enabling timely investigation |
+| **Job authorization** | Only authorized personnel can create, modify, or delete scheduled jobs |
+| **Execution logs** | Complete audit trail of job execution times, status, and any errors |
+
+For financial systems, the timing and sequencing of batch jobs directly affects reporting accuracy. A general ledger close job that runs before all subsidiary ledger postings are complete will produce inaccurate financial statements.
+
+### Backup and Recovery Procedures
+
+**Backup procedures** protect against data loss from hardware failure, software errors, cyberattacks, or natural disasters. Backup controls directly relate to the organization's **Recovery Point Objective (RPO)** and **Recovery Time Objective (RTO)**.
+
+| Backup Type | Description | Speed to Restore | Storage Required |
+|-------------|-------------|-------------------|-----------------|
+| **Full backup** | Complete copy of all data | Fastest — single restore operation | Highest — full copy each time |
+| **Incremental backup** | Only data changed since the last backup (any type) | Slowest — requires full + all incrementals in sequence | Lowest — only changes captured |
+| **Differential backup** | All data changed since the last full backup | Moderate — requires full + latest differential | Moderate — grows between full backups |
+
+Key backup controls include:
+
+- **Offsite storage** — Backups stored at a geographically separate location to protect against site-wide disasters
+- **Encryption** — Backup media encrypted to prevent unauthorized access to data
+- **Testing** — Regular restoration tests to verify backups are usable (untested backups provide false assurance)
+- **Rotation and retention** — Backup media rotated on a defined schedule with retention periods aligned to regulatory requirements
+- **Monitoring** — Automated verification that backups completed successfully
+
+> **Exam tip:** The exam commonly tests the distinction between backup types. The key differentiator is the reference point: incremental captures changes since the last backup of any type (fast to back up, slow to restore), while differential captures changes since the last full backup (slower to back up, faster to restore than incremental).
+
+### System Monitoring and Capacity Management
+
+Ongoing monitoring ensures that systems operate within acceptable parameters and that potential issues are identified before they affect operations:
+
+- **Performance monitoring** — Tracking CPU utilization, memory usage, disk I/O, and network bandwidth to identify bottlenecks
+- **Capacity planning** — Forecasting resource needs based on growth trends to prevent system outages due to resource exhaustion
+- **Threshold alerting** — Automated alerts when metrics exceed predefined thresholds (e.g., disk usage above 85%)
+- **Event log review** — Regular review of system, application, and security logs for errors, warnings, and anomalies
+- **Patch management** — Systematic process for evaluating, testing, and applying software patches and updates on a defined schedule
+
+### Problem and Incident Management
+
+Operations teams distinguish between **incidents** (unplanned interruptions to service) and **problems** (the underlying root cause of one or more incidents):
+
+| Concept | Focus | Goal |
+|---------|-------|------|
+| **Incident management** | Restore service as quickly as possible | Minimize business impact |
+| **Problem management** | Identify and eliminate root causes | Prevent incident recurrence |
+
+Effective operations controls include escalation procedures, severity classifications, and communication protocols that ensure the right people are notified when issues arise.
+
+## ITGC Interdependencies
+
+ITGCs do not operate in isolation. Weaknesses in one ITGC category can cascade and undermine controls in other categories:
+
+- Weak **access controls** allow unauthorized users to bypass **change management** procedures by modifying programs directly in production
+- Weak **change management** may allow untested code to disrupt **computer operations**, causing processing failures
+- Weak **operations controls** (e.g., failed backups) limit the organization's ability to recover from incidents caused by failed changes or security breaches
+
+For auditors, a deficiency in ITGCs means that **application controls cannot be relied upon**. If an auditor identifies that developers have direct access to production (access control + change management weakness), automated application controls in that system — such as three-way matching, automated approvals, or system-enforced credit limits — lose their evidentiary value.
+
+> **Exam tip:** This is one of the most critical concepts for ISC. The exam will present scenarios where application controls appear to function correctly, but an underlying ITGC weakness exists. The correct conclusion is that the application controls cannot be relied upon because the ITGC environment does not support their integrity.
+
+## Key Terms
+
+- **Logical access control** — Technology-based controls restricting system access based on user identity and authorization level
+- **Principle of least privilege** — Granting users only the minimum access necessary for their job functions
+- **Access recertification** — Periodic review by management to verify that user access rights remain appropriate
+- **Segregation of duties (SoD)** — Dividing critical functions among different individuals to prevent any single person from perpetrating and concealing fraud
+- **Change Advisory Board (CAB)** — A group responsible for evaluating, prioritizing, and approving proposed changes to IT systems
+- **Emergency change** — An urgent, unplanned change that bypasses normal approval processes but requires retroactive review and documentation
+- **User acceptance testing (UAT)** — Testing performed by business users to validate that a system change meets functional requirements
+- **Regression testing** — Testing to confirm that a new change has not adversely affected existing system functionality
+- **Rollback plan** — A documented procedure for reverting a system to its previous state if a change causes problems
+- **Job scheduling** — Automated execution of recurring IT processes at predefined times and in defined sequences
+- **Full backup** — A complete copy of all data at a specific point in time
+- **Incremental backup** — A backup capturing only data changed since the last backup of any type
+- **Differential backup** — A backup capturing all data changed since the last full backup
+- **Capacity management** — The practice of forecasting and managing IT resource needs to ensure adequate system performance
+- **Compensating control** — An alternative control implemented when the primary control is not feasible, providing equivalent risk mitigation
+
+## Practice Problems
+
+**1.** An auditor discovers that when employees transfer between departments, their previous system access is not removed. Instead, the transferred employees accumulate access from all departments they have worked in. Which control deficiency does this represent?
+
+a) Inadequate authentication controls
+b) Failure to enforce the principle of least privilege
+c) Lack of encryption for sensitive data
+d) Insufficient network segmentation
+
+**Answer:** b) The accumulation of access rights from prior roles violates the principle of least privilege, which requires that users have only the minimum access necessary for their current job functions. Authentication controls (a) verify identity and are not the issue here — the employees are properly authenticated. The problem is that their authorization scope exceeds their current job requirements. Access recertification reviews would detect and remediate this condition.
+
+---
+
+**2.** A company's change management policy requires that all application changes be approved by a Change Advisory Board before migration to production. During an audit, you discover that 40% of changes in the past quarter were classified as emergency changes and deployed without prior CAB approval. What is the MOST appropriate audit response?
+
+a) Accept the finding because emergency changes are exempt from change management requirements
+b) Evaluate whether emergency changes received retroactive documentation and approval, and investigate the root cause for the high emergency change rate
+c) Recommend eliminating the emergency change process entirely to prevent future bypass of controls
+d) Request that all emergency changes be reversed and re-implemented through the standard process
+
+**Answer:** b) Emergency changes are a valid part of change management, but they should be the exception, not the rule. A 40% emergency change rate is a red flag suggesting that the standard process may be inefficient or that the emergency designation is being misused to bypass controls. The auditor should verify that retroactive documentation and approval occurred and investigate why so many changes required emergency treatment. Eliminating emergency changes entirely (c) is impractical because legitimate urgent situations arise. Reversing implemented changes (d) could cause additional disruption.
+
+---
+
+**3.** An organization performs incremental backups Monday through Saturday and a full backup every Sunday. A server failure occurs on Thursday morning. To restore the system to Wednesday night's state, which backups are needed?
+
+a) Only Wednesday's incremental backup
+b) Sunday's full backup and Wednesday's differential backup
+c) Sunday's full backup and the incremental backups from Monday, Tuesday, and Wednesday
+d) Only Sunday's full backup
+
+**Answer:** c) Incremental backups capture only the data changed since the last backup of any type. To restore to Wednesday night, you need the base (Sunday's full backup) plus each incremental in sequence (Monday, Tuesday, Wednesday) because each incremental only contains changes since the previous day. If the organization used differential backups instead, only Sunday's full and Wednesday's differential would be needed, because differentials capture all changes since the last full backup.

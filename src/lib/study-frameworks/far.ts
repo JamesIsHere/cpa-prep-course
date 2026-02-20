@@ -262,6 +262,43 @@ export const farFramework: StudyFramework = {
 				],
 			},
 		},
+		{
+			title: "CECL Expected Credit Loss Model (ASC 326)",
+			root: {
+				label: "Current Expected Credit Losses",
+				children: [
+					{
+						label: "Scope",
+						children: [
+							{ label: "Trade receivables" },
+							{ label: "Held-to-maturity debt securities" },
+							{ label: "Loan receivables" },
+							{ label: "Net investment in leases" },
+							{ label: "Off-balance-sheet credit exposures" },
+						],
+					},
+					{
+						label: "Measurement Inputs",
+						children: [
+							{ label: "Historical loss experience" },
+							{ label: "Current economic conditions" },
+							{ label: "Reasonable and supportable forecasts" },
+						],
+					},
+					{
+						label: "Key Principles",
+						children: [
+							{ label: "Lifetime losses recognized at origination" },
+							{ label: "Pool assets with similar risk characteristics" },
+							{
+								label: "Revert to historical loss rates beyond forecast period",
+							},
+							{ label: "Contra-asset (allowance) — not direct write-down" },
+						],
+					},
+				],
+			},
+		},
 	],
 	decisionTrees: [
 		{
@@ -382,6 +419,24 @@ export const farFramework: StudyFramework = {
 				},
 			},
 		},
+		{
+			title: "Bank Reconciliation: Book Adjustment or Bank Adjustment?",
+			root: {
+				question: "Is this item already recorded on the company's books?",
+				yes: {
+					question:
+						"Does the item appear on the bank statement but not the bank's records of the company's account?",
+					yes: "Bank error — adjust bank balance",
+					no: "No adjustment needed — item is properly recorded on both sides",
+				},
+				no: {
+					question:
+						"Is this item on the bank statement (e.g., service charges, NSF checks, interest earned, EFT collections)?",
+					yes: "Adjust books — record journal entry for items the bank recorded that the company hasn't yet",
+					no: "Adjust bank balance — these are outstanding items (deposits in transit, outstanding checks) the company recorded but bank hasn't processed",
+				},
+			},
+		},
 	],
 	formulas: [
 		{
@@ -474,6 +529,20 @@ export const farFramework: StudyFramework = {
 				"Net Pension Liability = Total Pension Liability − Plan Fiduciary Net Position",
 			description:
 				"Reported on the government-wide Statement of Net Position for employer",
+		},
+		{
+			name: "Net Periodic Pension Cost (ASC 715)",
+			formula:
+				"Service Cost + Interest Cost − Expected Return on Plan Assets ± Amortization of Prior Service Cost ± Amortization of Net Gain/Loss",
+			description:
+				"Service cost is in operating income; all other components reported below the line. Expected return reduces pension expense; actual vs. expected difference deferred in OCI.",
+		},
+		{
+			name: "Allowance for Credit Losses (CECL — ASC 326)",
+			formula:
+				"Allowance = Σ (Amortized Cost of Pool × Expected Loss Rate over Remaining Life)",
+			description:
+				"Current expected credit loss model. Estimate lifetime losses at origination using historical data, current conditions, and reasonable/supportable forecasts. Applies to financial assets at amortized cost.",
 		},
 	],
 	referenceTables: [
@@ -676,6 +745,47 @@ export const farFramework: StudyFramework = {
 				["Meals expense (50% nondeductible)", "Permanent", "No"],
 			],
 		},
+		{
+			title: "Special Purpose Frameworks Comparison",
+			headers: [
+				"Framework",
+				"Basis of Accounting",
+				"Common Users",
+				"Key Feature",
+			],
+			rows: [
+				[
+					"Cash basis",
+					"Revenue/expense when cash received/paid",
+					"Small businesses, sole proprietors",
+					"Simplest; no receivables or payables",
+				],
+				[
+					"Modified cash basis",
+					"Cash basis + selected accruals (depreciation, debt)",
+					"Small businesses wanting some accrual items",
+					"Must be logical and consistent modifications",
+				],
+				[
+					"Tax basis",
+					"IRC rules for income/deductions",
+					"Tax-focused entities, S corps, partnerships",
+					"Follows tax return; DTA/DTL not needed",
+				],
+				[
+					"Regulatory basis",
+					"Rules prescribed by regulatory agency",
+					"Insurance companies, utilities, banks",
+					"May differ significantly from GAAP",
+				],
+				[
+					"Contractual basis",
+					"Terms specified in a contract or agreement",
+					"Loan covenants, joint ventures",
+					"Tailored to specific agreement requirements",
+				],
+			],
+		},
 	],
 	mnemonics: [
 		{
@@ -739,6 +849,13 @@ export const farFramework: StudyFramework = {
 				"Warranties (accrued), Unearned revenue (taxed on receipt), Compensation (accrued), Credit losses (estimated)",
 			explanation:
 				"Common items that create deferred tax assets — book expense now, tax deduction later, so future tax savings are recognized.",
+		},
+		{
+			acronym: "SIRAE",
+			expansion:
+				"Service cost, Interest cost, Return on plan assets (subtract), Amortization of prior service cost, Excess gain/loss amortization (corridor)",
+			explanation:
+				"The five components of net periodic pension cost under ASC 715. SIRAE walks through each element in order. Only service cost hits operating income; the rest go below the line.",
 		},
 	],
 };

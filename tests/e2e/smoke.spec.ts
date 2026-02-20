@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 
 test.describe("Public Pages — Smoke Tests", () => {
-	test("homepage loads with hero, features, sections, and pricing", async ({
+	test("homepage loads with hero, stats, features, sections, and pricing", async ({
 		page,
 	}) => {
 		await page.goto("/");
@@ -11,6 +11,10 @@ test.describe("Public Pages — Smoke Tests", () => {
 		await expect(
 			page.getByRole("link", { name: "Start Learning" }),
 		).toBeVisible();
+
+		// Stats bar
+		await expect(page.locator("text=1,050+")).toBeVisible();
+		await expect(page.locator("text=Practice Questions")).toBeVisible();
 
 		// Features section
 		await expect(
@@ -24,6 +28,11 @@ test.describe("Public Pages — Smoke Tests", () => {
 		).toBeVisible();
 		await expect(
 			page.getByRole("heading", { name: "PDF Study Frameworks" }),
+		).toBeVisible();
+
+		// "Built for self-study" section
+		await expect(
+			page.getByRole("heading", { name: "Built for self-study candidates" }),
 		).toBeVisible();
 
 		// Section cards (all 6)
@@ -50,10 +59,30 @@ test.describe("Public Pages — Smoke Tests", () => {
 			page.getByRole("heading", { name: "Tax Compliance and Planning" }),
 		).toBeVisible();
 
+		// How it works
+		await expect(
+			page.getByRole("heading", { name: "How it works" }),
+		).toBeVisible();
+
+		// Testimonials
+		await expect(
+			page.getByRole("heading", { name: "What candidates are saying" }),
+		).toBeVisible();
+
 		// Pricing
 		await expect(page.locator("text=$9.99")).toBeVisible();
 		await expect(
 			page.getByRole("link", { name: "Get Started Free" }),
+		).toBeVisible();
+
+		// FAQ
+		await expect(
+			page.getByRole("heading", { name: "Frequently asked questions" }),
+		).toBeVisible();
+
+		// Final CTA
+		await expect(
+			page.getByRole("link", { name: "Create Free Account" }),
 		).toBeVisible();
 	});
 
@@ -129,12 +158,39 @@ test.describe("Public Pages — Smoke Tests", () => {
 		await expect(page.locator('input[type="password"]')).toBeVisible();
 	});
 
-	test("signup page renders form", async ({ page }) => {
+	test("signup page renders form with value props", async ({ page }) => {
 		await page.goto("/signup");
 
 		await expect(page.locator("text=Create your account")).toBeVisible();
 		await expect(page.locator('input[type="email"]')).toBeVisible();
 		await expect(page.locator('input[type="password"]')).toBeVisible();
+
+		// Value prop bullets
+		await expect(page.locator("text=Free intro lessons")).toBeVisible();
+		await expect(
+			page.locator("text=$9.99/month to unlock everything"),
+		).toBeVisible();
+	});
+
+	test("contact page renders form", async ({ page }) => {
+		await page.goto("/contact");
+
+		await expect(
+			page.getByRole("heading", { name: "Contact us" }),
+		).toBeVisible();
+		await expect(page.locator('input[type="email"]')).toBeVisible();
+		await expect(page.locator("textarea")).toBeVisible();
+
+		// Category buttons
+		await expect(page.locator("text=General question")).toBeVisible();
+		await expect(page.locator("text=Content issue")).toBeVisible();
+		await expect(page.locator("text=Bug report")).toBeVisible();
+		await expect(page.locator("text=Suggestion")).toBeVisible();
+
+		// Submit button
+		await expect(
+			page.getByRole("button", { name: "Send Message" }),
+		).toBeVisible();
 	});
 
 	test("404 page renders for unknown routes", async ({ page }) => {
@@ -241,6 +297,33 @@ test.describe("Paywall Enforcement", () => {
 		await expect(
 			page.locator("text=This lesson requires a subscription"),
 		).toBeVisible({ timeout: 10_000 });
+	});
+});
+
+test.describe("Feedback Widget", () => {
+	test("feedback widget appears on free lesson pages", async ({ page }) => {
+		await page.goto("/sections/aud/lessons/01-intro");
+
+		await expect(page.locator("article")).toBeVisible({ timeout: 10_000 });
+
+		// Widget starts collapsed as a link
+		const reportButton = page.locator("text=Report an issue");
+		await expect(reportButton).toBeVisible();
+
+		// Click to expand
+		await reportButton.click();
+
+		// Form elements visible
+		await expect(page.locator("text=Content issue")).toBeVisible();
+		await expect(page.locator("text=Bug")).toBeVisible();
+		await expect(page.locator("text=Suggestion")).toBeVisible();
+		await expect(
+			page.locator('textarea[placeholder="Describe the issue..."]'),
+		).toBeVisible();
+
+		// Close button works
+		await page.locator("text=Close").click();
+		await expect(page.locator("textarea")).not.toBeVisible();
 	});
 });
 

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import FeedbackWidget from "@/components/feedback-widget";
 import LessonNav from "@/components/lesson-nav";
 import type { Lesson, Section } from "@/lib/sections";
 
@@ -64,6 +65,10 @@ export default function LessonPageClient({
 						) : (
 							<span />
 						)}
+					</div>
+
+					<div className="mt-8 pt-6 border-t border-gray-200">
+						<FeedbackWidget />
 					</div>
 				</article>
 			</div>

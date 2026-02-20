@@ -180,6 +180,82 @@ export const barFramework: StudyFramework = {
 				],
 			},
 		},
+		{
+			title: "Internal-Use Software Capitalization Stages",
+			root: {
+				label: "ASC 350-40: Internal-Use Software",
+				children: [
+					{
+						label: "Stage 1: Preliminary Project",
+						children: [
+							{ label: "Conceptual formulation and vendor evaluation" },
+							{ label: "Feasibility assessment" },
+							{ label: "Treatment: EXPENSE all costs" },
+						],
+					},
+					{
+						label: "Stage 2: Application Development",
+						children: [
+							{ label: "External direct costs (coding, testing)" },
+							{ label: "Internal payroll (developers on project)" },
+							{ label: "Interest costs (qualifying asset)" },
+							{ label: "Data conversion for functionality" },
+							{ label: "Treatment: CAPITALIZE" },
+						],
+					},
+					{
+						label: "Stage 3: Post-Implementation",
+						children: [
+							{ label: "Training, maintenance, bug fixes" },
+							{ label: "Routine data conversion" },
+							{ label: "Treatment: EXPENSE all costs" },
+						],
+					},
+				],
+			},
+		},
+		{
+			title: "Cloud Computing Arrangement Classification",
+			root: {
+				label: "Cloud Computing Arrangement (CCA)",
+				children: [
+					{
+						label: "Test 1: Right to Take Possession",
+						children: [
+							{
+								label:
+									"Can customer take possession without significant penalty?",
+							},
+							{ label: "If NO → Service contract" },
+						],
+					},
+					{
+						label: "Test 2: Feasibility",
+						children: [
+							{
+								label:
+									"Can customer run software independently or with unrelated host?",
+							},
+							{ label: "If NO → Service contract" },
+						],
+					},
+					{
+						label: "Both Tests Met → Software License",
+						children: [
+							{ label: "Capitalize as intangible (ASC 350-40)" },
+							{ label: "Amortize over software useful life" },
+						],
+					},
+					{
+						label: "Either Test Failed → Service Contract",
+						children: [
+							{ label: "Implementation costs → prepaid expense" },
+							{ label: "Amortize over hosting term (incl. renewals)" },
+						],
+					},
+				],
+			},
+		},
 	],
 	decisionTrees: [
 		{
@@ -241,6 +317,20 @@ export const barFramework: StudyFramework = {
 					no: "Not the primary beneficiary — do not consolidate (disclose involvement)",
 				},
 				no: "Not the primary beneficiary — do not consolidate (disclose involvement)",
+			},
+		},
+		{
+			title: "Does This Sale-Leaseback Qualify as a Sale?",
+			root: {
+				question:
+					"Does the transfer of the asset meet the criteria for a sale under ASC 606 (control transferred to buyer-lessor)?",
+				yes: {
+					question:
+						"Does the leaseback give the seller-lessee substantially all of the remaining use of the asset (e.g., finance lease covering entire useful life)?",
+					yes: "Failed sale-leaseback — account as a financing arrangement (keep asset on books, record financial liability)",
+					no: "Successful sale-leaseback — derecognize asset, recognize ROU asset for leaseback, and recognize gain/loss only on the portion of rights transferred",
+				},
+				no: "Failed sale — account as a financing arrangement (asset stays on seller-lessee's books, cash received is a financial liability)",
 			},
 		},
 	],
@@ -318,6 +408,20 @@ export const barFramework: StudyFramework = {
 			formula: "EBIT / (EBIT − Interest Expense)",
 			description:
 				"% change in EPS for a 1% change in EBIT. Higher DFL = more debt = more financial risk.",
+		},
+		{
+			name: "Net Periodic Pension Cost (ASC 715)",
+			formula:
+				"Service Cost + Interest Cost − Expected Return on Plan Assets ± Amortization of Prior Service Cost ± Amortization of Net Gain/Loss",
+			description:
+				"Only service cost is in operating income. All other components are below the line (other income/expense). The expected return reduces cost; actual vs. expected difference goes to OCI.",
+		},
+		{
+			name: "Corridor Amount (Gain/Loss Amortization)",
+			formula:
+				"Corridor = 10% × max(PBO, Fair Value of Plan Assets at beginning of year)",
+			description:
+				"Amortize only the excess of cumulative unrecognized net gain/loss over the corridor. Divide excess by average remaining service period of active employees.",
 		},
 	],
 	referenceTables: [
@@ -530,6 +634,39 @@ export const barFramework: StudyFramework = {
 					"EV/Revenue",
 					"Enterprise value / Revenue",
 					"SaaS and high-growth sectors",
+				],
+			],
+		},
+		{
+			title: "Pension Cost Components — Income Statement vs. OCI",
+			headers: ["Component", "Where Reported", "Effect on Pension Cost"],
+			rows: [
+				["Service cost", "Operating income", "Increases expense"],
+				["Interest cost", "Other income/expense", "Increases expense"],
+				[
+					"Expected return on plan assets",
+					"Other income/expense",
+					"Decreases expense",
+				],
+				[
+					"Amortization of prior service cost",
+					"Other income/expense",
+					"Increases expense",
+				],
+				[
+					"Amortization of net loss (gain)",
+					"Other income/expense",
+					"Increases (decreases) expense",
+				],
+				[
+					"Actuarial gains/losses (current year)",
+					"OCI",
+					"Deferred — amortized via corridor",
+				],
+				[
+					"Prior service cost (plan amendment)",
+					"OCI",
+					"Deferred — amortized over service period",
 				],
 			],
 		},

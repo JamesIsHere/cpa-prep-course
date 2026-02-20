@@ -180,6 +180,24 @@ export const sections: Section[] = [
 				contentPath: "far/13-consolidations",
 				isFree: false,
 			},
+			{
+				slug: "14-cash-and-receivables",
+				title: "Cash and Receivables",
+				contentPath: "far/14-cash-and-receivables",
+				isFree: false,
+			},
+			{
+				slug: "15-employee-benefit-plans",
+				title: "Employee Benefit Plans",
+				contentPath: "far/15-employee-benefit-plans",
+				isFree: false,
+			},
+			{
+				slug: "16-special-purpose-frameworks",
+				title: "Special Purpose Frameworks",
+				contentPath: "far/16-special-purpose-frameworks",
+				isFree: false,
+			},
 		],
 	},
 	{
@@ -342,6 +360,24 @@ export const sections: Section[] = [
 				contentPath: "bar/11-government-advanced",
 				isFree: false,
 			},
+			{
+				slug: "12-internal-use-software",
+				title: "Internal-Use Software and Cloud Computing",
+				contentPath: "bar/12-internal-use-software",
+				isFree: false,
+			},
+			{
+				slug: "13-advanced-leases",
+				title: "Advanced Lease Transactions",
+				contentPath: "bar/13-advanced-leases",
+				isFree: false,
+			},
+			{
+				slug: "14-employee-benefit-plans",
+				title: "Employee Benefit Plans",
+				contentPath: "bar/14-employee-benefit-plans",
+				isFree: false,
+			},
 		],
 	},
 	{
@@ -421,6 +457,18 @@ export const sections: Section[] = [
 				slug: "12-soc-reporting",
 				title: "SOC Reporting and Trust Services Criteria",
 				contentPath: "isc/12-soc-reporting",
+				isFree: false,
+			},
+			{
+				slug: "13-it-general-controls",
+				title: "IT General Controls",
+				contentPath: "isc/13-it-general-controls",
+				isFree: false,
+			},
+			{
+				slug: "14-it-audit-frameworks",
+				title: "IT Audit Frameworks",
+				contentPath: "isc/14-it-audit-frameworks",
 				isFree: false,
 			},
 		],

@@ -1,0 +1,251 @@
+# Employee Benefit Plans
+
+## Learning Objectives
+
+- Identify and calculate the components of the projected benefit obligation (PBO)
+- Determine the funded status of a defined benefit pension plan for balance sheet reporting
+- Calculate net periodic pension cost and classify its components between income statement and OCI
+- Apply the corridor approach for amortizing net actuarial gains and losses
+- Distinguish between defined benefit and defined contribution plan accounting
+- Understand OPEB (other post-employment benefits) reporting basics
+
+## Defined Benefit Plans Overview
+
+Under **ASC 715** (Compensation — Retirement Benefits), a **defined benefit plan** promises employees a specified pension benefit at retirement, typically based on years of service and compensation levels. The employer bears the **investment risk** and the **actuarial risk** — the obligation is funded through plan assets, but any shortfall is the employer's responsibility.
+
+The balance sheet reports the plan's **funded status**: the difference between the fair value of plan assets and the projected benefit obligation (PBO).
+
+> **Exam tip:** Defined benefit plans always appear on the balance sheet at their funded status. If PBO exceeds plan assets = **net pension liability**. If plan assets exceed PBO = **net pension asset**. There is no option to defer recognition of the funded status.
+
+## Projected Benefit Obligation (PBO)
+
+The **PBO** is the actuarial present value of all benefits attributed to employee service rendered to date, measured using assumptions about **future salary increases**. It is the primary obligation measure for balance sheet reporting.
+
+### PBO Components and Roll-Forward
+
+| Component | Effect on PBO | Description |
+|-----------|--------------|-------------|
+| Beginning PBO | Starting balance | Prior period ending balance |
+| + Service cost | Increase | PV of benefits earned by employees during the current period |
+| + Interest cost | Increase | PBO beginning balance x discount rate |
+| + Prior service cost | Increase | Retroactive benefits from plan amendments |
+| + Actuarial losses (- gains) | Increase (decrease) | Changes in assumptions or experience adjustments |
+| - Benefits paid | Decrease | Payments made to retired employees |
+| = Ending PBO | | |
+
+**Worked Example — PBO Roll-Forward:**
+
+Acme Corp's pension plan data for Year 1:
+
+| Item | Amount |
+|------|--------|
+| Beginning PBO | $2,000,000 |
+| Service cost | $150,000 |
+| Discount rate | 5% |
+| Actuarial loss (assumption change) | $45,000 |
+| Benefits paid to retirees | $120,000 |
+
+Interest cost = $2,000,000 x 5% = **$100,000**
+
+Ending PBO = $2,000,000 + $150,000 + $100,000 + $45,000 - $120,000 = **$2,175,000**
+
+### Related Obligation Measures
+
+- **Accumulated Benefit Obligation (ABO)** — Similar to PBO but uses current salary levels (no future salary assumptions). Always less than or equal to PBO.
+- **Vested Benefit Obligation (VBO)** — The portion of the ABO to which employees are entitled even if they leave the company. Used for certain funding calculations.
+
+## Plan Assets
+
+**Plan assets** are investments held in a trust to fund pension obligations. They are reported at **fair value**.
+
+### Plan Asset Roll-Forward
+
+| Component | Effect on Plan Assets |
+|-----------|---------------------|
+| Beginning fair value | Starting balance |
+| + Actual return on plan assets | Increase (or decrease if negative) |
+| + Employer contributions | Increase |
+| - Benefits paid | Decrease |
+| = Ending fair value | |
+
+**Worked Example — Plan Assets:**
+
+Using Acme Corp's data:
+
+| Item | Amount |
+|------|--------|
+| Beginning plan assets (FV) | $1,800,000 |
+| Actual return on plan assets | $135,000 |
+| Employer contributions | $200,000 |
+| Benefits paid | $120,000 |
+
+Ending plan assets = $1,800,000 + $135,000 + $200,000 - $120,000 = **$2,015,000**
+
+**Funded Status** = Plan assets - PBO = $2,015,000 - $2,175,000 = **($160,000)** net pension liability
+
+## Net Periodic Pension Cost (NPPC)
+
+**Net periodic pension cost** is the pension expense recognized each period. It has **five components**, split between the income statement and OCI:
+
+### The Five Components
+
+| # | Component | Where Reported | Description |
+|---|-----------|---------------|-------------|
+| 1 | **Service cost** | Operating income | PV of benefits earned during the period |
+| 2 | **Interest cost** | Non-operating (below the line) | Beginning PBO x discount rate |
+| 3 | **Expected return on plan assets** | Non-operating (below the line) | Beginning plan assets x expected long-term rate of return (reduces expense) |
+| 4 | **Amortization of prior service cost** | Non-operating (below the line) | Systematic recognition of retroactive benefit changes from plan amendments |
+| 5 | **Amortization of net gain/loss** | Non-operating (below the line) | Corridor approach — amortization of cumulative actuarial gains/losses exceeding the corridor |
+
+**Formula:**
+
+**NPPC = Service cost + Interest cost - Expected return on plan assets + Amortization of prior service cost + Amortization of net loss (or - net gain)**
+
+> **Exam tip:** Under ASU 2017-07, **only service cost** is reported in operating income. All other components are reported below operating income (non-operating) or in another appropriate line item. This is a critical presentation requirement.
+
+**Worked Example — Net Periodic Pension Cost:**
+
+Acme Corp, Year 1:
+
+| Component | Amount |
+|-----------|--------|
+| Service cost | $150,000 |
+| Interest cost ($2,000,000 x 5%) | $100,000 |
+| Expected return on plan assets ($1,800,000 x 7%) | ($126,000) |
+| Amortization of prior service cost | $18,000 |
+| Amortization of net loss (corridor) | $12,000 |
+
+**NPPC = $150,000 + $100,000 - $126,000 + $18,000 + $12,000 = $154,000**
+
+Income statement presentation:
+- Operating expense (service cost): **$150,000**
+- Non-operating pension cost: $100,000 - $126,000 + $18,000 + $12,000 = **$4,000**
+
+### Expected vs. Actual Return
+
+The difference between the **actual return** and the **expected return** on plan assets is an actuarial gain or loss that flows to **OCI** (and accumulates in AOCI):
+
+- If actual return > expected return = **gain** (credit to OCI)
+- If actual return < expected return = **loss** (debit to OCI)
+
+Using Acme Corp: Actual return = $135,000, Expected return = $126,000. The $9,000 difference is a gain recognized in OCI.
+
+## The Corridor Approach
+
+The **corridor approach** determines the minimum amortization of cumulative net actuarial gains and losses from AOCI into NPPC.
+
+### Corridor Calculation
+
+**Corridor amount = 10% x Greater of (Beginning PBO, Beginning plan assets fair value)**
+
+If the cumulative **net gain or loss** in AOCI exceeds the corridor, the **excess** is amortized over the **average remaining service period** of active employees.
+
+**Worked Example — Corridor Amortization:**
+
+Beginning of Year 2 data for Acme Corp:
+
+| Item | Amount |
+|------|--------|
+| Cumulative net actuarial loss in AOCI | $280,000 |
+| Beginning PBO | $2,175,000 |
+| Beginning plan assets (FV) | $2,015,000 |
+| Average remaining service period | 12 years |
+
+Corridor = 10% x $2,175,000 (greater of PBO and plan assets) = **$217,500**
+
+Excess = $280,000 - $217,500 = **$62,500**
+
+Amortization = $62,500 / 12 years = **$5,208** (minimum required amortization in Year 2)
+
+> **Exam tip:** The corridor approach sets a **minimum** amortization. Companies may elect a systematic method that amortizes gains and losses more rapidly, but the corridor is the default tested on the CPA exam.
+
+## OCI Items — Gains, Losses, and Prior Service Costs
+
+Certain pension items bypass the income statement and are recognized directly in **other comprehensive income (OCI)**:
+
+| Item | Initial Recognition | Subsequent Treatment |
+|------|-------------------|---------------------|
+| **Actuarial gains/losses** (PBO assumption changes, asset return differences) | OCI | Amortized from AOCI to NPPC via corridor approach |
+| **Prior service cost** (retroactive benefits from amendments) | OCI | Amortized from AOCI to NPPC over remaining service period of affected employees |
+| **Transition obligation** (legacy from initial adoption) | OCI | Amortized from AOCI to NPPC (rare in current practice) |
+
+The net amount remaining in **AOCI** is reclassified to earnings as it is amortized each period.
+
+## Defined Contribution Plans
+
+In contrast to defined benefit plans, a **defined contribution plan** (e.g., 401(k)) specifies the employer's contribution rather than the benefit. The employee bears the investment risk.
+
+**Accounting is straightforward:**
+- Employer recognizes **pension expense** equal to the required contribution for the period
+- No PBO, plan assets, or funded status on the balance sheet
+- If contributions are not yet paid, a **liability** is recorded; if paid in advance, a **prepaid** is recorded
+
+| Feature | Defined Benefit | Defined Contribution |
+|---------|----------------|---------------------|
+| Risk bearer | Employer | Employee |
+| Balance sheet | Funded status (PBO vs. plan assets) | Contribution payable/prepaid only |
+| Expense calculation | 5-component NPPC formula | Contribution amount |
+| Actuarial assumptions | Required (discount rate, salary growth, mortality) | Not applicable |
+| OCI items | Gains/losses, prior service cost | None |
+
+## OPEB — Other Post-Employment Benefits
+
+**OPEB** (primarily retiree health care and life insurance) follows the same framework as pension accounting under ASC 715-60:
+
+- Accumulated postretirement benefit obligation (**APBO**) replaces PBO
+- Net periodic postretirement benefit cost has the same five components
+- Funded status is reported on the balance sheet
+- Gains/losses and prior service costs flow through OCI
+
+Key differences from pensions:
+- OPEB plans are frequently **unfunded** (no plan assets)
+- Health care cost trend rates replace salary growth assumptions
+- Benefits may be subject to **caps** and cost-sharing arrangements
+
+## Key Terms
+
+- **Projected Benefit Obligation (PBO)** — The actuarial present value of pension benefits earned to date, using assumptions about future salary increases
+- **Funded status** — Plan assets at fair value minus PBO; reported as a net asset or net liability on the balance sheet
+- **Service cost** — The present value of pension benefits earned by employees during the current period; the only component reported in operating income
+- **Interest cost** — The increase in PBO due to the passage of time, calculated as beginning PBO times the discount rate
+- **Expected return on plan assets** — Beginning plan assets times the expected long-term rate of return; reduces NPPC
+- **Corridor amount** — 10% of the greater of beginning PBO or beginning plan assets fair value; the threshold for amortizing cumulative net gains/losses
+- **Prior service cost** — The cost of retroactive benefits granted by a plan amendment; recognized in OCI and amortized to NPPC
+- **Actuarial gain/loss** — Changes in PBO from revised assumptions or differences between expected and actual returns; recognized in OCI
+- **AOCI** — Accumulated other comprehensive income; the equity account where unamortized pension gains/losses and prior service costs reside
+- **ASU 2017-07** — Update requiring service cost to be presented in operating income and all other NPPC components outside operating income
+- **Net periodic pension cost (NPPC)** — The total pension expense for the period comprising five components
+- **OPEB** — Other post-employment benefits, primarily retiree health care, following the same ASC 715 framework as pensions
+
+## Practice Problems
+
+**1.** A company has a beginning PBO of $5,000,000 and beginning plan assets at fair value of $4,200,000. The discount rate is 6%, the expected long-term rate of return is 8%, service cost is $300,000, and amortization of prior service cost is $25,000. There is no corridor amortization. What is net periodic pension cost?
+
+a) $289,000
+b) $361,000
+c) $325,000
+d) $261,000
+
+**Answer:** a) $289,000 — Service cost: $300,000. Interest cost: $5,000,000 x 6% = $300,000. Expected return: $4,200,000 x 8% = ($336,000). Prior service cost amortization: $25,000. Corridor amortization: $0. NPPC = $300,000 + $300,000 - $336,000 + $25,000 + $0 = $289,000.
+
+---
+
+**2.** At the beginning of the year, a pension plan has cumulative net actuarial losses in AOCI of $520,000. The beginning PBO is $4,000,000 and beginning plan assets at fair value are $3,600,000. The average remaining service period is 10 years. What is the minimum amortization of the net loss?
+
+a) $52,000
+b) $12,000
+c) $16,000
+d) $120,000
+
+**Answer:** b) $12,000 — Corridor = 10% x $4,000,000 (greater of PBO and plan assets) = $400,000. Cumulative net loss ($520,000) exceeds the corridor by $120,000. Minimum amortization = $120,000 / 10 years = $12,000.
+
+---
+
+**3.** Under ASU 2017-07, which component of net periodic pension cost is presented within operating income on the income statement?
+
+a) Interest cost
+b) Expected return on plan assets
+c) Service cost
+d) Amortization of prior service cost
+
+**Answer:** c) Service cost — ASU 2017-07 requires that only service cost be reported as an operating expense. Interest cost, expected return on plan assets, amortization of prior service cost, and amortization of net gains/losses are all reported outside of operating income.

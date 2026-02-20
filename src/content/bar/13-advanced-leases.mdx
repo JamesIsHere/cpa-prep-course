@@ -1,0 +1,219 @@
+# Advanced Lease Transactions
+
+## Learning Objectives
+
+- Apply sale-leaseback accounting under ASC 842 and determine when the transfer qualifies as a sale
+- Account for failed sale-leasebacks as financing arrangements
+- Calculate the impact of lease modifications on the right-of-use asset and lease liability
+- Distinguish between lease modifications that create a separate contract and those requiring remeasurement
+- Account for lease incentives, subleases, and short-term lease elections
+
+## Sale-Leaseback Transactions (ASC 842-40)
+
+A **sale-leaseback** occurs when an entity (seller-lessee) transfers an asset to another entity (buyer-lessor) and then leases that same asset back. This arrangement can provide the seller-lessee with immediate cash while retaining use of the asset.
+
+### Step 1: Does the Transfer Qualify as a Sale?
+
+The transfer must meet the definition of a **sale** under ASC 606 (Revenue Recognition). The key question: has **control** of the asset transferred to the buyer-lessor?
+
+A transfer does **not** qualify as a sale if any of these conditions exist:
+
+- The seller-lessee has a **repurchase option** at a fixed price (or has an obligation to repurchase)
+- The leaseback is classified as a **finance lease** and the seller-lessee provided the financing (seller-financed)
+- The seller-lessee has the ability to repurchase the asset at less than substantially all of its fair value
+
+> **Exam tip:** The most common trap on sale-leaseback questions is the repurchase option. If the seller retains a repurchase option at a fixed price, the buyer does not obtain control, the sale fails, and the transaction is a financing arrangement.
+
+### Step 2: Sale Criteria Met — Accounting
+
+When the transfer **qualifies as a sale**, both parties account for the transaction in two parts:
+
+**Seller-Lessee:**
+1. **Derecognize** the underlying asset
+2. **Recognize** a right-of-use (ROU) asset and lease liability for the leaseback
+3. **Recognize gain or loss** on the sale — but only the portion relating to the **rights transferred** to the buyer-lessor
+
+The gain is calculated as:
+
+**Gain on sale = (Sale price - Carrying amount) x (Portion of rights transferred)**
+
+The portion of rights transferred is determined by comparing the present value of lease payments to the fair value of the asset. If the leaseback represents substantially all of the asset's utility, the gain recognized is limited.
+
+**Worked Example — Qualifying Sale-Leaseback:**
+
+MfgCo sells a building (carrying value $600,000) to InvestorCo for $1,000,000 (equal to fair value). MfgCo immediately leases it back for 5 years at $80,000/year. The building has a remaining useful life of 20 years. Discount rate: 6%.
+
+PV of lease payments = $80,000 x 4.2124 (PV annuity factor, 5 periods, 6%) = **$336,990**
+
+Portion of rights transferred to buyer = ($1,000,000 - $336,990) / $1,000,000 = **66.3%**
+
+Total gain = $1,000,000 - $600,000 = $400,000
+
+Gain recognized = $400,000 x 66.3% = **$265,200**
+
+The remaining $134,800 ($400,000 - $265,200) is included in the measurement of the ROU asset.
+
+MfgCo also records:
+- Lease liability: $336,990
+- ROU asset: $336,990 + $134,800 = **$471,790** (adjusted for the deferred gain portion)
+
+**Buyer-Lessor:** Accounts for the purchase of the asset and the lease as a lessor under ASC 842.
+
+### Step 3: Sale Criteria NOT Met — Financing
+
+When the transfer **fails to qualify as a sale**, neither party derecognizes the asset:
+
+**Seller-Lessee:**
+- Keeps the asset on the balance sheet and continues to depreciate it
+- Records the cash received as a **financial liability** (financing obligation)
+- Lease payments reduce the financial liability (principal + interest)
+
+**Buyer-Lessor:**
+- Does **not** record the asset
+- Records the cash paid as a **financial asset** (receivable)
+- Receives payments as principal and interest income
+
+> **Exam tip:** Think of a failed sale-leaseback as a **collateralized borrowing** — the seller pledged the asset as collateral for a loan from the buyer. The form looks like a sale, but the substance is financing.
+
+### Off-Market Terms
+
+If the sale price exceeds fair value, the excess is treated as **additional financing** from the buyer-lessor to the seller-lessee (a loan). If the sale price is below fair value, the deficiency is treated as a **prepayment of rent** unless the difference is compensated by below-market lease payments.
+
+## Lease Modifications (ASC 842-10-25)
+
+A **lease modification** is a change to the terms and conditions of a contract that was not part of the original terms, such as extending the lease term, adding or terminating the right to use underlying assets, or changing the consideration.
+
+### Does the Modification Create a Separate Contract?
+
+A modification is treated as a **separate (new) contract** if **both** conditions are met:
+
+1. The modification grants the lessee the right to use an **additional asset** that was not in the original lease
+2. The additional consideration is **commensurate with the standalone price** for the additional right of use, adjusted for the circumstances of the contract
+
+If treated as a separate contract, the original lease continues unchanged and the new right of use is accounted for independently.
+
+### Modifications That Are NOT Separate Contracts
+
+If the modification does not qualify as a separate contract, the lessee must:
+
+1. **Remeasure the lease liability** using a revised discount rate as of the modification date
+2. Determine the appropriate accounting based on the nature of the change:
+
+| Type of Modification | Accounting Treatment |
+|---------------------|---------------------|
+| **Full termination** of original lease, replaced by new lease | Derecognize existing ROU asset and liability; record new lease |
+| **Partial termination** (decrease in scope) | Decrease ROU asset and liability proportionally; recognize gain or loss for the difference |
+| **No decrease in scope** (extension, increase in payments, etc.) | Remeasure lease liability at revised rate; adjust ROU asset by the same amount (no gain/loss) |
+
+### Reassessment vs. Modification
+
+A **reassessment** is triggered by changes in circumstances (not changes in contract terms). Common triggers:
+
+- **Significant event or change** affecting whether the lessee is reasonably certain to exercise an option (e.g., a renewal or purchase option)
+- **Change in the lease term** due to exercise or non-exercise of an option
+- **Change in the probability** of exercising a purchase option
+
+When reassessment is triggered, the lessee remeasures the lease liability using a **revised discount rate** and adjusts the ROU asset accordingly.
+
+**Worked Example — Lease Modification (No Decrease in Scope):**
+
+On January 1, Year 1, LesseCo enters a 5-year operating lease with annual payments of $100,000. Discount rate at inception: 5%. Original lease liability = $100,000 x 4.3295 = $432,950.
+
+At the beginning of Year 3 (3 years remaining), the lease is modified to extend the term by 2 years (5 years remaining) at revised payments of $95,000/year. The revised discount rate at the modification date is 6%.
+
+New lease liability = $95,000 x 4.2124 (PV annuity, 5 periods, 6%) = **$400,178**
+
+The existing lease liability at the beginning of Year 3 (after 2 years of payments at 5%):
+- End of Year 1 balance: $432,950 x 1.05 - $100,000 = $354,598
+- End of Year 2 balance: $354,598 x 1.05 - $100,000 = $272,328
+
+Adjustment to ROU asset = $400,178 - $272,328 = **$127,850 increase**
+
+Journal entry:
+- Debit: Right-of-use asset $127,850
+- Credit: Lease liability $127,850
+
+**Worked Example — Partial Termination:**
+
+LesseCo leases two floors of an office building. Original ROU asset: $500,000. Lease liability: $480,000. The lease is modified to return one floor (50% reduction in scope).
+
+Proportional decrease in ROU asset: $500,000 x 50% = $250,000
+Proportional decrease in lease liability (remeasured): $240,000
+
+Gain on partial termination = $250,000 - $240,000 = **$10,000 loss** (the ROU asset decreased more than the liability, so this is actually a loss of $10,000, recognized in earnings).
+
+## Lease Incentives
+
+**Lease incentives** are payments or reimbursements from the lessor to the lessee — such as tenant improvement allowances, moving cost reimbursements, or rent-free periods.
+
+Under ASC 842:
+- Lease incentives **reduce** the ROU asset and lease liability at lease commencement
+- Incentives received before commencement are recorded as a liability until the lease begins
+- The effect is a lower ROU asset balance, resulting in lower amortization expense over the lease term
+
+## Subleases
+
+A **sublease** occurs when the original lessee (intermediate lessor) re-leases the underlying asset to a third party. Under ASC 842:
+
+- The original lessee classifies the sublease as an **operating** or **finance** lease from the perspective of a **lessor**, using the **right-of-use asset** (not the underlying asset) as the basis for classification
+- The original lease between the lessee and the head lessor remains on the books — the lessee continues to recognize its ROU asset and lease liability
+- Sublease income is recognized over the sublease term
+
+> **Exam tip:** In sublease classification, the intermediate lessor compares the sublease term and present value of sublease payments against the **ROU asset** (not the underlying asset's fair value or useful life). This is a key difference from head-lease classification.
+
+## Short-Term Lease Exemption
+
+ASC 842 provides an **election** for leases with a term of **12 months or less** (at commencement, considering renewal options reasonably certain to be exercised):
+
+- Lessees may elect **not** to recognize a ROU asset and lease liability
+- Lease payments are recognized as expense on a **straight-line basis** over the lease term
+- The election is made by class of underlying asset
+- A lease with a **purchase option** does not qualify for the short-term lease exemption, regardless of term length
+
+## Key Terms
+
+- **Sale-leaseback** — A transaction where the seller transfers an asset and simultaneously leases it back from the buyer
+- **Failed sale-leaseback** — A sale-leaseback where the transfer does not qualify as a sale under ASC 606, accounted for as a financing arrangement
+- **Lease modification** — A change to the terms of a lease not part of the original agreement, requiring remeasurement or separate contract treatment
+- **Reassessment** — Reevaluation of lease terms triggered by a significant event or change in circumstances, not a contract change
+- **ROU asset** — The right-of-use asset representing the lessee's right to use the underlying asset for the lease term
+- **Lease liability** — The present value of remaining lease payments, remeasured upon modification or reassessment
+- **Partial termination** — A modification that decreases the scope of a lease; requires proportional reduction of the ROU asset and liability with gain/loss recognition
+- **Lease incentive** — Payment from lessor to lessee that reduces the ROU asset and lease liability
+- **Sublease** — A transaction where the original lessee re-leases the right of use to a third party
+- **Short-term lease** — A lease with a term of 12 months or less with no purchase option; eligible for simplified recognition
+- **Discount rate** — The rate used to determine the present value of lease payments; revised at the date of modification or reassessment
+- **Financing obligation** — The liability recorded by the seller-lessee in a failed sale-leaseback, representing the cash received
+
+## Practice Problems
+
+**1.** A company sells a building with a carrying value of $800,000 to a buyer for $1,200,000 (fair value) and leases it back under a 6-year operating lease. The building has a 30-year remaining useful life. The present value of the leaseback payments is $360,000. What gain should the seller-lessee recognize at the transaction date?
+
+a) $400,000
+b) $280,000
+c) $0
+d) $120,000
+
+**Answer:** b) $280,000 — Total gain = $1,200,000 - $800,000 = $400,000. Portion of rights transferred = ($1,200,000 - $360,000) / $1,200,000 = 70%. Gain recognized = $400,000 x 70% = $280,000.
+
+---
+
+**2.** A seller-lessee transfers equipment to a buyer-lessor and leases it back. The seller retains an option to repurchase the equipment at a fixed price. How should the seller-lessee account for this transaction?
+
+a) As a sale and operating leaseback with full gain recognition
+b) As a sale and finance leaseback with deferred gain
+c) As a failed sale — financing arrangement with the asset remaining on the seller's books
+d) As a sale with the gain allocated between the sale and leaseback
+
+**Answer:** c) As a failed sale — financing arrangement with the asset remaining on the seller's books — A repurchase option at a fixed price means the buyer does not obtain control of the asset under ASC 606. The transfer fails to qualify as a sale, so the seller keeps the asset and records a financial liability.
+
+---
+
+**3.** A lessee's 8-year operating lease is modified at the beginning of Year 4 to extend the term by 3 years with no change in annual payments. The modification does not grant the right to use an additional asset. How should the lessee account for this modification?
+
+a) Treat as a separate new lease for the extension period
+b) Remeasure the lease liability using the revised discount rate and adjust the ROU asset
+c) Continue the original lease with no adjustment until the original term expires
+d) Derecognize the existing ROU asset and record a new lease from the modification date
+
+**Answer:** b) Remeasure the lease liability using the revised discount rate and adjust the ROU asset — The modification is not a separate contract (no additional asset). There is no decrease in scope (term is extended, not reduced). The lessee remeasures the lease liability at the revised discount rate and adjusts the ROU asset by the same amount.

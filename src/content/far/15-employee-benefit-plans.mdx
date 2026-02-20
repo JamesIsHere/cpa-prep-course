@@ -1,0 +1,216 @@
+# Employee Benefit Plans
+
+## Learning Objectives
+
+- Explain the components of net periodic pension cost for defined benefit plans under ASC 715
+- Distinguish between PBO, ABO, and VBO and calculate the funded status
+- Account for prior service cost, gains and losses, and the corridor approach
+- Record defined contribution plan expense and employer matching contributions
+- Apply OPEB accounting for postretirement benefits other than pensions under ASC 715-60
+
+## Defined Benefit Plans — Overview
+
+A **defined benefit plan** promises employees a specified monthly benefit upon retirement, typically based on a formula involving salary and years of service. The employer bears the investment risk and the obligation to fund the promised benefits. Accounting for defined benefit plans is governed by **ASC 715, Compensation — Retirement Benefits**.
+
+The central accounting question is: how much pension expense should the employer recognize each period, and what is the funded status reported on the balance sheet?
+
+### Benefit Obligation Measures
+
+Three measures of the pension obligation exist, each reflecting a different level of assumptions:
+
+| Measure | Definition | Includes Future Salary Increases? |
+|---------|-----------|-----------------------------------|
+| **Vested Benefit Obligation (VBO)** | Benefits earned by employees who have met vesting requirements | No |
+| **Accumulated Benefit Obligation (ABO)** | Benefits earned to date based on current salary levels | No |
+| **Projected Benefit Obligation (PBO)** | Benefits earned to date based on estimated future salary levels | Yes |
+
+The **PBO** is the measure used for balance sheet and expense calculations under ASC 715. It is always equal to or greater than the ABO because it incorporates projected salary increases.
+
+## Net Periodic Pension Cost
+
+Net periodic pension cost (pension expense) has five components:
+
+### 1. Service Cost
+
+The present value of benefits earned by employees during the **current period**. This is the only component presented as an operating expense on the income statement. All other components are reported below operating income (typically in other income/expense).
+
+### 2. Interest Cost
+
+Interest accruing on the beginning PBO at the **discount rate** (high-quality corporate bond rate matching the expected benefit payment timing).
+
+**Interest Cost = Beginning PBO x Discount Rate**
+
+### 3. Expected Return on Plan Assets
+
+The expected long-term rate of return applied to the **beginning fair value of plan assets**. This amount is **subtracted** from pension expense because earnings on plan assets offset the cost of providing benefits.
+
+**Expected Return = Beginning Plan Assets x Expected Rate of Return**
+
+### 4. Amortization of Prior Service Cost
+
+When a plan is amended to increase (or decrease) benefits retroactively, the resulting **prior service cost** is not expensed immediately. It is recognized in **other comprehensive income (OCI)** and then amortized to pension expense over the **average remaining service period** of employees expected to receive benefits.
+
+### 5. Amortization of Net Gain or Loss (Corridor Approach)
+
+Actuarial gains and losses arise from changes in assumptions (discount rate, mortality, turnover) and differences between expected and actual returns on plan assets. These are initially recognized in OCI.
+
+Amortization to pension expense is required only when the **cumulative unrecognized net gain or loss** exceeds a **corridor** equal to the greater of:
+
+- 10% of the beginning PBO, or
+- 10% of the beginning fair value of plan assets
+
+The amount amortized equals the **excess over the corridor** divided by the average remaining service period of active employees.
+
+### Pension Expense Formula
+
+**Net Periodic Pension Cost = Service Cost + Interest Cost - Expected Return on Plan Assets + Amortization of Prior Service Cost + Amortization of Net Loss (or - Net Gain)**
+
+### Worked Example — Net Periodic Pension Cost
+
+Greystone Inc. has the following pension data for the current year:
+
+- Beginning PBO: $2,000,000
+- Beginning plan assets (fair value): $1,800,000
+- Service cost: $150,000
+- Discount rate: 5%
+- Expected rate of return on plan assets: 7%
+- Amortization of prior service cost: $10,000
+- Cumulative unrecognized net loss: $250,000
+- Average remaining service period: 10 years
+
+**Step 1: Interest cost** = $2,000,000 x 5% = **$100,000**
+
+**Step 2: Expected return** = $1,800,000 x 7% = **$126,000**
+
+**Step 3: Corridor test**
+- 10% of beginning PBO: $200,000
+- 10% of beginning plan assets: $180,000
+- Corridor: $200,000 (the greater amount)
+- Excess: $250,000 - $200,000 = $50,000
+- Amortization: $50,000 / 10 = **$5,000**
+
+**Net Periodic Pension Cost:**
+$150,000 + $100,000 - $126,000 + $10,000 + $5,000 = **$139,000**
+
+## Funded Status on the Balance Sheet
+
+ASC 715 requires the **funded status** of the plan to be reported on the balance sheet:
+
+**Funded Status = Fair Value of Plan Assets - PBO**
+
+- If plan assets exceed the PBO → **Net pension asset** (noncurrent asset)
+- If the PBO exceeds plan assets → **Net pension liability** (typically noncurrent; current portion if benefits payable within 12 months exceed plan assets)
+
+Using the Greystone example above: Funded status = $1,800,000 - $2,000,000 = **($200,000)** — reported as a net pension liability of $200,000.
+
+### Items Recognized in OCI
+
+The following pension-related items are reported in **other comprehensive income** and accumulated in AOCI on the balance sheet:
+
+- **Prior service cost** (unamortized portion from plan amendments)
+- **Net actuarial gain or loss** (unamortized portion from assumption changes and experience differences)
+- **Net transition obligation or asset** (from initial adoption of ASC 715, if any remains)
+
+These items are reclassified from OCI to pension expense as they are amortized.
+
+## Defined Contribution Plans
+
+A **defined contribution plan** (e.g., 401(k)) specifies the employer's contribution to individual employee accounts. The employee bears the investment risk — the employer's obligation is limited to making the agreed contributions.
+
+Accounting is straightforward:
+
+**Pension Expense = Employer's Required Contribution for the Period**
+
+If the employer has not yet funded the contribution, a liability is recognized. If contributions exceed the required amount, a prepaid asset is recorded. There is no PBO, no plan asset accounting, no corridor calculation, and no OCI items.
+
+### Employer Matching
+
+Many plans include a **matching contribution** — the employer matches a portion of the employee's voluntary contributions. For example, a company might match 50% of employee contributions up to 6% of salary. The matching contribution is expensed as earned by employees (typically each pay period).
+
+**Example:** An employee earns $80,000 and contributes 6% ($4,800). The employer matches 50%, so employer expense = $4,800 x 50% = **$2,400** for the year.
+
+## OPEB — Other Postretirement Employee Benefits (ASC 715-60)
+
+**Other postretirement employee benefits (OPEB)** include healthcare, life insurance, and other nonpension benefits promised to retired employees. OPEB accounting under **ASC 715-60** parallels pension accounting in structure but has important differences.
+
+### Key OPEB Concepts
+
+**Accumulated Postretirement Benefit Obligation (APBO)** — The actuarial present value of all future postretirement benefits attributed to employee service to date. This is analogous to the PBO in pension accounting.
+
+**Expected Postretirement Benefit Obligation (EPBO)** — The total expected cost of providing postretirement benefits, both past and future service. The APBO is the portion of the EPBO attributed to service already rendered.
+
+### OPEB Expense Components
+
+OPEB expense follows the same structure as pension expense:
+
+1. **Service cost** — Benefits attributed to the current year
+2. **Interest cost** — Discount rate applied to the beginning APBO
+3. **Expected return on plan assets** — Subtracted (many OPEB plans are unfunded or underfunded, so this may be zero)
+4. **Amortization of prior service cost** — From plan amendments
+5. **Amortization of net gain/loss** — Same corridor approach as pensions
+
+### Key Differences: Pensions vs. OPEB
+
+| Feature | Defined Benefit Pension | OPEB |
+|---------|------------------------|------|
+| Primary obligation measure | PBO | APBO |
+| Typically funded? | Yes (ERISA requirements) | Often unfunded or partially funded |
+| Healthcare cost trend rate | N/A | Required assumption affecting APBO |
+| Full eligibility date | Retirement date | Date employee achieves full eligibility (may be before retirement) |
+| Attribution period | Hire date to retirement | Hire date to full eligibility date |
+
+> On the CPA exam, OPEB questions often focus on the healthcare cost trend rate (the expected annual rate of increase in per-capita healthcare costs) and the fact that many OPEB plans are unfunded, resulting in large liabilities on the balance sheet.
+
+## Curtailments and Settlements
+
+A **curtailment** occurs when an event significantly reduces the expected years of future service or eliminates the accrual of benefits for a significant number of employees (e.g., plant closing, workforce reduction). The effect on the PBO is recognized immediately as a gain or loss.
+
+A **settlement** occurs when the employer irrevocably relieves itself of the pension obligation (e.g., lump-sum payment to employees, purchasing annuity contracts). A settlement gain or loss is recognized when the obligation is settled.
+
+## Key Terms
+
+- **Projected Benefit Obligation (PBO)** — Present value of pension benefits earned to date, incorporating projected salary increases
+- **Accumulated Benefit Obligation (ABO)** — Present value of benefits earned to date using current salary levels
+- **Funded status** — Fair value of plan assets minus the PBO; reported on the balance sheet
+- **Service cost** — The present value of benefits earned during the current period
+- **Discount rate** — High-quality corporate bond rate used to calculate interest cost and present value of the obligation
+- **Expected return on plan assets** — Long-term rate of return applied to plan assets, subtracted from pension expense
+- **Prior service cost** — Cost from retroactive plan amendments, recognized in OCI and amortized over remaining service period
+- **Corridor** — 10% of the greater of beginning PBO or beginning plan assets; triggers amortization of net gains/losses
+- **APBO** — Accumulated Postretirement Benefit Obligation, the OPEB equivalent of the PBO
+- **Healthcare cost trend rate** — The expected annual rate of increase in per-capita healthcare costs used in OPEB valuations
+- **Curtailment** — An event that significantly reduces future service or eliminates benefit accrual
+- **Settlement** — Irrevocable discharge of a pension obligation through lump-sum payment or annuity purchase
+
+## Practice Problems
+
+**1.** A company has a beginning PBO of $3,000,000 and beginning plan assets with a fair value of $2,600,000. The discount rate is 4% and the expected rate of return on plan assets is 6%. Service cost for the year is $180,000. What is the interest cost component of net periodic pension cost?
+
+a) $104,000
+b) $120,000
+c) $156,000
+d) $180,000
+
+**Answer:** b) $120,000 — Interest cost = Beginning PBO x Discount rate = $3,000,000 x 4% = $120,000. The expected rate of return is used for the plan asset component, not interest cost.
+
+---
+
+**2.** Under ASC 715, where is the funded status of a defined benefit plan reported?
+
+a) Only in the notes to the financial statements
+b) As an asset or liability on the balance sheet, measured as the difference between fair value of plan assets and the PBO
+c) As an off-balance-sheet item with footnote disclosure
+d) As the difference between plan assets and the ABO
+
+**Answer:** b) As an asset or liability on the balance sheet, measured as the difference between fair value of plan assets and the PBO — ASC 715 requires full recognition of the funded status (plan assets minus PBO) on the balance sheet.
+
+---
+
+**3.** A company sponsors a defined contribution plan and matches 100% of employee contributions up to 3% of salary. An employee earns $120,000 and contributes 5% of salary. What is the employer's pension expense for this employee?
+
+a) $6,000
+b) $3,600
+c) $5,400
+d) $1,800
+
+**Answer:** b) $3,600 — The employer matches 100% of contributions up to 3% of salary. The employee contributes 5% ($6,000), but the match is capped at 3% of salary = $120,000 x 3% = $3,600. The employer's expense is $3,600.

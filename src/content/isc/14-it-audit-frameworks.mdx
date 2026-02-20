@@ -1,0 +1,299 @@
+# IT Audit Frameworks and Risk Assessment
+
+## Learning Objectives
+
+- Describe the structure and governance principles of COBIT 2019, distinguishing governance objectives from management objectives
+- Explain the ITIL 4 service value chain and its role in IT service management
+- Connect the COSO Internal Control framework to IT audit and technology governance
+- Apply the NIST Risk Management Framework (RMF) to IT risk assessment
+- Evaluate IT risk using structured methodologies including risk identification, likelihood and impact analysis, treatment options, and risk registers
+
+## COBIT 2019 Framework
+
+**COBIT 2019 (Control Objectives for Information and Related Technologies)** is an IT governance and management framework developed by **ISACA**. It provides a comprehensive model for governing and managing enterprise information and technology, aligning IT activities with business objectives.
+
+### Core Principles
+
+COBIT 2019 is built on six governance system principles:
+
+| Principle | Description |
+|-----------|-------------|
+| **1. Provide stakeholder value** | The governance system exists to satisfy stakeholder needs and generate value through IT |
+| **2. Holistic approach** | Governance relies on multiple interconnected components (processes, structures, information, culture) |
+| **3. Dynamic governance system** | The governance system adjusts as the enterprise design factors change |
+| **4. Governance distinct from management** | Governance evaluates, directs, and monitors; management plans, builds, runs, and monitors |
+| **5. Tailored to enterprise needs** | The governance system is customized using design factors specific to the organization |
+| **6. End-to-end governance system** | Covers all IT processing and technology, not just the IT department |
+
+### Governance vs Management Objectives
+
+COBIT 2019 organizes its **40 objectives** into two domains:
+
+**Governance objectives (EDM)** — Evaluate, Direct, and Monitor:
+
+| Objective | Focus |
+|-----------|-------|
+| EDM01 | Ensured governance framework setting and maintenance |
+| EDM02 | Ensured benefits delivery |
+| EDM03 | Ensured risk optimization |
+| EDM04 | Ensured resource optimization |
+| EDM05 | Ensured stakeholder engagement |
+
+**Management objectives** span four domains:
+
+| Domain | Code | Focus | Example Objectives |
+|--------|------|-------|--------------------|
+| **Align, Plan, and Organize** | APO | Strategy, architecture, innovation, portfolio management | APO12 Managed Risk, APO13 Managed Security |
+| **Build, Acquire, and Implement** | BAI | Solutions development, change management, asset management | BAI06 Managed IT Changes, BAI09 Managed Assets |
+| **Deliver, Service, and Support** | DSS | Operations, service requests, continuity, security services | DSS01 Managed Operations, DSS05 Managed Security Services |
+| **Monitor, Evaluate, and Assess** | MEA | Performance, internal controls, compliance, assurance | MEA02 Managed System of Internal Control |
+
+> **Exam tip:** The exam distinguishes governance from management. Governance is the board's responsibility — it sets direction and monitors outcomes. Management executes the plan. If a question asks about evaluating whether IT investments deliver value, that is governance (EDM02). If it asks about executing a change management process, that is management (BAI06).
+
+### COBIT Performance Management
+
+COBIT 2019 uses a **Capability Maturity Model Integration (CMMI)**-based rating scheme to assess process maturity:
+
+| Level | Name | Description |
+|-------|------|-------------|
+| 0 | Incomplete | Process not implemented or fails to achieve its purpose |
+| 1 | Performed | Process achieves its purpose but is not well managed |
+| 2 | Managed | Process is planned, monitored, and adjusted; work products are managed |
+| 3 | Defined | Process follows a defined standard across the organization |
+| 4 | Quantitative | Process is measured using quantitative techniques |
+| 5 | Optimizing | Process is continuously improved based on quantitative analysis |
+
+### Design Factors
+
+COBIT 2019 introduces **design factors** that help organizations tailor the governance system to their specific context:
+
+- Enterprise strategy (growth, innovation, cost optimization)
+- Enterprise goals and risk profile
+- IT-related issues and threat landscape
+- Compliance requirements and regulatory environment
+- Role of IT (support, factory, turnaround, strategic)
+- IT sourcing model (outsourced, cloud, in-house)
+- Enterprise size and IT implementation methods
+
+## ITIL 4 Framework
+
+**ITIL 4 (Information Technology Infrastructure Library)** is the most widely adopted framework for **IT service management (ITSM)**. While COBIT focuses on governance, ITIL focuses on how IT services are designed, delivered, and continuously improved.
+
+### The Service Value System
+
+ITIL 4 structures IT service management around the **Service Value System (SVS)**, which describes how organizational components work together to create value:
+
+| SVS Component | Purpose |
+|---------------|---------|
+| **Guiding principles** | Recommendations that guide organizational behavior in all circumstances |
+| **Governance** | Direction and control activities ensuring alignment with objectives |
+| **Service value chain** | The operating model for creating, delivering, and improving services |
+| **Practices** | Sets of organizational resources designed for performing work |
+| **Continual improvement** | Ongoing organizational activity at all levels |
+
+### The Service Value Chain
+
+The **service value chain** is the central element of ITIL 4, consisting of six activities that transform demand into value:
+
+| Activity | Purpose |
+|----------|---------|
+| **Plan** | Ensure shared understanding of vision, current status, and direction for all products and services |
+| **Improve** | Continually improve products, services, and practices across all value chain activities |
+| **Engage** | Understand stakeholder needs, maintain transparency, and ensure continual engagement |
+| **Design and transition** | Ensure products and services meet stakeholder expectations for quality, cost, and time-to-market |
+| **Obtain/build** | Ensure service components are available when needed and meet agreed specifications |
+| **Deliver and support** | Ensure services are delivered and supported according to agreed specifications and expectations |
+
+### ITIL 4 Guiding Principles
+
+ITIL 4 defines seven guiding principles that apply to all situations:
+
+1. **Focus on value** — Everything the organization does should map to value for stakeholders
+2. **Start where you are** — Assess the current state before planning improvements
+3. **Progress iteratively with feedback** — Work in manageable increments with feedback loops
+4. **Collaborate and promote visibility** — Work across boundaries with transparency
+5. **Think and work holistically** — No service or practice stands alone
+6. **Keep it simple and practical** — Eliminate processes that do not produce value
+7. **Optimize and automate** — Use technology to perform frequent, repetitive tasks
+
+> **Exam tip:** ITIL 4 is about service management — delivering IT services that create value. COBIT is about governance — ensuring IT aligns with enterprise objectives. The exam may present a scenario where an organization needs to improve how it delivers IT services to internal users. That calls for ITIL. If the organization needs to evaluate whether its IT investments align with strategy, that calls for COBIT.
+
+## COSO Integration with IT Governance
+
+The **COSO Internal Control — Integrated Framework (2013)** provides the foundation for evaluating internal controls over financial reporting. When IT systems process financial transactions, COSO's five components must be applied to the technology environment.
+
+### Mapping COSO to IT Governance
+
+| COSO Component | IT Governance Application | Framework Connection |
+|----------------|--------------------------|---------------------|
+| **Control environment** | IT governance structure, security policies, code of conduct for IT staff, competency requirements | COBIT EDM (governance layer) |
+| **Risk assessment** | IT risk identification, vulnerability assessments, threat modeling, risk prioritization | NIST RMF, COBIT APO12 |
+| **Control activities** | ITGCs (access, change management, operations), application controls | COBIT BAI/DSS domains |
+| **Information and communication** | System-generated reports, audit logs, IT policy distribution, incident notification | ITIL Engage activity |
+| **Monitoring activities** | Continuous monitoring, IT audits, control testing, deficiency remediation | COBIT MEA domain |
+
+The COSO framework provides the **conceptual basis** — it defines what internal controls should achieve. COBIT, ITIL, and NIST provide **implementation guidance** — they describe how to achieve those objectives in IT environments.
+
+> **Exam tip:** The exam may ask which framework provides the basis for evaluating IT controls in the context of a financial statement audit. The answer is COSO, because auditing standards (AS 2201, AU-C 315) reference the COSO framework for internal control evaluation. COBIT and NIST provide the detailed IT controls that satisfy COSO requirements.
+
+## NIST Risk Management Framework
+
+The **NIST Risk Management Framework (RMF)**, detailed in **NIST SP 800-37 Rev. 2**, provides a structured process for integrating security, privacy, and risk management into the system development lifecycle.
+
+### RMF Steps
+
+The RMF consists of seven steps, executed in sequence with ongoing monitoring:
+
+| Step | Activity | Key Actions |
+|------|----------|-------------|
+| **1. Prepare** | Establish context and priorities | Define risk management roles, strategy, and organizational risk tolerance |
+| **2. Categorize** | Classify information systems | Determine the impact level (low, moderate, high) for confidentiality, integrity, and availability using FIPS 199 |
+| **3. Select** | Choose security controls | Select baseline controls from NIST SP 800-53 based on the system categorization |
+| **4. Implement** | Deploy security controls | Install and configure controls; document how controls are implemented |
+| **5. Assess** | Evaluate control effectiveness | Test controls to determine if they are implemented correctly and producing desired outcomes |
+| **6. Authorize** | Make risk-based decision | Senior official reviews the risk assessment and authorizes the system to operate (ATO) |
+| **7. Monitor** | Ongoing surveillance | Continuously monitor control effectiveness, changes to the system, and emerging threats |
+
+### FIPS 199 Categorization
+
+The categorization step uses **FIPS 199** to classify systems based on potential impact:
+
+| Impact Level | Definition | Example System |
+|-------------|------------|----------------|
+| **Low** | Loss would have limited adverse effect on operations, assets, or individuals | Public-facing informational website |
+| **Moderate** | Loss would have serious adverse effect on operations, assets, or individuals | Internal financial reporting application |
+| **High** | Loss would have severe or catastrophic adverse effect on operations, assets, or individuals | Core banking transaction processing system |
+
+The categorization drives control selection — a high-impact system requires more rigorous controls than a low-impact system.
+
+## IT Risk Assessment Methodologies
+
+IT risk assessment is the systematic process of identifying, analyzing, and evaluating risks to information systems. Both **quantitative** and **qualitative** approaches are used in practice.
+
+### Risk Identification
+
+Risk identification involves cataloging threats and vulnerabilities that could affect information systems:
+
+- **Threat identification** — Natural disasters, cyberattacks, insider threats, hardware failures, software defects, third-party service disruptions
+- **Vulnerability identification** — Unpatched systems, misconfigured firewalls, weak passwords, lack of encryption, inadequate access controls
+- **Asset inventory** — Identifying and valuing the information assets that could be affected (financial data, customer records, intellectual property)
+
+### Quantitative Risk Analysis
+
+Quantitative analysis assigns **monetary values** to risk components:
+
+| Component | Formula | Description |
+|-----------|---------|-------------|
+| **Asset Value (AV)** | Determined by the organization | Replacement cost or business value of the asset |
+| **Exposure Factor (EF)** | Percentage of asset value lost | Proportion of the asset damaged by a single event (0% to 100%) |
+| **Single Loss Expectancy (SLE)** | SLE = AV x EF | Expected monetary loss from a single risk event |
+| **Annualized Rate of Occurrence (ARO)** | Historical data or estimates | Expected number of times the event occurs per year |
+| **Annualized Loss Expectancy (ALE)** | ALE = SLE x ARO | Expected annual monetary loss; used to justify control investments |
+
+**Example:** A database server (AV = $500,000) faces a ransomware risk with an exposure factor of 40% and an estimated occurrence of 0.25 times per year. SLE = $500,000 x 0.40 = $200,000. ALE = $200,000 x 0.25 = $50,000. A security control costing less than $50,000 per year is cost-justified.
+
+### Qualitative Risk Analysis
+
+Qualitative analysis uses **rating scales** (e.g., high, medium, low) instead of monetary values. It is faster and more practical when precise data is unavailable.
+
+A **risk matrix** (also called a heat map) plots likelihood against impact:
+
+| | Low Impact | Medium Impact | High Impact |
+|---|---|---|---|
+| **High Likelihood** | Medium risk | High risk | Critical risk |
+| **Medium Likelihood** | Low risk | Medium risk | High risk |
+| **Low Likelihood** | Low risk | Low risk | Medium risk |
+
+> **Exam tip:** Quantitative risk analysis provides dollar amounts that support cost-benefit decisions. Qualitative analysis provides relative risk rankings. The exam may present a scenario and ask which approach is more appropriate — use quantitative when precise financial data is available and needed for investment decisions, qualitative when quick prioritization is needed or data is limited.
+
+### Risk Treatment Options
+
+Once risks are assessed, the organization selects a treatment strategy:
+
+| Treatment | Description | Example |
+|-----------|-------------|---------|
+| **Mitigate (reduce)** | Implement controls to reduce likelihood or impact | Deploy encryption to reduce the impact of a data breach |
+| **Accept** | Acknowledge the risk and take no additional action | Accept the risk of minor website downtime during maintenance windows |
+| **Transfer (share)** | Shift the financial impact to a third party | Purchase cyber insurance; outsource hosting to a cloud provider with SLA guarantees |
+| **Avoid** | Eliminate the activity that creates the risk | Discontinue a legacy application that cannot be adequately secured |
+
+### The Risk Register
+
+A **risk register** is the central document for tracking identified risks, their assessments, treatment decisions, and ownership:
+
+| Risk Register Field | Purpose |
+|---------------------|---------|
+| **Risk ID** | Unique identifier for tracking |
+| **Risk description** | Clear statement of the threat, vulnerability, and potential impact |
+| **Likelihood** | Probability of occurrence (quantitative or qualitative) |
+| **Impact** | Consequence if the risk materializes (monetary or rated) |
+| **Risk rating** | Overall risk score (likelihood x impact) |
+| **Treatment strategy** | Mitigate, accept, transfer, or avoid |
+| **Control(s)** | Specific controls implemented to address the risk |
+| **Risk owner** | Individual accountable for managing the risk |
+| **Status** | Open, in progress, or closed |
+| **Review date** | Next scheduled reassessment |
+
+The risk register is a **living document** that must be reviewed and updated regularly, not just at the time of the initial assessment.
+
+## Framework Selection and Integration
+
+Organizations typically do not use a single framework in isolation. The following principles guide framework selection:
+
+| Need | Primary Framework | Supporting Standards |
+|------|-------------------|---------------------|
+| Enterprise IT governance | COBIT 2019 | ISO 38500, COSO |
+| IT service management | ITIL 4 | ISO 20000 |
+| Cybersecurity risk management | NIST CSF | NIST SP 800-53, ISO 27001 |
+| IT risk assessment | NIST RMF (SP 800-37) | COBIT APO12, ISO 27005 |
+| Internal controls over financial reporting | COSO 2013 | COBIT, PCAOB AS 2201 |
+
+> **Exam tip:** The CPA exam expects you to know which framework addresses which need, not to memorize every objective or practice within each framework. Focus on the purpose and scope of each framework and how they complement each other.
+
+## Key Terms
+
+- **COBIT 2019** — An IT governance and management framework developed by ISACA with 40 governance and management objectives organized across five domains
+- **EDM (Evaluate, Direct, Monitor)** — The governance domain in COBIT containing five objectives focused on board-level oversight
+- **ITIL 4** — The most widely adopted IT service management framework, organized around the Service Value System
+- **Service Value Chain** — The central operating model in ITIL 4 consisting of six activities that transform demand into value
+- **NIST RMF** — A seven-step risk management process defined in NIST SP 800-37 for integrating security into the system development lifecycle
+- **FIPS 199** — A federal standard for categorizing information systems based on the potential impact of a security breach
+- **Authority to Operate (ATO)** — A senior official's formal decision to authorize a system to operate based on the risk assessment
+- **Quantitative risk analysis** — Risk assessment using monetary values (SLE, ARO, ALE) to support cost-benefit decisions
+- **Qualitative risk analysis** — Risk assessment using rating scales (high, medium, low) for likelihood and impact
+- **Risk register** — A document that records identified risks, their assessments, treatment decisions, ownership, and status
+- **Risk treatment** — The selection of a strategy to address an identified risk: mitigate, accept, transfer, or avoid
+- **Design factors** — Enterprise-specific characteristics used in COBIT 2019 to tailor the governance system
+
+## Practice Problems
+
+**1.** An organization's board of directors wants to evaluate whether the company's IT investments are delivering expected business value and that IT risks are being appropriately managed. Which framework is MOST appropriate for this governance-level assessment?
+
+a) ITIL 4
+b) NIST Cybersecurity Framework
+c) COBIT 2019
+d) ISO 27001
+
+**Answer:** c) COBIT 2019 is specifically designed for IT governance and management. Its governance domain (EDM) includes objectives for ensuring benefits delivery (EDM02) and risk optimization (EDM03), directly addressing the board's concern. ITIL 4 (a) focuses on IT service management, not governance-level evaluation. NIST CSF (b) addresses cybersecurity risk, not overall IT value delivery. ISO 27001 (d) addresses information security management systems.
+
+---
+
+**2.** A CPA firm is performing an IT risk assessment for an audit client. The client's database server has an asset value of $800,000 and faces a flood risk with an exposure factor of 50% and an annualized rate of occurrence of 0.1. What is the annualized loss expectancy, and what is the maximum annual cost the organization should spend on flood mitigation controls?
+
+a) ALE = $40,000; spend up to $40,000 on controls
+b) ALE = $80,000; spend up to $80,000 on controls
+c) ALE = $400,000; spend up to $400,000 on controls
+d) ALE = $800,000; spend up to $800,000 on controls
+
+**Answer:** a) SLE = Asset Value x Exposure Factor = $800,000 x 0.50 = $400,000. ALE = SLE x ARO = $400,000 x 0.1 = $40,000. A security control is cost-justified only if its annual cost is less than the ALE it eliminates. Option c) incorrectly uses the SLE as the spending threshold, and option d) incorrectly uses the full asset value. The ALE represents the expected annual loss, making it the ceiling for cost-effective control spending.
+
+---
+
+**3.** During an ITIL 4 implementation, a service management team identifies that their current incident resolution process is slow because the team works in silos and does not share information effectively. Which ITIL 4 guiding principle should they apply FIRST to address this issue?
+
+a) Keep it simple and practical
+b) Optimize and automate
+c) Collaborate and promote visibility
+d) Progress iteratively with feedback
+
+**Answer:** c) The core issue is siloed work and lack of information sharing, which is directly addressed by the guiding principle "Collaborate and promote visibility." This principle emphasizes working across organizational boundaries with transparency and shared information. While "Keep it simple and practical" (a) and "Optimize and automate" (b) may eventually help, they do not address the root cause of poor collaboration. "Progress iteratively with feedback" (d) is a valid improvement approach but does not specifically target the collaboration deficit.

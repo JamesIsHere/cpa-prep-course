@@ -53,6 +53,8 @@ npm run lint         # ESLint
 
 | File                                          | Purpose                                    |
 |-----------------------------------------------|--------------------------------------------|
+| `src/lib/blueprint.ts`                        | AICPA Blueprint data + types (121 groups)  |
+| `src/lib/blueprint-coverage.ts`               | Coverage analysis + gap identification     |
 | `src/lib/sections.ts`                         | All section + lesson metadata (38 lessons) |
 | `src/lib/stripe.ts`                           | Lazy Stripe client (`getStripe()`)         |
 | `src/lib/supabase/client.ts`                  | Browser Supabase client                    |

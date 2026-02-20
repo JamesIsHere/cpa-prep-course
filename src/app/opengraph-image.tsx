@@ -38,8 +38,8 @@ export default function OgImage() {
 					lineHeight: 1.4,
 				}}
 			>
-				Lessons, quizzes, practice exams, and study frameworks for the AUD, FAR,
-				and REG sections.
+				73 lessons, 1,050+ questions, and study frameworks covering all 6 CPA
+				exam sections.
 			</div>
 		</div>,
 		{ ...size },

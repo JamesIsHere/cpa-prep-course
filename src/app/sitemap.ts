@@ -29,6 +29,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			changeFrequency: "yearly",
 			priority: 0.5,
 		},
+		{
+			url: `${base}/contact`,
+			lastModified: new Date(),
+			changeFrequency: "yearly",
+			priority: 0.4,
+		},
 	];
 
 	const sectionRoutes: MetadataRoute.Sitemap = sections.map((s) => ({

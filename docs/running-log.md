@@ -1,5 +1,19 @@
 # Running Log
 
+## 2026-02-20 05:31
+1. Completed Tier 1 of AICPA Blueprint Gap Fill: 8 new MDX lessons across ISC, BAR, FAR
+2. Created ISC lessons: IT General Controls (13), IT Audit Frameworks (14)
+3. Created BAR lessons: Internal-Use Software (12), Advanced Leases (13), Employee Benefit Plans (14)
+4. Created FAR lessons: Cash and Receivables (14), Employee Benefit Plans (15), Special Purpose Frameworks (16)
+5. Created SQL migration 00017 with 80 new quiz questions (20 ISC + 30 BAR + 30 FAR)
+6. Updated sections.ts with 8 new lesson entries
+7. Updated blueprint.ts: 8 new question topics, updated sectionQuestionTotals (FAR 230, BAR 175, ISC 170)
+8. Added 4 ISC study framework items: ConceptMap (ITGCs), DecisionTree (Change Authorization), ReferenceTable (Frameworks), Mnemonic (APOC)
+9. Added 6 BAR study framework items: 2 ConceptMaps (Software, Cloud), DecisionTree (Sale-Leaseback), 2 Formulas (NPPC, Corridor), ReferenceTable (Pension Components)
+10. Added 6 FAR study framework items: ConceptMap (CECL), DecisionTree (Bank Reconciliation), 2 Formulas (NPPC, CECL Allowance), ReferenceTable (SPF Comparison), Mnemonic (SIRAE)
+11. Updated blueprint.test.ts expected totals to match new question counts
+12. Verified all 56 unit tests pass and production build succeeds (117 pages)
+
 ## 2026-02-20 04:16
 1. Researched tax year inconsistencies across all content: lessons use 2024, quiz questions use 2025 (with some wrong 2025 figures)
 2. Verified correct 2025 IRS figures via web search (Rev. Proc. 2024-40): gift exclusion $19K, exemption $13.99M, 401(k) $23.5K, excess business loss $313K/$626K, etc.
