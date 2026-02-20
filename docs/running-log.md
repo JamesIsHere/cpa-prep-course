@@ -1,5 +1,12 @@
 # Running Log
 
+## 2026-02-20 06:56
+1. Fixed stale e2e test assertions: `1,250+` → `1,275+`, REG lessonCount `16` → `18`
+2. Fixed strict-mode locator violations in homepage test: `text=1,275+`, `text=Practice Questions`, `text=$9.99` switched to `getByText(..., { exact: true })`
+3. Updated stale metadata in 3 files: layout.tsx (3 instances), opengraph-image.tsx, signup/page.tsx — all `94 lessons, 1,250+` → `96 lessons, 1,275+`
+4. Verified all 81 smoke tests pass across Chromium, Firefox, WebKit (local)
+5. Verified all 27 smoke tests pass against production (slayer-cpa.com)
+
 ## 2026-02-20 06:45
 1. Session 7: Created REG lesson 17 (Filing Status and Dependents — MFJ/MFS/HOH/QSS, qualifying child/relative tests, tiebreaker rules)
 2. Session 7: Created REG lesson 18 (Tax-Exempt Organizations — 501(c)(3), UBIT, private foundations, Form 990)

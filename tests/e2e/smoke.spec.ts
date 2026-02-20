@@ -13,8 +13,10 @@ test.describe("Public Pages — Smoke Tests", () => {
 		).toBeVisible();
 
 		// Stats bar
-		await expect(page.locator("text=1,250+")).toBeVisible();
-		await expect(page.locator("text=Practice Questions")).toBeVisible();
+		await expect(page.getByText("1,275+", { exact: true })).toBeVisible();
+		await expect(
+			page.getByText("Practice Questions", { exact: true }),
+		).toBeVisible();
 
 		// Features section
 		await expect(
@@ -70,7 +72,7 @@ test.describe("Public Pages — Smoke Tests", () => {
 		).toBeVisible();
 
 		// Pricing
-		await expect(page.locator("text=$9.99")).toBeVisible();
+		await expect(page.getByText("$9.99", { exact: true })).toBeVisible();
 		await expect(
 			page.getByRole("link", { name: "Get Started Free" }),
 		).toBeVisible();
@@ -125,7 +127,7 @@ test.describe("Public Pages — Smoke Tests", () => {
 			title: "Financial Accounting and Reporting",
 			lessonCount: 18,
 		},
-		{ slug: "reg", title: "Taxation and Regulation", lessonCount: 16 },
+		{ slug: "reg", title: "Taxation and Regulation", lessonCount: 18 },
 		{ slug: "bar", title: "Business Analysis and Reporting", lessonCount: 16 },
 		{ slug: "isc", title: "Information Systems and Controls", lessonCount: 16 },
 		{ slug: "tcp", title: "Tax Compliance and Planning", lessonCount: 15 },
