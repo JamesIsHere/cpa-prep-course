@@ -17,7 +17,7 @@ export default function Home() {
 						study frameworks across all 6 CPA sections.
 					</p>
 					<p className="text-sm text-gray-400 mb-8">
-						Try intro lessons free — no account required.
+						Preview any intro lesson — no account required.
 					</p>
 					<div className="flex flex-col sm:flex-row gap-4 justify-center">
 						<Link
@@ -181,8 +181,8 @@ export default function Home() {
 								Pick a section
 							</h3>
 							<p className="text-sm text-gray-500">
-								Choose from AUD, FAR, REG, BAR, ISC, or TCP and start with the
-								free intro lesson.
+								Choose from AUD, FAR, REG, BAR, ISC, or TCP and preview the
+								intro lesson.
 							</p>
 						</div>
 						<div className="text-center">
@@ -274,7 +274,7 @@ export default function Home() {
 						Simple pricing
 					</h2>
 					<p className="text-gray-500 mb-8">
-						Intro lessons are free. Subscribe to unlock everything.
+						One price. Full access. Cancel anytime.
 					</p>
 					<div className="max-w-sm mx-auto bg-gray-50 rounded-xl p-8 border border-gray-200">
 						<div className="text-4xl font-bold text-gray-900 mb-2">
@@ -307,11 +307,8 @@ export default function Home() {
 							href="/signup"
 							className="block bg-emerald-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-emerald-700 transition-colors"
 						>
-							Get Started Free
+							Get Started
 						</Link>
-						<p className="text-xs text-gray-400 mt-3">
-							No credit card required to sign up
-						</p>
 					</div>
 				</div>
 			</section>
@@ -339,9 +336,9 @@ export default function Home() {
 							Can I try it before subscribing?
 						</h3>
 						<p className="text-sm text-gray-500 leading-relaxed">
-							Yes. Every section has a free intro lesson you can access without
-							creating an account. Sign up for free to save your progress, then
-							subscribe when you&apos;re ready to unlock the full course.
+							Yes. Every section has an intro lesson you can preview without
+							creating an account. Subscribe when you&apos;re ready to unlock
+							the full course.
 						</p>
 					</div>
 					<div>
@@ -392,7 +389,7 @@ export default function Home() {
 						href="/signup"
 						className="inline-block bg-white text-emerald-700 px-8 py-3 rounded-lg text-lg font-medium hover:bg-emerald-50 transition-colors"
 					>
-						Create Free Account
+						Create Account
 					</Link>
 				</div>
 			</section>

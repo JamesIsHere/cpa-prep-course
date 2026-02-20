@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Slayer CPA
 
-## Getting Started
+Full-scope CPA exam prep for $9.99/month. 96 lessons, 1,275+ practice questions, timed exams, and downloadable study frameworks across all 6 CPA sections.
 
-First, run the development server:
+**Live:** [slayer-cpa.com](https://www.slayer-cpa.com)
+
+## Sections
+
+| Section | Code | Lessons | Questions | Topics |
+|---------|------|---------|-----------|--------|
+| Auditing and Attestation | AUD | 13 | ~210 | Ethics, planning, risk, controls, evidence, sampling, reports |
+| Financial Accounting and Reporting | FAR | 18 | ~250 | Revenue, leases, bonds, equity, govt, NFP, consolidations |
+| Regulation | REG | 18 | ~250 | Contracts, business structures, individual/entity tax, procedures |
+| Business Analysis and Reporting | BAR | 16 | ~195 | Valuation, capital structure, derivatives, govt reporting |
+| Information Systems and Controls | ISC | 16 | ~190 | IT infrastructure, security, privacy, SOC engagements |
+| Tax Compliance and Planning | TCP | 15 | ~180 | Individual/entity planning, wealth transfer, international tax |
+
+## Features
+
+- Lesson content in MDX with exam tips and practice problems
+- Quiz engine with randomized questions, scoring, and per-question review
+- Timed practice exams with question flagging and navigation grid
+- Downloadable PDF study frameworks (concept maps, decision trees, mnemonics, formulas)
+- AICPA Blueprint coverage mapping across all 280 framework items
+- Stripe-powered subscription with customer portal
+- Free intro lessons for every section (no account required)
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| Framework | Next.js 16 (App Router) |
+| UI | React 19 + Tailwind CSS v4 |
+| Auth + DB | Supabase (Auth + Postgres + RLS) |
+| Payments | Stripe Checkout + Customer Portal |
+| Content | MDX files in `src/content/` |
+| Hosting | Vercel |
+
+## Development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev          # Start dev server
+npm run build        # Production build
+npm test             # Vitest unit tests
+npm run test:e2e     # Playwright e2e tests
+npm run lint         # ESLint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Copy `.env.local.example` to `.env.local` and fill in:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `NEXT_PUBLIC_SUPABASE_URL` — Supabase project URL
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY` — Supabase anonymous key
+- `SUPABASE_SERVICE_ROLE_KEY` — Supabase service role key (server-side only)
+- `STRIPE_SECRET_KEY` — Stripe secret key
+- `STRIPE_WEBHOOK_SECRET` — Stripe webhook signing secret
+- `STRIPE_PRICE_ID` — Stripe price ID for the $9.99/mo plan
+- `NEXT_PUBLIC_SITE_URL` — Site URL for redirects
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  app/           Routes (App Router)
+  components/    React components
+  content/       MDX lesson files (96 across 6 sections)
+  lib/           Data layer, utilities, study frameworks
+tests/
+  unit/          Vitest (94 tests)
+  e2e/           Playwright (152 tests)
+supabase/
+  migrations/    22 SQL migrations (schema + seed data)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Private. All rights reserved.

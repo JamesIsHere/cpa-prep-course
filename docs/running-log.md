@@ -1,5 +1,19 @@
 # Running Log
 
+## 2026-02-20 09:21
+1. Comprehensive project audit: folder structure, routes, content, security, code quality — all clean
+2. Verified all 94 unit tests + 152 e2e tests pass, production build clean
+3. Fixed 2 stale 2024 tax references in reg/06 (Section 179: $1,220K→$1,250K/$3,050K→$3,130K; Section 280F: updated to 2025 per Rev. Proc. 2025-16)
+4. Moved stale session file from project root to docs/sessions/2026-02/
+5. Replaced boilerplate create-next-app README with full project documentation
+6. Drafted comprehensive marketing plan (docs/marketing-plan.md): competitor pricing, target audience, 3-phase strategy, content calendar, objection handling, revenue projections
+7. Refined marketing plan with user input: faceless brand, $200-500/mo budget, written content only, no free trial
+8. Activated Stripe for live payments: created live product ($9.99/mo), set live API keys + webhook in Vercel, redeployed
+9. Tested full payment pipeline end-to-end: real $9.99 charge, webhook fired, subscription status updated to Active in Supabase, Stripe Customer Portal working
+10. Removed misleading "free" marketing copy from homepage and signup page (6 instances across 2 files)
+11. Created project To Do.md with phased marketing implementation plan
+12. Linked Vercel CLI and verified all 7 production environment variables
+
 ## 2026-02-20 08:25
 1. Fixed ISC encryption decision tree: replaced pointless identical branches (both led to AES-256) with meaningful column-level vs. full-disk encryption distinction
 2. Fixed ISC PICERL mnemonic: corrected acronym from "PICERLL" (7 chars) to "PICERL" (6 chars for 6 phases), cleaned up memory aid
