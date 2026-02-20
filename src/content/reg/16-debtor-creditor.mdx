@@ -1,0 +1,347 @@
+# Debtor-Creditor Relationships
+
+## Learning Objectives
+
+- Distinguish between Chapter 7, Chapter 11, and Chapter 13 bankruptcy proceedings
+- Understand the automatic stay and its effect on creditor actions
+- Apply the priority of claims and distribution rules in bankruptcy
+- Identify which debts are dischargeable and nondischargeable in bankruptcy
+- Explain the rights of a surety under suretyship and guaranty law
+- Apply UCC Article 9 rules for attachment, perfection, and priority of security interests
+
+## Bankruptcy Overview
+
+Federal bankruptcy law (Title 11, U.S. Code) provides a legal framework for debtors to obtain relief from overwhelming debt while balancing the rights of creditors. Three chapters are most commonly tested on the CPA exam.
+
+### Chapter 7 — Liquidation
+
+Chapter 7 is a **liquidation** proceeding. A **bankruptcy trustee** is appointed to collect the debtor's nonexempt assets, convert them to cash, and distribute the proceeds to creditors according to a statutory priority scheme. The debtor receives a **discharge** of most remaining debts.
+
+**Key features:**
+
+- Available to individuals, partnerships, and corporations (but corporations do not receive a discharge — they simply cease to exist)
+- Individuals must pass the **means test** — if the debtor's income exceeds the state median, they may be required to file under Chapter 13 instead
+- The trustee can **avoid** certain preferential transfers and fraudulent conveyances made before filing
+- The process typically takes 3 to 6 months
+
+### Chapter 11 — Reorganization
+
+Chapter 11 allows a debtor (typically a business) to **reorganize** and continue operating while developing a **plan of reorganization** to repay creditors over time. The debtor usually remains in control as a **debtor-in-possession** (DIP).
+
+**Key features:**
+
+- Available to individuals and businesses
+- The debtor proposes a plan of reorganization that classifies claims and specifies treatment for each class
+- Creditors vote on the plan — each class must accept by a **majority in number** holding at least **two-thirds in dollar amount** of claims
+- The court can confirm a plan over creditor objections through **cramdown** if the plan is fair and equitable and does not discriminate unfairly
+- The debtor-in-possession has the same powers as a trustee (avoiding powers, authority to use, sell, or lease property)
+
+### Chapter 13 — Individual Repayment Plan
+
+Chapter 13 is available only to **individuals with regular income** who have unsecured debts below $2,750,000 (2025 limit). The debtor proposes a **repayment plan** (3 to 5 years) using future income to pay creditors.
+
+**Key features:**
+
+- Only individuals are eligible (no businesses)
+- The debtor retains all property — no liquidation occurs
+- Plan must pay unsecured creditors at least as much as they would receive under Chapter 7 (**best interests test**)
+- The debtor must commit all **disposable income** to the plan for the applicable commitment period
+- A discharge is granted upon completion of all plan payments (a **broader** discharge than Chapter 7 for certain debts)
+
+**Worked Example — Choosing the Right Chapter:**
+
+| Factor | Chapter 7 | Chapter 11 | Chapter 13 |
+|--------|-----------|------------|------------|
+| Debtor type | Any (but means test for individuals) | Any | Individuals only |
+| Goal | Liquidate and discharge | Reorganize and continue operating | Repay from future income |
+| Property | Nonexempt assets sold | Debtor retains assets | Debtor retains all assets |
+| Duration | 3–6 months | Months to years | 3–5 years |
+| Best for | Individual with few assets and income below median | Business seeking to restructure debt | Individual with regular income who wants to keep property |
+
+> Exam tip: Chapter 7 is liquidation, Chapter 11 is reorganization, Chapter 13 is repayment. The most commonly tested concepts are the means test (Chapter 7), cramdown provisions (Chapter 11), and the best interests test (Chapter 13).
+
+## Automatic Stay
+
+Upon the filing of a bankruptcy petition, an **automatic stay** immediately goes into effect under Section 362. The stay prohibits virtually all collection actions against the debtor and the debtor's property.
+
+### Actions Prohibited by the Automatic Stay
+
+- Commencement or continuation of lawsuits against the debtor
+- Enforcement of judgments obtained before the filing
+- Actions to obtain possession of or exercise control over property of the estate
+- Actions to collect on pre-petition debts (calls, letters, garnishments)
+- Setoff of mutual debts (with limited exceptions)
+- Foreclosure on the debtor's property
+
+### Exceptions and Relief from Stay
+
+Certain actions are **not subject** to the automatic stay, including:
+
+- Criminal proceedings against the debtor
+- Collection of domestic support obligations (alimony, child support)
+- IRS tax audits (but collection activity is stayed)
+
+A creditor may petition the court for **relief from the automatic stay** by demonstrating either:
+
+1. **Cause** — including the lack of adequate protection of the creditor's interest in property (e.g., declining value of collateral without insurance)
+2. The debtor has no equity in the property and the property is not necessary for an effective reorganization
+
+> Exam tip: The automatic stay is immediate and automatic upon filing — no court order is required. Violating the stay can result in sanctions. However, remember the key exceptions: criminal proceedings and domestic support obligations are not stayed.
+
+## Priority of Claims
+
+In a Chapter 7 liquidation, the trustee distributes the estate's assets according to a **strict priority** system. Each priority level must be paid in full before the next level receives anything. Within a priority level, claims are paid **pro rata** if assets are insufficient.
+
+### Distribution Order
+
+| Priority | Claim Type | Description |
+|----------|-----------|-------------|
+| 1 | Secured claims | Paid from collateral proceeds (up to value of collateral) |
+| 2 | Administrative expenses | Costs of administering the bankruptcy estate (trustee fees, attorney fees, post-petition expenses) |
+| 3 | Gap claims | Claims arising in involuntary cases between filing and order for relief |
+| 4 | Wages and salaries | Employee wages earned within 180 days before filing, up to $15,150 per employee (2025) |
+| 5 | Employee benefit plans | Contributions to employee benefit plans for services within 180 days before filing |
+| 6 | Grain farmers and fishermen | Claims of certain grain farmers and fishermen against storage/processing facilities |
+| 7 | Consumer deposits | Deposits for purchase, lease, or rental of property or services, up to $3,350 per individual (2025) |
+| 8 | Tax claims | Income, property, employment, and excise taxes owed to governmental units |
+| 9 | General unsecured claims | Trade creditors, credit card debt, unsecured loans |
+| 10 | Equity interests | Shareholders receive only after all creditors are paid in full |
+
+**Worked Example:**
+
+A company files Chapter 7 with $500,000 in available assets after secured claims are satisfied:
+
+| Claim | Amount | Paid |
+|-------|--------|------|
+| Administrative expenses | $80,000 | $80,000 (paid in full) |
+| Employee wages (within limits) | $120,000 | $120,000 (paid in full) |
+| Tax claims | $150,000 | $150,000 (paid in full) |
+| General unsecured creditors | $400,000 | $150,000 (pro rata — $150K remaining / $400K = 37.5 cents per dollar) |
+| **Total distributed** | | **$500,000** |
+
+General unsecured creditors receive only 37.5% of their claims because higher-priority claims consumed most of the estate.
+
+> Exam tip: The priority order is heavily tested. Remember the mnemonic WATER — Wages (and administrative expenses first), Alimony/support, Taxes, Employee benefits, Remaining unsecured. Secured creditors are always first from their collateral.
+
+## Discharge of Debts
+
+### Dischargeable Debts
+
+Most pre-petition debts are discharged in bankruptcy, including:
+
+- Credit card debt
+- Medical bills
+- Personal loans
+- Deficiency balances on foreclosed property
+- Tort claims (except those arising from willful and malicious injury)
+
+### Nondischargeable Debts
+
+Certain debts **survive** bankruptcy and remain the debtor's obligation:
+
+| Nondischargeable Debt | Reason |
+|----------------------|--------|
+| Domestic support obligations (alimony, child support) | Public policy — protecting dependents |
+| Student loans | Unless debtor proves undue hardship (Brunner test) |
+| Taxes due within 3 years of filing | Recent tax obligations |
+| Debts obtained through fraud, false pretenses, or false financial statements | Debtor misconduct |
+| Debts from willful and malicious injury | Intentional torts |
+| Fines, penalties, and restitution owed to governmental units | Public enforcement |
+| DUI/DWI judgments | Public safety |
+| Debts not listed on the bankruptcy schedules (if creditor had no notice) | Procedural requirement |
+
+### Denial of Discharge
+
+A court may **deny the entire discharge** (not just specific debts) if the debtor:
+
+- Transferred, destroyed, or concealed property with intent to defraud creditors
+- Destroyed or failed to keep adequate records
+- Made a false oath or account
+- Failed to explain satisfactorily any loss of assets
+- Refused to obey a lawful court order
+- Received a discharge in a prior Chapter 7 case within the past **8 years**
+
+> Exam tip: Distinguish between nondischargeable debts (specific debts that survive) and denial of discharge (the entire discharge is denied). Student loans and domestic support obligations are the most commonly tested nondischargeable debts. Fraud-related debts are also frequently tested.
+
+## Suretyship and Guaranty
+
+A **surety** is a party who agrees to be liable for the debt or obligation of another party (the **principal debtor**) to a third party (the **creditor**). Suretyship creates a three-party relationship.
+
+### Surety vs. Guarantor
+
+| Feature | Surety | Guarantor |
+|---------|--------|-----------|
+| Liability | **Primary** — creditor can go directly to the surety without first pursuing the principal debtor | **Secondary** — creditor must first attempt to collect from the principal debtor (unless guaranty is absolute) |
+| Contract | Surety's obligation arises at the same time as the principal's | Guarantor's obligation is triggered only if the principal defaults |
+| Consideration | Surety's promise made at the same time as the principal obligation does not require separate consideration | Guarantor's promise made after the original obligation requires separate consideration |
+
+### Rights of the Surety
+
+When a surety pays the creditor, the surety has three important rights:
+
+1. **Exoneration** — the right to compel the principal debtor to perform (pay the creditor) before the surety is required to pay. The surety can petition a court to order the debtor to pay first.
+
+2. **Reimbursement (indemnification)** — after paying the creditor, the surety has the right to recover the amount paid from the principal debtor. This is the most commonly exercised right.
+
+3. **Subrogation** — after paying the creditor in full, the surety "steps into the shoes" of the creditor and acquires all of the creditor's rights against the principal debtor, including any collateral, liens, or security interests the creditor held.
+
+**Worked Example:**
+
+Debtor borrows $100,000 from Bank, and Surety guarantees the debt. Debtor defaults.
+
+| Step | Action | Result |
+|------|--------|--------|
+| 1 | Bank demands payment from Surety | Surety pays $100,000 to Bank |
+| 2 | Surety seeks reimbursement from Debtor | Surety is entitled to recover $100,000 from Debtor |
+| 3 | Surety exercises subrogation | Surety acquires Bank's security interest in Debtor's collateral |
+
+### Defenses Available to the Surety
+
+A surety may raise certain defenses to avoid liability:
+
+- **Release of the principal debtor** — if the creditor releases the principal without the surety's consent, the surety is discharged
+- **Material modification** — if the creditor and principal debtor modify the terms of the obligation (e.g., extending the due date, increasing the amount) without the surety's consent, the surety is discharged to the extent of any prejudice
+- **Impairment of collateral** — if the creditor fails to preserve collateral securing the debt, the surety is discharged to the extent of the impairment
+- **Fraud or duress** in inducing the surety's promise
+
+Defenses **not available** to the surety include: the principal debtor's bankruptcy, the principal debtor's incapacity, and the statute of limitations running on the principal obligation.
+
+> Exam tip: The three surety rights (exoneration, reimbursement, subrogation) are almost always tested. Remember the order: exoneration is pre-payment (compel debtor to pay), reimbursement is post-payment (recover from debtor), and subrogation is post-full-payment (step into creditor's shoes with creditor's rights).
+
+## UCC Article 9 — Secured Transactions
+
+**UCC Article 9** governs transactions where a debtor grants a creditor a **security interest** in personal property (collateral) to secure payment of a debt. Understanding attachment, perfection, and priority is critical.
+
+### Attachment (Creation of Security Interest)
+
+A security interest **attaches** to collateral — meaning it becomes enforceable against the debtor — when all three requirements are met:
+
+1. **Value** — the secured party must give value (such as making a loan)
+2. **Rights** — the debtor must have rights in the collateral (ownership or authorization to grant the interest)
+3. **Agreement** — either (a) the secured party has possession of the collateral, or (b) the debtor has signed (authenticated) a **security agreement** that describes the collateral
+
+Until all three elements are satisfied, the creditor has no enforceable security interest.
+
+### Perfection
+
+Perfection gives the secured party priority over most other creditors. A security interest is **perfected** by one of the following methods:
+
+| Method | When Used |
+|--------|-----------|
+| **Filing a financing statement (UCC-1)** | Most common method; used for equipment, inventory, accounts receivable, general intangibles |
+| **Possession** | Secured party takes physical possession of the collateral (e.g., pledged securities, negotiable instruments) |
+| **Control** | For deposit accounts, electronic chattel paper, and investment property |
+| **Automatic perfection** | Purchase money security interest (PMSI) in consumer goods perfects automatically upon attachment without filing |
+
+A **financing statement (UCC-1)** must include: (1) the debtor's name, (2) the secured party's name, and (3) a description of the collateral. It is filed with the appropriate state office (typically the Secretary of State). A financing statement is effective for **5 years** and may be continued by filing a **continuation statement** within 6 months before expiration.
+
+### Priority Rules
+
+When multiple creditors claim a security interest in the same collateral, **priority** determines who gets paid first.
+
+**General priority rules:**
+
+| Rule | Priority Order |
+|------|---------------|
+| **Perfected vs. unperfected** | Perfected security interest beats unperfected |
+| **Perfected vs. perfected** | First to file or perfect (whichever is earlier) wins |
+| **Unperfected vs. unperfected** | First to attach wins |
+| **Perfected vs. lien creditor** | Perfected interest beats a subsequent lien creditor |
+| **Buyer in ordinary course (BIOC)** | A buyer in the ordinary course of business takes free of a perfected security interest created by the seller, even if the buyer knows of the interest |
+
+### Purchase Money Security Interest (PMSI)
+
+A **PMSI** arises when a creditor (1) sells goods to a debtor on credit, retaining a security interest, or (2) provides funds specifically used to acquire the collateral. PMSIs receive **super-priority** over other perfected security interests.
+
+**PMSI priority rules:**
+
+| Collateral Type | PMSI Super-Priority Requirement |
+|----------------|-------------------------------|
+| **Goods other than inventory** | PMSI must be perfected within **20 days** after the debtor receives possession of the collateral |
+| **Inventory** | PMSI holder must (1) perfect before the debtor receives the inventory AND (2) send **authenticated notification** to prior perfected secured parties before delivery |
+
+**Worked Example:**
+
+Bank has a perfected security interest in all of Debtor's equipment (filed UCC-1 on January 1). On June 1, Seller sells a machine to Debtor on credit, retaining a PMSI. Seller files a UCC-1 on June 15, within 20 days of delivery on June 5.
+
+| Creditor | Interest | Filed/Perfected | Priority |
+|----------|----------|-----------------|----------|
+| Bank | Blanket security interest in equipment | January 1 | Second — PMSI trumps |
+| Seller | PMSI in the machine | June 15 (within 20 days of delivery) | **First — PMSI super-priority** |
+
+Even though Bank filed first, Seller's PMSI has super-priority because it was perfected within 20 days of the debtor receiving the goods.
+
+> Exam tip: The PMSI super-priority rules differ for inventory vs. non-inventory collateral. For non-inventory goods (equipment), the PMSI holder has 20 days after delivery to perfect. For inventory, the PMSI holder must perfect AND notify prior secured parties before delivery. This distinction is frequently tested.
+
+## Key Terms
+
+- **Chapter 7** — bankruptcy liquidation proceeding where a trustee sells nonexempt assets and distributes proceeds to creditors; remaining debts are discharged
+- **Chapter 11** — bankruptcy reorganization proceeding where the debtor proposes a plan to restructure debts while continuing operations
+- **Chapter 13** — individual repayment plan requiring the debtor to pay creditors from future income over 3 to 5 years
+- **Automatic stay** — the immediate, automatic prohibition on all collection actions upon filing a bankruptcy petition
+- **Means test** — income-based test determining whether an individual Chapter 7 debtor has sufficient income to repay debts, potentially requiring a Chapter 13 filing
+- **Cramdown** — court confirmation of a reorganization plan over the objection of a dissenting class of creditors, provided the plan is fair and equitable
+- **Surety** — a party primarily liable for the debt of another; the creditor may proceed directly against the surety without first pursuing the debtor
+- **Exoneration** — the surety's right to compel the principal debtor to perform before the surety is required to pay
+- **Reimbursement** — the surety's right to recover from the principal debtor amounts paid to the creditor
+- **Subrogation** — the surety's right to step into the creditor's position and exercise the creditor's rights against the debtor after paying the debt in full
+- **Security interest** — a creditor's right in personal property that secures payment of a debt, governed by UCC Article 9
+- **Attachment** — the creation of an enforceable security interest when value is given, the debtor has rights in the collateral, and an authenticated agreement exists
+- **Perfection** — the process by which a secured party establishes priority over other creditors, typically by filing a financing statement
+- **PMSI** — purchase money security interest; a security interest taken by a seller or lender whose credit enabled the debtor to acquire the collateral; receives super-priority
+- **Buyer in ordinary course of business (BIOC)** — a buyer who purchases goods in good faith from a seller's inventory; takes free of any security interest created by the seller
+
+## Practice Problems
+
+**1.** A debtor files for Chapter 7 bankruptcy. Which of the following debts will be discharged?
+
+a) Child support obligations
+b) Student loans (debtor cannot prove undue hardship)
+c) Credit card debt
+d) Federal income taxes due within the past 2 years
+
+**Answer:** c) Credit card debt — Credit card debt is a general unsecured obligation that is dischargeable in Chapter 7. Child support, student loans (without undue hardship), and recent income taxes are all nondischargeable.
+
+---
+
+**2.** A surety pays a creditor $50,000 on behalf of the principal debtor after the debtor defaults. Which right allows the surety to recover this amount from the debtor?
+
+a) Exoneration
+b) Subrogation
+c) Reimbursement
+d) Contribution
+
+**Answer:** c) Reimbursement — The right of reimbursement (indemnification) allows the surety to recover from the principal debtor the amount paid to the creditor. Exoneration is a pre-payment right. Subrogation involves stepping into the creditor's shoes. Contribution applies among co-sureties.
+
+---
+
+**3.** Bank has a perfected security interest in all of a debtor's equipment (filed January 1). On March 1, Seller sells a new machine to the debtor on credit, retaining a PMSI. Seller files a financing statement on March 18. The debtor received the machine on March 5. Who has priority in the machine?
+
+a) Bank, because it filed first
+b) Seller, because a PMSI in non-inventory goods has super-priority when perfected within 20 days of delivery
+c) Neither, because both security interests are perfected
+d) Bank, because Seller did not file before delivery
+
+**Answer:** b) Seller — A PMSI in non-inventory goods (equipment) has super-priority over a prior perfected security interest if the PMSI is perfected within 20 days after the debtor receives the collateral. Seller filed on March 18, which is 13 days after delivery on March 5 — within the 20-day window.
+
+---
+
+**4.** Which of the following actions is NOT prohibited by the automatic stay in bankruptcy?
+
+a) A creditor filing a lawsuit to collect a pre-petition debt
+b) A creditor garnishing the debtor's wages
+c) The government continuing a criminal prosecution against the debtor
+d) A bank foreclosing on the debtor's property
+
+**Answer:** c) The government continuing a criminal prosecution — Criminal proceedings are specifically excepted from the automatic stay. All other listed actions are prohibited upon the filing of a bankruptcy petition.
+
+---
+
+**5.** Under UCC Article 9, a security interest attaches to collateral when which combination of events occurs?
+
+a) The secured party files a financing statement and takes possession of the collateral
+b) The secured party gives value, the debtor has rights in the collateral, and there is an authenticated security agreement
+c) The debtor signs a promissory note and the creditor obtains a court judgment
+d) The financing statement is filed with the Secretary of State and the debtor makes the first payment
+
+**Answer:** b) The secured party gives value, the debtor has rights in the collateral, and there is an authenticated security agreement — These are the three requirements for attachment under UCC Article 9. Filing is for perfection, not attachment. A promissory note and judgment are not Article 9 requirements.

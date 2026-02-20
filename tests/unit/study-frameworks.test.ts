@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { getStudyFramework, type StudyFramework } from "@/lib/study-frameworks";
 
 const allCodes = ["aud", "bar", "far", "isc", "reg", "tcp"];
-const populatedCodes = ["aud", "far", "reg"];
+const populatedCodes = ["aud", "bar", "far", "isc", "reg", "tcp"];
 
 describe("getStudyFramework", () => {
 	it("returns a framework for each section code", () => {

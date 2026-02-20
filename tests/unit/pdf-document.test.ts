@@ -15,4 +15,54 @@ describe("StudyGuidePdf", () => {
 		const header = new TextDecoder().decode(buffer.slice(0, 5));
 		expect(header).toBe("%PDF-");
 	}, 30_000);
+
+	it("renders a valid PDF buffer for FAR", async () => {
+		const framework = getStudyFramework("far")!;
+		const buffer = await renderToBuffer(
+			createElement(StudyGuidePdf, { framework }),
+		);
+		expect(buffer.byteLength).toBeGreaterThan(0);
+		const header = new TextDecoder().decode(buffer.slice(0, 5));
+		expect(header).toBe("%PDF-");
+	}, 30_000);
+
+	it("renders a valid PDF buffer for REG", async () => {
+		const framework = getStudyFramework("reg")!;
+		const buffer = await renderToBuffer(
+			createElement(StudyGuidePdf, { framework }),
+		);
+		expect(buffer.byteLength).toBeGreaterThan(0);
+		const header = new TextDecoder().decode(buffer.slice(0, 5));
+		expect(header).toBe("%PDF-");
+	}, 30_000);
+
+	it("renders a valid PDF buffer for BAR", async () => {
+		const framework = getStudyFramework("bar")!;
+		const buffer = await renderToBuffer(
+			createElement(StudyGuidePdf, { framework }),
+		);
+		expect(buffer.byteLength).toBeGreaterThan(0);
+		const header = new TextDecoder().decode(buffer.slice(0, 5));
+		expect(header).toBe("%PDF-");
+	}, 30_000);
+
+	it("renders a valid PDF buffer for ISC", async () => {
+		const framework = getStudyFramework("isc")!;
+		const buffer = await renderToBuffer(
+			createElement(StudyGuidePdf, { framework }),
+		);
+		expect(buffer.byteLength).toBeGreaterThan(0);
+		const header = new TextDecoder().decode(buffer.slice(0, 5));
+		expect(header).toBe("%PDF-");
+	}, 30_000);
+
+	it("renders a valid PDF buffer for TCP", async () => {
+		const framework = getStudyFramework("tcp")!;
+		const buffer = await renderToBuffer(
+			createElement(StudyGuidePdf, { framework }),
+		);
+		expect(buffer.byteLength).toBeGreaterThan(0);
+		const header = new TextDecoder().decode(buffer.slice(0, 5));
+		expect(header).toBe("%PDF-");
+	}, 30_000);
 });

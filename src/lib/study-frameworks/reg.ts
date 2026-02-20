@@ -241,6 +241,68 @@ export const regFramework: StudyFramework = {
 				],
 			},
 		},
+		{
+			title: "Bankruptcy Chapters — Key Features",
+			root: {
+				label: "Bankruptcy (Title 11, U.S. Code)",
+				children: [
+					{
+						label: "Chapter 7 — Liquidation",
+						children: [
+							{ label: "Trustee sells nonexempt assets" },
+							{ label: "Individuals must pass means test" },
+							{ label: "Discharge of most debts (3–6 months)" },
+							{ label: "Corporations do not receive discharge" },
+							{
+								label:
+									"Nondischargeable: student loans, alimony, recent taxes, fraud debts",
+							},
+						],
+					},
+					{
+						label: "Chapter 11 — Reorganization",
+						children: [
+							{ label: "Debtor continues operating as DIP" },
+							{ label: "Plan of reorganization proposed by debtor" },
+							{
+								label:
+									"Creditor vote: majority in number + 2/3 in dollar amount per class",
+							},
+							{ label: "Court can confirm via cramdown" },
+							{ label: "Available to individuals and businesses" },
+						],
+					},
+					{
+						label: "Chapter 13 — Individual Repayment",
+						children: [
+							{ label: "Individuals with regular income only" },
+							{
+								label: "Unsecured debts below $2,750,000 (2025)",
+							},
+							{ label: "3–5 year repayment plan" },
+							{ label: "Debtor retains all property" },
+							{ label: "Must pass best interests test" },
+							{ label: "Broader discharge than Chapter 7" },
+						],
+					},
+					{
+						label: "Common to All Chapters",
+						children: [
+							{
+								label: "Automatic stay on filing (§362)",
+							},
+							{
+								label: "Exceptions: criminal proceedings, domestic support",
+							},
+							{
+								label:
+									"Priority: secured → admin → wages → taxes → general unsecured",
+							},
+						],
+					},
+				],
+			},
+		},
 	],
 	decisionTrees: [
 		{
@@ -374,6 +436,58 @@ export const regFramework: StudyFramework = {
 					no: "Not subject to UBIT — activity is not regularly carried on",
 				},
 				no: "Not subject to UBIT — not a trade or business",
+			},
+		},
+		{
+			title: "Which Court to File In — Tax Litigation",
+			root: {
+				question:
+					"Can the taxpayer pay the full disputed tax amount before filing suit?",
+				yes: {
+					question: "Does the taxpayer want a jury trial?",
+					yes: "File in U.S. District Court (only court offering jury trials; appeals to geographic circuit)",
+					no: {
+						question:
+							"Is there favorable precedent in the Federal Circuit (as opposed to the taxpayer's geographic circuit)?",
+						yes: "File in Court of Federal Claims (Washington, D.C. only; appeals to Federal Circuit)",
+						no: "File in U.S. District Court (local venue; appeals to geographic circuit) or Court of Federal Claims based on strategic preference",
+					},
+				},
+				no: {
+					question:
+						"Is the disputed amount $50,000 or less and the taxpayer willing to waive appeal rights?",
+					yes: "File in Tax Court — Small Case Division (simplified procedures, no appeal, no prepayment required)",
+					no: "File in U.S. Tax Court — Regular Division (no prepayment required; specialized judges; appeals to geographic circuit)",
+				},
+			},
+		},
+		{
+			title: "Is the Communication Privileged? — Tax Practitioner Analysis",
+			root: {
+				question:
+					"Is the practitioner an attorney (with attorney-client privilege)?",
+				yes: "Attorney-client privilege applies in both civil and criminal tax matters (broadest protection)",
+				no: {
+					question:
+						"Is the practitioner a CPA, enrolled agent, or enrolled actuary (federally authorized)?",
+					yes: {
+						question:
+							"Does the communication involve tax advice (not merely return preparation)?",
+						yes: {
+							question:
+								"Is the matter a noncriminal tax proceeding (before IRS or in federal court)?",
+							yes: {
+								question:
+									"Does the communication relate to promoting or participating in a tax shelter?",
+								yes: "Section 7525 privilege does NOT apply — tax shelter exception",
+								no: "Section 7525 privilege APPLIES — communication is protected in this noncriminal proceeding",
+							},
+							no: "Section 7525 privilege does NOT apply — criminal matters and state proceedings are excluded",
+						},
+						no: "Section 7525 privilege does NOT apply — only tax advice is protected, not return preparation activities",
+					},
+					no: "No practitioner privilege available — only attorneys and federally authorized practitioners have privilege protections",
+				},
 			},
 		},
 	],
@@ -695,6 +809,122 @@ export const regFramework: StudyFramework = {
 				["4th", "Excess over basis", "Capital gain"],
 			],
 		},
+		{
+			title: "Statute of Limitations — Assessment Periods",
+			headers: ["Scenario", "Period", "Key Rule"],
+			rows: [
+				[
+					"General rule",
+					"3 years",
+					"From later of filing date or due date (with extensions)",
+				],
+				[
+					"Early-filed return",
+					"3 years from due date",
+					"Statute runs from due date, not early filing date",
+				],
+				[
+					">25% gross income omission",
+					"6 years",
+					"Gross income = gross receipts for business; adequate disclosure prevents extension",
+				],
+				[
+					"Fraudulent return filed",
+					"Unlimited",
+					"Intent to evade tax — IRS can assess at any time",
+				],
+				["No return filed", "Unlimited", "Statute never begins to run"],
+				[
+					"Refund claim by taxpayer",
+					"Later of 3 years from filing or 2 years from payment",
+					"Refund limited to tax paid within applicable lookback period",
+				],
+				["Collection after assessment", "10 years", "From date of assessment"],
+			],
+		},
+		{
+			title: "Preparer Penalty Summary — Sections 6694 and 6695",
+			headers: ["Penalty", "Trigger", "Amount", "Defense"],
+			rows: [
+				[
+					"§6694(a)",
+					"Unreasonable position (undisclosed: fails substantial authority ~40%)",
+					"Greater of $1,000 or 50% of preparer income",
+					"Reasonable cause and good faith",
+				],
+				[
+					"§6694(a) — disclosed",
+					"Disclosed position fails reasonable basis (~20%)",
+					"Greater of $1,000 or 50% of preparer income",
+					"Reasonable cause and good faith",
+				],
+				[
+					"§6694(a) — tax shelter",
+					"Tax shelter position fails more likely than not (>50%)",
+					"Greater of $1,000 or 50% of preparer income",
+					"Reasonable cause and good faith",
+				],
+				[
+					"§6694(b)",
+					"Willful or reckless conduct",
+					"Greater of $5,000 or 75% of preparer income (reduced by 6694(a))",
+					"No defense available",
+				],
+				[
+					"§6695 — admin",
+					"Failure to sign, furnish PTIN, provide copy, retain records",
+					"$55 per failure (max $28,000/year per category)",
+					"Reasonable cause",
+				],
+				[
+					"§6695(g) — due diligence",
+					"Failure to meet EIC/CTC/AOTC/HOH due diligence",
+					"$600 per credit per return",
+					"Reasonable cause",
+				],
+			],
+		},
+		{
+			title: "UCC Article 9 — Priority Rules Summary",
+			headers: ["Competing Interests", "Rule", "Winner"],
+			rows: [
+				[
+					"Perfected vs. unperfected",
+					"Perfected always wins",
+					"Perfected creditor",
+				],
+				[
+					"Perfected vs. perfected",
+					"First to file or perfect (whichever earlier)",
+					"Earlier filer/perfecter",
+				],
+				[
+					"Unperfected vs. unperfected",
+					"First to attach",
+					"Earlier attachment",
+				],
+				[
+					"PMSI (non-inventory) vs. prior perfected",
+					"PMSI perfected within 20 days of debtor's possession",
+					"PMSI holder (super-priority)",
+				],
+				[
+					"PMSI (inventory) vs. prior perfected",
+					"PMSI perfected before delivery + notice to prior secured parties",
+					"PMSI holder (super-priority)",
+				],
+				[
+					"Perfected vs. lien creditor",
+					"Perfected before lien attaches",
+					"Perfected creditor",
+				],
+				[
+					"Buyer in ordinary course (BIOC) vs. perfected",
+					"BIOC takes free of SI created by seller",
+					"BIOC (regardless of knowledge)",
+				],
+			],
+		},
 	],
 	mnemonics: [
 		{
@@ -758,6 +988,20 @@ export const regFramework: StudyFramework = {
 				"Highly appreciated inventory (>120% of basis), Ordinary income recapture (§1245/§1250 depreciation), Trade receivables (unrealized receivables)",
 			explanation:
 				"Section 751 hot assets in a partnership that trigger ordinary income treatment on sale of a partnership interest.",
+		},
+		{
+			acronym: "ERS",
+			expansion:
+				"Exoneration (compel debtor to pay first), Reimbursement (recover from debtor after paying), Subrogation (step into creditor's shoes)",
+			explanation:
+				"The three rights of a surety. ERS follows the timeline: Exoneration is pre-payment, Reimbursement is post-payment, Subrogation is post-full-payment.",
+		},
+		{
+			acronym: "VRAP",
+			expansion:
+				"Value given, Rights in collateral, Authenticated security Agreement, (then) Perfect by filing",
+			explanation:
+				"UCC Article 9 security interest lifecycle. First the interest attaches (VRA), then it is perfected (P) by filing a UCC-1 financing statement.",
 		},
 	],
 };

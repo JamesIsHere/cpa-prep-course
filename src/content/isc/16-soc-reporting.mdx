@@ -1,0 +1,285 @@
+# SOC Reporting
+
+## Learning Objectives
+
+- Identify the four SOC opinion types and the conditions that lead to each
+- Explain how exceptions and deviations are presented in a SOC report
+- Describe the required elements of a SOC report, including management's assertion, system description, test results, and practitioner's opinion
+- Understand the purpose and use of bridge letters and gap analysis
+- Identify user entity responsibilities and complementary user entity controls (CUECs)
+- Distinguish between the inclusive method and the carve-out method for subservice organizations
+
+## SOC Report Opinion Types
+
+The practitioner's opinion is the most critical element of a SOC report. It communicates the practitioner's conclusion about whether management's description is fairly presented and whether controls are suitably designed (Type I) or suitably designed and operating effectively (Type II).
+
+### Four Opinion Types
+
+| Opinion Type | Condition | Meaning |
+|-------------|-----------|---------|
+| **Unqualified (unmodified)** | No material exceptions; description is fairly presented; controls are suitably designed and operating effectively | Clean opinion — highest level of assurance |
+| **Qualified** | One or more material exceptions exist, but they are limited to specific controls; the overall report is still useful | The opinion includes an "except for" clause identifying the specific controls with exceptions |
+| **Adverse** | Exceptions are so pervasive that the controls, taken as a whole, do not meet the applicable criteria | Negative opinion — controls are not suitably designed or not operating effectively as a whole |
+| **Disclaimer** | The practitioner is unable to obtain sufficient appropriate evidence to form an opinion | No opinion expressed — typically due to scope limitations imposed by the service organization |
+
+### Decision Process for Opinion Formation
+
+The practitioner forms the opinion by evaluating:
+
+1. **Is the description fairly presented?** — Does management's description of the system accurately reflect the system that was in place during the examination period?
+2. **Are controls suitably designed?** — Would the controls, as described, achieve the related criteria if they operated as described?
+3. **Were controls operating effectively?** (Type II only) — Did the controls actually operate as designed throughout the period?
+
+If the answer to any question is "no," the practitioner must assess whether the issue is material and whether it is pervasive or isolated to specific controls.
+
+> **Exam tip:** The exam tests the distinction between qualified and adverse opinions. A **qualified** opinion means problems are limited and identified specifically. An **adverse** opinion means problems are so widespread that the entire control system is unreliable. Think of qualified as "mostly good with a few problems" and adverse as "fundamentally broken."
+
+**Worked Example — Opinion Determination:**
+
+Scenario A: A SOC 2 Type II examination identifies that user access reviews were not performed in Q2 and Q3 (2 of 4 quarters), but all other security controls (encryption, monitoring, change management, physical access) operated effectively throughout the period.
+
+Analysis: The access review control has an exception. However, other controls addressing the security criterion operated effectively. The exception is limited to one specific control area. Result: **Qualified opinion** — "except for the user access review control."
+
+Scenario B: A SOC 2 Type II examination identifies that the change management process was not followed for any changes deployed during the period, user access reviews were never performed, and incident response procedures were not documented or tested. Multiple trust services criteria are affected.
+
+Analysis: Exceptions are pervasive across multiple control areas and trust services criteria. The control environment as a whole is ineffective. Result: **Adverse opinion**.
+
+## Handling Exceptions and Deviations
+
+When exceptions are identified during testing, they must be disclosed in the SOC report with sufficient detail for users to understand the nature and impact of each exception.
+
+### Exception Disclosure Requirements
+
+Each exception disclosed in the report must include:
+
+| Element | Description |
+|---------|-------------|
+| **Control tested** | The specific control from management's description |
+| **Test procedure performed** | What the practitioner did (inspected, reperformed, etc.) |
+| **Results of testing** | What was found, including the population size and number of deviations |
+| **Nature of the exception** | A clear description of how the control failed to operate as described |
+| **Management's response** | The service organization's explanation or planned remediation |
+
+### Quantifying Exceptions
+
+SOC reports typically present exception results in a structured format:
+
+**Example format in a SOC 2 Type II report:**
+
+> Control C-5.2: The IT Security Manager reviews user access rights quarterly and removes access for terminated employees within 24 hours.
+>
+> Test performed: Selected all 4 quarterly reviews and a sample of 20 employee terminations during the examination period. Inspected evidence of quarterly access reviews and compared HR termination dates to system access removal dates.
+>
+> Results: For 3 of 4 quarters, the quarterly review was performed timely with appropriate documentation. For Q3, the review was not performed. For 18 of 20 terminations, access was removed within 24 hours. For 2 of 20 terminations, access was removed 5 and 8 days after the termination date, respectively.
+>
+> Exception noted: The quarterly access review was not performed for Q3, and access removal exceeded the 24-hour requirement for 2 of 20 terminations tested.
+
+### Management's Response to Exceptions
+
+The service organization typically includes a response for each exception, which may include:
+
+- Acknowledgment of the deviation
+- Root cause explanation
+- Compensating controls that mitigated the risk
+- Remediation actions taken or planned
+- Timeline for resolution
+
+> **Exam tip:** The practitioner does NOT evaluate management's response or vouch for whether remediation will be effective. The response is included for the reader's benefit, but the practitioner's opinion is based on the evidence obtained during the examination period, not on promises of future remediation.
+
+## SOC Report Elements
+
+A SOC report (SOC 1 or SOC 2, Type I or Type II) contains several standard sections:
+
+### Section I: Independent Service Auditor's Report (Opinion)
+
+The practitioner's opinion covering:
+- The scope of the examination (system, period, applicable criteria)
+- Management's responsibility for the description and controls
+- The practitioner's responsibility to express an opinion
+- The opinion itself (unqualified, qualified, adverse, or disclaimer)
+- Inherent limitations of controls
+
+### Section II: Management's Assertion
+
+Management asserts that:
+- The description of the system fairly presents the system as designed and implemented (Type I) or as designed, implemented, and operated (Type II)
+- The controls are suitably designed to achieve the applicable criteria
+- The controls operated effectively throughout the period (Type II only)
+
+### Section III: Description of the System
+
+Management provides a detailed description of the system, including:
+
+| Component | Content |
+|-----------|---------|
+| **System overview** | Services provided, system boundaries, infrastructure components |
+| **Principal service commitments** | Commitments made to user entities (SLAs, contractual obligations) |
+| **System requirements** | Requirements the system must meet (regulatory, contractual) |
+| **Control environment** | Organizational structure, governance, risk management processes |
+| **Trust services criteria** | How each applicable criterion is addressed by specific controls |
+| **Complementary controls** | Controls that user entities and subservice organizations are expected to implement |
+
+### Section IV: Trust Services Criteria and Related Controls (with Tests and Results — Type II Only)
+
+This section maps each trust services criterion to the specific controls that address it. For Type II reports, it also includes:
+
+- Description of the test performed for each control
+- Results of each test, including any exceptions
+- Management's response to exceptions (if any)
+
+### Section V: Other Information Provided by the Service Organization (Optional)
+
+The service organization may include additional information not covered by the practitioner's opinion (e.g., planned enhancements, customer testimonials). This section is **clearly labeled** as not covered by the opinion.
+
+## Bridge Letters and Gap Analysis
+
+### Bridge Letters
+
+A **bridge letter** (also called a **gap letter**) is a written representation from the service organization's management covering the period between the end of the SOC report examination period and the user entity's year-end.
+
+**Purpose:** User entities whose fiscal year ends after the SOC report period need assurance that controls continued to operate effectively during the "gap" period.
+
+**Example:** A SOC 2 Type II report covers January 1 through September 30. A user entity has a December 31 year-end. The bridge letter covers October 1 through December 31, representing that:
+- No significant changes were made to the system or controls
+- No known control failures or exceptions occurred
+- The controls continued to operate as described
+
+| Feature | SOC Report | Bridge Letter |
+|---------|-----------|---------------|
+| **Nature** | Independent examination with testing | Management representation only |
+| **Assurance level** | Reasonable (examination) | None (management assertion) |
+| **Period covered** | Examination period (e.g., 12 months) | Gap period after examination |
+| **Who prepares** | Independent practitioner | Service organization management |
+| **Reliance** | User auditors can rely on it | Provides limited comfort; no independent verification |
+
+### Gap Analysis Considerations
+
+User auditors must consider the length and significance of the gap period:
+
+- **Short gap (1-3 months):** A bridge letter with inquiry is typically sufficient
+- **Long gap (4-6+ months):** The user auditor may need to perform additional procedures, including reviewing the service organization's change management logs and incident reports
+- **Significant changes during gap:** If the service organization made material system changes during the gap period, a bridge letter may be insufficient
+
+> **Exam tip:** A bridge letter is NOT a substitute for a current-period SOC report. It provides only management's representation — not independent assurance. If the exam asks whether a user auditor can rely solely on a bridge letter, the answer is no. The bridge letter supplements the SOC report; it does not replace it.
+
+## User Entity Responsibilities
+
+A SOC report operates on the premise that the service organization's controls work in conjunction with controls at the user entity. The report clearly identifies responsibilities that fall outside the service organization's scope.
+
+### Complementary User Entity Controls (CUECs)
+
+**CUECs** are controls that management of the service organization assumes will be implemented by user entities. The service organization's controls are designed to be effective only when these complementary controls are also in place.
+
+**Common CUECs include:**
+
+| CUEC Category | Example |
+|---------------|---------|
+| **User access management** | User entities are responsible for managing their own users' access credentials, disabling accounts of terminated employees, and enforcing password policies |
+| **Transaction authorization** | User entities are responsible for authorizing and approving transactions before submission to the service organization |
+| **Input validation** | User entities are responsible for the accuracy and completeness of data submitted to the service organization |
+| **Monitoring and reconciliation** | User entities are responsible for reviewing reports provided by the service organization and investigating discrepancies |
+| **Incident notification** | User entities are responsible for promptly notifying the service organization of suspected security incidents |
+| **Configuration management** | User entities are responsible for configuring system settings within their control (e.g., security settings in SaaS applications) |
+
+**Impact on user auditors:** When evaluating whether to rely on a SOC report, the user auditor must determine whether the user entity has actually implemented the CUECs. If CUECs are not in place, the service organization's controls alone may not be sufficient to mitigate the relevant risks.
+
+> **Exam tip:** The exam frequently tests CUECs. A common scenario: "A service organization's SOC 2 report identifies a CUEC requiring user entities to review monthly activity reports. The user entity's auditor discovers that no one at the user entity reviews these reports." In this case, the user auditor cannot rely on the SOC report for that particular control objective because the complementary control is not operating.
+
+## Subservice Organization Considerations
+
+Many service organizations use other service organizations (called **subservice organizations**) to perform parts of their services. For example, a payroll service provider might use a cloud hosting provider to run its infrastructure. GASB and AICPA standards provide two methods for addressing subservice organizations in SOC reports.
+
+### Inclusive Method
+
+Under the **inclusive method**, the subservice organization's controls are **included** in the scope of the SOC examination. The practitioner tests both the service organization's and the subservice organization's controls.
+
+| Feature | Detail |
+|---------|--------|
+| **Scope** | Covers both the service organization and the subservice organization |
+| **Description** | Includes the subservice organization's relevant controls in the system description |
+| **Testing** | The practitioner (or the practitioner's agent) tests the subservice organization's controls |
+| **Opinion** | Covers the combined control environment |
+| **User benefit** | Single comprehensive report; no need to obtain a separate report from the subservice organization |
+
+### Carve-Out Method
+
+Under the **carve-out method**, the subservice organization's controls are **excluded** from the scope of the SOC examination. The report identifies the subservice organization and the functions it performs but does not include its controls.
+
+| Feature | Detail |
+|---------|--------|
+| **Scope** | Covers only the service organization's controls |
+| **Description** | Identifies the subservice organization and services provided but does not describe its controls |
+| **Testing** | Only the service organization's controls are tested; monitoring controls over the subservice organization may be tested |
+| **Opinion** | Does NOT cover the subservice organization's controls |
+| **User impact** | User entities/auditors must obtain the subservice organization's own SOC report to evaluate the full control environment |
+
+### Comparing the Two Methods
+
+| Dimension | Inclusive Method | Carve-Out Method |
+|-----------|-----------------|------------------|
+| Subservice org controls in scope | Yes | No |
+| Practitioner tests subservice controls | Yes | No (tests monitoring controls only) |
+| Report completeness for users | More complete | Less complete — gap in coverage |
+| Coordination effort | High — must access subservice org | Lower — limited to service org |
+| Most common in practice | Less common | More common (most service orgs use carve-out) |
+
+**Worked Example — Carve-Out Impact:**
+
+A SaaS application provider uses AWS for hosting. The SOC 2 report uses the carve-out method — AWS controls are excluded from the scope.
+
+The report identifies:
+- Subservice organization: Amazon Web Services (AWS)
+- Functions performed: Infrastructure hosting, data storage, network security
+- The service organization's monitoring controls over AWS (e.g., reviewing AWS SOC reports, monitoring uptime dashboards)
+
+The user auditor must also obtain and evaluate AWS's own SOC report to assess the complete control environment for the SaaS application.
+
+> **Exam tip:** The carve-out method is by far the most common in practice. If the exam describes a SOC report that "excludes the hosting provider's controls," that is the carve-out method. The key follow-up question is whether the user entity/auditor has obtained the subservice organization's own SOC report. Without it, there is a gap in the user's understanding of the control environment.
+
+## Key Terms
+
+- **Unqualified opinion** — A clean opinion indicating that the description is fairly presented and controls are suitably designed (and operating effectively for Type II), with no material exceptions
+- **Qualified opinion** — An opinion indicating that except for specific identified exceptions, the description is fairly presented and controls are suitably designed and operating effectively
+- **Adverse opinion** — A negative opinion indicating that controls, taken as a whole, are not suitably designed or not operating effectively due to pervasive exceptions
+- **Disclaimer of opinion** — A statement that the practitioner is unable to form an opinion due to scope limitations or inability to obtain sufficient evidence
+- **Management's assertion** — Management's written statement that the system description is fairly presented, controls are suitably designed, and controls operated effectively (Type II)
+- **System description** — The detailed description of the service organization's system, including infrastructure, software, people, procedures, and data
+- **Bridge letter** — A written representation from the service organization covering the gap between the SOC report period end and the user entity's year-end
+- **CUEC (Complementary User Entity Control)** — A control that the service organization expects user entities to implement for the service organization's controls to be fully effective
+- **Subservice organization** — A third party used by the service organization to perform functions that are part of the system described in the SOC report
+- **Inclusive method** — An approach where the subservice organization's controls are included in the scope of the SOC examination and tested by the practitioner
+- **Carve-out method** — An approach where the subservice organization's controls are excluded from the SOC report scope; the report identifies the subservice organization and its functions
+- **Principal service commitments** — The commitments the service organization makes to user entities through service agreements, published policies, or contractual obligations
+
+## Practice Problems
+
+**1.** A SOC 2 Type II examination identifies that the service organization's change management control was not followed for 8 of 50 changes tested, and the access review control was not performed in 2 of 4 quarters. All other controls across all trust services criteria operated effectively. What type of opinion is MOST likely appropriate?
+
+a) Unqualified
+b) Qualified
+c) Adverse
+d) Disclaimer
+
+**Answer:** b) Qualified — The exceptions are significant (16% deviation rate for change management, 50% for access reviews) but are limited to two specific control areas. Other controls operated effectively, meaning the issues are not pervasive across the entire control environment. A qualified opinion with "except for" language identifying the specific controls with exceptions is most appropriate. An adverse opinion (c) would require the problems to be pervasive across the control environment as a whole.
+
+---
+
+**2.** A user auditor is evaluating a service organization's SOC 2 Type II report that uses the carve-out method. The report identifies a cloud hosting provider as a subservice organization. The user auditor should:
+
+a) Accept the SOC 2 report as sufficient because it covers all controls relevant to the service organization
+b) Obtain the cloud hosting provider's own SOC report to evaluate the complete control environment
+c) Refuse to rely on the SOC 2 report because the carve-out method is less reliable than the inclusive method
+d) Request that the service organization switch to the inclusive method for the next examination period
+
+**Answer:** b) When the carve-out method is used, the subservice organization's controls are excluded from the report scope. The user auditor should obtain the subservice organization's own SOC report to evaluate the complete control environment. The carve-out method is valid and commonly used (not less reliable per se — option c), but it creates a gap that the user auditor must fill.
+
+---
+
+**3.** A service organization's SOC 2 report identifies the following CUEC: "User entities are responsible for disabling access for terminated employees within their organization's user accounts." A user auditor discovers that the user entity does not have a process for disabling terminated employee access. What is the implication?
+
+a) The service organization's controls are ineffective because the CUEC was not implemented
+b) The user auditor cannot rely on the SOC report for the access-related control objective because the complementary control is not in place at the user entity
+c) The service organization must remediate the control gap on behalf of the user entity
+d) The CUEC has no impact on the user auditor's evaluation because it is outside the SOC report scope
+
+**Answer:** b) CUECs are controls that the service organization assumes user entities will implement. If a CUEC is not implemented, the combined control environment may not be sufficient to address the related risk. The user auditor cannot rely on the SOC report for that specific control objective and must evaluate the resulting control gap. The service organization's controls are not necessarily ineffective (a) — they were designed assuming the CUEC would be in place. The gap is at the user entity level.

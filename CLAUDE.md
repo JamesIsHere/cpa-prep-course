@@ -55,7 +55,7 @@ npm run lint         # ESLint
 |-----------------------------------------------|--------------------------------------------|
 | `src/lib/blueprint.ts`                        | AICPA Blueprint data + types (121 groups)  |
 | `src/lib/blueprint-coverage.ts`               | Coverage analysis + gap identification     |
-| `src/lib/sections.ts`                         | All section + lesson metadata (38 lessons) |
+| `src/lib/sections.ts`                         | All section + lesson metadata (94 lessons) |
 | `src/lib/stripe.ts`                           | Lazy Stripe client (`getStripe()`)         |
 | `src/lib/supabase/client.ts`                  | Browser Supabase client                    |
 | `src/lib/supabase/server.ts`                  | Server Supabase client                     |
@@ -73,14 +73,14 @@ npm run lint         # ESLint
 
 | Section | Code | Lessons | Questions | Framework Items | Topics                                            |
 |---------|------|---------|-----------|-----------------|---------------------------------------------------|
-| AUD     | aud  | 12      | ~200      | 34              | Ethics, planning, risk, controls, evidence, sampling, reports, review/compilation, attestation, quality mgmt |
-| FAR     | far  | 13      | ~200      | 49              | Financial statements, revenue, inventory, fixed/intangible assets, leases, bonds, equity, tax, govt, NFP, consolidations |
-| REG     | reg  | 13      | ~200      | 48              | Circular 230, contracts, agency, business structures, basis, gains/losses, 1031, individual tax, credits, C/S corps, partnerships |
-| BAR     | bar  | 11      | 150       | 32              | Financial analysis, valuation, capital structure, derivatives, consolidations, govt reporting |
-| ISC     | isc  | 12      | 150       | 33              | IT infrastructure, ERP, data management, security frameworks, threats, privacy, SOC |
-| TCP     | tcp  | 12      | 150       | 37              | Individual planning, passive/at-risk, wealth transfer, retirement, international tax, trusts |
+| AUD     | aud  | 13      | ~210      | 37              | Ethics, planning, risk, controls, evidence, sampling, reports, review/compilation, attestation, quality mgmt, government auditing |
+| FAR     | far  | 18      | ~250      | 54              | Financial statements, revenue, inventory, fixed/intangible assets, leases, bonds, equity, tax, govt, NFP, consolidations, contingencies, fair value |
+| REG     | reg  | 16      | ~230      | 56              | Circular 230, contracts, agency, business structures, basis, gains/losses, 1031, individual tax, credits, C/S corps, partnerships, tax procedures, legal duties, debtor-creditor |
+| BAR     | bar  | 16      | ~195      | 34              | Financial analysis, valuation, capital structure, derivatives, consolidations, govt reporting, fund reconciliation, interfund transactions |
+| ISC     | isc  | 16      | ~190      | 35              | IT infrastructure, ERP, data management, security frameworks, threats, privacy, SOC, SOC testing, SOC reporting |
+| TCP     | tcp  | 15      | ~180      | 44              | Individual planning, passive/at-risk, wealth transfer, retirement, international tax, trusts, capital structure tax, nontaxable dispositions, related parties |
 
-**Totals:** 73 lessons, ~1,050 questions, 233 framework items across 6 sections
+**Totals:** 94 lessons, ~1,255 questions, 276 framework items across 6 sections
 
 ## Database Tables
 

@@ -448,14 +448,14 @@ export function StudyGuidePdf({
 	return (
 		<Document
 			title={`${framework.sectionTitle} — Study Framework`}
-			author="CPA Prep Course"
+			author="Slayer CPA"
 		>
 			{/* Title page */}
 			<Page size="LETTER" style={styles.page}>
 				<View style={styles.titlePage}>
 					<Text style={styles.titleMain}>{framework.sectionTitle}</Text>
 					<Text style={styles.titleSub}>Study Framework</Text>
-					<Text style={styles.titleSub}>CPA Exam Prep Course</Text>
+					<Text style={styles.titleSub}>Slayer CPA</Text>
 					<Text style={styles.titleDate}>Generated {today}</Text>
 				</View>
 			</Page>

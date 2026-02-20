@@ -1,0 +1,274 @@
+# Related Party Transactions
+
+## Learning Objectives
+
+- Identify related parties under Section 267 and apply the loss disallowance rules
+- Trace constructive ownership chains using family attribution, entity attribution, and option attribution
+- Explain the deferred loss treatment and determine the buyer's basis adjustment on subsequent sale
+- Apply the Section 267(a)(2) accrual/cash matching rule for deductions and income
+- Distinguish Section 707(b) partnership-specific related party rules from Section 267
+- Recognize when Section 1239 recharacterizes capital gain as ordinary income on depreciable property sales
+- Develop planning strategies to avoid common related party traps
+
+## Section 267 Loss Disallowance Rules
+
+### The Basic Rule
+
+Under Section 267(a)(1), **no deduction is allowed** for losses on sales or exchanges of property between related parties. The loss is not merely deferred at the entity level -- it is permanently disallowed to the seller. However, the buyer receives a special basis rule that can partially offset the harsh result.
+
+### Who Is a Related Party Under Section 267?
+
+Section 267(b) defines the following relationships as "related":
+
+| Category | Relationship |
+|----------|-------------|
+| Family members | Siblings (whole and half), spouse, ancestors (parents, grandparents), and lineal descendants (children, grandchildren) |
+| Individual and corporation | An individual and a corporation in which the individual owns **more than 50%** of the stock (by value), directly or constructively |
+| Two corporations | Two corporations that are members of the same **controlled group** (more than 50% common ownership) |
+| Grantor and fiduciary | A grantor and the fiduciary of any trust created by the grantor |
+| Fiduciary and beneficiary | A fiduciary of a trust and a beneficiary of the same trust |
+| Fiduciary cross-trust | A fiduciary of a trust and a fiduciary of another trust if the same person is the grantor of both |
+| Fiduciary and corporation | A trust fiduciary and a corporation in which the trust or grantor owns more than 50% |
+| Tax-exempt entity and controlling person | A tax-exempt educational or charitable organization and a person who directly or indirectly controls it |
+| Corporation and partnership | A corporation and a partnership if the same persons own more than 50% of each |
+| Two partnerships | Two partnerships in which the same persons own more than 50% of the capital or profits interests |
+| Executor and estate beneficiary | An executor of an estate and a beneficiary of such estate |
+
+**Important:** The Section 267 family definition is **narrower** than the Section 318 constructive ownership rules. Notably, Section 267 family members include siblings but **do not include** aunts, uncles, cousins, in-laws, or stepchildren (unless legally adopted).
+
+> **Exam tip:** The Section 267 family definition is a frequent source of trick questions. Remember that brothers and sisters ARE related parties under Section 267, but in-laws and cousins are NOT. Also note the more-than-50% threshold for entity relationships -- exactly 50% ownership does not trigger Section 267.
+
+## Constructive Ownership Rules
+
+Section 267(c) provides constructive (attributed) ownership rules to prevent taxpayers from avoiding the related party rules through indirect ownership.
+
+### Family Attribution
+
+Stock owned by a family member (spouse, siblings, ancestors, lineal descendants) is attributed to the taxpayer. **Family attribution does not run through family -- there is no "chain" attribution among family members under Section 267.**
+
+**Example:** Father owns 30% of Corporation X. Son owns 25% of Corporation X. Father is deemed to own Son's 25%, giving Father constructive ownership of 55%. Father and Corporation X are related parties (more than 50%).
+
+### Entity Attribution
+
+| From Entity | Attribution Rule |
+|-------------|-----------------|
+| Corporation to shareholder | Stock owned by a corporation is attributed to any shareholder who owns **50% or more** (by value) of the corporation, in proportion to ownership |
+| Partnership to partner | Stock owned by a partnership is attributed to its partners in proportion to their partnership interests |
+| Trust/estate to beneficiary | Stock owned by a trust or estate is attributed to its beneficiaries in proportion to their actuarial interests |
+
+### From Individual to Entity
+
+| From Individual | Attribution Rule |
+|----------------|-----------------|
+| Shareholder to corporation | Stock owned by a **50%+ shareholder** is attributed to the corporation |
+| Partner to partnership | Stock owned by a partner is attributed to the partnership |
+| Beneficiary to trust/estate | Stock owned by a beneficiary is attributed to the trust/estate |
+
+### Option Attribution
+
+A person who holds an **option** to acquire stock is treated as the owner of that stock for constructive ownership purposes.
+
+### Worked Example: Constructive Ownership
+
+**Facts:** Anna owns 40% of Alpha Corp. Anna's daughter, Beth, owns 20% of Alpha Corp. Alpha Corp owns 60% of Beta Corp stock.
+
+**Step 1: Family Attribution**
+
+Anna constructively owns Beth's 20% (daughter is a lineal descendant). Anna's total ownership of Alpha Corp = 40% + 20% = 60%.
+
+**Step 2: Entity Attribution**
+
+Since Anna owns 60% of Alpha Corp (50%+), Alpha Corp's assets are attributed to Anna proportionally. Anna constructively owns 60% x 60% = 36% of Beta Corp.
+
+Anna's direct + constructive ownership of Beta Corp: 36%. If Anna also directly owns Beta Corp stock, add that amount.
+
+**Conclusion:** Anna is related to Alpha Corp (60% ownership, more than 50%). Whether Anna is related to Beta Corp depends on whether her direct + constructive ownership exceeds 50%.
+
+> **Exam tip:** Constructive ownership questions often require multiple layers of attribution. Work systematically: first apply family attribution, then entity attribution. Remember that under Section 267(c), there is no re-attribution through family chains (stock attributed to a person from an entity cannot then be attributed from that person to a family member in a second step for entity-to-individual rules, though the actual limitation depends on the specific constructive ownership provision being applied).
+
+## Deferred Loss Treatment and Buyer's Basis
+
+### The Seller's Side
+
+The seller's loss is **permanently disallowed**. It cannot be carried forward, used in any other year, or claimed on any return.
+
+### The Buyer's Basis Rule
+
+The buyer takes a **cost basis** in the property (the price actually paid). However, under Section 267(d), the buyer receives a special benefit: if the buyer later sells the property at a **gain**, the gain is reduced (but not below zero) by the **amount of the previously disallowed loss**.
+
+### Three Scenarios on Subsequent Sale
+
+| Scenario | Buyer's Result |
+|----------|---------------|
+| Buyer sells at a gain exceeding the disallowed loss | Gain is reduced by the full disallowed loss amount |
+| Buyer sells at a gain less than the disallowed loss | Gain is reduced to zero; remaining disallowed loss is permanently lost |
+| Buyer sells at a loss | No benefit from the disallowed loss; the loss is permanently lost |
+
+### Worked Example: Loss Disallowance and Basis
+
+**Facts:** Father sells stock to Daughter for $30,000. Father's adjusted basis is $50,000. The $20,000 loss is disallowed under Section 267.
+
+**Scenario A:** Daughter sells the stock for $60,000.
+- Daughter's gain before adjustment: $60,000 - $30,000 = $30,000
+- Reduction for disallowed loss: $20,000
+- **Recognized gain: $10,000**
+
+**Scenario B:** Daughter sells the stock for $40,000.
+- Daughter's gain before adjustment: $40,000 - $30,000 = $10,000
+- Reduction for disallowed loss: $10,000 (limited to the gain amount)
+- **Recognized gain: $0** (the remaining $10,000 of the disallowed loss is permanently lost)
+
+**Scenario C:** Daughter sells the stock for $25,000.
+- Daughter's loss: $30,000 - $25,000 = $5,000 loss
+- The disallowed loss provides **no benefit** -- it cannot increase Daughter's loss
+- **Recognized loss: $5,000**
+
+> **Exam tip:** The buyer's benefit from the disallowed loss can only reduce a gain, never create or increase a loss. This is a "gain reduction only" rule. In Scenario C, the full $20,000 disallowed loss is wasted.
+
+## Section 267(a)(2) Accrual/Cash Matching Rule
+
+### The Problem
+
+When a related accrual-basis taxpayer owes money to a related cash-basis taxpayer, the accrual-method payor could claim a deduction before the cash-method payee reports the income. Section 267(a)(2) prevents this mismatch.
+
+### The Rule
+
+An accrual-basis taxpayer cannot deduct an expense owed to a related cash-basis taxpayer until the cash-basis taxpayer **includes the amount in income**. This effectively forces the deduction to match the payee's income recognition.
+
+### Common Application
+
+| Situation | Result |
+|-----------|--------|
+| C corporation (accrual) accrues year-end bonus to >50% shareholder (cash basis) | Deduction deferred until shareholder receives and reports the payment |
+| Partnership (accrual) accrues interest on loan from partner (cash basis) | Deduction deferred until partner receives and reports the interest |
+| Corporation accrues rent owed to controlling shareholder | Deduction deferred until shareholder reports rental income |
+
+**Timing:** If the accrual-basis corporation accrues the expense on December 31 but pays the cash-basis shareholder on March 1 of the following year, the deduction is allowed in the year the payment is made (when the payee includes it in income), **provided** the payment occurs within 2.5 months after year-end. If payment occurs later than 2.5 months, the deduction may be further deferred under Section 404(a)(5).
+
+> **Exam tip:** The 267(a)(2) matching rule is frequently tested in corporate tax scenarios. The key trigger is: accrual-basis payor + cash-basis related payee. Watch for year-end accruals by C corporations to their majority shareholders.
+
+## Section 707(b) Partnership Related Party Rules
+
+### Loss Disallowance
+
+Section 707(b)(1) disallows losses on sales or exchanges between:
+
+- A **partnership** and a person who owns, directly or indirectly, **more than 50%** of the capital or profits interest
+- Two **partnerships** in which the same persons own, directly or indirectly, **more than 50%** of the capital or profits interests
+
+This is analogous to Section 267 but applies specifically to partnership transactions.
+
+### Ordinary Income Recharacterization
+
+Section 707(b)(2) provides that if property sold between related partnerships (or between a partnership and a more-than-50% partner) would **not** be a capital asset in the hands of the buyer, any gain is treated as **ordinary income** rather than capital gain.
+
+| Seller | Buyer | Gain Character |
+|--------|-------|---------------|
+| Partner sells capital asset to partnership | Partnership will use as inventory | Ordinary income to seller |
+| Partnership sells investment property to >50% partner | Partner will hold as inventory | Ordinary income to partnership |
+
+### Key Difference from Section 267
+
+Section 707(b) uses the same more-than-50% ownership threshold but determines ownership by reference to **capital or profits interests** rather than by value (as used in corporate contexts under Section 267).
+
+## Section 1239 — Ordinary Income on Depreciable Property
+
+### The Rule
+
+Under Section 1239, gain on the sale of **depreciable property** between related parties is treated as **ordinary income** (not capital gain or Section 1231 gain). This prevents taxpayers from converting ordinary income into capital gain through related-party sales of depreciable assets.
+
+### Related Parties Under Section 1239
+
+The definition of related parties for Section 1239 is broader than Section 267 in some respects:
+
+| Relationship | Related? |
+|-------------|----------|
+| Taxpayer and controlled entity (>50% ownership) | Yes |
+| Taxpayer and trust of which taxpayer or spouse is beneficiary | Yes |
+| Two entities owned >50% by the same person | Yes |
+| Husband and wife | Yes |
+
+### How It Works
+
+**Example:** Sarah owns 100% of Sarah Corp. Sarah sells a building to Sarah Corp for $500,000 (adjusted basis $300,000). Sarah Corp will depreciate the building.
+
+- Without Section 1239: Sarah would have $200,000 of Section 1231 gain (potentially taxed at long-term capital gain rates)
+- With Section 1239: The entire $200,000 gain is recharacterized as **ordinary income** because Sarah Corp will depreciate the property
+
+**The buyer's benefit:** Sarah Corp takes a $500,000 cost basis and can depreciate the building, generating ordinary deductions. The policy rationale for Section 1239 is that without it, Sarah could convert ordinary depreciation deductions (through the buyer's future depreciation) into capital gain (through the seller's sale treatment).
+
+> **Exam tip:** Section 1239 applies only when the property is **depreciable in the hands of the buyer**. If the buyer will hold the property as a non-depreciable investment (like land), Section 1239 does not apply and the gain retains its Section 1231 character.
+
+## Planning Strategies to Avoid Related Party Traps
+
+### 1. Sell to an Unrelated Third Party
+
+The simplest way to avoid Section 267 loss disallowance is to sell the property to a genuinely unrelated buyer. If the goal is to transfer the asset within the family, the unrelated party sale recognizes the loss, and a separate purchase can be made.
+
+**Caution:** The IRS may apply the **step transaction doctrine** if the sale to a third party and the family member's subsequent acquisition are prearranged.
+
+### 2. Make a Gift Instead of a Sale
+
+If the loss will be disallowed anyway, consider gifting the property. The donee takes a basis equal to the **FMV at the date of gift** (for loss purposes), which achieves a similar economic result without the complexity of a disallowed sale.
+
+### 3. Time Payments to Match Accrual/Cash Periods
+
+For Section 267(a)(2) issues, ensure that accrued expenses owed to related cash-basis payees are **paid within 2.5 months** of year-end so the deduction is allowed in the accrual year.
+
+### 4. Structure Ownership Below 50%
+
+Since Sections 267 and 707(b) use a **more-than-50%** threshold, structuring ownership at exactly 50% or below avoids the related party designation (but be aware that constructive ownership rules may attribute additional ownership).
+
+### 5. Avoid Selling Depreciable Property to Controlled Entities
+
+If the gain will be recharacterized as ordinary under Section 1239, consider alternative structures:
+- Contribute the property under Section 351 (tax-free) rather than selling
+- Lease the property to the controlled entity rather than selling it
+- Sell to the entity through an installment sale to spread the ordinary income over multiple years
+
+### 6. Document Business Purpose
+
+In all related party transactions, maintain thorough documentation of arm's-length pricing, business purpose, and economic substance. The IRS scrutinizes related party transactions more closely than arm's-length transactions.
+
+## Key Terms
+
+- **Constructive Ownership:** Attribution rules that treat a taxpayer as owning stock held by family members, entities, and option holders for purposes of determining related party status
+- **Deferred Loss:** Under Section 267, a loss disallowed to the seller that may reduce the buyer's gain (but not below zero) on a subsequent sale to an unrelated party
+- **Related Party:** Persons or entities with specified relationships under Section 267(b), including family members and commonly controlled entities exceeding the 50% ownership threshold
+- **Section 267(a)(2):** Rule deferring an accrual-basis taxpayer's deduction for amounts owed to a related cash-basis payee until the payee includes the amount in income
+- **Section 707(b):** Partnership-specific related party rules disallowing losses and recharacterizing gain as ordinary income on certain transactions involving more-than-50% partners
+- **Section 1239:** Rule recharacterizing gain as ordinary income on sales of depreciable property between related parties
+- **Step Transaction Doctrine:** An IRS doctrine that collapses a series of formally separate steps into a single transaction when the steps are prearranged to achieve a tax benefit
+
+## Practice Problems
+
+**1.** Brother sells stock with an adjusted basis of $80,000 to Sister for $60,000, resulting in a $20,000 loss. What is the tax consequence?
+
+a) Brother recognizes a $20,000 capital loss
+b) Brother's loss is disallowed; Sister takes a $60,000 basis with a potential $20,000 gain reduction on future sale
+c) Brother's loss is suspended until Sister sells the stock
+d) Brother can claim the loss if he files Form 8949 with an explanation
+
+**Answer:** b) Brother's loss is disallowed; Sister takes a $60,000 basis with a potential $20,000 gain reduction on future sale -- Under Section 267, siblings are related parties and losses on sales between them are disallowed. Sister takes a cost basis of $60,000 but may reduce any future gain by up to $20,000 (the disallowed loss amount) under Section 267(d).
+
+---
+
+**2.** Alex owns 45% of MegaCorp. Alex's spouse owns 10% of MegaCorp. Under Section 267 constructive ownership rules, what percentage does Alex constructively own?
+
+a) 45%
+b) 50%
+c) 55%
+d) 100%
+
+**Answer:** c) 55% -- Under Section 267(c)(4), Alex is attributed the stock owned by a spouse. Alex's constructive ownership = 45% (direct) + 10% (spouse attribution) = 55%. Since 55% exceeds 50%, Alex and MegaCorp are related parties under Section 267.
+
+---
+
+**3.** Davis (cash basis) owns 60% of Alpha Corp (accrual basis). Alpha Corp accrues a $100,000 bonus to Davis on December 31, Year 1, but does not pay it until July 15, Year 2. When can Alpha Corp deduct the bonus?
+
+a) Year 1, when the bonus is accrued
+b) Year 2, when Davis receives and reports the income
+c) The deduction is permanently disallowed
+d) Year 1, but only if the bonus is reasonable compensation
+
+**Answer:** b) Year 2, when Davis receives and reports the income -- Under Section 267(a)(2), an accrual-basis payor cannot deduct an expense owed to a related cash-basis payee until the payee includes the amount in income. Davis is related to Alpha Corp (60% > 50% ownership), so the deduction is deferred to Year 2 when Davis receives the cash and reports it.

@@ -1,0 +1,286 @@
+# Nontaxable Dispositions
+
+## Learning Objectives
+
+- Apply the installment method under Section 453, including gross profit percentage and basis recovery calculations
+- Identify transactions excluded from installment method eligibility (dealer dispositions, depreciation recapture)
+- Recognize the related party rules under Section 453(e) and their impact on installment sale deferral
+- Calculate gain deferral under Section 1033 involuntary conversion rules and apply the correct replacement period
+- Compare installment sales, involuntary conversions, and like-kind exchanges as deferral mechanisms
+- Evaluate when to elect out of the installment method
+
+## Installment Sales Under Section 453
+
+### Overview
+
+The installment method allows a taxpayer to defer gain recognition on the sale of property when at least one payment is received after the close of the tax year of sale. Rather than recognizing all gain in the year of sale, the taxpayer reports a **proportional share of gain** as each payment is received.
+
+**Eligibility:** The installment method applies automatically to qualifying sales unless the taxpayer elects out. It is available for sales of real property and casual sales of personal property (not inventory).
+
+### Installment Method Calculation
+
+The core concept is the **gross profit percentage**, which determines how much of each payment is taxable gain:
+
+**Gross Profit Percentage = Gross Profit / Contract Price**
+
+Where:
+- **Gross Profit** = Selling price - Adjusted basis - Selling expenses
+- **Contract Price** = Selling price - Assumed mortgage (to the extent it does not exceed adjusted basis)
+
+**Gain Recognized Per Payment = Payment Received x Gross Profit Percentage**
+
+### Worked Example: Basic Installment Sale
+
+**Facts:** Taylor sells land (adjusted basis $60,000) for $200,000. The buyer pays $50,000 at closing and will pay $50,000 per year for the next 3 years plus 6% interest. Selling expenses are $10,000.
+
+**Step 1: Calculate Gross Profit**
+
+Gross Profit = $200,000 - $60,000 - $10,000 = **$130,000**
+
+**Step 2: Calculate Contract Price**
+
+Contract Price = $200,000 (no mortgage assumed) = **$200,000**
+
+**Step 3: Calculate Gross Profit Percentage**
+
+Gross Profit Percentage = $130,000 / $200,000 = **65%**
+
+**Step 4: Gain Per Payment**
+
+Each $50,000 payment x 65% = **$32,500** of gain recognized
+
+Year 1: $32,500 gain
+Year 2: $32,500 gain
+Year 3: $32,500 gain
+Year 4: $32,500 gain
+Total: $130,000 (equals total gross profit)
+
+The 6% interest is reported separately as ordinary interest income in the year received.
+
+### Installment Sale with Mortgage Assumption
+
+When the buyer assumes the seller's existing mortgage, the calculation changes:
+
+**Facts:** Davis sells a building (adjusted basis $300,000) for $500,000. The buyer assumes Davis's $100,000 mortgage and pays $100,000 per year for 4 years.
+
+**Step 1: Gross Profit**
+
+Gross Profit = $500,000 - $300,000 = **$200,000**
+
+**Step 2: Contract Price**
+
+Contract Price = $500,000 - $100,000 (mortgage assumed, which does not exceed basis) = **$400,000**
+
+**Step 3: Gross Profit Percentage**
+
+$200,000 / $400,000 = **50%**
+
+**Step 4: Gain Per Payment**
+
+Each $100,000 payment x 50% = **$50,000** gain per year
+Total over 4 years: $200,000
+
+**Mortgage exceeds basis:** If the assumed mortgage exceeds the seller's adjusted basis, the excess is treated as a payment received in the year of sale.
+
+**Example:** If the mortgage were $350,000 on a $300,000 basis property, the excess $50,000 would be treated as a Year 1 payment and the contract price would be $500,000 - $300,000 = $200,000 (mortgage in excess of basis is included in the contract price).
+
+> **Exam tip:** The most tested installment sale concept is the mortgage-exceeds-basis scenario. When the assumed mortgage is greater than the adjusted basis, the excess is treated as a deemed payment in the year of sale. This is a common trap in multiple-choice questions.
+
+## Depreciation Recapture in Installment Sales
+
+Depreciation recapture under **Section 1245** and **Section 1250** must be recognized **in full in the year of sale**, regardless of the installment method. The recapture amount cannot be deferred.
+
+| Component | Treatment |
+|-----------|-----------|
+| Section 1245 recapture (ordinary income) | Recognized entirely in Year 1 |
+| Section 1250 recapture (ordinary income) | Recognized entirely in Year 1 |
+| Remaining Section 1231 gain | Spread over installment payments using gross profit percentage |
+
+### Worked Example: Recapture with Installment Sale
+
+**Facts:** Parker sells equipment for $150,000 (adjusted basis $80,000, original cost $120,000). Accumulated depreciation is $40,000. The buyer pays $50,000 per year for 3 years.
+
+- Total gain = $150,000 - $80,000 = $70,000
+- Section 1245 recapture = $40,000 (all accumulated depreciation, since gain exceeds depreciation)
+- Remaining Section 1231 gain = $70,000 - $40,000 = $30,000
+
+**Year 1:** $40,000 recapture (ordinary income) + ($50,000 x $30,000/$150,000) = $40,000 + $10,000 = **$50,000**
+
+**Year 2:** $50,000 x 20% = **$10,000** (Section 1231 gain)
+
+**Year 3:** $50,000 x 20% = **$10,000** (Section 1231 gain)
+
+Total: $40,000 + $10,000 + $10,000 + $10,000 = $70,000
+
+> **Exam tip:** Depreciation recapture is always recognized immediately in Year 1 of an installment sale. This is one of the most frequently tested rules on the TCP exam. If you see equipment or Section 1245 property in an installment sale question, expect a recapture component.
+
+## Related Party Rules Under Section 453(e)
+
+### Two-Year Disposition Rule
+
+If a seller uses the installment method on a sale to a **related party**, and the related party disposes of the property within **two years**, the original seller must recognize the remaining deferred gain immediately.
+
+The purpose is to prevent a two-step end-run: selling to a related party on installment, then having the related party immediately sell to a third party for cash.
+
+### Who Is a Related Party?
+
+For Section 453(e) purposes, related parties include:
+- Spouse, children, grandchildren, parents, grandparents, siblings
+- Corporations where the taxpayer owns more than 50% (by value)
+- Partnerships where the taxpayer owns more than 50% (capital or profits)
+- Trusts where the taxpayer is a beneficiary
+- Entities related under Section 267(b) or 707(b)(1)
+
+### Exceptions
+
+The two-year rule does not apply if:
+- The second disposition was an involuntary conversion (not within the related party's control)
+- The taxpayer establishes that **neither** the first nor the second disposition had tax avoidance as a principal purpose
+- The related party dies and the property receives a stepped-up basis
+
+## Dealer Exclusion
+
+The installment method is **not available** for:
+
+| Excluded Transaction | Reasoning |
+|---------------------|-----------|
+| Sales of inventory | Dealers in property must recognize gain in full at sale |
+| Sales of stock or securities (publicly traded) | Readily determinable market value |
+| Sales of personal property by a dealer | Regular course of business sales |
+| Depreciation recapture amounts | Must be recognized in Year 1 as noted above |
+
+Real property dealers can use the installment method only if the property is **used in the trade or business** or is a **farm** and is sold for over $150,000.
+
+## Electing Out of the Installment Method
+
+A taxpayer may elect out of the installment method by **reporting the entire gain** on the return for the year of sale. The election is made by the return due date (including extensions).
+
+**When might electing out make sense?**
+
+- The taxpayer has **capital loss carryforwards** that can offset the entire gain in the current year
+- The taxpayer expects to be in a **higher tax bracket** in future years
+- The seller has a **large NOL** that will expire
+- **Imputed interest** rules make deferral less attractive (higher imputed interest on deferred payments)
+
+Once the election out is made, it generally cannot be revoked without IRS consent.
+
+## Involuntary Conversions Under Section 1033
+
+### Overview
+
+Section 1033 allows a taxpayer to **defer gain** when property is involuntarily converted (destroyed, stolen, condemned, or requisitioned) if the taxpayer reinvests the proceeds in **qualified replacement property** within the replacement period.
+
+### Replacement Period Rules
+
+| Type of Conversion | Replacement Period |
+|-------------------|-------------------|
+| General rule (casualty, theft, destruction) | **2 years** from the close of the first tax year in which any gain is realized |
+| Condemned real property held for productive use or investment | **3 years** from the close of the first tax year in which any gain is realized |
+| Presidentially declared disaster areas (business or investment real property) | **4 years** from the close of the first tax year in which any gain is realized |
+| Livestock destroyed by disease or sold due to drought | 2-4 years depending on circumstances |
+
+### Gain Deferral Mechanics
+
+Gain is deferred only to the extent the taxpayer reinvests the proceeds. If the replacement property costs **at least as much** as the amount realized, all gain is deferred.
+
+**Formula:**
+
+> Recognized Gain = Amount Realized - Cost of Replacement Property (if less than amount realized)
+
+If the replacement property costs **less** than the amount realized, the taxpayer recognizes gain equal to the difference.
+
+### Basis of Replacement Property
+
+The basis of the replacement property is its cost, **reduced by the amount of deferred gain**:
+
+> Basis of Replacement Property = Cost - Deferred Gain
+
+This preserves the deferred gain for recognition on future disposition.
+
+### Worked Example: Involuntary Conversion
+
+**Facts:** Chen's warehouse (adjusted basis $400,000) is destroyed by fire. Insurance proceeds are $650,000. Chen purchases a replacement warehouse 18 months later for $600,000.
+
+**Step 1: Calculate Realized Gain**
+
+Realized Gain = $650,000 - $400,000 = **$250,000**
+
+**Step 2: Determine Amount Not Reinvested**
+
+Amount Not Reinvested = $650,000 - $600,000 = **$50,000**
+
+**Step 3: Recognized Gain**
+
+Recognized Gain = lesser of realized gain ($250,000) or amount not reinvested ($50,000) = **$50,000**
+
+**Step 4: Deferred Gain**
+
+Deferred Gain = $250,000 - $50,000 = **$200,000**
+
+**Step 5: Basis of Replacement Property**
+
+Basis = $600,000 - $200,000 = **$400,000**
+
+Note that the basis of the replacement property equals the original basis of the destroyed property ($400,000), preserving the deferred gain.
+
+> **Exam tip:** The recognized gain under Section 1033 is always the lesser of (1) the realized gain or (2) the amount not reinvested. If the taxpayer reinvests 100% of the proceeds, zero gain is recognized. If they reinvest less, they recognize gain only to the extent of the shortfall.
+
+### Qualified Replacement Property
+
+The replacement property must be:
+- **Similar or related in service or use** to the converted property (stricter than like-kind)
+- For **condemned real property** held for productive use or investment: **like-kind** property (the more relaxed standard)
+- Acquired from an **unrelated party** (related-party acquisitions do not qualify for Section 1033 deferral for realized gains exceeding $100,000 unless the replacement property was held by the related party before the involuntary conversion)
+
+### Comparison: Section 1033 vs. Section 1031
+
+| Feature | Section 1033 (Involuntary Conversion) | Section 1031 (Like-Kind Exchange) |
+|---------|--------------------------------------|----------------------------------|
+| Trigger | Involuntary (casualty, theft, condemnation) | Voluntary exchange |
+| Property type | Real and personal property | Real property only (post-TCJA) |
+| Replacement standard | Similar or related in service/use (general); like-kind (condemned real property) | Like-kind |
+| Timing | 2-4 year replacement period | 45-day identification, 180-day completion |
+| Partial reinvestment | Gain recognized to extent of proceeds not reinvested | Boot received triggers gain recognition |
+| Election | Taxpayer elects deferral | Mandatory (no election out) |
+
+## Key Terms
+
+- **Contract Price:** Selling price minus any mortgage assumed by the buyer (to the extent it does not exceed the seller's adjusted basis); the denominator in the gross profit percentage
+- **Gross Profit Percentage:** The ratio of gross profit to contract price; applied to each installment payment to determine the taxable gain component
+- **Installment Method:** A method of accounting under Section 453 that allows gain to be recognized proportionally as payments are received
+- **Involuntary Conversion:** The destruction, theft, seizure, requisition, or condemnation of property, or the disposal under threat of condemnation
+- **Qualified Replacement Property:** Property that is similar or related in service or use to the involuntarily converted property (or like-kind for condemned real property)
+- **Replacement Period:** The timeframe within which a taxpayer must acquire replacement property to defer gain under Section 1033
+
+## Practice Problems
+
+**1.** A taxpayer sells land with an adjusted basis of $100,000 for $400,000. The buyer pays $100,000 in the year of sale and will pay $100,000 per year for the next 3 years plus interest. What is the gross profit percentage?
+
+a) 25%
+b) 50%
+c) 75%
+d) 100%
+
+**Answer:** c) 75% -- Gross Profit = $400,000 - $100,000 = $300,000. Contract Price = $400,000 (no mortgage assumed). Gross Profit Percentage = $300,000 / $400,000 = 75%. Each $100,000 payment triggers $75,000 of gain recognition.
+
+---
+
+**2.** Equipment with an adjusted basis of $50,000 and accumulated depreciation of $30,000 is sold for $120,000 on a 3-year installment plan ($40,000 per year). How much ordinary income from depreciation recapture must be recognized in Year 1?
+
+a) $0
+b) $10,000
+c) $30,000
+d) $70,000
+
+**Answer:** c) $30,000 -- Section 1245 depreciation recapture must be recognized in full in the year of sale, regardless of the installment method. The recapture amount is the lesser of the gain ($70,000) or accumulated depreciation ($30,000), so $30,000 of ordinary income is recognized immediately in Year 1.
+
+---
+
+**3.** A taxpayer's building (adjusted basis $500,000) is condemned by the state government. The taxpayer receives $800,000 in condemnation proceeds and purchases a replacement building for $750,000 within 2 years. What gain must be recognized?
+
+a) $0
+b) $50,000
+c) $250,000
+d) $300,000
+
+**Answer:** b) $50,000 -- Realized gain = $800,000 - $500,000 = $300,000. Amount not reinvested = $800,000 - $750,000 = $50,000. Recognized gain = lesser of $300,000 (realized) or $50,000 (not reinvested) = $50,000. The remaining $250,000 of gain is deferred, and the basis of the replacement property is $750,000 - $250,000 = $500,000.

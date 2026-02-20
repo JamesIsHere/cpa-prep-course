@@ -126,12 +126,12 @@ describe("lesson slug cross-references", () => {
 
 describe("question counts", () => {
 	it("section totals match expected values", () => {
-		expect(sectionQuestionTotals.aud).toBe(200);
-		expect(sectionQuestionTotals.far).toBe(230);
-		expect(sectionQuestionTotals.reg).toBe(200);
-		expect(sectionQuestionTotals.bar).toBe(175);
-		expect(sectionQuestionTotals.isc).toBe(170);
-		expect(sectionQuestionTotals.tcp).toBe(150);
+		expect(sectionQuestionTotals.aud).toBe(210);
+		expect(sectionQuestionTotals.far).toBe(250);
+		expect(sectionQuestionTotals.reg).toBe(230);
+		expect(sectionQuestionTotals.bar).toBe(195);
+		expect(sectionQuestionTotals.isc).toBe(190);
+		expect(sectionQuestionTotals.tcp).toBe(180);
 	});
 
 	it("all question count values are positive integers", () => {
@@ -178,12 +178,12 @@ describe("coverage report", () => {
 		const missingLessonGaps = report.gaps.filter((g) => g.missingLessons);
 		expect(missingLessonGaps.length).toBeGreaterThan(0);
 
-		// AUD Group E (Government Auditing Standards) should be a gap
-		const audGovGap = missingLessonGaps.find(
+		// REG Group D (Filing status and dependents) should still be a gap
+		const regFilingGap = missingLessonGaps.find(
 			(g) =>
-				g.sectionCode === "aud" && g.groupLetter === "E" && g.areaNumber === 1,
+				g.sectionCode === "reg" && g.groupLetter === "D" && g.areaNumber === 4,
 		);
-		expect(audGovGap).toBeDefined();
+		expect(regFilingGap).toBeDefined();
 	});
 
 	it("formats report as readable string", () => {

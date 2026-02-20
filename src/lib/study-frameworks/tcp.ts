@@ -483,6 +483,79 @@ export const tcpFramework: StudyFramework = {
 				],
 			},
 		},
+		{
+			title: "Constructive Ownership Rules (Section 267/318)",
+			root: {
+				label: "Constructive Ownership Attribution",
+				children: [
+					{
+						label: "Family Attribution (Section 267(c)(4))",
+						children: [
+							{
+								label: "Spouse — stock attributed in both directions",
+							},
+							{
+								label:
+									"Siblings (whole and half-blood) — attributed to taxpayer",
+							},
+							{
+								label:
+									"Ancestors (parents, grandparents) — attributed to taxpayer",
+							},
+							{
+								label:
+									"Lineal descendants (children, grandchildren) — attributed to taxpayer",
+							},
+							{
+								label:
+									"NOT included: cousins, in-laws, step-relations (unless adopted), aunts, uncles",
+							},
+						],
+					},
+					{
+						label: "Entity Attribution",
+						children: [
+							{
+								label: "Corporation → 50%+ shareholder (proportional)",
+							},
+							{
+								label: "Partnership → partners (proportional to interest)",
+							},
+							{
+								label: "Trust/estate → beneficiaries (proportional)",
+							},
+							{
+								label:
+									"Reverse: 50%+ shareholder → corporation; partner → partnership; beneficiary → trust",
+							},
+						],
+					},
+					{
+						label: "Option Attribution",
+						children: [
+							{
+								label: "Option holder treated as owning the underlying stock",
+							},
+							{
+								label: "Applies to all types of options (calls, warrants)",
+							},
+						],
+					},
+					{
+						label: "Key Threshold: More Than 50%",
+						children: [
+							{
+								label:
+									"Section 267: direct + constructive > 50% = related party",
+							},
+							{
+								label: "Exactly 50% does NOT trigger related party status",
+							},
+						],
+					},
+				],
+			},
+		},
 	],
 	decisionTrees: [
 		{
@@ -597,6 +670,25 @@ export const tcpFramework: StudyFramework = {
 				},
 			},
 		},
+		{
+			title: "Is the Interest Deductible Under Section 163(j)?",
+			root: {
+				question:
+					"Does the taxpayer meet the small business exception (average annual gross receipts of $30 million or less for 3 prior tax years)?",
+				yes: "Section 163(j) does NOT apply — all business interest expense is fully deductible without limitation",
+				no: {
+					question:
+						"Is the taxpayer a real property trade or business or farming business that has elected out of Section 163(j)?",
+					yes: "Section 163(j) does NOT apply — interest is fully deductible, but ADS depreciation is required (40-yr nonresidential real property, 30-yr residential, 20-yr QIP). Election is irrevocable.",
+					no: {
+						question:
+							"Does the business interest expense exceed the sum of business interest income + 30% of ATI (EBIT basis for 2022+)?",
+						yes: "Excess interest is DISALLOWED in the current year — carried forward indefinitely to future years (subject to same 30% limitation). For partnerships: allocated to and tracked at partner level.",
+						no: "All business interest expense is DEDUCTIBLE — the 163(j) limitation is not binding in the current year",
+					},
+				},
+			},
+		},
 	],
 	formulas: [
 		{
@@ -661,6 +753,20 @@ export const tcpFramework: StudyFramework = {
 				"Estate Tax = (Gross Estate - Deductions) x Tax Rate - Unified Credit - Prior Gift Tax Credits",
 			description:
 				"Gross estate includes all property at FMV (date of death or alternate valuation date). Unified credit shelters $13.99M (2025). Top marginal rate is 40%. Portability allows surviving spouse to use deceased spouse's unused exemption.",
+		},
+		{
+			name: "Installment Sale Gross Profit Percentage",
+			formula:
+				"Gross Profit % = (Selling Price - Adjusted Basis - Selling Expenses) / Contract Price",
+			description:
+				"Applied to each installment payment to determine taxable gain. Contract Price = Selling Price - Mortgage Assumed (to extent not exceeding basis). If mortgage exceeds basis, excess is treated as Year 1 payment and added to contract price. Depreciation recapture (Section 1245/1250) is recognized in full in Year 1 regardless.",
+		},
+		{
+			name: "Section 163(j) Business Interest Limitation",
+			formula:
+				"Deductible Interest = Business Interest Income + (30% x ATI) + Floor Plan Financing Interest",
+			description:
+				"ATI is computed on EBIT basis (2022+): depreciation and amortization NOT added back. Disallowed interest carries forward indefinitely. Small business exception for taxpayers with average annual gross receipts ≤ $30M. Partnerships allocate disallowed interest to partners.",
 		},
 	],
 	referenceTables: [
@@ -975,6 +1081,129 @@ export const tcpFramework: StudyFramework = {
 					"Corps with $500M+ gross receipts",
 					"10% of modified taxable income",
 					"Minimum tax targeting base erosion through related-party payments",
+				],
+			],
+		},
+		{
+			title: "Debt vs. Equity Tax Characteristics",
+			headers: ["Characteristic", "Debt", "Equity"],
+			rows: [
+				[
+					"Returns to holder",
+					"Interest (deductible by payor)",
+					"Dividends (not deductible by payor)",
+				],
+				["Maturity", "Fixed date for repayment", "No maturity; perpetual"],
+				[
+					"Payment obligation",
+					"Unconditional; enforceable",
+					"Contingent on earnings and board discretion",
+				],
+				[
+					"Priority in liquidation",
+					"Senior to equity",
+					"Residual claimant after all debt",
+				],
+				[
+					"Holder voting rights",
+					"None (typically)",
+					"Voting rights on governance",
+				],
+				[
+					"Reclassification risk",
+					"May be reclassified as equity if factors point to disguised equity",
+					"N/A",
+				],
+				[
+					"Section 385 documentation",
+					"Required for related-party debt (written obligation, creditor rights, repayment evidence)",
+					"Not applicable",
+				],
+				[
+					"Proportionality concern",
+					"High risk if debt held in same ratio as stock",
+					"N/A",
+				],
+			],
+		},
+		{
+			title: "Involuntary Conversion Replacement Periods (Section 1033)",
+			headers: [
+				"Type of Conversion",
+				"Replacement Period",
+				"Property Standard",
+			],
+			rows: [
+				[
+					"General (casualty, theft, destruction)",
+					"2 years from close of first tax year gain is realized",
+					"Similar or related in service or use",
+				],
+				[
+					"Condemned real property (productive use/investment)",
+					"3 years from close of first tax year gain is realized",
+					"Like-kind (more relaxed standard)",
+				],
+				[
+					"Presidentially declared disaster (business/investment real property)",
+					"4 years from close of first tax year gain is realized",
+					"Like-kind",
+				],
+				[
+					"Livestock (disease)",
+					"2 years from close of first tax year gain is realized",
+					"Similar or related in service or use",
+				],
+				[
+					"Livestock (drought/weather)",
+					"4 years from close of first tax year gain is realized",
+					"Like-kind (other livestock)",
+				],
+			],
+		},
+		{
+			title: "Section 267 Related Party Categories",
+			headers: ["Category", "Relationship", "Ownership Threshold"],
+			rows: [
+				[
+					"Family members",
+					"Siblings (whole/half), spouse, ancestors, lineal descendants",
+					"N/A — automatically related",
+				],
+				[
+					"Individual & corporation",
+					"Individual owns stock in a corporation",
+					"More than 50% (by value, direct + constructive)",
+				],
+				[
+					"Two corporations (controlled group)",
+					"Common ownership in both corporations",
+					"More than 50% common ownership",
+				],
+				[
+					"Grantor & trust",
+					"Grantor and fiduciary of trust created by grantor",
+					"N/A — automatically related",
+				],
+				[
+					"Trust fiduciary & beneficiary",
+					"Fiduciary and beneficiary of the same trust",
+					"N/A — automatically related",
+				],
+				[
+					"Corporation & partnership",
+					"Same persons own both entities",
+					"More than 50% of each",
+				],
+				[
+					"Two partnerships",
+					"Same persons own capital/profits in both",
+					"More than 50% of each",
+				],
+				[
+					"Executor & beneficiary",
+					"Executor of estate and beneficiary of same estate",
+					"N/A — automatically related",
 				],
 			],
 		},

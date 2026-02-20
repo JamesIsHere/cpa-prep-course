@@ -13,7 +13,7 @@ test.describe("Public Pages — Smoke Tests", () => {
 		).toBeVisible();
 
 		// Stats bar
-		await expect(page.locator("text=1,050+")).toBeVisible();
+		await expect(page.locator("text=1,250+")).toBeVisible();
 		await expect(page.locator("text=Practice Questions")).toBeVisible();
 
 		// Features section
@@ -119,16 +119,16 @@ test.describe("Public Pages — Smoke Tests", () => {
 	});
 
 	const sectionTests = [
-		{ slug: "aud", title: "Auditing and Attestation", lessonCount: 12 },
+		{ slug: "aud", title: "Auditing and Attestation", lessonCount: 13 },
 		{
 			slug: "far",
 			title: "Financial Accounting and Reporting",
-			lessonCount: 13,
+			lessonCount: 18,
 		},
-		{ slug: "reg", title: "Taxation and Regulation", lessonCount: 13 },
-		{ slug: "bar", title: "Business Analysis and Reporting", lessonCount: 11 },
-		{ slug: "isc", title: "Information Systems and Controls", lessonCount: 12 },
-		{ slug: "tcp", title: "Tax Compliance and Planning", lessonCount: 12 },
+		{ slug: "reg", title: "Taxation and Regulation", lessonCount: 16 },
+		{ slug: "bar", title: "Business Analysis and Reporting", lessonCount: 16 },
+		{ slug: "isc", title: "Information Systems and Controls", lessonCount: 16 },
+		{ slug: "tcp", title: "Tax Compliance and Planning", lessonCount: 15 },
 	];
 
 	for (const { slug, title, lessonCount } of sectionTests) {

@@ -1,5 +1,31 @@
 # Running Log
 
+## 2026-02-20 06:12
+1. Session 1: Rebranded all UI/metadata from "CPA Prep Course" to "Slayer CPA" (nav, layout, OG image, PDF document)
+2. Session 1: Updated interim stats to 81 lessons, 1,125+ questions, 249 framework items
+3. Session 1: Added 4 security headers to next.config.ts (X-Frame-Options DENY, HSTS, X-XSS-Protection, Permissions-Policy)
+4. Session 1: Added PDF render tests for FAR, REG, BAR, ISC, TCP (5 new test cases, 61 total tests)
+5. Session 1: Expanded study-frameworks test to validate all 6 sections (was only AUD, FAR, REG)
+6. Session 2: Created AUD lesson 13 (Government Auditing Standards — Yellow Book, Single Audit, GAGAS)
+7. Session 2: Created FAR lessons 17 (Contingencies/ASC 450) and 18 (Fair Value/ASC 820)
+8. Session 2: Created migration 00018 with 30 questions + 3 lesson inserts
+9. Session 2: Added 8 study framework items (AUD: 3, FAR: 5 — concept maps, decision trees, reference tables, mnemonics)
+10. Session 3: Created REG lessons 14 (Federal Tax Procedures), 15 (Legal Duties), 16 (Debtor-Creditor)
+11. Session 3: Created migration 00019 with 30 questions + 3 lesson inserts
+12. Session 3: Added 8 study framework items (concept map, decision trees, reference tables, mnemonics)
+13. Session 4: Created BAR lessons 15 (Fund Reconciliation) and 16 (Interfund Transactions)
+14. Session 4: Created ISC lessons 15 (SOC Testing Controls) and 16 (SOC Reporting)
+15. Session 4: Created migration 00020 with 40 questions + 4 lesson inserts
+16. Session 4: Added 4 study framework items (BAR: concept map + reference table, ISC: decision tree + reference table)
+17. Session 5: Created TCP lessons 13 (Capital Structure Tax), 14 (Nontaxable Dispositions), 15 (Related Party Transactions)
+18. Session 5: Created migration 00021 with 30 questions + 3 lesson inserts
+19. Session 5: Added 7 study framework items (concept map, decision tree, 2 formulas, 3 reference tables)
+20. Session 6: Updated all stats to final numbers (94 lessons, 1,250+ questions, 276 framework items)
+21. Session 6: Updated e2e test expectations to final lesson counts per section
+22. Session 6: Updated blueprint.test.ts assertions (BAR 195, ISC 190)
+23. Session 6: Verified zero stale brand/stat references, all 61 tests passing, clean build
+24. Updated CLAUDE.md content summary with final per-section stats and topics
+
 ## 2026-02-20 05:31
 1. Completed Tier 1 of AICPA Blueprint Gap Fill: 8 new MDX lessons across ISC, BAR, FAR
 2. Created ISC lessons: IT General Controls (13), IT Audit Frameworks (14)

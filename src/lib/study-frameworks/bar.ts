@@ -256,6 +256,86 @@ export const barFramework: StudyFramework = {
 				],
 			},
 		},
+		{
+			title: "Government Fund-to-Government-Wide Reconciliation Adjustments",
+			root: {
+				label: "Reconciliation: Fund Statements → Government-Wide Statements",
+				children: [
+					{
+						label: "Capital Asset Adjustments",
+						children: [
+							{
+								label:
+									"Add: Capital assets net of depreciation (not in fund BS)",
+							},
+							{
+								label:
+									"Add back: Capital outlay expenditures (capitalized, not expensed, government-wide)",
+							},
+							{
+								label:
+									"Subtract: Depreciation expense (not in funds, recognized government-wide)",
+							},
+							{
+								label:
+									"Adjust: Gain/loss on disposal (funds record full proceeds as revenue; government-wide records only gain/loss)",
+							},
+						],
+					},
+					{
+						label: "Long-Term Liability Adjustments",
+						children: [
+							{
+								label:
+									"Subtract: GO bonds, compensated absences, net pension liability, net OPEB liability",
+							},
+							{
+								label:
+									"Subtract: Bond proceeds (other financing source in funds → liability government-wide)",
+							},
+							{
+								label:
+									"Add back: Debt principal payments (expenditure in funds → reduces liability government-wide)",
+							},
+							{
+								label:
+									"Adjust: Changes in accrued interest, compensated absences, pension/OPEB amounts",
+							},
+						],
+					},
+					{
+						label: "Deferred Inflows/Outflows",
+						children: [
+							{
+								label:
+									"Add: Unavailable revenue (deferred inflow in funds → revenue government-wide)",
+							},
+							{
+								label:
+									"Add: Deferred outflows — pensions and OPEB (GASB 68/75)",
+							},
+							{
+								label:
+									"Subtract: Deferred inflows — pensions and OPEB (GASB 68/75)",
+							},
+						],
+					},
+					{
+						label: "Internal Service Fund",
+						children: [
+							{
+								label:
+									"Add: Internal service fund net position (included with governmental activities)",
+							},
+							{
+								label:
+									"Add: Internal service fund change in net position (activity statement)",
+							},
+						],
+					},
+				],
+			},
+		},
 	],
 	decisionTrees: [
 		{
@@ -667,6 +747,53 @@ export const barFramework: StudyFramework = {
 					"Prior service cost (plan amendment)",
 					"OCI",
 					"Deferred — amortized over service period",
+				],
+			],
+		},
+		{
+			title: "Interfund Transaction Types",
+			headers: [
+				"Type",
+				"Category",
+				"Account Titles",
+				"Example",
+				"Government-Wide Treatment",
+			],
+			rows: [
+				[
+					"Interfund loan (short-term)",
+					"Reciprocal",
+					"Due from / Due to other funds",
+					"General Fund lends $100K to Capital Projects Fund for 6 months",
+					"Eliminated (both funds in governmental activities)",
+				],
+				[
+					"Interfund loan (long-term)",
+					"Reciprocal",
+					"Advance to / Advance from other funds; nonspendable fund balance in lending fund",
+					"General Fund lends $500K to Enterprise Fund, repayable in 5 years",
+					"Reported as internal balances if between governmental and business-type",
+				],
+				[
+					"Interfund services provided/used",
+					"Reciprocal",
+					"Revenue (providing fund) / Expenditure or expense (receiving fund)",
+					"Internal Service Fund charges General Fund $80K for fleet maintenance at fair value",
+					"Not eliminated (legitimate operating cost at fair value)",
+				],
+				[
+					"Interfund transfer",
+					"Nonreciprocal",
+					"Transfer out (other financing uses) / Transfer in (other financing sources)",
+					"General Fund transfers $1M to Debt Service Fund for annual debt payments",
+					"Eliminated between governmental funds; reported as transfers between governmental and business-type",
+				],
+				[
+					"Interfund reimbursement",
+					"Nonreciprocal",
+					"Reduces expenditure in reimbursed fund / Records expenditure in correct fund",
+					"General Fund paid $10K in supplies that should be charged to Special Revenue Fund",
+					"Not separately reported (reclassification only)",
 				],
 			],
 		},

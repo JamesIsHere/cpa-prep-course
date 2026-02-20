@@ -190,6 +190,52 @@ export const audFramework: StudyFramework = {
 			},
 		},
 		{
+			title: "Government Auditing Standards Hierarchy",
+			root: {
+				label: "Government Auditing Standards (GAGAS)",
+				children: [
+					{
+						label: "Issued by GAO (Yellow Book)",
+						children: [
+							{
+								label:
+									"Applies to government entities and federal award recipients",
+							},
+							{ label: "Builds on GAAS with additional requirements" },
+						],
+					},
+					{
+						label: "Financial Audits",
+						children: [
+							{ label: "Follow GAAS + GAGAS supplements" },
+							{
+								label: "Additional reports on internal control and compliance",
+							},
+							{
+								label:
+									"Single Audit for entities expending ≥$750,000 in federal awards",
+							},
+						],
+					},
+					{
+						label: "Performance Audits",
+						children: [
+							{ label: "Unique to GAGAS (no GAAS equivalent)" },
+							{ label: "Evaluate effectiveness, economy, and efficiency" },
+							{ label: "Findings: condition, criteria, cause, effect" },
+						],
+					},
+					{
+						label: "Attestation Engagements",
+						children: [
+							{ label: "Follow SSAE + GAGAS supplements" },
+							{ label: "Examinations, reviews, AUP on compliance" },
+						],
+					},
+				],
+			},
+		},
+		{
 			title: "SQMS No. 1 Components",
 			root: {
 				label: "System of Quality Management",
@@ -316,6 +362,29 @@ export const audFramework: StudyFramework = {
 					},
 				},
 				no: "No going concern reporting required",
+			},
+		},
+		{
+			title: "Is This Engagement Subject to GAGAS?",
+			root: {
+				question: "Is the entity a government organization or program?",
+				yes: "Subject to GAGAS — apply Yellow Book requirements",
+				no: {
+					question:
+						"Does the entity receive federal awards (grants, contracts, cooperative agreements)?",
+					yes: {
+						question:
+							"Does the entity expend $750,000 or more in federal awards during the fiscal year?",
+						yes: "Single Audit required under GAGAS and Uniform Guidance",
+						no: "GAGAS may apply if required by the award terms, but Single Audit is not required",
+					},
+					no: {
+						question:
+							"Do any laws, regulations, or contractual agreements require a GAGAS audit?",
+						yes: "Subject to GAGAS — apply Yellow Book requirements per the specific mandate",
+						no: "GAGAS does not apply — standard GAAS engagement",
+					},
+				},
 			},
 		},
 		{
@@ -599,6 +668,47 @@ export const audFramework: StudyFramework = {
 					"Yes",
 					"Yes",
 					"Inquiry + analytical procedures + rep letter",
+				],
+			],
+		},
+		{
+			title: "GAAS vs. GAGAS Requirements",
+			headers: ["Requirement", "GAAS (AICPA)", "GAGAS (Yellow Book)"],
+			rows: [
+				[
+					"Standard setter",
+					"AICPA Auditing Standards Board",
+					"U.S. Government Accountability Office (GAO)",
+				],
+				[
+					"Independence rules",
+					"AICPA Code + threats/safeguards",
+					"More restrictive — prohibits certain nonaudit services permitted under AICPA",
+				],
+				[
+					"CPE requirements",
+					"Varies by state board",
+					"80 hours/2 years, 24 in government topics",
+				],
+				[
+					"Internal control report",
+					"Communicate deficiencies in writing (no separate report)",
+					"Separate report on internal control required",
+				],
+				[
+					"Compliance report",
+					"Consider laws/regulations (no separate report)",
+					"Separate report on compliance with laws and regulations required",
+				],
+				[
+					"Performance audits",
+					"Not applicable",
+					"Yes — evaluates effectiveness, economy, and efficiency",
+				],
+				[
+					"Single Audit",
+					"Not applicable",
+					"Required for entities expending ≥$750,000 in federal awards",
 				],
 			],
 		},

@@ -605,6 +605,29 @@ export const iscFramework: StudyFramework = {
 				},
 			},
 		},
+		{
+			title: "SOC Test Type Selection",
+			root: {
+				question: "Is the control automated (system-enforced configuration)?",
+				yes: {
+					question:
+						"Are IT general controls (change management, access controls) over the system effective?",
+					yes: "Inspect configuration + limited reperformance (one test may suffice — automated control operates consistently when ITGCs effective)",
+					no: "Cannot rely on consistency of automated control — test like a manual control with sampling across the period, plus investigate ITGC failures",
+				},
+				no: {
+					question:
+						"Does the control produce documentary evidence (logs, signatures, reports)?",
+					yes: {
+						question:
+							"Is the control high-risk or were there prior-period exceptions?",
+						yes: "Inspection of documentation with larger sample size + consider reperformance for complex controls; spread sample across full period",
+						no: "Inspection of documentation with standard sample size spread across the examination period; corroborate with inquiry",
+					},
+					no: "Observation of the control being performed + inquiry of personnel; note that observation only provides point-in-time evidence — combine with other procedures",
+				},
+			},
+		},
 	],
 	formulas: [
 		{
@@ -904,6 +927,36 @@ export const iscFramework: StudyFramework = {
 					"Service management concepts",
 					"IT risk assessment",
 					"ICFR evaluation (primary framework)",
+				],
+			],
+		},
+		{
+			title: "SOC Opinion Types and Conditions",
+			headers: ["Opinion Type", "Condition", "Report Language", "User Impact"],
+			rows: [
+				[
+					"Unqualified (clean)",
+					"Description fairly presented; controls suitably designed and operating effectively (Type II); no material exceptions",
+					"'In our opinion, the description is fairly presented... and the controls... were suitably designed and operating effectively'",
+					"Highest assurance — user auditor can rely on SOC report for the controls tested",
+				],
+				[
+					"Qualified",
+					"One or more material exceptions limited to specific controls; overall control environment is still effective",
+					"'Except for [specific control(s)]... the controls were suitably designed and operating effectively'",
+					"User auditor evaluates the impact of the excepted controls on their risk assessment; may need additional procedures for affected areas",
+				],
+				[
+					"Adverse",
+					"Exceptions are pervasive across multiple control areas; the control environment as a whole is not effective",
+					"'The controls were not suitably designed / not operating effectively to achieve the applicable criteria'",
+					"User auditor cannot rely on the SOC report; must perform alternative procedures or expand substantive testing significantly",
+				],
+				[
+					"Disclaimer",
+					"Practitioner unable to obtain sufficient appropriate evidence (scope limitation imposed by service organization or circumstances)",
+					"'We were unable to obtain sufficient appropriate evidence to form an opinion'",
+					"No assurance provided; user auditor must treat as if no SOC report exists and perform full alternative procedures",
 				],
 			],
 		},

@@ -22,7 +22,7 @@ export default function SignupPage() {
 					</li>
 					<li className="flex items-start gap-2">
 						<span className="text-emerald-600 mt-0.5">✓</span>
-						73 lessons and 1,050+ questions across all 6 sections
+						94 lessons and 1,250+ questions across all 6 sections
 					</li>
 					<li className="flex items-start gap-2">
 						<span className="text-emerald-600 mt-0.5">✓</span>

@@ -16,24 +16,24 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
 	title: {
-		default: "CPA Prep Course",
-		template: "%s — CPA Prep Course",
+		default: "Slayer CPA",
+		template: "%s — Slayer CPA",
 	},
 	description:
-		"Full-scope CPA exam prep — 73 lessons, 1,050+ practice questions, timed exams, and study frameworks across all 6 sections for $9.99/month.",
+		"Full-scope CPA exam prep — 94 lessons, 1,250+ practice questions, timed exams, and study frameworks across all 6 sections for $9.99/month.",
 	metadataBase: new URL("https://www.slayer-cpa.com"),
 	openGraph: {
 		type: "website",
-		siteName: "CPA Prep Course",
-		title: "CPA Prep Course",
+		siteName: "Slayer CPA",
+		title: "Slayer CPA",
 		description:
-			"73 lessons, 1,050+ questions, timed practice exams, and PDF study frameworks covering AUD, FAR, REG, BAR, ISC, and TCP.",
+			"94 lessons, 1,250+ questions, timed practice exams, and PDF study frameworks covering AUD, FAR, REG, BAR, ISC, and TCP.",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "CPA Prep Course",
+		title: "Slayer CPA",
 		description:
-			"73 lessons, 1,050+ questions, timed practice exams, and PDF study frameworks covering AUD, FAR, REG, BAR, ISC, and TCP.",
+			"94 lessons, 1,250+ questions, timed practice exams, and PDF study frameworks covering AUD, FAR, REG, BAR, ISC, and TCP.",
 	},
 };
 

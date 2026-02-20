@@ -437,6 +437,28 @@ export const farFramework: StudyFramework = {
 				},
 			},
 		},
+		{
+			title: "How to Account for a Loss Contingency (ASC 450)",
+			root: {
+				question:
+					"Is it probable that a loss has been incurred as of the balance sheet date?",
+				yes: {
+					question: "Can the amount of the loss be reasonably estimated?",
+					yes: {
+						question:
+							"Is a specific amount within the range a better estimate than any other?",
+						yes: "Accrue the best estimate amount; disclose the contingency",
+						no: "Accrue the minimum of the range; disclose the nature and possible additional loss up to the range maximum",
+					},
+					no: "Do not accrue — disclose the nature of the contingency and state that an estimate cannot be made",
+				},
+				no: {
+					question: "Is the loss reasonably possible?",
+					yes: "Do not accrue — disclose the nature of the contingency and estimate of possible loss (or state estimate cannot be made)",
+					no: "Remote — generally no accrual or disclosure required (except guarantees of others' debt)",
+				},
+			},
+		},
 	],
 	formulas: [
 		{
@@ -786,6 +808,54 @@ export const farFramework: StudyFramework = {
 				],
 			],
 		},
+		{
+			title: "ASC 820 Fair Value Hierarchy",
+			headers: ["Level", "Input Type", "Examples", "Reliability"],
+			rows: [
+				[
+					"Level 1",
+					"Quoted prices (unadjusted) in active markets for identical assets/liabilities",
+					"Exchange-traded stocks, U.S. Treasury bonds, commodity futures",
+					"Highest — most reliable",
+				],
+				[
+					"Level 2",
+					"Observable inputs other than Level 1 (similar assets, inactive markets, derived from observable data)",
+					"Corporate bonds with comparable trade data, interest rate swaps using yield curves, real estate with comparable sales",
+					"Moderate — observable but adjusted",
+				],
+				[
+					"Level 3",
+					"Unobservable inputs based on entity's own assumptions about market participant assumptions",
+					"DCF models with projected revenues, internal pricing models for complex derivatives, customer relationship valuations",
+					"Lowest — most estimation uncertainty",
+				],
+			],
+		},
+		{
+			title: "Loss Contingency Treatment (ASC 450)",
+			headers: ["Likelihood", "Definition", "Accrue?", "Disclose?"],
+			rows: [
+				[
+					"Probable",
+					"Likely to occur",
+					"Yes, if reasonably estimable (minimum of range if no best estimate)",
+					"Yes — nature and amount",
+				],
+				[
+					"Reasonably possible",
+					"More than remote but less than likely",
+					"No",
+					"Yes — nature and estimate of possible loss or range",
+				],
+				[
+					"Remote",
+					"Slight chance",
+					"No",
+					"Generally no (except guarantees of others' debt)",
+				],
+			],
+		},
 	],
 	mnemonics: [
 		{
@@ -856,6 +926,18 @@ export const farFramework: StudyFramework = {
 				"Service cost, Interest cost, Return on plan assets (subtract), Amortization of prior service cost, Excess gain/loss amortization (corridor)",
 			explanation:
 				"The five components of net periodic pension cost under ASC 715. SIRAE walks through each element in order. Only service cost hits operating income; the rest go below the line.",
+		},
+		{
+			acronym: "PRE",
+			expansion: "Probable, Reasonably estimable → Expense (accrue the loss)",
+			explanation:
+				"The two conditions for accruing a loss contingency under ASC 450. Both must be met: the loss must be Probable AND Reasonably Estimable. If either condition is not met, disclosure may still be required but no accrual is recorded.",
+		},
+		{
+			acronym: "MIC",
+			expansion: "Market approach, Income approach, Cost approach",
+			explanation:
+				"The three valuation techniques under ASC 820 for measuring fair value. Market uses comparable transactions, Income converts future cash flows to present value, and Cost uses replacement cost adjusted for obsolescence.",
 		},
 	],
 };

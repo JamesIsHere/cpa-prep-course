@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "CPA Prep Course";
+export const alt = "Slayer CPA";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -26,7 +26,7 @@ export default function OgImage() {
 					letterSpacing: "-1px",
 				}}
 			>
-				CPA Prep Course
+				Slayer CPA
 			</div>
 			<div
 				style={{
@@ -38,7 +38,7 @@ export default function OgImage() {
 					lineHeight: 1.4,
 				}}
 			>
-				73 lessons, 1,050+ questions, and study frameworks covering all 6 CPA
+				94 lessons, 1,250+ questions, and study frameworks covering all 6 CPA
 				exam sections.
 			</div>
 		</div>,
