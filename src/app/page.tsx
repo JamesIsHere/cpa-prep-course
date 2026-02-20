@@ -109,6 +109,41 @@ export default function Home() {
 				</div>
 			</section>
 
+			{/* Free Study Plan Download */}
+			<section className="bg-emerald-50 border-y border-emerald-100">
+				<div className="max-w-4xl mx-auto px-4 py-12 text-center">
+					<h2 className="text-xl font-bold text-gray-900 mb-2">
+						Free CPA Study Plan
+					</h2>
+					<p className="text-gray-500 text-sm mb-6 max-w-lg mx-auto">
+						A 20-week study schedule covering all 6 sections, with time
+						estimates, section ordering advice, and exam day tips.
+					</p>
+					<a
+						href="/cpa-study-plan.pdf"
+						download
+						className="inline-flex items-center gap-2 bg-emerald-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-emerald-700 transition-colors"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							className="h-5 w-5"
+							viewBox="0 0 20 20"
+							fill="currentColor"
+						>
+							<path
+								fillRule="evenodd"
+								d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+								clipRule="evenodd"
+							/>
+						</svg>
+						Download PDF
+					</a>
+					<p className="text-xs text-gray-400 mt-3">
+						No email required — instant download
+					</p>
+				</div>
+			</section>
+
 			{/* Why Slayer CPA */}
 			<section className="bg-white border-y border-gray-200">
 				<div className="max-w-4xl mx-auto px-4 py-16">
@@ -140,7 +175,7 @@ export default function Home() {
 						</div>
 						<div>
 							<div className="text-emerald-600 text-3xl font-bold mb-2">
-								2025
+								2026
 							</div>
 							<div className="text-sm text-gray-500">
 								Content aligned to the current CPA exam blueprint and IRS
@@ -358,7 +393,7 @@ export default function Home() {
 							Is the content up to date?
 						</h3>
 						<p className="text-sm text-gray-500 leading-relaxed">
-							Yes. All lessons, questions, and study frameworks use 2025 IRS
+							Yes. All lessons, questions, and study frameworks use 2026 IRS
 							figures and are aligned to the current CPA exam blueprint.
 						</p>
 					</div>

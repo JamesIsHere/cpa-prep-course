@@ -97,6 +97,35 @@ A **rollback plan** must be prepared before any change is implemented. If the ch
 
 > **Exam tip:** The exam tests whether proper change management controls were followed. Watch for scenarios where developers have access to production systems (bypassing segregation), changes are implemented without testing, or approvals are missing. These are common control deficiencies.
 
+### Emergency Changes
+
+Not all changes follow the standard process. **Emergency changes** address critical issues — security vulnerabilities, production outages, or regulatory deadlines — that require immediate action.
+
+Emergency changes should still be controlled, even under time pressure:
+
+| Control | Purpose |
+|---------|---------|
+| Pre-authorized emergency access | Designated personnel have break-glass access to production for emergencies only |
+| Reduced approval requirements | A single senior approver (rather than the full CAB) authorizes the change |
+| Mandatory post-implementation review | The change must be fully documented and reviewed after the fact |
+| Temporary access revocation | Emergency access is revoked once the issue is resolved |
+
+A key audit concern is that emergency change procedures are not abused to bypass normal change management. Auditors review the frequency and nature of emergency changes — a high volume may indicate that the standard process is too slow or that controls are being circumvented.
+
+### Change Management Metrics and Data Analytics
+
+Organizations use metrics to monitor the health of their change management process:
+
+- **Change success rate** — Percentage of changes implemented without causing incidents or requiring rollback
+- **Emergency change ratio** — Proportion of total changes classified as emergency (target: below 10%)
+- **Change backlog** — Number of approved changes waiting for implementation
+- **Mean time to implement** — Average elapsed time from request to deployment
+- **Failed change rate** — Percentage of changes rolled back or causing production incidents
+
+**Data analytics** enhances change management by analyzing change logs for patterns: changes deployed outside maintenance windows, changes without proper approval chains, changes correlated with subsequent incidents, and unauthorized configuration modifications detected through CMDB (Configuration Management Database) monitoring.
+
+> **Exam tip:** The CMDB maintains a record of all IT assets and their configurations. When changes occur, the CMDB should be updated. Discrepancies between the CMDB and actual configurations may indicate unauthorized changes — a control failure that auditors investigate.
+
 ## Patch Management and Version Control
 
 **Patch management** is a specialized subset of change management focused on applying vendor-supplied updates to software and systems. Patches address security vulnerabilities, fix bugs, and add functionality.

@@ -1,5 +1,19 @@
 # Running Log
 
+## 2026-02-20 09:59
+1. Phase 1: Updated blueprint.ts source to January 2026 Blueprint — added 4 new topics, updated 2 topic names, removed 1 dropped topic (transfer pricing)
+2. Phase 1: Updated page.tsx year references from 2025 to 2026 (stats section + FAQ)
+3. Phase 2: Updated 12 MDX lesson files with 2026 Blueprint content (entity-level controls, accounting estimates, ASC 820 scope, H.R. 1 bonus depreciation/auto loan/tips, HIPAA key terms, emergency change management, SOC 1 AT-C 320, Section 250 GILTI deduction, TCJA extension language)
+4. Phase 2: Verified 2 MDX files needed no changes (AUD 12 quality management, FAR 02 financial statements)
+5. Phase 3: Updated tcp.ts study framework — ~20 dollar figures and year references to 2026 (exemption, excess business loss, SS wage base, QBI thresholds, retirement limits, trust bracket)
+6. Phase 3: Updated reg.ts study framework — ~15 references to 2026 (standard deductions, filing status tables, bankruptcy limit, dependency gross income)
+7. Phase 4: Created migration 00023_2026_blueprint_questions.sql — 32 new questions across all 6 sections
+8. Phase 4: Updated blueprint.ts question counts and section totals (+32 questions, total ~1,307)
+9. Phase 5: Created migration 00024_update_2026_tax_figures.sql — 22 question updates (estate exemption $14.50M, excess business loss $322K, standard deductions, 401(k) $24K, SIMPLE $17K, defined benefit $285K, Roth phase-out, dependency test $5,200, kiddie tax $1,350/$2,700)
+10. Phase 6: Fixed blueprint test assertions for new question totals — all 94 unit tests passing
+11. Phase 6: Verified clean production build (132 pages)
+12. Phase 6: Updated CLAUDE.md content summary table (~1,307 questions)
+
 ## 2026-02-20 09:21
 1. Comprehensive project audit: folder structure, routes, content, security, code quality — all clean
 2. Verified all 94 unit tests + 152 e2e tests pass, production build clean

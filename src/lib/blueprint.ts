@@ -1,5 +1,5 @@
 // AICPA CPA Exam Blueprint — structured data with content mappings
-// Source: AICPA Blueprints effective January 2024
+// Source: AICPA Blueprints effective January 2026
 // Mappings connect blueprint groups to lessons (sections.ts) and question topics (DB)
 
 // --- Types ---
@@ -35,14 +35,14 @@ export type CpaBlueprint = BlueprintSection[];
 // --- Question counts by topic (approximate, from seed migrations 00002–00015) ---
 
 export const questionCounts: Record<string, number> = {
-	// AUD (200 total)
+	// AUD (215 total)
 	"Ethics and Independence": 18,
 	"Professional Responsibilities": 14,
 	"Quality Management": 12,
 	"Audit Planning": 18,
 	"Risk Assessment": 18,
-	"Internal Controls": 18,
-	"Audit Evidence": 16,
+	"Internal Controls": 20,
+	"Audit Evidence": 19,
 	"Audit Sampling": 14,
 	"Substantive Procedures": 16,
 	"Audit Reports": 18,
@@ -50,7 +50,7 @@ export const questionCounts: Record<string, number> = {
 	"Review/Compilation Engagements": 10,
 	"Attestation Engagements": 14,
 	"Government Auditing Standards": 10,
-	// FAR (200 total)
+	// FAR (253 total)
 	"Financial Statements": 16,
 	"Statement of Cash Flows": 10,
 	"Earnings Per Share": 8,
@@ -64,24 +64,24 @@ export const questionCounts: Record<string, number> = {
 	Contingencies: 8,
 	"Income Taxes": 14,
 	Consolidations: 14,
-	"Fair Value": 8,
+	"Fair Value": 11,
 	"Not-for-Profit Accounting": 12,
 	"Governmental Accounting": 12,
 	"Cash and Receivables": 10,
 	"Employee Benefit Plans": 10,
 	"Special Purpose Frameworks": 10,
-	// REG (220 total)
+	// REG (258 total)
 	"Circular 230": 12,
 	"Professional Ethics in Tax": 10,
 	"Tax Procedures": 8,
 	"Business Law: Contracts": 14,
 	"Agency and Regulation": 12,
 	"Business Structures": 12,
-	"Property Transactions: Basis": 14,
+	"Property Transactions: Basis": 17,
 	"Property Transactions: Gains/Losses": 12,
 	"Like-Kind Exchanges": 8,
-	"Individual Taxation: Income": 16,
-	"Individual Taxation: Deductions": 10,
+	"Individual Taxation: Income": 18,
+	"Individual Taxation: Deductions": 13,
 	"Individual Taxation: Credits": 10,
 	"Individual Taxation: Credits/AMT": 8,
 	"Individual Taxation: Filing/Credits": 18,
@@ -92,11 +92,11 @@ export const questionCounts: Record<string, number> = {
 	"Legal Duties and Responsibilities": 10,
 	"Debtor-Creditor Relationships": 10,
 	"Tax-Exempt Organizations": 10,
-	// BAR (145 total)
+	// BAR (198 total)
 	"Financial Statement Analysis": 18,
 	"Prospective Analysis and Forecasting": 14,
 	"Capital Structure and Valuation": 16,
-	"Financial Valuation Methods": 14,
+	"Financial Valuation Methods": 17,
 	"Risk Management and Economics": 12,
 	"Advanced Revenue and Intangibles": 14,
 	"Stock Compensation and Business Combinations": 16,
@@ -108,46 +108,46 @@ export const questionCounts: Record<string, number> = {
 	"Pension and Postretirement Benefits": 10,
 	"Fund-to-Government-Wide Reconciliation": 10,
 	"Interfund Transactions": 10,
-	// ISC (150 total)
+	// ISC (198 total)
 	"IT Infrastructure and Architecture": 16,
 	"ERP and Accounting Information Systems": 14,
 	"Data Management and Lifecycle": 14,
-	"System Availability and Change Management": 14,
+	"System Availability and Change Management": 18,
 	"Security and Control Frameworks": 16,
 	"Threats, Attacks, and Vulnerabilities": 14,
 	"Security Controls and Monitoring": 14,
 	"Incident Response and Recovery": 12,
-	"Privacy Requirements and Data Protection": 12,
-	"SOC Engagements": 12,
+	"Privacy Requirements and Data Protection": 15,
+	"SOC Engagements": 13,
 	"SOC Reporting and Trust Services Criteria": 12,
 	"IT General Controls": 10,
 	"IT Audit Frameworks": 10,
 	"SOC Testing Controls": 10,
 	"SOC Reporting": 10,
-	// TCP (150 total)
+	// TCP (185 total)
 	"Individual Tax Planning: Compensation": 16,
 	"Passive Activity and At-Risk Rules": 14,
-	"Wealth Transfer and Gifting Strategies": 14,
+	"Wealth Transfer and Gifting Strategies": 16,
 	"Retirement Plans and Education Savings": 14,
 	"Entity Tax Compliance: NOLs and Consolidated Returns": 14,
-	"International Tax": 14,
+	"International Tax": 16,
 	"Owner-Entity Transactions": 14,
 	"Advanced Basis Calculations": 12,
 	"Entity Formation and Liquidation": 12,
 	"Trusts and Estates": 14,
-	"Entity Choice and Planning": 12,
+	"Entity Choice and Planning": 13,
 	"Capital Structure Tax Planning": 10,
 	"Nontaxable Dispositions": 10,
 	"Related Party Transactions": 10,
 };
 
 export const sectionQuestionTotals: Record<string, number> = {
-	aud: 210,
-	far: 250,
-	reg: 250,
-	bar: 195,
-	isc: 190,
-	tcp: 180,
+	aud: 215,
+	far: 253,
+	reg: 258,
+	bar: 198,
+	isc: 198,
+	tcp: 185,
 };
 
 // --- Blueprint Data ---
@@ -350,6 +350,10 @@ export const cpaBlueprint: CpaBlueprint = [
 							{
 								id: "aud.2.F.3",
 								name: "Information system and related controls",
+							},
+							{
+								id: "aud.2.F.4",
+								name: "Entity-level controls and ITGC relationship",
 							},
 						],
 						lessonSlugs: ["05-internal-controls"],
@@ -949,7 +953,7 @@ export const cpaBlueprint: CpaBlueprint = [
 						topics: [
 							{
 								id: "far.3.E.1",
-								name: "ASC 820 fair value hierarchy",
+								name: "ASC 820 scope and fair value hierarchy",
 							},
 							{
 								id: "far.3.E.2",
@@ -1306,6 +1310,10 @@ export const cpaBlueprint: CpaBlueprint = [
 								id: "reg.4.B.3",
 								name: "Qualified business income deduction (Section 199A)",
 							},
+							{
+								id: "reg.4.B.4",
+								name: "H.R. 1 AGI adjustments (auto loan interest, tip income)",
+							},
 						],
 						lessonSlugs: ["09-individual-taxation-income"],
 						questionTopics: ["Individual Taxation: Deductions"],
@@ -1527,6 +1535,10 @@ export const cpaBlueprint: CpaBlueprint = [
 							{
 								id: "bar.1.B.3",
 								name: "Market multiples and asset-based approaches",
+							},
+							{
+								id: "bar.1.B.4",
+								name: "Fair value measurement scope (ASC 820 vs. other frameworks)",
 							},
 						],
 						lessonSlugs: [
@@ -1894,6 +1906,14 @@ export const cpaBlueprint: CpaBlueprint = [
 							{
 								id: "isc.1.E.2",
 								name: "Configuration and release management",
+							},
+							{
+								id: "isc.1.E.3",
+								name: "Emergency change procedures and metrics",
+							},
+							{
+								id: "isc.1.E.4",
+								name: "Change management data analytics and CMDB",
 							},
 						],
 						lessonSlugs: ["05-system-availability"],
@@ -2286,10 +2306,6 @@ export const cpaBlueprint: CpaBlueprint = [
 							{
 								id: "tcp.2.B.2",
 								name: "Foreign tax credit mechanics",
-							},
-							{
-								id: "tcp.2.B.3",
-								name: "Transfer pricing fundamentals",
 							},
 						],
 						lessonSlugs: ["07-international-tax"],

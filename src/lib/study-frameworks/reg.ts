@@ -234,7 +234,7 @@ export const regFramework: StudyFramework = {
 					{
 						label: "Tier 4 — Excess Business Loss (§461(l))",
 						children: [
-							{ label: "$313K single / $626K MFJ (2025)" },
+							{ label: "$322K single / $644K MFJ (2026)" },
 							{ label: "Excess becomes NOL carryforward" },
 						],
 					},
@@ -277,7 +277,7 @@ export const regFramework: StudyFramework = {
 						children: [
 							{ label: "Individuals with regular income only" },
 							{
-								label: "Unsecured debts below $2,750,000 (2025)",
+								label: "Unsecured debts below $2,830,000 (2026)",
 							},
 							{ label: "3–5 year repayment plan" },
 							{ label: "Debtor retains all property" },
@@ -552,23 +552,23 @@ export const regFramework: StudyFramework = {
 				question: "Is the taxpayer married on December 31 of the tax year?",
 				yes: {
 					question: "Does the taxpayer want to file jointly with the spouse?",
-					yes: "Married Filing Jointly (MFJ) — $30,000 standard deduction (2025); joint and several liability",
+					yes: "Married Filing Jointly (MFJ) — $30,750 standard deduction (2026); joint and several liability",
 					no: {
 						question:
 							"Did the taxpayer live apart from the spouse for the last 6 months of the year, maintain a home for a qualifying child, and file separately?",
-						yes: "Head of Household (considered unmarried) — $22,500 standard deduction (2025)",
-						no: "Married Filing Separately (MFS) — $15,000 standard deduction (2025); if one spouse itemizes, the other must also itemize",
+						yes: "Head of Household (considered unmarried) — $23,100 standard deduction (2026)",
+						no: "Married Filing Separately (MFS) — $15,375 standard deduction (2026); if one spouse itemizes, the other must also itemize",
 					},
 				},
 				no: {
 					question:
 						"Did the taxpayer's spouse die in one of the two prior tax years, and does the taxpayer maintain a home for a dependent child?",
-					yes: "Qualifying Surviving Spouse (QSS) — $30,000 standard deduction (2025); available for 2 years after year of death",
+					yes: "Qualifying Surviving Spouse (QSS) — $30,750 standard deduction (2026); available for 2 years after year of death",
 					no: {
 						question:
 							"Does the taxpayer pay more than half the cost of a home for a qualifying person (child, parent, or qualifying relative)?",
-						yes: "Head of Household (HOH) — $22,500 standard deduction (2025); parent need not live with taxpayer",
-						no: "Single — $15,000 standard deduction (2025)",
+						yes: "Head of Household (HOH) — $23,100 standard deduction (2026); parent need not live with taxpayer",
+						no: "Single — $15,375 standard deduction (2026)",
 					},
 				},
 			},
@@ -689,7 +689,7 @@ export const regFramework: StudyFramework = {
 	],
 	referenceTables: [
 		{
-			title: "Filing Status — Standard Deduction (2025)",
+			title: "Filing Status — Standard Deduction (2026)",
 			headers: [
 				"Filing Status",
 				"Standard Deduction",
@@ -1009,7 +1009,7 @@ export const regFramework: StudyFramework = {
 			],
 		},
 		{
-			title: "Filing Status — Requirements and Benefits (2025)",
+			title: "Filing Status — Requirements and Benefits (2026)",
 			headers: [
 				"Filing Status",
 				"Key Requirement",
@@ -1017,24 +1017,77 @@ export const regFramework: StudyFramework = {
 				"Best For",
 			],
 			rows: [
-				["Single", "Unmarried on Dec 31, not HOH/QSS eligible", "$15,000", "Unmarried with no qualifying person"],
-				["MFJ", "Married on Dec 31; both agree to file jointly", "$30,000", "Most married couples (widest brackets)"],
-				["MFS", "Married on Dec 31; files separate return", "$15,000", "Limiting liability; high medical deductions"],
-				["HOH", "Unmarried + >50% home costs + qualifying person", "$22,500", "Unmarried parent or caretaker"],
-				["QSS", "Spouse died in prior 2 years + dependent child at home", "$30,000", "Recent widow(er) with dependent child"],
+				[
+					"Single",
+					"Unmarried on Dec 31, not HOH/QSS eligible",
+					"$15,375",
+					"Unmarried with no qualifying person",
+				],
+				[
+					"MFJ",
+					"Married on Dec 31; both agree to file jointly",
+					"$30,750",
+					"Most married couples (widest brackets)",
+				],
+				[
+					"MFS",
+					"Married on Dec 31; files separate return",
+					"$15,375",
+					"Limiting liability; high medical deductions",
+				],
+				[
+					"HOH",
+					"Unmarried + >50% home costs + qualifying person",
+					"$23,100",
+					"Unmarried parent or caretaker",
+				],
+				[
+					"QSS",
+					"Spouse died in prior 2 years + dependent child at home",
+					"$30,750",
+					"Recent widow(er) with dependent child",
+				],
 			],
 		},
 		{
 			title: "Dependency Tests — Qualifying Child vs. Qualifying Relative",
 			headers: ["Test", "Qualifying Child", "Qualifying Relative"],
 			rows: [
-				["Relationship", "Son, daughter, sibling, step/foster, or their descendants", "Related person OR member of household for full year"],
-				["Age", "Under 19 (or under 24 if full-time student; any age if disabled)", "No age requirement"],
-				["Residency", "Lived with taxpayer more than half the year", "Relationship OR lived with taxpayer full year"],
-				["Support", "Child did NOT provide more than half own support", "Taxpayer provided MORE than 50% of support"],
-				["Gross income", "No gross income test", "Person’s gross income < $5,050 (2025)"],
-				["Joint return", "Cannot file joint return (with exceptions)", "Cannot file joint return (with exceptions)"],
-				["Citizenship", "U.S. citizen/national/resident or Canada/Mexico resident", "U.S. citizen/national/resident or Canada/Mexico resident"],
+				[
+					"Relationship",
+					"Son, daughter, sibling, step/foster, or their descendants",
+					"Related person OR member of household for full year",
+				],
+				[
+					"Age",
+					"Under 19 (or under 24 if full-time student; any age if disabled)",
+					"No age requirement",
+				],
+				[
+					"Residency",
+					"Lived with taxpayer more than half the year",
+					"Relationship OR lived with taxpayer full year",
+				],
+				[
+					"Support",
+					"Child did NOT provide more than half own support",
+					"Taxpayer provided MORE than 50% of support",
+				],
+				[
+					"Gross income",
+					"No gross income test",
+					"Person’s gross income < $5,200 (2026)",
+				],
+				[
+					"Joint return",
+					"Cannot file joint return (with exceptions)",
+					"Cannot file joint return (with exceptions)",
+				],
+				[
+					"Citizenship",
+					"U.S. citizen/national/resident or Canada/Mexico resident",
+					"U.S. citizen/national/resident or Canada/Mexico resident",
+				],
 			],
 		},
 	],

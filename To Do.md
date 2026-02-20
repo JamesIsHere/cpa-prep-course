@@ -8,7 +8,7 @@
 - [ ] Build /blog route with MDX support (reuse existing MDX infra)
 - [ ] Draft + publish blog post #1: "Slayer CPA vs Becker: Full Comparison"
 - [ ] Draft + publish blog post #2: "How Much Does CPA Exam Prep Really Cost?"
-- [ ] Create free CPA study plan PDF (downloadable, no email gate)
+- [x] Create free CPA study plan PDF (downloadable, no email gate)
 
 ## Phase 1: Content Ramp (Weeks 2-8)
 
@@ -27,6 +27,7 @@
 ## Completed
 | Date       | Task                                                            |
 |------------|-----------------------------------------------------------------|
+| 2026-02-20 | Free CPA study plan PDF: markdown, branded PDF, homepage download link |
 | 2026-02-20 | Full project audit: folder, routes, content, security — all clean |
 | 2026-02-20 | All 94 unit tests + 152 e2e tests pass, production build clean  |
 | 2026-02-20 | Fix 2 stale 2024 tax refs (Sec 179 + 280F → 2025 figures)      |
