@@ -80,11 +80,72 @@ Interest on the liability in Year 1 = $42,124 x 6% = $2,527. The liability reduc
 
 Lessor accounting under ASC 842 remained largely consistent with the prior standard. A lessor classifies leases into three categories:
 
-**Sales-type lease** — Meets any of the five finance lease criteria listed above. The lessor derecognizes the asset, recognizes a net investment in the lease, and records a selling profit or loss at commencement.
+### Sales-Type Lease
 
-**Direct financing lease** — Does not meet any of the five criteria, but the present value of lease payments plus the present value of the residual value guaranteed by a third party equals substantially all of the asset's fair value, and it is probable the lessor will collect. The lessor derecognizes the asset and recognizes a net investment, but defers any selling profit.
+Meets any of the five finance lease criteria. At commencement:
+- Derecognize the underlying asset
+- Recognize a **net investment in the lease** = PV of lease payments + PV of unguaranteed residual
+- Recognize **selling profit or loss** = Net investment - Carrying amount of asset
+- Subsequently, recognize interest income using the effective interest method on the net investment
 
-**Operating lease** — Does not qualify as sales-type or direct financing. The lessor keeps the asset on its books, continues to depreciate it, and recognizes lease income on a straight-line basis.
+The net investment is composed of the **lease receivable** (PV of lease payments) and the **unguaranteed residual asset** (PV of the residual the lessor expects to recover).
+
+### Direct Financing Lease
+
+Does not meet any of the five criteria, but the present value of lease payments plus the present value of the residual value (guaranteed or unguaranteed) equals **substantially all** of the asset's fair value, and collection is probable. At commencement:
+- Derecognize the underlying asset
+- Recognize a net investment in the lease
+- **Defer** any selling profit (it is included in the net investment and recognized over the lease term as part of interest income)
+- Selling losses, however, are recognized immediately
+
+### Operating Lease
+
+Does not qualify as sales-type or direct financing. The lessor:
+- Keeps the asset on its books and continues to depreciate it
+- Recognizes lease income on a **straight-line basis** over the lease term
+- Initial direct costs are capitalized and amortized over the lease term
+
+| Feature | Sales-Type | Direct Financing | Operating |
+|---------|-----------|-----------------|-----------|
+| Asset derecognized | Yes | Yes | No |
+| Selling profit | Recognized immediately | Deferred | N/A |
+| Selling loss | Recognized immediately | Recognized immediately | N/A |
+| Income pattern | Interest income (front-loaded) | Interest income (front-loaded) | Straight-line |
+
+## Lease Modifications
+
+A **lease modification** is a change in the scope or consideration of a lease that was not part of the original terms. The accounting depends on whether the modification grants an additional right of use:
+
+**Treated as a separate lease** — When the modification grants an **additional right of use** that is distinct and the lease payments increase commensurate with the standalone price. Account for the new lease independently.
+
+**Not a separate lease** — When the modification does not qualify as a separate lease:
+- **Lessee:** Remeasure the lease liability using a revised discount rate, and adjust the ROU asset accordingly. If the modification decreases the scope, reduce the ROU asset proportionally and recognize any difference as a gain or loss.
+- **Lessor:** Reassess classification of the modified lease. If the classification changes, account for the modified lease as a new lease from the modification date.
+
+## Subleases
+
+When a lessee (the intermediate lessor) subleases a right-of-use asset to a third party:
+- The **original lease** between the lessee and the head lessor continues unchanged
+- The lessee classifies the **sublease** as a lessor, using the same sales-type/direct financing/operating criteria
+- The classification of the sublease is based on the **right-of-use asset** (not the underlying asset), which means the relevant economic life is the remaining lease term of the head lease
+- The original ROU asset remains on the lessee's books unless the sublease is classified as sales-type or direct financing
+
+## Sale-Leaseback Transactions
+
+In a **sale-leaseback**, an entity sells an asset and immediately leases it back from the buyer. Under ASC 842, the transaction is analyzed in two steps:
+
+**Step 1 — Does the transfer qualify as a sale under ASC 606?** The seller-lessee must transfer control of the asset to the buyer-lessor. If the leaseback is a finance lease or if the seller-lessee has a repurchase option, control has not transferred and the transaction **fails** sale treatment.
+
+**If the transfer is NOT a sale:**
+- The seller-lessee does not derecognize the asset
+- The cash received is recorded as a **financing obligation** (a loan)
+- The buyer-lessor does not recognize the asset; it records a receivable
+
+**If the transfer IS a sale:**
+- The seller-lessee derecognizes the asset and recognizes the ROU asset and lease liability for the leaseback
+- Any gain or loss on the sale is recognized only to the extent it relates to the **rights transferred** to the buyer (the portion not leased back). Gain on the retained right (the leaseback portion) is deferred as an adjustment to the ROU asset.
+
+> Sale-leaseback questions test whether the transfer qualifies as a sale and how to allocate the gain. Remember: if the leaseback is a finance lease, it is not a sale — it is a financing arrangement.
 
 ## Key Terms
 

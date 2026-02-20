@@ -62,6 +62,42 @@ A machine is purchased for $100,000, with a $10,000 salvage value and a 5-year u
 
 > Under DDB, entities often switch to straight-line in the year when straight-line depreciation on the remaining book value exceeds the DDB amount. This maximizes the deduction and ensures the asset is fully depreciated to salvage value.
 
+## Asset Retirement Obligations (ARO)
+
+An **asset retirement obligation** is a legal obligation to dismantle, remove, or remediate a long-lived asset at the end of its useful life. Common examples include decommissioning oil rigs, removing underground storage tanks, and restoring leased property to its original condition.
+
+Under **ASC 410-20**, when an ARO is incurred:
+
+1. **Measure the liability** at fair value (typically the present value of estimated future retirement costs) using a credit-adjusted, risk-free discount rate
+2. **Capitalize the same amount** as an addition to the carrying amount of the related fixed asset
+3. **Accrete the liability** over the asset's life using the effective interest method (debit accretion expense, credit ARO liability)
+4. **Depreciate the capitalized cost** over the asset's useful life along with the rest of the asset
+
+**Worked example:**
+
+A company installs an underground tank and has a legal obligation to remove it in 10 years at an estimated cost of $50,000. The credit-adjusted risk-free rate is 5%.
+
+- Initial ARO liability = $50,000 / (1.05)^10 = **$30,696**
+- Capitalize $30,696 as part of the tank's cost
+- Annual accretion expense = ARO liability x 5% (grows each year)
+- Year 1 accretion = $30,696 x 5% = **$1,535**
+
+At the end of 10 years, the liability accretes to approximately $50,000, matching the expected retirement cost. Any difference between the actual settlement cost and the liability balance at settlement is recognized as a gain or loss.
+
+> AROs only arise from **legal obligations** — not from planned maintenance or voluntary cleanup. The obligation must be imposed by law, regulation, or contract.
+
+## Capitalized Interest — Expanded
+
+Interest capitalization under **ASC 835** applies to assets constructed for the entity's own use and assets manufactured as discrete projects for sale (e.g., ships, real estate developments). It does **not** apply to routine inventory production or assets already in use.
+
+**Key rules:**
+- **Capitalization period** begins when expenditures are being made, construction activities are underway, and interest is being incurred. It ends when the asset is substantially complete and ready for use.
+- **Avoidable interest** = Weighted-average accumulated expenditures x Interest rate
+  - If specific borrowing exists for the project, use that rate first
+  - For remaining expenditures, use the weighted-average rate on all other borrowings
+- **Capitalized amount** = The lesser of avoidable interest and actual interest incurred during the period
+- Interest revenue on temporarily invested construction funds is **not** offset against interest to be capitalized — it is recognized as revenue separately
+
 ## Impairment of Long-Lived Assets
 
 Under **ASC 360**, long-lived assets held for use are tested for impairment when events or changes in circumstances indicate the carrying amount may not be recoverable. The test is a two-step process:

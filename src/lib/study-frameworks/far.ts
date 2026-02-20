@@ -174,6 +174,94 @@ export const farFramework: StudyFramework = {
 				],
 			},
 		},
+		{
+			title: "GAAP Hierarchy",
+			root: {
+				label: "U.S. GAAP Sources",
+				children: [
+					{
+						label: "Authoritative",
+						children: [
+							{ label: "FASB ASC (sole source)" },
+							{ label: "SEC rules/SABs (public entities)" },
+							{ label: "ASUs (updates to codification)" },
+						],
+					},
+					{
+						label: "Nonauthoritative",
+						children: [
+							{ label: "FASB Concepts Statements" },
+							{ label: "AICPA Issues Papers" },
+							{ label: "Industry practice / textbooks" },
+						],
+					},
+				],
+			},
+		},
+		{
+			title: "Consolidation and Investment Hierarchy",
+			root: {
+				label: "Level of Influence",
+				children: [
+					{
+						label: "Control (>50%)",
+						children: [
+							{ label: "Full consolidation" },
+							{ label: "Eliminate intercompany transactions" },
+							{ label: "Report NCI in equity" },
+						],
+					},
+					{
+						label: "Significant Influence (20-50%)",
+						children: [
+							{ label: "Equity method" },
+							{ label: "Single-line balance sheet / income" },
+							{ label: "Adjust for share of income/dividends" },
+						],
+					},
+					{
+						label: "No Significant Influence (<20%)",
+						children: [
+							{ label: "Fair value through net income (default)" },
+							{ label: "FV-OCI election (equity, no recycling)" },
+						],
+					},
+					{
+						label: "VIE (any %)",
+						children: [
+							{ label: "Primary beneficiary test: power + economics" },
+							{ label: "Consolidate if primary beneficiary" },
+						],
+					},
+				],
+			},
+		},
+		{
+			title: "NFP Net Asset Classification",
+			root: {
+				label: "Net Assets (ASC 958)",
+				children: [
+					{
+						label: "Without Donor Restrictions",
+						children: [
+							{ label: "Board-designated (internally restricted)" },
+							{ label: "Undesignated (fully available)" },
+						],
+					},
+					{
+						label: "With Donor Restrictions",
+						children: [
+							{ label: "Purpose restrictions" },
+							{ label: "Time restrictions" },
+							{
+								label: "Perpetual (endowments)",
+								children: [{ label: "Principal maintained permanently" }],
+							},
+						],
+					},
+				],
+			},
+		},
 	],
 	decisionTrees: [
 		{
@@ -248,6 +336,52 @@ export const farFramework: StudyFramework = {
 				},
 			},
 		},
+		{
+			title: "Sale-Leaseback Classification",
+			root: {
+				question:
+					"Does the transfer of the asset qualify as a sale under ASC 606 (control transferred)?",
+				yes: {
+					question: "Is the leaseback classified as a finance lease?",
+					yes: "Not a sale — record as financing obligation (failed sale-leaseback)",
+					no: "Sale recognized — derecognize asset, record ROU asset and lease liability; recognize gain only on rights transferred to buyer",
+				},
+				no: "Not a sale — record cash received as financing obligation; seller keeps asset on books",
+			},
+		},
+		{
+			title: "Uncertain Tax Position (ASC 740-10)",
+			root: {
+				question:
+					"Is it more likely than not (>50%) that the tax position will be sustained on technical merits?",
+				yes: {
+					question:
+						"Measure: What is the largest amount with >50% cumulative likelihood of being realized?",
+					yes: "Recognize that amount as a tax benefit",
+					no: "Recognize that amount as a tax benefit",
+				},
+				no: "No tax benefit recognized — record full unrecognized tax benefit as liability",
+			},
+		},
+		{
+			title: "Software Cost Capitalization",
+			root: {
+				question:
+					"Is the software for internal use or for external sale/licensing?",
+				yes: {
+					question:
+						"Has the application development stage begun (internal-use, ASC 350-40)?",
+					yes: "Capitalize development costs until post-implementation stage",
+					no: "Expense as incurred (preliminary project stage)",
+				},
+				no: {
+					question:
+						"Has technological feasibility been established (external, ASC 985)?",
+					yes: "Capitalize until available for general release; amortize at greater of revenue ratio or straight-line",
+					no: "Expense as incurred (R&D phase)",
+				},
+			},
+		},
 	],
 	formulas: [
 		{
@@ -313,6 +447,33 @@ export const farFramework: StudyFramework = {
 			name: "Governmental — Change in Fund Balance",
 			formula:
 				"Revenues + Other Financing Sources − Expenditures − Other Financing Uses",
+		},
+		{
+			name: "Gross Profit Method (Ending Inventory)",
+			formula:
+				"Ending Inventory = Goods Available for Sale − [Net Sales × (1 − Gross Profit %)]",
+			description:
+				"Estimates ending inventory using historical gross profit percentage applied to sales",
+		},
+		{
+			name: "Asset Retirement Obligation (Initial)",
+			formula: "ARO Liability = Estimated Future Cost / (1 + r)^n",
+			description:
+				"Present value of estimated retirement cost using credit-adjusted risk-free rate (r) over n periods",
+		},
+		{
+			name: "Goodwill (Acquisition Method)",
+			formula:
+				"Goodwill = Consideration Transferred + FV of NCI + FV of Previously Held Interest − FV of Net Identifiable Assets",
+			description:
+				"If result is negative, recognize a bargain purchase gain after reassessing measurements",
+		},
+		{
+			name: "Net Pension Liability (GASB 68)",
+			formula:
+				"Net Pension Liability = Total Pension Liability − Plan Fiduciary Net Position",
+			description:
+				"Reported on the government-wide Statement of Net Position for employer",
 		},
 	],
 	referenceTables: [
@@ -416,6 +577,105 @@ export const farFramework: StudyFramework = {
 				],
 			],
 		},
+		{
+			title: "Key IFRS vs. GAAP Differences",
+			headers: ["Topic", "U.S. GAAP", "IFRS"],
+			rows: [
+				["LIFO inventory", "Permitted", "Prohibited"],
+				[
+					"Inventory write-down reversal",
+					"Not permitted (FIFO/WA)",
+					"Permitted up to original cost",
+				],
+				[
+					"Development costs",
+					"Expense as incurred",
+					"Capitalize if 6 criteria met (IAS 38)",
+				],
+				[
+					"PP&E revaluation",
+					"Not permitted (historical cost)",
+					"Permitted (revaluation model, IAS 16)",
+				],
+				[
+					"Long-lived asset impairment reversal",
+					"Not permitted",
+					"Permitted (except goodwill)",
+				],
+				[
+					"Component depreciation",
+					"Permitted, not required",
+					"Required for significant components",
+				],
+				[
+					"Contingent liability threshold",
+					"Probable (>75%)",
+					"Probable (>50%)",
+				],
+			],
+		},
+		{
+			title: "Lessor Lease Classification (ASC 842)",
+			headers: ["Feature", "Sales-Type", "Direct Financing", "Operating"],
+			rows: [
+				["Asset derecognized", "Yes", "Yes", "No"],
+				["Selling profit", "Immediate", "Deferred", "N/A"],
+				["Selling loss", "Immediate", "Immediate", "N/A"],
+				[
+					"Income pattern",
+					"Interest (front-loaded)",
+					"Interest (front-loaded)",
+					"Straight-line",
+				],
+				[
+					"Depreciation",
+					"N/A (asset derecognized)",
+					"N/A",
+					"Lessor depreciates",
+				],
+			],
+		},
+		{
+			title: "OCI Components",
+			headers: ["Component", "Reclassified to Income?", "When Reclassified"],
+			rows: [
+				[
+					"Unrealized gains/losses — AFS debt securities",
+					"Yes",
+					"When sold or impaired",
+				],
+				[
+					"Foreign currency translation adjustments",
+					"Yes",
+					"When foreign entity disposed",
+				],
+				["Pension/OPEB adjustments", "Yes", "Amortized into pension expense"],
+				[
+					"Cash flow hedge gains/losses",
+					"Yes",
+					"When hedged item affects earnings",
+				],
+				[
+					"Credit risk changes (FV option liabilities)",
+					"No",
+					"Never reclassified",
+				],
+			],
+		},
+		{
+			title: "Temporary vs. Permanent Differences",
+			headers: ["Item", "Type", "Creates Deferred Tax?"],
+			rows: [
+				["Accelerated tax depreciation", "Temporary", "DTL"],
+				["Warranty accrual (deductible when paid)", "Temporary", "DTA"],
+				["Unearned revenue (taxable when received)", "Temporary", "DTA"],
+				["Installment sale gain", "Temporary", "DTL"],
+				["Municipal bond interest", "Permanent", "No"],
+				["Fines and penalties", "Permanent", "No"],
+				["Life insurance premiums on officers", "Permanent", "No"],
+				["Meals expense (50% nondeductible)", "Permanent", "No"],
+			],
+		},
 	],
 	mnemonics: [
 		{
@@ -458,6 +718,27 @@ export const farFramework: StudyFramework = {
 				"Contract identified, Approval/commitment, Rights identifiable, IN-substance commercial, Variable/fixed consideration measurable",
 			explanation:
 				"The five criteria that must all be met to identify a contract under ASC 606 Step 1.",
+		},
+		{
+			acronym: "PUFER",
+			expansion:
+				"Pensions/OPEB, Unrealized gains on AFS debt, Foreign currency translation, Effective portion of cash flow hedges, Risk (credit) changes on FV option liabilities",
+			explanation:
+				"The five components of Other Comprehensive Income (OCI). PUFER items bypass net income and accumulate in AOCI on the balance sheet.",
+		},
+		{
+			acronym: "TIPARA",
+			expansion:
+				"Technical feasibility, Intention to complete, Probable future benefits, Ability to use/sell, Resources available, Ability to measure costs",
+			explanation:
+				"The six criteria for capitalizing development costs under IFRS (IAS 38). Under GAAP, development costs are always expensed — this mnemonic is for IFRS differences only.",
+		},
+		{
+			acronym: "WUCC",
+			expansion:
+				"Warranties (accrued), Unearned revenue (taxed on receipt), Compensation (accrued), Credit losses (estimated)",
+			explanation:
+				"Common items that create deferred tax assets — book expense now, tax deduction later, so future tax savings are recognized.",
 		},
 	],
 };

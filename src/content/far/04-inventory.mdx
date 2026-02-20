@@ -69,12 +69,59 @@ Under FIFO, the periodic and perpetual systems produce the same results because 
 
 ## Inventory Estimation Methods
 
-When a physical count is not possible, inventory can be estimated using:
+When a physical count is not possible, inventory can be estimated using the gross profit method or the retail inventory method.
 
-- **Gross profit method** — Estimates ending inventory by applying a historical gross profit percentage to sales, then subtracting estimated COGS from goods available for sale
-- **Retail inventory method** — Uses the ratio of cost to retail price to convert ending inventory at retail to its estimated cost basis
+### Gross Profit Method
 
-These methods are useful for interim reporting and insurance claim calculations but are not acceptable for year-end audited financial statements without a physical count.
+The gross profit method estimates ending inventory by working backward from sales using a historical gross profit percentage.
+
+**Steps:**
+1. Calculate goods available for sale = Beginning inventory + Net purchases
+2. Estimate COGS = Net sales x (1 - Gross profit %)
+3. Estimated ending inventory = Goods available for sale - Estimated COGS
+
+**Worked example:**
+
+| Item | Amount |
+|------|--------|
+| Beginning inventory | $50,000 |
+| Net purchases | $200,000 |
+| Net sales | $280,000 |
+| Historical gross profit % | 30% |
+
+- Goods available for sale = $50,000 + $200,000 = **$250,000**
+- Estimated COGS = $280,000 x (1 - 0.30) = $280,000 x 0.70 = **$196,000**
+- Estimated ending inventory = $250,000 - $196,000 = **$54,000**
+
+### Retail Inventory Method
+
+The retail inventory method tracks both cost and retail amounts to calculate a **cost-to-retail ratio**, which converts ending inventory at retail to an estimated cost.
+
+**Steps:**
+1. Calculate goods available for sale at both cost and retail
+2. Compute cost-to-retail ratio = Cost of goods available / Retail value of goods available
+3. Determine ending inventory at retail = Goods available at retail - Net sales
+4. Convert to cost: Ending inventory at cost = Ending inventory at retail x Cost-to-retail ratio
+
+The ratio calculation varies depending on the cost flow assumption:
+- **Average cost** — Include both beginning inventory and net markups/markdowns in the ratio
+- **FIFO** — Exclude beginning inventory from the ratio (only current period layers)
+- **Lower of cost or market (conventional)** — Include net markups but exclude net markdowns from the ratio (produces a lower, more conservative ratio)
+
+**Markups** increase the retail price above original retail. **Markdowns** decrease the retail price below original retail. Net markups = markups - markup cancellations. Net markdowns = markdowns - markdown cancellations.
+
+> The conventional retail method (excluding markdowns from the ratio) approximates lower of cost or market and is the most commonly tested version on the CPA exam.
+
+### Purchase Commitments
+
+A **purchase commitment** is a noncancelable agreement to purchase inventory at a specified future date and price. Under U.S. GAAP:
+
+- If the **market value drops below the commitment price** before the purchase date, the entity recognizes a **loss** in the period the decline occurs and reports the commitment as a liability
+- When the goods are received, inventory is recorded at the lower market value
+- If market value **recovers** before delivery, the recovery is recognized as a gain (but only up to the previously recognized loss)
+- If market value is at or above the commitment price, no entry is required — only footnote disclosure of material purchase commitments
+
+> Purchase commitments are an easy-to-miss exam topic. Remember: losses are recognized when they become probable (market drops below commitment price), not when the goods are delivered.
 
 ## Key Terms
 

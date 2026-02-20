@@ -1,0 +1,877 @@
+-- =============================================================================
+-- Expand FAR question bank: +117 questions (83 → 200)
+-- Covers AICPA blueprint gaps: GAAP hierarchy, IFRS differences, contract
+-- modifications, licensing, principal/agent, gross profit method, retail method,
+-- AROs, convertible debt, fair value option, stock compensation, UTPs, GASB 68/75,
+-- VIEs, step acquisitions, equity method depth, NFP contributions
+-- Difficulty mix: ~29 easy, ~58 medium, ~30 hard
+-- =============================================================================
+
+insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
+
+-- =============================================================================
+-- Financial Statements — 10 questions
+-- =============================================================================
+
+(2, 'Financial Statements',
+ 'Under the GAAP hierarchy established by ASC 105, which of the following is the most authoritative source of accounting guidance?',
+ '["FASB Accounting Standards Codification", "FASB Emerging Issues Task Force consensuses", "AICPA accounting interpretations", "Industry practice not included in the Codification"]'::jsonb,
+ 0,
+ 'The FASB Accounting Standards Codification (ASC) is the single source of authoritative U.S. GAAP for nongovernmental entities. EITF consensuses are authoritative only to the extent they are incorporated into the Codification. AICPA interpretations and industry practice outside the Codification are nonauthoritative.',
+ 'easy'),
+
+(2, 'Financial Statements',
+ 'Under IFRS, which of the following is permitted but NOT allowed under U.S. GAAP?',
+ '["Use of the LIFO inventory method", "Revaluation of property, plant, and equipment to fair value", "Capitalization of development costs under all circumstances", "Recording goodwill internally generated"]'::jsonb,
+ 1,
+ 'IFRS permits the revaluation model for PP&E under IAS 16, allowing assets to be carried at fair value with changes recognized in other comprehensive income. U.S. GAAP requires the cost model only. LIFO is prohibited under IFRS but allowed under GAAP. Both frameworks prohibit internally generated goodwill, and IFRS capitalizes development costs only when specific criteria are met, not under all circumstances.',
+ 'medium'),
+
+(2, 'Financial Statements',
+ 'A company prepares financial statements using the income tax basis of accounting. This is an example of which of the following?',
+ '["Generally accepted accounting principles", "A special purpose framework", "An other comprehensive basis of accounting under IFRS", "A regulatory framework required by the SEC"]'::jsonb,
+ 1,
+ 'The income tax basis is a special purpose framework (SPF) as defined in GAAP and auditing literature. Other SPFs include cash basis, regulatory basis, and contractual basis. SPFs are not GAAP, not IFRS, and not SEC-required frameworks — they are alternative reporting frameworks used when GAAP is not required.',
+ 'easy'),
+
+(2, 'Financial Statements',
+ 'Under U.S. GAAP, which of the following items is reported in other comprehensive income (OCI) rather than net income?',
+ '["Realized gains on sale of available-for-sale debt securities", "Unrealized holding gains on trading securities", "Foreign currency translation adjustments from consolidating a foreign subsidiary", "Impairment losses on goodwill"]'::jsonb,
+ 2,
+ 'Foreign currency translation adjustments from consolidating foreign subsidiaries are reported in OCI under ASC 830. Realized gains on AFS securities are reclassified to net income upon sale. Unrealized gains on trading securities are recognized in net income. Goodwill impairment is reported in net income.',
+ 'medium'),
+
+(2, 'Financial Statements',
+ 'Under IFRS, a classified statement of financial position is required to distinguish between current and noncurrent items unless:',
+ '["The entity is a private company", "A liquidity-based presentation provides more relevant information", "The entity has fewer than 500 shareholders", "The entity operates in a single industry"]'::jsonb,
+ 1,
+ 'IAS 1 requires current/noncurrent classification unless a liquidity-based presentation provides information that is reliable and more relevant — for example, financial institutions often present assets and liabilities in order of liquidity. Entity size, number of shareholders, and industry are not criteria for this exception.',
+ 'medium'),
+
+(2, 'Financial Statements',
+ 'When a nonauthoritative source of guidance conflicts with the FASB Accounting Standards Codification, which takes precedence?',
+ '["The nonauthoritative source if it is more recent", "The Codification always takes precedence", "Whichever source is more conservative", "The entity may choose either source"]'::jsonb,
+ 1,
+ 'The FASB ASC is the sole source of authoritative U.S. GAAP. When a nonauthoritative source (such as textbooks, articles, or industry practice not codified) conflicts with the Codification, the Codification always prevails. Recency, conservatism, and entity choice are not factors in the GAAP hierarchy.',
+ 'easy'),
+
+(2, 'Financial Statements',
+ 'Which of the following is a key difference between IFRS and U.S. GAAP regarding the presentation of expenses on the income statement?',
+ '["IFRS requires the single-step format while GAAP requires multi-step", "IFRS permits classification of expenses by either nature or function, while GAAP typically requires classification by function", "GAAP requires presentation by nature while IFRS requires presentation by function", "Both frameworks require identical expense classifications"]'::jsonb,
+ 1,
+ 'IAS 1 allows entities to present expenses classified by nature (e.g., depreciation, salaries) or by function (e.g., cost of sales, administrative). U.S. GAAP practice and SEC rules generally require functional classification. Neither framework mandates a single-step or multi-step format specifically, but the flexibility in expense classification is a significant IFRS/GAAP difference.',
+ 'hard'),
+
+(2, 'Financial Statements',
+ 'Under ASC 220, which of the following is NOT a component of accumulated other comprehensive income (AOCI)?',
+ '["Unrealized gains on available-for-sale debt securities", "Pension prior service costs not yet recognized in net periodic pension cost", "Retained earnings", "Gains and losses on cash flow hedging instruments"]'::jsonb,
+ 2,
+ 'Retained earnings is a separate component of stockholders'' equity, not part of AOCI. AOCI includes unrealized gains/losses on AFS debt securities, pension and OPEB items not yet recognized in net periodic cost (such as prior service costs and net actuarial gains/losses), foreign currency translation adjustments, and effective portions of cash flow hedges.',
+ 'easy'),
+
+(2, 'Financial Statements',
+ 'A company changes its depreciation method from straight-line to double-declining balance. Under U.S. GAAP, how should this change be accounted for?',
+ '["As a change in accounting principle requiring retrospective application", "As a change in accounting estimate effected by a change in accounting principle, applied prospectively", "As a prior period adjustment with restatement of all prior periods", "As an extraordinary item reported net of tax"]'::jsonb,
+ 1,
+ 'Under ASC 250, a change in depreciation method is treated as a change in accounting estimate effected by a change in accounting principle. It is accounted for prospectively — applied to the current and future periods. It does not require retrospective restatement. Extraordinary items have been eliminated under U.S. GAAP.',
+ 'hard'),
+
+(2, 'Financial Statements',
+ 'Under the modified cash basis of accounting, which of the following adjustments to the pure cash basis is typically acceptable?',
+ '["Recording depreciation on fixed assets and accruing income taxes", "Capitalizing inventory and recording all accrued liabilities", "Recording revenue on a percentage-of-completion basis", "Recognizing deferred revenue for subscription contracts"]'::jsonb,
+ 0,
+ 'The modified cash basis is a special purpose framework that starts with cash basis and adds modifications with substantial support, such as recording depreciation on long-lived assets and accruing income taxes. Full accrual of all liabilities, percentage-of-completion, and deferred revenue recognition would move too close to full accrual GAAP and are not typical modified cash basis adjustments.',
+ 'hard'),
+
+-- =============================================================================
+-- Revenue Recognition — 10 questions
+-- =============================================================================
+
+(2, 'Revenue Recognition',
+ 'Under ASC 606, when a contract modification adds distinct goods or services at their standalone selling prices, how should the modification be accounted for?',
+ '["As a termination of the existing contract and creation of a new contract", "As a separate contract", "As a cumulative catch-up adjustment to the existing contract", "As a prospective adjustment to the remaining performance obligations"]'::jsonb,
+ 1,
+ 'When a contract modification adds distinct goods or services at standalone selling prices, it is treated as a separate contract. The existing contract continues unchanged, and the new goods/services are accounted for independently. A cumulative catch-up or prospective adjustment applies when the modification does not meet these criteria.',
+ 'medium'),
+
+(2, 'Revenue Recognition',
+ 'A software company licenses its product to a customer. The license provides the customer a right to use the software as it exists at the point in time the license is granted, with no obligation for the vendor to update it. Under ASC 606, when should revenue be recognized?',
+ '["Over the license term", "At the point in time when the license is transferred", "When cash is collected", "Ratably over the estimated useful life of the software"]'::jsonb,
+ 1,
+ 'A right-to-use license (also called a static or functional license) provides the customer with the right to use the intellectual property as it exists at the point in time the license is granted. Revenue is recognized at the point in time when control of the license transfers. A right-to-access license, by contrast, requires the vendor to maintain or update the IP and is recognized over time.',
+ 'medium'),
+
+(2, 'Revenue Recognition',
+ 'A media company licenses a character to a toy manufacturer. The license requires the media company to continue promoting the character, which significantly affects the character''s value to the licensee. Under ASC 606, this license is classified as:',
+ '["A right-to-use license with point-in-time recognition", "A right-to-access license with over-time recognition", "A sales-type arrangement", "A lease under ASC 842"]'::jsonb,
+ 1,
+ 'When the licensor''s ongoing activities significantly affect the utility of the intellectual property to the customer (as with a brand or character whose value depends on continued promotion), the license is a right-to-access license. Revenue is recognized over time because the customer simultaneously receives and consumes the benefit of the licensor''s performance. This is not a lease or sales-type arrangement.',
+ 'hard'),
+
+(2, 'Revenue Recognition',
+ 'Under ASC 606, a travel agency books hotel rooms for customers and collects payment. The hotel sets the room price and bears the inventory risk. The travel agency earns a commission. How should the travel agency recognize revenue?',
+ '["Gross, for the full room price collected from the customer", "Net, for only the commission earned", "Gross, because the agency collects cash from the customer", "Net, because the agency does not have a contract with the customer"]'::jsonb,
+ 1,
+ 'The travel agency is acting as an agent because the hotel (principal) controls the service before it is transferred to the customer, sets the price, and bears inventory risk. An agent recognizes revenue net — only the fee or commission earned. Collecting cash from the customer does not make the agency a principal; the key factors are control, pricing power, and inventory risk.',
+ 'medium'),
+
+(2, 'Revenue Recognition',
+ 'Which of the following indicators suggests that an entity is a principal rather than an agent in a transaction under ASC 606?',
+ '["The entity earns a flat commission regardless of the transaction price", "The entity is primarily responsible for fulfilling the promise to provide the good or service", "The entity never takes physical possession of the good", "The entity has no discretion in establishing the price"]'::jsonb,
+ 1,
+ 'Being primarily responsible for fulfilling the promise to transfer the good or service is a strong indicator of principal status under ASC 606. Principals bear fulfillment risk, have inventory risk, and typically have pricing discretion. A flat commission, no physical possession, and no pricing discretion are all indicators of agent status.',
+ 'easy'),
+
+(2, 'Revenue Recognition',
+ 'Under ASC 606, a contract modification removes some promised goods and adds others that are NOT distinct from the goods already transferred. How should this modification be accounted for?',
+ '["As a separate contract", "As a termination of the old contract and creation of a new contract", "As a cumulative catch-up adjustment, updating the measure of progress on the existing contract", "Revenue for the removed goods is reversed and the new goods are treated as a separate performance obligation"]'::jsonb,
+ 2,
+ 'When a modification does not add distinct goods/services and the remaining goods/services are not distinct from those already transferred, the modification is treated as part of the existing contract. The entity updates the transaction price and measure of progress, recognizing a cumulative catch-up adjustment. It is not a separate contract and does not result in a termination/new contract.',
+ 'hard'),
+
+(2, 'Revenue Recognition',
+ 'Sales-based royalties on licenses of intellectual property are recognized as revenue under ASC 606 when:',
+ '["The license is granted to the customer", "The underlying sale or usage occurs, or the performance obligation is satisfied, whichever is later", "Cash is received from the licensee", "The contract is signed by both parties"]'::jsonb,
+ 1,
+ 'ASC 606 includes a specific exception for sales-based and usage-based royalties on licenses of IP. Revenue is recognized when the later of (a) the subsequent sale or usage occurs or (b) the performance obligation to which the royalty has been allocated is partially or fully satisfied. This prevents premature recognition of variable consideration tied to future sales.',
+ 'medium'),
+
+(2, 'Revenue Recognition',
+ 'A construction company has a contract modification that changes the scope and price of an existing contract. The remaining goods are distinct from those already transferred. How should the modification be treated under ASC 606?',
+ '["As a cumulative catch-up adjustment to the original contract", "As a separate contract if at standalone selling price, otherwise as a termination and new contract", "Always as a prospective adjustment", "As a change in accounting estimate under ASC 250"]'::jsonb,
+ 1,
+ 'Under ASC 606, if the remaining goods/services in a modification are distinct from those already transferred, the modification is treated as a termination of the old contract and creation of a new contract (unless the added goods/services are at standalone selling prices, in which case it is a separate contract). This ensures proper allocation of the transaction price to remaining obligations.',
+ 'hard'),
+
+(2, 'Revenue Recognition',
+ 'Under ASC 606, a significant financing component exists in a contract when the timing of payments provides the customer or the entity with a significant benefit of financing. Which of the following practical expedients allows an entity to ignore the financing component?',
+ '["When the contract term exceeds five years", "When the period between transfer and payment is one year or less", "When the customer is a related party", "When the interest rate is below the prime rate"]'::jsonb,
+ 1,
+ 'ASC 606 provides a practical expedient allowing entities to ignore the effects of a significant financing component if the period between transfer of goods/services and customer payment is expected to be one year or less. Contract length, related party status, and interest rates relative to prime are not factors in this expedient.',
+ 'easy'),
+
+(2, 'Revenue Recognition',
+ 'Under ASC 606, when an entity acts as a principal, it recognizes revenue at the gross amount of consideration. When it acts as an agent, it recognizes revenue at the net amount. Which of the following is the OVERARCHING principle for determining principal vs. agent status?',
+ '["Whether the entity collects payment from the end customer", "Whether the entity obtains control of the good or service before it is transferred to the customer", "Whether the entity physically handles the goods", "Whether the entity bears credit risk on the receivable"]'::jsonb,
+ 1,
+ 'The overarching principle under ASC 606 is whether the entity obtains control of the specified good or service before it is transferred to the customer. If the entity controls the good or service, it is a principal and reports gross. Control is assessed by considering primary responsibility, inventory risk, and pricing discretion as indicators — but control is the core concept.',
+ 'medium'),
+
+-- =============================================================================
+-- Inventory — 10 questions
+-- =============================================================================
+
+(2, 'Inventory',
+ 'A company''s warehouse was destroyed by a flood. The company uses the gross profit method to estimate the inventory loss. Beginning inventory was $200,000, net purchases were $800,000, net sales were $1,100,000, and the historical gross profit percentage is 40%. What is the estimated inventory lost?',
+ '["$120,000", "$340,000", "$200,000", "$440,000"]'::jsonb,
+ 1,
+ 'Under the gross profit method: Cost of goods available for sale = $200,000 + $800,000 = $1,000,000. Estimated COGS = $1,100,000 × (1 − 0.40) = $660,000. Estimated ending inventory = $1,000,000 − $660,000 = $340,000. This $340,000 is the estimated inventory destroyed. The $120,000 answer incorrectly applies 40% to COGS rather than sales.',
+ 'medium'),
+
+(2, 'Inventory',
+ 'A retailer uses the conventional retail inventory method. The cost-to-retail ratio under this method is computed by:',
+ '["Dividing total goods available at cost by total goods available at retail, including net markups and net markdowns", "Dividing total goods available at cost by total goods available at retail, including net markups but excluding net markdowns", "Dividing cost of goods sold by net sales", "Dividing ending inventory at retail by ending inventory at cost"]'::jsonb,
+ 1,
+ 'The conventional (lower of cost or market) retail method computes the cost-to-retail ratio by including net markups but excluding net markdowns from the retail denominator. This produces a lower cost ratio, which approximates lower of cost or market. Including both markups and markdowns would produce the average cost method, not the conventional method.',
+ 'hard'),
+
+(2, 'Inventory',
+ 'A company enters into a noncancelable purchase commitment to buy raw materials at $50 per unit when the current market price is $45 per unit. Under U.S. GAAP, the company should:',
+ '["Record the commitment at market value of $45 per unit", "Recognize a loss for the difference between the commitment price and market price", "Disclose the commitment in the notes but record no loss until delivery", "Defer the loss until the materials are used in production"]'::jsonb,
+ 1,
+ 'Under U.S. GAAP, when the market price of goods under a noncancelable purchase commitment falls below the commitment price, the loss should be recognized in the period the decline occurs — not deferred until delivery or use. The loss equals the difference between the contract price and the current market price multiplied by the committed quantity.',
+ 'medium'),
+
+(2, 'Inventory',
+ 'A company using LIFO experiences a LIFO liquidation when current-year purchases are insufficient to replace inventory sold. What is the primary effect of this liquidation on the financial statements?',
+ '["Cost of goods sold increases because older, higher costs are matched against revenue", "Cost of goods sold decreases because older, lower costs are matched against revenue, inflating gross profit", "There is no effect because LIFO layers are automatically replenished", "Inventory is written up to replacement cost"]'::jsonb,
+ 1,
+ 'In a LIFO liquidation, the company dips into older, lower-cost LIFO layers. These older costs are matched against current higher revenues, reducing COGS and artificially inflating gross profit. This is often referred to as phantom or illusory profit because it does not reflect the current cost of replacing the inventory. Inventory is not written up under LIFO.',
+ 'medium'),
+
+(2, 'Inventory',
+ 'Under the gross profit method, net markdowns are:',
+ '["Subtracted from the retail column before computing the cost ratio", "Not relevant because the gross profit method uses cost data, not retail data", "Added to cost of goods available for sale", "Used to adjust the gross profit percentage"]'::jsonb,
+ 1,
+ 'The gross profit method does not use retail amounts at all — it estimates ending inventory based on cost of goods available for sale minus estimated cost of goods sold (derived from sales and the historical gross profit percentage). Net markdowns are a concept in the retail inventory method, not the gross profit method.',
+ 'easy'),
+
+(2, 'Inventory',
+ 'A company uses the retail inventory method. Beginning inventory at cost is $100,000 and at retail is $150,000. Net purchases at cost are $500,000 and at retail are $750,000. Net markups are $50,000 and net markdowns are $30,000. Net sales are $700,000. What is ending inventory at cost using the average cost retail method?',
+ '["$143,478", "$132,979", "$136,842", "$140,000"]'::jsonb,
+ 2,
+ 'Average cost retail method includes both markups and markdowns. Goods available at retail = $150,000 + $750,000 + $50,000 − $30,000 = $920,000. Cost ratio = ($100,000 + $500,000) / $920,000 = $600,000 / $920,000 = 0.65217. Ending inventory at retail = $920,000 − $700,000 = $220,000. Ending inventory at cost = $220,000 × 0.65217 = $143,478. The $136,842 answer uses the conventional method (excluding markdowns).',
+ 'hard'),
+
+(2, 'Inventory',
+ 'A company has a noncancelable purchase commitment for 10,000 units at $20 per unit. At year-end, the market price is $18 per unit. Before delivery occurs, the market price recovers to $19 per unit. What amount of loss should be recognized at the balance sheet date?',
+ '["$0", "$10,000", "$20,000", "$30,000"]'::jsonb,
+ 2,
+ 'At the balance sheet date, the market price ($18) is below the commitment price ($20), so a loss of ($20 − $18) × 10,000 = $20,000 must be recognized. The subsequent recovery to $19 occurs after the balance sheet date and does not affect the measurement at year-end. The loss is measured based on conditions at the reporting date, not subsequent events.',
+ 'medium'),
+
+(2, 'Inventory',
+ 'Under U.S. GAAP, inventory is measured at the lower of cost or net realizable value (NRV) for companies using FIFO. What is the definition of net realizable value?',
+ '["Historical cost minus accumulated depreciation", "Estimated selling price in the ordinary course of business minus reasonably predictable costs of completion, disposal, and transportation", "Replacement cost of the inventory", "Fair value minus costs to sell as defined by ASC 820"]'::jsonb,
+ 1,
+ 'Under ASU 2015-11, NRV is defined as estimated selling price in the ordinary course of business, less reasonably predictable costs of completion, disposal, and transportation. This differs from replacement cost (which is a floor/ceiling concept under LIFO/retail methods) and fair value under ASC 820. Depreciation does not apply to inventory.',
+ 'easy'),
+
+(2, 'Inventory',
+ 'Which of the following is true about the LIFO conformity rule under the Internal Revenue Code?',
+ '["A company using LIFO for tax purposes must also use LIFO for financial reporting", "A company may use FIFO for financial reporting while using LIFO for tax purposes", "The LIFO conformity rule only applies to publicly traded companies", "Companies must use LIFO for both tax and book purposes only if inventory exceeds $10 million"]'::jsonb,
+ 0,
+ 'The IRS LIFO conformity rule (IRC Section 472) requires that if a taxpayer elects LIFO for federal income tax purposes, it must also use LIFO in its primary financial statements (books). This is a rare instance where tax law dictates financial reporting. The rule applies to all entities that elect LIFO, not just public companies or those above a dollar threshold.',
+ 'medium'),
+
+(2, 'Inventory',
+ 'A LIFO liquidation results in the company reporting a tax liability that management considers temporary. To mitigate this, some companies establish a LIFO liquidation reserve. Under U.S. GAAP, this reserve is:',
+ '["Required to be recognized as a liability", "Not recognized as a liability because it does not meet the definition of an obligation to a third party", "Recognized as a contra-inventory account", "Recognized as a deferred tax asset"]'::jsonb,
+ 1,
+ 'A LIFO liquidation reserve is not recognized as a liability under GAAP because there is no present obligation to a third party — the additional tax from LIFO liquidation is simply included in income tax expense. The entity may disclose the effect of the liquidation in the notes but does not establish a separate reserve liability. It is not a contra-inventory account or deferred tax asset.',
+ 'hard'),
+
+-- =============================================================================
+-- Fixed Assets — 9 questions
+-- =============================================================================
+
+(2, 'Fixed Assets',
+ 'A company has a legal obligation to dismantle and remove a manufacturing plant at the end of its useful life. Under ASC 410, what is the initial accounting for this asset retirement obligation (ARO)?',
+ '["Record the estimated undiscounted cost as a liability and expense it immediately", "Record the fair value of the obligation as a liability and capitalize an equal amount as an increase to the related asset", "Defer recognition until the asset is retired", "Record the obligation only if it exceeds 10% of the asset''s carrying value"]'::jsonb,
+ 1,
+ 'Under ASC 410-20, an ARO is initially recognized at its fair value (typically the present value of estimated future cash flows) when a reasonable estimate can be made. The offsetting amount is capitalized as an increase to the carrying amount of the related long-lived asset. The asset retirement cost is depreciated over the asset''s useful life, and the liability is accreted to its settlement value over time.',
+ 'medium'),
+
+(2, 'Fixed Assets',
+ 'A company constructs a building for its own use. During construction, the company incurred $2,000,000 in weighted-average accumulated expenditures and had a specific construction loan of $1,500,000 at 8% and general borrowings of $3,000,000 at 6%. What amount of interest should be capitalized?',
+ '["$120,000", "$150,000", "$160,000", "$180,000"]'::jsonb,
+ 1,
+ 'Under ASC 835-20, interest is capitalized on weighted-average accumulated expenditures. First, apply the specific borrowing rate: $1,500,000 × 8% = $120,000. The remaining expenditures are $2,000,000 − $1,500,000 = $500,000, to which the general borrowing rate applies: $500,000 × 6% = $30,000. Total capitalizable interest = $120,000 + $30,000 = $150,000.',
+ 'hard'),
+
+(2, 'Fixed Assets',
+ 'Two companies exchange dissimilar equipment in a transaction that has commercial substance. Company A gives up equipment with a book value of $50,000 and a fair value of $70,000, and receives equipment with a fair value of $65,000 plus $5,000 cash. What gain should Company A recognize?',
+ '["$0", "$5,000", "$15,000", "$20,000"]'::jsonb,
+ 3,
+ 'When a nonmonetary exchange has commercial substance, gains and losses are recognized in full. Company A gave up an asset with a book value of $50,000 and received total consideration of $70,000 (equipment at $65,000 FV + $5,000 cash). The gain is $70,000 − $50,000 = $20,000. Full recognition is required because the exchange has commercial substance — the entity''s future cash flows change significantly.',
+ 'medium'),
+
+(2, 'Fixed Assets',
+ 'A nonmonetary exchange lacks commercial substance and no cash is involved. Under ASC 845, how is the acquired asset recorded?',
+ '["At the fair value of the asset given up", "At the fair value of the asset received", "At the book value of the asset given up, with no gain recognized", "At the lower of fair value or book value of the asset given up"]'::jsonb,
+ 2,
+ 'When a nonmonetary exchange lacks commercial substance and no boot is exchanged, the acquired asset is recorded at the book value of the asset given up. No gain is recognized because the exchange does not culminate an earnings process — the entity''s future cash flows have not changed significantly. Losses, however, are always recognized if the fair value of the asset given up is less than its book value.',
+ 'easy'),
+
+(2, 'Fixed Assets',
+ 'Under ASC 360-10-35, a long-lived asset classified as held for sale should be measured at:',
+ '["Historical cost", "Fair value", "The lower of its carrying amount or fair value less cost to sell", "Net realizable value"]'::jsonb,
+ 2,
+ 'ASC 360-10-35 requires long-lived assets classified as held for sale to be measured at the lower of their carrying amount or fair value less cost to sell. Any write-down is recognized as a loss. The asset is no longer depreciated once classified as held for sale. This is distinct from NRV (used for inventory) and pure fair value measurement.',
+ 'easy'),
+
+(2, 'Fixed Assets',
+ 'Which of the following criteria must be met to classify a long-lived asset as held for sale under ASC 360?',
+ '["The asset must be fully depreciated", "Management must commit to a plan to sell and the sale must be probable within one year", "A binding purchase agreement must be executed", "The asset must be impaired"]'::jsonb,
+ 1,
+ 'ASC 360 requires several criteria for held-for-sale classification: management with authority commits to a plan to sell, the asset is available for immediate sale, an active program to locate a buyer has been initiated, the sale is probable and expected within one year, the asset is being marketed at a reasonable price, and it is unlikely that significant changes will be made. A binding agreement is not required, nor must the asset be impaired or fully depreciated.',
+ 'medium'),
+
+(2, 'Fixed Assets',
+ 'Over time, accretion expense on an asset retirement obligation is recognized by:',
+ '["Debiting depreciation expense and crediting accumulated depreciation", "Debiting accretion expense and crediting the asset retirement obligation liability", "Debiting the related asset and crediting cash", "Debiting interest expense and crediting bonds payable"]'::jsonb,
+ 1,
+ 'Accretion expense increases the ARO liability over time to reflect the passage of time and the unwinding of the discount. The entry is a debit to accretion expense (often classified as an operating expense) and a credit to the ARO liability. This is conceptually similar to interest expense on a discounted liability. Depreciation of the asset retirement cost is a separate charge to depreciation expense.',
+ 'easy'),
+
+(2, 'Fixed Assets',
+ 'A company determines that a long-lived asset group (held and used) may be impaired. Under ASC 360, what is the first step in the impairment test?',
+ '["Compare the asset group''s carrying amount to its fair value", "Compare the asset group''s carrying amount to the sum of its undiscounted expected future cash flows", "Obtain an independent appraisal of fair value", "Write the asset down to net realizable value"]'::jsonb,
+ 1,
+ 'The ASC 360 impairment test for assets held and used is a two-step process. Step 1 (recoverability test): compare the carrying amount to the sum of undiscounted expected future cash flows. If carrying amount exceeds undiscounted cash flows, the asset is impaired. Step 2: measure the impairment loss as the excess of carrying amount over fair value. Fair value comparison is step 2, not step 1.',
+ 'medium'),
+
+(2, 'Fixed Assets',
+ 'In a nonmonetary exchange with commercial substance, Company B gives up equipment (book value $80,000, fair value $60,000) and receives equipment with a fair value of $55,000 plus $5,000 cash. What is the result for Company B?',
+ '["Recognize a gain of $5,000", "Recognize a loss of $20,000", "Recognize no gain or loss", "Recognize a loss of $15,000"]'::jsonb,
+ 1,
+ 'Because the exchange has commercial substance, gains and losses are recognized in full. Company B gave up an asset with a book value of $80,000 and received total consideration of $60,000 ($55,000 FV of asset received + $5,000 cash). The loss is $60,000 − $80,000 = $(20,000). Losses are always recognized regardless of whether the exchange has commercial substance.',
+ 'medium'),
+
+-- =============================================================================
+-- Intangible Assets — 9 questions
+-- =============================================================================
+
+(2, 'Intangible Assets',
+ 'Under IFRS (IAS 38), development costs are capitalized when certain criteria are met. Which of the following is one of the required criteria?',
+ '["The entity has elected the revaluation model for intangible assets", "The entity can demonstrate the technical feasibility of completing the intangible asset", "The entity has received government grant funding for the project", "The entity has obtained a patent for the technology"]'::jsonb,
+ 1,
+ 'Under IAS 38, development costs must be capitalized when all of six criteria are met: (1) technical feasibility, (2) intention to complete, (3) ability to use or sell, (4) probable future economic benefits, (5) availability of adequate resources, and (6) ability to reliably measure expenditures. Government grants, patents, and revaluation model elections are not among these criteria. Under U.S. GAAP, most R&D is expensed.',
+ 'medium'),
+
+(2, 'Intangible Assets',
+ 'Under U.S. GAAP (ASC 985-20), costs incurred to develop computer software for external sale are expensed as R&D until:',
+ '["The product is available for general release to customers", "A working model of the software has been completed", "Technological feasibility has been established", "The first customer order is received"]'::jsonb,
+ 2,
+ 'Under ASC 985-20, all costs incurred to establish technological feasibility of software for external sale are expensed as R&D. Once technological feasibility is established (typically by completing a detailed program design or a working model), costs are capitalized until the product is available for general release. The working model is one way to demonstrate feasibility, but feasibility is the trigger, not the model itself.',
+ 'medium'),
+
+(2, 'Intangible Assets',
+ 'Under ASC 350-40, costs incurred during the application development stage of internal-use software should be:',
+ '["Expensed as incurred", "Capitalized", "Reported as research and development expense", "Deferred until the software generates revenue"]'::jsonb,
+ 1,
+ 'ASC 350-40 identifies three stages of internal-use software development: (1) preliminary project stage — expensed, (2) application development stage — capitalized, and (3) post-implementation stage — expensed. During the application development stage, costs such as coding, testing, and installation are capitalized as an intangible asset. This contrasts with ASC 985-20 for software sold externally.',
+ 'easy'),
+
+(2, 'Intangible Assets',
+ 'When a company acquires another entity and identifies in-process research and development (IPR&D) as part of the business combination, how is the IPR&D accounted for under ASC 805?',
+ '["Expensed immediately on the acquisition date", "Capitalized as an indefinite-lived intangible asset until the project is completed or abandoned", "Included in goodwill and not separately identified", "Capitalized and amortized over 15 years"]'::jsonb,
+ 1,
+ 'Under ASC 805, IPR&D acquired in a business combination is recognized as a separate intangible asset at fair value and classified as indefinite-lived until the project is completed or abandoned. Once completed, it is reclassified as finite-lived and amortized. If abandoned, it is written off. Prior rules required immediate expensing, but current GAAP capitalizes IPR&D acquired in combinations.',
+ 'medium'),
+
+(2, 'Intangible Assets',
+ 'Under the qualitative assessment (Step 0) for goodwill impairment under ASC 350, an entity may skip the quantitative test if it concludes that:',
+ '["Goodwill is less than 10% of total assets", "It is more likely than not (greater than 50% likelihood) that the fair value of the reporting unit exceeds its carrying amount", "The reporting unit has reported net income for three consecutive years", "An independent appraisal has been performed within the last five years"]'::jsonb,
+ 1,
+ 'The qualitative assessment allows an entity to evaluate whether it is more likely than not (>50% probability) that the fair value of the reporting unit exceeds its carrying amount. If so, the quantitative impairment test is unnecessary. Factors to consider include macroeconomic conditions, industry and market conditions, entity-specific events, and financial performance. Asset ratios, consecutive income, and appraisals are not the standard.',
+ 'easy'),
+
+(2, 'Intangible Assets',
+ 'Which of the following factors would an entity consider in a qualitative assessment of goodwill impairment?',
+ '["Only changes in the entity''s stock price", "Macroeconomic conditions, industry conditions, cost factors, financial performance, and entity-specific events", "Only whether the entity has violated debt covenants", "Only the original purchase price allocation from the business combination"]'::jsonb,
+ 1,
+ 'The qualitative assessment considers a broad range of factors: macroeconomic conditions (deterioration), industry and market conditions (increased competition), cost factors (increases in raw materials or labor), overall financial performance (declining revenues or margins), entity-specific events (loss of key personnel, litigation), and changes in share price. No single factor is determinative.',
+ 'easy'),
+
+(2, 'Intangible Assets',
+ 'Under U.S. GAAP, which of the following is TRUE about the distinction between ASC 985-20 and ASC 350-40 for software costs?',
+ '["ASC 985-20 applies to software developed for internal use, while ASC 350-40 applies to software developed for sale", "ASC 985-20 applies to software developed for sale to external customers, while ASC 350-40 applies to software developed for internal use", "Both standards apply the same capitalization threshold", "Neither standard permits capitalization of software development costs"]'::jsonb,
+ 1,
+ 'ASC 985-20 governs the accounting for costs of software to be sold, leased, or otherwise marketed to external customers. ASC 350-40 governs costs of software developed or obtained for internal use. The capitalization triggers differ: ASC 985-20 requires technological feasibility before capitalizing, while ASC 350-40 capitalizes costs during the application development stage once preliminary project activities are complete.',
+ 'medium'),
+
+(2, 'Intangible Assets',
+ 'Under IFRS, research costs are:',
+ '["Capitalized when the project is expected to be profitable", "Always expensed as incurred", "Capitalized if they meet the six development criteria in IAS 38", "Deferred and amortized over 5 years"]'::jsonb,
+ 1,
+ 'Under IAS 38, research costs are always expensed as incurred because the entity cannot demonstrate that the intangible asset will generate probable future economic benefits during the research phase. Only development costs may be capitalized, and only when all six specific criteria are met. This is a key difference from U.S. GAAP, which expenses all R&D (with limited exceptions for software).',
+ 'easy'),
+
+(2, 'Intangible Assets',
+ 'A company performs its annual goodwill impairment test and determines the fair value of the reporting unit is $5,000,000 and the carrying amount (including goodwill of $800,000) is $5,500,000. Under the current one-step quantitative test, what impairment loss is recognized?',
+ '["$0", "$300,000", "$500,000", "$800,000"]'::jsonb,
+ 2,
+ 'Under the simplified one-step quantitative test (ASU 2017-04), the impairment loss is the amount by which the carrying amount of the reporting unit exceeds its fair value, limited to the amount of goodwill. Here: $5,500,000 − $5,000,000 = $500,000. Since $500,000 is less than the $800,000 of goodwill, the full $500,000 is recognized as an impairment loss. The old Step 2 (implied fair value of goodwill) has been eliminated.',
+ 'hard'),
+
+-- =============================================================================
+-- Leases — 10 questions
+-- =============================================================================
+
+(2, 'Leases',
+ 'Under ASC 842, a lessor classifies a lease as a sales-type lease if the lease transfers ownership, contains a purchase option reasonably certain to be exercised, or meets which other criterion?',
+ '["The lease term is at least 50% of the asset''s economic life", "The present value of lease payments equals or exceeds substantially all of the fair value of the underlying asset", "The lessee has guaranteed the residual value", "The lessor has incurred initial direct costs"]'::jsonb,
+ 1,
+ 'Under ASC 842, a lessor classifies a lease as sales-type if any of five criteria are met: (1) transfers ownership, (2) purchase option reasonably certain, (3) lease term is for the major part of the remaining economic life, (4) present value of payments and residual value guarantees equals or exceeds substantially all of the fair value, or (5) the asset is so specialized it has no alternative use. A residual value guarantee alone is not sufficient, nor are initial direct costs.',
+ 'medium'),
+
+(2, 'Leases',
+ 'A lessor has a lease that does not transfer ownership, has no purchase option, the lease term is 3 years out of a 10-year economic life, and the present value of payments is 60% of fair value. The asset is not specialized. The lease also does NOT meet the criteria for a sales-type lease. The collectibility of payments is probable. Under ASC 842, this is classified as:',
+ '["A sales-type lease", "A direct financing lease if the present value of payments plus residual value guarantee equals substantially all of the fair value and the lessor will earn a profit", "An operating lease", "A finance lease"]'::jsonb,
+ 2,
+ 'Since none of the five sales-type criteria are met (no ownership transfer, no purchase option, 3/10 years is not the major part of economic life, 60% is not substantially all of fair value, and the asset is not specialized), and the lease does not meet direct financing criteria either, this is classified as an operating lease by the lessor. The lessor recognizes rental income on a straight-line basis.',
+ 'medium'),
+
+(2, 'Leases',
+ 'Under ASC 842, when a lease modification grants the lessee an additional right-of-use asset that is not included in the original contract and the consideration increases commensurate with the standalone price, the modification is treated as:',
+ '["A remeasurement of the existing lease liability", "A separate contract", "A termination of the original lease and a new lease", "An impairment of the right-of-use asset"]'::jsonb,
+ 1,
+ 'Under ASC 842, a lease modification is treated as a separate contract when it grants an additional right-of-use asset not in the original lease and the additional consideration is commensurate with the standalone price for that additional right-of-use, adjusted for the circumstances of the contract. Otherwise, modifications are generally accounted for by remeasuring the lease liability.',
+ 'medium'),
+
+(2, 'Leases',
+ 'A lessee subleases a right-of-use asset to a third party. Under ASC 842, the original lessee (now sublessor) should classify the sublease by reference to:',
+ '["The fair value of the underlying asset", "The right-of-use asset arising from the head lease", "The original cost of the underlying asset to the head lessor", "The total remaining payments on the head lease"]'::jsonb,
+ 1,
+ 'Under ASC 842, the sublessor (original lessee) classifies the sublease by reference to the right-of-use asset arising from the head lease, not the underlying asset itself. This is a key distinction — the sublessor is effectively transferring its right-of-use asset, so classification criteria (sales-type, direct financing, operating) are applied relative to that ROU asset.',
+ 'hard'),
+
+(2, 'Leases',
+ 'In a sale-leaseback transaction under ASC 842, if the transfer of the asset does NOT qualify as a sale under ASC 606 (revenue recognition), how does the seller-lessee account for the transaction?',
+ '["As a sale with gain recognition and a new lease", "As a failed sale — the asset remains on the seller-lessee''s books and the proceeds are recorded as a financing obligation", "As an operating lease with no asset on the books", "As a deferred gain amortized over the lease term"]'::jsonb,
+ 1,
+ 'When the transfer does not qualify as a sale under ASC 606 (e.g., the buyer-lessor does not obtain control), it is a failed sale-leaseback. The seller-lessee does not derecognize the asset, does not recognize a gain, and instead records the proceeds as a financial liability (financing obligation). The asset continues to be depreciated, and the liability is repaid over the lease term.',
+ 'hard'),
+
+(2, 'Leases',
+ 'Under ASC 842, a lessee may elect the short-term lease exemption for leases with a term of 12 months or less. When this election is made, the lessee:',
+ '["Recognizes a right-of-use asset and lease liability but amortizes them over 12 months", "Does not recognize a right-of-use asset or lease liability, and recognizes lease payments as expense on a straight-line basis", "Recognizes only the lease liability but not the right-of-use asset", "Must apply the exemption to all leases regardless of term"]'::jsonb,
+ 1,
+ 'The short-term lease election under ASC 842 allows a lessee to forgo recognizing a ROU asset and lease liability for leases with terms of 12 months or less (at commencement, with no purchase option reasonably certain to be exercised). Instead, lease payments are recognized as expense generally on a straight-line basis. The election is made by asset class, not for all leases.',
+ 'easy'),
+
+(2, 'Leases',
+ 'Under ASC 842, what distinguishes a direct financing lease from a sales-type lease for a lessor?',
+ '["Direct financing leases never transfer ownership to the lessee", "In a direct financing lease, the lessor does not recognize a selling profit at lease commencement — instead, the profit is deferred and recognized over the lease term", "Direct financing leases always involve real estate", "In a direct financing lease, the lessor retains the underlying asset on its balance sheet"]'::jsonb,
+ 1,
+ 'The key distinction is profit recognition timing. In a sales-type lease, the lessor recognizes selling profit (or loss) at commencement. In a direct financing lease, the lessor defers the selling profit and recognizes it over the lease term as part of the interest income pattern. Direct financing classification also requires that the present value of payments plus any residual value guaranteed by a third party equals substantially all of the fair value, and collectibility is probable.',
+ 'hard'),
+
+(2, 'Leases',
+ 'In a successful sale-leaseback under ASC 842, if the sale price exceeds the fair value of the asset, the excess is accounted for as:',
+ '["A gain recognized immediately in full", "Additional financing provided by the buyer-lessor, recorded as a liability by the seller-lessee", "A reduction to cost of goods sold", "An extraordinary gain"]'::jsonb,
+ 1,
+ 'Under ASC 842, if the sale price exceeds the fair value of the asset in a sale-leaseback, the excess is not treated as a gain. Instead, it is considered additional financing provided by the buyer-lessor and is recorded as a financial liability by the seller-lessee. Only the gain attributable to the difference between fair value and carrying amount is recognized, and even that may be limited by the retained right of use.',
+ 'hard'),
+
+(2, 'Leases',
+ 'Under ASC 842, which of the following is NOT required to elect the short-term lease exemption?',
+ '["The lease must have a term of 12 months or less at commencement", "The lease must not include a purchase option the lessee is reasonably certain to exercise", "The election must be applied consistently to all leases of the same asset class", "The lessor must consent to the short-term election"]'::jsonb,
+ 3,
+ 'The short-term lease exemption is a lessee accounting policy election that does not require lessor consent. The requirements are: (1) the lease term is 12 months or less at commencement, (2) no purchase option reasonably certain to be exercised, and (3) the election is made by underlying asset class and applied consistently. Lessor agreement is irrelevant to the lessee''s accounting policy choice.',
+ 'easy'),
+
+(2, 'Leases',
+ 'A lease modification reduces the scope of a lease (e.g., reduces the square footage leased). Under ASC 842, the lessee should:',
+ '["Continue to account for the lease as if no modification occurred", "Reduce the right-of-use asset proportionately and remeasure the lease liability, recognizing any difference as a gain or loss", "Recognize the full remaining lease payments as an expense immediately", "Reclassify the lease from finance to operating"]'::jsonb,
+ 1,
+ 'When a lease modification decreases the scope of the lease, the lessee reduces the ROU asset proportionately (based on the reduction in the right of use) and remeasures the lease liability at the modified discount rate. Any difference between the proportionate decrease in the ROU asset and the decrease in the lease liability is recognized as a gain or loss. Modifications that increase scope are treated differently.',
+ 'medium'),
+
+-- =============================================================================
+-- Bonds and Debt — 9 questions
+-- =============================================================================
+
+(2, 'Bonds and Debt',
+ 'Under ASU 2020-06, which of the following is eliminated for convertible debt?',
+ '["The requirement to classify convertible debt as a liability", "The beneficial conversion feature (BCF) and cash conversion feature separation models", "The obligation to pay interest on convertible bonds", "The requirement to disclose the conversion terms in the footnotes"]'::jsonb,
+ 1,
+ 'ASU 2020-06 simplified the accounting for convertible instruments by eliminating the beneficial conversion feature (BCF) model and the cash conversion feature model that previously required bifurcation of the conversion feature into equity. Under the update, most convertible debt is accounted for as a single liability, reducing complexity. Interest and disclosure requirements remain unchanged.',
+ 'medium'),
+
+(2, 'Bonds and Debt',
+ 'A company elects the fair value option under ASC 825 for a long-term note payable. At year-end, the fair value of the note has decreased by $50,000 due to changes in the company''s own credit risk and $20,000 due to changes in market interest rates. Under ASC 825, how is the total change reported?',
+ '["The entire $70,000 decrease is reported as a gain in net income", "The $50,000 attributable to own credit risk is reported in OCI, and the $20,000 attributable to market rates is reported in net income", "The entire $70,000 is reported in OCI", "The $50,000 is reported in net income and the $20,000 in OCI"]'::jsonb,
+ 1,
+ 'Under ASC 825 (as amended by ASU 2016-01), when an entity elects the fair value option for a financial liability, changes in fair value attributable to instrument-specific credit risk (the entity''s own credit risk) are reported in OCI, while changes attributable to other factors (such as market interest rates) are reported in net income. This prevents a counterintuitive gain from a credit deterioration flowing through income.',
+ 'hard'),
+
+(2, 'Bonds and Debt',
+ 'A company violates a debt covenant on its long-term borrowing at the balance sheet date. The lender has not waived the violation. Under U.S. GAAP, how should the debt be classified?',
+ '["As long-term debt because the original maturity has not changed", "As a current liability because the lender has the right to demand repayment", "As long-term debt if management intends to refinance", "As mezzanine financing between current and noncurrent"]'::jsonb,
+ 1,
+ 'When a debt covenant violation occurs and the lender has not waived its right to demand repayment, the borrower must reclassify the debt as a current liability regardless of the original maturity date. The lender''s call right makes the obligation due on demand. A waiver obtained before the financial statements are issued may allow continued long-term classification, but management''s intent to refinance alone is insufficient.',
+ 'medium'),
+
+(2, 'Bonds and Debt',
+ 'In an in-substance defeasance, a company places assets in an irrevocable trust to service outstanding debt. Under U.S. GAAP, can the company derecognize the debt?',
+ '["Yes, because the trust assets will be used exclusively to service the debt", "No, the debtor has not been legally released from being the primary obligor, so the debt remains on the balance sheet", "Yes, if the trust assets exceed 110% of the debt balance", "No, unless the creditor consents in writing to the defeasance"]'::jsonb,
+ 1,
+ 'Under U.S. GAAP (ASC 405-20), a debtor can derecognize a liability only if (a) the debtor pays the creditor and is relieved, (b) the debtor is legally released from the obligation, or (c) a legal defeasance occurs where the debtor is legally released. In an in-substance defeasance, the debtor is NOT legally released — the trust merely provides economic assurance. Therefore, the debt remains on the balance sheet.',
+ 'hard'),
+
+(2, 'Bonds and Debt',
+ 'A company retires bonds payable before maturity by purchasing them on the open market. The bonds have a carrying amount (net of unamortized discount) of $940,000, and the company pays $960,000 to reacquire them. How is this transaction reported?',
+ '["A gain of $20,000 in other comprehensive income", "A loss of $20,000 in net income", "No gain or loss because the bonds are being retired", "A loss of $20,000 reported as an extraordinary item"]'::jsonb,
+ 1,
+ 'The early extinguishment results in a loss because the reacquisition price ($960,000) exceeds the carrying amount ($940,000) by $20,000. Under ASC 470-50, gains and losses on debt extinguishment are recognized in net income in the period of extinguishment. Extraordinary item classification was eliminated under ASU 2015-01.',
+ 'easy'),
+
+(2, 'Bonds and Debt',
+ 'Under ASU 2020-06, how is the earnings per share (EPS) dilution calculated for convertible debt?',
+ '["Only the treasury stock method is permitted", "Only the if-converted method is required", "The entity may choose between the treasury stock method and the if-converted method", "Convertible debt is excluded from diluted EPS calculations"]'::jsonb,
+ 1,
+ 'ASU 2020-06 requires the use of the if-converted method for calculating the dilutive impact of convertible instruments on EPS. The treasury stock method is no longer permitted for convertible debt. Under the if-converted method, the numerator is adjusted for interest expense (net of tax) and the denominator is increased by the shares that would be issued upon conversion.',
+ 'medium'),
+
+(2, 'Bonds and Debt',
+ 'A company has a revolving credit facility that matures in 3 years. At the balance sheet date, $500,000 is drawn on the facility. How should this amount be classified?',
+ '["Always as a current liability because it is a revolving facility", "As a noncurrent liability because the facility matures in 3 years and the company has the ability and intent to refinance on a long-term basis", "As a current liability unless the company has restricted cash set aside to repay it", "Classification depends on whether the company intends to repay the draw within 12 months"]'::jsonb,
+ 1,
+ 'Amounts drawn on a revolving credit facility are classified based on the maturity of the underlying agreement and the entity''s intent and ability to maintain the borrowing on a long-term basis. Since the facility matures in 3 years and the company can refinance draws on a long-term basis, the $500,000 is classified as noncurrent. Short-term draws on a long-term facility are noncurrent if the facility provides the ability to refinance.',
+ 'medium'),
+
+(2, 'Bonds and Debt',
+ 'A company issues convertible bonds with a conversion feature that is NOT required to be bifurcated under ASC 815 (derivatives). Under ASU 2020-06, the convertible bonds are accounted for as:',
+ '["A liability component and an equity component, with the equity component measured as the residual after allocating proceeds to the liability", "A single liability at the full proceeds amount, with no separate equity component", "A derivative liability measured at fair value through earnings each period", "A single equity instrument"]'::jsonb,
+ 1,
+ 'Under ASU 2020-06, convertible debt that does not require bifurcation of an embedded derivative is accounted for as a single liability at the full proceeds amount. The previous models that required separation of a BCF or cash conversion feature into equity have been eliminated, simplifying accounting and reducing the non-cash interest expense that previously resulted from the discount created by the equity allocation.',
+ 'easy'),
+
+(2, 'Bonds and Debt',
+ 'When an entity elects the fair value option under ASC 825 for a financial liability at initial recognition, subsequent changes in fair value are generally recognized in:',
+ '["Retained earnings directly", "Net income, except for changes attributable to the entity''s own credit risk which are reported in OCI", "Other comprehensive income only", "A contra-liability account"]'::jsonb,
+ 1,
+ 'Under ASC 825, when the fair value option is elected for a financial liability, subsequent fair value changes are recognized in earnings, except that the portion of the change attributable to the entity''s own credit risk (instrument-specific credit risk) is recognized in OCI. This prevents the counterintuitive result of a company reporting a gain when its creditworthiness deteriorates.',
+ 'medium'),
+
+-- =============================================================================
+-- Equity — 10 questions
+-- =============================================================================
+
+(2, 'Equity',
+ 'Under ASC 718, the fair value of stock options granted to employees is measured at:',
+ '["The intrinsic value on the grant date", "The fair value on the grant date, typically using an option-pricing model", "The market price of the stock on the vesting date", "The exercise price of the option"]'::jsonb,
+ 1,
+ 'ASC 718 requires that employee stock options be measured at fair value on the grant date using an appropriate option-pricing model (such as Black-Scholes or a lattice model). The intrinsic value method was eliminated for public companies. The grant date fair value is then recognized as compensation expense over the requisite service period (usually the vesting period).',
+ 'easy'),
+
+(2, 'Equity',
+ 'A company grants 1,000 restricted stock units (RSUs) to an employee on January 1, Year 1. The RSUs vest after 3 years of service. The stock price is $50 on the grant date and $70 on the vesting date. Under ASC 718, what is the total compensation expense recognized over the vesting period?',
+ '["$50,000", "$70,000", "$60,000", "$0"]'::jsonb,
+ 0,
+ 'Under ASC 718, RSUs are measured at the grant-date fair value of the underlying stock. The fair value is $50 × 1,000 = $50,000. This amount is recognized as compensation expense ratably over the 3-year vesting period ($16,667 per year). The increase in stock price to $70 on the vesting date does not affect the compensation expense for equity-classified awards — that change is irrelevant once the grant-date value is established.',
+ 'medium'),
+
+(2, 'Equity',
+ 'Under ASC 718, a performance condition on a stock option award affects:',
+ '["The fair value of the award on the grant date", "Whether the compensation expense is recognized — expense is recognized only if the performance condition is probable of being achieved", "The classification of the award as equity or liability", "The vesting period but not the amount of compensation expense"]'::jsonb,
+ 1,
+ 'Performance conditions are not reflected in the grant-date fair value (unlike market conditions). Instead, compensation expense for awards with performance conditions is recognized only if the condition is deemed probable of being achieved. If probability changes, the entity adjusts the cumulative expense recognized to date. This is a key distinction from market conditions, which are always reflected in the grant-date fair value.',
+ 'hard'),
+
+(2, 'Equity',
+ 'A market condition (such as achieving a target stock price) on a stock compensation award is:',
+ '["Reflected in the grant-date fair value of the award and recognized regardless of whether the condition is met", "Not reflected in the fair value and only affects whether expense is recognized", "Accounted for identically to a performance condition", "Disclosed in the notes but has no effect on accounting"]'::jsonb,
+ 0,
+ 'Market conditions are incorporated into the grant-date fair value measurement using an option-pricing model (such as a Monte Carlo simulation). Compensation expense is recognized over the requisite service period regardless of whether the market condition is ultimately achieved. This contrasts with performance conditions, where expense recognition depends on the probability of achievement.',
+ 'hard'),
+
+(2, 'Equity',
+ 'Restricted stock differs from restricted stock units (RSUs) in that:',
+ '["Restricted stock is always liability-classified while RSUs are equity-classified", "Restricted stock is issued and outstanding (the employee holds actual shares), while RSUs represent a promise to deliver shares upon vesting", "RSUs always include voting rights while restricted stock does not", "There is no accounting difference between the two"]'::jsonb,
+ 1,
+ 'With restricted stock, actual shares are issued to the employee at grant (the employee may receive dividends and vote), but the shares are subject to forfeiture if vesting conditions are not met. RSUs are promises to deliver shares (or cash) upon vesting — the employee does not receive shares until vesting occurs. Both are typically equity-classified and measured at grant-date fair value under ASC 718.',
+ 'medium'),
+
+(2, 'Equity',
+ 'Under ASC 220, which of the following is a component of other comprehensive income?',
+ '["Depreciation expense on buildings", "Gain on sale of equipment", "Unrealized holding gain on an available-for-sale debt security", "Bad debt expense"]'::jsonb,
+ 2,
+ 'Unrealized holding gains and losses on available-for-sale (AFS) debt securities are reported in other comprehensive income until the security is sold (reclassified to net income) or an allowance for credit losses is recognized. Depreciation, gains on equipment sales, and bad debt expense are all components of net income, not OCI.',
+ 'easy'),
+
+(2, 'Equity',
+ 'A company reacquires 1,000 shares of its $5 par value common stock for $40 per share. Under the cost method of accounting for treasury stock, the entry is:',
+ '["Debit Treasury Stock $40,000, Credit Cash $40,000", "Debit Treasury Stock $5,000, Debit Additional Paid-in Capital $35,000, Credit Cash $40,000", "Debit Common Stock $5,000, Debit Retained Earnings $35,000, Credit Cash $40,000", "Debit Treasury Stock $40,000, Credit Retained Earnings $40,000"]'::jsonb,
+ 0,
+ 'Under the cost method, treasury stock is debited for the total reacquisition cost ($40 × 1,000 = $40,000), with a credit to cash. The par value and APIC are not affected at the time of reacquisition. When the treasury shares are later reissued, the difference between reissue price and cost is adjusted through APIC or retained earnings. The par value method would debit treasury stock at par.',
+ 'easy'),
+
+(2, 'Equity',
+ 'Under the par value method of accounting for treasury stock, when shares are reacquired for more than their original issuance price, the excess is debited to:',
+ '["Treasury stock at the full reacquisition cost", "Additional paid-in capital from the original issuance (up to the amount available) and then retained earnings for any remainder", "Retained earnings for the full excess amount", "A loss account reported in net income"]'::jsonb,
+ 1,
+ 'Under the par value method, treasury stock is debited at par value, APIC is debited for the amount originally credited to APIC when the shares were issued, and any excess of the reacquisition price over the original issuance price is debited to retained earnings (or APIC from treasury stock transactions if available). The cost method, by contrast, debits treasury stock for the full cost.',
+ 'hard'),
+
+(2, 'Equity',
+ 'Which of the following is reclassified from accumulated other comprehensive income (AOCI) to net income upon occurrence of a specific event?',
+ '["Foreign currency translation adjustments upon sale or substantially complete liquidation of the foreign entity", "Unrealized gains on equity securities", "Revaluation surplus under IFRS upon sale of the revalued asset", "Minimum pension liability adjustments"]'::jsonb,
+ 0,
+ 'Foreign currency translation adjustments accumulated in AOCI are reclassified (recycled) to net income when the investment in the foreign entity is sold or substantially completely liquidated. Unrealized gains on equity securities are reported in net income under ASU 2016-01, not OCI. IFRS revaluation surplus is transferred within equity (to retained earnings), not through profit or loss.',
+ 'medium'),
+
+(2, 'Equity',
+ 'A company has a stock option award with a graded vesting schedule: one-third vests after Year 1, one-third after Year 2, and one-third after Year 3. Under ASC 718, the entity may recognize compensation expense using which approach?',
+ '["Only the straight-line method over the entire vesting period", "Only the accelerated attribution method treating each tranche as a separate award", "Either the straight-line method over the full vesting period or the accelerated attribution method, as an accounting policy election", "The intrinsic value method over the vesting period"]'::jsonb,
+ 2,
+ 'ASC 718 permits an accounting policy election for awards with graded vesting and service conditions only. The entity may use: (1) the accelerated attribution method, recognizing expense for each tranche as if it were a separate award (front-loading expense), or (2) the straight-line method over the requisite service period for the entire award. The intrinsic value method is not permitted under ASC 718.',
+ 'medium'),
+
+-- =============================================================================
+-- Income Taxes — 10 questions
+-- =============================================================================
+
+(2, 'Income Taxes',
+ 'Under ASC 740, the first step in evaluating an uncertain tax position is to determine whether it is "more likely than not" that the position will be sustained. What does this threshold mean?',
+ '["Greater than 75% likelihood of being sustained upon examination", "Greater than 50% likelihood of being sustained upon examination", "Virtually certain to be sustained upon examination", "At least a 25% probability of being sustained"]'::jsonb,
+ 1,
+ 'The "more likely than not" threshold under ASC 740-10 means a greater than 50% likelihood that the tax position will be sustained upon examination by the taxing authority, based on the technical merits of the position. This is the recognition threshold (Step 1). If met, Step 2 measures the benefit as the largest amount that is greater than 50% likely to be realized.',
+ 'easy'),
+
+(2, 'Income Taxes',
+ 'Under ASC 740, when a tax rate change is enacted, deferred tax assets and liabilities are:',
+ '["Adjusted in the period of enactment, with the effect recognized in income from continuing operations", "Adjusted only when the new rate takes effect", "Not adjusted until the temporary differences reverse", "Adjusted with the effect recognized in other comprehensive income"]'::jsonb,
+ 0,
+ 'ASC 740 requires that deferred tax assets and liabilities be adjusted for the effect of enacted tax rate changes in the period in which the change is enacted. The effect is recognized in income from continuing operations, regardless of when the new rate becomes effective or when the underlying temporary differences are expected to reverse.',
+ 'medium'),
+
+(2, 'Income Taxes',
+ 'A company has a deferred tax asset of $500,000. Management determines that it is more likely than not that only $300,000 of the DTA will be realized. Under ASC 740, the company should:',
+ '["Write off the entire DTA", "Record a valuation allowance of $200,000", "Reduce the DTA directly to $300,000 with no valuation allowance", "Disclose the uncertainty in the notes but make no adjustment"]'::jsonb,
+ 1,
+ 'Under ASC 740, a valuation allowance is established to reduce the DTA to the amount that is more likely than not to be realized. The DTA remains at $500,000 on the balance sheet, and a valuation allowance of $200,000 is recorded as a contra-asset. The net DTA presented is $300,000. The DTA is not directly reduced — the allowance is a separate account.',
+ 'easy'),
+
+(2, 'Income Taxes',
+ 'Which of the following is a source of evidence that management should consider when assessing whether a valuation allowance is needed for a deferred tax asset?',
+ '["Only future taxable income projections", "Only carryback potential to prior years", "Future reversals of existing taxable temporary differences, carryback potential, future taxable income projections, and tax-planning strategies", "Only the entity''s current-year pretax income"]'::jsonb,
+ 2,
+ 'ASC 740 identifies four sources of taxable income to be considered when assessing realizability of DTAs: (1) future reversals of existing taxable temporary differences, (2) taxable income in carryback years if carryback is permitted, (3) future taxable income exclusive of reversing temporary differences, and (4) tax-planning strategies. All four sources must be evaluated — relying on a single source is insufficient.',
+ 'medium'),
+
+(2, 'Income Taxes',
+ 'Under the two-step framework for uncertain tax positions in ASC 740, Step 2 measures the recognized benefit as:',
+ '["The full amount of the tax benefit claimed", "The smallest amount that is more likely than not to be sustained", "The largest amount of tax benefit that has a greater than 50% likelihood of being realized upon settlement", "The expected value of all possible outcomes"]'::jsonb,
+ 2,
+ 'Step 2 of the UTP framework measures the benefit as the largest amount of tax benefit that is greater than 50% likely to be realized upon ultimate settlement with the taxing authority. This is determined by evaluating the cumulative probability of possible outcomes. It is neither the full benefit, the smallest amount, nor a probability-weighted expected value.',
+ 'medium'),
+
+(2, 'Income Taxes',
+ 'Intraperiod tax allocation under ASC 740 requires the allocation of total income tax expense among which of the following?',
+ '["Only income from continuing operations", "Income from continuing operations, discontinued operations, other comprehensive income, and items charged directly to equity", "Only income from continuing operations and discontinued operations", "Each operating segment of the entity"]'::jsonb,
+ 1,
+ 'Intraperiod tax allocation allocates total income tax expense or benefit for the period among: (1) continuing operations, (2) discontinued operations, (3) other comprehensive income, and (4) items charged or credited directly to stockholders'' equity. This ensures each component reflects its own tax effect. Allocation by operating segment is not required under ASC 740.',
+ 'medium'),
+
+(2, 'Income Taxes',
+ 'Which of the following is a permanent difference that does NOT give rise to a deferred tax asset or liability?',
+ '["Depreciation differences between tax and book", "Accrued warranty expense recognized for book but deductible for tax when paid", "Tax-exempt municipal bond interest income", "Prepaid rent deducted for tax when paid but expensed for book when incurred"]'::jsonb,
+ 2,
+ 'Tax-exempt municipal bond interest is included in book income but is never included in taxable income — it is a permanent difference. Permanent differences do not reverse over time and therefore do not create deferred tax assets or liabilities. Depreciation differences, warranty accruals, and prepaid rent create temporary differences that do give rise to deferred tax items.',
+ 'easy'),
+
+(2, 'Income Taxes',
+ 'A company has a net operating loss (NOL) carryforward of $1,000,000 and a tax rate of 21%. The NOL is expected to be fully utilized. The company also has a valuation allowance of $50,000 against other DTAs. If the enacted tax rate changes to 25%, what is the adjusted DTA for the NOL carryforward?',
+ '["$210,000", "$250,000", "$200,000", "$240,000"]'::jsonb,
+ 1,
+ 'The DTA for the NOL carryforward is remeasured at the new enacted rate: $1,000,000 × 25% = $250,000. Previously it was $1,000,000 × 21% = $210,000. The increase of $40,000 is recognized in income from continuing operations in the period of enactment. The valuation allowance on other DTAs is a separate item and does not affect the NOL DTA calculation.',
+ 'medium'),
+
+(2, 'Income Taxes',
+ 'Under ASC 740, which of the following items creates a deferred tax liability?',
+ '["Estimated warranty costs accrued for book purposes but deducted on the tax return when paid", "Installment sales revenue recognized for book purposes at the time of sale but deferred for tax until cash is collected", "Municipal bond interest excluded from taxable income", "Goodwill amortization that is the same for both book and tax"]'::jsonb,
+ 1,
+ 'Installment sale revenue creates a deferred tax liability because revenue is recognized for book purposes at the time of sale (higher book income now) but is deferred for tax purposes until cash is collected (lower taxable income now). This temporary difference will result in future taxable amounts when cash is collected. Warranties create a DTA, municipal interest is permanent, and equal goodwill amortization creates no difference.',
+ 'easy'),
+
+(2, 'Income Taxes',
+ 'A company takes a tax position that reduces its tax liability by $800,000. Based on the two-step UTP analysis, the position meets the more-likely-than-not recognition threshold, and the largest cumulative amount with greater than 50% likelihood of being realized is $600,000. Under ASC 740, the company should recognize:',
+ '["A tax benefit of $800,000 and no liability", "A tax benefit of $600,000 and a liability for the unrecognized $200,000", "No tax benefit because the position is uncertain", "A tax benefit of $400,000 (50% of the claimed amount)"]'::jsonb,
+ 1,
+ 'Since the position meets the more-likely-than-not threshold (Step 1), a benefit is recognized. The Step 2 measurement is $600,000 (the largest cumulative amount with >50% likelihood). The remaining $200,000 ($800,000 − $600,000) is recorded as an unrecognized tax benefit liability. Interest and penalties on the unrecognized portion are also accrued under the entity''s accounting policy election.',
+ 'hard'),
+
+-- =============================================================================
+-- Governmental Accounting — 10 questions
+-- =============================================================================
+
+(2, 'Governmental Accounting',
+ 'Under GASB 34, the government-wide financial statements are prepared using which basis of accounting?',
+ '["Modified accrual basis", "Cash basis", "Full accrual basis, economic resources measurement focus", "Budgetary basis"]'::jsonb,
+ 2,
+ 'GASB 34 requires government-wide financial statements (statement of net position and statement of activities) to be prepared using the full accrual basis of accounting with an economic resources measurement focus. This is similar to commercial accounting. Fund-level governmental fund statements, by contrast, use the modified accrual basis with a current financial resources measurement focus.',
+ 'easy'),
+
+(2, 'Governmental Accounting',
+ 'Under GASB 68, the net pension liability reported by a state government employer is measured as:',
+ '["The total pension liability minus the plan''s fiduciary net position (plan assets)", "The total projected benefit obligation minus the accumulated benefit obligation", "The present value of future pension payments minus cash on hand", "The unfunded actuarial accrued liability minus amortized prior service costs"]'::jsonb,
+ 0,
+ 'GASB 68 defines the net pension liability as the total pension liability (the actuarial present value of projected benefit payments attributable to past periods of employee service) minus the pension plan''s fiduciary net position (essentially plan assets at fair value). This differs from the FASB model, which uses projected benefit obligation terminology. The GASB measure is reported in the government-wide statements.',
+ 'medium'),
+
+(2, 'Governmental Accounting',
+ 'Under GASB 75, total OPEB liability is measured using:',
+ '["The entry age normal cost method as the sole actuarial method", "Any actuarial method the government selects", "A projected unit credit method identical to FASB ASC 715", "The aggregate cost method"]'::jsonb,
+ 0,
+ 'GASB 75 requires the entry age normal cost method for measuring the total OPEB liability. This is the single prescribed actuarial cost method under GASB standards, unlike private-sector standards where the projected unit credit method is required. The entry age normal method spreads the actuarial present value of projected benefits as a level percentage of pay over each employee''s career.',
+ 'hard'),
+
+(2, 'Governmental Accounting',
+ 'Property taxes are an example of which type of nonexchange revenue under GASB Statement No. 33?',
+ '["Derived tax revenue", "Imposed nonexchange revenue", "Government-mandated nonexchange transaction", "Voluntary nonexchange transaction"]'::jsonb,
+ 1,
+ 'Under GASB 33, property taxes are classified as imposed nonexchange revenues because the government imposes the tax on property owners without a direct exchange of value. Derived tax revenues (such as income and sales taxes) are derived from underlying exchange transactions. Government-mandated and voluntary nonexchange transactions involve transfers between governments or grants.',
+ 'medium'),
+
+(2, 'Governmental Accounting',
+ 'Sales taxes collected by a state government are classified under GASB 33 as:',
+ '["Imposed nonexchange revenues", "Derived tax revenues", "Voluntary nonexchange transactions", "Exchange revenues"]'::jsonb,
+ 1,
+ 'Sales taxes are derived tax revenues because they are derived from (assessed on) underlying exchange transactions — retail sales. The tax is assessed on the exchange transaction itself. Imposed nonexchange revenues (like property taxes) are assessed on property ownership, not on transactions. Voluntary nonexchange transactions include grants and donations.',
+ 'easy'),
+
+(2, 'Governmental Accounting',
+ 'Under governmental fund accounting, an encumbrance is recorded when:',
+ '["Goods or services are received", "A purchase order or contract is issued, committing the government to a future expenditure", "Cash is disbursed to a vendor", "The budget is adopted at the beginning of the fiscal year"]'::jsonb,
+ 1,
+ 'An encumbrance is recorded when a purchase order or contract is issued, representing a commitment of budgetary resources for a future expenditure. The entry debits Encumbrances and credits Budgetary Fund Balance — Reserved for Encumbrances. When goods are received, the encumbrance is reversed and an expenditure is recorded. Encumbrances are part of budgetary accounting, not the basis for cash disbursement.',
+ 'easy'),
+
+(2, 'Governmental Accounting',
+ 'A government uses the modified approach for reporting its infrastructure assets under GASB 34. Under this approach, the government:',
+ '["Depreciates infrastructure assets using the straight-line method", "Does not depreciate infrastructure assets but instead expenses all maintenance and preservation costs and reports the condition of the assets", "Capitalizes all repair and maintenance costs as additions to the infrastructure assets", "Reports infrastructure assets at fair value each year"]'::jsonb,
+ 1,
+ 'Under the modified approach (GASB 34), a government does not depreciate eligible infrastructure assets. Instead, it must (1) maintain the assets at or above a condition level established and disclosed by the government, (2) perform condition assessments at least every three years, and (3) expense maintenance and preservation costs in the period incurred. Additions and improvements are still capitalized.',
+ 'hard'),
+
+(2, 'Governmental Accounting',
+ 'Under GASB 68, pension expense recognized by the employer includes which of the following components?',
+ '["Only the service cost component", "Service cost, interest on total pension liability, projected earnings on plan investments, and amortization of deferred outflows/inflows", "Only the annual required contribution (ARC)", "Cash payments to the pension plan during the period"]'::jsonb,
+ 1,
+ 'GASB 68 pension expense includes: (1) service cost, (2) interest on the total pension liability, (3) projected earnings on pension plan investments (which reduces expense), (4) changes in benefit terms, (5) differences between expected and actual experience (amortized), and (6) changes in assumptions (amortized). It is accrual-based and differs significantly from the prior ARC-based model.',
+ 'hard'),
+
+(2, 'Governmental Accounting',
+ 'In the government-wide statement of activities, expenses are reported by:',
+ '["Object classification (salaries, supplies, etc.)", "Function or program (public safety, education, etc.)", "Fund (general fund, special revenue, etc.)", "Natural classification with no functional breakdown"]'::jsonb,
+ 1,
+ 'GASB 34 requires the statement of activities to present expenses by function or program (e.g., general government, public safety, education, highways, health). Program revenues are reported directly with the function they support, and the net expense or revenue for each function is shown. This functional format differs from the fund-based presentation used in governmental fund statements.',
+ 'medium'),
+
+(2, 'Governmental Accounting',
+ 'Under GASB 33, revenue from a government grant that has eligibility requirements (such as allowable costs) is recognized when:',
+ '["The grant agreement is signed", "The eligibility requirements are met, including any time requirements", "Cash is received from the grantor", "The government appropriates the funds in its budget"]'::jsonb,
+ 1,
+ 'Government-mandated and voluntary nonexchange transactions (including grants) are recognized as revenue when eligibility requirements are met, including time requirements. If a grant requires expenditure of funds for allowable costs, revenue is not recognized until those costs are incurred. Signing the agreement, receiving cash, or appropriating funds does not trigger recognition if eligibility requirements are unmet.',
+ 'medium'),
+
+-- =============================================================================
+-- Not-for-Profit Accounting — 8 questions
+-- =============================================================================
+
+(2, 'Not-for-Profit Accounting',
+ 'Under ASC 958, a contribution is considered conditional if it includes:',
+ '["A restriction on how the funds are used", "A barrier that must be overcome and a right of return or release from the obligation if the barrier is not met", "A donor''s expressed preference for how the funds should be spent", "A requirement to provide an annual report to the donor"]'::jsonb,
+ 1,
+ 'ASU 2018-08 clarified that a conditional contribution has two characteristics: (1) a barrier (measurable performance or other requirement) that must be overcome, and (2) a right of return of assets or release of the promisor from the obligation if the barrier is not met. A restriction on use is a donor restriction, not a condition. Preferences and reporting requirements alone do not make a contribution conditional.',
+ 'medium'),
+
+(2, 'Not-for-Profit Accounting',
+ 'Under ASC 958-605, contributed services are recognized as revenue only when the services:',
+ '["Are donated by a licensed professional", "Create or enhance a nonfinancial asset, or require specialized skills that would typically need to be purchased if not donated", "Exceed $5,000 in fair value", "Are donated during the entity''s fiscal year"]'::jsonb,
+ 1,
+ 'Contributed services are recognized as revenue only if they (1) create or enhance a nonfinancial asset, or (2) require specialized skills, are provided by individuals possessing those skills, and would typically need to be purchased if not donated. General volunteer services (e.g., ushering, serving food) do not meet these criteria. There is no dollar threshold, professional license requirement, or timing restriction.',
+ 'medium'),
+
+(2, 'Not-for-Profit Accounting',
+ 'A donor contributes $100,000 to a not-for-profit with the stipulation that the principal must be maintained in perpetuity and only the investment income may be used for operations. Under ASC 958, this contribution is classified as:',
+ '["Net assets without donor restrictions", "Net assets with donor restrictions — time-restricted", "Net assets with donor restrictions — perpetual in nature (endowment)", "A liability until the investment income is earned"]'::jsonb,
+ 2,
+ 'A contribution where the donor stipulates that the principal must be maintained in perpetuity is classified as net assets with donor restrictions of a perpetual nature (endowment). The investment income, when earned, may be classified as with or without donor restrictions depending on the donor''s stipulations regarding its use. This is not a liability because the NFP has no obligation to return the funds.',
+ 'easy'),
+
+(2, 'Not-for-Profit Accounting',
+ 'When a not-for-profit satisfies a purpose restriction on a donor-restricted contribution, the accounting entry includes:',
+ '["A debit to net assets with donor restrictions and a credit to net assets without donor restrictions (reclassification)", "A debit to contribution revenue and a credit to cash", "A debit to program expense and a credit to net assets with donor restrictions", "No entry is needed — restrictions are tracked off the books"]'::jsonb,
+ 0,
+ 'When a purpose restriction is satisfied, the NFP reclassifies the amount from net assets with donor restrictions to net assets without donor restrictions. This is reported as "net assets released from restrictions" on the statement of activities. The entry debits net assets with donor restrictions and credits net assets without donor restrictions. No new revenue is recognized — it is a reclassification.',
+ 'easy'),
+
+(2, 'Not-for-Profit Accounting',
+ 'Under ASC 958, a not-for-profit receives a government grant with a requirement to provide meals to 10,000 individuals. If fewer than 10,000 meals are served, the unspent funds must be returned. This grant is:',
+ '["An unconditional contribution with a purpose restriction", "A conditional contribution because of the barrier (serving 10,000 meals) and right of return", "An exchange transaction", "A conditional contribution recognized in full when the grant is signed"]'::jsonb,
+ 1,
+ 'This grant is a conditional contribution under ASU 2018-08. The barrier is the measurable performance requirement (serving 10,000 meals), and the right of return exists because unspent funds must be returned. Revenue is recognized as the barrier is overcome — in this case, as meals are served. It is not unconditional, not an exchange transaction, and not recognized upon signing.',
+ 'medium'),
+
+(2, 'Not-for-Profit Accounting',
+ 'A not-for-profit has a donor-restricted endowment fund. Under the Uniform Prudent Management of Institutional Funds Act (UPMIFA), if the fair value of the endowment falls below the original gift amount (underwater endowment), the not-for-profit:',
+ '["Must immediately restore the endowment to its original value from unrestricted funds", "Continues to classify the original gift as donor-restricted and reports the deficiency in net assets with donor restrictions", "Writes off the difference as a loss in net income", "Reclassifies the entire endowment to net assets without donor restrictions"]'::jsonb,
+ 1,
+ 'Under UPMIFA and ASC 958, when an endowment is underwater (fair value is below the original gift amount or the amount required by the donor), the deficiency reduces net assets with donor restrictions. The original gift amount remains donor-restricted. The NFP does not restore the endowment from unrestricted funds, write off a loss, or reclassify the endowment.',
+ 'hard'),
+
+(2, 'Not-for-Profit Accounting',
+ 'Under ASU 2020-07, a not-for-profit that receives contributed nonfinancial assets (gifts-in-kind) must present them:',
+ '["Combined with cash contributions on the statement of activities", "As a separate line item on the statement of activities, with additional qualitative and quantitative disclosures", "Only in the footnotes with no statement of activities impact", "Net of any costs incurred to sell or distribute the assets"]'::jsonb,
+ 1,
+ 'ASU 2020-07 requires not-for-profits to present contributed nonfinancial assets as a separate line item on the statement of activities (not combined with cash contributions). Additional disclosures include: the type of assets, whether the assets were monetized or used, the valuation techniques used, donor restrictions, and any associated costs. This increases transparency around gifts-in-kind.',
+ 'medium'),
+
+(2, 'Not-for-Profit Accounting',
+ 'A not-for-profit receives a pledge (promise to give) of $50,000 to be paid in equal installments over 5 years. The pledge is unconditional. Under ASC 958, how is this pledge recognized?',
+ '["As revenue of $50,000 in the year the pledge is received, classified as net assets with donor restrictions (time restriction)", "As $10,000 of revenue each year as cash is received", "As a liability until all installments are collected", "As revenue of $50,000 in net assets without donor restrictions"]'::jsonb,
+ 0,
+ 'An unconditional promise to give is recognized as contribution revenue in the period the promise is made, for the full present value of the expected future payments. Because the pledge extends beyond the current period, it is classified as net assets with donor restrictions (time restriction) until the installments are due. The pledge is not recognized on a cash basis, as a liability, or without restrictions.',
+ 'hard'),
+
+-- =============================================================================
+-- Consolidations — 12 questions
+-- =============================================================================
+
+(2, 'Consolidations',
+ 'Under ASC 810, a variable interest entity (VIE) is an entity in which:',
+ '["The equity investors have the power to direct the entity''s activities and absorb its losses", "The equity investors as a group lack sufficient equity at risk to finance the entity''s activities without additional subordinated financial support", "The entity has total assets exceeding $100 million", "The entity is publicly traded on a major exchange"]'::jsonb,
+ 1,
+ 'A VIE is characterized by insufficient equity at risk — the equity investors as a group do not have enough equity investment to finance the entity''s activities without additional subordinated financial support from other parties. Other VIE indicators include equity holders lacking decision-making rights or lacking the obligation to absorb losses / right to receive returns. Asset size and public trading status are not VIE criteria.',
+ 'medium'),
+
+(2, 'Consolidations',
+ 'Under the VIE model in ASC 810, the primary beneficiary that must consolidate the VIE is the entity that has:',
+ '["The largest equity investment in the VIE", "Both the power to direct the activities that most significantly affect the VIE''s economic performance AND the obligation to absorb losses or right to receive benefits that could be significant to the VIE", "A contractual right to receive all of the VIE''s profits", "The longest relationship with the VIE"]'::jsonb,
+ 1,
+ 'The primary beneficiary of a VIE must have two characteristics: (1) the power to direct the activities that most significantly impact the VIE''s economic performance, and (2) the obligation to absorb losses or the right to receive benefits that could potentially be significant to the VIE. Having the largest equity investment, a profit-sharing right, or the longest relationship alone is insufficient.',
+ 'medium'),
+
+(2, 'Consolidations',
+ 'In a step acquisition, a company holds a 30% equity method investment in an entity and then acquires an additional 40% to obtain control (70% total). Under ASC 805, how is the previously held 30% interest accounted for on the acquisition date?',
+ '["It continues to be carried at its equity method basis", "It is remeasured to fair value on the acquisition date, with any gain or loss recognized in net income", "It is written down to zero and goodwill absorbs the difference", "It is reclassified to available-for-sale securities"]'::jsonb,
+ 1,
+ 'In a step acquisition under ASC 805, the previously held equity interest is remeasured to its acquisition-date fair value, and any difference between fair value and the previous carrying amount is recognized as a gain or loss in net income. The acquirer then measures the total consideration as the sum of the fair value of the additional interest acquired plus the fair value of the previously held interest.',
+ 'hard'),
+
+(2, 'Consolidations',
+ 'Under the equity method, when an investor pays more than its share of the investee''s book value for an investment, the excess is:',
+ '["Recorded entirely as goodwill on the investor''s books", "Allocated to identifiable assets and liabilities based on fair value differences, with any remainder as equity method goodwill, and amortized as a basis difference adjustment", "Expensed immediately as acquisition costs", "Ignored because the equity method does not track basis differences"]'::jsonb,
+ 1,
+ 'When an equity method investor pays more than its share of book value, the excess is analyzed similarly to a purchase price allocation: allocated to specific identifiable assets (such as undervalued inventory, PP&E, or intangibles) and amortized as those items are consumed or depreciated. Any remaining excess is treated as equity method goodwill, which is not amortized but is tested for impairment as part of the overall investment.',
+ 'hard'),
+
+(2, 'Consolidations',
+ 'In consolidation, when a parent sells inventory to its subsidiary (downstream transaction) at a profit, the intercompany profit is:',
+ '["Eliminated entirely from the parent''s net income", "Eliminated from consolidated net income in proportion to the parent''s ownership interest", "Not eliminated because the subsidiary is a separate legal entity", "Eliminated entirely from consolidated financial statements, attributed 100% to the parent"]'::jsonb,
+ 3,
+ 'In a downstream sale (parent sells to subsidiary), the unrealized intercompany profit is eliminated in full from consolidated financial statements. Because the parent generated the profit, 100% of the elimination is attributed to the controlling interest (parent). This differs from upstream transactions where the elimination is allocated between controlling and noncontrolling interests based on ownership percentages.',
+ 'medium'),
+
+(2, 'Consolidations',
+ 'In an upstream intercompany transaction (subsidiary sells to parent at a profit), the elimination of unrealized intercompany profit is:',
+ '["Attributed 100% to the parent company", "Allocated between the controlling interest and noncontrolling interest based on their respective ownership percentages", "Attributed 100% to the noncontrolling interest", "Not required for upstream transactions"]'::jsonb,
+ 1,
+ 'In an upstream sale (subsidiary sells to parent), the elimination of unrealized profit is allocated between the controlling and noncontrolling interests based on their ownership percentages. For example, if the parent owns 80% of the subsidiary, 80% of the profit elimination is attributed to the controlling interest and 20% to the noncontrolling interest. This differs from downstream, where 100% goes to the parent.',
+ 'hard'),
+
+(2, 'Consolidations',
+ 'Under ASC 805, when the fair value of net assets acquired in a business combination exceeds the total consideration paid, the acquirer should:',
+ '["Record the excess as negative goodwill and amortize it over 20 years", "Recognize a bargain purchase gain in net income after reassessing whether all assets and liabilities have been properly identified and measured", "Reduce the values assigned to noncurrent assets proportionally until the excess is eliminated", "Record the excess as a credit to additional paid-in capital"]'::jsonb,
+ 1,
+ 'Under ASC 805, a bargain purchase occurs when the fair value of identifiable net assets exceeds the consideration paid. The acquirer must first reassess whether all assets acquired and liabilities assumed have been properly identified and measured. If the excess remains after reassessment, the acquirer recognizes a gain in net income on the acquisition date. The old method of reducing noncurrent assets was eliminated.',
+ 'medium'),
+
+(2, 'Consolidations',
+ 'Under the equity method, if the fair value of an investment declines below its carrying amount and the decline is considered other-than-temporary, the investor should:',
+ '["Continue to carry the investment at its equity method basis and disclose the decline", "Write down the investment to fair value and recognize an impairment loss in net income", "Reclassify the investment as a trading security", "Reverse prior equity method earnings until the carrying amount equals fair value"]'::jsonb,
+ 1,
+ 'When an equity method investment suffers an other-than-temporary decline in fair value, the investor writes the investment down to fair value and recognizes an impairment loss in net income. The new reduced carrying amount becomes the basis for future equity method accounting. The impairment is not reversible under U.S. GAAP. Reclassification and reversal of prior earnings are not appropriate.',
+ 'medium'),
+
+(2, 'Consolidations',
+ 'Which of the following is an indicator that an entity is NOT a VIE under ASC 810?',
+ '["The entity''s equity investors have voting rights that are proportional to their economic interests and substantially all of the entity''s activities are conducted on their behalf", "The entity has guaranteed debt from a related party", "The entity''s total equity is less than 10% of total assets", "The entity was created to hold specific financial assets"]'::jsonb,
+ 0,
+ 'An entity is not a VIE if the equity investors have sufficient equity at risk, possess voting rights proportional to their economic interests, and substantially all activities are conducted on behalf of the equity investors (not disproportionately for other variable interest holders). Guaranteed debt from related parties, low equity ratios, and creation for asset-holding purposes are VIE indicators.',
+ 'hard'),
+
+(2, 'Consolidations',
+ 'A parent company owns 80% of a subsidiary. The subsidiary reports net income of $500,000. In the consolidated income statement, how is the subsidiary''s income allocated?',
+ '["$500,000 to the parent company", "$400,000 to the controlling interest and $100,000 to the noncontrolling interest", "$500,000 to the noncontrolling interest", "$400,000 to the noncontrolling interest and $100,000 to the parent"]'::jsonb,
+ 1,
+ 'In consolidation, the subsidiary''s net income is allocated between the controlling interest (parent) and the noncontrolling interest (NCI) based on ownership percentages. The parent (80%) is allocated $400,000 and the NCI (20%) is allocated $100,000. Both amounts are presented in the consolidated income statement, with NCI income shown as a separate line item.',
+ 'easy'),
+
+(2, 'Consolidations',
+ 'Under the equity method, an investor recognizes its share of the investee''s net income by:',
+ '["Debiting cash and crediting investment revenue", "Debiting the investment account and crediting equity in earnings of investee", "Debiting equity in earnings and crediting the investment account", "Debiting dividend income and crediting cash"]'::jsonb,
+ 1,
+ 'Under the equity method, when the investee reports net income, the investor debits the Investment account (increasing its carrying value) and credits Equity in Earnings of Investee (income). When dividends are received, the investor debits Cash and credits the Investment account (reducing its carrying value). Dividends are not income under the equity method — they are a return of investment.',
+ 'easy'),
+
+(2, 'Consolidations',
+ 'A company acquires 100% of a target for $10,000,000. The fair value of identifiable net assets acquired is $10,800,000. After reassessing all assets and liabilities, the excess persists. Under ASC 805, the acquirer recognizes:',
+ '["Goodwill of $800,000", "A bargain purchase gain of $800,000 in net income", "Negative goodwill of $800,000 amortized over its useful life", "A reduction of $800,000 to the target''s long-lived assets"]'::jsonb,
+ 1,
+ 'When the fair value of identifiable net assets ($10,800,000) exceeds the consideration paid ($10,000,000) by $800,000, and the acquirer has reassessed and confirmed that all assets and liabilities are properly identified and measured, a bargain purchase gain of $800,000 is recognized in net income on the acquisition date. This is not goodwill, and the old approaches of negative goodwill amortization or noncurrent asset reduction are no longer used under ASC 805.',
+ 'medium');
