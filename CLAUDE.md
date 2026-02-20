@@ -63,15 +63,22 @@ npm run lint         # ESLint
 | `src/lib/quiz.ts`                               | Quiz types + scoring logic                 |
 | `supabase/migrations/00001_initial_schema.sql` | Full DB schema + seed data                 |
 | `supabase/migrations/00002_seed_questions.sql` | 90 quiz questions + RLS update policy      |
+| `supabase/migrations/00006_add_discipline_sections.sql` | BAR, ISC, TCP section + intro lessons |
+| `supabase/migrations/00007–00012`             | Expanded questions + content per section   |
 | `.env.local.example`                          | Required env vars template                 |
 
 ## Content Summary
 
-| Section | Code | Lessons | Topics                                            |
-|---------|------|---------|---------------------------------------------------|
-| AUD     | aud  | 12      | Ethics, planning, risk, controls, evidence, sampling, reports, review/compilation, attestation, quality mgmt |
-| FAR     | far  | 13      | Financial statements, revenue, inventory, fixed/intangible assets, leases, bonds, equity, tax, govt, NFP, consolidations |
-| REG     | reg  | 13      | Circular 230, contracts, agency, business structures, basis, gains/losses, 1031, individual tax, credits, C/S corps, partnerships |
+| Section | Code | Lessons | Questions | Framework Items | Topics                                            |
+|---------|------|---------|-----------|-----------------|---------------------------------------------------|
+| AUD     | aud  | 12      | ~200      | 34              | Ethics, planning, risk, controls, evidence, sampling, reports, review/compilation, attestation, quality mgmt |
+| FAR     | far  | 13      | ~200      | 49              | Financial statements, revenue, inventory, fixed/intangible assets, leases, bonds, equity, tax, govt, NFP, consolidations |
+| REG     | reg  | 13      | ~200      | 48              | Circular 230, contracts, agency, business structures, basis, gains/losses, 1031, individual tax, credits, C/S corps, partnerships |
+| BAR     | bar  | 11      | 150       | 32              | Financial analysis, valuation, capital structure, derivatives, consolidations, govt reporting |
+| ISC     | isc  | 12      | 150       | 33              | IT infrastructure, ERP, data management, security frameworks, threats, privacy, SOC |
+| TCP     | tcp  | 12      | 150       | 37              | Individual planning, passive/at-risk, wealth transfer, retirement, international tax, trusts |
+
+**Totals:** 73 lessons, ~1,050 questions, 233 framework items across 6 sections
 
 ## Database Tables
 
@@ -79,15 +86,16 @@ npm run lint         # ESLint
 
 ## Current Phase
 
-**Phase 1: Scaffold + Static Shell** — complete
-**Phase 2: Auth + Payments** — complete
-**Phase 3: Lesson Content Generation** — complete
-**Phase 4: Quiz Engine** — complete
+All phases complete:
 
-### Remaining Phases
+- **Phase 1:** Scaffold + Static Shell
+- **Phase 2:** Auth + Payments
+- **Phase 3:** Lesson Content Generation
+- **Phase 4:** Quiz Engine
 - **Phase 5:** Practice Exams (timed, navigation, flagging)
 - **Phase 6:** PDF Study Frameworks
-- **Phase 7:** Polish + Deploy
+- **Phase 7:** Polish + Deploy (Vercel, SEO, error boundaries, loading states)
+- **Phase 8:** Content Expansion (all 6 sections deepened + built)
 
 ## Gotchas Learned
 
@@ -107,6 +115,9 @@ Full product specification with all 7 phases, data model, and acceptance criteri
 Repository: https://github.com/JamesIsHere/cpa-prep-course
 Branch: `master`
 Latest commits:
-- `b5cbff7` complete phase 3: generate 38 lessons across AUD, FAR, REG sections
-- `d3208ba` complete phase 2: supabase auth, stripe payments, paywall, dashboard, account page
-- `430debe` complete phase 1: scaffold, landing page, section/lesson pages, MDX content, tests
+- `cc505c0` add ISC and TCP full build: 22 lessons, 300 questions, 70 study frameworks
+- `864b0f8` add BAR full build: 10 lessons, 150 questions, 32 study frameworks
+- `dff7252` add 114 REG questions and expand study framework to 48 items
+- `1a5c39f` complete phase 5: practice exams with timed sessions
+- `f279b1f` complete phase 6: pdf study frameworks with on-demand generation
+- `e212de8` add phase 7 polish: favicon, error boundaries, OG tags, sitemap
