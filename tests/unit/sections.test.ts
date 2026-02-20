@@ -2,8 +2,8 @@ import { describe, expect, it } from "vitest";
 import { getLesson, getSection, sections } from "@/lib/sections";
 
 describe("sections data", () => {
-	it("has 3 sections", () => {
-		expect(sections).toHaveLength(3);
+	it("has 6 sections", () => {
+		expect(sections).toHaveLength(6);
 	});
 
 	it("each section has a unique slug", () => {
@@ -30,9 +30,9 @@ describe("sections data", () => {
 		}
 	});
 
-	it("covers AUD, FAR, and REG", () => {
+	it("covers all 6 CPA exam sections", () => {
 		const codes = sections.map((s) => s.code).sort();
-		expect(codes).toEqual(["aud", "far", "reg"]);
+		expect(codes).toEqual(["aud", "bar", "far", "isc", "reg", "tcp"]);
 	});
 });
 

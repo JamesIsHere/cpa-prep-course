@@ -1,6 +1,9 @@
 import { audFramework } from "./aud";
+import { barFramework } from "./bar";
 import { farFramework } from "./far";
+import { iscFramework } from "./isc";
 import { regFramework } from "./reg";
+import { tcpFramework } from "./tcp";
 import type { StudyFramework } from "./types";
 
 export type {
@@ -17,8 +20,11 @@ export type {
 
 const frameworks: Record<string, StudyFramework> = {
 	aud: audFramework,
+	bar: barFramework,
 	far: farFramework,
+	isc: iscFramework,
 	reg: regFramework,
+	tcp: tcpFramework,
 };
 
 export function getStudyFramework(

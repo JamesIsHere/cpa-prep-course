@@ -1,11 +1,12 @@
 import { describe, expect, it } from "vitest";
 import { getStudyFramework, type StudyFramework } from "@/lib/study-frameworks";
 
-const validCodes = ["aud", "far", "reg"];
+const allCodes = ["aud", "bar", "far", "isc", "reg", "tcp"];
+const populatedCodes = ["aud", "far", "reg"];
 
 describe("getStudyFramework", () => {
-	it("returns a framework for each valid section code", () => {
-		for (const code of validCodes) {
+	it("returns a framework for each section code", () => {
+		for (const code of allCodes) {
 			const fw = getStudyFramework(code);
 			expect(fw).toBeDefined();
 			expect(fw!.sectionCode).toBe(code);
@@ -19,7 +20,7 @@ describe("getStudyFramework", () => {
 });
 
 describe("study framework content", () => {
-	const frameworks: StudyFramework[] = validCodes.map(
+	const frameworks: StudyFramework[] = populatedCodes.map(
 		(c) => getStudyFramework(c)!,
 	);
 

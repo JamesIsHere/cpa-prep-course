@@ -269,6 +269,243 @@ export const sections: Section[] = [
 			},
 		],
 	},
+	{
+		code: "bar",
+		title: "Business Analysis and Reporting",
+		description:
+			"Financial analysis, valuation, advanced accounting, and governmental reporting. A discipline section for candidates pursuing corporate finance and advisory careers.",
+		slug: "bar",
+		lessons: [
+			{
+				slug: "01-intro",
+				title: "Introduction to Business Analysis and Reporting",
+				contentPath: "bar/01-intro",
+				isFree: true,
+			},
+			{
+				slug: "02-financial-analysis",
+				title: "Financial Statement Analysis",
+				contentPath: "bar/02-financial-analysis",
+				isFree: false,
+			},
+			{
+				slug: "03-prospective-analysis",
+				title: "Prospective Analysis and Forecasting",
+				contentPath: "bar/03-prospective-analysis",
+				isFree: false,
+			},
+			{
+				slug: "04-capital-structure",
+				title: "Capital Structure and Valuation",
+				contentPath: "bar/04-capital-structure",
+				isFree: false,
+			},
+			{
+				slug: "05-financial-valuation",
+				title: "Financial Valuation Methods",
+				contentPath: "bar/05-financial-valuation",
+				isFree: false,
+			},
+			{
+				slug: "06-risk-management",
+				title: "Risk Management and Economics",
+				contentPath: "bar/06-risk-management",
+				isFree: false,
+			},
+			{
+				slug: "07-advanced-revenue",
+				title: "Advanced Revenue and Intangibles",
+				contentPath: "bar/07-advanced-revenue",
+				isFree: false,
+			},
+			{
+				slug: "08-stock-compensation",
+				title: "Stock Compensation and Business Combinations",
+				contentPath: "bar/08-stock-compensation",
+				isFree: false,
+			},
+			{
+				slug: "09-consolidations-advanced",
+				title: "Advanced Consolidations",
+				contentPath: "bar/09-consolidations-advanced",
+				isFree: false,
+			},
+			{
+				slug: "10-derivatives",
+				title: "Derivatives and Hedging",
+				contentPath: "bar/10-derivatives",
+				isFree: false,
+			},
+			{
+				slug: "11-government-advanced",
+				title: "State and Local Government Reporting",
+				contentPath: "bar/11-government-advanced",
+				isFree: false,
+			},
+		],
+	},
+	{
+		code: "isc",
+		title: "Information Systems and Controls",
+		description:
+			"IT infrastructure, cybersecurity, data management, and SOC engagements. A discipline section for candidates pursuing IT audit and technology advisory careers.",
+		slug: "isc",
+		lessons: [
+			{
+				slug: "01-intro",
+				title: "Introduction to Information Systems and Controls",
+				contentPath: "isc/01-intro",
+				isFree: true,
+			},
+			{
+				slug: "02-it-infrastructure",
+				title: "IT Infrastructure and Architecture",
+				contentPath: "isc/02-it-infrastructure",
+				isFree: false,
+			},
+			{
+				slug: "03-erp-accounting-systems",
+				title: "ERP and Accounting Information Systems",
+				contentPath: "isc/03-erp-accounting-systems",
+				isFree: false,
+			},
+			{
+				slug: "04-data-management",
+				title: "Data Management and Lifecycle",
+				contentPath: "isc/04-data-management",
+				isFree: false,
+			},
+			{
+				slug: "05-system-availability",
+				title: "System Availability and Change Management",
+				contentPath: "isc/05-system-availability",
+				isFree: false,
+			},
+			{
+				slug: "06-security-frameworks",
+				title: "Security and Control Frameworks",
+				contentPath: "isc/06-security-frameworks",
+				isFree: false,
+			},
+			{
+				slug: "07-threats-vulnerabilities",
+				title: "Threats, Attacks, and Vulnerabilities",
+				contentPath: "isc/07-threats-vulnerabilities",
+				isFree: false,
+			},
+			{
+				slug: "08-security-controls",
+				title: "Security Controls and Monitoring",
+				contentPath: "isc/08-security-controls",
+				isFree: false,
+			},
+			{
+				slug: "09-privacy",
+				title: "Privacy Requirements and Data Protection",
+				contentPath: "isc/09-privacy",
+				isFree: false,
+			},
+			{
+				slug: "10-incident-response",
+				title: "Incident Response and Recovery",
+				contentPath: "isc/10-incident-response",
+				isFree: false,
+			},
+			{
+				slug: "11-soc-engagements",
+				title: "SOC Engagements",
+				contentPath: "isc/11-soc-engagements",
+				isFree: false,
+			},
+			{
+				slug: "12-soc-reporting",
+				title: "SOC Reporting and Trust Services Criteria",
+				contentPath: "isc/12-soc-reporting",
+				isFree: false,
+			},
+		],
+	},
+	{
+		code: "tcp",
+		title: "Tax Compliance and Planning",
+		description:
+			"Advanced tax planning, international tax, entity compliance, and specialized transactions. A discipline section for candidates pursuing tax practice careers.",
+		slug: "tcp",
+		lessons: [
+			{
+				slug: "01-intro",
+				title: "Introduction to Tax Compliance and Planning",
+				contentPath: "tcp/01-intro",
+				isFree: true,
+			},
+			{
+				slug: "02-individual-planning",
+				title: "Individual Tax Planning: Compensation",
+				contentPath: "tcp/02-individual-planning",
+				isFree: false,
+			},
+			{
+				slug: "03-passive-at-risk",
+				title: "Passive Activity and At-Risk Rules",
+				contentPath: "tcp/03-passive-at-risk",
+				isFree: false,
+			},
+			{
+				slug: "04-wealth-transfer",
+				title: "Wealth Transfer and Gifting Strategies",
+				contentPath: "tcp/04-wealth-transfer",
+				isFree: false,
+			},
+			{
+				slug: "05-retirement-education",
+				title: "Retirement Plans and Education Savings",
+				contentPath: "tcp/05-retirement-education",
+				isFree: false,
+			},
+			{
+				slug: "06-entity-compliance",
+				title: "Entity Tax Compliance: NOLs and Consolidated Returns",
+				contentPath: "tcp/06-entity-compliance",
+				isFree: false,
+			},
+			{
+				slug: "07-international-tax",
+				title: "International Tax",
+				contentPath: "tcp/07-international-tax",
+				isFree: false,
+			},
+			{
+				slug: "08-owner-entity",
+				title: "Owner-Entity Transactions",
+				contentPath: "tcp/08-owner-entity",
+				isFree: false,
+			},
+			{
+				slug: "09-basis-calculations",
+				title: "Advanced Basis Calculations",
+				contentPath: "tcp/09-basis-calculations",
+				isFree: false,
+			},
+			{
+				slug: "10-trusts-estates",
+				title: "Trusts and Estates",
+				contentPath: "tcp/10-trusts-estates",
+				isFree: false,
+			},
+			{
+				slug: "11-formation-liquidation",
+				title: "Entity Formation and Liquidation",
+				contentPath: "tcp/11-formation-liquidation",
+				isFree: false,
+			},
+			{
+				slug: "12-entity-choice",
+				title: "Entity Choice and Planning",
+				contentPath: "tcp/12-entity-choice",
+				isFree: false,
+			},
+		],
+	},
 ];
 
 export function getSection(slug: string): Section | undefined {
