@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import LoginForm from "./login-form";
 
 export const metadata: Metadata = {
-	title: "Log In — CPA Prep Course",
+	title: "Log In",
 };
 
 export default function LoginPage() {

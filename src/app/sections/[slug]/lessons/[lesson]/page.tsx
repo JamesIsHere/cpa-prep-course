@@ -18,7 +18,7 @@ export async function generateMetadata({
 	const { slug, lesson: lessonSlug } = await params;
 	const result = getLesson(slug, lessonSlug);
 	if (!result) return {};
-	return { title: `${result.lesson.title} — CPA Prep Course` };
+	return { title: result.lesson.title };
 }
 
 export default async function LessonPage({

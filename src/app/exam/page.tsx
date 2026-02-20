@@ -6,7 +6,7 @@ import { createClient } from "@/lib/supabase/server";
 import ExamConfigClient from "./exam-config-client";
 
 export const metadata: Metadata = {
-	title: "Practice Exam — CPA Prep Course",
+	title: "Practice Exam",
 };
 
 export default async function ExamPage({

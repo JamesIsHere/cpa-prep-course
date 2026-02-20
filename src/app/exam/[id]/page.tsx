@@ -9,7 +9,7 @@ export async function generateMetadata({
 	params: Promise<{ id: string }>;
 }) {
 	const { id } = await params;
-	return { title: `Exam #${id} — CPA Prep Course` };
+	return { title: `Exam #${id}` };
 }
 
 export default async function ExamSessionPage({

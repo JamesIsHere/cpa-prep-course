@@ -14,9 +14,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	title: "CPA Prep Course",
+	title: {
+		default: "CPA Prep Course",
+		template: "%s — CPA Prep Course",
+	},
 	description:
 		"Full-scope CPA exam prep — lessons, quizzes, practice exams, and study frameworks for $9.99/month.",
+	metadataBase: new URL("https://www.slayer-cpa.com"),
+	openGraph: {
+		type: "website",
+		siteName: "CPA Prep Course",
+		title: "CPA Prep Course",
+		description:
+			"Lessons, quizzes, practice exams, and study frameworks for the AUD, FAR, and REG sections of the CPA exam.",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "CPA Prep Course",
+		description:
+			"Lessons, quizzes, practice exams, and study frameworks for the AUD, FAR, and REG sections of the CPA exam.",
+	},
 };
 
 export default function RootLayout({

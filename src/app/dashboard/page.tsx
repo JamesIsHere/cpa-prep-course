@@ -5,7 +5,7 @@ import { sections } from "@/lib/sections";
 import { createClient } from "@/lib/supabase/server";
 
 export const metadata: Metadata = {
-	title: "Dashboard — CPA Prep Course",
+	title: "Dashboard",
 };
 
 export default async function DashboardPage() {

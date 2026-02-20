@@ -17,7 +17,7 @@ export async function generateMetadata({
 	const { slug } = await params;
 	const section = getSection(slug);
 	if (!section) return {};
-	return { title: `${section.title} Quiz — CPA Prep Course` };
+	return { title: `${section.title} Quiz` };
 }
 
 export default async function QuizPage({

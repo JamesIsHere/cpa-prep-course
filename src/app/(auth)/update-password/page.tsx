@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import UpdatePasswordForm from "./update-password-form";
 
 export const metadata: Metadata = {
-	title: "Update Password — CPA Prep Course",
+	title: "Update Password",
 };
 
 export default function UpdatePasswordPage() {

@@ -2,7 +2,7 @@ import SectionCard from "@/components/section-card";
 import { sections } from "@/lib/sections";
 
 export const metadata = {
-	title: "Sections — CPA Prep Course",
+	title: "Sections",
 };
 
 export default function SectionsPage() {

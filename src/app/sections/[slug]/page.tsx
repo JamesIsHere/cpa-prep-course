@@ -15,7 +15,7 @@ export async function generateMetadata({
 	const { slug } = await params;
 	const section = getSection(slug);
 	if (!section) return {};
-	return { title: `${section.title} — CPA Prep Course` };
+	return { title: section.title };
 }
 
 export default async function SectionDetailPage({
