@@ -13,7 +13,7 @@ export default function Home() {
 						<span className="text-emerald-600"> with confidence</span>
 					</h1>
 					<p className="text-lg sm:text-xl text-gray-600 mb-4 max-w-2xl mx-auto leading-relaxed">
-						94 lessons, 1,250+ practice questions, timed exams, and downloadable
+						96 lessons, 1,275+ practice questions, timed exams, and downloadable
 						study frameworks across all 6 CPA sections.
 					</p>
 					<p className="text-sm text-gray-400 mb-8">
@@ -40,11 +40,11 @@ export default function Home() {
 			<section className="bg-emerald-600">
 				<div className="max-w-4xl mx-auto px-4 py-6 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center text-white">
 					<div>
-						<div className="text-2xl sm:text-3xl font-bold">94</div>
+						<div className="text-2xl sm:text-3xl font-bold">96</div>
 						<div className="text-emerald-100 text-sm">Lessons</div>
 					</div>
 					<div>
-						<div className="text-2xl sm:text-3xl font-bold">1,250+</div>
+						<div className="text-2xl sm:text-3xl font-bold">1,275+</div>
 						<div className="text-emerald-100 text-sm">Practice Questions</div>
 					</div>
 					<div>
@@ -52,7 +52,7 @@ export default function Home() {
 						<div className="text-emerald-100 text-sm">Exam Sections</div>
 					</div>
 					<div>
-						<div className="text-2xl sm:text-3xl font-bold">276</div>
+						<div className="text-2xl sm:text-3xl font-bold">280</div>
 						<div className="text-emerald-100 text-sm">
 							Study Framework Items
 						</div>
@@ -284,11 +284,11 @@ export default function Home() {
 						<ul className="text-sm text-gray-600 space-y-3 mb-6 text-left">
 							<li className="flex items-start gap-2">
 								<span className="text-emerald-600 mt-0.5">✓</span>
-								94 lessons across all 6 CPA sections
+								96 lessons across all 6 CPA sections
 							</li>
 							<li className="flex items-start gap-2">
 								<span className="text-emerald-600 mt-0.5">✓</span>
-								1,250+ practice questions with explanations
+								1,275+ practice questions with explanations
 							</li>
 							<li className="flex items-start gap-2">
 								<span className="text-emerald-600 mt-0.5">✓</span>

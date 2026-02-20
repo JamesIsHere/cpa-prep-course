@@ -128,7 +128,7 @@ describe("question counts", () => {
 	it("section totals match expected values", () => {
 		expect(sectionQuestionTotals.aud).toBe(210);
 		expect(sectionQuestionTotals.far).toBe(250);
-		expect(sectionQuestionTotals.reg).toBe(230);
+		expect(sectionQuestionTotals.reg).toBe(250);
 		expect(sectionQuestionTotals.bar).toBe(195);
 		expect(sectionQuestionTotals.isc).toBe(190);
 		expect(sectionQuestionTotals.tcp).toBe(180);
@@ -169,21 +169,18 @@ describe("coverage report", () => {
 		expect(report.summary.totalGaps).toBeGreaterThan(0);
 	});
 
-	it("identifies gaps where lessons are missing", () => {
+	it("has no lesson gaps after full blueprint coverage", () => {
 		const report = generateCoverageReport(
 			cpaBlueprint,
 			questionCounts,
 			sectionQuestionTotals,
 		);
 		const missingLessonGaps = report.gaps.filter((g) => g.missingLessons);
-		expect(missingLessonGaps.length).toBeGreaterThan(0);
+		expect(missingLessonGaps.length).toBe(0);
 
-		// REG Group D (Filing status and dependents) should still be a gap
-		const regFilingGap = missingLessonGaps.find(
-			(g) =>
-				g.sectionCode === "reg" && g.groupLetter === "D" && g.areaNumber === 4,
-		);
-		expect(regFilingGap).toBeDefined();
+		// REG Group D (Filing status and dependents) should now be covered
+		const regSection = report.sections.find((s) => s.code === "reg");
+		expect(regSection?.lessonCoverage).toBe(100);
 	});
 
 	it("formats report as readable string", () => {

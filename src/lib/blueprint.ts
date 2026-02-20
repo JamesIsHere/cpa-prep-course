@@ -70,7 +70,7 @@ export const questionCounts: Record<string, number> = {
 	"Cash and Receivables": 10,
 	"Employee Benefit Plans": 10,
 	"Special Purpose Frameworks": 10,
-	// REG (200 total)
+	// REG (220 total)
 	"Circular 230": 12,
 	"Professional Ethics in Tax": 10,
 	"Tax Procedures": 8,
@@ -84,13 +84,14 @@ export const questionCounts: Record<string, number> = {
 	"Individual Taxation: Deductions": 10,
 	"Individual Taxation: Credits": 10,
 	"Individual Taxation: Credits/AMT": 8,
-	"Individual Taxation: Filing/Credits": 8,
+	"Individual Taxation: Filing/Credits": 18,
 	"Estate and Gift Tax": 10,
 	"C Corporations": 14,
 	"S Corporations": 12,
 	Partnerships: 10,
 	"Legal Duties and Responsibilities": 10,
 	"Debtor-Creditor Relationships": 10,
+	"Tax-Exempt Organizations": 10,
 	// BAR (145 total)
 	"Financial Statement Analysis": 18,
 	"Prospective Analysis and Forecasting": 14,
@@ -143,7 +144,7 @@ export const questionCounts: Record<string, number> = {
 export const sectionQuestionTotals: Record<string, number> = {
 	aud: 210,
 	far: 250,
-	reg: 230,
+	reg: 250,
 	bar: 195,
 	isc: 190,
 	tcp: 180,
@@ -1345,7 +1346,7 @@ export const cpaBlueprint: CpaBlueprint = [
 								name: "Dependency tests and qualifying individuals",
 							},
 						],
-						lessonSlugs: [],
+						lessonSlugs: ["17-filing-status-dependents"],
 						questionTopics: ["Individual Taxation: Filing/Credits"],
 					},
 					{
@@ -1468,8 +1469,8 @@ export const cpaBlueprint: CpaBlueprint = [
 								name: "Private foundation rules",
 							},
 						],
-						lessonSlugs: [],
-						questionTopics: [],
+						lessonSlugs: ["18-tax-exempt-organizations"],
+						questionTopics: ["Tax-Exempt Organizations"],
 					},
 				],
 			},

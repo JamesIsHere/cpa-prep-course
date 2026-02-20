@@ -55,7 +55,7 @@ npm run lint         # ESLint
 |-----------------------------------------------|--------------------------------------------|
 | `src/lib/blueprint.ts`                        | AICPA Blueprint data + types (121 groups)  |
 | `src/lib/blueprint-coverage.ts`               | Coverage analysis + gap identification     |
-| `src/lib/sections.ts`                         | All section + lesson metadata (94 lessons) |
+| `src/lib/sections.ts`                         | All section + lesson metadata (96 lessons) |
 | `src/lib/stripe.ts`                           | Lazy Stripe client (`getStripe()`)         |
 | `src/lib/supabase/client.ts`                  | Browser Supabase client                    |
 | `src/lib/supabase/server.ts`                  | Server Supabase client                     |
@@ -75,12 +75,12 @@ npm run lint         # ESLint
 |---------|------|---------|-----------|-----------------|---------------------------------------------------|
 | AUD     | aud  | 13      | ~210      | 37              | Ethics, planning, risk, controls, evidence, sampling, reports, review/compilation, attestation, quality mgmt, government auditing |
 | FAR     | far  | 18      | ~250      | 54              | Financial statements, revenue, inventory, fixed/intangible assets, leases, bonds, equity, tax, govt, NFP, consolidations, contingencies, fair value |
-| REG     | reg  | 16      | ~230      | 56              | Circular 230, contracts, agency, business structures, basis, gains/losses, 1031, individual tax, credits, C/S corps, partnerships, tax procedures, legal duties, debtor-creditor |
+| REG     | reg  | 18      | ~250      | 60              | Circular 230, contracts, agency, business structures, basis, gains/losses, 1031, individual tax, credits, filing status, C/S corps, partnerships, tax procedures, legal duties, debtor-creditor, tax-exempt orgs |
 | BAR     | bar  | 16      | ~195      | 34              | Financial analysis, valuation, capital structure, derivatives, consolidations, govt reporting, fund reconciliation, interfund transactions |
 | ISC     | isc  | 16      | ~190      | 35              | IT infrastructure, ERP, data management, security frameworks, threats, privacy, SOC, SOC testing, SOC reporting |
 | TCP     | tcp  | 15      | ~180      | 44              | Individual planning, passive/at-risk, wealth transfer, retirement, international tax, trusts, capital structure tax, nontaxable dispositions, related parties |
 
-**Totals:** 94 lessons, ~1,255 questions, 276 framework items across 6 sections
+**Totals:** 96 lessons, ~1,275 questions, 280 framework items across 6 sections
 
 ## Database Tables
 

@@ -321,6 +321,18 @@ export const sections: Section[] = [
 				contentPath: "reg/16-debtor-creditor",
 				isFree: false,
 			},
+			{
+				slug: "17-filing-status-dependents",
+				title: "Filing Status and Dependents",
+				contentPath: "reg/17-filing-status-dependents",
+				isFree: false,
+			},
+			{
+				slug: "18-tax-exempt-organizations",
+				title: "Tax-Exempt Organizations",
+				contentPath: "reg/18-tax-exempt-organizations",
+				isFree: false,
+			},
 		],
 	},
 	{

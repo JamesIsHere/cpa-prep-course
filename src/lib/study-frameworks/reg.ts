@@ -303,6 +303,62 @@ export const regFramework: StudyFramework = {
 				],
 			},
 		},
+		{
+			title: "Tax-Exempt Organizations — Section 501(c)(3)",
+			root: {
+				label: "501(c)(3) Tax-Exempt Organizations",
+				children: [
+					{
+						label: "Qualification",
+						children: [
+							{ label: "Organizational test (governing documents)" },
+							{ label: "Operational test (primarily exempt activities)" },
+							{ label: "Dissolution clause required" },
+							{ label: "No private inurement" },
+						],
+					},
+					{
+						label: "Public Charity vs. Private Foundation",
+						children: [
+							{ label: "Public charity: broad public support (1/3 test)" },
+							{ label: "Private foundation: presumed unless proved otherwise" },
+							{
+								label:
+									"Churches, schools, hospitals = automatic public charity",
+							},
+						],
+					},
+					{
+						label: "Prohibited Activities",
+						children: [
+							{ label: "Political campaign activity — absolute prohibition" },
+							{ label: "Lobbying — limited (not substantial part)" },
+							{ label: "Private inurement — no earnings to insiders" },
+						],
+					},
+					{
+						label: "Private Foundation Excise Taxes",
+						children: [
+							{ label: "§4940: 1.39% on net investment income" },
+							{ label: "§4941: Self-dealing (10% on self-dealer)" },
+							{ label: "§4942: Failure to distribute 5% of assets" },
+							{ label: "§4943: Excess business holdings (>20%)" },
+							{ label: "§4944: Jeopardizing investments" },
+							{ label: "§4945: Taxable expenditures" },
+						],
+					},
+					{
+						label: "UBIT (Three-Part Test)",
+						children: [
+							{ label: "Trade or business" },
+							{ label: "Regularly carried on" },
+							{ label: "Not substantially related to exempt purpose" },
+							{ label: "$1,000 specific deduction" },
+						],
+					},
+				],
+			},
+		},
 	],
 	decisionTrees: [
 		{
@@ -487,6 +543,33 @@ export const regFramework: StudyFramework = {
 						no: "Section 7525 privilege does NOT apply — only tax advice is protected, not return preparation activities",
 					},
 					no: "No practitioner privilege available — only attorneys and federally authorized practitioners have privilege protections",
+				},
+			},
+		},
+		{
+			title: "Filing Status Determination",
+			root: {
+				question: "Is the taxpayer married on December 31 of the tax year?",
+				yes: {
+					question: "Does the taxpayer want to file jointly with the spouse?",
+					yes: "Married Filing Jointly (MFJ) — $30,000 standard deduction (2025); joint and several liability",
+					no: {
+						question:
+							"Did the taxpayer live apart from the spouse for the last 6 months of the year, maintain a home for a qualifying child, and file separately?",
+						yes: "Head of Household (considered unmarried) — $22,500 standard deduction (2025)",
+						no: "Married Filing Separately (MFS) — $15,000 standard deduction (2025); if one spouse itemizes, the other must also itemize",
+					},
+				},
+				no: {
+					question:
+						"Did the taxpayer's spouse die in one of the two prior tax years, and does the taxpayer maintain a home for a dependent child?",
+					yes: "Qualifying Surviving Spouse (QSS) — $30,000 standard deduction (2025); available for 2 years after year of death",
+					no: {
+						question:
+							"Does the taxpayer pay more than half the cost of a home for a qualifying person (child, parent, or qualifying relative)?",
+						yes: "Head of Household (HOH) — $22,500 standard deduction (2025); parent need not live with taxpayer",
+						no: "Single — $15,000 standard deduction (2025)",
+					},
 				},
 			},
 		},
@@ -923,6 +1006,35 @@ export const regFramework: StudyFramework = {
 					"BIOC takes free of SI created by seller",
 					"BIOC (regardless of knowledge)",
 				],
+			],
+		},
+		{
+			title: "Filing Status — Requirements and Benefits (2025)",
+			headers: [
+				"Filing Status",
+				"Key Requirement",
+				"Standard Deduction",
+				"Best For",
+			],
+			rows: [
+				["Single", "Unmarried on Dec 31, not HOH/QSS eligible", "$15,000", "Unmarried with no qualifying person"],
+				["MFJ", "Married on Dec 31; both agree to file jointly", "$30,000", "Most married couples (widest brackets)"],
+				["MFS", "Married on Dec 31; files separate return", "$15,000", "Limiting liability; high medical deductions"],
+				["HOH", "Unmarried + >50% home costs + qualifying person", "$22,500", "Unmarried parent or caretaker"],
+				["QSS", "Spouse died in prior 2 years + dependent child at home", "$30,000", "Recent widow(er) with dependent child"],
+			],
+		},
+		{
+			title: "Dependency Tests — Qualifying Child vs. Qualifying Relative",
+			headers: ["Test", "Qualifying Child", "Qualifying Relative"],
+			rows: [
+				["Relationship", "Son, daughter, sibling, step/foster, or their descendants", "Related person OR member of household for full year"],
+				["Age", "Under 19 (or under 24 if full-time student; any age if disabled)", "No age requirement"],
+				["Residency", "Lived with taxpayer more than half the year", "Relationship OR lived with taxpayer full year"],
+				["Support", "Child did NOT provide more than half own support", "Taxpayer provided MORE than 50% of support"],
+				["Gross income", "No gross income test", "Person’s gross income < $5,050 (2025)"],
+				["Joint return", "Cannot file joint return (with exceptions)", "Cannot file joint return (with exceptions)"],
+				["Citizenship", "U.S. citizen/national/resident or Canada/Mexico resident", "U.S. citizen/national/resident or Canada/Mexico resident"],
 			],
 		},
 	],
