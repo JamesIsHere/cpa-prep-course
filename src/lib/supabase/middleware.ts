@@ -8,12 +8,9 @@ function isProtectedRoute(pathname: string): boolean {
 }
 
 function isGatedContent(pathname: string): boolean {
-	// Lesson pages and quiz pages under /sections/[slug]/ are gated
-	// Free lessons are checked at render time; quizzes require subscription
-	return (
-		/^\/sections\/[^/]+\/lessons\/[^/]+$/.test(pathname) ||
-		/^\/sections\/[^/]+\/quizzes$/.test(pathname)
-	);
+	// Quiz pages require auth + subscription (no public preview)
+	// Lesson pages are NOT gated here — the page handles free vs paid access
+	return /^\/sections\/[^/]+\/quizzes$/.test(pathname);
 }
 
 export async function updateSession(request: NextRequest) {
