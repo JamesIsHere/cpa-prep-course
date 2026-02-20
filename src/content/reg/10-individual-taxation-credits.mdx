@@ -70,13 +70,66 @@ The **Earned Income Tax Credit** is a fully **refundable** credit designed to be
 
 A taxpayer cannot claim both credits for the same student in the same year.
 
+### AOTC vs. Lifetime Learning Credit Comparison
+
+| Feature | AOTC | Lifetime Learning |
+|---------|------|-------------------|
+| Maximum credit | $2,500 per student | $2,000 per return |
+| Refundable? | 40% ($1,000 max) | No |
+| Years available | First 4 years of post-secondary | Unlimited |
+| Enrollment | At least half-time | One or more courses |
+| Felony drug conviction | Disqualifies | No restriction |
+| Qualified expenses | Tuition, fees, course materials | Tuition and fees only |
+| Per student or per return? | Per student | Per return |
+| Graduate school? | No | Yes |
+
+**Qualified expenses** for the AOTC include tuition, required enrollment fees, and course materials (books, supplies, equipment needed for a course). Room, board, insurance, transportation, and personal expenses do not qualify for either credit.
+
+> Exam tip: The AOTC is per student — a family with three children in college could claim up to $7,500. The Lifetime Learning Credit is per return — no matter how many students, the maximum is $2,000. A felony drug conviction disqualifies a student from the AOTC but not the LLC.
+
 ### Other Important Credits
 
-**Foreign Tax Credit** — Allows taxpayers to credit foreign income taxes paid against U.S. tax liability on foreign-source income. This prevents double taxation. The credit is limited to the U.S. tax attributable to foreign-source income. The credit is nonrefundable but can be carried back one year and forward ten years.
+**Foreign Tax Credit (Section 901)** — Allows taxpayers to credit foreign income taxes paid against U.S. tax liability on foreign-source income, preventing double taxation. The credit is **nonrefundable** but can be carried back one year and forward ten years.
 
-**Child and Dependent Care Credit** — Available for expenses paid for the care of a qualifying child under 13 or a disabled dependent to enable the taxpayer to work. The credit ranges from 20% to 35% of qualifying expenses (up to $3,000 for one qualifying individual, $6,000 for two or more). Nonrefundable.
+**Foreign tax credit limitation:**
+
+FTC Limit = U.S. tax liability × (Foreign-source taxable income / Worldwide taxable income)
+
+The limitation is computed separately for each category (or "basket") of income — **general category** and **passive category** are the two main baskets. If the taxpayer paid more foreign tax than the limit allows, the excess carries over.
+
+**Worked Example:**
+
+A taxpayer has worldwide taxable income of $200,000, of which $50,000 is foreign-source general category income. U.S. tax liability is $40,000. Foreign taxes paid: $12,000.
+
+| Step | Calculation | Amount |
+|------|------------|--------|
+| Foreign-source income | | $50,000 |
+| Worldwide taxable income | | $200,000 |
+| FTC limitation | $40,000 × ($50,000 / $200,000) | **$10,000** |
+| Foreign taxes paid | | $12,000 |
+| **Allowable credit** | Lesser of $12,000 paid or $10,000 limit | **$10,000** |
+| Excess credit carryforward | $12,000 − $10,000 | **$2,000** |
+
+Alternatively, taxpayers with $300 or less ($600 MFJ) in creditable foreign taxes from passive income only (e.g., foreign dividends) may claim the credit directly on Form 1040 without filing Form 1116.
+
+> Exam tip: The foreign tax credit is an alternative to the foreign tax deduction (Schedule A). The credit is almost always more beneficial. A taxpayer cannot claim both a credit and a deduction for the same foreign taxes.
+
+**Child and Dependent Care Credit** — Available for expenses paid for the care of a qualifying child under 13 or a disabled dependent to enable the taxpayer to work. The credit ranges from 20% to 35% of qualifying expenses (up to $3,000 for one qualifying individual, $6,000 for two or more). Nonrefundable. Both spouses must have earned income (or be full-time students or disabled) to claim the credit on a joint return.
 
 **Retirement Savings Contributions Credit (Saver's Credit)** — A nonrefundable credit of up to $1,000 ($2,000 MFJ) for low-income taxpayers who contribute to a retirement plan. The credit rate is 50%, 20%, or 10% depending on AGI.
+
+## Kiddie Tax
+
+The **kiddie tax** prevents parents from shifting investment income to children in lower tax brackets. Under the kiddie tax rules, a child's **unearned income** above a threshold is taxed at the **parent's marginal tax rate** rather than the child's rate.
+
+**Applies to:**
+- Children under age 19, or full-time students under age 24
+- Who have unearned income (interest, dividends, capital gains) exceeding approximately **$2,500** (indexed annually — first $1,250 is tax-free, next $1,250 taxed at child's rate)
+- Who do not file a joint return
+
+**How it works:** The child's unearned income above the threshold is added to the parent's return for purposes of determining the tax rate. The child's earned income (wages, self-employment) is always taxed at the child's own rate.
+
+> Exam tip: The kiddie tax applies to unearned income only. A 16-year-old who earns $30,000 from a summer job pays tax at their own rate. But if that same child has $10,000 in dividend income, the amount above the threshold is taxed at the parent's rate.
 
 ## Alternative Minimum Tax (AMT)
 
@@ -100,6 +153,22 @@ Items added back to taxable income for AMT purposes:
 - **Incentive stock option (ISO) exercise** — the spread between exercise price and FMV at exercise is an AMT adjustment (though not regular income)
 - **Standard deduction** — added back (if claimed instead of itemizing)
 - **Depreciation differences** — AMT may require slower depreciation methods
+- **Medical expenses** — the 7.5% AGI floor applies for both regular tax and AMT (previously differed)
+
+### AMT Preference Items vs. Adjustments
+
+**Preference items** are always added back (they only increase AMTI):
+- Private activity bond interest
+- Excess intangible drilling costs
+- Percentage depletion in excess of adjusted basis
+
+**Adjustments** can increase or decrease AMTI:
+- SALT deduction (added back entirely)
+- ISO exercise spread (added back in the year of exercise)
+- Depreciation timing differences (may increase or decrease depending on method used)
+- Standard deduction (added back if claimed)
+
+> Exam tip: The most commonly tested AMT items are (1) state and local tax deduction, (2) ISO exercise spread, and (3) private activity bond interest. Under current law with the high exemption amounts, AMT primarily affects taxpayers who exercise large ISO grants or have significant private activity bond portfolios.
 
 ### AMT Exemption Amounts (approximate 2026)
 
@@ -135,12 +204,29 @@ A taxpayer had a $20,000 tax liability last year and expects to owe $30,000 this
 
 The taxpayer can avoid the penalty by paying at least $20,000 through withholding and estimated payments, even though the actual liability is $30,000.
 
+### Annualized Income Installment Method
+
+Taxpayers with uneven income throughout the year (seasonal businesses, large year-end bonuses, capital gains in a single quarter) can use the **annualized income installment method** to reduce or eliminate estimated tax penalties for earlier quarters when income was lower. This requires computing the tax based on income actually received through each quarterly period, annualized to a full year.
+
 ### Exceptions to the Penalty
 
 The penalty does not apply if:
-- The total tax owed after withholding and credits is less than $1,000
-- The taxpayer had no tax liability in the prior year and was a U.S. citizen or resident for the entire year
+- The total tax owed after withholding and credits is less than **$1,000**
+- The taxpayer had **no tax liability** in the prior year and was a U.S. citizen or resident for the entire year
 - The underpayment was due to a casualty, disaster, or other unusual circumstance
+
+### Estimated Tax Summary Table
+
+| Rule | Threshold |
+|------|-----------|
+| Quarterly due dates | Apr 15, Jun 15, Sep 15, Jan 15 |
+| Current year safe harbor | 90% of current year tax |
+| Prior year safe harbor (AGI ≤ $150K) | 100% of prior year tax |
+| Prior year safe harbor (AGI > $150K) | 110% of prior year tax |
+| De minimis exception | Balance due < $1,000 |
+| Zero prior year liability | No penalty if prior year tax was $0 |
+
+> Exam tip: The 110% prior year safe harbor for high-income taxpayers (AGI > $150,000) is a favorite exam question. Many students forget the threshold jumps from 100% to 110% and choose the wrong answer.
 
 ## Key Terms
 
@@ -150,6 +236,10 @@ The penalty does not apply if:
 - **AMTI** — Alternative Minimum Taxable Income; the base on which the AMT is calculated
 - **Safe harbor** — the minimum payment threshold through withholding and estimated payments that avoids the underpayment penalty
 - **Qualified expenses** — education costs (tuition, fees, books for AOTC) that count toward education credit calculations
+- **Kiddie tax** — rule taxing a child's unearned income above a threshold at the parent's marginal rate to prevent income shifting
+- **Foreign tax credit limitation** — the maximum FTC allowed, calculated as U.S. tax multiplied by the ratio of foreign-source income to worldwide income
+- **AMT preference items** — items always added back to taxable income for AMT (e.g., private activity bond interest); adjustments may increase or decrease AMTI
+- **Annualized income installment method** — an alternative method for computing estimated tax payments when income is received unevenly throughout the year
 
 ## Practice Problems
 

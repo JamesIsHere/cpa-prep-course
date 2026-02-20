@@ -40,6 +40,29 @@ S corporation status terminates if:
 
 After involuntary termination, the corporation generally cannot re-elect S status for **five years** without IRS consent.
 
+### Inadvertent Termination Relief
+
+If the IRS determines that the termination was **inadvertent** (e.g., stock was unknowingly transferred to an ineligible shareholder) and the corporation takes corrective action within a reasonable period, the IRS may waive the termination and allow S status to continue retroactively.
+
+## Reasonable Compensation
+
+A significant compliance issue for S corporations is **reasonable compensation** for shareholder-employees. Because S corporation income passes through to shareholders and is not subject to self-employment tax, shareholders have an incentive to minimize salary and maximize distributions.
+
+**IRS position:** A shareholder who performs services for the S corporation **must** receive reasonable compensation as wages before taking distributions. The IRS examines whether the salary reflects what the shareholder would earn performing similar services for a comparable employer.
+
+**Factors determining reasonableness:**
+- Training, experience, and duties of the shareholder-employee
+- Time and effort devoted to the business
+- Comparable salaries in similar industries and geographic areas
+- Dividend history and distributions relative to salary
+- Corporate earnings and growth
+
+**Consequences of unreasonable compensation:**
+- The IRS can reclassify distributions as wages, imposing **FICA taxes** (employer and employee share) plus penalties and interest
+- Both the corporation and the shareholder are liable for unpaid employment taxes
+
+> Exam tip: Reasonable compensation is a top audit issue for S corporations. The exam tests the concept that shareholder-employees cannot take all income as distributions to avoid employment taxes — they must pay themselves a reasonable salary first.
+
 ## Pass-Through Taxation
 
 An S corporation files **Form 1120-S** (informational return) and issues **Schedule K-1** to each shareholder. Items are divided into two categories:
@@ -161,6 +184,63 @@ Distributions are applied against the **Accumulated Adjustments Account (AAA)** 
 3. **Remaining basis** — tax-free return of basis
 4. **Excess** — capital gain
 
+### AAA Computation
+
+The **Accumulated Adjustments Account** tracks the S corporation's cumulative income that has been taxed to shareholders but not yet distributed. Unlike shareholder basis, AAA is a **corporate-level** account (not per-shareholder).
+
+**Annual AAA adjustments (similar to basis, but with key differences):**
+
+| Adjustment | AAA | Shareholder Basis |
+|-----------|-----|-------------------|
+| Ordinary income | Increase | Increase |
+| Separately stated income | Increase | Increase |
+| Tax-exempt income | **No change** | Increase |
+| Distributions | Decrease | Decrease |
+| Nondeductible expenses | Decrease | Decrease |
+| Deductible losses | Decrease | Decrease |
+
+**Key difference:** Tax-exempt income increases shareholder basis but does **not** increase AAA. This means distributions of tax-exempt income come from the **Other Adjustments Account (OAA)**, not AAA.
+
+**AAA can go negative** (unlike shareholder basis, which cannot go below zero). A negative AAA means the corporation has distributed more than its cumulative S corporation earnings.
+
+**Worked Example — Distribution Ordering:**
+
+An S corporation converted from C status has: AAA of $50,000, accumulated E&P of $30,000, and a shareholder with stock basis of $90,000. The corporation distributes $100,000.
+
+| Layer | Source | Amount | Tax Treatment |
+|-------|--------|--------|---------------|
+| 1 | AAA | $50,000 | Tax-free (reduces basis to $40,000) |
+| 2 | Accumulated E&P | $30,000 | **Taxable dividend** |
+| 3 | Remaining basis | $20,000 | Tax-free return of capital (basis → $0) |
+| 4 | Excess | $0 | Capital gain (if any) |
+
+> Exam tip: The AAA vs. E&P ordering is heavily tested for S corporations with C corporation history. Remember: AAA first (tax-free), then E&P (dividend), then basis (tax-free), then capital gain. Shareholders can elect to reverse the first two layers (distribute from E&P before AAA), which may be beneficial to use up old E&P and avoid the excess net passive income tax.
+
+## Excess Net Passive Income Tax
+
+When an S corporation has both **accumulated C corporation E&P** and **passive investment income exceeding 25% of gross receipts**, it faces two consequences:
+
+### 1. Entity-Level Tax (Section 1375)
+
+The S corporation pays an entity-level tax on its **excess net passive income (ENPI)**:
+
+ENPI = Net passive income × [(Passive investment income − 25% of gross receipts) / Passive investment income]
+
+The tax rate is **21%** (the corporate rate). This tax reduces the amount of passive income passing through to shareholders.
+
+**Passive investment income** for this purpose includes: dividends, interest, rents (unless the corporation performs substantial services), royalties, and annuities.
+
+### 2. Automatic Termination of S Status
+
+If the S corporation has accumulated C corporation E&P and passive investment income exceeding 25% of gross receipts for **three consecutive tax years**, the S election is **automatically terminated** as of the first day of the fourth consecutive year.
+
+**How to avoid these consequences:**
+- **Distribute all accumulated C corporation E&P** (eliminates both the tax and termination risk)
+- Reduce passive income below 25% of gross receipts
+- Increase active business gross receipts
+
+> Exam tip: The excess net passive income tax only applies to S corporations with **accumulated C corporation E&P**. An S corporation that was never a C corporation is not subject to this tax, regardless of how much passive income it earns.
+
 ## Built-in Gains Tax
 
 When a C corporation converts to S corporation status, the **built-in gains (BIG) tax** prevents the corporation from avoiding corporate-level tax on appreciation that existed at the time of conversion.
@@ -188,6 +268,30 @@ The $31,500 BIG tax is paid at the entity level. The remaining gain passes throu
 
 > Exam tip: The BIG tax only applies when a C corporation converts to an S corporation. A corporation that has always been an S corporation is not subject to this tax. The five-year recognition period is the key window.
 
+## S Corporation Loss Limitations
+
+S corporation losses pass through to shareholders but are subject to a **four-tier limitation**, applied in this order:
+
+### 1. Stock and Debt Basis Limitation
+
+Losses are first limited to the shareholder's combined **stock basis** and **debt basis** (direct loans only). This is unique to S corps — unlike partnerships, third-party loan guarantees do **not** increase basis.
+
+### 2. At-Risk Limitation (Section 465)
+
+After passing the basis test, losses are further limited to the shareholder's **at-risk amount**. For S corp shareholders, the at-risk amount generally mirrors stock + debt basis because S corp shareholders typically do not have nonrecourse liabilities that would cause a difference.
+
+### 3. Passive Activity Limitation (Section 469)
+
+Losses from a passive S corporation activity can only offset passive income. The material participation tests (500-hour test being most common) apply at the **shareholder level**, not the entity level.
+
+### 4. Excess Business Loss Limitation (Section 461(l))
+
+After passing all three prior tests, any remaining net business loss exceeding **$305,000** (single) or **$610,000** (MFJ) — indexed annually — is disallowed for the current year. The excess is treated as an NOL carryforward to the following year.
+
+**Ordering summary:** Basis → At-risk → Passive activity → Excess business loss
+
+Suspended losses at any tier carry forward indefinitely and become deductible when that specific limitation is relieved (e.g., basis is restored, at-risk amount increases, passive income is earned, or the activity is disposed of).
+
 ## Key Terms
 
 - **Form 2553** — the IRS form filed to elect S corporation status, requiring all shareholders' consent
@@ -195,6 +299,11 @@ The $31,500 BIG tax is paid at the entity level. The remaining gain passes throu
 - **Accumulated Adjustments Account (AAA)** — an S corporation account tracking cumulative income minus distributions, used to determine tax treatment of distributions when accumulated E&P exists
 - **Built-in gains tax** — a corporate-level tax on pre-conversion appreciation when a C corporation converts to S corporation status
 - **Debt basis** — a shareholder's basis in direct loans to the S corporation, which may allow additional loss deductions beyond stock basis
+- **Reasonable compensation** — the salary an S corporation must pay a shareholder-employee for services performed, subject to FICA taxes; cannot be avoided by taking only distributions
+- **Accumulated Adjustments Account (AAA)** — a corporate-level account tracking cumulative S corporation income minus distributions; does not include tax-exempt income
+- **Excess net passive income tax** — an entity-level tax on S corporations with accumulated C corporation E&P and passive investment income exceeding 25% of gross receipts
+- **Other Adjustments Account (OAA)** — tracks tax-exempt income and related expenses; distributions from OAA are tax-free and reduce shareholder basis
+- **Excess business loss limitation** — Section 461(l) disallows net business losses exceeding approximately $305,000 (single) / $610,000 (MFJ), converting the excess to an NOL carryforward
 
 ## Practice Problems
 

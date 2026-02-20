@@ -105,6 +105,47 @@ The guaranteed payment is deducted in computing the partnership's ordinary incom
 
 > Exam tip: Guaranteed payments are always ordinary income to the receiving partner and are always deductible by the partnership (if they are ordinary and necessary business expenses). They are included in the partner's self-employment income.
 
+## Special Allocations
+
+A partnership agreement may allocate specific items of income, gain, loss, or deduction differently from the general profit-and-loss sharing ratios. These are called **special allocations**. For example, a partnership might allocate all depreciation deductions to one partner while splitting operating income equally.
+
+### Substantial Economic Effect (Section 704(b))
+
+For a special allocation to be respected by the IRS, it must have **substantial economic effect**. This has two components:
+
+**1. Economic effect** — the allocation must be consistent with the **economic arrangement** of the partners. The three requirements are:
+- Capital accounts are maintained in accordance with Treasury Regulations
+- Liquidating distributions are made in accordance with positive capital account balances
+- Partners with deficit capital accounts must restore the deficit upon liquidation (**deficit restoration obligation**) or comply with the **qualified income offset** alternative
+
+**2. Substantiality** — there must be a reasonable possibility that the allocation will **substantially affect** the dollar amounts received by the partners, independent of tax consequences. An allocation fails substantiality if:
+- It is a **shifting allocation** — allocating one item to Partner A and an offsetting item to Partner B with the same net effect on capital accounts
+- It is a **transitory allocation** — allocating an item one way in one year and reversing it in a later year
+
+If a special allocation lacks substantial economic effect, the IRS will reallocate the item according to the partners' **interests in the partnership** — essentially, their economic arrangement determined under all facts and circumstances.
+
+> Exam tip: The exam frequently tests whether a special allocation will be respected. The key concept is that the allocation must affect the partners economically (through capital accounts), not just shift tax benefits. An allocation of all depreciation to a high-bracket partner with no economic effect will be disregarded.
+
+## Contributed Property Rules (Section 704(c))
+
+When a partner contributes property with a built-in gain or loss (FMV differs from basis at contribution), **Section 704(c)** requires that the built-in gain or loss be allocated to the **contributing partner** when the partnership later sells or depreciates that property.
+
+**Purpose:** Prevent the non-contributing partners from being taxed on gain that accrued before they joined the partnership.
+
+**Worked Example:**
+
+Adams contributes land with a basis of $40,000 and FMV of $100,000 to AB Partnership for a 50% interest. Later, the partnership sells the land for $120,000.
+
+| Item | Amount |
+|------|--------|
+| Total gain on sale | $120,000 − $40,000 = $80,000 |
+| Built-in gain (Section 704(c)) | $100,000 − $40,000 = $60,000 → allocated entirely to Adams |
+| Post-contribution gain | $120,000 − $100,000 = $20,000 → split 50/50 |
+| **Adams's gain** | $60,000 + $10,000 = **$70,000** |
+| **Baker's gain** | **$10,000** |
+
+Without Section 704(c), Baker would bear tax on $40,000 of gain ($80,000 × 50%) that accrued before Baker joined the partnership.
+
 ## Distributions
 
 ### Current (Nonliquidating) Distributions
@@ -134,6 +175,77 @@ The partner's basis in the property is $30,000 (limited to remaining outside bas
 In a liquidating distribution, the partner's entire interest is terminated. Basis of property received equals the partner's **remaining outside basis** (after cash distributions), regardless of the partnership's inside basis. This may result in a basis step-up or step-down.
 
 Loss is recognized only in a liquidating distribution consisting solely of cash, unrealized receivables, and inventory — and only if the distribution is less than the partner's basis.
+
+## Hot Assets (Section 751)
+
+When a partner sells their partnership interest or receives a distribution that includes certain assets, **Section 751** overrides the general capital gain treatment and requires **ordinary income** recognition on the portion attributable to **hot assets**.
+
+### What Are Hot Assets?
+
+| Hot Asset Type | Description |
+|---------------|-------------|
+| **Unrealized receivables** | Accounts receivable for services rendered or goods delivered (not yet collected), plus recapture income (Section 1245/1250 depreciation recapture built into partnership assets) |
+| **Inventory items** | Inventory held for sale to customers, plus any assets that would produce ordinary income if sold by the partnership (including property held less than the long-term capital gains holding period in certain contexts) |
+
+### Sale of a Partnership Interest
+
+When a partner sells their partnership interest, the gain is generally capital gain. However, Section 751 requires the selling partner to recognize **ordinary income** on the portion of the gain attributable to their share of hot assets.
+
+**Worked Example:**
+
+Partner C sells a 1/3 partnership interest (outside basis $100,000) for $150,000. The partnership's assets include:
+
+| Asset | Partnership Basis | FMV | C's 1/3 Share of FMV |
+|-------|------------------|-----|----------------------|
+| Cash | $60,000 | $60,000 | $20,000 |
+| Equipment (1245 property) | $90,000 | $150,000 | $50,000 |
+| Goodwill | $0 | $150,000 | $50,000 |
+| Accounts receivable | $0 | $90,000 | $30,000 |
+
+| Step | Calculation | Amount |
+|------|------------|--------|
+| Total gain | $150,000 − $100,000 | $50,000 |
+| Hot asset gain — A/R (1/3 share) | $30,000 − $0 | **$30,000 ordinary** |
+| Hot asset gain — 1245 recapture (1/3 share) | $20,000 (C's share of recapture) | **$20,000 ordinary** |
+| **Remaining gain** | $50,000 − $30,000 − $20,000 | **$0 capital gain** |
+
+### Distributions Involving Hot Assets
+
+If a partner receives a distribution of hot assets disproportionate to their share, Section 751(b) treats the transaction as if the partner sold their share of hot assets back to the partnership in exchange for the non-hot assets received (or vice versa). This ensures ordinary income treatment is not converted to capital gain through distributions.
+
+> Exam tip: Section 751 converts what would otherwise be capital gain into ordinary income when hot assets are involved. The two categories to remember are unrealized receivables (including recapture) and inventory. This applies to both sales of partnership interests and disproportionate distributions.
+
+## Section 754 Elections
+
+A **Section 754 election** allows the partnership to adjust the basis of its assets when a partner purchases an interest or receives a distribution. Without this election, the partnership's inside basis in its assets remains unchanged even when a new partner pays a premium for their interest.
+
+### Section 743(b) — Transfer of Partnership Interest
+
+When a partnership interest is sold or exchanged and a Section 754 election is in effect, the partnership adjusts the inside basis of its assets **with respect to the transferee partner only**.
+
+**Adjustment = Transferee's outside basis − Transferee's share of partnership's inside basis**
+
+**Worked Example:**
+
+New Partner D purchases a 25% interest in ABCD Partnership for $250,000. The partnership's total inside basis in assets is $800,000 (D's 25% share = $200,000).
+
+| Step | Calculation | Amount |
+|------|------------|--------|
+| D's outside basis (purchase price) | | $250,000 |
+| D's share of inside basis | $800,000 × 25% | $200,000 |
+| **743(b) adjustment** | $250,000 − $200,000 | **$50,000 step-up** |
+
+The $50,000 step-up is allocated among the partnership's assets and affects only D's share of depreciation, gain, or loss when those assets are sold or depreciated. The other partners are not affected.
+
+### Section 734(b) — Distributions
+
+When a Section 754 election is in effect and a distribution results in a gain recognized by the distributee partner or a basis adjustment in the distributed property, the partnership adjusts the basis of its **remaining** assets.
+
+### Mandatory Adjustments
+
+Even without a Section 754 election, a **mandatory basis adjustment** is required under Section 743(b) when the transferee would receive a basis step-down of more than **$250,000** (a substantial built-in loss). This prevents loss duplication.
+
+> Exam tip: Section 754 is a partnership-level election that, once made, applies to all future transfers and distributions until revoked. The key concept is that it eliminates the mismatch between a new partner's outside basis and their share of inside basis. Questions typically test whether the election results in a step-up or step-down and how the adjustment is allocated.
 
 ## Loss Limitations
 
@@ -189,6 +301,12 @@ All three limitations are applied sequentially. Even though basis allows $60,000
 - **At-risk amount** — the maximum loss a taxpayer can deduct under Section 465, generally limited to amounts the taxpayer could actually lose
 - **Material participation** — active involvement in a business activity that removes it from passive activity classification
 - **Distributive share** — each partner's allocated portion of partnership income, deductions, gains, losses, and credits
+- **Special allocation** — an allocation of a specific income or deduction item that differs from the general profit-and-loss sharing ratio; must have substantial economic effect to be respected
+- **Substantial economic effect** — the standard a special allocation must meet under Section 704(b): the allocation must affect partner capital accounts (economic effect) and change the amounts partners receive (substantiality)
+- **Section 704(c)** — requires built-in gains or losses on contributed property to be allocated to the contributing partner, preventing tax shifting to other partners
+- **Hot assets** — unrealized receivables and inventory items that trigger ordinary income (rather than capital gain) under Section 751 when a partnership interest is sold or disproportionate distributions are made
+- **Section 754 election** — a partnership-level election allowing basis adjustments to partnership assets when interests are transferred (743(b)) or distributions are made (734(b))
+- **Inside/outside basis disparity** — the mismatch between a partner's basis in their partnership interest (outside) and their proportionate share of the partnership's basis in its assets (inside); Section 754 corrects this
 
 ## Practice Problems
 

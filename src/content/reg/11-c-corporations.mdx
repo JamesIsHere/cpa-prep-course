@@ -53,7 +53,7 @@ Corporations can deduct ordinary and necessary business expenses, including:
 - **Depreciation and amortization**
 - **Bad debts** — accrual-method corporations may use the specific charge-off method
 - **Charitable contributions** — limited to **10% of taxable income** computed before the charitable deduction, the dividends received deduction, NOL carrybacks, and capital loss carrybacks. Excess contributions carry forward five years.
-- **Net operating losses (NOLs)** — deductible up to **80% of taxable income** in the carryforward year, with indefinite carryforward
+- **Net operating losses (NOLs)** — deductible up to **80% of taxable income** in the carryforward year, with indefinite carryforward (see detailed NOL rules below)
 
 ### Dividends Received Deduction (DRD)
 
@@ -84,6 +84,39 @@ Beta Corp owns 30% of Gamma Corp stock and receives $100,000 in dividends. Beta 
 - Corporate capital gains are taxed at the same flat **21% rate** as ordinary income (no preferential rate)
 - Capital losses can only offset **capital gains** — they cannot offset ordinary income
 - Unused capital losses carry back **three years** and forward **five years**, treated as short-term in the carryover year
+
+## Net Operating Losses (Post-TCJA Rules)
+
+Under the **Tax Cuts and Jobs Act** (TCJA), NOL rules changed significantly for tax years beginning after December 31, 2017:
+
+| Feature | Pre-TCJA | Post-TCJA |
+|---------|----------|-----------|
+| Carryback | 2 years (general) | **No carryback** (except farming losses — 2 years) |
+| Carryforward | 20 years | **Indefinite** |
+| Deduction limit | 100% of taxable income | **80% of taxable income** |
+
+### 80% Limitation
+
+The NOL deduction in any carryforward year is limited to **80% of taxable income** (computed without regard to the NOL deduction itself). This ensures the corporation always pays tax on at least 20% of its income in profitable years.
+
+**Worked Example:**
+
+Epsilon Corp has a $500,000 NOL carryforward and current-year taxable income of $300,000 (before the NOL deduction).
+
+| Step | Calculation | Amount |
+|------|------------|--------|
+| Taxable income before NOL | | $300,000 |
+| NOL limitation | $300,000 × 80% | $240,000 |
+| NOL deduction allowed | Lesser of $500,000 carryforward or $240,000 limit | **$240,000** |
+| Taxable income after NOL | $300,000 − $240,000 | **$60,000** |
+| Tax (21%) | $60,000 × 21% | **$12,600** |
+| Remaining NOL carryforward | $500,000 − $240,000 | **$260,000** |
+
+### Section 382 Limitation
+
+When a corporation undergoes an **ownership change** (more than 50% change in stock ownership by 5% shareholders over a 3-year testing period), Section 382 imposes an **annual limitation** on the use of pre-change NOLs.
+
+The annual limit equals the FMV of the corporation's stock immediately before the ownership change multiplied by the **long-term tax-exempt rate** (published monthly by the IRS). This prevents companies from acquiring loss corporations solely for the tax benefit of the NOLs.
 
 ## Distributions to Shareholders
 
@@ -129,6 +162,72 @@ The **personal holding company (PHC) tax** is a **20% penalty tax** on undistrib
 
 The PHC tax can be avoided by distributing the PHC income as dividends, including **consent dividends** or **deficiency dividends**.
 
+### AET vs. PHC Tax Comparison
+
+| Feature | Accumulated Earnings Tax | Personal Holding Company Tax |
+|---------|--------------------------|------------------------------|
+| Rate | 20% | 20% |
+| Target | Corporations accumulating earnings to avoid dividends | Closely held corporations with passive income |
+| Tests | Accumulations beyond reasonable business needs | 50% stock + 60% passive income |
+| Credit | $250,000 ($150,000 for service corps) | None (based on PHC income) |
+| Avoidance | Demonstrate reasonable business needs | Distribute PHC income as dividends |
+| Applies to | C corps (not S corps, PHCs, or tax-exempts) | C corps meeting both ownership and income tests |
+| Can both apply? | No — mutually exclusive (PHC tax replaces AET) | No — if PHC, AET does not apply |
+
+> Exam tip: These two penalty taxes are mutually exclusive — a corporation subject to the PHC tax is exempt from the AET. The exam frequently asks which tax applies to a given set of facts. Key distinguisher: AET is about unreasonable accumulation; PHC is about the type of income (passive) combined with concentrated ownership.
+
+## Tax-Exempt Organizations
+
+Certain organizations are exempt from federal income tax under **Section 501(c)**, the most common being **Section 501(c)(3)** charitable organizations.
+
+### Section 501(c)(3) Requirements
+
+To qualify for tax-exempt status, an organization must be organized and operated **exclusively** for one or more exempt purposes:
+- Religious, charitable, scientific, literary, or educational purposes
+- Testing for public safety
+- Fostering national or international amateur sports competition
+- Prevention of cruelty to children or animals
+
+**Key restrictions:**
+- **Private inurement** — no part of the net earnings may benefit any private shareholder or individual (officers, directors, insiders)
+- **Political activities** — 501(c)(3) organizations are absolutely prohibited from participating in political campaigns. Violating this rule results in automatic loss of tax-exempt status.
+- **Lobbying limitation** — 501(c)(3) organizations may engage in limited lobbying (attempting to influence legislation) but it cannot be a **substantial part** of their activities. An organization can elect a specific dollar-limit test under Section 501(h).
+
+### Other Common Exempt Organizations
+
+| Section | Type | Tax-Exempt? | Contributions Deductible? |
+|---------|------|-------------|--------------------------|
+| 501(c)(3) | Charitable, religious, educational | Yes | Yes |
+| 501(c)(4) | Social welfare (civic leagues) | Yes | No |
+| 501(c)(6) | Business leagues, chambers of commerce | Yes | No (dues may be deductible as business expense) |
+| 501(c)(7) | Social/recreation clubs | Yes | No |
+
+## Unrelated Business Income Tax (UBIT)
+
+Even though an organization is tax-exempt, it must pay tax on **unrelated business income (UBI)** at the regular corporate rate (21% for organizations taxed as corporations).
+
+### Three-Part Test for UBI
+
+Income is unrelated business income if it results from an activity that meets **all three** criteria:
+
+1. It is a **trade or business** — any activity carried on for the production of income from selling goods or performing services
+2. It is **regularly carried on** — conducted with frequency and continuity comparable to a commercial enterprise (not a one-time fundraiser)
+3. It is **not substantially related** to the organization's exempt purpose (the activity itself must contribute to the mission, not just the income)
+
+### Common Exclusions from UBI
+
+Even if an activity meets the three-part test, certain types of income are excluded:
+
+- **Passive investment income** — dividends, interest, rents from real property, royalties, and capital gains
+- **Volunteer labor** — income from a trade or business where substantially all the work is performed by **unpaid volunteers**
+- **Convenience of members** — income from selling goods or services primarily for the convenience of members, students, patients, officers, or employees (e.g., a hospital cafeteria)
+- **Donated merchandise** — income from selling donated goods (thrift stores)
+- **Qualified sponsorship payments** — payments where the sponsor receives no substantial return benefit other than acknowledgment
+
+**Rent from real property** is generally excluded, but rent from **personal property** (equipment) or rent based on the tenant's **net income** is taxable UBI.
+
+> Exam tip: The most commonly tested UBIT concept is distinguishing passive income (excluded) from active business income (taxable). A university's investment portfolio dividends are not UBI, but a university operating an unrelated commercial bookstore open to the public could generate UBI.
+
 ## Key Terms
 
 - **Section 351** — the Code provision allowing tax-free incorporation when property is transferred for stock and the transferors have 80% control
@@ -136,6 +235,11 @@ The PHC tax can be avoided by distributing the PHC income as dividends, includin
 - **Earnings and profits (E&P)** — a tax concept measuring a corporation's economic ability to pay dividends; determines dividend treatment of distributions
 - **Accumulated earnings tax** — a 20% penalty tax on corporations that retain earnings beyond reasonable business needs to avoid shareholder-level tax
 - **Constructive dividend** — a payment or benefit to a shareholder that is reclassified as a dividend (e.g., excessive compensation, personal expenses paid by the corporation)
+- **Net operating loss (NOL)** — a loss that exceeds current-year income, carried forward indefinitely but limited to 80% of taxable income in any carryforward year
+- **Section 382** — limits annual NOL usage after an ownership change exceeding 50% over three years
+- **Section 501(c)(3)** — the Code section granting tax-exempt status to organizations operated exclusively for charitable, religious, educational, or scientific purposes
+- **Unrelated business income (UBI)** — income from a regularly conducted trade or business not substantially related to an exempt organization's purpose, taxed at the regular corporate rate
+- **Private inurement** — prohibited personal benefit to insiders of a tax-exempt organization, which can result in loss of exempt status
 
 ## Practice Problems
 

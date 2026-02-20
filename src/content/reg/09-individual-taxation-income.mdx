@@ -22,10 +22,61 @@
 - Alimony received (for agreements executed before 2019)
 - Retirement distributions (pensions, IRAs, 401(k) plans)
 - Unemployment compensation
-- Social Security benefits (up to 85% may be taxable depending on income)
+- Social Security benefits (up to 85% may be taxable — see taxability formula below)
 - Gambling winnings
 - Cancellation of debt income (with exceptions)
 - Bartering income (FMV of goods or services received)
+- **Schedule K-1 income** — a taxpayer's distributive share of income from partnerships (Form 1065 K-1), S corporations (Form 1120-S K-1), and trusts/estates (Form 1041 K-1)
+
+### Social Security Benefit Taxability
+
+The taxable portion of Social Security benefits depends on **provisional income** (also called combined income):
+
+**Provisional income** = AGI (excluding Social Security) + tax-exempt interest + 50% of Social Security benefits
+
+| Filing Status | Provisional Income | Taxable Portion |
+|---------------|-------------------|-----------------|
+| Single        | Below $25,000     | 0%              |
+| Single        | $25,000–$34,000   | Up to 50%       |
+| Single        | Above $34,000     | Up to 85%       |
+| MFJ           | Below $32,000     | 0%              |
+| MFJ           | $32,000–$44,000   | Up to 50%       |
+| MFJ           | Above $44,000     | Up to 85%       |
+
+**Worked Example:**
+
+A single retiree receives $20,000 in Social Security benefits, has $18,000 in pension income and $4,000 in tax-exempt bond interest.
+
+| Step | Calculation | Amount |
+|------|------------|--------|
+| AGI (excluding SS) | Pension income | $18,000 |
+| Tax-exempt interest | | $4,000 |
+| 50% of Social Security | $20,000 x 50% | $10,000 |
+| **Provisional income** | $18,000 + $4,000 + $10,000 | **$32,000** |
+
+Provisional income of $32,000 exceeds $34,000? No — it falls in the $25,000–$34,000 range, so up to **50%** of benefits ($10,000) may be taxable.
+
+> Exam tip: Tax-exempt interest is added back for the Social Security taxability calculation even though it is otherwise excluded from gross income. This catches students who assume tax-exempt means it has no tax consequences anywhere.
+
+### K-1 Income on the Individual Return
+
+Income from pass-through entities is reported to the individual on **Schedule K-1** and flows to various lines of Form 1040:
+
+| K-1 Item | Where It Goes on Form 1040 |
+|----------|---------------------------|
+| Ordinary business income/loss | Schedule E, Part II |
+| Rental income/loss | Schedule E, Part II |
+| Interest income | Schedule B |
+| Dividends | Schedule B |
+| Short-term capital gains/losses | Schedule D |
+| Long-term capital gains/losses | Schedule D |
+| Section 1231 gains/losses | Form 4797 |
+| Guaranteed payments | Schedule E (also Schedule SE for self-employment tax) |
+| Charitable contributions | Schedule A |
+| Section 179 deduction | Form 4562 |
+| Foreign taxes paid | Form 1116 or Schedule 3 |
+
+K-1 income retains its character when reported by the individual — capital gains remain capital gains, ordinary income remains ordinary. The individual taxpayer must also apply the **three-tier loss limitation** rules (basis, at-risk, passive activity) to any losses from pass-through entities before deducting them.
 
 ### Common Exclusions
 
@@ -34,7 +85,7 @@ Not everything received is taxable. Key exclusions from gross income include:
 - **Gifts and inheritances** — excluded under Section 102 (though the income earned on gifted property is taxable)
 - **Life insurance proceeds** — death benefits received by a beneficiary (with exceptions for transfers for value)
 - **Municipal bond interest** — interest on state and local government bonds
-- **Qualified scholarships** — amounts used for tuition and required fees (room and board are taxable)
+- **Qualified scholarships** — amounts used for tuition and required fees (room and board are taxable). Amounts received for teaching or research services are generally taxable as compensation, unless the services are required of all degree candidates
 - **Employer-provided health insurance** — premiums paid by the employer
 - **Workers' compensation** — benefits received for job-related injuries
 - **Child support** — payments received for child support
@@ -140,6 +191,82 @@ These deductions are subtracted from gross income to arrive at AGI and are avail
 
 > Exam tip: The distinction between above-the-line (for AGI) and below-the-line (from AGI) deductions matters because AGI is a threshold for many tax benefits. A lower AGI can increase eligibility for credits, deductions, and exclusions that phase out at higher income levels.
 
+## Modified Adjusted Gross Income (MAGI)
+
+Many tax benefits phase out based on **Modified Adjusted Gross Income (MAGI)**, which is AGI with certain items added back. The specific add-backs vary by provision:
+
+| Tax Benefit | MAGI = AGI + ... | Phase-Out Range (Single) |
+|-------------|-------------------|--------------------------|
+| Roth IRA contribution | Student loan interest, tuition deduction, foreign earned income | $146,000–$161,000 |
+| Traditional IRA deduction (if covered by employer plan) | Same add-backs | $77,000–$87,000 |
+| Education credits (AOTC/LLC) | Foreign earned income exclusion | $80,000–$90,000 |
+| Child tax credit | (AGI itself — no add-backs) | $200,000 ($400,000 MFJ) |
+| Passive activity rental allowance | (AGI without passive losses) | $100,000–$150,000 |
+
+> Exam tip: When an exam question says "MAGI" without specifying the provision, it typically means AGI with the foreign earned income exclusion and certain deductions added back. Always check which provision is being tested — the MAGI definition varies.
+
+## At-Risk Rules (Section 465)
+
+When an individual reports losses from a business activity (including losses passed through from partnerships and S corporations), the deductible loss cannot exceed the taxpayer's **amount at risk** in that activity.
+
+**Amount at risk includes:**
+- Cash invested in the activity
+- Adjusted basis of property contributed
+- Amounts borrowed for which the taxpayer is **personally liable** (recourse debt)
+- **Qualified nonrecourse financing** for real estate activities (debt secured by the real property, from a qualified lender, where no person is personally liable)
+
+**Not included in at-risk amount:**
+- Nonrecourse loans (except qualified nonrecourse financing for real estate)
+- Amounts protected against loss by guarantees, stop-loss agreements, or insurance
+- Amounts borrowed from related parties who have an interest in the activity
+
+Losses exceeding the at-risk amount are **suspended** and carry forward indefinitely until the at-risk amount increases.
+
+## Passive Activity Loss Rules (Section 469)
+
+After passing the basis and at-risk limitations, losses from **passive activities** can only offset income from other passive activities. Excess passive losses are suspended until the taxpayer either generates passive income or disposes of the entire activity in a fully taxable transaction.
+
+### What Is a Passive Activity?
+
+A passive activity is any trade or business in which the taxpayer does **not materially participate**, plus any **rental activity** (with limited exceptions).
+
+### Seven Material Participation Tests
+
+A taxpayer materially participates in an activity if they meet **any one** of these tests:
+
+| Test | Description |
+|------|-------------|
+| 1 | Participated more than **500 hours** during the year |
+| 2 | Participation constituted **substantially all** of the participation in the activity |
+| 3 | Participated more than **100 hours** and no other individual participated more |
+| 4 | Activity is a **significant participation activity** (100+ hours) and aggregate participation in all such activities exceeds **500 hours** |
+| 5 | Materially participated in **any 5 of the prior 10 years** |
+| 6 | Activity is a **personal service activity** and the taxpayer participated in any **3 prior years** |
+| 7 | Based on all facts and circumstances, the taxpayer participated on a **regular, continuous, and substantial** basis (must exceed 100 hours) |
+
+### Rental Activity Exception
+
+Rental activities are generally passive regardless of participation level. However, a taxpayer who **actively participates** in rental real estate can deduct up to **$25,000** of rental losses against nonpassive income.
+
+**Active participation** is a lower standard than material participation — it requires making management decisions (approving tenants, setting rental terms, approving repairs) but not day-to-day involvement.
+
+The $25,000 allowance phases out by $1 for every $2 of AGI above **$100,000**, reaching zero at **$150,000** AGI.
+
+### Real Estate Professional Exception
+
+A taxpayer who qualifies as a **real estate professional** can treat rental real estate activities as nonpassive. Both requirements must be met:
+
+1. More than **50%** of personal services performed during the year are in real property trades or businesses
+2. More than **750 hours** of services in real property trades or businesses during the year
+
+Each rental property is treated as a separate activity unless the taxpayer elects to aggregate all rental real estate activities.
+
+### Disposition of Passive Activities
+
+When a taxpayer disposes of their **entire interest** in a passive activity in a **fully taxable transaction** (typically a sale to an unrelated party), all suspended passive losses from that activity are released and become fully deductible against any type of income.
+
+> Exam tip: The three-tier loss limitation order is heavily tested: (1) basis → (2) at-risk → (3) passive activity. Each tier must be satisfied before moving to the next. Memorize this sequence and the material participation 500-hour test — they appear on nearly every REG exam.
+
 ## Key Terms
 
 - **Gross income** — all income from whatever source derived unless specifically excluded by the Internal Revenue Code
@@ -148,6 +275,12 @@ These deductions are subtracted from gross income to arrive at AGI and are avail
 - **Itemized deductions** — specific expenses (medical, taxes, interest, charitable) that may be deducted in lieu of the standard deduction
 - **Above-the-line deduction** — a deduction subtracted from gross income to arrive at AGI, available regardless of whether the taxpayer itemizes
 - **SALT cap** — the $10,000 limit on the deduction for state and local taxes
+- **Provisional income** — the measure used to determine taxable Social Security benefits, calculated as AGI (excluding SS) plus tax-exempt interest plus 50% of benefits
+- **Modified AGI (MAGI)** — AGI with specific items added back, used as the threshold for various phase-outs (definition varies by provision)
+- **At-risk amount** — the maximum loss deductible under Section 465, generally limited to the amount the taxpayer could actually lose economically
+- **Passive activity** — a trade or business in which the taxpayer does not materially participate, or any rental activity (with limited exceptions)
+- **Material participation** — sufficient involvement in a business activity (most commonly 500+ hours) that removes it from passive classification
+- **Schedule K-1** — the form reporting a taxpayer's share of income, deductions, and credits from a pass-through entity (partnership, S corporation, trust/estate)
 
 ## Practice Problems
 
