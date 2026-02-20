@@ -1,0 +1,163 @@
+# Security Controls and Monitoring
+
+## Learning Objectives
+
+- Compare and contrast access control models (DAC, MAC, RBAC, ABAC)
+- Understand authentication mechanisms including MFA, SSO, and biometrics
+- Distinguish between symmetric and asymmetric encryption and their use cases
+- Identify network security controls and their role in defense-in-depth
+- Recognize the importance of logging, monitoring, and physical security controls
+
+## Access Control Models
+
+Access control determines **who** can access **what** resources and **what actions** they can perform. The choice of access control model directly affects the organization's security posture and operational flexibility.
+
+| Model | Full Name | How Access Is Determined | Best For |
+|---|---|---|---|
+| DAC | Discretionary Access Control | Resource owner grants access at their discretion | Small organizations, file sharing |
+| MAC | Mandatory Access Control | System enforces access based on classification labels (e.g., Top Secret, Confidential) | Government, military, highly regulated environments |
+| RBAC | Role-Based Access Control | Access assigned based on the user's role in the organization | Most enterprises — aligns with job functions |
+| ABAC | Attribute-Based Access Control | Access determined by attributes (user, resource, environment, action) evaluated by policies | Complex, dynamic environments requiring fine-grained control |
+
+**RBAC** is the most commonly implemented model in business environments because it maps naturally to organizational structures. When an employee changes roles, their access changes with the role assignment rather than requiring individual permission updates.
+
+> **Exam tip:** RBAC enforces the principle of least privilege at scale. The exam frequently tests the relationship between RBAC and separation of duties — ensuring no single role has conflicting permissions (e.g., the same person cannot both approve and process payments).
+
+## Authentication
+
+**Authentication** verifies a user's identity before granting access. It is based on one or more **factors**:
+
+| Factor | Category | Examples |
+|---|---|---|
+| Something you know | Knowledge | Password, PIN, security question |
+| Something you have | Possession | Smart card, hardware token, mobile authenticator app |
+| Something you are | Inherence | Fingerprint, facial recognition, retina scan |
+
+### Multi-Factor Authentication (MFA)
+
+MFA requires **two or more factors from different categories**. Using two passwords is not MFA because both are knowledge factors. A password (knowledge) plus a mobile authenticator code (possession) is valid MFA.
+
+### Single Sign-On (SSO)
+
+SSO allows a user to authenticate once and gain access to multiple applications without re-entering credentials. Benefits include reduced password fatigue and centralized access management. The risk is that if the SSO credential is compromised, the attacker gains access to all connected systems.
+
+### Biometrics
+
+Biometric authentication uses unique physical or behavioral characteristics. Biometrics are strong for identity verification but raise privacy concerns and cannot be reset if compromised — you cannot change your fingerprint.
+
+Two key error rates for biometric systems:
+
+- **False Acceptance Rate (FAR)** — The system incorrectly grants access to an unauthorized person
+- **False Rejection Rate (FRR)** — The system incorrectly denies access to an authorized person
+- **Crossover Error Rate (CER)** — The point where FAR equals FRR; a lower CER indicates a more accurate system
+
+> **Exam tip:** MFA is one of the most effective controls against credential theft. The exam may present scenarios where a breach occurred because only single-factor authentication was in place — the correct recommendation is always to implement MFA.
+
+## Encryption
+
+**Encryption** converts plaintext into ciphertext using an algorithm and a key, protecting data confidentiality. Understanding the two main approaches is essential for ISC.
+
+### Symmetric vs. Asymmetric Encryption
+
+| Characteristic | Symmetric | Asymmetric |
+|---|---|---|
+| Keys | Single shared key for encrypt and decrypt | Key pair: public key (encrypt) + private key (decrypt) |
+| Speed | Fast — suitable for large volumes of data | Slow — computationally intensive |
+| Key distribution | Challenge — key must be securely shared | Easier — public key can be freely distributed |
+| Use case | Encrypting data at rest, bulk data transfer | Key exchange, digital signatures, email encryption |
+| Examples | AES, 3DES | RSA, ECC |
+
+In practice, systems often use **asymmetric encryption to exchange a symmetric key**, then use the symmetric key for the actual data encryption. This approach (used in TLS/SSL) combines the security of asymmetric key exchange with the speed of symmetric encryption.
+
+### Hashing
+
+**Hashing** produces a fixed-length output (hash/digest) from any input. Unlike encryption, hashing is **one-way** — you cannot derive the original data from the hash. Hashing is used for:
+
+- Password storage (store the hash, not the plaintext password)
+- Data integrity verification (any change to the input produces a completely different hash)
+- Digital signatures (hash the message, then encrypt the hash with the sender's private key)
+
+Common algorithms: SHA-256, SHA-3. MD5 and SHA-1 are considered deprecated due to collision vulnerabilities.
+
+### Encryption at Rest vs. In Transit
+
+| State | Protection | Technologies |
+|---|---|---|
+| At rest | Data stored on disk, database, or backup media | AES encryption, full-disk encryption (BitLocker, FileVault), database TDE |
+| In transit | Data moving across networks | TLS/SSL, VPN tunnels, HTTPS, SFTP |
+
+## Network Security Controls
+
+A **defense-in-depth** strategy layers multiple security controls so that if one control fails, others provide continued protection.
+
+| Control | Function | Position |
+|---|---|---|
+| Firewall | Filters traffic based on rules (source, destination, port, protocol) | Network perimeter and internal segments |
+| IDS (Intrusion Detection System) | Monitors network traffic and alerts on suspicious activity | Passive — detects but does not block |
+| IPS (Intrusion Prevention System) | Monitors and actively blocks suspicious traffic | Inline — detects and blocks |
+| SIEM (Security Information and Event Management) | Aggregates logs from multiple sources, correlates events, generates alerts | Central monitoring platform |
+| Network segmentation | Divides the network into isolated zones to limit lateral movement | Between critical systems and general network |
+| DMZ (Demilitarized Zone) | Isolated network segment for public-facing services | Between external internet and internal network |
+
+> **Exam tip:** Know the difference between IDS (detect and alert) and IPS (detect and block). The exam tests whether you understand that IDS is passive monitoring while IPS takes active preventive action. SIEM ties it all together by correlating events across the environment.
+
+## Logging and Monitoring
+
+Effective security monitoring requires comprehensive logging and timely analysis. Without proper logging, organizations cannot detect breaches, investigate incidents, or demonstrate compliance.
+
+**Essential log sources:**
+- Authentication logs (successful and failed login attempts)
+- System and application event logs
+- Network traffic logs (firewall, proxy, DNS)
+- Database access and query logs
+- Privileged user activity logs
+
+**Key monitoring practices:**
+
+- **Event correlation** — SIEM tools correlate events across multiple log sources to identify patterns that individual logs would not reveal (e.g., a failed login followed by a successful login from a different geography)
+- **Alerting thresholds** — Defining thresholds that trigger alerts (e.g., more than 5 failed login attempts in 10 minutes)
+- **Log retention** — Retaining logs for a period that satisfies both regulatory requirements and investigative needs (typically 1-7 years depending on the requirement)
+- **Log integrity** — Protecting logs from tampering through write-once storage, hashing, or centralized collection
+
+## Physical Security Controls
+
+Physical security protects the hardware, infrastructure, and facilities that house information systems. For data centers, key controls include:
+
+- **Perimeter controls** — Fencing, gates, security guards, bollards
+- **Entry controls** — Badge readers, biometric scanners, mantraps (interlocking doors)
+- **Environmental controls** — Fire suppression systems, HVAC, water detection, uninterruptible power supplies (UPS)
+- **Surveillance** — CCTV cameras, motion sensors, security patrols
+- **Visitor management** — Sign-in logs, escort requirements, temporary badges
+
+## Practice Problems
+
+**1.** An organization requires that employees access financial systems based on their job function, and access changes automatically when employees transfer to new departments. Which access control model is in use?
+
+a) Discretionary Access Control (DAC)
+b) Mandatory Access Control (MAC)
+c) Role-Based Access Control (RBAC)
+d) Attribute-Based Access Control (ABAC)
+
+**Answer:** c) RBAC assigns access permissions based on organizational roles. When an employee transfers to a new department and is assigned a new role, their access automatically adjusts to match the new role's permissions. This is the most common model for enterprise environments.
+
+---
+
+**2.** A company encrypts sensitive data stored in its database using AES-256 and protects data transmitted to clients using TLS 1.3. Which of the following BEST describes this approach?
+
+a) Symmetric encryption for data at rest and asymmetric encryption for data in transit
+b) Encryption at rest using AES and encryption in transit using TLS
+c) Hashing at rest and encryption in transit
+d) Asymmetric encryption for data at rest and symmetric encryption for data in transit
+
+**Answer:** b) AES-256 is used to encrypt data at rest (stored in the database), and TLS 1.3 protects data in transit (transmitted to clients). TLS actually uses both asymmetric encryption for key exchange and symmetric encryption for the data transfer itself, but the overall description of protecting data in both states is the key concept.
+
+---
+
+**3.** What is the PRIMARY difference between an Intrusion Detection System (IDS) and an Intrusion Prevention System (IPS)?
+
+a) IDS is deployed on endpoints while IPS is deployed on the network
+b) IDS monitors traffic and generates alerts, while IPS actively blocks suspicious traffic
+c) IDS uses encryption to protect data while IPS uses access controls
+d) IDS is a physical security control while IPS is a logical control
+
+**Answer:** b) The fundamental distinction is that IDS is passive — it monitors and alerts — while IPS is active — it detects and blocks malicious traffic in real time. Both analyze network traffic for suspicious patterns, but only IPS can take automated preventive action.

@@ -1,0 +1,177 @@
+# Privacy Requirements and Data Protection
+
+## Learning Objectives
+
+- Identify foundational privacy principles that underpin major privacy regulations
+- Understand GDPR scope, key requirements, data subject rights, and penalties
+- Compare CCPA/CPRA consumer rights and opt-out requirements
+- Recognize HIPAA requirements for protected health information
+- Apply privacy by design concepts and understand cross-border data transfer mechanisms
+
+## Privacy Principles
+
+Privacy regulations worldwide share a common foundation of **fair information practice principles (FIPPs)**. Understanding these principles provides a framework for analyzing any privacy law.
+
+| Principle | Description |
+|---|---|
+| Notice | Organizations must inform individuals about their data collection and use practices |
+| Choice/Consent | Individuals must have the ability to agree to or decline the collection and use of their data |
+| Collection Limitation | Only data that is necessary for the stated purpose should be collected |
+| Use Limitation | Data should only be used for the purpose for which it was collected |
+| Access | Individuals should be able to view, correct, or delete their personal data |
+| Security | Organizations must protect personal data with reasonable security measures |
+| Accountability | Organizations are responsible for complying with privacy principles and must be able to demonstrate compliance |
+
+> **Exam tip:** These principles appear across all major privacy frameworks. When evaluating a privacy scenario on the exam, identify which principle is being violated — this often points directly to the correct answer.
+
+## GDPR (General Data Protection Regulation)
+
+The **GDPR** is the European Union's comprehensive data protection law, effective May 2018. It is widely considered the most stringent privacy regulation globally and has influenced privacy laws worldwide.
+
+### Scope
+
+GDPR applies to any organization that:
+- Is established in the EU, **or**
+- Offers goods or services to individuals in the EU, **or**
+- Monitors the behavior of individuals in the EU
+
+This means GDPR can apply to U.S. companies that have EU customers, even if the company has no physical presence in Europe.
+
+### Key Roles
+
+| Role | Definition |
+|---|---|
+| Data subject | The individual whose personal data is being processed |
+| Data controller | The entity that determines the purposes and means of processing personal data |
+| Data processor | The entity that processes personal data on behalf of the controller |
+| Data Protection Officer (DPO) | Required for organizations that process personal data at scale or handle sensitive data; oversees compliance |
+
+### Data Subject Rights
+
+GDPR grants individuals eight fundamental rights:
+
+1. **Right to be informed** — Know how data is collected and used
+2. **Right of access** — Obtain a copy of personal data being processed
+3. **Right to rectification** — Correct inaccurate personal data
+4. **Right to erasure** ("right to be forgotten") — Request deletion of personal data under certain conditions
+5. **Right to restrict processing** — Limit how data is used
+6. **Right to data portability** — Receive data in a structured, machine-readable format
+7. **Right to object** — Object to processing for direct marketing or legitimate interests
+8. **Rights related to automated decision-making** — Not be subject to decisions based solely on automated processing
+
+### Penalties
+
+GDPR violations can result in fines up to the **greater of 20 million euros or 4% of annual global turnover**. Organizations must report data breaches to the supervisory authority within **72 hours** of becoming aware.
+
+> **Exam tip:** The 72-hour breach notification requirement and the two-tier penalty structure (up to 2% for administrative violations, up to 4% for core violations) are heavily tested. Remember that GDPR has extraterritorial reach — it applies based on where the data subjects are, not where the company is located.
+
+## CCPA/CPRA (California Consumer Privacy Act / California Privacy Rights Act)
+
+The CCPA (effective 2020) and its amendment, the CPRA (effective 2023), establish privacy rights for California residents and impose obligations on businesses that collect their personal information.
+
+### Scope
+
+CCPA/CPRA applies to for-profit businesses that collect California residents' personal information **and** meet any of these thresholds:
+- Annual gross revenue exceeding $25 million
+- Buy, sell, or share the personal information of 100,000+ consumers or households
+- Derive 50% or more of annual revenue from selling or sharing personal information
+
+### Consumer Rights
+
+| Right | Description |
+|---|---|
+| Right to know | What personal information is collected, used, shared, or sold |
+| Right to delete | Request deletion of personal information |
+| Right to opt-out | Direct a business to stop selling or sharing personal information |
+| Right to non-discrimination | Cannot be penalized for exercising privacy rights |
+| Right to correct | Correct inaccurate personal information (added by CPRA) |
+| Right to limit use of sensitive PI | Restrict use of sensitive categories like SSN, financial data, geolocation (added by CPRA) |
+
+Businesses must provide a clear **"Do Not Sell or Share My Personal Information"** link on their website.
+
+## HIPAA (Health Insurance Portability and Accountability Act)
+
+HIPAA establishes national standards for protecting **protected health information (PHI)** — any individually identifiable health information held or transmitted by a covered entity or business associate.
+
+### Key Entities
+
+| Entity | Examples |
+|---|---|
+| Covered entities | Health plans, healthcare providers, healthcare clearinghouses |
+| Business associates | Third parties that handle PHI on behalf of covered entities (cloud providers, billing companies, IT consultants) |
+
+### HIPAA Rules
+
+| Rule | Purpose |
+|---|---|
+| Privacy Rule | Establishes standards for who can access PHI and under what circumstances |
+| Security Rule | Requires administrative, physical, and technical safeguards to protect electronic PHI (ePHI) |
+| Breach Notification Rule | Requires notification to affected individuals, HHS, and potentially media within 60 days of discovering a breach |
+
+### Required Safeguards
+
+- **Administrative** — Risk assessments, workforce training, access management policies, business associate agreements
+- **Physical** — Facility access controls, workstation security, device and media controls
+- **Technical** — Access controls, audit controls, integrity controls, transmission security
+
+> **Exam tip:** HIPAA requires a **Business Associate Agreement (BAA)** before any third party can handle PHI. The absence of a BAA is itself a HIPAA violation. The exam tests this concept frequently in scenarios involving cloud service providers or outsourced billing.
+
+## Privacy by Design and Privacy Impact Assessments
+
+**Privacy by design** embeds privacy protections into systems and processes from the outset, rather than adding them as an afterthought. Its seven foundational principles include:
+
+1. Proactive, not reactive — anticipate and prevent privacy issues
+2. Privacy as the default setting — no action required from the individual
+3. Privacy embedded into design — integral to the system architecture
+4. Full functionality — positive-sum, not zero-sum (privacy and functionality coexist)
+5. End-to-end security — protect data throughout its entire lifecycle
+6. Visibility and transparency — keep practices open and verifiable
+7. Respect for user privacy — keep the user's interests central
+
+A **Privacy Impact Assessment (PIA)** is a systematic evaluation conducted before launching a new system, product, or process that involves personal data. The PIA identifies privacy risks, evaluates their likelihood and impact, and recommends mitigating controls.
+
+## Cross-Border Data Transfers
+
+When personal data crosses international borders, additional legal mechanisms are required to ensure adequate protection. This is particularly relevant under GDPR.
+
+| Mechanism | Description |
+|---|---|
+| Adequacy decisions | The European Commission determines that a country provides adequate data protection (e.g., Japan, UK, South Korea) |
+| Standard Contractual Clauses (SCCs) | Pre-approved contractual terms between data exporters and importers that ensure data protection obligations |
+| Binding Corporate Rules (BCRs) | Internal policies approved by supervisory authorities for multinational companies transferring data within their corporate group |
+| Derogations | Specific exceptions such as explicit consent or contractual necessity (used only in limited circumstances) |
+
+> **Exam tip:** After the Schrems II decision invalidated the EU-U.S. Privacy Shield, SCCs became the primary mechanism for EU-to-U.S. data transfers. The EU-U.S. Data Privacy Framework was adopted in 2023 as a replacement. Know that cross-border transfers require a valid legal mechanism — companies cannot simply transfer data internationally without one.
+
+## Practice Problems
+
+**1.** Under GDPR, a data breach must be reported to the supervisory authority within what timeframe after the organization becomes aware of it?
+
+a) 24 hours
+b) 48 hours
+c) 72 hours
+d) 30 days
+
+**Answer:** c) GDPR requires organizations to notify the relevant supervisory authority within 72 hours of becoming aware of a personal data breach. If notification is not made within 72 hours, the organization must provide a reasoned justification for the delay.
+
+---
+
+**2.** A hospital contracts with a cloud service provider to store patient medical records. Under HIPAA, the cloud provider is classified as a:
+
+a) Covered entity required to comply with the Privacy Rule only
+b) Business associate required to enter into a Business Associate Agreement
+c) Data processor with no HIPAA obligations
+d) Healthcare clearinghouse subject to the Security Rule only
+
+**Answer:** b) Any third party that creates, receives, maintains, or transmits PHI on behalf of a covered entity is a business associate under HIPAA. A Business Associate Agreement (BAA) must be executed before the cloud provider handles any PHI, establishing the provider's obligations for safeguarding the data.
+
+---
+
+**3.** A California-based company with $30 million in annual revenue allows users to opt out of the sale of their personal information. However, users who opt out receive a degraded version of the service. This practice violates which CCPA/CPRA right?
+
+a) Right to know
+b) Right to delete
+c) Right to non-discrimination
+d) Right to correct
+
+**Answer:** c) The right to non-discrimination prohibits businesses from penalizing consumers who exercise their CCPA/CPRA rights. Providing a degraded service to users who opt out of data sales constitutes discrimination and violates this right. Businesses may offer financial incentives for data collection, but cannot impose penalties.

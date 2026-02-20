@@ -1,0 +1,188 @@
+# Security and Control Frameworks
+
+## Learning Objectives
+
+- Describe the NIST Cybersecurity Framework and its five core functions
+- Explain the purpose and structure of COBIT as a governance and management framework
+- Identify the key elements of ISO 27001/27002 and information security management systems
+- Connect the COSO Internal Control framework to IT controls
+- Distinguish between IT General Controls (ITGCs) and Application Controls and classify controls as preventive, detective, or corrective
+
+## NIST Cybersecurity Framework
+
+The **NIST Cybersecurity Framework (CSF)**, developed by the National Institute of Standards and Technology, is a voluntary framework that provides a common language for managing cybersecurity risk. It is widely adopted across industries and is frequently referenced on the CPA exam.
+
+### Five Core Functions
+
+The framework is organized around five core functions that represent the lifecycle of cybersecurity risk management:
+
+| Function | Purpose | Example Activities |
+|----------|---------|-------------------|
+| **Identify** | Understand the organization's assets, risks, and vulnerabilities | Asset inventory, risk assessment, business environment analysis |
+| **Protect** | Implement safeguards to ensure delivery of critical services | Access controls, encryption, security awareness training, data protection |
+| **Detect** | Develop capabilities to identify cybersecurity events | Intrusion detection systems, continuous monitoring, anomaly detection, log analysis |
+| **Respond** | Take action when a cybersecurity event is detected | Incident response plan execution, containment, communication, forensic analysis |
+| **Recover** | Restore capabilities impaired by a cybersecurity event | System restoration, lessons learned, communication with stakeholders, plan updates |
+
+The five functions are not sequential steps but rather **concurrent and continuous** activities. An organization should be identifying risks, protecting assets, detecting threats, preparing responses, and planning recovery at all times.
+
+> **Exam tip:** The NIST framework functions are tested frequently. A reliable memory aid: **I-P-D-R-R** (Identify, Protect, Detect, Respond, Recover). When a question describes a specific security activity, match it to the correct function. For example, deploying a firewall is "Protect," while reviewing security logs is "Detect."
+
+### NIST Framework Tiers
+
+The framework includes four implementation tiers that describe the rigor of an organization's cybersecurity practices:
+
+| Tier | Name | Description |
+|------|------|-------------|
+| Tier 1 | Partial | Ad hoc, reactive; limited awareness of cybersecurity risk |
+| Tier 2 | Risk Informed | Risk management practices exist but are not organization-wide |
+| Tier 3 | Repeatable | Formal policies consistently applied across the organization |
+| Tier 4 | Adaptive | Continuously improving based on lessons learned and predictive indicators |
+
+## COBIT Framework
+
+**COBIT (Control Objectives for Information and Related Technologies)** is an IT governance and management framework developed by ISACA. While NIST focuses on cybersecurity, COBIT addresses the broader challenge of governing and managing enterprise information and technology.
+
+### Governance vs Management
+
+COBIT distinguishes between two domains:
+
+- **Governance** — Evaluates stakeholder needs, sets direction, and monitors performance. Governance ensures that enterprise objectives are achieved by evaluating and directing management processes.
+- **Management** — Plans, builds, runs, and monitors IT activities to achieve the objectives set by governance.
+
+### COBIT Core Principles
+
+COBIT is built on the principle that enterprise IT should be governed by a framework that:
+
+1. Meets stakeholder needs by balancing benefits, risk, and resources
+2. Covers the enterprise end-to-end, not just the IT department
+3. Applies a single integrated framework connecting to other standards
+4. Enables a holistic approach to governance
+5. Separates governance from management
+
+> **Exam tip:** The exam may ask you to distinguish between COBIT and NIST. Remember: NIST CSF is primarily a cybersecurity risk management framework. COBIT is a broader IT governance and management framework. Organizations often use both — COBIT for overall IT governance and NIST for cybersecurity specifically.
+
+## ISO 27001/27002
+
+**ISO 27001** is the international standard for establishing, implementing, maintaining, and continually improving an **Information Security Management System (ISMS)**. **ISO 27002** provides the detailed implementation guidance for the controls referenced in ISO 27001.
+
+### Key Concepts
+
+| Standard | Role | Content |
+|----------|------|---------|
+| **ISO 27001** | The certifiable standard; defines ISMS requirements | Risk assessment methodology, control selection, management commitment, continuous improvement cycle (Plan-Do-Check-Act) |
+| **ISO 27002** | Implementation guidance; not independently certifiable | Detailed control descriptions, implementation advice, 93 controls organized across 4 themes |
+
+### The ISMS Approach
+
+An ISMS is a systematic approach to managing sensitive information so that it remains secure. It encompasses people, processes, and technology. The ISMS follows the **Plan-Do-Check-Act (PDCA)** cycle:
+
+1. **Plan** — Establish ISMS scope, policy, risk assessment, and risk treatment plan
+2. **Do** — Implement controls and operate the ISMS
+3. **Check** — Monitor, measure, and audit ISMS performance
+4. **Act** — Take corrective and preventive actions based on audit results and management review
+
+Organizations can achieve **ISO 27001 certification** through an independent audit, demonstrating to customers, regulators, and partners that their information security practices meet an internationally recognized standard.
+
+## COSO and IT Controls
+
+The **COSO Internal Control — Integrated Framework** is the most widely used framework for evaluating internal controls over financial reporting (ICFR). While COSO is not an IT-specific framework, its five components apply directly to technology controls.
+
+### COSO Components Applied to IT
+
+| COSO Component | IT Application |
+|---------------|---------------|
+| **Control Environment** | IT governance structure, security policies, tone at the top regarding technology risk, IT personnel competency and training |
+| **Risk Assessment** | IT risk identification (cybersecurity threats, system failures, data breaches), vulnerability assessments, risk prioritization |
+| **Control Activities** | IT general controls, application controls, access management, change management, segregation of duties |
+| **Information and Communication** | System-generated reports, logging and monitoring, incident communication, IT policies distributed to users |
+| **Monitoring Activities** | Continuous security monitoring, periodic IT audits, penetration testing, control effectiveness evaluation |
+
+> **Exam tip:** COSO provides the conceptual basis for internal controls, while frameworks like NIST and COBIT provide IT-specific implementation guidance. When the exam asks about controls over financial reporting that involve IT systems, think COSO. When it asks about cybersecurity risk management, think NIST. When it asks about IT governance, think COBIT.
+
+## IT General Controls vs Application Controls
+
+IT controls are broadly classified into two categories. Both are essential for ensuring the reliability of financial data processed by information systems.
+
+### IT General Controls (ITGCs)
+
+**ITGCs** are controls over the IT environment that support the proper functioning of application controls. They apply across multiple systems and applications, creating the foundation on which application controls depend.
+
+| ITGC Category | Examples |
+|--------------|---------|
+| **Access to programs and data** | User provisioning, password policies, role-based access, privileged access management |
+| **Program changes** | Change management process, code review, testing before promotion to production |
+| **Program development** | SDLC compliance, requirements documentation, separation of environments |
+| **Computer operations** | Job scheduling, backup procedures, incident management, system monitoring |
+
+If ITGCs are deficient, application controls cannot be relied upon even if they appear to be functioning correctly. For example, if access controls are weak, an unauthorized user could modify the application logic that performs automated calculations.
+
+### Application Controls
+
+**Application controls** are specific to individual business applications and operate at the transaction level. They ensure that data processed by the application is complete, accurate, authorized, and valid.
+
+| Control Type | Purpose | Example |
+|-------------|---------|---------|
+| **Input controls** | Ensure data entering the system is valid and complete | Field validation, range checks, check digits, duplicate detection |
+| **Processing controls** | Ensure data is processed correctly | Batch totals, run-to-run totals, reasonableness checks |
+| **Output controls** | Ensure results are accurate and distributed appropriately | Report reconciliation, distribution lists, output review |
+
+### Relationship Between ITGCs and Application Controls
+
+Application controls depend on ITGCs. Consider this chain of reliance:
+
+An automated three-way match in accounts payable (application control) only works reliably if the underlying program code has not been tampered with (program change ITGC) and only authorized users can access the AP module (access control ITGC).
+
+## Control Activity Classifications
+
+Controls can also be classified by **when** they operate relative to an event:
+
+| Classification | Timing | Purpose | Example |
+|---------------|--------|---------|---------|
+| **Preventive** | Before the event | Stop errors or fraud from occurring | Access controls, input validation, segregation of duties, encryption |
+| **Detective** | During or after the event | Identify errors or fraud that have occurred | Log review, reconciliations, exception reports, intrusion detection |
+| **Corrective** | After detection | Fix the issue and restore normal operations | Backup restoration, incident response, patch deployment, disciplinary action |
+
+> **Exam tip:** The exam frequently asks you to classify a specific control. Preventive controls stop problems before they happen (access denied). Detective controls find problems that already happened (exception report flags an anomaly). Corrective controls fix problems after they are found (restoring data from backup). A strong control environment uses all three types in combination.
+
+## Framework Comparison Summary
+
+| Framework | Issuer | Primary Focus | Certifiable? |
+|-----------|--------|--------------|-------------|
+| **NIST CSF** | U.S. NIST | Cybersecurity risk management | No (voluntary framework) |
+| **COBIT** | ISACA | IT governance and management | No (but supports certification of individuals) |
+| **ISO 27001** | ISO/IEC | Information security management system | Yes (organizational certification) |
+| **COSO** | COSO | Internal control over financial reporting | No (framework for evaluation) |
+
+## Practice Problems
+
+**1.** An organization implements a system that automatically monitors network traffic and alerts the security team when unusual patterns are detected. Under the NIST Cybersecurity Framework, this activity falls under which core function?
+
+a) Identify
+b) Protect
+c) Detect
+d) Respond
+
+**Answer:** c) Detect. The Detect function includes continuous monitoring, anomaly detection, and event identification. Monitoring network traffic for unusual patterns and generating alerts is a detection activity. Responding to the alert would fall under the Respond function, but the monitoring and alerting itself is detection.
+
+---
+
+**2.** An auditor is evaluating a company's IT controls and finds that the automated purchase order approval system correctly enforces dollar-amount thresholds. However, the auditor also discovers that IT administrators can modify the approval thresholds directly in the production database without going through change management. What is the auditor's primary concern?
+
+a) The application control is not functioning as designed
+b) A deficiency in ITGCs undermines the reliability of the application control
+c) The company needs to implement detective controls over purchase orders
+d) The approval thresholds are set at inappropriate levels
+
+**Answer:** b) Even though the application control (automated approval thresholds) appears to be working correctly, the ability of IT administrators to modify production data without change management controls represents an ITGC deficiency. If ITGCs are weak, the auditor cannot rely on application controls because unauthorized changes could compromise their effectiveness at any time.
+
+---
+
+**3.** Which of the following is a corrective control?
+
+a) Requiring multi-factor authentication to access the payroll system
+b) Running a monthly reconciliation to identify discrepancies between the subledger and general ledger
+c) Restoring data from backup after a ransomware attack encrypts the production database
+d) Implementing input validation to reject journal entries where debits do not equal credits
+
+**Answer:** c) Restoring data from backup is a corrective control because it remediates a problem after it has been detected. Multi-factor authentication (a) and input validation (d) are preventive controls that stop problems before they occur. Monthly reconciliation (b) is a detective control that identifies discrepancies after transactions have been processed.

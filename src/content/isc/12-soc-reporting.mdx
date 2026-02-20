@@ -1,0 +1,193 @@
+# SOC Reporting and Trust Services Criteria
+
+## Learning Objectives
+
+- Describe the five Trust Services Criteria and their points of focus
+- Map Trust Services Criteria to specific control activities
+- Understand the structure and components of a SOC 2 report
+- Differentiate report distribution rules for SOC 2 vs. SOC 3
+- Explain bridge letters, gap periods, and how SOC reports are used in financial statement audits
+
+## Trust Services Criteria Overview
+
+The **Trust Services Criteria (TSC)** are the framework used for SOC 2 and SOC 3 engagements. Developed by the AICPA, they are organized into five categories. **Security** (also called the **common criteria**) is always included in every SOC 2 engagement. The remaining four categories are included based on the nature of services and user entity needs.
+
+| Criterion | Focus | When It Applies |
+|---|---|---|
+| **Security** | Protection against unauthorized access (physical and logical) | Always included — foundation for all SOC 2 reports |
+| **Availability** | System uptime and accessibility as committed or agreed | Service level agreements (SLAs), cloud hosting, critical infrastructure |
+| **Processing Integrity** | System processing is complete, valid, accurate, timely, and authorized | Transaction processing, financial calculations, automated workflows |
+| **Confidentiality** | Information designated as confidential is protected as committed | Handling of trade secrets, intellectual property, sensitive business data |
+| **Privacy** | Personal information is collected, used, retained, disclosed, and disposed of in conformity with commitments | Processing personal data of consumers, patients, or employees |
+
+> **Exam tip:** Remember the acronym **SAPCP** (Security, Availability, Processing Integrity, Confidentiality, Privacy). Security is mandatory — every SOC 2 includes it. The other four are optional based on the engagement scope. The exam will test whether you can identify which criteria apply to a given service scenario.
+
+## Points of Focus
+
+Each Trust Services Criterion includes **points of focus** — specific considerations that help management design controls and help auditors evaluate whether the criteria are met. Points of focus are not themselves criteria, but they guide the assessment.
+
+### Security — Common Criteria Points of Focus
+
+The Security criterion is organized around the **COSO Internal Control Framework** components:
+
+| COSO Component | SOC 2 Application | Example Controls |
+|---|---|---|
+| Control Environment (CC1) | Commitment to integrity and security, board oversight, organizational structure | Code of conduct, security policies, defined roles and responsibilities |
+| Communication and Information (CC2) | Internal and external communication about security policies and changes | Security awareness training, incident communication procedures |
+| Risk Assessment (CC3) | Identification and assessment of risks to achieving security objectives | Annual risk assessments, threat modeling, vulnerability scanning |
+| Monitoring Activities (CC4) | Ongoing and periodic evaluation of controls | Continuous monitoring, internal audit, penetration testing |
+| Control Activities (CC5) | Policies and procedures that address identified risks | Logical access controls, change management, incident response |
+| Logical and Physical Access Controls (CC6) | Managing access to systems and facilities | MFA, RBAC, badge access, network segmentation |
+| System Operations (CC7) | Detecting and responding to security events | SIEM monitoring, IDS/IPS, vulnerability management |
+| Change Management (CC8) | Controlling changes to infrastructure and software | Change approval processes, testing, rollback procedures |
+| Risk Mitigation (CC9) | Processes for managing identified risks | Business continuity planning, insurance, vendor management |
+
+### Additional Criteria Points of Focus
+
+| Criterion | Key Points of Focus |
+|---|---|
+| Availability (A1) | System recovery capabilities, backup procedures, disaster recovery testing, environmental protections |
+| Processing Integrity (PI1) | Input validation, processing accuracy, output completeness, error handling and correction |
+| Confidentiality (C1) | Identification of confidential information, access restrictions, secure disposal, encryption |
+| Privacy (P1-P8) | Notice, choice/consent, collection, use/retention/disposal, access, disclosure, quality, monitoring and enforcement |
+
+## Mapping Criteria to Control Activities
+
+A single control activity can satisfy multiple Trust Services Criteria. This mapping demonstrates how controls relate to the criteria they address.
+
+| Control Activity | Security | Availability | Processing Integrity | Confidentiality | Privacy |
+|---|---|---|---|---|---|
+| Multi-factor authentication | X | | | X | X |
+| Network segmentation | X | | | X | |
+| Automated backup and recovery | | X | | | |
+| Input validation checks | | | X | | |
+| Data encryption at rest | X | | | X | X |
+| Change management approval process | X | X | X | | |
+| Intrusion detection/prevention | X | X | | | |
+| Data retention and disposal policy | | | | X | X |
+| Incident response plan | X | X | | X | X |
+| SLA monitoring and reporting | | X | X | | |
+
+> **Exam tip:** The exam may present a control and ask which Trust Services Criteria it addresses. Encryption protects both confidentiality and security. Change management supports security (preventing unauthorized changes), availability (preventing outages from bad changes), and processing integrity (ensuring changes do not corrupt processing).
+
+## SOC 2 Report Structure
+
+A SOC 2 Type II report contains four main sections:
+
+### Section I — Independent Service Auditor's Report (Opinion)
+
+The service auditor's opinion addresses three elements:
+1. Whether the **system description** is fairly presented
+2. Whether the controls were **suitably designed** to meet the applicable Trust Services Criteria
+3. Whether the controls **operated effectively** throughout the specified period (Type II only)
+
+The opinion can be **unqualified** (controls are fairly presented, suitably designed, and operated effectively), **qualified** (exceptions exist but are limited), or **adverse** (significant deficiencies or material failures).
+
+### Section II — Management's Assertion
+
+Management provides a written assertion that:
+- The system description is fairly presented
+- Controls were suitably designed throughout the period
+- Controls operated effectively throughout the period (Type II)
+
+### Section III — System Description
+
+A detailed description of the system including:
+- Services provided and the types of user entities
+- Principal service commitments and system requirements
+- Components of the system (infrastructure, software, people, procedures, data)
+- Relevant aspects of the control environment
+- Complementary user entity controls (CUECs) and complementary subservice organization controls
+
+### Section IV — Description of Controls, Tests, and Results
+
+For each control:
+- Description of the control activity
+- Tests performed by the service auditor
+- Results of the tests (including any exceptions noted)
+
+This is the most detailed section and is the primary reason SOC 2 reports are restricted-use — they contain sensitive information about the organization's control environment.
+
+## Report Distribution and Use Restrictions
+
+| Characteristic | SOC 2 | SOC 3 |
+|---|---|---|
+| Level of detail | Full control descriptions, tests, and results | Summary opinion only — no control details or test results |
+| Distribution | **Restricted use** — management, user entities, user entity auditors, and specified parties | **General use** — freely distributable, may be posted on websites |
+| Purpose | Detailed evaluation of controls by knowledgeable parties | Marketing and general assurance for a broad audience |
+| Underlying criteria | Trust Services Criteria | Trust Services Criteria (same as SOC 2) |
+| Report period | Type I (point in time) or Type II (period of time) | Type II only |
+
+> **Exam tip:** SOC 2 restricted use means it should only be shared with parties who have a sufficient understanding to interpret the detailed findings. SOC 3 general use means anyone can receive it. If the exam describes a service organization posting a detailed SOC report on its website, this would only be appropriate for SOC 3, not SOC 2.
+
+## Bridge Letters and Gap Periods
+
+A **gap period** occurs when the SOC report period ends before the user entity auditor's reporting date. For example, if a SOC 2 Type II report covers January 1 – September 30, but the user entity's fiscal year ends December 31, there is a three-month gap (October 1 – December 31).
+
+A **bridge letter** (also called a **gap letter**) is a written representation from the service organization's management covering the gap period. It typically states:
+
+- Whether there have been any significant changes to the system or controls since the report period ended
+- Whether any new control deficiencies have been identified
+- Whether the system description remains accurate
+
+| Gap Period Handling | Approach |
+|---|---|
+| Gap is short (1-2 months) and no significant changes | Bridge letter from management is generally sufficient |
+| Gap is longer or significant changes occurred | User entity auditor should perform additional procedures (inquiry, observation, review of subsequent SOC report) |
+| No SOC report available | User entity auditor must perform alternative procedures to evaluate the service organization's controls |
+
+## Using SOC Reports in Financial Statement Audits
+
+User entity auditors use SOC reports as part of their **risk assessment** and **testing of controls** when a service organization processes transactions or maintains data relevant to the user entity's financial statements.
+
+### How the User Entity Auditor Uses a SOC Report
+
+1. **Read the report** — Understand the services, system boundaries, and control objectives
+2. **Evaluate the auditor** — Assess the competence and independence of the service auditor
+3. **Assess coverage** — Determine whether the report covers the right period and relevant controls
+4. **Evaluate exceptions** — Analyze any control exceptions noted in Section IV and their potential impact
+5. **Test CUECs** — Verify that the user entity has implemented the complementary controls identified in the report
+6. **Consider the gap period** — Determine whether additional procedures are needed for any period not covered by the report
+7. **Document conclusions** — Document the impact on the overall audit risk assessment
+
+### Key Considerations
+
+- A SOC 1 report is designed for financial statement audit purposes; SOC 2 may also be relevant depending on the nature of services
+- The user entity auditor **cannot simply rely on the SOC report without their own evaluation** — they must assess whether the report is sufficient for their purposes
+- If the SOC report contains exceptions, the user entity auditor must evaluate whether those exceptions affect the user entity's financial statements
+- The user entity auditor is **not required to reference** the service auditor or the SOC report in their own audit report, even when relying on it
+
+> **Exam tip:** The user entity auditor does not audit the service organization directly — they rely on the SOC report. However, they must perform their own evaluation of whether the report is sufficient, whether CUECs are in place, and whether any exceptions affect their audit. Simply receiving a "clean" SOC report is not enough — the auditor must actively evaluate it.
+
+## Practice Problems
+
+**1.** Which of the following Trust Services Criteria is ALWAYS included in a SOC 2 engagement?
+
+a) Availability
+b) Processing Integrity
+c) Security
+d) Privacy
+
+**Answer:** c) Security, also known as the common criteria, is always included in every SOC 2 engagement. It provides the foundational controls that support all other criteria. Availability, Processing Integrity, Confidentiality, and Privacy are included based on the nature of the services and the engagement scope.
+
+---
+
+**2.** A SOC 2 Type II report for a cloud service provider covers the period January 1 through September 30. The user entity's fiscal year ends December 31. The user entity auditor should MOST likely:
+
+a) Conclude that the SOC report is not usable because it does not cover the full fiscal year
+b) Obtain a bridge letter from the service organization and evaluate whether additional procedures are needed for the gap period
+c) Issue a qualified audit opinion due to the scope limitation
+d) Request the service organization to reissue the SOC report through December 31
+
+**Answer:** b) When a gap period exists between the end of the SOC report period and the user entity's year-end, the user entity auditor should obtain a bridge letter from the service organization covering the gap period. If no significant changes occurred and the gap is reasonable, the bridge letter combined with the SOC report may provide sufficient evidence. For longer gaps or when significant changes occurred, additional procedures may be needed.
+
+---
+
+**3.** A user entity auditor reviews a SOC 1 Type II report and notes that several control exceptions were identified in Section IV. The user entity auditor should:
+
+a) Automatically issue a qualified opinion on the user entity's financial statements
+b) Request the service organization to correct the exceptions and reissue the report
+c) Evaluate whether the exceptions affect the user entity's financial statements and determine if compensating controls or additional procedures are needed
+d) Disregard the exceptions because they are the service organization's responsibility
+
+**Answer:** c) The user entity auditor must evaluate the nature and significance of the control exceptions and determine whether they affect the user entity's financial statements. Not all exceptions at the service organization will be relevant to every user entity. The auditor should consider whether compensating controls exist at the user entity or whether additional substantive procedures are needed to address the risk.

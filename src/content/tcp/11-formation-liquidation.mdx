@@ -1,0 +1,204 @@
+# Entity Formation and Liquidation
+
+## Learning Objectives
+
+- Apply Section 351 corporate formation rules including boot, liabilities, and the control requirement
+- Distinguish tax-free partnership formation under Section 721 from its exceptions
+- Analyze complete liquidation rules under Sections 331, 332, and 336
+- Evaluate Section 338(h)(10) elections and partial liquidation treatment
+
+## Corporate Formation — Section 351
+
+Section 351 provides nonrecognition treatment when property is transferred to a corporation solely in exchange for stock, provided the transferors are in **control** immediately after the exchange.
+
+### Requirements
+
+| Element | Requirement |
+|---------|------------|
+| Property | Must be property (not services). Includes cash, tangible property, intangible property, installment obligations, and accounts receivable |
+| Exchange | In exchange for stock of the corporation |
+| Control | Transferors must own at least 80% of total voting power AND 80% of each class of nonvoting stock immediately after the transfer |
+
+### Boot and Gain Recognition
+
+If the transferor receives **boot** (cash, short-term notes, or other non-stock property) in addition to stock, gain is recognized to the extent of the lesser of:
+- Boot received, or
+- Realized gain
+
+**No loss is ever recognized** in a Section 351 exchange.
+
+### Assumption of Liabilities
+
+When the corporation assumes liabilities of the transferor, the assumption is generally NOT treated as boot. However, two exceptions apply:
+
+| Exception | Rule |
+|-----------|------|
+| Tax avoidance or no business purpose (Section 357(b)) | All liabilities treated as boot if the principal purpose is tax avoidance |
+| Liabilities exceed basis (Section 357(c)) | Gain recognized to the extent liabilities assumed exceed the aggregate adjusted basis of all property transferred |
+
+**Worked Example:**
+
+Baker transfers equipment (basis $60,000, FMV $200,000) subject to a $90,000 liability to a new corporation for 100% of the stock.
+
+| Step | Calculation | Amount |
+|------|------------|--------|
+| FMV of stock received | $200,000 - $90,000 | $110,000 |
+| Amount realized | $110,000 (stock) + $90,000 (liability relief) | $200,000 |
+| Realized gain | $200,000 - $60,000 | $140,000 |
+| Liabilities exceed basis? | $90,000 > $60,000 | Yes — gain of $30,000 |
+| **Recognized gain** | Excess of liabilities over basis | **$30,000** |
+
+Basis in stock received: $60,000 - $90,000 + $30,000 = **$0** (basis cannot be negative).
+
+Corporation's basis in equipment: $60,000 + $30,000 = **$90,000**.
+
+> **Exam tip:** The 80% control test counts ALL transferors in a single integrated transaction. A person who contributes only services does not count toward the control group, but if they also contribute property, they are included. Watch for multi-party formations where one party contributes services only.
+
+## Partnership Formation — Section 721
+
+### General Rule
+
+No gain or loss is recognized by a partner or the partnership when property is contributed in exchange for a partnership interest. The partner takes a **carryover basis** in the partnership interest equal to the adjusted basis of the contributed property, and the partnership takes the same carryover basis in the contributed asset.
+
+### Key Differences from Section 351
+
+| Feature | Section 351 (Corporate) | Section 721 (Partnership) |
+|---------|------------------------|--------------------------|
+| Control requirement | 80% immediately after | None |
+| Boot recognition | Gain recognized to extent of boot | No boot concept — partnerships can distribute cash without current gain in most cases |
+| Liabilities exceeding basis | Section 357(c) triggers gain | Generally no gain because partner's share of partnership liabilities increases outside basis |
+| Services for interest | Services are not "property" — transferor excluded from control group | Services for capital interest: taxable at FMV. Services for profits interest: generally not taxable |
+
+### Exceptions to Section 721 Nonrecognition
+
+| Exception | Treatment |
+|-----------|-----------|
+| Services for capital interest | Partner recognizes ordinary income equal to FMV of capital interest received |
+| Disguised sale (Section 707(a)(2)(B)) | If a contribution and related distribution are part of a prearranged transaction, treated as a sale |
+| Investment partnerships (Section 721(b)) | Gain recognized on contribution of appreciated securities to a partnership that would be treated as an investment company |
+
+## Complete Liquidation — Shareholder Treatment
+
+### Section 331 — Non-Subsidiary Liquidation
+
+When a corporation completely liquidates and distributes all assets to shareholders who are NOT a parent corporation (or the parent does not own 80%+), the shareholders treat the distributions as received in exchange for their stock.
+
+- Gain or loss = FMV of property received minus adjusted basis of stock surrendered
+- Character: **capital gain or loss** (long-term if stock held more than one year)
+- Shareholder takes a **FMV basis** in the distributed property
+
+### Section 332 — Subsidiary Liquidation
+
+When a **parent corporation** owning at least **80%** of the subsidiary's voting power and value liquidates the subsidiary, special rules apply:
+
+| Feature | Section 332 Treatment |
+|---------|----------------------|
+| Gain/loss to parent | **No gain or loss recognized** |
+| Parent's basis in distributed assets | **Carryover basis** from the subsidiary |
+| Subsidiary's tax attributes | NOLs, credits, E&P carry over to the parent |
+| Minority shareholders | Treated under Section 331 (recognize gain/loss at FMV) |
+
+> **Exam tip:** Section 332 is mandatory, not elective, when the 80% ownership threshold is met. The parent cannot choose Section 331 treatment. Minority shareholders in the same liquidation are treated under Section 331.
+
+**Worked Example:**
+
+Parent Corp owns 100% of Sub Corp stock (basis $300,000). Sub Corp liquidates, distributing assets with FMV of $500,000 and carryover basis of $350,000.
+
+| Party | Gain Recognized | Basis in Assets |
+|-------|----------------|-----------------|
+| Parent Corp (Section 332) | $0 | $350,000 (carryover from Sub) |
+| If parent owned only 70% (Section 331) | $200,000 gain ($500,000 - $300,000) | $500,000 (FMV) |
+
+## Corporate-Level Treatment — Section 336
+
+### General Rule
+
+A liquidating corporation recognizes **gain or loss** on the distribution of property as if the property were sold at FMV.
+
+### Exceptions and Limitations
+
+| Rule | Treatment |
+|------|-----------|
+| General rule (Section 336(a)) | Corporation recognizes gain or loss at FMV |
+| Distribution to 80% parent (Section 336(d)(3)) | **No gain or loss** recognized on distributions to a parent in a Section 332 liquidation |
+| Related party loss limitation (Section 336(d)(1)) | Loss is disallowed on distributions of property to a related person if the property was contributed with a built-in loss within 5 years, or the distribution is not pro rata |
+| Tax-exempt or foreign shareholder | Loss may be disallowed in certain distributions to tax-exempt or foreign shareholders |
+
+## Section 338(h)(10) Election
+
+When a purchasing corporation acquires at least **80%** of a target corporation's stock in a **qualified stock purchase**, the buyer and seller may jointly elect Section 338(h)(10) treatment.
+
+### Effect of the Election
+
+| Step | Treatment |
+|------|-----------|
+| 1 | Target is treated as having sold all of its assets at FMV in a single transaction (deemed asset sale) |
+| 2 | Target recognizes gain or loss on the deemed sale |
+| 3 | Target is treated as a new corporation that purchased the assets at FMV |
+| 4 | The actual stock sale is disregarded — the seller reports the results of the deemed asset sale, not a stock sale |
+
+### Why Elect?
+
+- **Buyer's advantage:** Gets a stepped-up basis in the target's assets, increasing future depreciation and amortization deductions
+- **Seller's advantage (S corp targets):** The deemed asset sale may result in lower overall tax than a stock sale when the target is an S corporation, because gains may be ordinary income (depreciable property) but are taxed only once at the shareholder level
+
+> **Exam tip:** Section 338(h)(10) is most commonly tested with S corporation targets. The deemed asset sale passes through to S corp shareholders on their final K-1s, and the stock sale is ignored. Compare this to a regular stock sale where the gain is capital gain to the selling shareholders.
+
+## Partial Liquidations — Section 302(b)(4)
+
+A **partial liquidation** is treated as a sale/exchange (not a dividend) if the distribution is **not essentially equivalent to a dividend** determined at the **corporate level**.
+
+### Corporate Contraction Doctrine
+
+The most common safe harbor requires:
+
+1. The distribution is attributable to the corporation **ceasing to conduct** a qualifying trade or business
+2. The corporation continues to conduct at least one other qualifying trade or business
+3. Both businesses were actively conducted for at least **5 years** before the distribution
+
+A qualifying trade or business must have been actively conducted throughout the 5-year period and not acquired in a taxable transaction during that period.
+
+**Worked Example:**
+
+MegaCorp has operated a manufacturing division and a retail division for 20 years. MegaCorp sells the manufacturing division and distributes the $2,000,000 proceeds to shareholders pro rata. A shareholder receiving $200,000 has stock basis of $120,000.
+
+| Step | Calculation | Amount |
+|------|------------|--------|
+| Distribution received | | $200,000 |
+| Stock basis surrendered (proportional) | | $120,000 |
+| **Capital gain** (Section 302(b)(4)) | $200,000 - $120,000 | **$80,000** |
+
+Without partial liquidation treatment, the entire $200,000 would be a dividend to the extent of E&P.
+
+## Practice Problems
+
+**1.** A taxpayer transfers property with an adjusted basis of $30,000 and FMV of $100,000, subject to a $45,000 liability, to a new corporation in exchange for 100% of the stock. What gain is recognized under Section 351?
+
+a) $0
+b) $15,000
+c) $70,000
+d) $45,000
+
+**Answer:** b) $15,000 — Under Section 357(c), gain is recognized when liabilities assumed ($45,000) exceed the aggregate adjusted basis of property transferred ($30,000). Recognized gain = $45,000 - $30,000 = $15,000.
+
+---
+
+**2.** Parent Corp owns 100% of Sub Corp (stock basis $400,000). Sub Corp liquidates, distributing assets with FMV of $600,000 and adjusted basis of $450,000. What gain does Parent Corp recognize?
+
+a) $200,000
+b) $50,000
+c) $0
+d) $150,000
+
+**Answer:** c) $0 — Under Section 332, no gain or loss is recognized when an 80%-or-more parent liquidates a subsidiary. Parent takes a carryover basis of $450,000 in the distributed assets. Sub Corp also recognizes no gain under Section 336(d)(3) on distributions to an 80% parent.
+
+---
+
+**3.** A partner contributes services (valued at $50,000) in exchange for a 25% capital interest in a partnership. Under Section 721, what is the tax consequence to the partner?
+
+a) No gain or loss recognized
+b) $50,000 of ordinary income
+c) $50,000 of capital gain
+d) $50,000 of self-employment income only
+
+**Answer:** b) $50,000 of ordinary income — Section 721 nonrecognition does not apply to the receipt of a capital interest in exchange for services. The partner must recognize ordinary compensation income equal to the FMV of the capital interest received ($50,000). If instead the partner received only a profits interest, the result would generally be nontaxable.

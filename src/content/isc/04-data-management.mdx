@@ -1,0 +1,186 @@
+# Data Management and Lifecycle
+
+## Learning Objectives
+
+- Compare database models including relational, NoSQL, and data warehouses
+- Trace the data lifecycle from creation through destruction
+- Explain data governance concepts including ownership, stewardship, and quality management
+- Apply data classification frameworks to determine appropriate security controls
+- Evaluate backup strategies and their implications for data recovery and continuity
+
+## Database Models
+
+Organizations store data using different database models depending on the nature of the data, performance requirements, and how the data will be queried. Understanding these models is essential for evaluating controls over data integrity and access.
+
+### Relational Databases (SQL)
+
+A **relational database** organizes data into structured tables with rows (records) and columns (fields). Tables are linked through **primary keys** and **foreign keys**, enforcing referential integrity. Structured Query Language (SQL) is used to create, read, update, and delete data.
+
+Example: A customer table linked to an orders table through a shared customer ID ensures that every order references a valid customer.
+
+**Key characteristics:**
+- Strong data integrity through enforced relationships and constraints
+- ACID properties (Atomicity, Consistency, Isolation, Durability) ensure reliable transaction processing
+- Well-suited for structured, transactional data such as accounting records
+- Examples: Oracle, Microsoft SQL Server, PostgreSQL
+
+### NoSQL Databases
+
+**NoSQL** databases handle unstructured or semi-structured data that does not fit neatly into tables. They trade some relational integrity for flexibility and horizontal scalability.
+
+| NoSQL Type | Structure | Use Case |
+|-----------|-----------|----------|
+| Document store | JSON-like documents with flexible schemas | Content management, customer profiles |
+| Key-value store | Simple key-value pairs for fast lookups | Session management, caching |
+| Column-family | Data stored in columns rather than rows | Large-scale analytics, time-series data |
+| Graph | Nodes and edges representing relationships | Social networks, fraud detection |
+
+> **Exam tip:** For CPA exam purposes, relational databases are the standard for financial data because of their strong integrity controls (ACID properties). NoSQL databases may appear in questions about unstructured data or when evaluating whether the chosen technology provides adequate controls for financial reporting.
+
+### Data Warehouses
+
+A **data warehouse** consolidates data from multiple source systems into a centralized repository optimized for reporting and analysis rather than transaction processing. Data is extracted from operational systems, **transformed** to a consistent format, and **loaded** into the warehouse (the ETL process).
+
+| Feature | Operational Database | Data Warehouse |
+|---------|---------------------|----------------|
+| Purpose | Process daily transactions | Support reporting and analytics |
+| Data currency | Real-time, current | Historical, periodic snapshots |
+| Optimization | Fast reads and writes for individual records | Fast queries across large data sets |
+| Schema | Normalized (minimizes redundancy) | Denormalized (optimizes query speed) |
+
+The ETL process introduces control risks around data completeness and accuracy. Controls should verify that all records are extracted, transformations are applied correctly, and load totals reconcile to source system totals.
+
+## Data Lifecycle
+
+Data has a lifecycle that spans from creation to destruction. Each phase requires specific controls to maintain data integrity, confidentiality, and compliance.
+
+### Six Phases of the Data Lifecycle
+
+| Phase | Description | Key Controls |
+|-------|-------------|-------------|
+| **Creation** | Data is generated or captured (manual entry, automated collection, import) | Input validation, authorization, data quality checks |
+| **Storage** | Data is persisted in databases, file systems, or cloud storage | Encryption at rest, access controls, physical security |
+| **Use** | Data is accessed, processed, and analyzed for business purposes | Role-based access, logging, segregation of duties |
+| **Sharing** | Data is transmitted to internal or external parties | Encryption in transit, data loss prevention (DLP), access agreements |
+| **Archival** | Data is moved to long-term storage for retention compliance | Indexed for retrieval, periodic integrity checks, documented retention schedule |
+| **Destruction** | Data is permanently deleted when no longer needed or required | Verified deletion methods, certificates of destruction, compliance documentation |
+
+> **Exam tip:** The exam may test whether controls are appropriate for a given lifecycle phase. For instance, encryption at rest is a storage control, while encryption in transit is a sharing control. Match the control to the phase.
+
+## Data Governance
+
+**Data governance** is the framework of policies, roles, and processes that ensures data is managed as a strategic asset. It defines who is accountable for data, how quality is maintained, and how data-related decisions are made.
+
+### Key Governance Roles
+
+| Role | Responsibility |
+|------|---------------|
+| **Data owner** | Senior business leader accountable for data within their domain; approves access, classification, and retention policies |
+| **Data steward** | Day-to-day manager of data quality and compliance; implements the data owner's policies |
+| **Data custodian** | IT professional responsible for the technical storage, security, and maintenance of data systems |
+| **Data user** | Anyone who accesses data to perform their job function; responsible for following usage policies |
+
+The data owner makes decisions about who can access the data and what classification level applies. The data custodian implements those decisions through technical controls. This separation ensures that business needs drive data policy while IT provides the technical enforcement.
+
+### Data Quality Management
+
+Data quality is measured across several dimensions:
+
+- **Accuracy** — Data correctly represents the real-world entity or event
+- **Completeness** — All required data fields are populated
+- **Consistency** — Data values agree across systems and over time
+- **Timeliness** — Data is available when needed and reflects current conditions
+- **Validity** — Data conforms to defined formats and business rules
+
+Poor data quality in financial systems leads to misstatements, failed reconciliations, and unreliable reporting. Controls include data validation rules, exception reports, and periodic data quality audits.
+
+## Data Classification
+
+**Data classification** assigns sensitivity levels to data, which in turn determines the minimum security controls required. A typical four-tier classification framework:
+
+| Classification | Description | Example | Required Controls |
+|---------------|-------------|---------|-------------------|
+| **Public** | No harm if disclosed | Marketing brochures, published financial statements | Basic integrity controls |
+| **Internal** | Low risk if disclosed; not for public distribution | Internal memos, org charts, non-sensitive emails | Access limited to employees |
+| **Confidential** | Significant harm if disclosed | Customer PII, financial projections, trade secrets | Encryption, strict access controls, DLP |
+| **Restricted** | Severe harm if disclosed; regulatory consequences | Social Security numbers, credit card data (PCI), health records (HIPAA) | Strongest encryption, multi-factor authentication, audit logging, need-to-know access |
+
+> **Exam tip:** Data classification drives the level of controls applied. If a question describes sensitive data (SSNs, financial records) stored without encryption or with broad access, the correct answer will likely involve implementing controls appropriate to the data's classification level.
+
+## Backup Strategies
+
+Backups are the primary defense against data loss from hardware failure, corruption, ransomware, or human error. The three main backup strategies differ in scope, speed, and storage requirements.
+
+| Strategy | What It Backs Up | Speed | Storage | Restore Time |
+|----------|-----------------|-------|---------|-------------|
+| **Full backup** | All data, every time | Slowest | Highest | Fastest (single restore) |
+| **Incremental backup** | Only data changed since the last backup (full or incremental) | Fastest | Lowest | Slowest (must restore full + all incrementals in sequence) |
+| **Differential backup** | All data changed since the last full backup | Moderate | Moderate | Moderate (restore full + latest differential) |
+
+### Backup Rotation Example
+
+A common enterprise schedule uses a **full backup** weekly (Sunday) with **incremental backups** daily (Monday through Saturday). To restore Wednesday's data after a failure on Thursday:
+
+1. Restore Sunday's full backup
+2. Apply Monday's incremental
+3. Apply Tuesday's incremental
+4. Apply Wednesday's incremental
+
+If the organization used **differential** backups instead, restoration requires only two steps: restore Sunday's full backup, then apply Wednesday's differential (which contains all changes since Sunday).
+
+> **Exam tip:** Know the trade-off: incremental backups are faster to create but slower to restore. Differential backups take longer to create but are faster to restore. Full backups are the simplest to restore but require the most time and storage.
+
+## Data Retention and Legal Hold
+
+### Retention Policies
+
+Data retention policies define how long data must be kept based on legal, regulatory, and business requirements. Retaining data longer than necessary increases storage costs and exposure to breaches. Destroying data too early can result in regulatory penalties or inability to support litigation.
+
+| Requirement | Typical Retention Period |
+|------------|------------------------|
+| IRS tax records | 3-7 years depending on filing type |
+| SOX financial records | 7 years minimum for audit workpapers |
+| HIPAA health records | 6 years from date of creation or last effective date |
+| SEC broker-dealer records | 3-6 years depending on record type |
+
+### Legal Hold
+
+A **legal hold** (also called litigation hold) suspends the normal destruction schedule for data that may be relevant to pending or anticipated litigation, audit, or government investigation. When a legal hold is issued:
+
+- All scheduled destruction of relevant data must stop immediately
+- The hold applies regardless of normal retention policies
+- Failure to preserve data subject to a legal hold can result in sanctions, adverse inference, or spoliation penalties
+- The hold remains in effect until formally released by legal counsel
+
+## Practice Problems
+
+**1.** A company performs a full backup every Sunday and incremental backups Monday through Saturday. The system crashes on Friday morning. How many backup sets are needed to restore the data to Thursday night's state?
+
+a) 1 (Thursday's incremental only)
+b) 2 (Sunday's full plus Thursday's incremental)
+c) 5 (Sunday's full plus Monday through Thursday incrementals)
+d) 6 (Sunday's full plus Monday through Friday incrementals)
+
+**Answer:** c) Incremental backups only capture changes since the last backup. To fully restore, you need the most recent full backup (Sunday) plus every incremental backup in sequence (Monday, Tuesday, Wednesday, Thursday) for a total of 5 backup sets.
+
+---
+
+**2.** Which data governance role is responsible for approving who can access a specific data set and determining its classification level?
+
+a) Data custodian
+b) Data steward
+c) Data owner
+d) Data user
+
+**Answer:** c) The data owner is the senior business leader accountable for data within their domain. They approve access, set classification levels, and define retention policies. The data custodian (a) implements technical controls, and the data steward (b) manages day-to-day quality and compliance.
+
+---
+
+**3.** A company receives a notification that it is the subject of a regulatory investigation. Which of the following actions should the company take immediately regarding its data?
+
+a) Accelerate destruction of records older than the standard retention period
+b) Issue a legal hold suspending all scheduled data destruction for relevant records
+c) Transfer all relevant data to an external legal counsel's servers
+d) Reclassify all company data as restricted
+
+**Answer:** b) A legal hold must be issued immediately to suspend normal data destruction schedules for any records potentially relevant to the investigation. Destroying records after learning of an investigation (a) could constitute spoliation and result in severe legal penalties.

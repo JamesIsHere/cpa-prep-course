@@ -1,0 +1,171 @@
+# System Availability and Change Management
+
+## Learning Objectives
+
+- Explain business continuity planning (BCP) and disaster recovery (DR) concepts and their relationship
+- Calculate and apply Recovery Point Objective (RPO) and Recovery Time Objective (RTO) in planning scenarios
+- Identify high availability architectures including redundancy, failover, and clustering
+- Describe the change management process and its role in maintaining system integrity
+- Outline the phases of the System Development Life Cycle (SDLC)
+
+## Business Continuity and Disaster Recovery
+
+**Business Continuity Planning (BCP)** is the overarching strategy for maintaining critical business operations during and after a disruption. **Disaster Recovery (DR)** is a subset of BCP that focuses specifically on restoring IT systems and data after a failure or disaster.
+
+| Concept | Scope | Focus |
+|---------|-------|-------|
+| **BCP** | Entire organization | Keeping the business running (people, processes, facilities, technology) |
+| **DR** | IT systems and data | Restoring technology infrastructure and recovering data |
+
+A BCP includes the DR plan but also addresses non-IT concerns such as alternate work locations, communication plans, employee safety, and vendor dependencies. The DR plan details how to restore servers, databases, networks, and applications to operational status.
+
+### Business Impact Analysis (BIA)
+
+Before creating a BCP or DR plan, an organization performs a **Business Impact Analysis (BIA)** to identify:
+
+- Which business processes are critical and must be restored first
+- The financial and operational impact of downtime for each process
+- Maximum tolerable downtime before unacceptable harm occurs
+- Dependencies between systems, processes, and third parties
+
+The BIA directly informs the recovery objectives (RPO and RTO) for each critical system.
+
+## Recovery Objectives
+
+Two metrics define how quickly and completely systems must be restored after a disruption.
+
+### RPO and RTO
+
+| Metric | Question It Answers | Measured In | Drives |
+|--------|-------------------|-------------|--------|
+| **RPO** (Recovery Point Objective) | How much data can we afford to lose? | Time (hours, minutes) | Backup frequency |
+| **RTO** (Recovery Time Objective) | How quickly must the system be restored? | Time (hours, minutes) | Recovery infrastructure investment |
+
+**Example:** A company sets an RPO of 4 hours and an RTO of 2 hours for its ERP system.
+
+- **RPO of 4 hours** means the company can tolerate losing up to 4 hours of data. Therefore, backups must occur at least every 4 hours. If the system fails at 3:00 PM and the last backup was at 12:00 PM, the company loses 3 hours of data, which is within the acceptable RPO.
+- **RTO of 2 hours** means the ERP system must be fully operational within 2 hours of the disruption. This drives investment in hot standby servers, automated failover, or rapid cloud provisioning.
+
+> **Exam tip:** RPO determines backup frequency; RTO determines recovery infrastructure investment. A lower RPO requires more frequent backups (higher cost). A lower RTO requires faster recovery capabilities (higher cost). The exam may present a scenario and ask which metric is violated or what controls would achieve a given objective.
+
+### DR Site Types
+
+| Site Type | Description | RTO | Cost |
+|-----------|-------------|-----|------|
+| **Hot site** | Fully equipped, data replicated in real-time, ready to take over immediately | Minutes to hours | Highest |
+| **Warm site** | Hardware in place, requires data restoration from backups | Hours to days | Moderate |
+| **Cold site** | Empty facility with power and connectivity; hardware must be procured and installed | Days to weeks | Lowest |
+
+## High Availability Architectures
+
+High availability (HA) designs eliminate single points of failure so that systems continue operating even when individual components fail.
+
+### Key HA Concepts
+
+**Redundancy** means duplicating critical components (servers, power supplies, network links, storage) so that a backup takes over if the primary fails. Redundancy can be applied at every layer: hardware, network, data center, and geographic region.
+
+**Failover** is the automatic transfer of operations from a failed component to a standby component. Failover can be:
+- **Active-passive:** A standby system waits idle and takes over when the primary fails
+- **Active-active:** Multiple systems share the workload simultaneously; if one fails, the others absorb its traffic
+
+**Clustering** groups multiple servers into a logical unit that appears as a single system. If one server in the cluster fails, the remaining servers continue processing without interruption. Clusters provide both high availability and load balancing.
+
+| Architecture | How It Works | Best For |
+|-------------|-------------|----------|
+| Active-passive failover | Standby server takes over on primary failure | Databases, ERP systems requiring consistent state |
+| Active-active load balancing | Multiple servers share traffic; survivors absorb failed server's load | Web applications, email, customer-facing services |
+| Geographic redundancy | Systems replicated across data centers in different regions | Protection against site-level disasters (flood, power outage) |
+
+> **Exam tip:** High availability questions often describe a scenario where a single component failure causes a system outage, then ask what architectural change would prevent the outage. The answer is almost always some form of redundancy or failover.
+
+## Change Management
+
+**Change management** is the structured process for making modifications to IT systems while minimizing risk to operations and data integrity. Unauthorized or poorly managed changes are one of the most common causes of system outages and control failures.
+
+### The Change Management Process
+
+| Step | Activity | Key Control |
+|------|----------|-------------|
+| **1. Request** | A change request is submitted describing the proposed modification, its business justification, and affected systems | Formal documentation; standardized request form |
+| **2. Review** | Technical staff assess the impact, risk, dependencies, and resource requirements | Impact analysis; risk assessment |
+| **3. Approve** | A Change Advisory Board (CAB) or authorized manager approves or rejects the change | Segregation of duties (requester cannot self-approve) |
+| **4. Implement** | The change is applied to the system, typically in a test environment first, then production | Separation of development, testing, and production environments |
+| **5. Test** | The change is validated to confirm it works as intended and has not introduced new issues | User acceptance testing (UAT); regression testing |
+| **6. Close** | The change request is documented with results and closed; rollback plan is archived | Post-implementation review; updated documentation |
+
+A **rollback plan** must be prepared before any change is implemented. If the change causes unexpected problems, the rollback plan defines the steps to revert the system to its previous state.
+
+> **Exam tip:** The exam tests whether proper change management controls were followed. Watch for scenarios where developers have access to production systems (bypassing segregation), changes are implemented without testing, or approvals are missing. These are common control deficiencies.
+
+## Patch Management and Version Control
+
+**Patch management** is a specialized subset of change management focused on applying vendor-supplied updates to software and systems. Patches address security vulnerabilities, fix bugs, and add functionality.
+
+A sound patch management process includes:
+
+1. **Monitoring** vendor announcements and vulnerability databases for new patches
+2. **Evaluating** each patch for relevance and urgency (critical security patches vs. minor updates)
+3. **Testing** patches in a non-production environment before deployment
+4. **Deploying** approved patches according to a scheduled maintenance window
+5. **Verifying** successful installation and monitoring for issues
+
+**Version control** tracks changes to source code, configuration files, and documentation over time. It maintains a history of who changed what, when, and why, enabling rollback to any previous version if needed. Version control systems (such as Git) are essential for software development and configuration management.
+
+## System Development Life Cycle (SDLC)
+
+The **System Development Life Cycle (SDLC)** is a structured framework for planning, building, testing, deploying, and maintaining information systems. While many variations exist, the traditional SDLC follows these phases:
+
+| Phase | Activities | Key Deliverable |
+|-------|-----------|----------------|
+| **1. Planning** | Define project scope, objectives, feasibility study, resource allocation | Project charter, feasibility analysis |
+| **2. Requirements** | Gather and document business and technical requirements from stakeholders | Requirements specification document |
+| **3. Design** | Create system architecture, data models, interface designs, and security specifications | System design document |
+| **4. Development** | Build the system by writing code, configuring software, and creating databases | Working software components |
+| **5. Testing** | Validate that the system meets requirements through unit, integration, and acceptance testing | Test results, defect reports |
+| **6. Deployment** | Migrate the system to the production environment and transition operations | Go-live plan, training materials |
+| **7. Maintenance** | Monitor performance, fix defects, apply patches, and implement enhancements | Change requests, updated documentation |
+
+### SDLC and Audit Considerations
+
+From an audit perspective, the SDLC provides control points where auditors verify that:
+- Requirements are formally documented and approved by business stakeholders
+- Development and testing environments are separated from production
+- Testing is adequate and results are documented
+- User acceptance testing (UAT) confirms the system meets business needs
+- Data migration is complete and accurate
+- Post-implementation reviews identify lessons learned
+
+> **Exam tip:** SDLC questions often focus on which activities belong to which phase, or which controls should be present. Remember that separation of environments (development, testing, production) is a fundamental SDLC control, and that changes should never be promoted to production without testing and approval.
+
+## Practice Problems
+
+**1.** A company's ERP system has an RPO of 1 hour and an RTO of 4 hours. A disaster occurs at 2:00 PM, and the last successful backup was at 12:30 PM. Which statement is correct?
+
+a) Both the RPO and RTO are violated
+b) The RPO is violated because 1.5 hours of data may be lost, exceeding the 1-hour objective
+c) The RTO is violated because the system should have recovered by 12:30 PM
+d) Neither objective is violated at this point
+
+**Answer:** b) The RPO of 1 hour means the company can tolerate losing at most 1 hour of data. Since the last backup was 1.5 hours before the disaster, up to 1.5 hours of data may be lost, which exceeds the RPO. The RTO has not been violated yet because the company has until 6:00 PM (4 hours after the disaster) to restore the system.
+
+---
+
+**2.** During an IT audit, the auditor discovers that software developers have direct access to the production environment and have been applying code changes without going through the change management process. Which of the following best describes this finding?
+
+a) A deficiency in patch management procedures
+b) A lack of segregation between development and production environments
+c) An inadequate disaster recovery plan
+d) A failure in the system development life cycle planning phase
+
+**Answer:** b) Allowing developers to modify production systems directly violates the fundamental change management control of segregating development, testing, and production environments. Changes should be developed and tested in separate environments, then promoted to production only after formal review, approval, and testing.
+
+---
+
+**3.** An organization needs to select a disaster recovery site for its mission-critical financial systems. The systems require an RTO of less than 1 hour. Which DR site type is most appropriate?
+
+a) Cold site
+b) Warm site
+c) Hot site
+d) Mobile site
+
+**Answer:** c) A hot site is a fully equipped facility with real-time data replication, capable of taking over operations within minutes to hours. Cold sites (a) take days to weeks to activate, and warm sites (b) take hours to days, both of which exceed the 1-hour RTO requirement. A hot site is the only option that reliably achieves sub-1-hour recovery.

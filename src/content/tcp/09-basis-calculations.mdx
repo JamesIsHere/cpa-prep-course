@@ -1,0 +1,196 @@
+# Advanced Basis Calculations
+
+## Learning Objectives
+
+- Compute S corporation shareholder stock basis and debt basis using the ordering rules
+- Distinguish partnership outside basis from inside basis and apply Section 754 elections
+- Calculate Section 743(b) and Section 734(b) basis adjustments
+- Apply the four-tier loss limitation hierarchy: basis, at-risk, passive activity, and excess business loss
+
+## S Corporation Shareholder Basis
+
+An S corporation shareholder must track two types of basis: **stock basis** and **debt basis**. These determine the deductibility of losses and the tax treatment of distributions.
+
+### Stock Basis Ordering Rules
+
+Stock basis is adjusted annually in the following order:
+
+| Order | Adjustment | Direction |
+|-------|-----------|-----------|
+| 1 | Separately stated income items and nonseparately computed income | Increase |
+| 2 | Tax-exempt income | Increase |
+| 3 | Nondeductible, non-capital expenses (e.g., 50% meals disallowance) | Decrease |
+| 4 | Distributions | Decrease |
+| 5 | Separately stated loss items and nonseparately computed loss | Decrease |
+
+Stock basis cannot go below **zero**. The ordering matters because income items increase basis before distributions reduce it, which can prevent distributions from being taxable.
+
+### Debt Basis
+
+If a shareholder has personally loaned money to the S corporation, the shareholder has **debt basis** equal to the face amount of the loan. Debt basis is used only after stock basis is exhausted.
+
+**Worked Example:**
+
+A shareholder begins the year with $20,000 stock basis and $10,000 debt basis. The S corporation reports: $8,000 ordinary income, $2,000 tax-exempt income, $5,000 distribution, and $35,000 ordinary loss.
+
+| Step | Item | Stock Basis | Debt Basis |
+|------|------|------------|-----------|
+| Start | Beginning balances | $20,000 | $10,000 |
+| 1 | Ordinary income | $28,000 | $10,000 |
+| 2 | Tax-exempt income | $30,000 | $10,000 |
+| 3 | Nondeductible expenses | $30,000 | $10,000 |
+| 4 | Distribution | $25,000 | $10,000 |
+| 5 | Loss (reduces stock to $0) | $0 | $10,000 |
+| 5 | Loss (remainder reduces debt basis) | $0 | $0 |
+| | Loss deductible | | $35,000 |
+| | Loss suspended | | $0 |
+
+The full $35,000 loss is deductible: $25,000 against stock basis and $10,000 against debt basis.
+
+> **Exam tip:** S corporation debt basis comes ONLY from direct shareholder loans to the corporation. Guarantees of corporate debt do NOT create debt basis. This is one of the most commonly tested distinctions on the TCP exam.
+
+## Partnership Outside Basis vs. Inside Basis
+
+### Outside Basis
+
+A partner's **outside basis** is the partner's basis in the partnership interest. It starts with the partner's initial contribution and is adjusted for:
+
+- Increases: share of partnership income (taxable and tax-exempt), additional contributions, increases in share of partnership liabilities
+- Decreases: share of partnership losses, distributions, decreases in share of partnership liabilities, nondeductible expenses
+
+### Inside Basis
+
+**Inside basis** is the partnership's basis in its assets. The partnership tracks its basis in each asset under Section 704(b) capital account rules.
+
+| Concept | Outside Basis | Inside Basis |
+|---------|--------------|-------------|
+| Whose basis? | Partner's basis in partnership interest | Partnership's basis in its own assets |
+| Where tracked? | On each partner's individual records | On the partnership's books |
+| Affected by liabilities? | Yes — partner's share of liabilities increases outside basis | No direct effect |
+| Used for | Loss limitations, gain on sale of partnership interest | Depreciation, gain/loss on asset sales |
+
+### Section 704(b) Capital Accounts
+
+Partners must maintain capital accounts that track economic ownership. Capital accounts are increased by contributions (at FMV) and allocations of income, and decreased by distributions (at FMV) and allocations of loss. The capital account balance reflects each partner's economic interest in the partnership.
+
+## Section 754 Election
+
+A partnership may elect under **Section 754** to adjust the inside basis of its assets when a partnership interest is transferred or when certain distributions are made. Once made, the election applies to all future transfers and distributions unless revoked with IRS consent.
+
+The election triggers adjustments under two provisions:
+
+| Section | Trigger | Effect |
+|---------|---------|--------|
+| 743(b) | Sale or exchange of a partnership interest (or death of a partner) | Adjusts inside basis of partnership assets with respect to the transferee partner only |
+| 734(b) | Distribution of property to a partner | Adjusts inside basis of remaining partnership assets |
+
+## Section 743(b) Adjustment
+
+When a partnership interest is sold and a Section 754 election is in effect, the purchasing partner receives a **special basis adjustment** equal to the difference between the purchase price (the new outside basis) and the partner's share of the partnership's inside basis.
+
+**Worked Example:**
+
+A one-third partner sells a partnership interest for $150,000. The partnership's total inside basis in its assets is $300,000. The purchasing partner's share of inside basis is $100,000 ($300,000 / 3).
+
+| Step | Calculation | Amount |
+|------|------------|--------|
+| Purchase price (new outside basis) | | $150,000 |
+| Share of inside basis | $300,000 x 1/3 | $100,000 |
+| **Section 743(b) adjustment** | $150,000 - $100,000 | **$50,000 step-up** |
+
+The $50,000 step-up is allocated among partnership assets under Section 755 (generally to the assets that would have produced gain on a hypothetical sale). This adjustment benefits only the purchasing partner — the other partners' shares are unaffected.
+
+> **Exam tip:** The 743(b) adjustment is personal to the transferee partner. It does not affect the partnership's common basis in its assets or the other partners' allocations. Think of it as a "side account" that adjusts depreciation and gain/loss for that partner only.
+
+## Section 734(b) Adjustment
+
+When a partnership distributes property and a Section 754 election is in effect, the partnership adjusts the basis of its remaining assets if the distribution caused a basis discrepancy.
+
+A **positive adjustment** (step-up) occurs when:
+- The distributee partner recognized gain on the distribution, or
+- The distributed property took a lower basis in the partner's hands than the partnership's basis
+
+A **negative adjustment** (step-down) occurs when:
+- The distributee partner recognized a loss, or
+- The distributed property took a higher basis in the partner's hands than the partnership's basis
+
+**Worked Example:**
+
+A partnership distributes land with an inside basis of $40,000 to a partner with an outside basis of $25,000 in a current distribution. The partner takes the land at a basis of $25,000 (limited to outside basis).
+
+| Step | Calculation | Amount |
+|------|------------|--------|
+| Partnership's basis in distributed land | | $40,000 |
+| Partner's basis in land received | | $25,000 |
+| Basis "lost" in the distribution | $40,000 - $25,000 | $15,000 |
+| **Section 734(b) adjustment** | Step-up remaining assets by | **$15,000** |
+
+## Built-In Gains and Losses — Section 704(c)
+
+When a partner contributes **appreciated or depreciated property** to a partnership, the built-in gain or loss must be allocated to the contributing partner when the property is sold. This prevents shifting pre-contribution gains or losses to other partners.
+
+### Allocation Methods
+
+| Method | Description |
+|--------|------------|
+| Traditional method | Allocate tax items to match Section 704(b) book items, subject to the "ceiling rule" limitation |
+| Traditional method with curative allocations | Same as traditional, but allows curative allocations of other tax items to correct ceiling rule distortions |
+| Remedial method | Creates notional tax items (offsetting income and deduction) to eliminate any ceiling rule distortion |
+
+## Loss Limitation Hierarchy
+
+Losses from pass-through entities must clear four hurdles, applied in order. A loss failing at any level is **suspended** and carried forward until that limitation is satisfied.
+
+| Level | Rule | Limitation |
+|-------|------|-----------|
+| 1 | **Basis limitation** | Losses cannot exceed the partner/shareholder's basis in the entity interest |
+| 2 | **At-risk limitation (Section 465)** | Losses cannot exceed the amount the taxpayer has at risk (cash contributed + recourse debt for which the taxpayer is personally liable) |
+| 3 | **Passive activity limitation (Section 469)** | Passive losses can only offset passive income (not active or portfolio income) |
+| 4 | **Excess business loss limitation (Section 461(l))** | Net business losses exceeding $305,000 ($610,000 MFJ for 2024) are disallowed and treated as an NOL carryforward |
+
+> **Exam tip:** The ordering is critical — basis first, then at-risk, then passive, then excess business loss. A loss suspended at the basis level never reaches the at-risk calculation. Losses freed at a higher level must still pass through the remaining lower hurdles.
+
+**Worked Example:**
+
+A partner has $50,000 outside basis, $40,000 at-risk amount, $35,000 of passive income from other sources, and is allocated $60,000 of passive losses from the partnership.
+
+| Level | Available | Allowed | Suspended |
+|-------|-----------|---------|-----------|
+| Basis ($50,000) | $60,000 | $50,000 | $10,000 |
+| At-risk ($40,000) | $50,000 | $40,000 | $10,000 |
+| Passive activity ($35,000 passive income) | $40,000 | $35,000 | $5,000 |
+| **Total deductible** | | **$35,000** | |
+| **Total suspended** | | | **$25,000** |
+
+## Practice Problems
+
+**1.** An S corporation shareholder begins the year with $15,000 stock basis and $0 debt basis. The shareholder guaranteed a $30,000 corporate bank loan. The S corporation allocates a $25,000 loss to the shareholder. How much loss can the shareholder deduct?
+
+a) $25,000
+b) $15,000
+c) $30,000
+d) $45,000
+
+**Answer:** b) $15,000 — Only direct loans from the shareholder create debt basis, not guarantees of corporate debt. With $15,000 stock basis and $0 debt basis, only $15,000 of the $25,000 loss is deductible. The remaining $10,000 is suspended until basis is restored.
+
+---
+
+**2.** A partner purchases a one-quarter interest in a partnership for $200,000. The partnership has total inside basis of $600,000 and a Section 754 election in effect. What is the Section 743(b) adjustment?
+
+a) $0
+b) $50,000 step-up
+c) $200,000 step-up
+d) $150,000 step-down
+
+**Answer:** b) $50,000 step-up — The partner's share of inside basis is $600,000 x 25% = $150,000. The purchase price is $200,000. Section 743(b) adjustment = $200,000 - $150,000 = $50,000 step-up, allocated among partnership assets under Section 755.
+
+---
+
+**3.** A taxpayer has $100,000 of passive losses from a limited partnership. The taxpayer's basis in the partnership is $120,000, the at-risk amount is $90,000, and the taxpayer has $60,000 of passive income from other sources. What is the deductible loss?
+
+a) $100,000
+b) $90,000
+c) $60,000
+d) $120,000
+
+**Answer:** c) $60,000 — The loss passes the basis test ($100,000 < $120,000) but is limited to $90,000 at the at-risk level. The $90,000 surviving at-risk amount is then limited by passive activity rules to $60,000 (the amount of passive income available to offset). The remaining $30,000 of at-risk-cleared losses and $10,000 of at-risk-suspended losses carry forward.

@@ -1,0 +1,176 @@
+# International Tax
+
+## Learning Objectives
+
+- Identify Controlled Foreign Corporation (CFC) rules and Subpart F income categories
+- Compute Global Intangible Low-Taxed Income (GILTI) and Foreign-Derived Intangible Income (FDII)
+- Apply the foreign tax credit limitation formula and basket system
+- Understand transfer pricing principles, tax treaty provisions, and the BEAT
+
+## Controlled Foreign Corporations (CFCs)
+
+A **Controlled Foreign Corporation** is any foreign corporation in which **U.S. shareholders** own more than 50% of the total combined voting power or value of stock. A U.S. shareholder is any U.S. person owning at least **10%** of the voting power or value of the foreign corporation's stock.
+
+CFC shareholders must include their pro rata share of **Subpart F income** in gross income currently, regardless of whether any distribution is made.
+
+### Subpart F Income Categories
+
+| Category | Examples |
+|----------|----------|
+| Foreign base company sales income | Income from buying/selling property involving a related party where the CFC is in a different country than the property's origin or destination |
+| Foreign base company services income | Services performed by the CFC for or on behalf of a related person outside the CFC's country of incorporation |
+| Foreign personal holding company income | Dividends, interest, rents, royalties, and net gains from property transactions |
+| Insurance income | Income from insuring risks outside the CFC's country of organization |
+
+> **Exam tip:** Subpart F income does NOT include income earned by a CFC from operations within its own country of incorporation. The "base company" concept targets income artificially shifted to low-tax jurisdictions.
+
+## Global Intangible Low-Taxed Income (GILTI)
+
+GILTI is a minimum tax on the earnings of CFCs that exceed a routine return on tangible assets. U.S. shareholders of CFCs must include GILTI annually.
+
+### GILTI Computation
+
+| Step | Item | Description |
+|------|------|-------------|
+| 1 | Tested income | CFC's gross income minus allocable deductions, excluding Subpart F income, high-taxed income, and U.S. effectively connected income |
+| 2 | Net CFC tested income | Aggregate tested income minus aggregate tested losses across all CFCs |
+| 3 | Net deemed tangible income return (DTIR) | 10% of qualified business asset investment (QBAI) minus interest expense |
+| 4 | GILTI inclusion | Net CFC tested income minus Net DTIR |
+
+**Worked Example:**
+
+A U.S. shareholder's CFC has tested income of $2,000,000 and QBAI of $8,000,000 with $50,000 of specified interest expense.
+
+| Step | Calculation | Amount |
+|------|------------|--------|
+| Net CFC tested income | | $2,000,000 |
+| DTIR (10% of QBAI) | $8,000,000 x 10% | $800,000 |
+| Net DTIR | $800,000 - $50,000 interest | $750,000 |
+| **GILTI inclusion** | $2,000,000 - $750,000 | **$1,250,000** |
+
+### Section 250 Deduction
+
+Corporate U.S. shareholders may deduct **50%** of GILTI (reduced to 37.5% for tax years beginning after 2025), effectively taxing GILTI at **10.5%** (or 13.125% after 2025) before foreign tax credits.
+
+> **Exam tip:** The Section 250 deduction is available only to C corporations. Individual shareholders of CFCs receive no Section 250 deduction unless they make a Section 962 election to be taxed as if they were a corporation.
+
+## Foreign-Derived Intangible Income (FDII)
+
+FDII encourages U.S. corporations to keep intangible-related income in the United States. It applies to income earned domestically from serving foreign markets.
+
+### FDII Computation
+
+| Step | Calculation |
+|------|------------|
+| 1 | Deduction-eligible income (DEI) = Gross income minus excluded items and allocable deductions |
+| 2 | Deemed intangible income (DII) = DEI minus (10% x QBAI) |
+| 3 | Foreign-derived ratio = Foreign-derived DEI / Total DEI |
+| 4 | FDII = DII x Foreign-derived ratio |
+| 5 | Section 250 deduction = 37.5% of FDII (effective rate: 13.125%) |
+
+FDII and GILTI are designed as two sides of one framework: FDII rewards keeping operations onshore, while GILTI penalizes shifting profits offshore.
+
+## Foreign Tax Credit
+
+U.S. persons may claim a **credit** against U.S. tax for foreign income taxes paid or accrued, preventing double taxation of the same income.
+
+### Limitation Formula
+
+The credit cannot exceed the U.S. tax attributable to foreign-source income:
+
+**FTC Limitation = U.S. tax liability x (Foreign-source taxable income / Worldwide taxable income)**
+
+**Worked Example:**
+
+A U.S. corporation has worldwide taxable income of $1,000,000, of which $400,000 is foreign-source. U.S. tax liability before credits is $210,000 (21%). Foreign taxes paid: $100,000.
+
+| Step | Calculation | Amount |
+|------|------------|--------|
+| FTC limitation | $210,000 x ($400,000 / $1,000,000) | $84,000 |
+| Foreign taxes paid | | $100,000 |
+| **Credit allowed** | Lesser of $100,000 or $84,000 | **$84,000** |
+| Excess credit | $100,000 - $84,000 | $16,000 (carryforward) |
+
+### Baskets and Carryovers
+
+Credits are computed separately for two **baskets**:
+
+| Basket | Income Types |
+|--------|-------------|
+| General category | Active business income, branch profits |
+| Passive category | Dividends, interest, rents, royalties, capital gains from passive investments |
+
+Excess foreign tax credits carry back **one year** and forward **ten years** within the same basket.
+
+> **Exam tip:** Cross-crediting between baskets is not allowed. Excess credits in the passive basket cannot offset a limitation in the general basket. The exam tests whether income is classified into the correct basket.
+
+## Transfer Pricing — Section 482
+
+The IRS may reallocate income among related entities to clearly reflect income using the **arm's length standard**: related-party transactions must produce results consistent with those between unrelated parties.
+
+### Common Methods
+
+| Method | Application |
+|--------|------------|
+| Comparable uncontrolled price (CUP) | Direct comparison to unrelated transactions |
+| Resale price method | Resale price minus appropriate markup |
+| Cost plus method | Cost of goods plus appropriate profit margin |
+| Comparable profits method (CPM) | Profit-level indicators of comparable companies |
+| Profit split method | Allocates combined profit based on relative contributions |
+
+Taxpayers must maintain **contemporaneous documentation** to avoid penalties. Penalties for transfer pricing adjustments include a **20% penalty** for substantial misstatements and a **40% penalty** for gross misstatements.
+
+## Tax Treaties and BEAT
+
+### Tax Treaties
+
+Bilateral treaties reduce withholding rates and prevent double taxation. Key concepts:
+
+- **Permanent establishment (PE):** A fixed place of business that creates taxing jurisdiction; treaty protection prevents taxation without a PE
+- **Reduced withholding rates:** Treaties commonly reduce withholding on dividends (often to 5-15%), interest (often to 0-10%), and royalties
+- **Treaty override:** A later-enacted statute may override a treaty provision under the "last in time" rule
+
+### Base Erosion and Anti-Abuse Tax (BEAT)
+
+BEAT is a minimum tax targeting large corporations making deductible payments to foreign related parties.
+
+| Element | Requirement |
+|---------|------------|
+| Applicable taxpayer | Average annual gross receipts of $500 million+ over 3 years, and base erosion percentage of 3%+ (2%+ for banks/dealers) |
+| Base erosion payments | Deductible amounts paid to foreign related parties (interest, royalties, services, depreciation on acquired assets) |
+| Tax computation | 10% of modified taxable income (taxable income computed without base erosion tax benefits and certain credits) minus regular tax liability |
+
+The BEAT applies only when the BEAT amount exceeds the corporation's regular tax liability. It operates as an alternative minimum tax specifically for base erosion.
+
+## Practice Problems
+
+**1.** A U.S. corporation's CFC earns $3,000,000 of tested income and has QBAI of $10,000,000 with no specified interest expense. What is the GILTI inclusion?
+
+a) $3,000,000
+b) $2,000,000
+c) $1,000,000
+d) $0
+
+**Answer:** b) $2,000,000 — Net DTIR = 10% x $10,000,000 = $1,000,000. GILTI = $3,000,000 tested income minus $1,000,000 DTIR = $2,000,000. The Section 250 deduction would then reduce the taxable amount, but the inclusion itself is $2,000,000.
+
+---
+
+**2.** A U.S. corporation has worldwide taxable income of $800,000, foreign-source income of $200,000, U.S. tax of $168,000, and foreign taxes paid of $50,000. What is the foreign tax credit allowed?
+
+a) $42,000
+b) $50,000
+c) $168,000
+d) $36,000
+
+**Answer:** a) $42,000 — FTC limitation = $168,000 x ($200,000 / $800,000) = $168,000 x 25% = $42,000. Since foreign taxes paid ($50,000) exceed the limitation ($42,000), the credit is limited to $42,000. The $8,000 excess carries forward.
+
+---
+
+**3.** Which of the following is NOT a category of Subpart F income?
+
+a) Foreign base company sales income
+b) Income earned by the CFC from operations within its country of incorporation
+c) Foreign personal holding company income
+d) Foreign base company services income
+
+**Answer:** b) Income earned by the CFC from operations within its country of incorporation — Subpart F targets income artificially shifted away from the CFC's home country. Income earned within the CFC's own country is excluded from Subpart F because it represents genuine local operations.

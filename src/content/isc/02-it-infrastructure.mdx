@@ -1,0 +1,133 @@
+# IT Infrastructure and Architecture
+
+## Learning Objectives
+
+- Identify core hardware components and their roles in enterprise IT environments
+- Compare network architectures including LAN, WAN, VPN, and client-server vs peer-to-peer
+- Distinguish between cloud computing service models (IaaS, PaaS, SaaS) and the shared responsibility model
+- Explain virtualization and containerization concepts relevant to IT controls
+- Evaluate trade-offs between on-premise, cloud, and hybrid infrastructure deployments
+
+## Hardware Components
+
+Enterprise IT infrastructure begins with the physical and virtual components that process, store, and transmit data. Understanding these components is essential for evaluating IT controls and assessing technology risk.
+
+### Servers and Endpoints
+
+| Component | Purpose | Control Considerations |
+|-----------|---------|----------------------|
+| Servers | Host applications, databases, and services centrally | Physical security, access controls, redundancy |
+| Workstations | Employee desktops and laptops for daily operations | Endpoint protection, patch management, encryption |
+| Mobile devices | Smartphones and tablets accessing corporate resources | MDM (Mobile Device Management), remote wipe capability |
+| Storage systems | SAN, NAS, and direct-attached storage for data persistence | Backup schedules, encryption at rest, access logging |
+
+### Networking Devices
+
+- **Routers** direct traffic between different networks using IP addresses. They operate at Layer 3 (Network) of the OSI model and enforce routing policies.
+- **Switches** connect devices within the same network segment. They operate at Layer 2 (Data Link) and can be configured with VLANs to segment traffic.
+- **Firewalls** filter network traffic based on predefined rules. They can be hardware appliances, software-based, or cloud-hosted, and they enforce perimeter security between trusted and untrusted networks.
+- **Load balancers** distribute incoming traffic across multiple servers to prevent overload and ensure availability.
+
+> **Exam tip:** The CPA exam tests whether you understand the *purpose* of each device, not detailed technical configurations. Know that firewalls enforce access policies, routers direct traffic between networks, and switches connect devices within a network.
+
+## Network Architectures
+
+### LAN, WAN, and VPN
+
+| Architecture | Scope | Example |
+|-------------|-------|---------|
+| **LAN** (Local Area Network) | Single building or campus | Office floor connecting all workstations to a file server |
+| **WAN** (Wide Area Network) | Geographically dispersed locations | Corporate network linking offices in New York and London |
+| **VPN** (Virtual Private Network) | Encrypted tunnel over a public network | Remote employee securely accessing the corporate LAN from home |
+
+A VPN creates a secure, encrypted connection over the public internet, allowing remote users to access internal resources as if they were on the local network. VPNs are a critical control for remote work environments.
+
+### Client-Server vs Peer-to-Peer
+
+In a **client-server** architecture, dedicated servers provide resources and services to client devices. This is the standard model for enterprise environments because it enables centralized administration, access controls, and audit logging.
+
+In a **peer-to-peer** architecture, each device can act as both a client and a server. While simpler for small groups, peer-to-peer networks lack centralized controls and are generally unsuitable for environments that require strong governance over data access.
+
+> **Exam tip:** Client-server is the expected architecture in enterprise and audit contexts. If a question describes peer-to-peer file sharing in a corporate setting, look for control weaknesses as the likely answer.
+
+## Cloud Computing Models
+
+Cloud computing delivers IT resources on demand over the internet. The three primary service models define how much of the technology stack the provider manages versus the customer.
+
+| Model | Provider Manages | Customer Manages | Example |
+|-------|-----------------|-----------------|---------|
+| **IaaS** (Infrastructure as a Service) | Hardware, networking, virtualization | OS, middleware, applications, data | AWS EC2, Azure VMs |
+| **PaaS** (Platform as a Service) | Everything through runtime environment | Applications and data | Heroku, Google App Engine |
+| **SaaS** (Software as a Service) | Entire stack including application | Data input and user access | Salesforce, Microsoft 365 |
+
+### The Shared Responsibility Model
+
+The shared responsibility model defines which security controls belong to the cloud provider and which belong to the customer. As you move from IaaS to SaaS, the provider assumes more responsibility, but the customer **always** retains responsibility for:
+
+- User access management and authentication
+- Data classification and protection
+- Compliance with applicable regulations
+
+> **Exam tip:** The shared responsibility model is heavily tested. Remember that moving to the cloud does not eliminate the organization's responsibility for data security and access controls. The customer cannot outsource accountability.
+
+## Virtualization and Containerization
+
+**Virtualization** allows multiple virtual machines (VMs) to run on a single physical server, each with its own operating system. A **hypervisor** manages resource allocation between VMs. Benefits include hardware consolidation, faster provisioning, and simplified disaster recovery through VM snapshots.
+
+**Containerization** packages applications with their dependencies into lightweight, portable units called containers. Unlike VMs, containers share the host operating system kernel, making them faster to start and more resource-efficient.
+
+| Feature | Virtual Machines | Containers |
+|---------|-----------------|------------|
+| Isolation level | Full OS isolation | Process-level isolation |
+| Resource usage | Higher (each VM runs full OS) | Lower (shared OS kernel) |
+| Startup time | Minutes | Seconds |
+| Use case | Running different OS environments | Deploying microservices |
+
+From an audit perspective, both technologies introduce risks around **configuration management**, **access to the hypervisor or container platform**, and **image integrity** (ensuring only approved VM or container images are deployed).
+
+## On-Premise vs Cloud vs Hybrid
+
+Organizations must decide where to host their IT infrastructure. Each deployment model involves different control considerations.
+
+| Factor | On-Premise | Cloud | Hybrid |
+|--------|-----------|-------|--------|
+| Capital expenditure | High (buy hardware) | Low (pay-as-you-go) | Moderate |
+| Scalability | Limited by physical capacity | Elastic, on-demand | Flexible |
+| Control | Full control over all layers | Shared with provider | Split by workload |
+| Compliance | Easier for data residency requirements | May require specific regions | Can keep sensitive data on-premise |
+| Disaster recovery | Organization must build and maintain DR | Provider offers built-in redundancy | Best of both approaches |
+
+A **hybrid** model keeps sensitive workloads on-premise (e.g., financial databases subject to regulatory requirements) while leveraging cloud resources for scalability and non-sensitive workloads. This is the most common enterprise approach.
+
+## Practice Problems
+
+**1.** A company uses a cloud provider for its email system. Employees log in with company credentials, and the provider manages the software, servers, and infrastructure. Which cloud service model is this?
+
+a) IaaS
+b) PaaS
+c) SaaS
+d) On-premise
+
+**Answer:** c) SaaS (Software as a Service) delivers a fully managed application to end users. Email services like Microsoft 365 or Google Workspace are classic SaaS examples where the provider manages the entire technology stack and the customer manages user access and data.
+
+---
+
+**2.** Under the shared responsibility model, which of the following is ALWAYS the customer's responsibility, regardless of the cloud service model used?
+
+a) Physical security of data centers
+b) Network infrastructure maintenance
+c) User access management and authentication
+d) Hypervisor patching and updates
+
+**Answer:** c) User access management and authentication is always the customer's responsibility across all cloud models (IaaS, PaaS, SaaS). Physical security (a) and hypervisor patching (d) are provider responsibilities. Network infrastructure maintenance (b) shifts depending on the model but is typically the provider's concern.
+
+---
+
+**3.** An auditor discovers that a company uses a peer-to-peer network for sharing financial documents among the accounting department. Which of the following is the most significant control concern?
+
+a) Peer-to-peer networks are more expensive than client-server networks
+b) Peer-to-peer networks lack centralized access controls and audit logging
+c) Peer-to-peer networks cannot connect to the internet
+d) Peer-to-peer networks require more hardware than client-server networks
+
+**Answer:** b) Peer-to-peer networks lack centralized administration, making it difficult to enforce access controls, maintain audit trails, and ensure data integrity. In an accounting environment where financial data must be controlled and auditable, the absence of centralized controls is the primary concern.

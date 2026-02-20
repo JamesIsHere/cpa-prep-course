@@ -1,0 +1,138 @@
+# Threats, Attacks, and Vulnerabilities
+
+## Learning Objectives
+
+- Identify the major categories of threat actors and their motivations
+- Distinguish between common attack vectors including phishing, malware, and social engineering
+- Recognize common vulnerabilities in systems and applications, including the OWASP Top 10
+- Understand supply chain attacks and third-party risk exposure
+- Differentiate between vulnerability assessments and penetration testing
+
+## Threat Actors
+
+A **threat actor** is any individual or group capable of carrying out an attack against an information system. Understanding who the adversaries are and what motivates them is fundamental to designing effective controls.
+
+| Threat Actor | Motivation | Sophistication | Example |
+|---|---|---|---|
+| Nation-state | Espionage, sabotage, geopolitical advantage | Very high — advanced persistent threats (APTs) | State-sponsored attacks on critical infrastructure |
+| Organized crime | Financial gain | High — ransomware-as-a-service, data theft | Credit card skimming rings, ransomware syndicates |
+| Insiders | Revenge, financial gain, negligence | Varies — may have elevated access | Disgruntled employee exfiltrating customer data |
+| Hacktivists | Political or social causes | Moderate — DDoS, defacement | Website defacement to protest corporate policies |
+| Script kiddies | Curiosity, notoriety | Low — use pre-built tools | Launching publicly available exploit kits |
+
+> **Exam tip:** Insider threats are particularly dangerous because insiders already have legitimate access to systems. Controls like separation of duties, access reviews, and user behavior analytics are the primary defenses against insider risk.
+
+## Attack Vectors
+
+An **attack vector** is the path or method an attacker uses to gain access to a target system.
+
+### Social Engineering
+
+Social engineering exploits human psychology rather than technical vulnerabilities. Common techniques include:
+
+- **Phishing** — Fraudulent emails designed to trick recipients into revealing credentials or clicking malicious links
+- **Spear phishing** — Targeted phishing aimed at a specific individual, often using personal details to increase credibility
+- **Whaling** — Spear phishing directed at senior executives or high-value targets
+- **Pretexting** — Creating a fabricated scenario to manipulate someone into providing information or access
+- **Vishing** — Voice-based phishing conducted over phone calls
+- **Smishing** — SMS-based phishing using text messages
+
+### Malware Types
+
+| Malware Type | Behavior | Key Characteristic |
+|---|---|---|
+| Ransomware | Encrypts victim's data, demands payment for decryption key | Most financially damaging; often involves double extortion (encrypt + threaten to leak) |
+| Trojans | Disguised as legitimate software, provides backdoor access | Relies on user to install; does not self-replicate |
+| Worms | Self-replicating malware that spreads across networks without user interaction | Can cause rapid, widespread damage |
+| Viruses | Malicious code attached to a host file; requires user action to activate | Must attach to another program |
+| Spyware | Secretly monitors user activity and collects data | Often captures keystrokes and credentials |
+| Rootkits | Hides deep in the operating system to maintain persistent, undetected access | Extremely difficult to detect and remove |
+
+## Common Vulnerabilities
+
+A **vulnerability** is a weakness in a system that can be exploited by a threat actor. The most common categories include:
+
+- **Unpatched software** — Known vulnerabilities that vendors have issued fixes for, but the organization has not applied. This is the single most exploited category.
+- **Misconfigurations** — Default settings, open ports, unnecessary services, overly permissive access rules, or cloud storage buckets left publicly accessible.
+- **Weak credentials** — Simple passwords, reused passwords, default administrator credentials, or lack of multi-factor authentication.
+- **Zero-day vulnerabilities** — Flaws unknown to the vendor with no available patch. These are rare but extremely dangerous.
+
+> **Exam tip:** Unpatched software and misconfigurations account for the majority of successful breaches. Patch management and configuration management are foundational IT general controls tested heavily on the ISC exam.
+
+## OWASP Top 10
+
+The **OWASP Top 10** is a widely referenced list of the most critical web application security risks, maintained by the Open Worldwide Application Security Project. CPAs evaluating web-based systems should understand these categories:
+
+| Rank | Vulnerability | Description |
+|---|---|---|
+| 1 | Broken Access Control | Users can act outside their intended permissions |
+| 2 | Cryptographic Failures | Sensitive data exposed due to weak or missing encryption |
+| 3 | Injection | Untrusted data sent to an interpreter as part of a command (SQL injection, XSS) |
+| 4 | Insecure Design | Missing or ineffective security controls due to flawed architecture |
+| 5 | Security Misconfiguration | Default configs, unnecessary features, missing hardening |
+| 6 | Vulnerable Components | Using libraries or frameworks with known vulnerabilities |
+| 7 | Authentication Failures | Broken authentication allowing credential stuffing or session hijacking |
+| 8 | Data Integrity Failures | Code and infrastructure that does not protect against integrity violations |
+| 9 | Logging & Monitoring Failures | Insufficient logging that delays breach detection |
+| 10 | Server-Side Request Forgery | Application fetches a remote resource without validating the user-supplied URL |
+
+## Supply Chain Attacks and Third-Party Risk
+
+A **supply chain attack** targets an organization indirectly by compromising a trusted vendor, software provider, or service partner. Because the malicious code arrives through a trusted channel, these attacks bypass many traditional security controls.
+
+**Examples include:**
+- Compromised software updates (e.g., SolarWinds Orion attack)
+- Malicious code injected into open-source libraries
+- Compromised managed service providers used as pivot points
+
+**Third-party risk management controls:**
+- Vendor due diligence and security assessments before onboarding
+- Contractual security requirements and right-to-audit clauses
+- Ongoing monitoring through SOC reports, questionnaires, and risk ratings
+- Software bill of materials (SBOM) to track dependencies
+
+## Vulnerability Assessment vs. Penetration Testing
+
+| Characteristic | Vulnerability Assessment | Penetration Testing |
+|---|---|---|
+| Purpose | Identify and catalog known vulnerabilities | Actively exploit vulnerabilities to test defenses |
+| Approach | Automated scanning with manual review | Simulated real-world attack by skilled testers |
+| Scope | Broad — scans entire environment | Narrow — targets specific systems or attack paths |
+| Output | Prioritized list of vulnerabilities with severity ratings | Narrative report showing how an attacker could breach defenses |
+| Frequency | Regular (monthly or quarterly) | Periodic (annually or after major changes) |
+| Risk | Low — non-invasive scanning | Higher — exploitation may cause disruption |
+
+> **Exam tip:** A vulnerability assessment tells you what weaknesses exist. A penetration test tells you whether those weaknesses can actually be exploited and what the real-world impact would be. The exam may ask you to recommend one over the other based on the scenario.
+
+## Practice Problems
+
+**1.** Which type of threat actor is MOST likely to conduct an advanced persistent threat (APT) campaign targeting a government contractor's financial systems?
+
+a) Hacktivist group motivated by political protest
+b) Script kiddie using publicly available exploit tools
+c) Nation-state actor conducting espionage
+d) Insider threat from a negligent employee
+
+**Answer:** c) Nation-state actors have the resources, sophistication, and motivation to conduct sustained APT campaigns against high-value targets like government contractors. APTs require significant resources and patience, which aligns with state-sponsored operations rather than hacktivists, script kiddies, or negligent insiders.
+
+---
+
+**2.** An organization discovers that a routine software update from a trusted vendor contained malicious code that provided attackers with backdoor access to the network. This is an example of:
+
+a) A phishing attack exploiting employee credentials
+b) A supply chain attack compromising a trusted vendor
+c) A zero-day vulnerability in the organization's firewall
+d) A brute force attack on the organization's authentication system
+
+**Answer:** b) A supply chain attack compromises a trusted third party — in this case, the software vendor — to gain access to downstream organizations. Because the malicious code arrived through a legitimate update channel, it bypassed perimeter security controls.
+
+---
+
+**3.** Which of the following BEST distinguishes a penetration test from a vulnerability assessment?
+
+a) A penetration test uses automated scanning tools while a vulnerability assessment uses manual techniques
+b) A vulnerability assessment is performed only on cloud environments while penetration tests cover on-premise systems
+c) A penetration test actively attempts to exploit identified vulnerabilities to demonstrate real-world impact
+d) A vulnerability assessment requires more skilled testers than a penetration test
+
+**Answer:** c) The defining characteristic of a penetration test is the active exploitation of vulnerabilities to simulate a real-world attack. Vulnerability assessments identify and catalog weaknesses but do not attempt exploitation. Penetration tests require highly skilled testers and produce narrative reports showing actual attack paths.

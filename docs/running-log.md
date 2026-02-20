@@ -1,5 +1,15 @@
 # Running Log
 
+## 2026-02-21
+1. Fixed personal-org .gitignore: added *.m4a, *.mp4, vault/books/**/*.pdf; untracked 82MB m4a file
+2. Built 11 ISC lessons (02-12): IT infrastructure, ERP systems, data management, availability, security frameworks, threats, security controls, privacy, incident response, SOC engagements, SOC reporting
+3. Built 11 TCP lessons (02-12): compensation planning, passive/at-risk rules, wealth transfer, retirement plans, NOLs/consolidated returns, international tax, owner-entity transactions, basis calculations, trusts/estates, formation/liquidation, entity choice
+4. Created ISC question bank: 150 CPA exam questions across 11 topics (migration 00011)
+5. Created TCP question bank: 150 CPA exam questions across 11 topics (migration 00012)
+6. Populated ISC study framework: 8 concept maps, 5 decision trees, 6 formulas, 6 reference tables, 8 mnemonics
+7. Populated TCP study framework: 8 concept maps, 6 decision trees, 9 formulas, 6 reference tables, 8 mnemonics
+8. Verified clean production build with all 73 lessons across 6 sections
+
 ## 2026-02-20
 1. Created quiz types and scoring helpers (`src/lib/quiz.ts`) with `scoreQuiz()` pure function
 2. Generated 90 CPA exam questions (30/section) seeded via `00002_seed_questions.sql`

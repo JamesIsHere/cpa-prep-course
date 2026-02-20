@@ -1,0 +1,175 @@
+# Incident Response and Recovery
+
+## Learning Objectives
+
+- Describe the six phases of the incident response lifecycle
+- Apply incident classification and severity level frameworks
+- Understand communication protocols for internal escalation and regulatory reporting
+- Recognize digital forensics fundamentals including evidence preservation and chain of custody
+- Explain disaster recovery procedures and the role of business impact analysis
+
+## Incident Response Lifecycle
+
+A **security incident** is any event that compromises the confidentiality, integrity, or availability of an information asset. The **NIST SP 800-61** framework defines six phases for managing incidents systematically.
+
+| Phase | Purpose | Key Activities |
+|---|---|---|
+| 1. Preparation | Build readiness before incidents occur | Develop IR plan, assemble IR team, deploy tools, conduct training and tabletop exercises |
+| 2. Identification | Detect and confirm that an incident has occurred | Monitor alerts, analyze logs, triage events, determine scope and nature of the incident |
+| 3. Containment | Limit the damage and prevent further spread | Short-term containment (isolate affected systems), long-term containment (apply temporary fixes while maintaining evidence) |
+| 4. Eradication | Remove the root cause from the environment | Delete malware, close vulnerabilities, remove unauthorized access, rebuild compromised systems |
+| 5. Recovery | Restore systems to normal operations | Restore from clean backups, bring systems online in stages, monitor for recurrence |
+| 6. Lessons Learned | Improve future response capabilities | Conduct post-incident review, document findings, update IR plan, implement preventive measures |
+
+> **Exam tip:** The six phases must be executed in order. The exam frequently presents scenarios where an organization skips containment and jumps straight to eradication — this is incorrect because it risks destroying evidence and allows the threat to spread. Containment always comes before eradication.
+
+### Preparation Phase Deep Dive
+
+Preparation is the most critical phase because it determines how effectively the organization responds when an incident occurs. Key preparation activities include:
+
+- **Incident Response Plan (IRP)** — A documented, tested plan that defines roles, responsibilities, communication procedures, and escalation paths
+- **IR Team composition** — Includes IT security, legal, communications, HR, and executive management
+- **Playbooks** — Step-by-step procedures for specific incident types (ransomware, data breach, insider threat, DDoS)
+- **Tabletop exercises** — Simulated scenarios where the IR team walks through their response without touching live systems
+- **Tools and infrastructure** — SIEM, forensic workstations, isolated analysis environments, communication channels
+
+## Incident Classification and Severity Levels
+
+Not all incidents require the same response. A severity classification framework ensures resources are allocated proportionally to the impact.
+
+| Severity | Definition | Example | Response |
+|---|---|---|---|
+| Critical (P1) | Widespread impact, data breach, or threat to business continuity | Ransomware encrypting production systems | Full IR team activation, executive notification, potential regulatory reporting |
+| High (P2) | Significant impact to a major system or confirmed unauthorized access | Compromised administrator credentials | IR team lead engaged, department heads notified |
+| Medium (P3) | Limited impact, contained to a single system or small user group | Malware detected on one workstation, quarantined by endpoint protection | Security operations team handles, documented for trending |
+| Low (P4) | Minimal impact, policy violations, or false positives confirmed | Employee accessing unauthorized website, blocked by proxy | Logged and reviewed in regular security operations |
+
+> **Exam tip:** Severity determines the escalation path and response time. The exam may test whether a given scenario requires immediate executive notification (Critical/High) or routine handling (Medium/Low).
+
+## Communication Protocols
+
+Effective incident communication requires pre-defined channels for internal escalation, external notification, and regulatory reporting.
+
+### Internal Escalation
+
+- **First responder** — Security analyst confirms the incident and classifies severity
+- **IR team lead** — Coordinates the response effort and assigns tasks
+- **Management/CISO** — Notified for High and Critical incidents; makes resource allocation and strategic decisions
+- **Executive leadership/Board** — Notified for Critical incidents that pose material business or legal risk
+- **Legal counsel** — Engaged early to establish attorney-client privilege and advise on regulatory obligations
+
+### External Notification
+
+| Stakeholder | When to Notify | Requirements |
+|---|---|---|
+| Regulatory authorities | When required by law (GDPR: 72 hours, HIPAA: 60 days, state breach notification laws vary) | Specific content and format requirements; legal counsel should review |
+| Affected individuals | When their personal data has been compromised | Clear description of what happened, what data was affected, and what steps they should take |
+| Law enforcement | When criminal activity is suspected or for Critical incidents | FBI, Secret Service, or local law enforcement depending on the nature |
+| Insurance carrier | Per policy terms, typically as soon as reasonably practicable | Cyber insurance policies often require prompt notification to preserve coverage |
+
+### Regulatory Reporting Timelines
+
+| Regulation | Notification Deadline | Recipient |
+|---|---|---|
+| GDPR | 72 hours | Supervisory authority |
+| HIPAA | 60 days (500+ individuals: also notify media) | HHS and affected individuals |
+| SEC (public companies) | 4 business days (material cybersecurity incidents) | Form 8-K filing |
+| State breach laws | Varies (30-90 days depending on state) | State attorney general and affected individuals |
+
+## Digital Forensics Basics
+
+**Digital forensics** is the process of collecting, preserving, analyzing, and presenting digital evidence in a manner that is legally admissible.
+
+### Evidence Preservation
+
+The cardinal rule of digital forensics is to **never modify the original evidence**. Key practices include:
+
+- **Create forensic images** — Bit-for-bit copies of hard drives and storage media before any analysis
+- **Use write blockers** — Hardware or software that prevents any writes to the original evidence media
+- **Hash verification** — Calculate cryptographic hashes (SHA-256) of the original and the copy to verify integrity
+- **Volatile data capture** — Collect RAM contents, running processes, and network connections before powering down systems (volatile data is lost on shutdown)
+
+### Chain of Custody
+
+The **chain of custody** documents every person who handled the evidence, when, and what they did with it. A broken chain of custody can render evidence inadmissible.
+
+A proper chain of custody log records:
+- Who collected the evidence and when
+- How the evidence was stored and protected
+- Every transfer between individuals (date, time, from, to, purpose)
+- Any analysis performed on forensic copies (never the original)
+
+> **Exam tip:** The order of volatility matters in evidence collection. Collect the most volatile data first: (1) CPU registers and cache, (2) RAM, (3) network connections, (4) running processes, (5) disk data, (6) backup media. The exam may test this sequence.
+
+## Disaster Recovery
+
+**Disaster recovery (DR)** focuses on restoring IT systems and data after a disruptive event. DR is a subset of the broader **Business Continuity Plan (BCP)**.
+
+### Key Metrics
+
+| Metric | Definition | Example |
+|---|---|---|
+| Recovery Time Objective (RTO) | Maximum acceptable time to restore a system after a disruption | 4 hours for the ERP system |
+| Recovery Point Objective (RPO) | Maximum acceptable amount of data loss measured in time | 1 hour (can lose up to 1 hour of transactions) |
+| Maximum Tolerable Downtime (MTD) | Longest period a business function can be unavailable before causing irreversible harm | 24 hours for order processing |
+
+### DR Procedures
+
+- **Failover** — Automatically or manually switching operations to a backup system or site when the primary fails
+- **Restoration** — Recovering data and systems from backups, replicas, or images
+- **DR site types** — Hot site (fully operational, near-instant failover), warm site (partially equipped, hours to activate), cold site (empty facility, days to activate)
+
+### DR Testing
+
+| Test Type | Description | Disruption Level |
+|---|---|---|
+| Tabletop/walkthrough | Team discusses the DR plan step by step | None |
+| Simulation | Team responds to a realistic scenario without affecting production | Minimal |
+| Parallel test | Backup systems are activated alongside production systems | Low |
+| Full interruption | Production systems are shut down and operations switch to DR site | High |
+
+## Business Impact Analysis (BIA)
+
+A **Business Impact Analysis** identifies critical business functions, the resources they depend on, and the impact of disruption over time. The BIA drives the RTO and RPO for each system.
+
+**BIA process:**
+1. Identify all business processes and their dependencies
+2. Assess the impact of disruption (financial loss, regulatory penalties, reputational damage)
+3. Determine criticality rankings for each process
+4. Establish RTO, RPO, and MTD for each critical function
+5. Identify resources needed for recovery (people, technology, facilities)
+
+> **Exam tip:** The BIA is conducted before the DR plan is created — it provides the requirements that the DR plan must satisfy. If the exam asks what should be done first when developing a disaster recovery strategy, the answer is conduct a BIA.
+
+## Practice Problems
+
+**1.** During an incident response, the security team identifies ransomware on several servers. The team immediately begins removing the malware and restoring from backups without first isolating the affected systems. Which phase of the incident response lifecycle was improperly skipped?
+
+a) Preparation
+b) Identification
+c) Containment
+d) Lessons learned
+
+**Answer:** c) Containment must occur before eradication. By jumping directly to removing the malware and restoring systems without first isolating the affected servers, the team risks allowing the ransomware to spread to additional systems. Containment — such as disconnecting affected servers from the network — should always precede eradication and recovery.
+
+---
+
+**2.** A public company discovers that a threat actor accessed a database containing 50,000 customer records including Social Security numbers. Under SEC requirements, the company must disclose this material cybersecurity incident within:
+
+a) 24 hours via press release
+b) 72 hours to the supervisory authority
+c) 4 business days via Form 8-K
+d) 60 days to the Department of Health and Human Services
+
+**Answer:** c) The SEC requires public companies to disclose material cybersecurity incidents within 4 business days of determining the incident is material, via a Form 8-K filing. The 72-hour requirement applies to GDPR, and the 60-day requirement applies to HIPAA.
+
+---
+
+**3.** An organization is developing its disaster recovery plan and needs to determine which systems to prioritize for recovery. What should be completed FIRST?
+
+a) A full interruption test of the current backup systems
+b) A business impact analysis to identify critical functions and recovery requirements
+c) Selection of a hot site vendor for disaster recovery
+d) Implementation of real-time data replication for all systems
+
+**Answer:** b) A business impact analysis (BIA) must be completed first because it identifies critical business functions, their dependencies, and the acceptable recovery timeframes (RTO and RPO). The BIA provides the requirements that drive all subsequent DR planning decisions, including site selection, backup strategies, and testing priorities.

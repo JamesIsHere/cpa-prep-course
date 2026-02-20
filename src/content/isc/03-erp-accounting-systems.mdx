@@ -1,0 +1,168 @@
+# ERP and Accounting Information Systems
+
+## Learning Objectives
+
+- Describe ERP system architecture and identify core functional modules
+- Compare batch processing and real-time transaction processing methods
+- Explain the components and data flows of an accounting information system (AIS)
+- Identify system integration points and the risks they introduce
+- Distinguish between master data and transaction data and their control implications
+
+## ERP System Architecture
+
+An **Enterprise Resource Planning (ERP)** system is an integrated software platform that consolidates an organization's core business processes into a single system with a shared database. Instead of separate, disconnected applications for accounting, inventory, and human resources, an ERP unifies these functions so that a single transaction can update multiple modules simultaneously.
+
+### Core ERP Modules
+
+| Module | Function | Key Data |
+|--------|----------|----------|
+| **General Ledger (GL)** | Central repository for all financial transactions; produces trial balance and financial statements | Chart of accounts, journal entries, account balances |
+| **Accounts Payable (AP)** | Manages vendor invoices, payment approvals, and disbursements | Vendor master file, invoice records, payment history |
+| **Accounts Receivable (AR)** | Tracks customer invoices, collections, and aging | Customer master file, invoices, cash receipts |
+| **Inventory** | Monitors stock levels, cost flows (FIFO, LIFO, weighted average), and reorder points | Item master file, quantity on hand, cost layers |
+| **Human Resources (HR) / Payroll** | Manages employee records, compensation, benefits, and payroll processing | Employee master file, pay rates, tax withholdings |
+| **Manufacturing / Production** | Plans production schedules, tracks work orders, and manages bills of materials | BOM (Bill of Materials), routing, work-in-process |
+
+> **Exam tip:** The exam frequently tests how ERP modules interact. For example, when inventory is sold, the transaction simultaneously updates the inventory module (reduce quantity), AR module (create receivable), and GL module (record revenue and COGS). Understanding these cross-module impacts is critical.
+
+### Benefits and Risks of ERP Systems
+
+**Benefits:**
+- Single source of truth eliminates data inconsistencies across departments
+- Real-time reporting and analytics from integrated data
+- Standardized business processes reduce manual intervention
+- Stronger audit trail through centralized transaction logging
+
+**Risks:**
+- Single point of failure if the system goes down, all business functions are affected
+- Complex implementation with high costs and long timelines
+- Requires robust access controls because all data is in one system
+- Customizations can introduce errors and complicate upgrades
+
+## Transaction Processing Methods
+
+ERP systems process transactions using one of two methods, and the choice has direct implications for internal controls and audit procedures.
+
+### Batch vs Real-Time Processing
+
+| Characteristic | Batch Processing | Real-Time (Online) Processing |
+|---------------|-----------------|-------------------------------|
+| Timing | Transactions collected and processed at scheduled intervals | Transactions processed immediately as they occur |
+| Example | Payroll run processed every two weeks | Point-of-sale transaction updating inventory instantly |
+| Audit trail | Batch control totals reconciled before and after processing | Individual transaction logs with timestamps |
+| Error handling | Errors detected during batch validation; entire batch may be rejected | Errors flagged immediately with real-time validation |
+| System load | Concentrated during processing windows | Distributed throughout the day |
+
+**Batch control totals** are a key control in batch processing. Before a batch is submitted, the total number of transactions, total dollar amount, and hash totals (sums of non-financial fields like account numbers) are calculated. After processing, these totals are compared to detect missing or duplicate transactions.
+
+> **Exam tip:** When a question mentions batch processing, look for controls related to batch control totals, reconciliation, and error handling. When it mentions real-time processing, focus on input validation, edit checks, and transaction logging.
+
+## Accounting Information System (AIS) Components
+
+An **Accounting Information System (AIS)** collects, stores, processes, and reports financial data. Whether built on an ERP platform or standalone software, every AIS contains six fundamental components:
+
+1. **People** — Users who operate the system and rely on its output (accountants, managers, auditors)
+2. **Procedures and instructions** — Methods for collecting, processing, and storing data (both manual and automated)
+3. **Data** — The financial and non-financial information stored in the system
+4. **Software** — Application programs used to process data (ERP, spreadsheets, reporting tools)
+5. **Information technology infrastructure** — Hardware, networks, and operating systems supporting the software
+6. **Internal controls** — Measures to safeguard data, ensure accuracy, and enforce compliance
+
+### AIS Data Flow
+
+The typical data flow through an AIS follows this sequence:
+
+**Source documents** (invoices, purchase orders, receipts) are captured as **inputs**, either manually entered or automatically imported. The system **processes** these inputs by validating data, applying business rules, and posting to the appropriate accounts. The **output** is financial reports, dashboards, and queries that support decision-making. Processed data is **stored** in the database for future retrieval, analysis, and audit.
+
+The integrity of this data flow depends on controls at each stage: input controls (validation, authorization), processing controls (calculations, posting logic), output controls (report distribution, access restrictions), and storage controls (backup, encryption, retention).
+
+## System Integration Points
+
+Modern organizations rarely operate a single monolithic system. Instead, multiple systems exchange data through **integration points** or **interfaces**. Common examples include:
+
+- **Bank feeds** importing transaction data into the GL
+- **E-commerce platforms** sending sales orders to the ERP
+- **Payroll providers** transmitting payroll journal entries to the GL
+- **Tax software** receiving trial balance data from the AIS
+
+Each integration point introduces risk:
+
+| Risk | Description | Mitigating Control |
+|------|-------------|-------------------|
+| Data loss | Transactions fail to transfer between systems | Reconciliation of record counts and totals between source and target |
+| Data corruption | Mapping errors transform data incorrectly during transfer | Data validation rules and exception reporting |
+| Timing differences | Systems process at different intervals creating temporary mismatches | Scheduled reconciliation and cutoff procedures |
+| Unauthorized access | Interfaces may bypass normal user access controls | API authentication, encryption in transit, access logging |
+
+> **Exam tip:** Integration points are a favorite exam topic because they represent a gap where normal application controls may not apply. Whenever two systems exchange data, expect questions about reconciliation controls and data integrity checks.
+
+## Audit Trails and Automated Controls
+
+### Audit Trails
+
+An **audit trail** is the chronological record of all transactions and events within a system. A complete audit trail allows an auditor to trace any financial statement balance back to its originating source document, and vice versa.
+
+Effective audit trails capture:
+- **Who** initiated or approved the transaction (user ID)
+- **What** was changed (before and after values)
+- **When** the change occurred (timestamp)
+- **Where** in the system the change was made (module, screen, field)
+
+Audit trail records should be **immutable** — users should not be able to modify or delete log entries. Write-once storage or separate logging servers help enforce this control.
+
+### Automated Controls in ERP Systems
+
+| Control Type | Example | Purpose |
+|-------------|---------|---------|
+| **Input validation** | Rejecting a journal entry where debits do not equal credits | Prevents invalid data from entering the system |
+| **Edit checks** | Flagging an invoice amount that exceeds a threshold | Identifies unusual transactions for review |
+| **Automated approvals** | Purchase orders under $500 auto-approved; over $500 routed to manager | Enforces segregation of duties and authorization limits |
+| **Three-way match** | System matches purchase order, receiving report, and vendor invoice before approving payment | Prevents payment for goods not ordered or not received |
+| **Segregation of duties** | System prevents the same user from creating a vendor and approving a payment to that vendor | Reduces fraud risk through enforced role separation |
+
+## Master Data vs Transaction Data
+
+Understanding the distinction between master data and transaction data is essential for evaluating controls over data integrity.
+
+| Attribute | Master Data | Transaction Data |
+|-----------|-------------|-----------------|
+| Definition | Relatively static reference data that defines business entities | Records of individual business events |
+| Examples | Vendor names and addresses, chart of accounts, employee pay rates | Purchase orders, journal entries, sales invoices |
+| Change frequency | Infrequent; changes require authorization | Continuous; created with every business event |
+| Control focus | Change management controls, approval workflows for modifications | Input validation, authorization, completeness checks |
+| Risk if compromised | Cascading errors across all future transactions (e.g., wrong vendor bank account leads to misdirected payments) | Errors limited to the individual transaction |
+
+> **Exam tip:** Master data changes are high-risk because they affect all subsequent transactions. A fraudulent change to a vendor's bank account in the master file redirects every future payment. Always look for dual-approval controls over master data modifications.
+
+## Practice Problems
+
+**1.** In an ERP system, when a company records a sale of inventory on account, which modules are directly affected?
+
+a) General Ledger only
+b) Accounts Receivable and Inventory only
+c) General Ledger, Accounts Receivable, and Inventory
+d) Accounts Payable, Accounts Receivable, and General Ledger
+
+**Answer:** c) A sale on account triggers updates in three modules: Inventory (reduce stock and record COGS), Accounts Receivable (create a customer receivable), and General Ledger (record the revenue and COGS journal entries). Accounts Payable is not involved in a sales transaction.
+
+---
+
+**2.** A company processes payroll in a batch every two weeks. Which control is most effective for detecting errors in the batch processing run?
+
+a) Real-time input validation on each timecard entry
+b) Reconciliation of batch control totals before and after processing
+c) Restricting payroll system access to authorized users only
+d) Encrypting payroll data during transmission
+
+**Answer:** b) Batch control totals (record counts, dollar totals, and hash totals) calculated before processing are compared to post-processing results to detect missing, duplicate, or altered transactions. While access controls (c) and encryption (d) are important, they do not specifically detect batch processing errors.
+
+---
+
+**3.** An auditor discovers that a single accounts payable clerk can create new vendors in the master file and approve payments to those vendors. Which control weakness does this represent?
+
+a) Inadequate input validation
+b) Lack of segregation of duties
+c) Missing audit trail
+d) Insufficient data encryption
+
+**Answer:** b) Allowing one person to both create vendors and approve payments violates segregation of duties, creating the opportunity for the clerk to set up a fictitious vendor and authorize fraudulent payments. The ERP system should enforce role-based access controls that prevent the same user from performing both functions.

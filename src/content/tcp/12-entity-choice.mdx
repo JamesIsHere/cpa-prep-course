@@ -1,0 +1,199 @@
+# Entity Choice and Planning
+
+## Learning Objectives
+
+- Compare the tax characteristics of C corporations, S corporations, partnerships, LLCs, and sole proprietorships
+- Analyze the impact of double taxation, the Section 199A deduction, and the flat corporate rate on entity choice
+- Apply S corporation eligibility rules and check-the-box regulations
+- Evaluate tax consequences of entity conversions and state tax considerations
+
+## Entity Comparison Framework
+
+| Feature | C Corp | S Corp | Partnership | LLC (default) | Sole Proprietorship |
+|---------|--------|--------|-------------|--------------|-------------------|
+| Tax rate | 21% flat | Pass-through (individual rates) | Pass-through (individual rates) | Depends on classification | Individual rates |
+| Double taxation | Yes — corporate + shareholder level | No — single level | No — single level | Depends on classification | No — single level |
+| Self-employment tax | No (wages subject to FICA) | No on distributions (wages subject to FICA) | General partners: yes. Limited partners: generally no | Depends on member role | Yes on net earnings |
+| Loss limitations | NOL rules (80% limit, no carryback) | Basis, at-risk, passive, excess business loss | Basis, at-risk, passive, excess business loss | Same as partnership | At-risk, passive, excess business loss |
+| QBI deduction (Section 199A) | Not available | Available (subject to limits) | Available (subject to limits) | Same as partnership | Available (subject to limits) |
+| Number of owners | Unlimited | Max 100 shareholders | Unlimited | Unlimited | One |
+| Ownership flexibility | Multiple classes of stock | One class of stock | Flexible allocations | Flexible allocations | N/A |
+
+## Tax Rate Analysis
+
+### Corporate Rate vs. Individual Rates
+
+The TCJA set the corporate rate at a flat **21%**. Individual rates range from 10% to 37%. The comparison depends on whether earnings are **distributed** or **retained**.
+
+**Retained earnings analysis:** A C corporation retaining all earnings pays only 21% currently. A pass-through entity owner pays up to 37% (or 29.6% after the 20% QBI deduction).
+
+**Distributed earnings analysis:** A C corporation distributing earnings faces double taxation:
+
+| Layer | Rate | Effective Tax |
+|-------|------|--------------|
+| Corporate tax | 21% | $21,000 on $100,000 |
+| Shareholder tax (qualified dividend at 20% + 3.8% NIIT) | 23.8% on $79,000 remaining | $18,802 |
+| **Combined effective rate** | | **39.8%** |
+
+Compare to a pass-through entity:
+
+| Scenario | Rate | Tax on $100,000 |
+|----------|------|-----------------|
+| Top individual rate (no QBI) | 37% + 3.8% NIIT | $40,800 |
+| With 20% QBI deduction | 29.6% + 3.8% NIIT on net investment income | Varies — roughly $29,600 to $33,400 |
+
+> **Exam tip:** The break-even analysis between C corp and pass-through depends on the distribution policy. If the business retains most earnings, C corp treatment often wins. If all earnings are distributed, pass-through is usually better. The exam frequently presents scenarios requiring this comparison.
+
+## Section 199A — Qualified Business Income Deduction
+
+Pass-through entity owners may deduct up to **20%** of qualified business income (QBI), subject to limitations:
+
+### Limitation Thresholds (2024)
+
+| Taxable Income | Limitation |
+|---------------|-----------|
+| Below $191,950 (single) / $383,900 (MFJ) | Full 20% deduction — no W-2/property limits |
+| Between threshold and $241,950 / $433,900 | Phase-in of W-2/property limitations |
+| Above $241,950 / $433,900 | Greater of: (a) 50% of W-2 wages, or (b) 25% of W-2 wages + 2.5% of UBIA of qualified property |
+
+### Specified Service Trades or Businesses (SSTBs)
+
+Certain professions are **excluded** from the QBI deduction for high-income taxpayers:
+
+- Health, law, accounting, actuarial science, performing arts, consulting, athletics, financial services, brokerage, and any trade or business where the principal asset is the reputation or skill of employees/owners
+
+For SSTBs, the deduction phases out entirely once taxable income exceeds $241,950 (single) / $433,900 (MFJ).
+
+## S Corporation Eligibility
+
+### Requirements
+
+| Requirement | Detail |
+|-------------|--------|
+| Domestic corporation | Must be organized in the United States |
+| Eligible shareholders only | Individuals, estates, certain trusts (grantor trusts, QSSTs, ESBTs), and tax-exempt organizations under 501(c)(3) |
+| Ineligible shareholders | Partnerships, corporations, nonresident aliens |
+| Maximum shareholders | **100** (family members counted as one) |
+| One class of stock | Differences in voting rights are permitted, but all shares must have identical rights to distribution and liquidation proceeds |
+| Ineligible corporations | Banks using reserve method, insurance companies, DISCs, certain international entities |
+
+### Election Timing
+
+- File **Form 2553** by the 15th day of the 3rd month of the tax year for which the election is effective (March 15 for calendar-year corporations)
+- Late elections may receive IRS relief under Rev. Proc. 2013-30
+
+## Check-the-Box Regulations
+
+### Default Classifications
+
+| Entity Type | Default Classification |
+|------------|----------------------|
+| Single-member LLC (domestic) | Disregarded entity (sole proprietorship) |
+| Multi-member LLC (domestic) | Partnership |
+| Corporation (incorporated under state law) | C corporation (cannot elect out) |
+| Foreign entity with limited liability for all members | Corporation (per se) |
+| Foreign entity with at least one member with unlimited liability | Partnership |
+
+### Making an Election
+
+Eligible entities file **Form 8832** to elect a different classification. An entity classified as a partnership can elect to be treated as a corporation (then make an S election via Form 2553). An entity classified as a disregarded entity can elect corporation status.
+
+Once an election is made, the entity generally cannot change its classification again for **60 months** unless more than 50% of the ownership interests change.
+
+> **Exam tip:** A corporation formed under state law is always classified as a corporation for tax purposes — it cannot "check the box" to be treated as a partnership. Only unincorporated entities (LLCs, LPs, etc.) have the check-the-box option.
+
+## Entity Conversions
+
+### C Corporation to S Corporation
+
+| Consequence | Treatment |
+|-------------|-----------|
+| Built-in gains tax (Section 1374) | If the S corp sells assets with built-in gain within **5 years** of conversion, the built-in gain is taxed at the corporate level (21%) in addition to pass-through taxation |
+| LIFO recapture | If using LIFO inventory, the LIFO reserve must be included in income in the last C corp year |
+| Passive investment income (Section 1375) | If the S corp has accumulated E&P from C corp years and passive investment income exceeds 25% of gross receipts, a penalty tax applies and the S election may be terminated |
+| AAA and E&P tracking | Must maintain separate Accumulated Adjustments Account (S corp earnings) and accumulated E&P (C corp earnings) |
+
+### S Corporation to C Corporation
+
+- No built-in gains tax issues
+- The AAA balance is frozen — distributions first come from current E&P, then from accumulated E&P, then from the remaining AAA balance
+- Corporate tax rate applies going forward
+
+### Partnership to Corporation
+
+| Method | Treatment |
+|--------|-----------|
+| Assets-over | Partnership transfers assets to new corporation under Section 351, distributes stock to partners, and liquidates. Generally tax-free if 80% control is met. |
+| Assets-up | Partnership distributes assets to partners (generally tax-free under Section 731), partners contribute to new corporation under Section 351. |
+| Check-the-box | LLC elects to be classified as a corporation. Treated as an assets-over transaction. |
+
+## State Tax Considerations
+
+### Nexus and Apportionment
+
+States tax entities that have sufficient **nexus** (connection) with the state. Physical presence, economic presence (meeting revenue thresholds), and factor presence all create nexus.
+
+Multi-state businesses apportion income using formulas — most states use a **single sales factor** formula, though some retain the traditional three-factor formula:
+
+| Formula | Factors |
+|---------|---------|
+| Single sales factor | 100% sales |
+| Three-factor (equal weight) | 1/3 sales + 1/3 property + 1/3 payroll |
+| Three-factor (double-weighted sales) | 50% sales + 25% property + 25% payroll |
+
+### Pass-Through Entity Taxes (PTET)
+
+Many states now allow pass-through entities to elect to pay state income tax at the **entity level**, working around the $10,000 individual SALT deduction cap imposed by the TCJA.
+
+| Feature | Detail |
+|---------|--------|
+| How it works | The partnership or S corp pays state tax on the owners' behalf; owners claim a credit or exclude the income on their state return |
+| Federal benefit | The entity-level payment is deductible as a business expense on the federal return, effectively bypassing the $10,000 SALT cap |
+| Availability | Over 30 states have enacted PTET legislation |
+
+> **Exam tip:** PTET elections are an increasingly important planning tool. The key concept is that entity-level taxes are deductible as business expenses without limitation, while individual SALT deductions are capped at $10,000. The exam may present a scenario where PTET election changes the after-tax outcome.
+
+## Entity Choice Planning Scenario
+
+**Facts:** A business earns $400,000 annually. The sole owner is in the 37% individual bracket. The business distributes all earnings. No QBI deduction applies (SSTB above threshold).
+
+| Entity | Tax Computation | After-Tax to Owner |
+|--------|----------------|-------------------|
+| C Corp | Corporate tax: $400,000 x 21% = $84,000. Dividend: $316,000 x 23.8% = $75,208. Total tax: $159,208 | $240,792 |
+| S Corp | Pass-through: $400,000 x 37% = $148,000. Plus 3.8% NIIT on net investment income (if applicable) | ~$252,000 |
+| Sole Prop | $400,000 x 37% = $148,000 + SE tax on first $168,600 at 15.3% + 2.9% on remainder | ~$230,000 (higher SE tax) |
+
+The S corporation produces the best result here because it avoids both double taxation and self-employment tax on distributions (assuming reasonable compensation is paid separately and is subject to FICA).
+
+## Practice Problems
+
+**1.** Which of the following entities is eligible to be an S corporation shareholder?
+
+a) A domestic C corporation
+b) A nonresident alien individual
+c) A general partnership
+d) A grantor trust
+
+**Answer:** d) A grantor trust — Grantor trusts, qualified subchapter S trusts (QSSTs), and electing small business trusts (ESBTs) are eligible S corporation shareholders. Corporations, partnerships, and nonresident aliens are ineligible.
+
+---
+
+**2.** A C corporation converts to S corporation status. The corporation holds land with FMV of $500,000 and adjusted basis of $200,000. If the land is sold 3 years after conversion, what is the built-in gains tax consequence?
+
+a) No corporate-level tax because S corporations are pass-through entities
+b) Corporate-level tax of $63,000 (21% of $300,000 built-in gain) plus pass-through taxation to shareholders
+c) Tax of $300,000 x 37% = $111,000 at the shareholder level only
+d) No tax because the 5-year recognition period has expired
+
+**Answer:** b) Corporate-level tax of $63,000 (21% of $300,000 built-in gain) plus pass-through taxation to shareholders — Under Section 1374, built-in gains recognized within 5 years of C-to-S conversion are subject to corporate-level tax at 21%. The net gain after the corporate tax also passes through to shareholders. The 5-year period has not expired (3 years < 5 years).
+
+---
+
+**3.** A single-member domestic LLC takes no classification election. How is it treated for federal tax purposes?
+
+a) Partnership
+b) C corporation
+c) S corporation
+d) Disregarded entity (sole proprietorship)
+
+**Answer:** d) Disregarded entity (sole proprietorship) — Under the check-the-box regulations, a domestic single-member LLC defaults to a disregarded entity, meaning it is treated as a sole proprietorship for federal tax purposes. The owner reports income and expenses on Schedule C (or Schedule E for rental activities). The LLC can elect corporation status by filing Form 8832.

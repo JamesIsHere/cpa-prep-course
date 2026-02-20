@@ -1,0 +1,232 @@
+# Entity Tax Compliance: NOLs and Consolidated Returns
+
+## Learning Objectives
+
+- Calculate net operating losses under post-TCJA rules including the 80% taxable income limitation
+- Apply NOL carryforward rules and compute the deduction in subsequent years
+- Determine whether an affiliated group qualifies to file a consolidated return
+- Analyze intercompany transaction rules and deferred gain treatment
+- Evaluate the advantages and disadvantages of consolidated vs. separate return filing
+
+## Net Operating Loss (NOL) Rules
+
+A **net operating loss** occurs when a taxpayer's allowable tax deductions exceed gross income. NOLs serve as a relief mechanism, allowing businesses to smooth taxable income across years.
+
+### Post-TCJA Framework
+
+The Tax Cuts and Jobs Act of 2017 fundamentally changed NOL rules for losses arising in tax years beginning after December 31, 2017:
+
+| Rule | Pre-TCJA (losses before 2018) | Post-TCJA (losses after 2017) |
+|------|------------------------------|-------------------------------|
+| Carryback | 2 years (general rule) | **No carryback** (with limited exceptions) |
+| Carryforward | 20 years | **Indefinite** |
+| Deduction limit | 100% of taxable income | **80% of taxable income** |
+
+**Exceptions to the no-carryback rule:**
+- Farming losses may be carried back 2 years
+- Certain insurance company losses retain carryback provisions
+- The CARES Act temporarily allowed 5-year carryback for losses arising in 2018-2020 (now expired)
+
+> **Exam tip:** The 80% limitation means a corporation with an NOL carryforward can never fully eliminate its taxable income in a profitable year. At minimum, 20% of taxable income will always be subject to tax. This is a critical planning consideration that the exam tests frequently.
+
+### NOL Computation
+
+The NOL is computed starting with taxable income (or loss) and making specific adjustments:
+
+**For corporations:**
+- Begin with the negative taxable income figure on the return
+- The NOL deduction from other years is **not allowed** in computing the current-year NOL (prevents circular calculation)
+- Dividends-received deduction is computed without the taxable income limitation
+- Capital losses can offset capital gains but cannot create or increase an NOL
+
+**For individuals (less common on TCP but testable):**
+- Nonbusiness deductions cannot exceed nonbusiness income
+- No NOL deduction from other years
+- No personal exemption deduction
+- Capital losses limited to $3,000 net
+
+**Worked Example:**
+
+ABC Corporation has the following results for 2024:
+
+| Item | Amount |
+|------|--------|
+| Gross income | $500,000 |
+| Business deductions | ($750,000) |
+| Dividends received (from 30%-owned corp) | $100,000 |
+| Dividends-received deduction (65%) | ($65,000) |
+
+NOL computation:
+- Taxable income before NOL: $500,000 + $100,000 - $750,000 - $65,000 = **($215,000)**
+- 2024 NOL = **$215,000**
+
+### Applying the NOL Deduction
+
+When carrying an NOL forward, the deduction is limited to **80% of taxable income** computed without the NOL deduction:
+
+**Worked Example:**
+
+ABC Corporation carries forward a $215,000 NOL to 2025. In 2025, taxable income before the NOL deduction is $300,000.
+
+| Step | Calculation | Amount |
+|------|------------|--------|
+| Taxable income before NOL | | $300,000 |
+| 80% limitation | $300,000 x 80% | $240,000 |
+| NOL deduction (lesser of NOL or 80% limit) | Lesser of $215,000 or $240,000 | ($215,000) |
+| Taxable income after NOL | $300,000 - $215,000 | **$85,000** |
+| Remaining NOL carryforward | $215,000 - $215,000 | **$0** |
+
+If the NOL had been $500,000 instead:
+
+| Step | Calculation | Amount |
+|------|------------|--------|
+| Taxable income before NOL | | $300,000 |
+| 80% limitation | $300,000 x 80% | $240,000 |
+| NOL deduction | Lesser of $500,000 or $240,000 | ($240,000) |
+| Taxable income after NOL | $300,000 - $240,000 | **$60,000** |
+| Remaining NOL carryforward | $500,000 - $240,000 | **$260,000** |
+
+The corporation pays tax on $60,000 even though it has $260,000 in unused NOLs.
+
+## Consolidated Return Requirements
+
+An **affiliated group** of corporations may elect to file a consolidated federal income tax return, combining income, deductions, gains, and losses of all group members into a single return.
+
+### Affiliated Group Definition
+
+An affiliated group requires:
+
+- A **common parent** corporation that directly owns at least **80% of the vote and 80% of the value** of at least one includible corporation
+- Each other member must be connected through **80% vote and value** ownership by one or more other group members
+- The parent must be an **includible corporation** (generally any domestic corporation except tax-exempt organizations, S corporations, REITs, RICs, and insurance companies taxed under Subchapter L)
+
+| Requirement | Test |
+|-------------|------|
+| Ownership — voting power | At least 80% of total voting power |
+| Ownership — value | At least 80% of total value of stock |
+| Connection | Chain of 80% ownership linking each member to the parent |
+| Includible corporation | Domestic C corporation (with specific exclusions) |
+
+**Worked Example:**
+
+Parent Corp owns 85% of Sub A and 70% of Sub B. Sub A owns 15% of Sub B.
+
+- Sub A: Parent owns 85% — meets 80% test. **Included.**
+- Sub B: Parent owns 70% + Sub A owns 15% = 85% total. **Included** (chain of 80% ownership through the group).
+- If Sub A only owned 5% of Sub B: 70% + 5% = 75%. **Not included** (fails 80% value test).
+
+### Election and Binding Effect
+
+- The consolidated return election is made by filing Form 1120 as a consolidated return
+- **All members must consent** in the first year
+- The election is **binding on all future years** unless the group terminates or IRS grants permission to discontinue
+- A new member joining an existing group must be included — no separate election
+
+## Intercompany Transaction Rules
+
+**Intercompany transactions** are transactions between members of a consolidated group. The regulations (Reg. 1.1502-13) ensure that the group's consolidated taxable income reflects the economic results as if the transaction occurred with an outsider.
+
+### Matching and Acceleration Rules
+
+| Concept | Rule |
+|---------|------|
+| **Matching rule** | The selling member's intercompany item (gain/loss) is taken into account to produce the same effect as if the transaction occurred between divisions of a single corporation |
+| **Acceleration rule** | If matching cannot occur (e.g., member leaves the group), the intercompany item is triggered immediately |
+
+### Deferred Gains on Intercompany Sales
+
+When one member sells property to another member at a gain, the gain is **deferred** until a triggering event:
+
+- The buying member sells the property to an outsider
+- The buying member depreciates the property (gain is recognized as the depreciation offsets it)
+- Either member leaves the consolidated group
+
+**Worked Example:**
+
+Sub A sells equipment with a basis of $50,000 to Sub B for $80,000. Sub B later sells to an outside party for $100,000.
+
+| Event | Sub A | Sub B | Consolidated |
+|-------|-------|-------|-------------|
+| Intercompany sale | $30,000 gain (deferred) | $80,000 basis | No consolidated gain yet |
+| Sale to outsider | $30,000 recognized | $20,000 gain ($100K - $80K) | **$50,000 total gain** |
+
+The consolidated result ($50,000) equals what a single entity would recognize selling $50,000-basis property for $100,000.
+
+> **Exam tip:** The purpose of intercompany transaction rules is to prevent the group from recognizing gains or losses on transactions that are economically internal. Think of the consolidated group as one entity — internal transfers should not create tax consequences until a real economic event occurs with the outside world.
+
+## Separate Return Limitation Year (SRLY) Rules
+
+The **SRLY rules** prevent a newly acquired subsidiary from using its pre-acquisition NOLs to offset the consolidated group's income without limitation.
+
+Under SRLY:
+- NOLs generated in a **separate return limitation year** (any year the member filed separately or was in a different consolidated group) can only offset that member's **own contribution** to consolidated taxable income
+- This prevents a profitable group from acquiring a loss corporation solely to absorb its NOLs
+
+**Exception:** The SRLY rules do not apply if the acquired corporation's NOL would also be limited under **Section 382** (ownership change limitation). In such cases, Section 382 serves as the primary limitation, and the SRLY rules are turned off to avoid redundancy.
+
+## Excess Loss Accounts and Investment Adjustments
+
+Each parent's basis in a subsidiary's stock is adjusted annually to reflect the subsidiary's results in the consolidated return:
+
+| Adjustment | Effect on Stock Basis |
+|------------|----------------------|
+| Subsidiary's taxable income | **Increase** |
+| Subsidiary's tax-exempt income | **Increase** |
+| Subsidiary's losses and deductions | **Decrease** |
+| Subsidiary's distributions | **Decrease** |
+| Subsidiary's nondeductible expenses | **Decrease** |
+
+If cumulative negative adjustments exceed the original stock basis, the result is an **excess loss account (ELA)**. An ELA represents a negative basis in the subsidiary's stock.
+
+The ELA must be recaptured as **ordinary income** when:
+- The subsidiary is disposed of (sold, liquidated, or deconsolidated)
+- The subsidiary becomes insolvent
+- Certain other triggering events occur
+
+## Consolidated vs. Separate Returns
+
+| Factor | Consolidated Return | Separate Returns |
+|--------|-------------------|-----------------|
+| **Losses offset income** | One member's losses offset another's income | Each entity stands alone |
+| **Intercompany transactions** | Gains deferred until outside sale | Gains recognized immediately |
+| **Capital gains/losses** | Net across the group | Each member separately |
+| **Section 1231 gains/losses** | Net across the group | Each member separately |
+| **Charitable deduction** | 10% of consolidated taxable income | 10% of each member's income |
+| **NOL utilization** | Shared within the group (subject to SRLY) | Each member uses its own |
+| **Joint and several liability** | All members liable for the group's tax | Each member liable for its own |
+| **Compliance complexity** | Significantly higher | Simpler per entity |
+
+> **Exam tip:** The biggest advantage of consolidated filing is the ability to offset one member's losses against another's income. The biggest disadvantage is joint and several liability — every member is liable for the entire group's tax bill. The exam often tests these trade-offs in a planning context.
+
+## Practice Problems
+
+**1.** A corporation has a post-2017 NOL carryforward of $400,000. In the current year, taxable income before the NOL deduction is $350,000. What is the NOL deduction and the remaining carryforward?
+
+a) NOL deduction: $350,000; Carryforward: $50,000
+b) NOL deduction: $280,000; Carryforward: $120,000
+c) NOL deduction: $400,000; Carryforward: $0
+d) NOL deduction: $280,000; Carryforward: $70,000
+
+**Answer:** b) NOL deduction: $280,000; Carryforward: $120,000 — Post-TCJA NOLs are limited to 80% of taxable income. $350,000 x 80% = $280,000. The remaining carryforward is $400,000 - $280,000 = $120,000. The corporation pays tax on $70,000 ($350,000 - $280,000).
+
+---
+
+**2.** Parent Corp owns 90% of Sub X and 75% of Sub Y. Sub X owns 10% of Sub Y. Can all three corporations file a consolidated return?
+
+a) Yes — all three meet the 80% vote and value test through the affiliated group chain
+b) No — Sub Y fails the 80% test because Parent only owns 75% directly
+c) Yes — but only if Sub Y elects to join the group
+d) No — consolidated returns require 100% ownership of subsidiaries
+
+**Answer:** a) Yes — all three meet the 80% vote and value test through the affiliated group chain — Parent owns 90% of Sub X (meets 80%). For Sub Y: Parent owns 75% + Sub X owns 10% = 85% total ownership through the group chain. Both subsidiaries are connected to Parent through at least 80% ownership.
+
+---
+
+**3.** Sub A sells land with a basis of $100,000 to Sub B for $160,000 within a consolidated group. Sub B holds the land for three years and then leaves the consolidated group (Parent sells Sub B's stock). What happens to the $60,000 intercompany gain?
+
+a) The gain is permanently eliminated
+b) The gain is recognized by Sub A when Sub B leaves the group
+c) The gain is recognized by Sub B when it leaves the group
+d) The gain is recognized by Parent on the sale of Sub B's stock
+
+**Answer:** b) The gain is recognized by Sub A when Sub B leaves the group — Under the acceleration rule, when a member leaves the consolidated group before the intercompany gain has been fully recognized through matching, the selling member's deferred gain is triggered. Sub A recognizes the $60,000 gain upon Sub B's departure from the group.
