@@ -1,5 +1,13 @@
 # Running Log
 
+## 2026-02-20 08:25
+1. Fixed ISC encryption decision tree: replaced pointless identical branches (both led to AES-256) with meaningful column-level vs. full-disk encryption distinction
+2. Fixed ISC PICERL mnemonic: corrected acronym from "PICERLL" (7 chars) to "PICERL" (6 chars for 6 phases), cleaned up memory aid
+3. Fixed TCP S Corp basis ordering: reordered nondeductible expenses before distributions per Reg. §1.1367-1(f) to match CPA exam convention
+4. Fixed TCP 199A W-2/UBIA limitation: updated stale 2024 threshold ($191,950/$383,900) to 2025 ($197,300/$394,600)
+5. Verified 4 of 7 QA issues were already resolved in prior sessions (FAR UTP, ISC SOC 3, ISC PICCERLL Classification phase, TCP defined benefit limit)
+6. Verified clean production build after all fixes
+
 ## 2026-02-20 08:16
 1. Fixed Playwright env loading: added `dotenv` dev dependency, configured `playwright.config.ts` to load `.env.local`
 2. Reset e2e test user password via Supabase Admin API (correct user ID `eb473759`, not stale `ae39837b` from screenshot)

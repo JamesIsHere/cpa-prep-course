@@ -532,9 +532,10 @@ export const iscFramework: StudyFramework = {
 			root: {
 				question: "Is the data at rest (stored)?",
 				yes: {
-					question: "Is the volume of data large and performance critical?",
-					yes: "Symmetric encryption (AES-256) — fast, single key, ideal for bulk data at rest",
-					no: "Symmetric encryption (AES-256) — still preferred for data at rest; use key management system",
+					question:
+						"Do you need to query or search individual fields within the encrypted data?",
+					yes: "Column-level / field-level encryption (AES-256) — encrypt sensitive columns individually; allows querying non-encrypted fields",
+					no: "Full-disk or volume encryption (AES-256, BitLocker, LUKS) — encrypts entire storage volume transparently; best for laptops, servers, cloud volumes",
 				},
 				no: {
 					question:
@@ -988,11 +989,11 @@ export const iscFramework: StudyFramework = {
 				"The four core change management process types in IT service management. All changes must go through a formal change advisory board (CAB) review before implementation.",
 		},
 		{
-			acronym: "PICERLL",
+			acronym: "PICERL",
 			expansion:
 				"Preparation, Identification, Containment, Eradication, Recovery, Lessons Learned",
 			explanation:
-				"The six phases of incident response per NIST SP 800-61. Memory aid: 'Please Identify Containment, Eradicate Root-causes, Learn Lessons.'",
+				"The six phases of incident response per NIST SP 800-61. Memory aid: 'Please Identify, Contain, Eradicate, Recover, Learn.'",
 		},
 		{
 			acronym: "KHA",

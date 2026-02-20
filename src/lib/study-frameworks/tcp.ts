@@ -722,9 +722,9 @@ export const tcpFramework: StudyFramework = {
 		{
 			name: "S Corp Stock Basis Ordering",
 			formula:
-				"Basis = Beginning + Income + Contributions - Distributions - Nondeductible Expenses - Losses/Deductions",
+				"Basis = Beginning + Income + Contributions - Nondeductible Expenses - Distributions - Losses/Deductions",
 			description:
-				"Order matters: increase for income items first, then decrease for distributions, then nondeductible expenses, then losses. Distributions are tax-free to extent of basis; excess is capital gain.",
+				"Order matters: increase for income items first, then decrease for nondeductible/noncapital expenses, then distributions (tax-free to extent of remaining basis; excess is capital gain), then losses/deductions (limited to remaining basis). Per Reg. §1.1367-1(f), nondeductible expenses reduce basis before distributions and losses.",
 		},
 		{
 			name: "Distributable Net Income (DNI)",
@@ -745,7 +745,7 @@ export const tcpFramework: StudyFramework = {
 			formula:
 				"QBI Deduction (above threshold) = 20% of QBI, limited to greater of: (a) 50% of W-2 wages, or (b) 25% of W-2 wages + 2.5% of UBIA of qualified property",
 			description:
-				"Applies when taxable income exceeds $191,950 single / $383,900 MFJ (2024). UBIA = unadjusted basis immediately after acquisition of qualified property. Phases in over $50K/$100K range.",
+				"Applies when taxable income exceeds $197,300 single / $394,600 MFJ (2025). UBIA = unadjusted basis immediately after acquisition of qualified property. Phases in over $50K/$100K range.",
 		},
 		{
 			name: "Estate Tax Computation",
