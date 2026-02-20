@@ -20,7 +20,7 @@ test.describe("Public Pages — Smoke Tests", () => {
 			page.getByRole("heading", { name: "Practice Quizzes" }),
 		).toBeVisible();
 		await expect(
-			page.getByRole("heading", { name: "Timed Exams" }),
+			page.getByRole("heading", { name: "Timed Practice Exams" }),
 		).toBeVisible();
 		await expect(
 			page.getByRole("heading", { name: "Study Frameworks" }),
