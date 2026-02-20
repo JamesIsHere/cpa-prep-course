@@ -41,3 +41,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# supabase local artifacts
+supabase/.branches/
+supabase/.temp/
+
+# test artifacts
+test-results/
