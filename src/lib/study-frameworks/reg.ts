@@ -234,7 +234,7 @@ export const regFramework: StudyFramework = {
 					{
 						label: "Tier 4 — Excess Business Loss (§461(l))",
 						children: [
-							{ label: "$305K single / $610K MFJ (2025)" },
+							{ label: "$313K single / $626K MFJ (2025)" },
 							{ label: "Excess becomes NOL carryforward" },
 						],
 					},
@@ -390,7 +390,7 @@ export const regFramework: StudyFramework = {
 		{
 			name: "Self-Employment Tax",
 			formula:
-				"Net SE Income × 92.35% × 15.3% (first $168,600 SS + unlimited Medicare)",
+				"Net SE Income × 92.35% × 15.3% (first $176,100 SS + unlimited Medicare)",
 			description:
 				"50% is deductible above-the-line. Additional 0.9% Medicare on SE income over $200K/$250K.",
 		},
@@ -492,17 +492,17 @@ export const regFramework: StudyFramework = {
 	],
 	referenceTables: [
 		{
-			title: "Filing Status — Standard Deduction (2024)",
+			title: "Filing Status — Standard Deduction (2025)",
 			headers: [
 				"Filing Status",
 				"Standard Deduction",
 				"Additional (Age 65+ / Blind)",
 			],
 			rows: [
-				["Single", "$14,600", "$1,950 each"],
-				["Married Filing Jointly", "$29,200", "$1,550 each"],
-				["Married Filing Separately", "$14,600", "$1,550 each"],
-				["Head of Household", "$21,900", "$1,950 each"],
+				["Single", "$15,000", "$2,000 each"],
+				["Married Filing Jointly", "$30,000", "$1,600 each"],
+				["Married Filing Separately", "$15,000", "$1,600 each"],
+				["Head of Household", "$22,500", "$2,000 each"],
 			],
 		},
 		{

@@ -1,5 +1,14 @@
 # Running Log
 
+## 2026-02-20 04:16
+1. Researched tax year inconsistencies across all content: lessons use 2024, quiz questions use 2025 (with some wrong 2025 figures)
+2. Verified correct 2025 IRS figures via web search (Rev. Proc. 2024-40): gift exclusion $19K, exemption $13.99M, 401(k) $23.5K, excess business loss $313K/$626K, etc.
+3. Updated 7 TCP lesson MDX files to 2025: retirement limits, gift/estate figures, trust brackets, QBI thresholds, excess business loss, parking fringe
+4. Updated tcp.ts study framework: 19 figure updates across concept maps, formulas, reference tables
+5. Updated reg.ts study framework: standard deduction, SS wage base, excess business loss threshold
+6. Created corrective SQL migration 00015: 11 UPDATE statements fixing quiz questions with wrong 2025 figures (gift exclusion $18K→$19K, exemption $13.61M→$13.99M, excess business loss $305K→$313K)
+7. Verified clean build and all 39 unit tests passing
+
 ## 2026-02-20
 1. Fixed FAR UTP decision tree: identical yes/no branches now distinguish full vs. partial benefit recognition
 2. Fixed ISC PICCERLL mnemonic: removed fabricated "Classification" phase, corrected to 6 real NIST SP 800-61 phases (PICERLL)

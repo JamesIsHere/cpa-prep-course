@@ -120,7 +120,7 @@ export const tcpFramework: StudyFramework = {
 							},
 							{
 								label:
-									"Threshold: $305,000 single / $610,000 MFJ (2024, indexed)",
+									"Threshold: $313,000 single / $626,000 MFJ (2025, indexed)",
 							},
 							{ label: "Applied after passive activity rules" },
 						],
@@ -136,7 +136,7 @@ export const tcpFramework: StudyFramework = {
 					{
 						label: "Gift Tax (Lifetime Transfers)",
 						children: [
-							{ label: "Annual exclusion: $18,000 per donee (2024)" },
+							{ label: "Annual exclusion: $19,000 per donee (2025)" },
 							{
 								label:
 									"Unlimited marital deduction (spouse must be US citizen)",
@@ -154,7 +154,7 @@ export const tcpFramework: StudyFramework = {
 								label:
 									"Deductions: debts, expenses, marital deduction, charitable deduction",
 							},
-							{ label: "Unified credit: $13.61M exemption (2024)" },
+							{ label: "Unified credit: $13.99M exemption (2025)" },
 							{
 								label:
 									"Portability: unused exemption transfers to surviving spouse (election required)",
@@ -172,7 +172,7 @@ export const tcpFramework: StudyFramework = {
 								label:
 									"Applies to transfers to skip persons (2+ generations below)",
 							},
-							{ label: "Separate GST exemption ($13.61M in 2024)" },
+							{ label: "Separate GST exemption ($13.99M in 2025)" },
 							{ label: "Flat rate equal to highest estate tax rate (40%)" },
 						],
 					},
@@ -406,7 +406,7 @@ export const tcpFramework: StudyFramework = {
 								label:
 									"Undistributed income taxed to trust at compressed rates",
 							},
-							{ label: "Highest bracket (37%) reached at ~$14,450 (2024)" },
+							{ label: "Highest bracket (37%) reached at ~$15,650 (2025)" },
 						],
 					},
 				],
@@ -618,14 +618,14 @@ export const tcpFramework: StudyFramework = {
 			formula:
 				"Taxable Gifts = Total Gifts - Annual Exclusions - Marital Deduction - Charitable Deduction",
 			description:
-				"Annual exclusion is $18,000 per donee (2024). Unlimited marital deduction for US citizen spouses. Gift-splitting available for married couples. Taxable gifts reduce lifetime unified credit.",
+				"Annual exclusion is $19,000 per donee (2025). Unlimited marital deduction for US citizen spouses. Gift-splitting available for married couples. Taxable gifts reduce lifetime unified credit.",
 		},
 		{
 			name: "Self-Employment Tax",
 			formula:
 				"SE Tax = 92.35% x Net SE Income x 15.3% (up to SS wage base); 2.9% on excess",
 			description:
-				"92.35% adjustment approximates the employer half. 15.3% = 12.4% Social Security (up to $168,600 in 2024) + 2.9% Medicare (no cap). Additional 0.9% Medicare on earned income above $200K/$250K.",
+				"92.35% adjustment approximates the employer half. 15.3% = 12.4% Social Security (up to $176,100 in 2025) + 2.9% Medicare (no cap). Additional 0.9% Medicare on earned income above $200K/$250K.",
 		},
 		{
 			name: "S Corp Stock Basis Ordering",
@@ -646,7 +646,7 @@ export const tcpFramework: StudyFramework = {
 			formula:
 				"QBI Deduction = Lesser of: (a) 20% of QBI, or (b) 20% of taxable income before QBI deduction (minus net capital gain)",
 			description:
-				"Available to noncorporate taxpayers from pass-through entities. Phase-out for SSTBs above $191,950/$383,900 (2024). W-2/UBIA limitation applies above threshold: greater of 50% of W-2 wages or 25% of W-2 wages + 2.5% of UBIA.",
+				"Available to noncorporate taxpayers from pass-through entities. Phase-out for SSTBs above $197,300/$394,600 (2025). W-2/UBIA limitation applies above threshold: greater of 50% of W-2 wages or 25% of W-2 wages + 2.5% of UBIA.",
 		},
 		{
 			name: "Section 199A W-2/UBIA Limitation",
@@ -660,7 +660,7 @@ export const tcpFramework: StudyFramework = {
 			formula:
 				"Estate Tax = (Gross Estate - Deductions) x Tax Rate - Unified Credit - Prior Gift Tax Credits",
 			description:
-				"Gross estate includes all property at FMV (date of death or alternate valuation date). Unified credit shelters $13.61M (2024). Top marginal rate is 40%. Portability allows surviving spouse to use deceased spouse's unused exemption.",
+				"Gross estate includes all property at FMV (date of death or alternate valuation date). Unified credit shelters $13.99M (2025). Top marginal rate is 40%. Portability allows surviving spouse to use deceased spouse's unused exemption.",
 		},
 	],
 	referenceTables: [
@@ -736,20 +736,20 @@ export const tcpFramework: StudyFramework = {
 			title: "Retirement Plan Comparison",
 			headers: [
 				"Plan",
-				"Contribution Limit (2024)",
+				"Contribution Limit (2025)",
 				"Employer Match",
 				"Key Rules",
 			],
 			rows: [
 				[
 					"Traditional 401(k)",
-					"$23,000 employee + $69,000 total (with employer)",
+					"$23,500 employee + $70,000 total (with employer)",
 					"Discretionary; subject to ADP/ACP testing",
 					"Pre-tax contributions; RMDs at 73; 10% early withdrawal penalty before 59.5",
 				],
 				[
 					"Roth 401(k)",
-					"$23,000 employee (same total limit)",
+					"$23,500 employee (same total limit)",
 					"Employer match goes to pre-tax account",
 					"After-tax contributions; qualified distributions tax-free; no income limit",
 				],
@@ -763,17 +763,17 @@ export const tcpFramework: StudyFramework = {
 					"Roth IRA",
 					"$7,000 ($8,000 if 50+)",
 					"N/A",
-					"After-tax; tax-free growth; no RMDs for owner; income phase-out $146K-$161K single (2024)",
+					"After-tax; tax-free growth; no RMDs for owner; income phase-out $150K-$165K single (2025)",
 				],
 				[
 					"SEP IRA",
-					"25% of compensation, max $69,000",
+					"25% of compensation, max $70,000",
 					"Employer contributes (must be uniform %)",
 					"Employer-only contributions; easy setup; no catch-up contributions",
 				],
 				[
 					"SIMPLE IRA",
-					"$16,000 employee ($19,500 if 50+)",
+					"$16,500 employee ($20,000 if 50+)",
 					"Required: 2% nonelective or 3% match",
 					"For employers with 100 or fewer employees; 25% early withdrawal penalty in first 2 years",
 				],
@@ -861,17 +861,17 @@ export const tcpFramework: StudyFramework = {
 			],
 		},
 		{
-			title: "Gift and Estate Tax Exemption Amounts (2024)",
+			title: "Gift and Estate Tax Exemption Amounts (2025)",
 			headers: ["Item", "Amount", "Notes"],
 			rows: [
 				[
 					"Annual gift exclusion",
-					"$18,000 per donee",
+					"$19,000 per donee",
 					"Indexed for inflation; doubles with gift-splitting",
 				],
 				[
 					"Lifetime unified credit exemption",
-					"$13.61 million",
+					"$13.99 million",
 					"Scheduled to sunset to ~$7M after 2025 (pre-TCJA level, indexed)",
 				],
 				[
@@ -881,7 +881,7 @@ export const tcpFramework: StudyFramework = {
 				],
 				[
 					"GST exemption",
-					"$13.61 million",
+					"$13.99 million",
 					"Separate from estate tax exemption; same sunset provision",
 				],
 				[
