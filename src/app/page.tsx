@@ -39,19 +39,19 @@ export default function Home() {
 			{/* Stats bar */}
 			<section className="bg-emerald-600">
 				<div className="max-w-4xl mx-auto px-4 py-6 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center text-white">
-					<div>
+					<div data-testid="stat-lessons">
 						<div className="text-2xl sm:text-3xl font-bold">96</div>
 						<div className="text-emerald-100 text-sm">Lessons</div>
 					</div>
-					<div>
+					<div data-testid="stat-questions">
 						<div className="text-2xl sm:text-3xl font-bold">1,275+</div>
 						<div className="text-emerald-100 text-sm">Practice Questions</div>
 					</div>
-					<div>
+					<div data-testid="stat-sections">
 						<div className="text-2xl sm:text-3xl font-bold">6</div>
 						<div className="text-emerald-100 text-sm">Exam Sections</div>
 					</div>
-					<div>
+					<div data-testid="stat-frameworks">
 						<div className="text-2xl sm:text-3xl font-bold">280</div>
 						<div className="text-emerald-100 text-sm">
 							Study Framework Items

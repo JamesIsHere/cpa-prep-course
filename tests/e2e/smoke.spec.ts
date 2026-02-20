@@ -13,10 +13,10 @@ test.describe("Public Pages — Smoke Tests", () => {
 		).toBeVisible();
 
 		// Stats bar
-		await expect(page.getByText("1,275+", { exact: true })).toBeVisible();
-		await expect(
-			page.getByText("Practice Questions", { exact: true }),
-		).toBeVisible();
+		await expect(page.getByTestId("stat-lessons")).toBeVisible();
+		await expect(page.getByTestId("stat-questions")).toBeVisible();
+		await expect(page.getByTestId("stat-sections")).toBeVisible();
+		await expect(page.getByTestId("stat-frameworks")).toBeVisible();
 
 		// Features section
 		await expect(

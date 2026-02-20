@@ -1,5 +1,10 @@
 # Running Log
 
+## 2026-02-20 07:02
+1. Added `data-testid` attributes to homepage stats bar (stat-lessons, stat-questions, stat-sections, stat-frameworks)
+2. Updated e2e smoke test to use `getByTestId` instead of brittle `getByText` for stats bar assertions
+3. Verified all 61 unit tests and 81 e2e tests pass (Chromium, Firefox, WebKit)
+
 ## 2026-02-20 06:56
 1. Fixed stale e2e test assertions: `1,250+` → `1,275+`, REG lessonCount `16` → `18`
 2. Fixed strict-mode locator violations in homepage test: `text=1,275+`, `text=Practice Questions`, `text=$9.99` switched to `getByText(..., { exact: true })`
