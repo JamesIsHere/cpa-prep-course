@@ -109,6 +109,66 @@ If the sample deviation rate exceeds the tolerable rate, the auditor cannot rely
 
 > MUS is especially popular for accounts receivable and inventory testing because it naturally emphasizes larger balances. It is less effective for testing understatement because items with zero or small recorded balances have little chance of selection.
 
+## Stratification
+
+**Stratification** is the process of dividing a population into subpopulations (strata) that share a common characteristic. Stratification improves audit efficiency by allowing the auditor to:
+
+- Focus attention on items with higher risk or larger dollar amounts
+- Reduce variability within each stratum, which reduces the required sample size
+- Apply different sampling approaches to different strata
+
+### Common Stratification Approaches
+
+- **By dollar amount** — Separate large items (tested 100%) from moderate items (sampled) and small items (may be covered by analytical procedures)
+- **By location or business unit** — When different locations have different risk profiles
+- **By age** — For receivables, older balances may warrant more testing
+- **By transaction type** — Separate routine from non-routine transactions
+
+**Example:** An auditor testing accounts receivable with a population of $10 million might stratify as follows:
+
+| Stratum | Range | Items | Approach |
+|---------|-------|-------|----------|
+| 1 | Over $500,000 | 8 items | Test 100% |
+| 2 | $50,000–$500,000 | 45 items | Sample 15 |
+| 3 | Under $50,000 | 1,200 items | Sample 20 |
+
+By testing all large items individually and sampling the remainder, the auditor achieves significant coverage of the dollar balance with a manageable sample size.
+
+> Stratification does not change the total population — it simply allows the auditor to design a more targeted testing approach. The exam may test whether stratification increases or decreases overall sample size. Generally, stratification reduces the total sample needed because it reduces variability within each stratum.
+
+## Projected Misstatement Calculations
+
+After testing a sample, the auditor must **project** the results to the entire population. The projection method depends on the sampling approach used.
+
+### For MUS (Monetary-Unit Sampling)
+
+Projection under MUS uses a **tainting factor** approach:
+
+1. Calculate the **tainting percentage** for each misstatement: (Book Value − Audit Value) / Book Value
+2. For each misstatement, multiply the tainting percentage by the **sampling interval** to get the projected misstatement
+3. Items selected because they exceed the sampling interval are not projected — their actual misstatement is used
+
+**Example:** Sampling interval = $50,000. A sampled item has book value $300 and audit value $210.
+- Tainting percentage = ($300 − $210) / $300 = 30%
+- Projected misstatement = 30% × $50,000 = $15,000
+
+### For Classical Variables Sampling
+
+Projection under classical methods typically uses either:
+
+- **Mean-per-unit:** Total estimated value = Sample mean × Population size
+- **Difference estimation:** Total estimated misstatement = Average difference in sample × Population size
+- **Ratio estimation:** Total estimated value = (Audit value / Book value in sample) × Total book value
+
+### Evaluating Projected Results
+
+After projection, the auditor compares the **projected misstatement** (plus an allowance for sampling risk) to the **tolerable misstatement**:
+
+- If projected misstatement + allowance < tolerable misstatement → Accept the population
+- If projected misstatement + allowance ≥ tolerable misstatement → The population may be materially misstated
+
+When the projected results suggest material misstatement, the auditor can increase the sample size, request management to investigate and correct, or consider the impact on the audit opinion.
+
 ## Evaluating Sample Results
 
 After completing the testing, the auditor projects the sample results to the population:

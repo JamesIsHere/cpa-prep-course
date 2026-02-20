@@ -106,6 +106,75 @@ Common procedures for testing the operating effectiveness of controls include:
 
 Inquiry alone is not sufficient to test operating effectiveness. The auditor must combine inquiry with at least one other procedure.
 
+## IT General Controls and Application Controls
+
+In modern audit environments, most financial transactions flow through information technology systems. The auditor must understand and evaluate **IT controls** as part of the overall assessment of internal controls.
+
+### IT General Controls (ITGCs)
+
+**IT general controls** are policies and procedures that apply broadly to the entire IT environment and support the effective functioning of application controls. The four primary categories are:
+
+| Category | Purpose | Examples |
+|----------|---------|---------|
+| Access security | Restrict access to programs and data | User IDs, passwords, role-based access, multifactor authentication |
+| Program change management | Ensure changes to programs are authorized, tested, and approved | Change request forms, testing in a separate environment, approval workflows |
+| Computer operations | Ensure systems run reliably and issues are resolved | Job scheduling, backup procedures, incident management |
+| Program development | Ensure new systems are properly designed and implemented | SDLC methodology, user acceptance testing, documentation |
+
+If ITGCs are weak, the auditor cannot rely on any application controls that depend on those systems — even if the application controls appear well-designed.
+
+### Application Controls
+
+**Application controls** are automated or manual procedures within specific applications that help ensure the completeness, accuracy, and validity of transactions. They include:
+
+- **Input controls** — Edit checks, validation rules, sequence checks, and duplicate detection that prevent erroneous data from entering the system
+- **Processing controls** — Run-to-run totals, reasonableness checks, and limit tests that ensure transactions are processed correctly
+- **Output controls** — Report distribution controls, reconciliation of output to input, and review procedures
+
+> The exam often tests the distinction between ITGCs and application controls. Remember: ITGCs support the environment in which applications operate, while application controls operate within specific applications to process transactions correctly.
+
+### Computer-Assisted Audit Techniques (CAATs)
+
+Auditors increasingly use technology to test IT controls and process large volumes of data:
+
+- **Test data** — The auditor submits fictitious transactions through the client's system to verify that controls process them correctly
+- **Integrated test facility (ITF)** — A dummy entity is embedded in the client's live system to process test transactions alongside real ones
+- **Generalized audit software (GAS)** — Tools like ACL or IDEA that allow the auditor to read, analyze, and sample from client data files
+- **Embedded audit modules** — Continuous monitoring routines built into the client's application to flag exceptions in real time
+
+## Service Organizations
+
+When a client outsources significant processes (payroll, data hosting, transaction processing), the auditor must consider the controls at the **service organization**. The relevant standard is **AU-C 402**.
+
+### User Auditor Responsibilities
+
+The **user auditor** (the auditor of the entity that uses the service organization) must:
+
+1. Understand the services provided and their significance to the client's financial reporting
+2. Evaluate controls at the service organization that are relevant to the client's financial statements
+3. Obtain evidence about the operating effectiveness of those controls
+
+### Methods to Obtain Evidence
+
+The user auditor has three approaches:
+
+- **Obtain a SOC 1 report** (Type 1 or Type 2) from the service organization's auditor — this is the most common approach
+- **Perform tests of controls directly** at the service organization
+- **Use another auditor** to perform procedures at the service organization on the user auditor's behalf
+
+### Using a SOC 1 Report
+
+When using a SOC 1 report, the user auditor must:
+
+- Evaluate whether the report covers the relevant period and controls
+- Assess the service auditor's competence and independence
+- Review any **complementary user entity controls (CUECs)** — controls that the service organization's system assumes the user entity has in place
+- Test the CUECs at the user entity
+
+A **Type 1 report** (design and implementation at a point in time) provides less evidence than a **Type 2 report** (design, implementation, and operating effectiveness over a period). If the service organization's controls are critical, the user auditor should obtain a Type 2 report.
+
+> Complementary user entity controls are a common exam topic. The SOC 1 report often states that certain controls are assumed to be in place at the user entity. The user auditor must test those controls — they are not covered by the SOC report.
+
 ## Evaluating Control Deficiencies
 
 When the auditor identifies a weakness in internal controls, the deficiency must be evaluated and classified:

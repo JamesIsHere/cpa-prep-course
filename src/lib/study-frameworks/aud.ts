@@ -153,6 +153,78 @@ export const audFramework: StudyFramework = {
 				],
 			},
 		},
+		{
+			title: "IT Controls Hierarchy",
+			root: {
+				label: "IT Controls",
+				children: [
+					{
+						label: "IT General Controls (ITGCs)",
+						children: [
+							{ label: "Access security (user IDs, passwords, MFA)" },
+							{ label: "Program change management (test, approve, migrate)" },
+							{ label: "Computer operations (backups, job scheduling)" },
+							{ label: "Program development (SDLC, user acceptance testing)" },
+						],
+					},
+					{
+						label: "Application Controls",
+						children: [
+							{ label: "Input controls (edit checks, validation rules)" },
+							{ label: "Processing controls (run-to-run totals, limit tests)" },
+							{
+								label: "Output controls (report distribution, reconciliation)",
+							},
+						],
+					},
+					{
+						label: "CAATs (Auditor Tools)",
+						children: [
+							{ label: "Test data" },
+							{ label: "Integrated test facility (ITF)" },
+							{ label: "Generalized audit software (GAS)" },
+							{ label: "Embedded audit modules" },
+						],
+					},
+				],
+			},
+		},
+		{
+			title: "SQMS No. 1 Components",
+			root: {
+				label: "System of Quality Management",
+				children: [
+					{
+						label: "Foundation",
+						children: [
+							{ label: "Firm's risk assessment process" },
+							{ label: "Governance and leadership" },
+						],
+					},
+					{
+						label: "Standards",
+						children: [
+							{ label: "Relevant ethical requirements" },
+							{ label: "Acceptance and continuance" },
+						],
+					},
+					{
+						label: "Execution",
+						children: [
+							{ label: "Engagement performance" },
+							{ label: "Resources (human, technological, intellectual)" },
+						],
+					},
+					{
+						label: "Oversight",
+						children: [
+							{ label: "Information and communication" },
+							{ label: "Monitoring and remediation" },
+						],
+					},
+				],
+			},
+		},
 	],
 	decisionTrees: [
 		{
@@ -218,6 +290,52 @@ export const audFramework: StudyFramework = {
 				},
 			},
 		},
+		{
+			title: "Going Concern Reporting",
+			root: {
+				question:
+					"Do conditions or events raise substantial doubt about going concern?",
+				yes: {
+					question:
+						"Are management's plans to mitigate the conditions feasible?",
+					yes: {
+						question: "Is substantial doubt alleviated by the plans?",
+						yes: "No modification needed (consider adequacy of disclosure)",
+						no: {
+							question:
+								"Has the entity adequately disclosed the going concern uncertainty?",
+							yes: "Unmodified opinion with emphasis-of-matter paragraph",
+							no: "Qualified or adverse opinion (GAAP departure)",
+						},
+					},
+					no: {
+						question:
+							"Has the entity adequately disclosed the going concern uncertainty?",
+						yes: "Unmodified opinion with emphasis-of-matter paragraph",
+						no: "Qualified or adverse opinion (GAAP departure)",
+					},
+				},
+				no: "No going concern reporting required",
+			},
+		},
+		{
+			title: "SOC Report Selection",
+			root: {
+				question:
+					"Are the controls relevant to user entities' financial reporting?",
+				yes: {
+					question:
+						"Does the user auditor need evidence about operating effectiveness over a period?",
+					yes: "SOC 1 Type 2 report",
+					no: "SOC 1 Type 1 report (design and implementation only)",
+				},
+				no: {
+					question: "Is the report intended for general public distribution?",
+					yes: "SOC 3 report (general-use, condensed format)",
+					no: "SOC 2 report (detailed, restricted distribution)",
+				},
+			},
+		},
 	],
 	formulas: [
 		{
@@ -249,6 +367,19 @@ export const audFramework: StudyFramework = {
 			formula: "AR = IR × CR × DR",
 			description:
 				"Audit Risk = Inherent Risk × Control Risk × Detection Risk. Auditor controls DR by adjusting nature, timing, and extent of procedures.",
+		},
+		{
+			name: "MUS Sampling Interval",
+			formula: "Sampling Interval = Total Population Value / Sample Size",
+			description:
+				"Each nth dollar is a selection point. Larger balances have proportionally higher probability of selection.",
+		},
+		{
+			name: "MUS Projected Misstatement",
+			formula:
+				"Projected Misstatement = Tainting % × Sampling Interval, where Tainting % = (Book − Audit) / Book",
+			description:
+				"Projects sample misstatements to the population. Items exceeding the interval use actual misstatement, not projection.",
 		},
 	],
 	referenceTables: [
@@ -365,6 +496,112 @@ export const audFramework: StudyFramework = {
 				],
 			],
 		},
+		{
+			title: "PCAOB vs. AICPA GAAS",
+			headers: ["Feature", "PCAOB (Issuers)", "GAAS (Non-Issuers)"],
+			rows: [
+				[
+					"Standard setter",
+					"PCAOB (SEC oversight)",
+					"AICPA Auditing Standards Board",
+				],
+				[
+					"Quality oversight",
+					"PCAOB inspections (annual or triennial)",
+					"Peer review (every 3 years)",
+				],
+				[
+					"Internal control opinion",
+					"Required (integrated audit)",
+					"Not required",
+				],
+				[
+					"Partner rotation",
+					"Required by SOX (5-year rotation)",
+					"Not required for most",
+				],
+				["CAMs/KAMs", "Required in audit report", "Not required"],
+				["Auditor tenure disclosure", "Required in report", "Not required"],
+			],
+		},
+		{
+			title: "SOC Report Types",
+			headers: ["Report", "Subject Matter", "Distribution", "Criteria"],
+			rows: [
+				[
+					"SOC 1",
+					"Controls relevant to user financial reporting",
+					"Restricted",
+					"SSAE (AT-C 320)",
+				],
+				[
+					"SOC 2",
+					"Security, availability, processing integrity, confidentiality, privacy",
+					"Restricted",
+					"Trust Services Criteria",
+				],
+				[
+					"SOC 3",
+					"Same as SOC 2 (condensed)",
+					"General use",
+					"Trust Services Criteria",
+				],
+			],
+		},
+		{
+			title: "IT Control Categories",
+			headers: ["Control Type", "Scope", "Examples"],
+			rows: [
+				[
+					"IT General Controls",
+					"IT environment (all applications)",
+					"Access security, change management, operations, development",
+				],
+				[
+					"Application Controls",
+					"Specific application/process",
+					"Edit checks, validation rules, run-to-run totals, output reconciliation",
+				],
+				[
+					"Manual Controls",
+					"Human-performed procedures",
+					"Supervisory review, reconciliations, physical counts",
+				],
+			],
+		},
+		{
+			title: "SSARS Engagement Levels",
+			headers: [
+				"Engagement",
+				"Assurance",
+				"Report Issued",
+				"Independence Required",
+				"Key Requirement",
+			],
+			rows: [
+				[
+					"Preparation",
+					"None",
+					"No (legend on each page)",
+					"No",
+					"Engagement letter + no-assurance legend",
+				],
+				[
+					"Compilation",
+					"None",
+					"Yes",
+					"No (disclose lack)",
+					"Read for obvious errors",
+				],
+				[
+					"Review",
+					"Limited",
+					"Yes",
+					"Yes",
+					"Inquiry + analytical procedures + rep letter",
+				],
+			],
+		},
 	],
 	mnemonics: [
 		{
@@ -400,6 +637,33 @@ export const audFramework: StudyFramework = {
 				"Prior period adjustments, Accounting changes, Irregularities, Disclosure inadequacies, Theft, Illegal acts, Personnel issues, Significant unusual transactions",
 			explanation:
 				"Red flags that may indicate increased risk of material misstatement or fraud.",
+		},
+		{
+			acronym: "POR",
+			expansion: "Pressure, Opportunity, Rationalization",
+			explanation:
+				"The fraud triangle — three conditions generally present when fraud occurs. Pressure creates motive, opportunity provides access, rationalization justifies the act.",
+		},
+		{
+			acronym: "GRACEIMM",
+			expansion:
+				"Governance, Risk assessment, Acceptance, Communication, Engagement performance, Information, Monitoring, Resources (reordered as GRACEIMM for memorability, but covers all 8 SQMS No. 1 components)",
+			explanation:
+				"The eight components of a firm's quality management system under SQMS No. 1. A firm without GRACEIMM has no quality assurance.",
+		},
+		{
+			acronym: "ROIA",
+			expansion:
+				"Risk of Overreliance, Risk of Incorrect Acceptance (effectiveness risks); Risk of Underreliance, Risk of Incorrect Rejection (efficiency risks)",
+			explanation:
+				"The four types of sampling risk. ROIA helps remember the two dangerous effectiveness risks: overreliance on controls and incorrect acceptance of a misstated balance.",
+		},
+		{
+			acronym: "CAM",
+			expansion:
+				"Communicated to audit committee, Accounts/disclosures are material, Matter involved challenging judgment",
+			explanation:
+				"The three criteria for Critical Audit Matters in PCAOB reports. All three must be met for a matter to be reported as a CAM.",
 		},
 	],
 };
