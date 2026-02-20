@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getAllPosts } from "@/lib/blog";
 import { sections } from "@/lib/sections";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -55,5 +56,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			})),
 	);
 
-	return [...staticRoutes, ...sectionRoutes, ...lessonRoutes];
+	const blogIndexRoute: MetadataRoute.Sitemap = [
+		{
+			url: `${base}/blog`,
+			lastModified: new Date(),
+			changeFrequency: "weekly",
+			priority: 0.8,
+		},
+	];
+
+	const blogPostRoutes: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
+		url: `${base}/blog/${post.slug}`,
+		lastModified: new Date(post.date),
+		changeFrequency: "monthly" as const,
+		priority: 0.7,
+	}));
+
+	return [
+		...staticRoutes,
+		...sectionRoutes,
+		...lessonRoutes,
+		...blogIndexRoute,
+		...blogPostRoutes,
+	];
 }

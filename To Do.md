@@ -5,9 +5,9 @@
 - [x] Verify Stripe is live: production keys in Vercel, test real checkout, confirm webhook fires
 - [ ] Set up Google Search Console: verify slayer-cpa.com, submit sitemap.xml
 - [ ] Set up analytics: GA4 or confirm Vercel Analytics is sufficient
-- [ ] Build /blog route with MDX support (reuse existing MDX infra)
-- [ ] Draft + publish blog post #1: "Slayer CPA vs Becker: Full Comparison"
-- [ ] Draft + publish blog post #2: "How Much Does CPA Exam Prep Really Cost?"
+- [x] Build /blog route with MDX support (reuse existing MDX infra)
+- [x] Draft + publish blog post #1: "Slayer CPA vs Becker: Full Comparison"
+- [x] Draft + publish blog post #2: "How Much Does CPA Exam Prep Really Cost?"
 - [x] Create free CPA study plan PDF (downloadable, no email gate)
 
 ## Phase 1: Content Ramp (Weeks 2-8)
@@ -27,6 +27,7 @@
 ## Completed
 | Date       | Task                                                            |
 |------------|-----------------------------------------------------------------|
+| 2026-02-20 | Blog route with MDX, 2 posts, nav/sitemap/footer links          |
 | 2026-02-20 | Free CPA study plan PDF: markdown, branded PDF, homepage download link |
 | 2026-02-20 | Full project audit: folder, routes, content, security — all clean |
 | 2026-02-20 | All 94 unit tests + 152 e2e tests pass, production build clean  |

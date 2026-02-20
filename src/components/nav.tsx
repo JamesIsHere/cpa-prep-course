@@ -48,6 +48,12 @@ export default function Nav() {
 						>
 							Sections
 						</Link>
+						<Link
+							href="/blog"
+							className="text-gray-600 hover:text-emerald-700 transition-colors"
+						>
+							Blog
+						</Link>
 						{user ? (
 							<>
 								<Link
@@ -129,6 +135,13 @@ export default function Nav() {
 							onClick={() => setOpen(false)}
 						>
 							Sections
+						</Link>
+						<Link
+							href="/blog"
+							className="block text-gray-600 hover:text-emerald-700 py-2"
+							onClick={() => setOpen(false)}
+						>
+							Blog
 						</Link>
 						{user ? (
 							<>

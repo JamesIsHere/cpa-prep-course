@@ -441,6 +441,12 @@ export default function Home() {
 							Sections
 						</Link>
 						<Link
+							href="/blog"
+							className="hover:text-gray-600 transition-colors"
+						>
+							Blog
+						</Link>
+						<Link
 							href="/login"
 							className="hover:text-gray-600 transition-colors"
 						>
