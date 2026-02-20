@@ -1,5 +1,16 @@
 # Running Log
 
+## 2026-02-20
+1. Fixed FAR UTP decision tree: identical yes/no branches now distinguish full vs. partial benefit recognition
+2. Fixed ISC PICCERLL mnemonic: removed fabricated "Classification" phase, corrected to 6 real NIST SP 800-61 phases (PICERLL)
+3. Fixed ISC encryption decision tree: restructured either/or root question into proper yes/no binary ("Is data at rest?")
+4. Fixed ISC SOC 3 table: corrected Type I/II rows to reflect SOC 3 is based on SOC 2 Type II engagements
+5. Fixed TCP Roth IRA phase-out range: corrected from $161K-$176K to $146K-$161K (2024)
+6. Fixed TCP defined benefit limit in DB: $275,000 → $280,000 for 2025, and 401(k) catch-up $7,000 → $7,500
+7. Created and applied corrective migration 00014 to production Supabase
+8. Verified S Corp basis ordering is correct per Reg. 1.1367-1(f) — QA false positive dismissed
+9. Verified clean build and all 39 unit tests passing
+
 ## 2026-02-22
 1. Applied migrations 00009–00012 to production Supabase (REG expanded questions, BAR/ISC/TCP full builds)
 2. Updated CLAUDE.md to reflect all 8 phases complete with full content stats (73 lessons, ~1,050 questions, 233 framework items)

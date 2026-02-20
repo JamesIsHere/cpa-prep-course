@@ -356,9 +356,9 @@ export const farFramework: StudyFramework = {
 					"Is it more likely than not (>50%) that the tax position will be sustained on technical merits?",
 				yes: {
 					question:
-						"Measure: What is the largest amount with >50% cumulative likelihood of being realized?",
-					yes: "Recognize that amount as a tax benefit",
-					no: "Recognize that amount as a tax benefit",
+						"Does the largest amount with >50% cumulative likelihood equal the full tax position?",
+					yes: "Recognize the full tax benefit — no unrecognized tax benefit liability needed",
+					no: "Recognize only the measured amount; record the difference as an unrecognized tax benefit liability",
 				},
 				no: "No tax benefit recognized — record full unrecognized tax benefit as liability",
 			},

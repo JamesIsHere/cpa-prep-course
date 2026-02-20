@@ -487,23 +487,18 @@ export const iscFramework: StudyFramework = {
 		{
 			title: "Encryption Method Selection",
 			root: {
-				question:
-					"Is the data at rest (stored) or in transit (being transmitted)?",
+				question: "Is the data at rest (stored)?",
 				yes: {
-					question: "Is the data at rest? (If no, it is in transit.)",
-					yes: {
-						question: "Is the volume of data large and performance critical?",
-						yes: "Symmetric encryption (AES-256) — fast, single key, ideal for bulk data at rest",
-						no: "Symmetric encryption (AES-256) — still preferred for data at rest; use key management system",
-					},
-					no: {
-						question:
-							"Is the communication between two parties who have not previously exchanged keys?",
-						yes: "Asymmetric encryption (RSA/ECC) for key exchange, then symmetric (AES) for session — TLS/HTTPS",
-						no: "Symmetric encryption with pre-shared key — VPN tunnels, internal network communication",
-					},
+					question: "Is the volume of data large and performance critical?",
+					yes: "Symmetric encryption (AES-256) — fast, single key, ideal for bulk data at rest",
+					no: "Symmetric encryption (AES-256) — still preferred for data at rest; use key management system",
 				},
-				no: "All sensitive data must be encrypted — determine whether at rest or in transit and apply appropriate method",
+				no: {
+					question:
+						"Is the communication between two parties who have not previously exchanged keys?",
+					yes: "Asymmetric encryption (RSA/ECC) for key exchange, then symmetric (AES) for session — TLS/HTTPS",
+					no: "Symmetric encryption with pre-shared key — VPN tunnels, internal network communication",
+				},
 			},
 		},
 		{
@@ -632,19 +627,19 @@ export const iscFramework: StudyFramework = {
 					"Type I",
 					"Design at a point in time",
 					"Design at a point in time",
-					"N/A (general use only)",
+					"N/A (Type II only)",
 				],
 				[
 					"Type II",
 					"Design + effectiveness over a period",
 					"Design + effectiveness over a period",
-					"N/A (general use only)",
+					"Short-form report based on SOC 2 Type II",
 				],
 				[
 					"Typical period",
 					"6-12 months",
 					"6-12 months",
-					"Point in time snapshot",
+					"Same period as companion SOC 2 Type II",
 				],
 			],
 		},
@@ -828,11 +823,11 @@ export const iscFramework: StudyFramework = {
 				"The four core change management process types in IT service management. All changes must go through a formal change advisory board (CAB) review before implementation.",
 		},
 		{
-			acronym: "PICCERLL",
+			acronym: "PICERLL",
 			expansion:
-				"Preparation, Identification, Containment, Classification, Eradication, Recovery, Lessons Learned",
+				"Preparation, Identification, Containment, Eradication, Recovery, Lessons Learned",
 			explanation:
-				"The phases of incident response per NIST SP 800-61. Memory aid: 'Please Identify Containment Challenges, Eradicate Root-causes, Learn Lessons.'",
+				"The six phases of incident response per NIST SP 800-61. Memory aid: 'Please Identify Containment, Eradicate Root-causes, Learn Lessons.'",
 		},
 		{
 			acronym: "KHA",

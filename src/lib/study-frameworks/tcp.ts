@@ -763,7 +763,7 @@ export const tcpFramework: StudyFramework = {
 					"Roth IRA",
 					"$7,000 ($8,000 if 50+)",
 					"N/A",
-					"After-tax; tax-free growth; no RMDs for owner; income phase-out $161K-$176K (single)",
+					"After-tax; tax-free growth; no RMDs for owner; income phase-out $146K-$161K single (2024)",
 				],
 				[
 					"SEP IRA",
