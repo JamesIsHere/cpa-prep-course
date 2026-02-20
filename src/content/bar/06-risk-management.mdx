@@ -1,0 +1,207 @@
+# Risk Management and Economics
+
+## Learning Objectives
+
+- Identify and classify types of business risk (systematic vs. unsystematic)
+- Apply hedging strategies to manage interest rate, currency, and commodity risk
+- Interpret key economic indicators and their impact on business decisions
+- Evaluate capital budgeting decisions using NPV, IRR, and payback period
+
+## Types of Risk
+
+### Systematic Risk (Market Risk)
+
+Risk that affects the **entire market** and cannot be eliminated through diversification:
+
+- Interest rate risk
+- Inflation risk
+- Currency (exchange rate) risk
+- Political/regulatory risk
+- Recession/economic cycle risk
+
+Systematic risk is measured by **beta** in the CAPM framework.
+
+### Unsystematic Risk (Diversifiable Risk)
+
+Risk specific to a **particular company or industry** that can be reduced through diversification:
+
+- Business risk (operating risk)
+- Financial risk (leverage risk)
+- Liquidity risk
+- Credit/default risk
+- Operational risk
+
+> **Exam tip:** Total risk = Systematic risk + Unsystematic risk. CAPM only compensates for systematic risk because rational investors diversify away unsystematic risk. If a question asks about the "relevant" risk for a well-diversified investor, the answer is systematic risk (beta).
+
+## Interest Rate Risk Management
+
+Interest rate changes affect the value of **fixed-income securities** and the cost of **variable-rate debt**.
+
+### Duration
+
+**Duration** measures the sensitivity of a bond's price to changes in interest rates. It represents the weighted average time to receive the bond's cash flows.
+
+- **Macaulay duration** — Weighted average time to maturity, measured in years
+- **Modified duration** — Macaulay duration / (1 + yield/n); measures the % price change for a 1% change in yield
+
+A bond with modified duration of 5.0 will decrease approximately 5% in value if interest rates rise by 1%.
+
+### Hedging Interest Rate Risk
+
+| Risk | Hedging Instrument | Strategy |
+|------|--------------------|----------|
+| Rising rates on variable debt | Interest rate swap (pay fixed, receive floating) | Converts variable payments to fixed |
+| Falling rates on floating investments | Interest rate cap | Sets a maximum rate the investor will pay |
+| Bond portfolio value decline | Futures or swaps | Short interest rate futures to offset losses |
+
+## Currency Risk Management
+
+Companies with international operations face **transaction exposure** (risk on existing contractual commitments), **translation exposure** (financial statement conversion), and **economic exposure** (long-term competitive effects).
+
+### Hedging Currency Risk
+
+- **Forward contracts** — Lock in a specific exchange rate for a future date (customized OTC)
+- **Currency futures** — Standardized exchange-traded contracts
+- **Currency options** — Right (not obligation) to exchange at a set rate; provides downside protection with upside potential
+- **Natural hedging** — Match revenues and expenses in the same currency (e.g., borrow in the currency where revenue is earned)
+
+**Worked Example:**
+
+A U.S. company expects to receive €500,000 in 90 days. The current spot rate is $1.10/€. The company fears the euro will weaken. It enters a 90-day forward contract at $1.09/€.
+
+- Without hedge: If euro drops to $1.05/€, the company receives $1.05 × 500,000 = $525,000
+- With hedge: Company locks in $1.09 × 500,000 = **$545,000** regardless of spot rate movement
+
+The hedge eliminates currency risk at the cost of giving up potential gains if the euro strengthens.
+
+## Capital Budgeting
+
+Capital budgeting evaluates **long-term investment decisions** using time value of money concepts.
+
+### Net Present Value (NPV)
+
+NPV = Sum of [Cash flow_t / (1 + r)^t] - Initial investment
+
+**Decision rule:** Accept if NPV > 0. NPV measures the dollar value added to the firm.
+
+**Worked Example:**
+
+A project costs $100,000 and generates cash flows of $35,000/year for 4 years. WACC is 10%.
+
+NPV = $35,000/1.10 + $35,000/1.21 + $35,000/1.331 + $35,000/1.4641 - $100,000
+NPV = $31,818 + $28,926 + $26,296 + $23,905 - $100,000
+NPV = $110,945 - $100,000 = **$10,945**
+
+Since NPV > 0, accept the project.
+
+### Internal Rate of Return (IRR)
+
+The IRR is the discount rate that makes NPV = 0. It represents the project's **expected percentage return**.
+
+**Decision rule:** Accept if IRR > WACC (or required rate of return).
+
+**Limitations of IRR:**
+- Assumes cash flows are reinvested at the IRR itself (often unrealistic)
+- May produce multiple IRRs for projects with non-conventional cash flows (alternating positive and negative)
+- Can give conflicting rankings with NPV for mutually exclusive projects
+
+> **Exam tip:** When NPV and IRR conflict on mutually exclusive projects, always go with NPV. NPV maximizes firm value in dollar terms, which is the correct objective.
+
+### Payback Period
+
+Payback = Number of years to recover the initial investment from cumulative cash flows.
+
+- Simple payback ignores the time value of money
+- **Discounted payback** uses present values of cash flows
+
+Payback is useful as a supplementary measure (risk screening) but should not be used as the sole criterion because it ignores cash flows after the payback point.
+
+### Profitability Index (PI)
+
+PI = PV of future cash flows / Initial investment
+
+**Decision rule:** Accept if PI > 1.0. PI is useful for **capital rationing** — when a company has limited capital and must choose among positive-NPV projects, rank them by PI to maximize value per dollar invested.
+
+## Economic Indicators
+
+### Leading Indicators
+
+Signal future economic activity (change before the economy changes):
+
+- Stock market returns
+- Building permits
+- Consumer confidence index
+- Average weekly hours (manufacturing)
+- New orders for durable goods
+
+### Coincident Indicators
+
+Move in sync with the economy:
+
+- Real GDP
+- Industrial production
+- Employment levels
+- Personal income
+
+### Lagging Indicators
+
+Change after the economy has already turned:
+
+- Unemployment rate
+- Average duration of unemployment
+- Commercial and industrial loans outstanding
+- Consumer price index (CPI)
+- Prime rate
+
+> **Exam tip:** The unemployment rate is a lagging indicator — it rises after a recession has begun and falls after recovery is underway. Stock prices are a leading indicator because markets are forward-looking.
+
+## Business Cycles
+
+| Phase | Characteristics |
+|-------|----------------|
+| Expansion | Rising GDP, falling unemployment, rising prices |
+| Peak | Maximum output, inflation pressure, full employment |
+| Contraction | Falling GDP, rising unemployment, falling demand |
+| Trough | Minimum output, high unemployment, low inflation |
+
+Monetary policy (Federal Reserve) and fiscal policy (Congress) are the primary tools for managing the business cycle. Expansionary monetary policy (lowering rates, QE) stimulates the economy during contraction. Contractionary policy (raising rates) cools an overheating economy.
+
+## Key Terms
+
+- **Duration** — A measure of interest rate sensitivity; the approximate percentage change in bond price for a 1% change in yield
+- **NPV** — Net present value; the sum of discounted future cash flows minus the initial investment; the gold standard for capital budgeting decisions
+- **IRR** — Internal rate of return; the discount rate that makes NPV equal to zero; represents the expected percentage return of a project
+- **Leading indicator** — An economic metric that changes before the overall economy, used to forecast future economic conditions
+
+## Practice Problems
+
+**1.** A project has an initial cost of $50,000 and generates annual cash flows of $15,000 for 5 years. At a 12% discount rate, the NPV is $4,066. What is the profitability index?
+
+a) 1.08
+b) 0.92
+c) 1.50
+d) 0.67
+
+**Answer:** a) 1.08 — PV of future cash flows = $50,000 + $4,066 = $54,066. PI = $54,066 / $50,000 = 1.08. Alternatively, PI = 1 + (NPV / Investment) = 1 + ($4,066 / $50,000) = 1.08.
+
+---
+
+**2.** Which of the following is a lagging economic indicator?
+
+a) Building permits
+b) Stock market returns
+c) Average duration of unemployment
+d) Consumer confidence index
+
+**Answer:** c) Average duration of unemployment — Unemployment duration rises after a recession has begun and remains elevated even as recovery starts, making it a lagging indicator. Building permits, stock returns, and consumer confidence are leading indicators.
+
+---
+
+**3.** A bond has a modified duration of 7.0. If interest rates increase by 0.5%, the bond's price will approximately:
+
+a) Increase by 3.5%
+b) Decrease by 3.5%
+c) Decrease by 7.0%
+d) Increase by 7.0%
+
+**Answer:** b) Decrease by 3.5% — Price change ≈ -Modified duration × Change in yield = -7.0 × 0.5% = -3.5%. Bond prices move inversely to interest rates.

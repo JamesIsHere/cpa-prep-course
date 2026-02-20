@@ -1,0 +1,188 @@
+# Advanced Consolidations
+
+## Learning Objectives
+
+- Prepare consolidated financial statements with intercompany eliminations
+- Account for variable interest entities (VIEs) and determine the primary beneficiary
+- Apply step acquisition and partial disposition rules
+- Eliminate intercompany profit in inventory, fixed assets, and debt transactions
+
+## Consolidation Fundamentals
+
+A parent consolidates a subsidiary when it has a **controlling financial interest** — usually ownership of more than 50% of voting stock, or status as the primary beneficiary of a VIE.
+
+### Basic Consolidation Process
+
+1. Combine 100% of the subsidiary's assets, liabilities, revenues, and expenses with the parent's
+2. Eliminate the **investment account** against the subsidiary's equity
+3. Recognize **goodwill** (or bargain purchase gain)
+4. Eliminate **intercompany transactions** (sales, receivables/payables, interest, dividends)
+5. Allocate NCI's share of net income and equity
+
+### The Elimination Entry
+
+At each reporting date, the basic elimination entry removes the parent's investment balance against the subsidiary's equity:
+
+- Debit: Common stock (subsidiary)
+- Debit: Retained earnings (subsidiary)
+- Debit: Fair value adjustments (amortizable)
+- Debit: Goodwill
+- Credit: Investment in subsidiary
+- Credit: Noncontrolling interest
+
+## Intercompany Transactions
+
+### Intercompany Inventory Sales
+
+When one entity sells inventory to an affiliated entity, the intercompany sale and **unrealized profit in ending inventory** must be eliminated.
+
+**Downstream sale** (parent sells to subsidiary):
+- Eliminate 100% of intercompany revenue and COGS
+- Eliminate unrealized profit in ending inventory
+- Full adjustment to parent (no NCI impact in current period)
+
+**Upstream sale** (subsidiary sells to parent):
+- Same elimination of revenue, COGS, and unrealized profit
+- NCI bears its proportionate share of the profit elimination
+
+**Worked Example:**
+
+Parent sells inventory to Subsidiary for $100,000 (cost: $70,000). At year-end, 40% remains unsold.
+
+Elimination entries:
+1. Eliminate intercompany sale: Debit Sales $100,000; Credit COGS $100,000
+2. Eliminate unrealized profit in ending inventory: Debit COGS $12,000; Credit Inventory $12,000
+
+Unrealized profit = ($100,000 - $70,000) × 40% = $12,000
+
+> **Exam tip:** When inventory is sold in the **following period**, the profit is "realized" and the prior-year elimination is reversed through beginning retained earnings. The COGS of the subsequent period is adjusted to reflect the original intercompany cost.
+
+### Intercompany Fixed Asset Sales
+
+When one entity sells a depreciable asset to an affiliate:
+
+1. Eliminate the **gain or loss** on the intercompany sale
+2. Adjust the asset to its **original cost** and **accumulated depreciation** as if the transfer never occurred
+3. Adjust **depreciation expense** each year — the purchasing entity depreciates based on the inflated (or deflated) transfer price, so the excess depreciation is eliminated
+
+**Worked Example:**
+
+Parent sells equipment to Subsidiary for $80,000. The equipment had a cost of $100,000 and accumulated depreciation of $40,000 (book value $60,000). Remaining useful life: 5 years.
+
+- Intercompany gain: $80,000 - $60,000 = $20,000 (eliminated)
+- Subsidiary depreciates at $80,000 / 5 = $16,000/year
+- Correct depreciation: $60,000 / 5 = $12,000/year
+- Excess depreciation eliminated each year: $4,000
+
+Over 5 years, the $20,000 gain is realized through $4,000 annual depreciation adjustments.
+
+### Intercompany Debt
+
+If the parent's subsidiary holds debt issued by the parent (or vice versa), in consolidation the entities are treated as a **single economic entity**. The debt is effectively retired:
+
+- Eliminate the intercompany receivable and payable
+- Eliminate intercompany interest revenue and interest expense
+- Recognize any **constructive gain or loss** (difference between carrying amounts of the bond payable and the investment)
+
+## Variable Interest Entities (VIEs)
+
+A **variable interest entity** is an entity where the equity investors do not have sufficient equity at risk to finance the entity's activities without additional subordinated financial support, OR the equity investors lack one or more of:
+
+1. Decision-making ability (power to direct significant activities)
+2. Obligation to absorb expected losses
+3. Right to receive expected residual returns
+
+### Primary Beneficiary
+
+The entity that consolidates a VIE is the **primary beneficiary** — the party that has:
+
+1. **Power** to direct the activities that most significantly affect the VIE's economic performance, AND
+2. **Obligation to absorb losses** or right to receive benefits that could potentially be significant to the VIE
+
+Both conditions must be met. Reassess whenever circumstances change.
+
+> **Exam tip:** VIE consolidation is based on economic substance, not voting control. A company can be required to consolidate a VIE even with 0% equity ownership if it meets the primary beneficiary criteria. This is why VIEs were created — to prevent off-balance-sheet abuse.
+
+**Common VIE structures:**
+- Special purpose entities (SPEs) for securitization
+- Joint ventures where one party provides financing and the other provides management
+- Leasing entities designed to hold a single asset
+- Research and development arrangements
+
+## Step Acquisitions
+
+A **step acquisition** occurs when a parent increases its ownership from a non-controlling investment to a controlling interest in stages.
+
+### Accounting Treatment
+
+When control is obtained:
+
+1. Remeasure any **previously held equity interest** to fair value on the acquisition date
+2. Recognize a **gain or loss** in earnings on the remeasurement
+3. Apply the acquisition method as of the date control is obtained
+4. Any amounts previously in OCI related to the prior investment are reclassified to earnings
+
+**Worked Example:**
+
+A company holds 30% of Target (equity method, carrying value $2,000,000). It acquires an additional 40% for $4,000,000 cash, obtaining control. Fair value of the original 30% on acquisition date is $2,800,000.
+
+- Gain on remeasurement: $2,800,000 - $2,000,000 = **$800,000** (recognized in earnings)
+- Total consideration for goodwill calculation: $4,000,000 (cash) + $2,800,000 (FV of prior interest) = $6,800,000 + FV of NCI (30%)
+
+## Partial Dispositions
+
+### Loss of Control
+
+When a parent sells enough shares to **lose control** of a subsidiary:
+
+1. Deconsolidate the subsidiary
+2. Recognize any **retained interest** at fair value
+3. Recognize **gain or loss** on the disposition in earnings
+
+### No Loss of Control
+
+When a parent sells shares but **retains control** (e.g., selling 20% of an 80% subsidiary, retaining 60%):
+
+- No gain or loss in earnings
+- Treat as an **equity transaction** — adjust APIC and NCI
+- This is a transaction between owners, not a sale of assets
+
+## Key Terms
+
+- **Intercompany elimination** — Adjustments made in consolidation to remove the effects of transactions between parent and subsidiary, preventing double-counting
+- **Variable interest entity** — An entity consolidated based on economic control (power + significant variable interests) rather than voting ownership
+- **Step acquisition** — Gaining control of a subsidiary in multiple transactions, requiring remeasurement of previously held interests to fair value
+- **Constructive retirement** — The elimination of intercompany debt in consolidation, treated as if the debt was retired
+
+## Practice Problems
+
+**1.** A subsidiary sells inventory to its parent for $200,000 (cost: $140,000). At year-end, 30% of the inventory remains unsold. The parent owns 80% of the subsidiary. What unrealized profit must be eliminated?
+
+a) $18,000
+b) $14,400
+c) $60,000
+d) $48,000
+
+**Answer:** a) $18,000 — Unrealized profit = ($200,000 - $140,000) × 30% = $60,000 × 30% = $18,000. The full $18,000 is eliminated regardless of the parent's ownership percentage. (Note: NCI bears 20% of the adjustment for this upstream sale, but the total elimination is $18,000.)
+
+---
+
+**2.** Which of the following is required for an entity to be the primary beneficiary of a VIE?
+
+a) Ownership of more than 50% of voting stock
+b) Power to direct significant activities and obligation to absorb losses or right to receive benefits
+c) Providing a majority of the VIE's financing
+d) Serving as the VIE's day-to-day manager
+
+**Answer:** b) Power to direct significant activities and obligation to absorb losses or right to receive benefits — Both conditions are required. VIE consolidation is not based on voting ownership, financing percentage, or management role alone.
+
+---
+
+**3.** A company holds a 25% equity method investment with a carrying value of $3,000,000. It acquires an additional 50% for $7,000,000, gaining control. The fair value of the original 25% is $3,500,000. What gain is recognized on the previously held interest?
+
+a) $0
+b) $500,000
+c) $3,500,000
+d) $7,000,000
+
+**Answer:** b) $500,000 — In a step acquisition, the previously held interest is remeasured to fair value. Gain = $3,500,000 - $3,000,000 = $500,000, recognized in earnings on the acquisition date.

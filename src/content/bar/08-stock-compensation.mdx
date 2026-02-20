@@ -1,0 +1,171 @@
+# Stock Compensation and Business Combinations
+
+## Learning Objectives
+
+- Account for stock options, restricted stock, and performance shares under ASC 718
+- Apply the acquisition method for business combinations under ASC 805
+- Calculate goodwill in a business combination and identify measurement period adjustments
+- Account for contingent consideration and bargain purchases
+
+## Stock-Based Compensation (ASC 718)
+
+ASC 718 requires companies to recognize **compensation expense** for all share-based payment arrangements at **fair value** on the **grant date**.
+
+### Stock Options
+
+A stock option gives the employee the right to purchase shares at a fixed **exercise price** after a **vesting period**.
+
+**Measurement:** Fair value is determined at the grant date using an option pricing model (Black-Scholes or binomial lattice). Once measured, the fair value is **not adjusted** for subsequent stock price changes.
+
+**Recognition:** Expense is recognized **over the requisite service period** (usually the vesting period), typically using straight-line allocation.
+
+**Worked Example:**
+
+On January 1, Year 1, a company grants 10,000 stock options with a fair value of $8 each. The vesting period is 4 years.
+
+Total compensation cost: 10,000 × $8 = $80,000
+
+Annual expense (straight-line): $80,000 / 4 = **$20,000 per year**
+
+Journal entry each year:
+- Debit: Compensation expense $20,000
+- Credit: Additional paid-in capital (APIC — stock options) $20,000
+
+When options are exercised (assume exercise price $25 per share, all 10,000 exercised):
+- Debit: Cash (10,000 × $25) = $250,000
+- Debit: APIC — stock options $80,000
+- Credit: Common stock + APIC $330,000
+
+> **Exam tip:** If options expire unexercised, the APIC — stock options balance is reclassified to APIC — expired options. No expense is reversed (the compensation already happened during the service period).
+
+### Restricted Stock
+
+Restricted stock is **actual shares** issued to the employee, subject to forfeiture if conditions are not met.
+
+**Measurement:** Fair value = Market price on the grant date (no option pricing model needed since there is no exercise price).
+
+**Recognition:** Same as options — over the vesting period.
+
+**Worked Example:**
+
+A company grants 5,000 restricted shares when the stock price is $30. Vesting period: 3 years.
+
+Total cost: 5,000 × $30 = $150,000
+Annual expense: $150,000 / 3 = **$50,000 per year**
+
+### Forfeitures
+
+ASC 718 allows two approaches:
+
+1. **Estimate forfeitures at grant date** — Reduce total expense by expected forfeitures; adjust if actual forfeitures differ
+2. **Recognize forfeitures as they occur** (policy election) — Record full expense, then reverse if employees leave before vesting
+
+### Modifications
+
+If the terms of an award are modified, the entity recognizes at minimum the **original grant-date fair value**. Any incremental fair value (new FV minus old FV at modification date) is recognized over the remaining vesting period.
+
+## Business Combinations (ASC 805)
+
+A **business combination** occurs when an acquirer obtains control of one or more businesses. ASC 805 requires the **acquisition method**.
+
+### Acquisition Method Steps
+
+1. **Identify the acquirer** — The entity that obtains control
+2. **Determine the acquisition date** — Date control transfers (usually closing date)
+3. **Recognize and measure identifiable assets, liabilities, and NCI** — At fair value on the acquisition date
+4. **Recognize goodwill or a bargain purchase gain**
+
+### Calculating Goodwill
+
+Goodwill = Consideration transferred + NCI + Previously held equity interest - Fair value of net identifiable assets
+
+**Worked Example:**
+
+Company A acquires 100% of Company B for $5,000,000 cash. On the acquisition date:
+
+| Item | Book Value | Fair Value |
+|------|-----------|------------|
+| Current assets | $800,000 | $800,000 |
+| Property & equipment | $2,000,000 | $2,500,000 |
+| Customer relationships | $0 | $400,000 |
+| Current liabilities | ($300,000) | ($300,000) |
+| Long-term debt | ($1,000,000) | ($1,050,000) |
+| **Net identifiable assets** | **$1,500,000** | **$2,350,000** |
+
+Goodwill = $5,000,000 - $2,350,000 = **$2,650,000**
+
+Note: Customer relationships ($400,000) are recognized as an intangible asset even though they were not on Company B's books. ASC 805 requires recognition of identifiable intangible assets at fair value.
+
+> **Exam tip:** Identifiable intangible assets that must be separately recognized in a business combination include: customer lists, trade names, patents, technology, non-compete agreements, and order backlogs. These are recognized even if they were internally developed by the acquiree.
+
+### Contingent Consideration
+
+The acquirer may agree to make additional payments based on future events (earn-outs). Under ASC 805:
+
+- Recognize at **fair value** on the acquisition date (included in goodwill calculation)
+- Classify as a **liability** or **equity**
+- If liability: remeasure at fair value each period — changes go to **earnings** (not goodwill)
+- If equity: no remeasurement after initial recognition
+
+### Bargain Purchase (Negative Goodwill)
+
+If the fair value of net identifiable assets exceeds the consideration paid:
+
+1. Re-examine all values to ensure accuracy
+2. If the excess remains after re-examination, recognize a **gain on bargain purchase** in earnings on the acquisition date
+
+### Measurement Period
+
+The acquirer has up to **12 months** from the acquisition date to finalize the fair values of assets and liabilities. Adjustments during the measurement period are recorded **retroactively** (as if they were known at the acquisition date).
+
+### Acquisition Costs
+
+Direct acquisition costs (legal fees, due diligence, finder's fees) are **expensed as incurred** — they are NOT included in the purchase price or added to goodwill. This is a common exam trap.
+
+The only exception: costs of issuing debt or equity securities follow their respective standards (debt issuance costs amortized; equity issuance costs reduce APIC).
+
+## Noncontrolling Interests (NCI)
+
+When less than 100% of a subsidiary is acquired, the acquirer must recognize the **noncontrolling interest** at fair value on the acquisition date.
+
+NCI is reported in the **equity section** of the consolidated balance sheet, separate from the parent's equity. NCI's share of subsidiary net income is reported on the consolidated income statement.
+
+## Key Terms
+
+- **Grant-date fair value** — The value of a stock-based award measured once at the date of grant, not subsequently adjusted for stock price changes
+- **Goodwill** — The excess of acquisition consideration over the fair value of identifiable net assets acquired in a business combination
+- **Contingent consideration** — Additional purchase price payments contingent on future events; classified as liability (remeasured) or equity (not remeasured)
+- **Measurement period** — Up to 12 months after a business combination during which the acquirer may adjust provisional fair values retroactively
+
+## Practice Problems
+
+**1.** A company grants 20,000 stock options on January 1, Year 1. The fair value per option is $6 and the vesting period is 3 years. What is the compensation expense recognized in Year 2?
+
+a) $120,000
+b) $40,000
+c) $60,000
+d) $80,000
+
+**Answer:** b) $40,000 — Total cost = 20,000 × $6 = $120,000. Annual expense = $120,000 / 3 = $40,000. The same amount is recognized each year of the vesting period.
+
+---
+
+**2.** In a business combination, Company P pays $8,000,000 to acquire Company S. The fair value of S's identifiable net assets is $6,500,000. Company P also incurs $200,000 in legal and advisory fees. What amount of goodwill is recognized?
+
+a) $1,700,000
+b) $1,500,000
+c) $1,300,000
+d) $1,900,000
+
+**Answer:** b) $1,500,000 — Goodwill = $8,000,000 - $6,500,000 = $1,500,000. The $200,000 in acquisition costs is expensed, not added to goodwill.
+
+---
+
+**3.** After initial recognition, contingent consideration classified as a liability in a business combination is:
+
+a) Not remeasured
+b) Remeasured at fair value with changes in goodwill
+c) Remeasured at fair value with changes in earnings
+d) Written off immediately
+
+**Answer:** c) Remeasured at fair value with changes in earnings — Liability-classified contingent consideration is remeasured each period, with changes reported in earnings. Changes do not adjust goodwill after the measurement period.

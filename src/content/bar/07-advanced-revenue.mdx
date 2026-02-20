@@ -1,0 +1,170 @@
+# Advanced Revenue and Intangibles
+
+## Learning Objectives
+
+- Apply ASC 606 to complex multi-element arrangements and variable consideration
+- Account for contract modifications, licensing, and principal-vs-agent arrangements
+- Apply the impairment models for goodwill (ASC 350) and long-lived assets (ASC 360)
+- Distinguish between internally developed and acquired intangible assets
+
+## ASC 606: Complex Revenue Recognition
+
+The five-step model from ASC 606 applies to all contracts with customers:
+
+1. **Identify the contract** with the customer
+2. **Identify the performance obligations** in the contract
+3. **Determine the transaction price**
+4. **Allocate the transaction price** to performance obligations
+5. **Recognize revenue** when (or as) each obligation is satisfied
+
+BAR goes deeper into complex applications of this framework.
+
+### Variable Consideration
+
+Variable consideration includes discounts, rebates, refunds, credits, price concessions, incentives, performance bonuses, and penalties. ASC 606 requires the entity to **estimate** variable consideration using one of two methods:
+
+- **Expected value** — Probability-weighted sum of possible outcomes (best when many possible outcomes)
+- **Most likely amount** — Single most likely outcome (best for binary outcomes — yes/no, pass/fail)
+
+The estimate is subject to the **constraint**: include variable consideration only to the extent it is probable that a significant reversal will not occur when uncertainty resolves.
+
+**Worked Example:**
+
+A construction company has a $10M contract with a $500K bonus if completed by March 31. Management estimates a 70% probability of on-time completion.
+
+- Expected value: 70% × $500,000 + 30% × $0 = $350,000
+- Most likely amount: $500,000 (since 70% > 50%, the most likely outcome is receiving the bonus)
+
+The company would use whichever method better predicts the outcome. If the constraint is met (no probable significant reversal), include the estimate in the transaction price.
+
+### Allocating Transaction Price
+
+When a contract has **multiple performance obligations**, allocate the total transaction price based on **relative standalone selling prices (SSP)**:
+
+Allocation to obligation = (SSP of obligation / Total SSP of all obligations) × Transaction price
+
+If standalone selling price is not directly observable, estimate using:
+
+1. **Adjusted market assessment** — What the market would pay
+2. **Expected cost plus margin** — Cost to satisfy plus a reasonable margin
+3. **Residual approach** — Total price minus observable SSPs (allowed only when SSP is highly variable or uncertain)
+
+**Worked Example:**
+
+A software company sells a bundle for $180,000: License (SSP $120,000), Implementation (SSP $40,000), One year of support (SSP $40,000). Total SSP = $200,000.
+
+- License: ($120,000 / $200,000) × $180,000 = **$108,000**
+- Implementation: ($40,000 / $200,000) × $180,000 = **$36,000**
+- Support: ($40,000 / $200,000) × $180,000 = **$36,000**
+
+### Contract Modifications
+
+A contract modification is a change in scope, price, or both. Accounting depends on whether the modification creates a **separate contract**:
+
+**Separate contract** if both: (1) distinct goods/services are added AND (2) the price increases by an amount that reflects standalone selling price. Account prospectively — like a new contract.
+
+**Not a separate contract** — Account as either:
+
+- **Prospective adjustment** — If remaining goods/services are distinct from those already transferred. Adjust the transaction price and allocate to remaining obligations going forward.
+- **Cumulative catch-up** — If remaining goods/services are NOT distinct (part of a single performance obligation partially satisfied). Adjust revenue recognized to date.
+
+### Licensing
+
+The nature of the license determines the revenue pattern:
+
+- **Right to use** (functional IP) — Revenue at a **point in time** when the license transfers. The customer can use the IP independently (e.g., software, film, music).
+- **Right to access** (symbolic IP) — Revenue **over time** as the customer accesses the IP. The entity's ongoing activities significantly affect the IP (e.g., brand name, franchise, team logo).
+
+> **Exam tip:** Software licenses are almost always "right to use" (point-in-time). Franchise rights are almost always "right to access" (over time). The key question is: does the licensor's ongoing activity change the value of the IP?
+
+### Principal vs. Agent
+
+When a third party is involved in providing goods or services, determine whether the entity is the **principal** (controls the good/service before transfer) or the **agent** (arranges for another party to provide it):
+
+| Factor | Principal | Agent |
+|--------|-----------|-------|
+| Revenue reported | Gross (full amount) | Net (commission only) |
+| Controls the good/service? | Yes | No |
+| Bears inventory risk? | Yes | No |
+| Sets the price? | Yes | No |
+
+**Worked Example:**
+
+An online marketplace charges sellers a 15% commission. A product sells for $100. The marketplace never takes possession.
+
+- Marketplace is the **agent**: Reports revenue of **$15** (commission)
+- If the marketplace took title and inventory risk: Reports revenue of **$100** (principal)
+
+## Goodwill Impairment (ASC 350)
+
+Goodwill is tested for impairment **annually** at the reporting unit level, or more frequently if triggering events occur.
+
+### Quantitative Test
+
+Compare the **fair value of the reporting unit** to its **carrying amount** (including goodwill):
+
+- If fair value ≥ carrying amount: **No impairment**
+- If fair value < carrying amount: Impairment loss = Carrying amount - Fair value (but not to exceed the carrying amount of goodwill)
+
+### Qualitative Assessment (Step 0)
+
+ASC 350-20 allows a **qualitative screen** first: assess whether it is "more likely than not" (>50%) that fair value is less than carrying amount. If not, skip the quantitative test.
+
+Qualitative factors: macroeconomic conditions, industry trends, cost factors, financial performance, entity-specific events, share price changes.
+
+> **Exam tip:** Goodwill impairment is a one-way street — once written down, goodwill can never be written back up under GAAP. Also, goodwill is not amortized for public companies (indefinite-life intangible).
+
+## Long-Lived Asset Impairment (ASC 360)
+
+Long-lived assets (PP&E, finite-life intangibles) use a **two-step impairment test** when triggering events occur:
+
+**Step 1 — Recoverability test:** Is the carrying amount recoverable from **undiscounted future cash flows**? If undiscounted cash flows ≥ carrying amount, no impairment.
+
+**Step 2 — Measurement:** If not recoverable, impairment loss = Carrying amount - **Fair value**.
+
+| Feature | Goodwill (ASC 350) | Long-Lived Assets (ASC 360) |
+|---------|--------------------|-----------------------------|
+| Trigger | Annual + events | Events only (no annual test) |
+| Step 1 test | FV vs. carrying | Undiscounted cash flows vs. carrying |
+| Measurement | FV vs. carrying | FV vs. carrying |
+| Reversal | Never | Never |
+
+## Key Terms
+
+- **Variable consideration** — Components of the transaction price that are uncertain at contract inception, estimated using expected value or most likely amount methods
+- **Standalone selling price** — The price at which an entity would sell a promised good or service separately; used to allocate the transaction price in multi-element arrangements
+- **Goodwill impairment** — A non-reversible write-down of goodwill when the fair value of a reporting unit falls below its carrying amount
+- **Functional IP** — Intellectual property with significant standalone functionality, recognized at a point in time (right to use)
+
+## Practice Problems
+
+**1.** A software company sells a bundle for $90,000 containing a license (SSP $60,000) and 2 years of support (SSP $40,000). How much revenue is allocated to the license?
+
+a) $60,000
+b) $54,000
+c) $45,000
+d) $50,000
+
+**Answer:** b) $54,000 — Total SSP = $100,000. License allocation = ($60,000 / $100,000) × $90,000 = $54,000.
+
+---
+
+**2.** A reporting unit has a carrying amount of $5,000,000 (including goodwill of $1,200,000) and a fair value of $4,200,000. What is the goodwill impairment loss?
+
+a) $1,200,000
+b) $800,000
+c) $0
+d) $2,000,000
+
+**Answer:** b) $800,000 — Impairment = Carrying amount - Fair value = $5,000,000 - $4,200,000 = $800,000. Since $800,000 is less than the goodwill carrying amount of $1,200,000, the full $800,000 is recorded as an impairment loss.
+
+---
+
+**3.** An online travel agency books hotel rooms for customers. The agency does not take possession of the rooms, does not set room prices, and earns a 12% commission. How should the agency report revenue on a $200 booking?
+
+a) $200 gross revenue
+b) $24 net revenue
+c) $176 net revenue
+d) $200 gross revenue with $176 cost of sales
+
+**Answer:** b) $24 net revenue — The agency is an agent because it does not control the service before transfer. Revenue is reported net: $200 × 12% = $24.

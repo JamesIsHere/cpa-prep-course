@@ -1,0 +1,186 @@
+# Financial Valuation Methods
+
+## Learning Objectives
+
+- Apply discounted cash flow (DCF) analysis to value a business or project
+- Calculate present value using free cash flow to the firm and free cash flow to equity
+- Use the dividend discount model to value equity
+- Apply market-based valuation multiples (P/E, EV/EBITDA, price-to-book)
+
+## Discounted Cash Flow (DCF) Analysis
+
+DCF is the foundation of intrinsic valuation. The premise is simple: **an asset is worth the present value of its future cash flows**, discounted at a rate that reflects the risk of those cash flows.
+
+### Free Cash Flow to the Firm (FCFF)
+
+FCFF represents cash available to **all capital providers** (debt and equity). Discount FCFF at the **WACC** to find enterprise value.
+
+FCFF = EBIT(1 - Tax rate) + Depreciation - Capital expenditures - Change in net working capital
+
+Or equivalently:
+
+FCFF = Net income + Depreciation + Interest(1 - T) - CapEx - ΔWorking capital
+
+### Free Cash Flow to Equity (FCFE)
+
+FCFE represents cash available to **equity holders only**. Discount FCFE at the **cost of equity** to find equity value directly.
+
+FCFE = FCFF - Interest(1 - T) + Net borrowing
+
+Or:
+
+FCFE = Net income + Depreciation - CapEx - ΔWorking capital + Net borrowing
+
+> **Exam tip:** FCFF is discounted at WACC to get enterprise value. FCFE is discounted at cost of equity to get equity value directly. The exam often tests whether you correctly match the cash flow type with the correct discount rate.
+
+**Worked Example — FCFF:**
+
+A company reports: EBIT $200,000; Tax rate 25%; Depreciation $40,000; CapEx $60,000; Increase in NWC $15,000.
+
+FCFF = $200,000(0.75) + $40,000 - $60,000 - $15,000
+FCFF = $150,000 + $40,000 - $60,000 - $15,000 = **$115,000**
+
+### Terminal Value
+
+Since projecting cash flows indefinitely is impractical, analysts project **discrete cash flows** for a forecast period (typically 5-10 years) and estimate a **terminal value** for all years beyond:
+
+**Gordon Growth Terminal Value:**
+
+Terminal value = FCF_final × (1 + g) / (r - g)
+
+Where:
+- FCF_final = Free cash flow in the last projected year
+- g = Long-term sustainable growth rate (typically 2-3%)
+- r = Discount rate (WACC for FCFF, cost of equity for FCFE)
+
+**Exit Multiple Terminal Value:**
+
+Terminal value = EBITDA_final × Exit multiple
+
+The exit multiple approach uses a comparable company's trading multiple (e.g., 8x EBITDA) applied to the terminal year's metric.
+
+**Worked Example — Full DCF:**
+
+Projected FCFF: Year 1: $100K, Year 2: $110K, Year 3: $121K, Year 4: $133K, Year 5: $146K. WACC: 10%. Terminal growth rate: 3%.
+
+Terminal value = $146,000 × (1.03) / (0.10 - 0.03) = $150,380 / 0.07 = **$2,148,286**
+
+Enterprise value = PV of Year 1-5 FCFF + PV of terminal value
+= $100K/1.10 + $110K/1.21 + $121K/1.331 + $133K/1.4641 + $146K/1.6105 + $2,148,286/1.6105
+= $90,909 + $90,909 + $90,909 + $90,852 + $90,652 + $1,333,868
+= **$1,788,099**
+
+> **Exam tip:** Terminal value often represents 60-80% of total enterprise value in a DCF. This makes the growth rate and discount rate assumptions in the terminal value extremely influential. Even small changes in g or r dramatically change the result.
+
+## Dividend Discount Model (DDM)
+
+The DDM values equity based on expected **future dividends**.
+
+### Constant Growth (Gordon Growth Model)
+
+P₀ = D₁ / (rₑ - g)
+
+Where:
+- D₁ = Expected dividend next year (D₀ × (1 + g))
+- rₑ = Required rate of return on equity
+- g = Constant dividend growth rate
+
+**Constraint:** g must be less than rₑ, and g should approximate the long-term nominal GDP growth rate for a mature company.
+
+**Worked Example:**
+
+A company just paid a dividend of $2.00. Dividends are expected to grow at 5% per year. The required return is 12%.
+
+D₁ = $2.00 × 1.05 = $2.10
+P₀ = $2.10 / (0.12 - 0.05) = $2.10 / 0.07 = **$30.00**
+
+### Two-Stage DDM
+
+For companies with high near-term growth that will eventually stabilize:
+
+1. Project dividends during the high-growth phase (e.g., 5 years at 15%)
+2. Calculate the terminal value at the point growth drops to the stable rate
+3. Discount all cash flows back to the present
+
+## Market-Based Valuation (Multiples)
+
+Market multiples provide a **relative valuation** by comparing a company to its peers.
+
+### Common Multiples
+
+| Multiple | Formula | Used When |
+|----------|---------|-----------|
+| Price-to-Earnings (P/E) | Market price / EPS | Profitable companies with stable earnings |
+| EV/EBITDA | Enterprise value / EBITDA | Comparing companies with different capital structures |
+| Price-to-Book (P/B) | Market price / Book value per share | Asset-heavy industries (banks, REITs) |
+| Price-to-Sales (P/S) | Market price / Revenue per share | Early-stage or unprofitable companies |
+| EV/Revenue | Enterprise value / Revenue | SaaS, high-growth sectors |
+
+### Enterprise Value
+
+Enterprise value = Market cap + Total debt + Preferred stock + Minority interest - Cash
+
+EV represents the **total acquisition cost** of a business. EV-based multiples (EV/EBITDA, EV/Revenue) are more comparable across companies with different leverage than equity-based multiples (P/E).
+
+> **Exam tip:** P/E uses equity value (stock price); EV/EBITDA uses enterprise value. Never mix equity multiples with enterprise-level metrics. A P/EBITDA ratio is meaningless.
+
+**Worked Example:**
+
+Company A has: Stock price $40, shares outstanding 10M, total debt $100M, cash $20M, EBITDA $50M, EPS $3.00.
+
+- Market cap: $40 × 10M = $400M
+- Enterprise value: $400M + $100M - $20M = $480M
+- P/E: $40 / $3.00 = **13.3x**
+- EV/EBITDA: $480M / $50M = **9.6x**
+
+If comparable companies trade at 12x EV/EBITDA, the implied EV = 12 × $50M = $600M, suggesting the stock is undervalued.
+
+## Reconciling Enterprise Value to Equity Value
+
+Enterprise value → Equity value:
+
+Equity value = Enterprise value - Debt - Preferred stock - Minority interest + Cash
+
+This step is critical when using EV-based methods (DCF with FCFF, EV/EBITDA) to determine the value per share:
+
+Value per share = Equity value / Shares outstanding
+
+## Key Terms
+
+- **Enterprise value** — The total value of a firm to all capital providers, calculated as market capitalization plus debt minus cash; used in EV-based valuation multiples
+- **Terminal value** — The value of all cash flows beyond the explicit forecast period in a DCF model, typically calculated using the Gordon Growth or exit multiple method
+- **FCFF** — Free cash flow to the firm; the cash flow available to both debt and equity holders after operating expenses, taxes, and reinvestment
+- **Relative valuation** — Valuing a company by comparing its trading multiples to those of similar companies or industry averages
+
+## Practice Problems
+
+**1.** A company has EBIT of $300,000, a tax rate of 20%, depreciation of $50,000, capital expenditures of $80,000, and an increase in net working capital of $20,000. What is FCFF?
+
+a) $190,000
+b) $250,000
+c) $200,000
+d) $240,000
+
+**Answer:** a) $190,000 — FCFF = $300,000(0.80) + $50,000 - $80,000 - $20,000 = $240,000 + $50,000 - $80,000 - $20,000 = $190,000.
+
+---
+
+**2.** A stock just paid a $1.50 dividend. Dividends are expected to grow at 6% annually. The required return is 10%. What is the intrinsic value using the Gordon Growth Model?
+
+a) $37.50
+b) $39.75
+c) $15.00
+d) $25.00
+
+**Answer:** b) $39.75 — D₁ = $1.50 × 1.06 = $1.59. P₀ = $1.59 / (0.10 - 0.06) = $1.59 / 0.04 = $39.75.
+
+---
+
+**3.** A company has a market cap of $500M, total debt of $200M, cash of $50M, and EBITDA of $80M. What is the EV/EBITDA multiple?
+
+a) 6.25x
+b) 8.13x
+c) 9.38x
+d) 6.88x
+
+**Answer:** b) 8.13x — EV = $500M + $200M - $50M = $650M. EV/EBITDA = $650M / $80M = 8.125x, or approximately 8.13x.

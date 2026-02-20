@@ -1,0 +1,169 @@
+# Derivatives and Hedging
+
+## Learning Objectives
+
+- Define derivatives and identify their key characteristics under ASC 815
+- Distinguish between fair value hedges, cash flow hedges, and net investment hedges
+- Apply hedge accounting and measure hedge effectiveness
+- Account for common derivative instruments (forwards, futures, options, swaps)
+
+## What is a Derivative?
+
+Under ASC 815, a **derivative** is a financial instrument with all three characteristics:
+
+1. **Underlying and notional amount** — Its value changes in response to changes in an underlying variable (interest rate, exchange rate, commodity price, stock price) applied to a notional amount or payment provision
+2. **Little or no initial net investment** — Requires little or no initial investment relative to other contracts with similar exposure
+3. **Net settlement** — Can be settled net in cash, by delivery of an asset readily convertible to cash, or by an exchange mechanism that provides net settlement
+
+Common derivatives: forward contracts, futures contracts, options, and swaps.
+
+> **Exam tip:** Typical contracts that meet the derivative definition under ASC 815 include interest rate swaps, foreign currency forwards, commodity futures, and stock options. Normal purchase/sale contracts for physical delivery are often excluded under the "normal purchases and sales" scope exception.
+
+## Derivative Instruments
+
+### Forward Contracts
+
+A **forward** is a customized agreement between two parties to buy or sell an asset at a specified price on a future date. Forwards are **over-the-counter (OTC)** — not exchange-traded, creating counterparty risk.
+
+### Futures Contracts
+
+A **future** is a standardized forward contract traded on an organized exchange. Key differences from forwards: daily settlement (mark-to-market), standardized terms, exchange clearinghouse eliminates counterparty risk, margin requirements.
+
+### Options
+
+An **option** gives the holder the **right, but not the obligation**, to buy (call) or sell (put) an asset at a specified strike price before or on the expiration date.
+
+- **Call option** — Right to buy at the strike price. Profitable when the underlying rises above the strike.
+- **Put option** — Right to sell at the strike price. Profitable when the underlying falls below the strike.
+- **Premium** — The price paid for the option; represents the maximum loss for the buyer.
+
+### Interest Rate Swaps
+
+An **interest rate swap** exchanges cash flows based on a notional principal amount. The most common type:
+
+- **Plain vanilla swap:** One party pays a fixed rate, the other pays a floating rate (e.g., SOFR)
+- Only the **net difference** is exchanged at each settlement date
+- No exchange of principal
+
+**Worked Example:**
+
+Company A has a $10,000,000 floating-rate loan at SOFR + 2%. To hedge rising rates, it enters an interest rate swap: pays fixed 5%, receives SOFR.
+
+If SOFR = 4%:
+- Loan payment: 4% + 2% = 6% on $10M = $600,000
+- Swap: Pays 5%, receives 4% → net payment of 1% on $10M = $100,000
+- Total cost: $600,000 + $100,000 = **$700,000** (effective rate: 7%)
+
+If SOFR = 6%:
+- Loan payment: 6% + 2% = 8% on $10M = $800,000
+- Swap: Pays 5%, receives 6% → net receipt of 1% on $10M = ($100,000)
+- Total cost: $800,000 - $100,000 = **$700,000** (effective rate: 7%)
+
+The swap locks the effective rate at 7% regardless of SOFR movements.
+
+## General Derivative Accounting
+
+Under ASC 815, **all derivatives** are recognized on the balance sheet at **fair value** as either assets or liabilities.
+
+**Without hedge designation:** Changes in fair value are recognized in **earnings** immediately. This is the default treatment.
+
+**With hedge designation:** Special hedge accounting may apply, allowing certain gains and losses to be deferred or matched with the hedged item.
+
+## Hedge Accounting (ASC 815)
+
+Hedge accounting is **optional** — companies must formally designate and document the hedge relationship to qualify. Three types:
+
+### Fair Value Hedge
+
+Hedges the exposure to changes in the **fair value of a recognized asset/liability** or a firm commitment.
+
+**Accounting:** Both the derivative and the hedged item are marked to fair value each period, with changes in both reported in **earnings**. The gains and losses offset.
+
+**Common example:** Hedging the fair value of fixed-rate debt using an interest rate swap (receive fixed, pay floating). As rates change, the swap gain/loss offsets the change in the debt's fair value.
+
+### Cash Flow Hedge
+
+Hedges the exposure to variability in **expected future cash flows** of a recognized asset/liability or a forecasted transaction.
+
+**Accounting:**
+1. The **effective portion** of the derivative gain/loss is recorded in **other comprehensive income (OCI)**
+2. Reclassified from OCI to earnings when the hedged transaction **affects earnings**
+3. The **ineffective portion** goes directly to earnings
+
+**Common example:** A company with variable-rate debt uses a swap (pay fixed, receive floating) to hedge future interest payments. The effective portion of the swap's gain/loss goes to OCI until the interest payment is made.
+
+> **Exam tip:** The key distinction: Fair value hedge = changes in BOTH the hedged item and derivative go to earnings. Cash flow hedge = effective portion of derivative gain/loss goes to OCI first, then reclassified to earnings.
+
+### Net Investment Hedge
+
+Hedges the foreign currency exposure of a **net investment in a foreign operation**.
+
+**Accounting:** The effective portion of the hedge gain/loss is recognized in the **cumulative translation adjustment (CTA)** within OCI. Treatment parallels the translation adjustment of the foreign operation itself.
+
+### Summary of Hedge Types
+
+| Feature | Fair Value Hedge | Cash Flow Hedge | Net Investment Hedge |
+|---------|-----------------|-----------------|---------------------|
+| What is hedged | FV of asset/liability or firm commitment | Variability of future cash flows | FX exposure of foreign sub |
+| Derivative gain/loss | Earnings | OCI (effective), Earnings (ineffective) | CTA in OCI |
+| Hedged item treatment | Adjusted to FV through earnings | No adjustment until reclassification | Translation in CTA |
+
+## Hedge Effectiveness
+
+To qualify for hedge accounting, the hedge must be **highly effective** at achieving offsetting changes. Under ASU 2017-12:
+
+- Qualitative assessment is allowed for certain hedges (matched terms)
+- Quantitative methods include the **dollar-offset method** (change in derivative value / change in hedged item value, targeting 80-125%) and **regression analysis**
+- Effectiveness must be assessed at inception and on an ongoing basis
+
+If a hedge ceases to be highly effective, hedge accounting is **discontinued prospectively**.
+
+## Embedded Derivatives
+
+An **embedded derivative** is a component within a hybrid instrument that meets the derivative definition. Under ASC 815, an embedded derivative must be **bifurcated** (separated) from the host contract and accounted for at fair value if:
+
+1. The economic characteristics of the embedded derivative are **not clearly and closely related** to the host contract
+2. The hybrid instrument is not measured at fair value with changes in earnings
+3. A separate instrument with the same terms would be a derivative
+
+**Example:** A bond denominated in USD with a coupon that resets based on the price of gold. The gold-linked component is an embedded derivative that must be bifurcated.
+
+## Key Terms
+
+- **Notional amount** — The face amount on which derivative payments are based; for an interest rate swap, the notional is the principal used to calculate interest payments (but is never exchanged)
+- **Fair value hedge** — A hedge of the exposure to changes in fair value of a recognized asset, liability, or firm commitment, with both the derivative and hedged item marked to earnings
+- **Cash flow hedge** — A hedge of expected variability in future cash flows, with the effective portion of derivative gains/losses parked in OCI
+- **Bifurcation** — Separating an embedded derivative from its host contract for separate fair value accounting under ASC 815
+
+## Practice Problems
+
+**1.** A company enters into an interest rate swap to hedge the variability of interest payments on its variable-rate debt. What type of hedge is this?
+
+a) Fair value hedge
+b) Cash flow hedge
+c) Net investment hedge
+d) Speculation (no hedge designation)
+
+**Answer:** b) Cash flow hedge — Variable-rate debt creates uncertainty in future cash flows (interest payments). A swap converting floating to fixed hedges the cash flow variability, qualifying as a cash flow hedge.
+
+---
+
+**2.** Under a fair value hedge, where are changes in the fair value of the hedging derivative recognized?
+
+a) Other comprehensive income
+b) Retained earnings directly
+c) Earnings (income statement)
+d) Cumulative translation adjustment
+
+**Answer:** c) Earnings (income statement) — In a fair value hedge, both the derivative gain/loss and the offsetting change in the hedged item's fair value are recognized in earnings.
+
+---
+
+**3.** A company enters a forward contract to purchase 10,000 barrels of oil for delivery in 6 months at $75/barrel. The current spot price is $72/barrel. Which of the following is NOT a characteristic of a derivative under ASC 815?
+
+a) The contract has an underlying (oil price) and notional amount (10,000 barrels)
+b) The contract requires a large initial investment equal to the purchase price
+c) The contract can be settled net
+d) The value changes with the price of oil
+
+**Answer:** b) The contract requires a large initial investment equal to the purchase price — Derivatives require little or no initial net investment. If the full purchase price were required upfront, it would not meet the derivative definition. Forward contracts typically require no initial payment (or only a small margin deposit).

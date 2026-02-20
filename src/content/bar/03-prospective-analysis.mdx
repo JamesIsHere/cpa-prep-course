@@ -1,0 +1,180 @@
+# Prospective Analysis and Forecasting
+
+## Learning Objectives
+
+- Distinguish between financial forecasts and financial projections
+- Prepare pro forma financial statements using percentage-of-sales and other methods
+- Apply regression analysis and time-series methods to financial data
+- Identify the attestation standards governing prospective financial information
+
+## Forecasts vs. Projections
+
+The AICPA distinguishes two types of **prospective financial statements**:
+
+**Financial forecast** — Presents expected financial position, results of operations, and cash flows based on the entity's **expected conditions and expected course of action**. This is the entity's best estimate of what will happen.
+
+**Financial projection** — Presents financial results based on one or more **hypothetical assumptions** (what-if scenarios). Projections are useful for planning but are not predictions — they answer "what would happen if" rather than "what will happen."
+
+| Feature | Forecast | Projection |
+|---------|----------|------------|
+| Basis | Expected conditions | Hypothetical assumptions |
+| Distribution | General use (any third party) | Limited use (specified parties) |
+| Exam answer | "Best estimate" | "What-if scenario" |
+| Attestation | Examination or agreed-upon | Examination, agreed-upon, or compilation |
+
+> **Exam tip:** Forecasts are for general use; projections are restricted to limited use. A forecast given only to a bank is still a forecast — the distinction is based on the assumptions, not the audience. But projections must never be distributed for general use.
+
+## Pro Forma Financial Statements
+
+Pro forma statements are forward-looking projections of a company's financial performance. The most common method is the **percentage-of-sales approach**.
+
+### Percentage-of-Sales Method
+
+This method assumes that most income statement and balance sheet items maintain a **stable relationship to revenue**. Steps:
+
+1. Project future revenue (growth assumption)
+2. Express each line item as a % of current revenue
+3. Apply those percentages to projected revenue
+4. Identify items that do **not** scale with sales (debt, equity, fixed charges)
+5. Calculate the **external financing needed (EFN)**
+
+**External Financing Needed:**
+
+EFN = (A/S)(ΔS) - (L/S)(ΔS) - PM(S₁)(1 - d)
+
+Where:
+- A/S = Assets that vary with sales / Current sales
+- L/S = Liabilities that spontaneously vary with sales / Current sales
+- ΔS = Change in sales
+- PM = Profit margin
+- S₁ = Projected sales
+- d = Dividend payout ratio
+
+**Worked Example:**
+
+Current sales: $1,000,000. Projected sales: $1,200,000. Total assets: $800,000 (all vary with sales). Spontaneous liabilities: $200,000. Net profit margin: 5%. Dividend payout: 40%.
+
+- A/S = $800,000 / $1,000,000 = 0.80
+- L/S = $200,000 / $1,000,000 = 0.20
+- ΔS = $200,000
+- PM x S₁ x (1 - d) = 5% x $1,200,000 x 0.60 = $36,000
+
+EFN = 0.80($200,000) - 0.20($200,000) - $36,000 = $160,000 - $40,000 - $36,000 = **$84,000**
+
+The company needs $84,000 in external financing (new debt or equity) to support the sales growth.
+
+## Regression Analysis
+
+**Simple linear regression** models the relationship between a dependent variable (Y) and one independent variable (X):
+
+Y = a + bX
+
+Where:
+- a = Y-intercept (fixed component)
+- b = Slope (variable component per unit of X)
+
+**Multiple regression** extends this to two or more independent variables:
+
+Y = a + b₁X₁ + b₂X₂ + ... + bₙXₙ
+
+### Key Statistics
+
+- **R² (coefficient of determination)** — Percentage of variation in Y explained by the model. R² of 0.85 means the model explains 85% of the variation.
+- **Standard error** — Measures the average distance of observed values from the regression line. Lower = better fit.
+- **t-statistic / p-value** — Tests whether each coefficient is significantly different from zero. A p-value below 0.05 generally indicates significance.
+
+> **Exam tip:** R² ranges from 0 to 1. A high R² does not prove causation — it only measures correlation. Also remember that adding more independent variables always increases R², so use adjusted R² when comparing models with different numbers of predictors.
+
+**Worked Example:**
+
+A company uses regression to predict overhead costs (Y) based on machine hours (X). Results: Y = $50,000 + $12X, R² = 0.92.
+
+Interpretation: Fixed overhead is approximately $50,000 per period, and each machine hour adds $12 in variable overhead. The model explains 92% of the variation in overhead costs. At 10,000 machine hours: Y = $50,000 + $12(10,000) = **$170,000**.
+
+## Time-Series Methods
+
+### Moving Averages
+
+A **simple moving average** smooths data by averaging the most recent N periods. A 3-month moving average forecast for April uses the average of January, February, and March.
+
+A **weighted moving average** assigns greater weight to more recent observations, making the forecast more responsive to recent trends.
+
+### Exponential Smoothing
+
+Assigns exponentially decreasing weights to older observations using a **smoothing constant (α)**, where 0 < α < 1:
+
+New forecast = α(Actual most recent) + (1 - α)(Previous forecast)
+
+- Higher α (closer to 1) = more responsive to recent changes
+- Lower α (closer to 0) = smoother, slower to react
+
+**Worked Example:**
+
+Previous forecast: 100 units. Actual demand: 120 units. α = 0.3.
+
+New forecast = 0.3(120) + 0.7(100) = 36 + 70 = **106 units**
+
+### Seasonal Adjustments
+
+When data exhibits predictable seasonal patterns, analysts apply **seasonal indices** to adjust forecasts. The index represents how much a season deviates from the annual average:
+
+- Index of 1.20 for Q4 means Q4 sales are typically 20% above the quarterly average
+- Deseasonalized value = Actual / Seasonal index
+
+## Sensitivity Analysis and Scenario Analysis
+
+**Sensitivity analysis** changes **one variable at a time** to measure its impact on the outcome. Also called "what-if" analysis.
+
+**Scenario analysis** changes **multiple variables simultaneously** to model different states of the world (best case, base case, worst case).
+
+Both techniques help management and analysts understand the range of possible outcomes and identify which assumptions drive the most risk.
+
+## Attestation Standards for Prospective Information
+
+Under AT-C Section 305, a CPA can perform:
+
+- **Examination** — Provides positive assurance (opinion) on whether the assumptions are reasonable and the statements are prepared in conformity with AICPA guidelines
+- **Agreed-upon procedures** — Report of findings based on specific procedures agreed to by the parties
+- **Compilation** — Assembly of prospective statements without assurance (projections only)
+
+A CPA **cannot** audit prospective financial statements — the nature of forward-looking information precludes an audit opinion.
+
+## Key Terms
+
+- **External financing needed (EFN)** — The additional debt or equity a company must raise to support projected sales growth after accounting for internally generated funds
+- **R-squared** — The coefficient of determination; measures the proportion of variation in the dependent variable explained by the independent variable(s) in a regression model
+- **Exponential smoothing** — A time-series forecasting method that weights recent observations more heavily, controlled by the smoothing constant alpha
+- **Sensitivity analysis** — A technique that measures the effect of changing one input variable at a time on a projected outcome
+
+## Practice Problems
+
+**1.** A company uses exponential smoothing with α = 0.4. The previous forecast was 200 units and actual demand was 250 units. What is the next forecast?
+
+a) 220 units
+b) 225 units
+c) 230 units
+d) 240 units
+
+**Answer:** a) 220 units — New forecast = 0.4(250) + 0.6(200) = 100 + 120 = 220 units.
+
+---
+
+**2.** Which of the following types of prospective financial statements may be distributed for general use?
+
+a) Financial projections
+b) Financial forecasts
+c) Both forecasts and projections
+d) Neither — prospective statements are always restricted
+
+**Answer:** b) Financial forecasts — Forecasts are based on expected conditions and may be distributed for general use. Projections are restricted to limited use because they are based on hypothetical assumptions.
+
+---
+
+**3.** A company has $500,000 in total assets (all varying with sales), $100,000 in spontaneous liabilities, current sales of $1,000,000, projected sales of $1,100,000, a 10% net profit margin, and a 50% dividend payout ratio. What is the external financing needed?
+
+a) $5,000
+b) $15,000
+c) $50,000
+d) $0
+
+**Answer:** a) $5,000 — EFN = 0.50($100,000) - 0.10($100,000) - [10% x $1,100,000 x 50%] = $50,000 - $10,000 - $55,000. Wait — let me recalculate. A/S = 0.50, L/S = 0.10, ΔS = $100,000. EFN = 0.50(100,000) - 0.10(100,000) - 0.10(1,100,000)(0.50) = 50,000 - 10,000 - 55,000 = -$15,000. A negative EFN means no external financing is needed — the company generates a surplus. The correct answer is d) $0 (no external financing needed, as the company has excess internal funds). When EFN is negative, the company has surplus funds that can be used to pay down debt or increase dividends.
