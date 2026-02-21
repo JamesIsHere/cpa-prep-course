@@ -29,6 +29,7 @@ Reddit-first launch strategy. See `docs/marketing-plan.md` for full plan, conten
 Blueprint-driven study pipeline, content connectivity, and data quality.
 
 ### Upcoming
+- [ ] Apply migrations 00032–00037 to production Supabase (600 gap coverage questions)
 - [ ] Resubmit sitemap to Google Search Console (now includes ~127 blueprint pages)
 - [ ] Add per-topic progress tracking to quiz_attempts (enables real per-group progress instead of proportional estimate)
 - [ ] Review Blueprint Explorer UI on mobile (accordion, group links, progress bars)
@@ -37,6 +38,9 @@ Blueprint-driven study pipeline, content connectivity, and data quality.
 
 | Date       | Task                                                                    |
 |------------|-------------------------------------------------------------------------|
+| 2026-02-21 | Add 600 gap questions for 30 unmapped blueprint groups (5,005 total)    |
+| 2026-02-21 | Update all question count references from 4,400+ to 5,000+             |
+| 2026-02-21 | Upgrade /wrap command with coherence audit step                         |
 | 2026-02-20 | Blueprint Pipeline: Explorer, group detail, targeted quizzes (11 files) |
 | 2026-02-20 | Tag 280 framework items with blueprintGroups across all 6 sections      |
 | 2026-02-20 | Add topics filter to quiz API for targeted practice                     |

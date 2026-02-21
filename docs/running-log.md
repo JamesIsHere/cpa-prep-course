@@ -1,5 +1,11 @@
 # Running Log
 
+## 2026-02-21 00:36
+1. Upgraded /wrap command with coherence audit step (hardcoded counts, CLAUDE.md accuracy, To Do.md, tests, stale files, build/test)
+2. Updated CLAUDE.md git section with current commit history
+3. Updated To Do.md: added 3 completed tasks, added pending task for production migration push
+4. Verified build + 113/113 tests pass after all coherence fixes
+
 ## 2026-02-21 00:30
 1. Created 6 SQL migration files (00032–00037) with 600 new questions for 30 unmapped blueprint groups
 2. AUD gap coverage: 300 questions across 15 new topics (Nature/Scope, Independence, Skepticism, Terms, Entity/Environment, Materiality, Assessed Risks, Work of Others, Tests of Controls, Analytical Procedures, Misstatements, Written Representations, Specific Areas, Report Modifications, Other Information)

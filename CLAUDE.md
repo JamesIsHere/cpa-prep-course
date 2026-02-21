@@ -123,9 +123,9 @@ Full product specification with all 7 phases, data model, and acceptance criteri
 Repository: https://github.com/JamesIsHere/cpa-prep-course
 Branch: `master`
 Latest commits:
-- `6afa973` rebalance quiz answer distribution and update pricing to $29.99
-- `a29529e` expand question bank from 1,307 to 4,405 questions across all 6 CPA sections
-- `64bb03b` add /blog route with MDX support and 2 initial posts
+- `478e6c8` add 600 blueprint gap questions, update all count references to 5,000+
+- `ef6d526` remove inline practice problems from all 94 lesson files
+- `5bbe92b` add Blueprint Explorer, targeted quizzes, project audit, and marketing docs
 - `900e33d` update all content to 2026 AICPA Blueprint with H.R. 1 provisions
 - `d5aeda1` project audit, Stripe go-live, marketing plan, remove free copy
 - `8e33678` fix 3 medium content QA issues: ISC encryption tree, TCP basis ordering, TCP 199A threshold
