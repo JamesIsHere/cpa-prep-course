@@ -79,6 +79,7 @@ npm run validate-migration <file>  # Validate question migration against style g
 | `supabase/migrations/00038_add_cognitive_level.sql` | Bloom's cognitive level column          |
 | `supabase/migrations/00040–00041`             | Data fix + 8 critical question rewrites  |
 | `supabase/migrations/00042–00050`                     | Deduplication + 8 question batch upgrades |
+| `supabase/migrations/00051–00060`                     | 10 more question batch upgrades (120 questions) |
 | `docs/question-style-guide.md`                | Question writing rubric (all new questions must meet this) |
 | `scripts/qa/run-qa.ts`                        | QA audit entry point (`npm run qa`)        |
 | `scripts/qa/validate-migration.ts`            | Pre-commit migration validator             |
@@ -141,8 +142,8 @@ Full product specification with all 7 phases, data model, and acceptance criteri
 Repository: https://github.com/JamesIsHere/cpa-prep-course
 Branch: `master`
 Latest commits:
+- `031f91e` deduplicate 18 questions, upgrade 172 moderate questions across 8 topics
 - `1275c2e` rewrite 8 critical questions, fix defined benefit limit, add fetch utility
 - `9cc30f3` build QA system: analyzers, style guide, validator, Bloom's tagging
 - `2f94b61` pipeline QA: indigo color, remove duplicate, fix stale tests, coherence audit
 - `f63c327` checkpoint: pipeline color refactor, remove duplicate, fix stale tests
-- `1a8f380` add study pipeline visual and framework discoverability across 8 pages

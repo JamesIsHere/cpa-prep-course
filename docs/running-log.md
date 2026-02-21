@@ -1,5 +1,18 @@
 # Running Log
 
+## 2026-02-22 03:45
+1. Upgraded 19 moderate Prospective Analysis and Forecasting questions to score 7+ (migration 00051)
+2. Upgraded 15 moderate Advanced Consolidations questions to score 7+ (migration 00052)
+3. Upgraded 15 moderate Financial Statement Analysis questions to score 7+ (migration 00053)
+4. Upgraded 15 moderate Stock Compensation and Business Combinations questions to score 7+ (migration 00054)
+5. Upgraded 10 moderate Internal Controls questions to score 7+ (migration 00055)
+6. Upgraded 10 moderate Business Law: Contracts questions to score 7+ (migration 00056)
+7. Upgraded 9 moderate Audit Sampling questions to score 7+ (migration 00057)
+8. Upgraded 9 moderate Agency and Regulation questions to score 7+ (migration 00058)
+9. Upgraded 9 moderate Estate and Gift Tax questions to score 7+ (migration 00059)
+10. Upgraded 9 moderate Advanced Lease Transactions questions to score 7+ (migration 00060)
+11. Coherence audit: archived stale session file, updated CLAUDE.md key files and git section, verified build + tests pass
+
 ## 2026-02-22 03:10
 1. Deduplicated 29 likely-duplicate question pairs: deleted 18 true duplicates, kept 11 intentional foil pairs (migration 00042)
 2. Upgraded 37 moderate State and Local Government Reporting questions to score 7+ (migration 00043)
