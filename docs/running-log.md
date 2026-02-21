@@ -1,5 +1,17 @@
 # Running Log
 
+## 2026-02-20 22:08
+1. Validated all 6 expansion migration files (00025–00030): zero SQL syntax errors, valid JSONB, correct difficulty distributions
+2. Identified severe correct_index skew in 5 of 6 files (AUD, FAR, REG, ISC, TCP) — index 1 overrepresented up to 58%
+3. Wrote and ran Python rebalance script to fix correct_index distribution to ~25% per index in all 5 local migration files
+4. Created production migration (00031_rebalance_correct_index.sql) — idempotent PL/pgSQL block that rebalances based on current state
+5. Applied 00031 to production Supabase via `supabase db push` — all 5 sections rebalanced successfully
+6. Updated pricing from $9.99 to $29.99 across 13 source files (components, pages, blog posts, signup, paywall, meta descriptions)
+7. Updated blog post math to reflect new pricing ($360/12mo, $180-$360 for 6-12mo, cost summary totals)
+8. Updated marketing plan: positioning, competitor table, ad copy, objections, revenue projections, LTV metrics
+9. Updated CLAUDE.md, README.md, and 3 e2e test assertions for new $29.99 price
+10. Cleaned up temp rebalance script after use
+
 ## 2026-02-20 21:42
 1. Created 6 SQL migration files (00025–00030) with 3,098 new questions across all CPA sections
 2. AUD expansion: 540 new questions (00025_expand_aud_bank.sql), total ~755

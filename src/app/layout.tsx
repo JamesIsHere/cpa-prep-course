@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 		template: "%s — Slayer CPA",
 	},
 	description:
-		"Full-scope CPA exam prep — 96 lessons, 4,400+ practice questions, timed exams, and study frameworks across all 6 sections for $9.99/month.",
+		"Full-scope CPA exam prep — 96 lessons, 4,400+ practice questions, timed exams, and study frameworks across all 6 sections for $29.99/month.",
 	metadataBase: new URL("https://www.slayer-cpa.com"),
 	openGraph: {
 		type: "website",

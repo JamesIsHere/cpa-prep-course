@@ -776,16 +776,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'Data Management and Lifecycle',
  'Which SQL statement is used to retrieve specific columns and rows from a database table based on defined conditions?',
- '["INSERT INTO", "SELECT ... FROM ... WHERE", "CREATE TABLE", "DROP TABLE"]'::jsonb,
- 1,
+ '["SELECT ... FROM ... WHERE", "INSERT INTO", "CREATE TABLE", "DROP TABLE"]'::jsonb,
+ 0,
  'The SELECT statement with FROM and WHERE clauses is the fundamental SQL query for retrieving data. SELECT specifies which columns to return, FROM identifies the table(s), and WHERE filters rows based on conditions. INSERT adds new rows, CREATE TABLE defines new tables, and DROP TABLE permanently removes tables.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'Data Management and Lifecycle',
  'A company''s data warehouse contains ten years of general ledger data. The CFO wants to analyze revenue trends by product line, region, and fiscal quarter. Which data warehouse query technique is MOST appropriate?',
- '["OLTP transaction processing", "OLAP cube analysis with drill-down, slice, and dice operations across product, region, and time dimensions", "Full table scans of the entire general ledger", "Exporting all data to spreadsheets for manual analysis"]'::jsonb,
- 1,
+ '["OLTP transaction processing", "Exporting all data to spreadsheets for manual analysis", "Full table scans of the entire general ledger", "OLAP cube analysis with drill-down, slice, and dice operations across product, region, and time dimensions"]'::jsonb,
+ 3,
  'OLAP cube analysis enables multidimensional exploration of aggregated data. The CFO can drill down from annual to quarterly revenue, slice by specific product lines, and dice across regions — all interactively. OLTP is for transaction processing, full table scans are inefficient for analysis, and exporting to spreadsheets does not scale for ten years of data.',
  'medium');
 
@@ -1029,8 +1029,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'System Availability and Change Management',
  'Which of the following metrics measures the average time a system operates between failures?',
- '["Mean Time to Repair (MTTR)", "Mean Time Between Failures (MTBF)", "Recovery Time Objective (RTO)", "Recovery Point Objective (RPO)"]'::jsonb,
- 1,
+ '["Mean Time to Repair (MTTR)", "Recovery Time Objective (RTO)", "Mean Time Between Failures (MTBF)", "Recovery Point Objective (RPO)"]'::jsonb,
+ 2,
  'Mean Time Between Failures (MTBF) measures the average operational time between system failures, indicating system reliability. Higher MTBF means greater reliability. MTTR measures the average time to restore after failure, RTO is the target recovery time, and RPO is the acceptable data loss window. MTBF and MTTR are actual measurements; RTO and RPO are objectives.',
  'easy');
 
@@ -1053,8 +1053,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'System Availability and Change Management',
  'A company''s release management process bundles multiple individual changes into a single release deployed during a scheduled maintenance window. What is the PRIMARY benefit of release management?',
- '["It eliminates the need for change management", "It coordinates multiple changes into a single, planned deployment, reducing the number of production disruptions and enabling comprehensive testing of changes as a group", "It allows changes to be deployed without testing", "It removes the need for CAB approval"]'::jsonb,
- 1,
+ '["It eliminates the need for change management", "It removes the need for CAB approval", "It allows changes to be deployed without testing", "It coordinates multiple changes into a single, planned deployment, reducing the number of production disruptions and enabling comprehensive testing of changes as a group"]'::jsonb,
+ 3,
  'Release management groups related changes into a coordinated deployment package. This reduces production disruptions (one maintenance window instead of many), enables integration testing of changes that may interact with each other, provides a single rollback point, and improves communication with stakeholders about what is changing and when.',
  'medium');
 
@@ -1109,8 +1109,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'System Availability and Change Management',
  'An organization''s change management metrics show that the change success rate has dropped from 95% to 78% over the past quarter. Which analysis should the change manager perform FIRST?',
- '["Immediately stop all production changes", "Analyze failed changes to identify common root causes — such as inadequate testing, poor impact assessment, or insufficient resources — and implement targeted process improvements", "Increase the number of changes to compensate for the failures", "Lower the definition of change success to improve the metric"]'::jsonb,
- 1,
+ '["Immediately stop all production changes", "Lower the definition of change success to improve the metric", "Increase the number of changes to compensate for the failures", "Analyze failed changes to identify common root causes — such as inadequate testing, poor impact assessment, or insufficient resources — and implement targeted process improvements"]'::jsonb,
+ 3,
  'Root cause analysis of failed changes is the appropriate response to a declining success rate. Common causes include rushed implementations, insufficient testing, incomplete impact assessments, or resource constraints. Identifying patterns enables targeted improvements. Stopping all changes disrupts business, increasing volume worsens the problem, and redefining success masks the issue.',
  'hard');
 
@@ -1133,8 +1133,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'System Availability and Change Management',
  'An organization''s DRP includes procedures for three types of recovery sites. The warm site has pre-installed hardware but requires data restoration from offsite backups that takes approximately 6 hours. If the RPO is 24 hours (daily backups) and the RTO is 12 hours, does the warm site meet both objectives?',
- '["No, because warm sites never meet any recovery objectives", "Yes — the daily backup satisfies the 24-hour RPO, and the 6-hour data restoration plus system startup time fits within the 12-hour RTO", "No, because the warm site has no hardware", "Yes, but only if the warm site is in the same building as the primary site"]'::jsonb,
- 1,
+ '["Yes, but only if the warm site is in the same building as the primary site", "No, because warm sites never meet any recovery objectives", "No, because the warm site has no hardware", "Yes — the daily backup satisfies the 24-hour RPO, and the 6-hour data restoration plus system startup time fits within the 12-hour RTO"]'::jsonb,
+ 0,
  'With daily backups, the maximum data loss is 24 hours (meets RPO). The warm site has pre-installed hardware, so recovery involves restoring data (6 hours) plus system configuration and startup (a few additional hours), which fits within the 12-hour RTO. This demonstrates how RTO and RPO requirements drive the selection of recovery site type and backup frequency.',
  'hard');
 
@@ -1181,8 +1181,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'System Availability and Change Management',
  'An organization implements database mirroring for its financial reporting database. The primary database in New York synchronously replicates every transaction to a mirror database in New Jersey. What availability benefit does this provide?',
- '["Faster query performance for end users", "If the primary database fails, the mirror can be activated almost immediately with zero data loss, providing high availability and data protection", "Reduced storage costs through data compression", "Elimination of the need for user authentication"]'::jsonb,
- 1,
+ '["Elimination of the need for user authentication", "Faster query performance for end users", "Reduced storage costs through data compression", "If the primary database fails, the mirror can be activated almost immediately with zero data loss, providing high availability and data protection"]'::jsonb,
+ 0,
  'Synchronous database mirroring ensures that every committed transaction exists on both the primary and mirror databases before being acknowledged. If the primary fails, the mirror contains an identical copy of all data (zero data loss, RPO = 0) and can be activated rapidly (low RTO). This provides both high availability and data protection for mission-critical financial data.',
  'medium');
 
@@ -1262,8 +1262,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'Security and Control Frameworks',
  'A company''s IT governance team is mapping COBIT 2019 to their organizational structure. Which COBIT 2019 concept distinguishes between setting direction and oversight (board level) versus planning and executing IT activities (management level)?',
- '["Design factors", "Governance and management objectives", "Focus areas", "Enterprise goals"]'::jsonb,
- 1,
+ '["Design factors", "Enterprise goals", "Focus areas", "Governance and management objectives"]'::jsonb,
+ 3,
  'COBIT 2019 clearly separates governance objectives (Evaluate, Direct, and Monitor — performed by the board) from management objectives (Align, Plan, Organize; Build, Acquire, Implement; Deliver, Service, Support; Monitor, Evaluate, Assess — performed by management). This distinction ensures accountability at appropriate levels and prevents governance gaps.',
  'medium');
 
@@ -1286,8 +1286,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'Security and Control Frameworks',
  'A mid-size accounting firm wants to select a cybersecurity framework. The firm has moderate IT complexity and handles sensitive client financial data. Which CIS Implementation Group would be MOST appropriate?',
- '["IG1 only, because the firm is not a critical infrastructure provider", "IG2, because the firm handles sensitive data and has moderate complexity requiring additional controls beyond basic hygiene", "IG3, because all firms handling financial data must implement the highest level", "None — CIS Controls are only for government agencies"]'::jsonb,
- 1,
+ '["IG1 only, because the firm is not a critical infrastructure provider", "None — CIS Controls are only for government agencies", "IG3, because all firms handling financial data must implement the highest level", "IG2, because the firm handles sensitive data and has moderate complexity requiring additional controls beyond basic hygiene"]'::jsonb,
+ 3,
  'IG2 is designed for enterprises that have IT staff managing infrastructure and handle sensitive client or enterprise data. An accounting firm with moderate IT complexity and sensitive financial data fits the IG2 profile, which adds controls for configuration management, data protection, and enhanced access control beyond the essential IG1 hygiene controls.',
  'medium');
 
@@ -1579,8 +1579,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'Threats, Attacks, and Vulnerabilities',
  'An organization''s website becomes unavailable after receiving an enormous volume of traffic from thousands of compromised devices worldwide. This attack is classified as a:',
- '["Man-in-the-middle attack", "Distributed Denial of Service (DDoS) attack", "Phishing campaign", "Insider threat"]'::jsonb,
- 1,
+ '["Distributed Denial of Service (DDoS) attack", "Man-in-the-middle attack", "Phishing campaign", "Insider threat"]'::jsonb,
+ 0,
  'A Distributed Denial of Service (DDoS) attack uses multiple compromised systems (often a botnet) to flood a target with traffic, overwhelming its resources and making it unavailable to legitimate users. The distributed nature makes DDoS harder to mitigate than a single-source DoS because traffic comes from thousands of different IP addresses worldwide.',
  'easy');
 
@@ -1888,8 +1888,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'Security Controls and Monitoring',
  'An organization deploys a Web Application Firewall (WAF) in front of its customer portal. A WAF operates at which layer of the OSI model?',
- '["Layer 3 (Network)", "Layer 7 (Application)", "Layer 4 (Transport)", "Layer 1 (Physical)"]'::jsonb,
- 1,
+ '["Layer 1 (Physical)", "Layer 3 (Network)", "Layer 4 (Transport)", "Layer 7 (Application)"]'::jsonb,
+ 0,
  'A WAF operates at Layer 7 (Application) of the OSI model, inspecting HTTP/HTTPS traffic to detect and block web application attacks such as SQL injection, XSS, and CSRF. By understanding application-layer protocols, WAFs can analyze request content, headers, cookies, and parameters — providing protection that network-layer firewalls cannot achieve.',
  'easy');
 
@@ -1992,8 +1992,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'Security Controls and Monitoring',
  'An organization requires all employees to use a VPN when working remotely. The VPN uses IPsec with AES-256 encryption. What security function does the VPN provide in this context?',
- '["It prevents all cyberattacks", "It creates an encrypted tunnel between the remote device and the corporate network, protecting data in transit from eavesdropping on untrusted networks", "It replaces the need for antivirus software", "It encrypts data stored on the employee''s laptop"]'::jsonb,
- 1,
+ '["It prevents all cyberattacks", "It encrypts data stored on the employee''s laptop", "It replaces the need for antivirus software", "It creates an encrypted tunnel between the remote device and the corporate network, protecting data in transit from eavesdropping on untrusted networks"]'::jsonb,
+ 3,
  'A VPN creates an encrypted tunnel between the remote device and the corporate network, ensuring that all traffic traversing untrusted networks (home Wi-Fi, public hotspots, internet backbone) is protected from eavesdropping and tampering. IPsec with AES-256 provides strong encryption for this tunnel. VPNs protect data in transit but do not address data at rest, malware, or other threats.',
  'easy');
 
@@ -2205,8 +2205,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'Incident Response and Recovery',
  'During the eradication phase of incident response, what is the PRIMARY objective?',
- '["Restoring systems to normal operation", "Completely removing the threat from the environment, including all malware, backdoors, and unauthorized access mechanisms the attacker may have established", "Notifying affected customers", "Calculating the financial impact of the incident"]'::jsonb,
- 1,
+ '["Restoring systems to normal operation", "Calculating the financial impact of the incident", "Notifying affected customers", "Completely removing the threat from the environment, including all malware, backdoors, and unauthorized access mechanisms the attacker may have established"]'::jsonb,
+ 3,
  'Eradication focuses on completely removing the threat from the environment. This includes removing malware, closing backdoors, eliminating unauthorized accounts, patching exploited vulnerabilities, and verifying that no persistence mechanisms remain. Incomplete eradication risks re-compromise. Recovery (restoring operations) follows eradication, and notification and cost analysis are separate activities.',
  'medium');
 
@@ -2277,8 +2277,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'Incident Response and Recovery',
  'During incident recovery, the IR team restores a compromised server from a backup taken two days before the incident. After restoration, what verification step is MOST important before returning the server to production?',
- '["Checking that the server boots successfully", "Verifying the backup itself is clean (not already compromised at the time of backup), validating system integrity, and monitoring for indicators of compromise before reconnecting to the production network", "Updating the server''s desktop wallpaper", "Renaming the server"]'::jsonb,
- 1,
+ '["Checking that the server boots successfully", "Renaming the server", "Updating the server''s desktop wallpaper", "Verifying the backup itself is clean (not already compromised at the time of backup), validating system integrity, and monitoring for indicators of compromise before reconnecting to the production network"]'::jsonb,
+ 3,
  'Before returning a restored server to production, the team must verify that the backup predates the compromise (otherwise the backup itself may contain the attacker''s persistence mechanisms), validate the system''s integrity, apply any missing patches (especially the one exploited in the attack), and monitor for indicators of compromise during a controlled reintroduction period.',
  'hard');
 
@@ -2301,8 +2301,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'Incident Response and Recovery',
  'An organization''s incident response plan requires preserving evidence before any containment actions that might alter the system state. What is the rationale for this requirement?',
- '["Evidence preservation is only important for insurance claims", "Containment actions such as rebooting, patching, or isolating systems can destroy volatile evidence and alter system state, making it impossible to determine the full scope of the incident or support legal proceedings", "There is no reason to preserve evidence before containment", "Evidence preservation slows down response unnecessarily"]'::jsonb,
- 1,
+ '["Evidence preservation is only important for insurance claims", "Evidence preservation slows down response unnecessarily", "There is no reason to preserve evidence before containment", "Containment actions such as rebooting, patching, or isolating systems can destroy volatile evidence and alter system state, making it impossible to determine the full scope of the incident or support legal proceedings"]'::jsonb,
+ 3,
  'Containment actions — while critical for limiting damage — can destroy volatile evidence (RAM, network connections, running processes) and alter the system state. Capturing evidence first (memory dumps, disk images, log snapshots) preserves the forensic record needed to understand the full attack scope, identify all affected systems, and support potential legal or regulatory proceedings.',
  'medium');
 -- ISC Chunk 3: Privacy, SOC Engagements, SOC Reporting/TSC, IT General Controls, IT Audit Frameworks, SOC Testing, SOC Reporting
@@ -2435,8 +2435,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'Privacy Requirements and Data Protection',
  'A global pharmaceutical company wants to establish a single set of data protection rules that apply across all its subsidiaries worldwide for intra-group transfers of personal data from the EU. Which GDPR mechanism is most appropriate?',
- '["Standard contractual clauses", "Binding corporate rules", "An adequacy decision", "Consent from each data subject"]'::jsonb,
- 1,
+ '["Consent from each data subject", "Standard contractual clauses", "An adequacy decision", "Binding corporate rules"]'::jsonb,
+ 0,
  'Binding corporate rules (BCRs) are internal policies adopted by a multinational group to allow intra-group transfers of personal data outside the EU. BCRs must be approved by the competent supervisory authority and provide enforceable data subject rights. They are specifically designed for multinational corporate groups with regular intra-group data flows.',
  'hard');
 
@@ -2869,8 +2869,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'SOC Reporting and Trust Services Criteria',
  'Which Trust Services Criteria category is concerned with protecting information designated as confidential, such as trade secrets and intellectual property?',
- '["Privacy", "Confidentiality", "Security", "Processing integrity"]'::jsonb,
- 1,
+ '["Privacy", "Processing integrity", "Security", "Confidentiality"]'::jsonb,
+ 3,
  'The confidentiality category addresses the protection of information designated as confidential per the entity''s commitments and agreements. This includes trade secrets, intellectual property, business plans, and other sensitive business information. Privacy specifically addresses personal information, while security addresses protection from unauthorized access broadly.',
  'easy');
 
@@ -3021,8 +3021,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'SOC Reporting and Trust Services Criteria',
  'The security category in the Trust Services framework is addressed through which of the following?',
- '["Only supplemental criteria specific to security", "The common criteria (CC1-CC9) which collectively address security", "A single criterion that requires implementation of a firewall", "External security certifications from third-party vendors"]'::jsonb,
- 1,
+ '["Only supplemental criteria specific to security", "External security certifications from third-party vendors", "A single criterion that requires implementation of a firewall", "The common criteria (CC1-CC9) which collectively address security"]'::jsonb,
+ 3,
  'The security category is addressed through the common criteria (CC1 through CC9), which collectively establish the controls necessary to protect the system from unauthorized access, both logical and physical. Because security is the foundation of the Trust Services framework, it is the only mandatory category and is addressed entirely through the common criteria.',
  'easy');
 
@@ -3037,8 +3037,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'SOC Reporting and Trust Services Criteria',
  'CC4 and CC5 in the Trust Services framework relate to which COSO components?',
- '["Control environment and risk assessment", "Monitoring activities and control activities", "Information and communication only", "All five COSO components equally"]'::jsonb,
- 1,
+ '["Control environment and risk assessment", "Information and communication only", "Monitoring activities and control activities", "All five COSO components equally"]'::jsonb,
+ 2,
  'CC4 addresses monitoring activities (COSO Component 5), which includes ongoing and separate evaluations of internal control, and evaluating and communicating deficiencies. CC5 addresses control activities (COSO Component 3), which includes selecting and developing control activities, selecting and developing general controls over technology, and deploying controls through policies and procedures.',
  'hard');
 
@@ -3146,8 +3146,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'IT General Controls',
  'An organization uses a version control system for all application source code. Which of the following is a primary benefit of version control in the context of IT general controls?',
- '["It automatically fixes bugs in the code", "It provides a complete audit trail of code changes, enables rollback to previous versions, and supports code review processes", "It eliminates the need for software testing", "It prevents all unauthorized access to source code"]'::jsonb,
- 1,
+ '["It automatically fixes bugs in the code", "It prevents all unauthorized access to source code", "It eliminates the need for software testing", "It provides a complete audit trail of code changes, enables rollback to previous versions, and supports code review processes"]'::jsonb,
+ 3,
  'Version control systems maintain a complete history of all code changes, including who made each change and when. This provides an audit trail for compliance, enables rollback to previous versions if issues are discovered, supports collaborative code review through pull requests or merge requests, and helps enforce change management policies.',
  'easy');
 
@@ -3210,8 +3210,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'IT General Controls',
  'An organization''s access control policy requires multi-factor authentication (MFA) for all remote access to corporate systems. Which of the following combinations correctly represents multi-factor authentication?',
- '["A password and a security question (both knowledge factors)", "A password (knowledge factor) and a one-time code from an authenticator app (possession factor)", "A username and a password (both knowledge factors)", "Two separate passwords for two different systems"]'::jsonb,
- 1,
+ '["Two separate passwords for two different systems", "A password and a security question (both knowledge factors)", "A username and a password (both knowledge factors)", "A password (knowledge factor) and a one-time code from an authenticator app (possession factor)"]'::jsonb,
+ 0,
  'Multi-factor authentication requires at least two different types of authentication factors: something you know (password, PIN), something you have (token, authenticator app, smart card), or something you are (biometric). A password combined with an authenticator app code uses two different factor types. Two passwords or a password and security question both use only knowledge factors.',
  'medium');
 
@@ -3226,8 +3226,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'IT General Controls',
  'An auditor is evaluating an organization''s logical access controls and discovers that the organization uses role-based access control (RBAC). Which of the following best describes RBAC?',
- '["Each user is individually assigned specific permissions to each system resource", "Access permissions are assigned to roles, and users are assigned to roles based on their job functions", "All users receive the same level of access to all systems", "Access is granted based solely on the time of day the user logs in"]'::jsonb,
- 1,
+ '["Each user is individually assigned specific permissions to each system resource", "Access is granted based solely on the time of day the user logs in", "All users receive the same level of access to all systems", "Access permissions are assigned to roles, and users are assigned to roles based on their job functions"]'::jsonb,
+ 3,
  'Role-based access control (RBAC) assigns permissions to defined roles rather than to individual users. Users are then assigned to roles based on their job functions and responsibilities. This approach simplifies access management, supports the principle of least privilege, and makes access reviews more efficient because reviewers evaluate role assignments rather than individual permissions.',
  'medium');
 
@@ -3266,24 +3266,24 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'IT General Controls',
  'An organization''s change advisory board (CAB) reviews all proposed changes to production systems before approval. Which of the following best describes the CAB''s role?',
- '["To develop and write the code for proposed changes", "To evaluate proposed changes for risk, impact, resource requirements, and scheduling before authorizing deployment", "To perform all testing of proposed changes", "To monitor production systems for performance issues"]'::jsonb,
- 1,
+ '["To monitor production systems for performance issues", "To develop and write the code for proposed changes", "To perform all testing of proposed changes", "To evaluate proposed changes for risk, impact, resource requirements, and scheduling before authorizing deployment"]'::jsonb,
+ 0,
  'A change advisory board (CAB) evaluates proposed changes to assess risk, potential impact on services, resource requirements, and appropriate scheduling. The CAB provides a multi-perspective review that includes stakeholders from various functions such as operations, security, and business units. The CAB authorizes changes but does not develop or test them.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'IT General Controls',
  'An organization implements data loss prevention (DLP) controls that monitor and restrict the transfer of sensitive data through email, USB devices, and cloud storage. These controls primarily address which IT general control objective?',
- '["Program change management", "Logical access controls and data protection", "Batch job scheduling", "System capacity management"]'::jsonb,
- 1,
+ '["Program change management", "System capacity management", "Batch job scheduling", "Logical access controls and data protection"]'::jsonb,
+ 3,
  'Data loss prevention controls are a component of logical access controls and data protection. DLP monitors data in motion (email, web), data at rest (file servers, databases), and data in use (endpoints) to detect and prevent unauthorized transmission of sensitive information. These controls complement traditional access controls by focusing on the data itself rather than just system access.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'IT General Controls',
  'An organization has implemented automated controls within its ERP system that prevent journal entries from being posted without a second-level approval. This is an example of which type of control?',
- '["A detective control that identifies errors after they occur", "A preventive application control that enforces segregation of duties within the system", "A physical control that restricts facility access", "A corrective control that fixes errors after detection"]'::jsonb,
- 1,
+ '["A detective control that identifies errors after they occur", "A corrective control that fixes errors after detection", "A physical control that restricts facility access", "A preventive application control that enforces segregation of duties within the system"]'::jsonb,
+ 3,
  'An automated control that prevents journal entries from being posted without approval is a preventive application control. It enforces segregation of duties by requiring a second approver before transactions are processed. Preventive controls stop errors or irregularities before they occur, unlike detective controls that identify issues after the fact or corrective controls that remediate identified issues.',
  'hard');
 
@@ -3303,16 +3303,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'IT Audit Frameworks',
  'COBIT 2019 is a governance framework developed by which organization?',
- '["The American Institute of CPAs (AICPA)", "ISACA (formerly the Information Systems Audit and Control Association)", "The International Organization for Standardization (ISO)", "The National Institute of Standards and Technology (NIST)"]'::jsonb,
- 1,
+ '["The American Institute of CPAs (AICPA)", "The International Organization for Standardization (ISO)", "ISACA (formerly the Information Systems Audit and Control Association)", "The National Institute of Standards and Technology (NIST)"]'::jsonb,
+ 2,
  'COBIT (Control Objectives for Information and Related Technologies) 2019 is developed and maintained by ISACA. It provides a comprehensive framework for the governance and management of enterprise information and technology. ISACA is a global professional association focused on IT governance, risk management, cybersecurity, and information systems auditing.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'IT Audit Frameworks',
  'COBIT 2019 distinguishes between governance objectives and management objectives. Which of the following best describes this distinction?',
- '["There is no distinction — governance and management are the same in COBIT 2019", "Governance ensures stakeholder needs are evaluated and direction is set, while management plans, builds, runs, and monitors activities to align with governance direction", "Governance handles day-to-day operations while management sets strategic direction", "Governance applies only to IT departments while management applies to all departments"]'::jsonb,
- 1,
+ '["There is no distinction — governance and management are the same in COBIT 2019", "Governance handles day-to-day operations while management sets strategic direction", "Governance ensures stakeholder needs are evaluated and direction is set, while management plans, builds, runs, and monitors activities to align with governance direction", "Governance applies only to IT departments while management applies to all departments"]'::jsonb,
+ 2,
  'In COBIT 2019, governance involves evaluating stakeholder needs, setting direction through prioritization and decision-making, and monitoring performance against agreed-upon direction. Management involves planning, building, running, and monitoring activities aligned with the governance body''s direction. This distinction separates strategic oversight from operational execution.',
  'medium');
 
@@ -3327,8 +3327,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'IT Audit Frameworks',
  'COBIT 2019 introduced the concept of design factors. What role do design factors play in the framework?',
- '["They define the minimum number of controls every organization must implement", "They influence the design of the governance system by helping organizations tailor COBIT to their specific context and priorities", "They specify the exact technology products an organization must purchase", "They determine the number of IT auditors an organization must employ"]'::jsonb,
- 1,
+ '["They define the minimum number of controls every organization must implement", "They determine the number of IT auditors an organization must employ", "They specify the exact technology products an organization must purchase", "They influence the design of the governance system by helping organizations tailor COBIT to their specific context and priorities"]'::jsonb,
+ 3,
  'Design factors in COBIT 2019 are factors that influence the design of an organization''s governance system. They include enterprise strategy, goals, risk profile, IT-related issues, threat landscape, compliance requirements, role of IT, sourcing model, IT implementation methods, technology adoption strategy, and enterprise size. These factors help organizations customize their COBIT implementation.',
  'medium');
 
@@ -3343,8 +3343,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'IT Audit Frameworks',
  'ITIL 4 is a framework for IT service management. What is the central concept of ITIL 4?',
- '["The software development lifecycle", "The service value system (SVS), which describes how organizational components work together to create value through IT services", "The financial management of IT departments", "The physical security of IT infrastructure"]'::jsonb,
- 1,
+ '["The physical security of IT infrastructure", "The software development lifecycle", "The financial management of IT departments", "The service value system (SVS), which describes how organizational components work together to create value through IT services"]'::jsonb,
+ 0,
  'ITIL 4''s central concept is the service value system (SVS), which describes how all the components and activities of an organization work together to facilitate value creation through IT-enabled services. The SVS includes the service value chain, practices, guiding principles, governance, and continual improvement. It provides a holistic approach to service management.',
  'easy');
 
@@ -3399,8 +3399,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'IT Audit Frameworks',
  'ITIL 4 organizes IT management activities into practices rather than the processes used in earlier versions. Which of the following is an example of an ITIL 4 practice?',
- '["Double-entry bookkeeping", "Incident management — restoring normal service operation as quickly as possible after a disruption", "Annual financial statement preparation", "Inventory valuation using FIFO"]'::jsonb,
- 1,
+ '["Inventory valuation using FIFO", "Double-entry bookkeeping", "Annual financial statement preparation", "Incident management — restoring normal service operation as quickly as possible after a disruption"]'::jsonb,
+ 0,
  'ITIL 4 defines 34 practices organized into general management practices, service management practices, and technical management practices. Incident management is a key service management practice focused on restoring normal service operation as quickly as possible following a disruption. Other examples include change enablement, problem management, and service desk.',
  'easy');
 
@@ -3415,8 +3415,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'IT Audit Frameworks',
  'In COBIT 2019, the governance domain is called "Evaluate, Direct, and Monitor" (EDM). What does this domain encompass?',
- '["Day-to-day IT operations and system maintenance", "Setting governance direction, evaluating stakeholder needs, and monitoring performance and compliance", "Software development and testing procedures", "Help desk and end-user support activities"]'::jsonb,
- 1,
+ '["Help desk and end-user support activities", "Day-to-day IT operations and system maintenance", "Software development and testing procedures", "Setting governance direction, evaluating stakeholder needs, and monitoring performance and compliance"]'::jsonb,
+ 0,
  'The EDM (Evaluate, Direct, and Monitor) domain in COBIT 2019 encompasses the governance activities of evaluating stakeholder needs and conditions, setting direction through prioritization and decision-making, and monitoring performance and conformance against the agreed-upon direction and objectives. This domain is the responsibility of the governing body, not operational management.',
  'medium');
 
@@ -3487,16 +3487,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'IT Audit Frameworks',
  'An organization implements the ITIL 4 practice of "continual improvement." Which of the following best describes this practice?',
- '["Performing a one-time assessment of IT services and implementing all changes at once", "A recurring organizational activity performed at all levels to ensure alignment with changing business needs and sustained improvement of products and services", "Conducting an annual IT audit and filing the results with regulators", "Replacing all IT systems every three years with newer technology"]'::jsonb,
- 1,
+ '["A recurring organizational activity performed at all levels to ensure alignment with changing business needs and sustained improvement of products and services", "Performing a one-time assessment of IT services and implementing all changes at once", "Conducting an annual IT audit and filing the results with regulators", "Replacing all IT systems every three years with newer technology"]'::jsonb,
+ 0,
  'Continual improvement in ITIL 4 is a recurring activity that takes place at all levels of the organization. It ensures that an organization''s practices and services continually align with changing business needs through ongoing identification and improvement of services, components, and practices. It uses methods such as the ITIL continual improvement model and the concept of a continual improvement register.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'IT Audit Frameworks',
  'An IT audit team is evaluating whether an organization''s IT risk management process considers emerging threats such as AI-powered cyberattacks and quantum computing risks. This evaluation most directly relates to which step of the risk management process?',
- '["Risk treatment", "Risk identification — ensuring the threat landscape is current and comprehensive", "Risk acceptance", "Risk transfer"]'::jsonb,
- 1,
+ '["Risk transfer", "Risk treatment", "Risk acceptance", "Risk identification — ensuring the threat landscape is current and comprehensive"]'::jsonb,
+ 0,
  'Evaluating whether the organization considers emerging threats relates to risk identification, which must be a continuous process that adapts to the evolving threat landscape. A comprehensive risk identification process should include horizon scanning for new and emerging threats, not just historical risk categories. This ensures the organization''s risk profile remains current and complete.',
  'hard');
 
@@ -3524,8 +3524,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'SOC Testing Controls',
  'In a SOC engagement, tests of design evaluate which of the following?',
- '["Whether controls operated effectively throughout the examination period", "Whether controls are suitably designed to achieve the related control objectives or meet the applicable criteria", "Whether the service organization''s financial statements are fairly presented", "Whether user entities have implemented complementary controls"]'::jsonb,
- 1,
+ '["Whether controls operated effectively throughout the examination period", "Whether user entities have implemented complementary controls", "Whether the service organization''s financial statements are fairly presented", "Whether controls are suitably designed to achieve the related control objectives or meet the applicable criteria"]'::jsonb,
+ 3,
  'Tests of design evaluate whether controls, if operating as described, would be suitably designed to achieve the related control objectives or meet the applicable Trust Services Criteria. Design testing determines if the control, as described and placed in operation, is capable of effectively addressing the identified risk. It does not assess whether the control actually operated effectively.',
  'easy');
 
@@ -3556,8 +3556,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'SOC Testing Controls',
  'Reperformance is a testing procedure in which the auditor independently executes the control procedure. In which of the following situations would reperformance be most useful?',
- '["When the control is a management review requiring professional judgment", "When the control is an automated calculation or system-enforced validation that can be independently executed by the auditor", "When the auditor wants to assess the general tone at the top of the organization", "When testing physical security controls at a data center"]'::jsonb,
- 1,
+ '["When the control is an automated calculation or system-enforced validation that can be independently executed by the auditor", "When the control is a management review requiring professional judgment", "When the auditor wants to assess the general tone at the top of the organization", "When testing physical security controls at a data center"]'::jsonb,
+ 0,
  'Reperformance is most effective for controls that involve specific procedures that can be independently replicated, such as automated calculations, system-enforced validations, or reconciliation processes. The auditor re-executes the control procedure to verify that it produces the expected results. Management reviews involving judgment are better tested through inquiry and inspection.',
  'medium');
 
@@ -3580,16 +3580,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'SOC Testing Controls',
  'A service auditor performs a walkthrough of a key control process during a SOC engagement. What is the primary purpose of a walkthrough?',
- '["To test the operating effectiveness of the control over the entire examination period", "To gain an understanding of the control by tracing a single transaction through the entire process from initiation to completion", "To calculate the error rate in the population", "To evaluate the service organization''s financial performance"]'::jsonb,
- 1,
+ '["To test the operating effectiveness of the control over the entire examination period", "To evaluate the service organization''s financial performance", "To calculate the error rate in the population", "To gain an understanding of the control by tracing a single transaction through the entire process from initiation to completion"]'::jsonb,
+ 3,
  'A walkthrough involves tracing a single transaction or event through the entire process from initiation to completion. The purpose is to confirm the auditor''s understanding of the process, verify that the controls described in the system description are in place, and identify the points at which controls operate. Walkthroughs support design testing but do not alone provide sufficient evidence of operating effectiveness.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'SOC Testing Controls',
  'During testing, the service auditor selects 25 change management tickets to verify that each change was properly approved before deployment to production. Three tickets show that changes were deployed without documented approval. How should the auditor evaluate these exceptions?',
- '["Ignore the exceptions because the majority of items were properly approved", "Evaluate the nature, cause, and frequency of the exceptions to determine whether they represent a systemic control failure or isolated deviations, and consider their impact on the opinion", "Automatically issue a qualified opinion because any exception requires qualification", "Request management to retrospectively approve the three changes to eliminate the exceptions"]'::jsonb,
- 1,
+ '["Ignore the exceptions because the majority of items were properly approved", "Automatically issue a qualified opinion because any exception requires qualification", "Evaluate the nature, cause, and frequency of the exceptions to determine whether they represent a systemic control failure or isolated deviations, and consider their impact on the opinion", "Request management to retrospectively approve the three changes to eliminate the exceptions"]'::jsonb,
+ 2,
  'The auditor must evaluate each exception by considering its nature (what went wrong), cause (why it happened), frequency (is it isolated or systemic), and potential impact. Three exceptions out of 25 (12% deviation rate) is significant and may indicate a systemic weakness, but the auditor must assess the specific circumstances before determining the impact on the opinion.',
  'medium');
 
@@ -3620,16 +3620,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'SOC Testing Controls',
  'A service auditor is testing a control that requires management to review system-generated exception reports daily. Which combination of procedures would provide the most effective evidence of operating effectiveness?',
- '["Inquiry of management alone", "Inquiry of management combined with inspection of the exception reports showing evidence of review (initials, dates, notes) for a sample of days throughout the examination period", "Observation of management reviewing one exception report", "Review of the policy requiring daily exception report reviews"]'::jsonb,
- 1,
+ '["Inquiry of management alone", "Review of the policy requiring daily exception report reviews", "Observation of management reviewing one exception report", "Inquiry of management combined with inspection of the exception reports showing evidence of review (initials, dates, notes) for a sample of days throughout the examination period"]'::jsonb,
+ 3,
  'The most effective approach combines inquiry (to understand how management performs the review) with inspection of documentary evidence demonstrating the review was performed throughout the period. Evidence includes management initials, review dates, notes documenting follow-up on exceptions, and resolution of identified issues. Inquiry alone or observation at a single point is insufficient.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'SOC Testing Controls',
  'Roll-forward procedures in a SOC engagement refer to which of the following?',
- '["Procedures performed at the beginning of the examination period to establish a baseline", "Procedures performed after an interim testing date to extend the testing to the end of the examination period", "Procedures that roll the examination period forward to the next year", "Procedures that carry forward the prior year''s audit results without additional testing"]'::jsonb,
- 1,
+ '["Procedures performed at the beginning of the examination period to establish a baseline", "Procedures that roll the examination period forward to the next year", "Procedures performed after an interim testing date to extend the testing to the end of the examination period", "Procedures that carry forward the prior year''s audit results without additional testing"]'::jsonb,
+ 2,
  'Roll-forward procedures are performed after initial interim testing to extend the testing conclusions to the end of the examination period. When the auditor performs interim testing, roll-forward procedures verify that controls continued to operate effectively from the interim test date through the period end. These procedures may include inquiry, observation, and testing of additional items.',
  'medium');
 
@@ -3809,48 +3809,48 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'SOC Reporting',
  'In the description of tests and results section of a SOC Type II report, the service auditor describes which of the following?',
- '["Only the controls that operated effectively during the period", "The controls tested, the testing procedures performed, and the results of those tests, including any exceptions identified", "The service organization''s revenue and profitability during the period", "The user entity''s internal control assessment"]'::jsonb,
- 1,
+ '["The controls tested, the testing procedures performed, and the results of those tests, including any exceptions identified", "Only the controls that operated effectively during the period", "The service organization''s revenue and profitability during the period", "The user entity''s internal control assessment"]'::jsonb,
+ 0,
  'The description of tests and results section presents each control tested, the specific testing procedures the auditor performed (such as inquiry, inspection, reperformance), and the results obtained. If exceptions were identified, they are described in this section along with the nature of the exception. This section provides transparency about the auditor''s work and findings.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'SOC Reporting',
  'A service organization provides data hosting services and uses two subservice organizations: one for physical data center operations and another for network security monitoring. The service organization uses the carve-out method for the data center operator and the inclusive method for the network security provider. How does this affect the SOC report?',
- '["This is not permitted — the same method must be used for all subservice organizations", "The report will include the network security provider''s controls in the scope and testing, while identifying the data center operator as carved out with expected CSOCs", "The report must use the carve-out method for both because one subservice organization uses it", "The service auditor must issue two separate reports"]'::jsonb,
- 1,
+ '["This is not permitted — the same method must be used for all subservice organizations", "The service auditor must issue two separate reports", "The report must use the carve-out method for both because one subservice organization uses it", "The report will include the network security provider''s controls in the scope and testing, while identifying the data center operator as carved out with expected CSOCs"]'::jsonb,
+ 3,
  'A service organization may use different methods for different subservice organizations based on the engagement circumstances. The inclusive method subservice organization''s controls are included in scope and tested, while the carve-out subservice organization is identified with its expected complementary controls (CSOCs). The system description clearly describes both arrangements.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'SOC Reporting',
  'The independent service auditor''s report in a SOC engagement includes which of the following key elements?',
- '["The service organization''s marketing brochure and client testimonials", "The scope of the examination, management''s responsibilities, the service auditor''s responsibilities, and the opinion", "The user entity''s financial statements and audit opinion", "The subservice organization''s employee handbook"]'::jsonb,
- 1,
+ '["The scope of the examination, management''s responsibilities, the service auditor''s responsibilities, and the opinion", "The service organization''s marketing brochure and client testimonials", "The user entity''s financial statements and audit opinion", "The subservice organization''s employee handbook"]'::jsonb,
+ 0,
  'The independent service auditor''s report includes the scope of the examination (what was examined and the period), a description of management''s responsibilities (for the system description and controls), the service auditor''s responsibilities (to express an opinion based on the examination), the criteria used, and the service auditor''s opinion on the system description and controls.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'SOC Reporting',
  'A service organization receives an unqualified opinion on its SOC 2 Type II report but has several minor exceptions noted in the testing results. Is this inconsistent?',
- '["Yes — any exceptions should result in a qualified opinion", "No — an unqualified opinion can be issued when exceptions exist if the auditor determines they are not material to the criteria and do not represent a systemic control failure", "Yes — the report should be reissued without the exceptions", "No — exceptions are never included in reports with unqualified opinions"]'::jsonb,
- 1,
+ '["Yes — any exceptions should result in a qualified opinion", "No — exceptions are never included in reports with unqualified opinions", "Yes — the report should be reissued without the exceptions", "No — an unqualified opinion can be issued when exceptions exist if the auditor determines they are not material to the criteria and do not represent a systemic control failure"]'::jsonb,
+ 3,
  'An unqualified opinion can be issued even when minor exceptions exist. The service auditor evaluates whether exceptions are material to the criteria being examined. Isolated exceptions that do not represent a systemic control failure and are not material to the achievement of the criteria may be reported without modifying the opinion. All exceptions are still disclosed in the testing results section.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'SOC Reporting',
  'Which section of a SOC report provides the most useful information for a user entity evaluating whether to engage or continue engaging a service organization?',
- '["The auditor''s engagement letter", "The system description, which details the services provided, system components, and control environment", "The service organization''s organizational chart", "The service auditor''s billing invoice"]'::jsonb,
- 1,
+ '["The auditor''s engagement letter", "The service auditor''s billing invoice", "The service organization''s organizational chart", "The system description, which details the services provided, system components, and control environment"]'::jsonb,
+ 3,
  'The system description provides comprehensive information about the services provided, the components of the system (infrastructure, software, people, procedures, data), the control environment, and the boundaries of the system. This section enables user entities to understand the service organization''s environment, assess its suitability, and determine what complementary controls they need to implement.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'SOC Reporting',
  'A service organization switches from the carve-out method to the inclusive method for a subservice organization between reporting periods. What is the impact on the current period''s SOC report?',
- '["The change has no impact on the report", "The system description should disclose the change in method, and the current period''s report will include the subservice organization''s controls in scope, with corresponding tests and results", "The service auditor must disclaim an opinion due to the change", "The prior period''s report must be reissued using the inclusive method"]'::jsonb,
- 1,
+ '["The prior period''s report must be reissued using the inclusive method", "The change has no impact on the report", "The service auditor must disclaim an opinion due to the change", "The system description should disclose the change in method, and the current period''s report will include the subservice organization''s controls in scope, with corresponding tests and results"]'::jsonb,
+ 0,
  'Changing the method for addressing a subservice organization is a significant change that should be disclosed in the system description. Under the inclusive method, the subservice organization''s relevant controls are now included in the scope, tested by the service auditor, and covered by the opinion. The report should clearly describe this change for the benefit of report users.',
  'medium');
 
@@ -3881,8 +3881,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'SOC Reporting',
  'A service organization receives a SOC 2 Type II report with a qualified opinion because the auditor found material exceptions in the operating effectiveness of change management controls. The service organization wants to address the qualification before the next report. What should the organization do?',
- '["Request the auditor to retroactively change the opinion to unqualified", "Remediate the identified control deficiencies, implement improved change management procedures, and demonstrate consistent operation of the improved controls during the next examination period", "Stop performing change management activities entirely", "Switch to a different auditing firm that will issue an unqualified opinion"]'::jsonb,
- 1,
+ '["Switch to a different auditing firm that will issue an unqualified opinion", "Request the auditor to retroactively change the opinion to unqualified", "Stop performing change management activities entirely", "Remediate the identified control deficiencies, implement improved change management procedures, and demonstrate consistent operation of the improved controls during the next examination period"]'::jsonb,
+ 0,
  'To address a qualification, the service organization should remediate the underlying control deficiencies, implement improved procedures, and consistently operate the improved controls. During the next examination period, the service auditor will test the remediated controls. If the controls are operating effectively throughout the new period, the qualification may be removed from the next report.',
  'medium');
 
@@ -3897,16 +3897,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'SOC Reporting',
  'A SOC 1 report uses the terminology "control objectives" while a SOC 2 report uses "criteria." What explains this difference?',
- '["There is no real difference — the terms are interchangeable", "SOC 1 control objectives are defined by the service organization to describe what controls should achieve for ICFR purposes, while SOC 2 criteria are the predefined Trust Services Criteria established by the AICPA", "SOC 1 uses criteria and SOC 2 uses control objectives", "Both use the same terminology established by the PCAOB"]'::jsonb,
- 1,
+ '["Both use the same terminology established by the PCAOB", "There is no real difference — the terms are interchangeable", "SOC 1 uses criteria and SOC 2 uses control objectives", "SOC 1 control objectives are defined by the service organization to describe what controls should achieve for ICFR purposes, while SOC 2 criteria are the predefined Trust Services Criteria established by the AICPA"]'::jsonb,
+ 0,
  'In SOC 1 engagements, control objectives are established by the service organization''s management to describe what controls should achieve in relation to user entities'' ICFR. In SOC 2 engagements, the criteria are the predefined Trust Services Criteria (security, availability, processing integrity, confidentiality, privacy) established by the AICPA. This difference reflects the distinct purposes of each engagement type.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'SOC Reporting',
  'A service organization distributes its SOC 2 Type II report to a potential investor who has no service relationship with the organization. Is this an appropriate use of the report?',
- '["Yes — SOC 2 reports can be shared with anyone", "No — SOC 2 reports are restricted-use reports and should only be distributed to parties who have a business need and sufficient knowledge to understand the report", "Yes — once issued, the service organization can distribute the report without restriction", "No — SOC 2 reports can only be shared with current user entities, never prospective ones"]'::jsonb,
- 1,
+ '["Yes — SOC 2 reports can be shared with anyone", "No — SOC 2 reports can only be shared with current user entities, never prospective ones", "Yes — once issued, the service organization can distribute the report without restriction", "No — SOC 2 reports are restricted-use reports and should only be distributed to parties who have a business need and sufficient knowledge to understand the report"]'::jsonb,
+ 3,
  'SOC 2 reports are restricted-use reports intended for parties who have a business need for the information and sufficient knowledge to understand it. A potential investor without a service relationship would not typically be an appropriate recipient. If the service organization wants to provide assurance to a broader audience, a SOC 3 report (general-use) would be more appropriate.',
  'medium');
 
@@ -3952,8 +3952,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'IT General Controls',
  'An organization implements a policy requiring that all production database changes go through a formal approval and testing process. A DBA bypasses this process to apply an urgent patch directly to the production database during a weekend outage. Which control should have prevented this?',
- '["A physical lock on the data center door", "Technical enforcement of the change management process that prevents direct production changes without documented approval in the change management system", "A policy statement posted on the company intranet", "Annual security awareness training"]'::jsonb,
- 1,
+ '["A physical lock on the data center door", "Annual security awareness training", "A policy statement posted on the company intranet", "Technical enforcement of the change management process that prevents direct production changes without documented approval in the change management system"]'::jsonb,
+ 3,
  'While policies are important, technical enforcement provides stronger assurance. Controls that technically prevent production changes without a corresponding approved change ticket in the change management system ensure compliance regardless of the urgency or the individual''s role. Policies and training are administrative controls that can be bypassed, while technical controls provide automated enforcement.',
  'hard');
 
@@ -4011,15 +4011,15 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'SOC Reporting',
  'A service organization receives its first SOC 2 Type II report with an adverse opinion because controls over logical access were pervasively deficient throughout the examination period. What does the adverse opinion communicate to report users?',
- '["The controls had minor issues that were promptly corrected", "The system description was not fairly presented or the controls were not suitably designed or did not operate effectively in a material and pervasive manner", "The service organization should cease operations immediately", "The report is incomplete and additional testing is needed"]'::jsonb,
- 1,
+ '["The controls had minor issues that were promptly corrected", "The report is incomplete and additional testing is needed", "The service organization should cease operations immediately", "The system description was not fairly presented or the controls were not suitably designed or did not operate effectively in a material and pervasive manner"]'::jsonb,
+ 3,
  'An adverse opinion is the most severe type of modified opinion. It communicates that the deficiencies identified are both material and pervasive, meaning they affect the system description, control design, or operating effectiveness to such an extent that a qualified opinion would not adequately convey the severity. Report users should carefully assess the implications for their own operations and risk.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (5, 'SOC Reporting',
  'A SOC report includes an "other information" section provided by the service organization that is not covered by the service auditor''s opinion. What is the auditor''s responsibility regarding this section?',
- '["The auditor must express an opinion on the other information section", "The auditor reads the other information to identify material inconsistencies with the system description or material misstatements of fact, but does not express an opinion on it", "The auditor ignores the other information section entirely", "The auditor must remove the other information section before the report is issued"]'::jsonb,
- 1,
+ '["The auditor must express an opinion on the other information section", "The auditor must remove the other information section before the report is issued", "The auditor ignores the other information section entirely", "The auditor reads the other information to identify material inconsistencies with the system description or material misstatements of fact, but does not express an opinion on it"]'::jsonb,
+ 3,
  'The service auditor reads the other information section to identify any material inconsistencies with the audited system description or any apparent material misstatements of fact. However, the auditor''s opinion does not cover this section. If inconsistencies or misstatements are identified, the auditor discusses them with management and may take further action depending on the resolution.',
  'hard');

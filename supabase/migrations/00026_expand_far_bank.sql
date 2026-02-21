@@ -69,8 +69,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Financial Statements',
  'On a single-step income statement, which of the following is true?',
- '["Gross profit is separately displayed", "All revenues are grouped together and all expenses are grouped together", "Operating and non-operating items are presented in separate sections", "Extraordinary items are presented below income from continuing operations"]'::jsonb,
- 1,
+ '["Gross profit is separately displayed", "Extraordinary items are presented below income from continuing operations", "Operating and non-operating items are presented in separate sections", "All revenues are grouped together and all expenses are grouped together"]'::jsonb,
+ 3,
  'A single-step income statement groups all revenues together and all expenses together, with one step to arrive at net income. It does not separately display gross profit or distinguish between operating and non-operating items. Extraordinary items are no longer permitted under U.S. GAAP.',
  'easy');
 
@@ -101,24 +101,24 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Financial Statements',
  'A company discovers that it failed to record $30,000 of depreciation expense in the prior year. The correction of this error requires:',
- '["Prospective adjustment only", "Retrospective restatement of prior period financial statements", "Disclosure in the footnotes with no adjustment", "Recording the $30,000 as current year expense"]'::jsonb,
- 1,
+ '["Prospective adjustment only", "Recording the $30,000 as current year expense", "Disclosure in the footnotes with no adjustment", "Retrospective restatement of prior period financial statements"]'::jsonb,
+ 3,
  'Under ASC 250, prior period errors are corrected through retrospective restatement. The prior year financial statements are restated to include the omitted $30,000 depreciation, and retained earnings is adjusted. This is not a change in estimate — it is a correction of an error.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Financial Statements',
  'A company changes from FIFO to LIFO for inventory valuation. Under U.S. GAAP, how is this change in accounting principle applied?',
- '["Retrospectively with restatement of all prior periods", "Prospectively from the beginning of the year of change", "Retrospectively with a cumulative-effect adjustment to retained earnings", "Only disclosed in the footnotes with no financial statement adjustment"]'::jsonb,
- 1,
+ '["Retrospectively with restatement of all prior periods", "Only disclosed in the footnotes with no financial statement adjustment", "Retrospectively with a cumulative-effect adjustment to retained earnings", "Prospectively from the beginning of the year of change"]'::jsonb,
+ 3,
  'A change from FIFO to LIFO is a special exception under ASC 250. Because it is generally impracticable to determine the cumulative effect of the change retrospectively, it is applied prospectively — the LIFO method is applied from the beginning of the year of change, using the opening inventory as the base-year layer.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Financial Statements',
  'A company changes from the completed-contract method to percentage-of-completion for long-term construction contracts. This is a change in accounting principle that requires:',
- '["Prospective application", "Retrospective application with restatement of prior periods", "A cumulative catch-up adjustment in the current period only", "No adjustment, only footnote disclosure"]'::jsonb,
- 1,
+ '["Prospective application", "No adjustment, only footnote disclosure", "A cumulative catch-up adjustment in the current period only", "Retrospective application with restatement of prior periods"]'::jsonb,
+ 3,
  'Under ASC 250, voluntary changes in accounting principle are applied retrospectively unless impracticable. The company must restate prior period financial statements as if the new principle had always been used, and disclose the nature and reason for the change.',
  'medium');
 
@@ -133,8 +133,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Financial Statements',
  'Current assets total $320,000 and current liabilities total $200,000. The company pays off a $40,000 current liability with cash. What is the current ratio after payment?',
- '["1.60", "1.75", "1.40", "1.56"]'::jsonb,
- 1,
+ '["1.40", "1.60", "1.75", "1.56"]'::jsonb,
+ 0,
  'After payment: Current assets = $320,000 - $40,000 = $280,000. Current liabilities = $200,000 - $40,000 = $160,000. Current ratio = $280,000 / $160,000 = 1.75. Paying off a current liability with cash reduces both current assets and current liabilities by the same amount.',
  'medium');
 
@@ -189,8 +189,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Financial Statements',
  'Which of the following errors, if discovered in the current year, would require restatement of prior period financial statements?',
- '["Overestimation of useful life of equipment in the prior year", "Failure to record accrued salaries payable at the prior year end", "A change in the estimated residual value of a building", "Revision of the estimated percentage of uncollectible accounts"]'::jsonb,
- 1,
+ '["Overestimation of useful life of equipment in the prior year", "Revision of the estimated percentage of uncollectible accounts", "A change in the estimated residual value of a building", "Failure to record accrued salaries payable at the prior year end"]'::jsonb,
+ 3,
  'Failure to record accrued salaries payable is an error — an omission that must be corrected by restating prior period financial statements under ASC 250. The other items are changes in estimates, which are applied prospectively and do not require restatement.',
  'medium');
 
@@ -245,8 +245,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Financial Statements',
  'A company with a December 31 year-end issues financial statements on March 15. On February 20, a major earthquake destroys one of its factories. How should this event be reported?',
- '["Adjust the December 31 financial statements to record the loss", "Disclose the event in the notes to the financial statements", "No reporting is required since it occurred after year end", "Record a contingent liability on the balance sheet"]'::jsonb,
- 1,
+ '["Adjust the December 31 financial statements to record the loss", "Record a contingent liability on the balance sheet", "No reporting is required since it occurred after year end", "Disclose the event in the notes to the financial statements"]'::jsonb,
+ 3,
  'The earthquake is a Type II (nonrecognized) subsequent event under ASC 855 because the condition did not exist at the balance sheet date. Type II events are disclosed in the notes but do not result in adjustments to the financial statements. The loss is recognized in the period it occurs.',
  'medium');
 
@@ -297,16 +297,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Statement of Cash Flows',
  'A company acquires a building by issuing a $500,000 mortgage note directly to the seller. How is this reported on the statement of cash flows?',
- '["$500,000 investing outflow and $500,000 financing inflow", "No cash flow impact — disclosed as a noncash investing and financing activity", "$500,000 investing outflow only", "$500,000 financing inflow only"]'::jsonb,
- 1,
+ '["$500,000 investing outflow and $500,000 financing inflow", "$500,000 investing outflow only", "No cash flow impact — disclosed as a noncash investing and financing activity", "$500,000 financing inflow only"]'::jsonb,
+ 2,
  'Acquiring an asset by issuing debt is a noncash transaction that involves both investing (acquiring the building) and financing (issuing the note). Under ASC 230, noncash investing and financing activities are disclosed in a supplemental schedule, not reported on the statement of cash flows.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Statement of Cash Flows',
  'Under the direct method of presenting operating activities, which of the following is reported?',
- '["Net income adjusted for noncash items", "Cash collected from customers", "Depreciation expense added back to net income", "Changes in working capital accounts"]'::jsonb,
- 1,
+ '["Net income adjusted for noncash items", "Changes in working capital accounts", "Depreciation expense added back to net income", "Cash collected from customers"]'::jsonb,
+ 3,
  'The direct method reports major classes of gross cash receipts and payments, such as cash collected from customers, cash paid to suppliers, and cash paid to employees. The indirect method starts with net income and adjusts for noncash items and working capital changes.',
  'easy');
 
@@ -329,16 +329,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Statement of Cash Flows',
  'A company reports a $20,000 loss on sale of investments in net income. Under the indirect method, this loss is:',
- '["Subtracted from net income in operating activities", "Added to net income in operating activities", "Reported as an investing activity only", "Ignored because it is already in net income"]'::jsonb,
- 1,
+ '["Subtracted from net income in operating activities", "Ignored because it is already in net income", "Reported as an investing activity only", "Added to net income in operating activities"]'::jsonb,
+ 3,
  'A loss on sale of investments reduced net income but is not an operating cash flow — it relates to investing activities. Under the indirect method, the loss is added back to net income to remove its effect from operating activities. The actual cash proceeds are reported as an investing inflow.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Statement of Cash Flows',
  'Which of the following is classified as a financing activity?',
- '["Cash received from customers", "Repayment of a long-term bank loan", "Purchase of trading securities", "Cash paid for inventory"]'::jsonb,
- 1,
+ '["Cash received from customers", "Cash paid for inventory", "Purchase of trading securities", "Repayment of a long-term bank loan"]'::jsonb,
+ 3,
  'Repaying a long-term bank loan is a financing activity because it involves returning capital to creditors. Cash from customers and cash paid for inventory are operating activities. Purchasing trading securities is classified as operating (not investing) because trading securities are held for short-term profit.',
  'easy');
 
@@ -361,8 +361,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Statement of Cash Flows',
  'A company issues $300,000 of common stock in exchange for land valued at $300,000. How does this affect the statement of cash flows?',
- '["$300,000 financing inflow and $300,000 investing outflow", "No effect on the statement — disclosed as a noncash investing and financing activity", "$300,000 net zero effect within financing activities", "Reported as a $300,000 investing outflow only"]'::jsonb,
- 1,
+ '["$300,000 financing inflow and $300,000 investing outflow", "Reported as a $300,000 investing outflow only", "$300,000 net zero effect within financing activities", "No effect on the statement — disclosed as a noncash investing and financing activity"]'::jsonb,
+ 3,
  'Exchanging stock for land is a noncash transaction involving both financing (stock issuance) and investing (land acquisition). ASC 230 requires noncash investing and financing activities to be disclosed separately, either in a supplemental schedule or in the notes, not within the cash flow statement.',
  'easy');
 
@@ -493,8 +493,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Earnings Per Share',
  'A company has net income of $800,000, 200,000 common shares outstanding, and 10,000 shares of $100 par, 6% cumulative preferred stock. The preferred dividends were not declared. What is basic EPS?',
- '["$4.00", "$3.70", "$3.40", "$3.00"]'::jsonb,
- 1,
+ '["$4.00", "$3.00", "$3.40", "$3.70"]'::jsonb,
+ 3,
  'For cumulative preferred, dividends are deducted from net income in the EPS calculation regardless of whether declared. Preferred dividends = 10,000 × $100 × 6% = $60,000. Basic EPS = ($800,000 - $60,000) / 200,000 = $740,000 / 200,000 = $3.70.',
  'medium');
 
@@ -509,8 +509,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Earnings Per Share',
  'Under the treasury stock method, stock options are dilutive when:',
- '["The exercise price exceeds the average market price", "The average market price exceeds the exercise price", "The exercise price equals the average market price", "The options have been outstanding for more than one year"]'::jsonb,
- 1,
+ '["The exercise price exceeds the average market price", "The exercise price equals the average market price", "The average market price exceeds the exercise price", "The options have been outstanding for more than one year"]'::jsonb,
+ 2,
  'Stock options are dilutive when the average market price exceeds the exercise price (the options are in the money). Under the treasury stock method, proceeds from assumed exercise are used to buy back shares at the average market price, resulting in a net increase in shares that dilutes EPS.',
  'easy');
 
@@ -549,8 +549,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Earnings Per Share',
  'Stock options with an exercise price of $60 are outstanding when the average market price is $45. For diluted EPS purposes, these options are:',
- '["Dilutive and included in the calculation", "Antidilutive and excluded from the calculation", "Included at the exercise price", "Included using the if-converted method"]'::jsonb,
- 1,
+ '["Dilutive and included in the calculation", "Included at the exercise price", "Antidilutive and excluded from the calculation", "Included using the if-converted method"]'::jsonb,
+ 2,
  'Options are antidilutive when the exercise price exceeds the average market price (out of the money). Under the treasury stock method, exercising would generate more shares repurchased than shares issued, decreasing the denominator and increasing EPS. Antidilutive securities are excluded from diluted EPS.',
  'easy');
 
@@ -589,8 +589,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Earnings Per Share',
  'On March 1, a company with 60,000 shares outstanding declares a 3-for-1 stock split. On July 1, it issues 15,000 new shares for cash. What is the weighted-average number of shares for the year?',
- '["180,000", "187,500", "195,000", "172,500"]'::jsonb,
- 1,
+ '["180,000", "172,500", "195,000", "187,500"]'::jsonb,
+ 3,
  'The stock split is applied retroactively: 60,000 × 3 = 180,000 for the full year. The July 1 issuance adds 15,000 × 6/12 = 7,500 weighted shares. Total weighted-average = 180,000 + 7,500 = 187,500. Stock splits are not time-weighted; new issuances are.',
  'medium');
 
@@ -633,8 +633,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Revenue Recognition',
  'Under ASC 606, a performance obligation is a promise to transfer to the customer:',
- '["Any item listed in the contract", "A distinct good or service, or a series of distinct goods or services that are substantially the same", "Only tangible goods, not services", "The entire bundle of goods and services in the contract as a single unit"]'::jsonb,
- 1,
+ '["Any item listed in the contract", "Only tangible goods, not services", "A distinct good or service, or a series of distinct goods or services that are substantially the same", "The entire bundle of goods and services in the contract as a single unit"]'::jsonb,
+ 2,
  'A performance obligation under ASC 606 is a promise to transfer a distinct good or service (or a series of distinct goods or services that are substantially the same and have the same pattern of transfer). Not every promised item is a separate performance obligation — only distinct ones.',
  'easy');
 
@@ -649,8 +649,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Revenue Recognition',
  'A company enters a contract to sell 1,000 units at $50 each, with a 5% volume discount if the customer purchases more than 800 units. The company estimates it is highly probable the customer will purchase all 1,000 units. Using the most likely amount method, what is the transaction price?',
- '["$50,000", "$47,500", "$40,000", "$52,500"]'::jsonb,
- 1,
+ '["$50,000", "$52,500", "$40,000", "$47,500"]'::jsonb,
+ 3,
  'The most likely amount is 1,000 units (highly probable). With the 5% volume discount triggered: $50 x 1,000 x 0.95 = $47,500. Under ASC 606, variable consideration is estimated using either the expected value or most likely amount method, and included to the extent it is probable a significant reversal will not occur.',
  'medium');
 
@@ -665,8 +665,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Revenue Recognition',
  'A construction company has a $2,000,000 fixed-price contract. At year end, costs incurred are $600,000, estimated total costs are $1,500,000, and the company recognizes revenue over time using the cost-to-cost method. How much revenue should be recognized?',
- '["$600,000", "$800,000", "$2,000,000", "$1,200,000"]'::jsonb,
- 1,
+ '["$600,000", "$1,200,000", "$2,000,000", "$800,000"]'::jsonb,
+ 3,
  'Percentage complete = $600,000 / $1,500,000 = 40%. Revenue recognized = 40% x $2,000,000 = $800,000. The cost-to-cost method measures progress toward completion based on costs incurred relative to total estimated costs.',
  'medium');
 
@@ -689,8 +689,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Revenue Recognition',
  'Under ASC 606, which method is used to estimate variable consideration when there are only two possible outcomes?',
- '["Expected value method", "Most likely amount method", "Residual approach", "Adjusted market assessment approach"]'::jsonb,
- 1,
+ '["Expected value method", "Adjusted market assessment approach", "Residual approach", "Most likely amount method"]'::jsonb,
+ 3,
  'The most likely amount method is appropriate when variable consideration has only two possible outcomes (e.g., a bonus is either earned or not). The expected value method is more appropriate when there is a range of possible outcomes. The residual approach is for estimating standalone selling prices, not variable consideration.',
  'medium');
 
@@ -705,16 +705,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Revenue Recognition',
  'A company enters a contract to deliver Product A for $60,000 and Product B for $40,000. The contract is later modified to add Product C for $25,000, which reflects its standalone selling price. Under ASC 606, how is the modification treated?',
- '["As a cumulative catch-up adjustment to the original contract", "As a separate contract", "Prospectively by combining with the original contract", "By restating all prior revenue from the original contract"]'::jsonb,
- 1,
+ '["As a cumulative catch-up adjustment to the original contract", "By restating all prior revenue from the original contract", "Prospectively by combining with the original contract", "As a separate contract"]'::jsonb,
+ 3,
  'Under ASC 606, a contract modification is treated as a separate contract when the additional goods or services are distinct AND the price reflects their standalone selling price. Since Product C is priced at its standalone selling price of $25,000, the modification is accounted for as a separate contract.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Revenue Recognition',
  'A company modifies a contract by adding services that are not distinct from those already provided. The modification should be treated as:',
- '["A separate contract", "A cumulative catch-up adjustment as if the original contract was terminated and a new one created", "An adjustment recognized only in future periods", "A gain or loss in the current period"]'::jsonb,
- 1,
+ '["A separate contract", "An adjustment recognized only in future periods", "A cumulative catch-up adjustment as if the original contract was terminated and a new one created", "A gain or loss in the current period"]'::jsonb,
+ 2,
  'When a modification adds goods or services that are not distinct from those already transferred, it is treated as part of the existing contract. The entity makes a cumulative catch-up adjustment to revenue as of the modification date, reflecting the updated transaction price and measure of progress.',
  'hard');
 
@@ -729,8 +729,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Revenue Recognition',
  'A company sells a $1,200 annual subscription on October 1. The subscription provides equal monthly access to a digital platform. How much revenue should be recognized in the year ended December 31?',
- '["$1,200", "$300", "$900", "$400"]'::jsonb,
- 1,
+ '["$1,200", "$400", "$900", "$300"]'::jsonb,
+ 3,
  'The subscription provides equal monthly benefits, so revenue is recognized ratably over the 12-month term. Monthly revenue = $1,200 / 12 = $100. Three months from October through December = $100 x 3 = $300. The remaining $900 is deferred revenue at December 31.',
  'easy');
 
@@ -753,8 +753,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Revenue Recognition',
  'A company enters a $500,000 contract with an expected cost of $400,000. Midway through the project, estimated total costs increase to $550,000. Under ASC 606 for over-time recognition, how is the expected loss treated?',
- '["The loss is deferred until the contract is complete", "The entire expected loss of $50,000 is recognized immediately", "Only the loss incurred to date is recognized", "No loss is recognized until costs actually exceed revenue"]'::jsonb,
- 1,
+ '["The loss is deferred until the contract is complete", "No loss is recognized until costs actually exceed revenue", "Only the loss incurred to date is recognized", "The entire expected loss of $50,000 is recognized immediately"]'::jsonb,
+ 3,
  'Under ASC 606, when a contract becomes onerous (total estimated costs exceed the transaction price), the entire expected loss must be recognized immediately as a contract loss. The $50,000 loss ($500,000 revenue - $550,000 estimated costs) is recognized in the period the loss is first identified.',
  'medium');
 
@@ -793,16 +793,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Revenue Recognition',
  'A franchisor grants a franchise license and provides initial training, ongoing support, and use of the brand name. Under ASC 606, the franchise fee for the license is likely recognized:',
- '["Entirely at the point the franchise opens", "Over the life of the franchise agreement", "When cash is collected from the franchisee", "At the date the franchise agreement is signed"]'::jsonb,
- 1,
+ '["Entirely at the point the franchise opens", "At the date the franchise agreement is signed", "When cash is collected from the franchisee", "Over the life of the franchise agreement"]'::jsonb,
+ 3,
  'A franchise license typically provides a right to access the franchisor''s intellectual property over the license period (the franchisor continues to support and develop the brand). This is recognized over time under ASC 606 because the customer simultaneously receives and consumes the benefits of the franchisor''s ongoing activities.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Revenue Recognition',
  'Under ASC 606, a significant financing component exists when:',
- '["Payment is due within 30 days", "The timing of payments provides a significant benefit of financing to either party", "The contract includes a volume discount", "The customer pays in advance for convenience"]'::jsonb,
- 1,
+ '["The timing of payments provides a significant benefit of financing to either party", "Payment is due within 30 days", "The contract includes a volume discount", "The customer pays in advance for convenience"]'::jsonb,
+ 0,
  'A significant financing component exists when the timing of payments agreed by the parties provides the customer or entity with a significant benefit of financing. The entity must adjust the transaction price for the time value of money. A practical expedient allows ignoring the financing component when the period is one year or less.',
  'medium');
 
@@ -825,24 +825,24 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Revenue Recognition',
  'A music streaming company grants a license that provides customers with access to its constantly updated library. Under ASC 606, this license represents:',
- '["A right to use the IP (point-in-time recognition)", "A right to access the IP (over-time recognition)", "A sale of intellectual property", "A financing arrangement"]'::jsonb,
- 1,
+ '["A right to use the IP (point-in-time recognition)", "A financing arrangement", "A sale of intellectual property", "A right to access the IP (over-time recognition)"]'::jsonb,
+ 3,
  'A license that provides access to the entity''s IP as it exists throughout the license period is a right-to-access license (symbolic IP). The entity has ongoing activities that significantly affect the IP. Revenue is recognized over time because the customer simultaneously receives and consumes the benefits.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Revenue Recognition',
  'A company has a contract to deliver 10,000 units over 10 months at $10 per unit. After delivering 4,000 units, the contract is modified to deliver 3,000 additional units at $9.50 each (reflecting standalone selling price). How is the modification treated?',
- '["Cumulative catch-up adjustment to the original contract", "As a separate contract for the 3,000 additional units", "Prospectively as a blended rate for remaining deliveries", "Revenue is deferred until all units are delivered"]'::jsonb,
- 1,
+ '["Cumulative catch-up adjustment to the original contract", "Prospectively as a blended rate for remaining deliveries", "As a separate contract for the 3,000 additional units", "Revenue is deferred until all units are delivered"]'::jsonb,
+ 2,
  'The additional 3,000 units are distinct from those already delivered, and the $9.50 price reflects their standalone selling price. Under ASC 606, this modification is treated as a separate contract. The original contract continues unchanged for the remaining 6,000 units at $10 each.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Revenue Recognition',
  'Under ASC 606, the constraint on variable consideration requires that variable amounts be included in the transaction price only to the extent that:',
- '["The customer has agreed to pay the amount", "It is probable that a significant reversal of cumulative revenue will not occur when the uncertainty is resolved", "The entity has historical data for at least 3 years", "The variable consideration exceeds 10% of the fixed price"]'::jsonb,
- 1,
+ '["The customer has agreed to pay the amount", "The variable consideration exceeds 10% of the fixed price", "The entity has historical data for at least 3 years", "It is probable that a significant reversal of cumulative revenue will not occur when the uncertainty is resolved"]'::jsonb,
+ 3,
  'The constraint on variable consideration under ASC 606 requires that variable amounts be included in the transaction price only to the extent it is probable that a significant reversal of cumulative revenue recognized will not occur when the uncertainty is subsequently resolved.',
  'medium');
 
@@ -857,8 +857,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Revenue Recognition',
  'A company bills a customer $50,000 for the first phase of a project but has only satisfied $35,000 of performance obligations. Under ASC 606, the company reports:',
- '["Revenue of $50,000", "Revenue of $35,000 and a contract liability of $15,000", "Revenue of $35,000 and accounts receivable of $15,000", "Deferred revenue of $50,000"]'::jsonb,
- 1,
+ '["Revenue of $50,000", "Deferred revenue of $50,000", "Revenue of $35,000 and accounts receivable of $15,000", "Revenue of $35,000 and a contract liability of $15,000"]'::jsonb,
+ 3,
  'Revenue is recognized based on performance obligation satisfaction, not billings. The company recognizes $35,000 revenue for work performed. The $15,000 excess billing over revenue recognized is a contract liability (deferred revenue), representing an obligation to transfer goods or services in the future.',
  'easy');
 
@@ -881,8 +881,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Revenue Recognition',
  'A company enters a contract to build specialized equipment for $800,000. The equipment has no alternative use, and the company has an enforceable right to payment for performance completed to date. Under ASC 606, revenue is recognized:',
- '["At the point in time when the equipment is delivered", "Over time as the company builds the equipment", "When cash is collected from the customer", "At the date the contract is signed"]'::jsonb,
- 1,
+ '["When cash is collected from the customer", "At the point in time when the equipment is delivered", "Over time as the company builds the equipment", "At the date the contract is signed"]'::jsonb,
+ 0,
  'Two conditions for over-time recognition are met: (1) the asset has no alternative use to the entity, and (2) the entity has an enforceable right to payment for performance completed to date. Under ASC 606, these criteria require over-time recognition, typically measured by an input or output method.',
  'easy');
 
@@ -925,8 +925,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Inventory',
  'A company has the following inventory data: beginning inventory 200 units at $8, purchases of 300 units at $10. Using weighted-average (periodic), what is the cost per unit?',
- '["$9.00", "$9.20", "$8.80", "$10.00"]'::jsonb,
- 1,
+ '["$9.00", "$10.00", "$8.80", "$9.20"]'::jsonb,
+ 3,
  'Weighted-average cost = Total cost / Total units = (200 x $8 + 300 x $10) / (200 + 300) = ($1,600 + $3,000) / 500 = $4,600 / 500 = $9.20. This single unit cost is applied to both COGS and ending inventory under the periodic weighted-average method.',
  'easy');
 
@@ -941,8 +941,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Inventory',
  'A company has inventory with a cost of $50,000 and a net realizable value of $42,000. Under ASC 330, what is the carrying value of inventory?',
- '["$50,000", "$42,000", "$46,000", "$8,000"]'::jsonb,
- 1,
+ '["$50,000", "$8,000", "$46,000", "$42,000"]'::jsonb,
+ 3,
  'Under the LCNRV rule, inventory is written down to $42,000 because NRV is lower than cost. The $8,000 write-down ($50,000 - $42,000) is recognized as a loss in the period. Inventory cannot be carried above its net realizable value.',
  'easy');
 
@@ -997,8 +997,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Inventory',
  'The gross profit method is most commonly used for:',
- '["Annual financial statement preparation", "Interim financial reporting and estimating inventory losses from casualties", "Tax return preparation", "Auditing ending inventory balances"]'::jsonb,
- 1,
+ '["Annual financial statement preparation", "Auditing ending inventory balances", "Tax return preparation", "Interim financial reporting and estimating inventory losses from casualties"]'::jsonb,
+ 3,
  'The gross profit method provides an estimate of inventory and is most commonly used for interim financial reporting (when a physical count is impractical) and for estimating inventory losses from fires, floods, or theft. It is not precise enough for annual GAAP reporting.',
  'easy');
 
@@ -1013,16 +1013,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Inventory',
  'Which of the following inventory cost flow methods is NOT permitted under IFRS?',
- '["FIFO", "LIFO", "Weighted average", "Specific identification"]'::jsonb,
- 1,
+ '["FIFO", "Specific identification", "Weighted average", "LIFO"]'::jsonb,
+ 3,
  'LIFO is prohibited under IFRS (IAS 2) because it often does not reflect the actual physical flow of goods and can result in outdated inventory values on the balance sheet. FIFO, weighted average, and specific identification are permitted under both GAAP and IFRS.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Inventory',
  'A company has a purchase commitment to buy 5,000 units at $20 each. The market price at year end has dropped to $15 per unit. Under U.S. GAAP, the company should:',
- '["Ignore the decline since the purchase has not occurred", "Recognize a loss of $25,000 and disclose the commitment", "Record the inventory at $15 per unit", "Cancel the purchase commitment"]'::jsonb,
- 1,
+ '["Ignore the decline since the purchase has not occurred", "Cancel the purchase commitment", "Record the inventory at $15 per unit", "Recognize a loss of $25,000 and disclose the commitment"]'::jsonb,
+ 3,
  'When the contracted price exceeds the current market price for a noncancelable purchase commitment, a loss must be recognized. Loss = 5,000 x ($20 - $15) = $25,000. The commitment must also be disclosed in the notes. This is similar to the LCNRV write-down concept.',
  'medium');
 
@@ -1037,8 +1037,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Inventory',
  'A company has beginning inventory of $80,000 (at base-year cost) under dollar-value LIFO. Ending inventory at current-year cost is $99,000 and the price index is 1.10. Has a new LIFO layer been added?',
- '["Yes, because ending inventory at current cost exceeds beginning inventory", "Yes, because ending inventory at base-year cost ($90,000) exceeds beginning inventory ($80,000)", "No, because the increase is only due to price changes", "No, because there is a LIFO liquidation"]'::jsonb,
- 1,
+ '["No, because the increase is only due to price changes", "Yes, because ending inventory at current cost exceeds beginning inventory", "Yes, because ending inventory at base-year cost ($90,000) exceeds beginning inventory ($80,000)", "No, because there is a LIFO liquidation"]'::jsonb,
+ 0,
  'Convert ending inventory to base-year cost: $99,000 / 1.10 = $90,000. Since $90,000 > $80,000, a new layer of $10,000 (at base-year cost) has been added. The new layer is then inflated by the current price index: $10,000 x 1.10 = $11,000.',
  'hard');
 
@@ -1085,16 +1085,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Inventory',
  'Under the conventional retail method (lower of average cost or market), markdowns are:',
- '["Included in both the numerator and denominator of the cost-to-retail ratio", "Excluded from the cost-to-retail ratio calculation", "Included in the numerator only", "Added to purchases at cost"]'::jsonb,
- 1,
+ '["Included in the numerator only", "Included in both the numerator and denominator of the cost-to-retail ratio", "Excluded from the cost-to-retail ratio calculation", "Added to purchases at cost"]'::jsonb,
+ 0,
  'Under the conventional retail method, net markdowns are excluded from the cost-to-retail ratio (denominator is not reduced by markdowns). This produces a lower cost-to-retail percentage, which approximates the lower of average cost or market. Markups are included in the ratio.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Inventory',
  'A company using FIFO has 300 units in ending inventory. The most recent purchases were 200 units at $15 and 400 units at $13 (before that). What is the ending inventory value?',
- '["$3,900", "$4,300", "$3,000", "$4,500"]'::jsonb,
- 1,
+ '["$3,900", "$4,500", "$3,000", "$4,300"]'::jsonb,
+ 3,
  'Under FIFO, ending inventory consists of the most recent purchases. Ending inventory = (200 x $15) + (100 x $13) = $3,000 + $1,300 = $4,300. The 200 most recent units at $15 are in ending inventory, plus 100 of the 400 units purchased at $13.',
  'medium');
 
@@ -1109,8 +1109,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Inventory',
  'A company has goods on consignment at a retailer''s location. The goods cost $30,000. For inventory purposes, these goods should be reported as:',
- '["Inventory of the retailer (consignee)", "Inventory of the consignor", "A sale by the consignor", "Accounts receivable of the consignor"]'::jsonb,
- 1,
+ '["Inventory of the retailer (consignee)", "A sale by the consignor", "Inventory of the consignor", "Accounts receivable of the consignor"]'::jsonb,
+ 2,
  'Consigned goods remain the inventory of the consignor until they are sold by the consignee to a third party. Title does not transfer to the consignee merely by placing goods at their location. The consignor reports the $30,000 as inventory on its balance sheet.',
  'medium');
 
@@ -1133,8 +1133,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Inventory',
  'A company that uses LIFO for tax purposes must also use LIFO for financial reporting. This requirement is known as the:',
- '["Matching principle", "LIFO conformity rule", "Revenue recognition principle", "LIFO reserve requirement"]'::jsonb,
- 1,
+ '["Matching principle", "LIFO reserve requirement", "Revenue recognition principle", "LIFO conformity rule"]'::jsonb,
+ 3,
  'The LIFO conformity rule (IRC Section 472) requires that a company using LIFO for tax purposes must also use LIFO as its primary inventory method for financial reporting. This is one of the few instances where tax rules dictate financial reporting method choices.',
  'medium');
 
@@ -1210,16 +1210,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Fixed Assets',
  'Lennox Co. has a machine with a carrying amount of $300,000. Undiscounted expected future cash flows are $320,000, and the fair value is $260,000. What impairment loss, if any, should Lennox record under ASC 360?',
- '["$40,000", "$0", "$20,000", "$60,000"]'::jsonb,
- 1,
+ '["$40,000", "$60,000", "$20,000", "$0"]'::jsonb,
+ 3,
  'Under ASC 360, the first step is the recoverability test: compare the carrying amount ($300,000) to undiscounted future cash flows ($320,000). Since $320,000 > $300,000, the asset passes the recoverability test and no impairment is recognized, regardless of fair value. The two-step process prevents premature impairment recognition.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Fixed Assets',
  'Which of the following expenditures should be capitalized rather than expensed?',
- '["Ordinary repairs that maintain an asset''s condition", "Replacement of a major component that extends the asset''s useful life", "Annual maintenance costs", "Repainting the exterior of a building"]'::jsonb,
- 1,
+ '["Ordinary repairs that maintain an asset''s condition", "Repainting the exterior of a building", "Annual maintenance costs", "Replacement of a major component that extends the asset''s useful life"]'::jsonb,
+ 3,
  'Capital expenditures increase an asset''s future economic benefits by extending its useful life, increasing its capacity, or improving its efficiency. Replacing a major component extends useful life and therefore should be capitalized. Ordinary repairs, routine maintenance, and repainting merely maintain the asset in its current condition and are period expenses.',
  'easy');
 
@@ -1362,8 +1362,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Fixed Assets',
  'Atlas Corp. reclassifies equipment from held-and-used to held-for-sale. The equipment has a carrying amount of $400,000 and a fair value less costs to sell of $350,000. What accounting treatment is required at the reclassification date?',
- '["Continue depreciating the asset and disclose the held-for-sale classification", "Write down to $350,000, recognize a $50,000 loss, and cease depreciation", "Record no adjustment until the asset is sold", "Reverse any previously recognized depreciation"]'::jsonb,
- 1,
+ '["Continue depreciating the asset and disclose the held-for-sale classification", "Reverse any previously recognized depreciation", "Record no adjustment until the asset is sold", "Write down to $350,000, recognize a $50,000 loss, and cease depreciation"]'::jsonb,
+ 3,
  'Under ASC 360-10-45, when an asset is reclassified to held-for-sale, it is measured at the lower of its carrying amount or fair value less costs to sell. Since $350,000 < $400,000, a $50,000 loss is recognized. Depreciation ceases once an asset is classified as held-for-sale because it is no longer being used in operations.',
  'hard');
 
@@ -1463,8 +1463,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Intangible Assets',
  'Which of the following costs should be capitalized as an intangible asset?',
- '["Costs incurred to internally develop a brand name", "Legal fees to successfully defend a patent", "Advertising costs to promote a new trademark", "Research costs for a new product"]'::jsonb,
- 1,
+ '["Costs incurred to internally develop a brand name", "Research costs for a new product", "Advertising costs to promote a new trademark", "Legal fees to successfully defend a patent"]'::jsonb,
+ 3,
  'Legal fees incurred to successfully defend a patent are capitalized because they protect the future economic benefits of the patent. Internally developed brand names, advertising costs, and research costs must all be expensed as incurred under U.S. GAAP. Only externally acquired intangibles and certain legal costs related to protecting existing intangibles are capitalized.',
  'easy');
 
@@ -1487,16 +1487,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Intangible Assets',
  'Davenport Corp. acquires a company in a business combination and identifies the following intangible assets: customer relationships ($400,000, 8-year life), trade name ($250,000, indefinite life), and assembled workforce ($150,000). Under ASC 805, how should the assembled workforce be treated?',
- '["Amortize over the employees'' expected tenure", "Include in goodwill — assembled workforce is not separately recognizable in a business combination", "Capitalize and test for impairment annually", "Expense immediately upon acquisition"]'::jsonb,
- 1,
+ '["Capitalize and test for impairment annually", "Amortize over the employees'' expected tenure", "Include in goodwill — assembled workforce is not separately recognizable in a business combination", "Expense immediately upon acquisition"]'::jsonb,
+ 0,
  'Under ASC 805, an assembled workforce does not meet the criteria for separate recognition as an intangible asset in a business combination because it is not separable and does not arise from contractual or legal rights. The value of the assembled workforce is subsumed into goodwill. Customer relationships and trade names do meet the recognition criteria.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Intangible Assets',
  'A finite-lived intangible asset with a carrying amount of $350,000 has estimated undiscounted future cash flows of $300,000 and a fair value of $240,000. What impairment loss should be recognized?',
- '["$50,000", "$110,000", "$0", "$60,000"]'::jsonb,
- 1,
+ '["$50,000", "$60,000", "$0", "$110,000"]'::jsonb,
+ 3,
  'Finite-lived intangible assets are tested for impairment under ASC 360, using the same two-step process as other long-lived assets. Step 1: Carrying amount ($350,000) > undiscounted cash flows ($300,000), so the asset is impaired. Step 2: Impairment loss = Carrying amount - Fair value = $350,000 - $240,000 = $110,000.',
  'medium');
 
@@ -1535,8 +1535,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Intangible Assets',
  'In a business combination, Sinclair Corp. acquires an in-process research and development project valued at $2,000,000. The project has not yet reached technological feasibility. Under ASC 805, how should Sinclair account for this?',
- '["Expense $2,000,000 immediately upon acquisition", "Capitalize as an indefinite-lived intangible asset until the project is completed or abandoned", "Capitalize and amortize over 10 years", "Record as goodwill"]'::jsonb,
- 1,
+ '["Expense $2,000,000 immediately upon acquisition", "Record as goodwill", "Capitalize and amortize over 10 years", "Capitalize as an indefinite-lived intangible asset until the project is completed or abandoned"]'::jsonb,
+ 3,
  'Under ASC 805, in-process research and development (IPR&D) acquired in a business combination is recognized as an intangible asset at fair value. It is classified as an indefinite-lived intangible until the project is either completed (at which point it becomes finite-lived and is amortized) or abandoned (at which point it is written off). This differs from pre-ASC 805 treatment that required immediate expensing.',
  'hard');
 
@@ -1559,8 +1559,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Intangible Assets',
  'Under ASC 985-20, technological feasibility for a software product is established when:',
- '["A product design has been completed", "All planning, designing, coding, and testing activities necessary to establish that the product can be produced to meet its design specifications have been completed", "The first unit of the product has been sold", "The product concept has been evaluated for technical and financial viability"]'::jsonb,
- 1,
+ '["The first unit of the product has been sold", "A product design has been completed", "All planning, designing, coding, and testing activities necessary to establish that the product can be produced to meet its design specifications have been completed", "The product concept has been evaluated for technical and financial viability"]'::jsonb,
+ 0,
  'Under ASC 985-20, technological feasibility is established when all planning, designing, coding, and testing activities necessary to demonstrate that the product can be produced to meet its design specifications are complete. This includes either completion of a detail program design or a working model. Costs prior to this point are R&D; costs after this point are capitalized.',
  'medium');
 
@@ -1684,8 +1684,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Leases',
  'Bennett Corp. enters a 10-year equipment lease. The equipment has a 12-year economic life. The lease does not transfer ownership and has no purchase option. The PV of lease payments is 85% of the equipment''s fair value. Under ASC 842, how should this lease be classified by the lessee?',
- '["Operating lease", "Finance lease", "Short-term lease", "Direct financing lease"]'::jsonb,
- 1,
+ '["Operating lease", "Short-term lease", "Finance lease", "Direct financing lease"]'::jsonb,
+ 2,
  'The lease term (10 years) is 83% of the economic life (12 years), which constitutes a "major part" (typically 75%+) of the remaining economic life. This meets one of the five finance lease classification criteria under ASC 842. Even though the PV of payments (85%) does not meet the 90% threshold, meeting any single criterion is sufficient for finance lease classification.',
  'medium');
 
@@ -1700,8 +1700,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Leases',
  'A lessor enters a lease that transfers ownership to the lessee at the end of the term. Under ASC 842, how should the lessor classify this lease?',
- '["Operating lease", "Sales-type lease", "Direct financing lease", "Leveraged lease"]'::jsonb,
- 1,
+ '["Sales-type lease", "Operating lease", "Direct financing lease", "Leveraged lease"]'::jsonb,
+ 0,
  'Under ASC 842, a lessor classifies a lease as sales-type if any of the five criteria are met (same as lessee finance lease criteria). Transfer of ownership at the end of the lease term is the first criterion. In a sales-type lease, the lessor derecognizes the asset, recognizes a net investment, and records selling profit or loss at commencement.',
  'easy');
 
@@ -1756,8 +1756,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Leases',
  'Under a sales-type lease, the lessor recognizes which of the following at lease commencement?',
- '["Only lease revenue on a straight-line basis over the lease term", "A net investment in the lease, selling profit (or loss), and derecognition of the underlying asset", "Depreciation expense on the leased asset and interest income", "Only a receivable equal to the total undiscounted lease payments"]'::jsonb,
- 1,
+ '["Only lease revenue on a straight-line basis over the lease term", "Depreciation expense on the leased asset and interest income", "A net investment in the lease, selling profit (or loss), and derecognition of the underlying asset", "Only a receivable equal to the total undiscounted lease payments"]'::jsonb,
+ 2,
  'At commencement of a sales-type lease, the lessor derecognizes the underlying asset from its balance sheet, recognizes a net investment in the lease (lease receivable + unguaranteed residual asset), and records any selling profit or loss (difference between the fair value and carrying amount of the asset). Interest income is recognized over the lease term.',
  'medium');
 
@@ -1780,8 +1780,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Leases',
  'A lessee enters a 4-year equipment lease. The annual payment is $30,000, payable at the beginning of each year. The lessee incurs $4,000 in initial direct costs. The IBR is 6%, and the PV of an annuity due at 6% for 4 periods is 3.6730. What is the initial ROU asset?',
- '["$110,190", "$114,190", "$120,000", "$116,190"]'::jsonb,
- 1,
+ '["$110,190", "$120,000", "$114,190", "$116,190"]'::jsonb,
+ 2,
  'Lease liability = $30,000 x 3.6730 = $110,190. Under ASC 842, the ROU asset = Lease liability + Initial direct costs = $110,190 + $4,000 = $114,190. Initial direct costs are added to the ROU asset and amortized over the lease term. They are not included in the lease liability measurement.',
  'medium');
 
@@ -1796,8 +1796,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Leases',
  'Under ASC 842, which of the following is NOT considered a lease?',
- '["A contract to use specific office space for 3 years", "A contract for dedicated server capacity where the supplier can substitute the server at any time without the customer''s approval", "A contract for exclusive use of a vehicle for 2 years", "A contract for warehouse space where the customer controls access and usage"]'::jsonb,
- 1,
+ '["A contract to use specific office space for 3 years", "A contract for warehouse space where the customer controls access and usage", "A contract for exclusive use of a vehicle for 2 years", "A contract for dedicated server capacity where the supplier can substitute the server at any time without the customer''s approval"]'::jsonb,
+ 3,
  'Under ASC 842, a lease requires an identified asset that the customer controls. If the supplier has a substantive right to substitute the asset throughout the period of use (the substitution is practical and the supplier benefits economically), the asset is not considered identified, and the contract is a service arrangement, not a lease.',
  'medium');
 
@@ -1812,8 +1812,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Leases',
  'Under ASC 842, a lease modification that grants the lessee a right to use an additional asset not included in the original lease, at a price commensurate with its standalone price, should be accounted for as:',
- '["A modification to the existing lease", "A separate new lease", "A termination of the old lease and commencement of a new lease", "An impairment of the ROU asset"]'::jsonb,
- 1,
+ '["A modification to the existing lease", "An impairment of the ROU asset", "A termination of the old lease and commencement of a new lease", "A separate new lease"]'::jsonb,
+ 3,
  'Under ASC 842, a lease modification that grants the lessee the right to use an additional asset and the increase in consideration is commensurate with the standalone price of the additional right of use (adjusted for the contract circumstances) is accounted for as a separate new lease. The original lease is unaffected by this modification.',
  'medium');
 
@@ -1844,8 +1844,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Leases',
  'Under ASC 842, how are variable lease payments that are based on changes in the Consumer Price Index (CPI) treated at lease commencement?',
- '["Excluded from the lease liability — expensed as incurred", "Included in the lease liability using the CPI at commencement", "Included in the lease liability using projected future CPI estimates", "Recognized as a separate financial instrument"]'::jsonb,
- 1,
+ '["Excluded from the lease liability — expensed as incurred", "Recognized as a separate financial instrument", "Included in the lease liability using projected future CPI estimates", "Included in the lease liability using the CPI at commencement"]'::jsonb,
+ 3,
  'Variable lease payments based on an index or rate (such as CPI) are included in the initial measurement of the lease liability using the index or rate as of the lease commencement date. They are not projected forward. Subsequent changes in the index or rate trigger remeasurement of the lease liability. Variable payments based on usage or performance are excluded.',
  'hard');
 
@@ -1905,32 +1905,32 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Bonds and Debt',
  'When bonds are issued at a premium, what happens to the carrying amount of the bonds over time?',
- '["It increases until maturity", "It decreases until it equals the face amount at maturity", "It remains constant at the issue price", "It fluctuates based on market interest rates"]'::jsonb,
- 1,
+ '["It increases until maturity", "It fluctuates based on market interest rates", "It remains constant at the issue price", "It decreases until it equals the face amount at maturity"]'::jsonb,
+ 3,
  'When bonds are issued at a premium, the carrying amount (face value + unamortized premium) decreases over time as the premium is amortized. At maturity, the carrying amount equals the face amount because the entire premium has been amortized. Premium amortization reduces interest expense below the cash interest paid each period.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Bonds and Debt',
  'Chambers Corp. has bonds outstanding with a face value of $800,000, carrying amount of $780,000, and a stated rate of 7%. The market rate at issuance was 8%. Using the effective interest method, what is the interest expense for the first period?',
- '["$56,000", "$62,400", "$64,000", "$54,600"]'::jsonb,
- 1,
+ '["$64,000", "$56,000", "$62,400", "$54,600"]'::jsonb,
+ 0,
  'Under the effective interest method, interest expense = Carrying amount x Market rate = $780,000 x 8% = $62,400. The cash interest paid = $800,000 x 7% = $56,000. The difference of $6,400 is the discount amortization, which increases the carrying amount. The effective interest method produces a constant rate of interest on the outstanding balance.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Bonds and Debt',
  'Under the straight-line method of bond discount amortization, a $60,000 discount on a 10-year bond results in what annual amortization amount?',
- '["$3,000", "$6,000", "$12,000", "$60,000"]'::jsonb,
- 1,
+ '["$3,000", "$60,000", "$12,000", "$6,000"]'::jsonb,
+ 3,
  'Under the straight-line method, the total discount is divided evenly over the bond''s life. Annual amortization = $60,000 / 10 years = $6,000. Each period, $6,000 of the discount is amortized, increasing the carrying amount and increasing interest expense above the cash interest payment. The straight-line method is acceptable when it does not produce materially different results from the effective interest method.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Bonds and Debt',
  'Morrison Corp. issues $2,000,000 of bonds at par and incurs $40,000 in bond issuance costs (underwriting fees, legal costs). Under ASC 835-30, how should the issuance costs be reported?',
- '["As an asset — deferred charge amortized over the bond term", "As a direct deduction from the carrying amount of the bonds", "As a current period expense", "As additional paid-in capital"]'::jsonb,
- 1,
+ '["As an asset — deferred charge amortized over the bond term", "As additional paid-in capital", "As a current period expense", "As a direct deduction from the carrying amount of the bonds"]'::jsonb,
+ 3,
  'Under ASC 835-30, debt issuance costs are reported as a direct deduction from the face amount of the related debt on the balance sheet, similar to a debt discount. They are amortized over the life of the debt using the effective interest method (or straight-line if not materially different), increasing interest expense each period.',
  'medium');
 
@@ -1945,8 +1945,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Bonds and Debt',
  'Dalton Corp. issues $3,000,000 of 10-year, 5% bonds at 98. The bonds pay interest semi-annually. What is the total discount to be amortized over the bond''s life?',
- '["$30,000", "$60,000", "$90,000", "$150,000"]'::jsonb,
- 1,
+ '["$30,000", "$150,000", "$90,000", "$60,000"]'::jsonb,
+ 3,
  'Issue price = $3,000,000 x 0.98 = $2,940,000. Discount = Par value - Issue price = $3,000,000 - $2,940,000 = $60,000. This discount will be amortized over the 10-year (20 semi-annual periods) bond term, increasing interest expense above cash interest paid each period.',
  'easy');
 
@@ -2017,8 +2017,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Bonds and Debt',
  'Under the fair value option (ASC 825-10), a company elects to measure its bonds payable at fair value. At year-end, the bonds'' fair value has decreased by $50,000 due to an increase in the company''s own credit risk. Where is this $50,000 change reported?',
- '["In net income", "In other comprehensive income (OCI)", "As a direct adjustment to retained earnings", "It is not recognized"]'::jsonb,
- 1,
+ '["In net income", "It is not recognized", "As a direct adjustment to retained earnings", "In other comprehensive income (OCI)"]'::jsonb,
+ 3,
  'Under ASC 825-10, when the fair value option is elected for financial liabilities, changes in fair value attributable to instrument-specific credit risk (the company''s own credit risk) are reported in OCI, not in net income. All other components of the fair value change are reported in net income. This prevents earnings volatility from a company''s own credit deterioration.',
  'hard');
 
@@ -2049,8 +2049,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Bonds and Debt',
  'Stratton Corp. has $10,000,000 of bonds outstanding with a carrying amount of $9,700,000. The bonds have a stated rate of 6%. Using the effective interest method and a market rate of 7%, what is the interest expense for the first semi-annual period?',
- '["$300,000", "$339,500", "$350,000", "$291,000"]'::jsonb,
- 1,
+ '["$300,000", "$291,000", "$350,000", "$339,500"]'::jsonb,
+ 3,
  'Semi-annual interest expense = Carrying amount x (Market rate / 2) = $9,700,000 x (7% / 2) = $9,700,000 x 3.5% = $339,500. Cash interest = $10,000,000 x (6% / 2) = $300,000. The difference of $39,500 is the discount amortization for the semi-annual period.',
  'medium');
 
@@ -2089,8 +2089,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Bonds and Debt',
  'Osborne Corp. has a $5,000,000 loan that violates a debt covenant at the balance sheet date. The lender has not waived the violation. Under ASC 470-10, how should the loan be classified?',
- '["Long-term liability because the original maturity exceeds one year", "Current liability because the violation gives the lender the right to demand repayment", "Contingent liability disclosed in the notes only", "Reclassified to equity"]'::jsonb,
- 1,
+ '["Long-term liability because the original maturity exceeds one year", "Reclassified to equity", "Contingent liability disclosed in the notes only", "Current liability because the violation gives the lender the right to demand repayment"]'::jsonb,
+ 3,
  'Under ASC 470-10, when a debtor violates a covenant at the balance sheet date and the violation gives the lender the right to demand repayment within one year, the debt must be classified as a current liability — unless the lender waives the violation for a period of at least one year (or the debtor cures the violation after the balance sheet date but before financial statement issuance).',
  'hard');
 
@@ -2126,24 +2126,24 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Equity',
  'Barton Corp. issues 10,000 shares of $5 par value common stock for $12 per share. What is the total credit to additional paid-in capital (APIC)?',
- '["$50,000", "$70,000", "$120,000", "$0"]'::jsonb,
- 1,
+ '["$50,000", "$0", "$120,000", "$70,000"]'::jsonb,
+ 3,
  'Total proceeds = 10,000 shares x $12 = $120,000. Common stock at par = 10,000 x $5 = $50,000. APIC = Proceeds - Par value = $120,000 - $50,000 = $70,000. When stock is issued above par, the excess over par is credited to APIC, which represents the amount paid by shareholders in excess of the stock''s legal capital.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Equity',
  'Millbrook Inc. issues 5,000 shares of no-par common stock with a stated value of $8 per share for $15 per share. How should the issuance be recorded?',
- '["Debit cash $75,000; credit common stock $75,000", "Debit cash $75,000; credit common stock $40,000 and APIC $35,000", "Debit cash $75,000; credit common stock $8,000 and APIC $67,000", "Debit cash $40,000; credit common stock $40,000"]'::jsonb,
- 1,
+ '["Debit cash $75,000; credit common stock $75,000", "Debit cash $40,000; credit common stock $40,000", "Debit cash $75,000; credit common stock $8,000 and APIC $67,000", "Debit cash $75,000; credit common stock $40,000 and APIC $35,000"]'::jsonb,
+ 3,
  'Total cash = 5,000 x $15 = $75,000. Common stock (at stated value) = 5,000 x $8 = $40,000. APIC = $75,000 - $40,000 = $35,000. When no-par stock has a stated value, the stated value functions like par value — amounts received in excess of stated value are credited to APIC.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Equity',
  'Which of the following is a characteristic of cumulative preferred stock?',
- '["Preferred shareholders can convert their shares to common stock", "Unpaid dividends from prior years must be paid before common dividends", "Preferred shareholders vote on all corporate matters", "Preferred shareholders participate in profits beyond the stated dividend rate"]'::jsonb,
- 1,
+ '["Preferred shareholders can convert their shares to common stock", "Preferred shareholders participate in profits beyond the stated dividend rate", "Preferred shareholders vote on all corporate matters", "Unpaid dividends from prior years must be paid before common dividends"]'::jsonb,
+ 3,
  'Cumulative preferred stock requires that all dividends in arrears (unpaid dividends from prior years) must be paid before any dividends can be paid to common shareholders. If dividends are skipped in a year, they accumulate as dividends in arrears. This feature protects preferred shareholders'' income priority over common shareholders.',
  'easy');
 
@@ -2214,8 +2214,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Equity',
  'What is the effect of a stock dividend on retained earnings, total equity, and earnings per share (EPS)?',
- '["Retained earnings decrease; total equity decreases; EPS decreases", "Retained earnings decrease; total equity unchanged; EPS decreases", "Retained earnings unchanged; total equity unchanged; EPS unchanged", "Retained earnings decrease; total equity unchanged; EPS increases"]'::jsonb,
- 1,
+ '["Retained earnings decrease; total equity decreases; EPS decreases", "Retained earnings decrease; total equity unchanged; EPS increases", "Retained earnings unchanged; total equity unchanged; EPS unchanged", "Retained earnings decrease; total equity unchanged; EPS decreases"]'::jsonb,
+ 3,
  'A stock dividend transfers an amount from retained earnings to paid-in capital (common stock and APIC), so retained earnings decreases. Total equity is unchanged because it is a reclassification within equity. EPS decreases because the number of shares outstanding increases while net income remains the same.',
  'medium');
 
@@ -2230,32 +2230,32 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Equity',
  'Bradford Inc. has 10,000 shares of $50 par, 5% fully participating preferred stock and 40,000 shares of $10 par common stock outstanding. Total dividends declared are $100,000. How much is allocated to preferred shareholders?',
- '["$25,000", "$55,556", "$50,000", "$75,000"]'::jsonb,
- 1,
+ '["$25,000", "$75,000", "$50,000", "$55,556"]'::jsonb,
+ 3,
  'Step 1: Preferred basic dividend = 10,000 x $50 x 5% = $25,000. Step 2: Common matching rate = 40,000 x $10 x 5% = $20,000. Step 3: Remaining $55,000 ($100,000 - $25,000 - $20,000) is allocated by relative total par values. Preferred par = $500,000; Common par = $400,000; Total = $900,000. Preferred participation = $55,000 x ($500,000/$900,000) = $30,556. Total to preferred = $25,000 + $30,556 = $55,556.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Equity',
  'Under the par value method of accounting for treasury stock, when shares originally issued at $25 (par value $10) are reacquired at $30, what is the entry?',
- '["Debit treasury stock $30; credit cash $30", "Debit treasury stock $10, APIC $15, retained earnings $5; credit cash $30", "Debit treasury stock $10 and APIC $20; credit cash $30", "Debit treasury stock $25; credit cash $25 and gain on treasury stock $5"]'::jsonb,
- 1,
+ '["Debit treasury stock $10 and APIC $20; credit cash $30", "Debit treasury stock $30; credit cash $30", "Debit treasury stock $10, APIC $15, retained earnings $5; credit cash $30", "Debit treasury stock $25; credit cash $25 and gain on treasury stock $5"]'::jsonb,
+ 0,
  'Under the par value method, treasury stock is debited at par ($10). The original APIC is removed ($25 - $10 = $15 debited to APIC). The excess of reacquisition cost over original issue price ($30 - $25 = $5) is debited to retained earnings. Cash is credited for $30. This method effectively reverses the original issuance entries.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Equity',
  'Weston Corp. has $200,000 of retained earnings appropriated for plant expansion. Which of the following is true about appropriated retained earnings?',
- '["The appropriation sets aside cash for plant expansion", "The appropriation restricts the amount available for dividends but does not set aside cash", "The appropriation is reported as a liability", "The appropriation reduces total shareholders'' equity"]'::jsonb,
- 1,
+ '["The appropriation sets aside cash for plant expansion", "The appropriation reduces total shareholders'' equity", "The appropriation is reported as a liability", "The appropriation restricts the amount available for dividends but does not set aside cash"]'::jsonb,
+ 3,
  'Appropriated retained earnings restrict the amount of retained earnings available for dividend distribution, but they do not set aside cash or other assets. The appropriation is a disclosure mechanism that shows management''s intention to retain earnings for a specific purpose. It is still part of total equity and does not create a liability or reduce total shareholders'' equity.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Equity',
  'Sterling Corp. issues 8,000 shares of $1 par common stock in exchange for land with a fair value of $200,000. The stock is currently trading at $28 per share. At what amount should the land be recorded?',
- '["$8,000", "$200,000", "$224,000", "$28,000"]'::jsonb,
- 1,
+ '["$8,000", "$224,000", "$200,000", "$28,000"]'::jsonb,
+ 2,
  'When stock is issued for noncash consideration, the transaction is recorded at the fair value of the consideration received (the land) if it is more clearly determinable. The land''s appraised fair value of $200,000 is used. Common stock is credited at par ($8,000), and APIC receives the excess ($192,000). If the asset''s fair value were not determinable, the stock''s fair value would be used.',
  'medium');
 
@@ -2278,16 +2278,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Equity',
  'Which of the following describes callable preferred stock?',
- '["The shareholder can demand the company repurchase the shares", "The issuing corporation has the right to redeem the shares at a specified price", "The shares automatically convert to common stock at a predetermined date", "The shares can be traded on a secondary market"]'::jsonb,
- 1,
+ '["The shareholder can demand the company repurchase the shares", "The shares can be traded on a secondary market", "The shares automatically convert to common stock at a predetermined date", "The issuing corporation has the right to redeem the shares at a specified price"]'::jsonb,
+ 3,
  'Callable preferred stock gives the issuing corporation the right (but not the obligation) to redeem (repurchase) the preferred shares at a specified call price, typically at a premium over par. This gives the issuer flexibility to retire expensive equity when market conditions are favorable. The shareholder cannot demand repurchase — that feature is called redeemable or puttable preferred stock.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Equity',
  'A quasi-reorganization is used to:',
- '["Restructure debt obligations with creditors", "Eliminate a deficit in retained earnings by restating assets to fair value and offsetting the deficit against paid-in capital", "Convert preferred stock to common stock", "Liquidate the corporation and distribute remaining assets"]'::jsonb,
- 1,
+ '["Restructure debt obligations with creditors", "Liquidate the corporation and distribute remaining assets", "Convert preferred stock to common stock", "Eliminate a deficit in retained earnings by restating assets to fair value and offsetting the deficit against paid-in capital"]'::jsonb,
+ 3,
  'A quasi-reorganization allows a company with a retained earnings deficit to get a "fresh start" without going through formal legal reorganization. Assets are restated to fair value (which may create additional losses), and the accumulated deficit is eliminated against APIC (or other paid-in capital). The retained earnings account starts at zero, and financial statements must be dated to show the reorganization.',
  'hard');
 
@@ -2302,16 +2302,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Equity',
  'Henderson Corp. has the following equity accounts: common stock ($10 par) $500,000; APIC $300,000; retained earnings $400,000; treasury stock (cost method) $80,000. What is total shareholders'' equity?',
- '["$1,200,000", "$1,120,000", "$1,280,000", "$1,180,000"]'::jsonb,
- 1,
+ '["$1,120,000", "$1,200,000", "$1,280,000", "$1,180,000"]'::jsonb,
+ 0,
  'Total shareholders'' equity = Common stock + APIC + Retained earnings - Treasury stock = $500,000 + $300,000 + $400,000 - $80,000 = $1,120,000. Treasury stock is a contra-equity account that reduces total equity. It represents shares repurchased by the company and not yet retired or reissued.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Equity',
  'Ridgefield Inc. retires 2,000 shares of treasury stock that were originally issued at $15 per share ($5 par) and reacquired at $18 per share using the cost method. What is the journal entry to retire the shares?',
- '["Debit common stock $10,000 and APIC $20,000; credit treasury stock $36,000 and gain $6,000", "Debit common stock $10,000, APIC $20,000, and retained earnings $6,000; credit treasury stock $36,000", "Debit common stock $36,000; credit treasury stock $36,000", "Debit retained earnings $36,000; credit treasury stock $36,000"]'::jsonb,
- 1,
+ '["Debit common stock $10,000 and APIC $20,000; credit treasury stock $36,000 and gain $6,000", "Debit retained earnings $36,000; credit treasury stock $36,000", "Debit common stock $36,000; credit treasury stock $36,000", "Debit common stock $10,000, APIC $20,000, and retained earnings $6,000; credit treasury stock $36,000"]'::jsonb,
+ 3,
  'When retiring treasury stock under the cost method: debit common stock at par (2,000 x $5 = $10,000), debit APIC for the original excess over par (2,000 x ($15-$5) = $20,000), and the remaining difference between treasury stock cost and the par + APIC amounts ($36,000 - $10,000 - $20,000 = $6,000) is debited to retained earnings. Credit treasury stock at cost ($36,000).',
  'hard');
 
@@ -2342,8 +2342,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Equity',
  'Westfield Corp. declares a property dividend, distributing investment securities with a carrying amount of $200,000 and a fair value of $280,000. What is the effect on retained earnings?',
- '["Decrease of $200,000", "Decrease of $280,000", "Decrease of $80,000", "No effect — property dividends do not affect retained earnings"]'::jsonb,
- 1,
+ '["Decrease of $200,000", "No effect — property dividends do not affect retained earnings", "Decrease of $80,000", "Decrease of $280,000"]'::jsonb,
+ 3,
  'A property dividend is recorded at the fair value of the assets distributed. Before distribution, the asset is revalued to fair value, and a gain of $80,000 ($280,000 - $200,000) is recognized in net income. The dividend is then recorded at fair value: debit retained earnings $280,000, credit dividends payable $280,000. Net effect on retained earnings is a $280,000 decrease (offset partially by the $80,000 gain in net income).',
  'hard');
 
@@ -2362,8 +2362,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Equity',
  'Norris Corp. has 60,000 shares of $15 par common stock outstanding. The board declares a 40% stock dividend when the market price is $45 per share. What is the journal entry?',
- '["Debit retained earnings $1,080,000; credit common stock $360,000 and APIC $720,000", "Debit retained earnings $360,000; credit common stock $360,000", "Debit retained earnings $900,000; credit common stock $360,000 and APIC $540,000", "Debit APIC $360,000; credit common stock $360,000"]'::jsonb,
- 1,
+ '["Debit retained earnings $1,080,000; credit common stock $360,000 and APIC $720,000", "Debit retained earnings $900,000; credit common stock $360,000 and APIC $540,000", "Debit retained earnings $360,000; credit common stock $360,000", "Debit APIC $360,000; credit common stock $360,000"]'::jsonb,
+ 2,
  'A 40% stock dividend is a large stock dividend (greater than 20-25%). Large stock dividends are recorded at par value, not market value. New shares = 60,000 x 40% = 24,000. Retained earnings debit = 24,000 x $15 par = $360,000. Common stock credit = $360,000. No APIC is recognized for large stock dividends because the market price is expected to decline proportionally.',
  'medium');
 
@@ -2399,8 +2399,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Contingencies',
  'A company is involved in litigation where the likelihood of loss is determined to be reasonably possible. The estimated loss is $300,000. What is the proper accounting treatment?',
- '["Accrue $300,000 as a liability", "Disclose the contingency in the notes to the financial statements", "No accrual and no disclosure is required", "Record a contingent asset of $300,000"]'::jsonb,
- 1,
+ '["Accrue $300,000 as a liability", "Record a contingent asset of $300,000", "No accrual and no disclosure is required", "Disclose the contingency in the notes to the financial statements"]'::jsonb,
+ 3,
  'When a loss contingency is reasonably possible (more than remote but less than probable), ASC 450 does not require accrual. However, disclosure of the nature and estimated amount of the contingency in the notes is required to inform financial statement users.',
  'easy');
 
@@ -2415,16 +2415,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Contingencies',
  'Bentley Corp. guarantees the $400,000 debt of its subsidiary. The subsidiary is financially healthy and the likelihood of Bentley having to perform under the guarantee is remote. Under ASC 460, what is required?',
- '["No accrual or disclosure is necessary", "Disclose the guarantee in the notes to the financial statements", "Accrue $400,000 as a liability", "Record a receivable from the subsidiary for $400,000"]'::jsonb,
- 1,
+ '["No accrual or disclosure is necessary", "Record a receivable from the subsidiary for $400,000", "Accrue $400,000 as a liability", "Disclose the guarantee in the notes to the financial statements"]'::jsonb,
+ 3,
  'Under ASC 460, guarantees of indebtedness of others must be disclosed in the notes even when the likelihood of loss is remote. This is an exception to the general ASC 450 rule that remote contingencies require no disclosure. The guarantor must also recognize the fair value of the guarantee obligation at inception.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Contingencies',
  'Perry Inc. has a gain contingency from a pending lawsuit where it is the plaintiff. The gain is considered probable and the amount is reasonably estimable at $750,000. How should Perry account for this?',
- '["Accrue the $750,000 gain", "Disclose the contingency in the notes but do not accrue", "No accrual and no disclosure", "Record $750,000 as deferred revenue"]'::jsonb,
- 1,
+ '["Accrue the $750,000 gain", "Record $750,000 as deferred revenue", "No accrual and no disclosure", "Disclose the contingency in the notes but do not accrue"]'::jsonb,
+ 3,
  'Under ASC 450-30, gain contingencies are never accrued, regardless of probability, to avoid recognizing revenue before it is realized. Adequate disclosure in the notes is appropriate when a gain contingency is probable, but the disclosure should avoid misleading implications about the likelihood of realization.',
  'medium');
 
@@ -2487,16 +2487,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Contingencies',
  'Which of the following loss contingencies would most likely require accrual under ASC 450?',
- '["A pending lawsuit where the outcome is uncertain", "Collectibility risk on accounts receivable", "A guarantee on a subsidiary''s debt where loss is remote", "An unasserted claim that counsel believes is frivolous"]'::jsonb,
- 1,
+ '["A pending lawsuit where the outcome is uncertain", "An unasserted claim that counsel believes is frivolous", "A guarantee on a subsidiary''s debt where loss is remote", "Collectibility risk on accounts receivable"]'::jsonb,
+ 3,
  'Credit losses on accounts receivable represent a loss contingency that is typically probable and estimable, requiring accrual under ASC 450 (and further specified by ASC 326 under the CECL model). Uncertain lawsuits, remote guarantees, and frivolous unasserted claims do not meet the accrual criteria.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Contingencies',
  'Redstone Inc. has been notified by the EPA that it is a potentially responsible party (PRP) for contamination at a Superfund site. Remediation costs for all PRPs are estimated at $10,000,000 and Redstone''s allocated share is 15%. The loss is considered probable. What amount should Redstone accrue?',
- '["$0", "$1,500,000", "$5,000,000", "$10,000,000"]'::jsonb,
- 1,
+ '["$0", "$10,000,000", "$5,000,000", "$1,500,000"]'::jsonb,
+ 3,
  'Redstone should accrue its allocated share of the probable remediation costs: $10,000,000 x 15% = $1,500,000. Under ASC 450 and related environmental guidance, each PRP accrues its estimated share of remediation costs when the loss is probable and the amount is reasonably estimable.',
  'medium');
 
@@ -2543,8 +2543,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Contingencies',
  'Nova Corp. determines that a lawsuit loss is probable. The best estimate of the loss is $400,000 but the range extends from $250,000 to $600,000. What amount should Nova accrue?',
- '["$250,000", "$400,000", "$425,000", "$600,000"]'::jsonb,
- 1,
+ '["$250,000", "$600,000", "$425,000", "$400,000"]'::jsonb,
+ 3,
  'When a specific amount within the range represents the best estimate of the probable loss, that amount should be accrued. The $400,000 best estimate takes precedence over the minimum-of-the-range rule, which only applies when no amount in the range is more likely than any other.',
  'easy');
 
@@ -2571,8 +2571,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Income Taxes',
  'Which of the following is a permanent difference that does not give rise to a deferred tax asset or liability?',
- '["Depreciation differences between book and tax", "Municipal bond interest income", "Warranty expense accrual", "Unearned revenue recognized for tax but deferred for book"]'::jsonb,
- 1,
+ '["Depreciation differences between book and tax", "Unearned revenue recognized for tax but deferred for book", "Warranty expense accrual", "Municipal bond interest income"]'::jsonb,
+ 3,
  'Municipal bond interest is exempt from federal taxation and is never taxed — it is a permanent difference. Depreciation timing differences, warranty accruals, and unearned revenue timing are all temporary differences that reverse over time and create deferred tax assets or liabilities.',
  'easy');
 
@@ -2595,8 +2595,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Income Taxes',
  'Under ASC 740, a valuation allowance is required for a deferred tax asset when:',
- '["Any uncertainty exists about realization", "It is more likely than not that some or all of the DTA will not be realized", "The deferred tax asset exceeds $1,000,000", "The entity has a net operating loss carryforward"]'::jsonb,
- 1,
+ '["Any uncertainty exists about realization", "The entity has a net operating loss carryforward", "The deferred tax asset exceeds $1,000,000", "It is more likely than not that some or all of the DTA will not be realized"]'::jsonb,
+ 3,
  'ASC 740-10-30-5 requires a valuation allowance when it is more likely than not (greater than 50% likelihood) that some portion or all of the deferred tax asset will not be realized. The assessment considers all available positive and negative evidence, including future taxable income projections, tax planning strategies, and existing taxable temporary differences.',
  'easy');
 
@@ -2619,8 +2619,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Income Taxes',
  'Under ASC 740, which of the following is the proper classification of deferred tax assets and liabilities on the balance sheet?',
- '["Always classified as current", "Always classified as noncurrent", "Classified based on the related asset or liability classification", "Current portion separated from noncurrent portion"]'::jsonb,
- 1,
+ '["Always classified as current", "Current portion separated from noncurrent portion", "Classified based on the related asset or liability classification", "Always classified as noncurrent"]'::jsonb,
+ 3,
  'ASU 2015-17 simplified the presentation by requiring all deferred tax assets and liabilities to be classified as noncurrent on the balance sheet. The previous requirement to separate current and noncurrent portions based on the underlying asset or liability was eliminated.',
  'easy');
 
@@ -2635,8 +2635,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Income Taxes',
  'Keller Corp. has pretax book income of $1,000,000 and taxable income of $900,000. The $100,000 difference consists of $60,000 in municipal bond interest and a $40,000 excess of tax depreciation over book depreciation. The tax rate is 21%. What is total income tax expense?',
- '["$189,000", "$197,400", "$210,000", "$180,600"]'::jsonb,
- 1,
+ '["$189,000", "$180,600", "$210,000", "$197,400"]'::jsonb,
+ 3,
  'Current tax expense = $900,000 x 21% = $189,000. Deferred tax expense from the $40,000 temporary depreciation difference = $40,000 x 21% = $8,400 (DTL increase). Total income tax expense = $189,000 + $8,400 = $197,400. The $60,000 municipal bond interest is a permanent difference with no deferred effect.',
  'hard');
 
@@ -2675,8 +2675,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Income Taxes',
  'Pacific Corp. takes an uncertain tax position claiming a $500,000 deduction. There is a 60% likelihood the position will be sustained. If sustained, the cumulative probabilities of the amounts that could be realized are: $500,000 (40%), $400,000 (55%), $300,000 (70%), $200,000 (85%). What benefit should Pacific recognize?',
- '["$500,000", "$400,000", "$300,000", "$200,000"]'::jsonb,
- 1,
+ '["$500,000", "$200,000", "$300,000", "$400,000"]'::jsonb,
+ 3,
  'Step 1: The position meets the more-likely-than-not threshold (60% > 50%). Step 2: The benefit is measured as the largest amount that has a greater than 50% cumulative likelihood of being realized. At $400,000, the cumulative probability is 55%, which exceeds 50%. At $500,000, it is only 40%. Therefore, $400,000 is recognized.',
  'hard');
 
@@ -2715,8 +2715,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Income Taxes',
  'Under ASC 740, deferred tax assets and liabilities are measured using:',
- '["The tax rate in effect when the temporary difference originated", "The currently enacted tax rate expected to apply when the difference reverses", "The average of the current and future enacted rates", "The statutory rate with no adjustment for rate changes"]'::jsonb,
- 1,
+ '["The tax rate in effect when the temporary difference originated", "The statutory rate with no adjustment for rate changes", "The average of the current and future enacted rates", "The currently enacted tax rate expected to apply when the difference reverses"]'::jsonb,
+ 3,
  'ASC 740-10-25-2 requires deferred tax assets and liabilities to be measured using the enacted tax rate expected to apply in the period(s) when the temporary difference is expected to reverse. If rates are scheduled to change in future years, the rate for the specific reversal year is used.',
  'easy');
 
@@ -2731,24 +2731,24 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Income Taxes',
  'Oliver Corp.''s effective tax rate is 26%, while the statutory rate is 21%. Which of the following could explain the difference?',
- '["Significant municipal bond interest income", "Significant nondeductible expenses such as fines and penalties", "Large excess tax depreciation", "Significant research and development tax credits"]'::jsonb,
- 1,
+ '["Significant municipal bond interest income", "Significant research and development tax credits", "Large excess tax depreciation", "Significant nondeductible expenses such as fines and penalties"]'::jsonb,
+ 3,
  'Nondeductible expenses (fines, penalties, certain lobbying costs) increase the effective rate above the statutory rate because they are expenses for book but not deductible for tax, increasing taxable income. Municipal bond interest and R&D credits would decrease the effective rate. Excess depreciation is a temporary difference that does not create a permanent rate difference.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Income Taxes',
  'A company reports pretax book income of $1,200,000. It has $40,000 of life insurance premiums on key officers (nondeductible) and $100,000 of excess tax depreciation. The tax rate is 21%. What is total income tax expense on the income statement?',
- '["$252,000", "$260,400", "$222,600", "$243,600"]'::jsonb,
- 1,
+ '["$252,000", "$243,600", "$222,600", "$260,400"]'::jsonb,
+ 3,
  'Total income tax expense includes the permanent difference but excludes only the nontaxable items. Taxable income = $1,200,000 + $40,000 (nondeductible premiums) - $100,000 (excess tax depreciation) = $1,140,000. Current tax = $1,140,000 x 21% = $239,400. Deferred tax expense = $100,000 x 21% = $21,000. Total tax expense = $239,400 + $21,000 = $260,400. Alternatively: ($1,200,000 + $40,000) x 21% = $260,400.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Income Taxes',
  'Barton Corp. has a deferred tax asset of $150,000 related to warranty accruals and a deferred tax liability of $90,000 related to depreciation. Both relate to the same tax jurisdiction. How are these reported on the balance sheet?',
- '["DTA of $150,000 and DTL of $90,000 reported separately as noncurrent", "Net DTA of $60,000 reported as noncurrent", "DTA of $150,000 as current and DTL of $90,000 as noncurrent", "Net DTL of $60,000 reported as noncurrent"]'::jsonb,
- 1,
+ '["DTA of $150,000 and DTL of $90,000 reported separately as noncurrent", "Net DTL of $60,000 reported as noncurrent", "DTA of $150,000 as current and DTL of $90,000 as noncurrent", "Net DTA of $60,000 reported as noncurrent"]'::jsonb,
+ 3,
  'Under ASC 740 (as amended by ASU 2015-17), all deferred tax assets and liabilities are classified as noncurrent. Additionally, DTAs and DTLs from the same tax-paying jurisdiction are offset and presented as a single net amount. The net DTA is $150,000 - $90,000 = $60,000 noncurrent.',
  'easy');
 
@@ -2831,16 +2831,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Consolidations',
  'In a business combination, the measurement period during which the acquirer can adjust provisional amounts cannot exceed:',
- '["6 months from the acquisition date", "1 year from the acquisition date", "The end of the fiscal year in which the acquisition occurred", "2 years from the acquisition date"]'::jsonb,
- 1,
+ '["6 months from the acquisition date", "2 years from the acquisition date", "The end of the fiscal year in which the acquisition occurred", "1 year from the acquisition date"]'::jsonb,
+ 3,
  'ASC 805-10-25-15 limits the measurement period to one year from the acquisition date. During this period, the acquirer may adjust the provisional amounts recognized at the acquisition date as new information is obtained about facts and circumstances that existed at the acquisition date. Any adjustments beyond one year are recognized in earnings.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Consolidations',
  'Foster Corp. acquires 80% of Grand Corp. for $4,800,000. The fair value of Grand''s identifiable net assets is $5,000,000. The fair value of the 20% noncontrolling interest is $1,200,000. What amount of goodwill is recognized under the fair value method for NCI?',
- '["$800,000", "$1,000,000", "$200,000", "$0"]'::jsonb,
- 1,
+ '["$800,000", "$0", "$200,000", "$1,000,000"]'::jsonb,
+ 3,
  'Under the fair value method for NCI: Goodwill = (Consideration + NCI fair value) - Fair value of net assets = ($4,800,000 + $1,200,000) - $5,000,000 = $1,000,000. This method attributes goodwill to both the controlling and noncontrolling interests.',
  'medium');
 
@@ -2871,8 +2871,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Consolidations',
  'In a downstream sale (parent sells to subsidiary), the unrealized intercompany profit is eliminated against:',
- '["The noncontrolling interest only", "The parent''s share of income only", "Both the parent''s and NCI''s share of income proportionally", "Retained earnings of the subsidiary"]'::jsonb,
- 1,
+ '["The noncontrolling interest only", "Retained earnings of the subsidiary", "Both the parent''s and NCI''s share of income proportionally", "The parent''s share of income only"]'::jsonb,
+ 3,
  'In a downstream sale, the parent is the seller and earns the intercompany profit. Therefore, the entire unrealized profit is eliminated against the parent''s income. The NCI is not affected because the subsidiary did not generate the profit — it merely purchased the inventory from the parent.',
  'medium');
 
@@ -2927,8 +2927,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Consolidations',
  'Under ASC 805, which of the following costs incurred in a business combination is expensed as incurred?',
- '["Costs of registering and issuing equity securities", "Finder''s fees and advisory fees", "Costs of issuing debt securities", "All of the above"]'::jsonb,
- 1,
+ '["Costs of registering and issuing equity securities", "All of the above", "Costs of issuing debt securities", "Finder''s fees and advisory fees"]'::jsonb,
+ 3,
  'Acquisition-related costs such as finder''s fees, advisory fees, legal fees, and due diligence costs are expensed as incurred under ASC 805-10-25-23. Costs of issuing equity securities reduce additional paid-in capital, and costs of issuing debt securities are accounted for under ASC 470. Only the advisory/transaction costs are expensed.',
  'medium');
 
@@ -2951,8 +2951,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Consolidations',
  'Which of the following is the primary criterion for determining whether a parent must consolidate a variable interest entity (VIE)?',
- '["Ownership of more than 50% of voting stock", "The entity is the primary beneficiary, having the power to direct activities and the obligation to absorb losses or right to receive benefits", "The entity provides more than 50% of the VIE''s financing", "The entity has a majority of seats on the VIE''s board"]'::jsonb,
- 1,
+ '["Ownership of more than 50% of voting stock", "The entity has a majority of seats on the VIE''s board", "The entity provides more than 50% of the VIE''s financing", "The entity is the primary beneficiary, having the power to direct activities and the obligation to absorb losses or right to receive benefits"]'::jsonb,
+ 3,
  'Under ASC 810-10-25, consolidation of a VIE is required for the entity identified as the primary beneficiary. The primary beneficiary has both (1) the power to direct the VIE''s most significant activities and (2) the obligation to absorb losses or the right to receive benefits that could be significant to the VIE. Voting interest percentage alone does not determine VIE consolidation.',
  'medium');
 
@@ -2975,8 +2975,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Consolidations',
  'A reporting unit has a carrying amount of $8,000,000 including goodwill of $2,000,000. Its fair value is determined to be $7,200,000. Under the current goodwill impairment test, what impairment loss is recognized?',
- '["$0", "$800,000", "$2,000,000", "$1,200,000"]'::jsonb,
- 1,
+ '["$0", "$1,200,000", "$2,000,000", "$800,000"]'::jsonb,
+ 3,
  'Under ASU 2017-04 (simplified one-step test), goodwill impairment = carrying amount of reporting unit minus fair value = $8,000,000 - $7,200,000 = $800,000. The impairment loss is limited to the carrying amount of goodwill ($2,000,000), so the full $800,000 is recognized. The old two-step test comparing implied goodwill fair value has been eliminated.',
  'medium');
 
@@ -3031,8 +3031,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Consolidations',
  'Consolidated total assets will generally be:',
- '["Equal to the sum of the parent''s and subsidiary''s total assets", "Less than the sum of the parent''s and subsidiary''s total assets due to intercompany eliminations", "Greater than the parent''s total assets by exactly the subsidiary''s total assets", "Equal to the parent''s total assets only"]'::jsonb,
- 1,
+ '["Equal to the sum of the parent''s and subsidiary''s total assets", "Greater than the parent''s total assets by exactly the subsidiary''s total assets", "Less than the sum of the parent''s and subsidiary''s total assets due to intercompany eliminations", "Equal to the parent''s total assets only"]'::jsonb,
+ 2,
  'Consolidated total assets are typically less than the simple sum of parent and subsidiary assets because intercompany balances (receivables, payables, investments) are eliminated. Additionally, unrealized intercompany profits in inventory or fixed assets reduce the consolidated amounts. However, goodwill and fair value adjustments may partially offset these reductions.',
  'medium');
 
@@ -3043,8 +3043,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Fair Value',
  'Under ASC 820, fair value is defined as:',
- '["The amount an entity would pay to acquire an asset in an orderly transaction", "The price that would be received to sell an asset or paid to transfer a liability in an orderly transaction between market participants at the measurement date", "The replacement cost of an asset", "The present value of expected future cash flows"]'::jsonb,
- 1,
+ '["The amount an entity would pay to acquire an asset in an orderly transaction", "The replacement cost of an asset", "The price that would be received to sell an asset or paid to transfer a liability in an orderly transaction between market participants at the measurement date", "The present value of expected future cash flows"]'::jsonb,
+ 2,
  'ASC 820-10-20 defines fair value as an exit price — the price that would be received to sell an asset or paid to transfer a liability in an orderly transaction between market participants at the measurement date. It is not an entry price (what you would pay to acquire), replacement cost, or necessarily the present value of cash flows.',
  'easy');
 
@@ -3083,8 +3083,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Fair Value',
  'A company values a corporate bond using quoted prices for similar bonds in active markets, adjusted for differences in credit quality and maturity. Under ASC 820, this valuation technique is:',
- '["A Level 1 measurement", "A Level 2 measurement using the market approach", "A Level 3 measurement", "Not a valid fair value technique"]'::jsonb,
- 1,
+ '["A Level 1 measurement", "Not a valid fair value technique", "A Level 3 measurement", "A Level 2 measurement using the market approach"]'::jsonb,
+ 3,
  'Using quoted prices for similar (not identical) assets with adjustments for observable differences (credit quality, maturity) represents a Level 2 measurement using the market approach. Level 1 requires identical assets with no adjustments. The market approach uses prices and other relevant information from market transactions involving comparable assets.',
  'medium');
 
@@ -3131,24 +3131,24 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Fair Value',
  'Under ASC 820, the principal market for an asset is defined as:',
- '["The market where the entity usually sells the asset", "The market with the greatest volume and level of activity for the asset", "The market that maximizes the amount received for the asset", "The market closest to the entity''s geographic location"]'::jsonb,
- 1,
+ '["The market where the entity usually sells the asset", "The market closest to the entity''s geographic location", "The market that maximizes the amount received for the asset", "The market with the greatest volume and level of activity for the asset"]'::jsonb,
+ 3,
  'The principal market is the market with the greatest volume and level of activity for the asset or liability. If a principal market exists, the fair value measurement represents the price in that market, even if a more advantageous price exists in a different market. Only in the absence of a principal market does the entity use the most advantageous market.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Fair Value',
  'Lyric Corp. holds a liability that has no active market. The identical liability is traded as an asset by other parties at a quoted price of $950,000. Under ASC 820, what is the fair value of the liability?',
- '["$0 because liabilities cannot have fair value", "$950,000", "Cannot be determined without Level 3 inputs", "The present value of future cash flows only"]'::jsonb,
- 1,
+ '["$0 because liabilities cannot have fair value", "Cannot be determined without Level 3 inputs", "$950,000", "The present value of future cash flows only"]'::jsonb,
+ 2,
  'ASC 820-10-35-16B provides that when a quoted price for the transfer of an identical liability is not available, but the identical item is held by another party as an asset, the entity uses the quoted price of the asset from the holder''s perspective. The liability fair value is $950,000, assuming no adjustments are needed.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Fair Value',
  'Under ASC 820, a Level 3 fair value measurement requires which of the following disclosures that are NOT required for Level 1 or Level 2?',
- '["The valuation technique used", "A reconciliation of beginning and ending balances (rollforward)", "The fair value amount at the reporting date", "The classification within the hierarchy"]'::jsonb,
- 1,
+ '["The valuation technique used", "The classification within the hierarchy", "The fair value amount at the reporting date", "A reconciliation of beginning and ending balances (rollforward)"]'::jsonb,
+ 3,
  'ASC 820-10-50-2 requires entities with Level 3 measurements to provide a rollforward (reconciliation of beginning and ending balances) showing purchases, sales, issuances, settlements, total gains/losses, and transfers. This additional disclosure is required because Level 3 inputs are unobservable and require more transparency.',
  'hard');
 
@@ -3163,16 +3163,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Fair Value',
  'Under ASC 820, the cost approach to fair value measurement reflects:',
- '["Historical acquisition cost less accumulated depreciation", "The amount that currently would be required to replace the service capacity of an asset", "The net realizable value of the asset", "The liquidation value of the asset"]'::jsonb,
- 1,
+ '["Historical acquisition cost less accumulated depreciation", "The liquidation value of the asset", "The net realizable value of the asset", "The amount that currently would be required to replace the service capacity of an asset"]'::jsonb,
+ 3,
  'The cost approach under ASC 820 reflects the current replacement cost — the amount that would currently be required to replace the service capacity of an asset (often referred to as current replacement cost). This is adjusted for obsolescence (physical, functional, and economic) and is not the same as historical cost or net realizable value.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Fair Value',
  'Beacon Corp. transfers a fair value measurement from Level 2 to Level 3 during the reporting period. Under ASC 820, Beacon must disclose:',
- '["Nothing, as transfers between levels need not be disclosed", "The reason for the transfer and the amounts involved", "Only the amounts transferred", "Only the reason for the transfer"]'::jsonb,
- 1,
+ '["Nothing, as transfers between levels need not be disclosed", "Only the reason for the transfer", "Only the amounts transferred", "The reason for the transfer and the amounts involved"]'::jsonb,
+ 3,
  'ASC 820-10-50-2 requires disclosure of transfers between levels of the fair value hierarchy, including the reasons for the transfer and the amounts involved. Transfers between Level 2 and Level 3 are particularly important because they indicate a change in the observability of inputs used in the measurement.',
  'medium');
 
@@ -3187,16 +3187,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Fair Value',
  'Under ASC 820, an orderly transaction is one that:',
- '["Occurs within a single business day", "Assumes exposure to the market for a period prior to the measurement date to allow for normal marketing activities", "Involves a distressed seller", "Requires government approval"]'::jsonb,
- 1,
+ '["Occurs within a single business day", "Involves a distressed seller", "Assumes exposure to the market for a period prior to the measurement date to allow for normal marketing activities", "Requires government approval"]'::jsonb,
+ 2,
  'An orderly transaction assumes the asset or liability has been exposed to the market for a period before the measurement date sufficient for normal marketing activities. It is not a forced liquidation or distress sale. The concept ensures fair value reflects market conditions under normal, not unusual, circumstances.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Fair Value',
  'Summit Corp. has a building with a current use as a warehouse. Market participants would value the property most highly as a retail center. Under ASC 820, the fair value measurement should:',
- '["Reflect the warehouse use since that is the entity''s current use", "Reflect the retail center use as the highest and best use", "Use the lower of warehouse or retail center value", "Use the average of warehouse and retail center values"]'::jsonb,
- 1,
+ '["Reflect the warehouse use since that is the entity''s current use", "Use the average of warehouse and retail center values", "Use the lower of warehouse or retail center value", "Reflect the retail center use as the highest and best use"]'::jsonb,
+ 3,
  'For nonfinancial assets, ASC 820 requires fair value to be measured based on the highest and best use from the perspective of market participants. If the highest and best use is as a retail center, that value must be used even though Summit currently uses the building as a warehouse.',
  'medium');
 
@@ -3235,8 +3235,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Fair Value',
  'An entity classifies a fair value measurement within the hierarchy based on:',
- '["The highest-level input that is significant to the measurement", "The lowest-level input that is significant to the entire measurement", "The average level of all inputs used", "The level of the most frequently used input"]'::jsonb,
- 1,
+ '["The highest-level input that is significant to the measurement", "The average level of all inputs used", "The lowest-level input that is significant to the entire measurement", "The level of the most frequently used input"]'::jsonb,
+ 2,
  'ASC 820-10-35-37 states that the level within the fair value hierarchy is determined by the lowest-level input that is significant to the entire measurement. For example, if a measurement uses Level 2 and Level 3 inputs, and the Level 3 input is significant, the entire measurement is classified as Level 3.',
  'medium');
 
@@ -3279,8 +3279,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Cash and Receivables',
  'Under CECL, on the date a trade receivable is first recognized, the entity must:',
- '["Wait until payment is past due before recording any allowance", "Immediately record an allowance for expected credit losses", "Record the receivable net of expected losses", "Not record any allowance until a trigger event occurs"]'::jsonb,
- 1,
+ '["Wait until payment is past due before recording any allowance", "Not record any allowance until a trigger event occurs", "Record the receivable net of expected losses", "Immediately record an allowance for expected credit losses"]'::jsonb,
+ 3,
  'A key change under CECL is day-one recognition of expected credit losses. On initial recognition of a financial asset measured at amortized cost, the entity must establish an allowance for expected credit losses. This forward-looking model ensures losses are recognized earlier than the previous incurred loss model.',
  'medium');
 
@@ -3335,8 +3335,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Cash and Receivables',
  'Grant Inc. accepts a $100,000, 6-month, 8% note receivable from a customer on July 1. What is the interest receivable at December 31?',
- '["$2,000", "$4,000", "$8,000", "$100,000"]'::jsonb,
- 1,
+ '["$8,000", "$2,000", "$4,000", "$100,000"]'::jsonb,
+ 0,
  'Interest = Principal x Rate x Time = $100,000 x 8% x 6/12 = $4,000. Since the note is for 6 months from July 1 to December 31, the full 6 months of interest ($4,000) is accrued at year-end. The note matures on December 31, so all interest has been earned.',
  'easy');
 
@@ -3367,8 +3367,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Cash and Receivables',
  'A bank reconciliation reveals that the bank incorrectly charged Company A''s account $2,000 for a check written by Company B. This error requires:',
- '["An adjustment to Company A''s book balance", "An adjustment to the bank balance (add $2,000)", "An adjustment to Company B''s book balance", "No adjustment since the bank will correct it automatically"]'::jsonb,
- 1,
+ '["An adjustment to Company A''s book balance", "No adjustment since the bank will correct it automatically", "An adjustment to Company B''s book balance", "An adjustment to the bank balance (add $2,000)"]'::jsonb,
+ 3,
  'A bank error is adjusted on the bank side of the reconciliation. Since the bank incorrectly deducted $2,000, the bank balance is understated by $2,000 and must be increased. Company A should notify the bank to correct the error, but the reconciling item is shown as an addition to the bank balance.',
  'easy');
 
@@ -3399,8 +3399,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Cash and Receivables',
  'Ridge Corp. has $3,000,000 in gross receivables and uses the CECL model. Historical loss data adjusted for current economic conditions indicates expected losses of 5%. During the period, actual write-offs were $120,000 and recoveries of previously written-off accounts were $15,000. What is the bad debt expense if the beginning allowance balance was $130,000?',
- '["$150,000", "$125,000", "$105,000", "$45,000"]'::jsonb,
- 1,
+ '["$150,000", "$45,000", "$105,000", "$125,000"]'::jsonb,
+ 3,
  'Required ending allowance = $3,000,000 x 5% = $150,000. Beginning allowance: $130,000. Write-offs reduce allowance: -$120,000. Recoveries increase allowance: +$15,000. Allowance before adjustment = $130,000 - $120,000 + $15,000 = $25,000. Bad debt expense = $150,000 - $25,000 = $125,000.',
  'hard');
 
@@ -3468,8 +3468,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Not-for-Profit Accounting',
  'A not-for-profit organization receives a $200,000 grant with a stipulation that funds may only be used for youth literacy programs. During the year, the NFP spends $140,000 on qualifying literacy activities. What is the effect on the statement of activities for the year?',
- '["$200,000 increase in revenue without donor restrictions and $140,000 in program expenses", "$200,000 increase in revenue with donor restrictions and $140,000 reclassification to without donor restrictions", "$140,000 increase in revenue without donor restrictions only", "$200,000 increase in revenue with donor restrictions and no reclassification until fully spent"]'::jsonb,
- 1,
+ '["$200,000 increase in revenue without donor restrictions and $140,000 in program expenses", "$200,000 increase in revenue with donor restrictions and no reclassification until fully spent", "$140,000 increase in revenue without donor restrictions only", "$200,000 increase in revenue with donor restrictions and $140,000 reclassification to without donor restrictions"]'::jsonb,
+ 3,
  'The full $200,000 is recognized as revenue with donor restrictions when received because the donor specified a purpose restriction. As the NFP spends $140,000 on qualifying activities, $140,000 is reclassified from net assets with donor restrictions to net assets without donor restrictions as a satisfaction of purpose restriction. The remaining $60,000 stays in net assets with donor restrictions.',
  'medium');
 
@@ -3516,8 +3516,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Not-for-Profit Accounting',
  'Under ASU 2020-07, which of the following disclosures is required for contributed nonfinancial assets?',
- '["Only the aggregate fair value of all contributed nonfinancial assets", "Disaggregation by category, the valuation techniques used, and any donor restrictions", "Only whether the assets were used or sold", "No specific disclosures are required beyond the statement of activities presentation"]'::jsonb,
- 1,
+ '["Only the aggregate fair value of all contributed nonfinancial assets", "No specific disclosures are required beyond the statement of activities presentation", "Only whether the assets were used or sold", "Disaggregation by category, the valuation techniques used, and any donor restrictions"]'::jsonb,
+ 3,
  'ASU 2020-07 requires NFPs to present contributed nonfinancial assets as a separate line item in the statement of activities and disclose: (1) disaggregation by category, (2) qualitative information about whether the assets were monetized or utilized, (3) the valuation techniques and inputs used, (4) any donor-imposed restrictions, and (5) the NFP''s policies for monetizing vs. utilizing the assets.',
  'medium');
 
@@ -3532,8 +3532,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Not-for-Profit Accounting',
  'A not-for-profit''s endowment fund has original gift corpus of $5,000,000 and accumulated unspent investment returns of $1,200,000. State law (UPMIFA) permits the NFP to spend a prudent amount of appreciation. The board adopts a 4% spending policy. What is the maximum amount the NFP can appropriate for expenditure this year?',
- '["$200,000 (4% of corpus only)", "$248,000 (4% of total endowment value)", "$1,200,000 (all accumulated returns)", "$0 because endowment principal cannot be spent"]'::jsonb,
- 1,
+ '["$200,000 (4% of corpus only)", "$0 because endowment principal cannot be spent", "$1,200,000 (all accumulated returns)", "$248,000 (4% of total endowment value)"]'::jsonb,
+ 3,
  'Under UPMIFA (adopted by most states) and ASC 958-205, a not-for-profit may spend from an endowment fund an amount it considers prudent, considering factors such as the fund''s purpose, economic conditions, and purchasing power preservation. The board''s 4% spending rate applied to the total endowment value ($5,000,000 + $1,200,000 = $6,200,000) yields $248,000. UPMIFA generally allows spending of both original gift and appreciation, subject to prudence.',
  'hard');
 
@@ -3596,8 +3596,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Not-for-Profit Accounting',
  'A not-for-profit museum receives a collection of paintings valued at $12,000,000. The museum''s policy is to not capitalize collections. Which of the following is correct regarding this gift?',
- '["The museum must capitalize the collection at $12,000,000 regardless of policy", "If the museum does not capitalize, it must still disclose the nature and description of the collection", "Not capitalizing collections is never permitted under GAAP", "The museum must recognize $12,000,000 in revenue but not as an asset"]'::jsonb,
- 1,
+ '["The museum must capitalize the collection at $12,000,000 regardless of policy", "The museum must recognize $12,000,000 in revenue but not as an asset", "Not capitalizing collections is never permitted under GAAP", "If the museum does not capitalize, it must still disclose the nature and description of the collection"]'::jsonb,
+ 3,
  'Under ASC 958-360, NFPs may choose not to capitalize collections if items are held for public exhibition, education, or research; are protected and preserved; and proceeds from any sales are used to acquire other collection items. If a museum elects this policy, it must consistently apply it and disclose a description of the collection, its stewardship, and why items are not capitalized.',
  'medium');
 
@@ -3620,8 +3620,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Not-for-Profit Accounting',
  'A not-for-profit receives an unconditional promise to give $600,000, collectible in equal annual installments over 3 years starting next year. The discount rate is 6%. The present value of the pledge is approximately $535,000. In the second year, what amount of contribution revenue is recognized from the discount amortization?',
- '["$0 because revenue was fully recognized in year one", "$32,100 (6% of beginning-of-year-2 carrying amount)", "$21,667 (straight-line over 3 years)", "$200,000 representing the cash collected"]'::jsonb,
- 1,
+ '["$0 because revenue was fully recognized in year one", "$200,000 representing the cash collected", "$21,667 (straight-line over 3 years)", "$32,100 (6% of beginning-of-year-2 carrying amount)"]'::jsonb,
+ 3,
  'Multi-year unconditional pledges are initially recorded at present value. Each year, the discount amortization (interest accretion) is recognized as additional contribution revenue. In year 2, this equals the discount rate times the carrying amount of the receivable at the beginning of year 2. Assuming the beginning balance is approximately $535,000 adjusted for year 1 amortization and collections, the amortization is approximately $32,100.',
  'hard');
 
@@ -3688,8 +3688,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Governmental Accounting',
  'A city levies $10,000,000 in property taxes for the current fiscal year. Historical data indicates that 3% will be uncollectible. Of the remaining amount, $9,200,000 is expected to be collected within 60 days of year-end, with the balance collected in the following 4 months. Under modified accrual accounting, what amount of property tax revenue should the city recognize in the General Fund?',
- '["$9,700,000", "$9,200,000", "$10,000,000", "$9,409,000"]'::jsonb,
- 1,
+ '["$9,700,000", "$9,409,000", "$10,000,000", "$9,200,000"]'::jsonb,
+ 3,
  'Under modified accrual accounting (GASB standards), revenue is recognized when it is both measurable and available. Available means collectible within the current period or soon enough thereafter to pay current-period liabilities (typically 60 days). The levy net of uncollectibles is $9,700,000, but only $9,200,000 is expected within 60 days. The remaining $500,000 is deferred inflow of resources.',
  'medium');
 
@@ -3744,16 +3744,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Governmental Accounting',
  'A government reports the following in its government-wide statement of net position: total assets $250,000,000; deferred outflows of resources $8,000,000; total liabilities $160,000,000; deferred inflows of resources $12,000,000. Of the net position, $45,000,000 is invested in capital assets net of related debt and $15,000,000 is restricted. What is the unrestricted net position?',
- '["$86,000,000", "$26,000,000", "$41,000,000", "$98,000,000"]'::jsonb,
- 1,
+ '["$86,000,000", "$41,000,000", "$26,000,000", "$98,000,000"]'::jsonb,
+ 2,
  'Net position = (Total Assets + Deferred Outflows) - (Total Liabilities + Deferred Inflows) = ($250,000,000 + $8,000,000) - ($160,000,000 + $12,000,000) = $86,000,000. The three categories of net position are: net investment in capital assets ($45,000,000), restricted ($15,000,000), and unrestricted. Unrestricted = $86,000,000 - $45,000,000 - $15,000,000 = $26,000,000.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Governmental Accounting',
  'Which of the following revenue sources is recognized under modified accrual accounting when the underlying exchange transaction occurs, provided the revenue is available?',
- '["Property taxes", "Sales taxes", "Federal grants for reimbursable expenditures", "Fines and forfeitures"]'::jsonb,
- 1,
+ '["Property taxes", "Fines and forfeitures", "Federal grants for reimbursable expenditures", "Sales taxes"]'::jsonb,
+ 3,
  'Sales taxes are exchange-like derived tax revenues that are recognized when the underlying exchange (the sale) occurs, provided the revenue is available (collected within the availability period). Property taxes are imposed nonexchange revenues recognized in the period for which levied. Federal grants for reimbursable expenditures are recognized when qualifying expenditures are incurred. Each type has different recognition criteria under GASB 33.',
  'medium');
 
@@ -3800,16 +3800,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Governmental Accounting',
  'On the government-wide statement of activities, a city reports expenses of $80,000,000 for public safety and program revenues (charges for services and grants) of $22,000,000 for public safety. What is the net expense for public safety?',
- '["$80,000,000", "$58,000,000", "$22,000,000", "$102,000,000"]'::jsonb,
- 1,
+ '["$80,000,000", "$102,000,000", "$22,000,000", "$58,000,000"]'::jsonb,
+ 3,
  'The statement of activities uses a net cost format where program revenues are deducted from program expenses to show the net cost that must be financed by general revenues (taxes, unrestricted grants, etc.). Net expense for public safety = $80,000,000 - $22,000,000 = $58,000,000. This format highlights the burden each function places on general taxpayers after accounting for direct program revenues.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Governmental Accounting',
  'A government acquires a fire truck for $650,000 using General Fund appropriations. How is this transaction reported in the General Fund versus the government-wide financial statements?',
- '["Both report a $650,000 expenditure", "General Fund reports a $650,000 expenditure; government-wide reports a $650,000 capital asset", "Both report a $650,000 capital asset", "General Fund reports a capital asset; government-wide reports an expenditure"]'::jsonb,
- 1,
+ '["Both report a $650,000 expenditure", "General Fund reports a capital asset; government-wide reports an expenditure", "Both report a $650,000 capital asset", "General Fund reports a $650,000 expenditure; government-wide reports a $650,000 capital asset"]'::jsonb,
+ 3,
  'In the General Fund (modified accrual, current financial resources focus), the purchase is an expenditure of $650,000 since it uses current financial resources. In the government-wide statements (accrual basis, economic resources focus), the fire truck is capitalized as a capital asset of $650,000 and depreciated over its useful life. This is a key reconciling item between fund and government-wide statements.',
  'medium');
 
@@ -3880,8 +3880,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Governmental Accounting',
  'A government''s enterprise fund reports operating revenues of $15,000,000 and operating expenses of $12,000,000, including $2,000,000 of depreciation. Nonoperating items include interest expense of $800,000 and an investment gain of $200,000. Capital contributions from developers total $1,500,000. What is the change in net position?',
- '["$3,000,000", "$3,900,000", "$2,400,000", "$3,200,000"]'::jsonb,
- 1,
+ '["$3,000,000", "$3,200,000", "$2,400,000", "$3,900,000"]'::jsonb,
+ 3,
  'Change in net position = Operating income + Nonoperating revenues/expenses + Capital contributions. Operating income = $15,000,000 - $12,000,000 = $3,000,000. Nonoperating = -$800,000 + $200,000 = -$600,000. Capital contributions = $1,500,000. Total change = $3,000,000 - $600,000 + $1,500,000 = $3,900,000. Capital contributions are reported separately below nonoperating items.',
  'medium');
 
@@ -3916,8 +3916,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Employee Benefit Plans',
  'At December 31, a company''s defined benefit pension plan reports the following: projected benefit obligation (PBO) $8,000,000; plan assets at fair value $6,500,000. What is the funded status and how is it reported on the balance sheet?',
- '["$1,500,000 net pension asset", "$1,500,000 net pension liability", "$8,000,000 pension liability", "$6,500,000 pension asset"]'::jsonb,
- 1,
+ '["$1,500,000 net pension asset", "$6,500,000 pension asset", "$8,000,000 pension liability", "$1,500,000 net pension liability"]'::jsonb,
+ 3,
  'Under ASC 715, the funded status of a defined benefit plan is measured as the difference between the PBO and the fair value of plan assets. PBO $8,000,000 minus plan assets $6,500,000 equals an underfunded status of $1,500,000, reported as a net pension liability on the balance sheet. If plan assets exceeded the PBO, a net pension asset would be reported.',
  'easy');
 
@@ -3996,8 +3996,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Employee Benefit Plans',
  'A company settles a portion of its defined benefit pension obligation by purchasing annuity contracts from an insurance company for $3,200,000. The PBO settled is $3,000,000 and the fair value of plan assets allocated to the settlement is $2,800,000. What is the settlement gain or loss?',
- '["$200,000 loss", "$400,000 loss", "$200,000 gain", "$0"]'::jsonb,
- 1,
+ '["$200,000 loss", "$0", "$200,000 gain", "$400,000 loss"]'::jsonb,
+ 3,
  'A pension settlement removes both the PBO and plan assets related to the settled obligation. The settlement cost is the price paid for the annuities ($3,200,000). The gain or loss on settlement considers: PBO eliminated ($3,000,000) minus assets used ($2,800,000) = $200,000 net obligation; actual cost to settle = $3,200,000 minus assets used ($2,800,000) = $400,000 net cost. The settlement results in a loss of $400,000 ($3,200,000 cost - $2,800,000 assets = $400,000 excess cost, which is a loss).',
  'hard');
 
@@ -4144,8 +4144,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (2, 'Special Purpose Frameworks',
  'A company uses the income tax basis and has the following: book depreciation of $200,000 and tax depreciation (MACRS) of $350,000 for the current year. Equipment cost was $1,000,000. What depreciation amount appears in the tax-basis financial statements?',
- '["$200,000", "$350,000", "$275,000", "$150,000"]'::jsonb,
- 1,
+ '["$350,000", "$200,000", "$275,000", "$150,000"]'::jsonb,
+ 0,
  'Under the income tax basis, depreciation follows the IRC rules, which typically means MACRS depreciation. The $350,000 MACRS amount is reported because tax-basis financial statements use the same methods as the entity''s income tax return. The $200,000 book depreciation (perhaps straight-line under GAAP) is irrelevant for tax-basis reporting. This often results in higher early-year depreciation due to accelerated methods.',
  'easy');
 

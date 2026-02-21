@@ -26,7 +26,7 @@ export default function SignupPage() {
 					</li>
 					<li className="flex items-start gap-2">
 						<span className="text-emerald-600 mt-0.5">✓</span>
-						$9.99/month — cancel anytime
+						$29.99/month — cancel anytime
 					</li>
 				</ul>
 				<SignupForm />

@@ -2,7 +2,7 @@
 
 ## Positioning
 
-> Full CPA exam prep for $9.99/month. No loans. No employer required. No excuses.
+> Full CPA exam prep for $29.99/month. No loans. No employer required. No excuses.
 
 Slayer CPA is a full-scope CPA prep course priced for the underserved majority: self-studiers, career changers, small-firm staff, international candidates, and the new wave entering through relaxed 150-hour pathways. The brand is faceless — the product speaks for itself.
 
@@ -18,9 +18,9 @@ Slayer CPA is a full-scope CPA prep course priced for the underserved majority: 
 | Gleim          | Premium       | $2,999          | Unlimited      |
 | Surgent        | Ultimate Pass | $1,999          | Until pass     |
 | NINJA CPA      | Monthly       | $67-87/month    | Month-to-month |
-| **Slayer CPA** | **Monthly**   | **$9.99/month** | **Month-to-month** |
+| **Slayer CPA** | **Monthly**   | **$29.99/month** | **Month-to-month** |
 
-Slayer CPA is 85-98% cheaper than every competitor. A full year costs $119.88 vs. $2,499+ at Becker. NINJA (the only other monthly option) is 7-9x more expensive.
+Slayer CPA is 55-92% cheaper than every competitor. A full year costs $359.88 vs. $2,499+ at Becker. NINJA (the only other monthly option) is 2-3x more expensive.
 
 ### Target Audience
 
@@ -47,7 +47,7 @@ Slayer CPA is 85-98% cheaper than every competitor. A full year costs $119.88 vs
 
 These must be done before driving traffic:
 
-1. **Verify Stripe is live** — confirm production keys in Vercel, test a real $9.99 checkout, verify webhook fires and subscription activates
+1. **Verify Stripe is live** — confirm production keys in Vercel, test a real $29.99 checkout, verify webhook fires and subscription activates
 2. **Set up Google Search Console** — verify slayer-cpa.com, submit sitemap.xml
 3. **Set up Google Analytics (GA4)** — install tracking on the site (or rely on Vercel Analytics if sufficient)
 4. **Verify domain and SSL** — confirm www.slayer-cpa.com resolves correctly with HTTPS
@@ -114,7 +114,7 @@ No email gating for now — keep the free content truly free to maximize reach. 
 
 - Target high-intent keywords: "CPA review course," "best CPA prep course," "cheapest CPA prep"
 - Focus on comparison keywords: "Becker alternative," "CPA prep under $100"
-- Landing pages tailored to each keyword with clear $9.99/month CTA
+- Landing pages tailored to each keyword with clear $29.99/month CTA
 - Expected CPC: $3-8 for CPA prep keywords
 - Target CAC: under $30 (3 months of subscription revenue)
 - Start small ($5-10/day), scale what converts
@@ -122,7 +122,7 @@ No email gating for now — keep the free content truly free to maximize reach. 
 #### Reddit Ads ($50-150/month)
 
 - Target r/CPA and r/Accounting subscribers
-- Ad creative: "Full CPA exam prep for $9.99/month. 96 lessons. 1,275+ questions. All 6 sections."
+- Ad creative: "Full CPA exam prep for $29.99/month. 96 lessons. 4,400+ questions. All 6 sections."
 - Use promoted posts that look organic, not banner ads
 - Reddit ads are cheaper than Google and reach the exact audience
 
@@ -155,19 +155,19 @@ No email gating for now — keep the free content truly free to maximize reach. 
 
 | Objection | Counter |
 |---|---|
-| "If it's $10/month, it must be garbage" | Free intro lessons prove quality. Let the content speak. |
-| "Becker has 8,500 MCQs, you have 1,275" | Questions are AICPA Blueprint-aligned. At $10/mo you can supplement with NINJA and still pay a fraction of Becker. |
+| "If it's $30/month, it must be garbage" | Free intro lessons prove quality. Let the content speak. |
+| "Becker has 8,500 MCQs, you have 4,400" | Questions are AICPA Blueprint-aligned. At $30/mo you can supplement with NINJA and still pay a fraction of Becker. |
 | "No one has heard of Slayer CPA" | Build trust through content marketing, Reddit presence, and early testimonials. Every brand started unknown. |
 | "No video lectures" | Active learning (questions, practice exams, study frameworks) beats passive video. Research backs this. |
-| "No pass guarantee" | At $10/mo the risk is near zero. Becker's "guarantee" gives $250 back on a $3,800 purchase — still a $3,550 loss. |
+| "No pass guarantee" | At $30/mo the risk is near zero. Becker's "guarantee" gives $250 back on a $3,800 purchase — still a $3,550 loss. |
 
 ## Revenue Projections
 
 | Scenario | Subscribers | Monthly Revenue | Annual Revenue |
 |----------|-------------|-----------------|----------------|
-| Baseline (1%) | 250 | $2,500 | $30,000 |
-| Moderate (3%) | 750 | $7,500 | $90,000 |
-| Strong (5%) | 1,250 | $12,500 | $150,000 |
+| Baseline (1%) | 250 | $7,500 | $90,000 |
+| Moderate (3%) | 750 | $22,500 | $270,000 |
+| Strong (5%) | 1,250 | $37,500 | $450,000 |
 
 Addressable market: ~25,000 self-funding candidates/year. Conservative — 150-hour reform expected to expand the pipeline.
 
@@ -181,7 +181,7 @@ Break-even estimate: At $200-500/mo ad spend, break-even is ~20-50 subscribers (
 | Free-to-paid conversion | Vercel Analytics + Stripe | 2-5% of site visitors |
 | Subscriber churn | Stripe dashboard | Under 10%/month |
 | CAC (paid channels) | Google/Reddit Ads | Under $30 |
-| LTV | Stripe (avg subscription length x $9.99) | $60+ (6+ months avg) |
+| LTV | Stripe (avg subscription length x $29.99) | $180+ (6+ months avg) |
 | Reddit referral traffic | UTM-tagged links | Track weekly |
 | Search rankings | Google Search Console | Top 20 for 5+ target keywords by month 4 |
 

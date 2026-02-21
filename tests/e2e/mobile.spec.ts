@@ -67,6 +67,6 @@ test.describe("Mobile Viewport", () => {
 		await page.goto("/");
 
 		await expect(page.locator("h1")).toContainText("Pass the CPA Exam");
-		await expect(page.getByText("$9.99", { exact: true })).toBeVisible();
+		await expect(page.getByText("$29.99", { exact: true })).toBeVisible();
 	});
 });

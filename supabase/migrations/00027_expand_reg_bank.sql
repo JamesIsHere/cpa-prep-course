@@ -29,8 +29,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Circular 230',
  'A CPA is preparing a tax return and relies on information provided by the client without independent verification. Under Circular 230, the CPA''s due diligence obligation requires:',
- '["Verification of every item reported on the return through third-party documentation", "Reliance in good faith on client-provided information unless the CPA knows or should know it is incorrect", "That the CPA obtain written representations from the client for every deduction claimed", "An independent audit of the client''s records before signing the return"]'::jsonb,
- 1,
+ '["Verification of every item reported on the return through third-party documentation", "An independent audit of the client''s records before signing the return", "That the CPA obtain written representations from the client for every deduction claimed", "Reliance in good faith on client-provided information unless the CPA knows or should know it is incorrect"]'::jsonb,
+ 3,
  'Circular 230 Section 10.34 and the due diligence standard allow practitioners to rely in good faith on information furnished by the client without requiring independent verification. However, the practitioner cannot ignore the implications of information provided and must make reasonable inquiries if the information appears incorrect, inconsistent, or incomplete.',
  'easy');
 
@@ -77,8 +77,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Circular 230',
  'A practitioner subject to Circular 230 receives a monetary penalty of $25,000 for a first violation. Under what circumstances may the IRS impose a monetary penalty instead of or in addition to censure, suspension, or disbarment?',
- '["Only if the practitioner is convicted of a felony", "When the practitioner engages in conduct subject to sanction and a monetary penalty is appropriate given the severity of the conduct", "Only if the practitioner fails to respond to OPR correspondence within 30 days", "Monetary penalties are never available — only censure, suspension, and disbarment"]'::jsonb,
- 1,
+ '["Only if the practitioner is convicted of a felony", "Monetary penalties are never available — only censure, suspension, and disbarment", "Only if the practitioner fails to respond to OPR correspondence within 30 days", "When the practitioner engages in conduct subject to sanction and a monetary penalty is appropriate given the severity of the conduct"]'::jsonb,
+ 3,
  'Under Circular 230 Section 10.50, the IRS may impose monetary penalties on practitioners who engage in sanctionable conduct. The penalty amount is determined based on the nature and severity of the misconduct and may be imposed in lieu of or in addition to censure, suspension, or disbarment. Monetary penalties are not limited to felony convictions or failure to respond to correspondence.',
  'medium');
 
@@ -141,8 +141,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Circular 230',
  'A CPA in private practice is suspended from practice before the IRS for two years. During the suspension period, the CPA:',
- '["May continue to prepare tax returns but cannot represent clients in IRS proceedings", "Is completely prohibited from practicing before the IRS in any capacity during the suspension period", "May petition the OPR for early reinstatement after six months", "May practice before the IRS under the direct supervision of another CPA"]'::jsonb,
- 1,
+ '["May continue to prepare tax returns but cannot represent clients in IRS proceedings", "May practice before the IRS under the direct supervision of another CPA", "May petition the OPR for early reinstatement after six months", "Is completely prohibited from practicing before the IRS in any capacity during the suspension period"]'::jsonb,
+ 3,
  'A suspended practitioner is completely barred from practicing before the IRS during the suspension period. This includes preparing returns to be filed with the IRS, representing clients, and corresponding with the IRS on clients'' behalf. The suspension is absolute — the practitioner cannot practice under supervision and there is no automatic early reinstatement provision, although the practitioner may petition for reinstatement after the suspension period expires.',
  'medium');
 
@@ -273,16 +273,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Professional Ethics in Tax',
  'Under SSTS No. 4 (Use of Estimates), which of the following statements about using estimates in tax return preparation is correct?',
- '["Estimates are never permitted on a tax return", "Estimates may be used when it is impracticable to obtain exact data, provided they are reasonable and the use of estimates does not imply greater accuracy than exists", "Estimates require a separate disclosure statement attached to the return", "Estimates may be used only if the amount is less than $500"]'::jsonb,
- 1,
+ '["Estimates may be used only if the amount is less than $500", "Estimates are never permitted on a tax return", "Estimates require a separate disclosure statement attached to the return", "Estimates may be used when it is impracticable to obtain exact data, provided they are reasonable and the use of estimates does not imply greater accuracy than exists"]'::jsonb,
+ 0,
  'SSTS No. 4 recognizes that estimates are sometimes necessary when exact data is impractical or impossible to obtain. The CPA may use estimates that are reasonable based on the known facts and circumstances. The estimates should not be presented in a manner that implies greater accuracy than exists. There is no dollar threshold, and a separate disclosure statement is not automatically required.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Professional Ethics in Tax',
  'A CPA is preparing a current-year return for a client who refused to file an amended return for a prior-year error that understated income by $30,000. Under SSTS No. 6, the CPA:',
- '["Must refuse to prepare the current-year return under all circumstances", "Must report the prior-year error to the IRS before preparing the current return", "May prepare the current-year return but must ensure it is correct and should consider whether the prior error affects the current return", "May prepare the current-year return and ignore the prior-year error entirely"]'::jsonb,
- 2,
+ '["May prepare the current-year return but must ensure it is correct and should consider whether the prior error affects the current return", "Must report the prior-year error to the IRS before preparing the current return", "Must refuse to prepare the current-year return under all circumstances", "May prepare the current-year return and ignore the prior-year error entirely"]'::jsonb,
+ 0,
  'Under SSTS No. 6, a CPA who knows of a prior-year error is not automatically required to terminate the engagement. The CPA may prepare the current-year return as long as the current return itself is correct. However, the CPA must consider whether the prior error has any effect on the current-year return (e.g., carryforward amounts) and should not repeat the error. The CPA should also consider whether continuing the engagement is appropriate given the circumstances.',
  'hard');
 
@@ -337,8 +337,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Professional Ethics in Tax',
  'A client provides their CPA with a round-number estimate of $5,000 for unreimbursed business expenses, stating they do not have receipts. Under SSTS No. 4, which approach is most appropriate?',
- '["Accept the $5,000 estimate without question and include it on the return", "Make reasonable inquiries about the nature and basis of the estimate, and include it only if it appears reasonable under the circumstances", "Refuse to include any amount for business expenses without receipts", "Require the client to sign a separate indemnification agreement for the estimated amount"]'::jsonb,
- 1,
+ '["Accept the $5,000 estimate without question and include it on the return", "Require the client to sign a separate indemnification agreement for the estimated amount", "Refuse to include any amount for business expenses without receipts", "Make reasonable inquiries about the nature and basis of the estimate, and include it only if it appears reasonable under the circumstances"]'::jsonb,
+ 3,
  'SSTS No. 4 allows the use of estimates when exact data is unavailable, but the CPA must exercise professional judgment. The CPA should inquire about the basis for the estimate, consider whether it is reasonable given the client''s occupation and income level, and determine whether it is consistent with known facts. Blindly accepting round-number estimates or categorically refusing all estimates without receipts both fail to meet the standard of professional care.',
  'medium');
 
@@ -369,8 +369,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Professional Ethics in Tax',
  'Under SSTS No. 3, a CPA preparing a client''s return receives a Form 1099-MISC showing $8,000 in non-employee compensation. The client claims the amount is incorrect and should be $3,000. The CPA should:',
- '["Report $8,000 as shown on the Form 1099 regardless of the client''s claim", "Inquire further, request supporting documentation, and exercise professional judgment in determining the correct amount to report", "Report $3,000 based solely on the client''s oral statement", "Report $5,500 as a compromise between the two amounts"]'::jsonb,
- 1,
+ '["Report $8,000 as shown on the Form 1099 regardless of the client''s claim", "Report $5,500 as a compromise between the two amounts", "Report $3,000 based solely on the client''s oral statement", "Inquire further, request supporting documentation, and exercise professional judgment in determining the correct amount to report"]'::jsonb,
+ 3,
  'When there is a discrepancy between information reported on third-party forms and the client''s claim, SSTS No. 3 requires the CPA to exercise professional judgment. The CPA should make additional inquiries, request supporting documentation, and evaluate the evidence before determining the correct amount. Neither blindly accepting the 1099 nor accepting the client''s unsupported claim is appropriate. Splitting the difference is not a valid professional approach.',
  'medium');
 
@@ -477,8 +477,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Tax Procedures',
  'A taxpayer disagrees with the results of an IRS examination and wants to litigate without paying the tax first. Which court should the taxpayer petition?',
- '["U.S. District Court", "U.S. Tax Court", "U.S. Court of Federal Claims", "U.S. Court of Appeals"]'::jsonb,
- 1,
+ '["U.S. Court of Appeals", "U.S. District Court", "U.S. Court of Federal Claims", "U.S. Tax Court"]'::jsonb,
+ 0,
  'The U.S. Tax Court is the only forum where a taxpayer may litigate a tax deficiency without first paying the disputed amount. Both U.S. District Court and the U.S. Court of Federal Claims require the taxpayer to pay the full assessment and then file a claim for refund before bringing suit. The Court of Appeals is an appellate court, not a trial court for tax disputes.',
  'easy');
 
@@ -501,8 +501,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Tax Procedures',
  'A taxpayer files a return on time but does not pay the full amount of tax shown on the return. The penalty for failure to pay is:',
- '["5% of the unpaid tax per month, up to 25%", "0.5% of the unpaid tax per month, up to 25%", "No penalty applies if the return is filed on time", "A flat 10% penalty on the unpaid balance"]'::jsonb,
- 1,
+ '["5% of the unpaid tax per month, up to 25%", "A flat 10% penalty on the unpaid balance", "No penalty applies if the return is filed on time", "0.5% of the unpaid tax per month, up to 25%"]'::jsonb,
+ 3,
  'Under IRC Section 6651(a)(2), the failure-to-pay penalty is 0.5% of the unpaid tax for each month (or part of a month) the tax remains unpaid, up to a maximum of 25%. Filing the return on time avoids the more severe failure-to-file penalty (5% per month) but does not eliminate the failure-to-pay penalty. The rate increases to 1% per month if the IRS issues a notice of intent to levy and the tax remains unpaid after 10 days.',
  'easy');
 
@@ -649,8 +649,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Business Law: Contracts',
  'Under the mailbox rule, an acceptance sent by mail is effective:',
- '["When the offeror receives it", "When it is properly dispatched (placed in the mail) by the offeree", "When the offeree writes the acceptance letter", "Only if the offeror acknowledges receipt within 48 hours"]'::jsonb,
- 1,
+ '["When the offeror receives it", "Only if the offeror acknowledges receipt within 48 hours", "When the offeree writes the acceptance letter", "When it is properly dispatched (placed in the mail) by the offeree"]'::jsonb,
+ 3,
  'The mailbox rule (also called the dispatch rule) provides that an acceptance is effective upon proper dispatch — when the offeree places the acceptance in the mail with proper postage and addressing. This creates a binding contract at the moment of mailing, even before the offeror receives the acceptance. The rule does not apply to revocations, rejections, or counteroffers, which are effective only upon receipt.',
  'medium');
 
@@ -737,8 +737,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Business Law: Contracts',
  'A merchant offers to sell goods to a buyer and states the offer will remain open for 10 days. Under UCC Article 2, this is:',
- '["Not binding because no consideration was given for the promise to keep the offer open", "A firm offer that is irrevocable for the stated period even without consideration, provided the offer is in a signed writing", "Automatically revoked after 5 business days", "Valid only if the buyer pays a deposit to hold the offer open"]'::jsonb,
- 1,
+ '["Valid only if the buyer pays a deposit to hold the offer open", "Not binding because no consideration was given for the promise to keep the offer open", "Automatically revoked after 5 business days", "A firm offer that is irrevocable for the stated period even without consideration, provided the offer is in a signed writing"]'::jsonb,
+ 0,
  'Under UCC Section 2-205, a firm offer by a merchant to buy or sell goods, made in a signed writing that assures the offer will be held open, is irrevocable for the stated time (up to 3 months) without consideration. This is an exception to the common law rule requiring consideration for option contracts. The offer must be made by a merchant, be in a signed writing, and give assurance of irrevocability.',
  'medium');
 
@@ -809,8 +809,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Business Law: Contracts',
  'Rescission as a contract remedy:',
- '["Awards the non-breaching party double the contract value", "Cancels the contract and requires both parties to return any benefits received, restoring them to their pre-contract positions", "Is available only for contracts involving real property", "Requires a finding of criminal fraud before it can be granted"]'::jsonb,
- 1,
+ '["Requires a finding of criminal fraud before it can be granted", "Awards the non-breaching party double the contract value", "Is available only for contracts involving real property", "Cancels the contract and requires both parties to return any benefits received, restoring them to their pre-contract positions"]'::jsonb,
+ 0,
  'Rescission is an equitable remedy that cancels the contract and returns both parties to their pre-contract positions through mutual restitution. Each party must return any benefits received under the contract. Rescission is available for fraud, misrepresentation, mistake, duress, undue influence, or failure of consideration. It does not require criminal fraud — civil misrepresentation or mutual mistake is sufficient.',
  'medium');
 
@@ -957,8 +957,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Agency and Regulation',
  'The principal owes the agent a duty to:',
- '["Provide a written employment contract", "Compensate the agent as agreed and reimburse the agent for authorized expenses incurred on the principal''s behalf", "Disclose the principal''s complete financial records", "Guarantee the agent''s personal safety at all times"]'::jsonb,
- 1,
+ '["Provide a written employment contract", "Guarantee the agent''s personal safety at all times", "Disclose the principal''s complete financial records", "Compensate the agent as agreed and reimburse the agent for authorized expenses incurred on the principal''s behalf"]'::jsonb,
+ 3,
  'The principal owes the agent the duties of compensation (as agreed), reimbursement (for authorized expenses incurred in performing agency duties), indemnification (for losses suffered without fault while acting within authority), and cooperation (not interfering with the agent''s performance). The principal is not required to provide a written contract, guarantee safety beyond reasonable standards, or disclose all financial records.',
  'medium');
 
@@ -1061,8 +1061,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Agency and Regulation',
  'The duty of indemnification requires the principal to:',
- '["Pay the agent a bonus for exceptional performance", "Compensate the agent for losses and expenses reasonably incurred while acting within the scope of authority on the principal''s behalf", "Provide health insurance and retirement benefits to the agent", "Hold the agent harmless from all liability regardless of the agent''s conduct"]'::jsonb,
- 1,
+ '["Pay the agent a bonus for exceptional performance", "Hold the agent harmless from all liability regardless of the agent''s conduct", "Provide health insurance and retirement benefits to the agent", "Compensate the agent for losses and expenses reasonably incurred while acting within the scope of authority on the principal''s behalf"]'::jsonb,
+ 3,
  'The duty of indemnification requires the principal to compensate the agent for losses, liabilities, and expenses reasonably incurred while the agent acted within the scope of authorized duties. This includes legal costs if the agent is sued by a third party for actions taken on the principal''s behalf within authority. The duty does not extend to losses caused by the agent''s own negligence, unauthorized acts, or illegal conduct.',
  'medium');
 
@@ -1082,8 +1082,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Business Structures',
  'A sole proprietor reports business income and expenses on which federal tax form?',
- '["Form 1120", "Schedule C of Form 1040", "Form 1065", "Schedule E of Form 1040"]'::jsonb,
- 1,
+ '["Schedule E of Form 1040", "Form 1120", "Form 1065", "Schedule C of Form 1040"]'::jsonb,
+ 0,
  'A sole proprietorship is not a separate legal entity for tax purposes. The owner reports all business income and expenses on Schedule C (Profit or Loss from Business) of Form 1040. Form 1120 is for C corporations, Form 1065 is for partnerships, and Schedule E is primarily for rental and passive income.',
  'easy');
 
@@ -1130,8 +1130,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Business Structures',
  'Which of the following is an advantage of forming a limited liability company (LLC) rather than a general partnership?',
- '["LLCs must have at least two members", "LLC members receive limited liability protection while retaining management flexibility", "LLCs are always taxed as corporations", "LLC members cannot participate in management"]'::jsonb,
- 1,
+ '["LLC members cannot participate in management", "LLCs must have at least two members", "LLCs are always taxed as corporations", "LLC members receive limited liability protection while retaining management flexibility"]'::jsonb,
+ 0,
  'An LLC combines the limited liability of a corporation with the management flexibility and pass-through taxation of a partnership. Unlike limited partners, LLC members can actively participate in management without losing liability protection. LLCs can be single-member, can elect partnership or corporate taxation, and members have full management rights unless they choose a manager-managed structure.',
  'easy');
 
@@ -1146,16 +1146,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Business Structures',
  'A creditor of an LLC member obtains a judgment against the member personally (not against the LLC). Under most state LLC statutes, the creditor''s remedy against the member''s LLC interest is:',
- '["Seizure and sale of the member''s LLC interest", "A charging order against the member''s distributions", "Forced dissolution of the LLC", "Direct collection from LLC assets"]'::jsonb,
- 1,
+ '["Direct collection from LLC assets", "Seizure and sale of the member''s LLC interest", "Forced dissolution of the LLC", "A charging order against the member''s distributions"]'::jsonb,
+ 0,
  'Under most state LLC statutes, a creditor of an individual member is limited to obtaining a charging order, which entitles the creditor to receive distributions that would otherwise go to the debtor-member. The creditor cannot seize the membership interest, force a sale, compel dissolution, or reach LLC assets directly. This protects the other members from disruption.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Business Structures',
  'Which of the following best describes a limited liability partnership (LLP)?',
- '["A partnership where no partner has personal liability for any obligation", "A partnership where partners are shielded from liability for other partners'' malpractice but remain liable for their own acts", "A partnership that must be taxed as a corporation", "A partnership that cannot have more than 100 partners"]'::jsonb,
- 1,
+ '["A partnership where no partner has personal liability for any obligation", "A partnership that cannot have more than 100 partners", "A partnership that must be taxed as a corporation", "A partnership where partners are shielded from liability for other partners'' malpractice but remain liable for their own acts"]'::jsonb,
+ 3,
  'An LLP provides partners with protection from vicarious liability for the negligence, malpractice, or misconduct of other partners. Each partner remains fully liable for their own acts and for obligations they directly supervise. LLPs are commonly used by professional firms such as accounting and law firms. They retain partnership taxation and have no partner limit.',
  'medium');
 
@@ -1226,8 +1226,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Business Structures',
  'Which of the following statements about a sole proprietorship is INCORRECT?',
- '["The owner has unlimited personal liability for business debts", "Business income is reported on Schedule C of Form 1040", "The business must file a separate federal income tax return", "The owner pays self-employment tax on net business income"]'::jsonb,
- 2,
+ '["The business must file a separate federal income tax return", "Business income is reported on Schedule C of Form 1040", "The owner has unlimited personal liability for business debts", "The owner pays self-employment tax on net business income"]'::jsonb,
+ 0,
  'A sole proprietorship does not file a separate federal income tax return. The owner reports all business income and deductions on Schedule C of their personal Form 1040. The sole proprietorship is a disregarded entity for tax purposes. The owner does have unlimited personal liability and must pay self-employment tax on net earnings from the business.',
  'easy');
 
@@ -1250,8 +1250,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Business Structures',
  'A manager-managed LLC has three members and one designated manager. Member B, who is not the manager, signs a $50,000 contract with a vendor on behalf of the LLC. Which statement is correct?',
- '["The contract is automatically binding because all members have apparent authority", "The contract is not binding because in a manager-managed LLC, only the manager has apparent authority to bind the LLC", "The contract is binding only if the vendor knew Member B was not the manager", "The contract is void and unenforceable under all circumstances"]'::jsonb,
- 1,
+ '["The contract is automatically binding because all members have apparent authority", "The contract is void and unenforceable under all circumstances", "The contract is binding only if the vendor knew Member B was not the manager", "The contract is not binding because in a manager-managed LLC, only the manager has apparent authority to bind the LLC"]'::jsonb,
+ 3,
  'In a manager-managed LLC, only the designated manager has apparent authority to bind the LLC in ordinary course transactions. Non-manager members do not have apparent authority. If a non-manager member enters a contract, it is generally not binding on the LLC unless the LLC ratifies it or the member had actual authority. This differs from a member-managed LLC where all members have apparent authority.',
  'hard');
 
@@ -1266,8 +1266,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Business Structures',
  'FastGrow LLC is taxed as a partnership and has three members: A (50%), B (30%), and C (20%). The LLC has $100,000 of recourse debt for which only Member A has personally guaranteed repayment. How is the $100,000 liability allocated for basis purposes?',
- '["$50,000 to A, $30,000 to B, $20,000 to C", "$100,000 to A, $0 to B, $0 to C", "$33,333 to each member equally", "$0 to all members because LLC members have limited liability"]'::jsonb,
- 1,
+ '["$50,000 to A, $30,000 to B, $20,000 to C", "$0 to all members because LLC members have limited liability", "$33,333 to each member equally", "$100,000 to A, $0 to B, $0 to C"]'::jsonb,
+ 3,
  'Under Section 752, recourse liabilities are allocated to the partner who bears the economic risk of loss. Because Member A personally guaranteed the $100,000 debt, A bears the entire economic risk of loss and the full liability is allocated to A''s basis. Members B and C receive no basis increase from this recourse liability. This differs from nonrecourse liabilities, which are shared based on profit ratios.',
  'hard');
 
@@ -1294,16 +1294,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Property Transactions: Basis',
  'Rachel purchases a rental property for $320,000. She pays $8,000 in closing costs (title insurance, legal fees, recording fees). What is Rachel''s initial cost basis in the property?',
- '["$320,000", "$328,000", "$312,000", "$316,000"]'::jsonb,
- 1,
+ '["$320,000", "$316,000", "$312,000", "$328,000"]'::jsonb,
+ 3,
  'The cost basis of property includes the purchase price plus all costs incident to the acquisition, such as title insurance, legal fees, recording fees, and transfer taxes. Rachel''s basis is $320,000 + $8,000 = $328,000. Closing costs that are capitalized into basis do not include prepaid interest, property taxes prorated to the buyer, or insurance premiums.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Property Transactions: Basis',
  'Kevin buys a house for $400,000. Over the next five years, he adds a $40,000 garage and replaces the roof for $25,000. He also claims $15,000 in casualty loss deductions. What is Kevin''s adjusted basis?',
- '["$400,000", "$450,000", "$465,000", "$480,000"]'::jsonb,
- 1,
+ '["$400,000", "$480,000", "$465,000", "$450,000"]'::jsonb,
+ 3,
  'Adjusted basis starts with the original cost basis ($400,000), adds capital improvements ($40,000 garage + $25,000 roof = $65,000), and subtracts items that reduce basis such as casualty loss deductions ($15,000). The adjusted basis is $400,000 + $65,000 - $15,000 = $450,000. Routine maintenance and repairs are not added to basis.',
  'medium');
 
@@ -1326,8 +1326,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Property Transactions: Basis',
  'Uncle Bob gives his nephew a stock portfolio with a fair market value of $50,000 on the date of the gift. Uncle Bob''s adjusted basis in the stock is $30,000. No gift tax is paid. What is the nephew''s basis for computing a GAIN on a later sale?',
- '["$0", "$30,000", "$50,000", "$40,000"]'::jsonb,
- 1,
+ '["$0", "$40,000", "$50,000", "$30,000"]'::jsonb,
+ 3,
  'Under Section 1015, the donee''s basis for computing gain on gifted property is generally the donor''s adjusted basis (carryover basis). Since Uncle Bob''s basis was $30,000, the nephew uses $30,000 as his basis for gain purposes. The FMV of $50,000 is relevant only if the property had declined in value (the dual-basis rule applies when FMV is less than donor''s basis).',
  'easy');
 
@@ -1358,8 +1358,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Property Transactions: Basis',
  'George inherits a vacation home from his father, who died on June 1, 2026. The father purchased the home for $350,000 and the FMV at the date of death is $280,000. What is George''s basis in the property?',
- '["$350,000", "$280,000", "$315,000", "$70,000"]'::jsonb,
- 1,
+ '["$70,000", "$350,000", "$315,000", "$280,000"]'::jsonb,
+ 0,
  'Under Section 1014, inherited property receives a basis equal to FMV at the date of death, which can be a step-up or a step-down. Since the FMV ($280,000) is less than the decedent''s cost ($350,000), George receives a stepped-down basis of $280,000. The $70,000 built-in loss is permanently lost and cannot be recognized by George or anyone.',
  'medium');
 
@@ -1430,24 +1430,24 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Property Transactions: Basis',
  'Which of the following costs is added to the basis of real property at the time of purchase?',
- '["Prepaid property taxes allocated to the buyer", "Title search and title insurance fees", "Mortgage interest paid at closing", "Homeowner''s insurance premiums"]'::jsonb,
- 1,
+ '["Prepaid property taxes allocated to the buyer", "Homeowner''s insurance premiums", "Mortgage interest paid at closing", "Title search and title insurance fees"]'::jsonb,
+ 3,
  'Title search and title insurance fees are costs of acquiring title and are capitalized into the property''s basis. Prepaid property taxes are deductible as taxes, not added to basis. Mortgage interest paid at closing is deductible as interest expense. Insurance premiums are period expenses. Other capitalizable costs include legal fees, recording fees, surveys, and transfer taxes.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Property Transactions: Basis',
  'Megan buys a rental property for $275,000. In year one, she adds a $15,000 deck and claims $8,500 in depreciation. In year two, a storm causes $12,000 in damage, and she claims a casualty loss deduction of $12,000. What is her adjusted basis at the end of year two?',
- '["$275,000", "$269,500", "$281,500", "$257,500"]'::jsonb,
- 1,
+ '["$275,000", "$257,500", "$281,500", "$269,500"]'::jsonb,
+ 3,
  'Starting basis is $275,000. Add capital improvements ($15,000 deck) = $290,000. Subtract year one depreciation ($8,500) = $281,500. Subtract casualty loss deduction ($12,000) = $269,500. Capital improvements increase basis, while depreciation and casualty losses claimed as deductions reduce basis. Repairs that are expensed do not affect basis.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Property Transactions: Basis',
  'Peter inherits land from his grandmother who died on September 1, 2026. The grandmother originally purchased the land in 1995 for $40,000. The FMV on the date of death is $175,000. Peter sells the land on December 1, 2026, for $185,000. What is the character of Peter''s gain?',
- '["$10,000 short-term capital gain", "$10,000 long-term capital gain", "$145,000 long-term capital gain", "$185,000 ordinary income"]'::jsonb,
- 1,
+ '["$185,000 ordinary income", "$10,000 short-term capital gain", "$145,000 long-term capital gain", "$10,000 long-term capital gain"]'::jsonb,
+ 0,
  'Peter''s stepped-up basis under Section 1014 is $175,000 (FMV at date of death). His gain is $185,000 - $175,000 = $10,000. Although Peter held the land only three months, inherited property is automatically treated as long-term regardless of the actual holding period. The $135,000 of appreciation during the grandmother''s lifetime is eliminated by the step-up in basis.',
  'easy');
 
@@ -1518,8 +1518,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Property Transactions: Basis',
  'A taxpayer builds a new fence around a rental property at a cost of $8,000 and also pays $2,000 to repair a broken water heater. How do these expenditures affect the property''s adjusted basis?',
- '["Both increase basis by a total of $10,000", "Only the $8,000 fence increases basis; the $2,000 repair is expensed", "Only the $2,000 repair increases basis", "Neither affects basis"]'::jsonb,
- 1,
+ '["Neither affects basis", "Both increase basis by a total of $10,000", "Only the $2,000 repair increases basis", "Only the $8,000 fence increases basis; the $2,000 repair is expensed"]'::jsonb,
+ 0,
  'Capital improvements that add value, prolong the useful life, or adapt property to a new use are added to basis. The $8,000 fence is a capital improvement that increases basis. The $2,000 water heater repair is a deductible expense that maintains the property''s current condition and does not increase basis. The distinction between improvements and repairs is critical for basis calculations.',
  'easy');
 
@@ -1594,8 +1594,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Property Transactions: Gains/Losses',
  'Carla sells a machine used in her business for $90,000. She purchased it for $60,000 and has claimed $25,000 in MACRS depreciation. What is the amount and character of her gain?',
- '["$55,000 all ordinary income under Section 1245", "$25,000 ordinary income and $30,000 Section 1231 gain", "$55,000 all Section 1231 gain", "$30,000 ordinary income and $25,000 Section 1231 gain"]'::jsonb,
- 1,
+ '["$55,000 all ordinary income under Section 1245", "$30,000 ordinary income and $25,000 Section 1231 gain", "$55,000 all Section 1231 gain", "$25,000 ordinary income and $30,000 Section 1231 gain"]'::jsonb,
+ 3,
  'Carla''s adjusted basis is $60,000 - $25,000 = $35,000. Her total gain is $90,000 - $35,000 = $55,000. Under Section 1245, gain is recaptured as ordinary income to the extent of depreciation claimed ($25,000). The remaining $30,000 ($55,000 - $25,000) is Section 1231 gain, treated as long-term capital gain if net Section 1231 gains exceed losses for the year.',
  'medium');
 
@@ -1698,8 +1698,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Property Transactions: Gains/Losses',
  'Jennifer has $4,000 of net long-term capital losses and no capital gains in 2026. Her AGI before capital losses is $85,000. How much of the capital loss can she deduct in 2026?',
- '["$4,000", "$3,000", "$1,000", "$0"]'::jsonb,
- 1,
+ '["$4,000", "$0", "$1,000", "$3,000"]'::jsonb,
+ 3,
  'Individual taxpayers may deduct a maximum of $3,000 of net capital losses against ordinary income per year ($1,500 if married filing separately). Jennifer can deduct $3,000 of her $4,000 net LTCL in 2026 and carry forward the remaining $1,000 as a long-term capital loss to 2027. The carryforward retains its long-term character and has no expiration.',
  'easy');
 
@@ -1730,8 +1730,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Property Transactions: Gains/Losses',
  'A taxpayer sells stock at a loss 20 days after purchasing identical stock. Under the wash sale rule, which statement is correct?',
- '["The loss is permanently disallowed", "The disallowed loss is added to the basis of the replacement stock", "The loss is deductible because the 30-day period has expired", "The wash sale rule only applies to gains, not losses"]'::jsonb,
- 1,
+ '["The loss is permanently disallowed", "The wash sale rule only applies to gains, not losses", "The loss is deductible because the 30-day period has expired", "The disallowed loss is added to the basis of the replacement stock"]'::jsonb,
+ 3,
  'Under the wash sale rule (Section 1091), if a taxpayer sells stock at a loss and purchases substantially identical stock within 30 days before or after the sale, the loss is disallowed. However, the disallowed loss is added to the basis of the replacement stock, so the economic loss is preserved and recognized when the replacement stock is eventually sold. The wash sale rule applies only to losses, not gains.',
  'medium');
 
@@ -1798,8 +1798,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Like-Kind Exchanges',
  'After the Tax Cuts and Jobs Act (TCJA), Section 1031 like-kind exchange treatment is available for which type of property?',
- '["Personal property such as vehicles and equipment", "Real property only", "Both real and personal property", "Intangible property only"]'::jsonb,
- 1,
+ '["Intangible property only", "Personal property such as vehicles and equipment", "Both real and personal property", "Real property only"]'::jsonb,
+ 0,
  'Effective January 1, 2018, the TCJA limited Section 1031 like-kind exchange treatment to real property only. Before the TCJA, taxpayers could also do like-kind exchanges of personal property (equipment, vehicles, machinery). Now, exchanges of personal property are fully taxable. The real property must be held for use in a trade or business or for investment.',
  'easy');
 
@@ -1830,16 +1830,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Like-Kind Exchanges',
  'In a Section 1031 exchange, Lisa transfers an office building (basis $200,000, FMV $350,000) and receives a warehouse (FMV $300,000) plus $50,000 cash. What is Lisa''s recognized gain?',
- '["$0", "$50,000", "$150,000", "$100,000"]'::jsonb,
- 1,
+ '["$100,000", "$0", "$150,000", "$50,000"]'::jsonb,
+ 0,
  'Lisa''s realized gain is $350,000 (FMV received: $300,000 + $50,000) minus $200,000 basis = $150,000. In a like-kind exchange, gain is recognized to the extent of boot received. Boot is non-like-kind property, including cash. Lisa received $50,000 in boot (cash). Her recognized gain is the lesser of realized gain ($150,000) or boot received ($50,000) = $50,000.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Like-Kind Exchanges',
  'Continuing with Lisa''s exchange (basis $200,000 in relinquished property, received warehouse FMV $300,000 plus $50,000 cash, recognized gain $50,000), what is Lisa''s basis in the replacement warehouse?',
- '["$300,000", "$200,000", "$250,000", "$150,000"]'::jsonb,
- 1,
+ '["$300,000", "$150,000", "$250,000", "$200,000"]'::jsonb,
+ 3,
  'The basis of replacement property in a like-kind exchange is: basis of relinquished property ($200,000) + gain recognized ($50,000) - boot received ($50,000) = $200,000. Alternatively: FMV of replacement property ($300,000) - deferred gain ($150,000 - $50,000 = $100,000) = $200,000. The $100,000 of deferred gain is preserved in the lower basis of the replacement property.',
  'medium');
 
@@ -1918,8 +1918,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Like-Kind Exchanges',
  'Janet identifies four potential replacement properties within the 45-day identification period. Under the three-property rule, what is the consequence?',
- '["The exchange automatically fails because more than three properties were identified", "The exchange qualifies only if the total FMV of the four properties does not exceed 200% of the relinquished property''s FMV", "The exchange qualifies as long as Janet acquires at least one within 180 days", "There is no limit on the number of replacement properties that can be identified"]'::jsonb,
- 1,
+ '["The exchange automatically fails because more than three properties were identified", "There is no limit on the number of replacement properties that can be identified", "The exchange qualifies as long as Janet acquires at least one within 180 days", "The exchange qualifies only if the total FMV of the four properties does not exceed 200% of the relinquished property''s FMV"]'::jsonb,
+ 3,
  'Under the three-property rule, a taxpayer may identify up to three replacement properties without regard to their value. If more than three are identified, the exchange can still qualify under the 200% rule — the total FMV of all identified properties must not exceed 200% of the FMV of the relinquished property. Alternatively, the 95% rule requires acquiring 95% of the total identified value.',
  'hard');
 
@@ -1970,8 +1970,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Income',
  'Under Section 61, which of the following is the best definition of gross income?',
- '["Income from wages and salaries only", "All income from whatever source derived, unless specifically excluded", "Total receipts minus cost of goods sold", "Adjusted gross income before deductions"]'::jsonb,
- 1,
+ '["Income from wages and salaries only", "Adjusted gross income before deductions", "Total receipts minus cost of goods sold", "All income from whatever source derived, unless specifically excluded"]'::jsonb,
+ 3,
  'Section 61 defines gross income as all income from whatever source derived, including but not limited to compensation for services, business income, gains from property, interest, rents, royalties, dividends, and alimony (pre-2019). This is an all-inclusive definition — income is taxable unless a specific Code section excludes it.',
  'easy');
 
@@ -1986,8 +1986,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Income',
  'Which of the following types of interest income is included in gross income?',
- '["Interest on municipal bonds issued by a state government", "Interest on a savings account at a commercial bank", "Interest on qualified private activity bonds (for regular tax purposes)", "Interest on U.S. Treasury bonds (for state income tax purposes)"]'::jsonb,
- 1,
+ '["Interest on municipal bonds issued by a state government", "Interest on U.S. Treasury bonds (for state income tax purposes)", "Interest on qualified private activity bonds (for regular tax purposes)", "Interest on a savings account at a commercial bank"]'::jsonb,
+ 3,
  'Interest on a savings account at a commercial bank is fully taxable and included in gross income. Municipal bond interest is generally excluded under Section 103. Private activity bond interest may be a tax preference item for AMT but is typically excluded for regular tax. Treasury bond interest is taxable for federal purposes but exempt from state income tax.',
  'easy');
 
@@ -2010,8 +2010,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Income',
  'To qualify for the preferential tax rate, qualified dividends must meet which of the following requirements?',
- '["They must be paid by a foreign corporation not eligible for treaty benefits", "The shareholder must hold the stock for more than 60 days during the 121-day period surrounding the ex-dividend date", "They must be paid from tax-exempt income of the corporation", "The shareholder must hold the stock for at least one full calendar year"]'::jsonb,
- 1,
+ '["The shareholder must hold the stock for at least one full calendar year", "They must be paid by a foreign corporation not eligible for treaty benefits", "They must be paid from tax-exempt income of the corporation", "The shareholder must hold the stock for more than 60 days during the 121-day period surrounding the ex-dividend date"]'::jsonb,
+ 0,
  'Qualified dividends must be paid by a U.S. corporation or a qualified foreign corporation, and the shareholder must meet the holding period requirement — holding the stock for more than 60 days during the 121-day period beginning 60 days before the ex-dividend date. Dividends from most U.S. corporations qualify, but those from REITs and certain foreign corporations do not.',
  'medium');
 
@@ -2090,8 +2090,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Income',
  'A taxpayer files for Chapter 7 bankruptcy and has $40,000 of debt cancelled by creditors as part of the bankruptcy proceeding. What is the tax treatment of the COD income?',
- '["$40,000 is included in gross income", "$40,000 is excluded from gross income under the bankruptcy exclusion", "$20,000 is excluded and $20,000 is taxable", "The taxpayer must reduce tax attributes by $40,000 but has no current income"]'::jsonb,
- 1,
+ '["$40,000 is included in gross income", "The taxpayer must reduce tax attributes by $40,000 but has no current income", "$20,000 is excluded and $20,000 is taxable", "$40,000 is excluded from gross income under the bankruptcy exclusion"]'::jsonb,
+ 3,
  'Under Section 108(a)(1)(A), COD income arising in a Title 11 bankruptcy case is fully excluded from gross income. This is the broadest exclusion — it applies regardless of solvency. However, the taxpayer must reduce tax attributes (NOLs, credits, basis of assets) under Section 108(b) by the amount excluded. The bankruptcy exclusion takes priority over the insolvency exclusion.',
  'medium');
 
@@ -2130,16 +2130,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Income',
  'Carlos receives $15,000 in unemployment compensation benefits in 2026. How is this treated for federal income tax purposes?',
- '["Fully excluded from gross income", "Fully included in gross income", "The first $10,200 is excluded, and the remainder is taxable", "Taxed at a flat 10% rate"]'::jsonb,
- 1,
+ '["Fully excluded from gross income", "Taxed at a flat 10% rate", "The first $10,200 is excluded, and the remainder is taxable", "Fully included in gross income"]'::jsonb,
+ 3,
  'Unemployment compensation is fully included in gross income under Section 85. The temporary exclusion of $10,200 in unemployment benefits applied only to tax year 2020 under the American Rescue Plan Act. For 2026, the full $15,000 is taxable. Taxpayers can elect to have federal income tax withheld from unemployment benefits at a 10% rate.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Income',
  'Eli rents a vacation property for 10 days and uses it personally for 5 days during 2026. Total rental income is $5,000. How is the rental income treated?',
- '["$5,000 is included in gross income with proportional expense deductions", "$5,000 is excluded from gross income under the 14-day rule", "Only $3,333 is included (proportional to rental days)", "$5,000 is included and no expenses are deductible"]'::jsonb,
- 1,
+ '["$5,000 is included in gross income with proportional expense deductions", "$5,000 is included and no expenses are deductible", "Only $3,333 is included (proportional to rental days)", "$5,000 is excluded from gross income under the 14-day rule"]'::jsonb,
+ 3,
  'Under the 14-day rule (Section 280A(g)), if a taxpayer rents a dwelling unit for 14 days or fewer during the year, the rental income is excluded from gross income entirely. Since Eli rented for only 10 days (14 or fewer), the $5,000 is tax-free. However, no rental expenses (other than those otherwise deductible, like mortgage interest and property taxes) can be claimed.',
  'medium');
 
@@ -2178,16 +2178,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Income',
  'In 2026, Jane has the following income: salary $75,000, interest on corporate bonds $2,000, qualified dividends $5,000, and long-term capital gains $8,000. Her marginal ordinary income tax rate is 22%. What total federal income tax rate applies to her qualified dividends?',
- '["22%", "15%", "0%", "20%"]'::jsonb,
- 1,
+ '["20%", "22%", "0%", "15%"]'::jsonb,
+ 0,
  'Qualified dividends are taxed at preferential long-term capital gains rates, not ordinary rates. For 2026, single filers with taxable income in Jane''s range (approximately $48,476 to $533,400) pay 15% on qualified dividends. The 0% rate applies to income within the lowest brackets, and the 20% rate applies above approximately $533,400. Jane''s $5,000 in qualified dividends is taxed at 15%.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Income',
  'Paul receives a below-market-interest loan of $200,000 from his employer at 1% interest when the applicable federal rate (AFR) is 5%. What are the tax consequences to Paul?',
- '["No tax consequences because it is a loan, not income", "Paul has imputed interest income of $8,000 (4% x $200,000) and the employer has compensation expense of $8,000", "Paul must include the full $200,000 as income", "Only the employer is affected — Paul has no taxable event"]'::jsonb,
- 1,
+ '["No tax consequences because it is a loan, not income", "Only the employer is affected — Paul has no taxable event", "Paul must include the full $200,000 as income", "Paul has imputed interest income of $8,000 (4% x $200,000) and the employer has compensation expense of $8,000"]'::jsonb,
+ 3,
  'Under Section 7872, below-market loans between employers and employees create two deemed transactions: (1) the employer pays additional compensation to the employee equal to the foregone interest ($200,000 x (5% - 1%) = $8,000), and (2) the employee pays interest back to the employer at the AFR. Paul has $8,000 of compensation income, and the employer has $8,000 of compensation expense and $8,000 of interest income.',
  'hard');
 
@@ -2234,8 +2234,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Income',
  'Ken has $45,000 in wages and receives a gift of $20,000 cash from his grandmother. What is Ken''s gross income?',
- '["$65,000", "$45,000", "$55,000", "$20,000"]'::jsonb,
- 1,
+ '["$65,000", "$20,000", "$55,000", "$45,000"]'::jsonb,
+ 3,
  'Under Section 102, the value of property or cash received as a gift is excluded from the donee''s gross income. Ken''s $20,000 gift from his grandmother is not taxable income to him. His gross income is $45,000 (wages only). Note that the gift tax, if any, is the responsibility of the donor (grandmother), not the recipient. Gifts from employers generally do not qualify for the exclusion.',
  'easy');
 
@@ -2298,8 +2298,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Deductions',
  'Roberto has net self-employment income of $140,000 in 2026. His total self-employment tax is $19,782. What amount may he deduct as an above-the-line adjustment for self-employment tax?',
- '["$19,782", "$9,891", "$10,710", "$0"]'::jsonb,
- 1,
+ '["$19,782", "$0", "$10,710", "$9,891"]'::jsonb,
+ 3,
  'Self-employed taxpayers may deduct 50% of self-employment tax as an above-the-line adjustment on Form 1040. This mirrors the employer''s share of FICA that W-2 employees receive as an exclusion. Roberto''s deduction is $19,782 x 50% = $9,891. The other half is not deductible.',
  'medium');
 
@@ -2338,8 +2338,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Deductions',
  'A married couple filing jointly purchased their primary residence in 2020 with a $900,000 mortgage. In 2026, they paid $38,000 in mortgage interest. How much mortgage interest can they deduct on Schedule A?',
- '["$38,000", "$31,667", "$28,500", "$0"]'::jsonb,
- 1,
+ '["$38,000", "$0", "$28,500", "$31,667"]'::jsonb,
+ 3,
  'For mortgages originated after December 15, 2017, the mortgage interest deduction is limited to interest on the first $750,000 of acquisition indebtedness. Since their $900,000 mortgage exceeds this limit, only the interest attributable to the first $750,000 is deductible: $38,000 x ($750,000 / $900,000) = $31,667.',
  'hard');
 
@@ -2354,8 +2354,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Deductions',
  'Sandra donates publicly traded stock held for 14 months with a fair market value of $25,000 and a cost basis of $8,000 to a public charity. Her AGI is $70,000. What is the maximum charitable deduction she can claim in 2026?',
- '["$8,000", "$21,000", "$25,000", "$14,000"]'::jsonb,
- 1,
+ '["$8,000", "$14,000", "$25,000", "$21,000"]'::jsonb,
+ 3,
  'Donations of long-term capital gain property to public charities are deductible at fair market value but limited to 30% of AGI. Sandra''s 30% limit is $70,000 x 30% = $21,000. Although the stock is worth $25,000, she can only deduct $21,000 in 2026. The remaining $4,000 carries forward for up to five years.',
  'medium');
 
@@ -2386,16 +2386,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Deductions',
  'Lauren, single, has $200,000 of QBI from her accounting practice (a specified service trade or business). Her 2026 taxable income before the QBI deduction is $220,000. What happens to her Section 199A deduction?',
- '["The full 20% deduction is available", "The deduction is partially phased out", "The deduction is completely disallowed", "She must use the W-2 wage safe harbor"]'::jsonb,
- 1,
+ '["The full 20% deduction is available", "She must use the W-2 wage safe harbor", "The deduction is completely disallowed", "The deduction is partially phased out"]'::jsonb,
+ 3,
  'Lauren''s taxable income of $220,000 exceeds the $197,300 single-filer threshold but falls within the $50,000 phase-out range (ending at $247,300). Because her business is a specified service trade or business (SSTB), the QBI deduction is partially phased out within this range. Above $247,300, an SSTB owner receives no Section 199A deduction.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Deductions',
  'Which of the following businesses is classified as a specified service trade or business (SSTB) for purposes of the Section 199A QBI deduction?',
- '["Residential construction company", "Law firm", "Manufacturing company", "Restaurant"]'::jsonb,
- 1,
+ '["Residential construction company", "Restaurant", "Manufacturing company", "Law firm"]'::jsonb,
+ 3,
  'A law firm is a specified service trade or business (SSTB) because it falls under the category of law as defined in Section 199A. SSTBs include health, law, accounting, actuarial science, performing arts, consulting, athletics, financial services, and brokerage. Construction, manufacturing, and restaurants are not SSTBs.',
  'easy');
 
@@ -2487,8 +2487,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Credits',
  'Under H.R. 1 provisions for 2026, what is the child tax credit amount per qualifying child under age 17?',
- '["$2,000", "$2,500", "$3,000", "$3,600"]'::jsonb,
- 1,
+ '["$3,600", "$2,000", "$3,000", "$2,500"]'::jsonb,
+ 0,
  'H.R. 1 increased the child tax credit to $2,500 per qualifying child under age 17 for 2026. This is an increase from the previous $2,000 amount under TCJA. The credit begins to phase out at $200,000 of MAGI for single filers and $400,000 for married filing jointly.',
  'easy');
 
@@ -2511,8 +2511,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Credits',
  'The child and dependent care credit allows a maximum amount of employment-related expenses for two or more qualifying individuals of:',
- '["$3,000", "$6,000", "$8,000", "$16,000"]'::jsonb,
- 1,
+ '["$3,000", "$16,000", "$8,000", "$6,000"]'::jsonb,
+ 3,
  'The child and dependent care credit is based on a maximum of $3,000 in expenses for one qualifying individual and $6,000 for two or more. The credit percentage ranges from 20% to 35% of eligible expenses depending on AGI. Both spouses must have earned income (or be a student/disabled) to claim the credit.',
  'easy');
 
@@ -2527,8 +2527,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Credits',
  'Which of the following is a requirement to claim the earned income credit (EIC)?',
- '["The taxpayer must have at least one qualifying child", "The taxpayer must have earned income and meet AGI limits", "The taxpayer must be married filing jointly", "The taxpayer must be at least age 25"]'::jsonb,
- 1,
+ '["The taxpayer must have at least one qualifying child", "The taxpayer must be at least age 25", "The taxpayer must be married filing jointly", "The taxpayer must have earned income and meet AGI limits"]'::jsonb,
+ 3,
  'The fundamental requirement for the EIC is that the taxpayer must have earned income (wages, self-employment income) and meet the applicable AGI limits. A qualifying child is not required — there is a smaller EIC available for eligible workers without qualifying children. Filing status does not have to be MFJ, and age requirements apply only to those without children.',
  'easy');
 
@@ -2551,8 +2551,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Credits',
  'Sarah, a junior in college, paid $5,200 in qualified tuition and $800 in required textbooks in 2026. What is her maximum American Opportunity Tax Credit?',
- '["$2,000", "$2,500", "$4,000", "$6,000"]'::jsonb,
- 1,
+ '["$2,000", "$6,000", "$4,000", "$2,500"]'::jsonb,
+ 3,
  'The AOTC is calculated as 100% of the first $2,000 in qualified expenses plus 25% of the next $2,000, for a maximum of $2,500 per student. Sarah''s qualified expenses of $6,000 exceed the $4,000 cap that generates the maximum credit. Her AOTC is $2,000 + ($2,000 x 25%) = $2,500.',
  'medium');
 
@@ -2599,16 +2599,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Credits',
  'To claim the child and dependent care credit, both spouses must have earned income unless one spouse is:',
- '["Over age 65", "A full-time student or disabled", "Claiming the EIC", "Filing a separate return"]'::jsonb,
- 1,
+ '["Over age 65", "Filing a separate return", "Claiming the EIC", "A full-time student or disabled"]'::jsonb,
+ 3,
  'The child and dependent care credit requires both spouses to have earned income (or be actively seeking employment). However, a spouse who is a full-time student or is physically or mentally incapable of self-care is deemed to have earned income of $250/month for one qualifying individual or $500/month for two or more, allowing the other spouse to claim the credit.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Credits',
  'Robert and Jennifer (MFJ) pay $4,500 in qualified tuition for their daughter''s first year of college and $8,000 for Robert''s MBA program. Can they claim both the AOTC and Lifetime Learning Credit on the same return?',
- '["No — only one education credit can be claimed per return", "Yes — they can claim the AOTC for the daughter and the LLC for Robert", "Yes — but they must split the credits equally", "No — MBA programs do not qualify for any education credit"]'::jsonb,
- 1,
+ '["No — MBA programs do not qualify for any education credit", "No — only one education credit can be claimed per return", "Yes — but they must split the credits equally", "Yes — they can claim the AOTC for the daughter and the LLC for Robert"]'::jsonb,
+ 0,
  'Taxpayers can claim the AOTC and Lifetime Learning Credit on the same return as long as they are for different students. The AOTC applies to the daughter (first four years of undergrad) and the LLC applies to Robert (graduate school). However, both credits cannot be claimed for the same student in the same year.',
  'medium');
 
@@ -2655,8 +2655,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Credits',
  'The earned income credit is calculated based on which of the following?',
- '["Total income including investment income", "Earned income only (wages and self-employment)", "AGI minus the standard deduction", "Taxable income after all deductions"]'::jsonb,
- 1,
+ '["Total income including investment income", "Taxable income after all deductions", "AGI minus the standard deduction", "Earned income only (wages and self-employment)"]'::jsonb,
+ 3,
  'The earned income credit is calculated based on earned income, which includes wages, salaries, tips, and net self-employment income. Investment income, pensions, Social Security benefits, and unemployment compensation are not earned income for EIC purposes, though investment income is used for the disqualification test.',
  'easy');
 
@@ -2679,8 +2679,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Credits',
  'David and Susan (MFJ) have a 17-year-old son in 2026. They claim him as a dependent. What child-related credit, if any, can they claim?',
- '["$2,500 child tax credit", "$500 credit for other dependents", "$2,000 child tax credit", "No credit — the child is too old"]'::jsonb,
- 1,
+ '["$2,500 child tax credit", "No credit — the child is too old", "$2,000 child tax credit", "$500 credit for other dependents"]'::jsonb,
+ 3,
  'The child tax credit under H.R. 1 requires the child to be under age 17 at the end of the tax year. A 17-year-old does not qualify. However, the $500 credit for other dependents (also called the family credit) is available for dependents who do not qualify for the child tax credit, including children age 17 and older who are still claimed as dependents.',
  'hard');
 
@@ -2796,8 +2796,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Credits/AMT',
  'George exercises ISOs and holds the stock through year-end. He paid AMT of $15,000 due entirely to the ISO timing preference. In the following year, he sells the stock at a gain. What happens to the $15,000 AMT credit?',
- '["It expires when the stock is sold", "It offsets his regular tax in the year of sale to the extent regular tax exceeds tentative minimum tax", "It is added to his basis in the stock", "It converts to a capital loss carryforward"]'::jsonb,
- 1,
+ '["It expires when the stock is sold", "It converts to a capital loss carryforward", "It is added to his basis in the stock", "It offsets his regular tax in the year of sale to the extent regular tax exceeds tentative minimum tax"]'::jsonb,
+ 3,
  'The AMT credit from ISO timing preferences carries forward and can offset regular tax liability in any future year to the extent the regular tax exceeds the tentative minimum tax. In the year of sale, the stock sale reverses the timing difference, typically causing the regular tax to exceed the AMT, allowing George to use the credit.',
  'hard');
 
@@ -2812,8 +2812,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Credits/AMT',
  'Which of the following correctly describes MACRS depreciation for AMT purposes?',
- '["AMT uses the same MACRS method as regular tax", "AMT requires the 150% declining balance method for personal property instead of 200%", "AMT requires straight-line depreciation for all property", "Depreciation is not allowed for AMT purposes"]'::jsonb,
- 1,
+ '["Depreciation is not allowed for AMT purposes", "AMT uses the same MACRS method as regular tax", "AMT requires straight-line depreciation for all property", "AMT requires the 150% declining balance method for personal property instead of 200%"]'::jsonb,
+ 0,
  'For AMT purposes, personal property that uses the 200% declining balance method under regular MACRS must use the 150% declining balance method. This slower depreciation creates a timing difference that is an AMT adjustment item. The difference reverses over the life of the asset as the AMT depreciation eventually catches up.',
  'hard');
 
@@ -2857,8 +2857,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Filing/Credits',
  'Which of the following filing statuses generally provides the most favorable tax rates?',
- '["Single", "Married Filing Jointly", "Married Filing Separately", "Head of Household"]'::jsonb,
- 1,
+ '["Single", "Head of Household", "Married Filing Separately", "Married Filing Jointly"]'::jsonb,
+ 3,
  'Married filing jointly generally provides the most favorable tax rates, with the widest tax brackets and the highest standard deduction ($31,400 in 2026). The MFJ brackets are approximately double the single brackets, reducing the marriage penalty. MFJ also provides access to credits that MFS does not.',
  'easy');
 
@@ -2905,8 +2905,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Filing/Credits',
  'For 2026, what is the maximum gross income a qualifying relative can have to be claimed as a dependent?',
- '["$4,700", "$5,050", "$4,400", "$15,700"]'::jsonb,
- 1,
+ '["$4,700", "$15,700", "$4,400", "$5,050"]'::jsonb,
+ 3,
  'A qualifying relative must have gross income below the exemption amount, which is approximately $5,050 for 2026. If the potential dependent''s gross income equals or exceeds this threshold, they cannot be claimed as a qualifying relative. This income test does not apply to qualifying children.',
  'easy');
 
@@ -2961,8 +2961,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Filing/Credits',
  'Rita and Tom are married but wish to file separate returns in 2026. If Rita itemizes her deductions, what must Tom do?',
- '["Tom may choose either standard deduction or itemized", "Tom must also itemize his deductions", "Tom may take the standard deduction plus half of Rita''s itemized amount", "Tom cannot file a separate return if Rita itemizes"]'::jsonb,
- 1,
+ '["Tom cannot file a separate return if Rita itemizes", "Tom may choose either standard deduction or itemized", "Tom may take the standard deduction plus half of Rita''s itemized amount", "Tom must also itemize his deductions"]'::jsonb,
+ 0,
  'When married taxpayers file separately, if one spouse itemizes deductions, the other spouse must also itemize — they cannot take the standard deduction. This rule prevents couples from optimizing by having one spouse itemize and the other take the standard deduction. Both must use the same method.',
  'medium');
 
@@ -2993,8 +2993,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Filing/Credits',
  'A self-employed taxpayer has net earnings of $60,000 in 2026. Estimated tax payments are due on which dates?',
- '["January 15, April 15, July 15, October 15", "April 15, June 15, September 15, January 15 (of next year)", "March 15, June 15, September 15, December 15", "Quarterly on the last day of each quarter"]'::jsonb,
- 1,
+ '["Quarterly on the last day of each quarter", "January 15, April 15, July 15, October 15", "March 15, June 15, September 15, December 15", "April 15, June 15, September 15, January 15 (of next year)"]'::jsonb,
+ 0,
  'Estimated tax payments for individuals are due on April 15, June 15, September 15, and January 15 of the following year. Note that the second quarter payment is due June 15 (not July 15), making the second quarter shorter than the others. These dates apply regardless of whether the taxpayer is self-employed or not.',
  'easy');
 
@@ -3065,8 +3065,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Filing/Credits',
  'Which of the following is a requirement for a taxpayer to claim qualifying surviving spouse filing status?',
- '["The surviving spouse must have been widowed within the current tax year", "The surviving spouse must not have remarried and must maintain a home for a dependent child", "The surviving spouse must have filed jointly in the year of the spouse''s death", "The surviving spouse must be at least age 65"]'::jsonb,
- 1,
+ '["The surviving spouse must have been widowed within the current tax year", "The surviving spouse must be at least age 65", "The surviving spouse must have filed jointly in the year of the spouse''s death", "The surviving spouse must not have remarried and must maintain a home for a dependent child"]'::jsonb,
+ 3,
  'Qualifying surviving spouse (QSS) status requires: (1) the spouse died in one of the two preceding tax years, (2) the surviving spouse has not remarried, (3) the surviving spouse maintains a household that is the principal residence of a dependent son, daughter, or stepchild for the entire year, and (4) the surviving spouse paid over half the cost of maintaining the home.',
  'medium');
 
@@ -3081,8 +3081,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Individual Taxation: Filing/Credits',
  'A non-custodial parent wishes to claim the child tax credit for their child. What form must the custodial parent sign to release the dependency exemption?',
- '["Form W-4", "Form 8332", "Form 2120", "Form 8812"]'::jsonb,
- 1,
+ '["Form 8812", "Form W-4", "Form 2120", "Form 8332"]'::jsonb,
+ 0,
  'Form 8332 (Release/Revocation of Release of Claim to Exemption for Child by Custodial Parent) must be signed by the custodial parent to allow the non-custodial parent to claim the child tax credit and dependency. Form 2120 is for multiple support agreements. Form 8812 is for the additional child tax credit. Form W-4 is for withholding.',
  'easy');
 
@@ -3198,8 +3198,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Estate and Gift Tax',
  'The alternate valuation date for estate tax purposes is:',
- '["3 months after the date of death", "6 months after the date of death", "12 months after the date of death", "The last day of the tax year of death"]'::jsonb,
- 1,
+ '["3 months after the date of death", "The last day of the tax year of death", "12 months after the date of death", "6 months after the date of death"]'::jsonb,
+ 3,
  'The executor may elect to value the gross estate at the alternate valuation date, which is 6 months after the date of death. This election is available only if it reduces both the gross estate value and the estate tax liability. Property sold or distributed within the 6-month period is valued at the date of sale or distribution.',
  'medium');
 
@@ -3214,8 +3214,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Estate and Gift Tax',
  'Direct payments made to an educational institution for tuition on behalf of another person are:',
- '["Subject to gift tax above the annual exclusion", "Excluded from gift tax regardless of amount", "Deductible as an education expense", "Treated as a qualified transfer under Section 529"]'::jsonb,
- 1,
+ '["Treated as a qualified transfer under Section 529", "Subject to gift tax above the annual exclusion", "Deductible as an education expense", "Excluded from gift tax regardless of amount"]'::jsonb,
+ 0,
  'Direct payments to educational institutions for tuition (not room and board) are excluded from gift tax under the educational exclusion, with no dollar limit. Like the medical exclusion, this is an unlimited exclusion separate from the $19,000 annual exclusion. The payment must be made directly to the institution.',
  'easy');
 
@@ -3286,8 +3286,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Estate and Gift Tax',
  'A Crummey power in an irrevocable trust allows:',
- '["The trustee to distribute principal at their discretion", "Beneficiaries to withdraw contributions for a limited time, converting them to present interests", "The grantor to revoke the trust within 30 days", "The trust to avoid all gift tax consequences"]'::jsonb,
- 1,
+ '["The trustee to distribute principal at their discretion", "The trust to avoid all gift tax consequences", "The grantor to revoke the trust within 30 days", "Beneficiaries to withdraw contributions for a limited time, converting them to present interests"]'::jsonb,
+ 3,
  'A Crummey power gives trust beneficiaries a limited right to withdraw contributions to the trust for a window of time (typically 30-60 days). This withdrawal right converts what would otherwise be a future interest into a present interest, qualifying the contribution for the annual gift tax exclusion. If the beneficiary does not exercise the power, the funds remain in trust.',
  'hard');
 
@@ -3331,8 +3331,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'C Corporations',
  'Beta Corp has taxable income of $500,000 for the current year. What is Beta Corp''s federal income tax liability?',
- '["$75,000", "$100,000", "$105,000", "$170,000"]'::jsonb,
- 2,
+ '["$105,000", "$100,000", "$75,000", "$170,000"]'::jsonb,
+ 0,
  'C corporations are taxed at a flat 21% rate under current law. Beta Corp''s tax liability is $500,000 x 21% = $105,000. The graduated corporate rate structure was eliminated by the Tax Cuts and Jobs Act, replaced by the single flat rate.',
  'easy');
 
@@ -3355,8 +3355,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'C Corporations',
  'Which of the following is the accumulated earnings credit threshold for a personal service corporation?',
- '["$0", "$100,000", "$150,000", "$250,000"]'::jsonb,
- 2,
+ '["$150,000", "$100,000", "$0", "$250,000"]'::jsonb,
+ 0,
  'Personal service corporations (those in health, law, engineering, architecture, accounting, actuarial science, performing arts, or consulting) have an accumulated earnings credit of $150,000 rather than the standard $250,000. This lower threshold reflects the idea that service companies have less need to accumulate earnings for business purposes.',
  'easy');
 
@@ -3655,8 +3655,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'S Corporations',
  'Maple Corp, an S corporation, has passive investment income exceeding 25% of gross receipts for three consecutive years and has accumulated E&P from C corporation years. What is the consequence?',
- '["A 20% penalty tax is imposed", "The S election is terminated on the first day of the fourth year", "The shareholders must pay an additional tax", "The IRS imposes a $10,000 fine"]'::jsonb,
- 1,
+ '["The IRS imposes a $10,000 fine", "A 20% penalty tax is imposed", "The shareholders must pay an additional tax", "The S election is terminated on the first day of the fourth year"]'::jsonb,
+ 0,
  'If an S corporation with accumulated C corporation E&P has passive investment income exceeding 25% of gross receipts for three consecutive tax years, the S election is automatically terminated on the first day of the fourth consecutive year. The corporation reverts to C corporation status. This rule encourages S corporations to distribute accumulated E&P or limit passive income.',
  'medium');
 
@@ -3999,8 +3999,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Legal Duties and Responsibilities',
  'Under the Ultramares doctrine, to whom does an accountant owe a duty of care in a negligence action?',
- '["Any person who relies on the financial statements", "Only those in privity of contract with the accountant", "All foreseeable third parties", "Government regulators only"]'::jsonb,
- 1,
+ '["Any person who relies on the financial statements", "Government regulators only", "All foreseeable third parties", "Only those in privity of contract with the accountant"]'::jsonb,
+ 3,
  'The Ultramares doctrine (from the landmark 1931 case Ultramares Corp. v. Touche) limits an accountant''s liability for negligence to those in privity of contract (the client) or near-privity. This is the most restrictive standard and was designed to prevent accountants from being liable to an indeterminate class of persons for an indeterminate amount.',
  'easy');
 
@@ -4163,8 +4163,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Debtor-Creditor Relationships',
  'Under UCC Article 9, what three elements must exist for a security interest to attach to collateral?',
- '["Filing, possession, and control", "Value given, debtor rights in collateral, and authenticated security agreement", "Signed promissory note, collateral description, and notarization", "Filing a financing statement, giving notice, and recording the lien"]'::jsonb,
- 1,
+ '["Filing, possession, and control", "Filing a financing statement, giving notice, and recording the lien", "Signed promissory note, collateral description, and notarization", "Value given, debtor rights in collateral, and authenticated security agreement"]'::jsonb,
+ 3,
  'Attachment of a security interest under Article 9 requires three elements: (1) value has been given by the secured party (e.g., a loan), (2) the debtor has rights in the collateral, and (3) the debtor has authenticated a security agreement that describes the collateral. Attachment gives the creditor rights against the debtor in the collateral.',
  'easy');
 
@@ -4187,8 +4187,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Debtor-Creditor Relationships',
  'When a debtor files a bankruptcy petition, which of the following occurs automatically?',
- '["All debts are immediately discharged", "An automatic stay prohibiting most collection activities takes effect", "The debtor''s property is immediately sold", "All liens on the debtor''s property are removed"]'::jsonb,
- 1,
+ '["All debts are immediately discharged", "All liens on the debtor''s property are removed", "The debtor''s property is immediately sold", "An automatic stay prohibiting most collection activities takes effect"]'::jsonb,
+ 3,
  'The filing of a bankruptcy petition triggers an automatic stay under Section 362 of the Bankruptcy Code. The automatic stay immediately halts most collection efforts, lawsuits, foreclosures, wage garnishments, and other actions against the debtor or the debtor''s property. The stay provides the debtor breathing room to reorganize or liquidate in an orderly fashion.',
  'easy');
 
@@ -4227,16 +4227,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Debtor-Creditor Relationships',
  'Seller sells a commercial refrigerator to Restaurant on credit, retaining a security interest. Seller perfects the security interest within 20 days of delivery. Bank had previously filed a financing statement covering all of Restaurant''s equipment. Who has priority in the refrigerator?',
- '["Bank, because it filed first", "Seller, because Seller has a purchase money security interest (PMSI) in equipment", "They share equally", "Neither, because the interests conflict"]'::jsonb,
- 1,
+ '["Neither, because the interests conflict", "Bank, because it filed first", "They share equally", "Seller, because Seller has a purchase money security interest (PMSI) in equipment"]'::jsonb,
+ 0,
  'A purchase money security interest (PMSI) in equipment has superpriority over a prior-perfected security interest if the PMSI is perfected within 20 days after the debtor receives possession of the equipment. Seller perfected within 20 days, so Seller''s PMSI in the refrigerator has priority over Bank''s earlier-filed blanket lien on equipment.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Debtor-Creditor Relationships',
  'Which of the following is a valid defense available to a surety against the creditor?',
- '["The debtor was a minor when the contract was formed", "The creditor materially modified the terms of the principal obligation without the surety''s consent", "The creditor extended the time for payment without changing the terms", "The debtor filed for bankruptcy"]'::jsonb,
- 1,
+ '["The debtor was a minor when the contract was formed", "The debtor filed for bankruptcy", "The creditor extended the time for payment without changing the terms", "The creditor materially modified the terms of the principal obligation without the surety''s consent"]'::jsonb,
+ 3,
  'A material modification of the underlying obligation without the surety''s consent releases the surety from liability to the extent of any loss caused by the modification. Common suretyship defenses include: fraud by the creditor, material alteration of the contract, release of collateral, and impairment of the surety''s subrogation rights. The debtor being a minor is typically the debtor''s defense, not the surety''s.',
  'medium');
 
@@ -4259,8 +4259,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Debtor-Creditor Relationships',
  'A creditor made a loan to a debtor that was induced by the debtor''s fraudulent financial statements. The debtor later files Chapter 7 bankruptcy. Is the debt dischargeable?',
- '["Yes, all debts are discharged in Chapter 7", "No, debts obtained through fraud or false pretenses are not dischargeable", "Yes, unless the creditor files a separate lawsuit", "No, but only if the fraud amount exceeds $10,000"]'::jsonb,
- 1,
+ '["Yes, all debts are discharged in Chapter 7", "No, but only if the fraud amount exceeds $10,000", "Yes, unless the creditor files a separate lawsuit", "No, debts obtained through fraud or false pretenses are not dischargeable"]'::jsonb,
+ 3,
  'Under Section 523(a)(2) of the Bankruptcy Code, debts obtained by false pretenses, false representation, or actual fraud are excepted from discharge. The creditor must file a timely adversary proceeding in the bankruptcy court to have the specific debt declared non-dischargeable. The debtor''s use of fraudulent financial statements to induce the loan qualifies.',
  'medium');
 
@@ -4291,8 +4291,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Debtor-Creditor Relationships',
  'A debtor paid $15,000 to a trade creditor on an existing $15,000 debt 60 days before filing a Chapter 7 petition. The payment was made in the ordinary course of business. Can the trustee recover this as a preference?',
- '["Yes, because it was made within 90 days of filing", "No, because ordinary course of business payments are excepted from preference recovery", "Yes, because the amount exceeds $5,000", "No, because the debtor was solvent at the time of payment"]'::jsonb,
- 1,
+ '["No, because the debtor was solvent at the time of payment", "Yes, because it was made within 90 days of filing", "Yes, because the amount exceeds $5,000", "No, because ordinary course of business payments are excepted from preference recovery"]'::jsonb,
+ 0,
  'Under Section 547(c)(2), a transfer made in the ordinary course of business (or financial affairs) of the debtor and the creditor is excepted from preference avoidance. Although the payment meets the general preference requirements (to a creditor, for an antecedent debt, within 90 days, while insolvent, giving more than in Chapter 7), the ordinary course defense applies.',
  'medium');
 
@@ -4307,24 +4307,24 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Debtor-Creditor Relationships',
  'Supplier holds a PMSI in inventory sold to Retailer. Under Article 9, what additional step must Supplier take to achieve superpriority over a prior-perfected secured party with a blanket lien on Retailer''s inventory?',
- '["File a UCC-1 within 20 days of delivery", "Perfect before the debtor receives the inventory and send authenticated notification to the prior-perfected party", "Obtain a court order granting superpriority", "Record the PMSI with the county recorder"]'::jsonb,
- 1,
+ '["File a UCC-1 within 20 days of delivery", "Record the PMSI with the county recorder", "Obtain a court order granting superpriority", "Perfect before the debtor receives the inventory and send authenticated notification to the prior-perfected party"]'::jsonb,
+ 3,
  'A PMSI in inventory has superpriority over a prior-perfected party only if: (1) the PMSI is perfected when the debtor receives possession of the inventory, and (2) the PMSI holder sends authenticated notification to the prior-perfected party before the debtor receives the inventory. This notification requirement for inventory PMSIs is more stringent than for equipment PMSIs (which only require perfection within 20 days).',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Debtor-Creditor Relationships',
  'A debtor files for Chapter 11 bankruptcy reorganization. Which of the following statements about Chapter 11 is correct?',
- '["Only corporations may file Chapter 11", "The debtor typically remains in possession and operates the business during reorganization", "All creditors must consent to the reorganization plan", "The debtor must liquidate all assets within 180 days"]'::jsonb,
- 1,
+ '["Only corporations may file Chapter 11", "The debtor must liquidate all assets within 180 days", "All creditors must consent to the reorganization plan", "The debtor typically remains in possession and operates the business during reorganization"]'::jsonb,
+ 3,
  'In Chapter 11, the debtor typically remains in possession (debtor-in-possession or DIP) and continues to operate the business during the reorganization process. Individuals, partnerships, and corporations can file Chapter 11. Not all creditors must consent — the plan can be confirmed through a cramdown if certain requirements are met. Chapter 11 is reorganization, not liquidation.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Debtor-Creditor Relationships',
  'A creditor holds a valid, perfected security interest in a debtor''s equipment. The debtor files Chapter 7 bankruptcy. What happens to the creditor''s secured claim?',
- '["The security interest is automatically voided by the bankruptcy filing", "The creditor retains its security interest but is subject to the automatic stay", "The creditor may immediately repossess the equipment", "The security interest is subordinated to all unsecured claims"]'::jsonb,
- 1,
+ '["The security interest is automatically voided by the bankruptcy filing", "The security interest is subordinated to all unsecured claims", "The creditor may immediately repossess the equipment", "The creditor retains its security interest but is subject to the automatic stay"]'::jsonb,
+ 3,
  'A valid, perfected security interest survives bankruptcy. The secured creditor retains its lien on the collateral but must comply with the automatic stay — it cannot repossess or foreclose without court permission (relief from stay). The secured creditor is paid from the collateral''s value before unsecured creditors receive anything from that specific asset.',
  'hard');
 
@@ -4367,8 +4367,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Tax-Exempt Organizations',
  'A Section 501(c)(3) organization receives $50,000 in dividends from publicly traded stocks it holds in its investment portfolio. Is this income subject to unrelated business income tax (UBIT)?',
- '["Yes, all investment income is subject to UBIT", "No, dividends are specifically excluded from UBIT", "Yes, because the income is not related to the exempt purpose", "No, but only if the dividends are reinvested"]'::jsonb,
- 1,
+ '["Yes, all investment income is subject to UBIT", "No, but only if the dividends are reinvested", "Yes, because the income is not related to the exempt purpose", "No, dividends are specifically excluded from UBIT"]'::jsonb,
+ 3,
  'Dividends are specifically excluded from unrelated business taxable income under Section 512(b)(1), along with interest, annuities, royalties, and most rents from real property. These passive investment income items are not considered income from a trade or business even though they are unrelated to the exempt purpose. This exclusion encourages exempt organizations to maintain investment portfolios.',
  'easy');
 
@@ -4503,8 +4503,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (3, 'Tax-Exempt Organizations',
  'An exempt organization operates a gift shop that sells items related to its museum exhibits (books, replicas, educational materials). Is the gift shop income subject to UBIT?',
- '["Yes, because it is a commercial retail operation", "No, because the sale of items substantially related to the exempt purpose is not unrelated business income", "Yes, but only for items priced over $50", "No, but only if the gift shop is staffed by volunteers"]'::jsonb,
- 1,
+ '["Yes, because it is a commercial retail operation", "No, but only if the gift shop is staffed by volunteers", "Yes, but only for items priced over $50", "No, because the sale of items substantially related to the exempt purpose is not unrelated business income"]'::jsonb,
+ 3,
  'Gift shop sales of items that are substantially related to the museum''s exempt educational purpose — such as books about exhibits, educational replicas, and materials that enhance visitors'' understanding — are not subject to UBIT. The third prong of the UBIT test (not substantially related) is not met. Items unrelated to the exhibits (generic souvenirs, snacks) might be subject to UBIT if regularly sold.',
  'medium');
 

@@ -7,7 +7,7 @@ export default function Paywall() {
 				This lesson requires a subscription
 			</h2>
 			<p className="text-gray-500 mb-6 max-w-md mx-auto">
-				Subscribe for $9.99/month to unlock all lessons, quizzes, practice
+				Subscribe for $29.99/month to unlock all lessons, quizzes, practice
 				exams, and downloadable study guides.
 			</p>
 			<div className="flex flex-col sm:flex-row gap-3 justify-center">

@@ -72,7 +72,7 @@ test.describe("Public Pages — Smoke Tests", () => {
 		).toBeVisible();
 
 		// Pricing
-		await expect(page.getByText("$9.99", { exact: true })).toBeVisible();
+		await expect(page.getByText("$29.99", { exact: true })).toBeVisible();
 		await expect(
 			page.getByRole("link", { name: "Get Started Free" }),
 		).toBeVisible();
@@ -170,7 +170,7 @@ test.describe("Public Pages — Smoke Tests", () => {
 		// Value prop bullets
 		await expect(page.locator("text=Free intro lessons")).toBeVisible();
 		await expect(
-			page.locator("text=$9.99/month to unlock everything"),
+			page.locator("text=$29.99/month to unlock everything"),
 		).toBeVisible();
 	});
 

@@ -56,7 +56,7 @@ export default async function AccountPage() {
 								type="submit"
 								className="bg-emerald-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-emerald-700 transition-colors"
 							>
-								Subscribe — $9.99/month
+								Subscribe — $29.99/month
 							</button>
 						</form>
 					</div>

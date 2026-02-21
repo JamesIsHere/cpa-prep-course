@@ -38,8 +38,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Ethics and Independence',
  'A CPA firm prepared the financial statements for a non-issuer audit client and is now engaged to audit those same financial statements. Under the AICPA Code, what type of threat does this create?',
- '["Undue influence threat", "Self-review threat", "Familiarity threat", "Advocacy threat"]'::jsonb,
- 1,
+ '["Self-review threat", "Undue influence threat", "Familiarity threat", "Advocacy threat"]'::jsonb,
+ 0,
  'When a CPA firm audits financial statements that it also prepared, a self-review threat exists because the auditor may not objectively evaluate their own work product. Under the AICPA Code, this service is permitted for non-issuers provided that the client''s management takes responsibility for the financial statements and the firm applies appropriate safeguards.',
  'medium');
 
@@ -118,16 +118,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Ethics and Independence',
  'A CPA firm has been asked to represent an audit client before the IRS in a tax dispute. Under the AICPA Code, which threat to independence does this create, and is it permissible?',
- '["Self-interest threat; it is not permissible", "Advocacy threat; it is permissible if the matter is administrative in nature and not adversarial", "Familiarity threat; it is permissible without restrictions", "Management participation threat; it is not permissible"]'::jsonb,
- 1,
+ '["Advocacy threat; it is permissible if the matter is administrative in nature and not adversarial", "Self-interest threat; it is not permissible", "Familiarity threat; it is permissible without restrictions", "Management participation threat; it is not permissible"]'::jsonb,
+ 0,
  'Representing a client before the IRS creates an advocacy threat. Under the AICPA Code, the threat may be acceptable if the representation involves routine tax matters such as responding to IRS inquiries or administrative proceedings. However, representing the client in an adversarial proceeding such as Tax Court would likely impair independence because the CPA would be acting as the client''s advocate.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Ethics and Independence',
  'Which of the following safeguards would be most effective in mitigating a familiarity threat caused by long association with an audit client?',
- '["Increasing the audit fee to reflect the additional risk", "Rotating the engagement partner off the engagement", "Assigning a less experienced team to the engagement", "Reducing the scope of the audit procedures"]'::jsonb,
- 1,
+ '["Rotating the engagement partner off the engagement", "Increasing the audit fee to reflect the additional risk", "Assigning a less experienced team to the engagement", "Reducing the scope of the audit procedures"]'::jsonb,
+ 0,
  'Rotating the engagement partner is the most effective safeguard against familiarity threats from long association. Fresh perspective from a new leader helps ensure objectivity is maintained. Increasing fees does not address the threat, assigning less experienced staff increases risk, and reducing scope is never an appropriate response to an independence threat.',
  'easy');
 
@@ -198,16 +198,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Ethics and Independence',
  'Under the AICPA Code, which of the following actions by a CPA would most likely constitute a breach of the integrity principle?',
- '["Issuing a qualified opinion due to a scope limitation", "Knowingly signing a tax return that contains a false statement", "Recommending that a client adopt a more conservative accounting policy", "Declining an engagement due to lack of industry expertise"]'::jsonb,
- 1,
+ '["Knowingly signing a tax return that contains a false statement", "Issuing a qualified opinion due to a scope limitation", "Recommending that a client adopt a more conservative accounting policy", "Declining an engagement due to lack of industry expertise"]'::jsonb,
+ 0,
  'Knowingly signing a document containing a false statement is a direct violation of the integrity principle, which requires CPAs to be honest and not knowingly misrepresent facts or subordinate judgment. Issuing a qualified opinion, declining an engagement, and recommending conservative policies are all appropriate professional actions consistent with integrity.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Ethics and Independence',
  'An audit firm provides IT consulting services to a non-issuer audit client, including designing and implementing a new general ledger system. During the implementation, firm personnel make routine configuration decisions. Under the AICPA Code, is independence impaired?',
- '["No, because IT consulting is a permitted nonattest service", "Yes, because making configuration decisions constitutes a management participation threat that may impair independence", "No, because the decisions were routine and immaterial", "Yes, because IT consulting is prohibited for all audit clients"]'::jsonb,
- 1,
+ '["Yes, because making configuration decisions constitutes a management participation threat that may impair independence", "No, because IT consulting is a permitted nonattest service", "No, because the decisions were routine and immaterial", "Yes, because IT consulting is prohibited for all audit clients"]'::jsonb,
+ 0,
  'Making configuration decisions on behalf of the client constitutes a management participation threat because the auditor is performing a management function. Even routine decisions about how to configure a system used for financial reporting can impair independence if the client has not designated a competent person to oversee and accept responsibility for those decisions.',
  'hard');
 
@@ -222,8 +222,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Ethics and Independence',
  'Under the AICPA Code, a covered member is prohibited from having which of the following relationships during the period of a professional engagement?',
- '["A checking account at a bank audit client that is fully insured by the FDIC", "A loan from an audit client that is not a financial institution", "A home mortgage from a bank audit client obtained under normal terms", "An automobile loan from a bank audit client obtained under normal lending procedures"]'::jsonb,
- 1,
+ '["A checking account at a bank audit client that is fully insured by the FDIC", "An automobile loan from a bank audit client obtained under normal lending procedures", "A home mortgage from a bank audit client obtained under normal terms", "A loan from an audit client that is not a financial institution"]'::jsonb,
+ 3,
  'Loans from audit clients that are not financial institutions are generally prohibited because they represent direct financial interests. The AICPA Code provides specific exceptions for certain loans from financial institution clients (such as checking accounts, home mortgages obtained under normal terms, and automobile loans), but these exceptions apply only to financial institution audit clients.',
  'medium');
 
@@ -254,8 +254,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Ethics and Independence',
  'Under the AICPA Code, which of the following acts as both a threat category and a prohibited action?',
- '["Self-interest threat", "Management participation threat", "Advocacy threat", "Familiarity threat"]'::jsonb,
- 1,
+ '["Management participation threat", "Familiarity threat", "Advocacy threat", "Self-interest threat"]'::jsonb,
+ 3,
  'Management participation is unique among the threat categories because it is both a category of threat and a specifically prohibited activity. A CPA must never assume a management responsibility for an attest client, regardless of whether safeguards might be available. Other threats — self-interest, familiarity, and advocacy — can potentially be mitigated through safeguards.',
  'hard');
 
@@ -339,8 +339,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Professional Responsibilities',
  'A CPA has been subpoenaed to testify in court about a client''s financial records. The client has not waived privilege. Under the AICPA Code, the CPA should:',
- '["Refuse to testify under any circumstances to protect confidentiality", "Testify as required by the subpoena after consulting with legal counsel", "Destroy the records to protect the client", "Contact the client and demand payment before testifying"]'::jsonb,
- 1,
+ '["Testify as required by the subpoena after consulting with legal counsel", "Contact the client and demand payment before testifying", "Destroy the records to protect the client", "Refuse to testify under any circumstances to protect confidentiality"]'::jsonb,
+ 3,
  'While the AICPA Code requires confidentiality, a valid subpoena or court order is a legally enforceable exception that supersedes the confidentiality requirement. The CPA should consult with legal counsel and comply with the subpoena. Refusing to comply with a valid court order or destroying records would expose the CPA to contempt charges and other legal consequences.',
  'medium');
 
@@ -592,8 +592,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Quality Management',
  'Under SQMS No. 1, which of the following is a required component of a firm''s system of quality management?',
- '["Client satisfaction surveys", "Risk assessment process", "Annual profitability analysis by engagement", "Partner compensation benchmarking"]'::jsonb,
- 1,
+ '["Risk assessment process", "Partner compensation benchmarking", "Annual profitability analysis by engagement", "Client satisfaction surveys"]'::jsonb,
+ 3,
  'SQMS No. 1 requires eight components, including a risk assessment process. The firm must identify quality risks and design responses to address them. Client satisfaction surveys, profitability analysis, and compensation benchmarking, while potentially useful management tools, are not required components of the quality management system.',
  'easy');
 
@@ -640,8 +640,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Quality Management',
  'A CPA firm determines that a quality risk exists related to staff turnover causing knowledge gaps on recurring engagements. Under SQMS No. 1, what type of response would be most appropriate?',
- '["Raise audit fees to compensate for the increased risk", "Implement knowledge transfer procedures, documentation requirements, and succession planning for key engagements", "Stop accepting new engagements until turnover stabilizes", "Outsource all audit work to a larger firm"]'::jsonb,
- 1,
+ '["Raise audit fees to compensate for the increased risk", "Stop accepting new engagements until turnover stabilizes", "Outsource all audit work to a larger firm", "Implement knowledge transfer procedures, documentation requirements, and succession planning for key engagements"]'::jsonb,
+ 2,
  'Under SQMS No. 1, the firm must design and implement responses to identified quality risks. For knowledge gaps from staff turnover, appropriate responses include knowledge transfer procedures, comprehensive documentation requirements, succession planning, and training programs. The response should be proportionate to the risk and designed to reduce it to an acceptable level.',
  'medium');
 
@@ -909,8 +909,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Government Auditing Standards',
  'Under Government Auditing Standards, which of the following nonaudit services is generally prohibited for an auditor providing services to a government audit client?',
- '["Providing advice on accounting standards", "Performing management functions such as making policy decisions for the entity", "Preparing financial statements from client-provided trial balances", "Providing training to client personnel on new accounting standards"]'::jsonb,
- 1,
+ '["Providing advice on accounting standards", "Providing training to client personnel on new accounting standards", "Preparing financial statements from client-provided trial balances", "Performing management functions such as making policy decisions for the entity"]'::jsonb,
+ 3,
  'The Yellow Book prohibits auditors from performing management functions for government audit clients. This includes making policy decisions, directing employees, or performing any function that is management''s responsibility. While other services like preparing financial statements or providing training may be permissible with appropriate safeguards, management functions are categorically prohibited.',
  'medium');
 
@@ -1298,8 +1298,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Audit Planning',
  'An auditor is determining materiality for a company that reported a net loss in the current year. Which benchmark would be most appropriate?',
- '["5% of the net loss", "1% of total revenues", "50% of the net loss", "5% of the change in net loss from the prior year"]'::jsonb,
- 1,
+ '["1% of total revenues", "5% of the net loss", "50% of the net loss", "5% of the change in net loss from the prior year"]'::jsonb,
+ 0,
  'When an entity reports a net loss, using a percentage of net income is not meaningful because it would produce a negative materiality. In such cases, the auditor selects an alternative benchmark such as total revenues, total assets, or total expenses. One percent of total revenues is a commonly used benchmark when income-based measures are not appropriate.',
  'medium');
 
@@ -1362,16 +1362,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Audit Planning',
  'An auditor is planning the audit of a company with significant estimates, including warranty reserves and pension obligations. The auditor''s planning should include:',
- '["Accepting management''s estimates as presented since management has the most knowledge", "Identifying areas involving significant estimates and planning procedures to evaluate the reasonableness of those estimates", "Limiting procedures to recalculation of management''s estimates", "Disclosing to users that estimates cannot be audited"]'::jsonb,
- 1,
+ '["Identifying areas involving significant estimates and planning procedures to evaluate the reasonableness of those estimates", "Disclosing to users that estimates cannot be audited", "Limiting procedures to recalculation of management''s estimates", "Accepting management''s estimates as presented since management has the most knowledge"]'::jsonb,
+ 3,
  'During planning, the auditor must identify areas involving significant accounting estimates and plan procedures to evaluate their reasonableness. This includes understanding management''s process, evaluating assumptions, and considering the need for an auditor''s specialist. Estimates are auditable, and the auditor cannot simply accept management''s figures.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Audit Planning',
  'In a group audit, the group engagement team sets component materiality for a significant subsidiary at $75,000. The component auditor identifies misstatements totaling $60,000 at the component. The component auditor should:',
- '["Ignore the misstatements because they are below component materiality", "Communicate all identified misstatements to the group engagement team on a timely basis", "Only communicate misstatements if they exceed group materiality", "Correct the misstatements without informing the group engagement team"]'::jsonb,
- 1,
+ '["Communicate all identified misstatements to the group engagement team on a timely basis", "Ignore the misstatements because they are below component materiality", "Only communicate misstatements if they exceed group materiality", "Correct the misstatements without informing the group engagement team"]'::jsonb,
+ 0,
  'Component auditors must communicate identified misstatements to the group engagement team on a timely basis so the group team can evaluate whether the aggregate of misstatements across all components is material to the group financial statements. Even misstatements below component materiality may be significant in aggregate at the group level.',
  'medium');
 
@@ -1394,8 +1394,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Audit Planning',
  'An auditor is planning the first-year audit of a company that was previously audited by another firm. The successor auditor has been unable to communicate with the predecessor auditor because the predecessor firm has dissolved. The successor auditor should:',
- '["Decline the engagement because communication with the predecessor is mandatory", "Accept the engagement but consider alternative procedures to obtain information normally obtained from the predecessor, such as reviewing prior year financial statements and regulatory filings", "Accept the engagement without any additional procedures since predecessor communication is optional", "Report the predecessor firm to the state board of accountancy"]'::jsonb,
- 1,
+ '["Accept the engagement but consider alternative procedures to obtain information normally obtained from the predecessor, such as reviewing prior year financial statements and regulatory filings", "Decline the engagement because communication with the predecessor is mandatory", "Accept the engagement without any additional procedures since predecessor communication is optional", "Report the predecessor firm to the state board of accountancy"]'::jsonb,
+ 0,
  'While communication with the predecessor is ordinarily required, circumstances may prevent it (e.g., firm dissolution). The successor auditor should consider alternative procedures such as reviewing prior year financial statements, SEC filings, or regulatory reports, and evaluating whether sufficient information can be obtained to accept the engagement and plan the audit.',
  'hard');
 
@@ -1450,8 +1450,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Audit Planning',
  'During planning, the auditor learns that the entity is involved in a significant lawsuit that could result in a material loss. The auditor should plan to:',
- '["Ignore the lawsuit because litigation outcomes are inherently uncertain", "Obtain an understanding of the nature of the claim, evaluate management''s assessment of the probable outcome, and plan procedures including inquiry of the entity''s legal counsel", "Immediately include a going concern paragraph in the audit report", "Advise the client to settle the lawsuit before the audit begins"]'::jsonb,
- 1,
+ '["Obtain an understanding of the nature of the claim, evaluate management''s assessment of the probable outcome, and plan procedures including inquiry of the entity''s legal counsel", "Ignore the lawsuit because litigation outcomes are inherently uncertain", "Immediately include a going concern paragraph in the audit report", "Advise the client to settle the lawsuit before the audit begins"]'::jsonb,
+ 0,
  'Significant pending litigation represents a contingent liability that requires the auditor to understand the claim, evaluate management''s assessment of probable outcomes, and plan procedures to gather sufficient evidence. This includes sending a letter of audit inquiry to the entity''s legal counsel and evaluating whether proper accrual and disclosure have been made.',
  'hard');
 
@@ -1466,8 +1466,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Audit Planning',
  'When establishing the overall audit strategy, the auditor identifies that the entity has undergone a major restructuring, including plant closures and employee layoffs. The auditor should evaluate how this affects:',
- '["Only the going concern assessment", "The risk assessment across multiple financial statement areas, including asset impairment, restructuring charges, employee benefit obligations, and the adequacy of related disclosures", "Only the staffing plan for the audit engagement", "Only the inventory valuation"]'::jsonb,
- 1,
+ '["Only the going concern assessment", "Only the inventory valuation", "Only the staffing plan for the audit engagement", "The risk assessment across multiple financial statement areas, including asset impairment, restructuring charges, employee benefit obligations, and the adequacy of related disclosures"]'::jsonb,
+ 3,
  'Major restructuring affects multiple financial statement areas and requires comprehensive risk assessment. The auditor must evaluate asset impairment, restructuring charge estimates, employee severance and benefit obligations, lease termination costs, disclosure adequacy, and potential going concern implications. Limiting the assessment to one area would be insufficient.',
  'hard');
 
@@ -1486,8 +1486,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Risk Assessment',
  'Which of the following is a component of audit risk?',
- '["Engagement risk", "Inherent risk", "Reputation risk", "Business risk"]'::jsonb,
- 1,
+ '["Inherent risk", "Engagement risk", "Reputation risk", "Business risk"]'::jsonb,
+ 0,
  'Audit risk consists of three components: inherent risk, control risk, and detection risk. Inherent risk is the susceptibility of an assertion to material misstatement before considering controls. Engagement risk, reputation risk, and business risk are relevant to the auditor but are not components of the audit risk model.',
  'easy');
 
@@ -1734,8 +1734,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Risk Assessment',
  'An auditor is assessing the risk of material misstatement for a client in the construction industry that uses the percentage-of-completion method. Which assertion is most likely to be assessed as having a higher risk of material misstatement?',
- '["Presentation and disclosure of fixed assets", "Valuation of revenue and cost estimates for long-term contracts", "Completeness of cash disbursements", "Existence of office equipment"]'::jsonb,
- 1,
+ '["Valuation of revenue and cost estimates for long-term contracts", "Presentation and disclosure of fixed assets", "Completeness of cash disbursements", "Existence of office equipment"]'::jsonb,
+ 0,
  'The percentage-of-completion method requires significant estimates of total contract revenue and costs, which directly affect the timing and amount of revenue recognition. These estimates involve substantial judgment and are inherently susceptible to misstatement. The valuation assertion for revenue and cost estimates on long-term contracts carries higher inherent risk.',
  'medium');
 
@@ -1766,8 +1766,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Risk Assessment',
  'An auditor discovers that management has overridden a key automated control to process a large, unusual transaction near year-end. The auditor should:',
- '["Accept the override if management provides a reasonable business explanation", "Treat this as a significant risk indicator, evaluate the business rationale for the transaction, and consider the implications for fraud risk and the reliability of other automated controls", "Ignore the override because management has authority to override controls", "Immediately report the override to law enforcement"]'::jsonb,
- 1,
+ '["Treat this as a significant risk indicator, evaluate the business rationale for the transaction, and consider the implications for fraud risk and the reliability of other automated controls", "Immediately report the override to law enforcement", "Ignore the override because management has authority to override controls", "Accept the override if management provides a reasonable business explanation"]'::jsonb,
+ 3,
  'Management override of an automated control for a large, unusual year-end transaction is a significant fraud risk indicator. The auditor must evaluate the business rationale, consider whether the override indicates systematic circumvention of controls, assess implications for the reliability of other automated controls, and determine whether the transaction is a scheme to manipulate financial results.',
  'hard');
 
@@ -1830,8 +1830,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Risk Assessment',
  'When assessing the risk of material misstatement due to fraud, the auditor should consider the risk of misstatement arising from both fraudulent financial reporting and misappropriation of assets. Which of the following scenarios most likely indicates a risk of misappropriation of assets rather than fraudulent financial reporting?',
- '["Management provides overly optimistic revenue forecasts to support goodwill valuations", "An employee in the warehouse has sole custody of high-value inventory with no independent verification or reconciliation", "The CFO pressures the accounting staff to capitalize expenses to meet earnings targets", "Management selects accounting policies that consistently maximize reported income"]'::jsonb,
- 1,
+ '["An employee in the warehouse has sole custody of high-value inventory with no independent verification or reconciliation", "Management selects accounting policies that consistently maximize reported income", "The CFO pressures the accounting staff to capitalize expenses to meet earnings targets", "Management provides overly optimistic revenue forecasts to support goodwill valuations"]'::jsonb,
+ 3,
  'An employee with sole custody of high-value inventory and no independent verification represents a classic misappropriation risk — the opportunity to steal assets due to weak physical controls and lack of segregation of duties. The other scenarios describe fraudulent financial reporting through manipulation of estimates, aggressive capitalization policies, or biased accounting policy selection.',
  'hard');
 
@@ -1842,8 +1842,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Internal Controls',
  'The COSO Internal Control framework identifies how many components of internal control?',
- '["Four", "Five", "Three", "Six"]'::jsonb,
- 1,
+ '["Five", "Six", "Three", "Four"]'::jsonb,
+ 3,
  'The COSO Internal Control — Integrated Framework identifies five components of internal control: the control environment, risk assessment, control activities, information and communication, and monitoring activities. These five components work together to provide reasonable assurance regarding the achievement of an entity''s objectives.',
  'easy');
 
@@ -1954,8 +1954,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Internal Controls',
  'A control deficiency exists when:',
- '["The entity has not implemented all possible controls", "The design or operation of a control does not allow management or employees, in the normal course of performing their assigned functions, to prevent, or detect and correct, misstatements on a timely basis", "Any error is found during the audit", "The entity does not have an internal audit function"]'::jsonb,
- 1,
+ '["The design or operation of a control does not allow management or employees, in the normal course of performing their assigned functions, to prevent, or detect and correct, misstatements on a timely basis", "The entity has not implemented all possible controls", "Any error is found during the audit", "The entity does not have an internal audit function"]'::jsonb,
+ 0,
  'A control deficiency exists when the design or operation of a control does not allow management or employees to prevent, or detect and correct, misstatements on a timely basis. A design deficiency exists when a necessary control is missing or improperly designed. An operating deficiency exists when a properly designed control does not operate as designed or is performed by unqualified personnel.',
  'easy');
 
@@ -2042,8 +2042,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Internal Controls',
  'A company implements an automated control that matches shipping documents to sales invoices before recording revenue. This control most directly addresses the assertion of:',
- '["Presentation and disclosure", "Occurrence of revenue transactions", "Classification of revenue", "Subsequent events"]'::jsonb,
- 1,
+ '["Occurrence of revenue transactions", "Presentation and disclosure", "Classification of revenue", "Subsequent events"]'::jsonb,
+ 0,
  'Matching shipping documents to sales invoices before recording revenue ensures that revenue is only recorded when goods have actually been shipped, directly addressing the occurrence assertion. This control prevents recording fictitious or premature revenue by requiring evidence that a sale actually took place before it enters the accounting system.',
  'medium');
 
@@ -2106,8 +2106,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Internal Controls',
  'An auditor observes that a client has a well-designed control requiring dual authorization for wire transfers over $50,000. However, during testing, the auditor finds that on 15 out of 30 sampled transactions, only one person authorized the transfer. This situation represents:',
- '["A design deficiency because the control is poorly designed", "An operating deficiency because the control is properly designed but not operating effectively", "No deficiency because a 50% compliance rate is acceptable", "A monitoring deficiency only"]'::jsonb,
- 1,
+ '["A design deficiency because the control is poorly designed", "A monitoring deficiency only", "No deficiency because a 50% compliance rate is acceptable", "An operating deficiency because the control is properly designed but not operating effectively"]'::jsonb,
+ 3,
  'This is an operating deficiency, not a design deficiency. The control requiring dual authorization is properly designed to prevent unauthorized wire transfers. However, the high rate of non-compliance (50% of sampled transactions lacked dual authorization) means the control is not operating as designed, creating a significant operating deficiency that likely constitutes at least a significant deficiency.',
  'medium');
 
@@ -2186,8 +2186,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Internal Controls',
  'During the evaluation of internal controls, the auditor identifies that the entity relies on a key manual control performed by a single individual with no backup or review. This person has been in the role for 15 years and has never taken an extended leave. The auditor should consider:',
- '["The control is more reliable because of the individual''s experience and tenure", "The concentration of knowledge and control in a single individual creates both a key-person dependency risk and an opportunity for concealment of errors or fraud, particularly given the absence of independent review or mandatory time off", "This is a strength of the control environment because of the employee''s dedication", "Only the design of the control, not the operating environment"]'::jsonb,
- 1,
+ '["The control is more reliable because of the individual''s experience and tenure", "This is a strength of the control environment because of the employee''s dedication", "Only the design of the control, not the operating environment", "The concentration of knowledge and control in a single individual creates both a key-person dependency risk and an opportunity for concealment of errors or fraud, particularly given the absence of independent review or mandatory time off"]'::jsonb,
+ 2,
  'Concentration of a key control in a single individual with no backup, review, or mandatory leave creates multiple risks: key-person dependency, opportunity for concealing errors or fraud over an extended period, and lack of detective controls. The employee''s long tenure without oversight could mask problems. This represents both a control deficiency and a fraud risk factor.',
  'hard');
 
@@ -2248,8 +2248,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Internal Controls',
  'An auditor is evaluating an entity''s controls over financial reporting close and identifies that management uses a detailed checklist for the monthly close process. This checklist includes reconciliation deadlines, review sign-offs, and a completion tracker. This control primarily addresses which COSO component?',
- '["Control environment", "Control activities", "Monitoring activities", "Risk assessment"]'::jsonb,
- 1,
+ '["Control activities", "Control environment", "Monitoring activities", "Risk assessment"]'::jsonb,
+ 0,
  'A detailed financial close checklist with reconciliation deadlines, review sign-offs, and completion tracking is a control activity. It establishes specific actions that individuals must perform to ensure accurate financial reporting. While it may support monitoring by providing visibility into the close process, its primary function is as a procedural control that guides and documents the execution of the close.',
  'easy');
 
@@ -2264,16 +2264,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Internal Controls',
  'An entity''s accounts payable department uses a three-way match before processing vendor payments. A clerk matches the purchase order, receiving report, and vendor invoice for each transaction. Which assertion does this control most directly address?',
- '["Completeness of accounts payable", "Existence and accuracy of recorded disbursements", "Presentation of accounts payable in the financial statements", "Valuation of long-term liabilities"]'::jsonb,
- 1,
+ '["Existence and accuracy of recorded disbursements", "Valuation of long-term liabilities", "Presentation of accounts payable in the financial statements", "Completeness of accounts payable"]'::jsonb,
+ 3,
  'The three-way match is a key control activity that ensures disbursements are for goods actually ordered (purchase order) and received (receiving report) at the agreed-upon price (vendor invoice). This directly addresses the existence assertion (the liability is real) and accuracy assertion (the amount is correct) for recorded disbursements and the related accounts payable balance.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Internal Controls',
  'During testing, the auditor finds that the entity''s password policy requires only four-character passwords with no complexity requirements, no expiration period, and no lockout after failed attempts. The auditor should evaluate this as:',
- '["Acceptable because any password policy is sufficient", "A significant IT general control deficiency that weakens access security and could allow unauthorized access to financial systems and data, undermining the reliability of all controls dependent on the system''s access restrictions", "Only relevant for publicly traded companies", "A minor observation not worth reporting"]'::jsonb,
- 1,
+ '["A significant IT general control deficiency that weakens access security and could allow unauthorized access to financial systems and data, undermining the reliability of all controls dependent on the system''s access restrictions", "Acceptable because any password policy is sufficient", "Only relevant for publicly traded companies", "A minor observation not worth reporting"]'::jsonb,
+ 0,
  'A weak password policy (short length, no complexity, no expiration, no lockout) is a significant ITGC deficiency over access security. Weak passwords are easily compromised through brute force or guessing, potentially allowing unauthorized individuals to access, modify, or delete financial data. This weakness undermines all controls that depend on proper user authentication and system access restrictions.',
  'medium');
 -- AUD Chunk 3: Audit Evidence, Audit Sampling, Substantive Procedures
@@ -2469,8 +2469,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Audit Evidence',
  'An auditor determines that a receivable confirmed at year-end was collected in full during January. This subsequent collection:',
- '["Is a Type II subsequent event requiring disclosure", "Provides evidence about the existence and valuation of the receivable at year-end", "Should be ignored because it occurred after the balance sheet date", "Requires a dual-dated audit report"]'::jsonb,
- 1,
+ '["Provides evidence about the existence and valuation of the receivable at year-end", "Is a Type II subsequent event requiring disclosure", "Should be ignored because it occurred after the balance sheet date", "Requires a dual-dated audit report"]'::jsonb,
+ 0,
  'Subsequent cash collections provide evidence about the existence and valuation (collectibility) of receivables at the balance sheet date. This is a common alternative procedure used when confirmations are not returned, and it supports assertions about conditions that existed at year-end.',
  'medium');
 
@@ -2509,8 +2509,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Audit Evidence',
  'When a client''s external attorney refuses to respond to an audit inquiry letter, the auditor should:',
- '["Accept management''s representations as sufficient evidence", "Consider this a scope limitation that may affect the audit opinion", "Issue an unmodified opinion with an other-matter paragraph", "Hire an independent attorney to evaluate the legal matters"]'::jsonb,
- 1,
+ '["Consider this a scope limitation that may affect the audit opinion", "Accept management''s representations as sufficient evidence", "Issue an unmodified opinion with an other-matter paragraph", "Hire an independent attorney to evaluate the legal matters"]'::jsonb,
+ 0,
  'If the client''s attorney refuses to furnish information in response to the inquiry letter, this represents a scope limitation. The auditor should consider whether the limitation is material enough to require a qualified opinion or disclaimer of opinion, depending on the significance of the legal matters involved.',
  'medium');
 
@@ -2613,8 +2613,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Audit Evidence',
  'Which of the following is an example of a Type I (recognized) subsequent event?',
- '["A new product line is launched after year-end", "A customer who owed money at year-end files for bankruptcy after year-end, confirming the receivable was impaired at the balance sheet date", "An earthquake destroys a warehouse after year-end", "A new bond issue is completed after year-end"]'::jsonb,
- 1,
+ '["A new product line is launched after year-end", "A new bond issue is completed after year-end", "An earthquake destroys a warehouse after year-end", "A customer who owed money at year-end files for bankruptcy after year-end, confirming the receivable was impaired at the balance sheet date"]'::jsonb,
+ 3,
  'A customer bankruptcy after year-end that confirms impairment existing at the balance sheet date is a Type I (recognized) subsequent event. The condition (customer financial difficulty) existed at year-end, and the post-year-end event provides additional evidence. The financial statements should be adjusted to reflect the impaired receivable.',
  'medium');
 
@@ -2697,8 +2697,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Audit Sampling',
  'An auditor uses haphazard selection for a nonstatistical sample. Which of the following describes a key risk of haphazard selection?',
- '["It always results in a biased sample", "The auditor may unconsciously select items that are easiest to locate or most readily accessible, potentially introducing bias", "It requires the use of a random number generator", "It is prohibited for nonstatistical samples"]'::jsonb,
- 1,
+ '["It always results in a biased sample", "It is prohibited for nonstatistical samples", "It requires the use of a random number generator", "The auditor may unconsciously select items that are easiest to locate or most readily accessible, potentially introducing bias"]'::jsonb,
+ 3,
  'Haphazard selection involves choosing items without a structured methodology, and the main risk is unconscious bias. The auditor may avoid selecting items that are difficult to locate, are in poor condition, or are in inconvenient locations, potentially producing a sample that is not representative of the population.',
  'medium');
 
@@ -2737,8 +2737,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Audit Sampling',
  'An auditor sets the tolerable misstatement at $50,000 for accounts receivable and expects no misstatements in the population. After testing a sample, the projected misstatement is $55,000. The auditor should:',
- '["Accept the results because the actual misstatements found in the sample were small", "Conclude that the account balance may be materially misstated and consider expanding the sample or requesting an adjustment", "Ignore the projected misstatement and rely on other procedures", "Reduce the tolerable misstatement to $40,000 and retest"]'::jsonb,
- 1,
+ '["Conclude that the account balance may be materially misstated and consider expanding the sample or requesting an adjustment", "Accept the results because the actual misstatements found in the sample were small", "Ignore the projected misstatement and rely on other procedures", "Reduce the tolerable misstatement to $40,000 and retest"]'::jsonb,
+ 0,
  'When the projected misstatement ($55,000) exceeds the tolerable misstatement ($50,000), the auditor should conclude that there is an unacceptably high risk that the account balance is materially misstated. The auditor should consider expanding procedures, requesting management to investigate and adjust, or evaluating the effect on the audit opinion.',
  'medium');
 
@@ -2777,8 +2777,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Audit Sampling',
  'When projecting misstatements found in a sample to the population, the auditor should:',
- '["Only consider the actual dollar amount of misstatements found in the sample without projection", "Project the misstatements to the entire population and add an allowance for sampling risk", "Assume the sample is perfectly representative and report only the sample misstatements", "Project misstatements only if statistical sampling was used"]'::jsonb,
- 1,
+ '["Only consider the actual dollar amount of misstatements found in the sample without projection", "Project misstatements only if statistical sampling was used", "Assume the sample is perfectly representative and report only the sample misstatements", "Project the misstatements to the entire population and add an allowance for sampling risk"]'::jsonb,
+ 3,
  'The auditor should project (extrapolate) the misstatements found in the sample to the entire population and then add an allowance for sampling risk. The projected misstatement plus the allowance for sampling risk is compared to tolerable misstatement to evaluate whether the account is materially misstated.',
  'medium');
 
@@ -2889,8 +2889,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Audit Sampling',
  'An auditor plans an attribute sampling application with a tolerable deviation rate of 6%, an expected population deviation rate of 1.5%, and a 95% confidence level. If the expected population deviation rate increases to 3%, what effect does this have?',
- '["Required sample size decreases", "Required sample size increases because the gap between expected and tolerable rates narrows", "Required sample size remains unchanged", "The auditor should switch to variables sampling"]'::jsonb,
- 1,
+ '["Required sample size increases because the gap between expected and tolerable rates narrows", "Required sample size decreases", "Required sample size remains unchanged", "The auditor should switch to variables sampling"]'::jsonb,
+ 0,
  'When the expected population deviation rate increases from 1.5% to 3% while the tolerable rate remains at 6%, the gap between expected and tolerable rates narrows. A larger sample is needed to determine with the same confidence whether the true deviation rate exceeds the tolerable rate.',
  'hard');
 
@@ -2965,8 +2965,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Substantive Procedures',
  'Which of the following factors most increases the reliability of a substantive analytical procedure?',
- '["Using the prior year balance as the sole basis for the expectation", "Using disaggregated data and independently developed expectations based on multiple reliable sources", "Performing the procedure early in the audit before other evidence is gathered", "Relying on management''s explanations without further corroboration"]'::jsonb,
- 1,
+ '["Using disaggregated data and independently developed expectations based on multiple reliable sources", "Relying on management''s explanations without further corroboration", "Performing the procedure early in the audit before other evidence is gathered", "Using the prior year balance as the sole basis for the expectation"]'::jsonb,
+ 3,
  'Substantive analytical procedures are more reliable when expectations are developed using disaggregated data (by product line, location, or month rather than annual totals), multiple independent sources, and data that the auditor has validated. Greater precision in the expectation produces more persuasive evidence.',
  'medium');
 
@@ -3005,8 +3005,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Substantive Procedures',
  'To test the completeness assertion for revenue, the auditor should:',
- '["Select a sample of recorded revenue transactions and vouch them to supporting documents", "Select from a source independent of the accounting records (such as shipping documents) and trace forward to the revenue journal", "Confirm revenue amounts with customers", "Recalculate the revenue amounts in the general ledger"]'::jsonb,
- 1,
+ '["Select from a source independent of the accounting records (such as shipping documents) and trace forward to the revenue journal", "Select a sample of recorded revenue transactions and vouch them to supporting documents", "Confirm revenue amounts with customers", "Recalculate the revenue amounts in the general ledger"]'::jsonb,
+ 0,
  'To test completeness (whether all transactions that should be recorded are recorded), the auditor starts from a source outside the accounting records — such as shipping documents or delivery records — and traces forward to determine whether each shipment was recorded as revenue. Starting from recorded amounts tests occurrence, not completeness.',
  'medium');
 
@@ -3053,8 +3053,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Substantive Procedures',
  'The auditor designs a test of details for the valuation of accounts receivable. Which of the following procedures is most relevant?',
- '["Confirming selected receivable balances with customers", "Evaluating the adequacy of the allowance for doubtful accounts by analyzing aging, historical loss rates, and current economic conditions", "Tracing sales invoices to shipping documents", "Inspecting the credit approval process for new customers"]'::jsonb,
- 1,
+ '["Evaluating the adequacy of the allowance for doubtful accounts by analyzing aging, historical loss rates, and current economic conditions", "Inspecting the credit approval process for new customers", "Tracing sales invoices to shipping documents", "Confirming selected receivable balances with customers"]'::jsonb,
+ 3,
  'Evaluating the allowance for doubtful accounts directly tests the valuation assertion for accounts receivable. This involves analyzing the aged receivables schedule, reviewing historical write-off patterns, considering current economic conditions, and evaluating management''s assumptions about collectibility.',
  'easy');
 
@@ -3253,8 +3253,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Substantive Procedures',
  'When an attorney''s response to an audit inquiry letter states that the attorney cannot form an opinion regarding the likelihood of an unfavorable outcome of a major lawsuit, the auditor should:',
- '["Accept the response and issue an unmodified opinion", "Consider this a scope limitation and evaluate whether sufficient evidence can be obtained through other procedures", "Instruct the attorney to provide a definitive assessment", "Withdraw from the engagement immediately"]'::jsonb,
- 1,
+ '["Accept the response and issue an unmodified opinion", "Withdraw from the engagement immediately", "Instruct the attorney to provide a definitive assessment", "Consider this a scope limitation and evaluate whether sufficient evidence can be obtained through other procedures"]'::jsonb,
+ 3,
  'When an attorney cannot or will not evaluate the likelihood of an unfavorable outcome of a significant legal matter, the auditor faces a potential scope limitation. The auditor should consider whether sufficient evidence can be obtained through other means (such as inquiry of management, review of board minutes, or consultation with the auditor''s own legal counsel).',
  'hard');
 
@@ -3299,8 +3299,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Audit Reports',
  'In an unmodified audit report, management''s responsibility section states that management is responsible for which of the following?',
- '["Conducting the audit in accordance with GAAS", "The preparation and fair presentation of the financial statements", "Determining materiality levels for the audit", "Communicating deficiencies to those charged with governance"]'::jsonb,
- 1,
+ '["Conducting the audit in accordance with GAAS", "Determining materiality levels for the audit", "Communicating deficiencies to those charged with governance", "The preparation and fair presentation of the financial statements"]'::jsonb,
+ 2,
  'The management responsibility section explicitly states that management is responsible for the preparation and fair presentation of the financial statements in accordance with the applicable framework, as well as for internal control relevant to that preparation. Conducting the audit, setting materiality, and communicating deficiencies are auditor responsibilities.',
  'easy');
 
@@ -3339,8 +3339,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Audit Reports',
  'An auditor decides to add an emphasis-of-matter paragraph to the audit report. Which of the following conditions must be met?',
- '["The matter must result in a modification to the auditor''s opinion", "The matter must be adequately disclosed in the financial statements", "The matter must relate to a scope limitation", "The auditor must obtain written permission from management"]'::jsonb,
- 1,
+ '["The matter must result in a modification to the auditor''s opinion", "The matter must relate to a scope limitation", "The auditor must obtain written permission from management", "The matter must be adequately disclosed in the financial statements"]'::jsonb,
+ 2,
  'An emphasis-of-matter paragraph is included when the auditor considers it necessary to draw users'' attention to a matter that is appropriately presented or disclosed in the financial statements and that is fundamental to users'' understanding. The matter must be adequately disclosed; the paragraph does not modify the opinion, is not related to scope limitations, and does not require management permission.',
  'medium');
 
@@ -3363,8 +3363,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Audit Reports',
  'Under AU-C 701, key audit matters (KAMs) are reported for audits of which type of entities?',
- '["All nonpublic entities", "Entities that elect to include KAMs voluntarily or when required by law", "Only entities with material weaknesses", "Only government entities"]'::jsonb,
- 1,
+ '["Entities that elect to include KAMs voluntarily or when required by law", "All nonpublic entities", "Only entities with material weaknesses", "Only government entities"]'::jsonb,
+ 0,
  'Under AU-C 701 for nonissuers, KAMs are communicated in the auditor''s report when the auditor is engaged to do so, when required by law or regulation, or when the auditor voluntarily decides to communicate them. KAMs are not a default requirement for all nonpublic entity audits. For issuers, critical audit matters are required under PCAOB AS 3101.',
  'medium');
 
@@ -3427,8 +3427,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Audit Reports',
  'The going concern emphasis-of-matter paragraph in an auditor''s report should include a reference to:',
- '["The specific dollar amount of the entity''s projected losses", "The note in the financial statements that discloses the relevant conditions and events", "The exact date the entity is expected to cease operations", "Management''s personal guarantee of the entity''s survival"]'::jsonb,
- 1,
+ '["The note in the financial statements that discloses the relevant conditions and events", "The specific dollar amount of the entity''s projected losses", "The exact date the entity is expected to cease operations", "Management''s personal guarantee of the entity''s survival"]'::jsonb,
+ 0,
  'The going concern emphasis-of-matter paragraph should reference the note in the financial statements that describes the conditions or events giving rise to the substantial doubt, and the related plans of management. The auditor does not include projected loss amounts, predicted cessation dates, or personal guarantees.',
  'medium');
 
@@ -3451,8 +3451,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Audit Reports',
  'An auditor issues a report on financial statements prepared using a regulatory basis of accounting intended for general use. The report should include:',
- '["An adverse opinion only", "An opinion on the regulatory basis and, in a separate paragraph, an opinion that the statements are not in conformity with GAAP", "An unmodified opinion without any additional paragraphs", "A disclaimer of opinion on the regulatory basis"]'::jsonb,
- 1,
+ '["An opinion on the regulatory basis and, in a separate paragraph, an opinion that the statements are not in conformity with GAAP", "A disclaimer of opinion on the regulatory basis", "An unmodified opinion without any additional paragraphs", "An adverse opinion only"]'::jsonb,
+ 3,
  'When regulatory-basis financial statements are intended for general use, AU-C 800 requires the auditor to express an opinion on whether the statements are presented in accordance with the regulatory basis and include a separate paragraph stating the statements are not in accordance with GAAP. This dual opinion ensures users understand the basis.',
  'hard');
 
@@ -3483,8 +3483,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Audit Reports',
  'Which of the following matters would most likely cause an auditor to issue an adverse opinion rather than a qualified opinion?',
- '["The entity changed its depreciation method", "The entity failed to consolidate a material subsidiary, and the effects are pervasive to the financial statements", "The auditor was unable to observe inventory at one location", "The entity disclosed a subsequent event that required an emphasis-of-matter paragraph"]'::jsonb,
- 1,
+ '["The entity failed to consolidate a material subsidiary, and the effects are pervasive to the financial statements", "The entity changed its depreciation method", "The auditor was unable to observe inventory at one location", "The entity disclosed a subsequent event that required an emphasis-of-matter paragraph"]'::jsonb,
+ 0,
  'Failure to consolidate a material subsidiary results in misstatements affecting multiple financial statement line items (assets, liabilities, revenue, expenses), making the effects both material and pervasive. This level of pervasive misstatement requires an adverse opinion rather than a qualified opinion.',
  'hard');
 
@@ -3499,8 +3499,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Audit Reports',
  'An auditor issues a report on group financial statements and decides not to reference the component auditor. In this case, the group engagement partner:',
- '["Assumes no responsibility for the component auditor''s work", "Assumes responsibility for the component auditor''s work as it relates to the group opinion", "Must disclaim an opinion on the group financial statements", "Must reperform all procedures of the component auditor"]'::jsonb,
- 1,
+ '["Assumes no responsibility for the component auditor''s work", "Must disclaim an opinion on the group financial statements", "Must reperform all procedures of the component auditor", "Assumes responsibility for the component auditor''s work as it relates to the group opinion"]'::jsonb,
+ 2,
  'When the group engagement partner decides not to reference the component auditor, the group engagement partner assumes responsibility for the component auditor''s work. This means the group auditor must be involved in the component auditor''s work through direction, supervision, or review to a sufficient degree.',
  'medium');
 
@@ -3515,8 +3515,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Audit Reports',
  'During the audit of comparative financial statements, the auditor resolves a prior-year scope limitation. The current-year opinion on the prior period should be:',
- '["A disclaimer of opinion, consistent with the original report", "Updated based on the results of the additional procedures performed", "A qualified opinion regardless of the results", "An adverse opinion due to the original limitation"]'::jsonb,
- 1,
+ '["A disclaimer of opinion, consistent with the original report", "An adverse opinion due to the original limitation", "A qualified opinion regardless of the results", "Updated based on the results of the additional procedures performed"]'::jsonb,
+ 3,
  'When a prior-year scope limitation has been resolved through procedures performed in the current year, the auditor updates the opinion on the prior-period financial statements based on the results of those additional procedures. The auditor is not required to maintain the original opinion if the circumstances have changed.',
  'hard');
 
@@ -3531,8 +3531,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Audit Reports',
  'An entity has a lawsuit pending that could result in a material loss. The outcome is reasonably possible but not probable, and adequate disclosure is made. What effect does this have on the auditor''s report?',
- '["The auditor should issue a qualified opinion", "The auditor issues an unmodified opinion since the matter is properly disclosed", "The auditor should issue a disclaimer of opinion", "The auditor must add an emphasis-of-matter paragraph"]'::jsonb,
- 1,
+ '["The auditor issues an unmodified opinion since the matter is properly disclosed", "The auditor must add an emphasis-of-matter paragraph", "The auditor should issue a disclaimer of opinion", "The auditor should issue a qualified opinion"]'::jsonb,
+ 3,
  'A contingency that is reasonably possible and properly disclosed in the notes to the financial statements does not require modification of the auditor''s opinion. GAAP requires note disclosure for reasonably possible contingencies, and if management has complied, the auditor issues an unmodified opinion without additional paragraphs.',
  'medium');
 
@@ -3563,8 +3563,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Audit Reports',
  'Under AU-C 706, when is an auditor required to include an emphasis-of-matter paragraph in the report?',
- '["When the auditor wants to disclaim an opinion", "When there is a change in accounting principle, going concern doubt, or a matter the auditor believes is fundamental to users'' understanding", "Only when the financial statements contain a material misstatement", "Only when the entity requests it"]'::jsonb,
- 1,
+ '["When there is a change in accounting principle, going concern doubt, or a matter the auditor believes is fundamental to users'' understanding", "When the auditor wants to disclaim an opinion", "Only when the financial statements contain a material misstatement", "Only when the entity requests it"]'::jsonb,
+ 0,
  'AU-C 706 requires an emphasis-of-matter paragraph when the auditor considers it necessary to draw users'' attention to matters that are fundamental to their understanding of the financial statements. Common required circumstances include going concern doubt, changes in accounting principles, and certain uncertainties.',
  'easy');
 
@@ -3631,8 +3631,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Review and Compilation',
  'The primary procedures performed in a review engagement are:',
- '["Inspection of documents and observation of processes", "Inquiry of management and analytical procedures", "Confirmation of account balances and vouching of transactions", "Physical examination of assets and recalculation of computations"]'::jsonb,
- 1,
+ '["Inquiry of management and analytical procedures", "Inspection of documents and observation of processes", "Confirmation of account balances and vouching of transactions", "Physical examination of assets and recalculation of computations"]'::jsonb,
+ 0,
  'Review engagements are primarily based on inquiry of management and analytical procedures. These are the two principal procedures that form the basis for the limited assurance provided. Unlike an audit, a review does not involve inspection of documents, confirmation of balances, or physical examination of assets.',
  'easy');
 
@@ -3663,24 +3663,24 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Review and Compilation',
  'Under SSARS, when performing a preparation of financial statements engagement, the accountant:',
- '["Must issue a report expressing limited assurance", "Prepares or assists in preparing financial statements but is not required to issue a report", "Must be independent of the entity", "Must verify the accuracy of the trial balance"]'::jsonb,
- 1,
+ '["Prepares or assists in preparing financial statements but is not required to issue a report", "Must issue a report expressing limited assurance", "Must be independent of the entity", "Must verify the accuracy of the trial balance"]'::jsonb,
+ 0,
  'Under AR-C 70, the preparation engagement involves the accountant assisting management in preparing financial statements without issuing a report and without providing any assurance. Independence is not required for a preparation engagement. The accountant is not required to verify the trial balance.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Review and Compilation',
  'Is an accountant required to be independent when performing a compilation engagement?',
- '["Yes, independence is always required for compilations", "No, but if not independent, the accountant must disclose the lack of independence in the compilation report", "No, independence is never relevant for compilations", "Yes, unless the entity is a nonprofit organization"]'::jsonb,
- 1,
+ '["Yes, independence is always required for compilations", "Yes, unless the entity is a nonprofit organization", "No, independence is never relevant for compilations", "No, but if not independent, the accountant must disclose the lack of independence in the compilation report"]'::jsonb,
+ 3,
  'Independence is not required for a compilation engagement; however, if the accountant is not independent, the compilation report must include a statement indicating the lack of independence. The accountant is not required to disclose the reason for the impairment unless the accountant chooses to do so.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Review and Compilation',
  'Is an accountant required to be independent when performing a review engagement under SSARS?',
- '["No, independence is optional for review engagements", "Yes, the accountant must be independent for a review engagement", "Independence is only required if the entity is publicly traded", "Independence is only required if the financial statements include disclosures"]'::jsonb,
- 1,
+ '["No, independence is optional for review engagements", "Independence is only required if the financial statements include disclosures", "Independence is only required if the entity is publicly traded", "Yes, the accountant must be independent for a review engagement"]'::jsonb,
+ 3,
  'Independence is required for a review engagement under SSARS. If the accountant is not independent, the accountant cannot perform a review and must consider whether a compilation or preparation engagement would be appropriate. This is a key distinction from compilation and preparation engagements.',
  'easy');
 
@@ -3695,16 +3695,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Review and Compilation',
  'In a review engagement, the accountant obtains a management representation letter. Which of the following is true about this requirement?',
- '["The representation letter is optional and only obtained if the accountant deems it necessary", "The accountant must obtain written representations from management for all review engagements", "The representation letter is only required for initial engagements", "The representation letter is obtained only when the accountant becomes aware of misstatements"]'::jsonb,
- 1,
+ '["The accountant must obtain written representations from management for all review engagements", "The representation letter is optional and only obtained if the accountant deems it necessary", "The representation letter is only required for initial engagements", "The representation letter is obtained only when the accountant becomes aware of misstatements"]'::jsonb,
+ 0,
  'Written representations from management are required for all review engagements. The letter confirms management''s responsibility for the financial statements, completeness of information provided, and other relevant matters. Failure to obtain the letter represents a scope limitation that may require withdrawal.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Review and Compilation',
  'During a review engagement, the accountant becomes aware of a material departure from the applicable financial reporting framework. Management refuses to revise the financial statements. The accountant should:',
- '["Issue the standard review report without modification", "Modify the review report to disclose the departure", "Withdraw from the engagement without further action", "Convert the engagement to a compilation"]'::jsonb,
- 1,
+ '["Modify the review report to disclose the departure", "Issue the standard review report without modification", "Withdraw from the engagement without further action", "Convert the engagement to a compilation"]'::jsonb,
+ 0,
  'When a material departure from the framework exists and management refuses to revise, the accountant should modify the review report to disclose the departure. The modified report includes a separate paragraph describing the departure and, if practicable, the effects on the financial statements.',
  'medium');
 
@@ -3719,8 +3719,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Review and Compilation',
  'When performing a compilation, the accountant discovers that management has omitted substantially all disclosures required by the applicable framework. The accountant may:',
- '["Not issue a compilation report under any circumstances", "Issue a compilation report provided the omission is clearly indicated in the report and the omission is not intended to mislead users", "Issue a standard compilation report with no modifications", "Issue a review report instead"]'::jsonb,
- 1,
+ '["Issue a compilation report provided the omission is clearly indicated in the report and the omission is not intended to mislead users", "Not issue a compilation report under any circumstances", "Issue a standard compilation report with no modifications", "Issue a review report instead"]'::jsonb,
+ 0,
  'Under AR-C 80, the accountant may compile financial statements that omit substantially all disclosures if the omission is clearly indicated in the report and the omission is not, to the accountant''s knowledge, undertaken with the intent to mislead users. This is a common practice for internal-use financial statements.',
  'medium');
 
@@ -3767,8 +3767,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Review and Compilation',
  'Which of the following is required for all SSARS engagements (preparation, compilation, and review)?',
- '["Independence of the accountant", "A written engagement letter", "Issuance of a report", "Performance of analytical procedures"]'::jsonb,
- 1,
+ '["Independence of the accountant", "Issuance of a report", "Performance of analytical procedures", "A written engagement letter"]'::jsonb,
+ 2,
  'A written engagement letter (or other suitable form of written agreement) is required for all SSARS engagements—preparation, compilation, and review. Independence is only required for reviews. Reports are required for compilations and reviews but not preparations. Analytical procedures are only performed in reviews.',
  'medium');
 
@@ -3799,8 +3799,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Review and Compilation',
  'An accountant compiles financial statements for a client that reports on the income tax basis of accounting. The compilation report should:',
- '["State that the financial statements are not in accordance with GAAP and express a qualified opinion", "Include a paragraph indicating the financial reporting framework used (tax basis) and reference the note describing the basis", "Include a disclaimer that the tax basis statements are unreliable", "Be identical to a GAAP-basis compilation report with no additional language"]'::jsonb,
- 1,
+ '["Include a paragraph indicating the financial reporting framework used (tax basis) and reference the note describing the basis", "State that the financial statements are not in accordance with GAAP and express a qualified opinion", "Include a disclaimer that the tax basis statements are unreliable", "Be identical to a GAAP-basis compilation report with no additional language"]'::jsonb,
+ 0,
  'When financial statements are prepared on a special purpose framework like the tax basis, the compilation report should indicate the framework used and reference the note describing the basis of accounting. This ensures users understand the financial statements are not prepared under GAAP.',
  'medium');
 
@@ -3831,24 +3831,24 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Review and Compilation',
  'When an accountant compiles financial statements that contain a known departure from the applicable framework, and management refuses to revise, the accountant should:',
- '["Issue a standard compilation report without modification", "Modify the compilation report to disclose the departure and, if practicable, its effects", "Issue an adverse opinion", "Withdraw from the engagement immediately"]'::jsonb,
- 1,
+ '["Issue a standard compilation report without modification", "Withdraw from the engagement immediately", "Issue an adverse opinion", "Modify the compilation report to disclose the departure and, if practicable, its effects"]'::jsonb,
+ 3,
  'If the accountant becomes aware of a material departure from the applicable framework and management refuses to revise, the accountant should modify the compilation report to disclose the departure. The report should describe the departure and, if practicable, include the effects on the financial statements.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Review and Compilation',
  'Under SSARS, which of the following best describes the accountant''s documentation requirements for a review engagement?',
- '["No documentation is required", "Documentation must include the engagement letter, significant findings, the review report, and communications with management", "Documentation is limited to the engagement letter only", "Documentation is identical to audit workpaper requirements"]'::jsonb,
- 1,
+ '["No documentation is required", "Documentation is identical to audit workpaper requirements", "Documentation is limited to the engagement letter only", "Documentation must include the engagement letter, significant findings, the review report, and communications with management"]'::jsonb,
+ 3,
  'Review engagement documentation must include the engagement letter, analytical procedures performed, significant inquiries and their results, unusual matters identified, communications with management and governance, and the review report. The documentation supports the basis for the accountant''s conclusion but is less extensive than audit documentation.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Review and Compilation',
  'During a review engagement, the accountant notes that accounts receivable increased 40% year over year while revenue remained flat. The most appropriate response is to:',
- '["Accept the fluctuation as normal business activity", "Inquire of management about the reasons for the disproportionate increase and evaluate the response", "Confirm a sample of accounts receivable with third parties", "Perform detailed testing of the aged receivable schedule"]'::jsonb,
- 1,
+ '["Inquire of management about the reasons for the disproportionate increase and evaluate the response", "Perform detailed testing of the aged receivable schedule", "Confirm a sample of accounts receivable with third parties", "Accept the fluctuation as normal business activity"]'::jsonb,
+ 3,
  'In a review engagement, when analytical procedures identify an unexpected fluctuation, the accountant should make additional inquiries of management to obtain explanations. Confirming balances and detailed testing are audit procedures. The accountant evaluates management''s response for reasonableness and consistency.',
  'hard');
 
@@ -3955,8 +3955,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Review/Compilation Engagements',
  'An accountant compiles financial statements that omit substantially all disclosures required by GAAP. The compilation report should include a paragraph that:',
- '["States that the financial statements are misleading", "Indicates that substantially all disclosures have been omitted and that users should be aware the statements might differ if disclosures were included", "Expresses a qualified opinion on the disclosure omission", "States the accountant takes responsibility for the omitted disclosures"]'::jsonb,
- 1,
+ '["Indicates that substantially all disclosures have been omitted and that users should be aware the statements might differ if disclosures were included", "States that the financial statements are misleading", "Expresses a qualified opinion on the disclosure omission", "States the accountant takes responsibility for the omitted disclosures"]'::jsonb,
+ 0,
  'When substantially all disclosures are omitted from compiled financial statements, the report must include a paragraph indicating the omission and that users should be aware that the financial statements might differ substantially from those that include all disclosures. The omission must not be intended to mislead.',
  'easy');
 
@@ -3971,16 +3971,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Review/Compilation Engagements',
  'An accountant compiles financial statements that contain a known departure from GAAP—specifically, inventory is stated at cost when the market value is significantly lower. The accountant should:',
- '["Adjust the inventory value without consulting management", "Modify the compilation report to disclose the departure and its known or estimated effects", "Issue a standard compilation report since no assurance is provided", "Refuse to compile the financial statements under any circumstances"]'::jsonb,
- 1,
+ '["Modify the compilation report to disclose the departure and its known or estimated effects", "Refuse to compile the financial statements under any circumstances", "Issue a standard compilation report since no assurance is provided", "Adjust the inventory value without consulting management"]'::jsonb,
+ 3,
  'When the accountant is aware of a material departure from the applicable framework, the compilation report should be modified to disclose the nature of the departure and, if known, its effects. The accountant cannot adjust the statements unilaterally but should not issue an unmodified report when aware of a material departure.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Review/Compilation Engagements',
  'After issuing a review report, the accountant learns that the inventory was materially overstated due to a counting error that existed at the balance sheet date. The accountant should:',
- '["Take no action since the report has already been issued", "Discuss the matter with management, request revision of the financial statements if necessary, and consider the effect on the issued report", "Issue an audit report on the revised financial statements", "Notify the SEC about the misstatement"]'::jsonb,
- 1,
+ '["Discuss the matter with management, request revision of the financial statements if necessary, and consider the effect on the issued report", "Take no action since the report has already been issued", "Issue an audit report on the revised financial statements", "Notify the SEC about the misstatement"]'::jsonb,
+ 0,
  'When subsequently discovered information indicates the financial statements may be materially misstated, the accountant should discuss the matter with management, request revision of the financial statements if appropriate, and consider whether users of the statements need to be informed about the revision and its impact on the review report.',
  'medium');
 
@@ -4011,8 +4011,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Review/Compilation Engagements',
  'In a review engagement, the accountant develops an expectation that cost of goods sold should represent approximately 65% of revenue based on prior periods and industry data. The reported ratio is 58%. The accountant should:',
- '["Accept the improvement as a positive trend", "Inquire of management about the reasons for the favorable variance, considering factors such as product mix changes, pricing strategies, or possible understatement of expenses", "Confirm the cost of goods sold with vendors", "Perform a physical inventory count to verify the ratio"]'::jsonb,
- 1,
+ '["Inquire of management about the reasons for the favorable variance, considering factors such as product mix changes, pricing strategies, or possible understatement of expenses", "Confirm the cost of goods sold with vendors", "Perform a physical inventory count to verify the ratio", "Accept the improvement as a positive trend"]'::jsonb,
+ 2,
  'When an analytical expectation differs materially from the reported amount—even in a favorable direction—the accountant should inquire of management to understand the cause. Unexpected improvements may reflect legitimate changes or may indicate misstatement. Confirmations and physical counts are audit procedures.',
  'medium');
 
@@ -4027,8 +4027,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Review/Compilation Engagements',
  'An accountant''s review report for a nonissuer identifies the financial statements reviewed. Which of the following statements is included in the report?',
- '["A paragraph describing each analytical procedure performed", "A statement that the review was performed in accordance with SSARS promulgated by the AICPA", "A list of all management personnel interviewed", "A description of the specific inquiry questions asked"]'::jsonb,
- 1,
+ '["A statement that the review was performed in accordance with SSARS promulgated by the AICPA", "A paragraph describing each analytical procedure performed", "A list of all management personnel interviewed", "A description of the specific inquiry questions asked"]'::jsonb,
+ 0,
  'The review report states that the review was conducted in accordance with Statements on Standards for Accounting and Review Services promulgated by the Accounting and Review Services Committee of the AICPA. The report does not detail specific procedures, personnel interviewed, or inquiry questions.',
  'easy');
 
@@ -4059,16 +4059,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Review/Compilation Engagements',
  'A client undergoing a compilation engagement asks the accountant to include a note about a subsequent event (a major fire after year-end). The accountant should:',
- '["Refuse, as subsequent events are not relevant to compilations", "Include the disclosure if management requests it and it is not misleading, noting that the financial statements do not include all required disclosures if applicable", "Insist that the disclosure be verified through audit procedures first", "Add the disclosure only if the fire resulted in a loss exceeding $1 million"]'::jsonb,
- 1,
+ '["Refuse, as subsequent events are not relevant to compilations", "Insist that the disclosure be verified through audit procedures first", "Add the disclosure only if the fire resulted in a loss exceeding $1 million", "Include the disclosure if management requests it and it is not misleading, noting that the financial statements do not include all required disclosures if applicable"]'::jsonb,
+ 2,
  'In a compilation, the accountant may include selected disclosures such as subsequent events if management requests it, provided they are not misleading. If substantially all disclosures are omitted, the report should note the omission while still permitting the selected subsequent event disclosure.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Review/Compilation Engagements',
  'In a review engagement, the accountant''s analytical procedures identify that the allowance for doubtful accounts as a percentage of receivables is significantly lower than in prior years and industry benchmarks. After inquiry, management provides a vague explanation. The accountant should:',
- '["Accept management''s explanation and conclude the procedures", "Perform additional inquiry procedures and consider whether the matter indicates a possible material misstatement requiring further action", "Perform a detailed test of the receivables aging schedule", "Convert the engagement to an audit"]'::jsonb,
- 1,
+ '["Perform additional inquiry procedures and consider whether the matter indicates a possible material misstatement requiring further action", "Convert the engagement to an audit", "Perform a detailed test of the receivables aging schedule", "Accept management''s explanation and conclude the procedures"]'::jsonb,
+ 3,
  'When management''s explanation is vague or unsatisfactory, the accountant should perform additional inquiry procedures and consider whether the matter indicates a possible material misstatement. If the accountant cannot resolve the matter through additional inquiries, the accountant considers the effect on the review report and whether withdrawal is necessary.',
  'hard');
 
@@ -4099,16 +4099,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Review/Compilation Engagements',
  'An accountant issues a compilation report and includes a statement that the accountant is not independent with respect to the entity. The accountant is NOT required to:',
- '["Disclose the lack of independence in the report", "Disclose the reason for the lack of independence", "Include a statement that no audit or review was performed", "Identify the financial statements compiled"]'::jsonb,
- 1,
+ '["Disclose the lack of independence in the report", "Identify the financial statements compiled", "Include a statement that no audit or review was performed", "Disclose the reason for the lack of independence"]'::jsonb,
+ 3,
  'While the accountant must disclose the lack of independence in the compilation report, the accountant is not required to disclose the reason for the impairment. The accountant may choose to disclose the reason but is not obligated to do so. All other elements (no audit/review statement and identification of statements) remain required.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Review/Compilation Engagements',
  'During a review engagement, the accountant learns that a significant transaction occurred the day after the balance sheet date. The accountant should:',
- '["Ignore it since it occurred after the balance sheet date", "Inquire of management about the transaction and evaluate whether it requires adjustment or disclosure in the financial statements", "Perform a detailed investigation of the transaction", "Extend the review report date to cover the subsequent event"]'::jsonb,
- 1,
+ '["Ignore it since it occurred after the balance sheet date", "Perform a detailed investigation of the transaction", "Extend the review report date to cover the subsequent event", "Inquire of management about the transaction and evaluate whether it requires adjustment or disclosure in the financial statements"]'::jsonb,
+ 2,
  'Subsequent events are within the scope of a review engagement. The accountant should inquire about events after the balance sheet date that may require adjustment (Type I) or disclosure (Type II) in the financial statements. The accountant evaluates management''s treatment of the event for consistency with the framework.',
  'medium');
 
@@ -4123,24 +4123,24 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Review/Compilation Engagements',
  'In a review engagement, which of the following analytical procedures would be most useful for evaluating the reasonableness of depreciation expense?',
- '["Comparing the current-year depreciation expense to revenue", "Calculating the ratio of depreciation expense to gross depreciable assets and comparing it to the prior year and expected useful lives", "Confirming the original cost of assets with vendors", "Inspecting asset purchase invoices for proper recording"]'::jsonb,
- 1,
+ '["Calculating the ratio of depreciation expense to gross depreciable assets and comparing it to the prior year and expected useful lives", "Comparing the current-year depreciation expense to revenue", "Confirming the original cost of assets with vendors", "Inspecting asset purchase invoices for proper recording"]'::jsonb,
+ 0,
  'Calculating the ratio of depreciation expense to gross depreciable assets provides insight into the average depreciation rate being applied. Comparing this to prior years and expected useful lives helps assess reasonableness. Confirming costs and inspecting invoices are audit-level procedures beyond the scope of a review.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Review/Compilation Engagements',
  'An accountant performs a review of a construction company''s financial statements. Percentage-of-completion revenue recognition shows revenue growth of 30% while contract backlog has decreased. The accountant should:',
- '["Accept the revenue figure since management determined the percentage complete", "Inquire of management about the revenue growth in light of declining backlog, considering factors such as acceleration of existing contracts or changes in estimation methods", "Confirm the percentage-of-completion calculations with the entity''s customers", "Recompute all percentage-of-completion calculations independently"]'::jsonb,
- 1,
+ '["Accept the revenue figure since management determined the percentage complete", "Recompute all percentage-of-completion calculations independently", "Confirm the percentage-of-completion calculations with the entity''s customers", "Inquire of management about the revenue growth in light of declining backlog, considering factors such as acceleration of existing contracts or changes in estimation methods"]'::jsonb,
+ 3,
  'When analytical procedures reveal an inconsistency—such as revenue growing while contract backlog declines—the accountant should inquire of management about the discrepancy. Legitimate explanations may include acceleration of work on existing contracts or changes in estimation methods. Confirmations and independent recomputation are audit-level procedures.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Review/Compilation Engagements',
  'When compiling financial statements for a new client, the accountant discovers the entity uses an accounting policy that the accountant believes is inappropriate but not a departure from the applicable framework. The accountant should:',
- '["Refuse to compile the financial statements", "Proceed with the compilation because the policy does not depart from the framework, even if the accountant would prefer a different policy", "Modify the compilation report to disclose the policy disagreement", "Convert the engagement to a review to evaluate the policy"]'::jsonb,
- 1,
+ '["Refuse to compile the financial statements", "Modify the compilation report to disclose the policy disagreement", "Convert the engagement to a review to evaluate the policy", "Proceed with the compilation because the policy does not depart from the framework, even if the accountant would prefer a different policy"]'::jsonb,
+ 2,
  'If an accounting policy is within the range permitted by the applicable framework (e.g., FIFO vs. LIFO), the accountant may proceed with the compilation even if the accountant would prefer a different method. The accountant''s role is to determine whether the statements conform to the framework, not to impose preferred policies.',
  'medium');
 
@@ -4223,8 +4223,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Attestation Engagements',
  'AT-C 305 addresses engagements on prospective financial statements. Which of the following are the two types of prospective financial statements?',
- '["Historical and projected", "Forecasts and projections", "Budgets and estimates", "Pro forma and comparative"]'::jsonb,
- 1,
+ '["Forecasts and projections", "Historical and projected", "Budgets and estimates", "Pro forma and comparative"]'::jsonb,
+ 0,
  'AT-C 305 identifies two types of prospective financial statements: financial forecasts (based on expected conditions and expected courses of action) and financial projections (based on hypothetical assumptions, or ''what-if'' scenarios). Forecasts are for general use; projections are typically for limited use.',
  'easy');
 
@@ -4247,8 +4247,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Attestation Engagements',
  'A practitioner examines a financial forecast and issues a report. The examination report on the forecast should include a caveat that:',
- '["The forecast is guaranteed to be achieved", "Prospective results may not be achieved because events and circumstances frequently do not occur as expected", "The practitioner accepts liability for the accuracy of the forecast", "The forecast has been audited with the same rigor as historical financial statements"]'::jsonb,
- 1,
+ '["The forecast is guaranteed to be achieved", "The forecast has been audited with the same rigor as historical financial statements", "The practitioner accepts liability for the accuracy of the forecast", "Prospective results may not be achieved because events and circumstances frequently do not occur as expected"]'::jsonb,
+ 3,
  'The examination report on a forecast must include a caveat stating that the prospective results may not be achieved because events and circumstances frequently do not occur as expected, and that the differences between prospective and actual results may be material. This alerts users to the inherent uncertainty of forecasts.',
  'medium');
 
@@ -4263,8 +4263,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Attestation Engagements',
  'When examining pro forma financial information, the practitioner should obtain satisfaction that:',
- '["The pro forma adjustments are mathematically correct and the assumptions are reasonable", "The historical financial statements have been audited or reviewed and the pro forma adjustments give appropriate effect to the significant transaction", "The entity will definitely complete the proposed transaction", "All pro forma statements are prepared in accordance with IFRS"]'::jsonb,
- 1,
+ '["The historical financial statements have been audited or reviewed and the pro forma adjustments give appropriate effect to the significant transaction", "The pro forma adjustments are mathematically correct and the assumptions are reasonable", "The entity will definitely complete the proposed transaction", "All pro forma statements are prepared in accordance with IFRS"]'::jsonb,
+ 0,
  'The practitioner must obtain satisfaction that the underlying historical financial statements have been audited or reviewed, that the pro forma adjustments give appropriate effect to the significant transaction or event, and that the presentation complies with the relevant criteria. Mathematical accuracy is part of the evaluation but not the sole focus.',
  'medium');
 
@@ -4287,8 +4287,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Attestation Engagements',
  'AT-C 105 establishes the general framework for attestation engagements. One fundamental requirement is that the subject matter must be:',
- '["Exclusively financial in nature", "Capable of consistent measurement or evaluation against suitable criteria", "Prepared by the practitioner", "Limited to publicly available information"]'::jsonb,
- 1,
+ '["Capable of consistent measurement or evaluation against suitable criteria", "Limited to publicly available information", "Prepared by the practitioner", "Exclusively financial in nature"]'::jsonb,
+ 3,
  'AT-C 105 requires that the subject matter be capable of consistent measurement or evaluation against suitable criteria that are available to the expected users. Subject matter can be financial, nonfinancial, quantitative, or qualitative. The criteria must be suitable and available.',
  'medium');
 
@@ -4311,8 +4311,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Attestation Engagements',
  'In an AUP engagement, the practitioner discovers that 5 out of 25 sampled disbursements lack proper approval. The AUP report should:',
- '["Express an adverse opinion on the disbursement process", "State the finding factually: 5 of 25 disbursements tested lacked proper approval documentation", "Recommend that management improve the approval process", "State that the internal controls are deficient"]'::jsonb,
- 1,
+ '["State the finding factually: 5 of 25 disbursements tested lacked proper approval documentation", "Express an adverse opinion on the disbursement process", "Recommend that management improve the approval process", "State that the internal controls are deficient"]'::jsonb,
+ 0,
  'The AUP report presents findings factually without adding conclusions, opinions, or recommendations. The practitioner states what was tested and what was found. In this case, the report would state that 5 of the 25 disbursements tested lacked the required approval documentation. Users draw their own conclusions.',
  'medium');
 
@@ -4327,8 +4327,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Attestation Engagements',
  'When a practitioner examines prospective financial statements, the practitioner must evaluate whether the assumptions are:',
- '["Guaranteed to produce accurate results", "Suitably supported and provide a reasonable basis for the prospective statements", "Identical to assumptions used by competitors", "Approved by the entity''s external auditor"]'::jsonb,
- 1,
+ '["Suitably supported and provide a reasonable basis for the prospective statements", "Guaranteed to produce accurate results", "Identical to assumptions used by competitors", "Approved by the entity''s external auditor"]'::jsonb,
+ 0,
  'In an examination of prospective financial statements, the practitioner evaluates whether the assumptions provide a reasonable basis for the prospective statements. Assumptions must be suitably supported by available information and internally consistent. The practitioner does not guarantee results or require competitor benchmarks.',
  'medium');
 
@@ -4343,24 +4343,24 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Attestation Engagements',
  'In an attestation engagement, the practitioner must maintain independence. Which of the following correctly describes this requirement?',
- '["Independence is required for examinations and reviews but not for agreed-upon procedures", "Independence is required for all attestation engagements—examinations, reviews, and agreed-upon procedures", "Independence is only required for examination engagements", "Independence is optional for all attestation engagements"]'::jsonb,
- 1,
+ '["Independence is required for all attestation engagements—examinations, reviews, and agreed-upon procedures", "Independence is optional for all attestation engagements", "Independence is only required for examination engagements", "Independence is required for examinations and reviews but not for agreed-upon procedures"]'::jsonb,
+ 3,
  'Independence is required for all types of attestation engagements: examinations, reviews, and agreed-upon procedures. This is a fundamental requirement under AT-C 105. Without independence, the practitioner cannot accept or continue an attestation engagement.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Attestation Engagements',
  'A practitioner issues an examination report on an entity''s compliance with environmental regulations. During the examination, the practitioner discovers a material scope limitation that prevents testing of certain compliance areas. The practitioner should:',
- '["Issue an unqualified opinion and note the limitation in an emphasis paragraph", "Issue a qualified opinion or disclaim an opinion depending on the significance of the limitation", "Issue an adverse opinion", "Proceed with the examination and omit the untested areas from the report"]'::jsonb,
- 1,
+ '["Issue an unqualified opinion and note the limitation in an emphasis paragraph", "Proceed with the examination and omit the untested areas from the report", "Issue an adverse opinion", "Issue a qualified opinion or disclaim an opinion depending on the significance of the limitation"]'::jsonb,
+ 3,
  'A material scope limitation in an examination engagement requires the practitioner to either qualify the opinion (if the limitation is material but not pervasive) or disclaim an opinion (if the limitation is material and pervasive). The practitioner cannot simply omit untested areas or issue an unqualified opinion.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Attestation Engagements',
  'A practitioner is engaged to examine management''s assertion about the entity''s internal control over financial reporting (ICFR) under AT-C 205. The examination report should include:',
- '["Only the practitioner''s conclusion without describing the criteria", "An opinion on whether the assertion is fairly stated in all material respects, a description of the criteria, and management''s responsibility", "A compilation of the entity''s control activities", "A recommendation for improving internal controls"]'::jsonb,
- 1,
+ '["An opinion on whether the assertion is fairly stated in all material respects, a description of the criteria, and management''s responsibility", "A compilation of the entity''s control activities", "A recommendation for improving internal controls", "Only the practitioner''s conclusion without describing the criteria"]'::jsonb,
+ 2,
  'The examination report on ICFR includes the practitioner''s opinion on whether management''s assertion is fairly stated based on the criteria, a description of the criteria used, a statement of management''s responsibility, and the practitioner''s responsibility. Recommendations for improvement are not part of the examination report.',
  'hard');
 

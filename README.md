@@ -1,6 +1,6 @@
 # Slayer CPA
 
-Full-scope CPA exam prep for $9.99/month. 96 lessons, 1,275+ practice questions, timed exams, and downloadable study frameworks across all 6 CPA sections.
+Full-scope CPA exam prep for $29.99/month. 96 lessons, 4,400+ practice questions, timed exams, and downloadable study frameworks across all 6 CPA sections.
 
 **Live:** [slayer-cpa.com](https://www.slayer-cpa.com)
 
@@ -56,7 +56,7 @@ Copy `.env.local.example` to `.env.local` and fill in:
 - `SUPABASE_SERVICE_ROLE_KEY` — Supabase service role key (server-side only)
 - `STRIPE_SECRET_KEY` — Stripe secret key
 - `STRIPE_WEBHOOK_SECRET` — Stripe webhook signing secret
-- `STRIPE_PRICE_ID` — Stripe price ID for the $9.99/mo plan
+- `STRIPE_PRICE_ID` — Stripe price ID for the $29.99/mo plan
 - `NEXT_PUBLIC_SITE_URL` — Site URL for redirects
 
 ## Project Structure

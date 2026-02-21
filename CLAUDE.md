@@ -1,6 +1,6 @@
 # CPA Prep Course
 
-Full-scope CPA exam prep website — lessons, quizzes, practice exams, and study frameworks for $9.99/month.
+Full-scope CPA exam prep website — lessons, quizzes, practice exams, and study frameworks for $29.99/month.
 
 ## Tech Stack
 

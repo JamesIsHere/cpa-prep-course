@@ -157,7 +157,7 @@ export default function Home() {
 					<div className="grid sm:grid-cols-3 gap-8 text-center">
 						<div>
 							<div className="text-emerald-600 text-3xl font-bold mb-2">
-								$9.99
+								$29.99
 							</div>
 							<div className="text-sm text-gray-500">
 								Per month — a fraction of what traditional review courses charge
@@ -313,7 +313,7 @@ export default function Home() {
 					</p>
 					<div className="max-w-sm mx-auto bg-gray-50 rounded-xl p-8 border border-gray-200">
 						<div className="text-4xl font-bold text-gray-900 mb-2">
-							$9.99
+							$29.99
 							<span className="text-lg font-normal text-gray-500">/month</span>
 						</div>
 						<ul className="text-sm text-gray-600 space-y-3 mb-6 text-left">
@@ -383,7 +383,7 @@ export default function Home() {
 						<p className="text-sm text-gray-500 leading-relaxed">
 							Traditional review courses cost $2,000–$3,500 and include video
 							lectures, live classes, and printed materials. Slayer CPA is a
-							focused self-study tool at $9.99/month — designed for candidates
+							focused self-study tool at $29.99/month — designed for candidates
 							who prefer reading-based study with immediate practice and
 							feedback.
 						</p>

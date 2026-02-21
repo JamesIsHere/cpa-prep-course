@@ -77,24 +77,24 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Individual Tax Planning: Compensation',
  'Under Section 409A, which of the following is a permissible distribution event for a nonqualified deferred compensation plan?',
- '["The participant''s request for early withdrawal due to financial hardship", "Separation from service", "A change in the participant''s investment preferences", "The participant reaching age 50"]'::jsonb,
- 1,
+ '["Separation from service", "The participant''s request for early withdrawal due to financial hardship", "A change in the participant''s investment preferences", "The participant reaching age 50"]'::jsonb,
+ 0,
  'Section 409A limits distributions from NQDC plans to six permissible events: separation from service, disability, death, a specified time or fixed schedule, change in control, or an unforeseeable emergency. A voluntary early withdrawal or change in investment preferences is not a permissible trigger. Reaching age 50 alone does not qualify unless the plan specifies that age as a distribution date.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Individual Tax Planning: Compensation',
  'What is the penalty for failing to comply with the requirements of Section 409A for a nonqualified deferred compensation plan?',
- '["A 10% early withdrawal penalty on the deferred amount", "Immediate inclusion of the deferred amount in income plus a 20% additional tax and premium interest", "Loss of the employer''s deduction for the deferred compensation", "A 50% excise tax on the excess deferral amount"]'::jsonb,
- 1,
+ '["A 10% early withdrawal penalty on the deferred amount", "A 50% excise tax on the excess deferral amount", "Loss of the employer''s deduction for the deferred compensation", "Immediate inclusion of the deferred amount in income plus a 20% additional tax and premium interest"]'::jsonb,
+ 3,
  'Noncompliance with Section 409A results in all deferred compensation being included in the participant''s gross income in the year of the violation. In addition, a 20% additional tax is imposed on the amount included, plus a premium interest charge calculated from the date the compensation was first deferred. This creates a severe penalty for plan design or operational failures.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Individual Tax Planning: Compensation',
  'Which of the following correctly describes the tax treatment of restricted stock units (RSUs)?',
- '["RSUs are taxed at the grant date based on fair market value", "RSUs are taxed as ordinary income when they vest and shares are delivered", "RSUs are always taxed as long-term capital gain", "RSUs are tax-free until the shares are sold"]'::jsonb,
- 1,
+ '["RSUs are taxed at the grant date based on fair market value", "RSUs are tax-free until the shares are sold", "RSUs are always taxed as long-term capital gain", "RSUs are taxed as ordinary income when they vest and shares are delivered"]'::jsonb,
+ 3,
  'RSUs are taxed as ordinary income at the time of vesting when shares are delivered to the employee. The amount included in income equals the fair market value of the shares on the vesting date. Unlike restricted stock, a Section 83(b) election is not available for RSUs because no property is transferred at grant. Any subsequent gain or loss from sale is capital gain or loss.',
  'easy');
 
@@ -133,8 +133,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Individual Tax Planning: Compensation',
  'A newly hired executive negotiates a signing bonus of $75,000. The employer also provides a $10,000 moving expense reimbursement. What total amount must be included in the executive''s 2026 gross income?',
- '["$75,000", "$85,000", "$10,000", "$0 because both are excludable hiring incentives"]'::jsonb,
- 1,
+ '["$85,000", "$75,000", "$10,000", "$0 because both are excludable hiring incentives"]'::jsonb,
+ 0,
  'Both the signing bonus and moving expense reimbursement are fully taxable to the employee in 2026. Under the Tax Cuts and Jobs Act (effective through 2025 and extended), employer-paid moving expenses are no longer excludable from income (except for active-duty military). Therefore, the full $85,000 ($75,000 + $10,000) must be included in gross income.',
  'easy');
 
@@ -149,8 +149,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Individual Tax Planning: Compensation',
  'Which of the following best describes a "working condition fringe benefit" under Section 132?',
- '["An employer-provided vehicle used exclusively for personal purposes", "Property or services provided by an employer that would be deductible as a business expense if the employee paid for them", "Free meals provided for the convenience of the employer on the business premises", "Health insurance premiums paid by the employer"]'::jsonb,
- 1,
+ '["Property or services provided by an employer that would be deductible as a business expense if the employee paid for them", "An employer-provided vehicle used exclusively for personal purposes", "Free meals provided for the convenience of the employer on the business premises", "Health insurance premiums paid by the employer"]'::jsonb,
+ 0,
  'A working condition fringe benefit under Section 132(d) is any property or service provided by the employer to the extent the employee would have been able to deduct the cost as a trade or business expense under Section 162 or depreciation under Section 167 if the employee had paid for it. Examples include employer-provided subscriptions, professional dues, and business-use vehicles.',
  'easy');
 
@@ -173,8 +173,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Individual Tax Planning: Compensation',
  'An employer provides a de minimis fringe benefit to an employee. Which of the following would qualify as a de minimis fringe benefit under Section 132(e)?',
- '["A $250 holiday gift card", "Occasional use of the company photocopier for personal purposes", "A monthly transit pass valued at $325", "An annual country club membership"]'::jsonb,
- 1,
+ '["A $250 holiday gift card", "An annual country club membership", "A monthly transit pass valued at $325", "Occasional use of the company photocopier for personal purposes"]'::jsonb,
+ 3,
  'A de minimis fringe benefit under Section 132(e) is property or service with a value so small that accounting for it would be unreasonable or administratively impracticable. Occasional personal use of the company photocopier is a classic example. Cash and cash equivalents (like gift cards) are never de minimis regardless of amount. Transit passes above $21/month are not de minimis, and club memberships are specifically excluded.',
  'easy');
 
@@ -189,8 +189,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Individual Tax Planning: Compensation',
  'An executive defers $150,000 under a Section 409A plan. Due to an operational failure, the plan makes a distribution at an impermissible time. What is the total additional tax imposed on the executive under Section 409A?',
- '["10% of the distributed amount", "20% of the amount included in income plus premium interest", "25% of the distributed amount", "No penalty if the executive was unaware of the violation"]'::jsonb,
- 1,
+ '["10% of the distributed amount", "No penalty if the executive was unaware of the violation", "25% of the distributed amount", "20% of the amount included in income plus premium interest"]'::jsonb,
+ 3,
  'Section 409A imposes a 20% additional tax on any NQDC amount that is included in income due to a plan failure, plus a premium interest charge. The interest is calculated at the underpayment rate plus 1% and runs from the year the compensation was first deferred. The penalty applies regardless of whether the executive was aware of the operational failure.',
  'hard');
 
@@ -221,8 +221,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Individual Tax Planning: Compensation',
  'An employer establishes a secular trust to fund deferred compensation for an executive. How does the taxation of a secular trust differ from a rabbi trust?',
- '["Secular trust contributions are tax-deductible by the employer but not taxable to the executive", "Secular trust assets are protected from employer creditors, causing immediate taxation to the executive when contributed", "Secular trust distributions are treated as capital gains rather than ordinary income", "There is no tax difference between secular and rabbi trusts"]'::jsonb,
- 1,
+ '["Secular trust contributions are tax-deductible by the employer but not taxable to the executive", "There is no tax difference between secular and rabbi trusts", "Secular trust distributions are treated as capital gains rather than ordinary income", "Secular trust assets are protected from employer creditors, causing immediate taxation to the executive when contributed"]'::jsonb,
+ 3,
  'Unlike a rabbi trust, a secular trust protects assets from the employer''s creditors because the funds are set aside irrevocably for the employee. Because the employee has a secured beneficial interest, contributions are taxable to the executive when made (or when the substantial risk of forfeiture lapses). In contrast, rabbi trust assets remain subject to employer creditors, so taxation is deferred until distribution.',
  'hard');
 
@@ -269,8 +269,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Individual Tax Planning: Compensation',
  'Which of the following best describes the tax treatment of employer-provided group-term life insurance under Section 79?',
- '["All employer-paid premiums are excludable regardless of coverage amount", "The cost of coverage exceeding $50,000 is included in the employee''s gross income", "Only the first $10,000 of coverage is excludable from income", "Group-term life insurance is always fully taxable to the employee"]'::jsonb,
- 1,
+ '["All employer-paid premiums are excludable regardless of coverage amount", "Group-term life insurance is always fully taxable to the employee", "Only the first $10,000 of coverage is excludable from income", "The cost of coverage exceeding $50,000 is included in the employee''s gross income"]'::jsonb,
+ 3,
  'Under Section 79, the cost of employer-provided group-term life insurance coverage is excludable from the employee''s income for the first $50,000 of coverage. The cost of coverage exceeding $50,000 (calculated using IRS Table I uniform premium rates, not actual premium cost) must be included in the employee''s gross income. This applies only to policies carried by the employer.',
  'easy');
 
@@ -285,8 +285,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Individual Tax Planning: Compensation',
  'An employee receives a qualified employee discount on services. Under Section 132(c), what is the maximum excludable discount percentage for services?',
- '["10% of the selling price", "20% of the selling price", "The employer''s gross profit percentage", "50% of the selling price"]'::jsonb,
- 1,
+ '["10% of the selling price", "50% of the selling price", "The employer''s gross profit percentage", "20% of the selling price"]'::jsonb,
+ 3,
  'Under Section 132(c), the maximum excludable employee discount for services is 20% of the price at which the services are offered to customers. For merchandise, the limit is the employer''s gross profit percentage. Any discount exceeding these limits is included in the employee''s gross income as compensation.',
  'medium');
 
@@ -301,16 +301,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Individual Tax Planning: Compensation',
  'An executive participates in a NQDC plan with a 10-year deferral. The plan uses a rabbi trust. In year five, the employer files for bankruptcy. What happens to the executive''s deferred compensation?',
- '["The deferred amounts are fully protected and paid to the executive on schedule", "The deferred amounts become subject to claims of the employer''s general creditors in the bankruptcy proceeding", "The rabbi trust automatically converts to a secular trust protecting the executive", "The executive receives a priority claim in the bankruptcy above all other creditors"]'::jsonb,
- 1,
+ '["The deferred amounts are fully protected and paid to the executive on schedule", "The executive receives a priority claim in the bankruptcy above all other creditors", "The rabbi trust automatically converts to a secular trust protecting the executive", "The deferred amounts become subject to claims of the employer''s general creditors in the bankruptcy proceeding"]'::jsonb,
+ 3,
  'The defining characteristic of a rabbi trust is that its assets remain subject to the claims of the employer''s general creditors in the event of the employer''s bankruptcy or insolvency. The executive becomes an unsecured creditor with no priority over other general creditors. This creditor risk is the trade-off for the deferral of income tax that the rabbi trust structure provides.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Individual Tax Planning: Compensation',
  'A company grants an employee 2,000 shares of restricted stock on March 1, 2026, when the FMV is $25 per share. The employee files a timely Section 83(b) election. The stock vests on March 1, 2029, when the FMV is $90 per share. The employee sells all shares on June 1, 2030, for $110 per share. What is the total long-term capital gain on the sale?',
- '["$130,000", "$170,000", "$50,000", "$220,000"]'::jsonb,
- 1,
+ '["$130,000", "$220,000", "$50,000", "$170,000"]'::jsonb,
+ 3,
  'With the Section 83(b) election, the employee included $50,000 (2,000 x $25) in ordinary income at grant. The basis in the shares is $25 per share. Upon sale at $110, the long-term capital gain is ($110 - $25) x 2,000 = $170,000. The holding period begins at the grant date (March 2026), so the sale in June 2030 qualifies for long-term treatment. Without the election, $180,000 (2,000 x $90) would have been ordinary income at vesting.',
  'hard');
 
@@ -337,24 +337,24 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Passive Activity and At-Risk Rules',
  'Which of the following is one of the seven tests for material participation under the Section 469 regulations?',
- '["The taxpayer invested at least $50,000 in the activity", "The taxpayer participated in the activity for more than 500 hours during the tax year", "The taxpayer owned more than 50% of the activity", "The taxpayer hired a full-time manager for the activity"]'::jsonb,
- 1,
+ '["The taxpayer participated in the activity for more than 500 hours during the tax year", "The taxpayer invested at least $50,000 in the activity", "The taxpayer owned more than 50% of the activity", "The taxpayer hired a full-time manager for the activity"]'::jsonb,
+ 0,
  'One of the seven material participation tests under Reg. 1.469-5T is that the individual participated in the activity for more than 500 hours during the tax year. Other tests include substantially all participation, more than 100 hours and not less than any other person, significant participation activities aggregating over 500 hours, material participation in 5 of the 10 preceding tax years, and personal service activity participation in any 3 prior years.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Passive Activity and At-Risk Rules',
  'A taxpayer with AGI of $130,000 actively participates in a rental property that generates a $25,000 loss. What amount of the rental loss can be deducted against nonpassive income under the special allowance?',
- '["$0", "$10,000", "$15,000", "$25,000"]'::jsonb,
- 1,
+ '["$0", "$25,000", "$15,000", "$10,000"]'::jsonb,
+ 3,
  'The $25,000 special allowance phases out by $1 for every $2 of AGI exceeding $100,000. With AGI of $130,000, the excess is $30,000, and the phase-out reduces the allowance by $15,000 ($30,000 / 2). The remaining allowance is $25,000 - $15,000 = $10,000. The remaining $15,000 loss is suspended and carried forward to future years.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Passive Activity and At-Risk Rules',
  'A taxpayer has $40,000 of suspended passive losses from a rental activity. The taxpayer sells the entire interest in the rental property in a fully taxable disposition. What happens to the suspended passive losses?',
- '["They are permanently lost and cannot be deducted", "They are released and can be deducted against any type of income in the year of disposition", "They can only be carried forward to offset future passive income", "They convert to capital losses limited to $3,000 per year"]'::jsonb,
- 1,
+ '["They are released and can be deducted against any type of income in the year of disposition", "They are permanently lost and cannot be deducted", "They can only be carried forward to offset future passive income", "They convert to capital losses limited to $3,000 per year"]'::jsonb,
+ 0,
  'Under Section 469(g), when a taxpayer makes a fully taxable disposition of an entire interest in a passive activity, all suspended passive losses from that activity are released and can be deducted against any type of income (active, portfolio, or passive) in the year of disposition. This is one of the most important planning opportunities in the passive activity rules.',
  'medium');
 
@@ -377,8 +377,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Passive Activity and At-Risk Rules',
  'A taxpayer participates in an activity for 120 hours during the year. No other person participates for more hours. Under the material participation tests, does this taxpayer materially participate?',
- '["No, because the taxpayer did not reach the 500-hour threshold", "Yes, because the taxpayer participated for more than 100 hours and no other individual participated more", "No, because the activity must be the taxpayer''s principal business", "Yes, but only if the activity is a real estate activity"]'::jsonb,
- 1,
+ '["No, because the taxpayer did not reach the 500-hour threshold", "Yes, but only if the activity is a real estate activity", "No, because the activity must be the taxpayer''s principal business", "Yes, because the taxpayer participated for more than 100 hours and no other individual participated more"]'::jsonb,
+ 3,
  'Under Reg. 1.469-5T(a)(3), a taxpayer materially participates if the individual participated for more than 100 hours during the year and that participation is not less than the participation of any other individual (including non-owners). Since this taxpayer participated for 120 hours and no other person participated more, the test is satisfied regardless of the type of activity.',
  'medium');
 
@@ -417,8 +417,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Passive Activity and At-Risk Rules',
  'A taxpayer participates in three significant participation activities during 2026. Activity A: 180 hours. Activity B: 200 hours. Activity C: 150 hours. Under the significant participation activity test, does the taxpayer materially participate in any of these activities?',
- '["No, because none individually exceeds 500 hours", "Yes, in all three activities because their aggregate hours exceed 500", "Yes, but only in Activity B because it has the most hours", "No, because significant participation requires at least 250 hours per activity"]'::jsonb,
- 1,
+ '["Yes, in all three activities because their aggregate hours exceed 500", "No, because none individually exceeds 500 hours", "Yes, but only in Activity B because it has the most hours", "No, because significant participation requires at least 250 hours per activity"]'::jsonb,
+ 0,
  'Under Reg. 1.469-5T(a)(4), if a taxpayer participates for more than 100 hours in several activities (significant participation activities) and the aggregate participation exceeds 500 hours, the taxpayer is treated as materially participating in all significant participation activities. Here, 180 + 200 + 150 = 530 hours exceeds 500, so all three activities are treated as material participation activities.',
  'hard');
 
@@ -449,8 +449,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Passive Activity and At-Risk Rules',
  'A taxpayer gifts a passive activity with $30,000 of suspended passive losses to a family member. What happens to the suspended losses?',
- '["The suspended losses transfer to the donee", "The suspended losses are added to the basis of the gifted property", "The suspended losses are deductible by the donor in the year of the gift", "The suspended losses are permanently lost"]'::jsonb,
- 1,
+ '["The suspended losses transfer to the donee", "The suspended losses are permanently lost", "The suspended losses are deductible by the donor in the year of the gift", "The suspended losses are added to the basis of the gifted property"]'::jsonb,
+ 3,
  'When a passive activity is transferred by gift, the suspended passive losses are not deductible by the donor and do not transfer to the donee. Instead, under Section 469(j)(6), the suspended losses are added to the basis of the transferred interest. This increases the donee''s basis and reduces any future gain (or increases any loss) when the donee eventually disposes of the property.',
  'hard');
 
@@ -465,8 +465,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Passive Activity and At-Risk Rules',
  'A taxpayer materially participated in a business activity for 5 of the last 10 tax years. In the current year, the taxpayer only participates for 50 hours. Under the material participation tests, is the taxpayer treated as materially participating in the current year?',
- '["No, because 50 hours does not meet any hourly threshold", "Yes, because material participation in 5 of the 10 preceding tax years satisfies one of the seven tests", "No, because the 5-of-10-year test requires consecutive years", "Yes, but only if the activity is a personal service activity"]'::jsonb,
- 1,
+ '["Yes, because material participation in 5 of the 10 preceding tax years satisfies one of the seven tests", "No, because 50 hours does not meet any hourly threshold", "No, because the 5-of-10-year test requires consecutive years", "Yes, but only if the activity is a personal service activity"]'::jsonb,
+ 0,
  'Under Reg. 1.469-5T(a)(5), a taxpayer is treated as materially participating in an activity if the individual materially participated in the activity for any 5 of the 10 preceding tax years. The years do not need to be consecutive. This test applies regardless of current-year hours and is commonly used by taxpayers transitioning away from active involvement in a business.',
  'medium');
 
@@ -481,32 +481,32 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Passive Activity and At-Risk Rules',
  'Under the at-risk rules, which of the following types of financing increases a taxpayer''s at-risk amount in a real estate activity?',
- '["A nonrecourse loan from a related party", "Qualified nonrecourse financing from a bank secured by the real property", "A loan guaranteed by a family member with no personal liability to the taxpayer", "Seller financing where the seller has an interest in the activity"]'::jsonb,
- 1,
+ '["Qualified nonrecourse financing from a bank secured by the real property", "A nonrecourse loan from a related party", "A loan guaranteed by a family member with no personal liability to the taxpayer", "Seller financing where the seller has an interest in the activity"]'::jsonb,
+ 0,
  'Section 465(b)(6) provides a special exception for real estate activities, allowing qualified nonrecourse financing to be included in the at-risk amount. Qualified nonrecourse financing must be borrowed from a qualified lender (bank, government agency, or unrelated person in the lending business), secured by the real property, and not from a related party or seller with an interest in the activity.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Passive Activity and At-Risk Rules',
  'A taxpayer has $80,000 at risk in a partnership activity. During the year, the taxpayer''s share of partnership losses is $95,000. How much of the loss can the taxpayer deduct under the at-risk rules (before applying passive activity rules)?',
- '["$0", "$80,000", "$95,000", "$15,000"]'::jsonb,
- 1,
+ '["$0", "$15,000", "$95,000", "$80,000"]'::jsonb,
+ 3,
  'Under Section 465, a taxpayer''s deductible loss is limited to the amount at risk in the activity. Since the taxpayer has $80,000 at risk and $95,000 of losses, only $80,000 is deductible under the at-risk rules. The remaining $15,000 is suspended and carried forward until the taxpayer''s at-risk amount increases. The $80,000 allowed loss must then pass the passive activity rules.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Passive Activity and At-Risk Rules',
  'A taxpayer disposes of a passive activity by transferring it to a former spouse as part of a divorce settlement under Section 1041. What happens to the suspended passive losses?',
- '["They are released and deductible in the year of transfer", "They transfer to the former spouse along with the property", "They are added to the basis of the property transferred", "They are permanently disallowed"]'::jsonb,
- 1,
+ '["They transfer to the former spouse along with the property", "They are released and deductible in the year of transfer", "They are added to the basis of the property transferred", "They are permanently disallowed"]'::jsonb,
+ 0,
  'Under Section 469(g)(1)(B), when a passive activity is transferred in a nonrecognition transaction such as a Section 1041 transfer incident to divorce, the suspended passive losses are not released. Instead, they transfer to the transferee spouse, who can use them when the activity is subsequently disposed of in a fully taxable transaction or against passive income from the activity.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Passive Activity and At-Risk Rules',
  'A limited partner in a real estate partnership wants to deduct rental losses against nonpassive income. Which of the following statements is correct?',
- '["Limited partners can never claim the $25,000 special allowance for rental losses", "Limited partners may claim the $25,000 allowance if they actively participate in rental management decisions", "Limited partners automatically qualify for the special allowance by virtue of their investment", "Limited partners must convert to general partners to deduct any rental losses"]'::jsonb,
- 1,
+ '["Limited partners may claim the $25,000 allowance if they actively participate in rental management decisions", "Limited partners can never claim the $25,000 special allowance for rental losses", "Limited partners automatically qualify for the special allowance by virtue of their investment", "Limited partners must convert to general partners to deduct any rental losses"]'::jsonb,
+ 0,
  'Limited partners can qualify for the $25,000 special allowance if they actively participate in management decisions such as approving tenants, setting rental terms, and approving capital expenditures. Active participation is a lower threshold than material participation and does not require the same level of involvement. However, limited partners generally cannot satisfy the material participation tests except through the 5-of-10-year or personal service activity tests.',
  'medium');
 
@@ -529,8 +529,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Passive Activity and At-Risk Rules',
  'A taxpayer has two passive activities. Activity X generates $20,000 income and Activity Y generates a $35,000 loss. The taxpayer also has $10,000 in suspended losses from Activity Y from prior years. What is the net passive loss suspended at year-end?',
- '["$15,000", "$25,000", "$35,000", "$45,000"]'::jsonb,
- 1,
+ '["$25,000", "$15,000", "$35,000", "$45,000"]'::jsonb,
+ 0,
  'Current year passive income from Activity X ($20,000) can offset current year passive losses from Activity Y ($35,000), leaving a net passive loss of $15,000. The prior suspended losses of $10,000 from Activity Y are also available. Total losses to consider are $35,000 + $10,000 = $45,000, offset by $20,000 income, leaving $25,000 suspended at year-end (assuming no special allowance applies).',
  'medium');
 
@@ -653,8 +653,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Wealth Transfer and Gifting Strategies',
  'A grandparent establishes an irrevocable trust for grandchildren with Crummey withdrawal powers. What is the purpose of the Crummey power?',
- '["To allow the trustee to invest trust assets in any asset class", "To convert future interest gifts into present interests that qualify for the annual gift tax exclusion", "To avoid the generation-skipping transfer tax on distributions", "To allow the grandparent to retain control over trust distributions"]'::jsonb,
- 1,
+ '["To allow the trustee to invest trust assets in any asset class", "To allow the grandparent to retain control over trust distributions", "To avoid the generation-skipping transfer tax on distributions", "To convert future interest gifts into present interests that qualify for the annual gift tax exclusion"]'::jsonb,
+ 3,
  'A Crummey power gives trust beneficiaries a temporary right to withdraw contributions made to the trust (typically for 30-60 days). This withdrawal right converts what would otherwise be a gift of a future interest into a present interest, qualifying the transfer for the annual gift tax exclusion. Without Crummey powers, gifts to irrevocable trusts would not qualify for the annual exclusion.',
  'medium');
 
@@ -677,8 +677,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Wealth Transfer and Gifting Strategies',
  'A grantor establishes a GRAT (grantor retained annuity trust) funded with $2,000,000 in appreciated stock. The GRAT pays an annuity to the grantor for 5 years. What is the primary estate planning benefit of a zeroed-out GRAT?',
- '["The grantor avoids all income tax on the annuity payments", "The remainder interest transferred to beneficiaries has a gift tax value of approximately zero while future appreciation passes transfer-tax-free", "The GRAT assets receive a stepped-up basis at the grantor''s death", "The annuity payments are deductible by the grantor"]'::jsonb,
- 1,
+ '["The grantor avoids all income tax on the annuity payments", "The annuity payments are deductible by the grantor", "The GRAT assets receive a stepped-up basis at the grantor''s death", "The remainder interest transferred to beneficiaries has a gift tax value of approximately zero while future appreciation passes transfer-tax-free"]'::jsonb,
+ 3,
  'A zeroed-out GRAT is structured so the present value of the annuity payments approximately equals the value of the assets transferred, making the taxable gift of the remainder interest approximately zero. If the trust assets appreciate at a rate exceeding the Section 7520 rate, the excess appreciation passes to the remainder beneficiaries free of gift and estate tax. This is a powerful technique for transferring appreciation.',
  'hard');
 
@@ -725,16 +725,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Wealth Transfer and Gifting Strategies',
  'Under gift splitting (Section 2513), which of the following requirements must be met?',
- '["Both spouses must be U.S. citizens", "Both spouses must consent to split all gifts made by either spouse during the calendar year", "The gifts must be made to the spouses'' children only", "Gift splitting is available only for gifts exceeding $100,000"]'::jsonb,
- 1,
+ '["Both spouses must consent to split all gifts made by either spouse during the calendar year", "Both spouses must be U.S. citizens", "The gifts must be made to the spouses'' children only", "Gift splitting is available only for gifts exceeding $100,000"]'::jsonb,
+ 0,
  'Gift splitting under Section 2513 requires that both spouses consent to split all gifts made by either spouse during the calendar year. Both must be married at the time of the gift and must file gift tax returns (Form 709) to make the election. Gift splitting is available for gifts to any donee, not just children, and there is no minimum gift amount. Both spouses need not be U.S. citizens.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Wealth Transfer and Gifting Strategies',
  'A donor contributes $500,000 to a charitable lead annuity trust (CLAT). The trust pays 8% ($40,000) per year to a qualified charity for 15 years, and the remainder passes to the donor''s children. What is the primary benefit of the CLAT?',
- '["The donor receives a current income tax deduction for the full $500,000", "The remainder passing to the children may have a reduced gift tax value because the charitable lead interest reduces the present value of the remainder", "The charity payments are deductible by the children", "The trust assets are excluded from the donor''s estate regardless of when the donor dies"]'::jsonb,
- 1,
+ '["The remainder passing to the children may have a reduced gift tax value because the charitable lead interest reduces the present value of the remainder", "The donor receives a current income tax deduction for the full $500,000", "The charity payments are deductible by the children", "The trust assets are excluded from the donor''s estate regardless of when the donor dies"]'::jsonb,
+ 0,
  'A CLAT provides a gift or estate tax benefit by reducing the taxable value of the remainder interest that passes to non-charitable beneficiaries. The taxable gift is the FMV of the trust assets minus the present value of the charitable lead interest. If the trust assets grow faster than the Section 7520 rate, the excess growth passes to the children transfer-tax-free.',
  'hard');
 
@@ -797,8 +797,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Wealth Transfer and Gifting Strategies',
  'A grantor establishes a GRAT with a 3-year term funded with $3,000,000 in stock. The Section 7520 rate is 5%. The annuity is structured to return essentially all value to the grantor over 3 years. If the stock appreciates at 12% annually, approximately how much value passes to the remainder beneficiaries transfer-tax-free?',
- '["$0 because the GRAT is zeroed out", "The excess growth above the 5% Section 7520 rate on $3,000,000 over 3 years", "The full $3,000,000", "Only the annual gift exclusion amount per beneficiary"]'::jsonb,
- 1,
+ '["$0 because the GRAT is zeroed out", "Only the annual gift exclusion amount per beneficiary", "The full $3,000,000", "The excess growth above the 5% Section 7520 rate on $3,000,000 over 3 years"]'::jsonb,
+ 3,
  'In a zeroed-out GRAT, the annuity returns the contributed value plus the Section 7520 assumed return to the grantor. Any appreciation exceeding the 7520 rate passes to remainder beneficiaries transfer-tax-free. With 12% actual growth versus 5% assumed, the excess 7% annual appreciation on $3,000,000 over 3 years passes to beneficiaries without gift or estate tax, making GRATs most effective in low-rate, high-growth environments.',
  'hard');
 
@@ -829,16 +829,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Wealth Transfer and Gifting Strategies',
  'A charitable remainder trust must meet the 10% remainder test. What does this requirement mean?',
- '["At least 10% of the trust income must be distributed to charity each year", "The present value of the charitable remainder interest must be at least 10% of the initial fair market value of the trust assets", "The trust must distribute at least 10% of its assets annually", "The charity must receive at least 10% of the trust assets upon termination"]'::jsonb,
- 1,
+ '["The present value of the charitable remainder interest must be at least 10% of the initial fair market value of the trust assets", "At least 10% of the trust income must be distributed to charity each year", "The trust must distribute at least 10% of its assets annually", "The charity must receive at least 10% of the trust assets upon termination"]'::jsonb,
+ 0,
  'Under Section 664(d), the present value of the charitable remainder interest must be at least 10% of the net fair market value of the property placed in the trust at the time of contribution. This is calculated using IRS actuarial tables and the Section 7520 rate. If the 10% test is not met, the trust does not qualify as a CRT and the donor does not receive a charitable deduction.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Wealth Transfer and Gifting Strategies',
  'A donor gives their child a piece of real estate with a fair market value of $500,000 and an adjusted basis of $100,000. No gift tax is paid. What is the donee''s basis in the property?',
- '["$500,000", "$100,000", "$400,000", "$0"]'::jsonb,
- 1,
+ '["$100,000", "$500,000", "$400,000", "$0"]'::jsonb,
+ 0,
  'Under Section 1015, the donee''s basis in gifted property is generally the donor''s adjusted basis ($100,000) when the FMV at the time of the gift exceeds the donor''s basis. This is known as a carryover basis. If gift tax were paid, the basis would be increased by the portion of gift tax attributable to the net appreciation. The donee takes the donor''s holding period as well.',
  'easy');
 
@@ -869,8 +869,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Wealth Transfer and Gifting Strategies',
  'A CPA advises a client to make annual exclusion gifts to a dynasty trust for the benefit of the client''s descendants. To qualify for the annual exclusion, what provision must the trust include?',
- '["A spendthrift clause preventing beneficiary access", "Crummey withdrawal powers giving beneficiaries a temporary right to withdraw contributions", "A requirement that all income be distributed currently", "A provision naming the CPA as trustee"]'::jsonb,
- 1,
+ '["A spendthrift clause preventing beneficiary access", "A provision naming the CPA as trustee", "A requirement that all income be distributed currently", "Crummey withdrawal powers giving beneficiaries a temporary right to withdraw contributions"]'::jsonb,
+ 3,
  'Gifts to an irrevocable trust are generally future interests that do not qualify for the annual gift tax exclusion. To convert them to present interests, the trust must include Crummey withdrawal powers that give beneficiaries a temporary right (typically 30-60 days) to withdraw newly contributed amounts. The powers must be real and the beneficiaries must be notified of their withdrawal rights.',
  'medium');
 
@@ -885,8 +885,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Wealth Transfer and Gifting Strategies',
  'A donor makes a gift of a painting appraised at $300,000. The donor''s adjusted basis in the painting is $50,000. What is the value used to calculate the taxable gift for gift tax purposes?',
- '["$50,000 (adjusted basis)", "$300,000 (fair market value)", "$250,000 (net appreciation)", "$150,000 (average of basis and FMV)"]'::jsonb,
- 1,
+ '["$50,000 (adjusted basis)", "$150,000 (average of basis and FMV)", "$250,000 (net appreciation)", "$300,000 (fair market value)"]'::jsonb,
+ 3,
  'For gift tax purposes, the value of a gift is the fair market value of the property on the date of the gift ($300,000). The donor''s adjusted basis is irrelevant for gift tax valuation. The taxable gift would be $300,000 minus the $19,000 annual exclusion = $281,000. The donee takes the donor''s basis ($50,000) for income tax purposes under the carryover basis rules of Section 1015.',
  'easy');
 
@@ -901,8 +901,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Wealth Transfer and Gifting Strategies',
  'A donor transfers a family limited partnership interest valued at $1,000,000 to children. A qualified appraiser applies a 30% combined discount for lack of marketability and lack of control. What is the gift tax value of the transfer?',
- '["$1,000,000", "$700,000", "$1,300,000", "$500,000"]'::jsonb,
- 1,
+ '["$1,000,000", "$500,000", "$1,300,000", "$700,000"]'::jsonb,
+ 3,
  'When transferring minority or non-controlling interests in closely held entities such as family limited partnerships, valuation discounts for lack of marketability and lack of control are commonly applied. A 30% combined discount on a $1,000,000 interest results in a gift tax value of $700,000 ($1,000,000 x 70%). These discounts can significantly reduce transfer tax costs, though the IRS closely scrutinizes aggressive discount claims.',
  'hard');
 
@@ -953,8 +953,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Retirement Plans and Education Savings',
  'A taxpayer converts $100,000 from a traditional IRA to a Roth IRA in 2026. The traditional IRA consists entirely of deductible contributions and earnings. What is the tax consequence of the conversion?',
- '["No tax consequence because conversions are tax-free", "$100,000 is included in ordinary income for 2026", "$100,000 is taxed as long-term capital gain", "The tax can be spread over 3 years"]'::jsonb,
- 1,
+ '["$100,000 is included in ordinary income for 2026", "No tax consequence because conversions are tax-free", "$100,000 is taxed as long-term capital gain", "The tax can be spread over 3 years"]'::jsonb,
+ 0,
  'A Roth conversion of pre-tax traditional IRA funds is a taxable event. The entire $100,000 is included in the taxpayer''s ordinary income for 2026. No 10% early withdrawal penalty applies to conversions regardless of age. The tax is due in the year of conversion and cannot be spread over multiple years. After conversion, qualified distributions from the Roth IRA will be tax-free.',
  'medium');
 
@@ -1001,8 +1001,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Retirement Plans and Education Savings',
  'A 403(b) plan is available to employees of which types of organizations?',
- '["For-profit corporations with more than 100 employees", "Public schools and Section 501(c)(3) tax-exempt organizations", "State and local government agencies only", "Any employer that elects 403(b) plan status"]'::jsonb,
- 1,
+ '["Public schools and Section 501(c)(3) tax-exempt organizations", "For-profit corporations with more than 100 employees", "State and local government agencies only", "Any employer that elects 403(b) plan status"]'::jsonb,
+ 0,
  'A 403(b) plan (also known as a tax-sheltered annuity or TSA) is available to employees of public educational organizations (public schools, including K-12 and universities) and Section 501(c)(3) tax-exempt organizations such as hospitals, churches, and charitable organizations. The 2026 elective deferral limit for 403(b) plans is the same as for 401(k) plans: $24,000 under age 50, $31,000 for age 50 and older.',
  'easy');
 
@@ -1017,8 +1017,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Retirement Plans and Education Savings',
  'In 2026, what is the maximum annual contribution to a Coverdell Education Savings Account per beneficiary?',
- '["$500", "$2,000", "$5,500", "$6,500"]'::jsonb,
- 1,
+ '["$2,000", "$500", "$5,500", "$6,500"]'::jsonb,
+ 0,
  'The maximum annual contribution to a Coverdell ESA is $2,000 per beneficiary. Contributions are not deductible, but qualified distributions are tax-free. Coverdell ESAs can be used for K-12 expenses as well as higher education expenses, which is a broader scope than 529 plans (which were historically limited to higher education but now also cover K-12 tuition up to $10,000 per year).',
  'easy');
 
@@ -1033,8 +1033,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Retirement Plans and Education Savings',
  'A taxpayer takes a distribution from a Roth IRA after holding the account for 3 years. The taxpayer is age 50. The distribution includes $10,000 of contributions and $5,000 of earnings. What are the tax consequences?',
- '["The entire $15,000 is tax-free", "The $10,000 of contributions is tax-free; the $5,000 of earnings is taxable and subject to the 10% penalty", "The entire $15,000 is taxable as ordinary income", "The $10,000 is tax-free; the $5,000 is taxable but exempt from the penalty"]'::jsonb,
- 1,
+ '["The entire $15,000 is tax-free", "The $10,000 is tax-free; the $5,000 is taxable but exempt from the penalty", "The entire $15,000 is taxable as ordinary income", "The $10,000 of contributions is tax-free; the $5,000 of earnings is taxable and subject to the 10% penalty"]'::jsonb,
+ 3,
  'Roth IRA contributions can always be withdrawn tax-free and penalty-free because they were made with after-tax dollars. However, the distribution of earnings ($5,000) is not qualified because the account has not been open for 5 years and the taxpayer is not yet 59½. Unqualified distributions of earnings are subject to income tax and the 10% early withdrawal penalty. The ordering rules treat contributions as distributed first.',
  'medium');
 
@@ -1049,8 +1049,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Retirement Plans and Education Savings',
  'A small business owner establishes a SEP IRA for their business with 8 employees. Which of the following is a requirement for SEP IRA contributions?',
- '["The employer can contribute different percentages for different employees based on seniority", "Contributions must be made as a uniform percentage of each eligible employee''s compensation", "Only the business owner is eligible for SEP contributions", "Employees must contribute at least 3% of their salary"]'::jsonb,
- 1,
+ '["The employer can contribute different percentages for different employees based on seniority", "Employees must contribute at least 3% of their salary", "Only the business owner is eligible for SEP contributions", "Contributions must be made as a uniform percentage of each eligible employee''s compensation"]'::jsonb,
+ 3,
  'SEP IRA contributions must be made as a uniform percentage of compensation for all eligible employees (those who are age 21+, have worked for the employer in 3 of the last 5 years, and earned at least $750). The employer cannot discriminate in the contribution percentage. There are no employee elective deferrals in a SEP — all contributions are made by the employer.',
  'medium');
 
@@ -1073,24 +1073,24 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Retirement Plans and Education Savings',
  'Which of the following is an exception to the 10% early withdrawal penalty under Section 72(t)?',
- '["Withdrawal to pay for a vacation", "Withdrawal due to the account owner''s total and permanent disability", "Withdrawal to purchase a new vehicle", "Withdrawal to pay off student loans from 20 years ago"]'::jsonb,
- 1,
+ '["Withdrawal to pay for a vacation", "Withdrawal to pay off student loans from 20 years ago", "Withdrawal to purchase a new vehicle", "Withdrawal due to the account owner''s total and permanent disability"]'::jsonb,
+ 3,
  'Section 72(t)(2)(A)(iii) provides an exception to the 10% early withdrawal penalty for distributions due to the account owner''s total and permanent disability. Other exceptions include death, substantially equal periodic payments (SEPP/72(t)), first-time homebuyer expenses ($10,000 lifetime limit), qualified higher education expenses, and certain medical expenses exceeding 7.5% of AGI. Vacations and vehicle purchases do not qualify.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Retirement Plans and Education Savings',
  'A taxpayer age 74 has a traditional IRA balance of $500,000 at December 31, 2025. Using the Uniform Lifetime Table, the distribution period factor for age 74 is 25.5. What is the 2026 RMD?',
- '["$15,000", "$19,608", "$20,000", "$25,000"]'::jsonb,
- 1,
+ '["$15,000", "$25,000", "$20,000", "$19,608"]'::jsonb,
+ 3,
  'The RMD is calculated by dividing the prior year-end account balance by the distribution period factor from the Uniform Lifetime Table. For 2026, the calculation is $500,000 / 25.5 = $19,608 (approximately). The taxpayer must withdraw at least this amount by December 31, 2026. Failure to take the full RMD results in a 25% excise tax on the shortfall (reduced to 10% if corrected timely).',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Retirement Plans and Education Savings',
  'An employer offers a 401(k) plan with a 100% match on the first 3% of salary and a 50% match on the next 2% of salary. An employee earning $80,000 contributes 5% of salary. What is the total employer match?',
- '["$2,400", "$3,200", "$4,000", "$4,800"]'::jsonb,
- 1,
+ '["$2,400", "$4,800", "$4,000", "$3,200"]'::jsonb,
+ 3,
  'The employee contributes 5% of $80,000 = $4,000. The employer matches 100% on the first 3% ($80,000 x 3% = $2,400 matched at 100% = $2,400) and 50% on the next 2% ($80,000 x 2% = $1,600 matched at 50% = $800). Total employer match is $2,400 + $800 = $3,200. The employee''s total contribution is $4,000 in deferrals plus $3,200 in employer match for $7,200 total additions.',
  'medium');
 
@@ -1113,16 +1113,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Retirement Plans and Education Savings',
  'A married couple filing jointly has MAGI of $250,000 in 2026. They want to contribute to Roth IRAs. What options do they have?',
- '["They can make direct Roth IRA contributions because they are under the income limit", "They cannot make direct contributions but can use the backdoor Roth strategy (contribute to a traditional IRA and convert)", "They are permanently prohibited from having any Roth IRA funds", "They can contribute to a Roth IRA only through their employer''s plan"]'::jsonb,
- 1,
+ '["They can make direct Roth IRA contributions because they are under the income limit", "They can contribute to a Roth IRA only through their employer''s plan", "They are permanently prohibited from having any Roth IRA funds", "They cannot make direct contributions but can use the backdoor Roth strategy (contribute to a traditional IRA and convert)"]'::jsonb,
+ 3,
  'For 2026, the Roth IRA income limit for married filing jointly phases out around $236,000 to $240,000 MAGI. At $250,000, the couple exceeds the phase-out range and cannot make direct Roth IRA contributions. However, they can use the backdoor Roth strategy: make a nondeductible contribution to a traditional IRA and then convert it to a Roth IRA. There is no income limit on Roth conversions.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Retirement Plans and Education Savings',
  'A 529 plan account owner changes the beneficiary from one child to another child (siblings). What are the tax consequences?',
- '["The change is a taxable distribution subject to income tax and a 10% penalty", "The change is tax-free because the new beneficiary is a member of the family of the original beneficiary", "Gift tax applies on the full account balance", "The change requires closing the original account and opening a new one"]'::jsonb,
- 1,
+ '["The change is tax-free because the new beneficiary is a member of the family of the original beneficiary", "The change is a taxable distribution subject to income tax and a 10% penalty", "Gift tax applies on the full account balance", "The change requires closing the original account and opening a new one"]'::jsonb,
+ 0,
  'Changing the beneficiary of a 529 plan to another member of the original beneficiary''s family (including siblings, parents, children, nieces, nephews, and first cousins) is not a taxable event. No income tax, penalty, or gift tax applies to the change. This flexibility allows families to redirect education savings to other family members without adverse tax consequences.',
  'easy');
 
@@ -1137,16 +1137,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Retirement Plans and Education Savings',
  'An employer establishes a SIMPLE IRA plan and elects the 2% nonelective contribution. An eligible employee earns $60,000 in 2026 but contributes $0 to the plan. What is the employer''s required contribution for this employee?',
- '["$0 because the employee did not contribute", "$1,200", "$1,800", "$3,300"]'::jsonb,
- 1,
+ '["$0 because the employee did not contribute", "$3,300", "$1,800", "$1,200"]'::jsonb,
+ 3,
  'When an employer elects the 2% nonelective contribution option for a SIMPLE IRA, the employer must contribute 2% of each eligible employee''s compensation regardless of whether the employee makes elective deferrals. For an employee earning $60,000, the contribution is $60,000 x 2% = $1,200. This is different from the matching contribution option, which only requires contributions when the employee defers.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Retirement Plans and Education Savings',
  'A taxpayer makes a nondeductible contribution of $7,500 to a traditional IRA. The taxpayer has no other traditional IRA assets. The taxpayer immediately converts the entire IRA to a Roth IRA. What is taxable on the conversion?',
- '["$7,500", "$0 because the contribution was nondeductible and there are no earnings", "The conversion is not permitted", "$3,750 (half of the contribution)"]'::jsonb,
- 1,
+ '["$7,500", "$3,750 (half of the contribution)", "The conversion is not permitted", "$0 because the contribution was nondeductible and there are no earnings"]'::jsonb,
+ 3,
  'This is the backdoor Roth IRA strategy. Since the $7,500 contribution was nondeductible (after-tax) and the account has no earnings or other pre-tax IRA balances, the conversion amount is $7,500 with a basis of $7,500, resulting in $0 taxable income. The pro-rata rule under Section 408(d)(2) would apply if the taxpayer had other pre-tax IRA balances, making a portion of the conversion taxable.',
  'hard');
 
@@ -1161,24 +1161,24 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Retirement Plans and Education Savings',
  'A taxpayer fails to take the full required minimum distribution from their traditional IRA in 2026. The RMD was $25,000 and the taxpayer only withdrew $15,000. What is the excise tax on the shortfall?',
- '["$1,000", "$2,500", "$5,000", "$10,000"]'::jsonb,
- 1,
+ '["$1,000", "$10,000", "$5,000", "$2,500"]'::jsonb,
+ 3,
  'Under SECURE 2.0, the excise tax for failing to take the full RMD was reduced from 50% to 25% of the shortfall. The shortfall is $25,000 - $15,000 = $10,000. The excise tax is 25% x $10,000 = $2,500. If the taxpayer corrects the shortfall within the correction window (generally by the end of the second year following the year of the missed RMD), the penalty is further reduced to 10%.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Retirement Plans and Education Savings',
  'A taxpayer has a traditional IRA with $200,000 in pre-tax contributions and earnings, and a separate traditional IRA with $50,000 in nondeductible contributions. The taxpayer converts $50,000 from the nondeductible IRA to a Roth IRA. What amount is taxable?',
- '["$0 because the conversion is from the nondeductible IRA", "$40,000", "$50,000", "$10,000"]'::jsonb,
- 1,
+ '["$40,000", "$0 because the conversion is from the nondeductible IRA", "$50,000", "$10,000"]'::jsonb,
+ 0,
  'Under the pro-rata rule of Section 408(d)(2), all traditional IRAs are aggregated for purposes of determining the taxable portion of a distribution or conversion. Total IRA balance is $250,000 ($200,000 pre-tax + $50,000 after-tax basis). The after-tax percentage is $50,000 / $250,000 = 20%. Therefore, 80% of the $50,000 conversion ($40,000) is taxable and 20% ($10,000) is a tax-free return of basis. The source IRA is irrelevant.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Retirement Plans and Education Savings',
  'A taxpayer uses $12,000 from a 529 plan to pay for K-12 private school tuition. Is the distribution tax-free?',
- '["No, 529 plans can only be used for higher education expenses", "Yes, up to $10,000 per year for K-12 tuition is a qualified expense", "Yes, the full $12,000 is tax-free for K-12 expenses", "No, K-12 distributions are always subject to a 10% penalty"]'::jsonb,
- 1,
+ '["Yes, up to $10,000 per year for K-12 tuition is a qualified expense", "No, 529 plans can only be used for higher education expenses", "Yes, the full $12,000 is tax-free for K-12 expenses", "No, K-12 distributions are always subject to a 10% penalty"]'::jsonb,
+ 0,
  'Under the Tax Cuts and Jobs Act, 529 plan distributions for K-12 tuition are tax-free but limited to $10,000 per student per year. Of the $12,000 distribution, $10,000 is tax-free and the remaining $2,000 is a nonqualified distribution. The earnings portion of the $2,000 excess is subject to income tax and the 10% penalty. The $10,000 limit applies to elementary and secondary school tuition only.',
  'medium');
 
@@ -1201,8 +1201,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Retirement Plans and Education Savings',
  'A taxpayer inherits a traditional IRA from a non-spouse who died in 2026. The beneficiary is not an eligible designated beneficiary. Under the SECURE Act, when must the inherited IRA be fully distributed?',
- '["Within 5 years of the owner''s death", "Within 10 years of the owner''s death", "Over the beneficiary''s life expectancy", "By December 31 of the year following the owner''s death"]'::jsonb,
- 1,
+ '["Within 10 years of the owner''s death", "Within 5 years of the owner''s death", "Over the beneficiary''s life expectancy", "By December 31 of the year following the owner''s death"]'::jsonb,
+ 0,
  'Under the SECURE Act (effective for deaths after 2019), most non-spouse designated beneficiaries who are not eligible designated beneficiaries must distribute the entire inherited IRA within 10 years of the account owner''s death. Eligible designated beneficiaries (surviving spouse, minor children, disabled/chronically ill individuals, and beneficiaries not more than 10 years younger) can still use the life expectancy method.',
  'medium');
 -- TCP Chunk 2: Entity Compliance/NOLs, International Tax, Owner-Entity Transactions, Advanced Basis
@@ -1238,16 +1238,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Tax Compliance: NOLs and Consolidated Returns',
  'Under post-TCJA rules, which type of taxpayer may still carry back an NOL?',
- '["All C corporations", "Farming businesses", "S corporations", "Partnerships"]'::jsonb,
- 1,
+ '["Farming businesses", "All C corporations", "S corporations", "Partnerships"]'::jsonb,
+ 0,
  'Post-TCJA, the general NOL carryback was eliminated. However, farming businesses retain a 2-year carryback election for farming losses. Property and casualty insurance companies also retain carryback provisions. S corporations and partnerships do not generate NOLs at the entity level; losses flow through to individual owners.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Tax Compliance: NOLs and Consolidated Returns',
  'Parent Corp owns 85% of the voting stock and 85% of the value of Sub Corp. Which of the following is true regarding filing a consolidated return?',
- '["They are required to file a consolidated return", "They may elect to file a consolidated return as an affiliated group", "They cannot file a consolidated return because 90% ownership is required", "Only a court order can require consolidated filing"]'::jsonb,
- 1,
+ '["They may elect to file a consolidated return as an affiliated group", "They are required to file a consolidated return", "They cannot file a consolidated return because 90% ownership is required", "Only a court order can require consolidated filing"]'::jsonb,
+ 0,
  'An affiliated group exists when a common parent owns at least 80% of the voting power and 80% of the value of at least one includible corporation. Since Parent owns 85% of both, they qualify as an affiliated group and may elect to file a consolidated return. The election is voluntary but binding once made.',
  'easy');
 
@@ -1278,48 +1278,48 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Tax Compliance: NOLs and Consolidated Returns',
  'In the prior question, Nano Corp sells the inventory to an unrelated customer for $150,000 in the following year. What gain does the consolidated group recognize in that year?',
- '["$30,000", "$70,000", "$40,000", "$110,000"]'::jsonb,
- 1,
+ '["$30,000", "$110,000", "$40,000", "$70,000"]'::jsonb,
+ 3,
  'When Nano sells the inventory externally, both the deferred intercompany gain and Nano''s own gain are recognized. Mega''s deferred gain is $40,000 ($120,000 - $80,000). Nano''s gain is $30,000 ($150,000 - $120,000). The consolidated group recognizes a total of $70,000 ($40,000 + $30,000) through the matching rule.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Tax Compliance: NOLs and Consolidated Returns',
  'Under the SRLY rules, Target Corp had a $150,000 NOL before joining the Alpha consolidated group. In its first year as a member, Target earns $60,000 of separate return taxable income. How much of the pre-acquisition NOL may the group use?',
- '["$0", "$48,000", "$60,000", "$150,000"]'::jsonb,
- 1,
+ '["$0", "$150,000", "$60,000", "$48,000"]'::jsonb,
+ 3,
  'The separate return limitation year (SRLY) rules limit the use of pre-acquisition NOLs to the member''s contribution to consolidated taxable income. Target contributed $60,000. However, the 80% limitation also applies: $60,000 x 80% = $48,000. The group may use $48,000 of Target''s pre-acquisition NOL, with $102,000 carrying forward.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Tax Compliance: NOLs and Consolidated Returns',
  'Which rule limits the use of a subsidiary''s pre-acquisition NOLs within a consolidated group to that subsidiary''s contribution to consolidated taxable income?',
- '["Section 382 limitation", "SRLY rules", "Built-in gain rules", "Excess loss account rules"]'::jsonb,
- 1,
+ '["SRLY rules", "Section 382 limitation", "Built-in gain rules", "Excess loss account rules"]'::jsonb,
+ 0,
  'The Separate Return Limitation Year (SRLY) rules prevent a consolidated group from using a new member''s pre-acquisition NOLs against income generated by other group members. The NOL can only offset income attributable to the subsidiary that generated the loss, measured by its separate return taxable income contribution.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Tax Compliance: NOLs and Consolidated Returns',
  'Parent Corp sells a piece of equipment with a basis of $50,000 to its 100%-owned Sub Corp for $30,000. Both are members of a consolidated group. How is the $20,000 loss treated?',
- '["Recognized immediately by Parent", "Deferred under the intercompany transaction rules", "Permanently disallowed under Section 267", "Recognized but limited to 50%"]'::jsonb,
- 1,
+ '["Deferred under the intercompany transaction rules", "Recognized immediately by Parent", "Permanently disallowed under Section 267", "Recognized but limited to 50%"]'::jsonb,
+ 0,
  'Losses on intercompany sales between members of a consolidated group are deferred, not permanently disallowed. Unlike Section 267 which applies to related but unconsolidated parties, the consolidated return regulations defer the loss until a triggering event such as sale to an outsider, departure from the group, or depreciation by the buying member.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Tax Compliance: NOLs and Consolidated Returns',
  'Sigma Corp is a member of the Beta consolidated group. Sigma''s stock basis held by Beta is $0, and Sigma has cumulative losses allocated to Beta of $75,000 beyond that basis. What has Beta created?',
- '["A capital loss carryover", "An excess loss account of $75,000", "A Section 382 limitation", "A deferred intercompany transaction"]'::jsonb,
- 1,
+ '["An excess loss account of $75,000", "A capital loss carryover", "A Section 382 limitation", "A deferred intercompany transaction"]'::jsonb,
+ 0,
  'An excess loss account (ELA) arises when a member''s losses allocated to the parent exceed the parent''s basis in the subsidiary''s stock. The ELA of $75,000 represents a negative basis in Sigma''s stock. If Sigma leaves the consolidated group, Beta must recognize the ELA as gain, typically treated as capital gain from a deemed stock disposition.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Tax Compliance: NOLs and Consolidated Returns',
  'When a subsidiary with an excess loss account departs a consolidated group, how is the excess loss account generally treated?',
- '["As an ordinary loss to the parent", "As a capital gain recognized by the parent", "As a deferred loss carried forward", "As a reduction to the departing subsidiary''s NOL"]'::jsonb,
- 1,
+ '["As a capital gain recognized by the parent", "As an ordinary loss to the parent", "As a deferred loss carried forward", "As a reduction to the departing subsidiary''s NOL"]'::jsonb,
+ 0,
  'When a subsidiary leaves the consolidated group (through sale, deconsolidation, or liquidation), the parent must recognize the excess loss account as gain. This gain is generally treated as gain from the disposition of stock, which is capital gain. The ELA essentially recaptures losses that reduced the parent''s stock basis below zero.',
  'medium');
 
@@ -1342,8 +1342,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Tax Compliance: NOLs and Consolidated Returns',
  'Kappa Corp is a large corporation that had taxable income exceeding $1,000,000 in a prior year. For estimated tax purposes, which installment may use the prior year safe harbor?',
- '["All four installments", "Only the first installment", "The first and second installments", "None — large corporations must use current year estimates"]'::jsonb,
- 1,
+ '["All four installments", "None — large corporations must use current year estimates", "The first and second installments", "Only the first installment"]'::jsonb,
+ 3,
  'Large corporations (those with taxable income of $1 million or more in any of the 3 preceding years) may only use the prior year''s tax liability as a safe harbor for the first installment. The remaining three installments must be based on the current year''s estimated tax liability. Any shortfall from the first installment must be made up by the second installment.',
  'medium');
 
@@ -1374,8 +1374,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Tax Compliance: NOLs and Consolidated Returns',
  'Once an affiliated group elects to file a consolidated return, what must occur for a subsidiary to file a separate return in a subsequent year?',
- '["The subsidiary may elect to leave at any time", "The IRS must grant permission for the subsidiary to file separately", "The subsidiary automatically reverts to separate filing after 5 years", "The parent simply files a revised election form"]'::jsonb,
- 1,
+ '["The subsidiary may elect to leave at any time", "The parent simply files a revised election form", "The subsidiary automatically reverts to separate filing after 5 years", "The IRS must grant permission for the subsidiary to file separately"]'::jsonb,
+ 3,
  'A consolidated return election is binding on all members for all subsequent years unless the IRS grants permission to discontinue. A member leaves the group only if it ceases to be a member of the affiliated group (e.g., the parent sells its stock below 80%). Voluntary withdrawal requires IRS consent, which is rarely granted.',
  'medium');
 
@@ -1446,16 +1446,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Tax Compliance: NOLs and Consolidated Returns',
  'Which of the following best describes the purpose of the intercompany transaction rules in a consolidated return?',
- '["To accelerate income recognition between group members", "To ensure the group is taxed as if it were a single entity", "To increase the tax liability of the consolidated group", "To prevent group members from transacting with each other"]'::jsonb,
- 1,
+ '["To accelerate income recognition between group members", "To prevent group members from transacting with each other", "To increase the tax liability of the consolidated group", "To ensure the group is taxed as if it were a single entity"]'::jsonb,
+ 3,
  'The intercompany transaction rules under Reg. Section 1.1502-13 are designed to ensure the consolidated group is taxed as though it were a single taxpayer. Gains and losses on transactions between members are deferred until there is a corresponding event involving a party outside the group, preserving the single-entity principle.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Tax Compliance: NOLs and Consolidated Returns',
  'Upsilon Corp has consolidated taxable income of $750,000. The group has a CNOL carryforward of $800,000 from 2023. What is the group''s tax liability at the 21% corporate rate after applying the NOL?',
- '["$0", "$31,500", "$157,500", "$105,000"]'::jsonb,
- 1,
+ '["$0", "$105,000", "$157,500", "$31,500"]'::jsonb,
+ 3,
  'The NOL deduction is limited to 80% of $750,000 = $600,000. The remaining taxable income after the NOL deduction is $750,000 - $600,000 = $150,000. The tax liability is $150,000 x 21% = $31,500. The unused portion of the CNOL ($200,000) carries forward indefinitely.',
  'medium');
 
@@ -1486,8 +1486,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Tax Compliance: NOLs and Consolidated Returns',
  'Psi Corp joins a consolidated group on July 1 of the current year. For purposes of computing estimated tax payments, when does the group''s obligation to include Psi in its estimates begin?',
- '["Retroactively to January 1", "The quarter following Psi''s entry into the group", "Immediately upon Psi joining the group", "The following tax year"]'::jsonb,
- 1,
+ '["Retroactively to January 1", "The following tax year", "Immediately upon Psi joining the group", "The quarter following Psi''s entry into the group"]'::jsonb,
+ 3,
  'When a new member joins a consolidated group mid-year, the group''s estimated tax payments are adjusted beginning with the quarter following the member''s entry. The group is not required to retroactively adjust prior installments, but must include the new member''s income in estimates going forward.',
  'medium');
 
@@ -1502,8 +1502,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Tax Compliance: NOLs and Consolidated Returns',
  'Epsilon Corp has taxable income of $10,000,000 and an NOL carryforward of $15,000,000 from post-2017 tax years. What is Epsilon''s taxable income after the NOL deduction?',
- '["$0", "$2,000,000", "$5,000,000", "$7,000,000"]'::jsonb,
- 1,
+ '["$2,000,000", "$0", "$5,000,000", "$7,000,000"]'::jsonb,
+ 0,
  'The 80% limitation caps the NOL deduction at $10,000,000 x 80% = $8,000,000. Epsilon''s taxable income after the deduction is $10,000,000 - $8,000,000 = $2,000,000. The remaining $7,000,000 of unused NOL carries forward indefinitely. Epsilon owes tax on $2,000,000 x 21% = $420,000.',
  'medium');
 
@@ -1546,8 +1546,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'International Tax',
  'A domestic C corporation includes $1,000,000 of GILTI in income. Under Section 250, what is the effective US tax rate on this GILTI inclusion (before foreign tax credits)?',
- '["21%", "10.5%", "13.125%", "15.75%"]'::jsonb,
- 1,
+ '["21%", "15.75%", "13.125%", "10.5%"]'::jsonb,
+ 3,
  'Section 250 provides a 50% deduction for GILTI inclusions by domestic C corporations. The deduction reduces the effective rate from 21% to 10.5% (21% x 50% = 10.5%). This reduced rate is designed to approximate the tax rate applied by other countries to intangible income, making the US rate competitive internationally.',
  'easy');
 
@@ -1578,16 +1578,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'International Tax',
  'Delta Corp pays $400,000 in foreign income taxes. Its Section 904 limitation is $350,000. What is the result?',
- '["Delta credits $400,000 and receives a $50,000 refund", "Delta credits $350,000 and carries the $50,000 excess forward", "Delta credits $350,000 and the $50,000 excess is permanently lost", "Delta must recalculate using an alternative method"]'::jsonb,
- 1,
+ '["Delta credits $400,000 and receives a $50,000 refund", "Delta must recalculate using an alternative method", "Delta credits $350,000 and the $50,000 excess is permanently lost", "Delta credits $350,000 and carries the $50,000 excess forward"]'::jsonb,
+ 3,
  'When foreign taxes paid exceed the Section 904 limitation, the excess cannot be credited in the current year. The $50,000 excess credit may be carried back 1 year and forward 10 years. Delta credits $350,000 (the limitation amount) and carries the remaining $50,000 to an eligible year where the limitation exceeds credits claimed.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'International Tax',
  'Under the foreign tax credit rules, excess foreign tax credits may be carried back how many years and forward how many years?',
- '["No carryback, 5 years forward", "1 year back, 10 years forward", "2 years back, 5 years forward", "3 years back, 15 years forward"]'::jsonb,
- 1,
+ '["No carryback, 5 years forward", "3 years back, 15 years forward", "2 years back, 5 years forward", "1 year back, 10 years forward"]'::jsonb,
+ 3,
  'Excess foreign tax credits (credits that exceed the Section 904 limitation) may be carried back 1 year and carried forward 10 years. This allows taxpayers to smooth out fluctuations in effective foreign tax rates across years. The carryback/carryforward amounts are applied on a FIFO basis.',
  'easy');
 
@@ -1626,16 +1626,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'International Tax',
  'Which PFIC election allows the shareholder to include their pro rata share of the PFIC''s ordinary earnings and net capital gain annually, avoiding the punitive excess distribution rules?',
- '["Mark-to-market election", "Qualified electing fund (QEF) election", "Section 962 election", "Check-the-box election"]'::jsonb,
- 1,
+ '["Mark-to-market election", "Check-the-box election", "Section 962 election", "Qualified electing fund (QEF) election"]'::jsonb,
+ 3,
  'A qualified electing fund (QEF) election under Section 1295 allows the US shareholder to include annually their pro rata share of the PFIC''s ordinary earnings and net capital gain. This current-inclusion regime avoids the interest charge and highest-rate taxation of the default excess distribution method. The election requires the PFIC to provide an annual information statement.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'International Tax',
  'Under the mark-to-market election for a PFIC, a US shareholder with stock that increases in value from $100,000 to $140,000 during the year must recognize what amount?',
- '["$0", "$40,000 as ordinary income", "$40,000 as capital gain", "$140,000 as ordinary income"]'::jsonb,
- 1,
+ '["$0", "$140,000 as ordinary income", "$40,000 as capital gain", "$40,000 as ordinary income"]'::jsonb,
+ 3,
  'Under the Section 1296 mark-to-market election, the shareholder includes as ordinary income the excess of the fair market value at year-end ($140,000) over the adjusted basis ($100,000), which is $40,000. Gains are ordinary income; losses are ordinary but limited to prior mark-to-market gains. This election is available only for marketable PFIC stock.',
  'medium');
 
@@ -1650,8 +1650,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'International Tax',
  'Which form must a US person file to report interests in a foreign partnership?',
- '["Form 5471", "Form 8865", "Form 1116", "Form 8938"]'::jsonb,
- 1,
+ '["Form 5471", "Form 8938", "Form 1116", "Form 8865"]'::jsonb,
+ 3,
  'Form 8865, Return of US Persons With Respect to Certain Foreign Partnerships, is required for US persons with specified interests in foreign partnerships. The filing categories include controlling partners (50%+ interest), 10% or more partners in controlled partnerships, and persons contributing property to foreign partnerships. Form 5471 is for foreign corporations.',
  'easy');
 
@@ -1666,8 +1666,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'International Tax',
  'Eta Corp, a US multinational with $600 million in gross receipts, makes $50 million in deductible payments to its foreign parent. Eta''s regular tax liability is $20 million and its modified taxable income (adding back base erosion payments) produces a BEAT liability of $25 million. What additional tax does Eta owe under BEAT?',
- '["$0", "$5,000,000", "$25,000,000", "$50,000,000"]'::jsonb,
- 1,
+ '["$5,000,000", "$0", "$25,000,000", "$50,000,000"]'::jsonb,
+ 0,
  'The BEAT imposes additional tax equal to the excess of the BEAT liability over the regular tax liability. BEAT = $25,000,000 - $20,000,000 = $5,000,000 additional tax. Eta pays its regular tax of $20 million plus the $5 million BEAT amount for a total of $25 million. If regular tax exceeds BEAT, no additional tax is owed.',
  'hard');
 
@@ -1690,16 +1690,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'International Tax',
  'Iota Corp''s CFC has tested income of $5,000,000 and QBAI of $20,000,000. The CFC pays $400,000 in foreign taxes on the tested income. What is Iota''s net GILTI inclusion before the Section 250 deduction?',
- '["$5,000,000", "$3,000,000", "$2,000,000", "$4,600,000"]'::jsonb,
- 1,
+ '["$5,000,000", "$4,600,000", "$2,000,000", "$3,000,000"]'::jsonb,
+ 3,
  'GILTI = tested income - DTIR. DTIR = 10% x QBAI = 10% x $20,000,000 = $2,000,000. GILTI = $5,000,000 - $2,000,000 = $3,000,000. The $400,000 in foreign taxes paid does not reduce the GILTI inclusion amount but may generate a deemed-paid foreign tax credit under Section 960(d), subject to the 80% haircut.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'International Tax',
  'A US corporation has GILTI of $2,000,000 and claims the 50% Section 250 deduction. It has $150,000 of deemed-paid foreign tax credits (after the 80% haircut). What is the net US tax on the GILTI?',
- '["$210,000", "$60,000", "$420,000", "$270,000"]'::jsonb,
- 1,
+ '["$210,000", "$270,000", "$420,000", "$60,000"]'::jsonb,
+ 3,
  'After the 50% Section 250 deduction, taxable GILTI = $2,000,000 x 50% = $1,000,000. US tax = $1,000,000 x 21% = $210,000. After the $150,000 foreign tax credit, net US tax = $210,000 - $150,000 = $60,000. The combination of the 50% deduction and foreign tax credits can reduce the effective US tax on GILTI to near zero.',
  'hard');
 
@@ -1722,8 +1722,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'International Tax',
  'Under Section 956, a CFC''s investment in US property triggers an income inclusion for US shareholders. Which of the following is considered US property?',
- '["Stock of an unrelated foreign corporation", "Obligations of a US person", "Deposits with foreign banks", "Active business inventory held abroad"]'::jsonb,
- 1,
+ '["Obligations of a US person", "Stock of an unrelated foreign corporation", "Deposits with foreign banks", "Active business inventory held abroad"]'::jsonb,
+ 0,
  'Under Section 956, US property includes tangible property located in the US, stock of a US corporation, obligations (loans) of a US person, and certain intangible property rights acquired from US persons. Obligations of a US person, such as loans from a CFC to its US parent, are the most common trigger. Foreign assets and foreign bank deposits are not US property.',
  'medium');
 
@@ -1746,8 +1746,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'International Tax',
  'Xi Corp uses a foreign subsidiary to purchase goods from a related manufacturer in Country A and resell them to customers in Country B. The subsidiary does not manufacture the goods. This arrangement generates what type of Subpart F income?',
- '["Foreign personal holding company income", "Foreign base company sales income", "Insurance income", "Foreign base company services income"]'::jsonb,
- 1,
+ '["Foreign base company sales income", "Foreign personal holding company income", "Insurance income", "Foreign base company services income"]'::jsonb,
+ 0,
  'Foreign base company sales income arises when a CFC buys personal property from a related person (or sells to a related person) and the property is both manufactured and sold for use outside the CFC''s country of incorporation. Xi''s subsidiary is acting as a pass-through entity for related-party sales, which is the classic foreign base company sales arrangement.',
  'medium');
 
@@ -1770,24 +1770,24 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'International Tax',
  'Pi Corp has a CFC in Country Y that earns $1,200,000 of tested income. The CFC has QBAI of $3,000,000 and pays $100,000 in foreign taxes. Pi claims the Section 250 deduction and the deemed-paid credit (after the 80% haircut). What is the DTIR for this CFC?',
- '["$120,000", "$300,000", "$1,200,000", "$3,000,000"]'::jsonb,
- 1,
+ '["$120,000", "$3,000,000", "$1,200,000", "$300,000"]'::jsonb,
+ 3,
  'The deemed tangible income return (DTIR) equals 10% of QBAI. DTIR = 10% x $3,000,000 = $300,000. This amount represents the routine return on tangible assets and is subtracted from tested income to compute GILTI. The GILTI inclusion is $1,200,000 - $300,000 = $900,000 before the Section 250 deduction.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'International Tax',
  'Rho Corp''s CFC has Subpart F income of $600,000 and accumulated earnings and profits of $450,000. How much Subpart F income must Rho include in its US taxable income?',
- '["$600,000", "$450,000", "$150,000", "$0"]'::jsonb,
- 1,
+ '["$600,000", "$0", "$150,000", "$450,000"]'::jsonb,
+ 3,
  'Subpart F income is included in the US shareholder''s income only to the extent of the CFC''s current and accumulated earnings and profits. Since the CFC''s E&P of $450,000 is less than the Subpart F income of $600,000, the inclusion is limited to $450,000. The excess $150,000 is not currently taxable as Subpart F income.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'International Tax',
  'A US-Country X income tax treaty reduces withholding on dividends from Country X corporations to US shareholders from 30% to 15%. Sigma Corp, a US corporation, receives $200,000 in dividends from an unrelated Country X corporation. What withholding does the treaty provide?',
- '["$60,000", "$30,000", "$0", "$42,000"]'::jsonb,
- 1,
+ '["$60,000", "$42,000", "$0", "$30,000"]'::jsonb,
+ 3,
  'Under the treaty, the withholding rate on dividends is reduced from Country X''s statutory 30% to the treaty rate of 15%. The withholding is $200,000 x 15% = $30,000. Treaty benefits must be claimed properly, and the shareholder may also claim a foreign tax credit for the $30,000 of taxes withheld, subject to the Section 904 limitation.',
  'easy');
 
@@ -1822,8 +1822,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Owner-Entity Transactions',
  'Partner A receives a guaranteed payment of $120,000 from ABC Partnership for services rendered. How is this payment treated for Partner A?',
- '["As a distributive share of partnership income", "As ordinary income subject to self-employment tax", "As a tax-free distribution", "As capital gain"]'::jsonb,
- 1,
+ '["As ordinary income subject to self-employment tax", "As a distributive share of partnership income", "As a tax-free distribution", "As capital gain"]'::jsonb,
+ 0,
  'Under Section 707(c), guaranteed payments are treated as payments to a non-partner for purposes of determining gross income. They are ordinary income to the receiving partner and subject to self-employment tax. The partnership deducts the payment in computing partnership income, reducing the distributive shares of all partners.',
  'easy');
 
@@ -1846,8 +1846,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Owner-Entity Transactions',
  'An S corporation shareholder-employee receives wages of $60,000 and distributions of $40,000. The IRS determines that reasonable compensation for the shareholder''s services is $90,000. What is the likely consequence?',
- '["No adjustment — the shareholder can choose the split", "The IRS reclassifies $30,000 of distributions as wages, triggering payroll taxes", "The distributions are treated as capital gains", "The S corporation loses its S election"]'::jsonb,
- 1,
+ '["No adjustment — the shareholder can choose the split", "The S corporation loses its S election", "The distributions are treated as capital gains", "The IRS reclassifies $30,000 of distributions as wages, triggering payroll taxes"]'::jsonb,
+ 3,
  'The IRS scrutinizes S corporation shareholder-employees who take below-market wages to avoid payroll taxes. If $90,000 is reasonable compensation, the IRS will reclassify $30,000 of the distributions as wages subject to FICA and Medicare taxes. The shareholder and corporation will owe additional payroll taxes plus potential penalties and interest.',
  'medium');
 
@@ -1862,8 +1862,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Owner-Entity Transactions',
  'Under Section 707(a)(2)(B), a partner contributes property to a partnership and the partnership makes a related cash distribution to the partner within 2 years. How might the IRS treat this arrangement?',
- '["As a tax-free contribution and distribution", "As a disguised sale of property to the partnership", "As a guaranteed payment", "As a loan from the partnership"]'::jsonb,
- 1,
+ '["As a disguised sale of property to the partnership", "As a tax-free contribution and distribution", "As a guaranteed payment", "As a loan from the partnership"]'::jsonb,
+ 0,
  'Section 707(a)(2)(B) and the related regulations create a presumption that transfers of property followed by related distributions within 2 years are disguised sales. The partner would recognize gain as if the property had been sold to the partnership at fair market value. The 2-year window creates a rebuttable presumption; transfers beyond 2 years are presumed not to be disguised sales.',
  'medium');
 
@@ -1886,16 +1886,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Owner-Entity Transactions',
  'A corporation makes a $150,000 interest-free demand loan to its sole shareholder. The AFR is 4%. Under Section 7872, the forgone interest is treated as:',
- '["A gift from the corporation to the shareholder", "A constructive dividend to the shareholder and deemed interest paid back to the corporation", "A capital contribution by the shareholder", "A nontaxable return of capital"]'::jsonb,
- 1,
+ '["A constructive dividend to the shareholder and deemed interest paid back to the corporation", "A gift from the corporation to the shareholder", "A capital contribution by the shareholder", "A nontaxable return of capital"]'::jsonb,
+ 0,
  'For below-market loans between a corporation and shareholder, the forgone interest ($150,000 x 4% = $6,000) is recharacterized in two steps: (1) a constructive dividend from the corporation to the shareholder, and (2) a deemed interest payment from the shareholder to the corporation. The shareholder has dividend income of $6,000, and the corporation has interest income of $6,000.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Owner-Entity Transactions',
  'Under Section 267, what happens when a taxpayer sells property at a loss to a related party who owns more than 50% of the entity?',
- '["The loss is deferred until the property is sold to an unrelated party", "The loss is permanently disallowed", "The loss is allowed but limited to 50%", "The loss is converted to a capital loss"]'::jsonb,
- 1,
+ '["The loss is deferred until the property is sold to an unrelated party", "The loss is converted to a capital loss", "The loss is allowed but limited to 50%", "The loss is permanently disallowed"]'::jsonb,
+ 3,
  'Section 267(a)(1) disallows losses on sales or exchanges between related parties, including a person and an entity in which they own more than 50%. The loss is permanently disallowed to the seller. However, the buyer may reduce any future gain on a subsequent sale to an unrelated party by the amount of the previously disallowed loss under Section 267(d).',
  'easy');
 
@@ -1910,16 +1910,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Owner-Entity Transactions',
  'Following the prior question, Alpha Corp later sells the equipment to an unrelated buyer for $95,000. Alpha''s basis is $50,000 (purchase price from Tom). What gain does Alpha recognize?',
- '["$45,000", "$15,000", "$95,000", "$0"]'::jsonb,
- 1,
+ '["$45,000", "$0", "$95,000", "$15,000"]'::jsonb,
+ 3,
  'Alpha''s realized gain is $95,000 - $50,000 = $45,000. Under Section 267(d), the buyer in a related-party sale can reduce gain by the amount of the seller''s previously disallowed loss ($30,000). Alpha''s recognized gain is $45,000 - $30,000 = $15,000. The disallowed loss benefit is limited to the gain — it cannot create or increase a loss for Alpha.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Owner-Entity Transactions',
  'Under Section 1239, Sarah sells a building to her 100%-owned corporation for $400,000. Sarah''s basis is $250,000. How is the $150,000 gain characterized?',
- '["Capital gain", "Ordinary income", "Section 1231 gain", "Tax-exempt"]'::jsonb,
- 1,
+ '["Capital gain", "Tax-exempt", "Section 1231 gain", "Ordinary income"]'::jsonb,
+ 3,
  'Section 1239 requires that gain on the sale of depreciable property between related persons (including a person and their more-than-50%-owned entity) be treated as ordinary income rather than capital or Section 1231 gain. Since the building is depreciable by the purchasing corporation and Sarah owns 100%, the entire $150,000 gain is ordinary income.',
  'medium');
 
@@ -1934,8 +1934,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Owner-Entity Transactions',
  'Mike is a 2% shareholder in an S corporation. The corporation provides Mike with health insurance costing $8,000 per year. How is this fringe benefit treated?',
- '["Excluded from Mike''s income as an employee fringe benefit", "Included in Mike''s W-2 wages and potentially deductible on his individual return", "Treated as a distribution reducing Mike''s stock basis", "Deductible by the S corporation with no income to Mike"]'::jsonb,
- 1,
+ '["Excluded from Mike''s income as an employee fringe benefit", "Deductible by the S corporation with no income to Mike", "Treated as a distribution reducing Mike''s stock basis", "Included in Mike''s W-2 wages and potentially deductible on his individual return"]'::jsonb,
+ 3,
  'Shareholders owning more than 2% of an S corporation are treated as self-employed for fringe benefit purposes. Health insurance premiums paid by the corporation must be included in the shareholder''s W-2 wages as income. The shareholder may then deduct the premiums as a self-employed health insurance deduction on their individual return (Form 1040, above-the-line).',
  'easy');
 
@@ -1950,16 +1950,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Owner-Entity Transactions',
  'ABC Partnership makes a guaranteed payment of $100,000 to Partner E for the use of capital (interest on capital). How does the partnership treat this payment?',
- '["As a reduction in Partner E''s capital account only", "As a deductible expense in computing partnership ordinary income", "As a distribution to Partner E", "As a nondeductible payment"]'::jsonb,
- 1,
+ '["As a reduction in Partner E''s capital account only", "As a nondeductible payment", "As a distribution to Partner E", "As a deductible expense in computing partnership ordinary income"]'::jsonb,
+ 3,
  'Guaranteed payments for the use of capital under Section 707(c) are treated the same as guaranteed payments for services — they are deductible by the partnership in computing ordinary income. Partner E includes the $100,000 as ordinary income. Unlike distributive shares, guaranteed payments are determined without regard to the partnership''s actual income.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Owner-Entity Transactions',
  'Partner F owns a 30% interest in FGH Partnership. Partner F sells land with a basis of $60,000 and fair market value of $100,000 to the partnership for $100,000. Does Section 707(b) disallow the gain?',
- '["Yes, all gains between partners and partnerships are disallowed", "No, Section 707(b) only disallows losses, not gains, between related parties", "Yes, because the partner owns more than 25%", "No, because the partner owns less than 50%"]'::jsonb,
- 1,
+ '["No, Section 707(b) only disallows losses, not gains, between related parties", "Yes, all gains between partners and partnerships are disallowed", "Yes, because the partner owns more than 25%", "No, because the partner owns less than 50%"]'::jsonb,
+ 0,
  'Section 707(b)(1) disallows losses (not gains) on sales between a partnership and a person owning more than 50% of the partnership. Since Partner F owns only 30%, the loss disallowance rule would not apply even if there were a loss. Gains on related-party sales are recognized but may be recharacterized under Section 1239 if the property is depreciable.',
  'medium');
 
@@ -1974,24 +1974,24 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Owner-Entity Transactions',
  'In a partnership, a partner performs services worth $200,000 and receives a partnership interest in exchange. The partner receives a 25% profits interest. Is this a taxable event?',
- '["Yes, the partner recognizes $200,000 of ordinary income", "No, receipt of a profits interest for services is generally not taxable under Revenue Procedure 93-27", "Yes, but it is treated as capital gain", "No, all partnership interest receipts are tax-free"]'::jsonb,
- 1,
+ '["No, receipt of a profits interest for services is generally not taxable under Revenue Procedure 93-27", "Yes, the partner recognizes $200,000 of ordinary income", "Yes, but it is treated as capital gain", "No, all partnership interest receipts are tax-free"]'::jsonb,
+ 0,
  'Under Revenue Procedure 93-27, the receipt of a profits interest (as opposed to a capital interest) for services is generally not a taxable event, provided the interest is not disposed of within 2 years, is not related to a substantially certain stream of income, and is not a disguised payment for services. A capital interest, by contrast, would be taxable.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Owner-Entity Transactions',
  'Lisa owns 80% of both Alpha Corp and Beta Corp. Lisa sells inventory with a basis of $40,000 to Beta Corp for $25,000. What is the tax treatment of the $15,000 loss?',
- '["Recognized as an ordinary loss", "Disallowed under Section 267 because Lisa owns more than 50% of both entities", "Deferred until Beta sells the inventory", "Recognized but limited to $3,000"]'::jsonb,
- 1,
+ '["Disallowed under Section 267 because Lisa owns more than 50% of both entities", "Recognized as an ordinary loss", "Deferred until Beta sells the inventory", "Recognized but limited to $3,000"]'::jsonb,
+ 0,
  'Section 267 disallows losses on sales between an individual and a corporation in which the individual owns more than 50%. Since Lisa owns 80% of Beta Corp, the $15,000 loss is disallowed. The constructive ownership rules under Section 267(c) also apply, which could attribute ownership through family members and entities.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Owner-Entity Transactions',
  'A C corporation shareholder borrows $300,000 from the corporation at 1% interest when the AFR is 5%. Under Section 7872, what is the annual forgone interest?',
- '["$3,000", "$12,000", "$15,000", "$0"]'::jsonb,
- 1,
+ '["$12,000", "$3,000", "$15,000", "$0"]'::jsonb,
+ 0,
  'Forgone interest equals the difference between interest at the AFR and the interest actually charged. AFR interest = $300,000 x 5% = $15,000. Actual interest = $300,000 x 1% = $3,000. Forgone interest = $15,000 - $3,000 = $12,000. This $12,000 is treated as a constructive dividend to the shareholder and a deemed interest payment back to the corporation.',
  'medium');
 
@@ -2006,16 +2006,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Owner-Entity Transactions',
  'JKL Partnership has three equal partners. Partner J performs services and receives a guaranteed payment of $90,000. Partnership net income before the guaranteed payment is $210,000. What is Partner K''s distributive share of partnership income?',
- '["$70,000", "$40,000", "$80,000", "$30,000"]'::jsonb,
- 1,
+ '["$70,000", "$30,000", "$80,000", "$40,000"]'::jsonb,
+ 3,
  'After the $90,000 guaranteed payment, partnership income is $210,000 - $90,000 = $120,000. As an equal (1/3) partner, Partner K''s distributive share is $120,000 x 1/3 = $40,000. Partner J would receive $90,000 (guaranteed payment) + $40,000 (1/3 distributive share) = $130,000 total.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Owner-Entity Transactions',
  'An S corporation with one shareholder has net income of $250,000. The shareholder performs substantial services. No salary is paid. What is the most likely tax consequence?',
- '["The entire $250,000 is treated as a distribution with no payroll tax", "The IRS may reclassify a reasonable portion as wages subject to employment taxes", "The S election is automatically revoked", "The income is exempt from all tax"]'::jsonb,
- 1,
+ '["The IRS may reclassify a reasonable portion as wages subject to employment taxes", "The entire $250,000 is treated as a distribution with no payroll tax", "The S election is automatically revoked", "The income is exempt from all tax"]'::jsonb,
+ 0,
  'When a shareholder-employee provides substantial services to an S corporation and takes no salary, the IRS will likely reclassify a portion of the distributions as reasonable compensation subject to FICA and Medicare taxes. The IRS has successfully challenged zero-salary arrangements in numerous cases, requiring retroactive payroll tax payments plus penalties.',
  'easy');
 
@@ -2038,16 +2038,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Owner-Entity Transactions',
  'Robert owns 55% of Sigma Corp and sells a patent (depreciable/amortizable property) to Sigma for $500,000. Robert''s basis in the patent is $100,000. Under Section 1239, what is Robert''s gain and its character?',
- '["$400,000 capital gain", "$400,000 ordinary income", "$100,000 capital gain", "$500,000 ordinary income"]'::jsonb,
- 1,
+ '["$400,000 capital gain", "$500,000 ordinary income", "$100,000 capital gain", "$400,000 ordinary income"]'::jsonb,
+ 3,
  'Under Section 1239, gain on the sale of depreciable property to a related party (more than 50% ownership) is recharacterized as ordinary income. Robert''s gain is $500,000 - $100,000 = $400,000, all treated as ordinary income. Without Section 1239, this gain would likely be long-term capital gain, making the recharacterization significant.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Owner-Entity Transactions',
  'PQR Partnership allocates a $200,000 guaranteed payment to Partner P for management services. Partner P''s self-employment tax on this amount is calculated at what rate (combined)?',
- '["7.65%", "15.3% on the first $168,600 and 2.9% on the excess", "21%", "12.4% on all amounts"]'::jsonb,
- 1,
+ '["7.65%", "12.4% on all amounts", "21%", "15.3% on the first $168,600 and 2.9% on the excess"]'::jsonb,
+ 3,
  'Guaranteed payments for services are subject to self-employment tax. The combined self-employment tax rate is 15.3% (12.4% Social Security + 2.9% Medicare) on amounts up to the Social Security wage base ($168,600 for 2024/$176,100 for 2025). Above the wage base, only the 2.9% Medicare tax applies. An additional 0.9% Medicare surtax applies above $200,000 for single filers.',
  'medium');
 
@@ -2102,8 +2102,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Owner-Entity Transactions',
  'An accrual-method partnership accrues $30,000 in rent payable to its cash-method partner on December 31. The rent is paid on February 28 of the following year. Under Section 267(a)(2), when does the partnership deduct the rent?',
- '["December 31 of the current year", "February 28 of the following year when the partner includes it in income", "Ratably over 12 months", "The deduction is permanently disallowed"]'::jsonb,
- 1,
+ '["February 28 of the following year when the partner includes it in income", "December 31 of the current year", "Ratably over 12 months", "The deduction is permanently disallowed"]'::jsonb,
+ 0,
  'Section 267(a)(2) applies to partnerships and partners who are related parties using different accounting methods. The accrual-method partnership cannot deduct the rent until the cash-method partner includes it in income. Since the partner reports it when received (February 28), the partnership''s deduction is deferred to that year.',
  'hard');
 
@@ -2114,8 +2114,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Advanced Basis Calculations',
  'Partner A contributes $100,000 cash to a new partnership. In Year 1, the partnership allocates $30,000 of ordinary income and $10,000 of tax-exempt income to Partner A, and Partner A receives a $15,000 cash distribution. What is Partner A''s outside basis at the end of Year 1?',
- '["$115,000", "$125,000", "$130,000", "$140,000"]'::jsonb,
- 1,
+ '["$115,000", "$140,000", "$130,000", "$125,000"]'::jsonb,
+ 3,
  'Outside basis = initial contribution + income allocations + tax-exempt income - distributions. Basis = $100,000 + $30,000 + $10,000 - $15,000 = $125,000. Tax-exempt income increases basis even though it is not taxable, to prevent the income from being taxed upon a subsequent distribution or sale of the partnership interest.',
  'easy');
 
@@ -2146,8 +2146,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Advanced Basis Calculations',
  'Partner D purchases a 25% partnership interest from an existing partner for $300,000. The partnership''s total inside basis in its assets is $800,000 (D''s 25% share = $200,000). The partnership has a Section 754 election in effect. What is D''s Section 743(b) adjustment?',
- '["$0", "$100,000 step-up", "$200,000 step-up", "$300,000 step-up"]'::jsonb,
- 1,
+ '["$0", "$300,000 step-up", "$200,000 step-up", "$100,000 step-up"]'::jsonb,
+ 3,
  'The Section 743(b) adjustment equals the difference between the transferee''s outside basis ($300,000 purchase price) and the transferee''s proportionate share of inside basis ($200,000). The adjustment is $300,000 - $200,000 = $100,000 step-up. This adjustment is personal to Partner D and adjusts the basis of partnership assets only for D''s benefit.',
  'medium');
 
@@ -2218,8 +2218,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Advanced Basis Calculations',
  'An S corporation shareholder has stock basis of $10,000 and no debt basis. The corporation allocates $25,000 of ordinary loss. How much can the shareholder deduct, and what happens to the remainder?',
- '["$25,000 deductible in full", "$10,000 deductible; $15,000 suspended and carried forward indefinitely", "$0 deductible; entire loss is permanently disallowed", "$10,000 deductible; $15,000 suspended for 5 years"]'::jsonb,
- 1,
+ '["$10,000 deductible; $15,000 suspended and carried forward indefinitely", "$25,000 deductible in full", "$0 deductible; entire loss is permanently disallowed", "$10,000 deductible; $15,000 suspended for 5 years"]'::jsonb,
+ 0,
  'The shareholder can only deduct losses up to the sum of stock basis and debt basis. With $10,000 stock basis and $0 debt basis, only $10,000 of the $25,000 loss is deductible. The remaining $15,000 is suspended and carries forward indefinitely until the shareholder''s basis is restored through income allocations or additional capital contributions.',
  'easy');
 
@@ -2242,16 +2242,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Advanced Basis Calculations',
  'An S corporation has AAA of $100,000 and accumulated E&P from C corporation years of $50,000. The corporation distributes $120,000 to its sole shareholder. How is the distribution treated?',
- '["$120,000 tax-free return of basis", "$100,000 tax-free from AAA, $20,000 dividend from E&P", "$100,000 tax-free from AAA, $20,000 return of basis", "$50,000 dividend, $70,000 tax-free"]'::jsonb,
- 1,
+ '["$100,000 tax-free from AAA, $20,000 dividend from E&P", "$120,000 tax-free return of basis", "$100,000 tax-free from AAA, $20,000 return of basis", "$50,000 dividend, $70,000 tax-free"]'::jsonb,
+ 0,
  'Distributions from an S corporation with accumulated E&P follow a specific ordering: first from AAA ($100,000 tax-free), then from accumulated E&P ($20,000 taxable dividend), then as a tax-free return of basis, and finally as capital gain. Since $120,000 exceeds the $100,000 AAA, $20,000 comes from E&P as a taxable dividend.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Advanced Basis Calculations',
  'Partner G has an outside basis of $50,000. The partnership allocates $70,000 of ordinary loss to Partner G. How much loss can Partner G deduct (considering only the basis limitation)?',
- '["$70,000", "$50,000", "$0", "$20,000"]'::jsonb,
- 1,
+ '["$70,000", "$20,000", "$0", "$50,000"]'::jsonb,
+ 3,
  'Under Section 704(d), a partner may only deduct losses to the extent of their outside basis. Partner G''s outside basis is $50,000, so only $50,000 of the $70,000 loss is currently deductible. The remaining $20,000 is suspended and carries forward indefinitely until Partner G''s outside basis is restored through income allocations, contributions, or increased share of liabilities.',
  'easy');
 
@@ -2290,8 +2290,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Advanced Basis Calculations',
  'After reducing debt basis for losses in a prior year, how is an S corporation shareholder''s debt basis restored?',
- '["By the shareholder making additional loans to the corporation", "By the shareholder''s pro rata share of subsequent net income", "By the corporation borrowing from third parties", "Debt basis cannot be restored once reduced"]'::jsonb,
- 1,
+ '["By the shareholder making additional loans to the corporation", "Debt basis cannot be restored once reduced", "By the corporation borrowing from third parties", "By the shareholder''s pro rata share of subsequent net income"]'::jsonb,
+ 3,
  'Debt basis is restored by the shareholder''s pro rata share of subsequent net income, but only after stock basis is first restored to its original amount (before any loss reductions). The restoration ordering is: (1) increase debt basis (before stock basis if debt basis was reduced by losses), (2) then increase stock basis for remaining income. Income restores debt basis before increasing stock basis beyond its pre-loss level.',
  'hard');
 
@@ -2306,8 +2306,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Advanced Basis Calculations',
  'Partner K sells their partnership interest for $400,000. K''s outside basis is $250,000, which includes $100,000 of liabilities. What is K''s total amount realized and gain on the sale?',
- '["Amount realized: $400,000; Gain: $150,000", "Amount realized: $500,000; Gain: $250,000", "Amount realized: $300,000; Gain: $50,000", "Amount realized: $400,000; Gain: $250,000"]'::jsonb,
- 1,
+ '["Amount realized: $400,000; Gain: $150,000", "Amount realized: $400,000; Gain: $250,000", "Amount realized: $300,000; Gain: $50,000", "Amount realized: $500,000; Gain: $250,000"]'::jsonb,
+ 3,
  'Under Section 752(d), the amount realized includes both the cash received ($400,000) and the relief from partnership liabilities ($100,000) = $500,000. Gain = $500,000 - $250,000 (outside basis) = $250,000. Liability relief is treated as additional consideration received because the buyer assumes the seller''s share of partnership debt.',
  'hard');
 
@@ -2354,8 +2354,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Advanced Basis Calculations',
  'The Section 743(b) adjustment applies to which party in a partnership interest transfer?',
- '["All partners equally", "Only the transferee (buyer) of the partnership interest", "Only the transferor (seller) of the partnership interest", "The partnership as a whole"]'::jsonb,
- 1,
+ '["All partners equally", "The partnership as a whole", "Only the transferor (seller) of the partnership interest", "Only the transferee (buyer) of the partnership interest"]'::jsonb,
+ 3,
  'The Section 743(b) basis adjustment is personal to the transferee (buyer) of the partnership interest. It adjusts the buyer''s share of partnership inside basis to match their outside basis, but only for the buyer''s benefit. Other partners'' shares of inside basis are unaffected. The partnership tracks the adjustment separately for the transferee partner.',
  'medium');
 
@@ -2440,8 +2440,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Formation and Liquidation',
  'Ralph transfers property with a basis of $25,000 and FMV of $90,000 to his corporation for stock. The corporation assumes a $35,000 mortgage on the property. The liability exceeds Ralph''s basis. What gain must Ralph recognize?',
- '["$0", "$10,000", "$65,000", "$35,000"]'::jsonb,
- 1,
+ '["$0", "$35,000", "$65,000", "$10,000"]'::jsonb,
+ 3,
  'Under Section 357(c), when liabilities assumed exceed the aggregate adjusted basis of all properties transferred, the excess is recognized as gain. The excess is $35,000 - $25,000 = $10,000. Ralph recognizes $10,000 of gain on the transfer.',
  'medium');
 
@@ -2456,8 +2456,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Formation and Liquidation',
  'A partner contributes land with a basis of $45,000 and FMV of $80,000 to a partnership. Under Section 723, what is the partnership''s basis in the land?',
- '["$80,000", "$45,000", "$35,000", "$62,500"]'::jsonb,
- 1,
+ '["$45,000", "$80,000", "$35,000", "$62,500"]'::jsonb,
+ 0,
  'Under Section 723, the partnership takes a carryover basis in contributed property equal to the contributing partner''s adjusted basis. The partnership''s basis in the land is $45,000, the same as the partner''s basis before contribution.',
  'easy');
 
@@ -2512,24 +2512,24 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Formation and Liquidation',
  'A partner with an outside basis of $80,000 receives a liquidating distribution of property with a basis of $50,000 to the partnership and FMV of $90,000. Under Section 732(b), what is the partner''s basis in the distributed property?',
- '["$50,000", "$80,000", "$90,000", "$70,000"]'::jsonb,
- 1,
+ '["$50,000", "$70,000", "$90,000", "$80,000"]'::jsonb,
+ 3,
  'Under Section 732(b), in a liquidating distribution, the partner''s basis in the distributed property equals the partner''s outside basis in the partnership interest ($80,000), reduced by any cash received. Since no cash was distributed, the partner takes a basis of $80,000 in the property, which substitutes entirely for the partnership interest.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Formation and Liquidation',
  'Under Section 736, payments made to a retiring general partner for unrealized receivables and goodwill (when the partnership agreement does not provide for goodwill payments) are treated as:',
- '["Capital gain distributions", "Section 736(a) ordinary income payments", "Tax-free return of capital", "Section 1231 gain"]'::jsonb,
- 1,
+ '["Capital gain distributions", "Section 1231 gain", "Tax-free return of capital", "Section 736(a) ordinary income payments"]'::jsonb,
+ 3,
  'Under Section 736(a), payments for unrealized receivables and unstated goodwill to a retiring general partner of a general partnership are treated as distributive shares of partnership income or guaranteed payments, resulting in ordinary income treatment. Section 736(b) covers payments for the partner''s interest in partnership property.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Formation and Liquidation',
  'Dan transfers equipment (basis $35,000, FMV $60,000) and a $5,000 note receivable to a new corporation for 85% of its stock and $8,000 cash. What is Dan''s recognized gain?',
- '["$0", "$8,000", "$25,000", "$30,000"]'::jsonb,
- 1,
+ '["$0", "$30,000", "$25,000", "$8,000"]'::jsonb,
+ 3,
  'Dan controls the corporation (85% > 80%), so Section 351 applies. The realized gain is ($60,000 + $5,000) - $35,000 = $30,000. The $8,000 cash is boot. Gain is recognized to the lesser of boot received ($8,000) or realized gain ($30,000), so Dan recognizes $8,000.',
  'medium');
 
@@ -2544,24 +2544,24 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Formation and Liquidation',
  'A corporation distributes property with a basis of $90,000 and FMV of $60,000 to a non-related shareholder in complete liquidation. Under Section 336, what loss does the corporation recognize?',
- '["$0 — losses are disallowed in liquidation", "$30,000 loss", "$60,000 loss", "$90,000 loss"]'::jsonb,
- 1,
+ '["$0 — losses are disallowed in liquidation", "$90,000 loss", "$60,000 loss", "$30,000 loss"]'::jsonb,
+ 3,
  'Under Section 336(a), a liquidating corporation generally recognizes gain or loss on distributions of property as if sold at FMV. The corporation recognizes a $30,000 loss ($60,000 FMV - $90,000 basis). Loss disallowance under Section 336(d) applies only to distributions to related parties or certain tax-avoidance transactions.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Formation and Liquidation',
  'A corporation distributes property with a basis of $100,000 and FMV of $65,000 to a related shareholder who owns 60% of the stock in complete liquidation. Under Section 336(d), what loss may the corporation recognize?',
- '["$35,000", "$0", "$65,000", "$100,000"]'::jsonb,
- 1,
+ '["$35,000", "$100,000", "$65,000", "$0"]'::jsonb,
+ 3,
  'Under Section 336(d)(1), losses are disallowed on distributions to related parties (more than 50% ownership) in a complete liquidation if the distribution is not pro rata or the property was contributed within five years of the liquidation as part of a plan to recognize loss. For a 60% shareholder, the loss is disallowed.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Formation and Liquidation',
  'A partner contributes services to a partnership in exchange for a 25% capital interest worth $40,000. What are the tax consequences to the partner?',
- '["No income recognized under Section 721", "$40,000 of ordinary income", "$40,000 of capital gain", "$10,000 of ordinary income"]'::jsonb,
- 1,
+ '["$40,000 of ordinary income", "No income recognized under Section 721", "$40,000 of capital gain", "$10,000 of ordinary income"]'::jsonb,
+ 0,
  'Section 721 nonrecognition applies only to contributions of property, not services. When a partner receives a capital interest in exchange for services, the partner recognizes ordinary income equal to the FMV of the interest received ($40,000) under the general rules of Section 83.',
  'medium');
 
@@ -2576,16 +2576,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Formation and Liquidation',
  'Amy transfers property (basis $20,000, FMV $50,000) and $10,000 cash to a corporation for 100% of its stock. What is the corporation''s basis in the property under Section 362?',
- '["$50,000", "$20,000", "$30,000", "$60,000"]'::jsonb,
- 1,
+ '["$20,000", "$50,000", "$30,000", "$60,000"]'::jsonb,
+ 0,
  'Under Section 362(a), the corporation''s basis in property received in a Section 351 exchange is the transferor''s basis ($20,000). Since no gain was recognized by Amy (no boot was received — the cash was contributed, not received), there is no basis increase. The $10,000 cash is a separate asset to the corporation.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Formation and Liquidation',
  'Kevin transfers property (basis $40,000, FMV $70,000) to a corporation for 80% of its stock and $12,000 in corporate bonds. What is the corporation''s basis in the property?',
- '["$40,000", "$52,000", "$70,000", "$58,000"]'::jsonb,
- 1,
+ '["$40,000", "$58,000", "$70,000", "$52,000"]'::jsonb,
+ 3,
  'Under Section 362(a), the corporation''s basis equals the transferor''s basis ($40,000) increased by any gain recognized by the transferor. Kevin recognized $12,000 of gain (the lesser of the $12,000 boot received and the $30,000 realized gain). Therefore, the corporation''s basis is $40,000 + $12,000 = $52,000.',
  'medium');
 
@@ -2624,8 +2624,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Formation and Liquidation',
  'Sarah contributes equipment (basis $60,000, FMV $100,000, subject to a $70,000 liability) to a corporation for 100% of its stock. Under Section 357(c), what gain does Sarah recognize?',
- '["$0", "$10,000", "$40,000", "$70,000"]'::jsonb,
- 1,
+ '["$0", "$70,000", "$40,000", "$10,000"]'::jsonb,
+ 3,
  'Under Section 357(c), gain is recognized when liabilities assumed exceed the total adjusted basis of all property transferred. The excess is $70,000 liability - $60,000 basis = $10,000. Sarah recognizes $10,000 of gain despite the transaction otherwise qualifying under Section 351.',
  'hard');
 
@@ -2693,8 +2693,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Trusts and Estates',
  'A grantor trust is one in which the grantor retains certain powers over the trust. Which of the following powers held by the grantor would cause the trust to be treated as a grantor trust?',
- '["Power to distribute income to charitable organizations", "Power to revoke the trust and recover trust assets", "Power to allocate receipts between income and principal", "Power to appoint a successor trustee"]'::jsonb,
- 1,
+ '["Power to distribute income to charitable organizations", "Power to appoint a successor trustee", "Power to allocate receipts between income and principal", "Power to revoke the trust and recover trust assets"]'::jsonb,
+ 3,
  'Under Sections 671-679, a trust is treated as a grantor trust when the grantor retains the power to revoke the trust (Section 676). The power to revoke means the grantor can reclaim the trust property, and all income is taxed to the grantor. The other powers listed do not typically trigger grantor trust status.',
  'easy');
 
@@ -2749,16 +2749,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Trusts and Estates',
  'Under Section 645, a qualified revocable trust can elect to be treated as part of the estate for tax purposes. What is the maximum period for this election if no estate tax return is required?',
- '["6 months after decedent''s death", "2 years after decedent''s death", "End of the month including 2 years after death", "No time limit"]'::jsonb,
- 1,
+ '["6 months after decedent''s death", "No time limit", "End of the month including 2 years after death", "2 years after decedent''s death"]'::jsonb,
+ 3,
  'Under Section 645, when no estate tax return is required, the Section 645 election period ends two years after the date of the decedent''s death. This allows the revocable trust to use a fiscal year and take advantage of other estate tax benefits during this period.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Trusts and Estates',
  'A simple trust earns $30,000 of dividend income and $20,000 of tax-exempt interest. The trust distributes all $50,000 to its sole beneficiary. How much is included in the beneficiary''s gross income?',
- '["$50,000", "$30,000", "$20,000", "$0"]'::jsonb,
- 1,
+ '["$50,000", "$0", "$20,000", "$30,000"]'::jsonb,
+ 3,
  'The beneficiary reports income based on the character of DNI. The distribution carries out the proportionate share of taxable and tax-exempt income. Since $30,000 of the $50,000 DNI is taxable dividends (60%) and $20,000 is tax-exempt (40%), the beneficiary includes $30,000 in gross income. The $20,000 tax-exempt portion retains its character.',
  'medium');
 
@@ -2781,8 +2781,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Trusts and Estates',
  'Continuing the previous scenario: DNI is $75,000, Beneficiary A receives $25,000 (required), and Beneficiary B receives $60,000 (discretionary). After A''s first-tier deduction, how much income does Beneficiary B report?',
- '["$60,000", "$50,000", "$75,000", "$25,000"]'::jsonb,
- 1,
+ '["$60,000", "$25,000", "$75,000", "$50,000"]'::jsonb,
+ 3,
  'After the first-tier distribution of $25,000 to A, remaining DNI is $50,000. Beneficiary B received $60,000 but can only be taxed on the remaining DNI of $50,000. The excess $10,000 is a tax-free distribution of corpus. Beneficiary B reports $50,000 of income.',
  'hard');
 
@@ -2845,8 +2845,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Trusts and Estates',
  'An estate earns $45,000 of income in its first year. The estate makes a distribution of $20,000 to a beneficiary on March 1 of the following year. Under the 65-day rule (Section 663(b)), the executor may elect to treat the distribution as made in:',
- '["Only the year of distribution", "The prior taxable year", "Both years proportionally", "Neither year — the distribution is tax-free"]'::jsonb,
- 1,
+ '["The prior taxable year", "Only the year of distribution", "Both years proportionally", "Neither year — the distribution is tax-free"]'::jsonb,
+ 0,
  'Under Section 663(b), the executor or trustee may elect to treat distributions made within 65 days after the close of the taxable year as having been made on the last day of that taxable year. This allows the estate to claim the income distribution deduction in the earlier year, reducing the estate''s taxable income.',
  'medium');
 
@@ -2861,8 +2861,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Trusts and Estates',
  'A beneficiary receives a Schedule K-1 (Form 1041) from a trust. The K-1 shows $15,000 of interest income and $5,000 of tax-exempt interest. What amount does the beneficiary include in gross income?',
- '["$20,000", "$15,000", "$5,000", "$10,000"]'::jsonb,
- 1,
+ '["$15,000", "$20,000", "$5,000", "$10,000"]'::jsonb,
+ 0,
  'The beneficiary includes only the $15,000 of taxable interest income in gross income. The $5,000 of tax-exempt interest retains its tax-exempt character when distributed to the beneficiary and is reported on the K-1 for informational purposes only (it may affect other calculations like the investment interest limitation).',
  'easy');
 
@@ -2933,16 +2933,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Trusts and Estates',
  'A trust earns $50,000 of interest income and incurs $5,000 of trustee fees. The trust instrument is silent on whether fees are charged to income or principal. If state law allocates the fees one-half to income and one-half to principal, what portion of the fees reduces DNI?',
- '["$0", "$2,500", "$5,000", "$3,750"]'::jsonb,
- 1,
+ '["$0", "$3,750", "$5,000", "$2,500"]'::jsonb,
+ 3,
  'When the trust instrument is silent, state law governs the allocation. If state law allocates trustee fees one-half to income and one-half to principal, only the $2,500 allocated to income reduces DNI. The $2,500 allocated to principal is still deductible on Form 1041 but does not reduce DNI.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Trusts and Estates',
  'A grantor trust is used for estate planning purposes as an intentionally defective grantor trust (IDGT). The grantor sells appreciated assets to the IDGT. What is the income tax consequence of this sale?',
- '["Capital gain is recognized by the grantor", "The sale is ignored for income tax purposes", "The trust recognizes gain", "The sale creates ordinary income"]'::jsonb,
- 1,
+ '["Capital gain is recognized by the grantor", "The sale creates ordinary income", "The trust recognizes gain", "The sale is ignored for income tax purposes"]'::jsonb,
+ 3,
  'Since a grantor trust is treated as owned by the grantor for income tax purposes, a sale between the grantor and the trust is disregarded — it is treated as the grantor selling to himself. No gain is recognized on the sale. However, the transfer is recognized for estate tax purposes, removing the assets from the grantor''s estate.',
  'hard');
 
@@ -2970,8 +2970,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Choice and Planning',
  'Which of the following is an advantage of operating as a partnership rather than an S corporation?',
- '["Limited liability for all partners", "Ability to make special allocations of income and loss", "Lower self-employment taxes", "Unlimited number of classes of ownership"]'::jsonb,
- 1,
+ '["Limited liability for all partners", "Unlimited number of classes of ownership", "Lower self-employment taxes", "Ability to make special allocations of income and loss"]'::jsonb,
+ 3,
  'Partnerships can make special allocations of income, gain, loss, deduction, and credit among partners under Section 704(b), provided they have substantial economic effect. S corporations cannot make special allocations — income must be allocated pro rata based on stock ownership. This flexibility is a major advantage of partnerships.',
  'easy');
 
@@ -3050,8 +3050,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Choice and Planning',
  'A C corporation converts to S corporation status. The corporation has $500,000 of built-in gains at the time of conversion. Under Section 1374, the built-in gains tax applies for how many years after the conversion?',
- '["3 years", "5 years", "7 years", "10 years"]'::jsonb,
- 1,
+ '["3 years", "10 years", "7 years", "5 years"]'::jsonb,
+ 3,
  'Under Section 1374, the built-in gains (BIG) tax applies to an S corporation that was formerly a C corporation for a recognition period of 5 years after the conversion. If the S corporation sells appreciated assets during this period, the built-in gain is subject to corporate-level tax at 21% in addition to the pass-through tax to shareholders.',
  'medium');
 
@@ -3106,8 +3106,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Choice and Planning',
  'An S corporation has an NOL of $50,000. Shareholder A has stock basis of $30,000 and no debt basis. How much of the NOL can Shareholder A deduct currently?',
- '["$50,000", "$30,000", "$0", "$20,000"]'::jsonb,
- 1,
+ '["$30,000", "$50,000", "$0", "$20,000"]'::jsonb,
+ 0,
  'An S corporation shareholder can deduct losses only to the extent of their stock basis plus direct loans to the corporation (debt basis). Shareholder A has $30,000 of stock basis and no debt basis, so A can deduct $30,000. The remaining $20,000 is suspended and carries forward indefinitely until basis is restored.',
  'medium');
 
@@ -3122,32 +3122,32 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Choice and Planning',
  'A C corporation pays its sole shareholder-employee a salary of $400,000 when comparable positions pay $200,000. What is the likely IRS adjustment?',
- '["No adjustment — compensation is a business decision", "Recharacterize $200,000 as a constructive dividend", "Disallow the entire $400,000 deduction", "Impose a 20% penalty on the excess"]'::jsonb,
- 1,
+ '["No adjustment — compensation is a business decision", "Impose a 20% penalty on the excess", "Disallow the entire $400,000 deduction", "Recharacterize $200,000 as a constructive dividend"]'::jsonb,
+ 3,
  'The IRS may recharacterize the $200,000 excess over reasonable compensation as a constructive dividend. This means the corporation loses the deduction for the excess amount (dividends are not deductible), and the shareholder must treat the $200,000 as dividend income rather than wages, potentially creating double taxation.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Choice and Planning',
  'A husband and wife want to form a business. They are considering a qualified joint venture versus a partnership. What is the primary tax advantage of a qualified joint venture?',
- '["Lower tax rates", "No partnership return (Form 1065) is required", "Additional deductions available", "Losses are not limited by basis"]'::jsonb,
- 1,
+ '["No partnership return (Form 1065) is required", "Lower tax rates", "Additional deductions available", "Losses are not limited by basis"]'::jsonb,
+ 0,
  'A qualified joint venture (available only to spouses filing jointly) allows the husband and wife to each report their share of income and expenses on separate Schedule C forms, avoiding the need to file a partnership return (Form 1065). This simplifies compliance while still allowing each spouse to receive Social Security credit for their share of earnings.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Choice and Planning',
  'A former C corporation elected S status and has net unrealized built-in gain of $400,000. In Year 2 of the recognition period, it sells an asset for a $150,000 gain that existed at the time of conversion. What is the Section 1374 built-in gains tax?',
- '["$0", "$31,500", "$84,000", "$150,000"]'::jsonb,
- 1,
+ '["$0", "$150,000", "$84,000", "$31,500"]'::jsonb,
+ 3,
  'The Section 1374 built-in gains tax is imposed at the highest corporate rate of 21% on recognized built-in gains during the 5-year recognition period. The tax on the $150,000 built-in gain is $150,000 x 21% = $31,500. This tax is in addition to the shareholder-level pass-through tax on the remaining gain.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Choice and Planning',
  'A partnership has three partners: A (40%), B (40%), and C (20%). The partnership agreement allocates 60% of depreciation deductions to Partner A. For this special allocation to be respected, it must:',
- '["Be approved by the IRS in advance", "Have substantial economic effect under Section 704(b)", "Be proportionate to capital contributions", "Reduce A''s distributive share of income by the same amount"]'::jsonb,
- 1,
+ '["Have substantial economic effect under Section 704(b)", "Be approved by the IRS in advance", "Be proportionate to capital contributions", "Reduce A''s distributive share of income by the same amount"]'::jsonb,
+ 0,
  'Under Section 704(b), allocations that differ from ownership percentages (special allocations) are respected only if they have substantial economic effect. This requires that allocations affect the partners'' capital accounts and be consistent with the economic arrangement. Without substantial economic effect, the IRS reallocates based on partners'' interests in the partnership.',
  'medium');
 
@@ -3194,8 +3194,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Entity Choice and Planning',
  'A professional services firm is evaluating entity choice. The firm''s income is $800,000 and it has three equal owners. Which entity type would most likely result in the lowest overall tax burden?',
- '["C corporation paying salaries only", "S corporation with reasonable salaries of $200,000 each", "General partnership", "C corporation retaining all earnings"]'::jsonb,
- 1,
+ '["C corporation paying salaries only", "C corporation retaining all earnings", "General partnership", "S corporation with reasonable salaries of $200,000 each"]'::jsonb,
+ 3,
  'An S corporation with reasonable salaries allows the $200,000 salary to each owner to be subject to FICA, while the remaining pass-through income ($200,000 total remaining, approximately $67,000 each) avoids self-employment tax. A partnership would subject all income to SE tax. A C corporation faces double taxation on distributed earnings.',
  'hard');
 
@@ -3279,8 +3279,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Capital Structure Tax Planning',
  'A corporation has adjusted taxable income (ATI) of $500,000, business interest income of $20,000, and business interest expense of $200,000. Under Section 163(j), what is the maximum business interest deduction?',
- '["$200,000", "$170,000", "$150,000", "$130,000"]'::jsonb,
- 1,
+ '["$200,000", "$130,000", "$150,000", "$170,000"]'::jsonb,
+ 3,
  'The Section 163(j) limitation is business interest income ($20,000) plus 30% of ATI (30% x $500,000 = $150,000), totaling $170,000. The corporation can deduct $170,000 of its $200,000 interest expense. The remaining $30,000 is disallowed and carries forward to future years as a disallowed business interest expense carryforward.',
  'medium');
 
@@ -3311,24 +3311,24 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Capital Structure Tax Planning',
  'A corporation issues $1,000,000 in bonds at a discount, receiving $950,000. The $50,000 original issue discount (OID) is:',
- '["Deductible by the corporation in the year of issuance", "Amortized and deducted by the corporation over the life of the bonds", "Not deductible under any circumstances", "Deductible only at maturity"]'::jsonb,
- 1,
+ '["Amortized and deducted by the corporation over the life of the bonds", "Deductible by the corporation in the year of issuance", "Not deductible under any circumstances", "Deductible only at maturity"]'::jsonb,
+ 0,
  'Original issue discount (OID) is treated as additional interest expense that is amortized over the life of the bond using the constant yield method. The corporation deducts the OID ratably as interest expense each year, and the bondholder includes the amortized OID in income annually, regardless of when cash is received.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Capital Structure Tax Planning',
  'A corporation issues convertible bonds that can be exchanged for common stock. Under Section 385 analysis, the convertibility feature suggests the instrument may be:',
- '["Pure debt with no equity characteristics", "A hybrid instrument with equity characteristics", "Tax-exempt debt", "Preferred stock"]'::jsonb,
- 1,
+ '["Pure debt with no equity characteristics", "Preferred stock", "Tax-exempt debt", "A hybrid instrument with equity characteristics"]'::jsonb,
+ 3,
  'Convertibility into stock is one of the Section 385 factors indicating the instrument has equity characteristics. The more an instrument resembles stock (conversion rights, no fixed maturity, contingent payments, subordination), the more likely the IRS will treat it as equity rather than debt, eliminating the interest deduction.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Capital Structure Tax Planning',
  'A corporation has $400,000 of ATI and $180,000 of business interest expense. It also has $10,000 of investment interest income and $5,000 of floor plan financing interest. What is the Section 163(j) deduction limit for business interest?',
- '["$120,000", "$125,000", "$130,000", "$180,000"]'::jsonb,
- 1,
+ '["$120,000", "$180,000", "$130,000", "$125,000"]'::jsonb,
+ 3,
  'Floor plan financing interest is excluded from the Section 163(j) limitation and fully deductible. The remaining $175,000 of business interest is limited to business interest income ($10,000) + 30% of ATI (30% x $400,000 = $120,000) = $130,000. But $5,000 of floor plan interest is fully deductible outside the limit, so total deductible interest is $130,000 + $5,000 = $135,000. The limit on the $175,000 non-floor-plan interest is $125,000.',
  'hard');
 
@@ -3351,8 +3351,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Capital Structure Tax Planning',
  'A partnership has $600,000 of ATI and three equal partners. The partnership incurs $250,000 of business interest expense and has $0 of business interest income. Under Section 163(j), how much excess business interest expense is allocated to each partner?',
- '["$0", "$23,333", "$83,333", "$70,000"]'::jsonb,
- 1,
+ '["$0", "$70,000", "$83,333", "$23,333"]'::jsonb,
+ 3,
  'The partnership''s Section 163(j) limit is 30% x $600,000 = $180,000. Disallowed interest is $250,000 - $180,000 = $70,000. Each partner is allocated one-third of the excess business interest expense: $70,000 / 3 = $23,333 per partner. This carryforward is tracked at the partner level and can only be used when the partner is allocated excess taxable income from the same partnership.',
  'hard');
 
@@ -3383,16 +3383,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Capital Structure Tax Planning',
  'A corporation issues $5 million in bonds with detachable stock warrants. The warrants have a FMV of $200,000. How is the $200,000 allocated to the warrants treated?',
- '["As additional interest expense amortized over the bond term", "As original issue discount amortized over the bond term", "As a capital contribution with no deduction", "As a dividend to bondholders"]'::jsonb,
- 1,
+ '["As additional interest expense amortized over the bond term", "As a dividend to bondholders", "As a capital contribution with no deduction", "As original issue discount amortized over the bond term"]'::jsonb,
+ 3,
  'When bonds are issued with detachable stock warrants, the proceeds must be allocated between the bonds and warrants based on relative FMV. The amount allocated to the warrants reduces the issue price of the bonds, creating original issue discount (OID). This OID is amortized as additional interest expense over the life of the bonds.',
  'hard');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Capital Structure Tax Planning',
  'A farming business with average annual gross receipts of $20 million can elect out of the Section 163(j) interest limitation. If it does, what is the required trade-off?',
- '["Must use cash method of accounting", "Must use ADS for any farming property with a recovery period of 10 years or more", "Must forgo all depreciation deductions", "Must limit interest deductions to 15% of ATI"]'::jsonb,
- 1,
+ '["Must use cash method of accounting", "Must limit interest deductions to 15% of ATI", "Must forgo all depreciation deductions", "Must use ADS for any farming property with a recovery period of 10 years or more"]'::jsonb,
+ 3,
  'Under Section 163(j)(7)(C), an electing farming business is exempt from the interest limitation but must use the alternative depreciation system (ADS) for any property with a recovery period of 10 years or more that is used in the farming business. This generally means longer depreciation periods for farm buildings and certain equipment.',
  'medium');
 
@@ -3407,8 +3407,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Capital Structure Tax Planning',
  'A corporation has $800,000 of ATI. It makes an election under Section 163(j)(7) for its real property trade or business. In the same year, it has $300,000 of business interest expense. How much interest can it deduct?',
- '["$240,000", "$300,000", "$560,000", "$800,000"]'::jsonb,
- 1,
+ '["$240,000", "$800,000", "$560,000", "$300,000"]'::jsonb,
+ 3,
  'By electing out of Section 163(j) as a real property trade or business, the corporation is exempt from the 30% ATI limitation on business interest expense. The full $300,000 of business interest is deductible. However, the trade-off is that the corporation must use ADS for its real property, resulting in longer depreciation periods.',
  'medium');
 
@@ -3447,8 +3447,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Capital Structure Tax Planning',
  'Corporation X has $200,000 of ATI, $80,000 of business interest expense, and $15,000 of business interest income. Its average annual gross receipts for the prior three years are $28 million. Is Corporation X subject to the Section 163(j) limitation?',
- '["Yes, all corporations are subject to Section 163(j)", "No, it qualifies for the small business exception", "Yes, but only on interest exceeding $75,000", "No, because it has business interest income"]'::jsonb,
- 1,
+ '["No, it qualifies for the small business exception", "Yes, all corporations are subject to Section 163(j)", "Yes, but only on interest exceeding $75,000", "No, because it has business interest income"]'::jsonb,
+ 0,
  'Corporation X has average annual gross receipts of $28 million, which is below the $30 million threshold for the small business exception under Section 163(j)(3). Therefore, Corporation X is exempt from the Section 163(j) interest limitation and can deduct the full $80,000 of business interest expense without regard to the 30% ATI limitation.',
  'medium');
 
@@ -3500,24 +3500,24 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Nontaxable Dispositions',
  'A taxpayer sells property to her brother on the installment method. The brother resells the property within 2 years. Under the related party installment sale rules, what happens?',
- '["Nothing — each sale is treated independently", "The original seller must recognize all remaining deferred gain immediately", "The brother must pay the sister''s deferred tax", "Both parties split the deferred gain equally"]'::jsonb,
- 1,
+ '["Nothing — each sale is treated independently", "Both parties split the deferred gain equally", "The brother must pay the sister''s deferred tax", "The original seller must recognize all remaining deferred gain immediately"]'::jsonb,
+ 3,
  'Under Section 453(e), when property is sold on the installment method to a related party and the related party disposes of the property within 2 years, the original seller must recognize the remaining deferred gain as if the amount realized by the related party had been received by the original seller. This prevents using related party sales to defer gain while obtaining cash.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Nontaxable Dispositions',
  'A taxpayer''s warehouse is destroyed by a fire. The insurance proceeds are $500,000 and the adjusted basis is $300,000. Under Section 1033, the taxpayer can defer the $200,000 gain if replacement property is purchased within:',
- '["1 year from the end of the tax year of the casualty", "2 years from the end of the tax year of the casualty", "3 years from the date of the casualty", "5 years from the date of the casualty"]'::jsonb,
- 1,
+ '["2 years from the end of the tax year of the casualty", "1 year from the end of the tax year of the casualty", "3 years from the date of the casualty", "5 years from the date of the casualty"]'::jsonb,
+ 0,
  'Under Section 1033(a)(2)(B), the replacement period for involuntary conversions generally ends 2 years after the close of the first taxable year in which any part of the gain is realized. For condemned real property, the period extends to 3 years. The taxpayer must purchase property similar or related in service or use to qualify for deferral.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Nontaxable Dispositions',
  'A taxpayer''s office building is condemned by the government. Insurance proceeds are $800,000 and the adjusted basis is $400,000. The condemned real property replacement period is:',
- '["2 years from the end of the tax year of condemnation", "3 years from the end of the tax year of condemnation", "2 years from the date of condemnation", "5 years from the date of condemnation"]'::jsonb,
- 1,
+ '["2 years from the end of the tax year of condemnation", "5 years from the date of condemnation", "2 years from the date of condemnation", "3 years from the end of the tax year of condemnation"]'::jsonb,
+ 3,
  'For condemnation of real property held for business use or investment, the replacement period is extended to 3 years from the close of the first taxable year in which any gain is realized, rather than the standard 2-year period. This longer period recognizes that replacing condemned real estate often takes more time.',
  'medium');
 
@@ -3532,16 +3532,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Nontaxable Dispositions',
  'Using the previous example ($400,000 proceeds, $250,000 basis, $350,000 replacement property, $50,000 gain recognized), what is the basis of the replacement property?',
- '["$350,000", "$300,000", "$250,000", "$400,000"]'::jsonb,
- 1,
+ '["$350,000", "$400,000", "$250,000", "$300,000"]'::jsonb,
+ 3,
  'The basis of the replacement property equals the cost of the replacement ($350,000) minus the deferred gain ($100,000), which equals $300,000. Alternatively: basis of old property ($250,000) + gain recognized ($50,000) = $300,000. The deferred gain reduces the basis so it will be recognized when the replacement property is eventually sold.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Nontaxable Dispositions',
  'For an involuntary conversion of business property (not condemnation), the replacement property must meet which standard?',
- '["Same asset class", "Similar or related in service or use", "Like-kind", "Identical property"]'::jsonb,
- 1,
+ '["Same asset class", "Identical property", "Like-kind", "Similar or related in service or use"]'::jsonb,
+ 3,
  'For involuntary conversions other than condemnation, the replacement property must be similar or related in service or use to the converted property. This is a stricter standard than the like-kind standard. For example, replacing a manufacturing plant with a retail store would not qualify, even though both are real property.',
  'medium');
 
@@ -3572,8 +3572,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Nontaxable Dispositions',
  'A taxpayer sells property on the installment method. The property had been depreciated, and $40,000 of the gain is attributable to depreciation recapture under Section 1245. Under the installment sale rules, how is the recapture treated?',
- '["Spread over the installment payments proportionally", "Recognized entirely in the year of sale", "Deferred until all payments are received", "Offset against the installment note basis"]'::jsonb,
- 1,
+ '["Spread over the installment payments proportionally", "Offset against the installment note basis", "Deferred until all payments are received", "Recognized entirely in the year of sale"]'::jsonb,
+ 3,
  'Under Section 453(i), depreciation recapture under Sections 1245 and 1250 is recognized entirely in the year of sale, regardless of when payments are received. The recapture amount cannot be deferred using the installment method. Only the remaining gain (above the recapture amount) is eligible for installment reporting.',
  'medium');
 
@@ -3588,8 +3588,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Nontaxable Dispositions',
  'A taxpayer''s rental property is destroyed by a hurricane. The adjusted basis is $150,000 and insurance proceeds are $220,000. The taxpayer purchases replacement rental property for $230,000. Under Section 1033, what gain is recognized?',
- '["$70,000", "$0", "$10,000", "$220,000"]'::jsonb,
- 1,
+ '["$0", "$70,000", "$10,000", "$220,000"]'::jsonb,
+ 0,
  'No gain is recognized because the taxpayer reinvested an amount equal to or greater than the insurance proceeds ($230,000 >= $220,000). Under Section 1033, gain is deferred to the extent proceeds are reinvested in qualifying replacement property. Since the full $220,000 was reinvested, the entire $70,000 gain is deferred.',
  'easy');
 
@@ -3620,8 +3620,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Nontaxable Dispositions',
  'An installment sale has a selling price of $500,000, basis of $300,000, and the seller receives $100,000 in Year 1, $200,000 in Year 2, and $200,000 in Year 3. How much gain is recognized in Year 2?',
- '["$200,000", "$80,000", "$120,000", "$40,000"]'::jsonb,
- 1,
+ '["$200,000", "$40,000", "$120,000", "$80,000"]'::jsonb,
+ 3,
  'Gross profit ratio = ($500,000 - $300,000) / $500,000 = $200,000 / $500,000 = 40%. Year 2 payment is $200,000. Gain recognized in Year 2 = $200,000 x 40% = $80,000. Each payment has the same 40% ratio applied regardless of which year the payment is received.',
  'easy');
 
@@ -3636,16 +3636,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Nontaxable Dispositions',
  'A taxpayer''s business equipment (basis $50,000) is stolen. The taxpayer receives $75,000 in insurance proceeds and purchases replacement equipment for $70,000. Under Section 1033, how much gain is recognized?',
- '["$0", "$5,000", "$25,000", "$20,000"]'::jsonb,
- 1,
+ '["$0", "$20,000", "$25,000", "$5,000"]'::jsonb,
+ 3,
  'Gain realized is $75,000 - $50,000 = $25,000. The taxpayer reinvested $70,000 of the $75,000 proceeds, leaving $5,000 not reinvested. Gain is recognized to the extent proceeds are not reinvested in replacement property: $75,000 - $70,000 = $5,000. The remaining $20,000 of gain is deferred.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Nontaxable Dispositions',
  'A taxpayer sells property for $300,000 (basis $120,000) on a 5-year installment note at 6% interest. In addition to the principal payments, the interest received each year is treated as:',
- '["Part of the installment gain", "Ordinary income separate from the installment gain", "Capital gain", "Tax-free return of basis"]'::jsonb,
- 1,
+ '["Ordinary income separate from the installment gain", "Part of the installment gain", "Capital gain", "Tax-free return of basis"]'::jsonb,
+ 0,
  'Interest on an installment note is treated as ordinary income when received, separate and apart from the installment gain calculation. The gross profit ratio is applied only to the principal portion of each payment. Interest income is reported as ordinary income in the year received under the normal rules of Section 61.',
  'easy');
 
@@ -3676,8 +3676,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Nontaxable Dispositions',
  'A taxpayer''s principal residence is condemned. The condemnation award is $450,000 and the basis is $200,000. The taxpayer purchases a new residence for $420,000. Can the taxpayer use both Section 121 (home sale exclusion) and Section 1033 (involuntary conversion)?',
- '["No, the taxpayer must choose one", "Yes, Section 121 exclusion applies first, then Section 1033 deferral on remaining gain", "No, condemnations do not qualify under either section", "Yes, but only Section 1033 applies"]'::jsonb,
- 1,
+ '["No, the taxpayer must choose one", "Yes, but only Section 1033 applies", "No, condemnations do not qualify under either section", "Yes, Section 121 exclusion applies first, then Section 1033 deferral on remaining gain"]'::jsonb,
+ 3,
  'A taxpayer may use both Section 121 and Section 1033 for a condemned principal residence. First, the Section 121 exclusion ($250,000/$500,000) reduces the gain. Any remaining gain may be deferred under Section 1033 by reinvesting in replacement property within the replacement period. This combination can eliminate or defer the entire gain.',
  'hard');
 
@@ -3700,8 +3700,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Nontaxable Dispositions',
  'A taxpayer sold investment land on the installment method to an unrelated buyer for $400,000 with a basis of $160,000. The buyer pays $100,000 per year. What total gain will the taxpayer recognize over the 4-year payment period?',
- '["$160,000", "$240,000", "$400,000", "$100,000"]'::jsonb,
- 1,
+ '["$240,000", "$160,000", "$400,000", "$100,000"]'::jsonb,
+ 0,
  'The total gain recognized over the life of the installment sale equals the gross profit of $240,000 ($400,000 - $160,000). The installment method only changes the timing of recognition, not the total amount. Each year, $100,000 x 60% gross profit ratio = $60,000 is recognized, totaling $240,000 over 4 years.',
  'medium');
 
@@ -3729,8 +3729,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Related Party Transactions',
  'Continuing the previous example: the sister purchased stock for $35,000 (seller''s disallowed loss was $15,000). She later sells the stock for $55,000. What is her recognized gain?',
- '["$20,000", "$5,000", "$55,000", "$0"]'::jsonb,
- 1,
+ '["$20,000", "$0", "$55,000", "$5,000"]'::jsonb,
+ 3,
  'Under Section 267(d), the sister''s gain is reduced (but not below zero) by the previously disallowed loss. Her realized gain is $55,000 - $35,000 = $20,000. The disallowed loss of $15,000 offsets part of this gain, so she recognizes $20,000 - $15,000 = $5,000 of gain. The disallowed loss can only offset gain, not create a loss.',
  'medium');
 
@@ -3769,8 +3769,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Related Party Transactions',
  'Under Section 707(b)(2), if a partner owning more than 50% sells property to the partnership and the property is not a capital asset in the hands of the partnership, any gain is treated as:',
- '["Capital gain", "Ordinary income", "Section 1231 gain", "Tax-exempt income"]'::jsonb,
- 1,
+ '["Ordinary income", "Capital gain", "Section 1231 gain", "Tax-exempt income"]'::jsonb,
+ 0,
  'Under Section 707(b)(2), if property sold by a more-than-50% partner to the partnership is not a capital asset in the hands of the transferee (e.g., it is inventory or other ordinary income property to the partnership), the gain is recharacterized as ordinary income. This prevents conversion of ordinary income to capital gain through related party transactions.',
  'medium');
 
@@ -3809,16 +3809,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Related Party Transactions',
  'A taxpayer owns 40% of Corporation A and 60% of Corporation B. He sells property at a loss from Corporation A to Corporation B. Are Corporations A and B related parties under Section 267?',
- '["No, they are separate legal entities", "Yes, because the same person owns more than 50% of each", "No, because the taxpayer does not own 80% of either", "Yes, because any common ownership creates a related party relationship"]'::jsonb,
- 1,
+ '["No, they are separate legal entities", "Yes, because any common ownership creates a related party relationship", "No, because the taxpayer does not own 80% of either", "Yes, because the same person owns more than 50% of each"]'::jsonb,
+ 3,
  'Under Section 267(b)(2), two corporations are related parties if the same person owns more than 50% of the value of each corporation (directly or through constructive ownership). The taxpayer owns 40% of A and 60% of B — only B exceeds 50%. However, the entities would not be related unless the same person owns more than 50% of each.',
  'medium');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Related Party Transactions',
  'An individual sells property to a trust in which the individual is the beneficiary. Under Section 267(b)(6), this transaction is between related parties. If the sale is at a loss, the loss is:',
- '["Deductible because trusts are separate entities", "Disallowed under Section 267", "Deferred until the trust terminates", "Deductible if the trust is irrevocable"]'::jsonb,
- 1,
+ '["Deductible because trusts are separate entities", "Deductible if the trust is irrevocable", "Deferred until the trust terminates", "Disallowed under Section 267"]'::jsonb,
+ 3,
  'Under Section 267(b)(6), a beneficiary and a trust of which they are a beneficiary are related parties. Any loss on a sale between them is disallowed under Section 267(a)(1). This applies to both grantor and non-grantor trusts when there is a beneficiary relationship.',
  'medium');
 
@@ -3841,8 +3841,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Related Party Transactions',
  'A taxpayer sells stock for $20,000 on December 1 with a basis of $30,000 (a $10,000 loss). On December 20, the taxpayer buys a call option on the same stock. Does the wash sale rule apply?',
- '["No, because a call option is not substantially identical to stock", "Yes, acquiring a call option on substantially identical stock triggers the wash sale rule", "No, wash sales apply only to stock purchases", "Yes, but only if the option is exercised"]'::jsonb,
- 1,
+ '["No, because a call option is not substantially identical to stock", "Yes, but only if the option is exercised", "No, wash sales apply only to stock purchases", "Yes, acquiring a call option on substantially identical stock triggers the wash sale rule"]'::jsonb,
+ 3,
  'Under Section 1091 and IRS guidance, acquiring a contract or option to buy substantially identical stock or securities within the 30-day wash sale window triggers the wash sale rule. This includes call options, rights to acquire stock, and contracts to acquire stock. The disallowed loss is added to the basis of the option.',
  'medium');
 
@@ -3881,16 +3881,16 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Related Party Transactions',
  'Under Section 267(c)(4), stock owned by a partnership is considered owned proportionately by its partners. This constructive ownership rule is known as:',
- '["Direct ownership", "Entity attribution", "Option attribution", "Family attribution"]'::jsonb,
- 1,
+ '["Direct ownership", "Family attribution", "Option attribution", "Entity attribution"]'::jsonb,
+ 3,
  'Section 267(c)(1) provides for entity-to-owner attribution: stock owned by a corporation, partnership, estate, or trust is considered owned proportionately by its shareholders, partners, or beneficiaries. This entity attribution rule expands the related party definitions by looking through entities to determine actual beneficial ownership.',
  'easy');
 
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Related Party Transactions',
  'A taxpayer sells a rental building (basis $200,000, FMV $350,000) to her 100%-owned S corporation. Under Section 1239, the $150,000 gain is ordinary income because:',
- '["The property was held less than one year", "The property is depreciable in the hands of the related buyer", "All real estate gains are ordinary", "The sale was below fair market value"]'::jsonb,
- 1,
+ '["The property is depreciable in the hands of the related buyer", "The property was held less than one year", "All real estate gains are ordinary", "The sale was below fair market value"]'::jsonb,
+ 0,
  'Section 1239 recharacterizes gain as ordinary income when depreciable property is sold to a related party who will be able to depreciate the property. The rental building is depreciable in the S corporation''s hands. This prevents the seller from recognizing capital gain while the buyer takes ordinary depreciation deductions against the same economic value.',
  'easy');
 
@@ -3913,8 +3913,8 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Related Party Transactions',
  'A taxpayer and her mother each own 50% of a corporation. The taxpayer sells property to the corporation at a loss. Under Section 267, is the taxpayer considered to own more than 50% of the corporation?',
- '["No, she owns exactly 50%", "Yes, she constructively owns her mother''s 50%, giving her 100%", "No, constructive ownership does not apply to parent-child", "Yes, but only for Section 1239 purposes"]'::jsonb,
- 1,
+ '["No, she owns exactly 50%", "Yes, but only for Section 1239 purposes", "No, constructive ownership does not apply to parent-child", "Yes, she constructively owns her mother''s 50%, giving her 100%"]'::jsonb,
+ 3,
  'Under Section 267(c)(2), an individual constructively owns stock owned by their family members, including parents. The taxpayer directly owns 50% and constructively owns her mother''s 50%, giving her 100% constructive ownership. Since she owns more than 50%, the corporation is a related party and the loss is disallowed.',
  'medium');
 
@@ -3953,7 +3953,7 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (6, 'Related Party Transactions',
  'An accrual-basis corporation owes $75,000 in rent to its sole shareholder (a cash-basis taxpayer) at year-end. The corporation accrues the expense on December 31 but does not pay it until March 15 of the following year. When can the corporation deduct the $75,000?',
- '["December 31 of the current year when accrued", "March 15 of the following year when the shareholder receives payment", "The corporation cannot deduct related party rent", "The expense must be capitalized"]'::jsonb,
- 1,
+ '["March 15 of the following year when the shareholder receives payment", "December 31 of the current year when accrued", "The corporation cannot deduct related party rent", "The expense must be capitalized"]'::jsonb,
+ 0,
  'Under Section 267(a)(2), an accrual-basis payor cannot deduct an expense owed to a related cash-basis payee until the payee includes the amount in income. Since the shareholder is cash-basis, the corporation cannot deduct the $75,000 until March 15 when the shareholder actually receives and reports the payment. This matching rule prevents timing arbitrage.',
  'medium');
