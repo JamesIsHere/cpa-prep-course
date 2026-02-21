@@ -2102,7 +2102,7 @@ insert into questions (section_id, topic, stem, choices, correct_index, explanat
 insert into questions (section_id, topic, stem, choices, correct_index, explanation, difficulty) values
 (1, 'Specific Areas and Transactions',
  'When there is substantial doubt about going concern and adequate disclosure is made in the financial statements, the emphasis-of-matter paragraph in the auditor''s report should:',
- '["Replace the opinion paragraph", "Follow the opinion paragraph and include the words "substantial doubt" and "going concern"", "Be placed before the opinion paragraph and include specific reference to the financial statement note discussing the matter", "Not reference any specific note in the financial statements"]'::jsonb,
+ '["Replace the opinion paragraph", "Follow the opinion paragraph and reference substantial doubt and going concern", "Be placed before the opinion paragraph and include specific reference to the financial statement note discussing the matter", "Not reference any specific note in the financial statements"]'::jsonb,
  2,
  'The emphasis-of-matter paragraph for going concern should be placed in a separate section of the auditor''s report after the opinion paragraph (for non-issuers) or before the opinion paragraph in certain circumstances. It should specifically reference the note in the financial statements that discusses the going concern uncertainty and include appropriate language about substantial doubt.',
  'hard');

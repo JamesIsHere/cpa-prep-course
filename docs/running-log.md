@@ -1,5 +1,11 @@
 # Running Log
 
+## 2026-02-21 00:47
+1. Applied 14 pending migrations (00023–00030, 00032–00037) to production Supabase — all 5,005 questions now live
+2. Fixed JSON quoting bug in 00032 migration (unescaped double quotes inside ::jsonb cast)
+3. Updated /wrap command: added step 1f for pending migration detection + auto-push, added production-sync rule
+4. Added Supabase/SQL lesson to lessons.md (JSON quoting in ::jsonb casts)
+
 ## 2026-02-21 00:36
 1. Upgraded /wrap command with coherence audit step (hardcoded counts, CLAUDE.md accuracy, To Do.md, tests, stale files, build/test)
 2. Updated CLAUDE.md git section with current commit history
