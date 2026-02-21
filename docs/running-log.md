@@ -1,5 +1,14 @@
 # Running Log
 
+## 2026-02-21 01:35
+1. Removed duplicate StudyPipeline from homepage (was rendered twice — "A 4-step system" and "How it works")
+2. Switched pipeline color from emerald to indigo to avoid visual collision with section badges
+3. Removed dead "+N more rows" truncation from reference table previews (now shows all rows)
+4. Updated sections page copy to include $29.99 pricing
+5. Fixed 2 stale e2e test assertions (features section headings and "How it works" heading)
+6. Full coherence audit: counts, prices, imports, links, CLAUDE.md, duplicates — all clean
+7. Archived stale session file from project root
+
 ## 2026-02-21 01:20
 1. Created `StudyPipeline` component with full (4-step horizontal flow with SVG icons) and compact (breadcrumb) variants
 2. Placed full pipeline on homepage (replaced emoji features grid + 3-step "How it works"), sections listing, and dashboard

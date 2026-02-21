@@ -37,6 +37,9 @@ Blueprint-driven study pipeline, content connectivity, and data quality.
 
 | Date       | Task                                                                    |
 |------------|-------------------------------------------------------------------------|
+| 2026-02-21 | Pipeline color refactor (emerald → indigo), remove homepage duplicate   |
+| 2026-02-21 | Fix dead "+N more rows" in reference table previews                     |
+| 2026-02-21 | Fix 2 stale e2e test assertions, full coherence audit                   |
 | 2026-02-21 | Add study pipeline visual + framework discoverability across 8 pages    |
 | 2026-02-21 | Apply migrations 00023–00037 to production Supabase (all questions live) |
 | 2026-02-21 | Add 600 gap questions for 30 unmapped blueprint groups (5,005 total)    |
