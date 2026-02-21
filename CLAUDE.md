@@ -103,10 +103,14 @@ npm run generate-migration   # Generate UPDATE scaffold from piped candidate JSO
 | `scripts/qa/run-qa.ts`                        | QA audit entry point (`npm run qa`)        |
 | `scripts/qa/pull-l2-batch.ts`                 | L2 question extractor for Bloom's rebalancing |
 | `scripts/qa/select-l2-candidates.ts`          | L2 candidate selector with topic cap awareness |
-| `scripts/qa/generate-migration.ts`            | Migration scaffold generator (stdin JSON → SQL) |
-| `scripts/qa/validate-migration.ts`            | Pre-commit migration validator (INSERT + UPDATE) |
+| `scripts/qa/select-easy-candidates.ts`        | Easy→medium candidate selector with topic floor |
+| `scripts/qa/find-missing-citations.ts`        | Citation gap identifier for backfill         |
+| `scripts/qa/generate-migration.ts`            | Migration scaffold generator (blooms/difficulty/citation modes) |
+| `scripts/qa/validate-migration.ts`            | Pre-commit migration validator (INSERT + UPDATE + explanation-only) |
 | `docs/blooms-rebalancing.md`                  | Cross-session Bloom's L3 rebalancing tracker |
 | `docs/blooms-l1-l4-rebalancing.md`            | Cross-session Bloom's L1/L4 rebalancing tracker |
+| `docs/difficulty-rebalancing.md`              | Cross-session difficulty rebalancing tracker |
+| `docs/citation-coverage.md`                   | Cross-session citation coverage tracker      |
 | `.env.local.example`                          | Required env vars template                 |
 
 ## Content Summary
@@ -153,12 +157,14 @@ All build phases complete. Active work is marketing and content connectivity.
 
 - **Style guide:** `docs/question-style-guide.md` — rubric for stem, distractor, explanation, difficulty, and Bloom's level standards
 - **QA audit:** `npm run qa` scores all questions on a 0-10 composite and produces a dated report in `docs/qa-reports/`. Supports `--output=json` for scripting. Bloom's classification uses DB `cognitive_level` column (authoritative) with heuristic fallback.
-- **Migration validator:** `npm run validate-migration <file>` checks INSERT and UPDATE migrations against the rubric (stem length, explanation quality, citation/contrast checks, TODO detection)
-- **Migration generator:** `npm run generate-migration` reads candidate JSON from stdin and outputs UPDATE scaffold SQL
+- **Migration validator:** `npm run validate-migration <file>` checks INSERT, UPDATE, and explanation-only UPDATE migrations against the rubric (stem length, explanation quality, citation/contrast checks, TODO detection)
+- **Migration generator:** `npm run generate-migration` reads candidate JSON from stdin and outputs UPDATE scaffold SQL. Supports `--mode=blooms|difficulty|citation`
 - **Rule:** All new question migrations must pass `validate-migration` before commit. No questions scoring 0-3 (critical) should be deployed.
 - **Current status:** 0 critical, 0 moderate, 4,987 acceptable (100% at score 7+, avg 8.2/10)
 - **Bloom's L3 rebalancing:** Complete — REG 9%→25%, BAR 16%→30%, FAR 16%→26%, TCP 15%→20%. Total: 389 rewrites. Tracker: `docs/blooms-rebalancing.md`
 - **Bloom's L1/L4 rebalancing:** Complete — BAR (23), FAR (51), TCP (71), REG (169), AUD (190), ISC (284). Total: 788/788 rewrites. Tracker: `docs/blooms-l1-l4-rebalancing.md`
+- **Difficulty rebalancing:** In progress — target 30/50/20 easy/medium/hard. ~533 easy→medium rewrites needed. Tracker: `docs/difficulty-rebalancing.md`
+- **Citation coverage:** Pending — ~65% of explanations lack standard citations. Tracker: `docs/citation-coverage.md`
 
 ## Spec Reference
 

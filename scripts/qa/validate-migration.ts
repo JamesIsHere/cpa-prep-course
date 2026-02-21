@@ -314,6 +314,65 @@ while ((match = updateNoCLPattern.exec(fullSql)) !== null) {
 }
 
 // ============================================================
+// Parse UPDATE statements (explanation-only, for citation backfill)
+// ============================================================
+// Matches: UPDATE questions SET
+//   explanation = '...'
+// WHERE id = N;
+const updateExplanationOnlyPattern =
+	/UPDATE\s+questions\s+SET\s+explanation\s*=\s*'((?:[^']|'')*?)'\s*WHERE\s+id\s*=\s*(\d+)\s*;/g;
+
+while ((match = updateExplanationOnlyPattern.exec(fullSql)) !== null) {
+	// Skip if this was already matched by a full UPDATE pattern (has stem before explanation)
+	const before = fullSql.slice(Math.max(0, match.index - 100), match.index);
+	if (/stem\s*=/i.test(before)) continue;
+
+	questionCount++;
+	const [, explanation, idStr] = match;
+	const id = parseInt(idStr);
+	const explanationClean = explanation.replace(/''/g, "'");
+	const charsBefore = fullSql.slice(0, match.index);
+	const approxLine = (charsBefore.match(/ {50}/g) ?? []).length + 1;
+
+	// TODO detection
+	if (/\bTODO\b/.test(explanationClean)) {
+		issues.push({
+			line: approxLine,
+			severity: "error",
+			message: `Explanation contains TODO placeholder: "${explanationClean.slice(0, 60)}..."`,
+		});
+	}
+
+	// Explanation length
+	const explanationWords = countWords(explanationClean);
+	if (explanationWords < 30) {
+		issues.push({
+			line: approxLine,
+			severity: "error",
+			message: `Short explanation (${explanationWords} words): "${explanationClean.slice(0, 60)}..."`,
+		});
+	}
+
+	// Citation check (error for citation-mode migrations, since that's the whole point)
+	if (!STANDARD_PATTERN.test(explanationClean)) {
+		issues.push({
+			line: approxLine,
+			severity: "error",
+			message: `Explanation lacks standard citation (AU-C, ASC, IRC, etc.): Q${id}`,
+		});
+	}
+
+	// Contrast language
+	if (!WRONG_ANSWER_PATTERN.test(explanationClean)) {
+		issues.push({
+			line: approxLine,
+			severity: "warn",
+			message: `Explanation lacks contrast language addressing wrong answers: Q${id}`,
+		});
+	}
+}
+
+// ============================================================
 // Check answer distribution (mechanical 5x0, 5x1 pattern)
 // ============================================================
 if (distributions.length >= 10) {

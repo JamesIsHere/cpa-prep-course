@@ -8,12 +8,12 @@ Full-scope CPA exam prep for $29.99/month. 96 lessons, 5,000+ practice questions
 
 | Section | Code | Lessons | Questions | Topics |
 |---------|------|---------|-----------|--------|
-| Auditing and Attestation | AUD | 13 | ~210 | Ethics, planning, risk, controls, evidence, sampling, reports |
-| Financial Accounting and Reporting | FAR | 18 | ~250 | Revenue, leases, bonds, equity, govt, NFP, consolidations |
-| Regulation | REG | 18 | ~250 | Contracts, business structures, individual/entity tax, procedures |
-| Business Analysis and Reporting | BAR | 16 | ~195 | Valuation, capital structure, derivatives, govt reporting |
-| Information Systems and Controls | ISC | 16 | ~190 | IT infrastructure, security, privacy, SOC engagements |
-| Tax Compliance and Planning | TCP | 15 | ~180 | Individual/entity planning, wealth transfer, international tax |
+| Auditing and Attestation | AUD | 13 | ~1,055 | Ethics, planning, risk, controls, evidence, sampling, reports |
+| Financial Accounting and Reporting | FAR | 18 | ~860   | Revenue, leases, bonds, equity, govt, NFP, consolidations |
+| Regulation | REG | 18 | ~850   | Contracts, business structures, individual/entity tax, procedures |
+| Business Analysis and Reporting | BAR | 16 | ~780   | Valuation, capital structure, derivatives, govt reporting |
+| Information Systems and Controls | ISC | 16 | ~749   | IT infrastructure, security, privacy, SOC engagements |
+| Tax Compliance and Planning | TCP | 15 | ~699   | Individual/entity planning, wealth transfer, international tax |
 
 ## Features
 
@@ -71,7 +71,7 @@ tests/
   unit/          Vitest (94 tests)
   e2e/           Playwright (152 tests)
 supabase/
-  migrations/    22 SQL migrations (schema + seed data)
+  migrations/    127 SQL migrations (schema + seed + question upgrades)
 ```
 
 ## License

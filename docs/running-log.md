@@ -1,5 +1,17 @@
 # Running Log
 
+## 2026-02-22 17:09
+1. Created `select-easy-candidates.ts` — easy→medium candidate selector with 20% per-topic floor safety
+2. Created `find-missing-citations.ts` — identifies questions with explanations lacking standard citations
+3. Extended `generate-migration.ts` with `--mode=blooms|difficulty|citation` flag for three migration types
+4. Extended `validate-migration.ts` with explanation-only UPDATE parser for citation backfill migrations
+5. Created `docs/difficulty-rebalancing.md` cross-session tracker (~533 rewrites, 6 sections)
+6. Created `docs/citation-coverage.md` cross-session tracker (~65% gap)
+7. Fixed README.md stale per-section question counts (were 25% of actual) and migration count (22→127)
+8. Archived stale session file from project root
+9. Updated CLAUDE.md key files table and question quality section with new tools and workstreams
+10. Updated To Do.md with difficulty rebalancing and citation coverage tasks
+
 ## 2026-02-22 16:44
 1. Database indexes migration (00126): 5 indexes on questions (section_id, section+topic, section+cognitive_level) and quiz/exam attempts (user_id)
 2. Random questions RPC migration (00127): `get_random_questions(p_section_id, p_count, p_topics)` for server-side sampling

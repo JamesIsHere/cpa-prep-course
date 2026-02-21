@@ -30,6 +30,8 @@ Blueprint-driven study pipeline, content connectivity, and data quality.
 
 ### Upcoming
 - [ ] Resubmit sitemap to Google Search Console (stable lastModified, no more crawl budget waste)
+- [ ] Difficulty rebalancing — target 30/50/20 easy/medium/hard. ~533 rewrites needed. Tracker: docs/difficulty-rebalancing.md
+- [ ] Citation coverage backfill — ~65% of explanations lack standard citations. Tracker: docs/citation-coverage.md
 - [x] Bloom's L1/L4 rebalancing — all sections complete. AUD (190), ISC (284). Tracker: docs/blooms-l1-l4-rebalancing.md
 - [x] Bloom's L3 question rebalancing — all sections done. REG 25%, BAR 30%, FAR 26%, TCP 20%. Tracker: docs/blooms-rebalancing.md
 
