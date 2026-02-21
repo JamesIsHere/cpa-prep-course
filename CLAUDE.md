@@ -78,6 +78,7 @@ npm run validate-migration <file>  # Validate question migration against style g
 | `supabase/migrations/00032–00037`             | Gap coverage questions for 30 blueprint groups |
 | `supabase/migrations/00038_add_cognitive_level.sql` | Bloom's cognitive level column          |
 | `supabase/migrations/00040–00041`             | Data fix + 8 critical question rewrites  |
+| `supabase/migrations/00042–00050`                     | Deduplication + 8 question batch upgrades |
 | `docs/question-style-guide.md`                | Question writing rubric (all new questions must meet this) |
 | `scripts/qa/run-qa.ts`                        | QA audit entry point (`npm run qa`)        |
 | `scripts/qa/validate-migration.ts`            | Pre-commit migration validator             |
@@ -94,7 +95,7 @@ npm run validate-migration <file>  # Validate question migration against style g
 | ISC     | isc  | 16      | ~749      | 39              | IT infrastructure, ERP, data management, security frameworks, threats, privacy, SOC, SOC testing, SOC reporting |
 | TCP     | tcp  | 15      | ~699      | 44              | Individual planning, passive/at-risk, wealth transfer, retirement, international tax, trusts, capital structure tax, nontaxable dispositions, related parties |
 
-**Totals:** 96 lessons, ~5,010 questions, 280 framework items across 6 sections
+**Totals:** 96 lessons, ~4,990 questions, 280 framework items across 6 sections
 
 ## Database Tables
 
@@ -140,8 +141,8 @@ Full product specification with all 7 phases, data model, and acceptance criteri
 Repository: https://github.com/JamesIsHere/cpa-prep-course
 Branch: `master`
 Latest commits:
+- `1275c2e` rewrite 8 critical questions, fix defined benefit limit, add fetch utility
 - `9cc30f3` build QA system: analyzers, style guide, validator, Bloom's tagging
 - `2f94b61` pipeline QA: indigo color, remove duplicate, fix stale tests, coherence audit
 - `f63c327` checkpoint: pipeline color refactor, remove duplicate, fix stale tests
 - `1a8f380` add study pipeline visual and framework discoverability across 8 pages
-- `dcf52ed` fix migration JSON quoting, push all migrations to production, add migration check to /wrap

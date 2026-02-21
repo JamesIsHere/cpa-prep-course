@@ -1,5 +1,18 @@
 # Running Log
 
+## 2026-02-22 03:10
+1. Deduplicated 29 likely-duplicate question pairs: deleted 18 true duplicates, kept 11 intentional foil pairs (migration 00042)
+2. Upgraded 37 moderate State and Local Government Reporting questions to score 7+ (migration 00043)
+3. Upgraded 25 moderate Risk Management and Economics questions to score 7+ (migration 00044)
+4. Upgraded 19 moderate Derivatives and Hedging questions to score 7+ (migration 00045)
+5. Upgraded 9 moderate Misstatements and Control Deficiencies questions to score 7+ (migration 00046)
+6. Upgraded 23 moderate Financial Valuation Methods questions to score 7+ (migration 00047)
+7. Upgraded 14 moderate Pension and Postretirement Benefits questions to score 7+ (migration 00048)
+8. Upgraded 21 moderate Advanced Revenue and Intangibles questions to score 7+ (migration 00049)
+9. Upgraded 20 moderate Capital Structure and Valuation questions to score 7+ (migration 00050)
+10. Built pull-moderate.ts and count-all-moderate.ts utility scripts for ongoing QA work
+11. Reduced moderate question count from 579 to 407 (172 questions upgraded, 18 duplicates removed)
+
 ## 2026-02-21 22:40
 1. Reviewed 7 medium content QA issues from prior session — 6 were false positives, 1 real bug found
 2. Fixed defined benefit plan limit for 2026: $280,000 → $285,000 in migration 00030 question (migration 00040)
