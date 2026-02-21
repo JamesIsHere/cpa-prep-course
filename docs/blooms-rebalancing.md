@@ -8,8 +8,8 @@ Cross-session tracker for rewriting L2 questions to L3 analytical depth.
 |---------|----------|-----------|--------|----------------------|-----------|---------|
 | REG     | 9%       | 25%       | ~0pt   | ~60                  | 155       | Done    |
 | BAR     | 16%      | 30%       | ~0pt   | ~109                 | 109       | Done    |
-| FAR     | 16%      | 25%       | -9pt   | ~77                  | 0         | Pending |
-| TCP     | 15%      | 20%       | -5pt   | ~36                  | 0         | Pending |
+| FAR     | 16%      | 25%       | ~0pt   | ~85                  | 85        | Done    |
+| TCP     | 15%      | 20%       | ~0pt   | ~40                  | 40        | Done    |
 
 ## Migration Log
 
@@ -21,6 +21,12 @@ Cross-session tracker for rewriting L2 questions to L3 analytical depth.
 | 2026-02-22 | 00098_blooms_l3_bar_batch1.sql     | BAR     | 45    | 22%     | 7 topics: Financial Statement Analysis, State/Local Govt, Derivatives, Revenue/Intangibles, Valuation, Consolidations, Leases |
 | 2026-02-22 | 00099_blooms_l3_bar_batch2.sql     | BAR     | 40    | 27%     | 6 topics: Forecasting, Capital Structure, Stock Comp/Bus Comb, Internal-Use Software, Fund-to-Govt-Wide, Pension |
 | 2026-02-22 | 00100_blooms_l3_bar_batch3.sql     | BAR     | 24    | 30%     | 6 topics: Interfund, Risk Mgmt, Foreign Currency, Intangible Assets, Income Taxes, Business Combinations |
+| 2026-02-21 | 00101_blooms_l3_far_batch1.sql     | FAR     | 25    | 20%     | 7 topics: Revenue Recognition, Governmental Accounting, Consolidations, Equity, Income Taxes, Fixed Assets, Leases |
+| 2026-02-21 | 00102_blooms_l3_far_batch2.sql     | FAR     | 25    | 22%     | 8 topics: Inventory, Fair Value, Financial Statements, Bonds/Debt, NFP, Intangible Assets, Cash/Receivables, Employee Benefits |
+| 2026-02-21 | 00103_blooms_l3_far_batch3.sql     | FAR     | 25    | 24%     | 8 topics: SPF, Cash Flows, Contingencies, EPS, Acctg Changes, Govt Fundamentals, Conceptual Framework, Payables |
+| 2026-02-21 | 00104_blooms_l3_far_batch4.sql     | FAR     | 10    | 26%     | 10 topics: top-up batch covering all major FAR topics for 25%+ target |
+| 2026-02-21 | 00105_blooms_l3_tcp_batch1.sql     | TCP     | 20    | 18%     | 10 topics: Entity Formation, Passive Activity, International, Wealth Transfer, Retirement, Trusts, Owner-Entity, Nontaxable, Compensation, NOLs |
+| 2026-02-21 | 00106_blooms_l3_tcp_batch2.sql     | TCP     | 20    | 20%     | 8 topics: Adv Basis, Entity Choice, Capital Structure, Related Parties, Formation/Restructuring, Multi-Jurisdictional, Entity Formation, Passive Activity |
 
 ## L3 Rewrite Patterns
 

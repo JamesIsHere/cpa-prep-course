@@ -1,5 +1,19 @@
 # Running Log
 
+## 2026-02-21 10:05
+1. Bloom's L3 rebalancing FAR batch 1 (00101): 25 L2→L3 rewrites across 7 topics (Revenue Recognition, Governmental Accounting, Consolidations, Equity, Income Taxes, Fixed Assets, Leases)
+2. Bloom's L3 rebalancing FAR batch 2 (00102): 25 L2→L3 rewrites across 8 topics (Inventory, Fair Value, Financial Statements, Bonds/Debt, NFP, Intangible Assets, Cash/Receivables, Employee Benefits)
+3. Bloom's L3 rebalancing FAR batch 3 (00103): 25 L2→L3 rewrites across 8 topics (SPF, Cash Flows, Contingencies, EPS, Accounting Changes, Govt Fundamentals, Conceptual Framework, Payables)
+4. Fixed 6 duplicate IDs across FAR batches (replaced with fresh L2 candidates from same topics)
+5. Bloom's L3 rebalancing FAR batch 4 top-up (00104): 10 additional rewrites to push FAR from 24% to 26% L3
+6. FAR section complete: 16%→26% L3, 85 total rewrites, all applied to production Supabase
+7. Bloom's L3 rebalancing TCP batch 1 (00105): 20 L2→L3 rewrites across 10 topics
+8. Bloom's L3 rebalancing TCP batch 2 (00106): 20 L2→L3 rewrites across 8 topics
+9. TCP section complete: 15%→20% L3, 40 total rewrites, all applied to production Supabase
+10. Updated blooms-rebalancing.md tracker — all 4 sections now Done
+11. Updated CLAUDE.md — migration refs, Bloom's status marked complete
+12. Coherence audit: build passes, 115 unit tests pass, all migrations in sync
+
 ## 2026-02-22 09:06
 1. Pulled L2 candidates for BAR section (556 L2 questions across 19 topics)
 2. Created migration 00098: Bloom's L3 BAR batch 1 — 45 rewrites across 7 topics (Financial Statement Analysis, State/Local Govt, Derivatives, Revenue/Intangibles, Valuation, Consolidations, Leases)
