@@ -83,45 +83,41 @@ function scoreQuestion(q: Q) {
 	return { score: Math.max(0, Math.min(10, score)), flags };
 }
 
-const TOPICS = [
-	"Terms of Engagement",
-	"Other Information and Supplementary Information",
-	"Materiality",
-	"Specific Areas and Transactions",
-	"Governmental Accounting Fundamentals",
-];
-
 async function main() {
 	const allModerate: Array<Q & { score: number; flags: string[] }> = [];
 
-	for (const topic of TOPICS) {
+	// Fetch ALL questions in pages of 1000
+	const allQuestions: Q[] = [];
+	let offset = 0;
+	while (true) {
 		const { data, error } = await supabase
 			.from("questions")
 			.select(
 				"id, stem, choices, correct_index, explanation, difficulty, topic, cognitive_level",
 			)
-			.eq("topic", topic)
+			.range(offset, offset + 999)
 			.order("id");
 
 		if (error) {
-			console.error(`Error fetching "${topic}":`, error);
-			continue;
+			console.error("DB error:", error);
+			break;
 		}
-
-		let topicModerate = 0;
-		for (const q of data as Q[]) {
-			const { score, flags } = scoreQuestion(q);
-			if (score >= 4 && score <= 6) {
-				topicModerate++;
-				allModerate.push({ ...q, score, flags });
-			}
-		}
-		console.error(
-			`${topic}: ${data.length} total, ${topicModerate} moderate (4-6)`,
-		);
+		if (!data || data.length === 0) break;
+		allQuestions.push(...(data as Q[]));
+		if (data.length < 1000) break;
+		offset += 1000;
 	}
 
-	console.error(`\nTotal moderate questions: ${allModerate.length}\n`);
+	console.error(`Fetched ${allQuestions.length} total questions`);
+
+	for (const q of allQuestions) {
+		const { score, flags } = scoreQuestion(q);
+		if (score >= 4 && score <= 6) {
+			allModerate.push({ ...q, score, flags });
+		}
+	}
+
+	console.error(`Total moderate questions: ${allModerate.length}\n`);
 
 	// Output as JSON for processing
 	const output = allModerate.map((q) => ({

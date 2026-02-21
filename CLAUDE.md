@@ -81,6 +81,7 @@ npm run validate-migration <file>  # Validate question migration against style g
 | `supabase/migrations/00042–00050`                     | Deduplication + 8 question batch upgrades |
 | `supabase/migrations/00051–00060`                     | 10 more question batch upgrades (120 questions) |
 | `supabase/migrations/00061–00092`                     | 32 remaining moderate question upgrades (303 questions) |
+| `supabase/migrations/00093`                           | Final 51 moderate question upgrades (0 moderate target) |
 | `docs/question-style-guide.md`                | Question writing rubric (all new questions must meet this) |
 | `scripts/qa/run-qa.ts`                        | QA audit entry point (`npm run qa`)        |
 | `scripts/qa/validate-migration.ts`            | Pre-commit migration validator             |
@@ -132,6 +133,7 @@ All build phases complete. Active work is marketing and content connectivity.
 - **QA audit:** `npm run qa` scores all questions on a 0-10 composite and produces a dated report in `docs/qa-reports/`
 - **Migration validator:** `npm run validate-migration <file>` checks new question migrations against the rubric before commit
 - **Rule:** All new question migrations must pass `validate-migration` before commit. No questions scoring 0-3 (critical) should be deployed.
+- **Current status:** 0 critical, 0 moderate, 4,987 acceptable (100% at score 7+, avg 8.2/10)
 
 ## Spec Reference
 
@@ -143,8 +145,8 @@ Full product specification with all 7 phases, data model, and acceptance criteri
 Repository: https://github.com/JamesIsHere/cpa-prep-course
 Branch: `master`
 Latest commits:
+- upgrade final 51 moderate questions to 0 moderate (100% acceptable)
+- `aaf9877` coherence audit, session wrap: update CLAUDE.md, log, archive session file
 - `10af244` update QA report: 0 critical, 51 moderate remaining (avg 8.2/10)
 - `82237e2` upgrade all remaining moderate questions across 32 migrations (287 → 0 moderate target)
 - `c33ea81` upgrade 120 moderate questions across 10 topics (407 → 287 moderate remaining)
-- `031f91e` deduplicate 18 questions, upgrade 172 moderate questions across 8 topics
-- `1275c2e` rewrite 8 critical questions, fix defined benefit limit, add fetch utility

@@ -1,5 +1,12 @@
 # Running Log
 
+## 2026-02-22 05:35
+1. Pulled all 51 moderate-scoring questions from Supabase using updated batch script
+2. Wrote migration 00093: upgraded all 51 moderate questions (short stems, length-cuing, absolute-assurance, short explanations, all-none-above)
+3. Applied migration 00093 to production Supabase — 0 moderate remaining (100% acceptable)
+4. Ran full QA audit: 0 critical, 0 moderate, 4,987 acceptable, avg 8.2/10
+5. Coherence audit: archived stale session file, updated CLAUDE.md (key files, git, QA status), updated To Do.md
+
 ## 2026-02-22 05:08
 1. Finished incomplete migration 00087 (10 remaining AUD questions)
 2. Wrote 5 new migrations (00088-00092) upgrading 303 moderate questions across FAR, REG, BAR, ISC, TCP
