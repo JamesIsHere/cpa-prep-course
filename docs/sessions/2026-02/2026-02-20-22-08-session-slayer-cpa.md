@@ -41,7 +41,7 @@ Validated all 6 question bank expansion migrations (00025–00030) for SQL corre
 
 ## Next Steps
 
-1. Verify Stripe product/price is updated to $29.99 in the Stripe Dashboard (the code references the price, but Stripe controls the actual charge)
-2. Set up Google Search Console: verify slayer-cpa.com, submit sitemap.xml
+1. ~~Verify Stripe product/price is updated to $29.99 in the Stripe Dashboard~~ — Done 2026-02-20 (new price created, old archived, STRIPE_PRICE_ID updated in Vercel)
+2. ~~Set up Google Search Console: verify slayer-cpa.com, submit sitemap.xml~~ — Done 2026-02-20 (TXT record in Cloudflare, 17 pages discovered)
 3. Continue marketing plan Phase 1: blog posts, Reddit participation, free content
 4. Run full test suite (`npm test` + `npm run test:e2e`) to confirm all assertions pass with new price

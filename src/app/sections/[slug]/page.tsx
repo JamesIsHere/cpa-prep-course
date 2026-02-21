@@ -39,12 +39,18 @@ export default async function SectionDetailPage({
 			<h1 className="text-3xl font-bold text-gray-900 mb-2">{section.title}</h1>
 			<p className="text-gray-500 mb-8">{section.description}</p>
 
-			<div className="flex gap-3 mb-8">
+			<div className="flex flex-wrap gap-3 mb-8">
 				<Link
 					href={`/sections/${section.slug}/quizzes`}
 					className="inline-flex items-center gap-2 bg-emerald-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-emerald-700 transition-colors text-sm"
 				>
 					Take a Quiz
+				</Link>
+				<Link
+					href={`/sections/${section.slug}/blueprint`}
+					className="inline-flex items-center gap-2 border border-emerald-600 text-emerald-700 px-5 py-2 rounded-lg font-medium hover:bg-emerald-50 transition-colors text-sm"
+				>
+					Study by Blueprint
 				</Link>
 				<Link
 					href={`/exam?section=${section.code}`}

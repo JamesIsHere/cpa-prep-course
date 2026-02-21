@@ -6,6 +6,7 @@ export const tcpFramework: StudyFramework = {
 	conceptMaps: [
 		{
 			title: "Stock Option Types — ISO vs. NQSO Tax Treatment",
+			blueprintGroups: ["tcp.1.A"],
 			root: {
 				label: "Compensatory Stock Options",
 				children: [
@@ -63,6 +64,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			title: "Loss Limitation Ordering Rules",
+			blueprintGroups: ["tcp.1.B", "tcp.2.D"],
 			root: {
 				label: "Loss Limitation Hierarchy (applied in order)",
 				children: [
@@ -130,6 +132,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			title: "Gift and Estate Tax Unified Framework",
+			blueprintGroups: ["tcp.1.C"],
 			root: {
 				label: "Transfer Tax System",
 				children: [
@@ -181,6 +184,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			title: "Entity Type Comparison",
+			blueprintGroups: ["tcp.3.B"],
 			root: {
 				label: "Business Entity Selection",
 				children: [
@@ -240,6 +244,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			title: "International Tax Provisions",
+			blueprintGroups: ["tcp.2.B"],
 			root: {
 				label: "US International Tax Framework",
 				children: [
@@ -311,6 +316,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			title: "Section 302 Stock Redemption Tests",
+			blueprintGroups: ["tcp.2.C"],
 			root: {
 				label: "Section 302 Redemption Analysis",
 				children: [
@@ -362,6 +368,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			title: "Trust Types and Taxation",
+			blueprintGroups: ["tcp.3.A"],
 			root: {
 				label: "Trust Classification and Tax Treatment",
 				children: [
@@ -414,6 +421,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			title: "Entity Formation and Liquidation — Key IRC Sections",
+			blueprintGroups: ["tcp.2.E", "tcp.4.A"],
 			root: {
 				label: "Tax-Deferred Formation and Taxable Liquidation",
 				children: [
@@ -485,6 +493,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			title: "Constructive Ownership Rules (Section 267/318)",
+			blueprintGroups: ["tcp.4.C"],
 			root: {
 				label: "Constructive Ownership Attribution",
 				children: [
@@ -560,6 +569,7 @@ export const tcpFramework: StudyFramework = {
 	decisionTrees: [
 		{
 			title: "Entity Choice Decision Tree",
+			blueprintGroups: ["tcp.3.B"],
 			root: {
 				question:
 					"Does the business need to retain earnings for growth and access public capital markets?",
@@ -589,6 +599,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			title: "ISO vs. NQSO — Qualifying vs. Disqualifying Disposition",
+			blueprintGroups: ["tcp.1.A"],
 			root: {
 				question: "Is the stock option an Incentive Stock Option (ISO)?",
 				yes: {
@@ -602,6 +613,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			title: "Section 302 Redemption — Dividend vs. Sale Treatment",
+			blueprintGroups: ["tcp.2.C"],
 			root: {
 				question:
 					"After applying IRC 318 constructive ownership rules, was the shareholder's entire interest completely terminated (302(b)(3))?",
@@ -621,6 +633,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			title: "NOL Utilization — Pre-TCJA vs. Post-TCJA Rules",
+			blueprintGroups: ["tcp.2.A"],
 			root: {
 				question:
 					"Was the net operating loss generated in a tax year beginning before January 1, 2018?",
@@ -634,6 +647,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			title: "Passive vs. Active — Material Participation Test Flow",
+			blueprintGroups: ["tcp.1.B"],
 			root: {
 				question:
 					"Did the taxpayer participate in the activity for more than 500 hours during the tax year?",
@@ -658,6 +672,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			title: "Trust Classification — Simple vs. Complex vs. Grantor",
+			blueprintGroups: ["tcp.3.A"],
 			root: {
 				question:
 					"Does the grantor retain a prohibited power or interest under IRC 671-679 (e.g., power to revoke, control beneficial enjoyment, borrow without adequate security)?",
@@ -672,6 +687,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			title: "Is the Interest Deductible Under Section 163(j)?",
+			blueprintGroups: ["tcp.3.C"],
 			root: {
 				question:
 					"Does the taxpayer meet the small business exception (average annual gross receipts of $30 million or less for 3 prior tax years)?",
@@ -693,6 +709,7 @@ export const tcpFramework: StudyFramework = {
 	formulas: [
 		{
 			name: "GILTI Computation",
+			blueprintGroups: ["tcp.2.B"],
 			formula:
 				"GILTI = Tested Income - (10% x QBAI) - Specified Interest Expense",
 			description:
@@ -700,6 +717,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			name: "Foreign Tax Credit Limitation",
+			blueprintGroups: ["tcp.2.B"],
 			formula:
 				"FTC Limit = US Tax x (Foreign Source Taxable Income / Worldwide Taxable Income)",
 			description:
@@ -707,6 +725,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			name: "Gift Tax — Taxable Gifts",
+			blueprintGroups: ["tcp.1.C"],
 			formula:
 				"Taxable Gifts = Total Gifts - Annual Exclusions - Marital Deduction - Charitable Deduction",
 			description:
@@ -714,6 +733,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			name: "Self-Employment Tax",
+			blueprintGroups: ["tcp.1.A"],
 			formula:
 				"SE Tax = 92.35% x Net SE Income x 15.3% (up to SS wage base); 2.9% on excess",
 			description:
@@ -721,6 +741,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			name: "S Corp Stock Basis Ordering",
+			blueprintGroups: ["tcp.2.D"],
 			formula:
 				"Basis = Beginning + Income + Contributions - Nondeductible Expenses - Distributions - Losses/Deductions",
 			description:
@@ -728,6 +749,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			name: "Distributable Net Income (DNI)",
+			blueprintGroups: ["tcp.3.A"],
 			formula:
 				"DNI = Taxable Income + Personal Exemption + Tax-Exempt Interest - Capital Gains Allocated to Corpus + Capital Losses",
 			description:
@@ -735,6 +757,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			name: "Section 199A QBI Deduction (Simplified)",
+			blueprintGroups: ["tcp.1.A"],
 			formula:
 				"QBI Deduction = Lesser of: (a) 20% of QBI, or (b) 20% of taxable income before QBI deduction (minus net capital gain)",
 			description:
@@ -742,6 +765,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			name: "Section 199A W-2/UBIA Limitation",
+			blueprintGroups: ["tcp.1.A"],
 			formula:
 				"QBI Deduction (above threshold) = 20% of QBI, limited to greater of: (a) 50% of W-2 wages, or (b) 25% of W-2 wages + 2.5% of UBIA of qualified property",
 			description:
@@ -749,6 +773,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			name: "Estate Tax Computation",
+			blueprintGroups: ["tcp.1.C"],
 			formula:
 				"Estate Tax = (Gross Estate - Deductions) x Tax Rate - Unified Credit - Prior Gift Tax Credits",
 			description:
@@ -756,6 +781,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			name: "Installment Sale Gross Profit Percentage",
+			blueprintGroups: ["tcp.4.B"],
 			formula:
 				"Gross Profit % = (Selling Price - Adjusted Basis - Selling Expenses) / Contract Price",
 			description:
@@ -763,6 +789,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			name: "Section 163(j) Business Interest Limitation",
+			blueprintGroups: ["tcp.3.C"],
 			formula:
 				"Deductible Interest = Business Interest Income + (30% x ATI) + Floor Plan Financing Interest",
 			description:
@@ -772,6 +799,7 @@ export const tcpFramework: StudyFramework = {
 	referenceTables: [
 		{
 			title: "Entity Comparison Table",
+			blueprintGroups: ["tcp.3.B"],
 			headers: [
 				"Feature",
 				"C Corporation",
@@ -840,6 +868,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			title: "Retirement Plan Comparison",
+			blueprintGroups: ["tcp.1.D"],
 			headers: [
 				"Plan",
 				"Contribution Limit (2026)",
@@ -887,6 +916,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			title: "IRC Section Quick Reference",
+			blueprintGroups: ["tcp.2.C", "tcp.2.D", "tcp.2.E", "tcp.4.C"],
 			headers: ["Section", "Topic", "Key Rule"],
 			rows: [
 				[
@@ -968,6 +998,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			title: "Gift and Estate Tax Exemption Amounts (2026)",
+			blueprintGroups: ["tcp.1.C"],
 			headers: ["Item", "Amount", "Notes"],
 			rows: [
 				[
@@ -1009,6 +1040,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			title: "Material Participation Tests (IRC 469)",
+			blueprintGroups: ["tcp.1.B"],
 			headers: ["Test #", "Description", "Hours/Criteria"],
 			rows: [
 				[
@@ -1050,6 +1082,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			title: "International Tax Provision Comparison",
+			blueprintGroups: ["tcp.2.B"],
 			headers: ["Provision", "Applies To", "Rate / Mechanism", "Purpose"],
 			rows: [
 				[
@@ -1086,6 +1119,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			title: "Debt vs. Equity Tax Characteristics",
+			blueprintGroups: ["tcp.3.C"],
 			headers: ["Characteristic", "Debt", "Equity"],
 			rows: [
 				[
@@ -1128,6 +1162,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			title: "Involuntary Conversion Replacement Periods (Section 1033)",
+			blueprintGroups: ["tcp.4.B"],
 			headers: [
 				"Type of Conversion",
 				"Replacement Period",
@@ -1163,6 +1198,7 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			title: "Section 267 Related Party Categories",
+			blueprintGroups: ["tcp.4.C"],
 			headers: ["Category", "Relationship", "Ownership Threshold"],
 			rows: [
 				[
@@ -1211,36 +1247,42 @@ export const tcpFramework: StudyFramework = {
 	mnemonics: [
 		{
 			acronym: "BAP-E",
+			blueprintGroups: ["tcp.1.B", "tcp.2.D"],
 			expansion: "Basis, At-risk, Passive activity, Excess business loss",
 			explanation:
 				"The mandatory ordering of loss limitation rules. Each limitation is applied in sequence: losses must first pass the basis test, then at-risk, then passive activity, and finally excess business loss.",
 		},
 		{
 			acronym: "100-1-No NRA",
+			blueprintGroups: ["tcp.3.B"],
 			expansion: "100 shareholders, 1 class of stock, No Nonresident Aliens",
 			explanation:
 				"The three key S corporation eligibility requirements. Also: shareholders must be individuals, certain trusts, or estates (no C corps or partnerships). Must be a domestic corporation.",
 		},
 		{
 			acronym: "CPS-80",
+			blueprintGroups: ["tcp.2.E"],
 			expansion: "Control, Property, Stock, 80%",
 			explanation:
 				"Section 351 tax-free corporate formation requirements: transferors must transfer Property solely for Stock and have 80% Control immediately after the exchange. Boot received triggers gain recognition.",
 		},
 		{
 			acronym: "DNI-DD",
+			blueprintGroups: ["tcp.3.A"],
 			expansion: "DNI Determines Distribution Deduction",
 			explanation:
 				"Distributable Net Income caps both the trust's distribution deduction and the amount taxable to beneficiaries. DNI is the ceiling for the distribution deduction — distributions in excess of DNI are tax-free return of corpus.",
 		},
 		{
 			acronym: "GILTI-Q",
+			blueprintGroups: ["tcp.2.B"],
 			expansion: "GILTI = Tested Income minus 10% of QBAI",
 			explanation:
 				"Quick GILTI formula: subtract 10% of qualified business asset investment (deemed tangible return) from CFC tested income. The excess is GILTI, included currently in US shareholder income. C corps get a 50% deduction.",
 		},
 		{
 			acronym: "FACETS",
+			blueprintGroups: ["tcp.1.B"],
 			expansion:
 				"Five hundred hours, All participation, Cent (100) hours + most, Earlier 5 of 10 years, Three prior years (PSA), Substantial involvement (facts)",
 			explanation:
@@ -1248,12 +1290,14 @@ export const tcpFramework: StudyFramework = {
 		},
 		{
 			acronym: "ISO-21",
+			blueprintGroups: ["tcp.1.A"],
 			expansion: "2 years from grant, 1 year from exercise",
 			explanation:
 				"The holding period requirements for ISO qualifying disposition treatment. Both periods must be met for the entire gain to be taxed as long-term capital gain. Failing either period results in a disqualifying disposition with ordinary income on the spread.",
 		},
 		{
 			acronym: "SLED",
+			blueprintGroups: ["tcp.2.D"],
 			expansion:
 				"Stock basis, Loans (direct only), E&P (AAA ordering), Distributions",
 			explanation:

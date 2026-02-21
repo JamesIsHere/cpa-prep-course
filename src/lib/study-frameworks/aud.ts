@@ -6,6 +6,7 @@ export const audFramework: StudyFramework = {
 	conceptMaps: [
 		{
 			title: "The Audit Process",
+			blueprintGroups: ["aud.1.G", "aud.2.A", "aud.3.A", "aud.4.A"],
 			root: {
 				label: "Audit Engagement",
 				children: [
@@ -49,6 +50,7 @@ export const audFramework: StudyFramework = {
 		},
 		{
 			title: "Audit Evidence",
+			blueprintGroups: ["aud.3.E"],
 			root: {
 				label: "Audit Evidence",
 				children: [
@@ -84,6 +86,7 @@ export const audFramework: StudyFramework = {
 		},
 		{
 			title: "Internal Control Components (COSO)",
+			blueprintGroups: ["aud.2.F"],
 			root: {
 				label: "Internal Control — Integrated Framework",
 				children: [
@@ -131,6 +134,7 @@ export const audFramework: StudyFramework = {
 		},
 		{
 			title: "Types of Audit Reports",
+			blueprintGroups: ["aud.4.A", "aud.4.B"],
 			root: {
 				label: "Audit Report Types",
 				children: [
@@ -155,6 +159,7 @@ export const audFramework: StudyFramework = {
 		},
 		{
 			title: "IT Controls Hierarchy",
+			blueprintGroups: ["aud.2.F"],
 			root: {
 				label: "IT Controls",
 				children: [
@@ -191,6 +196,7 @@ export const audFramework: StudyFramework = {
 		},
 		{
 			title: "Government Auditing Standards Hierarchy",
+			blueprintGroups: ["aud.1.E"],
 			root: {
 				label: "Government Auditing Standards (GAGAS)",
 				children: [
@@ -237,6 +243,7 @@ export const audFramework: StudyFramework = {
 		},
 		{
 			title: "SQMS No. 1 Components",
+			blueprintGroups: ["aud.1.F"],
 			root: {
 				label: "System of Quality Management",
 				children: [
@@ -275,6 +282,7 @@ export const audFramework: StudyFramework = {
 	decisionTrees: [
 		{
 			title: "Audit Opinion Selection",
+			blueprintGroups: ["aud.4.A", "aud.4.B"],
 			root: {
 				question: "Are the financial statements free of material misstatement?",
 				yes: {
@@ -296,6 +304,7 @@ export const audFramework: StudyFramework = {
 		},
 		{
 			title: "Control Deficiency Classification",
+			blueprintGroups: ["aud.3.F"],
 			root: {
 				question:
 					"Does a deficiency (or combination) exist in internal control?",
@@ -315,6 +324,7 @@ export const audFramework: StudyFramework = {
 		},
 		{
 			title: "Subsequent Events Treatment",
+			blueprintGroups: ["aud.3.G", "aud.3.H"],
 			root: {
 				question: "Did the event occur before the balance sheet date?",
 				yes: {
@@ -338,6 +348,7 @@ export const audFramework: StudyFramework = {
 		},
 		{
 			title: "Going Concern Reporting",
+			blueprintGroups: ["aud.3.H", "aud.4.A"],
 			root: {
 				question:
 					"Do conditions or events raise substantial doubt about going concern?",
@@ -366,6 +377,7 @@ export const audFramework: StudyFramework = {
 		},
 		{
 			title: "Is This Engagement Subject to GAGAS?",
+			blueprintGroups: ["aud.1.E"],
 			root: {
 				question: "Is the entity a government organization or program?",
 				yes: "Subject to GAGAS — apply Yellow Book requirements",
@@ -389,6 +401,7 @@ export const audFramework: StudyFramework = {
 		},
 		{
 			title: "SOC Report Selection",
+			blueprintGroups: ["aud.4.E"],
 			root: {
 				question:
 					"Are the controls relevant to user entities' financial reporting?",
@@ -409,23 +422,27 @@ export const audFramework: StudyFramework = {
 	formulas: [
 		{
 			name: "Overall Materiality",
+			blueprintGroups: ["aud.2.A", "aud.2.D"],
 			formula: "Benchmark × Percentage",
 			description:
 				"Common benchmarks: 5% of pre-tax income, 0.5–1% of total revenue, 1–2% of total assets",
 		},
 		{
 			name: "Performance Materiality",
+			blueprintGroups: ["aud.2.D"],
 			formula: "Overall Materiality × 50–75%",
 			description:
 				"Set below overall materiality to reduce the risk that aggregate uncorrected misstatements exceed materiality",
 		},
 		{
 			name: "Tolerable Misstatement (sampling)",
+			blueprintGroups: ["aud.2.D", "aud.3.D"],
 			formula: "Performance Materiality allocated to account",
 			description: "Maximum misstatement in an account that can be accepted",
 		},
 		{
 			name: "Sample Size (attributes)",
+			blueprintGroups: ["aud.3.D"],
 			formula:
 				"n = (Reliability Factor) / (Tolerable Rate − Expected Population Deviation Rate)",
 			description:
@@ -433,18 +450,21 @@ export const audFramework: StudyFramework = {
 		},
 		{
 			name: "Audit Risk Model",
+			blueprintGroups: ["aud.2.C"],
 			formula: "AR = IR × CR × DR",
 			description:
 				"Audit Risk = Inherent Risk × Control Risk × Detection Risk. Auditor controls DR by adjusting nature, timing, and extent of procedures.",
 		},
 		{
 			name: "MUS Sampling Interval",
+			blueprintGroups: ["aud.3.D"],
 			formula: "Sampling Interval = Total Population Value / Sample Size",
 			description:
 				"Each nth dollar is a selection point. Larger balances have proportionally higher probability of selection.",
 		},
 		{
 			name: "MUS Projected Misstatement",
+			blueprintGroups: ["aud.3.D"],
 			formula:
 				"Projected Misstatement = Tainting % × Sampling Interval, where Tainting % = (Book − Audit) / Book",
 			description:
@@ -454,6 +474,7 @@ export const audFramework: StudyFramework = {
 	referenceTables: [
 		{
 			title: "Management Assertions by Category",
+			blueprintGroups: ["aud.3.E"],
 			headers: ["Category", "Assertion", "Description"],
 			rows: [
 				["Transactions", "Occurrence", "Transactions actually occurred"],
@@ -501,6 +522,7 @@ export const audFramework: StudyFramework = {
 		},
 		{
 			title: "Engagement Types Comparison",
+			blueprintGroups: ["aud.1.A", "aud.4.D", "aud.4.E"],
 			headers: [
 				"Feature",
 				"Audit",
@@ -541,6 +563,7 @@ export const audFramework: StudyFramework = {
 		},
 		{
 			title: "Sampling Approaches",
+			blueprintGroups: ["aud.3.D"],
 			headers: ["Approach", "Use", "Method"],
 			rows: [
 				[
@@ -567,6 +590,7 @@ export const audFramework: StudyFramework = {
 		},
 		{
 			title: "PCAOB vs. AICPA GAAS",
+			blueprintGroups: ["aud.1.A"],
 			headers: ["Feature", "PCAOB (Issuers)", "GAAS (Non-Issuers)"],
 			rows: [
 				[
@@ -595,6 +619,7 @@ export const audFramework: StudyFramework = {
 		},
 		{
 			title: "SOC Report Types",
+			blueprintGroups: ["aud.4.E"],
 			headers: ["Report", "Subject Matter", "Distribution", "Criteria"],
 			rows: [
 				[
@@ -619,6 +644,7 @@ export const audFramework: StudyFramework = {
 		},
 		{
 			title: "IT Control Categories",
+			blueprintGroups: ["aud.2.F"],
 			headers: ["Control Type", "Scope", "Examples"],
 			rows: [
 				[
@@ -640,6 +666,7 @@ export const audFramework: StudyFramework = {
 		},
 		{
 			title: "SSARS Engagement Levels",
+			blueprintGroups: ["aud.4.D"],
 			headers: [
 				"Engagement",
 				"Assurance",
@@ -673,6 +700,7 @@ export const audFramework: StudyFramework = {
 		},
 		{
 			title: "GAAS vs. GAGAS Requirements",
+			blueprintGroups: ["aud.1.E"],
 			headers: ["Requirement", "GAAS (AICPA)", "GAGAS (Yellow Book)"],
 			rows: [
 				[
@@ -716,6 +744,7 @@ export const audFramework: StudyFramework = {
 	mnemonics: [
 		{
 			acronym: "CRIME",
+			blueprintGroups: ["aud.2.F"],
 			expansion:
 				"Control environment, Risk assessment, Information & communication, Monitoring, Existing control activities",
 			explanation:
@@ -723,12 +752,14 @@ export const audFramework: StudyFramework = {
 		},
 		{
 			acronym: "PERCV",
+			blueprintGroups: ["aud.3.E"],
 			expansion: "Presentation, Existence, Rights, Completeness, Valuation",
 			explanation:
 				"The five categories of financial statement assertions (balance sheet). Think: 'I PERCV the balance sheet.'",
 		},
 		{
 			acronym: "COCOA",
+			blueprintGroups: ["aud.3.E"],
 			expansion:
 				"Cutoff, Occurrence, Completeness, cOrrect amount (Accuracy), Account classification",
 			explanation:
@@ -736,6 +767,7 @@ export const audFramework: StudyFramework = {
 		},
 		{
 			acronym: "AEIOU",
+			blueprintGroups: ["aud.3.E"],
 			expansion:
 				"Analytical procedures, Enquiry/inquiry, Inspection, Observation, Underlying documentation (reperformance/recalculation)",
 			explanation:
@@ -743,6 +775,7 @@ export const audFramework: StudyFramework = {
 		},
 		{
 			acronym: "PAID TIPS",
+			blueprintGroups: ["aud.2.C"],
 			expansion:
 				"Prior period adjustments, Accounting changes, Irregularities, Disclosure inadequacies, Theft, Illegal acts, Personnel issues, Significant unusual transactions",
 			explanation:
@@ -750,12 +783,14 @@ export const audFramework: StudyFramework = {
 		},
 		{
 			acronym: "POR",
+			blueprintGroups: ["aud.2.C"],
 			expansion: "Pressure, Opportunity, Rationalization",
 			explanation:
 				"The fraud triangle — three conditions generally present when fraud occurs. Pressure creates motive, opportunity provides access, rationalization justifies the act.",
 		},
 		{
 			acronym: "GRACEIMM",
+			blueprintGroups: ["aud.1.F"],
 			expansion:
 				"Governance, Risk assessment, Acceptance, Communication, Engagement performance, Information, Monitoring, Resources (reordered as GRACEIMM for memorability, but covers all 8 SQMS No. 1 components)",
 			explanation:
@@ -763,6 +798,7 @@ export const audFramework: StudyFramework = {
 		},
 		{
 			acronym: "ROIA",
+			blueprintGroups: ["aud.3.D"],
 			expansion:
 				"Risk of Overreliance, Risk of Incorrect Acceptance (effectiveness risks); Risk of Underreliance, Risk of Incorrect Rejection (efficiency risks)",
 			explanation:
@@ -770,6 +806,7 @@ export const audFramework: StudyFramework = {
 		},
 		{
 			acronym: "CAM",
+			blueprintGroups: ["aud.4.A"],
 			expansion:
 				"Communicated to audit committee, Accounts/disclosures are material, Matter involved challenging judgment",
 			explanation:

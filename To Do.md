@@ -1,41 +1,55 @@
 # To Do
 
-## Pre-Launch (This Week)
+## Marketing Push
 
-- [x] Verify Stripe is live: production keys in Vercel, test real checkout, confirm webhook fires
-- [ ] Set up Google Search Console: verify slayer-cpa.com, submit sitemap.xml
-- [x] Set up analytics: GA4 or confirm Vercel Analytics is sufficient
-- [x] Build /blog route with MDX support (reuse existing MDX infra)
-- [x] Draft + publish blog post #1: "Slayer CPA vs Becker: Full Comparison"
-- [x] Draft + publish blog post #2: "How Much Does CPA Exam Prep Really Cost?"
-- [x] Create free CPA study plan PDF (downloadable, no email gate)
+Reddit-first launch strategy. See `docs/marketing-plan.md` for full plan, content calendar, and ad strategy.
 
-## Phase 1: Content Ramp (Weeks 2-8)
+### This Week
+- [ ] Create Reddit account, start browsing r/CPA and r/Accounting
+- [ ] Answer 2-3 questions/day on r/CPA — pure value, zero product mentions
+- [ ] Review and edit blog post: "Slayer CPA vs Surgent"
+- [ ] Review and edit blog post: "Which CPA Section Should You Take First?"
+- [ ] Monitor Google Search Console for indexing status
 
-- [ ] Publish 2 blog posts per week following content calendar in marketing-plan.md
-- [ ] Start organic participation in r/CPA (answer 2-3 questions/week)
+### Week 3-4
+- [ ] Set up Reddit Ads account, create first promoted post ($3-7/day)
+- [ ] Publish 2 blog posts: "Slayer CPA vs NINJA" + "CPA Exam Study Plan: 12-Month Schedule"
+- [ ] Start comparison site outreach — email CPA Exam Guy, I Pass the CPA Exam (offer free review accounts)
 - [ ] Draft free section topic checklists (PDF)
-- [ ] Monitor Search Console for indexing status weekly
 
-## Phase 2: Paid Ads (Month 2-3)
-
-- [ ] Set up Google Ads account, first campaign ($5-10/day)
-- [ ] Set up Reddit Ads, first promoted post ($50/month test)
+### Month 2-4
+- [ ] Scale Reddit Ads on winning creatives ($200-400/month)
+- [ ] Small Google Ads test — long-tail keywords only ($50-100/month max)
 - [ ] Collect first subscriber testimonials (email prompt after 30 days)
 - [ ] Add testimonials section to homepage
+- [ ] Add email capture on blog (Buttondown or Mailchimp free tier)
+
+## Pipeline & Content Quality
+
+Blueprint-driven study pipeline, content connectivity, and data quality.
+
+### Upcoming
+- [ ] Resubmit sitemap to Google Search Console (now includes ~127 blueprint pages)
+- [ ] Add per-topic progress tracking to quiz_attempts (enables real per-group progress instead of proportional estimate)
+- [ ] Review Blueprint Explorer UI on mobile (accordion, group links, progress bars)
 
 ## Completed
-| Date       | Task                                                            |
-|------------|-----------------------------------------------------------------|
-| 2026-02-20 | Vercel Analytics confirmed active (@vercel/analytics in layout)  |
-| 2026-02-20 | Blog route with MDX, 2 posts, nav/sitemap/footer links          |
-| 2026-02-20 | Free CPA study plan PDF: markdown, branded PDF, homepage download link |
-| 2026-02-20 | Full project audit: folder, routes, content, security — all clean |
-| 2026-02-20 | All 94 unit tests + 152 e2e tests pass, production build clean  |
-| 2026-02-20 | Fix 2 stale 2024 tax refs (Sec 179 + 280F → 2025 figures)      |
-| 2026-02-20 | Move stale session file from root to docs/sessions/             |
-| 2026-02-20 | Replace boilerplate README with project documentation           |
-| 2026-02-20 | Deployment review: Vercel, domain, security headers, SEO — good |
-| 2026-02-20 | Marketing plan finalized (docs/marketing-plan.md)               |
-| 2026-02-20 | Stripe go-live: live keys, webhook, tested real checkout ($9.99) |
-| 2026-02-20 | Remove "free" marketing copy from homepage + signup page        |
+
+| Date       | Task                                                                    |
+|------------|-------------------------------------------------------------------------|
+| 2026-02-20 | Blueprint Pipeline: Explorer, group detail, targeted quizzes (11 files) |
+| 2026-02-20 | Tag 280 framework items with blueprintGroups across all 6 sections      |
+| 2026-02-20 | Add topics filter to quiz API for targeted practice                     |
+| 2026-02-20 | Add blueprint routes to sitemap (~127 new pages)                        |
+| 2026-02-20 | Fix all 7 content QA issues (FAR UTP, ISC, TCP)                         |
+| 2026-02-20 | Expand question bank from 1,307 to 4,405 questions                     |
+| 2026-02-20 | Rebalance quiz answer distributions across 5 sections                   |
+| 2026-02-20 | Update pricing to $29.99/month (Stripe, UI, marketing)                  |
+| 2026-02-20 | Blog route with MDX, 4 posts drafted (2 published, 2 in review)        |
+| 2026-02-20 | Free CPA study plan PDF: markdown, branded, homepage download           |
+| 2026-02-20 | Marketing plan finalized (docs/marketing-plan.md)                       |
+| 2026-02-20 | Stripe go-live: live keys, webhook, tested real checkout                |
+| 2026-02-20 | Google Search Console: domain verified, sitemap submitted               |
+| 2026-02-20 | Full project audit: folder, routes, content, security — all clean       |
+| 2026-02-20 | Update all content to 2026 AICPA Blueprint with H.R. 1 provisions      |
+| 2026-02-20 | All 113 unit tests + 152 e2e tests pass, production build clean         |

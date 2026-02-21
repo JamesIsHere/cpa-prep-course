@@ -1,5 +1,22 @@
 # Running Log
 
+## 2026-02-20 23:30
+1. Blueprint Pipeline Phase 1: Added `blueprintGroups?: string[]` to all 5 framework types in types.ts
+2. Blueprint Pipeline Phase 1: Created blueprint-utils.ts with lookup, filtering, slug helpers, and questionCounts re-export
+3. Blueprint Pipeline Phase 1: Tagged 280 framework items with blueprintGroups across all 6 section files (AUD:37, FAR:60, REG:60, BAR:40, ISC:39, TCP:44)
+4. Blueprint Pipeline Phase 1: Created 19 unit tests for blueprint-utils (getBlueprintSection, getBlueprintGroup, getGroupQuestionCount, getFrameworkItemsForGroup, getGroupSlug/parseGroupSlug)
+5. Blueprint Pipeline Phase 2: Added optional `topics` filter to quiz start API and quiz-client component for targeted quizzes
+6. Blueprint Pipeline Phase 3: Built Blueprint Explorer page, accordion component, and progress bar component
+7. Blueprint Pipeline Phase 4: Built group detail page with framework previews, linked lessons, and targeted quiz launch
+8. Blueprint Pipeline Phase 5: Built targeted quiz route at `/sections/[slug]/blueprint/[group]/quiz` wrapping existing QuizClient
+9. Blueprint Pipeline Phase 6: Added loading.tsx skeletons for blueprint and group routes, generateMetadata for SEO
+10. Added "Study by Blueprint" button to section detail page
+11. Project audit: Fixed CLAUDE.md framework counts (FAR 54→60, BAR 34→40, ISC 35→39), added Phase 9 + Phase 10, updated git history
+12. Project audit: Added ~127 blueprint routes to sitemap.ts (6 overview + 121 group detail pages)
+13. Project audit: Restructured To Do.md into Marketing Push + Pipeline & Content Quality sections
+14. Project audit: Added Status column to marketing plan content calendar (Published/Draft/blank)
+15. All 113 unit tests passing, production build clean
+
 ## 2026-02-20 22:08
 1. Validated all 6 expansion migration files (00025–00030): zero SQL syntax errors, valid JSONB, correct difficulty distributions
 2. Identified severe correct_index skew in 5 of 6 files (AUD, FAR, REG, ISC, TCP) — index 1 overrepresented up to 58%

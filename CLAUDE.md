@@ -39,7 +39,8 @@ npm run test:e2e     # Playwright e2e tests (all browsers)
 - **Stripe webhooks** — `src/app/api/webhooks/stripe/route.ts` uses service role client (bypasses RLS)
 - **Auth middleware** — `middleware.ts` at project root protects `/dashboard`, `/account`, `/exam` routes, gated lesson pages, and quiz pages
 - **Paywall gating** — lesson and quiz pages check user's `subscription_status` before rendering content
-- **Quiz engine** — questions fetched server-side (no answers sent to client), scored on submit via route handler, results stored in `quiz_attempts`
+- **Quiz engine** — questions fetched server-side (no answers sent to client), scored on submit via route handler, results stored in `quiz_attempts`. Supports optional `topics` filter for targeted quizzes.
+- **Blueprint Explorer** — `/sections/[slug]/blueprint` shows AICPA Blueprint structure (areas/groups) with progress tracking. Group detail at `/sections/[slug]/blueprint/[group]` shows topics, linked lessons, framework previews, and targeted quiz launch. Study framework items tagged with `blueprintGroups` for per-group filtering.
 
 ## File Conventions
 
@@ -55,6 +56,7 @@ npm run test:e2e     # Playwright e2e tests (all browsers)
 | File                                          | Purpose                                    |
 |-----------------------------------------------|--------------------------------------------|
 | `src/lib/blueprint.ts`                        | AICPA Blueprint data + types (121 groups)  |
+| `src/lib/blueprint-utils.ts`                  | Blueprint lookup, filtering, slug helpers  |
 | `src/lib/blueprint-coverage.ts`               | Coverage analysis + gap identification     |
 | `src/lib/sections.ts`                         | All section + lesson metadata (96 lessons) |
 | `src/lib/stripe.ts`                           | Lazy Stripe client (`getStripe()`)         |
@@ -75,10 +77,10 @@ npm run test:e2e     # Playwright e2e tests (all browsers)
 | Section | Code | Lessons | Questions | Framework Items | Topics                                            |
 |---------|------|---------|-----------|-----------------|---------------------------------------------------|
 | AUD     | aud  | 13      | ~755      | 37              | Ethics, planning, risk, controls, evidence, sampling, reports, review/compilation, attestation, quality mgmt, government auditing |
-| FAR     | far  | 18      | ~780      | 54              | Financial statements, revenue, inventory, fixed/intangible assets, leases, bonds, equity, tax, govt, NFP, consolidations, contingencies, fair value |
+| FAR     | far  | 18      | ~780      | 60              | Financial statements, revenue, inventory, fixed/intangible assets, leases, bonds, equity, tax, govt, NFP, consolidations, contingencies, fair value |
 | REG     | reg  | 18      | ~810      | 60              | Circular 230, contracts, agency, business structures, basis, gains/losses, 1031, individual tax, credits, filing status, C/S corps, partnerships, tax procedures, legal duties, debtor-creditor, tax-exempt orgs |
-| BAR     | bar  | 16      | ~700      | 34              | Financial analysis, valuation, capital structure, derivatives, consolidations, govt reporting, fund reconciliation, interfund transactions |
-| ISC     | isc  | 16      | ~689      | 35              | IT infrastructure, ERP, data management, security frameworks, threats, privacy, SOC, SOC testing, SOC reporting |
+| BAR     | bar  | 16      | ~700      | 40              | Financial analysis, valuation, capital structure, derivatives, consolidations, govt reporting, fund reconciliation, interfund transactions |
+| ISC     | isc  | 16      | ~689      | 39              | IT infrastructure, ERP, data management, security frameworks, threats, privacy, SOC, SOC testing, SOC reporting |
 | TCP     | tcp  | 15      | ~671      | 44              | Individual planning, passive/at-risk, wealth transfer, retirement, international tax, trusts, capital structure tax, nontaxable dispositions, related parties |
 
 **Totals:** 96 lessons, ~4,405 questions, 280 framework items across 6 sections
@@ -89,7 +91,7 @@ npm run test:e2e     # Playwright e2e tests (all browsers)
 
 ## Current Phase
 
-All phases complete:
+All build phases complete. Active work is marketing and content connectivity.
 
 - **Phase 1:** Scaffold + Static Shell
 - **Phase 2:** Auth + Payments
@@ -99,6 +101,8 @@ All phases complete:
 - **Phase 6:** PDF Study Frameworks
 - **Phase 7:** Polish + Deploy (Vercel, SEO, error boundaries, loading states)
 - **Phase 8:** Content Expansion (all 6 sections deepened + built)
+- **Phase 9:** Blueprint Pipeline (Blueprint Explorer, group detail, targeted quizzes, framework tagging)
+- **Phase 10 (active):** Marketing Push (Reddit organic, blog content, Reddit Ads, SEO)
 
 ## Gotchas Learned
 
@@ -118,9 +122,9 @@ Full product specification with all 7 phases, data model, and acceptance criteri
 Repository: https://github.com/JamesIsHere/cpa-prep-course
 Branch: `master`
 Latest commits:
-- `cc505c0` add ISC and TCP full build: 22 lessons, 300 questions, 70 study frameworks
-- `864b0f8` add BAR full build: 10 lessons, 150 questions, 32 study frameworks
-- `dff7252` add 114 REG questions and expand study framework to 48 items
-- `1a5c39f` complete phase 5: practice exams with timed sessions
-- `f279b1f` complete phase 6: pdf study frameworks with on-demand generation
-- `e212de8` add phase 7 polish: favicon, error boundaries, OG tags, sitemap
+- `6afa973` rebalance quiz answer distribution and update pricing to $29.99
+- `a29529e` expand question bank from 1,307 to 4,405 questions across all 6 CPA sections
+- `64bb03b` add /blog route with MDX support and 2 initial posts
+- `900e33d` update all content to 2026 AICPA Blueprint with H.R. 1 provisions
+- `d5aeda1` project audit, Stripe go-live, marketing plan, remove free copy
+- `8e33678` fix 3 medium content QA issues: ISC encryption tree, TCP basis ordering, TCP 199A threshold

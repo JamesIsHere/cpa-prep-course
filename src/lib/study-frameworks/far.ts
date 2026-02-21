@@ -6,6 +6,7 @@ export const farFramework: StudyFramework = {
 	conceptMaps: [
 		{
 			title: "Financial Statements Overview",
+			blueprintGroups: ["far.1.B", "far.1.C", "far.2.I"],
 			root: {
 				label: "Financial Statements",
 				children: [
@@ -50,6 +51,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "Revenue Recognition (ASC 606)",
+			blueprintGroups: ["far.2.B"],
 			root: {
 				label: "ASC 606 — Five-Step Model",
 				children: [
@@ -74,6 +76,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "Lease Classification (ASC 842)",
+			blueprintGroups: ["far.2.G"],
 			root: {
 				label: "Lease Accounting",
 				children: [
@@ -110,6 +113,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "Governmental Accounting Fund Structure",
+			blueprintGroups: ["far.3.G", "far.4.A"],
 			root: {
 				label: "Government Funds",
 				children: [
@@ -141,6 +145,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "Income Tax Accounting (ASC 740)",
+			blueprintGroups: ["far.3.C"],
 			root: {
 				label: "Income Tax Provision",
 				children: [
@@ -176,6 +181,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "GAAP Hierarchy",
+			blueprintGroups: ["far.1.A"],
 			root: {
 				label: "U.S. GAAP Sources",
 				children: [
@@ -200,6 +206,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "Consolidation and Investment Hierarchy",
+			blueprintGroups: ["far.3.D"],
 			root: {
 				label: "Level of Influence",
 				children: [
@@ -238,6 +245,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "NFP Net Asset Classification",
+			blueprintGroups: ["far.3.F"],
 			root: {
 				label: "Net Assets (ASC 958)",
 				children: [
@@ -264,6 +272,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "CECL Expected Credit Loss Model (ASC 326)",
+			blueprintGroups: ["far.2.A"],
 			root: {
 				label: "Current Expected Credit Losses",
 				children: [
@@ -303,6 +312,7 @@ export const farFramework: StudyFramework = {
 	decisionTrees: [
 		{
 			title: "Lease Classification (Lessee — ASC 842)",
+			blueprintGroups: ["far.2.G"],
 			root: {
 				question:
 					"Does the lease transfer ownership to the lessee by the end of the lease term?",
@@ -327,6 +337,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "Impairment Testing — Indefinite-Lived Intangible Assets",
+			blueprintGroups: ["far.2.E"],
 			root: {
 				question: "Is a qualitative assessment performed first? (optional)",
 				yes: {
@@ -348,6 +359,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "Cash Flow Classification",
+			blueprintGroups: ["far.1.C"],
 			root: {
 				question:
 					"Does the cash flow relate to buying/selling long-term assets or investments?",
@@ -362,6 +374,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "Inventory: Lower of Cost or Net Realizable Value",
+			blueprintGroups: ["far.2.C"],
 			root: {
 				question:
 					"Is the inventory's Net Realizable Value (NRV) less than its cost?",
@@ -375,6 +388,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "Sale-Leaseback Classification",
+			blueprintGroups: ["far.2.G"],
 			root: {
 				question:
 					"Does the transfer of the asset qualify as a sale under ASC 606 (control transferred)?",
@@ -388,6 +402,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "Uncertain Tax Position (ASC 740-10)",
+			blueprintGroups: ["far.3.C"],
 			root: {
 				question:
 					"Is it more likely than not (>50%) that the tax position will be sustained on technical merits?",
@@ -402,6 +417,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "Software Cost Capitalization",
+			blueprintGroups: ["far.2.E"],
 			root: {
 				question:
 					"Is the software for internal use or for external sale/licensing?",
@@ -421,6 +437,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "Bank Reconciliation: Book Adjustment or Bank Adjustment?",
+			blueprintGroups: ["far.2.A"],
 			root: {
 				question: "Is this item already recorded on the company's books?",
 				yes: {
@@ -439,6 +456,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "How to Account for a Loss Contingency (ASC 450)",
+			blueprintGroups: ["far.3.B"],
 			root: {
 				question:
 					"Is it probable that a loss has been incurred as of the balance sheet date?",
@@ -463,11 +481,13 @@ export const farFramework: StudyFramework = {
 	formulas: [
 		{
 			name: "Basic EPS",
+			blueprintGroups: ["far.1.D"],
 			formula:
 				"(Net Income − Preferred Dividends) / Weighted-Average Common Shares Outstanding",
 		},
 		{
 			name: "Diluted EPS",
+			blueprintGroups: ["far.1.D"],
 			formula:
 				"(Net Income − Pref. Dividends + Convertible Adjustments) / (WACSO + Dilutive Potential Shares)",
 			description:
@@ -475,58 +495,70 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			name: "Straight-Line Depreciation",
+			blueprintGroups: ["far.2.D"],
 			formula: "(Cost − Salvage Value) / Useful Life",
 		},
 		{
 			name: "Double-Declining Balance",
+			blueprintGroups: ["far.2.D"],
 			formula: "Book Value × (2 / Useful Life)",
 			description: "Ignore salvage value until BV reaches salvage",
 		},
 		{
 			name: "Sum-of-Years-Digits",
+			blueprintGroups: ["far.2.D"],
 			formula: "(Cost − Salvage) × (Remaining Life / Sum of Years Digits)",
 			description: "Sum of years digits = n(n+1)/2",
 		},
 		{
 			name: "Weighted-Average Cost (Inventory)",
+			blueprintGroups: ["far.2.C"],
 			formula: "Total Cost of Goods Available / Total Units Available",
 		},
 		{
 			name: "COGS (Periodic)",
+			blueprintGroups: ["far.2.C"],
 			formula: "Beginning Inventory + Purchases − Ending Inventory",
 		},
 		{
 			name: "Bond Carrying Amount",
+			blueprintGroups: ["far.2.H"],
 			formula: "Face Value ± Unamortized Premium/Discount",
 			description:
 				"Premium: stated rate > market rate. Discount: stated rate < market rate.",
 		},
 		{
 			name: "Effective Interest (Bond Amort.)",
+			blueprintGroups: ["far.2.H"],
 			formula: "Interest Expense = Carrying Amount × Market Rate at Issuance",
 		},
 		{
 			name: "Right-of-Use Asset (Initial)",
+			blueprintGroups: ["far.2.G"],
 			formula:
 				"Lease Liability + Initial Direct Costs + Prepaid Lease Payments − Lease Incentives",
 		},
 		{
 			name: "Deferred Tax Asset/Liability",
+			blueprintGroups: ["far.3.C"],
 			formula: "Temporary Difference × Enacted Tax Rate",
 			description: "Use rate expected to be in effect when difference reverses",
 		},
 		{
 			name: "Pension Expense (Defined Benefit)",
+			blueprintGroups: ["far.1.E"],
 			formula:
 				"Service Cost + Interest Cost − Expected Return on Plan Assets + Amortization of Prior Service Cost ± Amortization of Net Gain/Loss",
 		},
 		{
 			name: "Governmental — Change in Fund Balance",
+			blueprintGroups: ["far.3.G", "far.4.A"],
 			formula:
 				"Revenues + Other Financing Sources − Expenditures − Other Financing Uses",
 		},
 		{
 			name: "Gross Profit Method (Ending Inventory)",
+			blueprintGroups: ["far.2.C"],
 			formula:
 				"Ending Inventory = Goods Available for Sale − [Net Sales × (1 − Gross Profit %)]",
 			description:
@@ -534,12 +566,14 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			name: "Asset Retirement Obligation (Initial)",
+			blueprintGroups: ["far.2.D"],
 			formula: "ARO Liability = Estimated Future Cost / (1 + r)^n",
 			description:
 				"Present value of estimated retirement cost using credit-adjusted risk-free rate (r) over n periods",
 		},
 		{
 			name: "Goodwill (Acquisition Method)",
+			blueprintGroups: ["far.3.D"],
 			formula:
 				"Goodwill = Consideration Transferred + FV of NCI + FV of Previously Held Interest − FV of Net Identifiable Assets",
 			description:
@@ -547,6 +581,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			name: "Net Pension Liability (GASB 68)",
+			blueprintGroups: ["far.4.A"],
 			formula:
 				"Net Pension Liability = Total Pension Liability − Plan Fiduciary Net Position",
 			description:
@@ -554,6 +589,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			name: "Net Periodic Pension Cost (ASC 715)",
+			blueprintGroups: ["far.1.E"],
 			formula:
 				"Service Cost + Interest Cost − Expected Return on Plan Assets ± Amortization of Prior Service Cost ± Amortization of Net Gain/Loss",
 			description:
@@ -561,6 +597,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			name: "Allowance for Credit Losses (CECL — ASC 326)",
+			blueprintGroups: ["far.2.A"],
 			formula:
 				"Allowance = Σ (Amortized Cost of Pool × Expected Loss Rate over Remaining Life)",
 			description:
@@ -570,6 +607,7 @@ export const farFramework: StudyFramework = {
 	referenceTables: [
 		{
 			title: "Inventory Methods Comparison",
+			blueprintGroups: ["far.2.C"],
 			headers: [
 				"Method",
 				"COGS in Rising Prices",
@@ -600,6 +638,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "Governmental vs. Commercial Accounting",
+			blueprintGroups: ["far.3.G", "far.4.A"],
 			headers: [
 				"Feature",
 				"Governmental Funds",
@@ -636,6 +675,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "ASC 606 Variable Consideration Methods",
+			blueprintGroups: ["far.2.B"],
 			headers: ["Method", "When to Use", "Calculation"],
 			rows: [
 				[
@@ -652,6 +692,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "Stock Compensation — Key Entries",
+			blueprintGroups: ["far.2.I"],
 			headers: ["Event", "Debit", "Credit"],
 			rows: [
 				["Grant date (options)", "No entry", "No entry"],
@@ -670,6 +711,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "Key IFRS vs. GAAP Differences",
+			blueprintGroups: ["far.1.A"],
 			headers: ["Topic", "U.S. GAAP", "IFRS"],
 			rows: [
 				["LIFO inventory", "Permitted", "Prohibited"],
@@ -707,6 +749,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "Lessor Lease Classification (ASC 842)",
+			blueprintGroups: ["far.2.G"],
 			headers: ["Feature", "Sales-Type", "Direct Financing", "Operating"],
 			rows: [
 				["Asset derecognized", "Yes", "Yes", "No"],
@@ -728,6 +771,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "OCI Components",
+			blueprintGroups: ["far.1.B"],
 			headers: ["Component", "Reclassified to Income?", "When Reclassified"],
 			rows: [
 				[
@@ -755,6 +799,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "Temporary vs. Permanent Differences",
+			blueprintGroups: ["far.3.C"],
 			headers: ["Item", "Type", "Creates Deferred Tax?"],
 			rows: [
 				["Accelerated tax depreciation", "Temporary", "DTL"],
@@ -769,6 +814,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "Special Purpose Frameworks Comparison",
+			blueprintGroups: ["far.1.F"],
 			headers: [
 				"Framework",
 				"Basis of Accounting",
@@ -810,6 +856,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "ASC 820 Fair Value Hierarchy",
+			blueprintGroups: ["far.3.E"],
 			headers: ["Level", "Input Type", "Examples", "Reliability"],
 			rows: [
 				[
@@ -834,6 +881,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "Loss Contingency Treatment (ASC 450)",
+			blueprintGroups: ["far.3.B"],
 			headers: ["Likelihood", "Definition", "Accrue?", "Disclose?"],
 			rows: [
 				[
@@ -860,6 +908,7 @@ export const farFramework: StudyFramework = {
 	mnemonics: [
 		{
 			acronym: "DR DIGS",
+			blueprintGroups: ["far.3.C"],
 			expansion:
 				"Depreciation, Rent, Depletion, Interest (on bonds), Goodwill (amortization/impairment), Start-up costs",
 			explanation:
@@ -867,6 +916,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			acronym: "GRaSPP",
+			blueprintGroups: ["far.3.G", "far.4.A"],
 			expansion:
 				"General, Special Revenue, Debt Service, Capital Projects, Permanent",
 			explanation:
@@ -874,6 +924,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			acronym: "SE-PIC",
+			blueprintGroups: ["far.1.E"],
 			expansion:
 				"Service cost, Expected return (subtract), Prior service cost amortization, Interest cost, Corridor amortization (gains/losses)",
 			explanation:
@@ -881,6 +932,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			acronym: "OWES LIFE",
+			blueprintGroups: ["far.2.G"],
 			expansion:
 				"Ownership transfer, Written purchase option, Economic life ≥75%, Substantially all FV ≥90%, Lessee — If any of the First Four apply → finance, Else → operating",
 			explanation:
@@ -888,12 +940,14 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			acronym: "RICE",
+			blueprintGroups: ["far.1.C"],
 			expansion: "Revenue, Inventory changes, COGS adjustments, Expenses",
 			explanation:
 				"Order of indirect method operating cash flow adjustments: start with net income, then adjust for non-cash items using RICE.",
 		},
 		{
 			acronym: "CARINV",
+			blueprintGroups: ["far.2.B"],
 			expansion:
 				"Contract identified, Approval/commitment, Rights identifiable, IN-substance commercial, Variable/fixed consideration measurable",
 			explanation:
@@ -901,6 +955,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			acronym: "PUFER",
+			blueprintGroups: ["far.1.B"],
 			expansion:
 				"Pensions/OPEB, Unrealized gains on AFS debt, Foreign currency translation, Effective portion of cash flow hedges, Risk (credit) changes on FV option liabilities",
 			explanation:
@@ -908,6 +963,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			acronym: "TIPARA",
+			blueprintGroups: ["far.1.A"],
 			expansion:
 				"Technical feasibility, Intention to complete, Probable future benefits, Ability to use/sell, Resources available, Ability to measure costs",
 			explanation:
@@ -915,6 +971,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			acronym: "WUCC",
+			blueprintGroups: ["far.3.C"],
 			expansion:
 				"Warranties (accrued), Unearned revenue (taxed on receipt), Compensation (accrued), Credit losses (estimated)",
 			explanation:
@@ -922,6 +979,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			acronym: "SIRAE",
+			blueprintGroups: ["far.1.E"],
 			expansion:
 				"Service cost, Interest cost, Return on plan assets (subtract), Amortization of prior service cost, Excess gain/loss amortization (corridor)",
 			explanation:
@@ -929,12 +987,14 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			acronym: "PRE",
+			blueprintGroups: ["far.3.B"],
 			expansion: "Probable, Reasonably estimable → Expense (accrue the loss)",
 			explanation:
 				"The two conditions for accruing a loss contingency under ASC 450. Both must be met: the loss must be Probable AND Reasonably Estimable. If either condition is not met, disclosure may still be required but no accrual is recorded.",
 		},
 		{
 			acronym: "MIC",
+			blueprintGroups: ["far.3.E"],
 			expansion: "Market approach, Income approach, Cost approach",
 			explanation:
 				"The three valuation techniques under ASC 820 for measuring fair value. Market uses comparable transactions, Income converts future cash flows to present value, and Cost uses replacement cost adjusted for obsolescence.",

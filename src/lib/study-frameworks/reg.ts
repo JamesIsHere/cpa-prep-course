@@ -6,6 +6,7 @@ export const regFramework: StudyFramework = {
 	conceptMaps: [
 		{
 			title: "Individual Tax Formula",
+			blueprintGroups: ["reg.4.A", "reg.4.B", "reg.4.C"],
 			root: {
 				label: "Individual Income Tax Computation",
 				children: [
@@ -58,6 +59,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "Business Entity Taxation",
+			blueprintGroups: ["reg.2.C", "reg.5.A", "reg.5.B", "reg.5.C"],
 			root: {
 				label: "Entity Types",
 				children: [
@@ -100,6 +102,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "Property Transactions — Basis Concepts",
+			blueprintGroups: ["reg.3.A", "reg.3.B"],
 			root: {
 				label: "Basis Determination",
 				children: [
@@ -140,6 +143,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "Tax Credits Overview",
+			blueprintGroups: ["reg.4.C"],
 			root: {
 				label: "Tax Credits",
 				children: [
@@ -167,6 +171,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "Circular 230 — Enforcement and Penalties",
+			blueprintGroups: ["reg.1.B", "reg.1.C"],
 			root: {
 				label: "IRS Enforcement Framework",
 				children: [
@@ -205,6 +210,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "Passive Activity Loss System",
+			blueprintGroups: ["reg.4.A"],
 			root: {
 				label: "Loss Limitation Tiers (S Corp / Partnership)",
 				children: [
@@ -243,6 +249,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "Bankruptcy Chapters — Key Features",
+			blueprintGroups: ["reg.2.D"],
 			root: {
 				label: "Bankruptcy (Title 11, U.S. Code)",
 				children: [
@@ -305,6 +312,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "Tax-Exempt Organizations — Section 501(c)(3)",
+			blueprintGroups: ["reg.5.E"],
 			root: {
 				label: "501(c)(3) Tax-Exempt Organizations",
 				children: [
@@ -363,6 +371,7 @@ export const regFramework: StudyFramework = {
 	decisionTrees: [
 		{
 			title: "Capital vs. Ordinary Gain/Loss",
+			blueprintGroups: ["reg.3.B"],
 			root: {
 				question:
 					"Is the asset a capital asset (not inventory, receivables, depreciable business property, or §1231 asset)?",
@@ -385,6 +394,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "Like-Kind Exchange Qualification (§1031)",
+			blueprintGroups: ["reg.3.B"],
 			root: {
 				question: "Is the property real property (land or buildings)?",
 				yes: {
@@ -402,6 +412,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "S Corporation Eligibility",
+			blueprintGroups: ["reg.5.B"],
 			root: {
 				question: "Is the entity a domestic corporation?",
 				yes: {
@@ -424,6 +435,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "Passive vs. Active vs. Portfolio Income",
+			blueprintGroups: ["reg.4.A"],
 			root: {
 				question:
 					"Is the income from rental activity or a business in which the taxpayer does NOT materially participate?",
@@ -448,6 +460,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "Involuntary Conversion Deferral (§1033)",
+			blueprintGroups: ["reg.3.B"],
 			root: {
 				question:
 					"Was property destroyed, stolen, seized, or condemned (involuntary conversion)?",
@@ -472,6 +485,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "UBIT Three-Part Test",
+			blueprintGroups: ["reg.5.E"],
 			root: {
 				question:
 					"Is the activity a trade or business (carried on for the production of income)?",
@@ -496,6 +510,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "Which Court to File In — Tax Litigation",
+			blueprintGroups: ["reg.1.C"],
 			root: {
 				question:
 					"Can the taxpayer pay the full disputed tax amount before filing suit?",
@@ -519,6 +534,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "Is the Communication Privileged? — Tax Practitioner Analysis",
+			blueprintGroups: ["reg.1.D"],
 			root: {
 				question:
 					"Is the practitioner an attorney (with attorney-client privilege)?",
@@ -548,6 +564,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "Filing Status Determination",
+			blueprintGroups: ["reg.4.D"],
 			root: {
 				question: "Is the taxpayer married on December 31 of the tax year?",
 				yes: {
@@ -577,15 +594,18 @@ export const regFramework: StudyFramework = {
 	formulas: [
 		{
 			name: "Adjusted Gross Income (AGI)",
+			blueprintGroups: ["reg.4.A", "reg.4.B"],
 			formula: "Gross Income − Above-the-Line Deductions",
 		},
 		{
 			name: "Taxable Income",
+			blueprintGroups: ["reg.4.B"],
 			formula:
 				"AGI − (Standard Deduction or Itemized Deductions) − QBI Deduction",
 		},
 		{
 			name: "Self-Employment Tax",
+			blueprintGroups: ["reg.4.A"],
 			formula:
 				"Net SE Income × 92.35% × 15.3% (first $176,100 SS + unlimited Medicare)",
 			description:
@@ -593,6 +613,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			name: "QBI Deduction (§199A — simplified)",
+			blueprintGroups: ["reg.4.B"],
 			formula:
 				"Lesser of: 20% of QBI OR 20% of Taxable Income before QBI deduction",
 			description:
@@ -600,41 +621,49 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			name: "Child Tax Credit",
+			blueprintGroups: ["reg.4.C"],
 			formula: "$2,000 per qualifying child under 17",
 			description:
 				"Phases out at $200K (single) / $400K (MFJ). Up to $1,700 refundable as Additional CTC.",
 		},
 		{
 			name: "Gain on Property Sale",
+			blueprintGroups: ["reg.3.B"],
 			formula: "Amount Realized − Adjusted Basis",
 		},
 		{
 			name: "Amount Realized",
+			blueprintGroups: ["reg.3.B"],
 			formula:
 				"Cash + FMV of Property Received + Liabilities Assumed by Buyer − Selling Expenses",
 		},
 		{
 			name: "Adjusted Basis",
+			blueprintGroups: ["reg.3.A"],
 			formula:
 				"Original Basis + Improvements − Depreciation Allowed or Allowable",
 		},
 		{
 			name: "Gift Basis (for gain)",
+			blueprintGroups: ["reg.3.A"],
 			formula: "Donor's Adjusted Basis + Gift Tax on Appreciation",
 			description: "For loss, use lower of donor's basis or FMV at gift date",
 		},
 		{
 			name: "Like-Kind Exchange — Boot Gain",
+			blueprintGroups: ["reg.3.B"],
 			formula: "Gain Recognized = Lesser of (Gain Realized, Boot Received)",
 			description: "Losses are never recognized in a §1031 exchange",
 		},
 		{
 			name: "Like-Kind Exchange — New Basis",
+			blueprintGroups: ["reg.3.B"],
 			formula:
 				"Basis of Old Property − Boot Received + Boot Paid + Gain Recognized",
 		},
 		{
 			name: "§1245 Depreciation Recapture",
+			blueprintGroups: ["reg.3.B"],
 			formula:
 				"Ordinary Income = Lesser of (Gain Realized, Accumulated Depreciation)",
 			description:
@@ -642,6 +671,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			name: "S Corp Shareholder Basis",
+			blueprintGroups: ["reg.5.B"],
 			formula:
 				"Beginning Basis + Income + Capital Contributions − Distributions − Losses",
 			description:
@@ -649,6 +679,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			name: "Partnership Outside Basis",
+			blueprintGroups: ["reg.5.C"],
 			formula:
 				"Beginning Basis + Income + Contributions + Share of Liabilities − Distributions − Losses",
 			description:
@@ -656,11 +687,13 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			name: "AMT Formula",
+			blueprintGroups: ["reg.4.E"],
 			formula:
 				"AMTI − AMT Exemption × 26%/28% = Tentative Minimum Tax; AMT = TMT − Regular Tax (if positive)",
 		},
 		{
 			name: "Foreign Tax Credit Limitation",
+			blueprintGroups: ["reg.4.C"],
 			formula:
 				"(Foreign Source Taxable Income ÷ Worldwide Taxable Income) × U.S. Tax Liability",
 			description:
@@ -668,12 +701,14 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			name: "Net Investment Income Tax (NIIT)",
+			blueprintGroups: ["reg.4.A"],
 			formula: "3.8% × Lesser of (Net Investment Income, MAGI − Threshold)",
 			description:
 				"Thresholds: $200K single, $250K MFJ, $125K MFS. Not indexed for inflation.",
 		},
 		{
 			name: "Social Security Taxability",
+			blueprintGroups: ["reg.4.A"],
 			formula:
 				"Provisional Income = AGI + Tax-Exempt Interest + 50% of SS Benefits",
 			description:
@@ -681,6 +716,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			name: "Section 382 NOL Limitation",
+			blueprintGroups: ["reg.5.A"],
 			formula:
 				"Annual Limit = FMV of Loss Corp Stock (pre-change) × Long-Term Tax-Exempt Rate",
 			description:
@@ -690,6 +726,7 @@ export const regFramework: StudyFramework = {
 	referenceTables: [
 		{
 			title: "Filing Status — Standard Deduction (2026)",
+			blueprintGroups: ["reg.4.D"],
 			headers: [
 				"Filing Status",
 				"Standard Deduction",
@@ -704,6 +741,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "Entity Comparison — Key Tax Characteristics",
+			blueprintGroups: ["reg.5.A", "reg.5.B", "reg.5.C"],
 			headers: ["Feature", "C Corp", "S Corp", "Partnership", "Sole Prop"],
 			rows: [
 				["Tax form", "1120", "1120-S", "1065", "Schedule C"],
@@ -735,6 +773,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "Property Transaction — Characterization",
+			blueprintGroups: ["reg.3.B"],
 			headers: [
 				"Asset Type",
 				"Holding Period",
@@ -757,6 +796,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "Key Itemized Deductions (Schedule A)",
+			blueprintGroups: ["reg.4.B"],
 			headers: ["Category", "Deduction", "Limitation"],
 			rows: [
 				["Medical", "Unreimbursed medical expenses", "Exceeds 7.5% of AGI"],
@@ -785,6 +825,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "MACRS Recovery Periods — Common Property Classes",
+			blueprintGroups: ["reg.3.A"],
 			headers: ["Class", "Property Examples", "Method", "Convention"],
 			rows: [
 				[
@@ -827,6 +868,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "Seven Material Participation Tests (Reg. §1.469-5T)",
+			blueprintGroups: ["reg.4.A"],
 			headers: ["Test", "Requirement"],
 			rows: [
 				["1", "More than 500 hours during the tax year"],
@@ -852,6 +894,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "AET vs. PHC Tax Comparison",
+			blueprintGroups: ["reg.5.A"],
 			headers: [
 				"Feature",
 				"Accumulated Earnings Tax",
@@ -880,6 +923,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "S Corp AAA Ordering Rules (with Accumulated E&P)",
+			blueprintGroups: ["reg.5.B"],
 			headers: ["Priority", "Source", "Tax Treatment"],
 			rows: [
 				[
@@ -894,6 +938,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "Statute of Limitations — Assessment Periods",
+			blueprintGroups: ["reg.1.C"],
 			headers: ["Scenario", "Period", "Key Rule"],
 			rows: [
 				[
@@ -927,6 +972,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "Preparer Penalty Summary — Sections 6694 and 6695",
+			blueprintGroups: ["reg.1.B", "reg.1.D"],
 			headers: ["Penalty", "Trigger", "Amount", "Defense"],
 			rows: [
 				[
@@ -969,6 +1015,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "UCC Article 9 — Priority Rules Summary",
+			blueprintGroups: ["reg.2.D"],
 			headers: ["Competing Interests", "Rule", "Winner"],
 			rows: [
 				[
@@ -1010,6 +1057,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "Filing Status — Requirements and Benefits (2026)",
+			blueprintGroups: ["reg.4.D"],
 			headers: [
 				"Filing Status",
 				"Key Requirement",
@@ -1051,6 +1099,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			title: "Dependency Tests — Qualifying Child vs. Qualifying Relative",
+			blueprintGroups: ["reg.4.D"],
 			headers: ["Test", "Qualifying Child", "Qualifying Relative"],
 			rows: [
 				[
@@ -1094,6 +1143,7 @@ export const regFramework: StudyFramework = {
 	mnemonics: [
 		{
 			acronym: "I SAID",
+			blueprintGroups: ["reg.4.A"],
 			expansion:
 				"Interest (tax-exempt), State/local tax refunds (if didn't itemize), Alimony (post-2018), Inheritances, Damages (physical injury)",
 			explanation:
@@ -1101,6 +1151,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			acronym: "ACID",
+			blueprintGroups: ["reg.4.B"],
 			expansion:
 				"Alimony (pre-2019), Contributions to IRA, Interest on student loans, Deduction for 50% SE tax",
 			explanation:
@@ -1108,12 +1159,14 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			acronym: "HIT DISC",
+			blueprintGroups: ["reg.3.B"],
 			expansion:
 				"Holding period >1 year, Investment or business use, Title to real property, Domestic property, In exchange for like-kind, Same taxpayer, Contemporaneous identification (45 days)",
 			explanation: "Requirements for §1031 like-kind exchange qualification.",
 		},
 		{
 			acronym: "DUST",
+			blueprintGroups: ["reg.5.B"],
 			expansion:
 				"Domestic corporation, Under 100 shareholders, Single class of stock, The right type of shareholders (individuals, estates, certain trusts)",
 			explanation:
@@ -1121,6 +1174,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			acronym: "DIME",
+			blueprintGroups: ["reg.5.B"],
 			expansion:
 				"Distributions reduce basis, Income increases basis, Minus losses (limited to basis), Excess losses suspended",
 			explanation:
@@ -1128,6 +1182,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			acronym: "SID BURNS",
+			blueprintGroups: ["reg.4.A"],
 			expansion:
 				"Salary/wages, Interest, Dividends, Business income, Unemployment comp, Rents/royalties, Notional income (partnerships K-1), Social security (up to 85%)",
 			explanation:
@@ -1135,6 +1190,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			acronym: "WATER",
+			blueprintGroups: ["reg.2.D"],
 			expansion:
 				"Wages (administrative expenses first), Alimony/child support, Taxes (federal and state), Employee claims (up to statutory limit), Remaining general unsecured creditors",
 			explanation:
@@ -1142,6 +1198,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			acronym: "BARP",
+			blueprintGroups: ["reg.4.A"],
 			expansion:
 				"Basis limitation, At-risk limitation, (Passive) activity loss rules, (Excess business loss) Post-TCJA cap",
 			explanation:
@@ -1149,6 +1206,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			acronym: "HOT",
+			blueprintGroups: ["reg.5.C"],
 			expansion:
 				"Highly appreciated inventory (>120% of basis), Ordinary income recapture (§1245/§1250 depreciation), Trade receivables (unrealized receivables)",
 			explanation:
@@ -1156,6 +1214,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			acronym: "ERS",
+			blueprintGroups: ["reg.2.D"],
 			expansion:
 				"Exoneration (compel debtor to pay first), Reimbursement (recover from debtor after paying), Subrogation (step into creditor's shoes)",
 			explanation:
@@ -1163,6 +1222,7 @@ export const regFramework: StudyFramework = {
 		},
 		{
 			acronym: "VRAP",
+			blueprintGroups: ["reg.2.D"],
 			expansion:
 				"Value given, Rights in collateral, Authenticated security Agreement, (then) Perfect by filing",
 			explanation:

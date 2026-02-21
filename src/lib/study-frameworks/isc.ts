@@ -6,6 +6,7 @@ export const iscFramework: StudyFramework = {
 	conceptMaps: [
 		{
 			title: "IT Infrastructure Layers",
+			blueprintGroups: ["isc.1.A"],
 			root: {
 				label: "IT Infrastructure Stack",
 				children: [
@@ -54,6 +55,7 @@ export const iscFramework: StudyFramework = {
 		},
 		{
 			title: "Cloud Computing Models — Shared Responsibility",
+			blueprintGroups: ["isc.1.A"],
 			root: {
 				label: "Cloud Service Models",
 				children: [
@@ -111,6 +113,7 @@ export const iscFramework: StudyFramework = {
 		},
 		{
 			title: "NIST Cybersecurity Framework (CSF)",
+			blueprintGroups: ["isc.2.A"],
 			root: {
 				label: "NIST CSF Core Functions",
 				children: [
@@ -172,6 +175,7 @@ export const iscFramework: StudyFramework = {
 		},
 		{
 			title: "Access Control Models",
+			blueprintGroups: ["isc.2.C"],
 			root: {
 				label: "Access Control Frameworks",
 				children: [
@@ -220,6 +224,7 @@ export const iscFramework: StudyFramework = {
 		},
 		{
 			title: "SOC Engagement Types",
+			blueprintGroups: ["isc.3.A"],
 			root: {
 				label: "System and Organization Controls (SOC) Reports",
 				children: [
@@ -269,6 +274,7 @@ export const iscFramework: StudyFramework = {
 		},
 		{
 			title: "Trust Services Criteria (TSC)",
+			blueprintGroups: ["isc.3.B"],
 			root: {
 				label: "AICPA Trust Services Criteria",
 				children: [
@@ -327,6 +333,7 @@ export const iscFramework: StudyFramework = {
 		},
 		{
 			title: "Incident Response Lifecycle",
+			blueprintGroups: ["isc.2.D"],
 			root: {
 				label: "NIST SP 800-61 Incident Response",
 				children: [
@@ -385,6 +392,7 @@ export const iscFramework: StudyFramework = {
 		},
 		{
 			title: "Data Lifecycle Management",
+			blueprintGroups: ["isc.1.C"],
 			root: {
 				label: "Data Lifecycle Stages",
 				children: [
@@ -441,6 +449,7 @@ export const iscFramework: StudyFramework = {
 		},
 		{
 			title: "IT General Controls (ITGCs)",
+			blueprintGroups: ["isc.1.F"],
 			root: {
 				label: "IT General Controls",
 				children: [
@@ -486,6 +495,7 @@ export const iscFramework: StudyFramework = {
 	decisionTrees: [
 		{
 			title: "Which SOC Report Type to Use",
+			blueprintGroups: ["isc.3.A"],
 			root: {
 				question:
 					"Are the controls relevant to user entities' internal control over financial reporting (ICFR)?",
@@ -510,6 +520,7 @@ export const iscFramework: StudyFramework = {
 		},
 		{
 			title: "Cloud Deployment Model Selection",
+			blueprintGroups: ["isc.1.A"],
 			root: {
 				question:
 					"Does the organization require full control over physical infrastructure and data sovereignty?",
@@ -529,6 +540,7 @@ export const iscFramework: StudyFramework = {
 		},
 		{
 			title: "Encryption Method Selection",
+			blueprintGroups: ["isc.2.C"],
 			root: {
 				question: "Is the data at rest (stored)?",
 				yes: {
@@ -547,6 +559,7 @@ export const iscFramework: StudyFramework = {
 		},
 		{
 			title: "Disaster Recovery Site Selection",
+			blueprintGroups: ["isc.1.D"],
 			root: {
 				question:
 					"Does the organization require near-zero downtime (RTO measured in minutes)?",
@@ -561,6 +574,7 @@ export const iscFramework: StudyFramework = {
 		},
 		{
 			title: "Privacy Regulation Applicability",
+			blueprintGroups: ["isc.2.E"],
 			root: {
 				question:
 					"Does the organization process personal data of EU/EEA residents?",
@@ -580,6 +594,7 @@ export const iscFramework: StudyFramework = {
 		},
 		{
 			title: "Is This Change Properly Authorized?",
+			blueprintGroups: ["isc.1.E"],
 			root: {
 				question: "Was a formal change request submitted?",
 				yes: {
@@ -608,6 +623,7 @@ export const iscFramework: StudyFramework = {
 		},
 		{
 			title: "SOC Test Type Selection",
+			blueprintGroups: ["isc.3.D"],
 			root: {
 				question: "Is the control automated (system-enforced configuration)?",
 				yes: {
@@ -633,36 +649,42 @@ export const iscFramework: StudyFramework = {
 	formulas: [
 		{
 			name: "Recovery Point Objective (RPO)",
+			blueprintGroups: ["isc.1.D"],
 			formula: "RPO = Maximum tolerable data loss (measured in time)",
 			description:
 				"The maximum acceptable amount of data loss measured in time. RPO of 1 hour means backups must occur at least hourly. Drives backup frequency decisions.",
 		},
 		{
 			name: "Recovery Time Objective (RTO)",
+			blueprintGroups: ["isc.1.D"],
 			formula: "RTO = Maximum tolerable downtime (measured in time)",
 			description:
 				"The maximum acceptable time to restore systems after a disruption. RTO of 4 hours means systems must be operational within 4 hours. Drives DR site selection.",
 		},
 		{
 			name: "Annualized Loss Expectancy (ALE)",
+			blueprintGroups: ["isc.2.A"],
 			formula: "ALE = SLE x ARO",
 			description:
 				"Single Loss Expectancy (SLE = asset value x exposure factor) times Annualized Rate of Occurrence (ARO). Used to justify security spending: implement control if cost < ALE reduction.",
 		},
 		{
 			name: "Single Loss Expectancy (SLE)",
+			blueprintGroups: ["isc.2.A"],
 			formula: "SLE = Asset Value x Exposure Factor (EF)",
 			description:
 				"Expected monetary loss each time a risk event occurs. Exposure factor is the percentage of asset value lost (0 to 1).",
 		},
 		{
 			name: "Risk Calculation",
+			blueprintGroups: ["isc.2.A"],
 			formula: "Risk = Threat x Vulnerability x Impact",
 			description:
 				"Qualitative or quantitative risk assessment. Threat is the probability of an attack, vulnerability is the likelihood of exploitation, impact is the resulting damage.",
 		},
 		{
 			name: "Biometric Accuracy — Crossover Error Rate",
+			blueprintGroups: ["isc.2.C"],
 			formula: "CER = point where FAR = FRR",
 			description:
 				"False Acceptance Rate (FAR) = % of unauthorized users incorrectly accepted. False Rejection Rate (FRR) = % of authorized users incorrectly rejected. Lower CER indicates a more accurate biometric system.",
@@ -671,6 +693,7 @@ export const iscFramework: StudyFramework = {
 	referenceTables: [
 		{
 			title: "NIST CSF Functions and Categories",
+			blueprintGroups: ["isc.2.A"],
 			headers: ["Function", "Key Categories", "Purpose"],
 			rows: [
 				[
@@ -702,6 +725,7 @@ export const iscFramework: StudyFramework = {
 		},
 		{
 			title: "SOC Report Comparison",
+			blueprintGroups: ["isc.3.A", "isc.3.C"],
 			headers: ["Feature", "SOC 1", "SOC 2", "SOC 3"],
 			rows: [
 				[
@@ -740,6 +764,7 @@ export const iscFramework: StudyFramework = {
 		},
 		{
 			title: "Privacy Regulation Comparison",
+			blueprintGroups: ["isc.2.E"],
 			headers: ["Feature", "GDPR", "CCPA/CPRA", "HIPAA"],
 			rows: [
 				[
@@ -782,6 +807,7 @@ export const iscFramework: StudyFramework = {
 		},
 		{
 			title: "Encryption Comparison",
+			blueprintGroups: ["isc.2.C"],
 			headers: ["Feature", "Symmetric (AES)", "Asymmetric (RSA/ECC)"],
 			rows: [
 				["Keys", "Single shared key", "Public/private key pair"],
@@ -814,6 +840,7 @@ export const iscFramework: StudyFramework = {
 		},
 		{
 			title: "Control Types and Functions",
+			blueprintGroups: ["isc.2.C"],
 			headers: ["Type", "Timing", "Purpose", "Examples"],
 			rows: [
 				[
@@ -850,6 +877,7 @@ export const iscFramework: StudyFramework = {
 		},
 		{
 			title: "Malware Types and Characteristics",
+			blueprintGroups: ["isc.2.B"],
 			headers: ["Type", "Behavior", "Propagation", "Key Characteristic"],
 			rows: [
 				[
@@ -892,6 +920,7 @@ export const iscFramework: StudyFramework = {
 		},
 		{
 			title: "IT Governance Frameworks Comparison",
+			blueprintGroups: ["isc.1.G"],
 			headers: ["Dimension", "COBIT 2019", "ITIL 4", "NIST RMF", "COSO"],
 			rows: [
 				[
@@ -933,6 +962,7 @@ export const iscFramework: StudyFramework = {
 		},
 		{
 			title: "SOC Opinion Types and Conditions",
+			blueprintGroups: ["isc.3.E"],
 			headers: ["Opinion Type", "Condition", "Report Language", "User Impact"],
 			rows: [
 				[
@@ -965,6 +995,7 @@ export const iscFramework: StudyFramework = {
 	mnemonics: [
 		{
 			acronym: "SAPCP",
+			blueprintGroups: ["isc.3.B"],
 			expansion:
 				"Security, Availability, Processing Integrity, Confidentiality, Privacy",
 			explanation:
@@ -972,24 +1003,28 @@ export const iscFramework: StudyFramework = {
 		},
 		{
 			acronym: "IPDRR",
+			blueprintGroups: ["isc.2.A"],
 			expansion: "Identify, Protect, Detect, Respond, Recover",
 			explanation:
 				"The five core functions of the NIST Cybersecurity Framework, in order. Remember: 'I Protect, Detect, Respond, Recover.'",
 		},
 		{
 			acronym: "CIA",
+			blueprintGroups: ["isc.2.A"],
 			expansion: "Confidentiality, Integrity, Availability",
 			explanation:
 				"The three pillars of information security. Confidentiality = prevent unauthorized disclosure. Integrity = prevent unauthorized modification. Availability = ensure authorized access when needed.",
 		},
 		{
 			acronym: "RICE",
+			blueprintGroups: ["isc.1.E"],
 			expansion: "Request, Incident, Change, Event",
 			explanation:
 				"The four core change management process types in IT service management. All changes must go through a formal change advisory board (CAB) review before implementation.",
 		},
 		{
 			acronym: "PICERL",
+			blueprintGroups: ["isc.2.D"],
 			expansion:
 				"Preparation, Identification, Containment, Eradication, Recovery, Lessons Learned",
 			explanation:
@@ -997,6 +1032,7 @@ export const iscFramework: StudyFramework = {
 		},
 		{
 			acronym: "KHA",
+			blueprintGroups: ["isc.2.C"],
 			expansion:
 				"Knowledge (something you know), Have (something you have), Are (something you are)",
 			explanation:
@@ -1004,18 +1040,21 @@ export const iscFramework: StudyFramework = {
 		},
 		{
 			acronym: "DRMM",
+			blueprintGroups: ["isc.2.C"],
 			expansion: "DAC, RBAC, MAC, (A)BAC",
 			explanation:
 				"The four access control models from least to most restrictive: Discretionary (owner decides), Role-Based (role determines access), Mandatory (classification labels), Attribute-Based (policies evaluate multiple attributes).",
 		},
 		{
 			acronym: "HWC",
+			blueprintGroups: ["isc.1.D"],
 			expansion: "Hot site, Warm site, Cold site",
 			explanation:
 				"DR site types from fastest to slowest recovery. Hot = real-time sync, minutes RTO, highest cost. Warm = partial hardware, hours RTO. Cold = empty facility, days RTO, lowest cost.",
 		},
 		{
 			acronym: "APOC",
+			blueprintGroups: ["isc.1.F"],
 			expansion:
 				"Access controls, Program change controls, Operations controls, Creation/development controls",
 			explanation:

@@ -17,6 +17,7 @@ interface QuizClientProps {
 	sectionSlug: string;
 	sectionTitle: string;
 	recentAttempts: RecentAttempt[];
+	topics?: string[];
 }
 
 type QuizState = "config" | "active" | "results";
@@ -26,6 +27,7 @@ export default function QuizClient({
 	sectionSlug,
 	sectionTitle,
 	recentAttempts,
+	topics,
 }: QuizClientProps) {
 	const [state, setState] = useState<QuizState>("config");
 	const [count, setCount] = useState(10);
@@ -44,7 +46,7 @@ export default function QuizClient({
 			const res = await fetch("/api/quizzes/start", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ sectionCode, count }),
+				body: JSON.stringify({ sectionCode, count, topics }),
 			});
 			if (!res.ok) {
 				const data = await res.json();

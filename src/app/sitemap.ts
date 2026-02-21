@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog";
+import { cpaBlueprint } from "@/lib/blueprint";
+import { getGroupSlug } from "@/lib/blueprint-utils";
 import { sections } from "@/lib/sections";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -56,6 +58,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			})),
 	);
 
+	const blueprintRoutes: MetadataRoute.Sitemap = cpaBlueprint.flatMap((s) => [
+		{
+			url: `${base}/sections/${s.code}/blueprint`,
+			lastModified: new Date(),
+			changeFrequency: "monthly" as const,
+			priority: 0.75,
+		},
+		...s.areas.flatMap((a) =>
+			a.groups.map((g) => ({
+				url: `${base}/sections/${s.code}/blueprint/${getGroupSlug(a.area, g.letter)}`,
+				lastModified: new Date(),
+				changeFrequency: "monthly" as const,
+				priority: 0.65,
+			})),
+		),
+	]);
+
 	const blogIndexRoute: MetadataRoute.Sitemap = [
 		{
 			url: `${base}/blog`,
@@ -76,6 +95,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		...staticRoutes,
 		...sectionRoutes,
 		...lessonRoutes,
+		...blueprintRoutes,
 		...blogIndexRoute,
 		...blogPostRoutes,
 	];

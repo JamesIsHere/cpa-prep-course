@@ -6,6 +6,7 @@ export const barFramework: StudyFramework = {
 	conceptMaps: [
 		{
 			title: "Financial Ratio Framework",
+			blueprintGroups: ["bar.1.A"],
 			root: {
 				label: "Financial Statement Analysis",
 				children: [
@@ -47,6 +48,7 @@ export const barFramework: StudyFramework = {
 		},
 		{
 			title: "Cost of Capital and WACC",
+			blueprintGroups: ["bar.1.B"],
 			root: {
 				label: "Weighted Average Cost of Capital",
 				children: [
@@ -92,6 +94,7 @@ export const barFramework: StudyFramework = {
 		},
 		{
 			title: "DCF Valuation Framework",
+			blueprintGroups: ["bar.1.B"],
 			root: {
 				label: "Discounted Cash Flow Analysis",
 				children: [
@@ -137,6 +140,7 @@ export const barFramework: StudyFramework = {
 		},
 		{
 			title: "Derivative and Hedge Accounting (ASC 815)",
+			blueprintGroups: ["bar.2.F"],
 			root: {
 				label: "Hedge Accounting Framework",
 				children: [
@@ -182,6 +186,7 @@ export const barFramework: StudyFramework = {
 		},
 		{
 			title: "Internal-Use Software Capitalization Stages",
+			blueprintGroups: ["bar.2.B"],
 			root: {
 				label: "ASC 350-40: Internal-Use Software",
 				children: [
@@ -216,6 +221,7 @@ export const barFramework: StudyFramework = {
 		},
 		{
 			title: "Cloud Computing Arrangement Classification",
+			blueprintGroups: ["bar.2.B"],
 			root: {
 				label: "Cloud Computing Arrangement (CCA)",
 				children: [
@@ -258,6 +264,7 @@ export const barFramework: StudyFramework = {
 		},
 		{
 			title: "Government Fund-to-Government-Wide Reconciliation Adjustments",
+			blueprintGroups: ["bar.3.B"],
 			root: {
 				label: "Reconciliation: Fund Statements → Government-Wide Statements",
 				children: [
@@ -340,6 +347,7 @@ export const barFramework: StudyFramework = {
 	decisionTrees: [
 		{
 			title: "Hedge Type Classification",
+			blueprintGroups: ["bar.2.F"],
 			root: {
 				question:
 					"Is the hedge protecting against changes in fair value of a recognized asset/liability or firm commitment?",
@@ -359,6 +367,7 @@ export const barFramework: StudyFramework = {
 		},
 		{
 			title: "Revenue Recognition — Licensing",
+			blueprintGroups: ["bar.2.A"],
 			root: {
 				question:
 					"Does the entity's ongoing activity significantly affect the utility of the IP to the customer?",
@@ -373,6 +382,7 @@ export const barFramework: StudyFramework = {
 		},
 		{
 			title: "Goodwill Impairment Test (ASC 350)",
+			blueprintGroups: ["bar.2.D", "bar.2.H"],
 			root: {
 				question:
 					"Optional: Does a qualitative assessment indicate it is more likely than not (>50%) that FV < carrying amount?",
@@ -387,6 +397,7 @@ export const barFramework: StudyFramework = {
 		},
 		{
 			title: "VIE Primary Beneficiary Determination",
+			blueprintGroups: ["bar.2.E"],
 			root: {
 				question:
 					"Does the entity have power to direct the activities that most significantly affect the VIE's economic performance?",
@@ -401,6 +412,7 @@ export const barFramework: StudyFramework = {
 		},
 		{
 			title: "Does This Sale-Leaseback Qualify as a Sale?",
+			blueprintGroups: ["bar.2.I"],
 			root: {
 				question:
 					"Does the transfer of the asset meet the criteria for a sale under ASC 606 (control transferred to buyer-lessor)?",
@@ -417,24 +429,28 @@ export const barFramework: StudyFramework = {
 	formulas: [
 		{
 			name: "WACC",
+			blueprintGroups: ["bar.1.B"],
 			formula: "wᵈ × rᵈ(1−T) + wᵖ × rᵖ + wᵉ × rₑ",
 			description:
 				"Weighted average cost of capital. Use market value weights. Only debt gets the tax shield.",
 		},
 		{
 			name: "CAPM (Cost of Equity)",
+			blueprintGroups: ["bar.1.B"],
 			formula: "rₑ = Rᶠ + β(Rₘ − Rᶠ)",
 			description:
 				"Risk-free rate plus beta times market risk premium. Beta measures systematic risk only.",
 		},
 		{
 			name: "Gordon Growth Model (DDM)",
+			blueprintGroups: ["bar.1.B"],
 			formula: "P₀ = D₁ / (rₑ − g)",
 			description:
 				"Constant-growth dividend discount model. Requires g < rₑ. D₁ = D₀ × (1 + g).",
 		},
 		{
 			name: "FCFF (Free Cash Flow to Firm)",
+			blueprintGroups: ["bar.1.B"],
 			formula:
 				"EBIT(1 − T) + Depreciation − Capital Expenditures − ΔNet Working Capital",
 			description:
@@ -442,30 +458,35 @@ export const barFramework: StudyFramework = {
 		},
 		{
 			name: "Terminal Value (Gordon Growth)",
+			blueprintGroups: ["bar.1.B"],
 			formula: "TV = FCFₙ × (1 + g) / (r − g)",
 			description:
 				"Value of all cash flows beyond the forecast period. Small changes in g or r have outsized impact.",
 		},
 		{
 			name: "External Financing Needed (EFN)",
+			blueprintGroups: ["bar.1.A"],
 			formula: "(A/S)(ΔS) − (L/S)(ΔS) − PM × S₁ × (1 − d)",
 			description:
 				"Additional capital needed to support sales growth. Negative EFN means surplus funds.",
 		},
 		{
 			name: "DuPont ROE Decomposition",
+			blueprintGroups: ["bar.1.A"],
 			formula: "ROE = Net Profit Margin × Asset Turnover × Equity Multiplier",
 			description:
 				"Decomposes return on equity into profitability, efficiency, and leverage drivers.",
 		},
 		{
 			name: "NPV (Net Present Value)",
+			blueprintGroups: ["bar.1.B"],
 			formula: "Σ [CFₜ / (1 + r)ᵗ] − Initial Investment",
 			description:
 				"Accept if NPV > 0. Gold standard for capital budgeting. Always preferred over IRR for mutually exclusive projects.",
 		},
 		{
 			name: "Enterprise Value",
+			blueprintGroups: ["bar.1.B"],
 			formula:
 				"Market Cap + Total Debt + Preferred Stock + Minority Interest − Cash",
 			description:
@@ -473,24 +494,28 @@ export const barFramework: StudyFramework = {
 		},
 		{
 			name: "Exponential Smoothing",
+			blueprintGroups: ["bar.1.A"],
 			formula: "New Forecast = α(Actual) + (1 − α)(Previous Forecast)",
 			description:
 				"α closer to 1 = more responsive; α closer to 0 = smoother. 0 < α < 1.",
 		},
 		{
 			name: "Degree of Operating Leverage (DOL)",
+			blueprintGroups: ["bar.1.A"],
 			formula: "Contribution Margin / EBIT",
 			description:
 				"% change in EBIT for a 1% change in sales. Higher DOL = more fixed costs = more operating risk.",
 		},
 		{
 			name: "Degree of Financial Leverage (DFL)",
+			blueprintGroups: ["bar.1.B"],
 			formula: "EBIT / (EBIT − Interest Expense)",
 			description:
 				"% change in EPS for a 1% change in EBIT. Higher DFL = more debt = more financial risk.",
 		},
 		{
 			name: "Net Periodic Pension Cost (ASC 715)",
+			blueprintGroups: ["bar.2.K"],
 			formula:
 				"Service Cost + Interest Cost − Expected Return on Plan Assets ± Amortization of Prior Service Cost ± Amortization of Net Gain/Loss",
 			description:
@@ -498,6 +523,7 @@ export const barFramework: StudyFramework = {
 		},
 		{
 			name: "Corridor Amount (Gain/Loss Amortization)",
+			blueprintGroups: ["bar.2.K"],
 			formula:
 				"Corridor = 10% × max(PBO, Fair Value of Plan Assets at beginning of year)",
 			description:
@@ -507,6 +533,7 @@ export const barFramework: StudyFramework = {
 	referenceTables: [
 		{
 			title: "Hedge Accounting Summary (ASC 815)",
+			blueprintGroups: ["bar.2.F"],
 			headers: [
 				"Feature",
 				"Fair Value Hedge",
@@ -542,6 +569,7 @@ export const barFramework: StudyFramework = {
 		},
 		{
 			title: "Economic Indicators Classification",
+			blueprintGroups: ["bar.1.A"],
 			headers: ["Type", "Indicator", "Timing"],
 			rows: [
 				["Leading", "Stock market returns", "Changes before economy"],
@@ -557,6 +585,7 @@ export const barFramework: StudyFramework = {
 		},
 		{
 			title: "Capital Budgeting Methods Comparison",
+			blueprintGroups: ["bar.1.B"],
 			headers: ["Method", "Formula / Rule", "Strengths", "Weaknesses"],
 			rows: [
 				[
@@ -587,6 +616,7 @@ export const barFramework: StudyFramework = {
 		},
 		{
 			title: "Government Fund Types",
+			blueprintGroups: ["bar.3.A"],
 			headers: ["Category", "Fund", "Measurement Focus", "Basis"],
 			rows: [
 				[
@@ -636,6 +666,7 @@ export const barFramework: StudyFramework = {
 		},
 		{
 			title: "GASB vs. FASB Key Differences",
+			blueprintGroups: ["bar.3.A"],
 			headers: ["Topic", "GASB", "FASB"],
 			rows: [
 				[
@@ -661,6 +692,7 @@ export const barFramework: StudyFramework = {
 		},
 		{
 			title: "ASC 805 — Identifiable Intangibles in Business Combinations",
+			blueprintGroups: ["bar.2.D", "bar.2.H"],
 			headers: ["Category", "Examples", "Useful Life"],
 			rows: [
 				[
@@ -688,6 +720,7 @@ export const barFramework: StudyFramework = {
 		},
 		{
 			title: "Valuation Multiples — When to Use",
+			blueprintGroups: ["bar.1.B"],
 			headers: ["Multiple", "Formula", "Best For"],
 			rows: [
 				[
@@ -719,6 +752,7 @@ export const barFramework: StudyFramework = {
 		},
 		{
 			title: "Pension Cost Components — Income Statement vs. OCI",
+			blueprintGroups: ["bar.2.K"],
 			headers: ["Component", "Where Reported", "Effect on Pension Cost"],
 			rows: [
 				["Service cost", "Operating income", "Increases expense"],
@@ -752,6 +786,7 @@ export const barFramework: StudyFramework = {
 		},
 		{
 			title: "Interfund Transaction Types",
+			blueprintGroups: ["bar.3.C"],
 			headers: [
 				"Type",
 				"Category",
@@ -801,6 +836,7 @@ export const barFramework: StudyFramework = {
 	mnemonics: [
 		{
 			acronym: "PLEASE",
+			blueprintGroups: ["bar.1.A"],
 			expansion:
 				"Profit margin, Leverage (equity multiplier), Efficiency (asset turnover), Analyze, Separate, Evaluate",
 			explanation:
@@ -808,6 +844,7 @@ export const barFramework: StudyFramework = {
 		},
 		{
 			acronym: "FCFF",
+			blueprintGroups: ["bar.1.B"],
 			expansion:
 				"From EBIT, Cut taxes, Fix for depreciation, Fund reinvestment",
 			explanation:
@@ -815,6 +852,7 @@ export const barFramework: StudyFramework = {
 		},
 		{
 			acronym: "GASBE",
+			blueprintGroups: ["bar.3.A"],
 			expansion:
 				"General, special revenue, cApital projects, debt Service, pErmanent",
 			explanation:
@@ -822,12 +860,14 @@ export const barFramework: StudyFramework = {
 		},
 		{
 			acronym: "COFFee",
+			blueprintGroups: ["bar.2.F"],
 			expansion: "Cash flow hedge → OCI, Fair value hedge → Full earnings",
 			explanation:
 				"Where derivative gains/losses go: Cash flow hedges park the effective portion in OCI; fair value hedges send everything to earnings.",
 		},
 		{
 			acronym: "NIECE",
+			blueprintGroups: ["bar.1.B"],
 			expansion: "NPV Is the Exam's Correct Evaluator",
 			explanation:
 				"When NPV and IRR conflict on mutually exclusive projects, always choose NPV. It maximizes firm value in dollar terms.",

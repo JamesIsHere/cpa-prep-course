@@ -26,9 +26,10 @@ export async function POST(request: Request) {
 	}
 
 	const body = await request.json();
-	const { sectionCode, count } = body as {
+	const { sectionCode, count, topics } = body as {
 		sectionCode: string;
 		count: number;
+		topics?: string[];
 	};
 
 	if (!sectionCode || !count || count < 1 || count > 30) {
@@ -51,10 +52,16 @@ export async function POST(request: Request) {
 
 	// Fetch random questions (Supabase doesn't support order by random(),
 	// so we fetch all for the section and shuffle client-side)
-	const { data: allQuestions, error: qError } = await supabase
+	let query = supabase
 		.from("questions")
 		.select("id, stem, choices, correct_index, explanation, topic, difficulty")
 		.eq("section_id", section.id);
+
+	if (topics && topics.length > 0) {
+		query = query.in("topic", topics);
+	}
+
+	const { data: allQuestions, error: qError } = await query;
 
 	if (qError || !allQuestions || allQuestions.length === 0) {
 		return NextResponse.json(

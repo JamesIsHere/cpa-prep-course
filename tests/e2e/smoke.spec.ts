@@ -73,9 +73,7 @@ test.describe("Public Pages — Smoke Tests", () => {
 
 		// Pricing
 		await expect(page.getByText("$29.99", { exact: true })).toBeVisible();
-		await expect(
-			page.getByRole("link", { name: "Get Started Free" }),
-		).toBeVisible();
+		await expect(page.getByRole("link", { name: "Get Started" })).toBeVisible();
 
 		// FAQ
 		await expect(
@@ -84,7 +82,7 @@ test.describe("Public Pages — Smoke Tests", () => {
 
 		// Final CTA
 		await expect(
-			page.getByRole("link", { name: "Create Free Account" }),
+			page.getByRole("link", { name: "Create Account" }),
 		).toBeVisible();
 	});
 
@@ -168,9 +166,13 @@ test.describe("Public Pages — Smoke Tests", () => {
 		await expect(page.locator('input[type="password"]')).toBeVisible();
 
 		// Value prop bullets
-		await expect(page.locator("text=Free intro lessons")).toBeVisible();
 		await expect(
-			page.locator("text=$29.99/month to unlock everything"),
+			page.locator(
+				"text=96 lessons and 4,400+ questions across all 6 sections",
+			),
+		).toBeVisible();
+		await expect(
+			page.locator("text=$29.99/month — cancel anytime"),
 		).toBeVisible();
 	});
 
