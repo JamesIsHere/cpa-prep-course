@@ -127,17 +127,82 @@ describe("lesson slug cross-references", () => {
 describe("question counts", () => {
 	it("section totals match expected values", () => {
 		expect(sectionQuestionTotals.aud).toBe(1055);
-		expect(sectionQuestionTotals.far).toBe(860);
-		expect(sectionQuestionTotals.reg).toBe(850);
-		expect(sectionQuestionTotals.bar).toBe(780);
-		expect(sectionQuestionTotals.isc).toBe(749);
-		expect(sectionQuestionTotals.tcp).toBe(711);
+		expect(sectionQuestionTotals.far).toBe(862);
+		expect(sectionQuestionTotals.reg).toBe(856);
+		expect(sectionQuestionTotals.bar).toBe(787);
+		expect(sectionQuestionTotals.isc).toBe(751);
+		expect(sectionQuestionTotals.tcp).toBe(699);
 	});
 
 	it("all question count values are positive integers", () => {
 		for (const [topic, count] of Object.entries(questionCounts)) {
 			expect(count).toBeGreaterThan(0);
 			expect(Number.isInteger(count)).toBe(true);
+		}
+	});
+
+	it("all questionCounts keys map to at least one blueprint group", () => {
+		// Every topic in questionCounts should appear in some group's questionTopics
+		const mappedTopics = new Set<string>();
+		for (const section of cpaBlueprint) {
+			for (const area of section.areas) {
+				for (const group of area.groups) {
+					for (const topic of group.questionTopics) {
+						mappedTopics.add(topic);
+					}
+				}
+			}
+		}
+
+		for (const topic of Object.keys(questionCounts)) {
+			expect(
+				mappedTopics.has(topic),
+				`Topic "${topic}" in questionCounts has no blueprint group mapping`,
+			).toBe(true);
+		}
+	});
+
+	it("no two questionCounts keys are suspiciously similar", () => {
+		// Levenshtein distance check to catch near-duplicate topic names
+		// Known legitimate similar pairs are excluded
+		const allowedPairs = new Set([
+			"C Corporations|S Corporations",
+			"Federal Tax Procedures|Tax Procedures",
+			"Entity Formation and Liquidation|Entity Formation and Restructuring",
+			"SOC Reporting|SOC Reporting and Trust Services Criteria",
+		]);
+		const keys = Object.keys(questionCounts);
+		function levenshtein(a: string, b: string): number {
+			const m = a.length;
+			const n = b.length;
+			const dp: number[][] = Array.from({ length: m + 1 }, () =>
+				Array(n + 1).fill(0),
+			);
+			for (let i = 0; i <= m; i++) dp[i][0] = i;
+			for (let j = 0; j <= n; j++) dp[0][j] = j;
+			for (let i = 1; i <= m; i++) {
+				for (let j = 1; j <= n; j++) {
+					const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+					dp[i][j] = Math.min(
+						dp[i - 1][j] + 1,
+						dp[i][j - 1] + 1,
+						dp[i - 1][j - 1] + cost,
+					);
+				}
+			}
+			return dp[m][n];
+		}
+
+		for (let i = 0; i < keys.length; i++) {
+			for (let j = i + 1; j < keys.length; j++) {
+				const pairKey = [keys[i], keys[j]].sort().join("|");
+				if (allowedPairs.has(pairKey)) continue;
+				const dist = levenshtein(keys[i].toLowerCase(), keys[j].toLowerCase());
+				expect(
+					dist,
+					`Topics "${keys[i]}" and "${keys[j]}" are suspiciously similar (Levenshtein distance: ${dist})`,
+				).toBeGreaterThanOrEqual(3);
+			}
 		}
 	});
 });

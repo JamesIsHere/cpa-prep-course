@@ -11,6 +11,7 @@ export interface QuizQuestionFull extends QuizQuestion {
 	explanation: string;
 	topic: string;
 	difficulty: string;
+	cognitive_level?: number;
 }
 
 // A single answer submitted by the user

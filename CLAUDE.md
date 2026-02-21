@@ -19,12 +19,15 @@ Full-scope CPA exam prep website — lessons, quizzes, practice exams, and study
 ## Commands
 
 ```bash
-npm run dev          # Start dev server
-npm run build        # Production build
-npm test             # Vitest unit tests (run)
-npm run test:watch   # Vitest watch mode
-npm run lint         # ESLint
-npm run test:e2e     # Playwright e2e tests (all browsers)
+npm run dev                  # Start dev server
+npm run build                # Production build
+npm test                     # Vitest unit tests (run)
+npm run test:watch           # Vitest watch mode
+npm run lint                 # ESLint
+npm run test:e2e             # Playwright e2e tests (all browsers)
+npm run qa                   # Question quality audit (all sections)
+npm run qa -- --section=aud  # QA audit for single section
+npm run validate-migration <file>  # Validate question migration against style guide
 ```
 
 ## Architecture
@@ -73,6 +76,10 @@ npm run test:e2e     # Playwright e2e tests (all browsers)
 | `supabase/migrations/00006_add_discipline_sections.sql` | BAR, ISC, TCP section + intro lessons |
 | `supabase/migrations/00007–00012`             | Expanded questions + content per section   |
 | `supabase/migrations/00032–00037`             | Gap coverage questions for 30 blueprint groups |
+| `supabase/migrations/00038_add_cognitive_level.sql` | Bloom's cognitive level column          |
+| `docs/question-style-guide.md`                | Question writing rubric (all new questions must meet this) |
+| `scripts/qa/run-qa.ts`                        | QA audit entry point (`npm run qa`)        |
+| `scripts/qa/validate-migration.ts`            | Pre-commit migration validator             |
 | `.env.local.example`                          | Required env vars template                 |
 
 ## Content Summary
@@ -90,7 +97,7 @@ npm run test:e2e     # Playwright e2e tests (all browsers)
 
 ## Database Tables
 
-`profiles`, `sections`, `lessons`, `questions`, `quiz_attempts`, `exam_attempts` — all defined in `00001_initial_schema.sql` with RLS policies. Auto-profile trigger creates a profile on user signup.
+`profiles`, `sections`, `lessons`, `questions`, `quiz_attempts`, `exam_attempts` — all defined in `00001_initial_schema.sql` with RLS policies. Auto-profile trigger creates a profile on user signup. `questions` table has optional `cognitive_level` column (1-4, Bloom's taxonomy) added in migration 00038.
 
 ## Current Phase
 
@@ -114,6 +121,13 @@ All build phases complete. Active work is marketing and content connectivity.
 - React Testing Library v16 needs explicit `cleanup()` in `afterEach` with Vitest — auto-cleanup doesn't work
 - `@next/mdx` requires `mdx-components.tsx` at the `src/` root (not `app/` root) for App Router
 - `generateStaticParams` only pre-renders free lessons; gated lessons are dynamic due to auth check in the page component
+
+## Question Quality
+
+- **Style guide:** `docs/question-style-guide.md` — rubric for stem, distractor, explanation, difficulty, and Bloom's level standards
+- **QA audit:** `npm run qa` scores all questions on a 0-10 composite and produces a dated report in `docs/qa-reports/`
+- **Migration validator:** `npm run validate-migration <file>` checks new question migrations against the rubric before commit
+- **Rule:** All new question migrations must pass `validate-migration` before commit. No questions scoring 0-3 (critical) should be deployed.
 
 ## Spec Reference
 

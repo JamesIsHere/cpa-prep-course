@@ -37,6 +37,9 @@ Blueprint-driven study pipeline, content connectivity, and data quality.
 
 | Date       | Task                                                                    |
 |------------|-------------------------------------------------------------------------|
+| 2026-02-21 | Build QA system: analyzers, style guide, validator, Bloom's tagging     |
+| 2026-02-21 | Sync questionCounts with live DB, fix Federal Tax Procedures orphan     |
+| 2026-02-21 | Add 2 new blueprint tests (topic mapping, Levenshtein similarity)       |
 | 2026-02-21 | Pipeline color refactor (emerald → indigo), remove homepage duplicate   |
 | 2026-02-21 | Fix dead "+N more rows" in reference table previews                     |
 | 2026-02-21 | Fix 2 stale e2e test assertions, full coherence audit                   |

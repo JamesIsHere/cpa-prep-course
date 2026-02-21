@@ -1,5 +1,19 @@
 # Running Log
 
+## 2026-02-21 02:15
+1. Built QA analysis system (`scripts/qa/`): 5 analyzers (difficulty, coverage, quality, Bloom's, duplicates), report formatter, orchestrator entry point
+2. Created `npm run qa` command — queries live Supabase DB, scores all 5,005 questions on 0-10 composite, writes dated markdown report
+3. Created question style guide (`docs/question-style-guide.md`): stem rules, distractor rules, explanation rules, difficulty/Bloom's definitions, tone rules, writing checklist
+4. Ran full QA audit: avg 7.8/10, 8 critical, 579 moderate, 4,418 acceptable, 174 duplicate pairs
+5. Fixed "Federal Tax Procedures" orphan: added to `questionCounts` and REG blueprint group's `questionTopics`
+6. Created migration 00038: `cognitive_level` column on questions table (nullable, CHECK 1-4)
+7. Created backfill script + migration 00039: tagged all 5,005 questions with heuristic Bloom's levels (L1:1475, L2:3421, L3:22, L4:87)
+8. Synced all `questionCounts` values with live DB counts (many topics had drifted 5-13 questions)
+9. Created `npm run validate-migration` — pre-commit validator for question INSERT SQL against style guide rubric
+10. Added 2 blueprint tests: topic-to-group mapping, Levenshtein similarity detection with `allowedPairs`
+11. Updated CLAUDE.md: added QA commands, key files, Question Quality section
+12. Coherence audit: pushed migrations 00038+00039 to production, archived stale session file, updated To Do.md
+
 ## 2026-02-21 01:35
 1. Removed duplicate StudyPipeline from homepage (was rendered twice — "A 4-step system" and "How it works")
 2. Switched pipeline color from emerald to indigo to avoid visual collision with section badges
