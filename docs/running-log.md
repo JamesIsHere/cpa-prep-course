@@ -1,5 +1,14 @@
 # Running Log
 
+## 2026-02-22 08:30
+1. Created migration 00097: Bloom's L3 rebalancing REG batch 3 — 60 L2→L3 rewrites across 24 topics
+2. Fixed correct_index alignment for all 60 rewritten questions (agent had shuffled answer positions)
+3. Fixed factual error in ID 493 (PTIN penalty math: $19,000 below cap, not $27,000 capped)
+4. Applied migration 00097 to production Supabase
+5. Archived stale session file from project root to docs/sessions/2026-02/
+6. Updated CLAUDE.md: key files, Bloom's status, git section
+7. Updated blooms-rebalancing.md tracker with batch 3 entry
+
 ## 2026-02-21 07:30
 1. Created `scripts/qa/pull-l2-batch.ts` — L2 question extractor for Bloom's L3 rebalancing
 2. Created `docs/blooms-rebalancing.md` — cross-session tracker for section progress and migration log

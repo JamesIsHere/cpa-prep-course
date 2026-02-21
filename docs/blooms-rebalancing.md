@@ -6,7 +6,7 @@ Cross-session tracker for rewriting L2 questions to L3 analytical depth.
 
 | Section | L3 Start | L3 Target | Gap    | Questions to Rewrite | Completed | Status  |
 |---------|----------|-----------|--------|----------------------|-----------|---------|
-| REG     | 9%       | 25%       | -7pt   | ~60                  | 95        | Active  |
+| REG     | 9%       | 25%       | ~0pt   | ~60                  | 155       | Active  |
 | BAR     | 16%      | 30%       | -14pt  | ~109                 | 0         | Pending |
 | FAR     | 16%      | 25%       | -9pt   | ~77                  | 0         | Pending |
 | TCP     | 15%      | 20%       | -5pt   | ~36                  | 0         | Pending |
@@ -17,6 +17,7 @@ Cross-session tracker for rewriting L2 questions to L3 analytical depth.
 |------------|------------------------------------|---------|-------|---------|-----------------|
 | 2026-02-21 | 00095_blooms_l3_reg_batch1.sql     | REG     | 45    | 13%     | 8 topics: Basis, Income, C Corps, Partnerships, Gains/Losses, 1031, S Corps, Estate/Gift |
 | 2026-02-21 | 00096_blooms_l3_reg_batch2.sql     | REG     | 50    | 18%     | 13 topics: Basis, Income, Circ 230, Filing, C Corps, Contracts, Tax-Exempt, Deductions, Credits, 1031, Legal, Ethics, Debtor-Creditor |
+| 2026-02-22 | 00097_blooms_l3_reg_batch3.sql     | REG     | 60    | ~25%    | 24 topics: all REG topics covered, 3 per major topic, 2 per minor topic |
 
 ## L3 Rewrite Patterns
 
