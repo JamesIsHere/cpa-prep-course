@@ -96,18 +96,18 @@ export function StudyPipeline({
 							<span
 								className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full ${
 									isActive
-										? "bg-emerald-100 text-emerald-700 font-semibold"
+										? "bg-indigo-100 text-indigo-700 font-semibold"
 										: isCompleted
-											? "text-emerald-600"
+											? "text-indigo-600"
 											: "text-gray-400"
 								}`}
 							>
 								<span
 									className={`w-4 h-4 rounded-full text-xs flex items-center justify-center font-bold ${
 										isActive
-											? "bg-emerald-600 text-white"
+											? "bg-indigo-600 text-white"
 											: isCompleted
-												? "bg-emerald-200 text-emerald-700"
+												? "bg-indigo-200 text-indigo-700"
 												: "bg-gray-200 text-gray-500"
 									}`}
 								>
@@ -117,7 +117,7 @@ export function StudyPipeline({
 							</span>
 							{i < steps.length - 1 && (
 								<span
-									className={isCompleted ? "text-emerald-400" : "text-gray-300"}
+									className={isCompleted ? "text-indigo-400" : "text-gray-300"}
 								>
 									&rarr;
 								</span>
@@ -149,8 +149,8 @@ export function StudyPipeline({
 						<div
 							className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 relative z-10 ${
 								isActive
-									? "bg-emerald-600 text-white"
-									: "bg-emerald-50 text-emerald-600 border border-emerald-200"
+									? "bg-indigo-600 text-white"
+									: "bg-indigo-50 text-indigo-600 border border-indigo-200"
 							}`}
 						>
 							{step.icon}
@@ -161,7 +161,7 @@ export function StudyPipeline({
 							<p className="font-semibold text-gray-900 text-sm">
 								{step.label}
 							</p>
-							<p className="text-emerald-600 text-xs font-medium">
+							<p className="text-indigo-600 text-xs font-medium">
 								{step.tagline}
 							</p>
 							<p className="text-gray-500 text-xs mt-1 max-w-[180px] leading-relaxed hidden sm:block">

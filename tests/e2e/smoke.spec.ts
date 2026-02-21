@@ -18,18 +18,11 @@ test.describe("Public Pages — Smoke Tests", () => {
 		await expect(page.getByTestId("stat-sections")).toBeVisible();
 		await expect(page.getByTestId("stat-frameworks")).toBeVisible();
 
-		// Features section
+		// Study pipeline section
 		await expect(
-			page.getByRole("heading", { name: "Conceptual Lessons" }),
-		).toBeVisible();
-		await expect(
-			page.getByRole("heading", { name: "Topic-Specific Quizzes" }),
-		).toBeVisible();
-		await expect(
-			page.getByRole("heading", { name: "Timed Practice Exams" }),
-		).toBeVisible();
-		await expect(
-			page.getByRole("heading", { name: "PDF Study Frameworks" }),
+			page.getByRole("heading", {
+				name: "A 4-step system for every topic",
+			}),
 		).toBeVisible();
 
 		// "Built for self-study" section
@@ -59,11 +52,6 @@ test.describe("Public Pages — Smoke Tests", () => {
 		).toBeVisible();
 		await expect(
 			page.getByRole("heading", { name: "Tax Compliance and Planning" }),
-		).toBeVisible();
-
-		// How it works
-		await expect(
-			page.getByRole("heading", { name: "How it works" }),
 		).toBeVisible();
 
 		// Testimonials

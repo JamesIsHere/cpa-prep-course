@@ -11,8 +11,8 @@ export default function SectionsPage() {
 		<main className="max-w-4xl mx-auto px-4 py-12">
 			<h1 className="text-3xl font-bold text-gray-900 mb-2">CPA Sections</h1>
 			<p className="text-gray-500 mb-8">
-				Choose a section to start studying. Each section includes lessons,
-				quizzes, and practice exams.
+				Choose a section and start studying, for $29.99 you have access to all
+				materials we offer.
 			</p>
 
 			<div className="mb-10 bg-gray-50 rounded-xl border border-gray-200 p-6">

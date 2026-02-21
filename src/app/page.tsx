@@ -183,20 +183,6 @@ export default function Home() {
 				</div>
 			</section>
 
-			{/* How it works */}
-			<section className="bg-white border-y border-gray-200">
-				<div className="max-w-4xl mx-auto px-4 py-16">
-					<h2 className="text-2xl font-bold text-gray-900 text-center mb-4">
-						How it works
-					</h2>
-					<p className="text-gray-500 text-center mb-10 max-w-lg mx-auto">
-						Pick any section, then follow the pipeline. Every topic uses the
-						same proven sequence.
-					</p>
-					<StudyPipeline variant="full" />
-				</div>
-			</section>
-
 			{/* Testimonials */}
 			<section className="max-w-4xl mx-auto px-4 py-16">
 				<h2 className="text-2xl font-bold text-gray-900 text-center mb-12">

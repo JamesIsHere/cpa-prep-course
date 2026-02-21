@@ -104,7 +104,7 @@ function ReferenceTablePreview({ item }: { item: ReferenceTable }) {
 					</tr>
 				</thead>
 				<tbody>
-					{item.rows.slice(0, 5).map((row, i) => (
+					{item.rows.map((row, i) => (
 						<tr key={i} className="border-t border-gray-50">
 							{row.map((cell, j) => (
 								<td key={j} className="py-1 pr-3 text-gray-700">
@@ -113,16 +113,6 @@ function ReferenceTablePreview({ item }: { item: ReferenceTable }) {
 							))}
 						</tr>
 					))}
-					{item.rows.length > 5 && (
-						<tr>
-							<td
-								colSpan={item.headers.length}
-								className="py-1 text-gray-400 text-xs"
-							>
-								+{item.rows.length - 5} more rows
-							</td>
-						</tr>
-					)}
 				</tbody>
 			</table>
 		</div>
