@@ -30,12 +30,13 @@ Blueprint-driven study pipeline, content connectivity, and data quality.
 
 ### Upcoming
 - [ ] Resubmit sitemap to Google Search Console (stable lastModified, no more crawl budget waste)
-- [ ] Bloom's L3 question rebalancing — REG done (~25%), next: BAR/FAR/TCP. Tracker: docs/blooms-rebalancing.md
+- [ ] Bloom's L3 question rebalancing — REG done (25%), BAR done (30%), next: FAR/TCP. Tracker: docs/blooms-rebalancing.md
 
 ## Completed
 
 | Date       | Task                                                                    |
 |------------|-------------------------------------------------------------------------|
+| 2026-02-22 | Bloom's L3 rebalancing BAR: 109 questions rewritten, 16%→30% L3        |
 | 2026-02-22 | Bloom's L3 rebalancing REG batch 3: 60 questions, 18%→~25% L3          |
 | 2026-02-21 | Bloom's L3 rebalancing REG: 95 questions rewritten, 9%→18% L3          |
 | 2026-02-21 | L2 extraction script + cross-session tracker for Bloom's rebalancing    |

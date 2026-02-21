@@ -6,8 +6,8 @@ Cross-session tracker for rewriting L2 questions to L3 analytical depth.
 
 | Section | L3 Start | L3 Target | Gap    | Questions to Rewrite | Completed | Status  |
 |---------|----------|-----------|--------|----------------------|-----------|---------|
-| REG     | 9%       | 25%       | ~0pt   | ~60                  | 155       | Active  |
-| BAR     | 16%      | 30%       | -14pt  | ~109                 | 0         | Pending |
+| REG     | 9%       | 25%       | ~0pt   | ~60                  | 155       | Done    |
+| BAR     | 16%      | 30%       | ~0pt   | ~109                 | 109       | Done    |
 | FAR     | 16%      | 25%       | -9pt   | ~77                  | 0         | Pending |
 | TCP     | 15%      | 20%       | -5pt   | ~36                  | 0         | Pending |
 
@@ -18,6 +18,9 @@ Cross-session tracker for rewriting L2 questions to L3 analytical depth.
 | 2026-02-21 | 00095_blooms_l3_reg_batch1.sql     | REG     | 45    | 13%     | 8 topics: Basis, Income, C Corps, Partnerships, Gains/Losses, 1031, S Corps, Estate/Gift |
 | 2026-02-21 | 00096_blooms_l3_reg_batch2.sql     | REG     | 50    | 18%     | 13 topics: Basis, Income, Circ 230, Filing, C Corps, Contracts, Tax-Exempt, Deductions, Credits, 1031, Legal, Ethics, Debtor-Creditor |
 | 2026-02-22 | 00097_blooms_l3_reg_batch3.sql     | REG     | 60    | ~25%    | 24 topics: all REG topics covered, 3 per major topic, 2 per minor topic |
+| 2026-02-22 | 00098_blooms_l3_bar_batch1.sql     | BAR     | 45    | 22%     | 7 topics: Financial Statement Analysis, State/Local Govt, Derivatives, Revenue/Intangibles, Valuation, Consolidations, Leases |
+| 2026-02-22 | 00099_blooms_l3_bar_batch2.sql     | BAR     | 40    | 27%     | 6 topics: Forecasting, Capital Structure, Stock Comp/Bus Comb, Internal-Use Software, Fund-to-Govt-Wide, Pension |
+| 2026-02-22 | 00100_blooms_l3_bar_batch3.sql     | BAR     | 24    | 30%     | 6 topics: Interfund, Risk Mgmt, Foreign Currency, Intangible Assets, Income Taxes, Business Combinations |
 
 ## L3 Rewrite Patterns
 

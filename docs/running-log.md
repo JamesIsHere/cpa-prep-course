@@ -1,5 +1,18 @@
 # Running Log
 
+## 2026-02-22 09:06
+1. Pulled L2 candidates for BAR section (556 L2 questions across 19 topics)
+2. Created migration 00098: Bloom's L3 BAR batch 1 — 45 rewrites across 7 topics (Financial Statement Analysis, State/Local Govt, Derivatives, Revenue/Intangibles, Valuation, Consolidations, Leases)
+3. Created migration 00099: Bloom's L3 BAR batch 2 — 40 rewrites across 6 topics (Forecasting, Capital Structure, Stock Comp/Bus Comb, Internal-Use Software, Fund-to-Govt-Wide, Pension)
+4. Created migration 00100: Bloom's L3 BAR batch 3 — 24 rewrites across 6 topics (Interfund, Risk Mgmt, Foreign Currency, Intangible Assets, Income Taxes, Business Combinations)
+5. Validated all 3 migrations (no errors), verified 109 UPDATEs with no duplicate IDs
+6. Applied all 3 migrations to production Supabase
+7. QA verified BAR L3: 16% → 30% (target floor hit), 0 critical, 0 moderate
+8. Updated blooms-rebalancing.md tracker with 3 BAR batch entries
+9. Updated CLAUDE.md: migration references, Bloom's status
+10. Updated To Do.md: BAR marked complete, completion entry added
+11. Archived stale session file to docs/sessions/2026-02/
+
 ## 2026-02-22 08:30
 1. Created migration 00097: Bloom's L3 rebalancing REG batch 3 — 60 L2→L3 rewrites across 24 topics
 2. Fixed correct_index alignment for all 60 rewritten questions (agent had shuffled answer positions)
