@@ -1,5 +1,15 @@
 # Running Log
 
+## 2026-02-22 05:08
+1. Finished incomplete migration 00087 (10 remaining AUD questions)
+2. Wrote 5 new migrations (00088-00092) upgrading 303 moderate questions across FAR, REG, BAR, ISC, TCP
+3. Validated all JSON choice arrays across 6 migration files
+4. Applied all 32 question upgrade migrations (00061-00092) to production Supabase
+5. Ran QA audit: 0 critical, 51 moderate remaining, avg score 8.2/10
+6. Cleaned up temp files (gen.js, wm.js, write-migration.js, tmp-moderate-output.txt, apply-migrations.ts)
+7. Coherence audit: updated CLAUDE.md key files + git section, To Do.md completed tasks, archived stale session file
+8. Pushed 6 pending migrations to production Supabase (00087-00092)
+
 ## 2026-02-22 03:45
 1. Upgraded 19 moderate Prospective Analysis and Forecasting questions to score 7+ (migration 00051)
 2. Upgraded 15 moderate Advanced Consolidations questions to score 7+ (migration 00052)

@@ -37,6 +37,11 @@ Blueprint-driven study pipeline, content connectivity, and data quality.
 
 | Date       | Task                                                                    |
 |------------|-------------------------------------------------------------------------|
+| 2026-02-21 | Upgrade 303 remaining moderate questions across 32 migrations (00061-00092) |
+| 2026-02-21 | Apply all 32 question upgrade migrations to production Supabase            |
+| 2026-02-21 | QA audit: 0 critical, 51 moderate remaining, avg score 8.2/10             |
+| 2026-02-21 | Deduplicate 18 questions, upgrade 172 moderate questions (8 topics)        |
+| 2026-02-21 | Upgrade 120 moderate questions across 10 topics (407 → 287 remaining)     |
 | 2026-02-21 | Rewrite 8 critical-scoring questions, fix defined benefit limit (00040-41) |
 | 2026-02-21 | Build QA system: analyzers, style guide, validator, Bloom's tagging     |
 | 2026-02-21 | Sync questionCounts with live DB, fix Federal Tax Procedures orphan     |
