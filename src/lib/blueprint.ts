@@ -35,7 +35,7 @@ export type CpaBlueprint = BlueprintSection[];
 // --- Question counts by topic (approximate, from seed migrations 00002–00015) ---
 
 export const questionCounts: Record<string, number> = {
-	// AUD (755 total)
+	// AUD (755 + 300 = 1055 total)
 	"Ethics and Independence": 60,
 	"Professional Responsibilities": 50,
 	"Quality Management": 45,
@@ -50,7 +50,22 @@ export const questionCounts: Record<string, number> = {
 	"Review/Compilation Engagements": 35,
 	"Attestation Engagements": 48,
 	"Government Auditing Standards": 45,
-	// FAR (780 total)
+	"Nature and Scope of Engagements": 20,
+	Independence: 20,
+	"Professional Skepticism and Judgment": 20,
+	"Terms of Engagement": 20,
+	"Understanding the Entity and Environment": 20,
+	Materiality: 20,
+	"Responding to Assessed Risks": 20,
+	"Using the Work of Others": 20,
+	"Tests of Controls": 20,
+	"Analytical Procedures": 20,
+	"Misstatements and Control Deficiencies": 20,
+	"Written Representations": 20,
+	"Specific Areas and Transactions": 20,
+	"Modifications to the Auditor Report": 20,
+	"Other Information and Supplementary Information": 20,
+	// FAR (780 + 80 = 860 total)
 	"Financial Statements": 50,
 	"Statement of Cash Flows": 35,
 	"Earnings Per Share": 28,
@@ -70,7 +85,11 @@ export const questionCounts: Record<string, number> = {
 	"Cash and Receivables": 35,
 	"Employee Benefit Plans": 35,
 	"Special Purpose Frameworks": 32,
-	// REG (810 total)
+	"Conceptual Framework and Standards": 20,
+	"Payables and Accrued Liabilities": 20,
+	"Accounting Changes and Error Corrections": 20,
+	"Governmental Accounting Fundamentals": 20,
+	// REG (810 + 40 = 850 total)
 	"Circular 230": 40,
 	"Professional Ethics in Tax": 35,
 	"Tax Procedures": 28,
@@ -92,7 +111,9 @@ export const questionCounts: Record<string, number> = {
 	"Legal Duties and Responsibilities": 32,
 	"Debtor-Creditor Relationships": 32,
 	"Tax-Exempt Organizations": 20,
-	// BAR (700 total)
+	"Government Regulation of Business": 20,
+	"Alternative Minimum Tax": 20,
+	// BAR (700 + 80 = 780 total)
 	"Financial Statement Analysis": 60,
 	"Prospective Analysis and Forecasting": 48,
 	"Capital Structure and Valuation": 55,
@@ -108,7 +129,11 @@ export const questionCounts: Record<string, number> = {
 	"Pension and Postretirement Benefits": 37,
 	"Fund-to-Government-Wide Reconciliation": 35,
 	"Interfund Transactions": 31,
-	// ISC (689 total)
+	"Business Combinations": 20,
+	"Foreign Currency Transactions": 20,
+	"Intangible Assets Advanced": 20,
+	"Income Taxes Advanced": 20,
+	// ISC (689 + 60 = 749 total)
 	"IT Infrastructure and Architecture": 56,
 	"ERP and Accounting Information Systems": 48,
 	"Data Management and Lifecycle": 48,
@@ -124,7 +149,10 @@ export const questionCounts: Record<string, number> = {
 	"IT Audit Frameworks": 35,
 	"SOC Testing Controls": 35,
 	"SOC Reporting": 35,
-	// TCP (671 total)
+	"Change Management": 20,
+	"Data Protection Technologies": 20,
+	"SOC Report Content and Structure": 20,
+	// TCP (671 + 40 = 711 total)
 	"Individual Tax Planning: Compensation": 58,
 	"Passive Activity and At-Risk Rules": 50,
 	"Wealth Transfer and Gifting Strategies": 58,
@@ -139,15 +167,17 @@ export const questionCounts: Record<string, number> = {
 	"Capital Structure Tax Planning": 36,
 	"Nontaxable Dispositions": 38,
 	"Related Party Transactions": 37,
+	"Multi-Jurisdictional Tax Planning": 20,
+	"Entity Formation and Restructuring": 20,
 };
 
 export const sectionQuestionTotals: Record<string, number> = {
-	aud: 755,
-	far: 780,
-	reg: 810,
-	bar: 700,
-	isc: 689,
-	tcp: 671,
+	aud: 1055,
+	far: 860,
+	reg: 850,
+	bar: 780,
+	isc: 749,
+	tcp: 711,
 };
 
 // --- Blueprint Data ---
@@ -174,7 +204,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							{ id: "aud.1.A.3", name: "Reasonable vs. limited assurance" },
 						],
 						lessonSlugs: ["01-intro"],
-						questionTopics: [],
+						questionTopics: ["Nature and Scope of Engagements"],
 					},
 					{
 						letter: "B",
@@ -207,7 +237,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 						],
 						lessonSlugs: ["02-ethics-and-independence"],
-						questionTopics: [],
+						questionTopics: ["Independence"],
 					},
 					{
 						letter: "D",
@@ -223,7 +253,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 						],
 						lessonSlugs: ["01-intro"],
-						questionTopics: [],
+						questionTopics: ["Professional Skepticism and Judgment"],
 					},
 					{
 						letter: "E",
@@ -258,7 +288,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							{ id: "aud.1.G.2", name: "Preconditions for an audit" },
 						],
 						lessonSlugs: ["03-audit-planning"],
-						questionTopics: [],
+						questionTopics: ["Terms of Engagement"],
 					},
 				],
 			},
@@ -293,7 +323,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							{ id: "aud.2.B.3", name: "Accounting policies selection" },
 						],
 						lessonSlugs: ["03-audit-planning"],
-						questionTopics: [],
+						questionTopics: ["Understanding the Entity and Environment"],
 					},
 					{
 						letter: "C",
@@ -317,7 +347,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							{ id: "aud.2.D.2", name: "Tolerable misstatement" },
 						],
 						lessonSlugs: ["03-audit-planning"],
-						questionTopics: [],
+						questionTopics: ["Materiality"],
 					},
 					{
 						letter: "E",
@@ -333,7 +363,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 						],
 						lessonSlugs: ["04-risk-assessment"],
-						questionTopics: [],
+						questionTopics: ["Responding to Assessed Risks"],
 					},
 					{
 						letter: "F",
@@ -371,7 +401,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 						],
 						lessonSlugs: ["03-audit-planning"],
-						questionTopics: [],
+						questionTopics: ["Using the Work of Others"],
 					},
 				],
 			},
@@ -407,7 +437,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 						],
 						lessonSlugs: ["05-internal-controls"],
-						questionTopics: [],
+						questionTopics: ["Tests of Controls"],
 					},
 					{
 						letter: "C",
@@ -420,7 +450,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							{ id: "aud.3.C.2", name: "Final analytical review" },
 						],
 						lessonSlugs: ["08-substantive-procedures"],
-						questionTopics: [],
+						questionTopics: ["Analytical Procedures"],
 					},
 					{
 						letter: "D",
@@ -470,7 +500,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 						],
 						lessonSlugs: ["09-audit-reports"],
-						questionTopics: [],
+						questionTopics: ["Misstatements and Control Deficiencies"],
 					},
 					{
 						letter: "G",
@@ -486,7 +516,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 						],
 						lessonSlugs: ["06-audit-evidence"],
-						questionTopics: [],
+						questionTopics: ["Written Representations"],
 					},
 					{
 						letter: "H",
@@ -503,7 +533,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 						],
 						lessonSlugs: ["08-substantive-procedures"],
-						questionTopics: [],
+						questionTopics: ["Specific Areas and Transactions"],
 					},
 				],
 			},
@@ -536,7 +566,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 						],
 						lessonSlugs: ["09-audit-reports"],
-						questionTopics: [],
+						questionTopics: ["Modifications to the Auditor Report"],
 					},
 					{
 						letter: "C",
@@ -552,7 +582,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 						],
 						lessonSlugs: ["09-audit-reports"],
-						questionTopics: [],
+						questionTopics: ["Other Information and Supplementary Information"],
 					},
 					{
 						letter: "D",
@@ -616,7 +646,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 						],
 						lessonSlugs: ["01-intro"],
-						questionTopics: [],
+						questionTopics: ["Conceptual Framework and Standards"],
 					},
 					{
 						letter: "B",
@@ -811,7 +841,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 						],
 						lessonSlugs: ["02-financial-statements"],
-						questionTopics: [],
+						questionTopics: ["Payables and Accrued Liabilities"],
 					},
 					{
 						letter: "G",
@@ -891,7 +921,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 						],
 						lessonSlugs: ["02-financial-statements"],
-						questionTopics: [],
+						questionTopics: ["Accounting Changes and Error Corrections"],
 					},
 					{
 						letter: "B",
@@ -1001,7 +1031,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 						],
 						lessonSlugs: ["11-governmental-accounting"],
-						questionTopics: [],
+						questionTopics: ["Governmental Accounting Fundamentals"],
 					},
 				],
 			},
@@ -1216,7 +1246,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 						],
 						lessonSlugs: ["04-agency-and-regulation"],
-						questionTopics: [],
+						questionTopics: ["Government Regulation of Business"],
 					},
 				],
 			},
@@ -1371,7 +1401,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 						],
 						lessonSlugs: ["10-individual-taxation-credits"],
-						questionTopics: [],
+						questionTopics: ["Alternative Minimum Tax"],
 					},
 				],
 			},
@@ -1621,7 +1651,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 						],
 						lessonSlugs: ["08-stock-compensation"],
-						questionTopics: [],
+						questionTopics: ["Business Combinations"],
 					},
 					{
 						letter: "E",
@@ -1677,7 +1707,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 						],
 						lessonSlugs: ["10-derivatives"],
-						questionTopics: [],
+						questionTopics: ["Foreign Currency Transactions"],
 					},
 					{
 						letter: "H",
@@ -1693,7 +1723,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 						],
 						lessonSlugs: ["07-advanced-revenue"],
-						questionTopics: [],
+						questionTopics: ["Intangible Assets Advanced"],
 					},
 					{
 						letter: "I",
@@ -1725,7 +1755,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 						],
 						lessonSlugs: ["09-consolidations-advanced"],
-						questionTopics: [],
+						questionTopics: ["Income Taxes Advanced"],
 					},
 					{
 						letter: "K",
@@ -1917,7 +1947,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 						],
 						lessonSlugs: ["05-system-availability"],
-						questionTopics: [],
+						questionTopics: ["Change Management"],
 					},
 					{
 						letter: "F",
@@ -2076,7 +2106,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 						],
 						lessonSlugs: ["09-privacy"],
-						questionTopics: [],
+						questionTopics: ["Data Protection Technologies"],
 					},
 				],
 			},
@@ -2135,7 +2165,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 						],
 						lessonSlugs: ["12-soc-reporting"],
-						questionTopics: [],
+						questionTopics: ["SOC Report Content and Structure"],
 					},
 					{
 						letter: "D",
@@ -2452,7 +2482,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 						],
 						lessonSlugs: ["07-international-tax"],
-						questionTopics: [],
+						questionTopics: ["Multi-Jurisdictional Tax Planning"],
 					},
 				],
 			},
@@ -2475,7 +2505,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 						],
 						lessonSlugs: ["11-formation-liquidation"],
-						questionTopics: [],
+						questionTopics: ["Entity Formation and Restructuring"],
 					},
 					{
 						letter: "B",
