@@ -1,5 +1,18 @@
 # Running Log
 
+## 2026-02-21 00:30
+1. Created 6 SQL migration files (00032–00037) with 600 new questions for 30 unmapped blueprint groups
+2. AUD gap coverage: 300 questions across 15 new topics (Nature/Scope, Independence, Skepticism, Terms, Entity/Environment, Materiality, Assessed Risks, Work of Others, Tests of Controls, Analytical Procedures, Misstatements, Written Representations, Specific Areas, Report Modifications, Other Information)
+3. FAR gap coverage: 80 questions across 4 new topics (Conceptual Framework, Payables/Accrued Liabilities, Accounting Changes, Governmental Fundamentals)
+4. REG gap coverage: 40 questions across 2 new topics (Government Regulation of Business, Alternative Minimum Tax)
+5. BAR gap coverage: 80 questions across 4 new topics (Business Combinations, Foreign Currency, Intangible Assets Advanced, Income Taxes Advanced)
+6. ISC gap coverage: 60 questions across 3 new topics (Change Management, Data Protection Technologies, SOC Report Content/Structure)
+7. TCP gap coverage: 40 questions across 2 new topics (Multi-Jurisdictional Tax Planning, Entity Formation and Restructuring)
+8. Updated blueprint.ts: all 30 groups now have non-empty questionTopics, 30 new questionCounts entries, sectionQuestionTotals updated (AUD 1055, FAR 860, REG 850, BAR 780, ISC 749, TCP 711)
+9. Updated question count references from "4,400+" to "5,000+" across 13 files (page.tsx, layout.tsx, opengraph-image.tsx, signup page, README, CLAUDE.md, marketing plan, reddit guide, study plan, 3 blog posts, e2e test)
+10. Updated blueprint.test.ts section total assertions to match new counts
+11. Verified clean production build and 113/113 unit tests passing
+
 ## 2026-02-20 23:30
 1. Blueprint Pipeline Phase 1: Added `blueprintGroups?: string[]` to all 5 framework types in types.ts
 2. Blueprint Pipeline Phase 1: Created blueprint-utils.ts with lookup, filtering, slug helpers, and questionCounts re-export
