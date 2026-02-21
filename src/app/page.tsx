@@ -1,5 +1,6 @@
 import Link from "next/link";
 import SectionCard from "@/components/section-card";
+import { StudyPipeline } from "@/components/study-pipeline";
 import { sections } from "@/lib/sections";
 
 export default function Home() {
@@ -60,52 +61,33 @@ export default function Home() {
 				</div>
 			</section>
 
-			{/* Features */}
+			{/* Study Pipeline */}
 			<section className="max-w-4xl mx-auto px-4 py-16">
-				<h2 className="text-2xl font-bold text-gray-900 text-center mb-12">
-					Everything you need to prepare
+				<h2 className="text-2xl font-bold text-gray-900 text-center mb-3">
+					A 4-step system for every topic
 				</h2>
-				<div className="grid sm:grid-cols-2 gap-8">
-					<div className="bg-white rounded-xl p-6 border border-gray-200">
-						<div className="text-2xl mb-3">📖</div>
-						<h3 className="text-lg font-semibold text-gray-900 mb-2">
-							Conceptual Lessons
-						</h3>
-						<p className="text-gray-500 text-sm leading-relaxed">
-							In-depth coverage with worked examples, key terms, and practice
-							problems aligned to the current CPA exam blueprint.
-						</p>
-					</div>
-					<div className="bg-white rounded-xl p-6 border border-gray-200">
-						<div className="text-2xl mb-3">✏️</div>
-						<h3 className="text-lg font-semibold text-gray-900 mb-2">
-							Topic-Specific Quizzes
-						</h3>
-						<p className="text-gray-500 text-sm leading-relaxed">
-							Filter by section and topic, answer multiple-choice questions, and
-							review detailed explanations for every answer.
-						</p>
-					</div>
-					<div className="bg-white rounded-xl p-6 border border-gray-200">
-						<div className="text-2xl mb-3">🕐</div>
-						<h3 className="text-lg font-semibold text-gray-900 mb-2">
-							Timed Practice Exams
-						</h3>
-						<p className="text-gray-500 text-sm leading-relaxed">
-							Simulate test day with full-length, timed exams. Flag questions
-							for review and get a detailed score breakdown.
-						</p>
-					</div>
-					<div className="bg-white rounded-xl p-6 border border-gray-200">
-						<div className="text-2xl mb-3">📄</div>
-						<h3 className="text-lg font-semibold text-gray-900 mb-2">
-							PDF Study Frameworks
-						</h3>
-						<p className="text-gray-500 text-sm leading-relaxed">
-							Downloadable guides with concept maps, decision trees, formula
-							sheets, and mnemonics for each section.
-						</p>
-					</div>
+				<p className="text-gray-500 text-center mb-10 max-w-xl mx-auto">
+					Each concept follows the same path — from exam structure to proven
+					mastery.
+				</p>
+				<StudyPipeline variant="full" />
+			</section>
+
+			{/* Mission */}
+			<section className="bg-gray-900">
+				<div className="max-w-3xl mx-auto px-4 py-16 text-center">
+					<p className="text-emerald-400 text-sm font-semibold tracking-wide uppercase mb-3">
+						Our Mission
+					</p>
+					<h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 leading-tight">
+						Breaking the relationship between price and quality
+					</h2>
+					<p className="text-gray-400 leading-relaxed max-w-xl mx-auto">
+						CPA review courses charge $2,000 to $3,500 because they can, not
+						because they have to. We built a course with 96 lessons, 5,000+
+						questions, timed exams, and study frameworks — then priced it at
+						$29.99 a month. Same depth. A fraction of the cost. No compromise.
+					</p>
 				</div>
 			</section>
 
@@ -204,47 +186,14 @@ export default function Home() {
 			{/* How it works */}
 			<section className="bg-white border-y border-gray-200">
 				<div className="max-w-4xl mx-auto px-4 py-16">
-					<h2 className="text-2xl font-bold text-gray-900 text-center mb-12">
+					<h2 className="text-2xl font-bold text-gray-900 text-center mb-4">
 						How it works
 					</h2>
-					<div className="grid sm:grid-cols-3 gap-8">
-						<div className="text-center">
-							<div className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 font-bold text-lg flex items-center justify-center mx-auto mb-4">
-								1
-							</div>
-							<h3 className="font-semibold text-gray-900 mb-2">
-								Pick a section
-							</h3>
-							<p className="text-sm text-gray-500">
-								Choose from AUD, FAR, REG, BAR, ISC, or TCP and preview the
-								intro lesson.
-							</p>
-						</div>
-						<div className="text-center">
-							<div className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 font-bold text-lg flex items-center justify-center mx-auto mb-4">
-								2
-							</div>
-							<h3 className="font-semibold text-gray-900 mb-2">
-								Study and practice
-							</h3>
-							<p className="text-sm text-gray-500">
-								Work through lessons, take quizzes after each topic, and
-								download study frameworks for review.
-							</p>
-						</div>
-						<div className="text-center">
-							<div className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 font-bold text-lg flex items-center justify-center mx-auto mb-4">
-								3
-							</div>
-							<h3 className="font-semibold text-gray-900 mb-2">
-								Test yourself
-							</h3>
-							<p className="text-sm text-gray-500">
-								Take timed practice exams that simulate real test conditions
-								with question flagging and score breakdowns.
-							</p>
-						</div>
-					</div>
+					<p className="text-gray-500 text-center mb-10 max-w-lg mx-auto">
+						Pick any section, then follow the pipeline. Every topic uses the
+						same proven sequence.
+					</p>
+					<StudyPipeline variant="full" />
 				</div>
 			</section>
 

@@ -41,6 +41,7 @@ npm run test:e2e     # Playwright e2e tests (all browsers)
 - **Paywall gating** — lesson and quiz pages check user's `subscription_status` before rendering content
 - **Quiz engine** — questions fetched server-side (no answers sent to client), scored on submit via route handler, results stored in `quiz_attempts`. Supports optional `topics` filter for targeted quizzes.
 - **Blueprint Explorer** — `/sections/[slug]/blueprint` shows AICPA Blueprint structure (areas/groups) with progress tracking. Group detail at `/sections/[slug]/blueprint/[group]` shows topics, linked lessons, framework previews, and targeted quiz launch. Study framework items tagged with `blueprintGroups` for per-group filtering.
+- **Study Pipeline** — 4-step methodology (Blueprint → Lesson → Framework → Practice) surfaced via `StudyPipeline` component. Full variant on homepage, sections listing, and dashboard. Compact breadcrumb variant on lesson pages (step 2), section detail, and quiz pages (step 4). End-of-lesson "What's Next" block links to framework download and quiz.
 
 ## File Conventions
 
@@ -65,6 +66,7 @@ npm run test:e2e     # Playwright e2e tests (all browsers)
 | `src/lib/supabase/middleware.ts`               | Auth redirect logic                        |
 | `middleware.ts`                                | Next.js middleware entry point             |
 | `src/mdx-components.tsx`                      | MDX component overrides                    |
+| `src/components/study-pipeline.tsx`               | 4-step pipeline visual (full + compact)    |
 | `src/lib/quiz.ts`                               | Quiz types + scoring logic                 |
 | `supabase/migrations/00001_initial_schema.sql` | Full DB schema + seed data                 |
 | `supabase/migrations/00002_seed_questions.sql` | 90 quiz questions + RLS update policy      |
@@ -123,9 +125,8 @@ Full product specification with all 7 phases, data model, and acceptance criteri
 Repository: https://github.com/JamesIsHere/cpa-prep-course
 Branch: `master`
 Latest commits:
+- `dcf52ed` fix migration JSON quoting, push all migrations to production, add migration check to /wrap
 - `478e6c8` add 600 blueprint gap questions, update all count references to 5,000+
 - `ef6d526` remove inline practice problems from all 94 lesson files
 - `5bbe92b` add Blueprint Explorer, targeted quizzes, project audit, and marketing docs
 - `900e33d` update all content to 2026 AICPA Blueprint with H.R. 1 provisions
-- `d5aeda1` project audit, Stripe go-live, marketing plan, remove free copy
-- `8e33678` fix 3 medium content QA issues: ISC encryption tree, TCP basis ordering, TCP 199A threshold

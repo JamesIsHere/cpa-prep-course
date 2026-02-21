@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DownloadStudyGuide } from "@/components/download-study-guide";
+import { StudyPipeline } from "@/components/study-pipeline";
 import { getSection, sections } from "@/lib/sections";
 
 export function generateStaticParams() {
@@ -37,7 +38,9 @@ export default async function SectionDetailPage({
 			</Link>
 
 			<h1 className="text-3xl font-bold text-gray-900 mb-2">{section.title}</h1>
-			<p className="text-gray-500 mb-8">{section.description}</p>
+			<p className="text-gray-500 mb-4">{section.description}</p>
+
+			<StudyPipeline variant="compact" />
 
 			<div className="flex flex-wrap gap-3 mb-8">
 				<Link

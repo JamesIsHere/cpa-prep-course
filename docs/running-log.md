@@ -1,5 +1,15 @@
 # Running Log
 
+## 2026-02-21 01:20
+1. Created `StudyPipeline` component with full (4-step horizontal flow with SVG icons) and compact (breadcrumb) variants
+2. Placed full pipeline on homepage (replaced emoji features grid + 3-step "How it works"), sections listing, and dashboard
+3. Placed compact pipeline on lesson pages (step 2 active), section detail, and quiz pages (step 4 active)
+4. Added "What's Next" block to lesson pages with framework download CTA and quiz link
+5. Added Study Frameworks download section with 6 buttons to dashboard
+6. Added study guide download button to Blueprint Explorer page
+7. Updated CLAUDE.md: architecture (study pipeline), key files (study-pipeline.tsx), git commits
+8. Archived stale session file from project root
+
 ## 2026-02-21 00:47
 1. Applied 14 pending migrations (00023–00030, 00032–00037) to production Supabase — all 5,005 questions now live
 2. Fixed JSON quoting bug in 00032 migration (unescaped double quotes inside ::jsonb cast)

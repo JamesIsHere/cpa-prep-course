@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import BlueprintExplorer from "@/components/blueprint-explorer";
+import { DownloadStudyGuide } from "@/components/download-study-guide";
 import { getBlueprintSection, questionCounts } from "@/lib/blueprint-utils";
 import { getSection, sections } from "@/lib/sections";
 import { createClient } from "@/lib/supabase/server";
@@ -106,9 +107,13 @@ export default async function BlueprintPage({
 			</Link>
 
 			<h1 className="text-3xl font-bold text-gray-900 mb-2">AICPA Blueprint</h1>
-			<p className="text-gray-500 mb-8">
+			<p className="text-gray-500 mb-4">
 				{section.title} — exam structure, topic weights, and your progress.
 			</p>
+
+			<div className="mb-8">
+				<DownloadStudyGuide sectionSlug={slug} />
+			</div>
 
 			<BlueprintExplorer
 				sectionSlug={slug}

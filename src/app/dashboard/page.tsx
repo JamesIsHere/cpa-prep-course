@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { DownloadStudyGuide } from "@/components/download-study-guide";
 import SectionCard from "@/components/section-card";
+import { StudyPipeline } from "@/components/study-pipeline";
 import { sections } from "@/lib/sections";
 import { createClient } from "@/lib/supabase/server";
 
@@ -93,6 +95,13 @@ export default async function DashboardPage() {
 				left off.
 			</p>
 
+			<div className="mb-10 bg-gray-50 rounded-xl border border-gray-200 p-6">
+				<p className="text-sm font-semibold text-gray-700 mb-4 text-center">
+					Your study pipeline
+				</p>
+				<StudyPipeline variant="full" />
+			</div>
+
 			<h2 className="text-lg font-semibold text-gray-800 mb-4">
 				Your Sections
 			</h2>
@@ -100,6 +109,29 @@ export default async function DashboardPage() {
 				{sections.map((section) => (
 					<SectionCard key={section.code} section={section} />
 				))}
+			</div>
+
+			<div className="mt-12">
+				<h2 className="text-lg font-semibold text-gray-800 mb-4">
+					Study Frameworks
+				</h2>
+				<p className="text-gray-500 text-sm mb-4">
+					Downloadable PDF guides with concept maps, decision trees, formulas,
+					and mnemonics for each section.
+				</p>
+				<div className="grid sm:grid-cols-3 gap-4">
+					{sections.map((section) => (
+						<div
+							key={section.code}
+							className="border border-gray-200 rounded-lg p-4 flex items-center justify-between"
+						>
+							<span className="text-sm font-medium text-gray-900">
+								{section.code.toUpperCase()}
+							</span>
+							<DownloadStudyGuide sectionSlug={section.slug} />
+						</div>
+					))}
+				</div>
 			</div>
 
 			{Object.keys(quizScores).length > 0 && (

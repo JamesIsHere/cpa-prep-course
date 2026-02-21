@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Paywall from "@/components/paywall";
+import { StudyPipeline } from "@/components/study-pipeline";
 import { getSection, sections } from "@/lib/sections";
 import { createClient } from "@/lib/supabase/server";
 import QuizClient from "./quiz-client";
@@ -112,9 +113,10 @@ export default async function QuizPage({
 			>
 				&larr; {section.title}
 			</Link>
-			<h1 className="text-3xl font-bold text-gray-900 mb-6">
+			<h1 className="text-3xl font-bold text-gray-900 mb-2">
 				{section.title} — Quiz
 			</h1>
+			<StudyPipeline variant="compact" activeStep={4} />
 			<QuizClient
 				sectionCode={section.code}
 				sectionSlug={section.slug}

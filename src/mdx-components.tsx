@@ -41,6 +41,25 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 				{children}
 			</code>
 		),
+		table: ({ children }) => (
+			<div className="overflow-x-auto mb-6 rounded-lg border border-gray-200">
+				<table className="w-full text-sm">{children}</table>
+			</div>
+		),
+		thead: ({ children }) => (
+			<thead className="bg-emerald-700 text-white">{children}</thead>
+		),
+		th: ({ children }) => (
+			<th className="px-4 py-2.5 text-left text-xs font-semibold tracking-wide">
+				{children}
+			</th>
+		),
+		td: ({ children }) => (
+			<td className="px-4 py-2.5 text-gray-700 border-t border-gray-100">
+				{children}
+			</td>
+		),
+		tr: ({ children }) => <tr className="even:bg-gray-50">{children}</tr>,
 		...components,
 	};
 }

@@ -37,6 +37,7 @@ Blueprint-driven study pipeline, content connectivity, and data quality.
 
 | Date       | Task                                                                    |
 |------------|-------------------------------------------------------------------------|
+| 2026-02-21 | Add study pipeline visual + framework discoverability across 8 pages    |
 | 2026-02-21 | Apply migrations 00023–00037 to production Supabase (all questions live) |
 | 2026-02-21 | Add 600 gap questions for 30 unmapped blueprint groups (5,005 total)    |
 | 2026-02-21 | Update all question count references from 4,400+ to 5,000+             |
