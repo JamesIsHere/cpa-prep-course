@@ -1,0 +1,28 @@
+-- Migration: Upgrade 4 moderate-scoring Specific Areas and Transactions questions
+-- Fixes: short-stem, length-cuing, missing citations, missing wrong-answer analysis
+-- Target: all questions score 7+ after this migration
+
+-- Q5151 [score:5] short-stem(11w) + length-cuing(42/132) → expand stem, balance choices, cite AU-C 550
+UPDATE questions SET
+  stem = 'During the audit of Lakeside Distributors, the engagement team at Mercer & Associates discovers that the company sold inventory to its CEO''s privately held entity at prices 30% below market value. The engagement senior flags this as a related party transaction and asks the engagement partner about the required response. Under AU-C 550, when the auditor identifies a related party transaction, the auditor should:',
+  choices = '["Automatically require the entity to eliminate the transaction from the financial statements as a matter of policy","Obtain sufficient appropriate evidence about whether the transaction has been properly accounted for and disclosed","Ignore the transaction if the dollar amount falls below performance materiality for the audit engagement","Report the transaction directly to the SEC regardless of the entity''s public or private reporting status"]',
+  explanation = 'Under AU-C 550.16, the auditor should obtain sufficient appropriate audit evidence about identified related party transactions to determine whether they have been properly accounted for and adequately disclosed in accordance with the applicable framework. This includes understanding the nature and business purpose of the transactions. Choice A is incorrect because the auditor cannot compel elimination of legitimate transactions — the issue is proper accounting and disclosure. Choice C is incorrect because related party transactions require evaluation regardless of dollar amount due to the inherent risk of management bias.'
+WHERE id = 5151;
+
+-- Q5153 [score:6] short-stem(8w) → expand with scenario + cite AU-C 540
+UPDATE questions SET
+  stem = 'Thornfield Pharmaceuticals holds a portfolio of investments in early-stage biotech companies measured at fair value under ASC 820. The engagement team at Calloway & Partners notes that management used a discounted cash flow model with significant assumptions about future clinical trial outcomes. The senior auditor must evaluate these fair value measurements. Under AU-C 540, when auditing fair value estimates, the auditor should:',
+  explanation = 'Under AU-C 540.13, the auditor should evaluate the reasonableness of the significant assumptions used by management, assess whether the methods and models are appropriate under the applicable framework, and test the accuracy and completeness of the underlying data. The auditor may also develop an independent estimate or review subsequent events for corroborating evidence. Choice A is incorrect because the auditor cannot accept fair value measurements without testing — estimates are inherently subjective and require professional skepticism. Choice D is incorrect because while an independent specialist may be used, it is not mandatory for all fair value measurements.'
+WHERE id = 5153;
+
+-- Q5159 [score:6] short-stem(7w) → expand with scenario + cite AU-C 540
+UPDATE questions SET
+  stem = 'The engagement team at Whitfield & Associates is auditing Ridgemont Construction''s December 31, 2025 financial statements. The company estimates a $2.8 million warranty reserve based on historical claim rates, expected defect ratios, and projected repair costs. The engagement senior must evaluate whether this estimate is reasonable. Under AU-C 540, when auditing accounting estimates, the auditor should:',
+  explanation = 'Under AU-C 540.08, auditing estimates requires the auditor to evaluate whether management''s methods are appropriate under the applicable framework, whether the significant assumptions are reasonable and supported by evidence, and whether the underlying data is relevant, reliable, and complete. Choice B is incorrect because evaluating accounting estimates goes beyond mathematical accuracy — the auditor must assess the reasonableness of assumptions, methods, and inputs. Choice C is incorrect because uncertainty does not excuse the auditor from evaluating the estimate — the auditor must still assess whether it falls within a reasonable range.'
+WHERE id = 5159;
+
+-- Q5167 [score:6] short-stem(11w) → expand with scenario + cite AU-C 540
+UPDATE questions SET
+  stem = 'While reviewing Ashford Distribution''s 2025 financial statements, the engagement team at Glenview & Associates observes that management consistently uses optimistic assumptions for bad debt reserves, inventory obsolescence, and warranty liabilities — all of which reduce reported expenses. The engagement partner is concerned about a pattern of management bias across these accounting estimates. Under AU-C 540, when the auditor identifies management bias in accounting estimates, this finding:',
+  explanation = 'Under AU-C 540.21, management bias in estimates does not automatically result in a material misstatement, but the auditor must evaluate the cumulative effect across all estimates. If the cumulative bias results in a material misstatement, or if the bias indicates possible intent to mislead (a fraud risk indicator under AU-C 240), the auditor must take appropriate action — which may include adjusting the risk assessment, performing additional procedures, or communicating with those charged with governance. Choice A is incorrect because systematic bias in one direction warrants professional skepticism. Choice C is incorrect because an adverse opinion is not automatic — the auditor first evaluates the cumulative quantitative effect.'
+WHERE id = 5167;

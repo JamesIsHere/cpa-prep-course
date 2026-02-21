@@ -1,0 +1,31 @@
+-- Migration: Upgrade 4 moderate-scoring Other Information and Supplementary Information questions
+-- Fixes: short-stem, length-cuing, absolute-assurance, missing wrong-answer analysis
+-- Target: all questions score 7+ after this migration
+
+-- Q5189 [score:6] short-stem(7w) + length-cuing(50/172) → expand stem, balance choices
+UPDATE questions SET
+  stem = 'The engagement team at Whitfield & Associates is auditing Sycamore Corp.''s December 31, 2025 financial statements. Sycamore''s annual report includes the audited financial statements, the auditor''s report, a letter from the CEO, management discussion and analysis, and a statistical summary of operations. The engagement partner reminds the team to evaluate the non-audited content. Under AU-C 720, "other information" refers to:',
+  choices = '["The audited financial statements and their accompanying footnotes included in the annual report","Financial and non-financial information in a document containing audited financial statements, excluding the statements and auditor''s report","Only the management discussion and analysis section, because it is specifically required by SEC regulations","Supplementary schedules that are audited to the same extent as the basic financial statements"]',
+  explanation = 'Under AU-C 720.04, other information is financial and non-financial information (other than the audited financial statements and the auditor''s report thereon) included in a document containing the audited financial statements. Examples include the annual report narrative, CEO letters, and statistical summaries. Choice A is incorrect because the audited financial statements themselves are not "other information." Choice C is too narrow — other information includes all non-audited content in the document, not just the MD&A.'
+WHERE id = 5189;
+
+-- Q5195 [score:5] short-stem(11w) + length-cuing(43/136) → expand stem, balance choices
+UPDATE questions SET
+  stem = 'Lakewood County prepares required supplementary information (RSI) including a budgetary comparison schedule and management''s discussion and analysis alongside its audited financial statements. The engagement team at Calloway & Partners must determine the appropriate level of procedures for the RSI. Under AU-C 730, the auditor''s procedures with respect to required supplementary information include:',
+  choices = '["A full audit of the RSI to the same extent as the basic financial statements, with a separate opinion","Inquiries of management about preparation methods and comparison of the RSI for consistency with the audited statements","A separate audit opinion issued on the RSI in an other-matter paragraph appended to the main report","No procedures, because RSI falls entirely outside the scope of the financial statement audit engagement"]',
+  explanation = 'Under AU-C 730.06, the auditor''s procedures for RSI are limited but specific: inquire of management about the methods used to prepare the RSI, compare it for consistency with management''s responses, the audited financial statements, and other knowledge obtained during the audit. Choice A is incorrect because RSI is not audited to the same extent as the basic statements. Choice D is incorrect because the auditor does have limited responsibilities for RSI even though the RSI is not audited.'
+WHERE id = 5195;
+
+-- Q5196 [score:6] length-cuing(24/121) → balance choices, add citation
+UPDATE questions SET
+  stem = 'During the audit of Pinecrest Regional Transit Authority, the engagement team at Mercer & Associates discovers that management has entirely omitted the required supplementary information — including the budgetary comparison schedule and the schedule of the authority''s proportionate share of the net pension liability. Under AU-C 730, if required supplementary information is omitted entirely, the auditor should:',
+  choices = '["Include a paragraph in the auditor''s report noting the omission without modifying the opinion on the financial statements","Issue a qualified opinion on the financial statements because the RSI is required by the applicable framework","Refuse to issue the audit report until management prepares and includes the missing supplementary information","Issue an adverse opinion because the omission represents a departure from generally accepted accounting principles"]',
+  explanation = 'Under AU-C 730.10, when RSI is omitted, the auditor includes an other-matter paragraph in the report noting the omission. However, the opinion on the basic financial statements is not modified, because RSI is not part of the basic financial statements — it supplements them. Choice B is incorrect because a qualified opinion is reserved for material misstatements in the basic financial statements, not for missing RSI. Choice C is incorrect because the auditor cannot compel management to prepare RSI.'
+WHERE id = 5196;
+
+-- Q5206 [score:5] absolute-assurance + length-cuing(24/139) → replace distractor, balance choices
+UPDATE questions SET
+  stem = 'The engagement team at Glenview & Associates includes reporting on required supplementary information in the auditor''s report for Thornfield Municipal Water District. The engagement partner drafts language describing the nature and extent of procedures applied to the RSI. Under AU-C 730, when the auditor''s report includes reporting on RSI, the report should indicate that:',
+  choices = '["The RSI has been audited to the same extent as the basic financial statements and is fairly presented","The auditor applied limited procedures to the RSI but did not audit it and does not express an opinion on it","The RSI is more reliable than the basic financial statements because it includes forward-looking information","The auditor reviewed the RSI and provides moderate assurance that it is free from material misstatement"]',
+  explanation = 'Under AU-C 730.09, the auditor''s report on RSI should state that certain limited procedures were applied (inquiries and comparison for consistency) but the RSI was not audited, and accordingly the auditor does not express an opinion or provide any assurance on it. Choice A is incorrect because RSI is not audited. Choice D is incorrect because the auditor provides no assurance on RSI — not even moderate or limited assurance.'
+WHERE id = 5206;

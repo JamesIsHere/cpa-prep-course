@@ -1,0 +1,55 @@
+-- Migration: Upgrade remaining moderate-scoring BAR questions
+-- Fixes: short-stem, length-cuing, short-expl, missing citations
+-- Target: all questions score 7+ after this migration
+
+-- === Consolidations and Intercompany Transactions ===
+
+-- Q691 [score:5] short-stem(11w) + short-expl(29w) → expand stem with scenario, expand explanation with wrong-answer analysis
+UPDATE questions SET
+  stem = 'Thornfield Industries (parent) sells $800,000 of inventory to its 80%-owned subsidiary, Lakeside Components, during the fiscal year ended December 31, 2025. At year-end, $200,000 of this inventory remains unsold in Lakeside''s warehouse, carrying $50,000 of unrealized intercompany profit. The consolidation team must determine how the unrealized profit elimination affects the parent''s income versus the noncontrolling interest. In a downstream intercompany sale, unrealized profit in ending inventory is eliminated against:',
+  explanation = 'In a downstream sale (parent sells to subsidiary), 100% of the unrealized profit is eliminated against the parent''s income regardless of the parent''s ownership percentage. Because the parent initiated the transaction, the noncontrolling interest is not affected — NCI shareholders had no role in setting the transfer price or earning the intercompany margin. Under ASC 810, the elimination entry debits cost of goods sold and credits ending inventory to remove the unrealized profit from consolidated results. Choice A is incorrect because the subsidiary did not initiate the sale — elimination falls entirely on the selling entity (the parent). Choice C is incorrect because proportional allocation applies only to upstream sales, where the subsidiary is the seller and NCI bears its share of the eliminated profit. Choice D is incorrect because ASC 810 requires elimination of all intercompany transactions in consolidation regardless of direction.'
+WHERE id = 691;
+
+-- Q688 [score:5] short-stem(7w) → expand stem with scenario + cite ASC 810
+UPDATE questions SET
+  stem = 'Prescott & Associates is auditing the consolidated financial statements of Ridgemont Holdings and its 75%-owned subsidiary, Clearwater Logistics. The consolidation accountant is preparing the consolidated balance sheet and needs to determine how the 25% outside ownership interest in Clearwater should be presented. Under ASC 810-10-45, noncontrolling interest in a subsidiary is reported:',
+  explanation = 'Under ASC 810-10-45-16, noncontrolling interest is reported in the equity section of the consolidated balance sheet, separate from the parent''s equity. It is clearly labeled and not classified as a liability or mezzanine item. Additionally, ASC 810-10-45-19 requires that the consolidated income statement present NCI''s share of net income as a separate line item, with consolidated net income attributed between the parent and the noncontrolling interest. Choice A is incorrect because NCI is an equity component, not a liability — ASC 810 explicitly requires equity classification. Choice C is incorrect because NCI has no connection to revenue measurement or deductions from the top line. Choice D is incorrect because NCI must appear on the face of the consolidated financial statements, not only in the notes.'
+WHERE id = 688;
+
+-- === Derivatives and Hedging ===
+
+-- Q706 [score:6] short-expl(22w) → expand to 50-100 words with citation + wrong-answer analysis
+UPDATE questions SET
+  explanation = 'Under ASC 815-10-35-1, all derivative instruments must be recognized on the balance sheet at fair value, regardless of whether hedge accounting is applied. This includes forwards, futures, options, and swaps. Fair value is remeasured at each reporting date, with changes flowing either to earnings (for derivatives not designated as hedges or designated as fair value hedges) or to other comprehensive income (for cash flow hedges under ASC 815-20). Choice A is incorrect because historical cost measurement is prohibited for derivatives — ASC 815 explicitly overrides the general cost basis for these instruments. Choice B is incorrect because amortized cost applies to held-to-maturity debt securities under ASC 320, not derivatives. Choice D is incorrect because the lower-of-cost-or-market framework was replaced by ASC 330 for inventory and does not apply to derivative instruments.'
+WHERE id = 706;
+
+-- Q715 [score:6] short-expl(28w) → expand to 50-100 words with citation + wrong-answer analysis
+UPDATE questions SET
+  explanation = 'Under ASC 815-10-35-2, when a derivative is not designated as a hedging instrument, all changes in its fair value are recognized in earnings in the period of change. This is the default treatment — commonly described as speculative or economic hedging without formal hedge accounting designation. To qualify for hedge accounting (deferring gains and losses to OCI for cash flow hedges or offsetting in earnings for fair value hedges), the entity must meet strict documentation and effectiveness testing requirements under ASC 815-20. Choice A is incorrect because deferral in OCI is permitted only for derivatives designated as cash flow hedges that meet all hedge accounting criteria. Choice B is incorrect because ASC 815 requires recognition of fair value changes each reporting period, not deferral until settlement. Choice D is incorrect because maturity-date recognition applies to certain held-to-maturity investments, not to derivatives.'
+WHERE id = 715;
+
+-- === Stock Compensation ===
+
+-- Q676 [score:6] short-stem(11w) → expand stem with scenario + cite ASC 718
+UPDATE questions SET
+  stem = 'On January 15, 2026, Ashford Corp. grants 10,000 stock options to its chief financial officer with an exercise price of $42 per share (equal to the grant-date market price), a four-year vesting period, and a ten-year contractual term. By December 31, 2026, Ashford''s stock price has risen to $58 per share. The controller is determining the measurement date for compensation cost. Under ASC 718, the fair value of stock options is measured:',
+  explanation = 'Under ASC 718-10-30-2, the fair value of equity-classified stock options is measured once at the grant date using an option-pricing model (such as Black-Scholes or a lattice model). Once established, this grant-date fair value is fixed and is not subsequently adjusted for changes in the underlying stock price, volatility, or other factors. Total compensation cost equals the grant-date fair value multiplied by the number of awards expected to vest, recognized ratably over the requisite service period. Choice B is incorrect because mark-to-market remeasurement at each reporting date applies only to liability-classified awards (such as cash-settled SARs), not equity-classified options. Choice C is incorrect because the exercise date is when the employee exercises the option — it has no bearing on the initial measurement of compensation cost. Choice D is incorrect because the vesting date determines when the option becomes exercisable, but measurement occurs at the grant date when the terms are established.'
+WHERE id = 676;
+
+-- Q686 [score:6] short-stem(11w) → expand stem with scenario + cite ASC 718
+UPDATE questions SET
+  stem = 'Ridgemont Technology previously granted its VP of Engineering 5,000 stock options with a grant-date fair value of $12 per option and a four-year cliff vest. Two years into the vesting period, the company''s stock price has dropped significantly, and the board approves a modification reducing the exercise price from $60 to $35 per share. The modified options have a fair value of $14 per option at the modification date. Under ASC 718-20-35, in a stock option modification the entity must recognize at minimum:',
+  explanation = 'Under ASC 718-20-35-3, when an equity award is modified, total compensation cost recognized must be at least equal to the original grant-date fair value ($12 × 5,000 = $60,000). Any incremental fair value — the excess of the modified award''s fair value over the original award''s fair value at the modification date — is recognized as additional compensation cost over the remaining vesting period. If the modification reduces fair value (a Type III modification), the entity continues recognizing the original grant-date fair value. Choice A is incorrect because using only the new fair value could result in less total compensation than the original award, which ASC 718 prohibits. Choice C is incorrect because intrinsic value is not the measurement attribute for equity-classified awards under ASC 718 — fair value is required. Choice D is incorrect because modifications never reset compensation to zero; at minimum, the original grant-date amount must be recognized.'
+WHERE id = 686;
+
+-- === Business Combinations ===
+
+-- Q682 [score:6] short-expl(28w) → expand to 50-100 words with citation + wrong-answer analysis
+UPDATE questions SET
+  explanation = 'Under ASC 805-20-25-10, the acquirer must separately recognize identifiable intangible assets acquired in a business combination at their acquisition-date fair values, even if those assets were not recognized on the acquiree''s pre-acquisition balance sheet. This includes customer relationships, trade names, developed technology, non-compete agreements, and order backlogs — items that meet either the contractual-legal criterion or the separability criterion. Choice A is incorrect because internally developed goodwill of the acquiree is subsumed into the overall goodwill recognized in the business combination and is not separately identifiable. Choice C is incorrect because employee training costs generally do not meet the criteria for separate recognition as an intangible asset — the assembled workforce is included within goodwill. Choice D is incorrect because advertising costs are period expenses under ASC 720-35 and do not qualify as separately identifiable intangible assets in a business combination.'
+WHERE id = 682;
+
+-- Q687 [score:6] short-expl(26w) → expand to 50-100 words with citation + wrong-answer analysis
+UPDATE questions SET
+  explanation = 'Under ASC 805-10-25-23, acquisition-related costs — including finder''s fees, advisory fees, legal fees, accounting fees, valuation fees, and other professional or consulting fees — are expensed in the periods in which they are incurred. This represents a significant departure from legacy purchase method accounting, which capitalized such costs as part of the purchase price. The rationale is that these costs represent services received by the acquirer rather than assets obtained from the acquiree. Choice A is incorrect because adding acquisition costs to goodwill was the treatment under the superseded SFAS 141 (original); ASC 805 explicitly prohibits this. Choice B is incorrect because transaction costs are not intangible assets — they do not meet the definition of an identifiable asset with future economic benefit to the entity. Choice D is incorrect because acquisition costs are separate from the purchase consideration and are not deducted from the fair value of identifiable net assets.'
+WHERE id = 687;
