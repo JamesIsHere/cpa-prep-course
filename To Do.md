@@ -37,6 +37,7 @@ Blueprint-driven study pipeline, content connectivity, and data quality.
 
 | Date       | Task                                                                    |
 |------------|-------------------------------------------------------------------------|
+| 2026-02-21 | Rewrite 8 critical-scoring questions, fix defined benefit limit (00040-41) |
 | 2026-02-21 | Build QA system: analyzers, style guide, validator, Bloom's tagging     |
 | 2026-02-21 | Sync questionCounts with live DB, fix Federal Tax Procedures orphan     |
 | 2026-02-21 | Add 2 new blueprint tests (topic mapping, Levenshtein similarity)       |

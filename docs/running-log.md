@@ -1,5 +1,13 @@
 # Running Log
 
+## 2026-02-21 22:40
+1. Reviewed 7 medium content QA issues from prior session — 6 were false positives, 1 real bug found
+2. Fixed defined benefit plan limit for 2026: $280,000 → $285,000 in migration 00030 question (migration 00040)
+3. Rewrote all 8 critical-scoring questions (score 0-3) with scenario-based stems, named entities, parallel-length choices, expanded explanations with standard citations, and wrong-answer analysis (migration 00041)
+4. Built `scripts/qa/fetch-questions.ts` utility for querying questions by ID from Supabase
+5. Pushed migrations 00040 and 00041 to production Supabase
+6. Coherence audit: fixed TCP count (~711 → ~699), total (~5,005 → ~5,010), updated CLAUDE.md git section and key files table, archived stale session file
+
 ## 2026-02-21 02:15
 1. Built QA analysis system (`scripts/qa/`): 5 analyzers (difficulty, coverage, quality, Bloom's, duplicates), report formatter, orchestrator entry point
 2. Created `npm run qa` command — queries live Supabase DB, scores all 5,005 questions on 0-10 composite, writes dated markdown report

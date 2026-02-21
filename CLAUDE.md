@@ -77,6 +77,7 @@ npm run validate-migration <file>  # Validate question migration against style g
 | `supabase/migrations/00007–00012`             | Expanded questions + content per section   |
 | `supabase/migrations/00032–00037`             | Gap coverage questions for 30 blueprint groups |
 | `supabase/migrations/00038_add_cognitive_level.sql` | Bloom's cognitive level column          |
+| `supabase/migrations/00040–00041`             | Data fix + 8 critical question rewrites  |
 | `docs/question-style-guide.md`                | Question writing rubric (all new questions must meet this) |
 | `scripts/qa/run-qa.ts`                        | QA audit entry point (`npm run qa`)        |
 | `scripts/qa/validate-migration.ts`            | Pre-commit migration validator             |
@@ -91,9 +92,9 @@ npm run validate-migration <file>  # Validate question migration against style g
 | REG     | reg  | 18      | ~850      | 60              | Circular 230, contracts, agency, business structures, basis, gains/losses, 1031, individual tax, credits, filing status, C/S corps, partnerships, tax procedures, legal duties, debtor-creditor, tax-exempt orgs |
 | BAR     | bar  | 16      | ~780      | 40              | Financial analysis, valuation, capital structure, derivatives, consolidations, govt reporting, fund reconciliation, interfund transactions |
 | ISC     | isc  | 16      | ~749      | 39              | IT infrastructure, ERP, data management, security frameworks, threats, privacy, SOC, SOC testing, SOC reporting |
-| TCP     | tcp  | 15      | ~711      | 44              | Individual planning, passive/at-risk, wealth transfer, retirement, international tax, trusts, capital structure tax, nontaxable dispositions, related parties |
+| TCP     | tcp  | 15      | ~699      | 44              | Individual planning, passive/at-risk, wealth transfer, retirement, international tax, trusts, capital structure tax, nontaxable dispositions, related parties |
 
-**Totals:** 96 lessons, ~5,005 questions, 280 framework items across 6 sections
+**Totals:** 96 lessons, ~5,010 questions, 280 framework items across 6 sections
 
 ## Database Tables
 
@@ -139,8 +140,8 @@ Full product specification with all 7 phases, data model, and acceptance criteri
 Repository: https://github.com/JamesIsHere/cpa-prep-course
 Branch: `master`
 Latest commits:
+- `9cc30f3` build QA system: analyzers, style guide, validator, Bloom's tagging
+- `2f94b61` pipeline QA: indigo color, remove duplicate, fix stale tests, coherence audit
+- `f63c327` checkpoint: pipeline color refactor, remove duplicate, fix stale tests
+- `1a8f380` add study pipeline visual and framework discoverability across 8 pages
 - `dcf52ed` fix migration JSON quoting, push all migrations to production, add migration check to /wrap
-- `478e6c8` add 600 blueprint gap questions, update all count references to 5,000+
-- `ef6d526` remove inline practice problems from all 94 lesson files
-- `5bbe92b` add Blueprint Explorer, targeted quizzes, project audit, and marketing docs
-- `900e33d` update all content to 2026 AICPA Blueprint with H.R. 1 provisions
