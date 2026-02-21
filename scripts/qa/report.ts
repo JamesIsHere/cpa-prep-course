@@ -1,6 +1,6 @@
 // Formats all analyzer outputs into a markdown report
 
-import type { BloomsDistribution } from "./analyzers/blooms";
+import type { BloomsDistribution, BloomsSourceStats } from "./analyzers/blooms";
 import { BLOOMS_TARGETS } from "./analyzers/blooms";
 import type { CoverageAnalysis } from "./analyzers/coverage";
 import type { DifficultyAnalysis } from "./analyzers/difficulty";
@@ -15,6 +15,7 @@ interface ReportData {
 	coverage: CoverageAnalysis;
 	quality: QualityAnalysis;
 	blooms: BloomsDistribution[];
+	bloomsSourceStats?: BloomsSourceStats;
 	duplicates: DuplicateAnalysis;
 	sectionCodeMap: Map<string, string>;
 }
@@ -138,6 +139,12 @@ export function generateReport(data: ReportData): string {
 	// === Bloom's Cognitive Levels ===
 	lines.push("## Bloom's Cognitive Level Distribution");
 	lines.push("");
+	if (data.bloomsSourceStats) {
+		lines.push(
+			`**Source:** ${data.bloomsSourceStats.dbCount} from DB \`cognitive_level\` column, ${data.bloomsSourceStats.heuristicCount} from heuristic classifier`,
+		);
+		lines.push("");
+	}
 	lines.push(
 		`| Section | L1 R&U     | L2 App     | L3 Analysis | L4 Eval    |`,
 	);

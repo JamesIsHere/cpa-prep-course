@@ -1,12 +1,9 @@
-// Pre-migration validator — checks question INSERTs against the style guide rubric
+// Pre-migration validator — checks question INSERTs and UPDATEs against the style guide rubric
 // Usage: npm run validate-migration supabase/migrations/00040_upgrade_aud_questions.sql
 
 import { readFileSync } from "fs";
-import { dirname, resolve } from "path";
-import { fileURLToPath } from "url";
+import { resolve } from "path";
 import { questionCounts } from "../../src/lib/blueprint";
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const validTopics = new Set(Object.keys(questionCounts));
 
@@ -32,77 +29,67 @@ interface Issue {
 	message: string;
 }
 
+interface ParsedQuestion {
+	id?: number;
+	topic?: string;
+	stem: string;
+	choicesJson: string;
+	correctIndex: number;
+	explanation: string;
+	difficulty: string;
+	cognitiveLevel?: number;
+	approxLine: number;
+}
+
 const issues: Issue[] = [];
 
-// Extract INSERT statements for the questions table
-// Pattern: INSERT INTO questions (section_id, topic, stem, choices, correct_index, explanation, difficulty)
-const insertPattern =
-	/INSERT\s+INTO\s+questions\s*\([^)]+\)\s*VALUES\s*\(([^;]+)\);/gi;
+// Standard citation patterns
+const STANDARD_PATTERN =
+	/\b(AU-C|ASC|IRC|FASB|GASB|SSARS|AT-C|SAS|PCAOB|Sec\.|Section|SQMS|SSAE)\b/i;
 
-// Also match single-row VALUES within multi-row inserts
-const valuesRowPattern =
-	/\((\d+),\s*'([^']*(?:''[^']*)*)'\s*,\s*'([^']*(?:''[^']*)*)'\s*,\s*'(\[.*?\])'::jsonb\s*,\s*(\d+)\s*,\s*'([^']*(?:''[^']*)*)'\s*,\s*'(easy|medium|hard)'\)/g;
+// Contrast/wrong-answer language
+const WRONG_ANSWER_PATTERN =
+	/\b(while|whereas|although|however|in contrast|not .* because|incorrect because|rather than|unlike)\b/i;
 
 function countWords(text: string): number {
 	return text.trim().split(/\s+/).filter(Boolean).length;
 }
 
-// Track answer distributions
-const distributions: { correct_index: number; topic: string }[] = [];
-let questionCount = 0;
+/**
+ * Shared validation logic for a single parsed question.
+ * Used by both INSERT and UPDATE parsers.
+ */
+function validateQuestion(q: ParsedQuestion): void {
+	const stemClean = q.stem.replace(/''/g, "'");
+	const explanationClean = q.explanation.replace(/''/g, "'");
 
-// Simple approach: find all VALUES rows that look like question inserts
-const lines = sql.split("\n");
-for (let lineNum = 0; lineNum < lines.length; lineNum++) {
-	const line = lines[lineNum];
-
-	// Check for topic references
-	const topicMatch = line.match(/,\s*'([^']+)'\s*,\s*'/);
-	if (topicMatch && line.match(/INSERT|VALUES|\(/i)) {
-		// Try to extract structured question data from this line + surrounding context
-	}
-}
-
-// Re-scan full SQL for complete INSERT patterns
-let match: RegExpExecArray | null;
-const fullSql = sql.replace(/\n/g, " ");
-
-// Match individual value tuples more broadly
-const tuplePattern =
-	/\(\s*(\d+)\s*,\s*'((?:[^']|'')*?)'\s*,\s*'((?:[^']|'')*?)'\s*,\s*'(\[(?:[^']|'')*?\])'::jsonb\s*,\s*(\d+)\s*,\s*'((?:[^']|'')*?)'\s*,\s*'(easy|medium|hard)'\s*\)/g;
-
-while ((match = tuplePattern.exec(fullSql)) !== null) {
-	questionCount++;
-	const [
-		,
-		sectionId,
-		topic,
-		stem,
-		choicesJson,
-		correctIndexStr,
-		explanation,
-		difficulty,
-	] = match;
-
-	const correctIndex = parseInt(correctIndexStr);
-	const stemClean = stem.replace(/''/g, "'");
-	const explanationClean = explanation.replace(/''/g, "'");
-
-	// Approximate line number
-	const charsBefore = fullSql.slice(0, match.index);
-	const approxLine = (charsBefore.match(/ {50}/g) ?? []).length + 1;
-
-	distributions.push({ correct_index: correctIndex, topic });
-
-	// --- Checks ---
-
-	// Stem length
-	const stemWords = countWords(stemClean);
-	if (stemWords < 12) {
+	// TODO detection — catches unfilled scaffolds
+	if (/\bTODO\b/.test(stemClean)) {
 		issues.push({
-			line: approxLine,
+			line: q.approxLine,
+			severity: "error",
+			message: `Stem contains TODO placeholder: "${stemClean.slice(0, 60)}..."`,
+		});
+	}
+	if (/\bTODO\b/.test(explanationClean)) {
+		issues.push({
+			line: q.approxLine,
+			severity: "error",
+			message: `Explanation contains TODO placeholder: "${explanationClean.slice(0, 60)}..."`,
+		});
+	}
+
+	// Context-aware stem length: L1 questions are intentionally shorter
+	const stemWords = countWords(stemClean);
+	const isL1 =
+		q.cognitiveLevel === 1 ||
+		(q.cognitiveLevel == null && q.difficulty === "easy");
+	const shortStemThreshold = isL1 ? 8 : 12;
+	if (stemWords < shortStemThreshold) {
+		issues.push({
+			line: q.approxLine,
 			severity: "warn",
-			message: `Short stem (${stemWords} words): "${stemClean.slice(0, 60)}..."`,
+			message: `Short stem (${stemWords} words, threshold ${shortStemThreshold}): "${stemClean.slice(0, 60)}..."`,
 		});
 	}
 
@@ -110,37 +97,55 @@ while ((match = tuplePattern.exec(fullSql)) !== null) {
 	const explanationWords = countWords(explanationClean);
 	if (explanationWords < 25) {
 		issues.push({
-			line: approxLine,
+			line: q.approxLine,
 			severity: "error",
 			message: `Short explanation (${explanationWords} words): "${explanationClean.slice(0, 60)}..."`,
+		});
+	}
+
+	// Explanation quality: standard citation check
+	if (!STANDARD_PATTERN.test(explanationClean)) {
+		issues.push({
+			line: q.approxLine,
+			severity: "warn",
+			message: `Explanation lacks standard citation (AU-C, ASC, IRC, etc.): Q${q.id ?? "?"}`,
+		});
+	}
+
+	// Explanation quality: contrast language (addresses wrong answers)
+	if (!WRONG_ANSWER_PATTERN.test(explanationClean)) {
+		issues.push({
+			line: q.approxLine,
+			severity: "warn",
+			message: `Explanation lacks contrast language addressing wrong answers: Q${q.id ?? "?"}`,
 		});
 	}
 
 	// Parse choices
 	let choices: string[] = [];
 	try {
-		choices = JSON.parse(choicesJson.replace(/''/g, "'"));
+		choices = JSON.parse(q.choicesJson.replace(/''/g, "'"));
 	} catch {
 		issues.push({
-			line: approxLine,
+			line: q.approxLine,
 			severity: "error",
-			message: `Malformed choices JSON: ${choicesJson.slice(0, 60)}...`,
+			message: `Malformed choices JSON: ${q.choicesJson.slice(0, 60)}...`,
 		});
-		continue;
+		return;
 	}
 
 	// All/None of the above
 	for (const choice of choices) {
 		if (/^(all|none) of the above$/i.test(choice)) {
 			issues.push({
-				line: approxLine,
+				line: q.approxLine,
 				severity: "error",
 				message: `Banned pattern: "${choice}"`,
 			});
 		}
 		if (/^both [A-D] and [A-D]$/i.test(choice)) {
 			issues.push({
-				line: approxLine,
+				line: q.approxLine,
 				severity: "error",
 				message: `Banned pattern: "${choice}"`,
 			});
@@ -148,7 +153,7 @@ while ((match = tuplePattern.exec(fullSql)) !== null) {
 	}
 
 	// Absolute assurance in wrong answers
-	const wrongChoices = choices.filter((_, i) => i !== correctIndex);
+	const wrongChoices = choices.filter((_, i) => i !== q.correctIndex);
 	for (const wc of wrongChoices) {
 		if (
 			/\b(absolute assurance|guarantee[sd]?|ensure[sd]? with certainty)\b/i.test(
@@ -156,7 +161,7 @@ while ((match = tuplePattern.exec(fullSql)) !== null) {
 			)
 		) {
 			issues.push({
-				line: approxLine,
+				line: q.approxLine,
 				severity: "warn",
 				message: `Lazy distractor pattern: "${wc.slice(0, 60)}..."`,
 			});
@@ -169,23 +174,148 @@ while ((match = tuplePattern.exec(fullSql)) !== null) {
 	const minLen = Math.min(...choiceLengths);
 	if (minLen > 0 && maxLen / minLen > 3) {
 		issues.push({
-			line: approxLine,
+			line: q.approxLine,
 			severity: "warn",
 			message: `Choice length ratio ${(maxLen / minLen).toFixed(1)}x (longest/shortest)`,
 		});
 	}
 
-	// Topic validation
-	if (!validTopics.has(topic)) {
+	// Topic validation (only for INSERTs that have topics)
+	if (q.topic && !validTopics.has(q.topic)) {
 		issues.push({
-			line: approxLine,
+			line: q.approxLine,
 			severity: "error",
-			message: `Unknown topic "${topic}" — not in questionCounts dict`,
+			message: `Unknown topic "${q.topic}" — not in questionCounts dict`,
 		});
 	}
 }
 
+// Track answer distributions
+const distributions: { correct_index: number; topic: string }[] = [];
+let questionCount = 0;
+
+const fullSql = sql.replace(/\n/g, " ");
+
+// ============================================================
+// Parse INSERT statements
+// ============================================================
+const tuplePattern =
+	/\(\s*(\d+)\s*,\s*'((?:[^']|'')*?)'\s*,\s*'((?:[^']|'')*?)'\s*,\s*'(\[(?:[^']|'')*?\])'::jsonb\s*,\s*(\d+)\s*,\s*'((?:[^']|'')*?)'\s*,\s*'(easy|medium|hard)'\s*\)/g;
+
+let match: RegExpExecArray | null;
+while ((match = tuplePattern.exec(fullSql)) !== null) {
+	questionCount++;
+	const [
+		,
+		,
+		topic,
+		stem,
+		choicesJson,
+		correctIndexStr,
+		explanation,
+		difficulty,
+	] = match;
+
+	const correctIndex = parseInt(correctIndexStr);
+	const charsBefore = fullSql.slice(0, match.index);
+	const approxLine = (charsBefore.match(/ {50}/g) ?? []).length + 1;
+
+	distributions.push({ correct_index: correctIndex, topic });
+
+	validateQuestion({
+		topic,
+		stem,
+		choicesJson,
+		correctIndex,
+		explanation,
+		difficulty,
+		approxLine,
+	});
+}
+
+// ============================================================
+// Parse UPDATE statements (rebalancing format with cognitive_level)
+// ============================================================
+// Matches: UPDATE questions SET
+//   stem = '...',
+//   choices = '...'::jsonb,
+//   explanation = '...',
+//   correct_index = N,
+//   difficulty = '...',
+//   cognitive_level = N
+// WHERE id = N;
+const updateWithCLPattern =
+	/UPDATE\s+questions\s+SET\s+stem\s*=\s*'((?:[^']|'')*?)'\s*,\s*choices\s*=\s*'(\[(?:[^']|'')*?\])'::jsonb\s*,\s*explanation\s*=\s*'((?:[^']|'')*?)'\s*,\s*correct_index\s*=\s*(\d+)\s*,\s*difficulty\s*=\s*'(easy|medium|hard)'\s*,\s*cognitive_level\s*=\s*(\d+)\s*WHERE\s+id\s*=\s*(\d+)\s*;/g;
+
+while ((match = updateWithCLPattern.exec(fullSql)) !== null) {
+	questionCount++;
+	const [
+		,
+		stem,
+		choicesJson,
+		explanation,
+		correctIndexStr,
+		difficulty,
+		cogLevelStr,
+		idStr,
+	] = match;
+
+	const correctIndex = parseInt(correctIndexStr);
+	const cognitiveLevel = parseInt(cogLevelStr);
+	const id = parseInt(idStr);
+	const charsBefore = fullSql.slice(0, match.index);
+	const approxLine = (charsBefore.match(/ {50}/g) ?? []).length + 1;
+
+	validateQuestion({
+		id,
+		stem,
+		choicesJson,
+		correctIndex,
+		explanation,
+		difficulty,
+		cognitiveLevel,
+		approxLine,
+	});
+}
+
+// ============================================================
+// Parse UPDATE statements (older format without cognitive_level)
+// ============================================================
+const updateNoCLPattern =
+	/UPDATE\s+questions\s+SET\s+stem\s*=\s*'((?:[^']|'')*?)'\s*,\s*choices\s*=\s*'(\[(?:[^']|'')*?\])'::jsonb\s*,\s*explanation\s*=\s*'((?:[^']|'')*?)'\s*,\s*correct_index\s*=\s*(\d+)\s*,\s*difficulty\s*=\s*'(easy|medium|hard)'\s*WHERE\s+id\s*=\s*(\d+)\s*;/g;
+
+while ((match = updateNoCLPattern.exec(fullSql)) !== null) {
+	// Skip if this position was already matched by the with-CL pattern
+	// (the with-CL pattern is a superset, so check for cognitive_level after difficulty)
+	const afterMatch = fullSql.slice(
+		match.index + match[0].length - 20,
+		match.index + match[0].length + 30,
+	);
+	if (/cognitive_level/i.test(afterMatch)) continue;
+
+	questionCount++;
+	const [, stem, choicesJson, explanation, correctIndexStr, difficulty, idStr] =
+		match;
+
+	const correctIndex = parseInt(correctIndexStr);
+	const id = parseInt(idStr);
+	const charsBefore = fullSql.slice(0, match.index);
+	const approxLine = (charsBefore.match(/ {50}/g) ?? []).length + 1;
+
+	validateQuestion({
+		id,
+		stem,
+		choicesJson,
+		correctIndex,
+		explanation,
+		difficulty,
+		approxLine,
+	});
+}
+
+// ============================================================
 // Check answer distribution (mechanical 5x0, 5x1 pattern)
+// ============================================================
 if (distributions.length >= 10) {
 	const byTopic = new Map<string, number[]>();
 	for (const d of distributions) {
@@ -195,7 +325,6 @@ if (distributions.length >= 10) {
 
 	for (const [topic, indices] of byTopic) {
 		if (indices.length < 10) continue;
-		// Check for repeating patterns
 		const pattern = indices.slice(0, 5).join(",");
 		let repeats = 0;
 		for (let i = 5; i <= indices.length - 5; i += 5) {
@@ -213,7 +342,9 @@ if (distributions.length >= 10) {
 	}
 }
 
+// ============================================================
 // Report
+// ============================================================
 console.log(`\nValidation: ${filePath}\n`);
 console.log(`Questions found: ${questionCount}`);
 

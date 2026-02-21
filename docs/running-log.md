@@ -1,5 +1,15 @@
 # Running Log
 
+## 2026-02-22 16:30
+1. Bloom's analyzer: use DB `cognitive_level` column as authoritative source, heuristic as fallback, with source stats tracking
+2. Quality analyzer: context-aware short-stem penalty (threshold 8 for L1, 12 for others) — fixes 34 false-positive moderate scores
+3. Migration validator: refactored to shared `validateQuestion()`, added UPDATE parsing for rebalancing migrations, explanation quality checks (citation, contrast, TODO detection)
+4. Migration scaffold generator: new `generate-migration.ts` reads candidate JSON from stdin, outputs grouped UPDATE scaffolds with auto-detected migration numbers
+5. Deleted exact duplicate Q1690 (migration 00125), applied to production
+6. Added `--output=json` to `run-qa.ts` for programmatic consumption (status to stderr, JSON to stdout)
+7. Updated `report.ts` with Bloom's source stats line
+8. Coherence audit: archived stale session file, updated CLAUDE.md (commands, key files, git section)
+
 ## 2026-02-21 16:06
 1. Bloom's L1 rebalancing AUD batches 1-4 (00115–00118): 190 L2→L1 rewrites across 22 topics, all validated and applied to production
 2. Bloom's L1 rebalancing ISC batches 1-6 (00119–00124): 284 L2→L1 rewrites across 18 topics, all validated and applied to production

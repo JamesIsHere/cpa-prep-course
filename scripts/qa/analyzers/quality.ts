@@ -51,10 +51,16 @@ export function scoreQuestion(q: DbQuestion): QuestionScore {
 	const stemWords = countWords(q.stem);
 	const explanationWords = countWords(q.explanation);
 
-	// Stem length check
-	if (stemWords < 12) {
+	// Context-aware stem length check: L1 questions are intentionally shorter
+	const isL1 =
+		q.cognitive_level === 1 ||
+		(q.cognitive_level == null && q.difficulty === "easy");
+	const shortStemThreshold = isL1 ? 8 : 12;
+	if (stemWords < shortStemThreshold) {
 		score -= 2;
-		flags.push(`short-stem (${stemWords} words)`);
+		flags.push(
+			`short-stem (${stemWords} words, threshold ${shortStemThreshold})`,
+		);
 	}
 
 	// Named entity bonus

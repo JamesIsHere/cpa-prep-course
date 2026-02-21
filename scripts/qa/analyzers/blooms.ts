@@ -12,6 +12,12 @@ export interface BloomsResult {
 	topic: string;
 	level: BloomsLevel;
 	confidence: "high" | "medium" | "low";
+	source: "db" | "heuristic";
+}
+
+export interface BloomsSourceStats {
+	dbCount: number;
+	heuristicCount: number;
 }
 
 export interface BloomsDistribution {
@@ -167,8 +173,33 @@ export function classifyBloomsLevel(stem: string): {
 export function analyzeBlooms(
 	questions: DbQuestion[],
 	sectionCodeMap: Map<string, string>,
-): { results: BloomsResult[]; distributions: BloomsDistribution[] } {
+): {
+	results: BloomsResult[];
+	distributions: BloomsDistribution[];
+	sourceStats: BloomsSourceStats;
+} {
+	let dbCount = 0;
+	let heuristicCount = 0;
+
 	const results: BloomsResult[] = questions.map((q) => {
+		// Use authoritative DB value when available (1-4), fall back to heuristic
+		if (
+			q.cognitive_level != null &&
+			q.cognitive_level >= 1 &&
+			q.cognitive_level <= 4
+		) {
+			dbCount++;
+			return {
+				id: q.id,
+				section_id: String(q.section_id),
+				topic: q.topic,
+				level: q.cognitive_level as BloomsLevel,
+				confidence: "high",
+				source: "db" as const,
+			};
+		}
+
+		heuristicCount++;
 		const { level, confidence } = classifyBloomsLevel(q.stem);
 		return {
 			id: q.id,
@@ -176,6 +207,7 @@ export function analyzeBlooms(
 			topic: q.topic,
 			level,
 			confidence,
+			source: "heuristic" as const,
 		};
 	});
 
@@ -210,5 +242,5 @@ export function analyzeBlooms(
 	}
 
 	distributions.sort((a, b) => a.section.localeCompare(b.section));
-	return { results, distributions };
+	return { results, distributions, sourceStats: { dbCount, heuristicCount } };
 }

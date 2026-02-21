@@ -31,6 +31,7 @@ export interface DbQuestion {
 	choices: string[];
 	correct_index: number;
 	explanation: string;
+	cognitive_level: number | null;
 }
 
 /**
@@ -64,7 +65,7 @@ export async function fetchAllQuestions(
 		let query = supabase
 			.from("questions")
 			.select(
-				"id, section_id, topic, difficulty, stem, choices, correct_index, explanation",
+				"id, section_id, topic, difficulty, stem, choices, correct_index, explanation, cognitive_level",
 			)
 			.range(offset, offset + pageSize - 1)
 			.order("id");

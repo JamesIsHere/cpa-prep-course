@@ -27,7 +27,9 @@ npm run lint                 # ESLint
 npm run test:e2e             # Playwright e2e tests (all browsers)
 npm run qa                   # Question quality audit (all sections)
 npm run qa -- --section=aud  # QA audit for single section
+npm run qa -- --output=json  # QA audit with JSON output (for scripting)
 npm run validate-migration <file>  # Validate question migration against style guide
+npm run generate-migration   # Generate UPDATE scaffold from piped candidate JSON
 ```
 
 ## Architecture
@@ -94,11 +96,13 @@ npm run validate-migration <file>  # Validate question migration against style g
 | `supabase/migrations/00111–00114`                     | Bloom's L1 rebalancing — REG batches 1-4 (169 questions) |
 | `supabase/migrations/00115–00118`                     | Bloom's L1 rebalancing — AUD batches 1-4 (190 questions) |
 | `supabase/migrations/00119–00124`                     | Bloom's L1 rebalancing — ISC batches 1-6 (284 questions) |
+| `supabase/migrations/00125`                           | Delete exact duplicate Q1690                             |
 | `docs/question-style-guide.md`                | Question writing rubric (all new questions must meet this) |
 | `scripts/qa/run-qa.ts`                        | QA audit entry point (`npm run qa`)        |
 | `scripts/qa/pull-l2-batch.ts`                 | L2 question extractor for Bloom's rebalancing |
 | `scripts/qa/select-l2-candidates.ts`          | L2 candidate selector with topic cap awareness |
-| `scripts/qa/validate-migration.ts`            | Pre-commit migration validator             |
+| `scripts/qa/generate-migration.ts`            | Migration scaffold generator (stdin JSON → SQL) |
+| `scripts/qa/validate-migration.ts`            | Pre-commit migration validator (INSERT + UPDATE) |
 | `docs/blooms-rebalancing.md`                  | Cross-session Bloom's L3 rebalancing tracker |
 | `docs/blooms-l1-l4-rebalancing.md`            | Cross-session Bloom's L1/L4 rebalancing tracker |
 | `.env.local.example`                          | Required env vars template                 |
@@ -146,8 +150,9 @@ All build phases complete. Active work is marketing and content connectivity.
 ## Question Quality
 
 - **Style guide:** `docs/question-style-guide.md` — rubric for stem, distractor, explanation, difficulty, and Bloom's level standards
-- **QA audit:** `npm run qa` scores all questions on a 0-10 composite and produces a dated report in `docs/qa-reports/`
-- **Migration validator:** `npm run validate-migration <file>` checks new question migrations against the rubric before commit
+- **QA audit:** `npm run qa` scores all questions on a 0-10 composite and produces a dated report in `docs/qa-reports/`. Supports `--output=json` for scripting. Bloom's classification uses DB `cognitive_level` column (authoritative) with heuristic fallback.
+- **Migration validator:** `npm run validate-migration <file>` checks INSERT and UPDATE migrations against the rubric (stem length, explanation quality, citation/contrast checks, TODO detection)
+- **Migration generator:** `npm run generate-migration` reads candidate JSON from stdin and outputs UPDATE scaffold SQL
 - **Rule:** All new question migrations must pass `validate-migration` before commit. No questions scoring 0-3 (critical) should be deployed.
 - **Current status:** 0 critical, 0 moderate, 4,987 acceptable (100% at score 7+, avg 8.2/10)
 - **Bloom's L3 rebalancing:** Complete — REG 9%→25%, BAR 16%→30%, FAR 16%→26%, TCP 15%→20%. Total: 389 rewrites. Tracker: `docs/blooms-rebalancing.md`
@@ -163,7 +168,6 @@ Full product specification with all 7 phases, data model, and acceptance criteri
 Repository: https://github.com/JamesIsHere/cpa-prep-course
 Branch: `master`
 Latest commits:
+- `cf41e21` Bloom's L1/L4 rebalancing AUD + ISC: 474 questions rewritten, all sections complete
+- `5d40326` Bloom's L1/L4 rebalancing BAR + FAR + TCP + REG: 314 questions rewritten
 - `cb40246` Bloom's L3 rebalancing FAR + TCP: 125 questions rewritten, all sections complete
-- `d93fad5` Bloom's L3 rebalancing BAR: 109 questions rewritten, 16%→30% L3
-- `8dfe8a4` Bloom's L3 rebalancing REG batch 3: 60 questions rewritten, 18%→~25% L3
-- `aaf9877` coherence audit, session wrap: update CLAUDE.md, log, archive session file

@@ -1,5 +1,5 @@
 // QA Report Entry Point
-// Usage: npm run qa [-- --section=aud]
+// Usage: npm run qa [-- --section=aud] [-- --output=json]
 
 import { mkdirSync, writeFileSync } from "fs";
 import { dirname, resolve } from "path";
@@ -14,21 +14,25 @@ import { generateReport } from "./report";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-// Parse --section flag
+// Parse flags
 const sectionFlag = process.argv
 	.find((a) => a.startsWith("--section="))
 	?.split("=")[1];
+const outputJson = process.argv.some((a) => a === "--output=json");
+
+// Use console.error for status messages so they don't pollute JSON stdout
+const log = outputJson ? console.error : console.log;
 
 async function main() {
-	console.log("CPA Question QA Audit");
-	console.log("=====================\n");
+	log("CPA Question QA Audit");
+	log("=====================\n");
 
 	if (sectionFlag) {
-		console.log(`Filtering to section: ${sectionFlag.toUpperCase()}\n`);
+		log(`Filtering to section: ${sectionFlag.toUpperCase()}\n`);
 	}
 
 	// Build section ID → code mapping
-	console.log("Fetching section metadata...");
+	log("Fetching section metadata...");
 	const { data: sections, error: sectionsError } = await supabase
 		.from("sections")
 		.select("id, code");
@@ -44,9 +48,9 @@ async function main() {
 	}
 
 	// Fetch all questions
-	console.log("Fetching questions...");
+	log("Fetching questions...");
 	const questions = await fetchAllQuestions(sectionFlag);
-	console.log(`Fetched ${questions.length} questions\n`);
+	log(`Fetched ${questions.length} questions\n`);
 
 	if (questions.length === 0) {
 		console.error(
@@ -56,23 +60,58 @@ async function main() {
 	}
 
 	// Run analyzers
-	console.log("Running difficulty analysis...");
+	log("Running difficulty analysis...");
 	const difficulty = analyzeDifficulty(questions);
 
-	console.log("Running coverage analysis...");
+	log("Running coverage analysis...");
 	const coverage = analyzeCoverage(questions);
 
-	console.log("Running quality scoring...");
+	log("Running quality scoring...");
 	const quality = analyzeQuality(questions);
 
-	console.log("Running Bloom's classification...");
+	log("Running Bloom's classification...");
 	const blooms = analyzeBlooms(questions, sectionCodeMap);
 
-	console.log("Running duplicate detection...");
+	log("Running duplicate detection...");
 	const duplicates = analyzeDuplicates(questions);
 
-	// Generate report
-	console.log("\nGenerating report...");
+	// JSON output mode
+	if (outputJson) {
+		const jsonOutput = {
+			date: new Date().toISOString().split("T")[0],
+			sectionFilter: sectionFlag ?? null,
+			totalQuestions: questions.length,
+			quality: {
+				distribution: quality.distribution,
+				avgScore: Math.round(quality.avgScore * 10) / 10,
+				sectionAvgs: Object.fromEntries(quality.sectionAvgs),
+			},
+			difficulty: {
+				sections: difficulty.sections,
+				flaggedTopics: difficulty.flaggedTopics,
+			},
+			blooms: {
+				distributions: blooms.distributions,
+				sourceStats: blooms.sourceStats,
+			},
+			coverage: {
+				totalDbQuestions: coverage.totalDbQuestions,
+				totalHardcoded: coverage.totalHardcoded,
+				orphanedTopics: coverage.orphanedTopics,
+				coverageGaps: coverage.coverageGaps,
+			},
+			duplicates: {
+				nearDuplicateCount: duplicates.nearDuplicateCount,
+				likelyDuplicateCount: duplicates.likelyDuplicateCount,
+				pairCount: duplicates.pairs.length,
+			},
+		};
+		console.log(JSON.stringify(jsonOutput, null, 2));
+		return;
+	}
+
+	// Generate markdown report
+	log("\nGenerating report...");
 	const date = new Date().toISOString().split("T")[0];
 	const report = generateReport({
 		date,
@@ -82,6 +121,7 @@ async function main() {
 		coverage,
 		quality,
 		blooms: blooms.distributions,
+		bloomsSourceStats: blooms.sourceStats,
 		duplicates,
 		sectionCodeMap,
 	});
@@ -94,26 +134,26 @@ async function main() {
 	writeFileSync(reportPath, report);
 
 	// Print summary to console
-	console.log(`\nReport written to: ${reportPath}\n`);
-	console.log("=== QUICK SUMMARY ===\n");
-	console.log(`Total questions: ${questions.length}`);
-	console.log(`Quality distribution:`);
-	console.log(`  Critical (0-3):   ${quality.distribution.critical}`);
-	console.log(`  Moderate (4-6):   ${quality.distribution.moderate}`);
-	console.log(`  Acceptable (7-10): ${quality.distribution.acceptable}`);
-	console.log(
-		`  Average score:    ${Math.round(quality.avgScore * 10) / 10}/10`,
-	);
-	console.log(
+	log(`\nReport written to: ${reportPath}\n`);
+	log("=== QUICK SUMMARY ===\n");
+	log(`Total questions: ${questions.length}`);
+	log(`Quality distribution:`);
+	log(`  Critical (0-3):   ${quality.distribution.critical}`);
+	log(`  Moderate (4-6):   ${quality.distribution.moderate}`);
+	log(`  Acceptable (7-10): ${quality.distribution.acceptable}`);
+	log(`  Average score:    ${Math.round(quality.avgScore * 10) / 10}/10`);
+	log(
 		`\nDuplicate pairs: ${duplicates.pairs.length} (${duplicates.likelyDuplicateCount} likely, ${duplicates.nearDuplicateCount} near)`,
 	);
-	console.log(`Orphaned topics: ${coverage.orphanedTopics.length}`);
-	console.log(`Low-coverage groups: ${coverage.coverageGaps.length}`);
+	log(`Orphaned topics: ${coverage.orphanedTopics.length}`);
+	log(`Low-coverage groups: ${coverage.coverageGaps.length}`);
 
-	// Bloom's summary
-	console.log(`\nBloom's distribution:`);
+	// Bloom's summary with source stats
+	log(
+		`\nBloom's distribution (source: ${blooms.sourceStats.dbCount} from DB, ${blooms.sourceStats.heuristicCount} from heuristic):`,
+	);
 	for (const b of blooms.distributions) {
-		console.log(
+		log(
 			`  ${b.section.toUpperCase()}: L1=${b.l1Pct}% L2=${b.l2Pct}% L3=${b.l3Pct}% L4=${b.l4Pct}%`,
 		);
 	}
