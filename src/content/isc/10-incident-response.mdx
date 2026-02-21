@@ -140,36 +140,3 @@ A **Business Impact Analysis** identifies critical business functions, the resou
 5. Identify resources needed for recovery (people, technology, facilities)
 
 > **Exam tip:** The BIA is conducted before the DR plan is created — it provides the requirements that the DR plan must satisfy. If the exam asks what should be done first when developing a disaster recovery strategy, the answer is conduct a BIA.
-
-## Practice Problems
-
-**1.** During an incident response, the security team identifies ransomware on several servers. The team immediately begins removing the malware and restoring from backups without first isolating the affected systems. Which phase of the incident response lifecycle was improperly skipped?
-
-a) Preparation
-b) Identification
-c) Containment
-d) Lessons learned
-
-**Answer:** c) Containment must occur before eradication. By jumping directly to removing the malware and restoring systems without first isolating the affected servers, the team risks allowing the ransomware to spread to additional systems. Containment — such as disconnecting affected servers from the network — should always precede eradication and recovery.
-
----
-
-**2.** A public company discovers that a threat actor accessed a database containing 50,000 customer records including Social Security numbers. Under SEC requirements, the company must disclose this material cybersecurity incident within:
-
-a) 24 hours via press release
-b) 72 hours to the supervisory authority
-c) 4 business days via Form 8-K
-d) 60 days to the Department of Health and Human Services
-
-**Answer:** c) The SEC requires public companies to disclose material cybersecurity incidents within 4 business days of determining the incident is material, via a Form 8-K filing. The 72-hour requirement applies to GDPR, and the 60-day requirement applies to HIPAA.
-
----
-
-**3.** An organization is developing its disaster recovery plan and needs to determine which systems to prioritize for recovery. What should be completed FIRST?
-
-a) A full interruption test of the current backup systems
-b) A business impact analysis to identify critical functions and recovery requirements
-c) Selection of a hot site vendor for disaster recovery
-d) Implementation of real-time data replication for all systems
-
-**Answer:** b) A business impact analysis (BIA) must be completed first because it identifies critical business functions, their dependencies, and the acceptable recovery timeframes (RTO and RPO). The BIA provides the requirements that drive all subsequent DR planning decisions, including site selection, backup strategies, and testing priorities.

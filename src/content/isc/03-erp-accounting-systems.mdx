@@ -133,36 +133,3 @@ Understanding the distinction between master data and transaction data is essent
 | Risk if compromised | Cascading errors across all future transactions (e.g., wrong vendor bank account leads to misdirected payments) | Errors limited to the individual transaction |
 
 > **Exam tip:** Master data changes are high-risk because they affect all subsequent transactions. A fraudulent change to a vendor's bank account in the master file redirects every future payment. Always look for dual-approval controls over master data modifications.
-
-## Practice Problems
-
-**1.** In an ERP system, when a company records a sale of inventory on account, which modules are directly affected?
-
-a) General Ledger only
-b) Accounts Receivable and Inventory only
-c) General Ledger, Accounts Receivable, and Inventory
-d) Accounts Payable, Accounts Receivable, and General Ledger
-
-**Answer:** c) A sale on account triggers updates in three modules: Inventory (reduce stock and record COGS), Accounts Receivable (create a customer receivable), and General Ledger (record the revenue and COGS journal entries). Accounts Payable is not involved in a sales transaction.
-
----
-
-**2.** A company processes payroll in a batch every two weeks. Which control is most effective for detecting errors in the batch processing run?
-
-a) Real-time input validation on each timecard entry
-b) Reconciliation of batch control totals before and after processing
-c) Restricting payroll system access to authorized users only
-d) Encrypting payroll data during transmission
-
-**Answer:** b) Batch control totals (record counts, dollar totals, and hash totals) calculated before processing are compared to post-processing results to detect missing, duplicate, or altered transactions. While access controls (c) and encryption (d) are important, they do not specifically detect batch processing errors.
-
----
-
-**3.** An auditor discovers that a single accounts payable clerk can create new vendors in the master file and approve payments to those vendors. Which control weakness does this represent?
-
-a) Inadequate input validation
-b) Lack of segregation of duties
-c) Missing audit trail
-d) Insufficient data encryption
-
-**Answer:** b) Allowing one person to both create vendors and approve payments violates segregation of duties, creating the opportunity for the clerk to set up a fictitious vendor and authorize fraudulent payments. The ERP system should enforce role-based access controls that prevent the same user from performing both functions.
