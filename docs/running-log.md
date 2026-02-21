@@ -1,5 +1,15 @@
 # Running Log
 
+## 2026-02-22 06:05
+1. Near-duplicate review: verified all 8 likely-duplicates and top 50 pairs as intentional; 0 true duplicates
+2. Sitemap stability fix: replaced 13 `new Date()` calls with stable `CONTENT_LAST_MODIFIED` constant
+3. Per-topic progress tracking: migration 00094 (topic_scores JSONB), scoreExam in submit route, real per-group progress in Blueprint pages, topic breakdown table in quiz results
+4. Mobile-responsive Blueprint Explorer: responsive breakpoints for area headers, progress bars, group rows, lesson cards
+5. Bloom's heuristic improvement: expanded L3 patterns, added conditional/causal detection, L3 from 0-1% to 9-16%
+6. QA report regenerated with improved Bloom's distribution and duplicate review note
+7. Migration 00094 pushed to production Supabase
+8. Archived stale session file, updated CLAUDE.md and To Do.md
+
 ## 2026-02-22 05:35
 1. Pulled all 51 moderate-scoring questions from Supabase using updated batch script
 2. Wrote migration 00093: upgraded all 51 moderate questions (short stems, length-cuing, absolute-assurance, short explanations, all-none-above)

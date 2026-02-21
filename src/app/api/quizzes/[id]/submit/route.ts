@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import type { QuizAnswer, QuizQuestionFull } from "@/lib/quiz";
-import { scoreQuiz } from "@/lib/quiz";
+import { scoreExam } from "@/lib/quiz";
 import { createClient } from "@/lib/supabase/server";
 
 export async function POST(
@@ -68,10 +68,10 @@ export async function POST(
 		);
 	}
 
-	// Score
-	const result = scoreQuiz(answers, questions as QuizQuestionFull[]);
+	// Score with topic breakdown
+	const result = scoreExam(answers, questions as QuizQuestionFull[]);
 
-	// Save results
+	// Save results with topic scores
 	const { error: updateError } = await supabase
 		.from("quiz_attempts")
 		.update({
@@ -81,6 +81,7 @@ export async function POST(
 				question_id: a.questionId,
 				choice_index: a.selectedIndex,
 			})),
+			topic_scores: result.topicScores,
 		})
 		.eq("id", attemptId);
 

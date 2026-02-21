@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import type { QuizResult } from "@/lib/quiz";
+import type { ExamResult, ExamTopicScore } from "@/lib/quiz";
 
 interface QuizResultsProps {
-	result: QuizResult;
+	result: ExamResult;
 	sectionSlug: string;
 	onRetry: () => void;
 }
@@ -46,6 +46,56 @@ export default function QuizResults({
 					{passed ? "Passing score" : "Below passing (75%)"}
 				</p>
 			</div>
+
+			{/* Topic breakdown */}
+			{result.topicScores && result.topicScores.length > 1 && (
+				<>
+					<h3 className="text-lg font-semibold text-gray-800 mb-4">
+						Score by Topic
+					</h3>
+					<div className="border border-gray-200 rounded-xl overflow-hidden mb-8">
+						<table className="w-full text-sm">
+							<thead>
+								<tr className="bg-gray-50 border-b border-gray-200">
+									<th className="text-left px-4 py-3 font-medium text-gray-600">
+										Topic
+									</th>
+									<th className="text-right px-4 py-3 font-medium text-gray-600">
+										Score
+									</th>
+									<th className="text-right px-4 py-3 font-medium text-gray-600">
+										%
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								{result.topicScores.map((t: ExamTopicScore) => {
+									const topicPct = Math.round((t.correct / t.total) * 100);
+									const topicPassed = topicPct >= 75;
+									return (
+										<tr
+											key={t.topic}
+											className="border-b border-gray-100 last:border-0"
+										>
+											<td className="px-4 py-3 text-gray-900">{t.topic}</td>
+											<td className="px-4 py-3 text-right text-gray-600">
+												{t.correct}/{t.total}
+											</td>
+											<td
+												className={`px-4 py-3 text-right font-bold ${
+													topicPassed ? "text-emerald-700" : "text-red-700"
+												}`}
+											>
+												{topicPct}%
+											</td>
+										</tr>
+									);
+								})}
+							</tbody>
+						</table>
+					</div>
+				</>
+			)}
 
 			{/* Per-question review */}
 			<h3 className="text-lg font-semibold text-gray-800 mb-4">

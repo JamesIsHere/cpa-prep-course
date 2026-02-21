@@ -82,6 +82,7 @@ npm run validate-migration <file>  # Validate question migration against style g
 | `supabase/migrations/00051–00060`                     | 10 more question batch upgrades (120 questions) |
 | `supabase/migrations/00061–00092`                     | 32 remaining moderate question upgrades (303 questions) |
 | `supabase/migrations/00093`                           | Final 51 moderate question upgrades (0 moderate target) |
+| `supabase/migrations/00094`                           | Add topic_scores JSONB to quiz_attempts + backfill |
 | `docs/question-style-guide.md`                | Question writing rubric (all new questions must meet this) |
 | `scripts/qa/run-qa.ts`                        | QA audit entry point (`npm run qa`)        |
 | `scripts/qa/validate-migration.ts`            | Pre-commit migration validator             |
@@ -102,7 +103,7 @@ npm run validate-migration <file>  # Validate question migration against style g
 
 ## Database Tables
 
-`profiles`, `sections`, `lessons`, `questions`, `quiz_attempts`, `exam_attempts` — all defined in `00001_initial_schema.sql` with RLS policies. Auto-profile trigger creates a profile on user signup. `questions` table has optional `cognitive_level` column (1-4, Bloom's taxonomy) added in migration 00038.
+`profiles`, `sections`, `lessons`, `questions`, `quiz_attempts`, `exam_attempts` — all defined in `00001_initial_schema.sql` with RLS policies. Auto-profile trigger creates a profile on user signup. `questions` table has optional `cognitive_level` column (1-4, Bloom's taxonomy) added in migration 00038. `quiz_attempts` has `topic_scores` JSONB column (array of `{topic, correct, total}`) added in migration 00094 for per-topic progress tracking.
 
 ## Current Phase
 

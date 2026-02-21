@@ -55,7 +55,7 @@ export default function BlueprintGroupDetail({
 		<div className="space-y-8">
 			{/* Progress summary */}
 			{questionCount > 0 && (
-				<div className="border border-gray-200 rounded-xl p-5">
+				<div className="border border-gray-200 rounded-xl p-4 sm:p-5">
 					<h2 className="text-sm font-semibold text-gray-700 mb-3">
 						Your Progress
 					</h2>
@@ -95,7 +95,7 @@ export default function BlueprintGroupDetail({
 							<li key={lesson.slug}>
 								<Link
 									href={`/sections/${sectionSlug}/lessons/${lesson.slug}`}
-									className="flex items-center gap-3 border border-gray-200 rounded-lg p-4 hover:border-emerald-500 hover:shadow-sm transition-all group"
+									className="flex items-center gap-3 border border-gray-200 rounded-lg p-3 sm:p-4 hover:border-emerald-500 hover:shadow-sm transition-all group"
 								>
 									<span className="text-gray-900 group-hover:text-emerald-700 transition-colors text-sm">
 										{lesson.title}

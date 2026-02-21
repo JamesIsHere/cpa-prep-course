@@ -46,54 +46,113 @@ export const BLOOMS_TARGETS: Record<string, BloomsTarget> = {
 // Keyword patterns for each level (checked in order: L4 first → L1 last)
 const L4_PATTERNS = [
 	/\b(evaluate|recommend|assess whether|should the auditor|should the CPA|advise|counsel|best course of action|most appropriate recommendation)\b/i,
+	/\b(which .+ would you recommend|what action should|appropriate response)\b/i,
 ];
 
 const L3_PATTERNS = [
-	/\b(most likely indicates?|effect of .+ on|compare|contrast|distinguish|analyze|what is the impact|how would .+ affect|implications? of|which .+ would result|what would be the consequence)\b/i,
+	// Direct analysis keywords
+	/\b(analyze|compare|contrast|distinguish|differentiate|classify|categorize)\b/i,
+	// Effect/impact/consequence patterns
+	/\b(effect of .+ on|what is the (impact|effect)|how would .+ affect|how does .+ affect|implications? of|what would be the consequence)\b/i,
+	/\b(which .+ would result|what is the result|resulting .+ would be)\b/i,
+	// Conditional/causal reasoning
+	/\b(what happens? (if|when)|if .+ (what|how|which)|what would happen)\b/i,
+	/\b(as a result of|because of .+ the|the reason .+ is|why (does|would|is|do))\b/i,
+	// Multi-concept interaction
+	/\b(relationship between|interaction between|differs? from|difference between|how does .+ differ)\b/i,
+	/\b(rather than|instead of|as opposed to|compared to|in contrast)\b/i,
+	// Inferential patterns (most likely, least likely with scenario)
+	/\b(most likely indicates?|would most likely|least likely to)\b/i,
+	// Multi-step reasoning signals
+	/\b(first .+ then|after .+ the|before .+ must|in order to .+ must)\b/i,
+	// "What is the effect on" (common CPA analysis pattern)
+	/what .+ (reported|recognized|recorded|included) .+ (income statement|balance sheet|financial statements|equity|retained earnings)/i,
+];
+
+// Conditional/causal language that elevates scenario+numbers from L2 to L3
+const L3_CONDITIONAL_PATTERNS = [
+	/\b(if|assuming|suppose|given that|provided that|in the event)\b/i,
+	/\b(what is the effect|how does this affect|what impact|what would be the|how should .+ be (reported|treated|classified))\b/i,
+	/\b(when .+ (happens?|occurs?|changes?|increases?|decreases?|is sold|is converted|defaults?))\b/i,
+	/\b(what adjustment|how should .+ adjust|what entry|what is the .+ after)\b/i,
 ];
 
 const L2_PATTERNS = [
-	/\b(calculate|determine the amount|compute|how much|what amount|what is the .+ balance|record the|prepare the|journal entry|what gain|what loss|adjusted basis|taxable income|net income|total assets)\b/i,
+	/\b(calculate|determine the amount|compute|how much|what amount|what is the .+ balance)\b/i,
+	/\b(record the|prepare the|journal entry)\b/i,
+	/\b(what gain|what loss|adjusted basis|taxable income|net income|total assets)\b/i,
 ];
 
 const L1_PATTERNS = [
-	/\b(what is|which of the following (best )?(describes?|defines?|is|are|represents?)|identify|which statement|define|true (about|regarding|of)|the definition of|is characterized by|is known as|refers to)\b/i,
+	/\b(which of the following (best )?(describes?|defines?|is\b|are\b|represents?))/i,
+	/\b(identify|which statement|define|the definition of)\b/i,
+	/\b(true (about|regarding|of)|is characterized by|is known as|refers to)\b/i,
 ];
+
+// Detect scenario-based stems (named entity or "a company/taxpayer" patterns)
+function hasScenarioContext(stem: string): boolean {
+	return (
+		/\b[A-Z][a-z]+(?:\s(?:Corp|Inc|LLC|Ltd|Co|Company|Partnership)\.?)?\b/.test(
+			stem,
+		) ||
+		/\b(a (company|corporation|taxpayer|partnership|client|firm|CPA|auditor|shareholder|employee|employer)|an (individual|entity|employee|employer|auditor))\b/i.test(
+			stem,
+		)
+	);
+}
+
+function hasNumericContext(stem: string): boolean {
+	return /\$[\d,]+|\b\d{2,}(?:,\d{3})*\b/.test(stem);
+}
 
 export function classifyBloomsLevel(stem: string): {
 	level: BloomsLevel;
 	confidence: "high" | "medium" | "low";
 } {
-	const stemLower = stem.toLowerCase();
-
 	// Check L4 first (most specific)
 	if (L4_PATTERNS.some((p) => p.test(stem))) {
 		return { level: 4, confidence: "high" };
 	}
 
-	// L3 — analysis
+	// L3 — explicit analysis keywords
 	if (L3_PATTERNS.some((p) => p.test(stem))) {
 		return { level: 3, confidence: "high" };
 	}
 
-	// L2 — application (also check for scenario indicators)
-	if (L2_PATTERNS.some((p) => p.test(stem))) {
+	// L2 — pure computation/application
+	const isComputation = L2_PATTERNS.some((p) => p.test(stem));
+
+	// Check if a computation question also has conditional/causal reasoning → L3
+	if (isComputation) {
+		const hasConditional = L3_CONDITIONAL_PATTERNS.some((p) => p.test(stem));
+		const wordCount = stem.trim().split(/\s+/).length;
+		// Long scenario + computation + conditional = analysis, not just application
+		if (hasConditional && wordCount > 30) {
+			return { level: 3, confidence: "medium" };
+		}
 		return { level: 2, confidence: "high" };
 	}
 
-	// Scenario-based stems with named entities are likely L2+
-	const hasScenario = /\b[A-Z][a-z]+(?:\s(?:Corp|Inc|LLC|Ltd|Co)\.?)?\b/.test(
-		stem,
-	);
-	const hasNumbers = /\$[\d,]+|\b\d{4}\b/.test(stem);
+	// Scenario-based stems with numbers
+	const scenario = hasScenarioContext(stem);
+	const numbers = hasNumericContext(stem);
 
-	if (hasScenario && hasNumbers) {
+	if (scenario && numbers) {
+		// If the scenario has conditional/causal language, it's L3 analysis
+		if (L3_CONDITIONAL_PATTERNS.some((p) => p.test(stem))) {
+			return { level: 3, confidence: "medium" };
+		}
 		return { level: 2, confidence: "medium" };
 	}
 
 	// L1 — remembering & understanding
 	if (L1_PATTERNS.some((p) => p.test(stem))) {
 		return { level: 1, confidence: "high" };
+	}
+
+	// Scenario without numbers but with conditional language → L3
+	if (scenario && L3_CONDITIONAL_PATTERNS.some((p) => p.test(stem))) {
+		return { level: 3, confidence: "low" };
 	}
 
 	// Default: short stems without scenarios → L1, others → L2

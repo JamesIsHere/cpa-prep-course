@@ -3,7 +3,7 @@
 import { useState } from "react";
 import QuizQuestionCard from "@/components/quiz-question";
 import QuizResults from "@/components/quiz-results";
-import type { QuizAnswer, QuizQuestion, QuizResult } from "@/lib/quiz";
+import type { ExamResult, QuizAnswer, QuizQuestion } from "@/lib/quiz";
 
 interface RecentAttempt {
 	id: number;
@@ -35,7 +35,7 @@ export default function QuizClient({
 	const [questions, setQuestions] = useState<QuizQuestion[]>([]);
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [answers, setAnswers] = useState<Map<number, number>>(new Map());
-	const [result, setResult] = useState<QuizResult | null>(null);
+	const [result, setResult] = useState<ExamResult | null>(null);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState<string | null>(null);
 
@@ -83,7 +83,7 @@ export default function QuizClient({
 				const data = await res.json();
 				throw new Error(data.error || "Failed to submit quiz");
 			}
-			const data: QuizResult = await res.json();
+			const data: ExamResult = await res.json();
 			setResult(data);
 			setState("results");
 		} catch (err) {

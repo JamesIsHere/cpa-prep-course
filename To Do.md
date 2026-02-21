@@ -29,14 +29,19 @@ Reddit-first launch strategy. See `docs/marketing-plan.md` for full plan, conten
 Blueprint-driven study pipeline, content connectivity, and data quality.
 
 ### Upcoming
-- [ ] Resubmit sitemap to Google Search Console (now includes ~127 blueprint pages)
-- [ ] Add per-topic progress tracking to quiz_attempts (enables real per-group progress instead of proportional estimate)
-- [ ] Review Blueprint Explorer UI on mobile (accordion, group links, progress bars)
+- [ ] Resubmit sitemap to Google Search Console (stable lastModified, no more crawl budget waste)
+- [ ] Bloom's L3 question rebalancing — rewrite/create questions to close gap (REG 9% vs 25-35% target, BAR 16% vs 30-40% target)
+- [ ] Apply migration 00094 (topic_scores column + backfill) to production Supabase
 
 ## Completed
 
 | Date       | Task                                                                    |
 |------------|-------------------------------------------------------------------------|
+| 2026-02-22 | Bloom's heuristic fix: L3 from 0-1% to 9-16%, closer to AICPA targets |
+| 2026-02-22 | Mobile-responsive Blueprint Explorer (area headers, progress bars, group rows) |
+| 2026-02-22 | Per-topic progress tracking (topic_scores JSONB, real per-group progress) |
+| 2026-02-22 | Sitemap stability fix (stable CONTENT_LAST_MODIFIED, no deploy churn) |
+| 2026-02-22 | Near-duplicate review: all 50 pairs verified intentional, 0 true duplicates |
 | 2026-02-22 | Upgrade final 51 moderate questions — 0 critical, 0 moderate, 100% acceptable |
 | 2026-02-21 | Upgrade 303 remaining moderate questions across 32 migrations (00061-00092) |
 | 2026-02-21 | Apply all 32 question upgrade migrations to production Supabase            |

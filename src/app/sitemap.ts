@@ -4,37 +4,41 @@ import { cpaBlueprint } from "@/lib/blueprint";
 import { getGroupSlug } from "@/lib/blueprint-utils";
 import { sections } from "@/lib/sections";
 
+// Stable date for content that doesn't change between deploys.
+// Update this when content (lessons, questions, blueprints) is modified.
+const CONTENT_LAST_MODIFIED = new Date("2026-02-22");
+
 export default function sitemap(): MetadataRoute.Sitemap {
 	const base = "https://www.slayer-cpa.com";
 
 	const staticRoutes: MetadataRoute.Sitemap = [
 		{
 			url: base,
-			lastModified: new Date(),
+			lastModified: CONTENT_LAST_MODIFIED,
 			changeFrequency: "monthly",
 			priority: 1,
 		},
 		{
 			url: `${base}/sections`,
-			lastModified: new Date(),
+			lastModified: CONTENT_LAST_MODIFIED,
 			changeFrequency: "monthly",
 			priority: 0.9,
 		},
 		{
 			url: `${base}/login`,
-			lastModified: new Date(),
+			lastModified: CONTENT_LAST_MODIFIED,
 			changeFrequency: "yearly",
 			priority: 0.3,
 		},
 		{
 			url: `${base}/signup`,
-			lastModified: new Date(),
+			lastModified: CONTENT_LAST_MODIFIED,
 			changeFrequency: "yearly",
 			priority: 0.5,
 		},
 		{
 			url: `${base}/contact`,
-			lastModified: new Date(),
+			lastModified: CONTENT_LAST_MODIFIED,
 			changeFrequency: "yearly",
 			priority: 0.4,
 		},
@@ -42,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
 	const sectionRoutes: MetadataRoute.Sitemap = sections.map((s) => ({
 		url: `${base}/sections/${s.slug}`,
-		lastModified: new Date(),
+		lastModified: CONTENT_LAST_MODIFIED,
 		changeFrequency: "monthly" as const,
 		priority: 0.8,
 	}));
@@ -52,7 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			.filter((l) => l.isFree)
 			.map((l) => ({
 				url: `${base}/sections/${s.slug}/lessons/${l.slug}`,
-				lastModified: new Date(),
+				lastModified: CONTENT_LAST_MODIFIED,
 				changeFrequency: "monthly" as const,
 				priority: 0.7,
 			})),
@@ -61,14 +65,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 	const blueprintRoutes: MetadataRoute.Sitemap = cpaBlueprint.flatMap((s) => [
 		{
 			url: `${base}/sections/${s.code}/blueprint`,
-			lastModified: new Date(),
+			lastModified: CONTENT_LAST_MODIFIED,
 			changeFrequency: "monthly" as const,
 			priority: 0.75,
 		},
 		...s.areas.flatMap((a) =>
 			a.groups.map((g) => ({
 				url: `${base}/sections/${s.code}/blueprint/${getGroupSlug(a.area, g.letter)}`,
-				lastModified: new Date(),
+				lastModified: CONTENT_LAST_MODIFIED,
 				changeFrequency: "monthly" as const,
 				priority: 0.65,
 			})),
@@ -78,7 +82,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 	const blogIndexRoute: MetadataRoute.Sitemap = [
 		{
 			url: `${base}/blog`,
-			lastModified: new Date(),
+			lastModified: CONTENT_LAST_MODIFIED,
 			changeFrequency: "weekly",
 			priority: 0.8,
 		},

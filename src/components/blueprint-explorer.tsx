@@ -81,21 +81,21 @@ export default function BlueprintExplorer({
 						<button
 							type="button"
 							onClick={() => toggleArea(area.area)}
-							className="w-full flex items-center gap-4 p-5 text-left hover:bg-gray-50 transition-colors"
+							className="w-full flex items-center gap-3 p-4 sm:gap-4 sm:p-5 text-left hover:bg-gray-50 transition-colors"
 						>
 							<span className="bg-emerald-100 text-emerald-700 text-sm font-bold w-8 h-8 flex items-center justify-center rounded-full shrink-0">
 								{area.area}
 							</span>
 							<div className="flex-1 min-w-0">
-								<div className="flex items-center gap-3 mb-1">
-									<h3 className="font-semibold text-gray-900 truncate">
+								<div className="flex items-center gap-2 sm:gap-3 mb-1">
+									<h3 className="font-semibold text-gray-900 truncate text-sm sm:text-base">
 										{area.name}
 									</h3>
 									<span className="text-xs text-gray-400 whitespace-nowrap">
 										{area.weight[0]}-{area.weight[1]}%
 									</span>
 								</div>
-								<div className="max-w-xs">
+								<div className="w-full sm:max-w-xs">
 									<BlueprintProgressBar
 										attempted={areaProgress.attempted}
 										correct={areaProgress.correct}
@@ -103,7 +103,7 @@ export default function BlueprintExplorer({
 									/>
 								</div>
 							</div>
-							<span className="text-gray-400 text-sm shrink-0">
+							<span className="text-gray-400 text-sm shrink-0 hidden sm:inline">
 								{area.groups.length} groups
 							</span>
 							<svg
@@ -137,13 +137,13 @@ export default function BlueprintExplorer({
 										<Link
 											key={group.letter}
 											href={`/sections/${sectionSlug}/blueprint/${groupKey}`}
-											className="flex items-center gap-4 px-5 py-4 hover:bg-gray-50 transition-colors border-t border-gray-50 first:border-t-0"
+											className="flex items-center gap-3 px-4 py-3 sm:gap-4 sm:px-5 sm:py-4 hover:bg-gray-50 transition-colors border-t border-gray-50 first:border-t-0"
 										>
 											<span className="text-sm font-mono text-gray-400 w-6 text-center shrink-0">
 												{group.letter}
 											</span>
 											<div className="flex-1 min-w-0">
-												<p className="text-sm text-gray-800 truncate">
+												<p className="text-xs sm:text-sm text-gray-800 truncate">
 													{group.name}
 												</p>
 												<div className="flex gap-3 mt-1">
@@ -160,7 +160,7 @@ export default function BlueprintExplorer({
 													)}
 												</div>
 											</div>
-											<div className="w-24 shrink-0">
+											<div className="w-16 sm:w-24 shrink-0">
 												<BlueprintProgressBar
 													attempted={gp.attempted}
 													correct={gp.correct}

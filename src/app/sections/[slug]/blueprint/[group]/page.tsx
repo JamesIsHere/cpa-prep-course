@@ -84,36 +84,45 @@ export default async function GroupDetailPage({
 		if (sectionData) {
 			const { data: attempts } = await supabase
 				.from("quiz_attempts")
-				.select("score, total")
+				.select("topic_scores")
 				.eq("user_id", user.id)
 				.eq("section_id", sectionData.id)
 				.not("completed_at", "is", null);
 
 			if (attempts && attempts.length > 0) {
-				const totalAttempted = attempts.reduce((s, a) => s + a.total, 0);
-				const totalCorrect = attempts.reduce((s, a) => s + a.score, 0);
-				const sectionTotal = blueprint.areas.reduce(
-					(s, a) =>
-						s +
-						a.groups.reduce(
-							(gs, g) =>
-								gs +
-								g.questionTopics.reduce(
-									(ts, t) => ts + (questionCounts[t] ?? 0),
-									0,
-								),
-							0,
-						),
-					0,
-				);
-				if (sectionTotal > 0) {
-					const ratio = questionCount / sectionTotal;
-					progress = {
-						attempted: Math.round(totalAttempted * ratio),
-						correct: Math.round(totalCorrect * ratio),
-						total: questionCount,
-					};
+				// Aggregate topic scores for this group's topics
+				const topicAgg = new Map<
+					string,
+					{ attempted: number; correct: number }
+				>();
+				for (const attempt of attempts) {
+					if (attempt.topic_scores && Array.isArray(attempt.topic_scores)) {
+						for (const ts of attempt.topic_scores as {
+							topic: string;
+							correct: number;
+							total: number;
+						}[]) {
+							const existing = topicAgg.get(ts.topic) ?? {
+								attempted: 0,
+								correct: 0,
+							};
+							existing.attempted += ts.total;
+							existing.correct += ts.correct;
+							topicAgg.set(ts.topic, existing);
+						}
+					}
 				}
+
+				let attempted = 0;
+				let correct = 0;
+				for (const topic of group.questionTopics) {
+					const agg = topicAgg.get(topic);
+					if (agg) {
+						attempted += agg.attempted;
+						correct += agg.correct;
+					}
+				}
+				progress = { attempted, correct, total: questionCount };
 			}
 		}
 	}

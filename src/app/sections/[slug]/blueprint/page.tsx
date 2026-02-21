@@ -56,22 +56,39 @@ export default async function BlueprintPage({
 			.single();
 
 		if (sectionData) {
-			// Get all completed quiz attempts for this section
+			// Get all completed quiz attempts with topic-level scores
 			const { data: attempts } = await supabase
 				.from("quiz_attempts")
-				.select("id, score, total")
+				.select("id, score, total, topic_scores")
 				.eq("user_id", user.id)
 				.eq("section_id", sectionData.id)
 				.not("completed_at", "is", null);
 
 			if (attempts && attempts.length > 0) {
-				// For now, aggregate at the section level
-				// Per-group progress requires topic-level tracking in quiz_attempts
-				// which we can add later
-				const totalAttempted = attempts.reduce((s, a) => s + a.total, 0);
-				const totalCorrect = attempts.reduce((s, a) => s + a.score, 0);
+				// Aggregate topic scores across all attempts
+				const topicAgg = new Map<
+					string,
+					{ attempted: number; correct: number }
+				>();
+				for (const attempt of attempts) {
+					if (attempt.topic_scores && Array.isArray(attempt.topic_scores)) {
+						for (const ts of attempt.topic_scores as {
+							topic: string;
+							correct: number;
+							total: number;
+						}[]) {
+							const existing = topicAgg.get(ts.topic) ?? {
+								attempted: 0,
+								correct: 0,
+							};
+							existing.attempted += ts.total;
+							existing.correct += ts.correct;
+							topicAgg.set(ts.topic, existing);
+						}
+					}
+				}
 
-				// Distribute progress proportionally across groups
+				// Map topic scores to blueprint groups
 				for (const area of blueprint.areas) {
 					for (const group of area.groups) {
 						const groupKey = `${area.area}-${group.letter}`;
@@ -79,18 +96,20 @@ export default async function BlueprintPage({
 							(sum, topic) => sum + (questionCounts[topic] ?? 0),
 							0,
 						);
-						if (groupTotal > 0) {
-							const sectionTotal = Object.values(questionCounts).reduce(
-								(a, b) => a + b,
-								0,
-							);
-							const ratio = groupTotal / sectionTotal;
-							progress[groupKey] = {
-								attempted: Math.round(totalAttempted * ratio),
-								correct: Math.round(totalCorrect * ratio),
-								total: groupTotal,
-							};
+						let attempted = 0;
+						let correct = 0;
+						for (const topic of group.questionTopics) {
+							const agg = topicAgg.get(topic);
+							if (agg) {
+								attempted += agg.attempted;
+								correct += agg.correct;
+							}
 						}
+						progress[groupKey] = {
+							attempted,
+							correct,
+							total: groupTotal,
+						};
 					}
 				}
 			}
