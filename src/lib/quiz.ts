@@ -96,8 +96,10 @@ export function scoreExam(
 
 	const topicMap = new Map<string, { correct: number; total: number }>();
 
+	const fullMap = new Map(questions.map((fq) => [fq.id, fq]));
+
 	for (const q of base.questions) {
-		const full = questions.find((fq) => fq.id === q.id);
+		const full = fullMap.get(q.id);
 		const topic = full?.topic ?? "Other";
 		const entry = topicMap.get(topic) ?? { correct: 0, total: 0 };
 		entry.total++;

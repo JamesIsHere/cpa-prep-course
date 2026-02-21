@@ -50,29 +50,22 @@ export async function POST(request: Request) {
 		return NextResponse.json({ error: "Section not found" }, { status: 404 });
 	}
 
-	// Fetch random questions (Supabase doesn't support order by random(),
-	// so we fetch all for the section and shuffle client-side)
-	let query = supabase
-		.from("questions")
-		.select("id, stem, choices, correct_index, explanation, topic, difficulty")
-		.eq("section_id", section.id);
+	// Fetch random questions via server-side RPC (avoids fetching all rows)
+	const { data: selected, error: qError } = await supabase.rpc(
+		"get_random_questions",
+		{
+			p_section_id: section.id,
+			p_count: count,
+			p_topics: topics && topics.length > 0 ? topics : null,
+		},
+	);
 
-	if (topics && topics.length > 0) {
-		query = query.in("topic", topics);
-	}
-
-	const { data: allQuestions, error: qError } = await query;
-
-	if (qError || !allQuestions || allQuestions.length === 0) {
+	if (qError || !selected || selected.length === 0) {
 		return NextResponse.json(
 			{ error: "No questions available" },
 			{ status: 404 },
 		);
 	}
-
-	// Shuffle and take `count`
-	const shuffled = allQuestions.sort(() => Math.random() - 0.5);
-	const selected = shuffled.slice(0, Math.min(count, allQuestions.length));
 
 	// Create quiz attempt
 	const { data: attempt, error: attemptError } = await supabase
@@ -93,11 +86,13 @@ export async function POST(request: Request) {
 	}
 
 	// Return questions WITHOUT correct_index and explanation
-	const clientQuestions = selected.map((q) => ({
-		id: q.id,
-		stem: q.stem,
-		choices: q.choices,
-	}));
+	const clientQuestions = selected.map(
+		(q: { id: number; stem: string; choices: string[] }) => ({
+			id: q.id,
+			stem: q.stem,
+			choices: q.choices,
+		}),
+	);
 
 	return NextResponse.json({
 		attemptId: attempt.id,

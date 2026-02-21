@@ -1,5 +1,17 @@
 # Running Log
 
+## 2026-02-22 16:44
+1. Database indexes migration (00126): 5 indexes on questions (section_id, section+topic, section+cognitive_level) and quiz/exam attempts (user_id)
+2. Random questions RPC migration (00127): `get_random_questions(p_section_id, p_count, p_topics)` for server-side sampling
+3. Quiz start route: replaced fetch-all-then-shuffle with RPC call — fetches only N rows instead of entire section
+4. Exam start route: same RPC pattern with count query for full-section exams
+5. Fixed O(n^2) lookup in `scoreExam` — Map instead of `.find()` inside loop
+6. Fixed O(n^2) question reordering in exam status route — Map instead of `.find()` per ID
+7. QA pagination batch size 1000 → 5000 (fewer round trips at scale)
+8. Duplicate detection optimization: size-based pre-filter skips ~80% of Jaccard comparisons
+9. Aligned validator explanation threshold from 25 → 30 words (matches QA quality analyzer)
+10. Both migrations applied to production, build passes, 115/115 tests pass
+
 ## 2026-02-22 16:30
 1. Bloom's analyzer: use DB `cognitive_level` column as authoritative source, heuristic as fallback, with source stats tracking
 2. Quality analyzer: context-aware short-stem penalty (threshold 8 for L1, 12 for others) — fixes 34 false-positive moderate scores

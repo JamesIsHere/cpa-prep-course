@@ -44,7 +44,7 @@ npm run generate-migration   # Generate UPDATE scaffold from piped candidate JSO
 - **Stripe webhooks** — `src/app/api/webhooks/stripe/route.ts` uses service role client (bypasses RLS)
 - **Auth middleware** — `middleware.ts` at project root protects `/dashboard`, `/account`, `/exam` routes, gated lesson pages, and quiz pages
 - **Paywall gating** — lesson and quiz pages check user's `subscription_status` before rendering content
-- **Quiz engine** — questions fetched server-side (no answers sent to client), scored on submit via route handler, results stored in `quiz_attempts`. Supports optional `topics` filter for targeted quizzes.
+- **Quiz engine** — questions fetched server-side via `get_random_questions` RPC (no answers sent to client), scored on submit via route handler, results stored in `quiz_attempts`. Supports optional `topics` filter for targeted quizzes.
 - **Blueprint Explorer** — `/sections/[slug]/blueprint` shows AICPA Blueprint structure (areas/groups) with progress tracking. Group detail at `/sections/[slug]/blueprint/[group]` shows topics, linked lessons, framework previews, and targeted quiz launch. Study framework items tagged with `blueprintGroups` for per-group filtering.
 - **Study Pipeline** — 4-step methodology (Blueprint → Lesson → Framework → Practice) surfaced via `StudyPipeline` component. Full variant on homepage, sections listing, and dashboard. Compact breadcrumb variant on lesson pages (step 2), section detail, and quiz pages (step 4). End-of-lesson "What's Next" block links to framework download and quiz.
 
@@ -97,6 +97,8 @@ npm run generate-migration   # Generate UPDATE scaffold from piped candidate JSO
 | `supabase/migrations/00115–00118`                     | Bloom's L1 rebalancing — AUD batches 1-4 (190 questions) |
 | `supabase/migrations/00119–00124`                     | Bloom's L1 rebalancing — ISC batches 1-6 (284 questions) |
 | `supabase/migrations/00125`                           | Delete exact duplicate Q1690                             |
+| `supabase/migrations/00126`                           | Performance indexes (questions, quiz/exam attempts)      |
+| `supabase/migrations/00127`                           | `get_random_questions` RPC for server-side sampling      |
 | `docs/question-style-guide.md`                | Question writing rubric (all new questions must meet this) |
 | `scripts/qa/run-qa.ts`                        | QA audit entry point (`npm run qa`)        |
 | `scripts/qa/pull-l2-batch.ts`                 | L2 question extractor for Bloom's rebalancing |

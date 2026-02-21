@@ -62,9 +62,15 @@ export function analyzeDuplicates(questions: DbQuestion[]): DuplicateAnalysis {
 		// Pre-compute trigrams
 		const trigramCache = qs.map((q) => ({ q, tris: trigrams(q.stem) }));
 
-		// Pairwise comparison
+		// Pairwise comparison with size-based pre-filter
 		for (let i = 0; i < trigramCache.length; i++) {
 			for (let j = i + 1; j < trigramCache.length; j++) {
+				// Skip pairs where set size difference makes Jaccard > 0.6 impossible
+				const sizeA = trigramCache[i].tris.size;
+				const sizeB = trigramCache[j].tris.size;
+				const maxSize = Math.max(sizeA, sizeB);
+				if (maxSize > 0 && Math.abs(sizeA - sizeB) / maxSize > 0.4) continue;
+
 				const sim = jaccardSimilarity(
 					trigramCache[i].tris,
 					trigramCache[j].tris,

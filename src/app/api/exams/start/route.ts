@@ -64,24 +64,38 @@ export async function POST(request: Request) {
 		);
 	}
 
-	// Fetch ALL questions for the section
-	const { data: allQuestions, error: qError } = await supabase
+	// Count questions in section to determine exam size
+	const { count: questionCount, error: countError } = await supabase
 		.from("questions")
-		.select("id, stem, choices")
+		.select("id", { count: "exact", head: true })
 		.eq("section_id", section.id);
 
-	if (qError || !allQuestions || allQuestions.length === 0) {
+	if (countError || !questionCount || questionCount === 0) {
 		return NextResponse.json(
 			{ error: "No questions available" },
 			{ status: 404 },
 		);
 	}
 
-	// Shuffle questions
-	const shuffled = allQuestions.sort(() => Math.random() - 0.5);
+	// Fetch all questions in random order via server-side RPC
+	const { data: shuffled, error: qError } = await supabase.rpc(
+		"get_random_questions",
+		{
+			p_section_id: section.id,
+			p_count: questionCount,
+			p_topics: null,
+		},
+	);
+
+	if (qError || !shuffled || shuffled.length === 0) {
+		return NextResponse.json(
+			{ error: "No questions available" },
+			{ status: 404 },
+		);
+	}
 
 	// Create exam attempt with question IDs stored in answers JSONB
-	const answersJson = shuffled.map((q) => ({
+	const answersJson = shuffled.map((q: { id: number }) => ({
 		question_id: q.id,
 		choice_index: null,
 	}));
@@ -105,11 +119,13 @@ export async function POST(request: Request) {
 	}
 
 	// Return questions WITHOUT correct answers
-	const clientQuestions = shuffled.map((q) => ({
-		id: q.id,
-		stem: q.stem,
-		choices: q.choices,
-	}));
+	const clientQuestions = shuffled.map(
+		(q: { id: number; stem: string; choices: string[] }) => ({
+			id: q.id,
+			stem: q.stem,
+			choices: q.choices,
+		}),
+	);
 
 	return NextResponse.json({
 		attemptId: attempt.id,

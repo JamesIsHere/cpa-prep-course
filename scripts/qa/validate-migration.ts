@@ -95,7 +95,7 @@ function validateQuestion(q: ParsedQuestion): void {
 
 	// Explanation length
 	const explanationWords = countWords(explanationClean);
-	if (explanationWords < 25) {
+	if (explanationWords < 30) {
 		issues.push({
 			line: q.approxLine,
 			severity: "error",

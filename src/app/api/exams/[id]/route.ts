@@ -87,8 +87,9 @@ export async function GET(
 	}
 
 	// Preserve the original shuffle order from answers JSONB
+	const questionMap = new Map(questions.map((q) => [q.id, q]));
 	const orderedQuestions = questionIds
-		.map((qid) => questions.find((q) => q.id === qid))
+		.map((qid) => questionMap.get(qid))
 		.filter(Boolean);
 
 	return NextResponse.json({
