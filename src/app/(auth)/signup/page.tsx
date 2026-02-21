@@ -18,7 +18,7 @@ export default function SignupPage() {
 				<ul className="text-sm text-gray-500 space-y-2 mb-8">
 					<li className="flex items-start gap-2">
 						<span className="text-emerald-600 mt-0.5">✓</span>
-						96 lessons and 1,275+ questions across all 6 sections
+						96 lessons and 4,400+ questions across all 6 sections
 					</li>
 					<li className="flex items-start gap-2">
 						<span className="text-emerald-600 mt-0.5">✓</span>

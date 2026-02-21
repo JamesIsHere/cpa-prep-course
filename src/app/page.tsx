@@ -13,7 +13,7 @@ export default function Home() {
 						<span className="text-emerald-600"> with confidence</span>
 					</h1>
 					<p className="text-lg sm:text-xl text-gray-600 mb-4 max-w-2xl mx-auto leading-relaxed">
-						96 lessons, 1,275+ practice questions, timed exams, and downloadable
+						96 lessons, 4,400+ practice questions, timed exams, and downloadable
 						study frameworks across all 6 CPA sections.
 					</p>
 					<p className="text-sm text-gray-400 mb-8">
@@ -44,7 +44,7 @@ export default function Home() {
 						<div className="text-emerald-100 text-sm">Lessons</div>
 					</div>
 					<div data-testid="stat-questions">
-						<div className="text-2xl sm:text-3xl font-bold">1,275+</div>
+						<div className="text-2xl sm:text-3xl font-bold">4,400+</div>
 						<div className="text-emerald-100 text-sm">Practice Questions</div>
 					</div>
 					<div data-testid="stat-sections">
@@ -323,7 +323,7 @@ export default function Home() {
 							</li>
 							<li className="flex items-start gap-2">
 								<span className="text-emerald-600 mt-0.5">✓</span>
-								1,275+ practice questions with explanations
+								4,400+ practice questions with explanations
 							</li>
 							<li className="flex items-start gap-2">
 								<span className="text-emerald-600 mt-0.5">✓</span>

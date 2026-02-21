@@ -74,14 +74,14 @@ npm run test:e2e     # Playwright e2e tests (all browsers)
 
 | Section | Code | Lessons | Questions | Framework Items | Topics                                            |
 |---------|------|---------|-----------|-----------------|---------------------------------------------------|
-| AUD     | aud  | 13      | ~215      | 37              | Ethics, planning, risk, controls, evidence, sampling, reports, review/compilation, attestation, quality mgmt, government auditing |
-| FAR     | far  | 18      | ~253      | 54              | Financial statements, revenue, inventory, fixed/intangible assets, leases, bonds, equity, tax, govt, NFP, consolidations, contingencies, fair value |
-| REG     | reg  | 18      | ~258      | 60              | Circular 230, contracts, agency, business structures, basis, gains/losses, 1031, individual tax, credits, filing status, C/S corps, partnerships, tax procedures, legal duties, debtor-creditor, tax-exempt orgs |
-| BAR     | bar  | 16      | ~198      | 34              | Financial analysis, valuation, capital structure, derivatives, consolidations, govt reporting, fund reconciliation, interfund transactions |
-| ISC     | isc  | 16      | ~198      | 35              | IT infrastructure, ERP, data management, security frameworks, threats, privacy, SOC, SOC testing, SOC reporting |
-| TCP     | tcp  | 15      | ~185      | 44              | Individual planning, passive/at-risk, wealth transfer, retirement, international tax, trusts, capital structure tax, nontaxable dispositions, related parties |
+| AUD     | aud  | 13      | ~755      | 37              | Ethics, planning, risk, controls, evidence, sampling, reports, review/compilation, attestation, quality mgmt, government auditing |
+| FAR     | far  | 18      | ~780      | 54              | Financial statements, revenue, inventory, fixed/intangible assets, leases, bonds, equity, tax, govt, NFP, consolidations, contingencies, fair value |
+| REG     | reg  | 18      | ~810      | 60              | Circular 230, contracts, agency, business structures, basis, gains/losses, 1031, individual tax, credits, filing status, C/S corps, partnerships, tax procedures, legal duties, debtor-creditor, tax-exempt orgs |
+| BAR     | bar  | 16      | ~700      | 34              | Financial analysis, valuation, capital structure, derivatives, consolidations, govt reporting, fund reconciliation, interfund transactions |
+| ISC     | isc  | 16      | ~689      | 35              | IT infrastructure, ERP, data management, security frameworks, threats, privacy, SOC, SOC testing, SOC reporting |
+| TCP     | tcp  | 15      | ~671      | 44              | Individual planning, passive/at-risk, wealth transfer, retirement, international tax, trusts, capital structure tax, nontaxable dispositions, related parties |
 
-**Totals:** 96 lessons, ~1,307 questions, 280 framework items across 6 sections
+**Totals:** 96 lessons, ~4,405 questions, 280 framework items across 6 sections
 
 ## Database Tables
 

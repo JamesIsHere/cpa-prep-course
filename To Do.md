@@ -4,7 +4,7 @@
 
 - [x] Verify Stripe is live: production keys in Vercel, test real checkout, confirm webhook fires
 - [ ] Set up Google Search Console: verify slayer-cpa.com, submit sitemap.xml
-- [ ] Set up analytics: GA4 or confirm Vercel Analytics is sufficient
+- [x] Set up analytics: GA4 or confirm Vercel Analytics is sufficient
 - [x] Build /blog route with MDX support (reuse existing MDX infra)
 - [x] Draft + publish blog post #1: "Slayer CPA vs Becker: Full Comparison"
 - [x] Draft + publish blog post #2: "How Much Does CPA Exam Prep Really Cost?"
@@ -27,6 +27,7 @@
 ## Completed
 | Date       | Task                                                            |
 |------------|-----------------------------------------------------------------|
+| 2026-02-20 | Vercel Analytics confirmed active (@vercel/analytics in layout)  |
 | 2026-02-20 | Blog route with MDX, 2 posts, nav/sitemap/footer links          |
 | 2026-02-20 | Free CPA study plan PDF: markdown, branded PDF, homepage download link |
 | 2026-02-20 | Full project audit: folder, routes, content, security — all clean |

@@ -1,5 +1,19 @@
 # Running Log
 
+## 2026-02-20 21:42
+1. Created 6 SQL migration files (00025–00030) with 3,098 new questions across all CPA sections
+2. AUD expansion: 540 new questions (00025_expand_aud_bank.sql), total ~755
+3. FAR expansion: 527 new questions (00026_expand_far_bank.sql), total ~780
+4. REG expansion: 552 new questions (00027_expand_reg_bank.sql), total ~810
+5. BAR expansion: 502 new questions (00028_expand_bar_bank.sql), total ~700
+6. ISC expansion: 491 new questions (00029_expand_isc_bank.sql), total ~689
+7. TCP expansion: 486 new questions (00030_expand_tcp_bank.sql), total ~671
+8. Updated question count references from "1,275+" to "4,400+" across 5 source files (page.tsx, layout.tsx, opengraph-image.tsx, signup/page.tsx, blog post)
+9. Updated blueprint.ts questionCounts and sectionQuestionTotals with new per-topic and per-section totals
+10. Updated CLAUDE.md Content Summary table with new question counts (~4,405 total)
+11. Updated blog post comparison copy to reflect competitive 4,400+ question bank
+12. Verified clean production build after all changes
+
 ## 2026-02-20 09:59
 1. Phase 1: Updated blueprint.ts source to January 2026 Blueprint — added 4 new topics, updated 2 topic names, removed 1 dropped topic (transfer pricing)
 2. Phase 1: Updated page.tsx year references from 2025 to 2026 (stats section + FAQ)
