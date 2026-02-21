@@ -30,13 +30,14 @@ Blueprint-driven study pipeline, content connectivity, and data quality.
 
 ### Upcoming
 - [ ] Resubmit sitemap to Google Search Console (stable lastModified, no more crawl budget waste)
-- [ ] Bloom's L3 question rebalancing — rewrite/create questions to close gap (REG 9% vs 25-35% target, BAR 16% vs 30-40% target)
-- [ ] Apply migration 00094 (topic_scores column + backfill) to production Supabase
+- [ ] Bloom's L3 question rebalancing — REG 18% (need 25%), then BAR/FAR/TCP. Tracker: docs/blooms-rebalancing.md
 
 ## Completed
 
 | Date       | Task                                                                    |
 |------------|-------------------------------------------------------------------------|
+| 2026-02-21 | Bloom's L3 rebalancing REG: 95 questions rewritten, 9%→18% L3          |
+| 2026-02-21 | L2 extraction script + cross-session tracker for Bloom's rebalancing    |
 | 2026-02-22 | Bloom's heuristic fix: L3 from 0-1% to 9-16%, closer to AICPA targets |
 | 2026-02-22 | Mobile-responsive Blueprint Explorer (area headers, progress bars, group rows) |
 | 2026-02-22 | Per-topic progress tracking (topic_scores JSONB, real per-group progress) |

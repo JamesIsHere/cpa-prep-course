@@ -83,9 +83,12 @@ npm run validate-migration <file>  # Validate question migration against style g
 | `supabase/migrations/00061–00092`                     | 32 remaining moderate question upgrades (303 questions) |
 | `supabase/migrations/00093`                           | Final 51 moderate question upgrades (0 moderate target) |
 | `supabase/migrations/00094`                           | Add topic_scores JSONB to quiz_attempts + backfill |
+| `supabase/migrations/00095–00096`                     | Bloom's L3 rebalancing — REG batch 1-2 (95 questions) |
 | `docs/question-style-guide.md`                | Question writing rubric (all new questions must meet this) |
 | `scripts/qa/run-qa.ts`                        | QA audit entry point (`npm run qa`)        |
+| `scripts/qa/pull-l2-batch.ts`                 | L2 question extractor for Bloom's rebalancing |
 | `scripts/qa/validate-migration.ts`            | Pre-commit migration validator             |
+| `docs/blooms-rebalancing.md`                  | Cross-session Bloom's L3 rebalancing tracker |
 | `.env.local.example`                          | Required env vars template                 |
 
 ## Content Summary
@@ -135,6 +138,7 @@ All build phases complete. Active work is marketing and content connectivity.
 - **Migration validator:** `npm run validate-migration <file>` checks new question migrations against the rubric before commit
 - **Rule:** All new question migrations must pass `validate-migration` before commit. No questions scoring 0-3 (critical) should be deployed.
 - **Current status:** 0 critical, 0 moderate, 4,987 acceptable (100% at score 7+, avg 8.2/10)
+- **Bloom's L3 rebalancing:** In progress — REG 9%→18% L3 (95 questions rewritten). Tracker: `docs/blooms-rebalancing.md`
 
 ## Spec Reference
 

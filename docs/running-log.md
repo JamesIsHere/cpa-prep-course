@@ -1,5 +1,15 @@
 # Running Log
 
+## 2026-02-21 07:30
+1. Created `scripts/qa/pull-l2-batch.ts` — L2 question extractor for Bloom's L3 rebalancing
+2. Created `docs/blooms-rebalancing.md` — cross-session tracker for section progress and migration log
+3. Bloom's L3 REG batch 1: rewrote 45 L2 questions to L3 analytical depth (migration 00095), L3 9%→13%
+4. Bloom's L3 REG batch 2: rewrote 50 L2 questions to L3 analytical depth (migration 00096), L3 13%→18%
+5. Pushed migrations 00095-00096 to production Supabase
+6. Fixed NIIT question (ID 522) math error in choices — corrected $3,040 to $2,280
+7. Fixed TypeScript build error in pull-l2-batch.ts (sectionFlag narrowing)
+8. Coherence audit: updated CLAUDE.md key files, question quality section, To Do.md
+
 ## 2026-02-22 06:05
 1. Near-duplicate review: verified all 8 likely-duplicates and top 50 pairs as intentional; 0 true duplicates
 2. Sitemap stability fix: replaced 13 `new Date()` calls with stable `CONTENT_LAST_MODIFIED` constant
