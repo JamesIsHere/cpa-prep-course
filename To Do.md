@@ -30,14 +30,14 @@ Blueprint-driven study pipeline, content connectivity, and data quality.
 
 ### Upcoming
 - [ ] Resubmit sitemap to Google Search Console (stable lastModified, no more crawl budget waste)
-- [ ] Bloom's L1/L4 rebalancing — AUD (190) and ISC (284) remaining. Tracker: docs/blooms-l1-l4-rebalancing.md
+- [x] Bloom's L1/L4 rebalancing — all sections complete. AUD (190), ISC (284). Tracker: docs/blooms-l1-l4-rebalancing.md
 - [x] Bloom's L3 question rebalancing — all sections done. REG 25%, BAR 30%, FAR 26%, TCP 20%. Tracker: docs/blooms-rebalancing.md
 
 ## Completed
 
 | Date       | Task                                                                    |
 |------------|-------------------------------------------------------------------------|
-| 2026-02-21 | Bloom's L1/L4 rebalancing: BAR 23, FAR 51, TCP 71, REG 169 (314 total) |
+| 2026-02-21 | Bloom's L1/L4 rebalancing: ALL DONE — AUD 190, ISC 284, BAR 23, FAR 51, TCP 71, REG 169 (788 total) |
 | 2026-02-21 | Bloom's L3 rebalancing TCP: 40 questions rewritten, 15%→20% L3         |
 | 2026-02-21 | Bloom's L3 rebalancing FAR: 85 questions rewritten, 16%→26% L3         |
 | 2026-02-22 | Bloom's L3 rebalancing BAR: 109 questions rewritten, 16%→30% L3        |

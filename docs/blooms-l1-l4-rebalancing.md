@@ -10,10 +10,10 @@ Cross-session tracker for rewriting L2 questions to L1 (Remember/Understand) and
 | FAR     | 8%       | 10-20%    | 66%      | 50-60%    | 1%       | 0%        | 51    | 0     | 51        | Done    |
 | TCP     | 5%       | 5-15%    | 75%      | 55-65%    | 0%       | 5-15%     | 36    | 35    | 71        | Done    |
 | REG     | 9%       | 25-35%    | 65%      | 35-45%    | 1%       | 0%        | 169   | 0     | 169       | Done    |
-| AUD     | 20%      | 30-40%    | 58%      | 30-40%    | 6%       | 5-15%     | 190   | 0     | 0         | Pending |
-| ISC     | 17%      | 55-65%    | 68%      | 20-30%    | 4%       | 0%        | 284   | 0     | 0         | Pending |
+| AUD     | 20%      | 30-40%    | 58%      | 30-40%    | 6%       | 5-15%     | 190   | 0     | 190       | Done    |
+| ISC     | 17%      | 55-65%    | 68%      | 20-30%    | 4%       | 0%        | 284   | 0     | 284       | Done    |
 
-**Totals:** ~788 rewrites (753 L2→L1, 35 L2→L4)
+**Totals:** 788 rewrites complete (753 L2→L1, 35 L2→L4) — ALL SECTIONS DONE
 
 ## Migration Log
 
@@ -27,6 +27,16 @@ Cross-session tracker for rewriting L2 questions to L1 (Remember/Understand) and
 | 2026-02-21 | 00112_blooms_l1_reg_batch2.sql     | REG     | L2→L1 | 45    | —       | —       | C Corps, 1031, Income, Legal Duties, Circ 230 |
 | 2026-02-21 | 00113_blooms_l1_reg_batch3.sql     | REG     | L2→L1 | 47    | —       | —       | Tax-Exempt, Filing, Estate/Gift, Ethics, Contracts, S Corps, Deductions |
 | 2026-02-21 | 00114_blooms_l1_reg_batch4.sql     | REG     | L2→L1 | 32    | ~29%    | ~45%    | Credits, Agency, AMT, Tax Procedures, Debtor-Creditor, Business Structures |
+| 2026-02-21 | 00115_blooms_l1_aud_batch1.sql     | AUD     | L2→L1 | 48    | —       | —       | Audit Reports, Ethics, Substantive Procedures, Professional Responsibilities, Audit Evidence |
+| 2026-02-21 | 00116_blooms_l1_aud_batch2.sql     | AUD     | L2→L1 | 48    | —       | —       | Review/Compilation, Risk Assessment, Planning, Attestation, Tests of Controls, 13 topics |
+| 2026-02-21 | 00117_blooms_l1_aud_batch3.sql     | AUD     | L2→L1 | 48    | —       | —       | Audit Reports, Ethics, Using Work of Others, Materiality, Analytical Procedures |
+| 2026-02-21 | 00118_blooms_l1_aud_batch4.sql     | AUD     | L2→L1 | 46    | ~38%    | ~40%    | Substantive Procedures, Ethics, Professional Responsibilities |
+| 2026-02-21 | 00119_blooms_l1_isc_batch1.sql     | ISC     | L2→L1 | 48    | —       | —       | System Availability, Security Frameworks, Security Controls, Data Management, Incident Response |
+| 2026-02-21 | 00120_blooms_l1_isc_batch2.sql     | ISC     | L2→L1 | 48    | —       | —       | SOC Reporting, SOC Testing, IT Audit, ERP, Change Management, 15 topics |
+| 2026-02-21 | 00121_blooms_l1_isc_batch3.sql     | ISC     | L2→L1 | 48    | —       | —       | System Availability (27), Security Frameworks (21) |
+| 2026-02-21 | 00122_blooms_l1_isc_batch4.sql     | ISC     | L2→L1 | 48    | —       | —       | Security Frameworks, Security Controls, Data Management |
+| 2026-02-21 | 00123_blooms_l1_isc_batch5.sql     | ISC     | L2→L1 | 48    | —       | —       | SOC Reporting, Incident Response, IT Audit, Data Management |
+| 2026-02-21 | 00124_blooms_l1_isc_batch6.sql     | ISC     | L2→L1 | 44    | ~55%    | ~30%    | SOC Testing Controls, IT Audit Frameworks, ERP |
 
 ## L2→L1 Rewrite Patterns
 

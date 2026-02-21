@@ -92,6 +92,8 @@ npm run validate-migration <file>  # Validate question migration against style g
 | `supabase/migrations/00109`                           | Bloom's L4 rebalancing — TCP batch 1 (35 questions)      |
 | `supabase/migrations/00110`                           | Bloom's L1 rebalancing — TCP batch 1 (36 questions)      |
 | `supabase/migrations/00111–00114`                     | Bloom's L1 rebalancing — REG batches 1-4 (169 questions) |
+| `supabase/migrations/00115–00118`                     | Bloom's L1 rebalancing — AUD batches 1-4 (190 questions) |
+| `supabase/migrations/00119–00124`                     | Bloom's L1 rebalancing — ISC batches 1-6 (284 questions) |
 | `docs/question-style-guide.md`                | Question writing rubric (all new questions must meet this) |
 | `scripts/qa/run-qa.ts`                        | QA audit entry point (`npm run qa`)        |
 | `scripts/qa/pull-l2-batch.ts`                 | L2 question extractor for Bloom's rebalancing |
@@ -149,7 +151,7 @@ All build phases complete. Active work is marketing and content connectivity.
 - **Rule:** All new question migrations must pass `validate-migration` before commit. No questions scoring 0-3 (critical) should be deployed.
 - **Current status:** 0 critical, 0 moderate, 4,987 acceptable (100% at score 7+, avg 8.2/10)
 - **Bloom's L3 rebalancing:** Complete — REG 9%→25%, BAR 16%→30%, FAR 16%→26%, TCP 15%→20%. Total: 389 rewrites. Tracker: `docs/blooms-rebalancing.md`
-- **Bloom's L1/L4 rebalancing:** In progress — BAR (23), FAR (51), TCP (71), REG (169) done. AUD (190) and ISC (284) remaining. Total: 314/788 rewrites. Tracker: `docs/blooms-l1-l4-rebalancing.md`
+- **Bloom's L1/L4 rebalancing:** Complete — BAR (23), FAR (51), TCP (71), REG (169), AUD (190), ISC (284). Total: 788/788 rewrites. Tracker: `docs/blooms-l1-l4-rebalancing.md`
 
 ## Spec Reference
 

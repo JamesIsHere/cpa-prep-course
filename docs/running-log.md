@@ -1,5 +1,12 @@
 # Running Log
 
+## 2026-02-21 16:06
+1. Bloom's L1 rebalancing AUD batches 1-4 (00115–00118): 190 L2→L1 rewrites across 22 topics, all validated and applied to production
+2. Bloom's L1 rebalancing ISC batches 1-6 (00119–00124): 284 L2→L1 rewrites across 18 topics, all validated and applied to production
+3. Bloom's L1/L4 rebalancing COMPLETE: 788/788 rewrites across all 6 sections (BAR 23, FAR 51, TCP 71, REG 169, AUD 190, ISC 284)
+4. Updated tracker (docs/blooms-l1-l4-rebalancing.md), To Do.md, CLAUDE.md with final status
+5. Archived stale root session file, coherence audit clean, build + 115 tests pass
+
 ## 2026-02-21 15:09
 1. Bloom's L1/L4 rebalancing pre-work: QA baseline (4,987 questions, 8.2 avg), created L1/L4 tracker, built select-l2-candidates.ts
 2. Bloom's L1 rebalancing BAR (00107): 23 L2→L1 rewrites across 18 topics, answer dist 6/6/6/5
