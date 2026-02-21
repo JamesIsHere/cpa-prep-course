@@ -1,6 +1,6 @@
 # Slayer CPA
 
-Full-scope CPA exam prep for $29.99/month. 96 lessons, 4,400+ practice questions, timed exams, and downloadable study frameworks across all 6 CPA sections.
+Full-scope CPA exam prep for $29.99/month. 96 lessons, 5,000+ practice questions, timed exams, and downloadable study frameworks across all 6 CPA sections.
 
 **Live:** [slayer-cpa.com](https://www.slayer-cpa.com)
 

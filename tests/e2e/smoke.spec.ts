@@ -168,7 +168,7 @@ test.describe("Public Pages — Smoke Tests", () => {
 		// Value prop bullets
 		await expect(
 			page.locator(
-				"text=96 lessons and 4,400+ questions across all 6 sections",
+				"text=96 lessons and 5,000+ questions across all 6 sections",
 			),
 		).toBeVisible();
 		await expect(

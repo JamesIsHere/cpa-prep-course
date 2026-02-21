@@ -20,20 +20,20 @@ export const metadata: Metadata = {
 		template: "%s — Slayer CPA",
 	},
 	description:
-		"Full-scope CPA exam prep — 96 lessons, 4,400+ practice questions, timed exams, and study frameworks across all 6 sections for $29.99/month.",
+		"Full-scope CPA exam prep — 96 lessons, 5,000+ practice questions, timed exams, and study frameworks across all 6 sections for $29.99/month.",
 	metadataBase: new URL("https://www.slayer-cpa.com"),
 	openGraph: {
 		type: "website",
 		siteName: "Slayer CPA",
 		title: "Slayer CPA",
 		description:
-			"96 lessons, 4,400+ questions, timed practice exams, and PDF study frameworks covering AUD, FAR, REG, BAR, ISC, and TCP.",
+			"96 lessons, 5,000+ questions, timed practice exams, and PDF study frameworks covering AUD, FAR, REG, BAR, ISC, and TCP.",
 	},
 	twitter: {
 		card: "summary_large_image",
 		title: "Slayer CPA",
 		description:
-			"96 lessons, 4,400+ questions, timed practice exams, and PDF study frameworks covering AUD, FAR, REG, BAR, ISC, and TCP.",
+			"96 lessons, 5,000+ questions, timed practice exams, and PDF study frameworks covering AUD, FAR, REG, BAR, ISC, and TCP.",
 	},
 };
 

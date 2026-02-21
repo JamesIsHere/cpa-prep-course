@@ -4,7 +4,7 @@
 
 > Structured understanding for $29.99/month. Mental models first, deep lessons second, surgical practice third.
 
-Slayer CPA is a full-scope CPA prep course built around a learning architecture that competitors don't offer: concept maps and decision trees that teach you *how to think about* problems, detailed lessons that fill in the specifics, and a 4,400+ question bank mapped to specific AICPA Blueprint topics so you can drill exactly where you're weak.
+Slayer CPA is a full-scope CPA prep course built around a learning architecture that competitors don't offer: concept maps and decision trees that teach you *how to think about* problems, detailed lessons that fill in the specifics, and a 5,000+ question bank mapped to specific AICPA Blueprint topics so you can drill exactly where you're weak.
 
 The brand is faceless — the product and method speak for themselves.
 
@@ -14,10 +14,10 @@ The real differentiator isn't just price — it's the learning method:
 
 1. **Mental Models First** — Concept maps, decision trees, and flowcharts that build structured frameworks for approaching problems. This is what expensive tutors provide and what video lectures skip.
 2. **Deep-Dive Lessons** — Once you have the mental structure, detailed lessons fill in the specifics within that framework. Text-based, example-heavy, no filler.
-3. **Surgical Question Practice** — 4,400+ questions mapped to specific AICPA Blueprint areas. Drill your weak spots precisely instead of churning through random question sets.
+3. **Surgical Question Practice** — 5,000+ questions mapped to specific AICPA Blueprint areas. Drill your weak spots precisely instead of churning through random question sets.
 4. **Downloadable Study Frameworks** — PDF reference sheets (concept maps, decision trees, formula sheets, mnemonics) for every section. Print them, mark them up, carry them to the exam center.
 
-**The pitch:** "Other courses sell you video lectures to watch. Slayer CPA gives you the mental scaffolding to *think through* unfamiliar problems on exam day — then 4,400 questions to prove you can."
+**The pitch:** "Other courses sell you video lectures to watch. Slayer CPA gives you the mental scaffolding to *think through* unfamiliar problems on exam day — then 5,000 questions to prove you can."
 
 ## Market Context
 
@@ -94,7 +94,7 @@ Start Reddit Ads much earlier than originally planned. They're the best-value pa
 - **Format:** Promoted posts (look organic, not banner ads)
 - **Creative angles:**
   - Method-first: "CPA prep built on mental models: concept maps → deep lessons → targeted practice. $29.99/month."
-  - Price comparison: "Full CPA exam prep for $29.99/month. 96 lessons. 4,400+ questions. All 6 sections."
+  - Price comparison: "Full CPA exam prep for $29.99/month. 96 lessons. 5,000+ questions. All 6 sections."
   - Problem-aware: "Tired of re-watching lectures? Try structured study: frameworks that teach you how to think through problems."
 - **Landing pages:** Blog comparison posts (Becker, Surgent) for competitor-aware traffic; homepage for general awareness
 - **Expected CPC:** $0.50-$1.50 (vs $6-$15 on Google)
@@ -132,7 +132,7 @@ Comparison posts are highest leverage — they serve as landing pages for Reddit
 CPA review comparison sites rank highly in Google for "best CPA review course" type searches. Getting listed drives qualified traffic.
 
 - **Target sites:** CPA Exam Guy, I Pass the CPA Exam, CPA Review for Free, Crush the CPA Exam
-- **Approach:** Email the site owner with a pitch: "We're a new monthly CPA prep at $29.99/month with 96 lessons and 4,400+ questions across all 6 sections. Happy to provide a review account."
+- **Approach:** Email the site owner with a pitch: "We're a new monthly CPA prep at $29.99/month with 96 lessons and 5,000+ questions across all 6 sections. Happy to provide a review account."
 - **Timeline:** Start outreach in week 3-4 after blog content is live
 - **Cost:** Free review accounts (negligible cost)
 
@@ -215,7 +215,7 @@ Do not bid on broad terms like "CPA review course" or "best CPA prep" — the bi
 | Objection                                      | Counter                                                                                         |
 |------------------------------------------------|-------------------------------------------------------------------------------------------------|
 | "If it's $30/month, it must be garbage"        | Free intro lessons prove quality. The method is the differentiator: structured mental models → deep lessons → surgical practice. |
-| "Becker has 8,500 MCQs, you have 4,400"        | Questions are AICPA Blueprint-mapped for targeted drilling. At $30/mo you can supplement with NINJA and still pay a fraction. |
+| "Becker has 8,500 MCQs, you have 5,000"        | Questions are AICPA Blueprint-mapped for targeted drilling. At $30/mo you can supplement with NINJA and still pay a fraction. |
 | "No one has heard of Slayer CPA"               | Build trust through Reddit helpfulness, blog content, and early testimonials. Every brand started unknown. |
 | "No video lectures"                            | Active learning (mental models, targeted questions, practice exams) beats passive video. Research backs this. |
 | "No pass guarantee"                            | At $30/mo the risk is near zero. Becker's "guarantee" gives $250 back on a $3,800 purchase — still a $3,550 loss. |

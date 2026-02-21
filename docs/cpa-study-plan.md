@@ -158,4 +158,4 @@ Week 20 is intentionally light. Use it to:
 
 ---
 
-*This study plan is provided by Slayer CPA. For 96 lessons, 4,400+ practice questions, timed exams, and downloadable study frameworks across all six CPA sections, visit [slayercpa.com](https://slayer-cpa.com).*
+*This study plan is provided by Slayer CPA. For 96 lessons, 5,000+ practice questions, timed exams, and downloadable study frameworks across all six CPA sections, visit [slayercpa.com](https://slayer-cpa.com).*

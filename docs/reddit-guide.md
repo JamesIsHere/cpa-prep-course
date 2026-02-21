@@ -67,7 +67,7 @@ Reddit is the #1 discovery channel for CPA exam candidates. r/CPA has ~105K memb
 **Angle:** Share realistic timelines (150–300 hours per section depending on background). Emphasize consistency over cramming. Mention that study frameworks and structured question practice help more than re-reading notes.
 
 ### "Best free/cheap resources?"
-**Angle:** This is the ideal thread for mentioning Slayer CPA. "Slayer CPA is $30/month with 4,400+ questions and all 6 sections. No contract. There's also free intro lessons you can try without signing up." Also mention free resources: AICPA sample tests, IRS publications for REG, r/CPA's own resource threads.
+**Angle:** This is the ideal thread for mentioning Slayer CPA. "Slayer CPA is $30/month with 5,000+ questions and all 6 sections. No contract. There's also free intro lessons you can try without signing up." Also mention free resources: AICPA sample tests, IRS publications for REG, r/CPA's own resource threads.
 
 ### "Study tips for [specific topic]?"
 **Angle:** Give actual study advice for the topic. If relevant, mention that Slayer CPA has a study framework PDF for that section. But the advice itself should stand alone — don't make it a product pitch.
@@ -86,7 +86,7 @@ When Slayer CPA comes up naturally, these are the key points to communicate:
 
 ### Content
 - "96 lessons across all 6 CPA sections"
-- "4,400+ practice questions with detailed explanations"
+- "5,000+ practice questions with detailed explanations"
 - "Timed practice exams that simulate the real exam"
 - "Downloadable PDF study frameworks — concept maps, decision trees, formula sheets"
 
@@ -136,7 +136,7 @@ Reddit's informal guideline: no more than 10% of your activity should be self-pr
 >
 > - **Surgent** ($1,600–$3,000): Adaptive learning, adjusts to your weak areas. Good if you want the software to guide your study plan.
 > - **NINJA** ($67–87/month): Monthly, good as a supplement. Question bank is solid.
-> - **Slayer CPA** ($30/month): Text-based lessons, 4,400+ questions, all 6 sections. No videos. Good if you're a reader and want to keep costs low.
+> - **Slayer CPA** ($30/month): Text-based lessons, 5,000+ questions, all 6 sections. No videos. Good if you're a reader and want to keep costs low.
 >
 > The biggest factor in passing isn't which course you pick — it's how many quality practice questions you work through with honest self-assessment. Pick something you'll actually use consistently.
 
@@ -156,7 +156,7 @@ Reddit's informal guideline: no more than 10% of your activity should be self-pr
 > - IRS publications for REG topics (pub 17 is great for individual tax)
 > - YouTube channels like Farhat Accounting Lectures for specific topics
 >
-> For paid but cheap: Slayer CPA is $30/month with 4,400+ questions across all 6 sections. No contract, you can cancel anytime. Free intro lessons if you want to see it before paying. Full disclosure — I use it, so I'm biased, but at that price the risk is basically zero.
+> For paid but cheap: Slayer CPA is $30/month with 5,000+ questions across all 6 sections. No contract, you can cancel anytime. Free intro lessons if you want to see it before paying. Full disclosure — I use it, so I'm biased, but at that price the risk is basically zero.
 
 ### Response 4: "Which section first?"
 
