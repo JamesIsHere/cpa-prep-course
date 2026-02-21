@@ -87,11 +87,18 @@ npm run validate-migration <file>  # Validate question migration against style g
 | `supabase/migrations/00098–00100`                     | Bloom's L3 rebalancing — BAR batches 1-3 (109 questions) |
 | `supabase/migrations/00101–00104`                     | Bloom's L3 rebalancing — FAR batches 1-4 (85 questions)  |
 | `supabase/migrations/00105–00106`                     | Bloom's L3 rebalancing — TCP batches 1-2 (40 questions)  |
+| `supabase/migrations/00107`                           | Bloom's L1 rebalancing — BAR batch 1 (23 questions)      |
+| `supabase/migrations/00108`                           | Bloom's L1 rebalancing — FAR batch 1 (51 questions)      |
+| `supabase/migrations/00109`                           | Bloom's L4 rebalancing — TCP batch 1 (35 questions)      |
+| `supabase/migrations/00110`                           | Bloom's L1 rebalancing — TCP batch 1 (36 questions)      |
+| `supabase/migrations/00111–00114`                     | Bloom's L1 rebalancing — REG batches 1-4 (169 questions) |
 | `docs/question-style-guide.md`                | Question writing rubric (all new questions must meet this) |
 | `scripts/qa/run-qa.ts`                        | QA audit entry point (`npm run qa`)        |
 | `scripts/qa/pull-l2-batch.ts`                 | L2 question extractor for Bloom's rebalancing |
+| `scripts/qa/select-l2-candidates.ts`          | L2 candidate selector with topic cap awareness |
 | `scripts/qa/validate-migration.ts`            | Pre-commit migration validator             |
 | `docs/blooms-rebalancing.md`                  | Cross-session Bloom's L3 rebalancing tracker |
+| `docs/blooms-l1-l4-rebalancing.md`            | Cross-session Bloom's L1/L4 rebalancing tracker |
 | `.env.local.example`                          | Required env vars template                 |
 
 ## Content Summary
@@ -142,6 +149,7 @@ All build phases complete. Active work is marketing and content connectivity.
 - **Rule:** All new question migrations must pass `validate-migration` before commit. No questions scoring 0-3 (critical) should be deployed.
 - **Current status:** 0 critical, 0 moderate, 4,987 acceptable (100% at score 7+, avg 8.2/10)
 - **Bloom's L3 rebalancing:** Complete — REG 9%→25%, BAR 16%→30%, FAR 16%→26%, TCP 15%→20%. Total: 389 rewrites. Tracker: `docs/blooms-rebalancing.md`
+- **Bloom's L1/L4 rebalancing:** In progress — BAR (23), FAR (51), TCP (71), REG (169) done. AUD (190) and ISC (284) remaining. Total: 314/788 rewrites. Tracker: `docs/blooms-l1-l4-rebalancing.md`
 
 ## Spec Reference
 
@@ -153,8 +161,7 @@ Full product specification with all 7 phases, data model, and acceptance criteri
 Repository: https://github.com/JamesIsHere/cpa-prep-course
 Branch: `master`
 Latest commits:
-- Bloom's L3 rebalancing REG batch 3: 60 questions rewritten (155 total)
-- `35e47d0` Bloom's L3 rebalancing REG batches 1-2: 95 questions rewritten, 9%→18% L3
-- `6380aeb` content quality polish: topic progress, mobile blueprint, Bloom's heuristic, sitemap fix
-- `1ebdcb3` upgrade final 51 moderate questions: 0 critical, 0 moderate, 100% acceptable
+- `cb40246` Bloom's L3 rebalancing FAR + TCP: 125 questions rewritten, all sections complete
+- `d93fad5` Bloom's L3 rebalancing BAR: 109 questions rewritten, 16%→30% L3
+- `8dfe8a4` Bloom's L3 rebalancing REG batch 3: 60 questions rewritten, 18%→~25% L3
 - `aaf9877` coherence audit, session wrap: update CLAUDE.md, log, archive session file

@@ -2,6 +2,8 @@
 
 Cross-session tracker for rewriting L2 questions to L3 analytical depth.
 
+**Next phase:** L1/L4 rebalancing — see `docs/blooms-l1-l4-rebalancing.md`
+
 ## Section Progress
 
 | Section | L3 Start | L3 Target | Gap    | Questions to Rewrite | Completed | Status  |

@@ -1,5 +1,19 @@
 # Running Log
 
+## 2026-02-21 15:09
+1. Bloom's L1/L4 rebalancing pre-work: QA baseline (4,987 questions, 8.2 avg), created L1/L4 tracker, built select-l2-candidates.ts
+2. Bloom's L1 rebalancing BAR (00107): 23 L2→L1 rewrites across 18 topics, answer dist 6/6/6/5
+3. Bloom's L1 rebalancing FAR (00108): 51 L2→L1 rewrites across 21 topics, answer dist 13/13/13/12
+4. Bloom's L4 rebalancing TCP (00109): 35 L2→L4 rewrites across 15 topics, evaluation/advisory stems
+5. Bloom's L1 rebalancing TCP (00110): 36 L2→L1 rewrites across 12 topics, non-overlapping with L4 batch
+6. Bloom's L1 rebalancing REG batch 1 (00111): 45 L2→L1 rewrites — Basis, Gains/Losses, Partnerships, Circular 230
+7. Bloom's L1 rebalancing REG batch 2 (00112): 45 L2→L1 rewrites — C Corps, 1031, Income, Legal Duties
+8. Bloom's L1 rebalancing REG batch 3 (00113): 47 L2→L1 rewrites — Tax-Exempt, Filing, Estate/Gift, Ethics, Contracts, S Corps, Deductions
+9. Bloom's L1 rebalancing REG batch 4 (00114): 32 L2→L1 rewrites — Credits, Agency, AMT, Tax Procedures, Debtor-Creditor
+10. Applied all 8 migrations to production Supabase — 314 questions rewritten
+11. Updated CLAUDE.md, To Do.md, L1/L4 tracker, L3 tracker link
+12. Coherence audit: build passes, 115 unit tests pass, session file archived
+
 ## 2026-02-21 10:05
 1. Bloom's L3 rebalancing FAR batch 1 (00101): 25 L2→L3 rewrites across 7 topics (Revenue Recognition, Governmental Accounting, Consolidations, Equity, Income Taxes, Fixed Assets, Leases)
 2. Bloom's L3 rebalancing FAR batch 2 (00102): 25 L2→L3 rewrites across 8 topics (Inventory, Fair Value, Financial Statements, Bonds/Debt, NFP, Intangible Assets, Cash/Receivables, Employee Benefits)
