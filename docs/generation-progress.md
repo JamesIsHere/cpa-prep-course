@@ -24,7 +24,7 @@ Each session:
 | AUD     | 1,052 | 5,000 | 120 | 3,828 | 4/146 | In Progress |
 | FAR     | 855 | 5,000 | 0 | 4,145 | 0/148 | Pending |
 | REG     | 847 | 5,000 | 60 | 4,093 | 2/152 | In Progress |
-| BAR     | 776 | 1,667 | 30 | 861 | 1/43 | In Progress |
+| BAR     | 776 | 1,667 | 60 | 831 | 2/43 | In Progress |
 | ISC     | 747 | 1,667 | 0 | 920 | 0/40 | Pending |
 | TCP     | 709 | 1,667 | 0 | 958 | 0/41 | Pending |
 
@@ -200,3 +200,4 @@ Each session:
 | 2026-02-22 | 00164_generate_reg_batch1.sql | REG | Estate and Gift Tax | 30 | Batch 1; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
 | 2026-02-22 | 00165_generate_reg_batch2.sql | REG | Estate and Gift Tax | 30 | Batch 2; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
 | 2026-02-22 | 00166_generate_bar_batch1.sql | BAR | Capital Structure and Valuation | 30 | Batch 1; 9E/15M/6H, L1:6/L2:10/L3:9/L4:5; 0 errors, 0 duplicates |
+| 2026-02-22 | 00167_generate_bar_batch2.sql | BAR | Capital Structure and Valuation | 30 | Batch 2; 9E/15M/6H, L1:6/L2:10/L3:9/L4:5; 0 errors, 1 near-dup warning |
