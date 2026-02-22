@@ -24,7 +24,7 @@ Each session:
 
 | Section | Missing | Total | Coverage Start | Coverage Now | Batches Done | Batches Left | Status      |
 |---------|---------|-------|----------------|--------------|--------------|--------------|-------------|
-| AUD     | 489     | 1,055 | 39%            | 98%          | 13/13        | 0            | Complete    |
+| AUD     | 489     | 1,055 | 39%            | 98%          | 14/14        | 0            | Complete    |
 | ISC     | 677     | 749   | 10%            | 10%          | 0/14         | 14           | Pending     |
 | BAR     | 496     | 780   | 36%            | 36%          | 0/10         | 10           | Pending     |
 | REG     | 441     | 850   | 48%            | 48%          | 0/9          | 9            | Pending     |
@@ -50,6 +50,7 @@ Each session:
 | 2026-02-22 | 00142_citation_aud_batch11.sql         | AUD     | 55    | 93%           | 25 topics covered |
 | 2026-02-22 | 00143_citation_aud_batch12.sql         | AUD     | 55    | 98%           | 24 topics covered |
 | 2026-02-22 | 00144_citation_aud_batch13.sql         | AUD     | 1     | 98%           | Final AUD batch — Internal Controls; AUD section complete |
+| 2026-02-22 | 00145_citation_aud_batch14.sql         | AUD     | 1     | 98%           | Internal Controls (ITGCs); AUD section finalized |
 
 ## Workflow
 
@@ -74,7 +75,7 @@ npm run validate-migration supabase/migrations/NNNNN_citation_aud_batchN.sql
 
 | Section | Migrations         | Batch Range |
 |---------|--------------------|-------------|
-| AUD     | 00130–00143        | 1–14        |
+| AUD     | 00130–00145        | 1–14        |
 | ISC     | 00144–00157        | 1–14        |
 | BAR     | 00158–00167        | 1–10        |
 | REG     | 00168–00176        | 1–9         |
