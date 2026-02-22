@@ -24,7 +24,7 @@ Each session:
 
 | Section | Missing | Total | Coverage Start | Coverage Now | Batches Done | Batches Left | Status      |
 |---------|---------|-------|----------------|--------------|--------------|--------------|-------------|
-| AUD     | 489     | 1,055 | 39%            | 73%          | 7/13         | 6            | In Progress |
+| AUD     | 489     | 1,055 | 39%            | 78%          | 8/13         | 5            | In Progress |
 | ISC     | 677     | 749   | 10%            | 10%          | 0/14         | 14           | Pending     |
 | BAR     | 496     | 780   | 36%            | 36%          | 0/10         | 10           | Pending     |
 | REG     | 441     | 850   | 48%            | 48%          | 0/9          | 9            | Pending     |
@@ -44,6 +44,7 @@ Each session:
 | 2026-02-22 | 00135_citation_aud_batch5.sql          | AUD     | 50    | 63%           | 27 topics covered |
 | 2026-02-22 | 00137_citation_aud_batch6.sql          | AUD     | 50    | 68%           | 26 topics covered |
 | 2026-02-22 | 00138_citation_aud_batch7.sql          | AUD     | 50    | 73%           | 27 topics covered |
+| 2026-02-22 | 00139_citation_aud_batch8.sql          | AUD     | 50    | 78%           | 27 topics covered |
 
 ## Workflow
 
