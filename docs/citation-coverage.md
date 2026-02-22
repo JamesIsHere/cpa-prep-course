@@ -25,7 +25,7 @@ Each session:
 | Section | Missing | Total | Coverage Start | Coverage Now | Batches Done | Batches Left | Status      |
 |---------|---------|-------|----------------|--------------|--------------|--------------|-------------|
 | AUD     | 489     | 1,055 | 39%            | 98%          | 14/14        | 0            | Complete    |
-| ISC     | 677     | 749   | 10%            | 63%          | 8/14         | 6            | In Progress |
+| ISC     | 677     | 749   | 10%            | 70%          | 9/14         | 5            | In Progress |
 | BAR     | 496     | 780   | 36%            | 36%          | 0/10         | 10           | Pending     |
 | REG     | 441     | 850   | 48%            | 48%          | 0/9          | 9            | Pending     |
 | FAR     | 425     | 860   | 51%            | 51%          | 0/9          | 9            | Pending     |
@@ -59,6 +59,7 @@ Each session:
 | 2026-02-22 | 00151_citation_isc_batch6.sql          | ISC     | 50    | 50%           | 16 topics covered (Data Mgmt, Data Protection, ERP, IR, IT Audit, ITGCs, Infra, Privacy, SOC Engagements, SOC Report Content, SOC Reporting/TSC, SOC Testing, Security Controls, Security Frameworks, Sys Avail, Threats) |
 | 2026-02-22 | 00152_citation_isc_batch7.sql          | ISC     | 50    | 57%           | 17 topics covered (Change Mgmt, Data Mgmt, ERP, IR, IT Audit, ITGCs, Infra, Privacy, SOC Engagements, SOC Report Content, SOC Reporting, SOC Reporting/TSC, SOC Testing, Security Controls, Security Frameworks, Sys Avail, Threats) |
 | 2026-02-22 | 00153_citation_isc_batch8.sql          | ISC     | 50    | 63%           | 17 topics covered (Data Mgmt, Data Protection, ERP, IR, IT Audit, ITGCs, Infra, Privacy, SOC Engagements, SOC Report Content, SOC Reporting, SOC Reporting/TSC, SOC Testing, Security Controls, Security Frameworks, Sys Avail, Threats) |
+| 2026-02-22 | 00154_citation_isc_batch9.sql          | ISC     | 50    | 70%           | 18 topics covered (Change Mgmt, Data Mgmt, Data Protection, ERP, IR, IT Audit, ITGCs, Infra, Privacy, SOC Engagements, SOC Report Content, SOC Reporting, SOC Reporting/TSC, SOC Testing, Security Controls, Security Frameworks, Sys Avail, Threats) |
 
 ## Workflow
 
