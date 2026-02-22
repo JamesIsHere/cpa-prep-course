@@ -1,6 +1,8 @@
 // Select L2 candidates for L1 (or L4) rewriting, spread across topics with 30% cap
-// Usage: npx tsx scripts/qa/select-l2-candidates.ts --section=bar --count=23 [--target=l1|l4]
+// Usage: npx tsx scripts/qa/select-l2-candidates.ts --section=bar --count=23 [--target=l1|l4] [--exclude-ids=file.json]
 
+import { readFileSync } from "fs";
+import { resolve } from "path";
 import { analyzeBlooms } from "./analyzers/blooms";
 import { fetchAllQuestions, supabase } from "./db-client";
 
@@ -13,15 +15,31 @@ const countArg = parseInt(
 const targetLevel = (process.argv
 	.find((a) => a.startsWith("--target="))
 	?.split("=")[1] || "l1") as "l1" | "l4";
+const excludeFile = process.argv
+	.find((a) => a.startsWith("--exclude-ids="))
+	?.split("=")[1];
 
 if (!sectionArg || !countArg) {
 	console.error(
-		"Usage: npx tsx scripts/qa/select-l2-candidates.ts --section=bar --count=23 [--target=l1|l4]",
+		"Usage: npx tsx scripts/qa/select-l2-candidates.ts --section=bar --count=23 [--target=l1|l4] [--exclude-ids=file.json]",
 	);
 	process.exit(1);
 }
 
 async function main() {
+	// Load exclude IDs if provided (for cross-batch deduplication)
+	const excludeIds = new Set<number>();
+	if (excludeFile) {
+		try {
+			const raw = readFileSync(resolve(process.cwd(), excludeFile), "utf-8");
+			const ids: number[] = JSON.parse(raw);
+			for (const id of ids) excludeIds.add(id);
+			console.error(`Excluding ${excludeIds.size} IDs from ${excludeFile}`);
+		} catch {
+			console.error(`Warning: Could not load exclude file: ${excludeFile}`);
+		}
+	}
+
 	const { data: sections } = await supabase.from("sections").select("id, code");
 	const sectionCodeMap = new Map<string, string>();
 	for (const s of sections!) sectionCodeMap.set(String(s.id), s.code);
@@ -50,8 +68,10 @@ async function main() {
 		if (r.level === 1) topicL1.set(r.topic, (topicL1.get(r.topic) || 0) + 1);
 	}
 
-	// Build L2 question lookup
-	const l2Ids = new Set(results.filter((r) => r.level === 2).map((r) => r.id));
+	// Build L2 question lookup (excluding already-processed IDs)
+	const l2Ids = new Set(
+		results.filter((r) => r.level === 2 && !excludeIds.has(r.id)).map((r) => r.id),
+	);
 	for (const q of questions) {
 		if (l2Ids.has(q.id)) {
 			const topic = q.topic;

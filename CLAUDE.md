@@ -32,6 +32,18 @@ npm run validate-migration <file>  # Validate question migration against style g
 npm run generate-migration   # Generate UPDATE scaffold from piped candidate JSON
 ```
 
+### Batch Orchestrator
+
+```powershell
+# Run from a standalone PowerShell terminal (not inside Claude Code)
+./scripts/orchestrate.ps1 -Section isc -Mode citation -Batches 14          # Citation backfill
+./scripts/orchestrate.ps1 -Section bar -Mode difficulty -Batches 10        # Difficulty rebalancing
+./scripts/orchestrate.ps1 -Section reg -Mode blooms -Target l3 -Batches 8 # Bloom's rebalancing
+./scripts/orchestrate.ps1 -Section isc -Mode citation -Batches 3 -DryRun  # Preview without Claude
+```
+
+Each batch gets its own headless `claude --print` invocation with a fresh context window. Cross-batch state (exclude IDs, progress) is tracked on disk. Logs written to `docs/orchestrator-logs/`. See `scripts/orchestrate.ps1` for full parameter docs.
+
 ## Architecture
 
 - **App Router only** — all routes under `src/app/`, no Pages Router
@@ -99,7 +111,9 @@ npm run generate-migration   # Generate UPDATE scaffold from piped candidate JSO
 | `supabase/migrations/00125`                           | Delete exact duplicate Q1690                             |
 | `supabase/migrations/00126`                           | Performance indexes (questions, quiz/exam attempts)      |
 | `supabase/migrations/00127`                           | `get_random_questions` RPC for server-side sampling      |
+| `supabase/migrations/00130–00145`                     | Citation backfill — AUD batches 1-14 (complete, 566 questions) |
 | `docs/question-style-guide.md`                | Question writing rubric (all new questions must meet this) |
+| `scripts/orchestrate.ps1`                     | Batch orchestrator (citation/difficulty/blooms, headless Claude) |
 | `scripts/qa/run-qa.ts`                        | QA audit entry point (`npm run qa`)        |
 | `scripts/qa/pull-l2-batch.ts`                 | L2 question extractor for Bloom's rebalancing |
 | `scripts/qa/select-l2-candidates.ts`          | L2 candidate selector with topic cap awareness |
@@ -164,7 +178,7 @@ All build phases complete. Active work is marketing and content connectivity.
 - **Bloom's L3 rebalancing:** Complete — REG 9%→25%, BAR 16%→30%, FAR 16%→26%, TCP 15%→20%. Total: 389 rewrites. Tracker: `docs/blooms-rebalancing.md`
 - **Bloom's L1/L4 rebalancing:** Complete — BAR (23), FAR (51), TCP (71), REG (169), AUD (190), ISC (284). Total: 788/788 rewrites. Tracker: `docs/blooms-l1-l4-rebalancing.md`
 - **Difficulty rebalancing:** In progress — target 30/50/20 easy/medium/hard. ~533 easy→medium rewrites needed. Tracker: `docs/difficulty-rebalancing.md`
-- **Citation coverage:** In progress — 2,970/4,993 explanations lack standard citations (~59%). Working worst-coverage-first: AUD (batch 1 done)→ISC→BAR→REG→FAR→TCP. Batches of 50, migrations 00130–00191. Tracker: `docs/citation-coverage.md`
+- **Citation coverage:** In progress — 2,970/4,993 explanations originally lacked citations (~59%). Working worst-coverage-first. AUD complete (14/14 batches, 98% coverage, migrations 00130–00145). Next: ISC→BAR→REG→FAR→TCP. Batches of 50, orchestrated via `scripts/orchestrate.ps1`. Tracker: `docs/citation-coverage.md`
 
 ## Spec Reference
 

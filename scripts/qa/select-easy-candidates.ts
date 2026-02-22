@@ -1,6 +1,8 @@
 // Select easy questions for difficulty rebalancing (easy→medium rewrites)
-// Usage: npx tsx scripts/qa/select-easy-candidates.ts --section=isc --count=50 [--floor=20]
+// Usage: npx tsx scripts/qa/select-easy-candidates.ts --section=isc --count=50 [--floor=20] [--exclude-ids=file.json]
 
+import { readFileSync } from "fs";
+import { resolve } from "path";
 import { fetchAllQuestions } from "./db-client";
 
 const sectionArg = process.argv
@@ -12,10 +14,13 @@ const countArg = parseInt(
 const floorPct = parseInt(
 	process.argv.find((a) => a.startsWith("--floor="))?.split("=")[1] || "20",
 );
+const excludeFile = process.argv
+	.find((a) => a.startsWith("--exclude-ids="))
+	?.split("=")[1];
 
 if (!sectionArg || !countArg) {
 	console.error(
-		"Usage: npx tsx scripts/qa/select-easy-candidates.ts --section=isc --count=50 [--floor=20]",
+		"Usage: npx tsx scripts/qa/select-easy-candidates.ts --section=isc --count=50 [--floor=20] [--exclude-ids=file.json]",
 	);
 	process.exit(1);
 }
@@ -32,6 +37,19 @@ interface Candidate {
 }
 
 async function main() {
+	// Load exclude IDs if provided (for cross-batch deduplication)
+	const excludeIds = new Set<number>();
+	if (excludeFile) {
+		try {
+			const raw = readFileSync(resolve(process.cwd(), excludeFile), "utf-8");
+			const ids: number[] = JSON.parse(raw);
+			for (const id of ids) excludeIds.add(id);
+			console.error(`Excluding ${excludeIds.size} IDs from ${excludeFile}`);
+		} catch {
+			console.error(`Warning: Could not load exclude file: ${excludeFile}`);
+		}
+	}
+
 	const questions = await fetchAllQuestions(sectionArg!);
 
 	// Build per-topic counts
@@ -40,7 +58,7 @@ async function main() {
 
 	for (const q of questions) {
 		topicTotal.set(q.topic, (topicTotal.get(q.topic) || 0) + 1);
-		if (q.difficulty === "easy") {
+		if (q.difficulty === "easy" && !excludeIds.has(q.id)) {
 			if (!topicEasyQuestions.has(q.topic)) topicEasyQuestions.set(q.topic, []);
 			topicEasyQuestions.get(q.topic)!.push({
 				id: q.id,
