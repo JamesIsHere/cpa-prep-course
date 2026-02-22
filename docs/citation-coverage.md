@@ -25,7 +25,7 @@ Each session:
 | Section | Missing | Total | Coverage Start | Coverage Now | Batches Done | Batches Left | Status      |
 |---------|---------|-------|----------------|--------------|--------------|--------------|-------------|
 | AUD     | 489     | 1,055 | 39%            | 98%          | 14/14        | 0            | Complete    |
-| ISC     | 677     | 749   | 10%            | 10%          | 0/14         | 14           | Pending     |
+| ISC     | 677     | 749   | 10%            | 17%          | 1/14         | 13           | In Progress |
 | BAR     | 496     | 780   | 36%            | 36%          | 0/10         | 10           | Pending     |
 | REG     | 441     | 850   | 48%            | 48%          | 0/9          | 9            | Pending     |
 | FAR     | 425     | 860   | 51%            | 51%          | 0/9          | 9            | Pending     |
@@ -51,6 +51,7 @@ Each session:
 | 2026-02-22 | 00143_citation_aud_batch12.sql         | AUD     | 55    | 98%           | 24 topics covered |
 | 2026-02-22 | 00144_citation_aud_batch13.sql         | AUD     | 1     | 98%           | Final AUD batch — Internal Controls; AUD section complete |
 | 2026-02-22 | 00145_citation_aud_batch14.sql         | AUD     | 1     | 98%           | Internal Controls (ITGCs); AUD section finalized |
+| 2026-02-22 | 00146_citation_isc_batch1.sql          | ISC     | 50    | 17%           | 18 topics covered (Change Mgmt, Data Mgmt, DLP, ERP, IR, IT Audit, ITGCs, Infra, Privacy, SOC, Security) |
 
 ## Workflow
 
