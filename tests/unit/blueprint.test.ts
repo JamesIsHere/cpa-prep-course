@@ -135,7 +135,7 @@ describe("question counts", () => {
 	});
 
 	it("all question count values are positive integers", () => {
-		for (const [topic, count] of Object.entries(questionCounts)) {
+		for (const [, count] of Object.entries(questionCounts)) {
 			expect(count).toBeGreaterThan(0);
 			expect(Number.isInteger(count)).toBe(true);
 		}

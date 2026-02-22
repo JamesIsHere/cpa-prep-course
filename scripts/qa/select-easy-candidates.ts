@@ -1,7 +1,7 @@
 // Select easy questions for difficulty rebalancing (easy→medium rewrites)
 // Usage: npx tsx scripts/qa/select-easy-candidates.ts --section=isc --count=50 [--floor=20]
 
-import { fetchAllQuestions, supabase } from "./db-client";
+import { fetchAllQuestions } from "./db-client";
 
 const sectionArg = process.argv
 	.find((a) => a.startsWith("--section="))
@@ -88,7 +88,7 @@ async function main() {
 	// If we didn't get enough (rounding), fill from topics with most room
 	if (remaining > 0) {
 		const usedIds = new Set(selected.map((s) => s.id));
-		for (const [topic, room] of sortedTopics) {
+		for (const [topic] of sortedTopics) {
 			if (remaining <= 0) break;
 			const candidates = topicEasyQuestions.get(topic) || [];
 			const floorCount = Math.ceil(

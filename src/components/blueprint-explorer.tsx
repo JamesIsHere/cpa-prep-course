@@ -21,7 +21,6 @@ export interface BlueprintExplorerProps {
 
 export default function BlueprintExplorer({
 	sectionSlug,
-	sectionTitle,
 	areas,
 	questionCounts,
 	progress,

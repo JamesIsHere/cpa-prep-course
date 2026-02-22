@@ -25,7 +25,6 @@ type QuizState = "config" | "active" | "results";
 export default function QuizClient({
 	sectionCode,
 	sectionSlug,
-	sectionTitle,
 	recentAttempts,
 	topics,
 }: QuizClientProps) {

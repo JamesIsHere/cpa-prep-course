@@ -12,7 +12,8 @@
     "test:e2e": "playwright test",
     "qa": "tsx scripts/qa/run-qa.ts",
     "validate-migration": "tsx scripts/qa/validate-migration.ts",
-    "generate-migration": "tsx scripts/qa/generate-migration.ts"
+    "generate-migration": "tsx scripts/qa/generate-migration.ts",
+    "health": "tsx scripts/health-check.ts"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",

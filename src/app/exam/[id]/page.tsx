@@ -127,6 +127,7 @@ export default async function ExamSessionPage({
 	const startedAt = new Date(attempt.started_at).getTime();
 	const limitMs = attempt.time_limit_minutes * 60 * 1000;
 
+	// eslint-disable-next-line react-hooks/purity -- server component, not a client render call
 	if (Date.now() - startedAt >= limitMs) {
 		// Auto-expire
 		await supabase

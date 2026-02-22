@@ -60,7 +60,7 @@ describe("FeedbackWidget", () => {
 	});
 
 	it("category toggle switches active category", () => {
-		const { container } = render(<FeedbackWidget />);
+		render(<FeedbackWidget />);
 		fireEvent.click(screen.getByText("Report an issue"));
 
 		// "Content issue" is default selected (emerald)

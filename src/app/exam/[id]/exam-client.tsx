@@ -1,6 +1,5 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 import ExamNavGrid from "@/components/exam-nav-grid";
 import ExamResults from "@/components/exam-results";
@@ -29,7 +28,6 @@ type ExamClientProps =
 	  };
 
 export default function ExamClient(props: ExamClientProps) {
-	const router = useRouter();
 	const [state, setState] = useState<"active" | "results">(props.mode);
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [answers, setAnswers] = useState<Map<number, number>>(new Map());

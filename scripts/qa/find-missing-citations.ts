@@ -35,7 +35,7 @@ async function main() {
 			const ids: number[] = JSON.parse(raw);
 			for (const id of ids) excludeIds.add(id);
 			console.error(`Excluding ${excludeIds.size} IDs from ${excludeFile}`);
-		} catch (err) {
+		} catch {
 			console.error(`Warning: Could not load exclude file: ${excludeFile}`);
 		}
 	}
@@ -70,7 +70,7 @@ async function main() {
 	let remaining = Math.min(countArg, totalMissing);
 
 	// Round-robin proportional selection
-	for (const [topic, items] of sortedTopics) {
+	for (const [, items] of sortedTopics) {
 		if (remaining <= 0) break;
 		const proportion = Math.max(
 			1,

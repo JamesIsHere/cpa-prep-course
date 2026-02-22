@@ -20,11 +20,6 @@ interface ReportData {
 	sectionCodeMap: Map<string, string>;
 }
 
-function pctBar(pct: number, width = 20): string {
-	const filled = Math.round((pct / 100) * width);
-	return "[" + "#".repeat(filled) + ".".repeat(width - filled) + "]";
-}
-
 function inRange(pct: number, range: [number, number]): string {
 	if (range[0] === 0 && range[1] === 0) return pct === 0 ? "OK" : "OVER";
 	if (pct < range[0]) return "LOW";

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import type { ExamResult } from "@/lib/quiz";
 
@@ -188,18 +189,18 @@ export default function ExamResults({ result }: ExamResultsProps) {
 
 			{/* Actions */}
 			<div className="flex flex-col sm:flex-row gap-3 mt-8">
-				<a
+				<Link
 					href="/exam"
 					className="bg-emerald-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-emerald-700 transition-colors text-center"
 				>
 					Take Another Exam
-				</a>
-				<a
+				</Link>
+				<Link
 					href="/dashboard"
 					className="border border-gray-300 text-gray-700 px-6 py-2 rounded-lg font-medium hover:bg-gray-50 transition-colors text-center"
 				>
 					Back to Dashboard
-				</a>
+				</Link>
 			</div>
 		</div>
 	);

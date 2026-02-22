@@ -34,9 +34,6 @@ interface BlueprintGroupDetailProps {
 
 export default function BlueprintGroupDetail({
 	sectionSlug,
-	sectionTitle,
-	areaNumber,
-	areaName,
 	group,
 	groupSlug,
 	lessons,

@@ -7,9 +7,8 @@ import {
 	getFrameworkItemsForGroup,
 	getGroupQuestionCount,
 	parseGroupSlug,
-	questionCounts,
 } from "@/lib/blueprint-utils";
-import { getSection, sections } from "@/lib/sections";
+import { getSection } from "@/lib/sections";
 import { createClient } from "@/lib/supabase/server";
 
 export async function generateMetadata({

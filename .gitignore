@@ -53,6 +53,7 @@ playwright-report/
 
 # claude code
 .claude/
+!.claude/commands/
 
 .vercel
 .env*.local
