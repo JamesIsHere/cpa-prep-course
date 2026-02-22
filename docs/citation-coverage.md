@@ -24,7 +24,7 @@ Each session:
 
 | Section | Missing | Total | Coverage Start | Coverage Now | Batches Done | Batches Left | Status      |
 |---------|---------|-------|----------------|--------------|--------------|--------------|-------------|
-| AUD     | 489     | 1,055 | 39%            | 98%          | 12/13        | 1            | In Progress |
+| AUD     | 489     | 1,055 | 39%            | 98%          | 13/13        | 0            | Complete    |
 | ISC     | 677     | 749   | 10%            | 10%          | 0/14         | 14           | Pending     |
 | BAR     | 496     | 780   | 36%            | 36%          | 0/10         | 10           | Pending     |
 | REG     | 441     | 850   | 48%            | 48%          | 0/9          | 9            | Pending     |
@@ -49,6 +49,7 @@ Each session:
 | 2026-02-22 | 00141_citation_aud_batch10.sql         | AUD     | 55    | 88%           | 27 topics covered |
 | 2026-02-22 | 00142_citation_aud_batch11.sql         | AUD     | 55    | 93%           | 25 topics covered |
 | 2026-02-22 | 00143_citation_aud_batch12.sql         | AUD     | 55    | 98%           | 24 topics covered |
+| 2026-02-22 | 00144_citation_aud_batch13.sql         | AUD     | 1     | 98%           | Final AUD batch — Internal Controls; AUD section complete |
 
 ## Workflow
 
