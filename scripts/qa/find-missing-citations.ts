@@ -24,7 +24,7 @@ if (!sectionArg) {
 
 // Standard citation pattern — same as quality.ts and validate-migration.ts
 const STANDARD_PATTERN =
-	/\b(AU-C|ASC|IRC|FASB|GASB|SSARS|AT-C|SAS|PCAOB|Sec\.|Section|SQMS|SSAE)\b/i;
+	/\b(AU-C|ASC|IRC|FASB|GASB|SSARS|AT-C|AR-C|SAS|PCAOB|Sec\.|Section|SQMS|SSAE|GAGAS|AICPA Code)\b/i;
 
 async function main() {
 	// Load exclude IDs if provided

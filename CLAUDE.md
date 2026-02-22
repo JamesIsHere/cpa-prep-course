@@ -164,7 +164,7 @@ All build phases complete. Active work is marketing and content connectivity.
 - **Bloom's L3 rebalancing:** Complete — REG 9%→25%, BAR 16%→30%, FAR 16%→26%, TCP 15%→20%. Total: 389 rewrites. Tracker: `docs/blooms-rebalancing.md`
 - **Bloom's L1/L4 rebalancing:** Complete — BAR (23), FAR (51), TCP (71), REG (169), AUD (190), ISC (284). Total: 788/788 rewrites. Tracker: `docs/blooms-l1-l4-rebalancing.md`
 - **Difficulty rebalancing:** In progress — target 30/50/20 easy/medium/hard. ~533 easy→medium rewrites needed. Tracker: `docs/difficulty-rebalancing.md`
-- **Citation coverage:** Pending — ~65% of explanations lack standard citations. Tracker: `docs/citation-coverage.md`
+- **Citation coverage:** In progress — 2,970/4,993 explanations lack standard citations (~59%). Working worst-coverage-first: AUD (batch 1 done)→ISC→BAR→REG→FAR→TCP. Batches of 50, migrations 00130–00191. Tracker: `docs/citation-coverage.md`
 
 ## Spec Reference
 
