@@ -21,7 +21,7 @@ Each session:
 
 | Section | Current | Target | Generated | Remaining | Batches Done | Status |
 |---------|---------|--------|-----------|-----------|--------------|--------|
-| AUD     | 1,052 | 5,000 | 30 | 3,918 | 1/146 | In Progress |
+| AUD     | 1,052 | 5,000 | 60 | 3,888 | 2/146 | In Progress |
 | FAR     | 855 | 5,000 | 0 | 4,145 | 0/148 | Pending |
 | REG     | 847 | 5,000 | 0 | 4,153 | 0/152 | Pending |
 | BAR     | 776 | 1,667 | 0 | 891 | 0/43 | Pending |
@@ -194,3 +194,4 @@ Each session:
 | Date | Migration | Section | Topic | Count | Notes |
 |------|-----------|---------|-------|-------|-------|
 | 2026-02-22 | 00160_generate_aud_batch1.sql | AUD | Misstatements and Control Deficiencies | 30 | First generation batch; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5 |
+| 2026-02-22 | 00161_generate_aud_batch2.sql | AUD | Misstatements and Control Deficiencies | 30 | Batch 2; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
