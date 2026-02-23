@@ -25,7 +25,7 @@ Each session:
 | FAR     | 855 | 5,000 | 150 | 3,995 | 5/148 | In Progress |
 | REG     | 847 | 5,000 | 180 | 3,973 | 6/152 | In Progress |
 | BAR     | 776 | 1,667 | 240 | 651 | 8/43 | In Progress |
-| ISC     | 747 | 1,667 | 60 | 860 | 2/40 | In Progress |
+| ISC     | 747 | 1,667 | 90 | 830 | 3/40 | In Progress |
 | TCP     | 709 | 1,667 | 0 | 958 | 0/41 | Pending |
 
 ## Topic Detail
@@ -220,3 +220,4 @@ Each session:
 | 2026-02-23 | 00184_generate_bar_batch8.sql | BAR | Capital Structure and Valuation | 30 | Batch 8; 9E/15M/6H, L1:6/L2:10/L3:9/L4:5; 0 errors, 0 duplicates |
 | 2026-02-23 | 00185_generate_isc_batch1.sql | ISC | Data Protection Technologies | 30 | Batch 1; 9E/15M/6H, L1:6/L2:10/L3:9/L4:5; 0 errors, 0 duplicates |
 | 2026-02-23 | 00186_generate_isc_batch2.sql | ISC | Data Protection Technologies | 30 | Batch 2; 9E/15M/6H, L1:6/L2:10/L3:9/L4:5; 0 errors, 0 duplicates |
+| 2026-02-23 | 00187_generate_isc_batch3.sql | ISC | Data Protection Technologies | 30 | Batch 3; 9E/15M/6H, L1:6/L2:10/L3:9/L4:5; 0 errors, 1 near-dup warning |
