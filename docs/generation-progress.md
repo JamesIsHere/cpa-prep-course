@@ -21,7 +21,7 @@ Each session:
 
 | Section | Current | Target | Generated | Remaining | Batches Done | Status |
 |---------|---------|--------|-----------|-----------|--------------|--------|
-| AUD     | 1,052 | 5,000 | 570 | 3,378 | 19/146 | In Progress |
+| AUD     | 1,052 | 5,000 | 600 | 3,348 | 20/146 | In Progress |
 | FAR     | 855 | 5,000 | 150 | 3,995 | 5/148 | In Progress |
 | REG     | 847 | 5,000 | 180 | 3,973 | 6/152 | In Progress |
 | BAR     | 776 | 1,667 | 240 | 651 | 8/43 | In Progress |
@@ -242,3 +242,4 @@ Each session:
 | 2026-02-23 | 00206_generate_aud_batch17.sql | AUD | Misstatements and Control Deficiencies | 30 | Batch 17; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 1 near-dup warning |
 | 2026-02-23 | 00207_generate_aud_batch18.sql | AUD | Misstatements and Control Deficiencies | 30 | Batch 18; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 1 near-dup warning |
 | 2026-02-23 | 00208_generate_aud_batch19.sql | AUD | Misstatements and Control Deficiencies | 30 | Batch 19; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
+| 2026-02-23 | 00209_generate_aud_batch20.sql | AUD | Misstatements and Control Deficiencies | 30 | Batch 20; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
