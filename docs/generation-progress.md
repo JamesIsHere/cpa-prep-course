@@ -22,7 +22,7 @@ Each session:
 | Section | Current | Target | Generated | Remaining | Batches Done | Status |
 |---------|---------|--------|-----------|-----------|--------------|--------|
 | AUD     | 1,052 | 5,000 | 180 | 3,768 | 6/146 | In Progress |
-| FAR     | 855 | 5,000 | 90 | 4,055 | 3/148 | In Progress |
+| FAR     | 855 | 5,000 | 120 | 4,025 | 4/148 | In Progress |
 | REG     | 847 | 5,000 | 60 | 4,093 | 2/152 | In Progress |
 | BAR     | 776 | 1,667 | 60 | 831 | 2/43 | In Progress |
 | ISC     | 747 | 1,667 | 0 | 920 | 0/40 | Pending |
@@ -206,3 +206,4 @@ Each session:
 | 2026-02-22 | 00170_generate_aud_batch6.sql | AUD | Misstatements and Control Deficiencies | 30 | Batch 6; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
 | 2026-02-22 | 00171_generate_far_batch2.sql | FAR | Governmental Accounting | 30 | Batch 2; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
 | 2026-02-22 | 00172_generate_far_batch3.sql | FAR | Governmental Accounting | 30 | Batch 3; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
+| 2026-02-22 | 00173_generate_far_batch4.sql | FAR | Governmental Accounting | 30 | Batch 4; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
