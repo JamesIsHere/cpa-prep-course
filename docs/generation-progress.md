@@ -23,7 +23,7 @@ Each session:
 |---------|---------|--------|-----------|-----------|--------------|--------|
 | AUD     | 1,052 | 5,000 | 180 | 3,768 | 6/146 | In Progress |
 | FAR     | 855 | 5,000 | 150 | 3,995 | 5/148 | In Progress |
-| REG     | 847 | 5,000 | 120 | 4,033 | 4/152 | In Progress |
+| REG     | 847 | 5,000 | 150 | 4,003 | 5/152 | In Progress |
 | BAR     | 776 | 1,667 | 60 | 831 | 2/43 | In Progress |
 | ISC     | 747 | 1,667 | 0 | 920 | 0/40 | Pending |
 | TCP     | 709 | 1,667 | 0 | 958 | 0/41 | Pending |
@@ -210,3 +210,4 @@ Each session:
 | 2026-02-22 | 00174_generate_far_batch5.sql | FAR | Governmental Accounting | 30 | Batch 5; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
 | 2026-02-22 | 00175_generate_reg_batch3.sql | REG | Estate and Gift Tax | 30 | Batch 3; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
 | 2026-02-22 | 00176_generate_reg_batch4.sql | REG | Estate and Gift Tax | 30 | Batch 4; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
+| 2026-02-22 | 00177_generate_reg_batch5.sql | REG | Estate and Gift Tax | 30 | Batch 5; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
