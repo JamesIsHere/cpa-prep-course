@@ -26,7 +26,7 @@ Each session:
 | REG     | 847 | 5,000 | 180 | 3,973 | 6/152 | In Progress |
 | BAR     | 776 | 1,667 | 240 | 651 | 8/43 | In Progress |
 | ISC     | 747 | 1,667 | 150 | 770 | 5/40 | In Progress |
-| TCP     | 709 | 1,667 | 0 | 958 | 0/41 | Pending |
+| TCP     | 709 | 1,667 | 30 | 928 | 1/41 | In Progress |
 
 ## Topic Detail
 
@@ -223,3 +223,4 @@ Each session:
 | 2026-02-23 | 00187_generate_isc_batch3.sql | ISC | Data Protection Technologies | 30 | Batch 3; 9E/15M/6H, L1:6/L2:10/L3:9/L4:5; 0 errors, 1 near-dup warning |
 | 2026-02-23 | 00188_generate_isc_batch4.sql | ISC | Data Protection Technologies | 30 | Batch 4; 9E/15M/6H, L1:6/L2:10/L3:9/L4:5; 0 errors, 0 duplicates |
 | 2026-02-23 | 00189_generate_isc_batch5.sql | ISC | Data Protection Technologies | 30 | Batch 5; 9E/15M/6H, L1:6/L2:10/L3:9/L4:5; 0 errors, 0 duplicates |
+| 2026-02-23 | 00190_generate_tcp_batch1.sql | TCP | Passive Activity and At-Risk Rules | 30 | Batch 1; 9E/15M/6H, L1:6/L2:10/L3:9/L4:5; 0 errors, 1 near-dup warning |
