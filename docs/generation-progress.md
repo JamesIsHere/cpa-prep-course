@@ -24,7 +24,7 @@ Each session:
 | AUD     | 1,052 | 5,000 | 180 | 3,768 | 6/146 | In Progress |
 | FAR     | 855 | 5,000 | 150 | 3,995 | 5/148 | In Progress |
 | REG     | 847 | 5,000 | 180 | 3,973 | 6/152 | In Progress |
-| BAR     | 776 | 1,667 | 210 | 681 | 7/43 | In Progress |
+| BAR     | 776 | 1,667 | 240 | 651 | 8/43 | In Progress |
 | ISC     | 747 | 1,667 | 0 | 920 | 0/40 | Pending |
 | TCP     | 709 | 1,667 | 0 | 958 | 0/41 | Pending |
 
@@ -217,3 +217,4 @@ Each session:
 | 2026-02-22 | 00181_generate_bar_batch5.sql | BAR | Capital Structure and Valuation | 30 | Batch 5; 9E/15M/6H, L1:6/L2:10/L3:9/L4:5; 0 errors, 0 duplicates |
 | 2026-02-22 | 00182_generate_bar_batch6.sql | BAR | Capital Structure and Valuation | 30 | Batch 6; 9E/15M/6H, L1:6/L2:10/L3:9/L4:5; 0 errors, 0 duplicates |
 | 2026-02-23 | 00183_generate_bar_batch7.sql | BAR | Capital Structure and Valuation | 30 | Batch 7; 9E/15M/6H, L1:6/L2:10/L3:9/L4:5; 0 errors, 2 near-dup warnings |
+| 2026-02-23 | 00184_generate_bar_batch8.sql | BAR | Capital Structure and Valuation | 30 | Batch 8; 9E/15M/6H, L1:6/L2:10/L3:9/L4:5; 0 errors, 0 duplicates |
