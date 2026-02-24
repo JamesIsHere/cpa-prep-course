@@ -206,6 +206,49 @@ async function checkEnvConsistency(): Promise<CheckResult> {
 	return { name: "Env consistency", status: "pass", message: "NEXT_PUBLIC_SITE_URL matches target", ms: 0 };
 }
 
+// ── Vercel deployment check ──
+
+async function checkVercelDeployment(): Promise<CheckResult> {
+	const token = process.env.VERCEL_TOKEN;
+	const projectId = process.env.VERCEL_PROJECT_ID;
+	if (!token) {
+		return { name: "Vercel deployment", status: "skip", message: "VERCEL_TOKEN not set in .env.local", ms: 0 };
+	}
+	const start = Date.now();
+	try {
+		const params = new URLSearchParams({ limit: "1", target: "production" });
+		if (projectId) params.set("projectId", projectId);
+		const res = await fetch(`https://api.vercel.com/v6/deployments?${params}`, {
+			headers: { Authorization: `Bearer ${token}` },
+		});
+		const ms = Date.now() - start;
+		if (!res.ok) {
+			return { name: "Vercel deployment", status: "fail", message: `API ${res.status}: ${res.statusText}`, ms };
+		}
+		const json = await res.json();
+		const d = json.deployments?.[0];
+		if (!d) {
+			return { name: "Vercel deployment", status: "warn", message: "No production deployments found", ms };
+		}
+		const age = Date.now() - d.created;
+		const agoMin = Math.round(age / 60000);
+		const agoStr = agoMin < 60 ? `${agoMin}m ago` : `${Math.round(agoMin / 60)}h ago`;
+		const sha = d.meta?.githubCommitSha?.slice(0, 7) || "unknown";
+		if (d.state === "READY" || d.readyState === "READY") {
+			return { name: `Vercel deployment: ${sha} READY (${agoStr})`, status: "pass", message: `Deployed ${agoStr}`, ms };
+		}
+		if (d.state === "ERROR" || d.readyState === "ERROR") {
+			return { name: `Vercel deployment: ${sha} ERROR (${agoStr})`, status: "fail", message: `Build failed ${agoStr}`, ms };
+		}
+		if (d.state === "BUILDING" || d.readyState === "BUILDING") {
+			return { name: `Vercel deployment: ${sha} BUILDING (${agoStr})`, status: "warn", message: `Build in progress`, ms };
+		}
+		return { name: `Vercel deployment: ${d.state || d.readyState} (${agoStr})`, status: "warn", message: `State: ${d.state || d.readyState}`, ms };
+	} catch (err) {
+		return { name: "Vercel deployment", status: "fail", message: err instanceof Error ? err.message : String(err), ms: Date.now() - start };
+	}
+}
+
 // ── Main ──
 
 async function main() {
@@ -232,12 +275,13 @@ async function main() {
 	// Direct checks
 	log(`\n${bold("Direct Checks")}`);
 	const directResults: CheckResult[] = [];
-	const [db, stripe, env] = await Promise.all([
+	const [db, stripe, env, vercel] = await Promise.all([
 		checkSupabaseDb(),
 		checkStripePrice(),
 		checkEnvConsistency(),
+		checkVercelDeployment(),
 	]);
-	directResults.push(db, stripe, env);
+	directResults.push(db, stripe, env, vercel);
 	for (const r of directResults) {
 		log(formatResult(r));
 	}
