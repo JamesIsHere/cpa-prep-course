@@ -59,5 +59,8 @@ playwright-report/
 # orchestrator logs (local only, not committed)
 docs/orchestrator-logs/
 
+# security audit (local only, contains sensitive context)
+security/
+
 .vercel
 .env*.local

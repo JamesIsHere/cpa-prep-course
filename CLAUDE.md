@@ -151,7 +151,15 @@ Each batch gets its own headless `claude --print` invocation with a fresh contex
 
 ## Database Tables
 
-`profiles`, `sections`, `lessons`, `questions`, `quiz_attempts`, `exam_attempts` — all defined in `00001_initial_schema.sql` with RLS policies. Auto-profile trigger creates a profile on user signup. `questions` table has optional `cognitive_level` column (1-4, Bloom's taxonomy) added in migration 00038. `quiz_attempts` has `topic_scores` JSONB column (array of `{topic, correct, total}`) added in migration 00094 for per-topic progress tracking.
+`profiles`, `sections`, `lessons`, `questions`, `quiz_attempts`, `exam_attempts`, `feedback` — all defined in migrations with RLS enabled. Auto-profile trigger creates a profile on user signup. `questions` table has optional `cognitive_level` column (1-4, Bloom's taxonomy) added in migration 00038. `quiz_attempts` has `topic_scores` JSONB column (array of `{topic, correct, total}`) added in migration 00094 for per-topic progress tracking.
+
+### !! MANDATORY — Row Level Security !!
+
+**Every new table MUST have `ALTER TABLE <name> ENABLE ROW LEVEL SECURITY;` in its migration.** No exceptions. A table without RLS is publicly readable AND writable by anyone with the anon key. Every migration that creates a table must include:
+
+1. `ALTER TABLE <name> ENABLE ROW LEVEL SECURITY;`
+2. At least one policy (e.g., `SELECT using (true)` for public read, or `using (auth.uid() = user_id)` for user isolation)
+3. If only read access is intended, do NOT add insert/update/delete policies — RLS will deny them by default
 
 ## Current Phase
 
