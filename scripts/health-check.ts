@@ -249,6 +249,159 @@ async function checkVercelDeployment(): Promise<CheckResult> {
 	}
 }
 
+// ── SEO checks ──
+
+async function checkSitemap(): Promise<CheckResult> {
+	const [res, ms, err] = await timedFetch(`${targetUrl}/sitemap.xml`);
+	if (err || !res) {
+		return { name: "Sitemap", status: "fail", message: err || "No response", ms };
+	}
+	if (res.status !== 200) {
+		return { name: "Sitemap", status: "fail", message: `HTTP ${res.status}`, ms };
+	}
+	const text = await res.text();
+	if (!text.includes("<urlset") && !text.includes("<sitemapindex")) {
+		return { name: "Sitemap", status: "fail", message: "Not valid sitemap XML", ms };
+	}
+	const urlCount = (text.match(/<url>/g) || []).length;
+	return { name: `Sitemap: ${urlCount} URLs`, status: "pass", message: `${urlCount} URLs`, ms };
+}
+
+async function checkRobotsTxt(): Promise<CheckResult> {
+	const [res, ms, err] = await timedFetch(`${targetUrl}/robots.txt`);
+	if (err || !res) {
+		return { name: "robots.txt", status: "fail", message: err || "No response", ms };
+	}
+	if (res.status !== 200) {
+		return { name: "robots.txt", status: "fail", message: `HTTP ${res.status}`, ms };
+	}
+	const text = await res.text();
+	if (!text.includes("User-Agent") && !text.includes("user-agent")) {
+		return { name: "robots.txt", status: "warn", message: "File exists but no User-Agent directive", ms };
+	}
+	const hasSitemap = text.toLowerCase().includes("sitemap:");
+	return { name: `robots.txt${hasSitemap ? " (has sitemap ref)" : ""}`, status: "pass", message: "Valid", ms };
+}
+
+// ── Content page checks ──
+
+const CONTENT_PAGES = [
+	{ path: "/sections", name: "Sections listing" },
+	{ path: "/blog", name: "Blog listing" },
+	{ path: "/sections/aud", name: "Section detail (AUD)" },
+	{ path: "/sections/aud/lessons/01-intro-to-auditing", name: "Free lesson" },
+	{ path: "/sections/aud/blueprint", name: "Blueprint explorer" },
+	{ path: "/blog/slayer-cpa-vs-becker", name: "Blog post" },
+	{ path: "/signup", name: "Signup page" },
+	{ path: "/login", name: "Login page" },
+];
+
+async function checkContentPage(page: { path: string; name: string }): Promise<CheckResult> {
+	const [res, ms, err] = await timedFetch(`${targetUrl}${page.path}`);
+	if (err || !res) {
+		return { name: `${page.name} ${page.path}`, status: "fail", message: err || "No response", ms };
+	}
+	if (res.status >= 500) {
+		return { name: `${page.name} ${page.path} -> ${res.status}`, status: "fail", message: `Server error`, ms };
+	}
+	if (res.status === 404) {
+		return { name: `${page.name} ${page.path} -> 404`, status: "fail", message: `Not found`, ms };
+	}
+	if (res.status >= 300 && res.status < 400) {
+		return { name: `${page.name} ${page.path} -> ${res.status}`, status: "pass", message: `Redirect (expected for auth)`, ms };
+	}
+	return { name: `${page.name} ${page.path} -> ${res.status}`, status: "pass", message: `OK`, ms };
+}
+
+// ── SSL certificate check ──
+
+async function checkSslCert(): Promise<CheckResult> {
+	const start = Date.now();
+	if (targetUrl.startsWith("http://")) {
+		return { name: "SSL certificate", status: "skip", message: "HTTP target, no SSL", ms: 0 };
+	}
+	try {
+		const tls = await import("tls");
+		const hostname = new URL(targetUrl).hostname;
+		const cert = await new Promise<{ valid_to?: string }>((resolve, reject) => {
+			const socket = tls.connect({ host: hostname, port: 443, servername: hostname }, () => {
+				const c = socket.getPeerCertificate();
+				socket.destroy();
+				resolve(c);
+			});
+			socket.on("error", reject);
+			socket.setTimeout(10000, () => { socket.destroy(); reject(new Error("Timeout")); });
+		});
+		const ms = Date.now() - start;
+		if (!cert.valid_to) {
+			return { name: "SSL certificate", status: "warn", message: "No expiry in certificate", ms };
+		}
+		const expiry = new Date(cert.valid_to);
+		const daysLeft = Math.floor((expiry.getTime() - Date.now()) / 86400000);
+		if (daysLeft < 0) {
+			return { name: `SSL certificate: EXPIRED`, status: "fail", message: `Expired ${Math.abs(daysLeft)} days ago`, ms };
+		}
+		if (daysLeft < 14) {
+			return { name: `SSL certificate: ${daysLeft} days left`, status: "fail", message: `Expires ${expiry.toISOString().slice(0, 10)}`, ms };
+		}
+		if (daysLeft < 30) {
+			return { name: `SSL certificate: ${daysLeft} days left`, status: "warn", message: `Expires ${expiry.toISOString().slice(0, 10)}`, ms };
+		}
+		return { name: `SSL certificate: ${daysLeft} days left`, status: "pass", message: `Expires ${expiry.toISOString().slice(0, 10)}`, ms };
+	} catch (err) {
+		return { name: "SSL certificate", status: "warn", message: err instanceof Error ? err.message : String(err), ms: Date.now() - start };
+	}
+}
+
+// ── Deploy freshness ──
+
+async function checkDeployFreshness(): Promise<CheckResult> {
+	const start = Date.now();
+	try {
+		const { execSync } = await import("child_process");
+		const localSha = execSync("git rev-parse HEAD", { encoding: "utf-8", timeout: 5000 }).trim().slice(0, 7);
+		// Fetch the homepage and check x-vercel-deployment-url or look for commit sha in meta
+		const [res, fetchMs, err] = await timedFetch(targetUrl);
+		const ms = Date.now() - start;
+		if (err || !res) {
+			return { name: "Deploy freshness", status: "warn", message: "Could not fetch homepage", ms };
+		}
+		const vercelId = res.headers.get("x-vercel-id");
+		if (!vercelId) {
+			return { name: "Deploy freshness", status: "skip", message: "No x-vercel-id header (not Vercel?)", ms };
+		}
+		// Use Vercel API if token available to compare SHAs
+		const token = process.env.VERCEL_TOKEN;
+		if (!token) {
+			return { name: `Deploy freshness: local ${localSha}`, status: "skip", message: "VERCEL_TOKEN not set — cannot compare deployed SHA", ms };
+		}
+		const params = new URLSearchParams({ limit: "1", target: "production" });
+		const projectId = process.env.VERCEL_PROJECT_ID;
+		if (projectId) params.set("projectId", projectId);
+		const apiRes = await fetch(`https://api.vercel.com/v6/deployments?${params}`, {
+			headers: { Authorization: `Bearer ${token}` },
+		});
+		const ms2 = Date.now() - start;
+		if (!apiRes.ok) {
+			return { name: "Deploy freshness", status: "warn", message: `Vercel API ${apiRes.status}`, ms: ms2 };
+		}
+		const json = await apiRes.json();
+		const d = json.deployments?.[0];
+		const deployedSha = d?.meta?.githubCommitSha?.slice(0, 7);
+		if (!deployedSha) {
+			return { name: "Deploy freshness", status: "warn", message: "No SHA in deployment metadata", ms: ms2 };
+		}
+		if (deployedSha === localSha) {
+			return { name: `Deploy freshness: ${localSha} = deployed`, status: "pass", message: "Local matches production", ms: ms2 };
+		}
+		// Count how many commits behind
+		const behindCount = execSync(`git rev-list --count ${deployedSha}..HEAD 2>/dev/null || echo ?`, { encoding: "utf-8", timeout: 5000 }).trim();
+		return { name: `Deploy freshness: local ${localSha} != deployed ${deployedSha} (${behindCount} ahead)`, status: "warn", message: `Production is ${behindCount} commits behind`, ms: ms2 };
+	} catch (err) {
+		return { name: "Deploy freshness", status: "warn", message: err instanceof Error ? err.message : String(err), ms: Date.now() - start };
+	}
+}
+
 // ── Main ──
 
 async function main() {
@@ -272,16 +425,33 @@ async function main() {
 		log(formatResult(r));
 	}
 
+	// Content page checks
+	log(`\n${bold("Content Pages")}`);
+	const contentResults = await Promise.all(CONTENT_PAGES.map(checkContentPage));
+	for (const r of contentResults) {
+		remoteResults.push(r);
+		log(formatResult(r));
+	}
+
+	// SEO checks
+	log(`\n${bold("SEO")}`);
+	const [sitemap, robots, ssl] = await Promise.all([checkSitemap(), checkRobotsTxt(), checkSslCert()]);
+	for (const r of [sitemap, robots, ssl]) {
+		remoteResults.push(r);
+		log(formatResult(r));
+	}
+
 	// Direct checks
 	log(`\n${bold("Direct Checks")}`);
 	const directResults: CheckResult[] = [];
-	const [db, stripe, env, vercel] = await Promise.all([
+	const [db, stripe, env, vercel, freshness] = await Promise.all([
 		checkSupabaseDb(),
 		checkStripePrice(),
 		checkEnvConsistency(),
 		checkVercelDeployment(),
+		checkDeployFreshness(),
 	]);
-	directResults.push(db, stripe, env, vercel);
+	directResults.push(db, stripe, env, vercel, freshness);
 	for (const r of directResults) {
 		log(formatResult(r));
 	}
