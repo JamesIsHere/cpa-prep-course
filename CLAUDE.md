@@ -112,8 +112,14 @@ Each batch gets its own headless `claude --print` invocation with a fresh contex
 | `supabase/migrations/00125`                           | Delete exact duplicate Q1690                             |
 | `supabase/migrations/00126`                           | Performance indexes (questions, quiz/exam attempts)      |
 | `supabase/migrations/00127`                           | `get_random_questions` RPC for server-side sampling      |
+| `supabase/migrations/00128–00129`                     | Difficulty rebalancing — ISC (68 questions)               |
 | `supabase/migrations/00130–00145`                     | Citation backfill — AUD batches 1-14 (complete, 566 questions) |
+| `supabase/migrations/00146–00159`                     | Citation backfill — ISC batches 1-14 (complete, 677 questions) |
+| `supabase/migrations/00160–00245`                     | Question generation — 86 batches, 2,580 new questions    |
+| `supabase/migrations/00246–00248`                     | RLS hardening + auth optimization                        |
 | `docs/question-style-guide.md`                | Question writing rubric (all new questions must meet this) |
+| `scripts/apply-migrations.mjs`                | Apply pending SQL migrations via exec_sql RPC            |
+| `scripts/health-check.ts`                     | Health check CLI (migration sync, DB, Stripe, Vercel, SEO) |
 | `scripts/orchestrate.ps1`                     | Batch orchestrator (citation/difficulty/blooms, headless Claude) |
 | `scripts/qa/run-qa.ts`                        | QA audit entry point (`npm run qa`)        |
 | `scripts/qa/pull-l2-batch.ts`                 | L2 question extractor for Bloom's rebalancing |
@@ -140,14 +146,14 @@ Each batch gets its own headless `claude --print` invocation with a fresh contex
 
 | Section | Code | Lessons | Questions | Framework Items | Topics                                            |
 |---------|------|---------|-----------|-----------------|---------------------------------------------------|
-| AUD     | aud  | 13      | ~1,055    | 37              | Ethics, planning, risk, controls, evidence, sampling, reports, review/compilation, attestation, quality mgmt, government auditing |
-| FAR     | far  | 18      | ~860      | 60              | Financial statements, revenue, inventory, fixed/intangible assets, leases, bonds, equity, tax, govt, NFP, consolidations, contingencies, fair value |
-| REG     | reg  | 18      | ~850      | 60              | Circular 230, contracts, agency, business structures, basis, gains/losses, 1031, individual tax, credits, filing status, C/S corps, partnerships, tax procedures, legal duties, debtor-creditor, tax-exempt orgs |
-| BAR     | bar  | 16      | ~780      | 40              | Financial analysis, valuation, capital structure, derivatives, consolidations, govt reporting, fund reconciliation, interfund transactions |
-| ISC     | isc  | 16      | ~749      | 39              | IT infrastructure, ERP, data management, security frameworks, threats, privacy, SOC, SOC testing, SOC reporting |
-| TCP     | tcp  | 15      | ~699      | 44              | Individual planning, passive/at-risk, wealth transfer, retirement, international tax, trusts, capital structure tax, nontaxable dispositions, related parties |
+| AUD     | aud  | 13      | ~2,732    | 37              | Ethics, planning, risk, controls, evidence, sampling, reports, review/compilation, attestation, quality mgmt, government auditing |
+| FAR     | far  | 18      | ~1,005    | 60              | Financial statements, revenue, inventory, fixed/intangible assets, leases, bonds, equity, tax, govt, NFP, consolidations, contingencies, fair value |
+| REG     | reg  | 18      | ~1,027    | 60              | Circular 230, contracts, agency, business structures, basis, gains/losses, 1031, individual tax, credits, filing status, C/S corps, partnerships, tax procedures, legal duties, debtor-creditor, tax-exempt orgs |
+| BAR     | bar  | 16      | ~1,016    | 40              | Financial analysis, valuation, capital structure, derivatives, consolidations, govt reporting, fund reconciliation, interfund transactions |
+| ISC     | isc  | 16      | ~897      | 39              | IT infrastructure, ERP, data management, security frameworks, threats, privacy, SOC, SOC testing, SOC reporting |
+| TCP     | tcp  | 15      | ~889      | 44              | Individual planning, passive/at-risk, wealth transfer, retirement, international tax, trusts, capital structure tax, nontaxable dispositions, related parties |
 
-**Totals:** 96 lessons, ~4,990 questions (target: 20,000), 280 framework items across 6 sections
+**Totals:** 96 lessons, ~7,566 questions (target: 20,000), 280 framework items across 6 sections
 
 ## Database Tables
 

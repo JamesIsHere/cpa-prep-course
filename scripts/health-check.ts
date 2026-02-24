@@ -2,8 +2,8 @@
 // Usage: npm run health [-- --url=https://www.slayer-cpa.com] [-- --json]
 
 import { config } from "dotenv";
-import { dirname, resolve } from "path";
-import { existsSync } from "fs";
+import { dirname, resolve, join } from "path";
+import { existsSync, readdirSync, readFileSync } from "fs";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -402,6 +402,108 @@ async function checkDeployFreshness(): Promise<CheckResult> {
 	}
 }
 
+// ── Migration sync check ──
+
+function countLocalQuestions(): { inserts: number; deletes: number; expected: number } {
+	const migrationsDir = resolve(__dirname, "../supabase/migrations");
+	if (!existsSync(migrationsDir)) return { inserts: 0, deletes: 0, expected: 0 };
+
+	let inserts = 0;
+	let deletes = 0;
+
+	const files = readdirSync(migrationsDir).filter(f => f.endsWith(".sql")).sort();
+	for (const file of files) {
+		const content = readFileSync(join(migrationsDir, file), "utf8");
+
+		// Count INSERT value rows (lines starting with (section_id, ...)
+		if (content.includes("INSERT INTO questions") || content.includes("insert into questions")) {
+			inserts += content.split("\n").filter(line => /^\s*\(\s*\d+\s*,/.test(line)).length;
+		}
+
+		// Count DELETE IDs
+		if (content.includes("DELETE FROM questions")) {
+			const singleDeletes = content.match(/DELETE FROM questions\s+WHERE id = \d+/g);
+			if (singleDeletes) deletes += singleDeletes.length;
+			const inBlocks = content.match(/DELETE FROM questions\s+WHERE id IN \(([\s\S]*?)\)/g);
+			if (inBlocks) {
+				for (const block of inBlocks) {
+					const ids = block.match(/\d{2,}/g); // IDs are multi-digit
+					if (ids) deletes += ids.length;
+				}
+			}
+		}
+	}
+	return { inserts, deletes, expected: inserts - deletes };
+}
+
+async function checkMigrationSync(): Promise<CheckResult> {
+	if (!hasEnvFile) {
+		return { name: "Migration sync", status: "skip", message: "No .env.local", ms: 0 };
+	}
+	const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+	const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+	if (!url || !key) {
+		return { name: "Migration sync", status: "skip", message: "Missing env vars", ms: 0 };
+	}
+	const start = Date.now();
+	try {
+		const local = countLocalQuestions();
+		const { createClient } = await import("@supabase/supabase-js");
+		const supabase = createClient(url, key);
+
+		const { count: liveTotal, error } = await supabase
+			.from("questions")
+			.select("id", { count: "exact", head: true });
+		const ms = Date.now() - start;
+
+		if (error) {
+			return { name: "Migration sync", status: "fail", message: error.message, ms };
+		}
+
+		if (liveTotal === null) {
+			return { name: "Migration sync", status: "fail", message: "Could not get live count", ms };
+		}
+
+		const diff = local.expected - liveTotal;
+
+		// If live count is close to expected (within 50 for historical dedup/edge cases), pass
+		if (diff <= 50 && diff >= 0) {
+			return {
+				name: `Migration sync: ${liveTotal} live, ${local.inserts} inserts`,
+				status: "pass",
+				message: `DB has ${liveTotal} questions (${local.inserts} inserts - ${local.deletes} deletes = ${local.expected} expected)`,
+				ms,
+			};
+		}
+
+		// Live count exceeds local (manual additions or already applied) — pass
+		if (liveTotal >= local.expected) {
+			return {
+				name: `Migration sync: ${liveTotal} live >= ${local.expected} expected`,
+				status: "pass",
+				message: `DB has ${liveTotal} questions, migrations expect ${local.expected}`,
+				ms,
+			};
+		}
+
+		// Significant gap: likely unapplied generation migrations
+		const behind = local.expected - liveTotal;
+		return {
+			name: `Migration sync: ~${behind} questions not applied`,
+			status: "fail",
+			message: `DB has ${liveTotal} but migrations expect ${local.expected} (${local.inserts} inserts - ${local.deletes} deletes). Run: node scripts/apply-migrations.mjs`,
+			ms,
+		};
+	} catch (err) {
+		return {
+			name: "Migration sync",
+			status: "fail",
+			message: err instanceof Error ? err.message : String(err),
+			ms: Date.now() - start,
+		};
+	}
+}
+
 // ── Main ──
 
 async function main() {
@@ -444,14 +546,15 @@ async function main() {
 	// Direct checks
 	log(`\n${bold("Direct Checks")}`);
 	const directResults: CheckResult[] = [];
-	const [db, stripe, env, vercel, freshness] = await Promise.all([
+	const [db, migSync, stripe, env, vercel, freshness] = await Promise.all([
 		checkSupabaseDb(),
+		checkMigrationSync(),
 		checkStripePrice(),
 		checkEnvConsistency(),
 		checkVercelDeployment(),
 		checkDeployFreshness(),
 	]);
-	directResults.push(db, stripe, env, vercel, freshness);
+	directResults.push(db, migSync, stripe, env, vercel, freshness);
 	for (const r of directResults) {
 		log(formatResult(r));
 	}
