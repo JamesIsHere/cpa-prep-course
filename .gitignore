@@ -57,7 +57,7 @@ playwright-report/
 !.claude/commands/
 
 # orchestrator logs (local only, not committed)
-docs/orchestrator-logs/*.log
+docs/orchestrator-logs/
 
 .vercel
 .env*.local
