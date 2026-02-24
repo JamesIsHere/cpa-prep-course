@@ -23,6 +23,7 @@ if (!sectionArg) {
 	);
 	process.exit(1);
 }
+const section: string = sectionArg;
 
 // Section citation patterns
 const CITATION_PATTERNS: Record<string, string> = {
@@ -71,14 +72,14 @@ async function main() {
 	}
 
 	const plan = JSON.parse(readFileSync(planPath, "utf-8"));
-	const sectionPlan = plan.sections.find((s: { section: string }) => s.section === sectionArg);
+	const sectionPlan = plan.sections.find((s: { section: string }) => s.section === section);
 	if (!sectionPlan) {
-		console.error(`Section ${sectionArg} not found in generation plan`);
+		console.error(`Section ${section} not found in generation plan`);
 		process.exit(1);
 	}
 
 	// Fetch live DB counts for this section
-	const questions = await fetchAllQuestions(sectionArg);
+	const questions = await fetchAllQuestions(section);
 
 	// Count per topic in DB
 	const dbTopicCounts = new Map<string, number>();
@@ -101,7 +102,7 @@ async function main() {
 
 	// Check if section is complete
 	if (gaps.length === 0 || gaps.every((g) => g.remaining < 10)) {
-		console.error(`Section ${sectionArg.toUpperCase()} is complete or near-complete.`);
+		console.error(`Section ${section.toUpperCase()} is complete or near-complete.`);
 		if (gaps.length > 0) {
 			console.error("Remaining gaps (< 10 each):");
 			for (const g of gaps) {
@@ -126,7 +127,7 @@ async function main() {
 	const medium = count - easy - hard;
 
 	// Compute Bloom's split
-	const bt = BLOOMS_TARGETS[sectionArg] || BLOOMS_TARGETS.aud;
+	const bt = BLOOMS_TARGETS[section] || BLOOMS_TARGETS.aud;
 	const l1 = Math.round(count * bt.l1);
 	const l3 = Math.round(count * bt.l3);
 	const l4 = Math.round(count * bt.l4);
@@ -136,14 +137,14 @@ async function main() {
 	const existingStems = stemsByTopic.get(picked.topic) || [];
 
 	const batchSpec: BatchSpec = {
-		section: sectionArg,
+		section: section,
 		sectionId: sectionPlan.sectionId,
 		topic: picked.topic,
 		count,
 		difficulty: { easy, medium, hard },
 		blooms: { l1, l2, l3, l4 },
 		existingStems,
-		citationPatterns: CITATION_PATTERNS[sectionArg] || "",
+		citationPatterns: CITATION_PATTERNS[section] || "",
 	};
 
 	// Output JSON to stdout
