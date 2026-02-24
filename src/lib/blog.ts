@@ -39,6 +39,30 @@ const blogPosts: BlogPost[] = [
 		date: "2026-02-21",
 		contentPath: "blog/which-cpa-section-first",
 	},
+	{
+		slug: "how-to-study-for-the-cpa-exam",
+		title: "How to Study for the CPA Exam: A Complete Guide",
+		description:
+			"A step-by-step study approach covering section order, Blueprint-based prioritization, practice questions, spaced repetition, and realistic scheduling.",
+		date: "2026-02-24",
+		contentPath: "blog/how-to-study-for-the-cpa-exam",
+	},
+	{
+		slug: "is-the-cpa-exam-hard",
+		title: "Is the CPA Exam Hard? What to Actually Expect",
+		description:
+			"An honest look at CPA exam difficulty — pass rates, what makes each section hard, adaptive testing, and what separates candidates who pass from those who don't.",
+		date: "2026-02-24",
+		contentPath: "blog/is-the-cpa-exam-hard",
+	},
+	{
+		slug: "how-long-to-pass-the-cpa-exam",
+		title: "How Long Does It Take to Pass the CPA Exam?",
+		description:
+			"Realistic CPA exam timelines based on weekly study hours, with per-section hour estimates, common delays, and a sample 12-month plan.",
+		date: "2026-02-24",
+		contentPath: "blog/how-long-to-pass-the-cpa-exam",
+	},
 ];
 
 export function getAllPosts(): BlogPost[] {
