@@ -58,7 +58,7 @@ export async function fetchAllQuestions(
 	}
 
 	const all: DbQuestion[] = [];
-	const pageSize = 5000;
+	const pageSize = 1000;
 	let offset = 0;
 
 	while (true) {

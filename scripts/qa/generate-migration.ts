@@ -3,12 +3,15 @@
 // Usage (difficulty): ... | npx tsx scripts/qa/generate-migration.ts --mode=difficulty --section=isc --batch=1
 // Usage (citation):   ... | npx tsx scripts/qa/generate-migration.ts --mode=citation --section=aud --batch=1
 
-import { readdirSync, writeFileSync } from "fs";
-import { dirname, resolve } from "path";
-import { fileURLToPath } from "url";
+import { writeFileSync } from "fs";
+import { resolve } from "path";
+import {
+	getNextMigrationNumber,
+	getMigrationsDir,
+	readStdin,
+} from "./utils";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const migrationsDir = resolve(__dirname, "../../supabase/migrations");
+const migrationsDir = getMigrationsDir();
 
 // Parse CLI args
 const modeArg = (process.argv
@@ -58,23 +61,6 @@ if (modeArg === "blooms") {
 		console.error(`Invalid target: ${targetArg}. Must be l1, l3, or l4.`);
 		process.exit(1);
 	}
-}
-
-// Auto-detect next migration number
-function getNextMigrationNumber(): string {
-	const files = readdirSync(migrationsDir).sort();
-	const last = files[files.length - 1];
-	const num = parseInt(last.slice(0, 5)) + 1;
-	return String(num).padStart(5, "0");
-}
-
-// Read stdin
-async function readStdin(): Promise<string> {
-	const chunks: Buffer[] = [];
-	for await (const chunk of process.stdin) {
-		chunks.push(chunk);
-	}
-	return Buffer.concat(chunks).toString("utf-8");
 }
 
 interface Candidate {

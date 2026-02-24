@@ -2,6 +2,7 @@
 // Scoped within same topic to keep pairwise comparisons manageable
 
 import type { DbQuestion } from "../db-client";
+import { trigrams, jaccardSimilarity } from "../utils";
 
 export interface DuplicatePair {
 	id1: number;
@@ -17,35 +18,6 @@ export interface DuplicateAnalysis {
 	pairs: DuplicatePair[];
 	nearDuplicateCount: number;
 	likelyDuplicateCount: number;
-}
-
-/**
- * Generate character trigrams from text.
- */
-function trigrams(text: string): Set<string> {
-	const normalized = text
-		.toLowerCase()
-		.replace(/[^a-z0-9\s]/g, "")
-		.replace(/\s+/g, " ")
-		.trim();
-	const result = new Set<string>();
-	for (let i = 0; i <= normalized.length - 3; i++) {
-		result.add(normalized.slice(i, i + 3));
-	}
-	return result;
-}
-
-/**
- * Jaccard similarity between two trigram sets.
- */
-function jaccardSimilarity(a: Set<string>, b: Set<string>): number {
-	if (a.size === 0 && b.size === 0) return 1;
-	let intersection = 0;
-	for (const t of a) {
-		if (b.has(t)) intersection++;
-	}
-	const union = a.size + b.size - intersection;
-	return union === 0 ? 0 : intersection / union;
 }
 
 export function analyzeDuplicates(questions: DbQuestion[]): DuplicateAnalysis {

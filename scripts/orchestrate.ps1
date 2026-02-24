@@ -9,6 +9,7 @@
     ./scripts/orchestrate.ps1 -Section isc -Mode citation -Batches 14
     ./scripts/orchestrate.ps1 -Section bar -Mode difficulty -Batches 10
     ./scripts/orchestrate.ps1 -Section reg -Mode blooms -Target l3 -Batches 8
+    ./scripts/orchestrate.ps1 -Section aud -Mode generate -Batches 130
     ./scripts/orchestrate.ps1 -Section aud -Mode citation -Batches 1 -DryRun
 #>
 
@@ -17,7 +18,7 @@ param(
     [ValidateSet('aud','far','reg','bar','isc','tcp')]
     [string]$Section,
 
-    [ValidateSet('citation','difficulty','blooms')]
+    [ValidateSet('citation','difficulty','blooms','generate')]
     [string]$Mode = 'citation',
 
     [Parameter(Mandatory)]
@@ -27,6 +28,8 @@ param(
 
     [ValidateSet('l1','l3','l4')]
     [string]$Target,
+
+    [string]$Topic,
 
     [int]$MaxRetries = 1,
 
@@ -55,6 +58,7 @@ $TrackerMap = @{
     'citation'  = Join-Path (Join-Path $RepoRoot 'docs') 'citation-coverage.md'
     'difficulty' = Join-Path (Join-Path $RepoRoot 'docs') 'difficulty-rebalancing.md'
     'blooms'    = Join-Path (Join-Path $RepoRoot 'docs') 'blooms-rebalancing.md'
+    'generate'  = Join-Path (Join-Path $RepoRoot 'docs') 'generation-progress.md'
 }
 $TrackerFile = $TrackerMap[$Mode]
 
@@ -63,6 +67,7 @@ $SelectorMap = @{
     'citation'  = 'find-missing-citations.ts'
     'difficulty' = 'select-easy-candidates.ts'
     'blooms'    = 'select-l2-candidates.ts'
+    'generate'  = 'select-generation-batch.ts'
 }
 
 # Section citation patterns (passed to Claude in prompt)
@@ -80,6 +85,7 @@ $ModeLabel = switch ($Mode) {
     'citation'  { 'Citation backfill' }
     'difficulty' { 'Difficulty rebalancing' }
     'blooms'    { "Bloom's $($Target.ToUpper()) rebalancing" }
+    'generate'  { 'Question generation' }
 }
 
 # File pattern for detecting existing batches
@@ -87,6 +93,7 @@ $FilePattern = switch ($Mode) {
     'citation'  { "*_citation_${Section}_batch*.sql" }
     'difficulty' { "*_difficulty_${Section}_batch*.sql" }
     'blooms'    { "*_blooms_${Target}_${Section}_batch*.sql" }
+    'generate'  { "*_generate_${Section}_batch*.sql" }
 }
 
 # ═══════════════════════════════════════════════════════════════
@@ -95,6 +102,17 @@ $FilePattern = switch ($Mode) {
 
 if ($Mode -eq 'blooms' -and -not $Target) {
     throw 'Blooms mode requires -Target (l1, l3, or l4)'
+}
+
+if ($Mode -eq 'generate') {
+    $planFile = Join-Path (Join-Path $RepoRoot 'docs') 'generation-plan.json'
+    if (-not (Test-Path $planFile)) {
+        throw "generation-plan.json not found. Run: npx tsx scripts/qa/plan-distribution.ts"
+    }
+    # Override batch size default for generate mode
+    if (-not $PSBoundParameters.ContainsKey('BatchSize')) {
+        $BatchSize = 30
+    }
 }
 
 if (-not (Test-Path (Join-Path $RepoRoot 'package.json'))) {
@@ -191,10 +209,15 @@ function Select-Candidates {
     }
 
     $scriptPath = Join-Path $QaScripts $SelectorMap[$Mode]
-    $selectArgs = @("--section=$Section", "--count=$BatchSize", "--exclude-ids=$excludeFile")
 
-    if ($Mode -eq 'blooms') {
-        $selectArgs += "--target=$Target"
+    if ($Mode -eq 'generate') {
+        # Generate mode: select-generation-batch.ts has its own args
+        $selectArgs = @("--section=$Section", "--batch-size=$BatchSize")
+    } else {
+        $selectArgs = @("--section=$Section", "--count=$BatchSize", "--exclude-ids=$excludeFile")
+        if ($Mode -eq 'blooms') {
+            $selectArgs += "--target=$Target"
+        }
     }
 
     # PS5.1: $ErrorActionPreference='Stop' treats stderr as terminating errors
@@ -228,18 +251,35 @@ function Select-Candidates {
 function New-Scaffold {
     param([string]$CandidateFile, [int]$BatchNum)
 
-    $scriptPath = Join-Path $QaScripts 'generate-migration.ts'
-    $genArgs = @("--mode=$Mode", "--section=$Section", "--batch=$BatchNum")
-    if ($Mode -eq 'blooms') { $genArgs += "--target=$Target" }
+    if ($Mode -eq 'generate') {
+        # Generate mode: pipe batch spec to generate-insert-scaffold.ts
+        $scriptPath = Join-Path $QaScripts 'generate-insert-scaffold.ts'
+        $genArgs = @("--section=$Section", "--batch=$BatchNum")
 
-    Push-Location $RepoRoot
-    $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
-    try {
-        Get-Content $CandidateFile -Raw | & npx tsx $scriptPath @genArgs 2>&1 | Out-Null
-        $exitCode = $LASTEXITCODE
-    } finally {
-        $ErrorActionPreference = $prevEAP
-        Pop-Location
+        Push-Location $RepoRoot
+        $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
+        try {
+            Get-Content $CandidateFile -Raw | & npx tsx $scriptPath @genArgs 2>&1 | Out-Null
+            $exitCode = $LASTEXITCODE
+        } finally {
+            $ErrorActionPreference = $prevEAP
+            Pop-Location
+        }
+    } else {
+        # Update modes: pipe candidates to generate-migration.ts
+        $scriptPath = Join-Path $QaScripts 'generate-migration.ts'
+        $genArgs = @("--mode=$Mode", "--section=$Section", "--batch=$BatchNum")
+        if ($Mode -eq 'blooms') { $genArgs += "--target=$Target" }
+
+        Push-Location $RepoRoot
+        $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
+        try {
+            Get-Content $CandidateFile -Raw | & npx tsx $scriptPath @genArgs 2>&1 | Out-Null
+            $exitCode = $LASTEXITCODE
+        } finally {
+            $ErrorActionPreference = $prevEAP
+            Pop-Location
+        }
     }
 
     if ($exitCode -ne 0) {
@@ -338,6 +378,72 @@ When finished, output this EXACT line as your final message:
 ORCHESTRATOR_RESULT:{"status":"ok","questions":N,"file":"$fn"}
 
 If unrecoverable error:
+ORCHESTRATOR_RESULT:{"status":"error","message":"brief description"}
+"@
+        }
+
+        'generate' {
+            # Read batch spec to get topic, counts, and existing stems
+            $batchSpec = Get-Content $CandidateFile -Raw | ConvertFrom-Json
+            $genTopic  = $batchSpec.topic
+            $genCount  = $batchSpec.count
+            $diffEasy  = $batchSpec.difficulty.easy
+            $diffMed   = $batchSpec.difficulty.medium
+            $diffHard  = $batchSpec.difficulty.hard
+            $bL1       = $batchSpec.blooms.l1
+            $bL2       = $batchSpec.blooms.l2
+            $bL3       = $batchSpec.blooms.l3
+            $bL4       = $batchSpec.blooms.l4
+
+            # Truncate existing stems to stay within context limits
+            $existingStems = $batchSpec.existingStems
+            if ($existingStems.Count -gt 150) {
+                $existingStems = $existingStems[0..149]
+            }
+            $stemsJson = ($existingStems | ConvertTo-Json -Compress)
+            if (-not $stemsJson -or $stemsJson -eq 'null') { $stemsJson = '[]' }
+
+            return @"
+You are running headless as part of an automated batch pipeline. Execute autonomously — do not ask questions, do not create task lists, do not use TodoWrite.
+
+TASK: Generate $genCount new $su questions for topic "$genTopic", batch $BatchNum.
+
+TARGET: $diffEasy easy, $diffMed medium, $diffHard hard
+BLOOM'S: $bL1 L1, $bL2 L2, $bL3 L3, $bL4 L4
+
+SCAFFOLD: $sf
+TRACKER: $tf
+
+EXISTING STEMS (do NOT duplicate these concepts):
+$stemsJson
+
+RULES:
+1. STEM: L1 = "What is...?" (10-20 words). L2+ = scenario-first with named
+   entity, dollar amounts, dates (20-60 words). No "What is X?" for medium/hard.
+2. CHOICES: 4 parallel-grammar choices. Wrong answers = real misconceptions.
+   No all/none of above. Longest max 2x shortest.
+3. EXPLANATION (50-100 words, three parts):
+   a) Cite standard ($cit) by section number
+   b) Explain why correct
+   c) Contrast language for most plausible wrong answer
+4. VARIETY: Each question tests a DIFFERENT concept within "$genTopic".
+   Vary entities, amounts, correct_index distribution (roughly equal 0-3).
+5. SQL: Escape single quotes as ''. Choices as valid JSON arrays.
+   section_id = $($batchSpec.sectionId). Include cognitive_level column.
+
+STEPS:
+1. Read scaffold at $sf, replace every TODO
+2. Validate: npm run validate-migration $sf
+3. Duplicate check: npx tsx scripts/qa/check-generation-duplicates.ts --migration=$sf --section=$Section
+4. Fix any errors, re-validate
+5. Update tracker at ${tf}:
+   - Update the $su row in Section Progress table (increment Generated, decrement Remaining, increment Batches Done)
+   - Add a new row to the Batch Log table with: today's date, migration filename ($fn), section ($su), topic ($genTopic), question count ($genCount), and a short note
+
+When finished, output this EXACT line as your final message:
+ORCHESTRATOR_RESULT:{"status":"ok","questions":$genCount,"file":"$fn"}
+
+If you encounter an unrecoverable error, output:
 ORCHESTRATOR_RESULT:{"status":"error","message":"brief description"}
 "@
         }
@@ -463,13 +569,28 @@ for ($i = 0; $i -lt $Batches; $i++) {
     try {
         $candidateFile = Select-Candidates -BatchNum $batchNum
         $candidates    = Get-Content $candidateFile -Raw | ConvertFrom-Json
-        $batchCount    = @($candidates).Count
 
-        if ($batchCount -eq 0) {
-            Write-Step 'Select' '0 candidates -- section complete' 'Yellow'
-            break
+        if ($Mode -eq 'generate') {
+            # Generate mode: batch spec is a single object with a .count field
+            # Empty array signals section complete
+            if ($candidates -is [array]) {
+                Write-Step 'Select' 'section complete (empty batch spec)' 'Yellow'
+                break
+            }
+            $batchCount = [int]$candidates.count
+            if ($batchCount -eq 0) {
+                Write-Step 'Select' '0 questions -- section complete' 'Yellow'
+                break
+            }
+            Write-Step 'Select' "$batchCount questions for `"$($candidates.topic)`""
+        } else {
+            $batchCount = @($candidates).Count
+            if ($batchCount -eq 0) {
+                Write-Step 'Select' '0 candidates -- section complete' 'Yellow'
+                break
+            }
+            Write-Step 'Select' "$batchCount candidates"
         }
-        Write-Step 'Select' "$batchCount candidates"
     } catch {
         Write-Step 'Select' "FAILED: $_" 'Red'
         $stopped = $true; break
@@ -579,7 +700,72 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
         }
     }
 
-    # ── 6. Commit ──────────────────────────────────────────────
+    # ── 6. Duplicate check (generate mode only) ─────────────────
+    if ($Mode -eq 'generate') {
+        $dupScript = Join-Path $QaScripts 'check-generation-duplicates.ts'
+        Push-Location $RepoRoot
+        $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
+        try {
+            $dupOutput = & npx tsx $dupScript --migration=$scaffoldPath --section=$Section 2>&1 | Out-String
+            $dupExit   = $LASTEXITCODE
+        } finally {
+            $ErrorActionPreference = $prevEAP
+            Pop-Location
+        }
+
+        if ($dupExit -eq 0) {
+            Write-Step 'Dedup' 'PASS'
+        } else {
+            Write-Step 'Dedup' 'likely duplicates found — retrying' 'Red'
+
+            # Send duplicate errors back to Claude for a fix
+            $dupRetryPrompt = @"
+The migration at $($scaffoldPath.Replace('\','/')) has likely-duplicate questions. Here is the duplicate check output:
+
+$dupOutput
+
+Read the file, rewrite any questions flagged as likely-duplicate (>0.8 similarity) to test different concepts. Keep the same topic, difficulty, and cognitive_level. Then re-validate:
+npm run validate-migration $($scaffoldPath.Replace('\','/'))
+npx tsx scripts/qa/check-generation-duplicates.ts --migration=$($scaffoldPath.Replace('\','/')) --section=$Section
+
+When fixed, output: ORCHESTRATOR_RESULT:{"status":"ok"}
+If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
+"@
+            $dupRetryFile = Join-Path $TempDir "dedup_b${batchNum}.txt"
+            $dupRetryPrompt | Out-String | ForEach-Object { [System.IO.File]::WriteAllText($dupRetryFile, $_) }
+
+            Push-Location $RepoRoot
+            $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
+            try {
+                Get-Content $dupRetryFile -Raw | claude --print --dangerously-skip-permissions 2>&1 | Out-Null
+            } finally {
+                $ErrorActionPreference = $prevEAP
+                Pop-Location
+            }
+
+            # Re-check
+            Push-Location $RepoRoot
+            $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
+            try {
+                $dupOutput2 = & npx tsx $dupScript --migration=$scaffoldPath --section=$Section 2>&1 | Out-String
+                $dupExit2   = $LASTEXITCODE
+            } finally {
+                $ErrorActionPreference = $prevEAP
+                Pop-Location
+            }
+
+            if ($dupExit2 -eq 0) {
+                Write-Step 'Dedup' 'fixed after retry'
+            } else {
+                Write-Host ''
+                Write-Host '   STOPPED: duplicate check failed after retry' -ForegroundColor Red
+                Write-Host "   File: $scaffoldPath" -ForegroundColor DarkGray
+                $stopped = $true; break
+            }
+        }
+    }
+
+    # ── 7. Commit ──────────────────────────────────────────────
     $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
     & git -C $RepoRoot add $scaffoldPath $TrackerFile 2>&1 | Out-Null
 
@@ -592,11 +778,14 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
     $ErrorActionPreference = $prevEAP
     Write-Step 'Commit' $commitHash
 
-    # ── 7. Update running state ────────────────────────────────
+    # ── 8. Update running state ────────────────────────────────
     $totalQuestions += $batchCount
     $completedBatches++
 
-    foreach ($c in @($candidates)) { $excludeIds.Add([int]$c.id) }
+    # Generate mode doesn't use exclude IDs (batch selector reads live DB)
+    if ($Mode -ne 'generate') {
+        foreach ($c in @($candidates)) { $excludeIds.Add([int]$c.id) }
+    }
 
     $batchElapsed = (Get-Date) - $batchStart
     $batchLog.Add(@{

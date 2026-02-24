@@ -197,13 +197,75 @@ let questionCount = 0;
 const fullSql = sql.replace(/\n/g, " ");
 
 // ============================================================
-// Parse INSERT statements
+// Parse INSERT statements (8-column: with cognitive_level)
 // ============================================================
-const tuplePattern =
-	/\(\s*(\d+)\s*,\s*'((?:[^']|'')*?)'\s*,\s*'((?:[^']|'')*?)'\s*,\s*'(\[(?:[^']|'')*?\])'::jsonb\s*,\s*(\d+)\s*,\s*'((?:[^']|'')*?)'\s*,\s*'(easy|medium|hard)'\s*\)/g;
+const tuplePattern8 =
+	/\(\s*(\d+)\s*,\s*'((?:[^']|'')*?)'\s*,\s*'((?:[^']|'')*?)'\s*,\s*'(\[(?:[^']|'')*?\])'::jsonb\s*,\s*(\d+)\s*,\s*'((?:[^']|'')*?)'\s*,\s*'(easy|medium|hard)'\s*,\s*(\d+)\s*\)/g;
 
 let match: RegExpExecArray | null;
-while ((match = tuplePattern.exec(fullSql)) !== null) {
+while ((match = tuplePattern8.exec(fullSql)) !== null) {
+	questionCount++;
+	const [
+		,
+		,
+		topic,
+		stem,
+		choicesJson,
+		correctIndexStr,
+		explanation,
+		difficulty,
+		cogLevelStr,
+	] = match;
+
+	const correctIndex = parseInt(correctIndexStr);
+	const cognitiveLevel = parseInt(cogLevelStr);
+	const charsBefore = fullSql.slice(0, match.index);
+	const approxLine = (charsBefore.match(/ {50}/g) ?? []).length + 1;
+
+	distributions.push({ correct_index: correctIndex, topic });
+
+	// Cross-validate cognitive_level vs difficulty
+	if (cognitiveLevel === 1 && difficulty !== "easy") {
+		issues.push({
+			line: approxLine,
+			severity: "warn",
+			message: `L1 question has difficulty='${difficulty}' (expected easy): topic "${topic}"`,
+		});
+	}
+	if ((cognitiveLevel === 3 || cognitiveLevel === 4) && difficulty === "easy") {
+		issues.push({
+			line: approxLine,
+			severity: "warn",
+			message: `L${cognitiveLevel} question has difficulty='easy' (expected medium/hard): topic "${topic}"`,
+		});
+	}
+
+	validateQuestion({
+		topic,
+		stem,
+		choicesJson,
+		correctIndex,
+		explanation,
+		difficulty,
+		cognitiveLevel,
+		approxLine,
+	});
+}
+
+// ============================================================
+// Parse INSERT statements (7-column: without cognitive_level)
+// ============================================================
+const tuplePattern7 =
+	/\(\s*(\d+)\s*,\s*'((?:[^']|'')*?)'\s*,\s*'((?:[^']|'')*?)'\s*,\s*'(\[(?:[^']|'')*?\])'::jsonb\s*,\s*(\d+)\s*,\s*'((?:[^']|'')*?)'\s*,\s*'(easy|medium|hard)'\s*\)/g;
+
+while ((match = tuplePattern7.exec(fullSql)) !== null) {
+	// Skip if this position was already matched by the 8-column pattern
+	const afterMatch = fullSql.slice(
+		match.index + match[0].length,
+		match.index + match[0].length + 10,
+	);
+	if (/^\s*,\s*\d+\s*\)/.test(afterMatch)) continue;
+
 	questionCount++;
 	const [
 		,

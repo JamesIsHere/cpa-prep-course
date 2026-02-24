@@ -39,6 +39,7 @@ npm run generate-migration   # Generate UPDATE scaffold from piped candidate JSO
 ./scripts/orchestrate.ps1 -Section isc -Mode citation -Batches 14          # Citation backfill
 ./scripts/orchestrate.ps1 -Section bar -Mode difficulty -Batches 10        # Difficulty rebalancing
 ./scripts/orchestrate.ps1 -Section reg -Mode blooms -Target l3 -Batches 8 # Bloom's rebalancing
+./scripts/orchestrate.ps1 -Section aud -Mode generate -Batches 130         # New question generation
 ./scripts/orchestrate.ps1 -Section isc -Mode citation -Batches 3 -DryRun  # Preview without Claude
 ```
 
@@ -120,11 +121,19 @@ Each batch gets its own headless `claude --print` invocation with a fresh contex
 | `scripts/qa/select-easy-candidates.ts`        | Easy→medium candidate selector with topic floor |
 | `scripts/qa/find-missing-citations.ts`        | Citation gap identifier for backfill         |
 | `scripts/qa/generate-migration.ts`            | Migration scaffold generator (blooms/difficulty/citation modes) |
+| `scripts/qa/generate-insert-scaffold.ts`      | INSERT migration scaffold for new question generation |
+| `scripts/qa/plan-distribution.ts`             | Compute per-topic targets from blueprint weights |
+| `scripts/qa/select-generation-batch.ts`       | Pick next batch for a section (biggest-gap-first) |
+| `scripts/qa/extract-topic-stems.ts`           | Fetch existing stems for dedup context |
+| `scripts/qa/check-generation-duplicates.ts`   | Post-generation trigram duplicate check |
+| `scripts/qa/utils.ts`                         | Shared utilities (migration numbering, file lock, trigrams) |
 | `scripts/qa/validate-migration.ts`            | Pre-commit migration validator (INSERT + UPDATE + explanation-only) |
 | `docs/blooms-rebalancing.md`                  | Cross-session Bloom's L3 rebalancing tracker |
 | `docs/blooms-l1-l4-rebalancing.md`            | Cross-session Bloom's L1/L4 rebalancing tracker |
 | `docs/difficulty-rebalancing.md`              | Cross-session difficulty rebalancing tracker |
 | `docs/citation-coverage.md`                   | Cross-session citation coverage tracker      |
+| `docs/generation-progress.md`                 | Cross-session question generation tracker    |
+| `docs/generation-plan.json`                   | Machine-readable per-topic generation targets |
 | `.env.local.example`                          | Required env vars template                 |
 
 ## Content Summary
@@ -138,7 +147,7 @@ Each batch gets its own headless `claude --print` invocation with a fresh contex
 | ISC     | isc  | 16      | ~749      | 39              | IT infrastructure, ERP, data management, security frameworks, threats, privacy, SOC, SOC testing, SOC reporting |
 | TCP     | tcp  | 15      | ~699      | 44              | Individual planning, passive/at-risk, wealth transfer, retirement, international tax, trusts, capital structure tax, nontaxable dispositions, related parties |
 
-**Totals:** 96 lessons, ~4,990 questions, 280 framework items across 6 sections
+**Totals:** 96 lessons, ~4,990 questions (target: 20,000), 280 framework items across 6 sections
 
 ## Database Tables
 
@@ -178,7 +187,8 @@ All build phases complete. Active work is marketing and content connectivity.
 - **Bloom's L3 rebalancing:** Complete — REG 9%→25%, BAR 16%→30%, FAR 16%→26%, TCP 15%→20%. Total: 389 rewrites. Tracker: `docs/blooms-rebalancing.md`
 - **Bloom's L1/L4 rebalancing:** Complete — BAR (23), FAR (51), TCP (71), REG (169), AUD (190), ISC (284). Total: 788/788 rewrites. Tracker: `docs/blooms-l1-l4-rebalancing.md`
 - **Difficulty rebalancing:** In progress — target 30/50/20 easy/medium/hard. ~533 easy→medium rewrites needed. Tracker: `docs/difficulty-rebalancing.md`
-- **Citation coverage:** In progress — 2,970/4,993 explanations originally lacked citations (~59%). Working worst-coverage-first. AUD complete (14/14 batches, 98% coverage, migrations 00130–00145). Next: ISC→BAR→REG→FAR→TCP. Batches of 50, orchestrated via `scripts/orchestrate.ps1`. Tracker: `docs/citation-coverage.md`
+- **Citation coverage:** In progress — 2,970/4,993 explanations originally lacked citations (~59%). Working worst-coverage-first. AUD complete (14/14 batches, 98% coverage, migrations 00130–00145). ISC complete (14/14 batches, 100% coverage). Next: BAR→REG→FAR→TCP. Batches of 50, orchestrated via `scripts/orchestrate.ps1`. Tracker: `docs/citation-coverage.md`
+- **Question generation (20K scale):** Pipeline built — `plan-distribution.ts` → `select-generation-batch.ts` → `generate-insert-scaffold.ts` → Claude fills → `validate-migration` + `check-generation-duplicates.ts`. Core (AUD/FAR/REG): 5,000 each. Electives (BAR/ISC/TCP): ~1,667 each. ~15,015 new questions in batches of 30. Tracker: `docs/generation-progress.md`
 
 ## Spec Reference
 
