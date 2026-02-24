@@ -1,5 +1,19 @@
 # Slayer CPA — Marketing Plan
 
+## Website Copy Ideas
+
+Taglines and text blocks for use on marketing pages, landing pages, and the homepage.
+
+| #  | Copy                                                                                              | Placement   |
+|----|---------------------------------------------------------------------------------------------------|-------------|
+| 1  | "New Questions Every Week"                                                                        | Homepage    |
+| 2  | "Active Support Staff — Email Replies Within 12 Hours"                                            | Homepage    |
+| 3  | "Find an error in a question? If it's valid, get a free month. If not, get a thoughtful response." | Homepage    |
+
+## Mascot
+
+Need a mascot image for the brand. TBD — style, character, where it appears on the site.
+
 ## Positioning
 
 > Structured understanding for $29.99/month. Mental models first, deep lessons second, surgical practice third.
