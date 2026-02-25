@@ -7,16 +7,21 @@ interface QuizResultsProps {
 	result: ExamResult;
 	sectionSlug: string;
 	onRetry: () => void;
+	onReviewMissed?: (missedIds: number[]) => void;
 }
 
 export default function QuizResults({
 	result,
 	sectionSlug,
 	onRetry,
+	onReviewMissed,
 }: QuizResultsProps) {
 	const [expandedId, setExpandedId] = useState<number | null>(null);
 	const percentage = Math.round((result.score / result.total) * 100);
 	const passed = percentage >= 75;
+	const missedIds = result.questions
+		.filter((q) => !q.correct)
+		.map((q) => q.id);
 
 	return (
 		<div>
@@ -192,6 +197,14 @@ export default function QuizResults({
 				>
 					Try Again
 				</button>
+				{onReviewMissed && missedIds.length > 0 && (
+					<button
+						onClick={() => onReviewMissed(missedIds)}
+						className="bg-amber-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-amber-700 transition-colors"
+					>
+						Review Missed ({missedIds.length})
+					</button>
+				)}
 				<a
 					href={`/sections/${sectionSlug}`}
 					className="border border-gray-300 text-gray-700 px-6 py-2 rounded-lg font-medium hover:bg-gray-50 transition-colors text-center"

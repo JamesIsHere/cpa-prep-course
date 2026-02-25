@@ -92,6 +92,33 @@ export default function QuizClient({
 		}
 	}
 
+	async function startReviewQuiz(missedIds: number[]) {
+		setLoading(true);
+		setError(null);
+		try {
+			const res = await fetch("/api/quizzes/review", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ questionIds: missedIds, sectionCode }),
+			});
+			if (!res.ok) {
+				const data = await res.json();
+				throw new Error(data.error || "Failed to start review quiz");
+			}
+			const data = await res.json();
+			setAttemptId(data.attemptId);
+			setQuestions(data.questions);
+			setCurrentIndex(0);
+			setAnswers(new Map());
+			setResult(null);
+			setState("active");
+		} catch (err) {
+			setError(err instanceof Error ? err.message : "Something went wrong");
+		} finally {
+			setLoading(false);
+		}
+	}
+
 	function handleRetry() {
 		setResult(null);
 		setAttemptId(null);
@@ -229,6 +256,7 @@ export default function QuizClient({
 				result={result}
 				sectionSlug={sectionSlug}
 				onRetry={handleRetry}
+				onReviewMissed={startReviewQuiz}
 			/>
 		);
 	}

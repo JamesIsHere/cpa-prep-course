@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReadinessResult } from "@/lib/readiness";
 import type { Section } from "@/lib/sections";
 
 export interface SectionProgress {
@@ -13,9 +14,11 @@ export interface SectionProgress {
 export default function SectionProgressCard({
 	section,
 	progress,
+	readiness,
 }: {
 	section: Section;
 	progress: SectionProgress | null;
+	readiness?: ReadinessResult;
 }) {
 	const hasProgress = progress && progress.questionsPracticed > 0;
 
@@ -40,6 +43,37 @@ export default function SectionProgressCard({
 
 			{hasProgress ? (
 				<>
+					{readiness && readiness.score > 0 && (
+						<div className="flex items-center gap-4 mb-4 pb-4 border-b border-gray-100">
+							<ReadinessGauge score={readiness.score} />
+							<div className="flex-1 min-w-0">
+								<p className="text-xs text-gray-400 mb-1">Exam Readiness</p>
+								<div className="flex gap-3 text-xs text-gray-500">
+									<span>
+										Coverage{" "}
+										<span className="font-medium text-gray-700">
+											{Math.round(readiness.coverage * 100)}%
+										</span>
+									</span>
+									<span>
+										Volume{" "}
+										<span className="font-medium text-gray-700">
+											{Math.round(readiness.volume * 100)}%
+										</span>
+									</span>
+									<span>
+										Accuracy{" "}
+										<span className="font-medium text-gray-700">
+											{readiness.accuracy > 0
+												? `${Math.round(readiness.accuracy * 100)}%`
+												: "n/a"}
+										</span>
+									</span>
+								</div>
+							</div>
+						</div>
+					)}
+
 					<div className="grid grid-cols-3 gap-4 mb-4">
 						<QuestionsMetric
 							practiced={progress.questionsPracticed}
@@ -88,6 +122,60 @@ export default function SectionProgressCard({
 					{progress?.totalQuestions.toLocaleString() ?? 0} questions available
 				</p>
 			)}
+		</div>
+	);
+}
+
+function ReadinessGauge({ score }: { score: number }) {
+	// SVG semicircle gauge
+	const radius = 28;
+	const stroke = 6;
+	const cx = 36;
+	const cy = 36;
+	const circumference = Math.PI * radius; // half circle
+	const offset = circumference - (score / 100) * circumference;
+
+	const color =
+		score >= 70
+			? "stroke-emerald-500"
+			: score >= 40
+				? "stroke-amber-500"
+				: "stroke-red-500";
+	const textColor =
+		score >= 70
+			? "text-emerald-700"
+			: score >= 40
+				? "text-amber-700"
+				: "text-red-700";
+
+	return (
+		<div className="relative flex-shrink-0" style={{ width: 72, height: 44 }}>
+			<svg width="72" height="44" viewBox="0 0 72 44">
+				{/* Background arc */}
+				<path
+					d={`M ${cx - radius} ${cy} A ${radius} ${radius} 0 0 1 ${cx + radius} ${cy}`}
+					fill="none"
+					className="stroke-gray-100"
+					strokeWidth={stroke}
+					strokeLinecap="round"
+				/>
+				{/* Filled arc */}
+				<path
+					d={`M ${cx - radius} ${cy} A ${radius} ${radius} 0 0 1 ${cx + radius} ${cy}`}
+					fill="none"
+					className={color}
+					strokeWidth={stroke}
+					strokeLinecap="round"
+					strokeDasharray={circumference}
+					strokeDashoffset={offset}
+				/>
+			</svg>
+			<span
+				className={`absolute inset-0 flex items-end justify-center text-sm font-bold ${textColor}`}
+				style={{ paddingBottom: 0 }}
+			>
+				{score}
+			</span>
 		</div>
 	);
 }

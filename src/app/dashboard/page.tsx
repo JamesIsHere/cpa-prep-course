@@ -1,11 +1,23 @@
 import type { Metadata } from "next";
+import DashboardCharts from "@/components/dashboard-charts";
 import { DownloadStudyGuide } from "@/components/download-study-guide";
 import SectionProgressCard from "@/components/section-progress-card";
 import type { SectionProgress } from "@/components/section-progress-card";
+import WeakTopicCard from "@/components/weak-topic-card";
 import { StudyPipeline } from "@/components/study-pipeline";
 import { cpaBlueprint, sectionQuestionTotals } from "@/lib/blueprint";
+import { computeReadiness } from "@/lib/readiness";
+import type { ReadinessResult } from "@/lib/readiness";
 import { sections } from "@/lib/sections";
 import { createClient } from "@/lib/supabase/server";
+import { analyzeTopicPerformance } from "@/lib/weak-topics";
+import type { TopicAnalysis } from "@/lib/weak-topics";
+
+export interface ScoreTrendPoint {
+	date: string; // ISO date string
+	score: number; // percentage 0–100
+	type: "quiz" | "exam";
+}
 
 export const metadata: Metadata = {
 	title: "Dashboard",
@@ -36,6 +48,9 @@ export default async function DashboardPage() {
 	}
 
 	const progressMap: Record<string, SectionProgress> = {};
+	const readinessMap: Record<string, ReadinessResult> = {};
+	const weakTopicsMap: Record<string, TopicAnalysis> = {};
+	const trendMap: Record<string, ScoreTrendPoint[]> = {};
 
 	// Initialize empty progress for all sections (so empty state has totals)
 	for (const section of sections) {
@@ -48,6 +63,7 @@ export default async function DashboardPage() {
 			blueprintGroupsTotal: meta?.groupCount ?? 0,
 			recentScores: [],
 		};
+		trendMap[section.code] = [];
 	}
 
 	if (user) {
@@ -85,6 +101,10 @@ export default async function DashboardPage() {
 			string,
 			{ score: number; total: number }[]
 		>();
+		const topicScoresBySection = new Map<
+			string,
+			{ topic: string; correct: number; total: number }[][]
+		>();
 
 		if (quizAttempts) {
 			for (const a of quizAttempts) {
@@ -109,6 +129,28 @@ export default async function DashboardPage() {
 					for (const ts of a.topic_scores as { topic: string }[]) {
 						topicSet.add(ts.topic);
 					}
+
+					// Collect topic_scores arrays for weak topic analysis
+					if (!topicScoresBySection.has(code))
+						topicScoresBySection.set(code, []);
+					topicScoresBySection
+						.get(code)!
+						.push(
+							a.topic_scores as {
+								topic: string;
+								correct: number;
+								total: number;
+							}[],
+						);
+				}
+
+				// Build trend data (quiz attempts, capped at 50 per section)
+				if (a.completed_at && trendMap[code].length < 50) {
+					trendMap[code].push({
+						date: a.completed_at,
+						score: Math.round((a.score / a.total) * 100),
+						type: "quiz",
+					});
 				}
 			}
 		}
@@ -121,6 +163,15 @@ export default async function DashboardPage() {
 
 				progressMap[code].questionsPracticed += a.total;
 				progressMap[code].totalCorrect += a.score;
+
+				// Build trend data (exam attempts)
+				if (a.completed_at && trendMap[code].length < 50) {
+					trendMap[code].push({
+						date: a.completed_at,
+						score: Math.round((a.score / a.total) * 100),
+						type: "exam",
+					});
+				}
 			}
 		}
 
@@ -143,7 +194,29 @@ export default async function DashboardPage() {
 				progressMap[code].recentScores = recent;
 			}
 		}
+
+		// Compute readiness + weak topics per section
+		for (const section of sections) {
+			const progress = progressMap[section.code];
+			readinessMap[section.code] = computeReadiness(progress);
+
+			const topicArrays = topicScoresBySection.get(section.code) ?? [];
+			weakTopicsMap[section.code] = analyzeTopicPerformance(topicArrays);
+
+			// Sort trend data chronologically (was desc from query)
+			trendMap[section.code].reverse();
+		}
 	}
+
+	// Check if there are any weak topics to display
+	const hasWeakTopics = sections.some(
+		(s) => (weakTopicsMap[s.code]?.weakTopics.length ?? 0) > 0,
+	);
+
+	// Check if there are any trend data points
+	const hasTrends = sections.some(
+		(s) => (trendMap[s.code]?.length ?? 0) >= 2,
+	);
 
 	return (
 		<main className="max-w-4xl mx-auto px-4 py-12">
@@ -169,9 +242,53 @@ export default async function DashboardPage() {
 						key={section.code}
 						section={section}
 						progress={progressMap[section.code] ?? null}
+						readiness={readinessMap[section.code]}
 					/>
 				))}
 			</div>
+
+			{hasWeakTopics && (
+				<div className="mt-10">
+					<h2 className="text-lg font-semibold text-gray-800 mb-4">
+						Focus Areas
+					</h2>
+					<p className="text-gray-500 text-sm mb-4">
+						Topics where you scored lowest. Target these for your next practice
+						sessions.
+					</p>
+					<div className="grid sm:grid-cols-2 gap-4">
+						{sections.map((section) => (
+							<WeakTopicCard
+								key={section.code}
+								sectionCode={section.code}
+								sectionSlug={section.slug}
+								sectionTitle={section.title}
+								weakTopics={
+									weakTopicsMap[section.code]?.weakTopics ?? []
+								}
+							/>
+						))}
+					</div>
+				</div>
+			)}
+
+			{hasTrends && (
+				<div className="mt-10">
+					<h2 className="text-lg font-semibold text-gray-800 mb-4">
+						Score Trends
+					</h2>
+					<p className="text-gray-500 text-sm mb-4">
+						Your quiz and exam scores over time.
+					</p>
+					<DashboardCharts
+						sections={sections.map((s) => ({
+							code: s.code,
+							title: s.title,
+						}))}
+						trendMap={trendMap}
+					/>
+				</div>
+			)}
 
 			<div className="mt-12">
 				<h2 className="text-lg font-semibold text-gray-800 mb-4">

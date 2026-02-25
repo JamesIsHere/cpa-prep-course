@@ -23,10 +23,13 @@ export async function generateMetadata({
 
 export default async function QuizPage({
 	params,
+	searchParams,
 }: {
 	params: Promise<{ slug: string }>;
+	searchParams: Promise<{ topics?: string }>;
 }) {
 	const { slug } = await params;
+	const { topics: topicsParam } = await searchParams;
 	const section = getSection(slug);
 	if (!section) notFound();
 
@@ -122,6 +125,7 @@ export default async function QuizPage({
 				sectionSlug={section.slug}
 				sectionTitle={section.title}
 				recentAttempts={recentAttempts}
+				topics={topicsParam ? topicsParam.split(",").map((t) => t.trim()) : undefined}
 			/>
 		</main>
 	);
