@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { DownloadStudyGuide } from "@/components/download-study-guide";
-import SectionCard from "@/components/section-card";
+import SectionProgressCard from "@/components/section-progress-card";
+import type { SectionProgress } from "@/components/section-progress-card";
 import { StudyPipeline } from "@/components/study-pipeline";
+import { cpaBlueprint, sectionQuestionTotals } from "@/lib/blueprint";
 import { sections } from "@/lib/sections";
 import { createClient } from "@/lib/supabase/server";
 
@@ -16,15 +17,38 @@ export default async function DashboardPage() {
 		data: { user },
 	} = await supabase.auth.getUser();
 
-	// Fetch recent quiz attempts per section
-	const quizScores: Record<
+	// Pre-compute blueprint group counts and questionTopics per section
+	const blueprintMeta = new Map<
 		string,
-		{ score: number; total: number; date: string }[]
-	> = {};
-	const examScores: Record<
-		string,
-		{ id: number; score: number; total: number; date: string }[]
-	> = {};
+		{ groupCount: number; topicsByGroup: string[][] }
+	>();
+	for (const bp of cpaBlueprint) {
+		const topicsByGroup: string[][] = [];
+		for (const area of bp.areas) {
+			for (const group of area.groups) {
+				topicsByGroup.push(group.questionTopics);
+			}
+		}
+		blueprintMeta.set(bp.code, {
+			groupCount: topicsByGroup.length,
+			topicsByGroup,
+		});
+	}
+
+	const progressMap: Record<string, SectionProgress> = {};
+
+	// Initialize empty progress for all sections (so empty state has totals)
+	for (const section of sections) {
+		const meta = blueprintMeta.get(section.code);
+		progressMap[section.code] = {
+			questionsPracticed: 0,
+			totalCorrect: 0,
+			totalQuestions: sectionQuestionTotals[section.code] ?? 0,
+			blueprintGroupsTouched: 0,
+			blueprintGroupsTotal: meta?.groupCount ?? 0,
+			recentScores: [],
+		};
+	}
 
 	if (user) {
 		// Map section_id to section code
@@ -39,50 +63,84 @@ export default async function DashboardPage() {
 			]),
 		);
 
-		const { data: attempts } = await supabase
+		// Fetch all completed quiz attempts (no limit — need full aggregates)
+		const { data: quizAttempts } = await supabase
 			.from("quiz_attempts")
+			.select("section_id, score, total, topic_scores, completed_at")
+			.eq("user_id", user.id)
+			.not("completed_at", "is", null)
+			.order("completed_at", { ascending: false });
+
+		// Fetch all completed exam attempts
+		const { data: examAttempts } = await supabase
+			.from("exam_attempts")
 			.select("section_id, score, total, completed_at")
 			.eq("user_id", user.id)
 			.not("completed_at", "is", null)
-			.order("completed_at", { ascending: false })
-			.limit(15);
+			.order("completed_at", { ascending: false });
 
-		if (attempts) {
-			for (const a of attempts) {
+		// Aggregate per-section quiz data
+		const topicsBySection = new Map<string, Set<string>>();
+		const recentBySection = new Map<
+			string,
+			{ score: number; total: number }[]
+		>();
+
+		if (quizAttempts) {
+			for (const a of quizAttempts) {
 				const code = idToCode.get(a.section_id);
-				if (!code) continue;
-				if (!quizScores[code]) quizScores[code] = [];
-				if (quizScores[code].length < 3) {
-					quizScores[code].push({
-						score: a.score,
-						total: a.total,
-						date: a.completed_at,
-					});
+				if (!code || !progressMap[code]) continue;
+
+				progressMap[code].questionsPracticed += a.total;
+				progressMap[code].totalCorrect += a.score;
+
+				// Collect recent scores (first 3 per section, already ordered desc)
+				if (!recentBySection.has(code)) recentBySection.set(code, []);
+				const recent = recentBySection.get(code)!;
+				if (recent.length < 3) {
+					recent.push({ score: a.score, total: a.total });
+				}
+
+				// Collect practiced topics for blueprint coverage
+				if (a.topic_scores && Array.isArray(a.topic_scores)) {
+					if (!topicsBySection.has(code))
+						topicsBySection.set(code, new Set());
+					const topicSet = topicsBySection.get(code)!;
+					for (const ts of a.topic_scores as { topic: string }[]) {
+						topicSet.add(ts.topic);
+					}
 				}
 			}
 		}
 
-		const { data: examAttempts } = await supabase
-			.from("exam_attempts")
-			.select("id, section_id, score, total, completed_at")
-			.eq("user_id", user.id)
-			.not("completed_at", "is", null)
-			.order("completed_at", { ascending: false })
-			.limit(15);
-
+		// Aggregate exam attempts into totals
 		if (examAttempts) {
 			for (const a of examAttempts) {
 				const code = idToCode.get(a.section_id);
-				if (!code) continue;
-				if (!examScores[code]) examScores[code] = [];
-				if (examScores[code].length < 3) {
-					examScores[code].push({
-						id: a.id,
-						score: a.score,
-						total: a.total,
-						date: a.completed_at,
-					});
+				if (!code || !progressMap[code]) continue;
+
+				progressMap[code].questionsPracticed += a.total;
+				progressMap[code].totalCorrect += a.score;
+			}
+		}
+
+		// Compute blueprint groups touched per section
+		for (const [code, topicSet] of topicsBySection) {
+			const meta = blueprintMeta.get(code);
+			if (!meta) continue;
+			let touched = 0;
+			for (const groupTopics of meta.topicsByGroup) {
+				if (groupTopics.some((t) => topicSet.has(t))) {
+					touched++;
 				}
+			}
+			progressMap[code].blueprintGroupsTouched = touched;
+		}
+
+		// Assign recent scores
+		for (const [code, recent] of recentBySection) {
+			if (progressMap[code]) {
+				progressMap[code].recentScores = recent;
 			}
 		}
 	}
@@ -105,9 +163,13 @@ export default async function DashboardPage() {
 			<h2 className="text-lg font-semibold text-gray-800 mb-4">
 				Your Sections
 			</h2>
-			<div className="grid sm:grid-cols-3 gap-6">
+			<div className="grid sm:grid-cols-2 gap-6">
 				{sections.map((section) => (
-					<SectionCard key={section.code} section={section} />
+					<SectionProgressCard
+						key={section.code}
+						section={section}
+						progress={progressMap[section.code] ?? null}
+					/>
 				))}
 			</div>
 
@@ -133,117 +195,6 @@ export default async function DashboardPage() {
 					))}
 				</div>
 			</div>
-
-			{Object.keys(quizScores).length > 0 && (
-				<div className="mt-12">
-					<h2 className="text-lg font-semibold text-gray-800 mb-4">
-						Recent Quiz Scores
-					</h2>
-					<div className="grid sm:grid-cols-3 gap-6">
-						{sections.map((section) => {
-							const scores = quizScores[section.code];
-							if (!scores || scores.length === 0) return null;
-							return (
-								<div
-									key={section.code}
-									className="border border-gray-200 rounded-xl p-5"
-								>
-									<div className="flex items-center justify-between mb-3">
-										<span className="bg-emerald-100 text-emerald-700 text-sm font-bold px-3 py-1 rounded-full">
-											{section.code.toUpperCase()}
-										</span>
-										<Link
-											href={`/sections/${section.slug}/quizzes`}
-											className="text-xs text-emerald-600 hover:text-emerald-700"
-										>
-											Take quiz &rarr;
-										</Link>
-									</div>
-									<div className="space-y-2">
-										{scores.map((s, i) => {
-											const pct = Math.round((s.score / s.total) * 100);
-											const passed = pct >= 75;
-											return (
-												<div
-													key={i}
-													className="flex items-center justify-between text-sm"
-												>
-													<span
-														className={`font-bold ${passed ? "text-emerald-700" : "text-red-700"}`}
-													>
-														{pct}%
-														<span className="font-normal text-gray-500 ml-1">
-															({s.score}/{s.total})
-														</span>
-													</span>
-													<span className="text-gray-400 text-xs">
-														{new Date(s.date).toLocaleDateString()}
-													</span>
-												</div>
-											);
-										})}
-									</div>
-								</div>
-							);
-						})}
-					</div>
-				</div>
-			)}
-			{Object.keys(examScores).length > 0 && (
-				<div className="mt-12">
-					<h2 className="text-lg font-semibold text-gray-800 mb-4">
-						Recent Exam Scores
-					</h2>
-					<div className="grid sm:grid-cols-3 gap-6">
-						{sections.map((section) => {
-							const scores = examScores[section.code];
-							if (!scores || scores.length === 0) return null;
-							return (
-								<div
-									key={section.code}
-									className="border border-gray-200 rounded-xl p-5"
-								>
-									<div className="flex items-center justify-between mb-3">
-										<span className="bg-emerald-100 text-emerald-700 text-sm font-bold px-3 py-1 rounded-full">
-											{section.code.toUpperCase()}
-										</span>
-										<Link
-											href={`/exam?section=${section.code}`}
-											className="text-xs text-emerald-600 hover:text-emerald-700"
-										>
-											Take exam &rarr;
-										</Link>
-									</div>
-									<div className="space-y-2">
-										{scores.map((s) => {
-											const pct = Math.round((s.score / s.total) * 100);
-											const passed = pct >= 75;
-											return (
-												<div
-													key={s.id}
-													className="flex items-center justify-between text-sm"
-												>
-													<span
-														className={`font-bold ${passed ? "text-emerald-700" : "text-red-700"}`}
-													>
-														{pct}%
-														<span className="font-normal text-gray-500 ml-1">
-															({s.score}/{s.total})
-														</span>
-													</span>
-													<span className="text-gray-400 text-xs">
-														{new Date(s.date).toLocaleDateString()}
-													</span>
-												</div>
-											);
-										})}
-									</div>
-								</div>
-							);
-						})}
-					</div>
-				</div>
-			)}
 		</main>
 	);
 }
