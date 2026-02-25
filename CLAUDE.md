@@ -28,6 +28,7 @@ npm run test:e2e             # Playwright e2e tests (all browsers)
 npm run qa                   # Question quality audit (all sections)
 npm run qa -- --section=aud  # QA audit for single section
 npm run qa -- --output=json  # QA audit with JSON output (for scripting)
+npm run sync-counts          # Sync questionCounts from live DB → blueprint.ts + tests
 npm run validate-migration <file>  # Validate question migration against style guide
 npm run generate-migration   # Generate UPDATE scaffold from piped candidate JSON
 ```
@@ -132,6 +133,7 @@ Each batch gets its own headless `claude --print` invocation with a fresh contex
 | `scripts/qa/select-generation-batch.ts`       | Pick next batch for a section (biggest-gap-first) |
 | `scripts/qa/extract-topic-stems.ts`           | Fetch existing stems for dedup context |
 | `scripts/qa/check-generation-duplicates.ts`   | Post-generation trigram duplicate check |
+| `scripts/qa/sync-question-counts.ts`          | Sync DB topic counts → blueprint.ts + test assertions      |
 | `scripts/qa/utils.ts`                         | Shared utilities (migration numbering, file lock, trigrams) |
 | `scripts/qa/validate-migration.ts`            | Pre-commit migration validator (INSERT + UPDATE + explanation-only) |
 | `docs/blooms-rebalancing.md`                  | Cross-session Bloom's L3 rebalancing tracker |

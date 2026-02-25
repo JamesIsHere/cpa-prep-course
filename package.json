@@ -13,7 +13,8 @@
     "qa": "tsx scripts/qa/run-qa.ts",
     "validate-migration": "tsx scripts/qa/validate-migration.ts",
     "generate-migration": "tsx scripts/qa/generate-migration.ts",
-    "health": "tsx scripts/health-check.ts"
+    "health": "tsx scripts/health-check.ts",
+    "sync-counts": "tsx scripts/qa/sync-question-counts.ts"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",

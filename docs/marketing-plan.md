@@ -4,11 +4,12 @@
 
 Taglines and text blocks for use on marketing pages, landing pages, and the homepage.
 
-| #  | Copy                                                                                              | Placement   |
-|----|---------------------------------------------------------------------------------------------------|-------------|
-| 1  | "New Questions Every Week"                                                                        | Homepage    |
-| 2  | "Active Support Staff — Email Replies Within 12 Hours"                                            | Homepage    |
-| 3  | "Find an error in a question? If it's valid, get a free month. If not, get a thoughtful response." | Homepage    |
+| #  | Copy                                                                                            | Placement   |
+|----|-------------------------------------------------------------------------------------------------|-------------|
+| 1  | New Questions Every Week                                                                        | Homepage    |
+| 2  | Active Support Staff — Email Replies Within 12 Hours                                            | Homepage    |
+| 3  | Find an error in a question? If it's valid, get a free month. If not, get a thoughtful response | Homepage    |
+| 4  | Not finding a good explanation - I reccomend AI                                                 | Homepage    |
 
 ## Mascot
 
