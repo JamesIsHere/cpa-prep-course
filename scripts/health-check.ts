@@ -363,7 +363,7 @@ async function checkDeployFreshness(): Promise<CheckResult> {
 		const { execSync } = await import("child_process");
 		const localSha = execSync("git rev-parse HEAD", { encoding: "utf-8", timeout: 5000 }).trim().slice(0, 7);
 		// Fetch the homepage and check x-vercel-deployment-url or look for commit sha in meta
-		const [res, fetchMs, err] = await timedFetch(targetUrl);
+		const [res, , err] = await timedFetch(targetUrl);
 		const ms = Date.now() - start;
 		if (err || !res) {
 			return { name: "Deploy freshness", status: "warn", message: "Could not fetch homepage", ms };
@@ -509,6 +509,7 @@ async function checkMigrationSync(): Promise<CheckResult> {
 // ── Main ──
 
 async function main() {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const vlog = verbose ? log : (..._args: unknown[]) => {};
 
 	vlog(bold("Slayer CPA Health Check"));

@@ -54,7 +54,7 @@ async function main() {
 
 	// Available slots from targets
 	let easyLeft = spec.difficulty.easy;
-	let mediumLeft = spec.difficulty.medium;
+	// mediumLeft not tracked — only easyLeft and hardLeft drive assignments
 	let hardLeft = spec.difficulty.hard;
 
 	// Assign Bloom's levels to compatible difficulties
@@ -66,7 +66,7 @@ async function main() {
 		} else {
 			// Overflow: L1 with medium (acceptable, just less ideal)
 			assignments.push({ difficulty: "medium", cognitiveLevel: 1 });
-			mediumLeft--;
+			// medium slot consumed
 		}
 	}
 	// L4 → hard (all)
@@ -77,7 +77,7 @@ async function main() {
 		} else {
 			// Overflow: L4 with medium
 			assignments.push({ difficulty: "medium", cognitiveLevel: 4 });
-			mediumLeft--;
+			// medium slot consumed
 		}
 	}
 	// L3 → remaining hard first, then medium
@@ -87,7 +87,7 @@ async function main() {
 			hardLeft--;
 		} else {
 			assignments.push({ difficulty: "medium", cognitiveLevel: 3 });
-			mediumLeft--;
+			// medium slot consumed
 		}
 	}
 	// L2 → remaining easy first, then medium
@@ -97,7 +97,7 @@ async function main() {
 			easyLeft--;
 		} else {
 			assignments.push({ difficulty: "medium", cognitiveLevel: 2 });
-			mediumLeft--;
+			// medium slot consumed
 		}
 	}
 
