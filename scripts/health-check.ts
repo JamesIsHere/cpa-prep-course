@@ -10,7 +10,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const envPath = resolve(__dirname, "../.env.local");
 const hasEnvFile = existsSync(envPath);
 if (hasEnvFile) {
-	config({ path: envPath });
+	config({ path: envPath, quiet: true });
 }
 
 // Parse flags
@@ -20,6 +20,7 @@ const urlFlag = process.argv
 	.slice(1)
 	.join("=");
 const outputJson = process.argv.some((a) => a === "--json");
+const verbose = process.argv.some((a) => a === "--verbose");
 
 const targetUrl = (urlFlag || "http://localhost:3000").replace(/\/$/, "");
 const log = outputJson ? console.error : console.log;
@@ -46,7 +47,8 @@ function formatResult(r: CheckResult): string {
 				: r.status === "warn"
 					? yellow("[WARN]")
 					: yellow("[SKIP]");
-	return `  ${tag} ${r.name} (${r.ms}ms)`;
+	const detail = r.status === "fail" ? red(`${r.name} (${r.ms}ms)`) : `${r.name} (${r.ms}ms)`;
+	return `  ${tag} ${detail}`;
 }
 
 async function timedFetch(
@@ -507,44 +509,46 @@ async function checkMigrationSync(): Promise<CheckResult> {
 // ── Main ──
 
 async function main() {
-	log(bold("Slayer CPA Health Check"));
-	log("========================");
-	log(`Target: ${targetUrl}\n`);
+	const vlog = verbose ? log : (..._args: unknown[]) => {};
+
+	vlog(bold("Slayer CPA Health Check"));
+	vlog("========================");
+	vlog(`Target: ${targetUrl}\n`);
 
 	// Remote checks
-	log(bold("Remote Checks"));
+	vlog(bold("Remote Checks"));
 	const remoteResults: CheckResult[] = [];
 
 	const [homepage, health] = await Promise.all([checkHomepage(), checkHealthEndpoint()]);
 	remoteResults.push(homepage, health);
-	log(formatResult(homepage));
-	log(formatResult(health));
+	vlog(formatResult(homepage));
+	vlog(formatResult(health));
 
 	// Route checks — run in parallel
 	const routeResults = await Promise.all(ROUTE_CHECKS.map(checkRoute));
 	for (const r of routeResults) {
 		remoteResults.push(r);
-		log(formatResult(r));
+		vlog(formatResult(r));
 	}
 
 	// Content page checks
-	log(`\n${bold("Content Pages")}`);
+	vlog(`\n${bold("Content Pages")}`);
 	const contentResults = await Promise.all(CONTENT_PAGES.map(checkContentPage));
 	for (const r of contentResults) {
 		remoteResults.push(r);
-		log(formatResult(r));
+		vlog(formatResult(r));
 	}
 
 	// SEO checks
-	log(`\n${bold("SEO")}`);
+	vlog(`\n${bold("SEO")}`);
 	const [sitemap, robots, ssl] = await Promise.all([checkSitemap(), checkRobotsTxt(), checkSslCert()]);
 	for (const r of [sitemap, robots, ssl]) {
 		remoteResults.push(r);
-		log(formatResult(r));
+		vlog(formatResult(r));
 	}
 
 	// Direct checks
-	log(`\n${bold("Direct Checks")}`);
+	vlog(`\n${bold("Direct Checks")}`);
 	const directResults: CheckResult[] = [];
 	const [db, migSync, stripe, env, vercel, freshness] = await Promise.all([
 		checkSupabaseDb(),
@@ -556,7 +560,7 @@ async function main() {
 	]);
 	directResults.push(db, migSync, stripe, env, vercel, freshness);
 	for (const r of directResults) {
-		log(formatResult(r));
+		vlog(formatResult(r));
 	}
 
 	// Summary
@@ -567,7 +571,95 @@ async function main() {
 	const skipped = all.filter((r) => r.status === "skip").length;
 	const total = all.length - skipped;
 
-	log(`\n${bold("Summary")}: ${passed}/${total} passed, ${failed} failed${warned ? `, ${warned} warnings` : ""}${skipped ? `, ${skipped} skipped` : ""}`);
+	// Dot grid — three-column layout with colored dots and short labels
+	const white = (s: string) => (outputJson ? s : `\x1b[37m${s}\x1b[0m`);
+	const dim = (s: string) => (outputJson ? s : `\x1b[2m${s}\x1b[0m`);
+
+	function dotColor(status: CheckResult["status"]): string {
+		switch (status) {
+			case "pass": return green("●");
+			case "fail": return red("●");
+			case "warn": return yellow("●");
+			case "skip": return white("○");
+		}
+	}
+
+	// Short display labels for grid — keyed by prefix match on check name
+	const SHORT_LABELS: [RegExp, string][] = [
+		[/^Homepage/, "Homepage"],
+		[/^Health endpoint/, "Health API"],
+		[/checkout/i, "Checkout"],
+		[/portal/i, "Portal"],
+		[/quizzes\/start/, "Quiz Start"],
+		[/quizzes.*submit/, "Quiz Submit"],
+		[/exams\/start/, "Exam Start"],
+		[/exams\/\d+\b(?!.*submit)/, "Exam Get"],
+		[/exams.*submit/, "Exam Submit"],
+		[/feedback/, "Feedback"],
+		[/webhooks\/stripe/, "Stripe Hook"],
+		[/study-frameworks/, "Frameworks"],
+		[/Sections listing/, "Sections"],
+		[/Blog listing/, "Blog"],
+		[/Section detail/, "AUD Section"],
+		[/Free lesson/, "AUD Free Lesson"],
+		[/Blueprint/, "Blueprint"],
+		[/Blog post/, "Blog Post"],
+		[/Signup/, "Signup"],
+		[/Login/, "Login"],
+		[/Sitemap/, "Sitemap"],
+		[/robots/, "robots.txt"],
+		[/SSL/, "SSL Cert"],
+		[/Supabase DB/, "Supabase"],
+		[/Migration sync/, "Migrations"],
+		[/Stripe price/, "Stripe"],
+		[/Env consistency/, "Env Vars"],
+		[/Vercel deploy/, "Vercel"],
+		[/Deploy freshness/, "Deploy Sync"],
+	];
+
+	function shortName(r: CheckResult): string {
+		for (const [re, label] of SHORT_LABELS) {
+			if (re.test(r.name)) return label;
+		}
+		let n = r.name.replace(/ -> \d+$/, "").replace(/: .*$/, "");
+		if (n.length > 20) n = n.slice(0, 17) + "...";
+		return n;
+	}
+
+	if (!outputJson) {
+		const COLS = 3;
+		const COL_W = 24;
+		const host = new URL(targetUrl).hostname;
+		log(`\n${bold("Slayer CPA")} — ${host}`);
+		log(dim("─".repeat(COLS * COL_W)));
+		for (let i = 0; i < all.length; i += COLS) {
+			let row = "";
+			for (let c = 0; c < COLS && i + c < all.length; c++) {
+				const item = all[i + c];
+				const label = shortName(item);
+				const cell = `${dotColor(item.status)} ${label}`;
+				const plainLen = 2 + label.length; // "● " + label
+				const pad = " ".repeat(Math.max(1, COL_W - plainLen));
+				row += cell + pad;
+			}
+			log(row);
+		}
+		log(dim("─".repeat(COLS * COL_W)));
+	}
+
+	// Overall status banner
+	const statusLabel = failed > 0
+		? red("● UNHEALTHY")
+		: warned > 0
+			? yellow("● DEGRADED")
+			: green("● HEALTHY");
+
+	const passedStr = green(`${passed} passed`);
+	const failedStr = failed > 0 ? red(`${failed} failed`) : `${failed} failed`;
+	const warnedStr = warned > 0 ? `, ${yellow(`${warned} warnings`)}` : "";
+	const skippedStr = skipped > 0 ? `, ${skipped} skipped` : "";
+
+	log(`${statusLabel}  ${passedStr}, ${failedStr}${warnedStr}${skippedStr}`);
 
 	// JSON output
 	if (outputJson) {
