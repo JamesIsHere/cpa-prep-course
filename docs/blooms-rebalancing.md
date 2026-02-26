@@ -10,7 +10,7 @@ Cross-session tracker for rewriting L2 questions to L3 analytical depth.
 |---------|----------|-----------|--------|----------------------|-----------|---------|
 | REG     | 9%       | 25%       | ~0pt   | ~60                  | 155       | Done    |
 | BAR     | 16%      | 30%       | ~0pt   | ~109                 | 109       | Done    |
-| FAR     | 16%      | 25%       | ~0pt   | ~85                  | 85        | Done    |
+| FAR     | 16%      | 25%       | ~0pt   | ~85                  | 135       | Done    |
 | TCP     | 15%      | 20%       | ~0pt   | ~40                  | 40        | Done    |
 
 ## Migration Log
@@ -29,6 +29,7 @@ Cross-session tracker for rewriting L2 questions to L3 analytical depth.
 | 2026-02-21 | 00104_blooms_l3_far_batch4.sql     | FAR     | 10    | 26%     | 10 topics: top-up batch covering all major FAR topics for 25%+ target |
 | 2026-02-21 | 00105_blooms_l3_tcp_batch1.sql     | TCP     | 20    | 18%     | 10 topics: Entity Formation, Passive Activity, International, Wealth Transfer, Retirement, Trusts, Owner-Entity, Nontaxable, Compensation, NOLs |
 | 2026-02-21 | 00106_blooms_l3_tcp_batch2.sql     | TCP     | 20    | 20%     | 8 topics: Adv Basis, Entity Choice, Capital Structure, Related Parties, Formation/Restructuring, Multi-Jurisdictional, Entity Formation, Passive Activity |
+| 2026-02-26 | 00253_blooms_l3_far_batch5.sql     | FAR     | 50    | ~30%    | 23 topics: Acctg Changes, Bonds, Cash/Recv, Conceptual Frmwk, Consolidations, Contingencies, EPS, Employee Benefits, Equity, Fair Value, Fin Stmts, Fixed Assets, Govt Acctg, Govt Fundamentals, Income Taxes, Intangibles, Inventory, Leases, NFP, Payables, Revenue, SPF, Cash Flows |
 
 ## L3 Rewrite Patterns
 
