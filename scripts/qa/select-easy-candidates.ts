@@ -4,6 +4,8 @@
 import { readFileSync } from "fs";
 import { resolve } from "path";
 import { fetchAllQuestions } from "./db-client";
+import { cpaBlueprint } from "../../src/lib/blueprint";
+import { getFrameworkItemsForGroup } from "../../src/lib/blueprint-utils";
 
 const sectionArg = process.argv
 	.find((a) => a.startsWith("--section="))
@@ -34,10 +36,12 @@ interface Candidate {
 	difficulty: string;
 	topic: string;
 	cognitive_level: number | null;
+	lessonSlugs: string[];
+	frameworkItems: any;
 }
 
 async function main() {
-	// Load exclude IDs if provided (for cross-batch deduplication)
+	// ... existing exclude IDs logic ...
 	const excludeIds = new Set<number>();
 	if (excludeFile) {
 		try {
@@ -52,24 +56,39 @@ async function main() {
 
 	const questions = await fetchAllQuestions(sectionArg!);
 
+	// Helper to find lesson/framework for a topic
+	const getTopicContext = (topic: string) => {
+		let slugs: string[] = [];
+		let items: any = null;
+		const bpSection = cpaBlueprint.find((s) => s.code === sectionArg);
+		if (bpSection) {
+			for (const area of bpSection.areas) {
+				for (const group of area.groups) {
+					if (group.questionTopics.includes(topic)) {
+						slugs = group.lessonSlugs;
+						items = getFrameworkItemsForGroup(
+							sectionArg!,
+							area.area,
+							group.letter,
+						);
+						break;
+					}
+				}
+				if (slugs.length > 0) break;
+			}
+		}
+		return { slugs, items };
+	};
+
 	// Build per-topic counts
 	const topicTotal = new Map<string, number>();
-	const topicEasyQuestions = new Map<string, Candidate[]>();
+	const topicEasyQuestions = new Map<string, any[]>();
 
 	for (const q of questions) {
 		topicTotal.set(q.topic, (topicTotal.get(q.topic) || 0) + 1);
 		if (q.difficulty === "easy" && !excludeIds.has(q.id)) {
 			if (!topicEasyQuestions.has(q.topic)) topicEasyQuestions.set(q.topic, []);
-			topicEasyQuestions.get(q.topic)!.push({
-				id: q.id,
-				stem: q.stem,
-				choices: q.choices as string[],
-				correct_index: q.correct_index,
-				explanation: q.explanation,
-				difficulty: q.difficulty,
-				topic: q.topic,
-				cognitive_level: q.cognitive_level,
-			});
+			topicEasyQuestions.get(q.topic)!.push(q);
 		}
 	}
 
@@ -97,8 +116,22 @@ async function main() {
 		const proportion = Math.max(1, Math.round((room / totalRoom) * countArg));
 		const pick = Math.min(proportion, room, remaining);
 		const candidates = topicEasyQuestions.get(topic) || [];
+		const context = getTopicContext(topic);
+
 		for (let i = 0; i < pick && i < candidates.length; i++) {
-			selected.push(candidates[i]);
+			const c = candidates[i];
+			selected.push({
+				id: c.id,
+				stem: c.stem,
+				choices: c.choices as string[],
+				correct_index: c.correct_index,
+				explanation: c.explanation,
+				difficulty: c.difficulty,
+				topic: c.topic,
+				cognitive_level: c.cognitive_level,
+				lessonSlugs: context.slugs,
+				frameworkItems: context.items,
+			});
 			remaining--;
 		}
 	}
@@ -109,6 +142,7 @@ async function main() {
 		for (const [topic] of sortedTopics) {
 			if (remaining <= 0) break;
 			const candidates = topicEasyQuestions.get(topic) || [];
+			const context = getTopicContext(topic);
 			const floorCount = Math.ceil(
 				(topicTotal.get(topic) || 0) * (floorPct / 100),
 			);
@@ -118,7 +152,18 @@ async function main() {
 				if (remaining <= 0) break;
 				if (topicEasyCount - topicSelected <= floorCount) break;
 				if (!usedIds.has(c.id)) {
-					selected.push(c);
+					selected.push({
+						id: c.id,
+						stem: c.stem,
+						choices: c.choices as string[],
+						correct_index: c.correct_index,
+						explanation: c.explanation,
+						difficulty: c.difficulty,
+						topic: c.topic,
+						cognitive_level: c.cognitive_level,
+						lessonSlugs: context.slugs,
+						frameworkItems: context.items,
+					});
 					usedIds.add(c.id);
 					remaining--;
 					topicSelected++;

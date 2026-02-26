@@ -1,33 +1,24 @@
-// Fetch all existing stems for a topic as compact JSON array (dedup context for Claude)
-// Usage: npx tsx scripts/qa/extract-topic-stems.ts --section=aud --topic="Ethics and Independence"
+// Extract all stems for a specific topic to provide "Concept Diversity" context to the LLM
+// Usage: npx tsx scripts/qa/extract-topic-stems.ts --section=aud --topic="Audit Evidence"
 
 import { fetchAllQuestions } from "./db-client";
 
-const sectionArg = process.argv
-	.find((a) => a.startsWith("--section="))
-	?.split("=")[1];
-const topicArg = process.argv
-	.find((a) => a.startsWith("--topic="))
-	?.split("=")[1];
+const sectionArg = process.argv.find((a) => a.startsWith("--section="))?.split("=")[1];
+const topicArg = process.argv.find((a) => a.startsWith("--topic="))?.split("=")[1];
 
 if (!sectionArg || !topicArg) {
-	console.error(
-		'Usage: npx tsx scripts/qa/extract-topic-stems.ts --section=aud --topic="Ethics and Independence"',
-	);
+	console.error("Usage: npx tsx scripts/qa/extract-topic-stems.ts --section=aud --topic=\"Audit Evidence\"");
 	process.exit(1);
 }
 
 async function main() {
-	const questions = await fetchAllQuestions(sectionArg!);
-
-	const stems = questions
+	const all = await fetchAllQuestions(sectionArg!);
+	const topicStems = all
 		.filter((q) => q.topic === topicArg)
 		.map((q) => q.stem);
 
-	// Output compact JSON array to stdout (no choices/explanations — minimizes context)
-	console.log(JSON.stringify(stems));
-
-	console.error(`\nExtracted ${stems.length} stems for "${topicArg}" (${sectionArg!.toUpperCase()})`);
+	// Output as JSON to stdout
+	console.log(JSON.stringify(topicStems, null, 2));
 }
 
 main();

@@ -126,7 +126,7 @@ describe("lesson slug cross-references", () => {
 
 describe("question counts", () => {
 	it("section totals match expected values", () => {
-		expect(sectionQuestionTotals.aud).toBe(2732);
+		expect(sectionQuestionTotals.aud).toBe(2792);
 		expect(sectionQuestionTotals.far).toBe(1005);
 		expect(sectionQuestionTotals.reg).toBe(1027);
 		expect(sectionQuestionTotals.bar).toBe(1016);

@@ -5,6 +5,9 @@ import { readFileSync, existsSync } from "fs";
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 import { fetchAllQuestions } from "./db-client";
+import { cpaBlueprint } from "../../src/lib/blueprint";
+import { getStudyFramework } from "../../src/lib/study-frameworks";
+import { getFrameworkItemsForGroup } from "../../src/lib/blueprint-utils";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const docsDir = resolve(__dirname, "../../docs");
@@ -61,6 +64,8 @@ interface BatchSpec {
 	blooms: { l1: number; l2: number; l3: number; l4: number };
 	existingStems: string[];
 	citationPatterns: string;
+	lessonSlugs: string[];
+	frameworkItems: any; // Using any for simplicity in JSON transport
 }
 
 async function main() {
@@ -118,6 +123,28 @@ async function main() {
 	gaps.sort((a, b) => b.remaining - a.remaining);
 	const picked = gaps[0];
 
+	// Find blueprint group for the picked topic to extract lesson mapping and frameworks
+	let lessonSlugs: string[] = [];
+	let frameworkItems: any = null;
+
+	const bpSection = cpaBlueprint.find((s) => s.code === section);
+	if (bpSection) {
+		for (const area of bpSection.areas) {
+			for (const group of area.groups) {
+				if (group.questionTopics.includes(picked.topic)) {
+					lessonSlugs = group.lessonSlugs;
+					frameworkItems = getFrameworkItemsForGroup(
+						section,
+						area.area,
+						group.letter,
+					);
+					break;
+				}
+			}
+			if (lessonSlugs.length > 0) break;
+		}
+	}
+
 	// Determine actual batch count (min of batchSize and remaining)
 	const count = Math.min(batchSize, picked.remaining);
 
@@ -145,6 +172,8 @@ async function main() {
 		blooms: { l1, l2, l3, l4 },
 		existingStems,
 		citationPatterns: CITATION_PATTERNS[section] || "",
+		lessonSlugs,
+		frameworkItems,
 	};
 
 	// Output JSON to stdout

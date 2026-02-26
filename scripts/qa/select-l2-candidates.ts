@@ -5,6 +5,8 @@ import { readFileSync } from "fs";
 import { resolve } from "path";
 import { analyzeBlooms } from "./analyzers/blooms";
 import { fetchAllQuestions, supabase } from "./db-client";
+import { cpaBlueprint } from "../../src/lib/blueprint";
+import { getFrameworkItemsForGroup } from "../../src/lib/blueprint-utils";
 
 const sectionArg = process.argv
 	.find((a) => a.startsWith("--section="))
@@ -14,7 +16,7 @@ const countArg = parseInt(
 );
 const targetLevel = (process.argv
 	.find((a) => a.startsWith("--target="))
-	?.split("=")[1] || "l1") as "l1" | "l4";
+	?.split("=")[1] || "l1") as "l1" | "l3" | "l4";
 const excludeFile = process.argv
 	.find((a) => a.startsWith("--exclude-ids="))
 	?.split("=")[1];
@@ -50,6 +52,7 @@ async function main() {
 	// Build per-topic counts
 	const topicTotal = new Map<string, number>();
 	const topicL1 = new Map<string, number>();
+	const topicL3 = new Map<string, number>();
 	const topicL2Questions: Map<
 		string,
 		Array<{
@@ -66,6 +69,7 @@ async function main() {
 	for (const r of results) {
 		topicTotal.set(r.topic, (topicTotal.get(r.topic) || 0) + 1);
 		if (r.level === 1) topicL1.set(r.topic, (topicL1.get(r.topic) || 0) + 1);
+		if (r.level === 3) topicL3.set(r.topic, (topicL3.get(r.topic) || 0) + 1);
 	}
 
 	// Build L2 question lookup (excluding already-processed IDs)
@@ -88,12 +92,16 @@ async function main() {
 		}
 	}
 
-	// Calculate room per topic (30% cap applies only for L1 target)
+	// Calculate room per topic (30% cap applies to L1/L3 targets)
 	const topicRoom = new Map<string, number>();
 	for (const [topic, total] of topicTotal) {
 		if (targetLevel === "l1") {
 			const cap = Math.floor(total * 0.3);
 			const current = topicL1.get(topic) || 0;
+			topicRoom.set(topic, Math.max(0, cap - current));
+		} else if (targetLevel === "l3") {
+			const cap = Math.floor(total * 0.3);
+			const current = topicL3.get(topic) || 0;
 			topicRoom.set(topic, Math.max(0, cap - current));
 		} else {
 			// L4 has no per-topic cap, allow any L2 question
@@ -115,8 +123,34 @@ async function main() {
 		explanation: string;
 		difficulty: string;
 		topic: string;
+		lessonSlugs: string[];
+		frameworkItems: any;
 	}> = [];
 	let remaining = countArg;
+
+	// Helper to find lesson/framework for a topic
+	const getTopicContext = (topic: string) => {
+		let slugs: string[] = [];
+		let items: any = null;
+		const bpSection = cpaBlueprint.find((s) => s.code === sectionArg);
+		if (bpSection) {
+			for (const area of bpSection.areas) {
+				for (const group of area.groups) {
+					if (group.questionTopics.includes(topic)) {
+						slugs = group.lessonSlugs;
+						items = getFrameworkItemsForGroup(
+							sectionArg!,
+							area.area,
+							group.letter,
+						);
+						break;
+					}
+				}
+				if (slugs.length > 0) break;
+			}
+		}
+		return { slugs, items };
+	};
 
 	// Round-robin: pick proportionally from each topic
 	for (const [topic, room] of sortedTopics) {
@@ -124,9 +158,15 @@ async function main() {
 		const proportion = Math.max(1, Math.round((room / totalRoom) * countArg));
 		const pick = Math.min(proportion, room, remaining);
 		const candidates = topicL2Questions.get(topic) || [];
+		const context = getTopicContext(topic);
+
 		// Pick first N candidates (they're already in the order from DB)
 		for (let i = 0; i < pick && i < candidates.length; i++) {
-			selected.push(candidates[i]);
+			selected.push({
+				...candidates[i],
+				lessonSlugs: context.slugs,
+				frameworkItems: context.items,
+			});
 			remaining--;
 		}
 	}
@@ -137,10 +177,16 @@ async function main() {
 		for (const [topic] of sortedTopics) {
 			if (remaining <= 0) break;
 			const candidates = topicL2Questions.get(topic) || [];
+			const context = getTopicContext(topic);
+
 			for (const c of candidates) {
 				if (remaining <= 0) break;
 				if (!usedIds.has(c.id)) {
-					selected.push(c);
+					selected.push({
+						...c,
+						lessonSlugs: context.slugs,
+						frameworkItems: context.items,
+					});
 					usedIds.add(c.id);
 					remaining--;
 				}

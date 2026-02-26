@@ -18,7 +18,7 @@ param(
     [ValidateSet('aud','far','reg','bar','isc','tcp')]
     [string]$Section,
 
-    [ValidateSet('citation','difficulty','blooms','generate')]
+    [ValidateSet('citation','difficulty','blooms','generate','moderate')]
     [string]$Mode = 'citation',
 
     [Parameter(Mandatory)]
@@ -68,6 +68,7 @@ $SelectorMap = @{
     'difficulty' = 'select-easy-candidates.ts'
     'blooms'    = 'select-l2-candidates.ts'
     'generate'  = 'select-generation-batch.ts'
+    'moderate'  = 'pull-moderate-candidates.ts'
 }
 
 # Section citation patterns (passed to Claude in prompt)
@@ -86,6 +87,7 @@ $ModeLabel = switch ($Mode) {
     'difficulty' { 'Difficulty rebalancing' }
     'blooms'    { "Bloom's $($Target.ToUpper()) rebalancing" }
     'generate'  { 'Question generation' }
+    'moderate'  { 'Quality upgrade' }
 }
 
 # File pattern for detecting existing batches
@@ -94,6 +96,7 @@ $FilePattern = switch ($Mode) {
     'difficulty' { "*_difficulty_${Section}_batch*.sql" }
     'blooms'    { "*_blooms_${Target}_${Section}_batch*.sql" }
     'generate'  { "*_generate_${Section}_batch*.sql" }
+    'moderate'  { "*_upgrade_${Section}_batch*.sql" }
 }
 
 # ═══════════════════════════════════════════════════════════════
@@ -347,6 +350,30 @@ ORCHESTRATOR_RESULT:{"status":"error","message":"brief description"}
         }
 
         'difficulty' {
+            # Load context for rebalancing/upgrade modes
+            $candidates = Get-Content $CandidateFile -Raw | ConvertFrom-Json
+            
+            # Aggregate unique lesson slugs
+            $slugs = @()
+            foreach ($c in $candidates) {
+                if ($c.lessonSlugs) {
+                    foreach ($s in $c.lessonSlugs) {
+                        if ($slugs -notcontains $s) { $slugs += $s }
+                    }
+                }
+            }
+
+            # Load Lesson Content
+            $lessonContent = ""
+            foreach ($slug in $slugs) {
+                $lessonPath = Join-Path (Join-Path (Join-Path $RepoRoot 'src') 'content') $Section
+                $lessonFile = Join-Path $lessonPath "${slug}.mdx"
+                if (Test-Path $lessonFile) {
+                    $lessonContent += "`n--- LESSON: $slug ---`n"
+                    $lessonContent += Get-Content $lessonFile -Raw
+                }
+            }
+
             return @"
 You are running headless as part of an automated batch pipeline. Execute autonomously — do not ask questions, do not create task lists, do not use TodoWrite.
 
@@ -357,15 +384,18 @@ FILES:
 - Original easy questions: $cf
 - Progress tracker to update: $tf
 
+SOURCE LESSON CONTENT (Use for accuracy):
+$lessonContent
+
 INSTRUCTIONS:
 
-1. Read the scaffold and candidate JSON. Each candidate is currently easy difficulty — you are rewriting to medium.
+1. Read the scaffold and candidate JSON. Each candidate is currently easy difficulty — you are rewriting to medium. Candidates include relevant lessonSlugs and frameworkItems.
 
 2. For EVERY question in the scaffold, perform a full rewrite:
-   a) STEM: Add a realistic scenario with a named entity (e.g., "Oakridge Construction LLC"), specific dollar amounts, specific dates, and a complicating factor. Target 20-40 words. No pure "What is X?" stems.
-   b) CHOICES: Write four choices with parallel grammatical structure. Each wrong answer must represent a real misconception or computational error students actually make. No "all of the above", "none of the above", or "both A and C" patterns. Longest choice max 2x shortest length.
-   c) EXPLANATION: First sentence cites the controlling standard ($cit) by section number. Second sentence explains why correct. Third uses contrast language (while, whereas, although, however, incorrect because, rather than, unlike) to address the most plausible wrong answer. Target 50-100 words.
-   d) Set correct_index to the right choice (0-based). Vary the distribution — do not repeat the same index mechanically.
+   a) STEM: Add a realistic scenario with a named entity, specific dollar amounts, specific dates, and a complicating factor. Target 20-40 words. INTEGRATE the provided frameworkItems.
+   b) CHOICES: Write four choices with parallel grammatical structure. No "all of the above" patterns. Longest choice max 2x shortest length.
+   c) EXPLANATION: First sentence cites the controlling standard ($cit) by section number. Second sentence explains why correct. Third uses contrast language to address the most plausible wrong answer. Target 50-100 words.
+   d) Set correct_index (0-based). Vary the distribution.
    e) Keep difficulty='medium' and cognitive_level=2.
    f) CRITICAL: escape single quotes as '' in SQL. Format choices as valid JSON arrays.
 
@@ -382,6 +412,67 @@ ORCHESTRATOR_RESULT:{"status":"error","message":"brief description"}
 "@
         }
 
+        'moderate' {
+            # Load context for rebalancing/upgrade modes
+            $candidates = Get-Content $CandidateFile -Raw | ConvertFrom-Json
+            
+            # Aggregate unique lesson slugs
+            $slugs = @()
+            foreach ($c in $candidates) {
+                if ($c.lessonSlugs) {
+                    foreach ($s in $c.lessonSlugs) {
+                        if ($slugs -notcontains $s) { $slugs += $s }
+                    }
+                }
+            }
+
+            # Load Lesson Content
+            $lessonContent = ""
+            foreach ($slug in $slugs) {
+                $lessonPath = Join-Path (Join-Path (Join-Path $RepoRoot 'src') 'content') $Section
+                $lessonFile = Join-Path $lessonPath "${slug}.mdx"
+                if (Test-Path $lessonFile) {
+                    $lessonContent += "`n--- LESSON: $slug ---`n"
+                    $lessonContent += Get-Content $lessonFile -Raw
+                }
+            }
+
+            return @"
+You are running headless as part of an automated batch pipeline. Execute autonomously — do not ask questions, do not create task lists, do not use TodoWrite.
+
+TASK: Quality upgrade (moderate to acceptable) for $su section, batch $BatchNum.
+
+FILES:
+- Migration scaffold (fill every TODO): $sf
+- Original mediocre questions: $cf
+- Progress tracker to update: $tf
+
+SOURCE LESSON CONTENT (Use for accuracy):
+$lessonContent
+
+INSTRUCTIONS:
+
+1. Read the scaffold and candidate JSON. These questions have mediocre quality (score 4-6). Each candidate in the JSON includes its relevant lessonSlugs and frameworkItems (mnemonics, decision trees, etc.).
+
+2. For EVERY question, perform a professional upgrade:
+   a) STEM: If the stem is a simple question, rewrite it as a scenario with a named entity, specific numbers, and professional context. 20-40 words. INTEGRATE the provided frameworkItems (e.g., require applying a specific mnemonic).
+   b) CHOICES: Ensure 4 parallel-grammar choices. Fix any "all of the above" or "length-cuing" issues.
+   c) EXPLANATION: First sentence MUST cite the standard ($cit) by section. Second explains why correct. Third MUST use contrast language. 50-100 words.
+   d) Set correct_index (0-based) and escape single quotes as ''.
+
+3. Validate: npm run validate-migration $sf
+   Fix errors, re-validate.
+
+4. Update tracker at $tf.
+
+When finished, output this EXACT line as your final message:
+ORCHESTRATOR_RESULT:{"status":"ok","questions":N,"file":"$fn"}
+
+If you encounter an unrecoverable error, output:
+ORCHESTRATOR_RESULT:{"status":"error","message":"brief description"}
+"@
+        }
+
         'generate' {
             # Read batch spec to get topic, counts, and existing stems
             $batchSpec = Get-Content $CandidateFile -Raw | ConvertFrom-Json
@@ -394,6 +485,25 @@ ORCHESTRATOR_RESULT:{"status":"error","message":"brief description"}
             $bL2       = $batchSpec.blooms.l2
             $bL3       = $batchSpec.blooms.l3
             $bL4       = $batchSpec.blooms.l4
+
+            # Load Lesson Content
+            $lessonContent = ""
+            if ($batchSpec.lessonSlugs) {
+                foreach ($slug in $batchSpec.lessonSlugs) {
+                    $lessonPath = Join-Path (Join-Path (Join-Path $RepoRoot 'src') 'content') $Section
+                    $lessonFile = Join-Path $lessonPath "${slug}.mdx"
+                    if (Test-Path $lessonFile) {
+                        $lessonContent += "`n--- LESSON: $slug ---`n"
+                        $lessonContent += Get-Content $lessonFile -Raw
+                    }
+                }
+            }
+
+            # Load Framework Items (formatted JSON)
+            $frameworkJson = ""
+            if ($batchSpec.frameworkItems) {
+                $frameworkJson = ($batchSpec.frameworkItems | ConvertTo-Json -Depth 10)
+            }
 
             # Truncate existing stems to stay within context limits
             $existingStems = $batchSpec.existingStems
@@ -417,23 +527,31 @@ TRACKER: $tf
 EXISTING STEMS (do NOT duplicate these concepts):
 $stemsJson
 
+SOURCE LESSON CONTENT (Use this to ensure accuracy and consistent terminology):
+$lessonContent
+
+STUDY FRAMEWORKS (Integrate these! Create questions that require applying these mnemonics or following these decision paths):
+$frameworkJson
+
 RULES:
-1. STEM: L1 = "What is...?" (10-20 words). L2+ = scenario-first with named
+1. CONCEPTUAL RESEARCH: Before generating, read the EXISTING STEMS and the SOURCE LESSON CONTENT. Identify the specific sub-topics/concepts already covered. List at least 5 concepts within "$genTopic" that are NOT yet tested by the existing stems.
+2. STEM: L1 = "What is...?" (10-20 words). L2+ = scenario-first with named
    entity, dollar amounts, dates (20-60 words). No "What is X?" for medium/hard.
-2. CHOICES: 4 parallel-grammar choices. Wrong answers = real misconceptions.
+3. CHOICES: 4 parallel-grammar choices. Wrong answers = real misconceptions.
    No all/none of above. Longest max 2x shortest.
-3. EXPLANATION (50-100 words, three parts):
+4. EXPLANATION (50-100 words, three parts):
    a) Cite standard ($cit) by section number
    b) Explain why correct
    c) Contrast language for most plausible wrong answer
-4. VARIETY: Each question tests a DIFFERENT concept within "$genTopic".
+5. VARIETY: Each question in this batch must test a DIFFERENT concept identified in your research.
    Vary entities, amounts, correct_index distribution (roughly equal 0-3).
-5. SQL: Escape single quotes as ''. Choices as valid JSON arrays.
+6. SQL: Escape single quotes as ''. Choices as valid JSON arrays.
    section_id = $($batchSpec.sectionId). Include cognitive_level column.
 
 STEPS:
-1. Read scaffold at $sf, replace every TODO
-2. Validate: npm run validate-migration $sf
+1. Perform Conceptual Research as defined in Rule 1.
+2. Read scaffold at $sf, replace every TODO using your research to ensure diversity.
+3. Validate: npm run validate-migration $sf
 3. Duplicate check: npx tsx scripts/qa/check-generation-duplicates.ts --migration=$sf --section=$Section
 4. Fix any errors, re-validate
 5. Update tracker at ${tf}:
@@ -449,11 +567,35 @@ ORCHESTRATOR_RESULT:{"status":"error","message":"brief description"}
         }
 
         'blooms' {
+            # Load context for rebalancing/upgrade modes
+            $candidates = Get-Content $CandidateFile -Raw | ConvertFrom-Json
+            
+            # Aggregate unique lesson slugs
+            $slugs = @()
+            foreach ($c in $candidates) {
+                if ($c.lessonSlugs) {
+                    foreach ($s in $c.lessonSlugs) {
+                        if ($slugs -notcontains $s) { $slugs += $s }
+                    }
+                }
+            }
+
+            # Load Lesson Content
+            $lessonContent = ""
+            foreach ($slug in $slugs) {
+                $lessonPath = Join-Path (Join-Path (Join-Path $RepoRoot 'src') 'content') $Section
+                $lessonFile = Join-Path $lessonPath "${slug}.mdx"
+                if (Test-Path $lessonFile) {
+                    $lessonContent += "`n--- LESSON: $slug ---`n"
+                    $lessonContent += Get-Content $lessonFile -Raw
+                }
+            }
+
             $tgt = $Target.ToUpper()
             $levelGuide = switch ($Target) {
-                'l1' { "L1 (Remembering/Understanding): recall facts, definitions, standards. Stems: 'What is...?', 'Which describes...?', 'Which statement is true about...?'. Target difficulty: easy." }
-                'l3' { "L3 (Analysis): evaluate effects, compare alternatives, identify implications. Stems: 'What is the most likely effect of X on Y?', 'Which factor most likely indicates...?', 'How would X affect Y?'. Target difficulty: medium or hard." }
-                'l4' { "L4 (Evaluation): make judgments, recommend actions, assess competing positions. Stems: 'Evaluate...', 'Recommend...', 'Should the auditor...?', 'What is the best course of action?'. Target difficulty: hard." }
+                'l1' { "L1 (Remembering/Understanding): recall facts, definitions, standards. Target difficulty: easy." }
+                'l3' { "L3 (Analysis): evaluate effects, compare alternatives, identify implications. Target difficulty: medium or hard." }
+                'l4' { "L4 (Evaluation): make judgments, recommend actions, assess competing positions. Target difficulty: hard." }
             }
 
             return @"
@@ -468,14 +610,17 @@ FILES:
 - Original L2 (Application) questions: $cf
 - Progress tracker to update: $tf
 
+SOURCE LESSON CONTENT (Use for accuracy):
+$lessonContent
+
 INSTRUCTIONS:
 
-1. Read the scaffold and candidate JSON. Each candidate is currently L2 — you are rewriting to $tgt.
+1. Read the scaffold and candidate JSON. Each candidate is currently L2 — you are rewriting to $tgt. Candidates include relevant lessonSlugs and frameworkItems.
 
 2. For EVERY question, perform a full rewrite to the target cognitive level:
-   a) STEM: Rewrite to match $tgt stem patterns (see TARGET above). Use named entities, specific amounts/dates.
-   b) CHOICES: Four parallel-grammar choices. Wrong answers reflect real misconceptions. No banned patterns. Longest max 2x shortest.
-   c) EXPLANATION: First sentence cites standard ($cit). Second explains why correct. Third contrasts most plausible wrong answer using contrast language (while, whereas, although, however, incorrect because, rather than, unlike). 50-100 words.
+   a) STEM: Rewrite to match $tgt stem patterns. Use named entities, specific amounts/dates. INTEGRATE the provided frameworkItems (mnemonics, decision trees).
+   b) CHOICES: Four parallel-grammar choices. No banned patterns. Longest max 2x shortest.
+   c) EXPLANATION: First sentence cites standard ($cit). Second explains why correct. Third contrasts most plausible wrong answer using contrast language. 50-100 words.
    d) Set correct_index (0-based), vary distribution.
    e) CRITICAL: escape single quotes as '' in SQL. Format choices as valid JSON.
 
