@@ -157,7 +157,7 @@ Each batch gets its own headless `claude --print` invocation with a fresh contex
 | ISC     | isc  | 16      | ~897      | 39              | IT infrastructure, ERP, data management, security frameworks, threats, privacy, SOC, SOC testing, SOC reporting |
 | TCP     | tcp  | 15      | ~889      | 44              | Individual planning, passive/at-risk, wealth transfer, retirement, international tax, trusts, capital structure tax, nontaxable dispositions, related parties |
 
-**Totals:** 96 lessons, ~7626 questions (target: 20,000), 280 framework items across 6 sections
+**Totals:** 96 lessons, ~15426 questions (target: 20,000), 280 framework items across 6 sections
 
 ## Database Tables
 
@@ -221,4 +221,5 @@ Latest commits:
 - `cf41e21` Bloom's L1/L4 rebalancing AUD + ISC: 474 questions rewritten, all sections complete
 - `5d40326` Bloom's L1/L4 rebalancing BAR + FAR + TCP + REG: 314 questions rewritten
 - `cb40246` Bloom's L3 rebalancing FAR + TCP: 125 questions rewritten, all sections complete
+
 

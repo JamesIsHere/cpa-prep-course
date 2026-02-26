@@ -35,7 +35,7 @@ export type CpaBlueprint = BlueprintSection[];
 // --- Question counts by topic (synced from live DB via `npm run sync-counts`) ---
 
 export const questionCounts: Record<string, number> = {
-	// AUD (2,792 total — synced with live DB 2026-02-26)
+	// AUD (7,892 total — synced with live DB 2026-02-26)
 	"Analytical Procedures": 20,
 	"Attestation Engagements": 46,
 	"Audit Evidence": 67,
@@ -47,7 +47,7 @@ export const questionCounts: Record<string, number> = {
 	Independence: 20,
 	"Internal Controls": 72,
 	Materiality: 20,
-	"Misstatements and Control Deficiencies": 1700,
+	"Misstatements and Control Deficiencies": 6740,
 	"Modifications to the Auditor Report": 20,
 	"Nature and Scope of Engagements": 20,
 	"Other Information and Supplementary Information": 20,
@@ -58,14 +58,14 @@ export const questionCounts: Record<string, number> = {
 	"Review and Compilation": 46,
 	"Review/Compilation Engagements": 37,
 	"Risk Assessment": 64,
-	"Specific Areas and Transactions": 80,
+	"Specific Areas and Transactions": 140,
 	"Substantive Procedures": 58,
 	"Terms of Engagement": 20,
 	"Tests of Controls": 20,
 	"Understanding the Entity and Environment": 20,
 	"Using the Work of Others": 20,
 	"Written Representations": 20,
-	// FAR (1,005 total — synced with live DB 2026-02-26)
+	// FAR (1,455 total — synced with live DB 2026-02-26)
 	"Accounting Changes and Error Corrections": 20,
 	"Bonds and Debt": 44,
 	"Cash and Receivables": 34,
@@ -78,7 +78,7 @@ export const questionCounts: Record<string, number> = {
 	"Fair Value": 39,
 	"Financial Statements": 48,
 	"Fixed Assets": 44,
-	"Governmental Accounting": 196,
+	"Governmental Accounting": 646,
 	"Governmental Accounting Fundamentals": 20,
 	"Income Taxes": 46,
 	"Intangible Assets": 42,
@@ -89,7 +89,7 @@ export const questionCounts: Record<string, number> = {
 	"Revenue Recognition": 53,
 	"Special Purpose Frameworks": 34,
 	"Statement of Cash Flows": 28,
-	// REG (1,027 total — synced with live DB 2026-02-26)
+	// REG (1,567 total — synced with live DB 2026-02-26)
 	"Agency and Regulation": 36,
 	"Alternative Minimum Tax": 20,
 	"Business Law: Contracts": 43,
@@ -97,7 +97,7 @@ export const questionCounts: Record<string, number> = {
 	"C Corporations": 46,
 	"Circular 230": 42,
 	"Debtor-Creditor Relationships": 32,
-	"Estate and Gift Tax": 214,
+	"Estate and Gift Tax": 754,
 	"Federal Tax Procedures": 10,
 	"Government Regulation of Business": 20,
 	"Individual Taxation: Credits": 38,
@@ -114,12 +114,12 @@ export const questionCounts: Record<string, number> = {
 	"S Corporations": 39,
 	"Tax Procedures": 26,
 	"Tax-Exempt Organizations": 32,
-	// BAR (1,016 total — synced with live DB 2026-02-26)
+	// BAR (1,736 total — synced with live DB 2026-02-26)
 	"Advanced Consolidations": 50,
 	"Advanced Lease Transactions": 39,
 	"Advanced Revenue and Intangibles": 50,
 	"Business Combinations": 20,
-	"Capital Structure and Valuation": 288,
+	"Capital Structure and Valuation": 1008,
 	"Derivatives and Hedging": 50,
 	"Financial Statement Analysis": 58,
 	"Financial Valuation Methods": 53,
@@ -134,10 +134,10 @@ export const questionCounts: Record<string, number> = {
 	"Risk Management and Economics": 40,
 	"State and Local Government Reporting": 56,
 	"Stock Compensation and Business Combinations": 52,
-	// ISC (897 total — synced with live DB 2026-02-26)
+	// ISC (1,347 total — synced with live DB 2026-02-26)
 	"Change Management": 20,
 	"Data Management and Lifecycle": 48,
-	"Data Protection Technologies": 170,
+	"Data Protection Technologies": 620,
 	"ERP and Accounting Information Systems": 48,
 	"Incident Response and Recovery": 44,
 	"IT Audit Frameworks": 38,
@@ -153,7 +153,7 @@ export const questionCounts: Record<string, number> = {
 	"SOC Testing Controls": 38,
 	"System Availability and Change Management": 57,
 	"Threats, Attacks, and Vulnerabilities": 48,
-	// TCP (889 total — synced with live DB 2026-02-26)
+	// TCP (1,429 total — synced with live DB 2026-02-26)
 	"Advanced Basis Calculations": 47,
 	"Capital Structure Tax Planning": 40,
 	"Entity Choice and Planning": 44,
@@ -165,7 +165,7 @@ export const questionCounts: Record<string, number> = {
 	"Multi-Jurisdictional Tax Planning": 20,
 	"Nontaxable Dispositions": 40,
 	"Owner-Entity Transactions": 50,
-	"Passive Activity and At-Risk Rules": 230,
+	"Passive Activity and At-Risk Rules": 770,
 	"Related Party Transactions": 40,
 	"Retirement Plans and Education Savings": 50,
 	"Trusts and Estates": 50,
@@ -173,12 +173,12 @@ export const questionCounts: Record<string, number> = {
 };
 
 export const sectionQuestionTotals: Record<string, number> = {
-	aud: 2792,
-	far: 1005,
-	reg: 1027,
-	bar: 1016,
-	isc: 897,
-	tcp: 889,
+	aud: 7892,
+	far: 1455,
+	reg: 1567,
+	bar: 1736,
+	isc: 1347,
+	tcp: 1429,
 };
 
 // --- Blueprint Data ---
