@@ -62,7 +62,7 @@ async function checkSupabaseDb(): Promise<CheckResult> {
 		try {
 			const supabase = createClient(
 				process.env.NEXT_PUBLIC_SUPABASE_URL!,
-				process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+				process.env.SUPABASE_SERVICE_ROLE_KEY!,
 			);
 			const { data, error } = await supabase.from("sections").select("id").limit(1);
 			if (error) {
@@ -81,17 +81,35 @@ async function checkSupabaseRpc(): Promise<CheckResult> {
 		try {
 			const supabase = createClient(
 				process.env.NEXT_PUBLIC_SUPABASE_URL!,
-				process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+				process.env.SUPABASE_SERVICE_ROLE_KEY!,
 			);
-			const { data, error } = await supabase.rpc("get_random_questions", {
+			// 1. Check random questions RPC
+			const { data: qData, error: qError } = await supabase.rpc("get_random_questions", {
 				p_section_id: 1,
 				p_count: 1,
 				p_topics: null,
 			});
-			if (error) {
-				return { status: "fail" as const, message: `RPC error: ${error.message}` };
+			if (qError) {
+				return { status: "fail" as const, message: `Random RPC error: ${qError.message}` };
 			}
-			return { status: "pass" as const, message: `RPC returned ${data?.length ?? 0} question(s)` };
+
+			// 2. Check dashboard stats RPC (new)
+			const { error: dError } = await supabase.rpc("get_user_dashboard_stats", {
+				p_user_id: "00000000-0000-0000-0000-000000000000", // Dummy UUID
+			});
+			
+			if (dError) {
+				const msg = dError.message.toLowerCase();
+				if (msg.includes("does not exist")) {
+					return { status: "fail" as const, message: "Dashboard RPC missing" };
+				}
+				// Ignore specific UUID syntax errors as they mean the function exists but input was dummy
+				if (!msg.includes("invalid input syntax") && !msg.includes("not found")) {
+					return { status: "fail" as const, message: `Dashboard RPC error: ${dError.message}` };
+				}
+			}
+
+			return { status: "pass" as const, message: "Core RPCs functional" };
 		} catch (err) {
 			return { status: "fail" as const, message: `RPC error: ${err instanceof Error ? err.message : String(err)}` };
 		}

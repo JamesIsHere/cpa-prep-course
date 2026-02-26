@@ -67,144 +67,94 @@ export default async function DashboardPage() {
 	}
 
 	if (user) {
-		// Map section_id to section code
-		const { data: dbSections } = await supabase
-			.from("sections")
-			.select("id, code");
+		const { data: stats } = (await supabase.rpc("get_user_dashboard_stats", {
+			p_user_id: user.id,
+		})) as { data: any };
 
-		const idToCode = new Map(
-			(dbSections ?? []).map((s: { id: number; code: string }) => [
-				s.id,
-				s.code,
-			]),
-		);
-
-		// Fetch all completed quiz attempts (no limit — need full aggregates)
-		const { data: quizAttempts } = await supabase
-			.from("quiz_attempts")
-			.select("section_id, score, total, topic_scores, completed_at")
-			.eq("user_id", user.id)
-			.not("completed_at", "is", null)
-			.order("completed_at", { ascending: false });
-
-		// Fetch all completed exam attempts
-		const { data: examAttempts } = await supabase
-			.from("exam_attempts")
-			.select("section_id, score, total, completed_at")
-			.eq("user_id", user.id)
-			.not("completed_at", "is", null)
-			.order("completed_at", { ascending: false });
-
-		// Aggregate per-section quiz data
-		const topicsBySection = new Map<string, Set<string>>();
-		const recentBySection = new Map<
-			string,
-			{ score: number; total: number }[]
-		>();
-		const topicScoresBySection = new Map<
-			string,
-			{ topic: string; correct: number; total: number }[][]
-		>();
-
-		if (quizAttempts) {
-			for (const a of quizAttempts) {
-				const code = idToCode.get(a.section_id);
-				if (!code || !progressMap[code]) continue;
-
-				progressMap[code].questionsPracticed += a.total;
-				progressMap[code].totalCorrect += a.score;
-
-				// Collect recent scores (first 3 per section, already ordered desc)
-				if (!recentBySection.has(code)) recentBySection.set(code, []);
-				const recent = recentBySection.get(code)!;
-				if (recent.length < 3) {
-					recent.push({ score: a.score, total: a.total });
-				}
-
-				// Collect practiced topics for blueprint coverage
-				if (a.topic_scores && Array.isArray(a.topic_scores)) {
-					if (!topicsBySection.has(code))
-						topicsBySection.set(code, new Set());
-					const topicSet = topicsBySection.get(code)!;
-					for (const ts of a.topic_scores as { topic: string }[]) {
-						topicSet.add(ts.topic);
+		if (stats) {
+			const {
+				sections: sectionStats,
+				trend_data,
+				topic_performance,
+			} = stats as {
+				sections: Record<
+					string,
+					{
+						total_correct: number;
+						total_practiced: number;
+						practiced_topics: string[];
+						recent_scores: { score: number; total: number }[];
 					}
+				>;
+				trend_data: {
+					section_code: string;
+					date: string;
+					score: number;
+					type: "quiz" | "exam";
+				}[];
+				topic_performance: {
+					section_code: string;
+					topic: string;
+					correct: number;
+					total: number;
+				}[];
+			};
 
-					// Collect topic_scores arrays for weak topic analysis
-					if (!topicScoresBySection.has(code))
-						topicScoresBySection.set(code, []);
-					topicScoresBySection
-						.get(code)!
-						.push(
-							a.topic_scores as {
-								topic: string;
-								correct: number;
-								total: number;
-							}[],
-						);
+			for (const section of sections) {
+				const sData = sectionStats[section.code];
+				if (!sData) continue;
+
+				const prog = progressMap[section.code];
+				prog.questionsPracticed = sData.total_practiced;
+				prog.totalCorrect = sData.total_correct;
+				prog.recentScores = sData.recent_scores;
+
+				// Compute blueprint groups touched
+				const meta = blueprintMeta.get(section.code);
+				if (meta) {
+					const topicSet = new Set(sData.practiced_topics);
+					let touched = 0;
+					for (const groupTopics of meta.topicsByGroup) {
+						if (groupTopics.some((t) => topicSet.has(t))) {
+							touched++;
+						}
+					}
+					prog.blueprintGroupsTouched = touched;
 				}
 
-				// Build trend data (quiz attempts, capped at 50 per section)
-				if (a.completed_at && trendMap[code].length < 50) {
-					trendMap[code].push({
-						date: a.completed_at,
-						score: Math.round((a.score / a.total) * 100),
-						type: "quiz",
-					});
+				// Compute readiness
+				readinessMap[section.code] = computeReadiness(prog);
+
+				// Analyze weak topics
+				const sectionTopics = topic_performance
+					.filter((tp) => tp.section_code === section.code)
+					.map((tp) => ({
+						topic: tp.topic,
+						correct: tp.correct,
+						total: tp.total,
+					}));
+				weakTopicsMap[section.code] = analyzeTopicPerformance([sectionTopics]);
+			}
+
+			// Populate trend map (reverse order handled in RPC/Query)
+			if (trend_data) {
+				for (const t of trend_data) {
+					if (trendMap[t.section_code]) {
+						trendMap[t.section_code].push({
+							date: t.date,
+							score: t.score,
+							type: t.type,
+						});
+					}
+				}
+				// Sort chronological for chart
+				for (const code in trendMap) {
+					trendMap[code].sort(
+						(a, b) =>
+							new Date(a.date).getTime() - new Date(b.date).getTime(),
+					);
 				}
 			}
-		}
-
-		// Aggregate exam attempts into totals
-		if (examAttempts) {
-			for (const a of examAttempts) {
-				const code = idToCode.get(a.section_id);
-				if (!code || !progressMap[code]) continue;
-
-				progressMap[code].questionsPracticed += a.total;
-				progressMap[code].totalCorrect += a.score;
-
-				// Build trend data (exam attempts)
-				if (a.completed_at && trendMap[code].length < 50) {
-					trendMap[code].push({
-						date: a.completed_at,
-						score: Math.round((a.score / a.total) * 100),
-						type: "exam",
-					});
-				}
-			}
-		}
-
-		// Compute blueprint groups touched per section
-		for (const [code, topicSet] of topicsBySection) {
-			const meta = blueprintMeta.get(code);
-			if (!meta) continue;
-			let touched = 0;
-			for (const groupTopics of meta.topicsByGroup) {
-				if (groupTopics.some((t) => topicSet.has(t))) {
-					touched++;
-				}
-			}
-			progressMap[code].blueprintGroupsTouched = touched;
-		}
-
-		// Assign recent scores
-		for (const [code, recent] of recentBySection) {
-			if (progressMap[code]) {
-				progressMap[code].recentScores = recent;
-			}
-		}
-
-		// Compute readiness + weak topics per section
-		for (const section of sections) {
-			const progress = progressMap[section.code];
-			readinessMap[section.code] = computeReadiness(progress);
-
-			const topicArrays = topicScoresBySection.get(section.code) ?? [];
-			weakTopicsMap[section.code] = analyzeTopicPerformance(topicArrays);
-
-			// Sort trend data chronologically (was desc from query)
-			trendMap[section.code].reverse();
 		}
 	}
 

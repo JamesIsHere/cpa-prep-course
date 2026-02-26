@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
-import type { QuizAnswer, QuizQuestionFull } from "@/lib/quiz";
+import type { QuizQuestionFull } from "@/lib/quiz";
 import { scoreExam } from "@/lib/quiz";
 import { createClient } from "@/lib/supabase/server";
+import { submitQuizSchema } from "@/lib/schemas";
 
 export async function POST(
 	request: Request,
@@ -45,14 +46,16 @@ export async function POST(
 	}
 
 	const body = await request.json();
-	const { answers } = body as { answers: QuizAnswer[] };
+	const validation = submitQuizSchema.safeParse(body);
 
-	if (!answers || !Array.isArray(answers) || answers.length === 0) {
+	if (!validation.success) {
 		return NextResponse.json(
-			{ error: "Answers are required" },
+			{ error: "Invalid submission data", details: validation.error.format() },
 			{ status: 400 },
 		);
 	}
+
+	const { answers } = validation.data;
 
 	// Fetch full questions for scoring
 	const questionIds = answers.map((a) => a.questionId);

@@ -1,13 +1,19 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { feedbackSchema } from "@/lib/schemas";
 
 export async function POST(request: Request) {
 	const body = await request.json();
-	const { email, pageUrl, category, message } = body;
+	const validation = feedbackSchema.safeParse(body);
 
-	if (!message || typeof message !== "string" || message.trim().length === 0) {
-		return NextResponse.json({ error: "Message is required" }, { status: 400 });
+	if (!validation.success) {
+		return NextResponse.json(
+			{ error: "Invalid feedback data", details: validation.error.format() },
+			{ status: 400 },
+		);
 	}
+
+	const { email, pageUrl, category, message } = validation.data;
 
 	const supabase = await createClient();
 	const {

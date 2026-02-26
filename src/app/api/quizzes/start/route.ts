@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { startQuizSchema } from "@/lib/schemas";
 
 export async function POST(request: Request) {
 	const supabase = await createClient();
@@ -26,18 +27,16 @@ export async function POST(request: Request) {
 	}
 
 	const body = await request.json();
-	const { sectionCode, count, topics } = body as {
-		sectionCode: string;
-		count: number;
-		topics?: string[];
-	};
+	const result = startQuizSchema.safeParse(body);
 
-	if (!sectionCode || !count || count < 1 || count > 30) {
+	if (!result.success) {
 		return NextResponse.json(
-			{ error: "Invalid sectionCode or count (1-30)" },
+			{ error: "Invalid request data", details: result.error.format() },
 			{ status: 400 },
 		);
 	}
+
+	const { sectionCode, count, topics } = result.data;
 
 	// Look up section
 	const { data: section } = await supabase
