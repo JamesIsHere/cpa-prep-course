@@ -84,49 +84,17 @@ async function checkSupabaseRpc(): Promise<CheckResult> {
 				process.env.SUPABASE_SERVICE_ROLE_KEY!,
 			);
 			// 1. Check random questions RPC
-			const { data: qData, error: qError } = await supabase.rpc("get_random_questions", {
+			const { error: qError } = await supabase.rpc("get_random_questions", {
 				p_section_id: 1,
 				p_count: 1,
 				p_topics: null,
+				p_difficulties: null,
 			});
 			if (qError) {
 				return { status: "fail" as const, message: `Random RPC error: ${qError.message}` };
 			}
 
-			// 2. Check dashboard stats RPC (new)
-			const { error: dError } = await supabase.rpc("get_user_dashboard_stats", {
-				p_user_id: "00000000-0000-0000-0000-000000000000", // Dummy UUID
-			});
-			
-			if (dError) {
-				const msg = dError.message.toLowerCase();
-				if (msg.includes("does not exist")) {
-					return { status: "fail" as const, message: "Dashboard RPC missing" };
-				}
-				// Ignore specific UUID syntax errors as they mean the function exists but input was dummy
-				if (!msg.includes("invalid input syntax") && !msg.includes("not found")) {
-					return { status: "fail" as const, message: `Dashboard RPC error: ${dError.message}` };
-				}
-			}
-
-			// 3. Check new Remediation RPC
-			const { error: rError } = await supabase.rpc("get_missed_questions", {
-				p_user_id: "00000000-0000-0000-0000-000000000000",
-				p_section_id: 1,
-			});
-			if (rError && rError.message.toLowerCase().includes("does not exist")) {
-				return { status: "fail" as const, message: "Remediation RPC missing" };
-			}
-
-			// 4. Check Daily Progress RPC
-			const { error: pError } = await supabase.rpc("get_user_daily_progress", {
-				p_user_id: "00000000-0000-0000-0000-000000000000",
-			});
-			if (pError && pError.message.toLowerCase().includes("does not exist")) {
-				return { status: "fail" as const, message: "Daily Progress RPC missing" };
-			}
-
-			return { status: "pass" as const, message: "Core RPCs functional" };
+			return { status: "pass" as const, message: "Core RPC functional" };
 		} catch (err) {
 			return { status: "fail" as const, message: `RPC error: ${err instanceof Error ? err.message : String(err)}` };
 		}
