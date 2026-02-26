@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import DashboardCharts from "@/components/dashboard-charts";
 import DailyGoalsCard from "@/components/daily-goals-card";
@@ -76,6 +77,8 @@ export default async function DashboardPage() {
 	const weakTopicsMap: Record<string, TopicAnalysis> = {};
 	const trendMap: Record<string, ScoreTrendPoint[]> = {};
 
+	let stats: any = null;
+
 	// Initialize empty progress for all sections (so empty state has totals)
 	for (const section of sections) {
 		const meta = blueprintMeta.get(section.code);
@@ -91,9 +94,10 @@ export default async function DashboardPage() {
 	}
 
 	if (user) {
-		const { data: stats } = (await supabase.rpc("get_user_dashboard_stats", {
+		const { data } = (await supabase.rpc("get_user_dashboard_stats", {
 			p_user_id: user.id,
 		})) as { data: any };
+		stats = data;
 
 		if (stats) {
 			const {

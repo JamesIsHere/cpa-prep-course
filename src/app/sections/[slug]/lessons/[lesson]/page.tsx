@@ -36,6 +36,9 @@ export default async function LessonPage({
 
 	const { section, lesson } = result;
 
+	const lessonTopics = getTopicsForLesson(section.code, lesson.slug);
+	const blueprintGroup = getBlueprintGroupForLesson(section.code, lesson.slug);
+
 	// Check access for non-free lessons
 	if (!lesson.isFree) {
 		const supabase = await createClient();
@@ -45,7 +48,12 @@ export default async function LessonPage({
 
 		if (!user) {
 			return (
-				<LessonPageClient section={section} lesson={lesson}>
+				<LessonPageClient 
+					section={section} 
+					lesson={lesson}
+					lessonTopics={lessonTopics}
+					blueprintGroup={blueprintGroup}
+				>
 					<Paywall />
 				</LessonPageClient>
 			);
@@ -59,7 +67,12 @@ export default async function LessonPage({
 
 		if (profile?.subscription_status !== "active") {
 			return (
-				<LessonPageClient section={section} lesson={lesson}>
+				<LessonPageClient 
+					section={section} 
+					lesson={lesson}
+					lessonTopics={lessonTopics}
+					blueprintGroup={blueprintGroup}
+				>
 					<Paywall />
 				</LessonPageClient>
 			);
@@ -73,9 +86,6 @@ export default async function LessonPage({
 	} catch {
 		notFound();
 	}
-
-	const lessonTopics = getTopicsForLesson(section.code, lesson.slug);
-	const blueprintGroup = getBlueprintGroupForLesson(section.code, lesson.slug);
 
 	return (
 		<LessonPageClient

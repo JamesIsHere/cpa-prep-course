@@ -7,6 +7,7 @@ import {
 
 export { questionCounts };
 
+import { sections } from "./sections";
 import { getStudyFramework } from "./study-frameworks";
 import type {
 	ConceptMap,
@@ -188,6 +189,8 @@ export function getBlueprintGroupForLesson(
 	return undefined;
 }
 
+import { analyzeTopicPerformance, type TopicPerformance } from "./weak-topics";
+
 export interface NextStep {
 	type: "lesson" | "quiz" | "exam";
 	title: string;
@@ -200,7 +203,7 @@ export function getNextBestStep(
 	sectionCode: string,
 	sectionSlug: string,
 	progress: any,
-	weakTopics: { topic: string; score: number }[],
+	weakTopics: TopicPerformance[],
 	blueprint: BlueprintSection,
 ): NextStep {
 	// 1. If brand new, start with first lesson
@@ -215,7 +218,7 @@ export function getNextBestStep(
 	}
 
 	// 2. If they have serious gaps (accuracy < 60%) in a topic, go back to that lesson
-	if (weakTopics.length > 0 && weakTopics[0].score < 60) {
+	if (weakTopics.length > 0 && (weakTopics[0].accuracy * 100) < 60) {
 		const weakest = weakTopics[0].topic;
 		// Find lesson for this topic
 		for (const area of blueprint.areas) {

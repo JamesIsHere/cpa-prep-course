@@ -27,8 +27,8 @@ async function main() {
 
 		console.log(`Generating PDF for ${section.toUpperCase()}...`);
 		try {
-			// @ts-ignore - StudyGuidePdf props mismatch in some environments
-			const element = createElement(StudyGuidePdf, { framework });
+			// Cast to any to bypass strict ReactElement vs PDF Document props mismatch in some build environments
+			const element = createElement(StudyGuidePdf as any, { framework }) as any;
 			const buffer = await renderToBuffer(element);
 			
 			const fileName = `${section}-study-guide.pdf`;
