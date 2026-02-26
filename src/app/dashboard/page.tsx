@@ -279,8 +279,8 @@ export default async function DashboardPage() {
 				)}
 			</div>
 
-				{/* Score Trends for Active Section */}
-				{trendMap[activeSection]?.length >= 2 && (
+			{/* Score Trends for Active Section */}
+			{trendMap[activeSection]?.length >= 2 && (
 					<div>
 						<h2 className="text-lg font-bold text-gray-900 mb-4">Score Trends</h2>
 						<DashboardCharts
@@ -292,7 +292,6 @@ export default async function DashboardPage() {
 						/>
 					</div>
 				)}
-			</div>
 
 			{/* Secondary Actions */}
 			<div className="mt-16 pt-8 border-t border-gray-100">

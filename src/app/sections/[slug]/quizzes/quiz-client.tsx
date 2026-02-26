@@ -429,6 +429,7 @@ export default function QuizClient({
 					</div>
 				</div>
 				{error && <p className="text-sm text-red-600 mt-4">{error}</p>}
+				</div>
 			</div>
 		);
 	}

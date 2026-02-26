@@ -81,7 +81,7 @@ export default function BlueprintExplorer({
 				</div>
 				<div className="flex items-center gap-1.5">
 					<span className="w-2 h-2 rounded-full bg-red-500"></span>
-					<span className="text-xs text-gray-600">Critical (<60%)</span>
+					<span className="text-xs text-gray-600">Critical (&lt;60%)</span>
 				</div>
 			</div>
 
