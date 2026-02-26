@@ -25,7 +25,8 @@ AS $$
 $$;
 
 -- Fix 3: Require authentication for feedback submissions
-drop policy "Anyone can submit feedback" on feedback;
+drop policy if exists "Anyone can submit feedback" on feedback;
+drop policy if exists "Authenticated users can submit feedback" on feedback;
 create policy "Authenticated users can submit feedback"
   on feedback for insert
   with check (auth.uid() is not null and user_id = auth.uid());

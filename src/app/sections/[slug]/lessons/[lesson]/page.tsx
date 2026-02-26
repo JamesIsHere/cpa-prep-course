@@ -1,5 +1,9 @@
 import { notFound } from "next/navigation";
 import Paywall from "@/components/paywall";
+import {
+	getBlueprintGroupForLesson,
+	getTopicsForLesson,
+} from "@/lib/blueprint-utils";
 import { getLesson, sections } from "@/lib/sections";
 import { createClient } from "@/lib/supabase/server";
 import LessonPageClient from "./lesson-page-client";
@@ -70,8 +74,16 @@ export default async function LessonPage({
 		notFound();
 	}
 
+	const lessonTopics = getTopicsForLesson(section.code, lesson.slug);
+	const blueprintGroup = getBlueprintGroupForLesson(section.code, lesson.slug);
+
 	return (
-		<LessonPageClient section={section} lesson={lesson}>
+		<LessonPageClient
+			section={section}
+			lesson={lesson}
+			lessonTopics={lessonTopics}
+			blueprintGroup={blueprintGroup}
+		>
 			<Content />
 		</LessonPageClient>
 	);

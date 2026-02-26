@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
+import { getLessonForTopic } from "@/lib/blueprint-utils";
 import type { ExamResult, ExamTopicScore } from "@/lib/quiz";
 
 interface QuizResultsProps {
@@ -177,10 +179,26 @@ export default function QuizResults({
 										})}
 									</div>
 									<div className="bg-gray-50 rounded-lg p-3">
-										<p className="text-sm text-gray-700">
+										<p className="text-sm text-gray-700 mb-3">
 											<span className="font-medium">Explanation:</span>{" "}
 											{q.explanation}
 										</p>
+										{q.topic && (
+											(() => {
+												const lesson = getLessonForTopic(sectionSlug, q.topic);
+												if (lesson) {
+													return (
+														<Link 
+															href={`/sections/${lesson.sectionSlug}/lessons/${lesson.slug}`}
+															className="inline-flex items-center gap-2 bg-white border border-emerald-600 text-emerald-700 px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-emerald-50 transition-all shadow-sm"
+														>
+															📚 Re-read Lesson: {q.topic} &rarr;
+														</Link>
+													);
+												}
+												return null;
+											})()
+										)}
 									</div>
 								</div>
 							)}

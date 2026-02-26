@@ -55,7 +55,7 @@ export async function POST(
 		);
 	}
 
-	const { answers } = validation.data;
+	const { answers, durationSeconds } = validation.data;
 
 	// Fetch full questions for scoring
 	const questionIds = answers.map((a) => a.questionId);
@@ -85,6 +85,7 @@ export async function POST(
 				choice_index: a.selectedIndex,
 			})),
 			topic_scores: result.topicScores,
+			duration_seconds: durationSeconds,
 		})
 		.eq("id", attemptId);
 

@@ -6,7 +6,7 @@ import { createClient } from "@/lib/supabase/server";
 import ExamConfigClient from "./exam-config-client";
 
 export const metadata: Metadata = {
-	title: "Practice Exam",
+	title: "Practice Center",
 };
 
 export default async function ExamPage({
@@ -24,7 +24,7 @@ export default async function ExamPage({
 	if (!user) {
 		return (
 			<main className="max-w-4xl mx-auto px-4 py-12">
-				<h1 className="text-3xl font-bold text-gray-900 mb-6">Practice Exam</h1>
+				<h1 className="text-3xl font-bold text-gray-900 mb-6">Practice Center</h1>
 				<Paywall />
 			</main>
 		);
@@ -39,7 +39,7 @@ export default async function ExamPage({
 	if (profile?.subscription_status !== "active") {
 		return (
 			<main className="max-w-4xl mx-auto px-4 py-12">
-				<h1 className="text-3xl font-bold text-gray-900 mb-6">Practice Exam</h1>
+				<h1 className="text-3xl font-bold text-gray-900 mb-6">Practice Center</h1>
 				<Paywall />
 			</main>
 		);
@@ -79,7 +79,7 @@ export default async function ExamPage({
 		.eq("user_id", user.id)
 		.not("completed_at", "is", null)
 		.order("completed_at", { ascending: false })
-		.limit(10);
+		.limit(5);
 
 	const recentAttempts = (recentExams ?? []).map(
 		(a: {
@@ -105,13 +105,12 @@ export default async function ExamPage({
 			>
 				&larr; Dashboard
 			</Link>
-			<h1 className="text-3xl font-bold text-gray-900 mb-2">Practice Exam</h1>
+			<h1 className="text-3xl font-bold text-gray-900 mb-2">Practice Center</h1>
 			<p className="text-gray-500 mb-8">
-				Full-length timed exam using all questions for a section. 4 hours, just
-				like the real CPA exam.
+				Sharpen your skills with targeted quizzes or challenge yourself with a full-length simulated exam.
 			</p>
 			<ExamConfigClient
-				sections={sections.map((s) => ({ code: s.code, title: s.title }))}
+				sections={sections.map((s) => ({ code: s.code, title: s.title, slug: s.slug }))}
 				activeExam={activeExam}
 				recentAttempts={recentAttempts}
 				preselectedSection={preselected ?? null}

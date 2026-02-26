@@ -102,7 +102,7 @@ export default async function ExamSessionPage({
 					href="/exam"
 					className="text-sm text-emerald-600 hover:text-emerald-700 mb-6 inline-block"
 				>
-					&larr; Practice Exams
+					&larr; Practice Hub
 				</Link>
 				<h1 className="text-3xl font-bold text-gray-900 mb-2">
 					{sectionCode.toUpperCase()} Exam Results
@@ -112,6 +112,7 @@ export default async function ExamSessionPage({
 				</p>
 				<ExamClient
 					mode="results"
+					sectionCode={sectionCode}
 					result={{
 						score: attempt.score ?? 0,
 						total: attempt.total ?? 0,

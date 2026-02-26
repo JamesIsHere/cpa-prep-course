@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 interface ExamConfigClientProps {
-	sections: { code: string; title: string }[];
+	sections: { code: string; title: string; slug: string }[];
 	activeExam: {
 		id: number;
 		sectionCode: string;
@@ -33,6 +33,8 @@ export default function ExamConfigClient({
 	);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState<string | null>(null);
+
+	const currentSection = sections.find((s) => s.code === selectedSection);
 
 	async function startExam() {
 		setLoading(true);
@@ -81,93 +83,73 @@ export default function ExamConfigClient({
 				</div>
 			)}
 
-			{/* Section selector + start */}
-			<div className="border border-gray-200 rounded-xl p-6 mb-8">
-				<h2 className="text-lg font-semibold text-gray-800 mb-4">
-					Start New Exam
-				</h2>
-				<label className="block text-sm text-gray-600 mb-2">
-					Select a section
+			<div className="mb-8">
+				<label className="block text-sm font-semibold text-gray-700 mb-3">
+					1. Select a section
 				</label>
-				<div className="flex gap-3 mb-6">
+				<div className="flex flex-wrap gap-2">
 					{sections.map((s) => (
 						<button
 							key={s.code}
 							onClick={() => setSelectedSection(s.code)}
-							className={`px-4 py-2 rounded-lg font-medium text-sm transition-colors ${
+							className={`px-4 py-2 rounded-lg font-bold text-sm transition-all ${
 								selectedSection === s.code
-									? "bg-emerald-600 text-white"
-									: "border border-gray-200 text-gray-700 hover:bg-gray-50"
+									? "bg-emerald-600 text-white shadow-md transform scale-105"
+									: "bg-white border border-gray-200 text-gray-600 hover:border-emerald-300 hover:bg-emerald-50"
 							}`}
 						>
 							{s.code.toUpperCase()}
 						</button>
 					))}
 				</div>
-				<p className="text-sm text-gray-500 mb-4">
-					{sections.find((s) => s.code === selectedSection)?.title} — All
-					questions, 4-hour time limit
-				</p>
-				{error && <p className="text-sm text-red-600 mb-4">{error}</p>}
-				<button
-					onClick={startExam}
-					disabled={loading || !!activeExam}
-					className="bg-emerald-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-emerald-700 transition-colors disabled:opacity-50"
-				>
-					{loading ? "Starting\u2026" : "Start Exam"}
-				</button>
-				{activeExam && (
-					<p className="text-xs text-gray-400 mt-2">
-						Finish or let your current exam expire before starting a new one.
+				{currentSection && (
+					<p className="mt-3 text-sm text-gray-600">
+						Currently practicing: <span className="font-medium text-gray-900">{currentSection.title}</span>
 					</p>
 				)}
 			</div>
 
-			{/* Recent attempts */}
-			{recentAttempts.length > 0 && (
-				<div>
-					<h2 className="text-lg font-semibold text-gray-800 mb-4">
-						Recent Exams
-					</h2>
-					<div className="space-y-2">
-						{recentAttempts.map((a) => {
-							const pct = Math.round((a.score / a.total) * 100);
-							const passed = pct >= 75;
-							return (
-								<div
-									key={a.id}
-									className="flex items-center justify-between border border-gray-200 rounded-lg p-4"
-								>
-									<div className="flex items-center gap-3">
-										<span className="bg-emerald-100 text-emerald-700 text-xs font-bold px-2 py-0.5 rounded-full">
-											{a.sectionCode.toUpperCase()}
-										</span>
-										<span
-											className={`text-sm font-bold ${passed ? "text-emerald-700" : "text-red-700"}`}
-										>
-											{pct}%
-											<span className="font-normal text-gray-500 ml-1">
-												({a.score}/{a.total})
-											</span>
-										</span>
-									</div>
-									<div className="flex items-center gap-3">
-										<span className="text-sm text-gray-400">
-											{new Date(a.completedAt).toLocaleDateString()}
-										</span>
-										<a
-											href={`/exam/${a.id}`}
-											className="text-xs text-emerald-600 hover:text-emerald-700"
-										>
-											Review &rarr;
-										</a>
-									</div>
-								</div>
-							);
-						})}
+			<div className="grid sm:grid-cols-2 gap-6 mb-12">
+				{/* Quick Quiz Card */}
+				<div className="border border-gray-200 rounded-xl p-6 bg-white hover:border-emerald-500 transition-colors shadow-sm">
+					<div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+						<svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+						</svg>
 					</div>
+					<h3 className="text-xl font-bold text-gray-900 mb-2">Quick Quiz</h3>
+					<p className="text-gray-500 text-sm mb-6">
+						Short, focused practice sessions. Choose 10, 20, or 30 questions. Immediate feedback and review.
+					</p>
+					{currentSection && (
+						<a
+							href={`/sections/${currentSection.slug}/quizzes`}
+							className="block w-full text-center bg-white border-2 border-emerald-600 text-emerald-700 px-6 py-2 rounded-lg font-bold hover:bg-emerald-50 transition-colors"
+						>
+							Take a Quiz
+						</a>
+					)}
 				</div>
-			)}
-		</div>
-	);
-}
+
+				{/* Full Exam Card */}
+				<div className="border border-gray-200 rounded-xl p-6 bg-white hover:border-emerald-500 transition-colors shadow-sm">
+					<div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+						<svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+						</svg>
+					</div>
+					<h3 className="text-xl font-bold text-gray-900 mb-2">Simulated Exam</h3>
+					<p className="text-gray-500 text-sm mb-6">
+						The full experience. 4 hours, all questions for the section. Test your stamina and timing.
+					</p>
+					<button
+						onClick={startExam}
+						disabled={loading || !!activeExam}
+						className="w-full bg-emerald-600 text-white px-6 py-2.5 rounded-lg font-bold hover:bg-emerald-700 transition-colors disabled:opacity-50"
+					>
+						{loading ? "Starting\u2026" : "Start Full Exam"}
+					</button>
+				</div>
+			</div>
+
+			{error && <p className="text-sm text-red-600 mb-4">{error}</p>}

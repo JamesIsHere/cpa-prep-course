@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import DashboardCharts from "@/components/dashboard-charts";
+import DailyGoalsCard from "@/components/daily-goals-card";
 import { DownloadStudyGuide } from "@/components/download-study-guide";
+import ExamCountdown from "@/components/exam-countdown";
+import PerformanceInsights from "@/components/performance-insights";
 import SectionProgressCard from "@/components/section-progress-card";
 import type { SectionProgress } from "@/components/section-progress-card";
 import WeakTopicCard from "@/components/weak-topic-card";
 import { StudyPipeline } from "@/components/study-pipeline";
 import { cpaBlueprint, sectionQuestionTotals } from "@/lib/blueprint";
+import { getBlueprintSection, getNextBestStep } from "@/lib/blueprint-utils";
 import { computeReadiness } from "@/lib/readiness";
 import type { ReadinessResult } from "@/lib/readiness";
 import { sections } from "@/lib/sections";
@@ -28,6 +33,25 @@ export default async function DashboardPage() {
 	const {
 		data: { user },
 	} = await supabase.auth.getUser();
+
+	let activeSection = "aud";
+	let targetExamDate: string | null = null;
+	if (user) {
+		const { data: profile } = await supabase
+			.from("profiles")
+			.select("active_section, onboarding_completed, target_exam_date")
+			.eq("id", user.id)
+			.single();
+		
+		if (profile && !profile.onboarding_completed) {
+			redirect("/onboarding");
+		}
+
+		if (profile?.active_section) {
+			activeSection = profile.active_section;
+		}
+		targetExamDate = profile?.target_exam_date || null;
+	}
 
 	// Pre-compute blueprint group counts and questionTopics per section
 	const blueprintMeta = new Map<
@@ -158,6 +182,16 @@ export default async function DashboardPage() {
 		}
 	}
 
+	const activeSectionData = sections.find((s) => s.code === activeSection)!;
+	const activeBlueprint = getBlueprintSection(activeSection)!;
+	const nextStep = getNextBestStep(
+		activeSection,
+		activeSectionData.slug,
+		progressMap[activeSection],
+		weakTopicsMap[activeSection]?.weakTopics || [],
+		activeBlueprint,
+	);
+
 	// Check if there are any weak topics to display
 	const hasWeakTopics = sections.some(
 		(s) => (weakTopicsMap[s.code]?.weakTopics.length ?? 0) > 0,
@@ -170,94 +204,117 @@ export default async function DashboardPage() {
 
 	return (
 		<main className="max-w-4xl mx-auto px-4 py-12">
-			<h1 className="text-3xl font-bold text-gray-900 mb-2">Dashboard</h1>
-			<p className="text-gray-500 mb-8">
-				Welcome back{user?.email ? `, ${user.email}` : ""}. Pick up where you
-				left off.
-			</p>
-
-			<div className="mb-10 bg-gray-50 rounded-xl border border-gray-200 p-6">
-				<p className="text-sm font-semibold text-gray-700 mb-4 text-center">
-					Your study pipeline
+			<div className="mb-10">
+				<h1 className="text-3xl font-bold text-gray-900 mb-2">Dashboard</h1>
+				<p className="text-gray-500">
+					Welcome back{user?.email ? `, ${user.email.split("@")[0]}` : ""}. 
+					You are currently focused on <span className="font-bold text-emerald-700">{sections.find(s => s.code === activeSection)?.title}</span>.
 				</p>
-				<StudyPipeline variant="full" />
 			</div>
 
-			<h2 className="text-lg font-semibold text-gray-800 mb-4">
-				Your Sections
-			</h2>
-			<div className="grid sm:grid-cols-2 gap-6">
-				{sections.map((section) => (
-					<SectionProgressCard
-						key={section.code}
-						section={section}
-						progress={progressMap[section.code] ?? null}
-						readiness={readinessMap[section.code]}
-					/>
-				))}
-			</div>
-
-			{hasWeakTopics && (
-				<div className="mt-10">
-					<h2 className="text-lg font-semibold text-gray-800 mb-4">
-						Focus Areas
-					</h2>
-					<p className="text-gray-500 text-sm mb-4">
-						Topics where you scored lowest. Target these for your next practice
-						sessions.
-					</p>
-					<div className="grid sm:grid-cols-2 gap-4">
-						{sections.map((section) => (
-							<WeakTopicCard
-								key={section.code}
-								sectionCode={section.code}
-								sectionSlug={section.slug}
-								sectionTitle={section.title}
-								weakTopics={
-									weakTopicsMap[section.code]?.weakTopics ?? []
-								}
-							/>
-						))}
+			<div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+				<div className="md:col-span-2 space-y-6">
+					<DailyGoalsCard />
+					{targetExamDate && (
+						<ExamCountdown 
+							targetDate={targetExamDate} 
+							sectionTitle={sections.find(s => s.code === activeSection)?.title || ""} 
+						/>
+					)}
+				</div>
+				<div className="bg-white rounded-2xl border-2 border-emerald-600 p-6 flex flex-col justify-center relative overflow-hidden shadow-md">
+					<div className="absolute top-0 right-0 p-2 opacity-10">
+						<span className="text-6xl font-black">?</span>
+					</div>
+					<div className="relative z-10">
+						<span className="text-[10px] font-black bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded uppercase tracking-wider mb-2 inline-block">
+							Recommended Next Step
+						</span>
+						<h3 className="text-xl font-bold text-gray-900 mb-1">{nextStep.title}</h3>
+						<p className="text-xs text-gray-500 mb-4 leading-relaxed">
+							{nextStep.description}
+						</p>
+						<Link 
+							href={nextStep.link}
+							className="bg-emerald-600 text-white w-full py-2.5 rounded-xl font-bold text-sm text-center hover:bg-emerald-700 transition-all inline-block shadow-sm"
+						>
+							{nextStep.type === "lesson" ? "Resume Lesson" : nextStep.type === "quiz" ? "Start Quiz" : "Take Exam"} &rarr;
+						</Link>
 					</div>
 				</div>
-			)}
+			</div>
 
-			{hasTrends && (
-				<div className="mt-10">
-					<h2 className="text-lg font-semibold text-gray-800 mb-4">
-						Score Trends
-					</h2>
-					<p className="text-gray-500 text-sm mb-4">
-						Your quiz and exam scores over time.
-					</p>
-					<DashboardCharts
-						sections={sections.map((s) => ({
-							code: s.code,
-							title: s.title,
-						}))}
-						trendMap={trendMap}
-					/>
-				</div>
-			)}
-
-			<div className="mt-12">
-				<h2 className="text-lg font-semibold text-gray-800 mb-4">
-					Study Frameworks
+			<div className="mb-10">
+				<h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+					<span className="w-2 h-6 bg-emerald-600 rounded-full"></span>
+					Active Focus: {sections.find(s => s.code === activeSection)?.title}
 				</h2>
-				<p className="text-gray-500 text-sm mb-4">
-					Downloadable PDF guides with concept maps, decision trees, formulas,
-					and mnemonics for each section.
-				</p>
-				<div className="grid sm:grid-cols-3 gap-4">
+				<SectionProgressCard
+					section={sections.find((s) => s.code === activeSection)!}
+					progress={progressMap[activeSection] ?? null}
+					readiness={readinessMap[activeSection]}
+				/>
+			</div>
+
+			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+				{/* Performance Insights for Active Section */}
+				{(stats as any)?.sections[activeSection]?.avg_seconds_per_q > 0 && (
+					<PerformanceInsights 
+						avgSecondsPerQ={(stats as any).sections[activeSection].avg_seconds_per_q}
+						accuracy={progressMap[activeSection].totalCorrect / Math.max(1, progressMap[activeSection].questionsPracticed)}
+					/>
+				)}
+
+				{/* Focus Areas (Weak Topics) for Active Section */}
+				{weakTopicsMap[activeSection]?.weakTopics.length > 0 && (
+					<div>
+						<h2 className="text-lg font-bold text-gray-900 mb-4">Focus Areas</h2>
+						<WeakTopicCard
+							sectionCode={activeSection}
+							sectionSlug={sections.find((s) => s.code === activeSection)!.slug}
+							sectionTitle={sections.find((s) => s.code === activeSection)!.title}
+							weakTopics={weakTopicsMap[activeSection].weakTopics}
+						/>
+					</div>
+				)}
+			</div>
+
+				{/* Score Trends for Active Section */}
+				{trendMap[activeSection]?.length >= 2 && (
+					<div>
+						<h2 className="text-lg font-bold text-gray-900 mb-4">Score Trends</h2>
+						<DashboardCharts
+							sections={[{
+								code: activeSection,
+								title: sections.find(s => s.code === activeSection)!.title
+							}]}
+							trendMap={{ [activeSection]: trendMap[activeSection] }}
+						/>
+					</div>
+				)}
+			</div>
+
+			{/* Secondary Actions */}
+			<div className="mt-16 pt-8 border-t border-gray-100">
+				<h2 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6">
+					Resources & Downloads
+				</h2>
+				<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
 					{sections.map((section) => (
 						<div
 							key={section.code}
-							className="border border-gray-200 rounded-lg p-4 flex items-center justify-between"
+							className={`border rounded-xl p-3 flex flex-col items-center gap-2 transition-all ${
+								section.code === activeSection 
+									? "bg-emerald-50 border-emerald-200" 
+									: "bg-white border-gray-100 hover:border-gray-200"
+							}`}
 						>
-							<span className="text-sm font-medium text-gray-900">
+							<span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${
+								section.code === activeSection ? "bg-emerald-600 text-white" : "bg-gray-100 text-gray-500"
+							}`}>
 								{section.code.toUpperCase()}
 							</span>
-							<DownloadStudyGuide sectionSlug={section.slug} />
+							<DownloadStudyGuide sectionSlug={section.slug} variant="icon" />
 						</div>
 					))}
 				</div>

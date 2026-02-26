@@ -2,7 +2,13 @@
 
 import { useState } from "react";
 
-export function DownloadStudyGuide({ sectionSlug }: { sectionSlug: string }) {
+export function DownloadStudyGuide({ 
+	sectionSlug, 
+	variant = "button" 
+}: { 
+	sectionSlug: string;
+	variant?: "button" | "icon";
+}) {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState<string | null>(null);
 
@@ -14,15 +20,15 @@ export function DownloadStudyGuide({ sectionSlug }: { sectionSlug: string }) {
 			const res = await fetch(`/api/study-frameworks/${sectionSlug}`);
 
 			if (res.status === 401) {
-				setError("Sign in to download study guides.");
+				setError("Sign in to download.");
 				return;
 			}
 			if (res.status === 403) {
-				setError("An active subscription is required.");
+				setError("Subscription required.");
 				return;
 			}
 			if (!res.ok) {
-				setError("Download failed. Please try again.");
+				setError("Failed.");
 				return;
 			}
 
@@ -36,10 +42,33 @@ export function DownloadStudyGuide({ sectionSlug }: { sectionSlug: string }) {
 			a.remove();
 			URL.revokeObjectURL(url);
 		} catch {
-			setError("Download failed. Please try again.");
+			setError("Failed.");
 		} finally {
 			setLoading(false);
 		}
+	}
+
+	if (variant === "icon") {
+		return (
+			<div className="relative group">
+				<button
+					type="button"
+					onClick={handleDownload}
+					disabled={loading}
+					className="text-emerald-600 hover:text-emerald-700 p-2 rounded-lg hover:bg-emerald-50 transition-colors disabled:opacity-30"
+					title={`Download ${sectionSlug.toUpperCase()} Study Guide`}
+				>
+					<svg className={`w-5 h-5 ${loading ? "animate-spin" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+					</svg>
+				</button>
+				{error && (
+					<p className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-red-600 text-white text-[10px] px-2 py-1 rounded whitespace-nowrap z-10 shadow-lg">
+						{error}
+					</p>
+				)}
+			</div>
+		);
 	}
 
 	return (

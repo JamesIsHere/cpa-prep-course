@@ -21,6 +21,7 @@ export interface BlueprintExplorerProps {
 
 export default function BlueprintExplorer({
 	sectionSlug,
+	sectionTitle,
 	areas,
 	questionCounts,
 	progress,
@@ -68,6 +69,22 @@ export default function BlueprintExplorer({
 
 	return (
 		<div className="space-y-4">
+			<div className="flex flex-wrap items-center gap-4 px-1 pb-2">
+				<span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Mastery Heatmap:</span>
+				<div className="flex items-center gap-1.5">
+					<span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+					<span className="text-xs text-gray-600">Mastered (75%+)</span>
+				</div>
+				<div className="flex items-center gap-1.5">
+					<span className="w-2 h-2 rounded-full bg-amber-500"></span>
+					<span className="text-xs text-gray-600">Review (60-74%)</span>
+				</div>
+				<div className="flex items-center gap-1.5">
+					<span className="w-2 h-2 rounded-full bg-red-500"></span>
+					<span className="text-xs text-gray-600">Critical (<60%)</span>
+				</div>
+			</div>
+
 			{areas.map((area) => {
 				const isExpanded = expandedAreas.has(area.area);
 				const areaProgress = getAreaProgress(area);
@@ -136,15 +153,26 @@ export default function BlueprintExplorer({
 										<Link
 											key={group.letter}
 											href={`/sections/${sectionSlug}/blueprint/${groupKey}`}
-											className="flex items-center gap-3 px-4 py-3 sm:gap-4 sm:px-5 sm:py-4 hover:bg-gray-50 transition-colors border-t border-gray-50 first:border-t-0"
+											className="flex items-center gap-3 px-4 py-3 sm:gap-4 sm:px-5 sm:py-4 hover:bg-gray-50 transition-colors border-t border-gray-50 first:border-t-0 group/row"
 										>
 											<span className="text-sm font-mono text-gray-400 w-6 text-center shrink-0">
 												{group.letter}
 											</span>
 											<div className="flex-1 min-w-0">
-												<p className="text-xs sm:text-sm text-gray-800 truncate">
-													{group.name}
-												</p>
+												<div className="flex items-center gap-2">
+													<p className="text-xs sm:text-sm text-gray-800 truncate font-medium">
+														{group.name}
+													</p>
+													{gp.attempted > 0 && (
+														<span className={`w-2 h-2 rounded-full shrink-0 ${
+															(gp.correct / gp.attempted) >= 0.75 
+																? "bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" 
+																: (gp.correct / gp.attempted) >= 0.60
+																	? "bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.5)]"
+																	: "bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.5)]"
+														}`} />
+													)}
+												</div>
 												<div className="flex gap-3 mt-1">
 													{lessonCount > 0 && (
 														<span className="text-xs text-gray-400">

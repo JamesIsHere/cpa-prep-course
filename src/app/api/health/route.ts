@@ -109,6 +109,23 @@ async function checkSupabaseRpc(): Promise<CheckResult> {
 				}
 			}
 
+			// 3. Check new Remediation RPC
+			const { error: rError } = await supabase.rpc("get_missed_questions", {
+				p_user_id: "00000000-0000-0000-0000-000000000000",
+				p_section_id: 1,
+			});
+			if (rError && rError.message.toLowerCase().includes("does not exist")) {
+				return { status: "fail" as const, message: "Remediation RPC missing" };
+			}
+
+			// 4. Check Daily Progress RPC
+			const { error: pError } = await supabase.rpc("get_user_daily_progress", {
+				p_user_id: "00000000-0000-0000-0000-000000000000",
+			});
+			if (pError && pError.message.toLowerCase().includes("does not exist")) {
+				return { status: "fail" as const, message: "Daily Progress RPC missing" };
+			}
+
 			return { status: "pass" as const, message: "Core RPCs functional" };
 		} catch (err) {
 			return { status: "fail" as const, message: `RPC error: ${err instanceof Error ? err.message : String(err)}` };

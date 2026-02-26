@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { sections } from "@/lib/sections";
 import { createClient } from "@/lib/supabase/server";
+import ActiveSectionSettings from "./active-section-settings";
 
 export const metadata: Metadata = {
 	title: "Account",
@@ -13,11 +15,13 @@ export default async function AccountPage() {
 
 	const { data: profile } = await supabase
 		.from("profiles")
-		.select("subscription_status, stripe_customer_id")
+		.select("subscription_status, stripe_customer_id, active_section, target_exam_date")
 		.eq("id", user!.id)
 		.single();
 
 	const subscriptionStatus = profile?.subscription_status ?? "free";
+	const activeSection = profile?.active_section ?? "aud";
+	const targetExamDate = profile?.target_exam_date ?? null;
 
 	const statusLabels: Record<string, { label: string; color: string }> = {
 		free: { label: "Free", color: "bg-gray-100 text-gray-700" },
@@ -74,6 +78,18 @@ export default async function AccountPage() {
 						</form>
 					</div>
 				)}
+			</div>
+
+			<div className="mt-8 bg-white rounded-xl border border-gray-200 p-6">
+				<h2 className="text-lg font-bold text-gray-900 mb-4">Study Focus</h2>
+				<p className="text-sm text-gray-500 mb-6">
+					Choose which section you are currently studying for. Your dashboard will focus specifically on this exam.
+				</p>
+				<ActiveSectionSettings 
+					sections={sections.map(s => ({ code: s.code, title: s.title }))} 
+					activeSection={activeSection} 
+					targetExamDate={targetExamDate}
+				/>
 			</div>
 		</main>
 	);

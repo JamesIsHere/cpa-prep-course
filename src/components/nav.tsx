@@ -60,7 +60,7 @@ export default function Nav() {
 									href="/exam"
 									className="text-gray-600 hover:text-emerald-700 transition-colors"
 								>
-									Practice Exam
+									Practice Hub
 								</Link>
 								<Link
 									href="/dashboard"
@@ -150,7 +150,7 @@ export default function Nav() {
 									className="block text-gray-600 hover:text-emerald-700 py-2"
 									onClick={() => setOpen(false)}
 								>
-									Practice Exam
+									Practice Hub
 								</Link>
 								<Link
 									href="/dashboard"

@@ -20,11 +20,11 @@ type ExamClientProps =
 	| {
 			mode: "results";
 			result: ExamResult;
+			sectionCode: string;
 			attemptId?: undefined;
 			questions?: undefined;
 			startedAt?: undefined;
 			timeLimitMinutes?: undefined;
-			sectionCode?: undefined;
 	  };
 
 export default function ExamClient(props: ExamClientProps) {
@@ -32,6 +32,7 @@ export default function ExamClient(props: ExamClientProps) {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [answers, setAnswers] = useState<Map<number, number>>(new Map());
 	const [flagged, setFlagged] = useState<Set<number>>(new Set());
+	const [focusMode, setFocusMode] = useState(false);
 	const [result, setResult] = useState<ExamResult | null>(
 		props.mode === "results" ? props.result : null,
 	);
@@ -78,7 +79,7 @@ export default function ExamClient(props: ExamClientProps) {
 
 	// RESULTS state
 	if (state === "results" && result) {
-		return <ExamResults result={result} />;
+		return <ExamResults result={result} sectionCode={props.sectionCode!} />;
 	}
 
 	// ACTIVE state
@@ -110,21 +111,38 @@ export default function ExamClient(props: ExamClientProps) {
 		}
 
 		return (
-			<div>
-				{/* Header: timer + section badge */}
-				<div className="flex items-center justify-between mb-6">
-					<div className="flex items-center gap-3">
-						<span className="bg-emerald-100 text-emerald-700 text-sm font-bold px-3 py-1 rounded-full">
-							{props.sectionCode?.toUpperCase()}
+			<div className={focusMode ? "fixed inset-0 z-50 bg-white overflow-y-auto p-4 sm:p-8" : ""}>
+				<div className={focusMode ? "max-w-4xl mx-auto" : ""}>
+					<div className="flex items-center justify-between mb-6">
+						<button 
+							onClick={() => setFocusMode(!focusMode)}
+							className={`text-xs font-bold px-3 py-1.5 rounded-lg transition-all ${
+								focusMode 
+									? "bg-gray-900 text-white hover:bg-gray-800" 
+									: "bg-emerald-50 text-emerald-700 hover:bg-emerald-100"
+							}`}
+						>
+							{focusMode ? "Exit Focus" : "✨ Focus Mode"}
+						</button>
+						<span className="text-[10px] font-black text-gray-300 uppercase tracking-[0.3em]">
+							{focusMode ? "Simulated Environment" : ""}
 						</span>
-						<span className="text-sm text-gray-500">Practice Exam</span>
 					</div>
-					<ExamTimer
-						startedAt={props.startedAt}
-						timeLimitMinutes={props.timeLimitMinutes}
-						onTimeExpired={handleTimeExpired}
-					/>
-				</div>
+
+					{/* Header: timer + section badge */}
+					<div className="flex items-center justify-between mb-6">
+						<div className="flex items-center gap-3">
+							<span className="bg-emerald-100 text-emerald-700 text-sm font-bold px-3 py-1 rounded-full">
+								{props.sectionCode?.toUpperCase()}
+							</span>
+							<span className="text-sm text-gray-500">Practice Exam</span>
+						</div>
+						<ExamTimer
+							startedAt={props.startedAt}
+							timeLimitMinutes={props.timeLimitMinutes}
+							onTimeExpired={handleTimeExpired}
+						/>
+					</div>
 
 				{/* Nav grid */}
 				<div className="border border-gray-200 rounded-xl p-4 mb-6">

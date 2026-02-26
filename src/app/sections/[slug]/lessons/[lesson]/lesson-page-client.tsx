@@ -5,16 +5,22 @@ import { useState } from "react";
 import { DownloadStudyGuide } from "@/components/download-study-guide";
 import FeedbackWidget from "@/components/feedback-widget";
 import LessonNav from "@/components/lesson-nav";
+import LessonQuizSection from "@/components/lesson-quiz-section";
 import { StudyPipeline } from "@/components/study-pipeline";
+import type { BlueprintGroup } from "@/lib/blueprint";
 import type { Lesson, Section } from "@/lib/sections";
 
 export default function LessonPageClient({
 	section,
 	lesson,
+	lessonTopics,
+	blueprintGroup,
 	children,
 }: {
 	section: Section;
 	lesson: Lesson;
+	lessonTopics: string[];
+	blueprintGroup?: { area: number; group: BlueprintGroup };
 	children: React.ReactNode;
 }) {
 	const [collapsed, setCollapsed] = useState(true);
@@ -46,38 +52,43 @@ export default function LessonPageClient({
 					<StudyPipeline variant="compact" activeStep={2} />
 					{children}
 
-					{/* What's Next */}
 					<div className="mt-12 pt-6 border-t border-gray-200">
 						<h3 className="text-lg font-semibold text-gray-900 mb-4">
-							What&apos;s next
+							Step 3: Drill the mental model
 						</h3>
-						<div className="grid sm:grid-cols-2 gap-4">
-							<div className="border border-gray-200 rounded-lg p-4">
-								<p className="text-sm font-medium text-gray-900 mb-1">
-									Drill the mental model
-								</p>
-								<p className="text-xs text-gray-500 mb-3">
-									Download the study framework — concept maps, decision trees,
-									and formulas for {section.title}.
-								</p>
-								<DownloadStudyGuide sectionSlug={section.slug} />
-							</div>
-							<div className="border border-gray-200 rounded-lg p-4">
-								<p className="text-sm font-medium text-gray-900 mb-1">
-									Test your understanding
-								</p>
-								<p className="text-xs text-gray-500 mb-3">
-									Take a quiz on {section.title} topics to see how well you
-									retained the material.
+						<div className="border border-gray-200 rounded-lg p-4 mb-8">
+							<p className="text-sm font-medium text-gray-900 mb-1">
+								Download the study framework
+							</p>
+							<p className="text-xs text-gray-500 mb-3">
+								Concept maps, decision trees, and formulas for {section.title}.
+							</p>
+							<DownloadStudyGuide sectionSlug={section.slug} />
+						</div>
+
+						<LessonQuizSection
+							sectionCode={section.code}
+							sectionSlug={section.slug}
+							lessonSlug={lesson.slug}
+							topics={lessonTopics}
+						/>
+
+						{blueprintGroup && (
+							<div className="mt-8 p-6 bg-emerald-50 rounded-xl border border-emerald-100">
+								<h3 className="text-sm font-bold text-emerald-800 uppercase tracking-wider mb-2">
+									Step 4: Comprehensive Review
+								</h3>
+								<p className="text-gray-700 text-sm mb-4">
+									Feeling confident? Take a major section test on the entire <strong>{blueprintGroup.group.name}</strong> group.
 								</p>
 								<Link
-									href={`/sections/${section.slug}/quizzes`}
-									className="inline-flex items-center gap-2 bg-emerald-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-emerald-700 transition-colors text-sm"
+									href={`/sections/${section.slug}/blueprint/${blueprintGroup.area}-${blueprintGroup.group.letter}/quiz`}
+									className="inline-flex items-center gap-2 text-emerald-700 font-bold hover:text-emerald-800 transition-colors"
 								>
-									Take a Quiz
+									Take {blueprintGroup.group.name} Test &rarr;
 								</Link>
 							</div>
-						</div>
+						)}
 					</div>
 
 					{/* Prev / Next navigation */}

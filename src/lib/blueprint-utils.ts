@@ -127,3 +127,148 @@ export function parseGroupSlug(
 	if (!match) return null;
 	return { area: Number.parseInt(match[1], 10), letter: match[2] };
 }
+
+export function getTopicsForLesson(
+	sectionCode: string,
+	lessonSlug: string,
+): string[] {
+	const section = getBlueprintSection(sectionCode);
+	if (!section) return [];
+
+	const topics = new Set<string>();
+	for (const area of section.areas) {
+		for (const group of area.groups) {
+			if (group.lessonSlugs.includes(lessonSlug)) {
+				for (const t of group.questionTopics) {
+					topics.add(t);
+				}
+			}
+		}
+	}
+	return Array.from(topics);
+}
+
+export function getLessonForTopic(
+	sectionCode: string,
+	topic: string,
+): { slug: string; sectionSlug: string } | undefined {
+	const section = getBlueprintSection(sectionCode);
+	if (!section) return undefined;
+
+	// Find the section slug from our static sections list
+	const mainSection = sections.find((s) => s.code === sectionCode.toLowerCase());
+	if (!mainSection) return undefined;
+
+	for (const area of section.areas) {
+		for (const group of area.groups) {
+			if (group.questionTopics.includes(topic) && group.lessonSlugs.length > 0) {
+				return { 
+					slug: group.lessonSlugs[0], 
+					sectionSlug: mainSection.slug 
+				};
+			}
+		}
+	}
+	return undefined;
+}
+
+export function getBlueprintGroupForLesson(
+	sectionCode: string,
+	lessonSlug: string,
+): { area: number; group: BlueprintGroup } | undefined {
+	const section = getBlueprintSection(sectionCode);
+	if (!section) return undefined;
+	for (const area of section.areas) {
+		for (const group of area.groups) {
+			if (group.lessonSlugs.includes(lessonSlug)) {
+				return { area: area.area, group };
+			}
+		}
+	}
+	return undefined;
+}
+
+export interface NextStep {
+	type: "lesson" | "quiz" | "exam";
+	title: string;
+	description: string;
+	link: string;
+	reason: string;
+}
+
+export function getNextBestStep(
+	sectionCode: string,
+	sectionSlug: string,
+	progress: any,
+	weakTopics: { topic: string; score: number }[],
+	blueprint: BlueprintSection,
+): NextStep {
+	// 1. If brand new, start with first lesson
+	if (progress.questionsPracticed === 0) {
+		return {
+			type: "lesson",
+			title: "Start at the Beginning",
+			description: "Begin your journey with the introductory lesson.",
+			link: `/sections/${sectionSlug}/lessons/01-intro`,
+			reason: "New Section",
+		};
+	}
+
+	// 2. If they have serious gaps (accuracy < 60%) in a topic, go back to that lesson
+	if (weakTopics.length > 0 && weakTopics[0].score < 60) {
+		const weakest = weakTopics[0].topic;
+		// Find lesson for this topic
+		for (const area of blueprint.areas) {
+			for (const group of area.groups) {
+				if (group.questionTopics.includes(weakest) && group.lessonSlugs.length > 0) {
+					return {
+						type: "lesson",
+						title: `Review: ${group.name}`,
+						description: `Revisit the material for ${weakest} to build a stronger foundation.`,
+						link: `/sections/${sectionSlug}/lessons/${group.lessonSlugs[0]}`,
+						reason: "Critical Gap",
+					};
+				}
+			}
+		}
+	}
+
+	// 3. If coverage is low, find the first un-touched group
+	for (const area of blueprint.areas) {
+		for (const group of area.groups) {
+			const groupKey = `${area.area}-${group.letter}`;
+			// We'll need the raw progress data here, but for now we'll check if it's in weakTopics or has 0 questions
+			// Logic: If coverage is < 80%, pick a group they haven't done yet.
+			// Simplified check:
+			if (progress.blueprintGroupsTouched < progress.blueprintGroupsTotal) {
+				return {
+					type: "quiz",
+					title: "Expand Your Base",
+					description: "Try a quiz on a new topic area to increase your blueprint coverage.",
+					link: `/sections/${sectionSlug}/quizzes`,
+					reason: "Low Coverage",
+				};
+			}
+		}
+	}
+
+	// 4. If high readiness, suggest a full exam
+	if (progress.totalCorrect / progress.questionsPracticed > 0.75) {
+		return {
+			type: "exam",
+			title: "Simulated Exam",
+			description: "You're looking ready! Take a full 4-hour practice exam to test your stamina.",
+			link: "/exam",
+			reason: "Exam Ready",
+		};
+	}
+
+	// Default to remediation
+	return {
+		type: "quiz",
+		title: "Blast Your Gaps",
+		description: "Keep drilling those missed questions to push your passing probability higher.",
+		link: `/sections/${sectionSlug}/quizzes`,
+		reason: "Optimization",
+	};
+}

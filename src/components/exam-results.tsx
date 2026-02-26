@@ -2,13 +2,15 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import BlueprintScoreReport from "./blueprint-score-report";
 import type { ExamResult } from "@/lib/quiz";
 
 interface ExamResultsProps {
 	result: ExamResult;
+	sectionCode: string;
 }
 
-export default function ExamResults({ result }: ExamResultsProps) {
+export default function ExamResults({ result, sectionCode }: ExamResultsProps) {
 	const [expandedId, setExpandedId] = useState<number | null>(null);
 	const percentage = Math.round((result.score / result.total) * 100);
 	const passed = percentage >= 75;
@@ -42,50 +44,10 @@ export default function ExamResults({ result }: ExamResultsProps) {
 				</p>
 			</div>
 
-			{/* Topic breakdown */}
-			<h3 className="text-lg font-semibold text-gray-800 mb-4">
-				Score by Topic
-			</h3>
-			<div className="border border-gray-200 rounded-xl overflow-hidden mb-8">
-				<table className="w-full text-sm">
-					<thead>
-						<tr className="bg-gray-50 border-b border-gray-200">
-							<th className="text-left px-4 py-3 font-medium text-gray-600">
-								Topic
-							</th>
-							<th className="text-right px-4 py-3 font-medium text-gray-600">
-								Score
-							</th>
-							<th className="text-right px-4 py-3 font-medium text-gray-600">
-								%
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-						{result.topicScores.map((t) => {
-							const topicPct = Math.round((t.correct / t.total) * 100);
-							const topicPassed = topicPct >= 75;
-							return (
-								<tr
-									key={t.topic}
-									className="border-b border-gray-100 last:border-0"
-								>
-									<td className="px-4 py-3 text-gray-900">{t.topic}</td>
-									<td className="px-4 py-3 text-right text-gray-600">
-										{t.correct}/{t.total}
-									</td>
-									<td
-										className={`px-4 py-3 text-right font-bold ${
-											topicPassed ? "text-emerald-700" : "text-red-700"
-										}`}
-									>
-										{topicPct}%
-									</td>
-								</tr>
-							);
-						})}
-					</tbody>
-				</table>
+			{/* Blueprint Score Report */}
+			<div className="mb-12">
+				<h3 className="text-xl font-bold text-gray-900 mb-6">Performance Breakdown</h3>
+				<BlueprintScoreReport result={result} sectionCode={sectionCode} />
 			</div>
 
 			{/* Per-question review */}
@@ -193,7 +155,7 @@ export default function ExamResults({ result }: ExamResultsProps) {
 					href="/exam"
 					className="bg-emerald-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-emerald-700 transition-colors text-center"
 				>
-					Take Another Exam
+					Practice Hub
 				</Link>
 				<Link
 					href="/dashboard"

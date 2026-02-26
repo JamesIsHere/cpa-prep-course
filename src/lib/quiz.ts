@@ -29,6 +29,7 @@ export interface QuizQuestionResult {
 	correctIndex: number;
 	explanation: string;
 	correct: boolean;
+	topic?: string;
 }
 
 // Full quiz result
@@ -74,6 +75,7 @@ export function scoreQuiz(
 			correctIndex: question.correct_index,
 			explanation: question.explanation,
 			correct,
+			topic: question.topic,
 		};
 	});
 

@@ -1,7 +1,9 @@
 import type { MDXComponents } from "mdx/types";
+import QuickCheck from "@/components/quick-check";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
 	return {
+		QuickCheck,
 		h1: ({ children }) => (
 			<h1 className="text-3xl font-bold mb-6 text-gray-900">{children}</h1>
 		),

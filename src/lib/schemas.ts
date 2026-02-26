@@ -15,6 +15,7 @@ export const quizAnswerSchema = z.object({
 
 export const submitQuizSchema = z.object({
 	answers: z.array(quizAnswerSchema).min(1, "At least one answer is required"),
+	durationSeconds: z.number().int().optional(),
 });
 
 export type SubmitQuizInput = z.infer<typeof submitQuizSchema>;

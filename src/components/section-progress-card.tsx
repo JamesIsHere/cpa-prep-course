@@ -33,32 +33,43 @@ export default function SectionProgressCard({
 						{section.title}
 					</h3>
 				</div>
-				<Link
-					href={`/sections/${section.slug}`}
-					className="text-sm text-emerald-600 hover:text-emerald-700 font-medium whitespace-nowrap"
-				>
-					Study &rarr;
-				</Link>
+				<div className="flex items-center gap-3">
+					<Link
+						href={`/sections/${section.slug}/quizzes`}
+						className="text-xs bg-emerald-600 text-white px-3 py-1.5 rounded-lg font-medium hover:bg-emerald-700 transition-colors"
+					>
+						Quick Quiz
+					</Link>
+					<Link
+						href={`/sections/${section.slug}`}
+						className="text-sm text-emerald-600 hover:text-emerald-700 font-medium whitespace-nowrap"
+					>
+						Study &rarr;
+					</Link>
+				</div>
 			</div>
 
 			{hasProgress ? (
 				<>
-					{readiness && readiness.score > 0 && (
+					{readiness && readiness.probability !== undefined && (
 						<div className="flex items-center gap-4 mb-4 pb-4 border-b border-gray-100">
-							<ReadinessGauge score={readiness.score} />
+							<ReadinessGauge score={readiness.probability} />
 							<div className="flex-1 min-w-0">
-								<p className="text-xs text-gray-400 mb-1">Exam Readiness</p>
+								<div className="flex items-center gap-2 mb-1">
+									<p className="text-xs font-bold text-gray-400 uppercase tracking-wider">Probability of Passing</p>
+									<span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full ${
+										readiness.probability >= 75 ? "bg-emerald-100 text-emerald-700" : 
+										readiness.probability >= 50 ? "bg-amber-100 text-amber-700" : 
+										"bg-red-100 text-red-700"
+									}`}>
+										{readiness.probability >= 75 ? "EXAM READY" : readiness.probability >= 50 ? "ON TRACK" : "BUILDING BASE"}
+									</span>
+								</div>
 								<div className="flex gap-3 text-xs text-gray-500">
 									<span>
-										Coverage{" "}
+										Blueprint{" "}
 										<span className="font-medium text-gray-700">
 											{Math.round(readiness.coverage * 100)}%
-										</span>
-									</span>
-									<span>
-										Volume{" "}
-										<span className="font-medium text-gray-700">
-											{Math.round(readiness.volume * 100)}%
 										</span>
 									</span>
 									<span>
@@ -170,12 +181,13 @@ function ReadinessGauge({ score }: { score: number }) {
 					strokeDashoffset={offset}
 				/>
 			</svg>
-			<span
-				className={`absolute inset-0 flex items-end justify-center text-sm font-bold ${textColor}`}
+			<div
+				className={`absolute inset-0 flex items-end justify-center font-bold ${textColor}`}
 				style={{ paddingBottom: 0 }}
 			>
-				{score}
-			</span>
+				<span className="text-sm">{score}</span>
+				<span className="text-[10px] mb-0.5 ml-0.5">%</span>
+			</div>
 		</div>
 	);
 }

@@ -26,10 +26,10 @@ export default async function QuizPage({
 	searchParams,
 }: {
 	params: Promise<{ slug: string }>;
-	searchParams: Promise<{ topics?: string }>;
+	searchParams: Promise<{ topics?: string; id?: string }>;
 }) {
 	const { slug } = await params;
-	const { topics: topicsParam } = await searchParams;
+	const { topics: topicsParam, id: attemptIdParam } = await searchParams;
 	const section = getSection(slug);
 	if (!section) notFound();
 
@@ -126,6 +126,7 @@ export default async function QuizPage({
 				sectionTitle={section.title}
 				recentAttempts={recentAttempts}
 				topics={topicsParam ? topicsParam.split(",").map((t) => t.trim()) : undefined}
+				preloadedAttemptId={attemptIdParam ? parseInt(attemptIdParam, 10) : undefined}
 			/>
 		</main>
 	);
