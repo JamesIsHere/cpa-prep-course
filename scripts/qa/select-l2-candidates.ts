@@ -6,7 +6,7 @@ import { resolve } from "path";
 import { analyzeBlooms } from "./analyzers/blooms";
 import { fetchAllQuestions, supabase } from "./db-client";
 import { cpaBlueprint } from "../../src/lib/blueprint";
-import { getFrameworkItemsForGroup } from "../../src/lib/blueprint-utils";
+import { getFrameworkItemsForGroup, type GroupFrameworkItems } from "../../src/lib/blueprint-utils";
 
 const sectionArg = process.argv
 	.find((a) => a.startsWith("--section="))
@@ -124,14 +124,14 @@ async function main() {
 		difficulty: string;
 		topic: string;
 		lessonSlugs: string[];
-		frameworkItems: any;
+		frameworkItems: GroupFrameworkItems | null;
 	}> = [];
 	let remaining = countArg;
 
 	// Helper to find lesson/framework for a topic
 	const getTopicContext = (topic: string) => {
 		let slugs: string[] = [];
-		let items: any = null;
+		let items: GroupFrameworkItems | null = null;
 		const bpSection = cpaBlueprint.find((s) => s.code === sectionArg);
 		if (bpSection) {
 			for (const area of bpSection.areas) {

@@ -4,7 +4,7 @@
 import { fetchAllQuestions } from "./db-client";
 import { scoreQuestion } from "./analyzers/quality";
 import { cpaBlueprint } from "../../src/lib/blueprint";
-import { getFrameworkItemsForGroup } from "../../src/lib/blueprint-utils";
+import { getFrameworkItemsForGroup, type GroupFrameworkItems } from "../../src/lib/blueprint-utils";
 
 const sectionArg = process.argv.find((a) => a.startsWith("--section="))?.split("=")[1];
 const countArg = parseInt(process.argv.find((a) => a.startsWith("--count="))?.split("=")[1] || "30");
@@ -31,7 +31,7 @@ async function main() {
 	// Helper to find lesson/framework for a topic
 	const getTopicContext = (topic: string) => {
 		let slugs: string[] = [];
-		let items: any = null;
+		let items: GroupFrameworkItems | null = null;
 		const bpSection = cpaBlueprint.find((s) => s.code === sectionArg);
 		if (bpSection) {
 			for (const area of bpSection.areas) {

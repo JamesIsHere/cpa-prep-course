@@ -3,9 +3,9 @@
 
 import { readFileSync } from "fs";
 import { resolve } from "path";
-import { fetchAllQuestions } from "./db-client";
+import { fetchAllQuestions, type DbQuestion } from "./db-client";
 import { cpaBlueprint } from "../../src/lib/blueprint";
-import { getFrameworkItemsForGroup } from "../../src/lib/blueprint-utils";
+import { getFrameworkItemsForGroup, type GroupFrameworkItems } from "../../src/lib/blueprint-utils";
 
 const sectionArg = process.argv
 	.find((a) => a.startsWith("--section="))
@@ -37,7 +37,7 @@ interface Candidate {
 	topic: string;
 	cognitive_level: number | null;
 	lessonSlugs: string[];
-	frameworkItems: any;
+	frameworkItems: GroupFrameworkItems | null;
 }
 
 async function main() {
@@ -59,7 +59,7 @@ async function main() {
 	// Helper to find lesson/framework for a topic
 	const getTopicContext = (topic: string) => {
 		let slugs: string[] = [];
-		let items: any = null;
+		let items: GroupFrameworkItems | null = null;
 		const bpSection = cpaBlueprint.find((s) => s.code === sectionArg);
 		if (bpSection) {
 			for (const area of bpSection.areas) {
@@ -82,7 +82,7 @@ async function main() {
 
 	// Build per-topic counts
 	const topicTotal = new Map<string, number>();
-	const topicEasyQuestions = new Map<string, any[]>();
+	const topicEasyQuestions = new Map<string, DbQuestion[]>();
 
 	for (const q of questions) {
 		topicTotal.set(q.topic, (topicTotal.get(q.topic) || 0) + 1);

@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import type { QuizQuestionFull } from "@/lib/quiz";
 import { createClient } from "@/lib/supabase/server";
 
 export async function GET(

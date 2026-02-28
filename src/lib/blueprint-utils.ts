@@ -246,8 +246,7 @@ export function getNextBestStep(
 
 	// 3. If coverage is low, find the first un-touched group
 	for (const area of blueprint.areas) {
-		for (const group of area.groups) {
-			const groupKey = `${area.area}-${group.letter}`;
+		for (const _group of area.groups) {
 			// We'll need the raw progress data here, but for now we'll check if it's in weakTopics or has 0 questions
 			// Logic: If coverage is < 80%, pick a group they haven't done yet.
 			// Simplified check:

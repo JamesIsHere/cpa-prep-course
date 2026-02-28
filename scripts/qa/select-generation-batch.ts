@@ -6,7 +6,7 @@ import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 import { fetchAllQuestions } from "./db-client";
 import { cpaBlueprint } from "../../src/lib/blueprint";
-import { getFrameworkItemsForGroup } from "../../src/lib/blueprint-utils";
+import { getFrameworkItemsForGroup, type GroupFrameworkItems } from "../../src/lib/blueprint-utils";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const docsDir = resolve(__dirname, "../../docs");
@@ -64,7 +64,7 @@ interface BatchSpec {
 	existingStems: string[];
 	citationPatterns: string;
 	lessonSlugs: string[];
-	frameworkItems: any; // Using any for simplicity in JSON transport
+	frameworkItems: GroupFrameworkItems | null;
 }
 
 async function main() {
@@ -124,7 +124,7 @@ async function main() {
 
 	// Find blueprint group for the picked topic to extract lesson mapping and frameworks
 	let lessonSlugs: string[] = [];
-	let frameworkItems: any = null;
+	let frameworkItems: GroupFrameworkItems | null = null;
 
 	const bpSection = cpaBlueprint.find((s) => s.code === section);
 	if (bpSection) {

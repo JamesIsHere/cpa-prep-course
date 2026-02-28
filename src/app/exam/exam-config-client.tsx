@@ -24,7 +24,7 @@ interface ExamConfigClientProps {
 export default function ExamConfigClient({
 	sections,
 	activeExam,
-	recentAttempts,
+	recentAttempts: _recentAttempts,
 	preselectedSection,
 }: ExamConfigClientProps) {
 	const router = useRouter();

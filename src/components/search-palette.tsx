@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useState, useRef } from "react";
+import { useCallback, useEffect, useMemo, useState, useRef } from "react";
 import { sections } from "@/lib/sections";
 import { getStudyFramework } from "@/lib/study-frameworks";
 
@@ -18,16 +18,26 @@ export default function SearchPalette() {
 	const router = useRouter();
 	const [isOpen, setIsOpen] = useState(false);
 	const [query, setQuery] = useState("");
-	const [results, setResults] = useState<SearchResult[]>([]);
 	const [selectedIndex, setSelectedIndex] = useState(0);
 	const inputRef = useRef<HTMLInputElement>(null);
 
-	// Toggle on Ctrl+K
+	const closePalette = useCallback(() => {
+		setIsOpen(false);
+	}, []);
+
+	// Toggle on Ctrl+K / Escape
 	useEffect(() => {
 		function handleKeyDown(e: KeyboardEvent) {
 			if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
 				e.preventDefault();
-				setIsOpen((prev) => !prev);
+				setIsOpen((prev) => {
+					if (!prev) {
+						setQuery("");
+						setSelectedIndex(0);
+						setTimeout(() => inputRef.current?.focus(), 50);
+					}
+					return !prev;
+				});
 			}
 			if (e.key === "Escape") {
 				setIsOpen(false);
@@ -37,21 +47,9 @@ export default function SearchPalette() {
 		return () => window.removeEventListener("keydown", handleKeyDown);
 	}, []);
 
-	// Focus input when opened
-	useEffect(() => {
-		if (isOpen) {
-			setQuery("");
-			setSelectedIndex(0);
-			setTimeout(() => inputRef.current?.focus(), 50);
-		}
-	}, [isOpen]);
-
-	// Search logic
-	useEffect(() => {
-		if (query.length < 2) {
-			setResults([]);
-			return;
-		}
+	// Derive search results from query (no effect needed)
+	const results = useMemo(() => {
+		if (query.length < 2) return [];
 
 		const allResults: SearchResult[] = [];
 		const q = query.toLowerCase();
@@ -101,13 +99,17 @@ export default function SearchPalette() {
 			}
 		});
 
-		setResults(allResults.slice(0, 8));
-		setSelectedIndex(0);
+		return allResults.slice(0, 8);
 	}, [query]);
 
 	function handleSelect(result: SearchResult) {
 		router.push(result.link);
-		setIsOpen(false);
+		closePalette();
+	}
+
+	function handleQueryChange(value: string) {
+		setQuery(value);
+		setSelectedIndex(0);
 	}
 
 	function handleKeyDown(e: React.KeyboardEvent) {
@@ -129,7 +131,7 @@ export default function SearchPalette() {
 			{/* Overlay */}
 			<div 
 				className="fixed inset-0 bg-gray-900/60 backdrop-blur-sm transition-opacity" 
-				onClick={() => setIsOpen(false)}
+				onClick={closePalette}
 			/>
 
 			{/* Palette */}
@@ -142,7 +144,7 @@ export default function SearchPalette() {
 						ref={inputRef}
 						type="text"
 						value={query}
-						onChange={(e) => setQuery(e.target.value)}
+						onChange={(e) => handleQueryChange(e.target.value)}
 						onKeyDown={handleKeyDown}
 						placeholder="Search lessons, mnemonics, or formulas..."
 						className="w-full py-4 px-3 text-gray-900 placeholder-gray-400 focus:outline-none text-base sm:text-lg"

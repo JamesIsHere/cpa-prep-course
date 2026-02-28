@@ -51,7 +51,6 @@ function checkLinks() {
 
 			// Handle different internal route types
 			let targetPath = "";
-			let isValid = true;
 
 			if (link.startsWith("/sections/")) {
 				// Format: /sections/[slug]/[lesson]

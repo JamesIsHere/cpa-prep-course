@@ -9,7 +9,6 @@ import PerformanceInsights from "@/components/performance-insights";
 import SectionProgressCard from "@/components/section-progress-card";
 import type { SectionProgress } from "@/components/section-progress-card";
 import WeakTopicCard from "@/components/weak-topic-card";
-import { StudyPipeline } from "@/components/study-pipeline";
 import { cpaBlueprint, sectionQuestionTotals } from "@/lib/blueprint";
 import { getBlueprintSection, getNextBestStep } from "@/lib/blueprint-utils";
 import { computeReadiness } from "@/lib/readiness";
@@ -199,16 +198,6 @@ export default async function DashboardPage() {
 		progressMap[activeSection],
 		weakTopicsMap[activeSection]?.weakTopics || [],
 		activeBlueprint,
-	);
-
-	// Check if there are any weak topics to display
-	const hasWeakTopics = sections.some(
-		(s) => (weakTopicsMap[s.code]?.weakTopics.length ?? 0) > 0,
-	);
-
-	// Check if there are any trend data points
-	const hasTrends = sections.some(
-		(s) => (trendMap[s.code]?.length ?? 0) >= 2,
 	);
 
 	return (

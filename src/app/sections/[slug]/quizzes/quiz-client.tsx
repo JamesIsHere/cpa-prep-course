@@ -302,7 +302,7 @@ export default function QuizClient({
 															const data = await res.json();
 															setResult(data);
 															setState("results");
-														} catch (err) {
+														} catch (_err) {
 															setError("Failed to load attempt review");
 														} finally {
 															setLoading(false);

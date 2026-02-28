@@ -509,7 +509,6 @@ async function checkMigrationSync(): Promise<CheckResult> {
 // ── Main ──
 
 async function main() {
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const vlog = verbose ? log : (..._args: unknown[]) => {};
 
 	vlog(bold("Slayer CPA Health Check"));

@@ -2,7 +2,7 @@
 // Usage: npx tsx scripts/generate-pdf-guides.ts
 
 import { renderToBuffer } from "@react-pdf/renderer";
-import { createElement } from "react";
+import React, { createElement } from "react";
 import { writeFileSync, mkdirSync, existsSync } from "fs";
 import { resolve } from "path";
 import { getStudyFramework } from "../src/lib/study-frameworks";
@@ -27,8 +27,8 @@ async function main() {
 
 		console.log(`Generating PDF for ${section.toUpperCase()}...`);
 		try {
-			// Cast to any to bypass strict ReactElement vs PDF Document props mismatch in some build environments
-			const element = createElement(StudyGuidePdf as any, { framework }) as any;
+			// Cast to bypass strict ReactElement vs PDF Document props mismatch in some build environments
+			const element = createElement(StudyGuidePdf as unknown as React.FC<{ framework: typeof framework }>, { framework }) as React.ReactElement;
 			const buffer = await renderToBuffer(element);
 			
 			const fileName = `${section}-study-guide.pdf`;
