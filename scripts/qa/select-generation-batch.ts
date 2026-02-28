@@ -6,7 +6,6 @@ import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 import { fetchAllQuestions } from "./db-client";
 import { cpaBlueprint } from "../../src/lib/blueprint";
-import { getStudyFramework } from "../../src/lib/study-frameworks";
 import { getFrameworkItemsForGroup } from "../../src/lib/blueprint-utils";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
