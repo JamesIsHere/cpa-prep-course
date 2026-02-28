@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { activeSectionSchema } from "@/lib/schemas";
 import { createClient } from "@/lib/supabase/server";
 
 export async function POST(request: Request) {
@@ -11,17 +12,25 @@ export async function POST(request: Request) {
 		return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 	}
 
-	const { sectionCode, targetExamDate } = await request.json();
-
-	if (!sectionCode) {
-		return NextResponse.json({ error: "Section code required" }, { status: 400 });
+	let body: unknown;
+	try {
+		body = await request.json();
+	} catch {
+		return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
 	}
+
+	const validation = activeSectionSchema.safeParse(body);
+	if (!validation.success) {
+		return NextResponse.json({ error: "Invalid request data" }, { status: 400 });
+	}
+
+	const { sectionCode, targetExamDate } = validation.data;
 
 	const { error } = await supabase
 		.from("profiles")
-		.update({ 
+		.update({
 			active_section: sectionCode,
-			target_exam_date: targetExamDate
+			target_exam_date: targetExamDate ?? null,
 		})
 		.eq("id", user.id);
 

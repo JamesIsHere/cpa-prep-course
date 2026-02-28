@@ -14,7 +14,7 @@ export default function Home() {
 						<span className="text-emerald-600"> with confidence</span>
 					</h1>
 					<p className="text-lg sm:text-xl text-gray-600 mb-4 max-w-2xl mx-auto leading-relaxed">
-						96 lessons, 5,000+ practice questions, timed exams, and downloadable
+						96 lessons, 15,000+ practice questions, timed exams, and downloadable
 						study frameworks across all 6 CPA sections.
 					</p>
 					<p className="text-sm text-gray-400 mb-8">
@@ -45,7 +45,7 @@ export default function Home() {
 						<div className="text-emerald-100 text-sm">Lessons</div>
 					</div>
 					<div data-testid="stat-questions">
-						<div className="text-2xl sm:text-3xl font-bold">5,000+</div>
+						<div className="text-2xl sm:text-3xl font-bold">15,000+</div>
 						<div className="text-emerald-100 text-sm">Practice Questions</div>
 					</div>
 					<div data-testid="stat-sections">
@@ -84,7 +84,7 @@ export default function Home() {
 					</h2>
 					<p className="text-gray-400 leading-relaxed max-w-xl mx-auto">
 						CPA review courses charge $2,000 to $3,500 because they can, not
-						because they have to. We built a course with 96 lessons, 5,000+
+						because they have to. We built a course with 96 lessons, 15,000+
 						questions, timed exams, and study frameworks — then priced it at
 						$29.99 a month. Same depth. A fraction of the cost. No compromise.
 					</p>
@@ -258,7 +258,7 @@ export default function Home() {
 							</li>
 							<li className="flex items-start gap-2">
 								<span className="text-emerald-600 mt-0.5">✓</span>
-								5,000+ practice questions with explanations
+								15,000+ practice questions with explanations
 							</li>
 							<li className="flex items-start gap-2">
 								<span className="text-emerald-600 mt-0.5">✓</span>

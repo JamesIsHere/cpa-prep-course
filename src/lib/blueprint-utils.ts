@@ -9,6 +9,7 @@ export { questionCounts };
 
 import { sections } from "./sections";
 import { getStudyFramework } from "./study-frameworks";
+import type { TopicPerformance } from "./weak-topics";
 import type {
 	ConceptMap,
 	DecisionTree,
@@ -189,8 +190,6 @@ export function getBlueprintGroupForLesson(
 	return undefined;
 }
 
-import { analyzeTopicPerformance, type TopicPerformance } from "./weak-topics";
-
 export interface NextStep {
 	type: "lesson" | "quiz" | "exam";
 	title: string;
@@ -199,10 +198,19 @@ export interface NextStep {
 	reason: string;
 }
 
+export interface SectionProgressData {
+	questionsPracticed: number;
+	totalCorrect: number;
+	totalQuestions: number;
+	blueprintGroupsTouched: number;
+	blueprintGroupsTotal: number;
+	recentScores: { score: number; total: number }[];
+}
+
 export function getNextBestStep(
 	sectionCode: string,
 	sectionSlug: string,
-	progress: any,
+	progress: SectionProgressData,
 	weakTopics: TopicPerformance[],
 	blueprint: BlueprintSection,
 ): NextStep {

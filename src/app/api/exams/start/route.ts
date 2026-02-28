@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
-import { createClient } from "@/lib/supabase/server";
+import { requireActiveSubscription } from "@/lib/require-subscription";
 import { startExamSchema } from "@/lib/schemas";
+import { createClient } from "@/lib/supabase/server";
 
 export async function POST(request: Request) {
 	const supabase = await createClient();
@@ -12,21 +13,15 @@ export async function POST(request: Request) {
 		return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 	}
 
-	// Check subscription
-	const { data: profile } = await supabase
-		.from("profiles")
-		.select("subscription_status")
-		.eq("id", user.id)
-		.single();
+	const subError = await requireActiveSubscription(supabase, user.id);
+	if (subError) return subError;
 
-	if (profile?.subscription_status !== "active") {
-		return NextResponse.json(
-			{ error: "Active subscription required" },
-			{ status: 403 },
-		);
+	let body: unknown;
+	try {
+		body = await request.json();
+	} catch {
+		return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
 	}
-
-	const body = await request.json();
 	const validation = startExamSchema.safeParse(body);
 
 	if (!validation.success) {

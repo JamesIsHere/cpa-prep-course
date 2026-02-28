@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+import { requireActiveSubscription } from "@/lib/require-subscription";
+import { reviewQuizSchema } from "@/lib/schemas";
 import { createClient } from "@/lib/supabase/server";
 
 export async function POST(request: Request) {
@@ -11,44 +13,25 @@ export async function POST(request: Request) {
 		return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 	}
 
-	// Check subscription
-	const { data: profile } = await supabase
-		.from("profiles")
-		.select("subscription_status")
-		.eq("id", user.id)
-		.single();
+	const subError = await requireActiveSubscription(supabase, user.id);
+	if (subError) return subError;
 
-	if (profile?.subscription_status !== "active") {
-		return NextResponse.json(
-			{ error: "Active subscription required" },
-			{ status: 403 },
-		);
+	let body: unknown;
+	try {
+		body = await request.json();
+	} catch {
+		return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
 	}
 
-	const body = await request.json();
-	const { questionIds, sectionCode } = body as {
-		questionIds: number[];
-		sectionCode: string;
-	};
-
-	if (
-		!questionIds ||
-		!Array.isArray(questionIds) ||
-		questionIds.length === 0 ||
-		questionIds.length > 30
-	) {
+	const validation = reviewQuizSchema.safeParse(body);
+	if (!validation.success) {
 		return NextResponse.json(
-			{ error: "Invalid questionIds (1-30)" },
+			{ error: "Invalid request data" },
 			{ status: 400 },
 		);
 	}
 
-	if (!sectionCode) {
-		return NextResponse.json(
-			{ error: "sectionCode is required" },
-			{ status: 400 },
-		);
-	}
+	const { questionIds, sectionCode } = validation.data;
 
 	// Look up section
 	const { data: section } = await supabase

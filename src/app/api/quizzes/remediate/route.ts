@@ -1,11 +1,7 @@
 import { NextResponse } from "next/server";
+import { requireActiveSubscription } from "@/lib/require-subscription";
+import { remediateSchema } from "@/lib/schemas";
 import { createClient } from "@/lib/supabase/server";
-import { z } from "zod";
-
-const remediateSchema = z.object({
-	sectionCode: z.string(),
-	count: z.number().min(1).max(50).default(10),
-});
 
 export async function POST(request: Request) {
 	const supabase = await createClient();
@@ -17,7 +13,15 @@ export async function POST(request: Request) {
 		return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 	}
 
-	const body = await request.json();
+	const subError = await requireActiveSubscription(supabase, user.id);
+	if (subError) return subError;
+
+	let body: unknown;
+	try {
+		body = await request.json();
+	} catch {
+		return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+	}
 	const validation = remediateSchema.safeParse(body);
 
 	if (!validation.success) {

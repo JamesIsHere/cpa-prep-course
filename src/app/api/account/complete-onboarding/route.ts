@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { completeOnboardingSchema } from "@/lib/schemas";
 import { createClient } from "@/lib/supabase/server";
 
 export async function POST(request: Request) {
@@ -11,16 +12,28 @@ export async function POST(request: Request) {
 		return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 	}
 
-	const { questionsGoal, lessonsGoal } = await request.json();
+	let body: unknown;
+	try {
+		body = await request.json();
+	} catch {
+		return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+	}
+
+	const validation = completeOnboardingSchema.safeParse(body);
+	if (!validation.success) {
+		return NextResponse.json({ error: "Invalid request data" }, { status: 400 });
+	}
+
+	const { questionsGoal, lessonsGoal } = validation.data;
 
 	const { error } = await supabase
 		.from("profiles")
-		.update({ 
+		.update({
 			onboarding_completed: true,
 			daily_goals: {
-				questions: questionsGoal || 20,
-				lessons: lessonsGoal || 1
-			}
+				questions: questionsGoal ?? 20,
+				lessons: lessonsGoal ?? 1,
+			},
 		})
 		.eq("id", user.id);
 

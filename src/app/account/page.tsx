@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import { sections } from "@/lib/sections";
 import { createClient } from "@/lib/supabase/server";
 import ActiveSectionSettings from "./active-section-settings";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
 	title: "Account",
@@ -13,10 +16,14 @@ export default async function AccountPage() {
 		data: { user },
 	} = await supabase.auth.getUser();
 
+	if (!user) {
+		redirect("/login");
+	}
+
 	const { data: profile } = await supabase
 		.from("profiles")
 		.select("subscription_status, stripe_customer_id, active_section, target_exam_date")
-		.eq("id", user!.id)
+		.eq("id", user.id)
 		.single();
 
 	const subscriptionStatus = profile?.subscription_status ?? "free";

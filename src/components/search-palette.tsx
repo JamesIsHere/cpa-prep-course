@@ -77,7 +77,7 @@ export default function SearchPalette() {
 				framework.mnemonics.forEach((m) => {
 					if (m.acronym.toLowerCase().includes(q) || m.expansion.toLowerCase().includes(q)) {
 						allResults.push({
-							id: `m-${m.acronym}`,
+							id: `m-${section.code}-${m.acronym}`,
 							title: m.acronym,
 							subtitle: `${m.expansion} (Mnemonic in ${section.code.toUpperCase()})`,
 							type: "mnemonic",
@@ -89,7 +89,7 @@ export default function SearchPalette() {
 				framework.formulas.forEach((f) => {
 					if (f.name.toLowerCase().includes(q) || f.formula.toLowerCase().includes(q)) {
 						allResults.push({
-							id: `f-${f.name}`,
+							id: `f-${section.code}-${f.name}`,
 							title: f.name,
 							subtitle: `${f.formula} (Formula in ${section.code.toUpperCase()})`,
 							type: "formula",

@@ -25,6 +25,8 @@ export interface ScoreTrendPoint {
 	type: "quiz" | "exam";
 }
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
 	title: "Dashboard",
 };
@@ -77,7 +79,32 @@ export default async function DashboardPage() {
 	const weakTopicsMap: Record<string, TopicAnalysis> = {};
 	const trendMap: Record<string, ScoreTrendPoint[]> = {};
 
-	let stats: any = null;
+	interface DashboardStats {
+		sections: Record<
+			string,
+			{
+				total_correct: number;
+				total_practiced: number;
+				practiced_topics: string[];
+				recent_scores: { score: number; total: number }[];
+				avg_seconds_per_q: number;
+			}
+		>;
+		trend_data: {
+			section_code: string;
+			date: string;
+			score: number;
+			type: "quiz" | "exam";
+		}[];
+		topic_performance: {
+			section_code: string;
+			topic: string;
+			correct: number;
+			total: number;
+		}[];
+	}
+
+	let stats: DashboardStats | null = null;
 
 	// Initialize empty progress for all sections (so empty state has totals)
 	for (const section of sections) {
@@ -96,7 +123,7 @@ export default async function DashboardPage() {
 	if (user) {
 		const { data } = (await supabase.rpc("get_user_dashboard_stats", {
 			p_user_id: user.id,
-		})) as { data: any };
+		})) as { data: DashboardStats | null };
 		stats = data;
 
 		if (stats) {
@@ -104,29 +131,7 @@ export default async function DashboardPage() {
 				sections: sectionStats,
 				trend_data,
 				topic_performance,
-			} = stats as {
-				sections: Record<
-					string,
-					{
-						total_correct: number;
-						total_practiced: number;
-						practiced_topics: string[];
-						recent_scores: { score: number; total: number }[];
-					}
-				>;
-				trend_data: {
-					section_code: string;
-					date: string;
-					score: number;
-					type: "quiz" | "exam";
-				}[];
-				topic_performance: {
-					section_code: string;
-					topic: string;
-					correct: number;
-					total: number;
-				}[];
-			};
+			} = stats;
 
 			for (const section of sections) {
 				const sData = sectionStats[section.code];
@@ -262,12 +267,16 @@ export default async function DashboardPage() {
 
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
 				{/* Performance Insights for Active Section */}
-				{(stats as any)?.sections[activeSection]?.avg_seconds_per_q > 0 && (
-					<PerformanceInsights 
-						avgSecondsPerQ={(stats as any).sections[activeSection].avg_seconds_per_q}
-						accuracy={progressMap[activeSection].totalCorrect / Math.max(1, progressMap[activeSection].questionsPracticed)}
-					/>
-				)}
+				{(() => {
+					const sectionStats = stats?.sections[activeSection];
+					if (!sectionStats || sectionStats.avg_seconds_per_q <= 0) return null;
+					return (
+						<PerformanceInsights
+							avgSecondsPerQ={sectionStats.avg_seconds_per_q}
+							accuracy={progressMap[activeSection].totalCorrect / Math.max(1, progressMap[activeSection].questionsPracticed)}
+						/>
+					);
+				})()}
 
 				{/* Focus Areas (Weak Topics) for Active Section */}
 				{weakTopicsMap[activeSection]?.weakTopics.length > 0 && (

@@ -5,6 +5,8 @@ import { sections } from "@/lib/sections";
 import { createClient } from "@/lib/supabase/server";
 import ExamConfigClient from "./exam-config-client";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
 	title: "Practice Center",
 };

@@ -2,7 +2,7 @@ import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Nav from "@/components/nav";
-import SearchPalette from "@/components/search-palette";
+import SearchPaletteLoader from "@/components/search-palette-loader";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -21,20 +21,20 @@ export const metadata: Metadata = {
 		template: "%s — Slayer CPA",
 	},
 	description:
-		"Full-scope CPA exam prep — 96 lessons, 5,000+ practice questions, timed exams, and study frameworks across all 6 sections for $29.99/month.",
+		"Full-scope CPA exam prep — 96 lessons, 15,000+ practice questions, timed exams, and study frameworks across all 6 sections for $29.99/month.",
 	metadataBase: new URL("https://www.slayer-cpa.com"),
 	openGraph: {
 		type: "website",
 		siteName: "Slayer CPA",
 		title: "Slayer CPA",
 		description:
-			"96 lessons, 5,000+ questions, timed practice exams, and PDF study frameworks covering AUD, FAR, REG, BAR, ISC, and TCP.",
+			"96 lessons, 15,000+ questions, timed practice exams, and PDF study frameworks covering AUD, FAR, REG, BAR, ISC, and TCP.",
 	},
 	twitter: {
 		card: "summary_large_image",
 		title: "Slayer CPA",
 		description:
-			"96 lessons, 5,000+ questions, timed practice exams, and PDF study frameworks covering AUD, FAR, REG, BAR, ISC, and TCP.",
+			"96 lessons, 15,000+ questions, timed practice exams, and PDF study frameworks covering AUD, FAR, REG, BAR, ISC, and TCP.",
 	},
 };
 
@@ -49,7 +49,7 @@ export default function RootLayout({
 				className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50`}
 			>
 				<Nav />
-				<SearchPalette />
+				<SearchPaletteLoader />
 				{children}
 				<Analytics />
 			</body>

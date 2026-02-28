@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import type { QuizAnswer, QuizQuestionFull } from "@/lib/quiz";
 import { scoreExam } from "@/lib/quiz";
+import { submitExamSchema } from "@/lib/schemas";
 import { createClient } from "@/lib/supabase/server";
 
 export async function POST(
@@ -46,15 +47,22 @@ export async function POST(
 		);
 	}
 
-	const body = await request.json();
-	const { answers } = body as { answers: QuizAnswer[] };
+	let body: unknown;
+	try {
+		body = await request.json();
+	} catch {
+		return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+	}
 
-	if (!answers || !Array.isArray(answers)) {
+	const validation = submitExamSchema.safeParse(body);
+	if (!validation.success) {
 		return NextResponse.json(
-			{ error: "Answers are required" },
+			{ error: "Invalid submission data" },
 			{ status: 400 },
 		);
 	}
+
+	const { answers } = validation.data;
 
 	// Get all question IDs from the stored attempt (the full exam set)
 	const storedQuestionIds = (attempt.answers as { question_id: number }[]).map(

@@ -39,10 +39,14 @@ export async function POST(request: Request) {
 					: subscription.customer.id;
 			const status = subscription.status === "active" ? "active" : "canceled";
 
-			await supabase
+			const { error: updateError } = await supabase
 				.from("profiles")
 				.update({ subscription_status: status })
 				.eq("stripe_customer_id", customerId);
+			if (updateError) {
+				console.error("Stripe webhook: failed to update subscription status", updateError);
+				return NextResponse.json({ error: "Database update failed" }, { status: 500 });
+			}
 			break;
 		}
 
@@ -53,10 +57,14 @@ export async function POST(request: Request) {
 					? subscription.customer
 					: subscription.customer.id;
 
-			await supabase
+			const { error: deleteError } = await supabase
 				.from("profiles")
 				.update({ subscription_status: "canceled" })
 				.eq("stripe_customer_id", customerId);
+			if (deleteError) {
+				console.error("Stripe webhook: failed to cancel subscription", deleteError);
+				return NextResponse.json({ error: "Database update failed" }, { status: 500 });
+			}
 			break;
 		}
 	}

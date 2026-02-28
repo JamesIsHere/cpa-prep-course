@@ -24,6 +24,33 @@ export const startExamSchema = z.object({
 	sectionCode: z.string().min(2, "Section code is required"),
 });
 
+export const activeSectionSchema = z.object({
+	sectionCode: z.string().min(2).max(6),
+	targetExamDate: z.string().nullable().optional(),
+});
+
+export const completeOnboardingSchema = z.object({
+	questionsGoal: z.number().int().min(1).max(100).optional(),
+	lessonsGoal: z.number().int().min(1).max(20).optional(),
+});
+
+export const reviewQuizSchema = z.object({
+	questionIds: z.array(z.number().int()).min(1).max(30),
+	sectionCode: z.string().min(2),
+});
+
+export const submitExamSchema = z.object({
+	answers: z.array(z.object({
+		questionId: z.number().int(),
+		selectedIndex: z.number().int().min(-1).max(3),
+	})).min(1),
+});
+
+export const remediateSchema = z.object({
+	sectionCode: z.string().min(2),
+	count: z.number().int().min(1).max(50).default(10),
+});
+
 export const feedbackSchema = z.object({
 	email: z.string().email().optional().or(z.literal("")),
 	pageUrl: z.string().optional(),

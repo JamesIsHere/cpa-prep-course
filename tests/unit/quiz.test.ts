@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import type { QuizAnswer, QuizQuestionFull, QuizResult } from "@/lib/quiz";
-import { scoreQuiz } from "@/lib/quiz";
+import type { QuizAnswer, QuizQuestionFull, QuizResult, ExamResult } from "@/lib/quiz";
+import { scoreQuiz, scoreExam } from "@/lib/quiz";
 
 const mockQuestions: QuizQuestionFull[] = [
 	{
@@ -105,5 +105,67 @@ describe("scoreQuiz", () => {
 		expect(result.questions[0].explanation).toBe(
 			"The sky appears blue due to Rayleigh scattering.",
 		);
+	});
+});
+
+describe("scoreExam", () => {
+	it("returns score and topic breakdown", () => {
+		const answers: QuizAnswer[] = [
+			{ questionId: 1, selectedIndex: 1 }, // correct — Math
+			{ questionId: 2, selectedIndex: 0 }, // wrong — Science
+			{ questionId: 3, selectedIndex: 3 }, // correct — Geography
+		];
+
+		const result: ExamResult = scoreExam(answers, mockQuestions);
+		expect(result.score).toBe(2);
+		expect(result.total).toBe(3);
+		expect(result.topicScores).toHaveLength(3);
+
+		const math = result.topicScores.find((t) => t.topic === "Math");
+		expect(math).toEqual({ topic: "Math", correct: 1, total: 1 });
+
+		const science = result.topicScores.find((t) => t.topic === "Science");
+		expect(science).toEqual({ topic: "Science", correct: 0, total: 1 });
+
+		const geo = result.topicScores.find((t) => t.topic === "Geography");
+		expect(geo).toEqual({ topic: "Geography", correct: 1, total: 1 });
+	});
+
+	it("sorts topic scores alphabetically", () => {
+		const answers: QuizAnswer[] = [
+			{ questionId: 1, selectedIndex: 1 },
+			{ questionId: 2, selectedIndex: 2 },
+			{ questionId: 3, selectedIndex: 3 },
+		];
+
+		const result = scoreExam(answers, mockQuestions);
+		const topics = result.topicScores.map((t) => t.topic);
+		expect(topics).toEqual(["Geography", "Math", "Science"]);
+	});
+
+	it("handles unanswered questions (selectedIndex -1)", () => {
+		const answers: QuizAnswer[] = [
+			{ questionId: 1, selectedIndex: -1 },
+			{ questionId: 2, selectedIndex: 2 },
+		];
+
+		const result = scoreExam(answers, [mockQuestions[0], mockQuestions[1]]);
+		expect(result.score).toBe(1);
+		expect(result.total).toBe(2);
+	});
+
+	it("groups multiple questions under the same topic", () => {
+		const dupeTopicQuestions: QuizQuestionFull[] = [
+			{ ...mockQuestions[0], id: 10, topic: "Math" },
+			{ ...mockQuestions[1], id: 11, topic: "Math" },
+		];
+		const answers: QuizAnswer[] = [
+			{ questionId: 10, selectedIndex: 1 }, // correct
+			{ questionId: 11, selectedIndex: 0 }, // wrong (correct is 2)
+		];
+
+		const result = scoreExam(answers, dupeTopicQuestions);
+		expect(result.topicScores).toHaveLength(1);
+		expect(result.topicScores[0]).toEqual({ topic: "Math", correct: 1, total: 2 });
 	});
 });

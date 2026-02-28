@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-	title: "Blog — Slayer CPA",
+	title: "Blog",
 	description:
 		"CPA exam tips, cost breakdowns, and study strategies from Slayer CPA.",
 };
