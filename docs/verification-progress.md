@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 110      | 108  | 0    | 2      | Active  |
+| BAR     | ~1,016 | 120      | 117  | 1    | 2      | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -28,3 +28,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 6 | BAR | 10 | 10 | 0 | 0 | All pass — ASU 2018-15 CCA classification/capitalization stages, ASC 350-40 useful life revision, ASC 842 sale-leaseback (FV bifurcation/repurchase options/partial termination/financing treatment), ASC 715 pension actuarial loss to OCI |
 | 2026-03-01 | batch 7 | BAR | 10 | 10 | 0 | 0 | All pass — ASC 715 DC vs DB accounting, discount rate/PBO inverse, plan asset rollforward, prior service cost OCI amortization, corridor approach, NPPC calculation, GASB 34 net position reconciliation/bond premium/unavailable revenue/debt service |
 | 2026-03-01 | batch 8 | BAR | 10 | 10 | 0 | 0 | All pass — GASB 34 ISF reconciliation/net position calculation/depreciation reconciling item, interfund loan classification, intra-activity transfer elimination, ISF services recording, loan vs transfer comparison, GASB 33 grant revenue with unmet match, government-wide interfund elimination analysis, interfund reimbursement |
+| 2026-03-01 | batch 9 | BAR | 10 | 9 | 1 | 0 | Q2940 fail: keyed answer 4.8 turnover is wrong — correct calc is $2.4M/$400K=6.0 (uses ending inventory instead of average). Rest pass — ISF markup elimination, AR turnover, D/E ratio, TIE, gross margin formula, GMROI, DuPont ROE/equity multiplier/profit margin, inventory turnover |
