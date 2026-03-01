@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 980      | 943  | 24   | 13     | Active  |
+| BAR     | ~1,016 | 990      | 951  | 26   | 13     | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -115,3 +115,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 93 | BAR | 10 | 10 | 0 | 0 | All pass — country risk premium CAPM, ROIC calculation, market capitalization, convertible debt cost in WACC, DSCR covenant, IRR vs marginal cost of capital, EV/EBITDA equity bridge per share, EVA formula, divisional hurdle rate vs corporate WACC, share repurchase EPS effect |
 | 2026-03-01 | batch 94 | BAR | 10 | 8 | 2 | 0 | Q13883 fail: WACC calc yields 9.33% from given weights (40/10/50) but keyed 9.58% — same error pattern as Q6083/Q8723/Q11303. Q13884 fail: new WACC calc yields 9.87% not keyed 10.37% — same error pattern as Q6084/Q8724/Q11304, explanation fabricates "spread widening." Rest pass — residual income, optimal capital structure, maturity mismatch, after-tax cost of debt, DDM cost of equity, lease vs buy NPV, DSCR sustainability, Hamada equation levered beta |
 | 2026-03-01 | batch 95 | BAR | 10 | 10 | 0 | 0 | All pass — tax rate reduction optimal debt ratio, convertible debt dilution trade-off, credit downgrade WACC impact, DOL calculation, CAPM required return, EV/EBITDA valuation, Hamada unlevered beta, capital structure flexibility for high-growth firm, covenant coverage ratio forecast, EV-to-equity per share |
+| 2026-03-01 | batch 96 | BAR | 10 | 8 | 2 | 0 | Q13908 fail: pro forma interest coverage — total interest is $1,050K+$400K=$1,450K giving 2.90×, not keyed 2.80× ($1,500K); explanation fabricates "commitment fees" not in stem; same pattern as Q6108/Q8748/Q11328. Q13913 fail: Waverly EPS decline is 18.4% not 20.8% — explanation uses wrong new EPS ($5.81 vs correct $5.98); same pattern as Q6113/Q8753/Q11333. Rest pass — stock split P/E, WACC sensitivity, WACC calculation, DDM cost of equity, CAPM, WACC rate increase, DFL, cost of preferred stock |
