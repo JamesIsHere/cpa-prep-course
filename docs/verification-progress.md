@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 550      | 529  | 13   | 8      | Active  |
+| BAR     | ~1,016 | 560      | 539  | 13   | 8      | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -72,3 +72,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 50 | BAR | 10 | 10 | 0 | 0 | All pass — EVA calculation, Hamada unlevered beta, DOL amplification, retained earnings breakpoint, underinvestment agency cost, Gordon growth terminal value, interest coverage ratio, trade-off theory distress analysis, share repurchase tax advantage, equity carve-out vs spin-off |
 | 2026-03-01 | batch 51 | BAR | 10 | 10 | 0 | 0 | All pass — EV-to-equity per share, credit downgrade new debt cost, market vs book WACC weights, rights offering shares/rights calc, debt covenant technical default, FCFF calculation, sustainable growth rate, EV/EBITDA equity bridge, share repurchase EPS with forgone return, treasury stock EPS effect |
 | 2026-03-01 | batch 52 | BAR | 10 | 10 | 0 | 0 | All pass — risk-free rate WACC impact, recap trade-off analysis, EVA calculation, FCFF calculation, enterprise value, residual income, Gordon growth equity valuation, M-M dividend irrelevance tax deviation, terminal value with growth factor, P/E comparable undervaluation |
+| 2026-03-01 | batch 53 | BAR | 10 | 10 | 0 | 0 | All pass — diluted EPS convertible bonds, BVPS preferred deduction, APV with distress costs, ASC 842 finance lease leverage, bond-yield-plus-risk-premium, equity vs debt signaling theory, treasury stock method diluted EPS, common equity market cap, Hamada unlevered beta, capital rationing NPV maximization |
