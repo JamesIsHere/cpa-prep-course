@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 1020     | 979  | 26   | 15     | Active  |
+| BAR     | ~1,016 | 1030     | 989  | 26   | 15     | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -119,3 +119,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 97 | BAR | 10 | 10 | 0 | 0 | All pass — after-tax cost of debt, WACC leverage/distress trade-off, debt-financed repurchase D/E, EV-to-equity per share, Hamada equation levered beta, DDM vs CAPM reliability (erratic dividends), NOL/high-leverage preferred stock financing, covenant D/E equity issuance, 2-for-1 stock split effects, tax rate increase WACC impact |
 | 2026-03-01 | batch 98 | BAR | 10 | 8 | 0 | 2 | Q13933 review: Hamada re-levering arithmetic error — 0.914×1.30=1.19 not 1.12; same pattern as Q6133/Q8773/Q11353. Q13934 review: FCFE value $83,687,500 not $83,718,750; same pattern as Q6134/Q8774/Q11354. Rest pass — risk-adjusted project acceptance, EV-to-equity bridge, WACC, ASC 842 finance lease vs loan, DDM dividend increase, sustainable growth rate, FCFF, goodwill impairment D/E |
 | 2026-03-01 | batch 99 | BAR | 10 | 10 | 0 | 0 | All pass — convertible bond WACC effect, DuPont ROE equity multiplier, residual dividend policy, APV for LBO valuation, interest coverage ratio covenant, DOL calculation, SEO dilution per share, Gordon Growth terminal value, WACC debt retirement shift, M-M distress costs critique |
+| 2026-03-01 | batch 100 | BAR | 10 | 10 | 0 | 0 | All pass — UFCF calculation, NPV vs IRR mutually exclusive, tangible assets leverage (trade-off theory), Jensen FCF hypothesis, ROIC calculation, MCC break point, accelerated depreciation borrowing capacity, P/E multiple valuation, NOPAT calculation, debt-to-total-capital ratio |
