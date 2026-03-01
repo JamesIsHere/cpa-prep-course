@@ -134,7 +134,7 @@ function parseQuestionsFromMigration(filePath: string): VerifiableQuestion[] {
 
 	let match: RegExpExecArray | null;
 	while ((match = tuplePattern8.exec(fullSql)) !== null) {
-		const [, sectionId, topic, stem, choicesJson, correctIndexStr, explanation, difficulty, cogLevelStr] = match;
+		const [, _sectionId, topic, stem, choicesJson, correctIndexStr, explanation, difficulty, cogLevelStr] = match;
 		try {
 			questions.push({
 				id: null,
@@ -162,7 +162,7 @@ function parseQuestionsFromMigration(filePath: string): VerifiableQuestion[] {
 		);
 		if (/^\s*,\s*\d+\s*\)/.test(afterMatch)) continue;
 
-		const [, sectionId, topic, stem, choicesJson, correctIndexStr, explanation, difficulty] = match;
+		const [, _sectionId, topic, stem, choicesJson, correctIndexStr, explanation, difficulty] = match;
 		try {
 			questions.push({
 				id: null,
