@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 650      | 623  | 18   | 9      | Active  |
+| BAR     | ~1,016 | 660      | 633  | 18   | 9      | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -82,3 +82,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 60 | BAR | 10 | 8 | 1 | 1 | Q8773 fail: Hamada re-levering arithmetic error — 0.914×1.30=1.19 not keyed 1.12; correct answer not among choices. Same error pattern as Q6133. Q8774 review: FCFE valuation $6.5M×1.03/0.08=$83,687,500 not $83,718,750; methodology correct, B is best choice but figure has small error. Same pattern as Q6134. Rest pass — Hamada levered beta, DDM vs CAPM reliability, NOL preferred stock financing, covenant D/E equity issuance, stock split effects, tax rate WACC impact, risk-adjusted project acceptance, EV-to-equity bridge |
 | 2026-03-01 | batch 61 | BAR | 10 | 10 | 0 | 0 | All pass — WACC calculation, ASC 842 finance lease vs loan covenant analysis, DDM dividend increase stock price, sustainable growth rate retention ratio, FCFF calculation, goodwill impairment D/E covenant, convertible bond WACC effect, DuPont ROE equity multiplier, residual dividend policy, APV for LBO valuation |
 | 2026-03-01 | batch 62 | BAR | 10 | 10 | 0 | 0 | All pass — interest coverage ratio covenant, DOL calculation, SEO dilution per share, Gordon Growth terminal value, WACC shift from debt retirement, M-M distress costs critique, unlevered FCF, NPV vs IRR mutually exclusive, tangible assets leverage (trade-off theory), Jensen FCF hypothesis |
+| 2026-03-01 | batch 63 | BAR | 10 | 10 | 0 | 0 | All pass — ROIC calculation, MCC break point, accelerated depreciation borrowing capacity, P/E multiple valuation, NOPAT calculation, debt-to-total-capital ratio, static trade-off theory cross-industry leverage, retention ratio, Hamada unlevered beta, APV vs WACC changing leverage |
