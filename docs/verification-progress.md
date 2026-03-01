@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 190      | 181  | 5    | 4      | Active  |
+| BAR     | ~1,016 | 200      | 191  | 5    | 4      | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -36,3 +36,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 14 | BAR | 10 | 7 | 2 | 1 | Q3010 fail: choice C text says "from $4.60 to $3.25, ~29%" but correct Lancaster base EPS is $6.10→$4.60 (−24.6%) — explanation correct, choice text wrong. Q3020 fail: WACC calc yields 11.6% (choice A) not keyed 10.80% (choice B) — explanation itself derives 11.6%. Q3015 review: MM Prop II question missing cost of debt — unsolvable without assuming Rd. Rest pass — CAPM, EPS, preferred stock cost, indifference EBIT, WACC hurdle, after-tax debt cost, CAPM sensitivity |
 | 2026-03-01 | batch 15 | BAR | 10 | 10 | 0 | 0 | All pass — Hamada equation levered beta, EV-to-equity per share, perpetuity NPV, beta market sensitivity, Gordon Growth EV, EV/EBITDA equity bridge, terminal value calc, asset-based valuation applicability, FCFF formula, WACC-DCF inverse sensitivity |
 | 2026-03-01 | batch 16 | BAR | 10 | 9 | 1 | 0 | Q3057 fail: keyed answer B ($100M) is wrong — original treats $6M as FCFF₀ (EV=$6M×1.04/0.05=$124.8M), so revised should be $6M×1.03/0.06=$103M (choice A), not $100M. Explanation self-contradicts by switching to FCFF₁ interpretation. Rest pass — minority discount, FCFF vs FCFE divergence, EV/EBITDA with marketability discount, P/E vs EV/EBITDA per-share, capitalization of earnings, terminal growth sensitivity, FX forward hedge, variable-rate exposure, futures vs options hedging |
+| 2026-03-01 | batch 17 | BAR | 10 | 10 | 0 | 0 | All pass — VaR vs CVaR tail risk, interest rate cap, FX revenue impact, ASC 815 hedge of cancelled forecast, risk appetite hedging gap, cost-to-cost revenue recognition, ASC 606 SSP allocation, variable consideration with returns, ASC 350 goodwill impairment methodology, ASC 606 loss contract immediate recognition |
