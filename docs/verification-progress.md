@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 160      | 155  | 2    | 3      | Active  |
+| BAR     | ~1,016 | 170      | 162  | 4    | 4      | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -33,3 +33,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 11 | BAR | 10 | 10 | 0 | 0 | All pass — NI vs FCFF divergence, inventory buildup via ratio divergence, defensive interval ratio, ROIC vs WACC value creation, Beneish M-score threshold, EVA formula, DuPont decomposition business models, current/quick/cash ratios, operating leverage breakeven trade-off, CVP target profit revenue |
 | 2026-03-01 | batch 12 | BAR | 10 | 10 | 0 | 0 | All pass — operating leverage VC sensitivity, pro forma NI, projection vs forecast (hypothetical assumption), margin of safety, DOL amplification, Monte Carlo 5th percentile, DFL/coverage reciprocal, percent-of-sales AR, CVP after-tax target revenue, what-if raw material margin impact |
 | 2026-03-01 | batch 13 | BAR | 10 | 8 | 1 | 1 | Q2992 fail: correct_index points to C/$160K but math yields $240K (choice A/index 0) — explanation itself derives $240K. Q3000 review: choices A and D are both "9.00%" (duplicate distractor). Rest pass — breakeven FC proportionality, tornado diagram, indifference volume, sales mix shift CVP, CAPM net effect, DDM formula, Gordon model sensitivity, after-tax cost of debt |
+| 2026-03-01 | batch 14 | BAR | 10 | 7 | 2 | 1 | Q3010 fail: choice C text says "from $4.60 to $3.25, ~29%" but correct Lancaster base EPS is $6.10→$4.60 (−24.6%) — explanation correct, choice text wrong. Q3020 fail: WACC calc yields 11.6% (choice A) not keyed 10.80% (choice B) — explanation itself derives 11.6%. Q3015 review: MM Prop II question missing cost of debt — unsolvable without assuming Rd. Rest pass — CAPM, EPS, preferred stock cost, indifference EBIT, WACC hurdle, after-tax debt cost, CAPM sensitivity |
