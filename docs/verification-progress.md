@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 1040     | 999  | 26   | 15     | Active  |
+| BAR     | ~1,016 | 1050     | 1009 | 26   | 15     | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -121,3 +121,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 99 | BAR | 10 | 10 | 0 | 0 | All pass — convertible bond WACC effect, DuPont ROE equity multiplier, residual dividend policy, APV for LBO valuation, interest coverage ratio covenant, DOL calculation, SEO dilution per share, Gordon Growth terminal value, WACC debt retirement shift, M-M distress costs critique |
 | 2026-03-01 | batch 100 | BAR | 10 | 10 | 0 | 0 | All pass — UFCF calculation, NPV vs IRR mutually exclusive, tangible assets leverage (trade-off theory), Jensen FCF hypothesis, ROIC calculation, MCC break point, accelerated depreciation borrowing capacity, P/E multiple valuation, NOPAT calculation, debt-to-total-capital ratio |
 | 2026-03-01 | batch 101 | BAR | 10 | 10 | 0 | 0 | All pass — static trade-off theory cross-industry leverage, retention ratio, Hamada unlevered beta, APV vs WACC changing leverage, FCFF calculation, leveraged recap EPS, rate hike WACC impact, CAPM cost of equity, debt covenant coverage breach, market-value capital weights |
+| 2026-03-01 | batch 102 | BAR | 10 | 10 | 0 | 0 | All pass — debt vs equity EPS/coverage analysis, Miller personal tax framework, WACC shift from debt retirement, equity value per share (EV bridge), divisional WACC pure-play principle, TIE ratio, trade-off theory tax reform, EVA calculation, D/E ratio (interest-bearing debt), convertible bond capital structure |
