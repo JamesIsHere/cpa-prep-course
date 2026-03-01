@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 760      | 733  | 18   | 9      | Active  |
+| BAR     | ~1,016 | 770      | 743  | 18   | 9      | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -93,3 +93,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 71 | BAR | 10 | 10 | 0 | 0 | All pass — FCFF calculation, enterprise value, residual income, Gordon growth equity valuation, M-M dividend irrelevance tax deviation, terminal value with growth factor, P/E comparable undervaluation, diluted EPS convertible bonds, BVPS preferred deduction, APV with distress costs |
 | 2026-03-01 | batch 72 | BAR | 10 | 10 | 0 | 0 | All pass — ASC 842 finance lease leverage, bond-yield-plus-risk-premium, equity vs debt signaling theory, treasury stock method diluted EPS, common equity market cap, Hamada unlevered beta, capital rationing NPV maximization, trade-off theory leverage, incremental EVA analysis, FCFF calculation |
 | 2026-03-01 | batch 73 | BAR | 10 | 10 | 0 | 0 | All pass — DOL sales decline amplification, interest coverage expansion impact, book vs market WACC weights, comparable company P/E valuation, residual income calculation, APV vs WACC for changing leverage, TIE ratio, pure-play Hamada beta (unlever/relever), sustainable growth rate, EV-to-equity per share |
+| 2026-03-01 | batch 74 | BAR | 10 | 10 | 0 | 0 | All pass — two-stage DDM valuation, retained earnings breakpoint, debt covenant D/E analysis, country risk premium CAPM, ROIC calculation, market capitalization, convertible debt cost in WACC, DSCR covenant, IRR vs marginal cost of capital, EV/EBITDA equity bridge per share |
