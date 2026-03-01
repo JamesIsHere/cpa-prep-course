@@ -22,7 +22,7 @@ Each session:
 | Section | Current | Target | Generated | Remaining | Batches Done | Status |
 |---------|---------|--------|-----------|-----------|--------------|--------|
 | AUD     | 1,052 | 5,000 | 1,710 | 2,238 | 57/146 | In Progress |
-| FAR     | 855 | 5,000 | 180 | 3,965 | 6/148 | In Progress |
+| FAR     | 855 | 5,000 | 210 | 3,935 | 7/148 | In Progress |
 | REG     | 847 | 5,000 | 180 | 3,973 | 6/152 | In Progress |
 | BAR     | 776 | 1,667 | 240 | 651 | 8/43 | In Progress |
 | ISC     | 747 | 1,667 | 150 | 770 | 5/40 | In Progress |
@@ -281,3 +281,4 @@ Each session:
 | 2026-02-23 | 00245_generate_aud_batch56.sql | AUD | Misstatements and Control Deficiencies | 30 | Batch 56; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
 | 2026-02-26 | 00251_generate_aud_batch57.sql | AUD | Specific Areas and Transactions | 30 | Batch 57; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
 | 2026-02-28 | 00267_generate_far_batch6.sql | FAR | Earnings Per Share | 30 | Batch 6; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
+| 2026-02-28 | 00268_generate_far_batch7.sql | FAR | Earnings Per Share | 30 | Batch 7; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
