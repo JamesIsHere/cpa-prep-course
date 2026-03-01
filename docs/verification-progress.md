@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 260      | 248  | 8    | 4      | Active  |
+| BAR     | ~1,016 | 270      | 258  | 8    | 4      | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -43,3 +43,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 21 | BAR | 10 | 10 | 0 | 0 | All pass — consolidation elimination entry, intercompany land sale elimination, NCI equity transaction (ASC 810), subsidiary dividend allocation, ASC 815 cash flow hedge disqualification OCI treatment, call option definition, fair value hedge definition, cash flow hedge definition, fair value hedge earnings volatility analysis, call option intrinsic value |
 | 2026-03-01 | batch 22 | BAR | 10 | 9 | 1 | 0 | Q3233 fail: keyed answer D claims total net position is lower with bond financing, but issuing a bond creates both an asset (cash) and liability — total net position unchanged in both scenarios. Choice A (index 0) is correct. Rest pass — notional amount definition, option time value, ASC 815 derivative balance sheet, modified accrual deferred inflow, capital projects fund, government grant program revenue, cloud computing service vs license, ASC 350-40 amortization, ASU 2018-15 implementation costs |
 | 2026-03-01 | batch 23 | BAR | 10 | 10 | 0 | 0 | All pass — ASU 2018-15 SaaS implementation capitalization, software abandonment write-off, perpetual license vs maintenance (ASC 350-40), ASC 842 short-term lease exemption trade-offs, CPI vs usage variable payments, initial direct costs in ROU asset, operating vs finance expense patterns, purchase option in liability, discount rate hierarchy, lease modification remeasurement |
+| 2026-03-01 | batch 24 | BAR | 10 | 10 | 0 | 0 | All pass — ASC 715 interest cost formula, pension contribution vs expense separation, corridor amortization, PBO rollforward, actual return derivation, NPPC calculation, GASB 34 bond principal reconciliation, modified accrual deferred inflows (property tax), ISF net position reconciliation, capital asset/depreciation reconciling adjustment |
