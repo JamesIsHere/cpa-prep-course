@@ -23,7 +23,7 @@ Each session:
 |---------|---------|--------|-----------|-----------|--------------|--------|
 | AUD     | 1,052 | 5,000 | 2,430 | 1,518 | 81/146 | In Progress |
 | FAR     | 855 | 5,000 | 510 | 3,635 | 17/148 | In Progress |
-| REG     | 847 | 5,000 | 900 | 3,253 | 30/152 | In Progress |
+| REG     | 847 | 5,000 | 930 | 3,223 | 31/152 | In Progress |
 | BAR     | 776 | 1,667 | 270 | 621 | 9/43 | In Progress |
 | ISC     | 747 | 1,667 | 210 | 710 | 7/40 | In Progress |
 | TCP     | 709 | 1,667 | 210 | 748 | 7/41 | In Progress |
@@ -344,3 +344,4 @@ Each session:
 | 2026-02-28 | 00332_generate_aud_batch81.sql | AUD | Written Representations | 30 | Batch 81; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
 | 2026-02-28 | 00334_generate_reg_batch30.sql | REG | Tax-Exempt Organizations | 30 | Batch 30; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
 | 2026-02-28 | 00335_generate_aud_batch82.sql | AUD | Written Representations | 30 | Batch 82; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
+| 2026-02-28 | 00336_generate_reg_batch31.sql | REG | Tax-Exempt Organizations | 30 | Batch 31; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
