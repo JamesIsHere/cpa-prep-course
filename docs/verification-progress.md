@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 820      | 785  | 22   | 13     | Active  |
+| BAR     | ~1,016 | 830      | 795  | 22   | 13     | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -99,3 +99,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 77 | BAR | 10 | 8 | 1 | 1 | Q11333 fail: Waverly EPS decline is 18.4% not 20.8% — explanation uses wrong new EPS ($5.81 vs correct $5.98); same error pattern as Q6113/Q8753. Q11328 review: pro forma interest coverage math gives 2.90× not 2.80× — explanation says $1,450K total then divides by $1,500K citing "commitment fees" not in stem; same pattern as Q6108/Q8748. Rest pass — capital structure trade-off, covenant breach forecast, EV-to-equity per share, stock split P/E, WACC sensitivity, WACC calculation, DDM cost of equity, CAPM |
 | 2026-03-01 | batch 78 | BAR | 10 | 10 | 0 | 0 | All pass — WACC rate increase calculation, DFL formula, cost of preferred stock formula, after-tax cost of debt, leverage evaluation (trade-off theory + distress), debt-financed repurchase D/E, EV-to-equity per share, Hamada equation levered beta, DDM vs CAPM reliability (erratic dividends), NOL/high-leverage preferred stock financing |
 | 2026-03-01 | batch 79 | BAR | 10 | 6 | 1 | 3 | Q11353 fail: Hamada re-levering arithmetic error — 0.914×1.30=1.19 not keyed 1.12; same pattern as Q6133/Q8773. Q11349 review: choice C (50/50 mix) also avoids D/E covenant (1.44<1.5). Q11354 review: FCFE value $83,687,500 not $83,718,750; same pattern as Q6134/Q8774. Q11357 review: answer text claims D/E exceeds covenant max but math gives 1.47<1.5; same pattern as Q6137. Rest pass — stock split effects, WACC tax rate change, risk-adjusted project evaluation, EV-to-equity bridge, WACC calculation, DDM dividend increase |
+| 2026-03-01 | batch 80 | BAR | 10 | 10 | 0 | 0 | All pass — sustainable growth rate payout change, FCFF calculation, goodwill impairment D/E covenant, convertible bond WACC effect, DuPont ROE equity multiplier, residual dividend policy, APV for LBO valuation, interest coverage ratio covenant, DOL calculation, SEO dilution per share |
