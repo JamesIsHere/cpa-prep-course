@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 510      | 489  | 13   | 8      | Active  |
+| BAR     | ~1,016 | 520      | 499  | 13   | 8      | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -68,3 +68,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 46 | BAR | 10 | 10 | 0 | 0 | All pass — Miller personal tax framework, WACC shift from debt retirement, EV-to-equity per share, divisional WACC project evaluation, TIE ratio, trade-off theory tax cut, EVA calculation, D/E ratio (interest-bearing debt), convertible bond capital structure, CAPM vs DDM divergence |
 | 2026-03-01 | batch 47 | BAR | 10 | 10 | 0 | 0 | All pass — perpetuity growth terminal value, residual income, depreciation tax shield, FCFF calculation, EV/EBITDA equity bridge, sustainable growth rate, convertible bond WACC analysis, forward P/E valuation, retained earnings break point, interest coverage ratio covenant |
 | 2026-03-01 | batch 48 | BAR | 10 | 10 | 0 | 0 | All pass — M-M dividend irrelevance (dividend vs buyback), EVA divisional comparison, multi-stage DDM vs Gordon error direction, residual income calculation, capital rationing NPV maximization, pure-play Hamada levered beta, DSCR, FCFE at WACC understatement error, rights offering ex-rights price, retention ratio |
+| 2026-03-01 | batch 49 | BAR | 10 | 10 | 0 | 0 | All pass — trade-off theory flexibility vs tax shield, bond yield vs CAPM divergence, covenant D/EBITDA+IC analysis, weighted flotation cost, Hamada unlevered beta, residual dividend model, APV acquisition valuation, FCFE calculation, EPS indifference EBIT, M-M leveraged recap per-share value |
