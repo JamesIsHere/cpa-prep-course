@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 700      | 673  | 18   | 9      | Active  |
+| BAR     | ~1,016 | 710      | 683  | 18   | 9      | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -87,3 +87,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 65 | BAR | 10 | 10 | 0 | 0 | All pass — divisional WACC pure-play principle, TIE ratio, trade-off theory tax reform, EVA calculation, D/E ratio (interest-bearing debt), convertible bond capital structure, CAPM vs DDM divergence, perpetuity growth terminal value, residual income, depreciation tax shield |
 | 2026-03-01 | batch 66 | BAR | 10 | 10 | 0 | 0 | All pass — FCFF calculation, EV/EBITDA equity bridge, sustainable growth rate, convertible bond WACC analysis, forward P/E valuation, retained earnings break point, interest coverage ratio covenant, M-M dividend irrelevance (dividend vs buyback), EVA divisional comparison, multi-stage DDM vs Gordon error direction |
 | 2026-03-01 | batch 67 | BAR | 10 | 10 | 0 | 0 | All pass — residual income, capital rationing NPV maximization, pure-play Hamada levered beta, DSCR, FCFE at WACC understatement error, rights offering ex-rights price, retention ratio, trade-off theory flexibility vs tax shield, bond yield vs CAPM divergence, covenant D/EBITDA+IC analysis |
+| 2026-03-01 | batch 68 | BAR | 10 | 10 | 0 | 0 | All pass — weighted avg flotation cost, Hamada unlevered beta, residual dividend model, APV acquisition valuation, FCFE calculation, EPS indifference EBIT, M-M leveraged recap per-share value, EVA calculation, pure-play Hamada unlevered beta, DOL amplification |
