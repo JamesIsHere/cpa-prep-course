@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 130      | 127  | 1    | 2      | Active  |
+| BAR     | ~1,016 | 140      | 137  | 1    | 2      | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -30,3 +30,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 8 | BAR | 10 | 10 | 0 | 0 | All pass — GASB 34 ISF reconciliation/net position calculation/depreciation reconciling item, interfund loan classification, intra-activity transfer elimination, ISF services recording, loan vs transfer comparison, GASB 33 grant revenue with unmet match, government-wide interfund elimination analysis, interfund reimbursement |
 | 2026-03-01 | batch 9 | BAR | 10 | 9 | 1 | 0 | Q2940 fail: keyed answer 4.8 turnover is wrong — correct calc is $2.4M/$400K=6.0 (uses ending inventory instead of average). Rest pass — ISF markup elimination, AR turnover, D/E ratio, TIE, gross margin formula, GMROI, DuPont ROE/equity multiplier/profit margin, inventory turnover |
 | 2026-03-01 | batch 10 | BAR | 10 | 10 | 0 | 0 | All pass — fixed asset turnover depreciation distortion, common-size income statement comparison, Altman Z-score zones, equity multiplier/leverage, horizontal analysis debt trend, EBITDA→NI calculation, DuPont leverage risk, common-size balance sheet, Basel III Tier 1 capital, sustainable growth rate |
+| 2026-03-01 | batch 11 | BAR | 10 | 10 | 0 | 0 | All pass — NI vs FCFF divergence, inventory buildup via ratio divergence, defensive interval ratio, ROIC vs WACC value creation, Beneish M-score threshold, EVA formula, DuPont decomposition business models, current/quick/cash ratios, operating leverage breakeven trade-off, CVP target profit revenue |
