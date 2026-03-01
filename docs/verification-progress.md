@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 370      | 356  | 9    | 5      | Active  |
+| BAR     | ~1,016 | 380      | 366  | 9    | 5      | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -54,3 +54,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 32 | BAR | 10 | 9 | 0 | 1 | Q5401 review: keyed B says recognize deferred taxes for withholding/state taxes, but stem states Harbor asserts indefinite reinvestment — explanation's own "unless indefinite reinvestment is asserted" language supports answer C (no deferred taxes). Rest pass — goodwill impairment by unit, ASC 740 UTP two-step, EAETR discrete items, DTL rate change adjustment, valuation allowance evidence weighing, NOL 80% limitation, intraperiod OCI allocation, interim AETR revision |
 | 2026-03-01 | batch 33 | BAR | 10 | 10 | 0 | 0 | All pass — DTL on acquired intangible, valuation allowance net reporting, share repurchase EPS effect, risk-free rate WACC impact, recap trade-off analysis, EVA calculation, FCFF calculation, enterprise value, residual income, Gordon growth model equity valuation |
 | 2026-03-01 | batch 34 | BAR | 10 | 10 | 0 | 0 | All pass — M-M dividend irrelevance tax violation, Gordon growth terminal value, P/E comparable undervaluation, diluted EPS convertible bonds, BVPS preferred deduction, APV with distress costs, ASC 842 finance lease leverage, bond-yield-plus-risk-premium, equity vs debt financing signaling theory, treasury stock method diluted EPS |
+| 2026-03-01 | batch 35 | BAR | 10 | 10 | 0 | 0 | All pass — common equity market cap, Hamada unlevered beta, capital rationing NPV maximization, trade-off theory leverage, incremental EVA analysis, FCFF calculation, DOL sales decline amplification, interest coverage expansion impact, book vs market WACC weights, comparable company P/E valuation |
