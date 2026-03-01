@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 330      | 317  | 9    | 4      | Active  |
+| BAR     | ~1,016 | 340      | 327  | 9    | 4      | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -50,3 +50,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 28 | BAR | 10 | 10 | 0 | 0 | All pass — GASB interfund due to/from classification, long-term advance with nonspendable fund balance, indirect method operating CF, WACC calculation, ASC 606 contract asset→receivable, ASU 2018-15 data migration capitalization, ASC 715 negative plan amendment prior service credit, depreciation reconciling item, ASC 805 acquisition costs expensed, full goodwill with NCI at fair value |
 | 2026-03-01 | batch 29 | BAR | 10 | 10 | 0 | 0 | All pass — ASC 805 step acquisition remeasurement gain, intangible asset recognition at fair value, goodwill calculation, measurement period adjustment, NCI proportionate share, contingent consideration remeasurement, push-down accounting, bargain purchase gain in net income, partial year income inclusion, ASC 830 foreign currency transaction loss |
 | 2026-03-01 | batch 30 | BAR | 10 | 10 | 0 | 0 | All pass — ASC 830 current rate method CTA to OCI, temporal method inventory rate selection (historical cost vs NRV), current rate equipment translation, translation vs remeasurement income treatment, third-party vs intercompany receivable (ASC 830-20-35-3), peso depreciation CTA calculation, euro borrowing transaction gain, dividend declaration rate, fair value hedge dual income recognition, ASU 2017-04 goodwill impairment |
+| 2026-03-01 | batch 31 | BAR | 10 | 10 | 0 | 0 | All pass — ASC 350-30 indefinite vs finite-lived intangible impairment/amortization, IPR&D lifecycle (acquisition/development/completion/abandonment), goodwill one-step impairment test (×2, one capped at goodwill), non-compete agreement recognition, patent amortization shorter of legal/economic life, defensive intangible recognition, ASC 360 two-step finite-lived impairment, IPR&D abandonment write-off |
