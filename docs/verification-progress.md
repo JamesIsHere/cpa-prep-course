@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 720      | 693  | 18   | 9      | Active  |
+| BAR     | ~1,016 | 730      | 703  | 18   | 9      | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -89,3 +89,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 67 | BAR | 10 | 10 | 0 | 0 | All pass — residual income, capital rationing NPV maximization, pure-play Hamada levered beta, DSCR, FCFE at WACC understatement error, rights offering ex-rights price, retention ratio, trade-off theory flexibility vs tax shield, bond yield vs CAPM divergence, covenant D/EBITDA+IC analysis |
 | 2026-03-01 | batch 68 | BAR | 10 | 10 | 0 | 0 | All pass — weighted avg flotation cost, Hamada unlevered beta, residual dividend model, APV acquisition valuation, FCFE calculation, EPS indifference EBIT, M-M leveraged recap per-share value, EVA calculation, pure-play Hamada unlevered beta, DOL amplification |
 | 2026-03-01 | batch 69 | BAR | 10 | 10 | 0 | 0 | All pass — retained earnings breakpoint, underinvestment agency cost (debt overhang), Gordon growth terminal value, interest coverage ratio, trade-off theory distress analysis, share repurchase tax advantage, equity carve-out vs spin-off, EV-to-equity per share, credit downgrade new debt cost, market vs book WACC weights |
+| 2026-03-01 | batch 70 | BAR | 10 | 10 | 0 | 0 | All pass — rights offering shares/rights calc, debt covenant technical default, FCFF calculation, sustainable growth rate, EV/EBITDA equity bridge, share repurchase EPS with forgone return, treasury stock EPS effect, risk-free rate WACC impact, recap trade-off analysis, EVA calculation |
