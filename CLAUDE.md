@@ -31,6 +31,9 @@ npm run qa -- --output=json  # QA audit with JSON output (for scripting)
 npm run sync-counts          # Sync questionCounts from live DB → blueprint.ts + tests
 npm run validate-migration <file>  # Validate question migration against style guide
 npm run generate-migration   # Generate UPDATE scaffold from piped candidate JSON
+npm run verify -- --section=bar --limit=50   # Substantive correctness verification
+npm run verify -- --migration=path/to/file.sql  # Verify migration before commit
+npm run verify -- --ids=1234,1235 --brief    # Verify specific IDs (compact output)
 ```
 
 ### Batch Orchestrator
@@ -42,6 +45,7 @@ npm run generate-migration   # Generate UPDATE scaffold from piped candidate JSO
 ./scripts/orchestrate.ps1 -Section bar -Mode difficulty -Batches 10        # Difficulty rebalancing
 ./scripts/orchestrate.ps1 -Section reg -Mode blooms -Target l3 -Batches 8 # Bloom's rebalancing
 ./scripts/orchestrate.ps1 -Section aud -Mode generate -Batches 130         # New question generation
+./scripts/orchestrate.ps1 -Section bar -Mode verify -Batches 100          # Correctness verification
 ./scripts/wrap.ps1                                                        # Session wrap-up
 ./scripts/orchestrate.ps1 -Section isc -Mode citation -Batches 3 -DryRun  # Preview without Claude
 ```
@@ -123,7 +127,7 @@ Each batch gets its own headless `claude --print` invocation with a fresh contex
 | `docs/question-style-guide.md`                | Question writing rubric (all new questions must meet this) |
 | `scripts/apply-migrations.mjs`                | Apply pending SQL migrations via exec_sql RPC            |
 | `scripts/health-check.ts`                     | Health check CLI (migration sync, DB, Stripe, Vercel, SEO) |
-| `scripts/orchestrate.ps1`                     | Batch orchestrator (citation/difficulty/blooms, headless Claude) |
+| `scripts/orchestrate.ps1`                     | Batch orchestrator (citation/difficulty/blooms/verify, headless Claude) |
 | `scripts/qa/run-qa.ts`                        | QA audit entry point (`npm run qa`)        |
 | `scripts/qa/pull-l2-batch.ts`                 | L2 question extractor for Bloom's rebalancing |
 | `scripts/qa/select-l2-candidates.ts`          | L2 candidate selector with topic cap awareness |
@@ -138,12 +142,17 @@ Each batch gets its own headless `claude --print` invocation with a fresh contex
 | `scripts/qa/sync-question-counts.ts`          | Sync DB topic counts → blueprint.ts + test assertions      |
 | `scripts/qa/utils.ts`                         | Shared utilities (migration numbering, file lock, trigrams) |
 | `scripts/qa/validate-migration.ts`            | Pre-commit migration validator (INSERT + UPDATE + explanation-only) |
+| `scripts/qa/verify-correctness.ts`            | Substantive correctness verifier (Claude-as-reviewer)              |
+| `scripts/qa/select-verify-candidates.ts`      | Risk-prioritized candidate selector for verification               |
+| `scripts/qa/generate-fix-scaffold.ts`         | UPDATE scaffold generator for failed verifications                 |
 | `docs/blooms-rebalancing.md`                  | Cross-session Bloom's L3 rebalancing tracker |
 | `docs/blooms-l1-l4-rebalancing.md`            | Cross-session Bloom's L1/L4 rebalancing tracker |
 | `docs/difficulty-rebalancing.md`              | Cross-session difficulty rebalancing tracker |
 | `docs/citation-coverage.md`                   | Cross-session citation coverage tracker      |
 | `docs/generation-progress.md`                 | Cross-session question generation tracker    |
 | `docs/generation-plan.json`                   | Machine-readable per-topic generation targets |
+| `docs/verification-progress.md`               | Cross-session correctness verification tracker |
+| `docs/verified-ids.json`                      | Persisted verified question IDs by section     |
 | `.env.local.example`                          | Required env vars template                 |
 
 ## Content Summary

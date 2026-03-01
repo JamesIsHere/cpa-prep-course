@@ -18,7 +18,7 @@ param(
     [ValidateSet('aud','far','reg','bar','isc','tcp')]
     [string]$Section,
 
-    [ValidateSet('citation','difficulty','blooms','generate','moderate')]
+    [ValidateSet('citation','difficulty','blooms','generate','moderate','verify')]
     [string]$Mode = 'citation',
 
     [Parameter(Mandatory)]
@@ -59,6 +59,7 @@ $TrackerMap = @{
     'difficulty' = Join-Path (Join-Path $RepoRoot 'docs') 'difficulty-rebalancing.md'
     'blooms'    = Join-Path (Join-Path $RepoRoot 'docs') 'blooms-rebalancing.md'
     'generate'  = Join-Path (Join-Path $RepoRoot 'docs') 'generation-progress.md'
+    'verify'    = Join-Path (Join-Path $RepoRoot 'docs') 'verification-progress.md'
 }
 $TrackerFile = $TrackerMap[$Mode]
 
@@ -69,6 +70,7 @@ $SelectorMap = @{
     'blooms'    = 'select-l2-candidates.ts'
     'generate'  = 'select-generation-batch.ts'
     'moderate'  = 'pull-moderate-candidates.ts'
+    'verify'    = 'select-verify-candidates.ts'
 }
 
 # Section citation patterns (passed to Claude in prompt)
@@ -88,6 +90,7 @@ $ModeLabel = switch ($Mode) {
     'blooms'    { "Bloom's $($Target.ToUpper()) rebalancing" }
     'generate'  { 'Question generation' }
     'moderate'  { 'Quality upgrade' }
+    'verify'    { 'Correctness verification' }
 }
 
 # File pattern for detecting existing batches
@@ -97,6 +100,7 @@ $FilePattern = switch ($Mode) {
     'blooms'    { "*_blooms_${Target}_${Section}_batch*.sql" }
     'generate'  { "*_generate_${Section}_batch*.sql" }
     'moderate'  { "*_upgrade_${Section}_batch*.sql" }
+    'verify'    { "*_verify_fix_${Section}_batch*.sql" }
 }
 
 # ═══════════════════════════════════════════════════════════════
@@ -115,6 +119,13 @@ if ($Mode -eq 'generate') {
     # Override batch size default for generate mode
     if (-not $PSBoundParameters.ContainsKey('BatchSize')) {
         $BatchSize = 30
+    }
+}
+
+if ($Mode -eq 'verify') {
+    # Override batch size default for verify mode (deeper reasoning per question)
+    if (-not $PSBoundParameters.ContainsKey('BatchSize')) {
+        $BatchSize = 10
     }
 }
 
@@ -569,7 +580,7 @@ ORCHESTRATOR_RESULT:{"status":"error","message":"brief description"}
         'blooms' {
             # Load context for rebalancing/upgrade modes
             $candidates = Get-Content $CandidateFile -Raw | ConvertFrom-Json
-            
+
             # Aggregate unique lesson slugs
             $slugs = @()
             foreach ($c in $candidates) {
@@ -631,6 +642,84 @@ INSTRUCTIONS:
 
 When finished, output this EXACT line as your final message:
 ORCHESTRATOR_RESULT:{"status":"ok","questions":N,"file":"$fn"}
+
+If unrecoverable error:
+ORCHESTRATOR_RESULT:{"status":"error","message":"brief description"}
+"@
+        }
+
+        'verify' {
+            $candidates = Get-Content $CandidateFile -Raw | ConvertFrom-Json
+            $batchCount = @($candidates).Count
+            $verifiedIdsFile = Join-Path (Join-Path $RepoRoot 'docs') 'verified-ids.json'
+            $vf = $verifiedIdsFile.Replace('\', '/')
+
+            # Build question list for the prompt
+            $questionBlock = ""
+            $qi = 0
+            foreach ($c in @($candidates)) {
+                $qi++
+                $choiceLabels = @('A','B','C','D')
+                $choicesStr = ""
+                for ($ci = 0; $ci -lt $c.choices.Count; $ci++) {
+                    $choicesStr += "  $($choiceLabels[$ci]). $($c.choices[$ci])`n"
+                }
+                $keyedLetter = if ($c.correct_index -lt $choiceLabels.Count) { $choiceLabels[$c.correct_index] } else { '?' }
+                $qType = if ($c.questionType) { $c.questionType } else { 'conceptual' }
+
+                $questionBlock += @"
+
+### Question $qi (ID: $($c.id), type: $qType, difficulty: $($c.difficulty))
+STEM: $($c.stem)
+CHOICES:
+$choicesStr
+KEYED ANSWER: $keyedLetter (index $($c.correct_index))
+EXPLANATION: $($c.explanation)
+"@
+            }
+
+            return @"
+You are running headless as part of an automated batch pipeline. Execute autonomously — do not ask questions, do not create task lists, do not use TodoWrite.
+
+TASK: Substantive correctness verification for $su section, batch $BatchNum ($batchCount questions).
+
+TRACKER: $tf
+VERIFIED IDS: $vf
+
+INSTRUCTIONS:
+
+You are a CPA exam content reviewer. For each question below, independently derive the correct answer BEFORE looking at the keyed answer. Then compare.
+
+For each question, perform these checks based on type:
+- calculation: Re-derive arithmetic step by step, show work
+- citation: Verify the cited standard/section actually covers the topic
+- conceptual: Determine which answer is best independently, check no distractor is equally defensible
+- scenario: Verify conclusion follows from scenario facts
+
+ALL types — also check:
+- Does correct_index point to the right choice? (0=A, 1=B, 2=C, 3=D)
+- Does explanation support keyed answer (not a different choice)?
+- Is any distractor accidentally correct?
+
+Flagging rules:
+- "pass" = question is substantively correct
+- "fail" = you are confident the key is wrong, math is wrong, or citation is fabricated
+- "review" = something seems off but you are not fully certain
+- Be conservative: only flag with confidence
+
+QUESTIONS:
+$questionBlock
+
+STEPS:
+1. Verify each question, write your reasoning for each
+2. Output a JSON result block with per-question verdicts
+3. Update verified-ids.json at $vf — add each question ID to the appropriate verdict array under "$Section"
+4. Update tracker at ${tf}
+   - Update the $su row (increment Verified, update Pass/Fail/Review counts)
+   - Add a row to the Batch Log with date, batch $BatchNum, section $su, question count, pass/fail/review counts, and note
+
+When finished, output this EXACT line as your final message:
+ORCHESTRATOR_RESULT:{"status":"ok","questions":$batchCount,"pass":P,"fail":F,"review":R,"file":"batch${BatchNum}"}
 
 If unrecoverable error:
 ORCHESTRATOR_RESULT:{"status":"error","message":"brief description"}
@@ -741,14 +830,19 @@ for ($i = 0; $i -lt $Batches; $i++) {
         $stopped = $true; break
     }
 
-    # ── 2. Generate scaffold ───────────────────────────────────
-    try {
-        $scaffoldPath = New-Scaffold -CandidateFile $candidateFile -BatchNum $batchNum
-        $scaffoldName = Split-Path $scaffoldPath -Leaf
-        Write-Step 'Scaffold' $scaffoldName
-    } catch {
-        Write-Step 'Scaffold' "FAILED: $_" 'Red'
-        $stopped = $true; break
+    # ── 2. Generate scaffold (skip for verify mode) ──────────────
+    $scaffoldPath = $null
+    if ($Mode -ne 'verify') {
+        try {
+            $scaffoldPath = New-Scaffold -CandidateFile $candidateFile -BatchNum $batchNum
+            $scaffoldName = Split-Path $scaffoldPath -Leaf
+            Write-Step 'Scaffold' $scaffoldName
+        } catch {
+            Write-Step 'Scaffold' "FAILED: $_" 'Red'
+            $stopped = $true; break
+        }
+    } else {
+        Write-Step 'Scaffold' 'n/a (verify mode)' 'DarkGray'
     }
 
     # ── 3. DRY RUN shortcut ───────────────────────────────────
@@ -761,7 +855,8 @@ for ($i = 0; $i -lt $Batches; $i++) {
     }
 
     # ── 4. Invoke Claude ───────────────────────────────────────
-    Write-Step 'Claude' 'filling content...' 'Yellow'
+    $claudeLabel = if ($Mode -eq 'verify') { 'verifying...' } else { 'filling content...' }
+    Write-Step 'Claude' $claudeLabel 'Yellow'
 
     $prompt     = Build-Prompt -ScaffoldPath $scaffoldPath -CandidateFile $candidateFile -BatchNum $batchNum
     $promptFile = Join-Path $TempDir "prompt_b${batchNum}.txt"
@@ -788,6 +883,11 @@ for ($i = 0; $i -lt $Batches; $i++) {
     }
 
     # ── 5. Validate (double-check even if Claude said ok) ──────
+    #       Skip for verify mode (no migration file to validate)
+    if ($Mode -eq 'verify') {
+        Write-Step 'Validate' 'n/a (verify mode)' 'DarkGray'
+    } else {
+
     $val = Invoke-Validate -ScaffoldPath $scaffoldPath
 
     if ($val.ExitCode -eq 0) {
@@ -844,6 +944,8 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
             $stopped = $true; break
         }
     }
+
+    } # end: skip validate for verify mode
 
     # ── 6. Duplicate check (generate mode only) ─────────────────
     if ($Mode -eq 'generate') {
@@ -908,11 +1010,86 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
                 $stopped = $true; break
             }
         }
+
+        # ── 6.5. Correctness verification (generate mode) ──────────
+        $verifyScript = Join-Path $QaScripts 'verify-correctness.ts'
+        if (Test-Path $verifyScript) {
+            Write-Step 'Verify' 'checking correctness...' 'Yellow'
+            Push-Location $RepoRoot
+            $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
+            try {
+                $verifyOutput = & npx tsx $verifyScript --migration=$scaffoldPath --brief 2>&1 | Out-String
+                $verifyExit   = $LASTEXITCODE
+            } finally {
+                $ErrorActionPreference = $prevEAP
+                Pop-Location
+            }
+
+            if ($verifyExit -eq 0) {
+                Write-Step 'Verify' 'PASS'
+            } else {
+                Write-Step 'Verify' 'critical issues found — retrying' 'Red'
+
+                # Send verification errors back to Claude for fixes
+                $verifyRetryPrompt = @"
+The migration at $($scaffoldPath.Replace('\','/')) has substantive correctness issues. Verification output:
+
+$verifyOutput
+
+Read the migration file. For each question flagged as "fail", fix the issue described. Common fixes:
+- wrong_key: change correct_index to point to the actually correct choice
+- arithmetic_error: recalculate and fix the numbers in stem/choices/explanation
+- citation_error: fix or remove incorrect standard references
+- distractor_also_correct: rewrite the distractor to be clearly wrong
+
+Then re-validate: npm run validate-migration $($scaffoldPath.Replace('\','/'))
+
+When fixed, output: ORCHESTRATOR_RESULT:{"status":"ok"}
+If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
+"@
+                $verifyRetryFile = Join-Path $TempDir "verify_b${batchNum}.txt"
+                $verifyRetryPrompt | Out-String | ForEach-Object { [System.IO.File]::WriteAllText($verifyRetryFile, $_) }
+
+                Push-Location $RepoRoot
+                $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
+                try {
+                    Get-Content $verifyRetryFile -Raw | claude --print --dangerously-skip-permissions 2>&1 | Out-Null
+                } finally {
+                    $ErrorActionPreference = $prevEAP
+                    Pop-Location
+                }
+
+                # Re-verify
+                Push-Location $RepoRoot
+                $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
+                try {
+                    $verifyOutput2 = & npx tsx $verifyScript --migration=$scaffoldPath --brief 2>&1 | Out-String
+                    $verifyExit2   = $LASTEXITCODE
+                } finally {
+                    $ErrorActionPreference = $prevEAP
+                    Pop-Location
+                }
+
+                if ($verifyExit2 -eq 0) {
+                    Write-Step 'Verify' 'fixed after retry'
+                } else {
+                    Write-Host ''
+                    Write-Host '   STOPPED: verification failed after retry' -ForegroundColor Red
+                    Write-Host "   File: $scaffoldPath" -ForegroundColor DarkGray
+                    $stopped = $true; break
+                }
+            }
+        }
     }
 
     # ── 7. Commit ──────────────────────────────────────────────
     $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
-    & git -C $RepoRoot add $scaffoldPath $TrackerFile 2>&1 | Out-Null
+    if ($Mode -eq 'verify') {
+        $verifiedIdsFile = Join-Path (Join-Path $RepoRoot 'docs') 'verified-ids.json'
+        & git -C $RepoRoot add $TrackerFile $verifiedIdsFile 2>&1 | Out-Null
+    } else {
+        & git -C $RepoRoot add $scaffoldPath $TrackerFile 2>&1 | Out-Null
+    }
 
     $commitBody = "$ModeLabel $su batch $batchNum ($batchCount questions) + tracker update"
     $commitMsgFile = Join-Path $TempDir "commit_b${batchNum}.txt"
@@ -927,8 +1104,8 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
     $totalQuestions += $batchCount
     $completedBatches++
 
-    # Generate mode doesn't use exclude IDs (batch selector reads live DB)
-    if ($Mode -ne 'generate') {
+    # Generate/verify modes don't use exclude IDs (selectors read from disk/DB directly)
+    if ($Mode -ne 'generate' -and $Mode -ne 'verify') {
         foreach ($c in @($candidates)) { $excludeIds.Add([int]$c.id) }
     }
 
