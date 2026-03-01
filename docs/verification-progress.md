@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 490      | 469  | 13   | 8      | Active  |
+| BAR     | ~1,016 | 500      | 479  | 13   | 8      | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -66,3 +66,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 44 | BAR | 10 | 10 | 0 | 0 | All pass — NPV vs IRR mutually exclusive, tangible assets leverage (trade-off theory), Jensen FCF hypothesis, ROIC calculation, MCC break point, accelerated depreciation borrowing capacity, P/E multiple valuation, NOPAT calculation, debt-to-total-capital ratio, static trade-off theory cross-industry leverage |
 | 2026-03-01 | batch 45 | BAR | 10 | 10 | 0 | 0 | All pass — retention ratio, Hamada unlevered beta, APV vs WACC changing leverage, FCFF calculation, leveraged recap EPS, rate hike WACC impact, CAPM cost of equity, debt covenant coverage breach, market-value capital weights, debt vs equity financing recommendation |
 | 2026-03-01 | batch 46 | BAR | 10 | 10 | 0 | 0 | All pass — Miller personal tax framework, WACC shift from debt retirement, EV-to-equity per share, divisional WACC project evaluation, TIE ratio, trade-off theory tax cut, EVA calculation, D/E ratio (interest-bearing debt), convertible bond capital structure, CAPM vs DDM divergence |
+| 2026-03-01 | batch 47 | BAR | 10 | 10 | 0 | 0 | All pass — perpetuity growth terminal value, residual income, depreciation tax shield, FCFF calculation, EV/EBITDA equity bridge, sustainable growth rate, convertible bond WACC analysis, forward P/E valuation, retained earnings break point, interest coverage ratio covenant |
