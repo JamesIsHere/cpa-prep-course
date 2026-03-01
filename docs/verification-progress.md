@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 380      | 366  | 9    | 5      | Active  |
+| BAR     | ~1,016 | 390      | 376  | 9    | 5      | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -55,3 +55,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 33 | BAR | 10 | 10 | 0 | 0 | All pass — DTL on acquired intangible, valuation allowance net reporting, share repurchase EPS effect, risk-free rate WACC impact, recap trade-off analysis, EVA calculation, FCFF calculation, enterprise value, residual income, Gordon growth model equity valuation |
 | 2026-03-01 | batch 34 | BAR | 10 | 10 | 0 | 0 | All pass — M-M dividend irrelevance tax violation, Gordon growth terminal value, P/E comparable undervaluation, diluted EPS convertible bonds, BVPS preferred deduction, APV with distress costs, ASC 842 finance lease leverage, bond-yield-plus-risk-premium, equity vs debt financing signaling theory, treasury stock method diluted EPS |
 | 2026-03-01 | batch 35 | BAR | 10 | 10 | 0 | 0 | All pass — common equity market cap, Hamada unlevered beta, capital rationing NPV maximization, trade-off theory leverage, incremental EVA analysis, FCFF calculation, DOL sales decline amplification, interest coverage expansion impact, book vs market WACC weights, comparable company P/E valuation |
+| 2026-03-01 | batch 36 | BAR | 10 | 10 | 0 | 0 | All pass — residual income calculation, APV vs WACC for changing leverage, TIE ratio, pure-play beta (Hamada unlever/relever), sustainable growth rate, EV-to-equity per share, two-stage DDM valuation, retained earnings breakpoint, debt covenant D/E analysis, country risk premium CAPM |
