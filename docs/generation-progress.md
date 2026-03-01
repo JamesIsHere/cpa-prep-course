@@ -25,7 +25,7 @@ Each session:
 | FAR     | 855 | 5,000 | 210 | 3,935 | 7/148 | In Progress |
 | REG     | 847 | 5,000 | 240 | 3,913 | 8/152 | In Progress |
 | BAR     | 776 | 1,667 | 270 | 621 | 9/43 | In Progress |
-| ISC     | 747 | 1,667 | 180 | 740 | 6/40 | In Progress |
+| ISC     | 747 | 1,667 | 210 | 710 | 7/40 | In Progress |
 | TCP     | 709 | 1,667 | 210 | 748 | 7/41 | In Progress |
 
 ## Topic Detail
@@ -288,3 +288,4 @@ Each session:
 | 2026-02-28 | 00272_generate_tcp_batch7.sql | TCP | Retirement Plans and Education Savings | 30 | Batch 7; 9E/15M/6H, L1:6/L2:10/L3:9/L4:5; 0 errors, 0 duplicates |
 | 2026-02-28 | 00274_generate_bar_batch9.sql | BAR | Financial Statement Analysis | 30 | Batch 9; 9E/15M/6H, L1:6/L2:10/L3:9/L4:5; 0 errors, 0 duplicates |
 | 2026-02-28 | 00275_generate_reg_batch8.sql | REG | Tax-Exempt Organizations | 30 | Batch 8; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
+| 2026-02-28 | 00276_generate_isc_batch7.sql | ISC | Incident Response and Recovery | 30 | Batch 7; 9E/15M/6H, L1:6/L2:10/L3:9/L4:5; 0 errors, 0 duplicates |
