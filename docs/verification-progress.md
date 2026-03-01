@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 920      | 885  | 22   | 13     | Active  |
+| BAR     | ~1,016 | 930      | 895  | 22   | 13     | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -109,3 +109,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 87 | BAR | 10 | 10 | 0 | 0 | All pass — APV acquisition valuation, FCFE calculation, EPS indifference EBIT, M-M leveraged recap per-share value, EVA calculation, Hamada unlevered beta, DOL amplification, retained earnings breakpoint, underinvestment agency cost (debt overhang), Gordon growth terminal value |
 | 2026-03-01 | batch 88 | BAR | 10 | 10 | 0 | 0 | All pass — interest coverage ratio, trade-off theory D/E distress, share repurchase tax deferral, equity carve-out vs spin-off cash, EV-to-equity per share, credit downgrade new debt cost, market vs book WACC weights, rights offering shares/rights calc, debt covenant technical default, FCFF calculation |
 | 2026-03-01 | batch 89 | BAR | 10 | 10 | 0 | 0 | All pass — sustainable growth rate, EV/EBITDA equity bridge, EPS after repurchase with forgone return, share repurchase EPS effect, risk-free rate WACC impact, recap trade-off analysis, EVA calculation, FCFF calculation, enterprise value, residual income |
+| 2026-03-01 | batch 90 | BAR | 10 | 10 | 0 | 0 | All pass — Gordon growth FCFE valuation, M-M dividend irrelevance tax deviation, terminal value with growth factor, P/E comparable undervaluation, diluted EPS convertible bonds, BVPS preferred deduction, APV with distress costs, ASC 842 finance lease leverage, bond-yield-plus-risk-premium, equity vs debt signaling theory |
