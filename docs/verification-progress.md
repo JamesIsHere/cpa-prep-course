@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 660      | 633  | 18   | 9      | Active  |
+| BAR     | ~1,016 | 670      | 643  | 18   | 9      | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -83,3 +83,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 61 | BAR | 10 | 10 | 0 | 0 | All pass — WACC calculation, ASC 842 finance lease vs loan covenant analysis, DDM dividend increase stock price, sustainable growth rate retention ratio, FCFF calculation, goodwill impairment D/E covenant, convertible bond WACC effect, DuPont ROE equity multiplier, residual dividend policy, APV for LBO valuation |
 | 2026-03-01 | batch 62 | BAR | 10 | 10 | 0 | 0 | All pass — interest coverage ratio covenant, DOL calculation, SEO dilution per share, Gordon Growth terminal value, WACC shift from debt retirement, M-M distress costs critique, unlevered FCF, NPV vs IRR mutually exclusive, tangible assets leverage (trade-off theory), Jensen FCF hypothesis |
 | 2026-03-01 | batch 63 | BAR | 10 | 10 | 0 | 0 | All pass — ROIC calculation, MCC break point, accelerated depreciation borrowing capacity, P/E multiple valuation, NOPAT calculation, debt-to-total-capital ratio, static trade-off theory cross-industry leverage, retention ratio, Hamada unlevered beta, APV vs WACC changing leverage |
+| 2026-03-01 | batch 64 | BAR | 10 | 10 | 0 | 0 | All pass — FCFF calculation, leveraged recap EPS, rate hike WACC impact, CAPM cost of equity, debt covenant coverage breach, market-value capital weights, debt vs equity financing recommendation, Miller personal tax framework, WACC shift from debt retirement, EV-to-equity per share |
