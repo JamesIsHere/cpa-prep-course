@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 320      | 307  | 9    | 4      | Active  |
+| BAR     | ~1,016 | 330      | 317  | 9    | 4      | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -49,3 +49,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 27 | BAR | 10 | 10 | 0 | 0 | All pass — interest rate swap net payment, ASC 350-40 training expense, ASC 842 ROU asset measurement, residual value guarantee (expected amount), ASC 715 funded status PBO, governmental fund capital expenditure, pension contribution vs expense reconciliation, net pension liability fund exclusion, capital asset sale reconciliation, ISF overcharge elimination |
 | 2026-03-01 | batch 28 | BAR | 10 | 10 | 0 | 0 | All pass — GASB interfund due to/from classification, long-term advance with nonspendable fund balance, indirect method operating CF, WACC calculation, ASC 606 contract asset→receivable, ASU 2018-15 data migration capitalization, ASC 715 negative plan amendment prior service credit, depreciation reconciling item, ASC 805 acquisition costs expensed, full goodwill with NCI at fair value |
 | 2026-03-01 | batch 29 | BAR | 10 | 10 | 0 | 0 | All pass — ASC 805 step acquisition remeasurement gain, intangible asset recognition at fair value, goodwill calculation, measurement period adjustment, NCI proportionate share, contingent consideration remeasurement, push-down accounting, bargain purchase gain in net income, partial year income inclusion, ASC 830 foreign currency transaction loss |
+| 2026-03-01 | batch 30 | BAR | 10 | 10 | 0 | 0 | All pass — ASC 830 current rate method CTA to OCI, temporal method inventory rate selection (historical cost vs NRV), current rate equipment translation, translation vs remeasurement income treatment, third-party vs intercompany receivable (ASC 830-20-35-3), peso depreciation CTA calculation, euro borrowing transaction gain, dividend declaration rate, fair value hedge dual income recognition, ASU 2017-04 goodwill impairment |
