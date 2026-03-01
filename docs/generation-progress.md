@@ -22,7 +22,7 @@ Each session:
 | Section | Current | Target | Generated | Remaining | Batches Done | Status |
 |---------|---------|--------|-----------|-----------|--------------|--------|
 | AUD     | 1,052 | 5,000 | 1,800 | 2,148 | 60/146 | In Progress |
-| FAR     | 855 | 5,000 | 210 | 3,935 | 7/148 | In Progress |
+| FAR     | 855 | 5,000 | 240 | 3,905 | 8/148 | In Progress |
 | REG     | 847 | 5,000 | 300 | 3,853 | 10/152 | In Progress |
 | BAR     | 776 | 1,667 | 270 | 621 | 9/43 | In Progress |
 | ISC     | 747 | 1,667 | 210 | 710 | 7/40 | In Progress |
@@ -293,3 +293,4 @@ Each session:
 | 2026-02-28 | 00280_generate_reg_batch9.sql | REG | Tax-Exempt Organizations | 30 | Batch 9; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
 | 2026-02-28 | 00282_generate_aud_batch61.sql | AUD | Written Representations | 30 | Batch 61; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
 | 2026-02-28 | 00283_generate_reg_batch10.sql | REG | Tax-Exempt Organizations | 30 | Batch 10; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
+| 2026-02-28 | 00285_generate_far_batch9.sql | FAR | Earnings Per Share | 30 | Batch 9; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
