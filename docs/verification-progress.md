@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 230      | 219  | 7    | 4      | Active  |
+| BAR     | ~1,016 | 240      | 229  | 7    | 4      | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -40,3 +40,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 18 | BAR | 10 | 9 | 1 | 0 | Q3129 fail: telecom bundle allocation — stem includes fabricated "$240 subsidy" in transaction price ($1,640 vs correct $1,400), correct phone allocation is $500 (not among choices), explanation cannot derive keyed answer $591. Rest pass — ASC 606 franchise fee allocation, ASC 340-40 commission capitalization, percentage-of-completion revenue, loyalty program performance obligation, expected value variable consideration, contract liabilities definition, ASC 718 grant date measurement, stock option compensation expense, ASC 805 goodwill |
 | 2026-03-01 | batch 19 | BAR | 10 | 10 | 0 | 0 | All pass — ASC 805 bargain purchase, ASC 718 performance condition vesting, ASC 718 performance vs market condition asymmetry, ASC 805 contingent consideration, RSU straight-line expense, forfeiture-as-occurs reversal, step acquisition definition, step acquisition remeasurement gain, ESPP non-compensatory threshold, goodwill calculation |
 | 2026-03-01 | batch 20 | BAR | 10 | 9 | 1 | 0 | Q3173 fail: deconsolidation gain calc yields $1M not keyed $3M — explanation self-contradicts, correct answer not among choices. Rest pass — ASC 718 repricing, downstream/upstream elimination allocation, NCI upstream adjustment, VIE classification, intercompany dividends, equipment sale consolidation, deconsolidation recognition, intercompany balance elimination |
+| 2026-03-01 | batch 21 | BAR | 10 | 10 | 0 | 0 | All pass — consolidation elimination entry, intercompany land sale elimination, NCI equity transaction (ASC 810), subsidiary dividend allocation, ASC 815 cash flow hedge disqualification OCI treatment, call option definition, fair value hedge definition, cash flow hedge definition, fair value hedge earnings volatility analysis, call option intrinsic value |
