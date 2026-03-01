@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 450      | 429  | 13   | 8      | Active  |
+| BAR     | ~1,016 | 460      | 439  | 13   | 8      | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -62,3 +62,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 40 | BAR | 10 | 8 | 0 | 2 | Q6108 review: explanation calculates $1,450K total interest but divides by $1,500K citing "commitment fees" not in stem; correct ratio ≈2.90 not 2.80. Q6113 review: Waverly EPS decline is 18.4% not 20.8% — explanation uses wrong new EPS ($5.81 vs correct $5.98). Rest pass — WACC sensitivity, WACC calculation, DDM cost of equity, CAPM, DFL, rate increase WACC impact, preferred stock cost, after-tax debt cost |
 | 2026-03-01 | batch 41 | BAR | 10 | 10 | 0 | 0 | All pass — leverage WACC/distress trade-off, debt-financed repurchase D/E, EV-to-equity per share, Hamada equation levered beta, DDM vs CAPM reliability (erratic dividends), NOL/high-leverage preferred stock financing, covenant D/E equity issuance, 2-for-1 stock split effects, tax rate increase WACC impact, risk-adjusted project acceptance |
 | 2026-03-01 | batch 42 | BAR | 10 | 7 | 2 | 1 | Q6133 fail: 0.914×1.30=1.19 not 1.12 — arithmetic error, correct answer not among choices. Q6134 fail: $6.5M×1.03/0.08=$83,687,500 not $83,718,750 — correct answer not among choices. Q6137 review: choice A says D/E rises "above covenant max" but math gives 1.47<1.5. Rest pass — EV-to-equity bridge, WACC, DDM dividend increase, sustainable growth rate, FCFF, goodwill impairment D/E, convertible bond WACC effect |
+| 2026-03-01 | batch 43 | BAR | 10 | 10 | 0 | 0 | All pass — DuPont ROE equity multiplier, residual dividend policy, APV for LBO valuation, interest coverage ratio covenant, DOL calculation, SEO dilution, Gordon Growth terminal value, WACC shift from debt retirement, M-M distress costs critique, unlevered FCF |
