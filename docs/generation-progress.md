@@ -21,7 +21,7 @@ Each session:
 
 | Section | Current | Target | Generated | Remaining | Batches Done | Status |
 |---------|---------|--------|-----------|-----------|--------------|--------|
-| AUD     | 1,052 | 5,000 | 1,920 | 2,028 | 64/146 | In Progress |
+| AUD     | 1,052 | 5,000 | 1,950 | 1,998 | 65/146 | In Progress |
 | FAR     | 855 | 5,000 | 300 | 3,845 | 10/148 | In Progress |
 | REG     | 847 | 5,000 | 420 | 3,733 | 14/152 | In Progress |
 | BAR     | 776 | 1,667 | 270 | 621 | 9/43 | In Progress |
@@ -304,3 +304,4 @@ Each session:
 | 2026-02-28 | 00292_generate_reg_batch13.sql | REG | Tax-Exempt Organizations | 30 | Batch 13; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
 | 2026-02-28 | 00293_generate_aud_batch65.sql | AUD | Written Representations | 30 | Batch 65; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
 | 2026-02-28 | 00295_generate_reg_batch14.sql | REG | Tax-Exempt Organizations | 30 | Batch 14; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
+| 2026-02-28 | 00296_generate_aud_batch66.sql | AUD | Written Representations | 30 | Batch 66; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
