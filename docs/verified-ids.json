@@ -2,7 +2,7 @@
   "aud": { "pass": [], "fail": [], "review": [] },
   "far": { "pass": [], "fail": [], "review": [] },
   "reg": { "pass": [], "fail": [], "review": [] },
-  "bar": { "pass": [], "fail": [], "review": [] },
+  "bar": { "pass": [601, 602, 603, 604, 605, 608, 610, 613, 614, 617], "fail": [], "review": [] },
   "isc": { "pass": [], "fail": [], "review": [] },
   "tcp": { "pass": [], "fail": [], "review": [] }
 }

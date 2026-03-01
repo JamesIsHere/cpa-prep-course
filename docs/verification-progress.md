@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 0        | 0    | 0    | 0      | Pending |
+| BAR     | ~1,016 | 10       | 10   | 0    | 0      | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -17,3 +17,4 @@ Cross-session tracker for the correctness verification audit.
 
 | Date | Migration | Section | Questions | Pass | Fail | Review | Note |
 |------|-----------|---------|-----------|------|------|--------|------|
+| 2026-03-01 | batch 1 | BAR | 10 | 10 | 0 | 0 | All calculation questions verified — ratios, DuPont, DSI, common-size, TIE, horizontal analysis, exponential smoothing |
