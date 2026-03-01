@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 590      | 567  | 15   | 8      | Active  |
+| BAR     | ~1,016 | 600      | 577  | 15   | 8      | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -76,3 +76,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 54 | BAR | 10 | 10 | 0 | 0 | All pass — trade-off theory leverage, incremental EVA analysis, FCFF calculation, DOL sales decline amplification, interest coverage expansion impact, book vs market WACC weights, comparable company P/E valuation, residual income calculation, APV vs WACC for changing leverage, TIE ratio |
 | 2026-03-01 | batch 55 | BAR | 10 | 10 | 0 | 0 | All pass — pure-play Hamada unlevered beta, sustainable growth rate, EV-to-equity per share, two-stage DDM valuation, retained earnings breakpoint, debt covenant D/E analysis, country risk premium CAPM, ROIC calculation, market capitalization, convertible debt cost in WACC |
 | 2026-03-01 | batch 56 | BAR | 10 | 8 | 2 | 0 | Q8723 fail: WACC calc yields 9.33% from given weights (40/10/50) but keyed 9.58% — same error pattern as Q6083. Q8724 fail: new WACC calc yields 9.87% not keyed 10.37% — same error pattern as Q6084, explanation fabricates "spread widening." Rest pass — DSCR, marginal cost of capital, terminal equity value, EVA, divisional CAPM hurdle, share repurchase EPS, residual income, optimal capital structure |
+| 2026-03-01 | batch 57 | BAR | 10 | 10 | 0 | 0 | All pass — maturity mismatch refinancing risk, after-tax cost of debt, Gordon DDM cost of equity, lease vs buy NPV, DSCR sustainability, Hamada equation levered beta, tax rate reduction optimal debt ratio, convertible debt dilution trade-off, credit downgrade WACC impact, DOL calculation |
