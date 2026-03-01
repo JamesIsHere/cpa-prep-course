@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 80       | 78   | 0    | 2      | Active  |
+| BAR     | ~1,016 | 90       | 88   | 0    | 2      | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -25,3 +25,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 6 | BAR | 10 | 10 | 0 | 0 | All pass — ASC 805 step acquisition (×2), ASC 810 intercompany equipment/bonds/equity transactions/NCI upstream, GASB 34 fiduciary exclusion, consolidation elimination entry, ASC 815 cash flow hedge |
 | 2026-03-01 | batch 7 | BAR | 10 | 9 | 0 | 1 | Q708 review: answer B uses pre-ASU 2017-12 bifurcation of effective/ineffective portions; current ASC 815-30-35-3 records entire derivative change in OCI without separate ineffectiveness recognition. Rest pass — hedges, options, swaps, GASB 34 modified accrual/major funds/fiduciary/capital assets |
 | 2026-03-01 | batch 5 | BAR | 10 | 10 | 0 | 0 | All pass — GASB 34 bond proceeds/property tax 60-day/permanent fund/debt service expenditures/bond premium dual reporting/measurement focus, ASC 350-40 internal-use software capitalization (×4) |
+| 2026-03-01 | batch 6 | BAR | 10 | 10 | 0 | 0 | All pass — ASU 2018-15 CCA classification/capitalization stages, ASC 350-40 useful life revision, ASC 842 sale-leaseback (FV bifurcation/repurchase options/partial termination/financing treatment), ASC 715 pension actuarial loss to OCI |
