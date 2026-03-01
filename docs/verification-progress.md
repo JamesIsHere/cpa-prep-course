@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 630      | 603  | 18   | 9      | Active  |
+| BAR     | ~1,016 | 640      | 613  | 18   | 9      | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -80,3 +80,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 58 | BAR | 10 | 9 | 1 | 0 | Q8748 fail: pro forma interest coverage — total interest is $1,050K+$400K=$1,450K giving 2.90×, not keyed 2.80× ($1,500K); explanation fabricates "commitment fees" not in stem. Same error pattern as Q6108. Rest pass — CAPM, EV/EBITDA, Hamada unlevered beta, capital structure scenario, covenant coverage forecast, EV-to-equity per share, stock split P/E, WACC sensitivity, WACC calculation |
 | 2026-03-01 | batch 59 | BAR | 10 | 9 | 1 | 0 | Q8753 fail: Waverly EPS decline is 18.4% not 20.8% — explanation claims new EPS=$5.81 but correct calc is $5.98; same error pattern as Q6113. Rest pass — DDM cost of equity, CAPM, WACC rate increase, DFL, cost of preferred stock, after-tax debt cost, leverage decision analysis, debt-financed repurchase D/E, EV-to-equity per share |
 | 2026-03-01 | batch 60 | BAR | 10 | 8 | 1 | 1 | Q8773 fail: Hamada re-levering arithmetic error — 0.914×1.30=1.19 not keyed 1.12; correct answer not among choices. Same error pattern as Q6133. Q8774 review: FCFE valuation $6.5M×1.03/0.08=$83,687,500 not $83,718,750; methodology correct, B is best choice but figure has small error. Same pattern as Q6134. Rest pass — Hamada levered beta, DDM vs CAPM reliability, NOL preferred stock financing, covenant D/E equity issuance, stock split effects, tax rate WACC impact, risk-adjusted project acceptance, EV-to-equity bridge |
+| 2026-03-01 | batch 61 | BAR | 10 | 10 | 0 | 0 | All pass — WACC calculation, ASC 842 finance lease vs loan covenant analysis, DDM dividend increase stock price, sustainable growth rate retention ratio, FCFF calculation, goodwill impairment D/E covenant, convertible bond WACC effect, DuPont ROE equity multiplier, residual dividend policy, APV for LBO valuation |
