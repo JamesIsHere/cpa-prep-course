@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 970      | 933  | 24   | 13     | Active  |
+| BAR     | ~1,016 | 980      | 943  | 24   | 13     | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -114,3 +114,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 92 | BAR | 10 | 10 | 0 | 0 | All pass — comparable company P/E valuation, residual income, APV vs WACC changing leverage, TIE ratio, pure-play Hamada beta, sustainable growth rate, EV-to-equity per share, two-stage DDM valuation, retained earnings breakpoint, debt covenant D/E analysis |
 | 2026-03-01 | batch 93 | BAR | 10 | 10 | 0 | 0 | All pass — country risk premium CAPM, ROIC calculation, market capitalization, convertible debt cost in WACC, DSCR covenant, IRR vs marginal cost of capital, EV/EBITDA equity bridge per share, EVA formula, divisional hurdle rate vs corporate WACC, share repurchase EPS effect |
 | 2026-03-01 | batch 94 | BAR | 10 | 8 | 2 | 0 | Q13883 fail: WACC calc yields 9.33% from given weights (40/10/50) but keyed 9.58% — same error pattern as Q6083/Q8723/Q11303. Q13884 fail: new WACC calc yields 9.87% not keyed 10.37% — same error pattern as Q6084/Q8724/Q11304, explanation fabricates "spread widening." Rest pass — residual income, optimal capital structure, maturity mismatch, after-tax cost of debt, DDM cost of equity, lease vs buy NPV, DSCR sustainability, Hamada equation levered beta |
+| 2026-03-01 | batch 95 | BAR | 10 | 10 | 0 | 0 | All pass — tax rate reduction optimal debt ratio, convertible debt dilution trade-off, credit downgrade WACC impact, DOL calculation, CAPM required return, EV/EBITDA valuation, Hamada unlevered beta, capital structure flexibility for high-growth firm, covenant coverage ratio forecast, EV-to-equity per share |
