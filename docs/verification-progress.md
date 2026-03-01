@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 400      | 386  | 9    | 5      | Active  |
+| BAR     | ~1,016 | 410      | 394  | 11   | 5      | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -57,3 +57,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 35 | BAR | 10 | 10 | 0 | 0 | All pass — common equity market cap, Hamada unlevered beta, capital rationing NPV maximization, trade-off theory leverage, incremental EVA analysis, FCFF calculation, DOL sales decline amplification, interest coverage expansion impact, book vs market WACC weights, comparable company P/E valuation |
 | 2026-03-01 | batch 36 | BAR | 10 | 10 | 0 | 0 | All pass — residual income calculation, APV vs WACC for changing leverage, TIE ratio, pure-play beta (Hamada unlever/relever), sustainable growth rate, EV-to-equity per share, two-stage DDM valuation, retained earnings breakpoint, debt covenant D/E analysis, country risk premium CAPM |
 | 2026-03-01 | batch 37 | BAR | 10 | 10 | 0 | 0 | All pass — ROIC calculation, market capitalization, convertible debt cost in WACC, DSCR covenant, IRR vs marginal cost of capital, EV/EBITDA equity bridge per share, EVA formula, divisional hurdle rate vs corporate WACC, share repurchase EPS effect, residual income |
+| 2026-03-01 | batch 38 | BAR | 10 | 8 | 2 | 0 | Q6083 fail: WACC calc yields 9.33% from given weights but keyed 9.58% — no choice matches correct answer, explanation hand-waves "slight premium on equity." Q6084 fail: new WACC calc yields 9.87% not keyed 10.37%, plus stated current WACC (9.5%) inconsistent with given inputs (8.70%). Rest pass — capital structure trade-off, maturity mismatch refinancing risk, after-tax cost of debt, Gordon DDM cost of equity, lease vs buy NPV, DSCR sustainability, Hamada equation levered beta, tax rate reduction optimal debt ratio |
