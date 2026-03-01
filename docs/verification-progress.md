@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 1060     | 1019 | 26   | 15     | Active  |
+| BAR     | ~1,016 | 1070     | 1029 | 26   | 15     | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -123,3 +123,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 101 | BAR | 10 | 10 | 0 | 0 | All pass — static trade-off theory cross-industry leverage, retention ratio, Hamada unlevered beta, APV vs WACC changing leverage, FCFF calculation, leveraged recap EPS, rate hike WACC impact, CAPM cost of equity, debt covenant coverage breach, market-value capital weights |
 | 2026-03-01 | batch 102 | BAR | 10 | 10 | 0 | 0 | All pass — debt vs equity EPS/coverage analysis, Miller personal tax framework, WACC shift from debt retirement, equity value per share (EV bridge), divisional WACC pure-play principle, TIE ratio, trade-off theory tax reform, EVA calculation, D/E ratio (interest-bearing debt), convertible bond capital structure |
 | 2026-03-01 | batch 103 | BAR | 10 | 10 | 0 | 0 | All pass — CAPM vs DDM divergence analysis, perpetuity growth terminal value, residual income, depreciation tax shield, FCFF calculation, EV/EBITDA equity bridge, sustainable growth rate, convertible bond WACC analysis, forward P/E valuation, retained earnings breakpoint |
+| 2026-03-01 | batch 104 | BAR | 10 | 10 | 0 | 0 | All pass — interest coverage ratio exactly 3.0x, M-M dividend irrelevance (dividend vs buyback), EVA divisional comparison, multi-stage DDM vs Gordon error direction, residual income calculation, capital rationing NPV maximization, pure-play Hamada levered beta, DSCR, FCFE at WACC understatement error, rights offering ex-rights price |
