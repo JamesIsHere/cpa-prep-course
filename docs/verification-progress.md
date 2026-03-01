@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 290      | 277  | 9    | 4      | Active  |
+| BAR     | ~1,016 | 300      | 287  | 9    | 4      | Active  |
 | FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
@@ -46,3 +46,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 24 | BAR | 10 | 10 | 0 | 0 | All pass — ASC 715 interest cost formula, pension contribution vs expense separation, corridor amortization, PBO rollforward, actual return derivation, NPPC calculation, GASB 34 bond principal reconciliation, modified accrual deferred inflows (property tax), ISF net position reconciliation, capital asset/depreciation reconciling adjustment |
 | 2026-03-01 | batch 25 | BAR | 10 | 9 | 1 | 0 | Q3325 fail: keyed A (zero net adjustment) is wrong — grant revenue needs no adjustment but capital outlay add-back is +$5M, so net adjustment is +$5M (choice B). Explanation self-contradicts by acknowledging "capital outlay add-back is the primary adjustment" then claiming net is zero. Rest pass — GASB 34 net position from fund balance, interfund transfer definition, interfund services vs transfers, reimbursement treatment, transfer out classification, internal balances, ISF overcharge elimination, cross-activity transfer reporting, breakeven sales dollars |
 | 2026-03-01 | batch 26 | BAR | 10 | 10 | 0 | 0 | All pass — DOL sales decline amplification, WACC calculation, flotation cost impact on equity cost, ASC 606 significant financing component, refund liability calculation, ASC 718 performance condition (not probable), intercompany unrealized profit elimination, NCI loss absorption, proportional consolidation prohibition (US GAAP), subsidiary disposal gain/loss |
+| 2026-03-01 | batch 27 | BAR | 10 | 10 | 0 | 0 | All pass — interest rate swap net payment, ASC 350-40 training expense, ASC 842 ROU asset measurement, residual value guarantee (expected amount), ASC 715 funded status PBO, governmental fund capital expenditure, pension contribution vs expense reconciliation, net pension liability fund exclusion, capital asset sale reconciliation, ISF overcharge elimination |
