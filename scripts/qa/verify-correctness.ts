@@ -354,11 +354,15 @@ function invokeClaudeVerify(prompt: string): string {
 		);
 		return result;
 	} catch (err: unknown) {
-		const error = err as { stdout?: string; stderr?: string; code?: string };
+		const error = err as { stdout?: string; stderr?: string; code?: string; status?: number; message?: string };
 		if (error.code === "ETIMEDOUT") {
 			console.error("    Claude verification call timed out (300s) — treating batch as review");
 			return "";
 		}
+		// Log the actual error for debugging
+		console.error(`    Claude verify error: code=${error.code} status=${error.status}`);
+		if (error.stderr) console.error(`    stderr: ${error.stderr.substring(0, 500)}`);
+		if (error.message && !error.stdout) console.error(`    message: ${error.message.substring(0, 500)}`);
 		if (error.stdout) return error.stdout;
 		throw err;
 	} finally {
