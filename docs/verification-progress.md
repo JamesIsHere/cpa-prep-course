@@ -7,7 +7,7 @@ Cross-session tracker for the correctness verification audit.
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
 | BAR     | ~1,016 | 1080     | 1039 | 26   | 15     | Active  |
-| FAR     | ~1,005 | 310      | 290  | 16   | 4      | Active  |
+| FAR     | ~1,005 | 320      | 300  | 16   | 4      | Active  |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
 | ISC     | ~897   | 0        | 0    | 0    | 0      | Pending |
@@ -156,3 +156,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 29 | FAR | 10 | 9 | 1 | 0 | Q1955 fail: correct_index=0 (A="When cash is collected") but explanation and ASC 606-10-25-27 both require over-time recognition (C, index 2) — no alternative use + enforceable right to payment = over-time. Rest pass — ASC 606 contract liability ($15K), relative SSP bundle allocation ($7,200), ratable service revenue ($15K/$45K), cost-to-cost cumulative catch-up ($350K), FIFO COGS ($1,240), LIFO COGS ($1,440), weighted-average cost ($9.20), LCNRV write-down ($42K), periodic COGS formula |
 | 2026-03-01 | batch 30 | FAR | 10 | 9 | 1 | 0 | Q1974 fail: keyed A ("No, increase only due to price changes") but $99K/1.10=$90K>$80K means new layer WAS added — explanation itself says "a new layer has been added," contradicting keyed answer. Correct answer is C (index 2). Rest pass — FIFO perpetual=periodic, LIFO reserve conversion ($245K), LIFO reserve change COGS ($8K), gross profit method ($90K), retail inventory average cost ($53,333), purchase commitment loss ($25K), DV LIFO new layer ($110,800), LCNRV write-down ($92K), GAAP no reversal of inventory write-down |
 | 2026-03-01 | batch 31 | FAR | 10 | 10 | 0 | 0 | All pass — FIFO ending inventory ($4,300), FOB shipping point buyer inclusion, consignment goods remain consignor inventory, inventoriable product costs ($180K), LCM three-step market test ($17), equipment capitalization excluding maintenance ($133K), straight-line depreciation ($36K), DDB Year 2 ($25K), SYD Year 1 ($30K), units-of-production depreciation ($13,125) |
+| 2026-03-01 | batch 32 | FAR | 10 | 10 | 0 | 0 | All pass — component depreciation roof replacement ($250K capitalize + $40K write-off), ASC 360 impairment two-step ($80K loss), ASC 360 no impairment (undiscounted CF > carrying), equipment disposal gain ($15K), self-constructed asset capitalization ($740K incl fixed OH), ARO accretion expense ($30K), ARO upward revision new layer at current rate, nonmonetary exchange commercial substance at FV ($45K), SYD Year 3 depreciation ($34,286), lump-sum purchase relative FV allocation ($630K building) |
