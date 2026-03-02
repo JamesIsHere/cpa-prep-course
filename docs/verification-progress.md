@@ -7,7 +7,7 @@ Cross-session tracker for the correctness verification audit.
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
 | BAR     | ~1,016 | 1080     | 1039 | 26   | 15     | Active  |
-| FAR     | ~1,005 | 530      | 502  | 22   | 6      | Active  |
+| FAR     | ~1,005 | 540      | 512  | 22   | 6      | Active  |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
 | ISC     | ~897   | 0        | 0    | 0    | 0      | Pending |
@@ -178,3 +178,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 51 | FAR | 10 | 10 | 0 | 0 | All pass — NFP unconditional pledge PV (ASC 958-605), contributed services recognition criteria (specialized skills), volunteer painting non-recognition, donated pharma at NFP fair value (ASU 2020-07), time restriction reclassification, UPMIFA 4% spending ($248K), underwater endowment reporting (ASC 958-205), charitable remainder trust split-interest (ASC 958-30), NFP net asset calculation ($3.2M), program efficiency ratio (60%) |
 | 2026-03-01 | batch 52 | FAR | 10 | 10 | 0 | 0 | All pass — conditional grant barrier recognition (ASC 958-605), NFP collection non-capitalization disclosure (ASC 958-360), healthcare net patient revenue ($255K, ASC 606/954), implied time restriction over equipment useful life, multi-year pledge discount amortization ($32.1K), grantor conditional grant expense (ASC 958-605), gala bifurcation ($76K/$24K), federal grant barrier vs administrative requirement, contributed stock FV ($180K), charitable lead annuity trust PV ($386K, ASC 958-30) |
 | 2026-03-01 | batch 53 | FAR | 10 | 10 | 0 | 0 | All pass — property tax modified accrual revenue ($9.2M available), capital projects fund for GO bonds, budgetary journal entry (estimated revenues/appropriations), encumbrance accounting for outstanding POs, GASB 54 fund classification flexibility, unrestricted net position calculation ($26M), ISF reporting as governmental activity (GASB 34), permanent fund for endowment earnings, net expense format on statement of activities ($58M), fund vs government-wide capital asset reporting |
+| 2026-03-01 | batch 54 | FAR | 10 | 10 | 0 | 0 | All pass — govt-wide principal payment as liability reduction (not expense), GASB 54 nonspendable fund balance (prepaid+inventory), debt service fund ending balance ($1,220K), modified accrual 60-day availability ($35M), enterprise fund change in net position ($3.9M), agency/custodial 2% collection fee ($50K), interfund transfers as OFU ($4M), GO bond premium separate OFS ($20M+$400K), ASC 715 funded status net pension liability ($1.5M), NPPC calculation ($520K) |
