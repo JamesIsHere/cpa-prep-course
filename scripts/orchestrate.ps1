@@ -1100,6 +1100,27 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
     $ErrorActionPreference = $prevEAP
     Write-Step 'Commit' $commitHash
 
+    # ── 7.5. Apply migration to DB (generate mode only) ────────
+    # Without this, the next batch's selector sees stale DB counts and
+    # keeps generating for already-filled topics, overshooting targets.
+    if ($Mode -eq 'generate' -and (Test-Path $scaffoldPath)) {
+        Push-Location $RepoRoot
+        $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
+        try {
+            $migNum = [int]([System.IO.Path]::GetFileName($scaffoldPath).Split('_')[0])
+            $applyOutput = & node scripts/apply-migrations.mjs --from=$migNum 2>&1 | Out-String
+            if ($LASTEXITCODE -eq 0) {
+                Write-Step 'Apply' 'migration applied to DB'
+            } else {
+                Write-Step 'Apply' 'WARNING: migration apply failed — DB counts may be stale' 'Yellow'
+                Write-Log "Apply  WARNING: $applyOutput"
+            }
+        } finally {
+            $ErrorActionPreference = $prevEAP
+            Pop-Location
+        }
+    }
+
     # ── 8. Update running state ────────────────────────────────
     $totalQuestions += $batchCount
     $completedBatches++
