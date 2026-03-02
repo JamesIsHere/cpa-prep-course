@@ -7,7 +7,7 @@ Cross-session tracker for the correctness verification audit.
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
 | BAR     | ~1,016 | 1080     | 1039 | 26   | 15     | Active  |
-| FAR     | ~1,005 | 0        | 0    | 0    | 0      | Pending |
+| FAR     | ~1,005 | 10       | 10   | 0    | 0      | Active  |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
 | ISC     | ~897   | 0        | 0    | 0    | 0      | Pending |
@@ -125,3 +125,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 103 | BAR | 10 | 10 | 0 | 0 | All pass — CAPM vs DDM divergence analysis, perpetuity growth terminal value, residual income, depreciation tax shield, FCFF calculation, EV/EBITDA equity bridge, sustainable growth rate, convertible bond WACC analysis, forward P/E valuation, retained earnings breakpoint |
 | 2026-03-01 | batch 104 | BAR | 10 | 10 | 0 | 0 | All pass — interest coverage ratio exactly 3.0x, M-M dividend irrelevance (dividend vs buyback), EVA divisional comparison, multi-stage DDM vs Gordon error direction, residual income calculation, capital rationing NPV maximization, pure-play Hamada levered beta, DSCR, FCFE at WACC understatement error, rights offering ex-rights price |
 | 2026-03-01 | batch 105 | BAR | 10 | 10 | 0 | 0 | All pass — retention ratio, trade-off theory flexibility vs tax shield, bond yield vs CAPM divergence, covenant D/EBITDA+IC analysis, weighted avg flotation cost, Hamada unlevered beta, residual dividend model, APV acquisition valuation, FCFE calculation, EPS indifference EBIT |
+| 2026-03-01 | batch 1 | FAR | 10 | 10 | 0 | 0 | All pass — ROA year-end timing, ASC 606 relative SSP allocation (×2), cost-to-cost revision, LIFO-to-FIFO turnover conversion, DDB vs SL fixed asset turnover, ASC 835-20 two-tier interest capitalization, mid-year intangible amortization, indefinite vs finite impairment frameworks, ASC 842 finance vs operating expense pattern |
