@@ -7,7 +7,7 @@ Cross-session tracker for the correctness verification audit.
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
 | BAR     | ~1,016 | 1080     | 1039 | 26   | 15     | Active  |
-| FAR     | ~1,005 | 460      | 433  | 21   | 6      | Active  |
+| FAR     | ~1,005 | 470      | 443  | 21   | 6      | Active  |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
 | ISC     | ~897   | 0        | 0    | 0    | 0      | Pending |
@@ -171,3 +171,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 44 | FAR | 10 | 10 | 0 | 0 | All pass — ASC 450 unasserted claim accrual ($250K), warranty liability ($110K), gain contingency disclosure only (ASC 450-30), loss range best estimate accrual ($400K), joint-and-several proportionate share ($3M), permanent differences tax ($163,800), MACRS vs SL DTL ($10,500), DTA valuation allowance ($130K net), net deferred tax DTL vs DTA ($29,400 net DTL), litigation accrual DTA ($63K) |
 | 2026-03-01 | batch 45 | FAR | 10 | 10 | 0 | 0 | All pass — income tax expense with permanent+temporary diffs ($197,400), DTL rate change adjustment ($420K→$500K), intraperiod allocation ($105K), ASC 740-10 uncertain tax position ($400K), NOL carryforward DTA with 80% limitation ($420K), temporary vs permanent diff identification ($80K), DTL at enacted future rate ($168K), effective vs statutory rate analysis, total tax expense with nondeductible premiums ($260,400), netting DTA/DTL same jurisdiction ($60K net DTA) |
 | 2026-03-01 | batch 46 | FAR | 10 | 9 | 1 | 0 | Q2187 fail: arithmetic error — explanation claims 2,500K−100K−300K+150K=$2,300K but correct sum is $2,250K; keyed answer $483K wrong, correct is $472,500 (not among choices). 9 pass: DTL in business combination ($63K), DTA on advance payments ($37,800), valuation allowance analysis ($420K supported), goodwill ($800K), bargain purchase gain ($500K), NCI fair value goodwill ($1M), proportionate share goodwill ($800K), intercompany profit elimination ($30K), upstream sale NCI allocation (80/20) |
+| 2026-03-01 | batch 47 | FAR | 10 | 10 | 0 | 0 | All pass — intercompany note elimination ($500K), equity method income 40%×$800K ($320K), NCI income 30%×$600K ($180K), intercompany equipment gain+depreciation reversal ($150K/$30K), ASC 805 customer list at FV ($200K), upstream unrealized profit $90K allocated 60/40, post-acquisition revenue 7/12 ($2.1M), ASU 2017-04 goodwill impairment ($800K), equity method investment balance ($3,504K), ASC 805-20-25-19 contingent liability at FV ($350K) |
