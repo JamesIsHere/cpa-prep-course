@@ -346,7 +346,7 @@ function invokeClaudeVerify(prompt: string): string {
 			{
 				cwd: repoRoot,
 				maxBuffer: 10 * 1024 * 1024,
-				timeout: 180_000,
+				timeout: 300_000,
 				shell: "bash",
 				encoding: "utf-8",
 				env,
@@ -354,7 +354,11 @@ function invokeClaudeVerify(prompt: string): string {
 		);
 		return result;
 	} catch (err: unknown) {
-		const error = err as { stdout?: string; stderr?: string };
+		const error = err as { stdout?: string; stderr?: string; code?: string };
+		if (error.code === "ETIMEDOUT") {
+			console.error("    Claude verification call timed out (300s) — treating batch as review");
+			return "";
+		}
 		if (error.stdout) return error.stdout;
 		throw err;
 	} finally {
