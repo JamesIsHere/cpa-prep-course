@@ -7,7 +7,7 @@ Cross-session tracker for the correctness verification audit.
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
 | BAR     | ~1,016 | 1080     | 1039 | 26   | 15     | Active  |
-| FAR     | ~1,005 | 330      | 310  | 16   | 4      | Active  |
+| FAR     | ~1,005 | 340      | 319  | 17   | 4      | Active  |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
 | ISC     | ~897   | 0        | 0    | 0    | 0      | Pending |
@@ -158,3 +158,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 31 | FAR | 10 | 10 | 0 | 0 | All pass — FIFO ending inventory ($4,300), FOB shipping point buyer inclusion, consignment goods remain consignor inventory, inventoriable product costs ($180K), LCM three-step market test ($17), equipment capitalization excluding maintenance ($133K), straight-line depreciation ($36K), DDB Year 2 ($25K), SYD Year 1 ($30K), units-of-production depreciation ($13,125) |
 | 2026-03-01 | batch 32 | FAR | 10 | 10 | 0 | 0 | All pass — component depreciation roof replacement ($250K capitalize + $40K write-off), ASC 360 impairment two-step ($80K loss), ASC 360 no impairment (undiscounted CF > carrying), equipment disposal gain ($15K), self-constructed asset capitalization ($740K incl fixed OH), ARO accretion expense ($30K), ARO upward revision new layer at current rate, nonmonetary exchange commercial substance at FV ($45K), SYD Year 3 depreciation ($34,286), lump-sum purchase relative FV allocation ($630K building) |
 | 2026-03-01 | batch 33 | FAR | 10 | 10 | 0 | 0 | All pass — DDB Year 3 ($34,560), partial-year SL depreciation ($9,000), ASC 360 two-step impairment ($500K), ASC 360 no impairment (undiscounted CF passes), ARO depreciation over remaining life, nonmonetary exchange gain ($5K), capital vs revenue expenditure, held-for-sale reclassification ($50K write-down), impairment reversal prohibition (US GAAP), change in estimate revised depreciation ($22K) |
+| 2026-03-01 | batch 34 | FAR | 10 | 9 | 1 | 0 | Q2029 fail: keyed A ("Capitalize and test for impairment annually") but explanation states assembled workforce is NOT separately recognizable under ASC 805 and must be subsumed into goodwill — correct answer is C (index 2). Rest pass — patent amortization shorter of legal/useful ($28K), goodwill impairment ($1.8M), goodwill impairment capped at balance ($1.2M), R&D expense all-in ($395K), ASC 985-20 post-feasibility capitalization ($300K), useful life change in estimate ($45K), ASC 360 two-step impairment ($110K), franchise amortization carrying amount ($400K), ASC 350-40 internal-use software ($350K) |
