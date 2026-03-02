@@ -7,7 +7,7 @@ Cross-session tracker for the correctness verification audit.
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
 | BAR     | ~1,016 | 1080     | 1039 | 26   | 15     | Active  |
-| FAR     | ~1,005 | 510      | 482  | 22   | 6      | Active  |
+| FAR     | ~1,005 | 520      | 492  | 22   | 6      | Active  |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
 | ISC     | ~897   | 0        | 0    | 0    | 0      | Pending |
@@ -176,3 +176,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 49 | FAR | 10 | 9 | 1 | 0 | Q2255 fail: keyed answer A ($8,000) but correct is C ($4,000) — explanation itself calculates $100K×8%×6/12=$4,000 contradicting the key. 9 pass: bank recon book adjustments (NSF+fee), adjusted book balance ($46,050), CECL bad debt expense ($30K), factoring without recourse cash ($460K), factoring with recourse loss ($52K), pledged receivables remain on balance sheet (ASC 860-30), assignment as secured borrowing (Dr Cash/Cr Notes Payable), noninterest-bearing note PV ($41,322), aging schedule allowance ($27,400) |
 | 2026-03-01 | batch 50 | FAR | 10 | 10 | 0 | 0 | All pass — bank recon bank error add-back ($2K), undrawn LOC off-balance-sheet disclosure, accrued interest 10/12 ($8,333), CECL bad debt expense ($125K), factoring w/o recourse loss=$fee ($60K), NCI balance rollforward ($680K), restricted cash noncurrent 18-month escrow, NFP perpetual endowment with donor restrictions (ASC 958), purpose-restricted grant $140K reclassification, conditional promise disclosure only (matching barrier) |
 | 2026-03-01 | batch 51 | FAR | 10 | 10 | 0 | 0 | All pass — NFP unconditional pledge PV (ASC 958-605), contributed services recognition criteria (specialized skills), volunteer painting non-recognition, donated pharma at NFP fair value (ASU 2020-07), time restriction reclassification, UPMIFA 4% spending ($248K), underwater endowment reporting (ASC 958-205), charitable remainder trust split-interest (ASC 958-30), NFP net asset calculation ($3.2M), program efficiency ratio (60%) |
+| 2026-03-01 | batch 52 | FAR | 10 | 10 | 0 | 0 | All pass — conditional grant barrier recognition (ASC 958-605), NFP collection non-capitalization disclosure (ASC 958-360), healthcare net patient revenue ($255K, ASC 606/954), implied time restriction over equipment useful life, multi-year pledge discount amortization ($32.1K), grantor conditional grant expense (ASC 958-605), gala bifurcation ($76K/$24K), federal grant barrier vs administrative requirement, contributed stock FV ($180K), charitable lead annuity trust PV ($386K, ASC 958-30) |
