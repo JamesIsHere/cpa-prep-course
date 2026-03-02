@@ -316,10 +316,10 @@ function Build-Prompt {
     $su = $Section.ToUpper()
     $cit = $CitPatterns[$Section]
     # Forward slashes for Claude's bash environment
-    $sf = $ScaffoldPath.Replace('\', '/')
+    $sf = if ($ScaffoldPath) { $ScaffoldPath.Replace('\', '/') } else { '' }
     $cf = $CandidateFile.Replace('\', '/')
     $tf = $TrackerFile.Replace('\', '/')
-    $fn = Split-Path $ScaffoldPath -Leaf
+    $fn = if ($ScaffoldPath) { Split-Path $ScaffoldPath -Leaf } else { '' }
 
     switch ($Mode) {
         'citation' {
