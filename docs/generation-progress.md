@@ -23,7 +23,7 @@ Each session:
 |---------|---------|--------|-----------|-----------|--------------|--------|
 | AUD     | 1,052 | 5,000 | 2,460 | 1,488 | 82/146 | In Progress |
 | FAR     | 855 | 5,000 | 1,560 | 2,585 | 52/148 | In Progress |
-| REG     | 847 | 5,000 | 930 | 3,223 | 31/152 | In Progress |
+| REG     | 847 | 5,000 | 960 | 3,193 | 32/152 | In Progress |
 | BAR     | 776 | 1,667 | 270 | 621 | 9/43 | In Progress |
 | ISC     | 747 | 1,667 | 210 | 710 | 7/40 | In Progress |
 | TCP     | 709 | 1,667 | 210 | 748 | 7/41 | In Progress |
@@ -379,3 +379,4 @@ Each session:
 | 2026-03-01 | 00368_generate_far_batch50.sql | FAR | Earnings Per Share | 30 | Batch 50; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 1 near-dup warning |
 | 2026-03-02 | 00371_generate_far_batch51.sql | FAR | Employee Benefit Plans | 30 | Batch 51; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
 | 2026-03-02 | 00372_generate_far_batch52.sql | FAR | Employee Benefit Plans | 30 | Batch 52; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 2 near-dup warnings |
+| 2026-03-02 | 00372_generate_reg_batch32.sql | REG | C Corporations | 30 | Batch 32; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
