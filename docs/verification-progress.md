@@ -7,7 +7,7 @@ Cross-session tracker for the correctness verification audit.
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
 | BAR     | ~1,016 | 1080     | 1039 | 26   | 15     | Active  |
-| FAR     | ~1,005 | 490      | 462  | 22   | 6      | Active  |
+| FAR     | ~1,005 | 500      | 472  | 22   | 6      | Active  |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
 | ISC     | ~897   | 0        | 0    | 0    | 0      | Pending |
@@ -174,3 +174,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 47 | FAR | 10 | 10 | 0 | 0 | All pass — intercompany note elimination ($500K), equity method income 40%×$800K ($320K), NCI income 30%×$600K ($180K), intercompany equipment gain+depreciation reversal ($150K/$30K), ASC 805 customer list at FV ($200K), upstream unrealized profit $90K allocated 60/40, post-acquisition revenue 7/12 ($2.1M), ASU 2017-04 goodwill impairment ($800K), equity method investment balance ($3,504K), ASC 805-20-25-19 contingent liability at FV ($350K) |
 | 2026-03-01 | batch 48 | FAR | 10 | 10 | 0 | 0 | All pass — ASC 805 goodwill with contingent consideration ($600K), step acquisition remeasure 30% to FV (ASC 805-10-25-10), Level 1 NYSE quoted price, blockage discount prohibition (ASC 820-10-35-36B), valuation approach selection (most representative), liability FV via corresponding asset ($950K, ASC 820-10-35-16B), Level 3 classification (significant unobservable input), FVO loss in earnings (ASC 825), principal market price prevails ($120K, ASC 820-10-35-5), bank reconciliation ($81K) |
 | 2026-03-01 | batch 49 | FAR | 10 | 9 | 1 | 0 | Q2255 fail: keyed answer A ($8,000) but correct is C ($4,000) — explanation itself calculates $100K×8%×6/12=$4,000 contradicting the key. 9 pass: bank recon book adjustments (NSF+fee), adjusted book balance ($46,050), CECL bad debt expense ($30K), factoring without recourse cash ($460K), factoring with recourse loss ($52K), pledged receivables remain on balance sheet (ASC 860-30), assignment as secured borrowing (Dr Cash/Cr Notes Payable), noninterest-bearing note PV ($41,322), aging schedule allowance ($27,400) |
+| 2026-03-01 | batch 50 | FAR | 10 | 10 | 0 | 0 | All pass — bank recon bank error add-back ($2K), undrawn LOC off-balance-sheet disclosure, accrued interest 10/12 ($8,333), CECL bad debt expense ($125K), factoring w/o recourse loss=$fee ($60K), NCI balance rollforward ($680K), restricted cash noncurrent 18-month escrow, NFP perpetual endowment with donor restrictions (ASC 958), purpose-restricted grant $140K reclassification, conditional promise disclosure only (matching barrier) |
