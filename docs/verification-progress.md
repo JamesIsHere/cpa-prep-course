@@ -7,7 +7,7 @@ Cross-session tracker for the correctness verification audit.
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
 | BAR     | ~1,016 | 1080     | 1039 | 26   | 15     | Active  |
-| FAR     | ~1,005 | 380      | 357  | 19   | 4      | Active  |
+| FAR     | ~1,005 | 390      | 367  | 19   | 4      | Active  |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
 | ISC     | ~897   | 0        | 0    | 0    | 0      | Pending |
@@ -163,3 +163,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 36 | FAR | 10 | 10 | 0 | 0 | All pass — ASC 842 finance lease interest expense ($21,197), short-term lease exemption 12-month limit, finance lease 75% economic life test (83%), operating lease straight-line expense ($53,333), lease modification remeasurement, ROU asset with lease incentive ($59,357), operating lease classification (no criteria met), finance lease liability balance effective interest ($330,440), ROU asset with initial direct costs ($114,190), lessor operating lease IDC amortization ($3,000/yr) |
 | 2026-03-01 | batch 37 | FAR | 10 | 9 | 1 | 0 | Q2081 fail: keyed A ($64,000) but $780,000×8%=$62,400 (choice C) — explanation itself derives $62,400 but points to wrong choice. Rest pass — operating lease straight-line ($42K), ROU amortization over lease term ($80K), lease liability with guaranteed residual ($169,917), short-term lease exemption, lessor operating lease classification, finance lease total expense ($104K), bond proceeds at premium ($1,030K), bond issue price at discount ($460,081), straight-line discount amortization ($6K) |
 | 2026-03-01 | batch 38 | FAR | 10 | 10 | 0 | 0 | All pass — ASC 835-30 issuance costs as direct deduction, early extinguishment loss ($15K), bond discount at 98 ($60K), convertible bond book value method ($4,850K equity), carrying amount with issuance costs ($975K), premium straight-line interest expense ($260K), early retirement gain ($60K), accrued interest 3 months ($13,500), ASC 825-10 fair value option credit risk in OCI, amortized cost measurement without FVO ($1,500K) |
+| 2026-03-01 | batch 39 | FAR | 10 | 10 | 0 | 0 | All pass — relative FV allocation bonds+warrants ($923,077/$76,923), effective interest semi-annual ($339,500), zero-coupon Year 1 interest ($185,102), ASC 470-20 convertible bond premium as liability, straight-line discount amortization ($258K), ASC 470-10 covenant violation reclassify to current, accrued interest 4 months ($20K), post-BS refinancing long-term classification, carrying amount with issuance costs ($740K), APIC on stock issuance ($70K) |
