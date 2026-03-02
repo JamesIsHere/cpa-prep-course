@@ -7,11 +7,10 @@
 //   npm run verify -- --ids=1234,1235,1236
 //   npm run verify -- --section=bar --limit=50 --brief
 
-import { readFileSync, existsSync, writeFileSync, unlinkSync } from "fs";
+import { readFileSync, existsSync } from "fs";
 import { resolve, dirname, join } from "path";
 import { fileURLToPath } from "url";
-import { execSync } from "child_process";
-import { tmpdir } from "os";
+import { execSync, spawnSync } from "child_process";
 import { fetchAllQuestions, type DbQuestion } from "./db-client";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -332,42 +331,39 @@ Return ONLY the JSON array inside a single code fence. No other text.`;
 // ─── Claude invocation ───────────────────────────────────────
 
 function invokeClaudeVerify(prompt: string): string {
-	// Write prompt to temp file to avoid shell escaping issues with large prompts
-	const tmpFile = join(tmpdir(), `cpa-verify-${Date.now()}.txt`);
-	writeFileSync(tmpFile, prompt, "utf-8");
-
-	// Clear CLAUDECODE env var to allow nested invocation during testing
+	// Clear CLAUDECODE env var to allow nested invocation
 	const env = { ...process.env };
 	delete env.CLAUDECODE;
 
-	try {
-		const result = execSync(
-			`cat "${tmpFile.replace(/\\/g, "/")}" | claude --print --model sonnet`,
-			{
-				cwd: repoRoot,
-				maxBuffer: 10 * 1024 * 1024,
-				timeout: 300_000,
-				shell: "bash",
-				encoding: "utf-8",
-				env,
-			},
-		);
-		return result;
-	} catch (err: unknown) {
-		const error = err as { stdout?: string; stderr?: string; code?: string; status?: number; message?: string };
-		if (error.code === "ETIMEDOUT") {
+	// Use spawnSync with stdin pipe — avoids shell: "bash" which breaks
+	// when the process tree originates from PowerShell on Windows
+	const result = spawnSync("claude", ["--print", "--model", "sonnet"], {
+		cwd: repoRoot,
+		input: prompt,
+		maxBuffer: 10 * 1024 * 1024,
+		timeout: 300_000,
+		encoding: "utf-8",
+		env,
+	});
+
+	if (result.error) {
+		if ((result.error as NodeJS.ErrnoException).code === "ETIMEDOUT") {
 			console.error("    Claude verification call timed out (300s) — treating batch as review");
 			return "";
 		}
-		// Log the actual error for debugging
-		console.error(`    Claude verify error: code=${error.code} status=${error.status}`);
-		if (error.stderr) console.error(`    stderr: ${error.stderr.substring(0, 500)}`);
-		if (error.message && !error.stdout) console.error(`    message: ${error.message.substring(0, 500)}`);
-		if (error.stdout) return error.stdout;
-		throw err;
-	} finally {
-		try { unlinkSync(tmpFile); } catch { /* ignore */ }
+		console.error(`    Claude verify spawn error: ${result.error.message}`);
+		throw result.error;
 	}
+
+	if (result.status !== 0) {
+		console.error(`    Claude verify exit code: ${result.status}`);
+		if (result.stderr) console.error(`    stderr: ${result.stderr.substring(0, 500)}`);
+		// Still return stdout if available — Claude may have produced partial output
+		if (result.stdout) return result.stdout;
+		throw new Error(`Claude verify failed with exit code ${result.status}`);
+	}
+
+	return result.stdout;
 }
 
 function parseClaudeResponse(raw: string): QuestionResult[] | null {
