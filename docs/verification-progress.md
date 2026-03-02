@@ -6,8 +6,8 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 1080     | 1039 | 26   | 15     | Active  |
-| FAR     | ~1,005 | 1000     | 966  | 28   | 6      | Active  |
+| BAR     | ~1,016 | 1080     | 1039 | 26   | 15     | Done (00369: 27 deletes + 7 fixes) |
+| FAR     | ~1,005 | 1000     | 966  | 28   | 6      | Done (00370: 3 deletes + 19 fixes) |
 | REG     | ~1,027 | 0        | 0    | 0    | 0      | Pending |
 | AUD     | ~2,732 | 0        | 0    | 0    | 0      | Pending |
 | ISC     | ~897   | 0        | 0    | 0    | 0      | Pending |
