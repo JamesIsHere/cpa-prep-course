@@ -21,7 +21,7 @@ Each session:
 
 | Section | Current | Target | Generated | Remaining | Batches Done | Status |
 |---------|---------|--------|-----------|-----------|--------------|--------|
-| FAR     | 3,285 | 5,000 | 90 | 1,625 | 3/74 | In Progress |
+| FAR     | 3,315 | 5,000 | 120 | 1,595 | 4/74 | In Progress |
 | REG     | 3,809 | 5,000 | 0 | 1,191 | 0/53 | Pending |
 | BAR     | 1,347 | 5,000 | 0 | 3,653 | 0/131 | Pending |
 | ISC     | 1,188 | 5,000 | 0 | 3,812 | 0/140 | Pending |
@@ -161,3 +161,4 @@ Each session:
 | 2026-03-03 | 00400_generate_far_batch52.sql | FAR | Governmental Accounting | 30 | GASB 42 impairment, GASB 87 lessor, GASB 51 intangibles, GASB 91 conduit w/commitment, fund accounting mechanics |
 | 2026-03-03 | 00401_generate_far_batch53.sql | FAR | Governmental Accounting | 30 | Direct method cash flows, indirect expense allocation, reimbursement vs transfer, blended discount rate, ISF reclassification, GASB 65 issuance costs, GASB 63 net position, joint venture equity method |
 | 2026-03-03 | 00402_generate_far_batch54.sql | FAR | Governmental Accounting | 30 | GASB 18 landfill, GASB 83 ARO, GASB 40 deposit/investment risk, GASB 88 direct borrowings, GASB 10 risk pools, GASB 46 enabling legislation, GASB 86 defeasance, GASB 74 OPEB plan, demand bonds, BANs/RANs, on-behalf payments, advance/current refunding |
+| 2026-03-03 | 00403_generate_far_batch55.sql | FAR | Employee Benefit Plans | 30 | Projected unit credit method, first-year plan expense, business combination pension, alternative amortization, unfunded OPEB cost, measurement date, withdrawal liability, contribution vs expense, MRV expected return, salary progression, cliff vesting, smoothing purpose, OPEB life insurance scope, current/noncurrent classification, discount rate criteria, negative PSC offset, service cost PV, contributions ≠ expense, OPEB eligibility attribution, settlement proportionate AOCI, asset loss deferral, tax effects OCI, actuarial gain/loss causes, new hires service cost, mortality assumption, DC advantage, plan termination total loss, reclassification net effect, OPEB sensitivity interaction, funded status vs AOCI |
