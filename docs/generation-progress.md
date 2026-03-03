@@ -23,7 +23,7 @@ Each session:
 |---------|---------|--------|-----------|-----------|--------------|--------|
 | AUD     | 1,052 | 5,000 | 2,460 | 1,488 | 82/146 | In Progress |
 | FAR     | 855 | 5,000 | 1,560 | 2,585 | 52/148 | In Progress |
-| REG     | 847 | 5,000 | 1,200 | 2,953 | 40/152 | In Progress |
+| REG     | 847 | 5,000 | 1,230 | 2,923 | 41/152 | In Progress |
 | BAR     | 776 | 1,667 | 270 | 621 | 9/43 | In Progress |
 | ISC     | 747 | 1,667 | 210 | 710 | 7/40 | In Progress |
 | TCP     | 709 | 1,667 | 210 | 748 | 7/41 | In Progress |
@@ -388,3 +388,4 @@ Each session:
 | 2026-03-02 | 00378_generate_reg_batch38.sql | REG | Alternative Minimum Tax | 30 | Batch 38; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 1 near-dup warning |
 | 2026-03-02 | 00379_generate_reg_batch39.sql | REG | Individual Taxation: Credits | 30 | Batch 39; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
 | 2026-03-02 | 00380_generate_reg_batch40.sql | REG | Individual Taxation: Credits/AMT | 30 | Batch 40; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 1 near-dup warning |
+| 2026-03-02 | 00381_generate_reg_batch41.sql | REG | Individual Taxation: Deductions | 30 | Batch 41; 9E/15M/6H, L1:8/L2:9/L3:8/L4:5; 0 errors, 0 duplicates |
