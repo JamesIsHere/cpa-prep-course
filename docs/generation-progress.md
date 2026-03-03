@@ -21,7 +21,7 @@ Each session:
 
 | Section | Current | Target | Generated | Remaining | Batches Done | Status |
 |---------|---------|--------|-----------|-----------|--------------|--------|
-| FAR     | 3,405 | 5,000 | 210 | 1,505 | 7/74 | In Progress |
+| FAR     | 3,405 | 5,000 | 240 | 1,475 | 8/74 | In Progress |
 | REG     | 3,809 | 5,000 | 0 | 1,191 | 0/53 | Pending |
 | BAR     | 1,347 | 5,000 | 0 | 3,653 | 0/131 | Pending |
 | ISC     | 1,188 | 5,000 | 0 | 3,812 | 0/140 | Pending |
@@ -165,3 +165,4 @@ Each session:
 | 2026-03-03 | 00404_generate_far_batch56.sql | FAR | Special Purpose Frameworks | 30 | OCBOA terminology, tax bad debts IRC 166, general-use vs special-use regulatory, constructive receipt, UNICAP 263A, no deferred tax on tax basis, SSARS compilation SPF report, S corp flow-through, FFIEC regulatory basis, related party SPF disclosures, contractual special-use, cash basis manipulation, modified cash capitalization rationale, going concern/subsequent events for SPF |
 | 2026-03-03 | 00405_generate_far_batch57.sql | FAR | Conceptual Framework and Standards | 30 | Monetary unit, periodicity, economic entity, accrual vs cash, confirmatory value, timeliness vs verifiability, asset/liability/equity/expense definitions, IFRS revaluation vs GAAP cost, TIPARA dev costs, neutrality vs prudence, component depreciation, materiality entity-specific, NRV vs fair value, inventory write-down reversal, impairment reversal, restructuring liability, ASU role, conservatism exclusion |
 | 2026-03-03 | 00406_generate_far_batch58.sql | FAR | Earnings Per Share | 30 | Preferred redemption premium, DRIP shares, anti-dilution sequencing failure, actual conversion if-converted assumption, dual-class EPS, counterparty-controlled settlement, EPS-based contingent trigger circularity, loss allocation asymmetry, interest add-back effective rate, share lending exclusion, reverse acquisition EPS restatement, nonforfeitable dividend participating security |
+| 2026-03-03 | 00407_generate_far_batch59.sql | FAR | Financial Statements | 30 | Noncash supplemental schedule, cash equivalents maturity, dividends paid/received CF class, working capital, indirect method computation, treasury stock contra equity, discontinued ops presentation, direct method, investing/financing activity classification, AOCI location, income statement ordering, IFRS vs GAAP CF flexibility, notes integral part, SPF basis note, AFS reclassification, PUFER credit risk, extraordinary items eliminated, restricted cash ASU 2016-18, deferred tax noncurrent ASU 2015-17, operating cycle, supplemental disclosures |
