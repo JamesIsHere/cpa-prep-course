@@ -21,7 +21,7 @@ Each session:
 
 | Section | Current | Target | Generated | Remaining | Batches Done | Status |
 |---------|---------|--------|-----------|-----------|--------------|--------|
-| FAR     | 3,285 | 5,000 | 30 | 1,685 | 1/74 | In Progress |
+| FAR     | 3,285 | 5,000 | 60 | 1,655 | 2/74 | In Progress |
 | REG     | 3,809 | 5,000 | 0 | 1,191 | 0/53 | Pending |
 | BAR     | 1,347 | 5,000 | 0 | 3,653 | 0/131 | Pending |
 | ISC     | 1,188 | 5,000 | 0 | 3,812 | 0/140 | Pending |
@@ -159,3 +159,4 @@ Each session:
 | Date | Migration | Section | Topic | Count | Notes |
 |------|-----------|---------|-------|-------|-------|
 | 2026-03-03 | 00400_generate_far_batch52.sql | FAR | Governmental Accounting | 30 | GASB 42 impairment, GASB 87 lessor, GASB 51 intangibles, GASB 91 conduit w/commitment, fund accounting mechanics |
+| 2026-03-03 | 00401_generate_far_batch53.sql | FAR | Governmental Accounting | 30 | Direct method cash flows, indirect expense allocation, reimbursement vs transfer, blended discount rate, ISF reclassification, GASB 65 issuance costs, GASB 63 net position, joint venture equity method |
