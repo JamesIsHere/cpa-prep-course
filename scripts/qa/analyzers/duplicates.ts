@@ -2,7 +2,7 @@
 // Scoped within same topic to keep pairwise comparisons manageable
 
 import type { DbQuestion } from "../db-client";
-import { trigrams, jaccardSimilarity } from "../utils";
+import { trigrams, jaccardSimilarity, normalizeStem } from "../utils";
 
 export interface DuplicatePair {
 	id1: number;
@@ -31,8 +31,12 @@ export function analyzeDuplicates(questions: DbQuestion[]): DuplicateAnalysis {
 	const pairs: DuplicatePair[] = [];
 
 	for (const [topic, qs] of byTopic) {
-		// Pre-compute trigrams
-		const trigramCache = qs.map((q) => ({ q, tris: trigrams(q.stem) }));
+		// Pre-compute trigrams (raw + normalized)
+		const trigramCache = qs.map((q) => ({
+			q,
+			tris: trigrams(q.stem),
+			normTris: trigrams(normalizeStem(q.stem)),
+		}));
 
 		// Pairwise comparison with size-based pre-filter
 		for (let i = 0; i < trigramCache.length; i++) {
@@ -43,9 +47,16 @@ export function analyzeDuplicates(questions: DbQuestion[]): DuplicateAnalysis {
 				const maxSize = Math.max(sizeA, sizeB);
 				if (maxSize > 0 && Math.abs(sizeA - sizeB) / maxSize > 0.4) continue;
 
-				const sim = jaccardSimilarity(
-					trigramCache[i].tris,
-					trigramCache[j].tris,
+				// Max of raw and normalized similarity
+				const sim = Math.max(
+					jaccardSimilarity(
+						trigramCache[i].tris,
+						trigramCache[j].tris,
+					),
+					jaccardSimilarity(
+						trigramCache[i].normTris,
+						trigramCache[j].normTris,
+					),
 				);
 				if (sim > 0.6) {
 					pairs.push({
@@ -55,7 +66,7 @@ export function analyzeDuplicates(questions: DbQuestion[]): DuplicateAnalysis {
 						similarity: Math.round(sim * 1000) / 1000,
 						stem1: trigramCache[i].q.stem.slice(0, 100),
 						stem2: trigramCache[j].q.stem.slice(0, 100),
-						severity: sim > 0.8 ? "likely-duplicate" : "near-duplicate",
+						severity: sim > 0.7 ? "likely-duplicate" : "near-duplicate",
 					});
 				}
 			}

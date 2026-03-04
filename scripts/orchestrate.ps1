@@ -518,8 +518,8 @@ ORCHESTRATOR_RESULT:{"status":"error","message":"brief description"}
 
             # Truncate existing stems to stay within context limits
             $existingStems = $batchSpec.existingStems
-            if ($existingStems.Count -gt 150) {
-                $existingStems = $existingStems[0..149]
+            if ($existingStems.Count -gt 500) {
+                $existingStems = $existingStems[0..499]
             }
             $stemsJson = ($existingStems | ConvertTo-Json -Compress)
             if (-not $stemsJson -or $stemsJson -eq 'null') { $stemsJson = '[]' }
@@ -556,6 +556,10 @@ RULES:
    c) Contrast language for most plausible wrong answer
 5. VARIETY: Each question in this batch must test a DIFFERENT concept identified in your research.
    Vary entities, amounts, correct_index distribution (roughly equal 0-3).
+6. SEMANTIC UNIQUENESS: Changing entity names, dollar amounts, or percentages does NOT make
+   a question unique. "Acme Corp reports `$50,000" and "Baker LLC reports `$75,000" testing the
+   same concept are duplicates. Each question must test a genuinely different rule, exception,
+   threshold, or scenario.
 6. SQL: Escape single quotes as ''. Choices as valid JSON arrays.
    section_id = $($batchSpec.sectionId). Include cognitive_level column.
 

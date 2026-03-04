@@ -112,6 +112,51 @@ export function jaccardSimilarity(a: Set<string>, b: Set<string>): number {
 	return union === 0 ? 0 : intersection / union;
 }
 
+// ─── Stem normalization (semantic dedup) ─────────────────────────
+
+/**
+ * Normalize a question stem for semantic duplicate detection.
+ * Strips entity names, dollar amounts, percentages, dates, and other
+ * variable details so that questions differing only in names/numbers
+ * produce the same normalized form.
+ *
+ * E.g., "Acme Corp reports $50,000..." and "Baker LLC reports $75,000..."
+ * both normalize to the same string.
+ */
+export function normalizeStem(stem: string): string {
+	return (
+		stem
+			// Dates with month names: must run BEFORE entity matching (case-insensitive)
+			// "January 15, 2024", "Dec. 31, 2024", "March 3, 2025"
+			.replace(
+				/\b(?:January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\.?\s+\d{1,2},?\s+\d{4}\b/gi,
+				"DATE",
+			)
+			// Named entities: must run BEFORE toLowerCase since we match on capitalization
+			// Match capitalized words optionally followed by LLC/Inc/Corp/Co/LLP/etc.
+			.replace(
+				/\b[A-Z][a-z]+(?:\s+(?:&|and|of)\s+[A-Z][a-z]+|\s+[A-Z][a-z]+){0,3}(?:\s+(?:LLC|Inc|Corp|Co|LLP|PC|PA|Ltd)\.?)?\b/g,
+				"ENTITY",
+			)
+			.toLowerCase()
+			// Dollar amounts: $1,234.56 → $X
+			.replace(/\$[\d,]+(?:\.\d+)?/g, "$X")
+			// Percentages: 15%, 3.5% → X%
+			.replace(/\d+(?:\.\d+)?%/g, "X%")
+			// Numeric dates: 12/31/2024, 2024-12-31
+			.replace(/\d{1,2}\/\d{1,2}\/\d{2,4}/g, "DATE")
+			.replace(/\d{4}-\d{2}-\d{2}/g, "DATE")
+			// Standalone years: 2023, 2024, 2025
+			.replace(/\b20\d{2}\b/g, "YEAR")
+			// Plain large numbers: 1,000 or 50000 (not already caught by $)
+			.replace(/\b\d{1,3}(?:,\d{3})+\b/g, "NUM")
+			.replace(/\b\d{4,}\b/g, "NUM")
+			// Collapse whitespace
+			.replace(/\s+/g, " ")
+			.trim()
+	);
+}
+
 // ─── Stdin reader ───────────────────────────────────────────────
 
 export async function readStdin(): Promise<string> {

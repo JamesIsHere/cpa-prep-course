@@ -3,7 +3,7 @@
 
 import { readFileSync } from "fs";
 import { resolve } from "path";
-import { trigrams, jaccardSimilarity } from "./utils";
+import { trigrams, jaccardSimilarity, normalizeStem } from "./utils";
 import { fetchAllQuestions } from "./db-client";
 
 const migrationArg = process.argv
@@ -13,9 +13,14 @@ const sectionArg = process.argv
 	.find((a) => a.startsWith("--section="))
 	?.split("=")[1];
 
+const maxNearArg = process.argv
+	.find((a) => a.startsWith("--max-near="))
+	?.split("=")[1];
+const maxNearDupes = maxNearArg ? parseInt(maxNearArg, 10) : 3;
+
 if (!migrationArg || !sectionArg) {
 	console.error(
-		"Usage: npx tsx scripts/qa/check-generation-duplicates.ts --migration=path/to/file.sql --section=aud",
+		"Usage: npx tsx scripts/qa/check-generation-duplicates.ts --migration=path/to/file.sql --section=aud [--max-near=N]",
 	);
 	process.exit(1);
 }
@@ -77,39 +82,58 @@ async function main() {
 	const existing = await fetchAllQuestions(sectionArg!);
 	console.error(`Loaded ${existing.length} existing questions for ${sectionArg!.toUpperCase()}`);
 
-	// Pre-compute trigrams for existing stems, grouped by topic
+	// Pre-compute trigrams (raw + normalized) for existing stems
 	const existingTrigrams = existing.map((q) => ({
 		stem: q.stem,
 		topic: q.topic,
 		tris: trigrams(q.stem),
+		normTris: trigrams(normalizeStem(q.stem)),
 	}));
+
+	// Helper: max of raw and normalized similarity
+	function maxSimilarity(
+		rawA: Set<string>,
+		normA: Set<string>,
+		rawB: Set<string>,
+		normB: Set<string>,
+	): number {
+		return Math.max(
+			jaccardSimilarity(rawA, rawB),
+			jaccardSimilarity(normA, normB),
+		);
+	}
 
 	// Check each new stem against all existing
 	const hits: DuplicateHit[] = [];
 	for (const newStem of newStems) {
 		const newTris = trigrams(newStem);
+		const newNormTris = trigrams(normalizeStem(newStem));
 
 		for (const ex of existingTrigrams) {
-			// Size pre-filter
+			// Size pre-filter (use raw trigrams)
 			const sizeA = newTris.size;
 			const sizeB = ex.tris.size;
 			const maxSize = Math.max(sizeA, sizeB);
 			if (maxSize > 0 && Math.abs(sizeA - sizeB) / maxSize > 0.4) continue;
 
-			const sim = jaccardSimilarity(newTris, ex.tris);
+			const sim = maxSimilarity(newTris, newNormTris, ex.tris, ex.normTris);
 			if (sim > 0.6) {
 				hits.push({
 					newStem: newStem.slice(0, 100),
 					existingStem: ex.stem.slice(0, 100),
 					similarity: Math.round(sim * 1000) / 1000,
-					severity: sim > 0.8 ? "likely-duplicate" : "near-duplicate",
+					severity: sim > 0.7 ? "likely-duplicate" : "near-duplicate",
 				});
 			}
 		}
 	}
 
 	// Also check new stems against each other
-	const newTrigrams = newStems.map((s) => ({ stem: s, tris: trigrams(s) }));
+	const newTrigrams = newStems.map((s) => ({
+		stem: s,
+		tris: trigrams(s),
+		normTris: trigrams(normalizeStem(s)),
+	}));
 	for (let i = 0; i < newTrigrams.length; i++) {
 		for (let j = i + 1; j < newTrigrams.length; j++) {
 			const sizeA = newTrigrams[i].tris.size;
@@ -117,13 +141,18 @@ async function main() {
 			const maxSize = Math.max(sizeA, sizeB);
 			if (maxSize > 0 && Math.abs(sizeA - sizeB) / maxSize > 0.4) continue;
 
-			const sim = jaccardSimilarity(newTrigrams[i].tris, newTrigrams[j].tris);
+			const sim = maxSimilarity(
+				newTrigrams[i].tris,
+				newTrigrams[i].normTris,
+				newTrigrams[j].tris,
+				newTrigrams[j].normTris,
+			);
 			if (sim > 0.6) {
 				hits.push({
 					newStem: newTrigrams[i].stem.slice(0, 100),
 					existingStem: newTrigrams[j].stem.slice(0, 100),
 					similarity: Math.round(sim * 1000) / 1000,
-					severity: sim > 0.8 ? "likely-duplicate" : "near-duplicate",
+					severity: sim > 0.7 ? "likely-duplicate" : "near-duplicate",
 				});
 			}
 		}
@@ -160,14 +189,19 @@ async function main() {
 		console.error("\nNo duplicates found. All clear.");
 	}
 
-	// Exit code: 1 if likely duplicates, 0 otherwise
+	// Exit code: 1 if likely duplicates OR too many near-dupes in batch
 	if (likelyDupes.length > 0) {
-		console.error(`\nFAILED: ${likelyDupes.length} likely duplicates found (>0.8 similarity)`);
+		console.error(`\nFAILED: ${likelyDupes.length} likely duplicates found (>0.7 similarity)`);
+		process.exit(1);
+	}
+
+	if (nearDupes.length > maxNearDupes) {
+		console.error(`\nFAILED: ${nearDupes.length} near-duplicates in batch (max ${maxNearDupes} allowed)`);
 		process.exit(1);
 	}
 
 	if (nearDupes.length > 0) {
-		console.error(`\nPASSED with ${nearDupes.length} warnings (0.6-0.8 similarity)`);
+		console.error(`\nPASSED with ${nearDupes.length} warnings (0.6-0.7 similarity)`);
 	}
 
 	process.exit(0);

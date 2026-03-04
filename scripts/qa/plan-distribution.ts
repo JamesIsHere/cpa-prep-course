@@ -18,14 +18,14 @@ const batchSize = parseInt(
 	process.argv.find((a) => a.startsWith("--batch-size="))?.split("=")[1] || "30",
 );
 
-// Section targets: core (AUD/FAR/REG) = 5000 each, electives (BAR/ISC/TCP) = ~1667 each
+// Section targets: 5000 each across all 6 sections (30,000 total)
 const SECTION_TARGETS: Record<string, number> = {
 	aud: 5000,
 	far: 5000,
 	reg: 5000,
-	bar: 1667,
-	isc: 1667,
-	tcp: 1667,
+	bar: 5000,
+	isc: 5000,
+	tcp: 5000,
 };
 
 // Bloom's distribution targets per section type
