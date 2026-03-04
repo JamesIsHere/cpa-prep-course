@@ -8,9 +8,9 @@
 //   npm run verify -- --section=bar --limit=50 --brief
 
 import { readFileSync, existsSync } from "fs";
-import { resolve, dirname, join } from "path";
+import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
-import { execSync, spawnSync } from "child_process";
+import { spawnSync } from "child_process";
 import { fetchAllQuestions, type DbQuestion } from "./db-client";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
