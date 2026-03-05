@@ -516,10 +516,11 @@ ORCHESTRATOR_RESULT:{"status":"error","message":"brief description"}
                 $frameworkJson = ($batchSpec.frameworkItems | ConvertTo-Json -Depth 10)
             }
 
-            # Truncate existing stems to stay within context limits
+            # Truncate existing stems to stay within context limits (~80K tokens at 2K stems)
             $existingStems = $batchSpec.existingStems
-            if ($existingStems.Count -gt 500) {
-                $existingStems = $existingStems[0..499]
+            if ($existingStems.Count -gt 2000) {
+                Write-Warning "Stem context capped at 2,000 (had $($existingStems.Count))"
+                $existingStems = $existingStems[0..1999]
             }
             $stemsJson = ($existingStems | ConvertTo-Json -Compress)
             if (-not $stemsJson -or $stemsJson -eq 'null') { $stemsJson = '[]' }
@@ -975,7 +976,7 @@ The migration at $($scaffoldPath.Replace('\','/')) has likely-duplicate question
 
 $dupOutput
 
-Read the file, rewrite any questions flagged as likely-duplicate (>0.8 similarity) to test different concepts. Keep the same topic, difficulty, and cognitive_level. Then re-validate:
+Read the file, rewrite any questions flagged as likely-duplicate (>0.6 similarity or >80% concept overlap) to test DIFFERENT concepts entirely. Do NOT just change entity names or dollar amounts — the dedup checker normalizes those away. Keep the same topic, difficulty, and cognitive_level. Then re-validate:
 npm run validate-migration $($scaffoldPath.Replace('\','/'))
 npx tsx scripts/qa/check-generation-duplicates.ts --migration=$($scaffoldPath.Replace('\','/')) --section=$Section
 

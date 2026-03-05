@@ -122,7 +122,9 @@ Each batch gets its own headless `claude --print` invocation with a fresh contex
 | `supabase/migrations/00128–00129`                     | Difficulty rebalancing — ISC (68 questions)               |
 | `supabase/migrations/00130–00145`                     | Citation backfill — AUD batches 1-14 (complete, 566 questions) |
 | `supabase/migrations/00146–00159`                     | Citation backfill — ISC batches 1-14 (complete, 677 questions) |
-| `supabase/migrations/00160–00245`                     | Question generation — 86 batches, 2,580 new questions    |
+| `supabase/migrations/00160–00393`                     | Question generation — 247 batches across all sections    |
+| `supabase/migrations/00435–00440`                     | Dedup cleanup — 6,244 duplicates + 90 TODOs deleted (2026-03-05) |
+| `supabase/migrations/00400–00434`                     | Question generation — FAR batches 52-86                  |
 | `supabase/migrations/00246–00248`                     | RLS hardening + auth optimization                        |
 | `docs/question-style-guide.md`                | Question writing rubric (all new questions must meet this) |
 | `scripts/apply-migrations.mjs`                | Apply pending SQL migrations via exec_sql RPC            |
@@ -159,14 +161,14 @@ Each batch gets its own headless `claude --print` invocation with a fresh contex
 
 | Section | Code | Lessons | Questions | Framework Items | Topics                                            |
 |---------|------|---------|-----------|-----------------|---------------------------------------------------|
-| AUD     | aud  | 13      | ~2,732    | 37              | Ethics, planning, risk, controls, evidence, sampling, reports, review/compilation, attestation, quality mgmt, government auditing |
-| FAR     | far  | 18      | ~1,005    | 60              | Financial statements, revenue, inventory, fixed/intangible assets, leases, bonds, equity, tax, govt, NFP, consolidations, contingencies, fair value |
-| REG     | reg  | 18      | ~1,027    | 60              | Circular 230, contracts, agency, business structures, basis, gains/losses, 1031, individual tax, credits, filing status, C/S corps, partnerships, tax procedures, legal duties, debtor-creditor, tax-exempt orgs |
-| BAR     | bar  | 16      | ~1,016    | 40              | Financial analysis, valuation, capital structure, derivatives, consolidations, govt reporting, fund reconciliation, interfund transactions |
-| ISC     | isc  | 16      | ~897      | 39              | IT infrastructure, ERP, data management, security frameworks, threats, privacy, SOC, SOC testing, SOC reporting |
-| TCP     | tcp  | 15      | ~889      | 44              | Individual planning, passive/at-risk, wealth transfer, retirement, international tax, trusts, capital structure tax, nontaxable dispositions, related parties |
+| AUD     | aud  | 13      | ~3,180    | 37              | Ethics, planning, risk, controls, evidence, sampling, reports, review/compilation, attestation, quality mgmt, government auditing |
+| FAR     | far  | 18      | ~2,801    | 60              | Financial statements, revenue, inventory, fixed/intangible assets, leases, bonds, equity, tax, govt, NFP, consolidations, contingencies, fair value |
+| REG     | reg  | 18      | ~2,219    | 60              | Circular 230, contracts, agency, business structures, basis, gains/losses, 1031, individual tax, credits, filing status, C/S corps, partnerships, tax procedures, legal duties, debtor-creditor, tax-exempt orgs |
+| BAR     | bar  | 16      | ~1,047    | 40              | Financial analysis, valuation, capital structure, derivatives, consolidations, govt reporting, fund reconciliation, interfund transactions |
+| ISC     | isc  | 16      | ~948      | 39              | IT infrastructure, ERP, data management, security frameworks, threats, privacy, SOC, SOC testing, SOC reporting |
+| TCP     | tcp  | 15      | ~910      | 44              | Individual planning, passive/at-risk, wealth transfer, retirement, international tax, trusts, capital structure tax, nontaxable dispositions, related parties |
 
-**Totals:** 96 lessons, ~15426 questions (target: 20,000), 280 framework items across 6 sections
+**Totals:** 96 lessons, ~11,105 questions (target: 30,000), 280 framework items across 6 sections
 
 ## Database Tables
 
@@ -215,7 +217,7 @@ All build phases complete. Active work is marketing and content connectivity.
 - **Bloom's L1/L4 rebalancing:** Complete — BAR (23), FAR (51), TCP (71), REG (169), AUD (190), ISC (284). Total: 788/788 rewrites. Tracker: `docs/blooms-l1-l4-rebalancing.md`
 - **Difficulty rebalancing:** In progress — target 30/50/20 easy/medium/hard. ~533 easy→medium rewrites needed. Tracker: `docs/difficulty-rebalancing.md`
 - **Citation coverage:** In progress — 2,970/4,993 explanations originally lacked citations (~59%). Working worst-coverage-first. AUD complete (14/14 batches, 98% coverage, migrations 00130–00145). ISC complete (14/14 batches, 100% coverage). Next: BAR→REG→FAR→TCP. Batches of 50, orchestrated via `scripts/orchestrate.ps1`. Tracker: `docs/citation-coverage.md`
-- **Question generation (20K scale):** Pipeline built — `plan-distribution.ts` → `select-generation-batch.ts` → `generate-insert-scaffold.ts` → Claude fills → `validate-migration` + `check-generation-duplicates.ts`. Core (AUD/FAR/REG): 5,000 each. Electives (BAR/ISC/TCP): ~1,667 each. ~15,015 new questions in batches of 30. Tracker: `docs/generation-progress.md`
+- **Question generation (30K scale):** Pipeline built — `plan-distribution.ts` → `select-generation-batch.ts` → `generate-insert-scaffold.ts` → Claude fills → `validate-migration` + `check-generation-duplicates.ts`. All sections target 5,000. ~18,895 new questions needed in batches of 30 (~630 batches). Live DB: 11,105 unique questions (post-dedup cleanup 2026-03-05). Tracker: `docs/generation-progress.md`
 
 ## Spec Reference
 

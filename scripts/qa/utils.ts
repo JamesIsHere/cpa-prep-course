@@ -139,6 +139,11 @@ export function normalizeStem(stem: string): string {
 				"ENTITY",
 			)
 			.toLowerCase()
+			// CPA boilerplate phrases → canonical tokens
+			.replace(/which\s+of\s+the\s+following\s+(?:statements?\s+)?(?:is|are|best|most\s+(?:likely|accurately))\b/gi, "WHICH")
+			.replace(/which\s+of\s+the\s+following\b/gi, "WHICH")
+			.replace(/(?:during\s+the\s+audit\s+of|while\s+auditing|when\s+reviewing)\b/gi, "")
+			.replace(/(?:for\s+the\s+(?:year|period)\s+ended|during\s+the\s+current\s+(?:year|period))\b/gi, "PERIOD")
 			// Dollar amounts: $1,234.56 → $X
 			.replace(/\$[\d,]+(?:\.\d+)?/g, "$X")
 			// Percentages: 15%, 3.5% → X%
@@ -155,6 +160,25 @@ export function normalizeStem(stem: string): string {
 			.replace(/\s+/g, " ")
 			.trim()
 	);
+}
+
+/**
+ * Extract significant words (≥4 chars) from a normalized stem, sorted alphabetically.
+ * Used for concept-key overlap detection.
+ */
+export function extractConceptKeys(normalizedStem: string): string[] {
+	const stopWords = new Set([
+		"this", "that", "with", "from", "have", "been", "would", "should", "could",
+		"will", "what", "when", "where", "which", "their", "there", "they", "them",
+		"than", "then", "these", "those", "into", "also", "does", "each", "most",
+		"must", "only", "over", "such", "some", "were", "your", "under", "after",
+		"about", "being", "before", "between", "entity", "period", "year", "date",
+		"following", "statement", "statements",
+	]);
+	return normalizedStem
+		.split(/\s+/)
+		.filter((w) => w.length >= 4 && !stopWords.has(w))
+		.sort();
 }
 
 // ─── Stdin reader ───────────────────────────────────────────────

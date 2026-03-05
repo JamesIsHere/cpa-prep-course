@@ -3,7 +3,7 @@
 
 import { readFileSync } from "fs";
 import { resolve } from "path";
-import { trigrams, jaccardSimilarity, normalizeStem } from "./utils";
+import { trigrams, jaccardSimilarity, normalizeStem, extractConceptKeys } from "./utils";
 import { fetchAllQuestions } from "./db-client";
 
 const migrationArg = process.argv
@@ -103,6 +103,17 @@ async function main() {
 		);
 	}
 
+	// Concept-key overlap helper: returns overlap ratio (0-1)
+	function conceptOverlap(stemA: string, stemB: string): number {
+		const keysA = extractConceptKeys(normalizeStem(stemA));
+		const keysB = extractConceptKeys(normalizeStem(stemB));
+		if (keysA.length === 0 || keysB.length === 0) return 0;
+		const setB = new Set(keysB);
+		const shared = keysA.filter((w) => setB.has(w)).length;
+		const maxLen = Math.max(keysA.length, keysB.length);
+		return shared / maxLen;
+	}
+
 	// Check each new stem against all existing
 	const hits: DuplicateHit[] = [];
 	for (const newStem of newStems) {
@@ -117,12 +128,18 @@ async function main() {
 			if (maxSize > 0 && Math.abs(sizeA - sizeB) / maxSize > 0.4) continue;
 
 			const sim = maxSimilarity(newTris, newNormTris, ex.tris, ex.normTris);
-			if (sim > 0.6) {
+			if (sim > 0.5) {
+				// Concept-key overlap check: >80% word overlap = likely-duplicate
+				const overlap = conceptOverlap(newStem, ex.stem);
+				const effectiveSeverity =
+					sim > 0.6 || overlap > 0.8
+						? "likely-duplicate"
+						: "near-duplicate";
 				hits.push({
 					newStem: newStem.slice(0, 100),
 					existingStem: ex.stem.slice(0, 100),
 					similarity: Math.round(sim * 1000) / 1000,
-					severity: sim > 0.7 ? "likely-duplicate" : "near-duplicate",
+					severity: effectiveSeverity,
 				});
 			}
 		}
@@ -147,12 +164,20 @@ async function main() {
 				newTrigrams[j].tris,
 				newTrigrams[j].normTris,
 			);
-			if (sim > 0.6) {
+			if (sim > 0.5) {
+				const overlap = conceptOverlap(
+					newTrigrams[i].stem,
+					newTrigrams[j].stem,
+				);
+				const effectiveSeverity =
+					sim > 0.6 || overlap > 0.8
+						? "likely-duplicate"
+						: "near-duplicate";
 				hits.push({
 					newStem: newTrigrams[i].stem.slice(0, 100),
 					existingStem: newTrigrams[j].stem.slice(0, 100),
 					similarity: Math.round(sim * 1000) / 1000,
-					severity: sim > 0.7 ? "likely-duplicate" : "near-duplicate",
+					severity: effectiveSeverity,
 				});
 			}
 		}
@@ -191,7 +216,7 @@ async function main() {
 
 	// Exit code: 1 if likely duplicates OR too many near-dupes in batch
 	if (likelyDupes.length > 0) {
-		console.error(`\nFAILED: ${likelyDupes.length} likely duplicates found (>0.7 similarity)`);
+		console.error(`\nFAILED: ${likelyDupes.length} likely duplicates found (>0.6 similarity or >80% concept overlap)`);
 		process.exit(1);
 	}
 
@@ -201,7 +226,7 @@ async function main() {
 	}
 
 	if (nearDupes.length > 0) {
-		console.error(`\nPASSED with ${nearDupes.length} warnings (0.6-0.7 similarity)`);
+		console.error(`\nPASSED with ${nearDupes.length} warnings (0.5-0.6 similarity)`);
 	}
 
 	process.exit(0);

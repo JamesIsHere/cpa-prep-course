@@ -1,14 +1,16 @@
 # Question Generation Progress
 
-Cross-session tracker for scaling question bank from ~5K to 20K.
+Cross-session tracker for scaling question bank to 30K (5K per section).
 
-**Goal:** 20,000 total questions across all sections.
+**Goal:** 30,000 total questions (5,000 per section × 6 sections).
 
 **Batch size:** 30 questions per migration.
 
-**Total new needed:** 14,221 questions (~532 batches).
+**Total new needed:** ~12,561 questions (~419 batches).
 
 **Difficulty targets:** 30% easy / 50% medium / 20% hard.
+
+**Note:** Baseline reset on 2026-03-05 after full dedup cleanup (migrations 00435–00440). Deleted 6,244 duplicates + 90 TODOs. Verified via `npm run sync-counts`.
 
 ## How to Resume
 
@@ -19,16 +21,20 @@ Each session:
 
 ## Section Progress
 
-| Section | Current | Target | Generated | Remaining | Batches Done | Status |
-|---------|---------|--------|-----------|-----------|--------------|--------|
-| AUD     | 5,670 | 5,000 | 0 | 0 | — | Complete |
-| FAR     | 3,675 | 5,000 | 1,020 | 695 | 34/74 | In Progress |
-| REG     | 3,809 | 5,000 | 0 | 1,191 | 0/53 | Pending |
-| BAR     | 1,347 | 5,000 | 0 | 3,653 | 0/131 | Pending |
-| ISC     | 1,188 | 5,000 | 0 | 3,812 | 0/140 | Pending |
-| TCP     | 1,150 | 5,000 | 0 | 3,850 | 0/134 | Pending |
+| Section | Current | Target | Remaining | Batches Needed | Status  |
+|---------|---------|--------|-----------|----------------|---------|
+| AUD     | 3,180   | 5,000  | 1,820     | ~61            | Pending |
+| FAR     | 2,801   | 5,000  | 2,199     | ~74            | Pending |
+| REG     | 2,219   | 5,000  | 2,781     | ~93            | Pending |
+| BAR     | 1,047   | 5,000  | 3,953     | ~132           | Pending |
+| ISC     | 948     | 5,000  | 4,052     | ~135           | Pending |
+| TCP     | 910     | 5,000  | 4,090     | ~137           | Pending |
 
 ## Topic Detail
+
+> **WARNING:** Topic-level counts below are stale (pre-cleanup). Run `npm run sync-counts` or
+> `npx tsx scripts/qa/plan-distribution.ts --section=<code>` against the live DB to get accurate
+> per-topic numbers before resuming generation for any section.
 
 ### FAR
 
