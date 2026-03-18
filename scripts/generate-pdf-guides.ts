@@ -27,8 +27,8 @@ async function main() {
 
 		console.log(`Generating PDF for ${section.toUpperCase()}...`);
 		try {
-			// Cast to bypass strict ReactElement vs PDF Document props mismatch in some build environments
-			const element = createElement(StudyGuidePdf as unknown as React.FC<{ framework: typeof framework }>, { framework }) as React.ReactElement;
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
+			const element = createElement(StudyGuidePdf as unknown as React.FC<{ framework: typeof framework }>, { framework }) as React.ReactElement<any>;
 			const buffer = await renderToBuffer(element);
 			
 			const fileName = `${section}-study-guide.pdf`;
