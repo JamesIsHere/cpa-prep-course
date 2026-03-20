@@ -28,8 +28,8 @@ async function main() {
 		console.log(`Generating PDF for ${section.toUpperCase()}...`);
 		try {
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
-			const element = createElement(StudyGuidePdf as unknown as React.FC<{ framework: typeof framework }>, { framework }) as React.ReactElement<any>;
-			const buffer = await renderToBuffer(element);
+			const element = createElement(StudyGuidePdf as unknown as React.FC<{ framework: typeof framework }>, { framework });
+			const buffer = await renderToBuffer(element as any);
 			
 			const fileName = `${section}-study-guide.pdf`;
 			const filePath = resolve(outputDir, fileName);
