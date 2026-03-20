@@ -1,5 +1,16 @@
 # Running Log
 
+## 2026-03-20 16:07
+1. Provisioned new Supabase project (flfoefqafyqxyrnumacc) under root@slayer-cpa.com
+2. Created `.env.local` with new Supabase keys (sb_publishable/sb_secret format) + existing Stripe/Vercel keys
+3. Created exec_sql RPC and applied_migrations table in Supabase SQL Editor
+4. Applied all 435 migrations — 12,282 questions, 96 lessons, 6 sections, RLS, indexes, RPCs
+5. Configured Supabase auth: email/password only, site URL, redirect URLs (no OAuth)
+6. Updated 3 Vercel env vars to point to new Supabase project
+7. Fixed pre-existing build error in `scripts/generate-pdf-guides.ts` (renderToBuffer type cast)
+8. Reverted `.env.local.example` to placeholder values (was accidentally populated with real keys)
+9. Verified: signup works, profile auto-created, Stripe webhook endpoint confirmed, production deploy green
+
 ## 2026-02-22 17:09
 1. Created `select-easy-candidates.ts` — easy→medium candidate selector with 20% per-topic floor safety
 2. Created `find-missing-citations.ts` — identifies questions with explanations lacking standard citations
