@@ -19,5 +19,6 @@
 
 ## Batch Log
 
-| Date | File | Section | Count | Notes |
-|------|------|---------|-------|-------|
+| Date       | File                          | Section | Count | Notes                                                        |
+|------------|-------------------------------|---------|-------|--------------------------------------------------------------|
+| 2026-03-23 | 00452_cleanup_far_batch1.sql  | FAR     | 5     | unstructured, no_citation, no_contrast, no_blooms, choice_cuing |
