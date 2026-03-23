@@ -23,3 +23,4 @@
 |------------|-------------------------------|---------|-------|--------------------------------------------------------------|
 | 2026-03-23 | 00452_cleanup_far_batch1.sql  | FAR     | 5     | unstructured, no_citation, no_contrast, no_blooms, choice_cuing |
 | 2026-03-23 | 00453_cleanup_far_batch2.sql  | FAR     | 50    | unstructured, no_citation, no_contrast, no_blooms, choice_cuing |
+| 2026-03-23 | 00454_cleanup_far_batch3.sql  | FAR     | 50    | unstructured, no_citation, no_contrast, no_blooms, choice_cuing |
