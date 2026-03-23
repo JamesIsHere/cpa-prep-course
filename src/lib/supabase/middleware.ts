@@ -42,6 +42,7 @@ export async function updateSession(request: NextRequest) {
 	} = await supabase.auth.getUser();
 
 	const { pathname } = request.nextUrl;
+	const isAdmin = user?.id === process.env.ADMIN_USER_ID;
 
 	// Redirect unauthenticated users away from protected routes
 	if (!user && (isProtectedRoute(pathname) || isGatedContent(pathname))) {
@@ -54,13 +55,25 @@ export async function updateSession(request: NextRequest) {
 	// Redirect authenticated users away from auth pages
 	if (user && (pathname === "/login" || pathname === "/signup")) {
 		const url = request.nextUrl.clone();
-		// Admin users go to the admin gate (review vs. user mode)
-		if (user.id === process.env.ADMIN_USER_ID) {
+		if (isAdmin) {
+			// Clear any stale mode cookie so admin sees the gate fresh after login
 			url.pathname = "/admin-gate";
-		} else {
-			url.pathname = "/dashboard";
+			const redirect = NextResponse.redirect(url);
+			redirect.cookies.delete("admin_mode");
+			return redirect;
 		}
+		url.pathname = "/dashboard";
 		return NextResponse.redirect(url);
+	}
+
+	// Admin hitting /dashboard without choosing study mode → show gate
+	if (isAdmin && pathname.startsWith("/dashboard")) {
+		const hasStudyMode = request.cookies.get("admin_mode")?.value === "study";
+		if (!hasStudyMode) {
+			const gateUrl = request.nextUrl.clone();
+			gateUrl.pathname = "/admin-gate";
+			return NextResponse.redirect(gateUrl);
+		}
 	}
 
 	return response;

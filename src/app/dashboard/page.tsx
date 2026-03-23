@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import AdminModeSwitch from "@/components/admin-mode-switch";
 import DashboardCharts from "@/components/dashboard-charts";
 import DailyGoalsCard from "@/components/daily-goals-card";
 import { DownloadStudyGuide } from "@/components/download-study-guide";
@@ -338,6 +339,7 @@ export default async function DashboardPage() {
 								<p className="text-xs text-gray-500">Review questions, manage flags, view users</p>
 							</div>
 						</Link>
+						<AdminModeSwitch />
 					</div>
 				</div>
 			)}

@@ -53,16 +53,20 @@ export default function AdminSidebar() {
 				})}
 			</nav>
 
-			<div className="px-3 py-4 border-t border-gray-100">
-				<Link
-					href="/dashboard"
-					className="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-gray-400 hover:text-gray-600 hover:bg-gray-50 transition-colors"
+			<div className="px-3 py-4 border-t border-gray-100 space-y-1">
+				<button
+					type="button"
+					onClick={() => {
+						document.cookie = "admin_mode=study; path=/; max-age=86400; SameSite=Lax";
+						window.location.href = "/dashboard";
+					}}
+					className="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-gray-400 hover:text-gray-600 hover:bg-gray-50 transition-colors w-full"
 				>
 					<svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-						<path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+						<path strokeLinecap="round" strokeLinejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
 					</svg>
-					Back to Dashboard
-				</Link>
+					Switch to Study Mode
+				</button>
 			</div>
 		</aside>
 	);
