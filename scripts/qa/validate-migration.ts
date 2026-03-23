@@ -121,6 +121,23 @@ function validateQuestion(q: ParsedQuestion): void {
 		});
 	}
 
+	// Explanation structure: must use Correct (X) / Wrong (Y) format
+	if (!/^Correct\s*\([A-D]\)/i.test(explanationClean)) {
+		issues.push({
+			line: q.approxLine,
+			severity: "warn",
+			message: `Explanation missing structured format (should start with "Correct (X):"): Q${q.id ?? "?"}`,
+		});
+	}
+	const wrongCount = (explanationClean.match(/Wrong\s*\([A-D]\)/gi) ?? []).length;
+	if (wrongCount < 2) {
+		issues.push({
+			line: q.approxLine,
+			severity: "warn",
+			message: `Explanation has ${wrongCount} "Wrong (X)" blocks (expected 3): Q${q.id ?? "?"}`,
+		});
+	}
+
 	// Parse choices
 	let choices: string[] = [];
 	try {
@@ -168,15 +185,21 @@ function validateQuestion(q: ParsedQuestion): void {
 		}
 	}
 
-	// Choice length ratio
+	// Choice length ratio — 2x is the hard limit, 3x is legacy tolerance
 	const choiceLengths = choices.map((c) => c.length);
 	const maxLen = Math.max(...choiceLengths);
 	const minLen = Math.min(...choiceLengths);
 	if (minLen > 0 && maxLen / minLen > 3) {
 		issues.push({
 			line: q.approxLine,
+			severity: "error",
+			message: `Choice length ratio ${(maxLen / minLen).toFixed(1)}x exceeds 3x limit (longest/shortest)`,
+		});
+	} else if (minLen > 0 && maxLen / minLen > 2) {
+		issues.push({
+			line: q.approxLine,
 			severity: "warn",
-			message: `Choice length ratio ${(maxLen / minLen).toFixed(1)}x (longest/shortest)`,
+			message: `Choice length ratio ${(maxLen / minLen).toFixed(1)}x exceeds 2x target (longest/shortest)`,
 		});
 	}
 

@@ -572,18 +572,20 @@ RULES:
    entity, dollar amounts, dates (20-60 words). No "What is X?" for medium/hard.
 3. CHOICES: 4 parallel-grammar choices. Wrong answers = real misconceptions.
    No all/none of above. Longest max 2x shortest.
-4. EXPLANATION (50-100 words, three parts):
-   a) Cite standard ($cit) by section number
-   b) Explain why correct
-   c) Contrast language for most plausible wrong answer
+4. EXPLANATION (mandatory structured format, 50-100 words):
+   Correct (X): [Cite standard ($cit) by section number]. [Explain why correct in 2-3 sentences].
+   Wrong (Y): [Capitalize first word. Why this choice is wrong — 1-2 sentences].
+   Wrong (Z): [Why wrong].
+   Wrong (W): [Why wrong].
+   Every explanation MUST start with "Correct (X):" and contain three "Wrong (X):" blocks.
 5. VARIETY: Each question in this batch must test a DIFFERENT concept identified in your research.
    Vary entities, amounts, correct_index distribution (roughly equal 0-3).
 6. SEMANTIC UNIQUENESS: Changing entity names, dollar amounts, or percentages does NOT make
    a question unique. "Acme Corp reports `$50,000" and "Baker LLC reports `$75,000" testing the
    same concept are duplicates. Each question must test a genuinely different rule, exception,
    threshold, or scenario.
-6. SQL: Escape single quotes as ''. Choices as valid JSON arrays.
-   section_id = $($batchSpec.sectionId). Include cognitive_level column.
+7. SQL: Use `$EXPL$` dollar-quote delimiters for stem, choices, and explanation values (NOT `$$` — content has dollar amounts).
+   Choices as valid JSON arrays. section_id = $($batchSpec.sectionId). Include cognitive_level column.
 
 STEPS:
 1. Perform Conceptual Research as defined in Rule 1.

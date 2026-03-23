@@ -132,10 +132,13 @@ async function main() {
 		const isLast = i === spec.count - 1;
 		const comma = isLast ? "" : ",";
 
+		const correctLetter = "ABCD"[i % 4];
+		const wrongLetters = ["A", "B", "C", "D"].filter((l) => l !== correctLetter);
+
 		lines.push("");
 		lines.push(`-- Q${i + 1}: ${a.difficulty} / ${levelLabel} — TODO: brief concept description`);
 		lines.push(
-			`(${spec.sectionId}, '${spec.topic}', 'TODO: write ${levelLabel} stem for ${a.difficulty} question', '["TODO: choice A", "TODO: choice B", "TODO: choice C", "TODO: choice D"]'::jsonb, 0, 'TODO: write explanation with citation and contrast', '${a.difficulty}', ${a.cognitiveLevel})${comma}`,
+			`(${spec.sectionId}, '${spec.topic}', $EXPL$TODO: write ${levelLabel} stem for ${a.difficulty} question$EXPL$, $EXPL$["TODO: choice A", "TODO: choice B", "TODO: choice C", "TODO: choice D"]$EXPL$::jsonb, ${i % 4}, $EXPL$TODO: Correct (${correctLetter}): [cite standard + explain]. Wrong (${wrongLetters[0]}): [why wrong]. Wrong (${wrongLetters[1]}): [why wrong]. Wrong (${wrongLetters[2]}): [why wrong].$EXPL$, '${a.difficulty}', ${a.cognitiveLevel})${comma}`,
 		);
 	}
 
