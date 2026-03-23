@@ -13,7 +13,8 @@
  *   npx tsx scripts/qa/select-cleanup-candidates.ts --section=far --limit=50 [--exclude=ids.json]
  */
 
-import "dotenv/config";
+import dotenv from "dotenv";
+dotenv.config({ path: ".env.local" });
 import { createClient } from "@supabase/supabase-js";
 import { parseArgs } from "node:util";
 import { readFileSync } from "node:fs";

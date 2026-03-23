@@ -18,7 +18,7 @@ param(
     [ValidateSet('aud','far','reg','bar','isc','tcp')]
     [string]$Section,
 
-    [ValidateSet('citation','difficulty','blooms','generate','moderate','verify')]
+    [ValidateSet('citation','difficulty','blooms','generate','moderate','verify','cleanup')]
     [string]$Mode = 'citation',
 
     [Parameter(Mandatory)]
@@ -60,6 +60,7 @@ $TrackerMap = @{
     'blooms'    = Join-Path (Join-Path $RepoRoot 'docs') 'blooms-rebalancing.md'
     'generate'  = Join-Path (Join-Path $RepoRoot 'docs') 'generation-progress.md'
     'verify'    = Join-Path (Join-Path $RepoRoot 'docs') 'verification-progress.md'
+    'cleanup'   = Join-Path (Join-Path $RepoRoot 'docs') 'cleanup-progress.md'
 }
 $TrackerFile = $TrackerMap[$Mode]
 
@@ -71,6 +72,7 @@ $SelectorMap = @{
     'generate'  = 'select-generation-batch.ts'
     'moderate'  = 'pull-moderate-candidates.ts'
     'verify'    = 'select-verify-candidates.ts'
+    'cleanup'   = 'select-cleanup-candidates.ts'
 }
 
 # Section citation patterns (passed to Claude in prompt)
@@ -91,6 +93,7 @@ $ModeLabel = switch ($Mode) {
     'generate'  { 'Question generation' }
     'moderate'  { 'Quality upgrade' }
     'verify'    { 'Correctness verification' }
+    'cleanup'   { 'FAR cleanup' }
 }
 
 # File pattern for detecting existing batches
@@ -101,6 +104,7 @@ $FilePattern = switch ($Mode) {
     'generate'  { "*_generate_${Section}_batch*.sql" }
     'moderate'  { "*_upgrade_${Section}_batch*.sql" }
     'verify'    { "*_verify_fix_${Section}_batch*.sql" }
+    'cleanup'   { "*_cleanup_${Section}_batch*.sql" }
 }
 
 # ═══════════════════════════════════════════════════════════════
@@ -227,6 +231,9 @@ function Select-Candidates {
     if ($Mode -eq 'generate') {
         # Generate mode: select-generation-batch.ts has its own args
         $selectArgs = @("--section=$Section", "--batch-size=$BatchSize")
+    } elseif ($Mode -eq 'cleanup') {
+        # Cleanup mode: uses --limit and --exclude
+        $selectArgs = @("--section=$Section", "--limit=$BatchSize", "--exclude=$excludeFile")
     } else {
         $selectArgs = @("--section=$Section", "--count=$BatchSize", "--exclude-ids=$excludeFile")
         if ($Mode -eq 'blooms') {
@@ -268,6 +275,20 @@ function New-Scaffold {
     if ($Mode -eq 'generate') {
         # Generate mode: pipe batch spec to generate-insert-scaffold.ts
         $scriptPath = Join-Path $QaScripts 'generate-insert-scaffold.ts'
+        $genArgs = @("--section=$Section", "--batch=$BatchNum")
+
+        Push-Location $RepoRoot
+        $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
+        try {
+            Get-Content $CandidateFile -Raw | & npx tsx $scriptPath @genArgs 2>&1 | Out-Null
+            $exitCode = $LASTEXITCODE
+        } finally {
+            $ErrorActionPreference = $prevEAP
+            Pop-Location
+        }
+    } elseif ($Mode -eq 'cleanup') {
+        # Cleanup mode: custom scaffold generator
+        $scriptPath = Join-Path $QaScripts 'generate-cleanup-scaffold.ts'
         $genArgs = @("--section=$Section", "--batch=$BatchNum")
 
         Push-Location $RepoRoot
@@ -649,6 +670,71 @@ When finished, output this EXACT line as your final message:
 ORCHESTRATOR_RESULT:{"status":"ok","questions":N,"file":"$fn"}
 
 If unrecoverable error:
+ORCHESTRATOR_RESULT:{"status":"error","message":"brief description"}
+"@
+        }
+
+        'cleanup' {
+            $candidates = Get-Content $CandidateFile -Raw | ConvertFrom-Json
+            $batchCount = @($candidates).Count
+
+            return @"
+You are running headless as part of an automated batch pipeline. Execute autonomously — do not ask questions, do not create task lists, do not use TodoWrite.
+
+TASK: FAR cleanup for $su section, batch $BatchNum ($batchCount questions).
+
+FILES:
+- Migration scaffold (fill every TODO): $sf
+- Original questions with issues: $cf
+- Progress tracker to update: $tf
+
+INSTRUCTIONS:
+
+1. Read the scaffold and candidate JSON. Each candidate lists its issues (unstructured, no_citation, no_contrast, no_blooms, choice_cuing, both_ab).
+
+2. For EVERY TODO placeholder, apply fixes:
+
+   EXPLANATION FORMAT (mandatory — this is the primary fix):
+   Correct (X): [Cite the authoritative standard by specific section number, e.g., ASC 606-10-25-1, GASB 34-15]. [Explain why correct in 2-3 sentences].
+   Wrong (Y): [Capitalize first word. Why this choice is incorrect — 1-2 sentences].
+   Wrong (Z): [Why wrong].
+   Wrong (W): [Why wrong].
+
+   CHOICE FIXES (only for questions marked choice_cuing or both_ab):
+   - Rewrite all 4 choices with parallel grammatical structure
+   - Longest choice must be no more than 2x the length of the shortest
+   - No "all of the above", "none of the above", "both A and B"
+   - Keep the same correct answer concept
+
+   COGNITIVE LEVEL (for questions marked no_blooms — set cognitive_level):
+   - 1 = Remember (definitional recall: "What is X?")
+   - 2 = Understand (explain, classify, distinguish)
+   - 3 = Apply (calculate, apply rule to scenario with numbers)
+   - 4 = Analyze (evaluate, compare, multi-step judgment)
+
+   STEM FIXES (only for questions needing choice rewrites):
+   - Keep the same tested concept and difficulty level
+   - Improve clarity if needed but don't change the fundamental question
+
+3. Standards to cite ($cit). Every explanation MUST reference a specific standard section.
+
+4. CRITICAL SQL rules:
+   - Escape all single quotes as '' (two single quotes)
+   - Format choices as valid JSON arrays: ["choice1","choice2","choice3","choice4"]
+   - Keep correct_index unchanged unless choices were reordered
+   - Use dollar-quote delimiters ($$...$$) for all string values
+
+5. After filling ALL TODOs, validate:
+   npm run validate-migration $sf
+   Fix any errors and re-validate. Warnings are acceptable.
+
+6. Update tracker at ${tf}:
+   - Add a row to the log with: today's date, filename ($fn), section ($su), question count, issues fixed, notes
+
+When finished, output this EXACT line as your final message:
+ORCHESTRATOR_RESULT:{"status":"ok","questions":$batchCount,"file":"$fn"}
+
+If you encounter an unrecoverable error, output:
 ORCHESTRATOR_RESULT:{"status":"error","message":"brief description"}
 "@
         }
