@@ -45,7 +45,7 @@ export default async function DashboardPage() {
 			.eq("id", user.id)
 			.single();
 		
-		if (profile && !profile.onboarding_completed) {
+		if (profile && !profile.onboarding_completed && user.id !== process.env.ADMIN_USER_ID) {
 			redirect("/onboarding");
 		}
 
@@ -329,13 +329,13 @@ export default async function DashboardPage() {
 					</h2>
 					<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 						<Link
-							href="/admin/review"
+							href="/admin"
 							className="border border-gray-200 rounded-xl p-4 hover:border-gray-300 hover:bg-gray-50 transition-colors flex items-center gap-3"
 						>
-							<span className="text-lg">&#128269;</span>
+							<span className="text-lg">&#128737;</span>
 							<div>
-								<p className="font-medium text-gray-900 text-sm">Review Questions</p>
-								<p className="text-xs text-gray-500">Work through every question, flag issues, track progress</p>
+								<p className="font-medium text-gray-900 text-sm">Admin Hub</p>
+								<p className="text-xs text-gray-500">Review questions, manage flags, view users</p>
 							</div>
 						</Link>
 					</div>

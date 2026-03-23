@@ -78,6 +78,17 @@ export const flagQuestionSchema = z.object({
 
 export const markReviewedSchema = z.object({
 	questionId: z.number().int(),
+	notes: z.string().max(2000).optional(),
+});
+
+export const saveCursorSchema = z.object({
+	sectionCode: z.string().min(2).max(4),
+	questionId: z.number().int(),
+});
+
+export const resolveFlagSchema = z.object({
+	flagId: z.number().int(),
+	resolutionNotes: z.string().max(1000).default(""),
 });
 
 export const feedbackSchema = z.object({

@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
-import { isAdmin } from "@/lib/admin";
 import { getBlueprintSection } from "@/lib/blueprint-utils";
 import { createClient } from "@/lib/supabase/server";
 import type { ReviewQuestion, QuestionFlag } from "@/lib/quiz";
@@ -45,7 +44,7 @@ export default async function AdminReviewPage({ searchParams }: PageProps) {
 		data: { user },
 	} = await supabase.auth.getUser();
 
-	if (!user || !isAdmin(user.id)) {
+	if (!user) {
 		redirect("/dashboard");
 	}
 
@@ -160,14 +159,16 @@ export default async function AdminReviewPage({ searchParams }: PageProps) {
 		flagsByQuestion.set(f.question_id, arr);
 	}
 
-	// Batch-fetch reviewed status
+	// Batch-fetch reviewed status + notes
 	const { data: revRows } = await supabase
 		.from("question_reviews")
-		.select("question_id")
+		.select("question_id, notes")
 		.eq("user_id", user.id)
 		.in("question_id", questionIds.length > 0 ? questionIds : [0]);
 
-	const reviewedSet = new Set((revRows ?? []).map((r) => r.question_id));
+	const reviewedMap = new Map(
+		(revRows ?? []).map((r) => [r.question_id, r.notes ?? ""]),
+	);
 
 	const questions: ReviewQuestion[] = questionRows.map((q) => ({
 		id: q.id,
@@ -179,7 +180,8 @@ export default async function AdminReviewPage({ searchParams }: PageProps) {
 		difficulty: q.difficulty,
 		cognitive_level: q.cognitive_level,
 		flags: flagsByQuestion.get(q.id) ?? [],
-		reviewed: reviewedSet.has(q.id),
+		reviewed: reviewedMap.has(q.id),
+		notes: reviewedMap.get(q.id) ?? "",
 	}));
 
 	return renderPage(questions, hasMore, total ?? 0, reviewedCount, section);

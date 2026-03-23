@@ -53,9 +53,14 @@ export async function updateSession(request: NextRequest) {
 
 	// Redirect authenticated users away from auth pages
 	if (user && (pathname === "/login" || pathname === "/signup")) {
-		const dashboardUrl = request.nextUrl.clone();
-		dashboardUrl.pathname = "/dashboard";
-		return NextResponse.redirect(dashboardUrl);
+		const url = request.nextUrl.clone();
+		// Admin users go to the admin gate (review vs. user mode)
+		if (user.id === process.env.ADMIN_USER_ID) {
+			url.pathname = "/admin-gate";
+		} else {
+			url.pathname = "/dashboard";
+		}
+		return NextResponse.redirect(url);
 	}
 
 	return response;

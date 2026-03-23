@@ -20,7 +20,7 @@ export default function LoginForm() {
 		setLoading(true);
 
 		const supabase = createClient();
-		const { error: authError } = await supabase.auth.signInWithPassword({
+		const { data, error: authError } = await supabase.auth.signInWithPassword({
 			email,
 			password,
 		});
@@ -31,7 +31,13 @@ export default function LoginForm() {
 			return;
 		}
 
-		router.push(next);
+		// Admin users go to the gate (review vs. study mode)
+		const adminId = process.env.NEXT_PUBLIC_ADMIN_USER_ID;
+		if (adminId && data.user?.id === adminId) {
+			router.push("/admin-gate");
+		} else {
+			router.push(next);
+		}
 		router.refresh();
 	}
 

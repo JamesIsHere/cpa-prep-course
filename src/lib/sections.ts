@@ -13,7 +13,8 @@ export interface Section {
 	lessons: Lesson[];
 }
 
-export const sections: Section[] = [
+// All sections (used internally for lookups — always complete)
+const allSections: Section[] = [
 	{
 		code: "aud",
 		title: "Auditing and Attestation",
@@ -646,8 +647,19 @@ export const sections: Section[] = [
 	},
 ];
 
+// Filter to active sections (set NEXT_PUBLIC_ACTIVE_SECTIONS=far,aud to control)
+const activeCodes = (process.env.NEXT_PUBLIC_ACTIVE_SECTIONS ?? "")
+	.split(",")
+	.map((s) => s.trim().toLowerCase())
+	.filter(Boolean);
+
+export const sections: Section[] =
+	activeCodes.length > 0
+		? allSections.filter((s) => activeCodes.includes(s.code))
+		: allSections;
+
 export function getSection(slug: string): Section | undefined {
-	return sections.find((s) => s.slug === slug);
+	return allSections.find((s) => s.slug === slug);
 }
 
 export function getLesson(

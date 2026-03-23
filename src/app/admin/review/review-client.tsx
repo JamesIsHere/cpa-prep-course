@@ -117,8 +117,17 @@ export default function ReviewClient({
 		return () => window.removeEventListener("keydown", handleKey);
 	});
 
-	// Mark reviewed on reveal
+	// Reveal just saves cursor position — does NOT mark reviewed
 	async function handleReveal(questionId: number) {
+		await fetch("/api/admin/review/cursor", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify({ sectionCode: currentSection, questionId }),
+		});
+	}
+
+	// Explicit "Mark Reviewed" — only this counts
+	async function handleMarkReviewed(questionId: number) {
 		await fetch("/api/admin/review/progress", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
@@ -127,6 +136,18 @@ export default function ReviewClient({
 		setReviewed((r) => r + 1);
 		setQuestions((qs) =>
 			qs.map((q) => (q.id === questionId ? { ...q, reviewed: true } : q)),
+		);
+	}
+
+	// Save notes
+	async function handleSaveNotes(questionId: number, notes: string) {
+		await fetch("/api/admin/review/progress", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify({ questionId, notes }),
+		});
+		setQuestions((qs) =>
+			qs.map((q) => (q.id === questionId ? { ...q, notes } : q)),
 		);
 	}
 
@@ -278,6 +299,8 @@ export default function ReviewClient({
 						onFlag={handleFlag}
 						onRemoveFlag={handleRemoveFlag}
 						onReveal={handleReveal}
+						onSaveNotes={handleSaveNotes}
+						onMarkReviewed={handleMarkReviewed}
 					/>
 
 					{/* Navigation */}

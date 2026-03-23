@@ -12,6 +12,7 @@ export const config = {
 		"/exam/:path*",
 		"/sections/:path*",
 		"/admin/:path*",
+		"/admin-gate",
 		"/login",
 		"/signup",
 		"/update-password",

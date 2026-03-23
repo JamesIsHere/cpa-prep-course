@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Question Pipeline — Slayer CPA</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: system-ui, -apple-system, sans-serif; background: #f8fafc; color: #1e293b; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
+  h1 { font-size: 28px; font-weight: 800; margin-bottom: 4px; }
+  .subtitle { font-size: 14px; color: #64748b; margin-bottom: 32px; }
+
+  /* Pipeline flow */
+  .pipeline { display: flex; flex-direction: column; gap: 0; }
+  .stage { position: relative; }
+  .stage-card {
+    background: white; border: 2px solid #e2e8f0; border-radius: 16px;
+    padding: 24px; transition: all 0.2s; cursor: pointer;
+  }
+  .stage-card:hover { border-color: #10b981; box-shadow: 0 4px 12px rgba(16,185,129,0.1); }
+  .stage-card.active { border-color: #10b981; box-shadow: 0 4px 16px rgba(16,185,129,0.15); }
+
+  .stage-header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .stage-num {
+    width: 32px; height: 32px; border-radius: 50%; display: flex;
+    align-items: center; justify-content: center; font-size: 13px;
+    font-weight: 700; color: white; flex-shrink: 0;
+  }
+  .stage-title { font-size: 16px; font-weight: 700; }
+  .stage-desc { font-size: 13px; color: #64748b; margin-left: 44px; }
+
+  /* Arrow connector */
+  .arrow {
+    display: flex; justify-content: center; padding: 4px 0;
+  }
+  .arrow svg { width: 24px; height: 24px; color: #cbd5e1; }
+
+  /* Detail panel */
+  .detail-panel {
+    display: none; margin-top: 16px; margin-left: 44px;
+    background: #f1f5f9; border-radius: 12px; padding: 20px;
+    font-size: 13px; line-height: 1.7;
+  }
+  .stage-card.active .detail-panel { display: block; }
+
+  .detail-panel h4 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; margin-bottom: 8px; margin-top: 16px; }
+  .detail-panel h4:first-child { margin-top: 0; }
+  .detail-panel ul { padding-left: 16px; }
+  .detail-panel li { margin-bottom: 4px; }
+  .detail-panel code { background: #e2e8f0; padding: 1px 5px; border-radius: 4px; font-size: 12px; font-family: 'SF Mono', Consolas, monospace; }
+  .detail-panel .file-tag {
+    display: inline-block; background: #dbeafe; color: #1e40af; padding: 2px 8px;
+    border-radius: 6px; font-size: 11px; font-family: monospace; margin: 2px;
+  }
+
+  /* Colors per stage */
+  .bg-plan { background: #6366f1; }
+  .bg-select { background: #8b5cf6; }
+  .bg-scaffold { background: #a855f7; }
+  .bg-fill { background: #ec4899; }
+  .bg-validate { background: #f59e0b; }
+  .bg-dedup { background: #f97316; }
+  .bg-rebalance { background: #14b8a6; }
+  .bg-qa { background: #10b981; }
+  .bg-verify { background: #3b82f6; }
+  .bg-deploy { background: #059669; }
+
+  /* Rebalancing sub-passes */
+  .sub-passes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 12px; }
+  .sub-pass {
+    background: white; border: 1px solid #e2e8f0; border-radius: 10px;
+    padding: 14px; font-size: 12px;
+  }
+  .sub-pass-title { font-weight: 700; font-size: 13px; margin-bottom: 4px; }
+  .sub-pass-stat { color: #64748b; }
+
+  /* Quality table */
+  .quality-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px; }
+  .quality-table th { text-align: left; padding: 6px 8px; background: #e2e8f0; font-weight: 600; }
+  .quality-table td { padding: 6px 8px; border-bottom: 1px solid #e2e8f0; }
+  .quality-table .score-critical { color: #dc2626; font-weight: 700; }
+  .quality-table .score-moderate { color: #d97706; font-weight: 700; }
+  .quality-table .score-good { color: #059669; font-weight: 700; }
+
+  /* Stats bar */
+  .stats-bar {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+    margin-bottom: 32px;
+  }
+  .stat-card {
+    background: white; border: 1px solid #e2e8f0; border-radius: 12px;
+    padding: 16px; text-align: center;
+  }
+  .stat-value { font-size: 28px; font-weight: 800; color: #10b981; }
+  .stat-label { font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px; }
+
+  /* Legend */
+  .legend {
+    display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;
+    padding: 16px; background: white; border: 1px solid #e2e8f0; border-radius: 12px;
+  }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #64748b; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+  /* Orchestrator modes */
+  .modes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 12px; }
+  .mode-card {
+    background: white; border: 1px solid #e2e8f0; border-radius: 8px;
+    padding: 10px; font-size: 12px;
+  }
+  .mode-name { font-weight: 700; font-size: 13px; }
+  .mode-desc { color: #64748b; margin-top: 2px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Question Pipeline</h1>
+  <p class="subtitle">How questions move from idea to production across the Slayer CPA platform. Click any stage to expand.</p>
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stat-card">
+      <div class="stat-value">12,282</div>
+      <div class="stat-label">Live Questions</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">30,000</div>
+      <div class="stat-label">Target</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">8.2</div>
+      <div class="stat-label">Avg QA Score</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">100%</div>
+      <div class="stat-label">Score 7+</div>
+    </div>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot bg-plan"></div> Planning</div>
+    <div class="legend-item"><div class="legend-dot bg-fill"></div> AI Generation</div>
+    <div class="legend-item"><div class="legend-dot bg-validate"></div> Validation</div>
+    <div class="legend-item"><div class="legend-dot bg-rebalance"></div> Rebalancing</div>
+    <div class="legend-item"><div class="legend-dot bg-qa"></div> Quality Audit</div>
+    <div class="legend-item"><div class="legend-dot bg-verify"></div> Verification</div>
+  </div>
+
+  <!-- Pipeline -->
+  <div class="pipeline">
+
+    <!-- Stage 1: Planning -->
+    <div class="stage">
+      <div class="stage-card" onclick="toggle(this)">
+        <div class="stage-header">
+          <div class="stage-num bg-plan">1</div>
+          <div class="stage-title">Planning & Distribution</div>
+        </div>
+        <div class="stage-desc">Compute per-topic targets from AICPA Blueprint weights. 5,000 questions per section, 30K total.</div>
+        <div class="detail-panel">
+          <h4>What happens</h4>
+          <ul>
+            <li>Blueprint structure (6 sections, areas, groups, topics) defines the target distribution</li>
+            <li>Each topic gets a proportional question count based on exam weight</li>
+            <li>Difficulty split: <strong>30% easy / 50% medium / 20% hard</strong></li>
+            <li>Bloom's targets: L1 20-25% / L2 35% / L3 20-30% / L4 15%</li>
+          </ul>
+          <h4>Key files</h4>
+          <span class="file-tag">scripts/qa/plan-distribution.ts</span>
+          <span class="file-tag">docs/generation-plan.json</span>
+          <span class="file-tag">src/lib/blueprint.ts</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+
+    <!-- Stage 2: Batch Selection -->
+    <div class="stage">
+      <div class="stage-card" onclick="toggle(this)">
+        <div class="stage-header">
+          <div class="stage-num bg-select">2</div>
+          <div class="stage-title">Batch Selection</div>
+        </div>
+        <div class="stage-desc">Pick the next topic with the biggest gap. Gather context: existing stems, lesson content, frameworks.</div>
+        <div class="detail-panel">
+          <h4>Selection strategy</h4>
+          <ul>
+            <li><strong>Biggest-gap-first:</strong> topic farthest from its target gets the next batch</li>
+            <li>30 questions per batch (default), 10 for verification</li>
+            <li>Existing stems fetched (up to 2,000) for dedup context</li>
+            <li>Lesson MDX content + study framework items included for rich context</li>
+          </ul>
+          <h4>Mode-specific selectors</h4>
+          <div class="modes-grid">
+            <div class="mode-card"><div class="mode-name">generate</div><div class="mode-desc">select-generation-batch.ts</div></div>
+            <div class="mode-card"><div class="mode-name">citation</div><div class="mode-desc">find-missing-citations.ts</div></div>
+            <div class="mode-card"><div class="mode-name">difficulty</div><div class="mode-desc">select-easy-candidates.ts</div></div>
+            <div class="mode-card"><div class="mode-name">blooms</div><div class="mode-desc">select-l2-candidates.ts</div></div>
+            <div class="mode-card"><div class="mode-name">verify</div><div class="mode-desc">select-verify-candidates.ts</div></div>
+            <div class="mode-card"><div class="mode-name">moderate</div><div class="mode-desc">QA score 4-6 selector</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+
+    <!-- Stage 3: Scaffold -->
+    <div class="stage">
+      <div class="stage-card" onclick="toggle(this)">
+        <div class="stage-header">
+          <div class="stage-num bg-scaffold">3</div>
+          <div class="stage-title">Scaffold Generation</div>
+        </div>
+        <div class="stage-desc">Create SQL migration template with TODO placeholders for Claude to fill.</div>
+        <div class="detail-panel">
+          <h4>Scaffold types</h4>
+          <ul>
+            <li><strong>INSERT</strong> (generate mode): 30 new question tuples with TODO placeholders</li>
+            <li><strong>UPDATE</strong> (citation/difficulty/blooms/moderate): rewrite existing questions</li>
+            <li><strong>UPDATE fix</strong> (verify mode): targeted corrections for failed questions</li>
+          </ul>
+          <h4>Each question slot includes</h4>
+          <ul>
+            <li>Section ID, topic, difficulty target, Bloom's level target</li>
+            <li>TODO placeholders for: stem, choices JSON, correct_index, explanation</li>
+            <li>Bloom's-to-difficulty alignment (L1 prefers easy, L4 prefers hard)</li>
+          </ul>
+          <h4>Key files</h4>
+          <span class="file-tag">scripts/qa/generate-insert-scaffold.ts</span>
+          <span class="file-tag">scripts/qa/generate-migration.ts</span>
+          <span class="file-tag">scripts/qa/generate-fix-scaffold.ts</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+
+    <!-- Stage 4: Claude Fill -->
+    <div class="stage">
+      <div class="stage-card" onclick="toggle(this)">
+        <div class="stage-header">
+          <div class="stage-num bg-fill">4</div>
+          <div class="stage-title">AI Fill-In (Headless Claude)</div>
+        </div>
+        <div class="stage-desc">Each batch runs in a fresh Claude context. Fills all TODOs with substantive CPA exam content.</div>
+        <div class="detail-panel">
+          <h4>How it works</h4>
+          <ul>
+            <li>Orchestrator (<code>scripts/orchestrate.ps1</code>) runs <code>claude --print</code> per batch</li>
+            <li>Fresh context window per batch (prevents overflow on 100+ batch runs)</li>
+            <li>Claude receives: scaffold file, lesson content, frameworks, existing stems</li>
+            <li>~3-5 minutes per batch</li>
+          </ul>
+          <h4>Content requirements</h4>
+          <ul>
+            <li><strong>Stems:</strong> L1 = 10-20 words, L2+ = 20-60 words with scenario (entity, amounts, dates)</li>
+            <li><strong>Choices:</strong> 4 parallel-grammar options, no "all/none of above"</li>
+            <li><strong>Explanation:</strong> 50-100 words. Cite standard, explain correct, contrast wrong answer</li>
+            <li><strong>Variety:</strong> Each question tests a different concept</li>
+          </ul>
+          <h4>Key file</h4>
+          <span class="file-tag">scripts/orchestrate.ps1</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+
+    <!-- Stage 5: Validation -->
+    <div class="stage">
+      <div class="stage-card" onclick="toggle(this)">
+        <div class="stage-header">
+          <div class="stage-num bg-validate">5</div>
+          <div class="stage-title">Pre-Commit Validation</div>
+        </div>
+        <div class="stage-desc">Every migration must pass the validator before commit. Checks stem length, citations, distractors, JSON format.</div>
+        <div class="detail-panel">
+          <h4>Validation checks</h4>
+          <table class="quality-table">
+            <tr><th>Check</th><th>Severity</th><th>Rule</th></tr>
+            <tr><td>TODO placeholders</td><td class="score-critical">ERROR</td><td>No "TODO" in stem or explanation</td></tr>
+            <tr><td>Stem length</td><td class="score-moderate">WARN/ERR</td><td>L1: 8+ words, L2+: 12+ words</td></tr>
+            <tr><td>Explanation length</td><td class="score-critical">ERROR</td><td>30+ words required</td></tr>
+            <tr><td>Standard citation</td><td class="score-moderate">WARN</td><td>Must cite ASC, AU-C, IRC, GASB, etc.</td></tr>
+            <tr><td>Contrast language</td><td class="score-moderate">WARN</td><td>Must include while/whereas/however</td></tr>
+            <tr><td>Banned distractors</td><td class="score-critical">ERROR</td><td>No "all of above" / "none of above"</td></tr>
+            <tr><td>Choice length parity</td><td class="score-critical">ERROR</td><td>Longest choice max 2x shortest</td></tr>
+            <tr><td>Valid topic</td><td class="score-critical">ERROR</td><td>Must exist in blueprint.ts</td></tr>
+            <tr><td>Choices JSON</td><td class="score-critical">ERROR</td><td>Valid JSON array of 4 strings</td></tr>
+          </table>
+          <h4>Key file</h4>
+          <span class="file-tag">scripts/qa/validate-migration.ts</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+
+    <!-- Stage 6: Dedup -->
+    <div class="stage">
+      <div class="stage-card" onclick="toggle(this)">
+        <div class="stage-header">
+          <div class="stage-num bg-dedup">6</div>
+          <div class="stage-title">Deduplication</div>
+        </div>
+        <div class="stage-desc">Trigram-based Jaccard similarity catches near-duplicates before they ship. 85%+ = blocked, 70%+ = warned.</div>
+        <div class="detail-panel">
+          <h4>How it works</h4>
+          <ul>
+            <li>Compares new stems against all existing stems in the section</li>
+            <li>Uses both raw and normalized trigrams (handles case/punctuation variance)</li>
+            <li><strong>85%+ similarity</strong> = likely duplicate (ERROR, blocks commit)</li>
+            <li><strong>70-84% similarity</strong> = near duplicate (WARN, max 3 allowed)</li>
+            <li>Post-generation cleanup deleted 6,244 duplicates + 90 TODO leftovers</li>
+          </ul>
+          <h4>Key files</h4>
+          <span class="file-tag">scripts/qa/check-generation-duplicates.ts</span>
+          <span class="file-tag">scripts/qa/utils.ts</span> (trigram functions)
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+
+    <!-- Stage 7: Rebalancing -->
+    <div class="stage">
+      <div class="stage-card" onclick="toggle(this)">
+        <div class="stage-header">
+          <div class="stage-num bg-rebalance">7</div>
+          <div class="stage-title">Post-Generation Rebalancing</div>
+        </div>
+        <div class="stage-desc">Three parallel passes normalize the question bank to target distributions.</div>
+        <div class="detail-panel">
+          <div class="sub-passes">
+            <div class="sub-pass">
+              <div class="sub-pass-title">Bloom's Rebalancing</div>
+              <div class="sub-pass-stat">1,177 rewrites complete</div>
+              <div style="margin-top:6px; font-size:11px; color:#64748b;">
+                L3: 389 rewrites (REG 25%, BAR 30%, FAR 26%, TCP 20%)<br>
+                L1/L4: 788 rewrites (all 6 sections)
+              </div>
+            </div>
+            <div class="sub-pass">
+              <div class="sub-pass-title">Difficulty Rebalancing</div>
+              <div class="sub-pass-stat">Target: 30/50/20 easy/med/hard</div>
+              <div style="margin-top:6px; font-size:11px; color:#64748b;">
+                ~533 easy-to-medium rewrites needed<br>
+                Min 20% easy floor per topic
+              </div>
+            </div>
+            <div class="sub-pass">
+              <div class="sub-pass-title">Citation Backfill</div>
+              <div class="sub-pass-stat">AUD 98% / ISC 100%</div>
+              <div style="margin-top:6px; font-size:11px; color:#64748b;">
+                Started at 59% missing citations<br>
+                BAR, REG, FAR, TCP pending
+              </div>
+            </div>
+          </div>
+          <h4 style="margin-top:16px">Trackers</h4>
+          <span class="file-tag">docs/blooms-rebalancing.md</span>
+          <span class="file-tag">docs/blooms-l1-l4-rebalancing.md</span>
+          <span class="file-tag">docs/difficulty-rebalancing.md</span>
+          <span class="file-tag">docs/citation-coverage.md</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+
+    <!-- Stage 8: QA Audit -->
+    <div class="stage">
+      <div class="stage-card" onclick="toggle(this)">
+        <div class="stage-header">
+          <div class="stage-num bg-qa">8</div>
+          <div class="stage-title">QA Audit & Scoring</div>
+        </div>
+        <div class="stage-desc">Composite 0-10 quality score across all questions. Currently: 0 critical, 0 moderate, 100% at 7+.</div>
+        <div class="detail-panel">
+          <h4>Scoring (baseline 7, adjusted by factors)</h4>
+          <table class="quality-table">
+            <tr><th>Factor</th><th>Adjustment</th></tr>
+            <tr><td>Short stem (below threshold)</td><td>-2</td></tr>
+            <tr><td>Named entity present</td><td>+1</td></tr>
+            <tr><td>Short explanation (&lt; 30 words)</td><td>-2</td></tr>
+            <tr><td>Cites authoritative standard</td><td>+1</td></tr>
+            <tr><td>Addresses wrong answer (contrast)</td><td>+1</td></tr>
+            <tr><td>All/none of above distractor</td><td>-3</td></tr>
+            <tr><td>Choice length cuing (3x ratio)</td><td>-1</td></tr>
+          </table>
+          <h4 style="margin-top:12px">Quality thresholds</h4>
+          <table class="quality-table">
+            <tr><th>Score</th><th>Category</th><th>Action</th></tr>
+            <tr><td class="score-critical">0-3</td><td>Critical</td><td>Do not deploy, immediate rewrite</td></tr>
+            <tr><td class="score-moderate">4-6</td><td>Moderate</td><td>Candidate for quality upgrade batch</td></tr>
+            <tr><td class="score-good">7-10</td><td>Acceptable</td><td>Production ready</td></tr>
+          </table>
+          <h4>Key files</h4>
+          <span class="file-tag">scripts/qa/run-qa.ts</span>
+          <span class="file-tag">npm run qa</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+
+    <!-- Stage 9: Verification -->
+    <div class="stage">
+      <div class="stage-card" onclick="toggle(this)">
+        <div class="stage-header">
+          <div class="stage-num bg-verify">9</div>
+          <div class="stage-title">Correctness Verification</div>
+        </div>
+        <div class="stage-desc">Claude-as-reviewer checks substantive accuracy. Classifies questions, checks math, citations, logic.</div>
+        <div class="detail-panel">
+          <h4>Question classification</h4>
+          <ul>
+            <li><strong>Calculation</strong> — contains $, %, "calculate", "determine amount"</li>
+            <li><strong>Citation</strong> — references specific standard</li>
+            <li><strong>Scenario</strong> — "most likely", "best approach", L3/L4</li>
+            <li><strong>Conceptual</strong> — pure knowledge-based</li>
+          </ul>
+          <h4>Issue types checked</h4>
+          <ul>
+            <li><code>wrong_key</code> — answer key doesn't match correct choice</li>
+            <li><code>arithmetic_error</code> — calculation produces wrong number</li>
+            <li><code>citation_error</code> — standard misattributed</li>
+            <li><code>distractor_also_correct</code> — multiple valid answers</li>
+            <li><code>explanation_mismatch</code> — contradicts stem/choices</li>
+            <li><code>logical_error</code> — impossible scenario</li>
+          </ul>
+          <h4>Verdicts</h4>
+          <ul>
+            <li><span style="color:#059669;font-weight:700;">pass</span> — no critical issues</li>
+            <li><span style="color:#dc2626;font-weight:700;">fail</span> — critical issues, requires fix migration</li>
+            <li><span style="color:#d97706;font-weight:700;">review</span> — uncertain, needs human inspection</li>
+          </ul>
+          <h4>Key files</h4>
+          <span class="file-tag">scripts/qa/verify-correctness.ts</span>
+          <span class="file-tag">scripts/qa/select-verify-candidates.ts</span>
+          <span class="file-tag">docs/verification-progress.md</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+
+    <!-- Stage 10: Deploy -->
+    <div class="stage">
+      <div class="stage-card" onclick="toggle(this)">
+        <div class="stage-header">
+          <div class="stage-num bg-deploy">10</div>
+          <div class="stage-title">Deploy to Production</div>
+        </div>
+        <div class="stage-desc">Migration committed, applied to Supabase, live for students. Trackers updated, orchestrator logs saved.</div>
+        <div class="detail-panel">
+          <h4>Deployment chain</h4>
+          <ul>
+            <li>Migration file committed to git</li>
+            <li><code>scripts/apply-migrations.mjs</code> applies to Supabase via tracking table</li>
+            <li>Question immediately available in quiz engine (<code>get_random_questions</code> RPC)</li>
+            <li>Blueprint counts synced: <code>npm run sync-counts</code></li>
+            <li>Tracker files updated with batch log entry</li>
+          </ul>
+          <h4>Orchestrator logging</h4>
+          <span class="file-tag">docs/orchestrator-logs/</span>
+          <span class="file-tag">docs/generation-progress.md</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Orchestrator modes summary -->
+  <div style="margin-top:40px;">
+    <h2 style="font-size:20px;font-weight:700;margin-bottom:16px;">Orchestrator Modes</h2>
+    <p style="font-size:13px;color:#64748b;margin-bottom:16px;">
+      <code>./scripts/orchestrate.ps1 -Section &lt;code&gt; -Mode &lt;mode&gt; -Batches &lt;N&gt;</code>
+    </p>
+    <div class="modes-grid" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="mode-card" style="border-left:3px solid #ec4899;">
+        <div class="mode-name">generate</div>
+        <div class="mode-desc">New questions via INSERT. 30/batch. Biggest-gap topic. Dedup + validate.</div>
+      </div>
+      <div class="mode-card" style="border-left:3px solid #14b8a6;">
+        <div class="mode-name">citation</div>
+        <div class="mode-desc">Add standard citations to explanations. UPDATE explanation only. 50/batch.</div>
+      </div>
+      <div class="mode-card" style="border-left:3px solid #f59e0b;">
+        <div class="mode-name">difficulty</div>
+        <div class="mode-desc">Rewrite easy questions to medium. Full UPDATE. 50/batch.</div>
+      </div>
+      <div class="mode-card" style="border-left:3px solid #8b5cf6;">
+        <div class="mode-name">blooms</div>
+        <div class="mode-desc">Rewrite L2 to L1/L3/L4. Full UPDATE. 50/batch. Uses -Target flag.</div>
+      </div>
+      <div class="mode-card" style="border-left:3px solid #6366f1;">
+        <div class="mode-name">moderate</div>
+        <div class="mode-desc">Quality upgrade for score 4-6 questions. Full UPDATE rewrite.</div>
+      </div>
+      <div class="mode-card" style="border-left:3px solid #3b82f6;">
+        <div class="mode-name">verify</div>
+        <div class="mode-desc">Correctness audit. Claude checks math, citations, logic. Fix migrations.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggle(el) {
+  const wasActive = el.classList.contains('active');
+  document.querySelectorAll('.stage-card.active').forEach(c => c.classList.remove('active'));
+  if (!wasActive) el.classList.add('active');
+}
+</script>
+</body>
+</html>

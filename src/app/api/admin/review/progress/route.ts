@@ -28,14 +28,19 @@ export async function POST(request: Request) {
 		);
 	}
 
-	const { questionId } = parsed.data;
+	const { questionId, notes } = parsed.data;
+
+	const row: Record<string, unknown> = {
+		question_id: questionId,
+		user_id: user.id,
+	};
+	if (notes !== undefined) {
+		row.notes = notes;
+	}
 
 	const { error } = await supabase
 		.from("question_reviews")
-		.upsert(
-			{ question_id: questionId, user_id: user.id },
-			{ onConflict: "question_id,user_id" },
-		);
+		.upsert(row, { onConflict: "question_id,user_id" });
 
 	if (error) {
 		return NextResponse.json({ error: error.message }, { status: 500 });

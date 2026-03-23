@@ -62,6 +62,7 @@ export interface QuestionFlag {
 export interface ReviewQuestion extends QuizQuestionFull {
 	flags: QuestionFlag[];
 	reviewed: boolean;
+	notes?: string;
 }
 
 /**

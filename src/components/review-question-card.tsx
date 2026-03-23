@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { ReviewQuestion } from "@/lib/quiz";
 
 const FLAG_TYPES = [
@@ -29,17 +29,41 @@ interface Props {
 	onFlag: (questionId: number, flagType: string, notes: string) => Promise<void>;
 	onRemoveFlag: (questionId: number, flagType: string) => Promise<void>;
 	onReveal: (questionId: number) => void;
+	onSaveNotes?: (questionId: number, notes: string) => Promise<void>;
+	onMarkReviewed?: (questionId: number) => Promise<void>;
 }
 
-export default function ReviewQuestionCard({ question, onFlag, onRemoveFlag, onReveal }: Props) {
+export default function ReviewQuestionCard({ question, onFlag, onRemoveFlag, onReveal, onSaveNotes, onMarkReviewed }: Props) {
 	const [selected, setSelected] = useState<number | null>(null);
 	const [revealed, setRevealed] = useState(false);
 	const [flagDropdown, setFlagDropdown] = useState(false);
 	const [flagNotes, setFlagNotes] = useState("");
 	const [flagType, setFlagType] = useState<string>("wrong_answer");
 	const [flagging, setFlagging] = useState(false);
+	const [notes, setNotes] = useState(question.notes ?? "");
+	const [notesSaved, setNotesSaved] = useState(true);
+	const saveTimer = useRef<ReturnType<typeof setTimeout>>(null);
 
 	const letters = ["A", "B", "C", "D"];
+
+	// Auto-save notes with debounce
+	useEffect(() => {
+		return () => {
+			if (saveTimer.current) clearTimeout(saveTimer.current);
+		};
+	}, []);
+
+	function handleNotesChange(value: string) {
+		setNotes(value);
+		setNotesSaved(false);
+		if (saveTimer.current) clearTimeout(saveTimer.current);
+		saveTimer.current = setTimeout(async () => {
+			if (onSaveNotes) {
+				await onSaveNotes(question.id, value);
+				setNotesSaved(true);
+			}
+		}, 800);
+	}
 
 	function handleReveal() {
 		if (selected === null) return;
@@ -65,7 +89,6 @@ export default function ReviewQuestionCard({ question, onFlag, onRemoveFlag, onR
 			if (selected === index) return `${base} border-blue-500 bg-blue-50`;
 			return `${base} border-gray-200 hover:border-gray-300 bg-white`;
 		}
-		// Revealed
 		if (index === question.correct_index) return `${base} border-green-500 bg-green-50`;
 		if (selected === index && index !== question.correct_index)
 			return `${base} border-red-500 bg-red-50`;
@@ -143,14 +166,46 @@ export default function ReviewQuestionCard({ question, onFlag, onRemoveFlag, onR
 			{/* Explanation (after reveal) */}
 			{revealed && (
 				<div className="px-6 pb-5 space-y-4">
-					<div className="bg-gray-50 rounded-lg p-4 border border-gray-100">
-						<h4 className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">
-							Explanation
-						</h4>
-						<p className="text-sm text-gray-700 leading-relaxed whitespace-pre-wrap">
-							{question.explanation}
-						</p>
-					</div>
+					<ExplanationBlock explanation={question.explanation} />
+
+					{/* Mark Reviewed */}
+					{onMarkReviewed && !question.reviewed && (
+						<button
+							onClick={() => onMarkReviewed(question.id)}
+							className="w-full py-2.5 rounded-lg font-medium transition-colors bg-emerald-600 text-white hover:bg-emerald-700"
+						>
+							Mark Reviewed
+						</button>
+					)}
+					{question.reviewed && (
+						<div className="flex items-center gap-2 text-sm text-emerald-600 font-medium">
+							<svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+								<path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+							</svg>
+							Reviewed
+						</div>
+					)}
+
+					{/* Notes */}
+					{onSaveNotes && (
+						<div>
+							<div className="flex items-center justify-between mb-1.5">
+								<h4 className="text-xs font-bold text-gray-400 uppercase tracking-wide">
+									Notes
+								</h4>
+								<span className="text-[10px] text-gray-300">
+									{notesSaved ? "Saved" : "Saving..."}
+								</span>
+							</div>
+							<textarea
+								value={notes}
+								onChange={(e) => handleNotesChange(e.target.value)}
+								placeholder="Freeform notes on this question..."
+								rows={2}
+								className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 resize-none focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500"
+							/>
+						</div>
+					)}
 
 					{/* Active flags */}
 					{question.flags.length > 0 && (
@@ -224,4 +279,101 @@ export default function ReviewQuestionCard({ question, onFlag, onRemoveFlag, onR
 			)}
 		</div>
 	);
+}
+
+/** Parse and render explanation with visual separation between correct/wrong answers. */
+function ExplanationBlock({ explanation }: { explanation: string }) {
+	const sections = parseExplanation(explanation);
+
+	if (sections.length <= 1) {
+		// No structure detected — render as plain text
+		return (
+			<div className="bg-gray-50 rounded-lg p-4 border border-gray-100">
+				<h4 className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">
+					Explanation
+				</h4>
+				<p className="text-sm text-gray-700 leading-relaxed whitespace-pre-wrap">
+					{explanation}
+				</p>
+			</div>
+		);
+	}
+
+	return (
+		<div className="space-y-2">
+			<h4 className="text-xs font-bold text-gray-400 uppercase tracking-wide">
+				Explanation
+			</h4>
+			{sections.map((section, i) => (
+				<div
+					key={i}
+					className={`rounded-lg p-4 border text-sm leading-relaxed ${
+						section.type === "correct"
+							? "bg-green-50 border-green-200"
+							: "bg-gray-50 border-gray-100"
+					}`}
+				>
+					<span
+						className={`text-xs font-bold uppercase tracking-wide ${
+							section.type === "correct" ? "text-green-600" : "text-gray-400"
+						}`}
+					>
+						{section.label}
+					</span>
+					<p className="mt-1 text-gray-700 whitespace-pre-wrap">{section.text}</p>
+				</div>
+			))}
+		</div>
+	);
+}
+
+interface ExplanationSection {
+	type: "correct" | "wrong";
+	label: string;
+	text: string;
+}
+
+function capitalize(s: string): string {
+	return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+function parseExplanation(explanation: string): ExplanationSection[] {
+	const sections: ExplanationSection[] = [];
+
+	// Match "Correct (X):" or "Correct (X)\n" at the start
+	const correctMatch = explanation.match(/^Correct\s*\(([A-D])\)[:\s]*/i);
+	if (!correctMatch) return [];
+
+	const letter = correctMatch[1];
+	const rest = explanation.slice(correctMatch[0].length);
+
+	// Split on wrong answer markers:
+	// "(A) is wrong because..." (inline) or "Wrong (A):" (line-separated)
+	const wrongPattern = /(?:\.\s+|\n\n?)\(?([A-D])\)?\s*is wrong\s*(?:because\s*)?|(?:\n\n?)Wrong\s*\(([A-D])\)[:\s]*/gi;
+	const wrongMatches = [...rest.matchAll(wrongPattern)];
+
+	if (wrongMatches.length === 0) return [];
+
+	// Correct answer text = everything before first wrong marker
+	const firstIdx = wrongMatches[0].index!;
+	let correctText = rest.slice(0, firstIdx).trim();
+	// Keep trailing period if the split landed on one
+	if (rest[firstIdx] === ".") correctText += ".";
+	sections.push({ type: "correct", label: `Correct (${letter})`, text: correctText });
+
+	// Each wrong answer
+	for (let i = 0; i < wrongMatches.length; i++) {
+		const match = wrongMatches[i];
+		const wrongLetter = match[1] || match[2];
+		const start = match.index! + match[0].length;
+		const end = i + 1 < wrongMatches.length ? wrongMatches[i + 1].index! : rest.length;
+		let wrongText = rest.slice(start, end).trim();
+		// Strip trailing period/whitespace
+		wrongText = wrongText.replace(/\.\s*$/, "").trim();
+		// Capitalize first letter
+		wrongText = capitalize(wrongText);
+		sections.push({ type: "wrong", label: `Wrong (${wrongLetter})`, text: wrongText });
+	}
+
+	return sections;
 }
