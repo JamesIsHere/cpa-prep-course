@@ -320,6 +320,27 @@ export default async function DashboardPage() {
 					))}
 				</div>
 			</div>
+
+			{/* Admin Tools (only visible to admin) */}
+			{user && process.env.ADMIN_USER_ID === user.id && (
+				<div className="mt-16 pt-8 border-t border-gray-100">
+					<h2 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6">
+						Admin Tools
+					</h2>
+					<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+						<Link
+							href="/admin/review"
+							className="border border-gray-200 rounded-xl p-4 hover:border-gray-300 hover:bg-gray-50 transition-colors flex items-center gap-3"
+						>
+							<span className="text-lg">&#128269;</span>
+							<div>
+								<p className="font-medium text-gray-900 text-sm">Review Questions</p>
+								<p className="text-xs text-gray-500">Work through every question, flag issues, track progress</p>
+							</div>
+						</Link>
+					</div>
+				</div>
+			)}
 		</main>
 	);
 }

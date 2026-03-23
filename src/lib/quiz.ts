@@ -51,6 +51,19 @@ export interface ExamResult extends QuizResult {
 	topicScores: ExamTopicScore[];
 }
 
+// Flag on a question (used by admin review)
+export interface QuestionFlag {
+	flag_type: string;
+	notes: string;
+	created_at: string;
+}
+
+// Question with review metadata (used by admin review)
+export interface ReviewQuestion extends QuizQuestionFull {
+	flags: QuestionFlag[];
+	reviewed: boolean;
+}
+
 /**
  * Score a quiz by comparing user answers against full questions.
  * Pure function — no side effects.

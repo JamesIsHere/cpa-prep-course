@@ -51,6 +51,35 @@ export const remediateSchema = z.object({
 	count: z.number().int().min(1).max(50).default(10),
 });
 
+export const reviewFilterSchema = z.object({
+	section: z.string().min(2),
+	topic: z.string().optional(),
+	difficulty: z.enum(["easy", "medium", "hard"]).optional(),
+	cognitive_level: z.coerce.number().int().min(1).max(4).optional(),
+	flagged: z.enum(["true", "false"]).optional(),
+	reviewed: z.enum(["true", "false"]).optional(),
+	cursor: z.coerce.number().int().optional(),
+	limit: z.coerce.number().int().min(1).max(100).default(50),
+});
+
+export type ReviewFilterInput = z.infer<typeof reviewFilterSchema>;
+
+export const flagQuestionSchema = z.object({
+	questionId: z.number().int(),
+	flagType: z.enum([
+		"wrong_answer",
+		"unclear_stem",
+		"bad_distractor",
+		"wrong_explanation",
+		"other",
+	]),
+	notes: z.string().max(1000).default(""),
+});
+
+export const markReviewedSchema = z.object({
+	questionId: z.number().int(),
+});
+
 export const feedbackSchema = z.object({
 	email: z.string().email().optional().or(z.literal("")),
 	pageUrl: z.string().optional(),
