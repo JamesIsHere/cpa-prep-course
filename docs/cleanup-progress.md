@@ -4,7 +4,7 @@
 
 | Section | Total | Needs Fix | Clean | Batches Done | Batches Left |
 |---------|-------|-----------|-------|--------------|--------------|
-| FAR     | 1,000 | 905       | 95    | 19           | 0            |
+| FAR     | 1,000 | 905       | 95    | 20           | 0            |
 
 ## Issues Breakdown
 
@@ -40,3 +40,4 @@
 | 2026-03-23 | 00468_cleanup_far_batch17.sql | FAR     | 50    | unstructured, no_contrast                                         |
 | 2026-03-23 | 00469_cleanup_far_batch18.sql | FAR     | 50    | unstructured, no_citation, no_contrast, choice_cuing              |
 | 2026-03-23 | 00470_cleanup_far_batch19.sql | FAR     | 50    | unstructured, no_citation, no_contrast, choice_cuing              |
+| 2026-03-23 | 00471_cleanup_far_batch20.sql | FAR     | 50    | unstructured, no_contrast, choice_cuing                           |
