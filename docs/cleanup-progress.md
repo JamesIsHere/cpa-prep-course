@@ -37,3 +37,4 @@
 | 2026-03-23 | 00465_cleanup_far_batch14.sql | FAR     | 50    | unstructured, no_citation, no_contrast                            |
 | 2026-03-23 | 00466_cleanup_far_batch15.sql | FAR     | 50    | unstructured, no_citation, no_contrast                            |
 | 2026-03-23 | 00467_cleanup_far_batch16.sql | FAR     | 50    | unstructured, no_citation, no_contrast, no_blooms, choice_cuing   |
+| 2026-03-23 | 00468_cleanup_far_batch17.sql | FAR     | 50    | unstructured, no_contrast                                         |
