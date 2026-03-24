@@ -25,9 +25,9 @@ For each section:
 |---------|---------|--------|---------|-------------|-------------|--------|
 | AUD     | 3,534 | 1,500 | 2,355 | 291 | 26 | Pending |
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
-| REG     | 2,410 | 1,500 | 1,010 | 54 | 8 | Pending |
+| REG     | 2,425 | 1,500 | 1,010 | 39 | 7 | Pending |
 | BAR     | 1,159 | 1,500 | 151 | 492 | 30 | Pending |
-| ISC     | 1,080 | 1,500 | 78 | 498 | 27 | Pending |
+| ISC     | 1,110 | 1,500 | 78 | 468 | 28 | Pending |
 | TCP     | 983 | 1,500 | 96 | 613 | 28 | Pending |
 
 ## Topic Detail
@@ -113,7 +113,7 @@ For each section:
 | 3 | Property Transactions: Gains/Losses | 44 | 50 |  | +6 |
 | 4 | Alternative Minimum Tax | 80 | 68 | -12 |  |
 | 4 | Individual Taxation: Credits | 98 | 68 | -30 |  |
-| 4 | Individual Taxation: Credits/AMT | 53 | 68 |  | +15 |
+| 4 | Individual Taxation: Credits/AMT | 68 | 68 |  |  |
 | 4 | Individual Taxation: Deductions | 66 | 68 |  | +2 |
 | 4 | Individual Taxation: Filing/Credits | 75 | 68 | -7 |  |
 | 4 | Individual Taxation: Income | 85 | 68 | -17 |  |
@@ -160,7 +160,7 @@ For each section:
 | 1 | System Availability and Change Management | 57 | 86 |  | +29 |
 | 2 | Data Protection Technologies | 169 | 100 | -69 |  |
 | 2 | Incident Response and Recovery | 109 | 100 | -9 |  |
-| 2 | Privacy Requirements and Data Protection | 52 | 100 |  | +48 |
+| 2 | Privacy Requirements and Data Protection | 82 | 100 |  | +18 |
 | 2 | Security and Control Frameworks | 52 | 99 |  | +47 |
 | 2 | Security Controls and Monitoring | 78 | 100 |  | +22 |
 | 2 | Threats, Attacks, and Vulnerabilities | 78 | 99 |  | +21 |
@@ -214,3 +214,4 @@ For each section:
 | 2026-03-24 | 00494_generate_reg_batch57.sql | REG | Like-Kind Exchanges | 16 | Boot exceeds realized gain cap, nature/character vs grade/quality, tax return due date deadline, mandatory deferral, 200% rule, loss non-recognition, constructive receipt/QI, personal property as boot, basis with boot given+received, simultaneous vs deferred, reverse exchange/EAT, dealer inventory exclusion, deferred gain in basis, 95% rule, personal-use exclusion, installment note as boot |
 | 2026-03-24 | 00495_generate_aud_batch87.sql | AUD | Responding to Assessed Risks | 30 | Combined vs substantive approach, dual-purpose tests, fraud indicator response, weak control environment effect, roll-forward procedures, inverse RMM/detection risk, external confirmations, completeness direction of testing, related party transactions, control deficiency effect, further audit procedure categories, substantive procedure types, tests of controls purpose, auditor's specialist, evidence reliability, systematic error response, IT dependence effect, prior year misstatement effect, going concern response, accounting estimates, combined approach definition, unpredictability, inquiry limitations, risk reassessment, existence direction of testing, tests of details definition, CAATs advantages, documentation linkage, confirmation sample sizing, substantive analytical procedure limitations |
 | 2026-03-24 | 00496_generate_isc_batch13.sql | ISC | IT General Controls | 30 | Default deny provisioning, RPO vs RTO, differential backup restore, ITGC cascade effect, regression testing, emergency change ratio red flag, rollback plan requirement, batch job sequencing, compensating controls for small IT, event log review, application control reliance on ITGCs, offsite backup, patch management, job failure alerting, UAT definition, post-implementation review, CAB role, root cause analysis, APOC mnemonic, backup encryption, GL close timing, backup retention, threshold alerting, time-limited privileges, integration testing, problem management, access recertification, baseline configuration, backup monitoring, compensating control definition |
+| 2026-03-24 | 00500_generate_reg_batch58.sql | REG | Individual Taxation: Credits/AMT | 15 | Credit ordering rules, Other Dependent Credit, Premium Tax Credit, FTC simplified election, care credit age limit, EITC earned income definition, CTC citizenship requirement, GBC carryback/forward, care credit MFJ earned income, care credit expense limits, adoption credit special needs, AMT standard deduction add-back, LLC enrollment flexibility, EITC age requirement, FTC carryback/forward periods |
