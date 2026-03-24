@@ -27,7 +27,7 @@ For each section:
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,425 | 1,500 | 1,010 | 39 | 7 | Pending |
 | BAR     | 1,189 | 1,500 | 151 | 462 | 29 | Pending |
-| ISC     | 1,319 | 1,500 | 78 | 259 | 30 | Generating |
+| ISC     | 1,341 | 1,500 | 78 | 237 | 30 | Generating |
 | TCP     | 1,073 | 1,500 | 96 | 523 | 30 | Generating |
 
 ## Topic Detail
@@ -162,7 +162,7 @@ For each section:
 | 2 | Incident Response and Recovery | 109 | 100 | -9 |  |
 | 2 | Privacy Requirements and Data Protection | 82 | 100 |  | +18 |
 | 2 | Security and Control Frameworks | 82 | 99 |  | +17 |
-| 2 | Security Controls and Monitoring | 78 | 100 |  | +22 |
+| 2 | Security Controls and Monitoring | 100 | 100 |  |  |
 | 2 | Threats, Attacks, and Vulnerabilities | 78 | 99 |  | +21 |
 | 3 | SOC Engagements | 45 | 60 |  | +15 |
 | 3 | SOC Report Content and Structure | 50 | 60 |  | +10 |
@@ -230,3 +230,4 @@ For each section:
 | 2026-03-24 | 00511_generate_isc_batch20.sql | ISC | IT Infrastructure and Architecture | 30 | DHCP, DNS, stateful firewall, multi-tenancy risk, load balancer failover, peer-to-peer controls, RAID 6 dual parity, hot/warm/cold site, MDM, WEP/WPA segmentation, SLA metrics, OSI Application layer, SDN security, subnetting, NAT, IPv6 dual-stack, HA clustering, UPS, forward proxy, star topology, cloud elasticity, thin client VDI, SNMP monitoring, data center tiers, EDR defense-in-depth, routing protocol auth, bandwidth, OSI Physical/Presentation layers, 802.1X port security |
 | 2026-03-24 | 00512_generate_isc_batch21.sql | ISC | System Availability and Change Management | 29 | Version control rollback, SDLC testing/deployment/maintenance phases, active-active failover, patch urgency evaluation, BIA financial impact, segregation of duties, maintenance window analytics, geographic redundancy single-provider risk, change backlog metric, BCP non-IT components, requirements traceability, break-glass access, change request documentation, failed change rate trending, environment separation, rollback archival, DR test design evaluation, BIA interdependency gap, change mgmt maturity metrics, CMDB unauthorized modification detection, patch testing control, DR readiness multi-dimension evaluation, data migration validation, UAT by business stakeholders, clustering |
 | 2026-03-24 | 00510_generate_tcp_batch15.sql | TCP | Entity Formation and Restructuring | 30 | 355(e) anti-Morris Trust, 354(a)(2) securities boot, 368(a)(2)(C) drop-down, 1032 issuing corp, 357(a) liabilities in reorg, 382 testing period, Morris Trust evaluation, 384 preacquisition losses, 368(b) party to reorg, Type E recapitalization excess securities, 355 distribution requirement, net value requirement, Type A flexibility, 355(d) disqualified distribution, 306 taint in recap, 382(h) NUBIL, dissenting shareholders, triangular Type B, consolidation definition, 382(c) COBE, 356 block-by-block, 338(d)(3) QSP, reorg plan requirement, 361(c) distribution, Type C boot+liabilities, 382 value calc, 368(a)(1)(A) cross-border, 355(e) integrated analysis, 382 in reorg, 355 split-up |
+| 2026-03-24 | 00513_generate_isc_batch22.sql | ISC | Security Controls and Monitoring | 22 | Account lockout, tokenization vs masking, honeypot VLAN risk, FIM noise reduction, password salting, reverse proxy, JIT provisioning, geolocation controls, zero trust microsegmentation, CCTV classification, session timeout, MAC filtering limits, awareness training metrics, WPA3 SAE, API gateway, UEBA insider threat, TOTP clock sync, baseline hardening, auth architecture tradeoffs, motion detection, lateral movement detection, API security architecture |
