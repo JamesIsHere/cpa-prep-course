@@ -27,7 +27,7 @@ For each section:
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,425 | 1,500 | 1,010 | 39 | 7 | Pending |
 | BAR     | 1,189 | 1,500 | 151 | 462 | 29 | Pending |
-| ISC     | 1,170 | 1,500 | 78 | 408 | 27 | Pending |
+| ISC     | 1,200 | 1,500 | 78 | 378 | 27 | Pending |
 | TCP     | 1,013 | 1,500 | 96 | 583 | 28 | Pending |
 
 ## Topic Detail
@@ -152,7 +152,7 @@ For each section:
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
 | 1 | Change Management | 49 | 86 |  | +37 |
-| 1 | Data Management and Lifecycle | 48 | 86 |  | +38 |
+| 1 | Data Management and Lifecycle | 78 | 86 |  | +8 |
 | 1 | ERP and Accounting Information Systems | 48 | 86 |  | +38 |
 | 1 | IT Audit Frameworks | 68 | 86 |  | +18 |
 | 1 | IT General Controls | 68 | 86 |  | +18 |
@@ -223,3 +223,4 @@ For each section:
 | 2026-03-24 | 00504_generate_aud_batch89.sql | AUD | Using the Work of Others | 30 | Bridge letter purpose, carve-out method, component auditor quality concerns, SOC gap period, component materiality, SOC 2 vs SOC 1, internal audit reporting line, group-component communication, service org deficiency impact, direct assistance written acknowledgment, restricted working paper access, specialist assumptions, inclusive vs carve-out, gap period testing, consolidation adjustments, IA quality assurance, group opinion responsibility, service auditor role, shared service center, component instruction deviations, predecessor component papers, subservice org definition, specialist objectivity bias, Type 1 vs Type 2 effect, significant component definition, re-performing IA work, complex estimates at component, SOC report control risk, specialist disagreement, inclusive method definition |
 | 2026-03-24 | 00503_generate_tcp_batch13.sql | TCP | Owner-Entity Transactions | 30 | Thin capitalization, Sec 318 sibling exclusion, current distribution basis cap, Sec 302 failed test basis transfer, constructive dividend (auto/rent/expenses/loans), Sec 302(b)(1)/(b)(3)/(b)(4), Sec 318 option/entity/re-attribution, liquidating distribution loss/basis, Sec 267 in-law exclusion/267(d) loss limit, Sec 351 boot, 704(c) built-in gain, S corp AAA/E&P/basis layering, Sec 311(b) appreciated property, debt-vs-equity multi-factor, Sec 7872 gift/compensation loans |
 | 2026-03-24 | 00505_generate_isc_batch16.sql | ISC | SOC Report Content and Structure | 30 | TSC Security mandatory, Section IV restricted-use reason, change mgmt multi-criteria mapping, bridge letter insufficiency, four report sections, service auditor opinion elements, AT-C 205 standard, Section IV exception evaluation, encryption multi-criteria, SOC 1 audience, SOC 3 Type II only, CC9 risk mitigation, CC6 access controls, restricted-use recipients, gap period conflicting bridge letter, PI1 points of focus, user entity auditor no reference required, COSO CC3 mapping, Privacy P5 access, Availability least-relevant control, MFA multi-criteria, system description components, SSAE 18 AT-C 320, service auditor independence, management assertion Type II, SOC report type selection, CC7 system operations, Confidentiality C1 EXCEPT, typical exam period, incident response multi-criteria |
+| 2026-03-24 | 00506_generate_isc_batch17.sql | ISC | Data Management and Lifecycle | 30 | ACID atomicity, differential restore sequence, graph DB fraud detection, incremental backup, data user role, sharing-phase encryption, column-family time-series, storage-phase encryption at rest, creation-phase input validation, legal hold definition, SOX 7-year retention, backup strategy for fast restore, data validity dimension, RPO/RTO backup evaluation, key-value store, spoliation penalties, governance maturity/classification foundation, certificate of destruction, differential backup definition, lifecycle control-phase matching, custodian-owner separation risk, full backup characteristics, classification-driven controls, archival integrity/media refresh, denormalized warehouse schema, SSD vs HDD degaussing, HIPAA 6-year retention, ETL reconciliation control gaps, DLP for data exfiltration, cryptographic erasure conditions |
