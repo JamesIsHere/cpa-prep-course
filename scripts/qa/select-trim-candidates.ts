@@ -45,6 +45,7 @@ if (!sectionArg) {
 	);
 	process.exit(1);
 }
+const section: string = sectionArg;
 
 // ─── Citation patterns per section ───────────────────────────────
 
@@ -112,10 +113,10 @@ async function main() {
 	const planPath = resolve(docsDir, "generation-plan.json");
 	const plan = JSON.parse(readFileSync(planPath, "utf-8"));
 	const sectionPlan = plan.sections.find(
-		(s: { section: string }) => s.section === sectionArg,
+		(s: { section: string }) => s.section === section,
 	);
 	if (!sectionPlan) {
-		console.error(`Section ${sectionArg} not found in generation-plan.json`);
+		console.error(`Section ${section} not found in generation-plan.json`);
 		process.exit(1);
 	}
 
@@ -126,8 +127,8 @@ async function main() {
 	}
 
 	// Fetch all questions for this section
-	const questions = await fetchAllQuestions(sectionArg);
-	console.error(`Loaded ${questions.length} ${sectionArg.toUpperCase()} questions`);
+	const questions = await fetchAllQuestions(section);
+	console.error(`Loaded ${questions.length} ${section.toUpperCase()} questions`);
 
 	// Group by topic and score
 	const byTopic = new Map<string, Array<{ id: number; score: number; q: DbQuestion }>>();
@@ -135,7 +136,7 @@ async function main() {
 		if (!byTopic.has(q.topic)) byTopic.set(q.topic, []);
 		byTopic.get(q.topic)!.push({
 			id: q.id,
-			score: scoreQuestion(q, sectionArg),
+			score: scoreQuestion(q, section),
 			q,
 		});
 	}
@@ -203,7 +204,7 @@ async function main() {
 
 	// Output
 	if (formatArg === "summary") {
-		console.log(`# Trim Plan: ${sectionArg.toUpperCase()}`);
+		console.log(`# Trim Plan: ${section.toUpperCase()}`);
 		console.log(
 			`\nTotal to delete: ${toDelete.length} / ${questions.length} (keeping ${questions.length - toDelete.length})`,
 		);
@@ -222,7 +223,7 @@ async function main() {
 		// Sort IDs for clean SQL
 		const ids = toDelete.map((d) => d.id).sort((a, b) => a - b);
 		const lines: string[] = [
-			`-- Trim ${sectionArg.toUpperCase()}: delete ${ids.length} lowest-scoring questions to reach 1,500 target`,
+			`-- Trim ${section.toUpperCase()}: delete ${ids.length} lowest-scoring questions to reach 1,500 target`,
 			`-- Topics affected: ${topicSummaries.map((s) => `${s.topic} (-${s.trimming})`).join(", ")}`,
 			"",
 			"BEGIN;",
