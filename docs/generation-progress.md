@@ -26,7 +26,7 @@ For each section:
 | AUD     | 3,474 | 1,500 | 2,355 | 381 | 24 | Pending |
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,375 | 1,500 | 1,010 | 105 | 10 | Pending |
-| BAR     | 1,099 | 1,500 | 151 | 552 | 30 | Pending |
+| BAR     | 1,129 | 1,500 | 151 | 522 | 30 | Pending |
 | ISC     | 1,020 | 1,500 | 78 | 558 | 27 | Pending |
 | TCP     | 983 | 1,500 | 96 | 613 | 28 | Pending |
 
@@ -130,7 +130,7 @@ For each section:
 | 1 | Capital Structure and Valuation | 285 | 134 | -151 |  |
 | 1 | Financial Statement Analysis | 116 | 134 |  | +18 |
 | 1 | Financial Valuation Methods | 53 | 134 |  | +81 |
-| 1 | Prospective Analysis and Forecasting | 46 | 134 |  | +88 |
+| 1 | Prospective Analysis and Forecasting | 76 | 134 |  | +58 |
 | 1 | Risk Management and Economics | 70 | 134 |  | +64 |
 | 2 | Advanced Consolidations | 49 | 55 |  | +6 |
 | 2 | Advanced Lease Transactions | 39 | 55 |  | +16 |
@@ -163,7 +163,7 @@ For each section:
 | 2 | Privacy Requirements and Data Protection | 52 | 100 |  | +48 |
 | 2 | Security and Control Frameworks | 52 | 99 |  | +47 |
 | 2 | Security Controls and Monitoring | 78 | 100 |  | +22 |
-| 2 | Threats, Attacks, and Vulnerabilities | 48 | 99 |  | +51 |
+| 2 | Threats, Attacks, and Vulnerabilities | 78 | 99 |  | +21 |
 | 3 | SOC Engagements | 45 | 60 |  | +15 |
 | 3 | SOC Report Content and Structure | 20 | 60 |  | +40 |
 | 3 | SOC Reporting | 38 | 60 |  | +22 |
@@ -202,3 +202,4 @@ For each section:
 | 2026-03-24 | 00479_generate_reg_batch54.sql | REG | Federal Tax Procedures | 30 | Correspondence audit, lien vs levy, 30-day letter, Appeals hazards, FTF/FTP interaction, refund lookback, valuation misstatement, interest netting, estimated tax safe harbor |
 | 2026-03-24 | 00480_generate_bar_batch11.sql | BAR | Risk Management and Economics | 30 | WACC calc, tax shield, trough phase, translation exposure, DOL/DFL/DTL, M&M Props I&II, pecking order, two-stage DDM, PI capital rationing, natural hedging, CAPM blending |
 | 2026-03-24 | 00484_generate_tcp_batch10.sql | TCP | Wealth Transfer and Gifting Strategies | 30 | QDOT, qualified disclaimer, net gift, Sec 2036 retained life estate, Sec 2035 three-year rule, gift of services, below-market loans, part-gift/part-sale, non-citizen spouse exclusion, reciprocal trust doctrine, Sec 2032A special use valuation, FLP Sec 2036 challenge |
+| 2026-03-24 | 00488_generate_isc_batch11.sql | ISC | Threats, Attacks, and Vulnerabilities | 30 | Credential stuffing, watering hole, fileless malware, privilege escalation, OWASP broken access control, DNS poisoning, session hijacking, SSRF, cryptojacking, IoA vs IoC, ARP spoofing, insecure deserialization, STRIDE, SBOM, RaaS, evil twin, buffer overflow, malvertising, API security, STIX/TAXII |
