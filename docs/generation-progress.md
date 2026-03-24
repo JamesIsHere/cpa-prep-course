@@ -28,7 +28,7 @@ For each section:
 | REG     | 2,375 | 1,500 | 1,010 | 105 | 10 | Pending |
 | BAR     | 1,099 | 1,500 | 151 | 552 | 30 | Pending |
 | ISC     | 1,020 | 1,500 | 78 | 558 | 27 | Pending |
-| TCP     | 953 | 1,500 | 96 | 643 | 29 | Pending |
+| TCP     | 983 | 1,500 | 96 | 613 | 28 | Pending |
 
 ## Topic Detail
 
@@ -177,7 +177,7 @@ For each section:
 | 1 | Individual Tax Planning: Compensation | 81 | 132 |  | +51 |
 | 1 | Passive Activity and At-Risk Rules | 228 | 132 | -96 |  |
 | 1 | Retirement Plans and Education Savings | 86 | 131 |  | +45 |
-| 1 | Wealth Transfer and Gifting Strategies | 54 | 131 |  | +77 |
+| 1 | Wealth Transfer and Gifting Strategies | 84 | 131 |  | +47 |
 | 2 | Advanced Basis Calculations | 47 | 105 |  | +58 |
 | 2 | Entity Formation and Liquidation | 48 | 105 |  | +57 |
 | 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 51 | 105 |  | +54 |
@@ -201,3 +201,4 @@ For each section:
 | 2026-03-24 | 00478_generate_aud_batch84.sql | AUD | Analytical Procedures | 30 | Scanning, related-party detection, accounting policy changes, conflicting evidence, disaggregation, review engagement analytics, common-size analysis, seasonality, proof-in-total, cross-sectional analysis |
 | 2026-03-24 | 00479_generate_reg_batch54.sql | REG | Federal Tax Procedures | 30 | Correspondence audit, lien vs levy, 30-day letter, Appeals hazards, FTF/FTP interaction, refund lookback, valuation misstatement, interest netting, estimated tax safe harbor |
 | 2026-03-24 | 00480_generate_bar_batch11.sql | BAR | Risk Management and Economics | 30 | WACC calc, tax shield, trough phase, translation exposure, DOL/DFL/DTL, M&M Props I&II, pecking order, two-stage DDM, PI capital rationing, natural hedging, CAPM blending |
+| 2026-03-24 | 00484_generate_tcp_batch10.sql | TCP | Wealth Transfer and Gifting Strategies | 30 | QDOT, qualified disclaimer, net gift, Sec 2036 retained life estate, Sec 2035 three-year rule, gift of services, below-market loans, part-gift/part-sale, non-citizen spouse exclusion, reciprocal trust doctrine, Sec 2032A special use valuation, FLP Sec 2036 challenge |
