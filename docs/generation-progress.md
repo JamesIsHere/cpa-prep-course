@@ -23,10 +23,10 @@ For each section:
 
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status |
 |---------|---------|--------|---------|-------------|-------------|--------|
-| AUD     | 3,444 | 1,500 | 2,355 | 411 | 25 | Pending |
+| AUD     | 3,474 | 1,500 | 2,355 | 381 | 24 | Pending |
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
-| REG     | 2,375 | 1,500 | 1,010 | 135 | 11 | Pending |
-| BAR     | 1,069 | 1,500 | 151 | 582 | 31 | Pending |
+| REG     | 2,375 | 1,500 | 1,010 | 105 | 10 | Pending |
+| BAR     | 1,099 | 1,500 | 151 | 552 | 30 | Pending |
 | ISC     | 990 | 1,500 | 78 | 588 | 28 | Pending |
 | TCP     | 953 | 1,500 | 96 | 643 | 29 | Pending |
 
@@ -51,7 +51,7 @@ For each section:
 | 2 | Risk Assessment | 64 | 64 |  |  |
 | 2 | Understanding the Entity and Environment | 20 | 64 |  | +44 |
 | 2 | Using the Work of Others | 20 | 64 |  | +44 |
-| 3 | Analytical Procedures | 20 | 65 |  | +45 |
+| 3 | Analytical Procedures | 50 | 65 |  | +15 |
 | 3 | Audit Evidence | 67 | 65 | -2 |  |
 | 3 | Audit Sampling | 52 | 65 |  | +13 |
 | 3 | Misstatements and Control Deficiencies | 1649 | 65 | -1584 |  |
@@ -99,7 +99,7 @@ For each section:
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
 | 1 | Circular 230 | 42 | 45 |  | +3 |
-| 1 | Federal Tax Procedures | 10 | 45 |  | +35 |
+| 1 | Federal Tax Procedures | 40 | 45 |  | +5 |
 | 1 | Legal Duties and Responsibilities | 32 | 45 |  | +13 |
 | 1 | Professional Ethics in Tax | 29 | 45 |  | +16 |
 | 1 | Tax Procedures | 26 | 45 |  | +19 |
@@ -131,7 +131,7 @@ For each section:
 | 1 | Financial Statement Analysis | 116 | 134 |  | +18 |
 | 1 | Financial Valuation Methods | 53 | 134 |  | +81 |
 | 1 | Prospective Analysis and Forecasting | 46 | 134 |  | +88 |
-| 1 | Risk Management and Economics | 40 | 134 |  | +94 |
+| 1 | Risk Management and Economics | 70 | 134 |  | +64 |
 | 2 | Advanced Consolidations | 49 | 55 |  | +6 |
 | 2 | Advanced Lease Transactions | 39 | 55 |  | +16 |
 | 2 | Advanced Revenue and Intangibles | 49 | 55 |  | +6 |
@@ -197,3 +197,6 @@ For each section:
 |------|-----------|---------|-------|-------|-------|
 | 2026-03-24 | 00481_generate_isc_batch9.sql | ISC | Change Management | 30 | Rollback plans, CAB composition, CMDB, patch mgmt, RICE framework, change categorization, environment separation |
 | 2026-03-24 | 00482_generate_tcp_batch9.sql | TCP | Individual Tax Planning: Compensation | 30 | SE tax, 83(b) forfeiture, golden parachute 280G, constructive receipt, SARs, phantom stock, QBI 199A, Section 119/129 |
+| 2026-03-24 | 00478_generate_aud_batch84.sql | AUD | Analytical Procedures | 30 | Scanning, related-party detection, accounting policy changes, conflicting evidence, disaggregation, review engagement analytics, common-size analysis, seasonality, proof-in-total, cross-sectional analysis |
+| 2026-03-24 | 00479_generate_reg_batch54.sql | REG | Federal Tax Procedures | 30 | Correspondence audit, lien vs levy, 30-day letter, Appeals hazards, FTF/FTP interaction, refund lookback, valuation misstatement, interest netting, estimated tax safe harbor |
+| 2026-03-24 | 00480_generate_bar_batch11.sql | BAR | Risk Management and Economics | 30 | WACC calc, tax shield, trough phase, translation exposure, DOL/DFL/DTL, M&M Props I&II, pecking order, two-stage DDM, PI capital rationing, natural hedging, CAPM blending |
