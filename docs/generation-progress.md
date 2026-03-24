@@ -27,7 +27,7 @@ For each section:
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,425 | 1,500 | 1,010 | 39 | 7 | Pending |
 | BAR     | 1,189 | 1,500 | 151 | 462 | 29 | Pending |
-| ISC     | 1,385 | 1,500 | 78 | 193 | 31 | Generating |
+| ISC     | 1,406 | 1,500 | 78 | 172 | 31 | Generating |
 | TCP     | 1,103 | 1,500 | 96 | 493 | 30 | Generating |
 
 ## Topic Detail
@@ -163,7 +163,7 @@ For each section:
 | 2 | Privacy Requirements and Data Protection | 82 | 100 |  | +18 |
 | 2 | Security and Control Frameworks | 82 | 99 |  | +17 |
 | 2 | Security Controls and Monitoring | 100 | 100 |  |  |
-| 2 | Threats, Attacks, and Vulnerabilities | 78 | 99 |  | +21 |
+| 2 | Threats, Attacks, and Vulnerabilities | 99 | 99 |  |  |
 | 3 | SOC Engagements | 45 | 60 |  | +15 |
 | 3 | SOC Report Content and Structure | 50 | 60 |  | +10 |
 | 3 | SOC Reporting | 60 | 60 |  |  |
@@ -234,3 +234,4 @@ For each section:
 | 2026-03-24 | 00514_generate_tcp_batch16.sql | TCP | Entity Tax Compliance: NOLs and Consolidated Returns | 30 | Joint/several liability, charitable 10% consolidated limit, capital loss netting, Sec 1231 netting, year-end conformity, depreciation triggering deferred gain, SRLY overlap rule, stock basis adjustments, common parent as agent, intercompany loss matching, pre-TCJA vs post-TCJA ordering, FIFO NOL ordering, DRD in NOL computation, capital losses excluded from NOL, ELA ordinary income character, NUBIG Sec 382(h), unused 382 limitation carryforward, reverse acquisition, dual consolidated loss Sec 1503(d) |
 | 2026-03-24 | 00515_generate_isc_batch23.sql | ISC | SOC Reporting | 22 | Opinion formation 3-step process, scope limitation disclaimer, compensating controls in mgmt response, bridge letter assurance level, CUEC input validation, long gap period procedures, Section V other information, inherent limitations, principal service commitments, carve-out monitoring controls, Type I vs Type II assertion, qualified vs adverse pervasiveness, CUEC configuration mgmt, adverse opinion substantive testing, system requirements, examination-level assurance, TSC mapping, CUEC incident notification, practitioner independence from mgmt response, multi-subservice mixed methods, population quantification, inclusive method coordination |
 | 2026-03-24 | 00516_generate_isc_batch24.sql | ISC | SOC Testing Controls | 22 | Block selection limitations, systematic selection, haphazard selection, population documentation, per-transaction population definition, isolated vs systemic deviations, decision tree ITGC automated, working paper signing, deviation cause analysis, deviation nature classification, inquiry corroboration requirement, random selection default, tests tied to mgmt description, control placement design, authorized personnel operating effectiveness, evidence retention, trust services criteria cross-referencing, prior-period exceptions, key control no compensating, inquiry vs inspection conflict, inherent risk sample sizes, control logic soundness |
+| 2026-03-24 | 00517_generate_isc_batch25.sql | ISC | Threats, Attacks, and Vulnerabilities | 21 | Botnet C2, CVSS base score components, lateral movement, business logic flaws, DNS tunneling, polymorphic malware, adware, reconnaissance phase, MITRE ATT&CK, replay attack, honeypot, shoulder surfing, race condition, cryptographic failures OWASP#2, dumpster diving, scareware, steganography, vulnerable components OWASP#6, ISAC threat sharing, open redirect, typosquatting |
