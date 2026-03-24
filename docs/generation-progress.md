@@ -28,7 +28,7 @@ For each section:
 | REG     | 2,375 | 1,500 | 1,010 | 135 | 11 | Pending |
 | BAR     | 1,069 | 1,500 | 151 | 582 | 31 | Pending |
 | ISC     | 990 | 1,500 | 78 | 588 | 28 | Pending |
-| TCP     | 923 | 1,500 | 96 | 673 | 29 | Pending |
+| TCP     | 953 | 1,500 | 96 | 643 | 29 | Pending |
 
 ## Topic Detail
 
@@ -174,7 +174,7 @@ For each section:
 
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
-| 1 | Individual Tax Planning: Compensation | 51 | 132 |  | +81 |
+| 1 | Individual Tax Planning: Compensation | 81 | 132 |  | +51 |
 | 1 | Passive Activity and At-Risk Rules | 228 | 132 | -96 |  |
 | 1 | Retirement Plans and Education Savings | 86 | 131 |  | +45 |
 | 1 | Wealth Transfer and Gifting Strategies | 54 | 131 |  | +77 |
@@ -196,3 +196,4 @@ For each section:
 | Date | Migration | Section | Topic | Count | Notes |
 |------|-----------|---------|-------|-------|-------|
 | 2026-03-24 | 00481_generate_isc_batch9.sql | ISC | Change Management | 30 | Rollback plans, CAB composition, CMDB, patch mgmt, RICE framework, change categorization, environment separation |
+| 2026-03-24 | 00482_generate_tcp_batch9.sql | TCP | Individual Tax Planning: Compensation | 30 | SE tax, 83(b) forfeiture, golden parachute 280G, constructive receipt, SARs, phantom stock, QBI 199A, Section 119/129 |
