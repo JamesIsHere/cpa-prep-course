@@ -1,5 +1,5 @@
 // Compute per-section, per-topic question targets and write a generation plan
-// Usage: npx tsx scripts/qa/plan-distribution.ts [--total=20000] [--batch-size=30]
+// Usage: npx tsx scripts/qa/plan-distribution.ts [--total=9000] [--batch-size=30]
 
 import { writeFileSync } from "fs";
 import { dirname, resolve } from "path";
@@ -12,20 +12,20 @@ const docsDir = resolve(__dirname, "../../docs");
 
 // Parse CLI args
 const totalArg = parseInt(
-	process.argv.find((a) => a.startsWith("--total="))?.split("=")[1] || "20000",
+	process.argv.find((a) => a.startsWith("--total="))?.split("=")[1] || "9000",
 );
 const batchSize = parseInt(
 	process.argv.find((a) => a.startsWith("--batch-size="))?.split("=")[1] || "30",
 );
 
-// Section targets: 5000 each across all 6 sections (30,000 total)
+// Section targets: 1500 each across all 6 sections (9,000 total)
 const SECTION_TARGETS: Record<string, number> = {
-	aud: 5000,
-	far: 5000,
-	reg: 5000,
-	bar: 5000,
-	isc: 5000,
-	tcp: 5000,
+	aud: 1500,
+	far: 1500,
+	reg: 1500,
+	bar: 1500,
+	isc: 1500,
+	tcp: 1500,
 };
 
 // Bloom's distribution targets per section type
@@ -49,7 +49,8 @@ interface TopicPlan {
 	areaWeight: [number, number];
 	currentCount: number;
 	targetCount: number;
-	newNeeded: number;
+	toGenerate: number;
+	toTrim: number;
 	batches: number;
 	difficulty: { easy: number; medium: number; hard: number };
 	blooms: { l1: number; l2: number; l3: number; l4: number };
@@ -60,7 +61,8 @@ interface SectionPlan {
 	sectionId: number;
 	currentTotal: number;
 	targetTotal: number;
-	newNeeded: number;
+	toGenerate: number;
+	toTrim: number;
 	totalBatches: number;
 	topics: TopicPlan[];
 }
@@ -74,7 +76,8 @@ interface GenerationPlan {
 	summary: {
 		totalCurrent: number;
 		totalTarget: number;
-		totalNew: number;
+		totalToGenerate: number;
+		totalToTrim: number;
 		totalBatches: number;
 	};
 }
@@ -136,12 +139,6 @@ async function main() {
 
 		const sectionTopicCounts = perSectionTopicCounts.get(sectionId) || new Map<string, number>();
 		const currentTotal = [...sectionTopicCounts.values()].reduce((a, b) => a + b, 0);
-		const newNeeded = Math.max(0, sectionTarget - currentTotal);
-
-		if (newNeeded === 0) {
-			console.error(`  ${bp.code.toUpperCase()}: already at or above target (${currentTotal}/${sectionTarget})`);
-			continue;
-		}
 
 		// Compute weight midpoints for each area
 		const areaWeightMidpoints = bp.areas.map((a) => ({
@@ -152,7 +149,7 @@ async function main() {
 		// Normalize weights to sum to 1
 		const totalWeight = areaWeightMidpoints.reduce((s, a) => s + a.midpoint, 0);
 
-		// Collect all topics with their area weights
+		// Collect all topics with their normalized area weights
 		const topicEntries: Array<{
 			topic: string;
 			areaNumber: number;
@@ -161,14 +158,12 @@ async function main() {
 		}> = [];
 
 		for (const { area, midpoint } of areaWeightMidpoints) {
-			// Count total question topics in this area
 			const areaTopics: string[] = [];
 			for (const group of area.groups) {
 				for (const t of group.questionTopics) {
 					areaTopics.push(t);
 				}
 			}
-			// Each topic in the area gets equal share of the area's weight
 			const perTopicWeight = areaTopics.length > 0
 				? (midpoint / totalWeight) / areaTopics.length
 				: 0;
@@ -185,39 +180,41 @@ async function main() {
 			}
 		}
 
-		// Allocate new questions to topics proportionally
+		// Compute absolute target per topic based on section target × weight
 		const bloomsTarget = BLOOMS_TARGETS[bp.code];
 		const topicPlans: TopicPlan[] = [];
 
-		// First pass: compute raw allocations
+		// First pass: compute raw targets
 		let allocatedTotal = 0;
-		const rawAllocations: Array<{ entry: typeof topicEntries[0]; rawNew: number }> = [];
+		const rawTargets: Array<{ entry: typeof topicEntries[0]; rawTarget: number }> = [];
 
 		for (const entry of topicEntries) {
-			const rawNew = Math.round(entry.normalizedWeight * newNeeded);
-			rawAllocations.push({ entry, rawNew });
-			allocatedTotal += rawNew;
+			const rawTarget = Math.round(entry.normalizedWeight * sectionTarget);
+			rawTargets.push({ entry, rawTarget });
+			allocatedTotal += rawTarget;
 		}
 
-		// Adjust for rounding error — distribute remainder to largest topics
-		let remainder = newNeeded - allocatedTotal;
-		rawAllocations.sort((a, b) => b.rawNew - a.rawNew);
-		for (let i = 0; remainder > 0 && i < rawAllocations.length; i++) {
-			rawAllocations[i].rawNew++;
+		// Adjust for rounding error
+		let remainder = sectionTarget - allocatedTotal;
+		rawTargets.sort((a, b) => b.rawTarget - a.rawTarget);
+		for (let i = 0; remainder > 0 && i < rawTargets.length; i++) {
+			rawTargets[i].rawTarget++;
 			remainder--;
 		}
-		for (let i = 0; remainder < 0 && i < rawAllocations.length; i++) {
-			if (rawAllocations[i].rawNew > 0) {
-				rawAllocations[i].rawNew--;
+		for (let i = 0; remainder < 0 && i < rawTargets.length; i++) {
+			if (rawTargets[i].rawTarget > 0) {
+				rawTargets[i].rawTarget--;
 				remainder++;
 			}
 		}
 
-		// Build topic plans
-		for (const { entry, rawNew } of rawAllocations) {
+		// Build topic plans with trim/generate deltas
+		for (const { entry, rawTarget } of rawTargets) {
 			const current = sectionTopicCounts.get(entry.topic) || 0;
-			const targetCount = current + rawNew;
-			const batches = Math.ceil(rawNew / batchSize);
+			const delta = rawTarget - current;
+			const toGenerate = Math.max(0, delta);
+			const toTrim = Math.max(0, -delta);
+			const batches = Math.ceil(toGenerate / batchSize);
 
 			topicPlans.push({
 				topic: entry.topic,
@@ -225,19 +222,20 @@ async function main() {
 				areaNumber: entry.areaNumber,
 				areaWeight: entry.areaWeight,
 				currentCount: current,
-				targetCount,
-				newNeeded: rawNew,
+				targetCount: rawTarget,
+				toGenerate,
+				toTrim,
 				batches,
 				difficulty: {
-					easy: Math.round(rawNew * DIFFICULTY_TARGETS.easy),
-					medium: Math.round(rawNew * DIFFICULTY_TARGETS.medium),
-					hard: rawNew - Math.round(rawNew * DIFFICULTY_TARGETS.easy) - Math.round(rawNew * DIFFICULTY_TARGETS.medium),
+					easy: Math.round(toGenerate * DIFFICULTY_TARGETS.easy),
+					medium: Math.round(toGenerate * DIFFICULTY_TARGETS.medium),
+					hard: toGenerate - Math.round(toGenerate * DIFFICULTY_TARGETS.easy) - Math.round(toGenerate * DIFFICULTY_TARGETS.medium),
 				},
 				blooms: {
-					l1: Math.round(rawNew * bloomsTarget.l1),
-					l2: Math.round(rawNew * bloomsTarget.l2),
-					l3: Math.round(rawNew * bloomsTarget.l3),
-					l4: rawNew - Math.round(rawNew * bloomsTarget.l1) - Math.round(rawNew * bloomsTarget.l2) - Math.round(rawNew * bloomsTarget.l3),
+					l1: Math.round(toGenerate * bloomsTarget.l1),
+					l2: Math.round(toGenerate * bloomsTarget.l2),
+					l3: Math.round(toGenerate * bloomsTarget.l3),
+					l4: toGenerate - Math.round(toGenerate * bloomsTarget.l1) - Math.round(toGenerate * bloomsTarget.l2) - Math.round(toGenerate * bloomsTarget.l3),
 				},
 			});
 		}
@@ -245,6 +243,8 @@ async function main() {
 		// Sort by area number then topic name
 		topicPlans.sort((a, b) => a.areaNumber - b.areaNumber || a.topic.localeCompare(b.topic));
 
+		const sectionToGenerate = topicPlans.reduce((s, t) => s + t.toGenerate, 0);
+		const sectionToTrim = topicPlans.reduce((s, t) => s + t.toTrim, 0);
 		const totalBatches = topicPlans.reduce((s, t) => s + t.batches, 0);
 		grandTotalBatches += totalBatches;
 
@@ -253,17 +253,21 @@ async function main() {
 			sectionId,
 			currentTotal,
 			targetTotal: sectionTarget,
-			newNeeded,
+			toGenerate: sectionToGenerate,
+			toTrim: sectionToTrim,
 			totalBatches,
 			topics: topicPlans,
 		});
 
-		console.error(`  ${bp.code.toUpperCase()}: ${currentTotal} → ${sectionTarget} (+${newNeeded}, ${totalBatches} batches)`);
+		const trimNote = sectionToTrim > 0 ? `, trim ${sectionToTrim}` : "";
+		const genNote = sectionToGenerate > 0 ? `, generate ${sectionToGenerate}` : "";
+		console.error(`  ${bp.code.toUpperCase()}: ${currentTotal} → ${sectionTarget}${trimNote}${genNote} (${totalBatches} gen batches)`);
 	}
 
 	// Summary
 	const totalCurrent = sectionPlans.reduce((s, p) => s + p.currentTotal, 0);
-	const totalNew = sectionPlans.reduce((s, p) => s + p.newNeeded, 0);
+	const totalToGenerate = sectionPlans.reduce((s, p) => s + p.toGenerate, 0);
+	const totalToTrim = sectionPlans.reduce((s, p) => s + p.toTrim, 0);
 
 	const plan: GenerationPlan = {
 		generatedAt: new Date().toISOString(),
@@ -274,7 +278,8 @@ async function main() {
 		summary: {
 			totalCurrent,
 			totalTarget: totalArg,
-			totalNew,
+			totalToGenerate,
+			totalToTrim,
 			totalBatches: grandTotalBatches,
 		},
 	};
@@ -291,39 +296,43 @@ async function main() {
 	console.error(`Wrote: ${progressPath}`);
 
 	// Final summary
-	console.error(`\nSummary: ${totalCurrent} → ${totalArg} (+${totalNew} new, ${grandTotalBatches} batches of ${batchSize})`);
+	console.error(`\nSummary: ${totalCurrent} current → ${totalArg} target`);
+	console.error(`  Generate: ${totalToGenerate} new (${grandTotalBatches} batches of ${batchSize})`);
+	console.error(`  Trim:     ${totalToTrim} to delete`);
 }
 
 function buildProgressMarkdown(plan: GenerationPlan): string {
 	const lines: string[] = [
-		"# Question Generation Progress",
+		"# Question Curation Plan",
 		"",
-		"Cross-session tracker for scaling question bank from ~5K to 20K.",
+		"Per-section target: 1,500 questions. Distributed by AICPA Blueprint area weights.",
 		"",
 		`**Goal:** ${plan.totalTarget.toLocaleString()} total questions across all sections.`,
 		"",
-		`**Batch size:** ${plan.batchSize} questions per migration.`,
+		`**Batch size:** ${plan.batchSize} questions per generation batch.`,
 		"",
-		`**Total new needed:** ${plan.summary.totalNew.toLocaleString()} questions (~${plan.summary.totalBatches} batches).`,
+		`**To generate:** ${plan.summary.totalToGenerate.toLocaleString()} new questions (~${plan.summary.totalBatches} batches).`,
+		"",
+		`**To trim:** ${plan.summary.totalToTrim.toLocaleString()} questions to delete (keep best, cut weakest).`,
 		"",
 		"**Difficulty targets:** 30% easy / 50% medium / 20% hard.",
 		"",
-		"## How to Resume",
+		"## Workflow",
 		"",
-		"Each session:",
-		"1. Read this file - find the first section with status \"In Progress\" or \"Pending\"",
-		"2. Run: `./scripts/orchestrate.ps1 -Section <code> -Mode generate -Batches N`",
-		"3. The orchestrator auto-selects topics, generates scaffolds, and updates this tracker",
+		"For each section:",
+		"1. **Trim** — for over-target topics, score/rank existing questions and delete the weakest",
+		"2. **Generate** — for under-target topics, run orchestrator to fill the gap",
+		"3. **Review** — manual human review of the surviving question set",
 		"",
-		"## Section Progress",
+		"## Section Overview",
 		"",
-		"| Section | Current | Target | Generated | Remaining | Batches Done | Status |",
-		"|---------|---------|--------|-----------|-----------|--------------|--------|",
+		"| Section | Current | Target | To Trim | To Generate | Gen Batches | Status |",
+		"|---------|---------|--------|---------|-------------|-------------|--------|",
 	];
 
 	for (const sp of plan.sections) {
 		lines.push(
-			`| ${sp.section.toUpperCase()}     | ${sp.currentTotal.toLocaleString()} | ${sp.targetTotal.toLocaleString()} | 0 | ${sp.newNeeded.toLocaleString()} | 0/${sp.totalBatches} | Pending |`,
+			`| ${sp.section.toUpperCase()}     | ${sp.currentTotal.toLocaleString()} | ${sp.targetTotal.toLocaleString()} | ${sp.toTrim.toLocaleString()} | ${sp.toGenerate.toLocaleString()} | ${sp.totalBatches} | Pending |`,
 		);
 	}
 
@@ -334,11 +343,13 @@ function buildProgressMarkdown(plan: GenerationPlan): string {
 	for (const sp of plan.sections) {
 		lines.push(`### ${sp.section.toUpperCase()}`);
 		lines.push("");
-		lines.push("| Topic | Current | Target | New | Batches |");
-		lines.push("|-------|---------|--------|-----|---------|");
+		lines.push("| Area | Topic | Current | Target | Trim | Generate |");
+		lines.push("|------|-------|---------|--------|------|----------|");
 		for (const tp of sp.topics) {
+			const trimStr = tp.toTrim > 0 ? `-${tp.toTrim}` : "";
+			const genStr = tp.toGenerate > 0 ? `+${tp.toGenerate}` : "";
 			lines.push(
-				`| ${tp.topic} | ${tp.currentCount} | ${tp.targetCount} | ${tp.newNeeded} | ${tp.batches} |`,
+				`| ${tp.areaNumber} | ${tp.topic} | ${tp.currentCount} | ${tp.targetCount} | ${trimStr} | ${genStr} |`,
 			);
 		}
 		lines.push("");
