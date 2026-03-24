@@ -27,7 +27,7 @@ For each section:
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,425 | 1,500 | 1,010 | 39 | 7 | Pending |
 | BAR     | 1,189 | 1,500 | 151 | 462 | 29 | Pending |
-| ISC     | 1,260 | 1,500 | 78 | 318 | 28 | Generating |
+| ISC     | 1,290 | 1,500 | 78 | 288 | 29 | Generating |
 | TCP     | 1,043 | 1,500 | 96 | 553 | 29 | Generating |
 
 ## Topic Detail
@@ -156,7 +156,7 @@ For each section:
 | 1 | ERP and Accounting Information Systems | 78 | 86 |  | +8 |
 | 1 | IT Audit Frameworks | 68 | 86 |  | +18 |
 | 1 | IT General Controls | 68 | 86 |  | +18 |
-| 1 | IT Infrastructure and Architecture | 52 | 86 |  | +34 |
+| 1 | IT Infrastructure and Architecture | 82 | 86 |  | +4 |
 | 1 | System Availability and Change Management | 57 | 86 |  | +29 |
 | 2 | Data Protection Technologies | 169 | 100 | -69 |  |
 | 2 | Incident Response and Recovery | 109 | 100 | -9 |  |
@@ -227,3 +227,4 @@ For each section:
 | 2026-03-24 | 00508_generate_isc_batch18.sql | ISC | ERP and Accounting Information Systems | 30 | Hash totals, timing differences at integration points, master data fraud, mapping error controls, single point of failure BCP, AIS components, reconciliation controls, audit trail immutability, edit checks, API authentication, cost flow methods, transaction vs master data, change management controls, real-time reporting, audit trail elements, BOM, storage controls, cutoff procedures, standardized processes, before/after values, source documents, split-ordering circumvention, customization upgrade risk, shared database, exception reporting, encryption residual risk, run-to-run totals, AIS data flow, reorder points, system load distribution |
 | 2026-03-24 | 00507_generate_tcp_batch14.sql | TCP | Owner-Entity Transactions | 30 | Thin capitalization reclassification, 302(b)(3) family attribution waiver, constructive dividend (auto/rent-free/expenses/loans-no-repayment/bargain sale), Sec 7872 $100K gift NII exception, Sec 7872 compensation loan, Sec 7872 demand vs term, Sec 318 entity-to-owner/option/owner-to-entity/family-no-siblings, Sec 302(b)(1) meaningful reduction, Sec 302(b)(4) partial liquidation, Sec 302 dividend basis transfer, Sec 267 controlled group, S corp basis ordering/debt restoration, Sec 311(a) no loss, partnership current distribution cash>basis/property basis cap, debt-vs-equity multi-factor |
 | 2026-03-24 | 00509_generate_isc_batch19.sql | ISC | Change Management | 30 | FSC definition, configuration drift, SDLC-ITIL integration, change models, back-out testing, governance escalation, RICE service request vs change, stakeholder communication, environment promotion controls, automated vs manual CAB, change ownership, technical debt backlog, data migration validation, change closure criteria, parallel vs pilot testing, change enablement ITIL 4, audit trail requirements, change collision analysis, maturity overstatement, SDLC requirements sign-off, risk categorization, PIR definition, smoke testing, immutable artifacts, SDLC planning deliverable, success rate calculation, environment separation, merged org framework, BIA-informed priority, SaaS change governance |
+| 2026-03-24 | 00511_generate_isc_batch20.sql | ISC | IT Infrastructure and Architecture | 30 | DHCP, DNS, stateful firewall, multi-tenancy risk, load balancer failover, peer-to-peer controls, RAID 6 dual parity, hot/warm/cold site, MDM, WEP/WPA segmentation, SLA metrics, OSI Application layer, SDN security, subnetting, NAT, IPv6 dual-stack, HA clustering, UPS, forward proxy, star topology, cloud elasticity, thin client VDI, SNMP monitoring, data center tiers, EDR defense-in-depth, routing protocol auth, bandwidth, OSI Physical/Presentation layers, 802.1X port security |
