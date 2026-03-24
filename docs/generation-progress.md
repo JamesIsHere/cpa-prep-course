@@ -27,7 +27,7 @@ For each section:
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,425 | 1,500 | 1,010 | 39 | 7 | Pending |
 | BAR     | 1,189 | 1,500 | 151 | 462 | 29 | Pending |
-| ISC     | 1,230 | 1,500 | 78 | 348 | 27 | Generating |
+| ISC     | 1,260 | 1,500 | 78 | 318 | 28 | Generating |
 | TCP     | 1,043 | 1,500 | 96 | 553 | 29 | Generating |
 
 ## Topic Detail
@@ -151,7 +151,7 @@ For each section:
 
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
-| 1 | Change Management | 49 | 86 |  | +37 |
+| 1 | Change Management | 79 | 86 |  | +7 |
 | 1 | Data Management and Lifecycle | 78 | 86 |  | +8 |
 | 1 | ERP and Accounting Information Systems | 78 | 86 |  | +8 |
 | 1 | IT Audit Frameworks | 68 | 86 |  | +18 |
@@ -226,3 +226,4 @@ For each section:
 | 2026-03-24 | 00506_generate_isc_batch17.sql | ISC | Data Management and Lifecycle | 30 | ACID atomicity, differential restore sequence, graph DB fraud detection, incremental backup, data user role, sharing-phase encryption, column-family time-series, storage-phase encryption at rest, creation-phase input validation, legal hold definition, SOX 7-year retention, backup strategy for fast restore, data validity dimension, RPO/RTO backup evaluation, key-value store, spoliation penalties, governance maturity/classification foundation, certificate of destruction, differential backup definition, lifecycle control-phase matching, custodian-owner separation risk, full backup characteristics, classification-driven controls, archival integrity/media refresh, denormalized warehouse schema, SSD vs HDD degaussing, HIPAA 6-year retention, ETL reconciliation control gaps, DLP for data exfiltration, cryptographic erasure conditions |
 | 2026-03-24 | 00508_generate_isc_batch18.sql | ISC | ERP and Accounting Information Systems | 30 | Hash totals, timing differences at integration points, master data fraud, mapping error controls, single point of failure BCP, AIS components, reconciliation controls, audit trail immutability, edit checks, API authentication, cost flow methods, transaction vs master data, change management controls, real-time reporting, audit trail elements, BOM, storage controls, cutoff procedures, standardized processes, before/after values, source documents, split-ordering circumvention, customization upgrade risk, shared database, exception reporting, encryption residual risk, run-to-run totals, AIS data flow, reorder points, system load distribution |
 | 2026-03-24 | 00507_generate_tcp_batch14.sql | TCP | Owner-Entity Transactions | 30 | Thin capitalization reclassification, 302(b)(3) family attribution waiver, constructive dividend (auto/rent-free/expenses/loans-no-repayment/bargain sale), Sec 7872 $100K gift NII exception, Sec 7872 compensation loan, Sec 7872 demand vs term, Sec 318 entity-to-owner/option/owner-to-entity/family-no-siblings, Sec 302(b)(1) meaningful reduction, Sec 302(b)(4) partial liquidation, Sec 302 dividend basis transfer, Sec 267 controlled group, S corp basis ordering/debt restoration, Sec 311(a) no loss, partnership current distribution cash>basis/property basis cap, debt-vs-equity multi-factor |
+| 2026-03-24 | 00509_generate_isc_batch19.sql | ISC | Change Management | 30 | FSC definition, configuration drift, SDLC-ITIL integration, change models, back-out testing, governance escalation, RICE service request vs change, stakeholder communication, environment promotion controls, automated vs manual CAB, change ownership, technical debt backlog, data migration validation, change closure criteria, parallel vs pilot testing, change enablement ITIL 4, audit trail requirements, change collision analysis, maturity overstatement, SDLC requirements sign-off, risk categorization, PIR definition, smoke testing, immutable artifacts, SDLC planning deliverable, success rate calculation, environment separation, merged org framework, BIA-informed priority, SaaS change governance |
