@@ -25,9 +25,9 @@ For each section:
 |---------|---------|--------|---------|-------------|-------------|--------|
 | AUD     | 3,474 | 1,500 | 2,355 | 351 | 25 | Pending |
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
-| REG     | 2,394 | 1,500 | 1,010 | 86 | 9 | Pending |
+| REG     | 2,394 | 1,500 | 1,010 | 70 | 9 | Pending |
 | BAR     | 1,129 | 1,500 | 151 | 522 | 30 | Pending |
-| ISC     | 1,020 | 1,500 | 78 | 558 | 27 | Pending |
+| ISC     | 1,050 | 1,500 | 78 | 528 | 26 | Pending |
 | TCP     | 983 | 1,500 | 96 | 613 | 28 | Pending |
 
 ## Topic Detail
@@ -154,7 +154,7 @@ For each section:
 | 1 | Change Management | 49 | 86 |  | +37 |
 | 1 | Data Management and Lifecycle | 48 | 86 |  | +38 |
 | 1 | ERP and Accounting Information Systems | 48 | 86 |  | +38 |
-| 1 | IT Audit Frameworks | 38 | 86 |  | +48 |
+| 1 | IT Audit Frameworks | 68 | 86 |  | +18 |
 | 1 | IT General Controls | 38 | 86 |  | +48 |
 | 1 | IT Infrastructure and Architecture | 52 | 86 |  | +34 |
 | 1 | System Availability and Change Management | 57 | 86 |  | +29 |
@@ -206,3 +206,5 @@ For each section:
 | 2026-03-24 | 00486_generate_reg_batch55.sql | REG | Tax Procedures | 19 | Lien attachment timing, adequate disclosure SOL, court choice strategy, FTF/FTP combined calc, Form 872 consent, math error authority, fraud burden shift, penalty mutual exclusivity, levy definition, interest rate adjustment, NFTL creditor priority, field audit location, valuation misstatement 40%, Small Case Division threshold, refund lookback |
 | 2026-03-24 | 00488_generate_isc_batch11.sql | ISC | Threats, Attacks, and Vulnerabilities | 30 | Credential stuffing, watering hole, fileless malware, privilege escalation, OWASP broken access control, DNS poisoning, session hijacking, SSRF, cryptojacking, IoA vs IoC, ARP spoofing, insecure deserialization, STRIDE, SBOM, RaaS, evil twin, buffer overflow, malvertising, API security, STIX/TAXII |
 | 2026-03-24 | 00487_generate_bar_batch12.sql | BAR | Prospective Analysis and Forecasting | 30 | Weighted MA divergence, adjusted R², SGR, deseasonalizing, tracking signal, DuPont strategy, multicollinearity, capital intensity, IGR, Delphi, alpha lag, retention EFN, MAPE, t-stat, Durbin-Watson, pro forma CF, forecast triangulation, CV, heteroscedasticity, MAD |
+| 2026-03-24 | 00490_generate_isc_batch12.sql | ISC | IT Audit Frameworks | 30 | NIST SP 800-53, ALE cost-benefit, COBIT APO domain, framework selection, SLE calc, COSO control environment mapping, CMMI Level 4 vs 5, ATO authorization, optimize and automate, exposure factor, COBIT MEA, COSO monitoring mapping, FIPS 199 categorization, risk register living document, COBIT DSS, ITIL design and transition, vulnerability identification, end-to-end governance, quantitative vs qualitative selection, ITIL Engage, EDM03 risk optimization, RMF Prepare step, risk mitigation, dynamic governance, ARO, ISO 20000, asset inventory, COSO info/communication mapping, ITIL Improve |
+| 2026-03-24 | 00493_generate_reg_batch56.sql | REG | Professional Ethics in Tax | 16 | §6694(a)/(b) preparer penalties, §7216 unauthorized disclosure, §10.29 conflicts of interest, contingent fees, client record return, EA practice rights, OPR sanctions, §6695 admin penalties, §10.51 disreputable conduct, solicitation restrictions, reasonable basis vs substantial authority, §10.37 audit lottery, cashing refund checks, prompt disposition, §6662 accuracy penalty, penalty/sanction interplay |
