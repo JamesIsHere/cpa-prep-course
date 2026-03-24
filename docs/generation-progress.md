@@ -23,7 +23,7 @@ For each section:
 
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status |
 |---------|---------|--------|---------|-------------|-------------|--------|
-| AUD     | 3,474 | 1,500 | 2,355 | 351 | 25 | Pending |
+| AUD     | 3,504 | 1,500 | 2,355 | 321 | 25 | Pending |
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,394 | 1,500 | 1,010 | 70 | 9 | Pending |
 | BAR     | 1,129 | 1,500 | 151 | 522 | 30 | Pending |
@@ -46,7 +46,7 @@ For each section:
 | 1 | Terms of Engagement | 20 | 38 |  | +18 |
 | 2 | Audit Planning | 62 | 64 |  | +2 |
 | 2 | Internal Controls | 72 | 64 | -8 |  |
-| 2 | Materiality | 20 | 64 |  | +44 |
+| 2 | Materiality | 50 | 64 |  | +14 |
 | 2 | Responding to Assessed Risks | 20 | 64 |  | +44 |
 | 2 | Risk Assessment | 64 | 64 |  |  |
 | 2 | Understanding the Entity and Environment | 20 | 64 |  | +44 |
@@ -208,3 +208,4 @@ For each section:
 | 2026-03-24 | 00487_generate_bar_batch12.sql | BAR | Prospective Analysis and Forecasting | 30 | Weighted MA divergence, adjusted R², SGR, deseasonalizing, tracking signal, DuPont strategy, multicollinearity, capital intensity, IGR, Delphi, alpha lag, retention EFN, MAPE, t-stat, Durbin-Watson, pro forma CF, forecast triangulation, CV, heteroscedasticity, MAD |
 | 2026-03-24 | 00490_generate_isc_batch12.sql | ISC | IT Audit Frameworks | 30 | NIST SP 800-53, ALE cost-benefit, COBIT APO domain, framework selection, SLE calc, COSO control environment mapping, CMMI Level 4 vs 5, ATO authorization, optimize and automate, exposure factor, COBIT MEA, COSO monitoring mapping, FIPS 199 categorization, risk register living document, COBIT DSS, ITIL design and transition, vulnerability identification, end-to-end governance, quantitative vs qualitative selection, ITIL Engage, EDM03 risk optimization, RMF Prepare step, risk mitigation, dynamic governance, ARO, ISO 20000, asset inventory, COSO info/communication mapping, ITIL Improve |
 | 2026-03-24 | 00493_generate_reg_batch56.sql | REG | Professional Ethics in Tax | 16 | §6694(a)/(b) preparer penalties, §7216 unauthorized disclosure, §10.29 conflicts of interest, contingent fees, client record return, EA practice rights, OPR sanctions, §6695 admin penalties, §10.51 disreputable conduct, solicitation restrictions, reasonable basis vs substantial authority, §10.37 audit lottery, cashing refund checks, prompt disposition, §6662 accuracy penalty, penalty/sanction interplay |
+| 2026-03-24 | 00492_generate_aud_batch86.sql | AUD | Materiality | 30 | Clearly trivial threshold, related-party qualitative factors, conglomerate specific materiality, performance materiality calc, aggregated misstatements near materiality, interim revision, documentation requirements, fraud risk effect, governmental benchmark, governance communication, prior-period carryforward, management pressure on materiality, tolerable misstatement allocation, specific vs overall materiality, first-year audit, clearly trivial percentage, clearly trivial application, acquisition revision, user perspective, sample size relationship, management bias pattern, timing of establishment, group audit component materiality, representation letter, scoping new accounts, cash flow misclassification, asset-intensive benchmark, fraud risk pattern, going concern effect, management communication sequence |
