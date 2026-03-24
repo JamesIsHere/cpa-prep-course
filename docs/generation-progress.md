@@ -27,7 +27,7 @@ For each section:
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,375 | 1,500 | 1,010 | 135 | 11 | Pending |
 | BAR     | 1,069 | 1,500 | 151 | 582 | 31 | Pending |
-| ISC     | 960 | 1,500 | 78 | 618 | 28 | Pending |
+| ISC     | 990 | 1,500 | 78 | 588 | 28 | Pending |
 | TCP     | 923 | 1,500 | 96 | 673 | 29 | Pending |
 
 ## Topic Detail
@@ -151,7 +151,7 @@ For each section:
 
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
-| 1 | Change Management | 19 | 86 |  | +67 |
+| 1 | Change Management | 49 | 86 |  | +37 |
 | 1 | Data Management and Lifecycle | 48 | 86 |  | +38 |
 | 1 | ERP and Accounting Information Systems | 48 | 86 |  | +38 |
 | 1 | IT Audit Frameworks | 38 | 86 |  | +48 |
@@ -195,3 +195,4 @@ For each section:
 
 | Date | Migration | Section | Topic | Count | Notes |
 |------|-----------|---------|-------|-------|-------|
+| 2026-03-24 | 00481_generate_isc_batch9.sql | ISC | Change Management | 30 | Rollback plans, CAB composition, CMDB, patch mgmt, RICE framework, change categorization, environment separation |
