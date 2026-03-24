@@ -23,9 +23,9 @@ For each section:
 
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status |
 |---------|---------|--------|---------|-------------|-------------|--------|
-| AUD     | 3,504 | 1,500 | 2,355 | 321 | 25 | Pending |
+| AUD     | 3,534 | 1,500 | 2,355 | 291 | 26 | Pending |
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
-| REG     | 2,394 | 1,500 | 1,010 | 70 | 9 | Pending |
+| REG     | 2,410 | 1,500 | 1,010 | 54 | 8 | Pending |
 | BAR     | 1,129 | 1,500 | 151 | 522 | 30 | Pending |
 | ISC     | 1,050 | 1,500 | 78 | 528 | 26 | Pending |
 | TCP     | 983 | 1,500 | 96 | 613 | 28 | Pending |
@@ -108,7 +108,7 @@ For each section:
 | 2 | Business Structures | 68 | 60 | -8 |  |
 | 2 | Debtor-Creditor Relationships | 62 | 60 | -2 |  |
 | 2 | Government Regulation of Business | 50 | 60 |  | +10 |
-| 3 | Like-Kind Exchanges | 34 | 50 |  | +16 |
+| 3 | Like-Kind Exchanges | 50 | 50 |  |  |
 | 3 | Property Transactions: Basis | 52 | 50 | -2 |  |
 | 3 | Property Transactions: Gains/Losses | 44 | 50 |  | +6 |
 | 4 | Alternative Minimum Tax | 80 | 68 | -12 |  |
@@ -178,7 +178,7 @@ For each section:
 | 1 | Passive Activity and At-Risk Rules | 228 | 132 | -96 |  |
 | 1 | Retirement Plans and Education Savings | 86 | 131 |  | +45 |
 | 1 | Wealth Transfer and Gifting Strategies | 84 | 131 |  | +47 |
-| 2 | Advanced Basis Calculations | 47 | 105 |  | +58 |
+| 2 | Advanced Basis Calculations | 107 | 105 |  |  |
 | 2 | Entity Formation and Liquidation | 48 | 105 |  | +57 |
 | 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 51 | 105 |  | +54 |
 | 2 | International Tax | 54 | 105 |  | +51 |
@@ -209,3 +209,5 @@ For each section:
 | 2026-03-24 | 00490_generate_isc_batch12.sql | ISC | IT Audit Frameworks | 30 | NIST SP 800-53, ALE cost-benefit, COBIT APO domain, framework selection, SLE calc, COSO control environment mapping, CMMI Level 4 vs 5, ATO authorization, optimize and automate, exposure factor, COBIT MEA, COSO monitoring mapping, FIPS 199 categorization, risk register living document, COBIT DSS, ITIL design and transition, vulnerability identification, end-to-end governance, quantitative vs qualitative selection, ITIL Engage, EDM03 risk optimization, RMF Prepare step, risk mitigation, dynamic governance, ARO, ISO 20000, asset inventory, COSO info/communication mapping, ITIL Improve |
 | 2026-03-24 | 00493_generate_reg_batch56.sql | REG | Professional Ethics in Tax | 16 | §6694(a)/(b) preparer penalties, §7216 unauthorized disclosure, §10.29 conflicts of interest, contingent fees, client record return, EA practice rights, OPR sanctions, §6695 admin penalties, §10.51 disreputable conduct, solicitation restrictions, reasonable basis vs substantial authority, §10.37 audit lottery, cashing refund checks, prompt disposition, §6662 accuracy penalty, penalty/sanction interplay |
 | 2026-03-24 | 00492_generate_aud_batch86.sql | AUD | Materiality | 30 | Clearly trivial threshold, related-party qualitative factors, conglomerate specific materiality, performance materiality calc, aggregated misstatements near materiality, interim revision, documentation requirements, fraud risk effect, governmental benchmark, governance communication, prior-period carryforward, management pressure on materiality, tolerable misstatement allocation, specific vs overall materiality, first-year audit, clearly trivial percentage, clearly trivial application, acquisition revision, user perspective, sample size relationship, management bias pattern, timing of establishment, group audit component materiality, representation letter, scoping new accounts, cash flow misclassification, asset-intensive benchmark, fraud risk pattern, going concern effect, management communication sequence |
+| 2026-03-24 | 00494_generate_reg_batch57.sql | REG | Like-Kind Exchanges | 16 | Boot exceeds realized gain cap, nature/character vs grade/quality, tax return due date deadline, mandatory deferral, 200% rule, loss non-recognition, constructive receipt/QI, personal property as boot, basis with boot given+received, simultaneous vs deferred, reverse exchange/EAT, dealer inventory exclusion, deferred gain in basis, 95% rule, personal-use exclusion, installment note as boot |
+| 2026-03-24 | 00495_generate_aud_batch87.sql | AUD | Responding to Assessed Risks | 30 | Combined vs substantive approach, dual-purpose tests, fraud indicator response, weak control environment effect, roll-forward procedures, inverse RMM/detection risk, external confirmations, completeness direction of testing, related party transactions, control deficiency effect, further audit procedure categories, substantive procedure types, tests of controls purpose, auditor's specialist, evidence reliability, systematic error response, IT dependence effect, prior year misstatement effect, going concern response, accounting estimates, combined approach definition, unpredictability, inquiry limitations, risk reassessment, existence direction of testing, tests of details definition, CAATs advantages, documentation linkage, confirmation sample sizing, substantive analytical procedure limitations |
