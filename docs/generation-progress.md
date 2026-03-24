@@ -27,8 +27,8 @@ For each section:
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,425 | 1,500 | 1,010 | 39 | 7 | Pending |
 | BAR     | 1,189 | 1,500 | 151 | 462 | 29 | Pending |
-| ISC     | 1,341 | 1,500 | 78 | 237 | 30 | Generating |
-| TCP     | 1,073 | 1,500 | 96 | 523 | 30 | Generating |
+| ISC     | 1,363 | 1,500 | 78 | 215 | 30 | Generating |
+| TCP     | 1,103 | 1,500 | 96 | 493 | 30 | Generating |
 
 ## Topic Detail
 
@@ -166,7 +166,7 @@ For each section:
 | 2 | Threats, Attacks, and Vulnerabilities | 78 | 99 |  | +21 |
 | 3 | SOC Engagements | 45 | 60 |  | +15 |
 | 3 | SOC Report Content and Structure | 50 | 60 |  | +10 |
-| 3 | SOC Reporting | 38 | 60 |  | +22 |
+| 3 | SOC Reporting | 60 | 60 |  |  |
 | 3 | SOC Reporting and Trust Services Criteria | 41 | 60 |  | +19 |
 | 3 | SOC Testing Controls | 38 | 60 |  | +22 |
 
@@ -180,7 +180,7 @@ For each section:
 | 1 | Wealth Transfer and Gifting Strategies | 84 | 131 |  | +47 |
 | 2 | Advanced Basis Calculations | 107 | 105 |  |  |
 | 2 | Entity Formation and Liquidation | 78 | 105 |  | +27 |
-| 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 51 | 105 |  | +54 |
+| 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 81 | 105 |  | +24 |
 | 2 | International Tax | 54 | 105 |  | +51 |
 | 2 | Owner-Entity Transactions | 80 | 105 |  | +25 |
 | 3 | Capital Structure Tax Planning | 40 | 56 |  | +16 |
@@ -231,3 +231,5 @@ For each section:
 | 2026-03-24 | 00512_generate_isc_batch21.sql | ISC | System Availability and Change Management | 29 | Version control rollback, SDLC testing/deployment/maintenance phases, active-active failover, patch urgency evaluation, BIA financial impact, segregation of duties, maintenance window analytics, geographic redundancy single-provider risk, change backlog metric, BCP non-IT components, requirements traceability, break-glass access, change request documentation, failed change rate trending, environment separation, rollback archival, DR test design evaluation, BIA interdependency gap, change mgmt maturity metrics, CMDB unauthorized modification detection, patch testing control, DR readiness multi-dimension evaluation, data migration validation, UAT by business stakeholders, clustering |
 | 2026-03-24 | 00510_generate_tcp_batch15.sql | TCP | Entity Formation and Restructuring | 30 | 355(e) anti-Morris Trust, 354(a)(2) securities boot, 368(a)(2)(C) drop-down, 1032 issuing corp, 357(a) liabilities in reorg, 382 testing period, Morris Trust evaluation, 384 preacquisition losses, 368(b) party to reorg, Type E recapitalization excess securities, 355 distribution requirement, net value requirement, Type A flexibility, 355(d) disqualified distribution, 306 taint in recap, 382(h) NUBIL, dissenting shareholders, triangular Type B, consolidation definition, 382(c) COBE, 356 block-by-block, 338(d)(3) QSP, reorg plan requirement, 361(c) distribution, Type C boot+liabilities, 382 value calc, 368(a)(1)(A) cross-border, 355(e) integrated analysis, 382 in reorg, 355 split-up |
 | 2026-03-24 | 00513_generate_isc_batch22.sql | ISC | Security Controls and Monitoring | 22 | Account lockout, tokenization vs masking, honeypot VLAN risk, FIM noise reduction, password salting, reverse proxy, JIT provisioning, geolocation controls, zero trust microsegmentation, CCTV classification, session timeout, MAC filtering limits, awareness training metrics, WPA3 SAE, API gateway, UEBA insider threat, TOTP clock sync, baseline hardening, auth architecture tradeoffs, motion detection, lateral movement detection, API security architecture |
+| 2026-03-24 | 00514_generate_tcp_batch16.sql | TCP | Entity Tax Compliance: NOLs and Consolidated Returns | 30 | Joint/several liability, charitable 10% consolidated limit, capital loss netting, Sec 1231 netting, year-end conformity, depreciation triggering deferred gain, SRLY overlap rule, stock basis adjustments, common parent as agent, intercompany loss matching, pre-TCJA vs post-TCJA ordering, FIFO NOL ordering, DRD in NOL computation, capital losses excluded from NOL, ELA ordinary income character, NUBIG Sec 382(h), unused 382 limitation carryforward, reverse acquisition, dual consolidated loss Sec 1503(d) |
+| 2026-03-24 | 00515_generate_isc_batch23.sql | ISC | SOC Reporting | 22 | Opinion formation 3-step process, scope limitation disclaimer, compensating controls in mgmt response, bridge letter assurance level, CUEC input validation, long gap period procedures, Section V other information, inherent limitations, principal service commitments, carve-out monitoring controls, Type I vs Type II assertion, qualified vs adverse pervasiveness, CUEC configuration mgmt, adverse opinion substantive testing, system requirements, examination-level assurance, TSC mapping, CUEC incident notification, practitioner independence from mgmt response, multi-subservice mixed methods, population quantification, inclusive method coordination |
