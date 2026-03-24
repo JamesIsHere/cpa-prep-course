@@ -23,11 +23,11 @@ For each section:
 
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status |
 |---------|---------|--------|---------|-------------|-------------|--------|
-| AUD     | 3,534 | 1,500 | 2,355 | 291 | 26 | Pending |
+| AUD     | 3,564 | 1,500 | 2,355 | 261 | 25 | Pending |
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,425 | 1,500 | 1,010 | 39 | 7 | Pending |
 | BAR     | 1,159 | 1,500 | 151 | 492 | 30 | Pending |
-| ISC     | 1,110 | 1,500 | 78 | 468 | 28 | Pending |
+| ISC     | 1,140 | 1,500 | 78 | 438 | 28 | Pending |
 | TCP     | 983 | 1,500 | 96 | 613 | 28 | Pending |
 
 ## Topic Detail
@@ -161,7 +161,7 @@ For each section:
 | 2 | Data Protection Technologies | 169 | 100 | -69 |  |
 | 2 | Incident Response and Recovery | 109 | 100 | -9 |  |
 | 2 | Privacy Requirements and Data Protection | 82 | 100 |  | +18 |
-| 2 | Security and Control Frameworks | 52 | 99 |  | +47 |
+| 2 | Security and Control Frameworks | 82 | 99 |  | +17 |
 | 2 | Security Controls and Monitoring | 78 | 100 |  | +22 |
 | 2 | Threats, Attacks, and Vulnerabilities | 78 | 99 |  | +21 |
 | 3 | SOC Engagements | 45 | 60 |  | +15 |
@@ -217,3 +217,5 @@ For each section:
 | 2026-03-24 | 00500_generate_reg_batch58.sql | REG | Individual Taxation: Credits/AMT | 15 | Credit ordering rules, Other Dependent Credit, Premium Tax Credit, FTC simplified election, care credit age limit, EITC earned income definition, CTC citizenship requirement, GBC carryback/forward, care credit MFJ earned income, care credit expense limits, adoption credit special needs, AMT standard deduction add-back, LLC enrollment flexibility, EITC age requirement, FTC carryback/forward periods |
 | 2026-03-24 | 00498_generate_isc_batch14.sql | ISC | Privacy Requirements and Data Protection | 30 | GDPR personal data definition, two-tier penalty calc, right to restrict processing, HIPAA safeguard categorization, CCPA thresholds, extraterritorial reach, automated decision-making Art 22, HIPAA 60-day notification, Do Not Sell link, ePHI vs PHI, processor obligations, privacy as default, administrative safeguards, private right of action, right to object direct marketing, EU-US Data Privacy Framework, HIPAA penalty tiers, Art 49 derogations, oral PHI, non-discrimination, positive-sum principle, household threshold |
 | 2026-03-24 | 00501_generate_tcp_batch12.sql | TCP | Entity Formation and Liquidation | 30 | Sec 332 mandatory, holding period tacking, 338(h)(10) S corp, partial liq 5-yr test, 362(e)(2) built-in loss, Sec 381 attribute carryover, 707(a)(2)(B) disguised sale, 334(a) FMV basis, short-term notes as boot, 338 vs 338(h)(10), corporate-level partial liq test, step transaction, 721(b) investment company, S corp single-tax advantage, A/R as property, 336(d)(1) related-party loss, Sec 332 timing, accommodation transferor, 736(a) unstated goodwill, 453B installment acceleration, 357(b) tax avoidance, 731(a)(2) loss rules, 1245 recapture deferral, 332 continuous ownership, nonvoting stock control test, 302(b)(4) noncorporate only, multiparty boot isolation, 453(h) shareholder installment, 351 vs 721 liability comparison, 338(h)(10) stepped-up basis |
+| 2026-03-24 | 00502_generate_isc_batch15.sql | ISC | Security and Control Frameworks | 30 | CIA triad, NIST Tier 1/3/4 characteristics, COBIT Level 3 capability, ALE/SLE calculations, ITGC-application control dependency, check digit input controls, batch total processing controls, output controls, corrective controls, ISMS definition, ISO 27001 PDCA Do/Act phases, COSO Risk Assessment/Info-Comm IT application, detective/preventive control classification, COBIT APO/DSS domains, CIS IG3, multi-framework integration, zero trust concurrent functions |
+| 2026-03-24 | 00497_generate_aud_batch88.sql | AUD | Understanding the Entity and Environment | 30 | Declining industry going concern, franchise royalty reliability, rapid growth control strain, engagement letter content, cloud migration IT controls, new accounting standard adoption, governance definition, audit strategy vs plan, cryptocurrency holdings, preliminary analytics, multi-component entity, ownership structure, whistleblower hotline findings, management responsibilities, acquisition strategy, predecessor authorization, budgets/forecasts variance, labor union negotiations, actuarial estimates, interim period changes, control environment definition, revenue concentration, related-party leases, framework transition, engagement letter update, multi-jurisdictional operations, audit committee effectiveness, related-party guarantees, restatement history, nonprofit restricted funding |
