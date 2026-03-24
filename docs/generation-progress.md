@@ -25,7 +25,7 @@ For each section:
 |---------|---------|--------|---------|-------------|-------------|--------|
 | AUD     | 3,474 | 1,500 | 2,355 | 351 | 25 | Pending |
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
-| REG     | 2,375 | 1,500 | 1,010 | 105 | 10 | Pending |
+| REG     | 2,394 | 1,500 | 1,010 | 86 | 9 | Pending |
 | BAR     | 1,129 | 1,500 | 151 | 522 | 30 | Pending |
 | ISC     | 1,020 | 1,500 | 78 | 558 | 27 | Pending |
 | TCP     | 983 | 1,500 | 96 | 613 | 28 | Pending |
@@ -102,7 +102,7 @@ For each section:
 | 1 | Federal Tax Procedures | 40 | 45 |  | +5 |
 | 1 | Legal Duties and Responsibilities | 32 | 45 |  | +13 |
 | 1 | Professional Ethics in Tax | 29 | 45 |  | +16 |
-| 1 | Tax Procedures | 26 | 45 |  | +19 |
+| 1 | Tax Procedures | 45 | 45 |  |  |
 | 2 | Agency and Regulation | 66 | 60 | -6 |  |
 | 2 | Business Law: Contracts | 73 | 60 | -13 |  |
 | 2 | Business Structures | 68 | 60 | -8 |  |
@@ -203,5 +203,6 @@ For each section:
 | 2026-03-24 | 00480_generate_bar_batch11.sql | BAR | Risk Management and Economics | 30 | WACC calc, tax shield, trough phase, translation exposure, DOL/DFL/DTL, M&M Props I&II, pecking order, two-stage DDM, PI capital rationing, natural hedging, CAPM blending |
 | 2026-03-24 | 00484_generate_tcp_batch10.sql | TCP | Wealth Transfer and Gifting Strategies | 30 | QDOT, qualified disclaimer, net gift, Sec 2036 retained life estate, Sec 2035 three-year rule, gift of services, below-market loans, part-gift/part-sale, non-citizen spouse exclusion, reciprocal trust doctrine, Sec 2032A special use valuation, FLP Sec 2036 challenge |
 | 2026-03-24 | 00485_generate_aud_batch85.sql | AUD | Tests of Controls | 30 | Internal audit reliance, upper deviation limit, quarterly 100% testing, detective controls, unpredictability, first-year audit, sequential sampling, test data CAATs, entity-level controls, block selection, access security, change management ITGCs, group audit component reliance, management override evaluation |
+| 2026-03-24 | 00486_generate_reg_batch55.sql | REG | Tax Procedures | 19 | Lien attachment timing, adequate disclosure SOL, court choice strategy, FTF/FTP combined calc, Form 872 consent, math error authority, fraud burden shift, penalty mutual exclusivity, levy definition, interest rate adjustment, NFTL creditor priority, field audit location, valuation misstatement 40%, Small Case Division threshold, refund lookback |
 | 2026-03-24 | 00488_generate_isc_batch11.sql | ISC | Threats, Attacks, and Vulnerabilities | 30 | Credential stuffing, watering hole, fileless malware, privilege escalation, OWASP broken access control, DNS poisoning, session hijacking, SSRF, cryptojacking, IoA vs IoC, ARP spoofing, insecure deserialization, STRIDE, SBOM, RaaS, evil twin, buffer overflow, malvertising, API security, STIX/TAXII |
 | 2026-03-24 | 00487_generate_bar_batch12.sql | BAR | Prospective Analysis and Forecasting | 30 | Weighted MA divergence, adjusted R², SGR, deseasonalizing, tracking signal, DuPont strategy, multicollinearity, capital intensity, IGR, Delphi, alpha lag, retention EFN, MAPE, t-stat, Durbin-Watson, pro forma CF, forecast triangulation, CV, heteroscedasticity, MAD |
