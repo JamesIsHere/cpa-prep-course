@@ -23,12 +23,12 @@ For each section:
 
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status |
 |---------|---------|--------|---------|-------------|-------------|--------|
-| AUD     | 3,564 | 1,500 | 2,355 | 261 | 25 | Pending |
+| AUD     | 3,564 | 1,500 | 2,355 | 231 | 26 | Pending |
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,425 | 1,500 | 1,010 | 39 | 7 | Pending |
-| BAR     | 1,159 | 1,500 | 151 | 492 | 30 | Pending |
-| ISC     | 1,140 | 1,500 | 78 | 438 | 28 | Pending |
-| TCP     | 983 | 1,500 | 96 | 613 | 28 | Pending |
+| BAR     | 1,189 | 1,500 | 151 | 462 | 29 | Pending |
+| ISC     | 1,170 | 1,500 | 78 | 408 | 27 | Pending |
+| TCP     | 1,013 | 1,500 | 96 | 583 | 28 | Pending |
 
 ## Topic Detail
 
@@ -129,7 +129,7 @@ For each section:
 |------|-------|---------|--------|------|----------|
 | 1 | Capital Structure and Valuation | 285 | 134 | -151 |  |
 | 1 | Financial Statement Analysis | 116 | 134 |  | +18 |
-| 1 | Financial Valuation Methods | 53 | 134 |  | +81 |
+| 1 | Financial Valuation Methods | 83 | 134 |  | +51 |
 | 1 | Prospective Analysis and Forecasting | 106 | 134 |  | +28 |
 | 1 | Risk Management and Economics | 70 | 134 |  | +64 |
 | 2 | Advanced Consolidations | 49 | 55 |  | +6 |
@@ -165,7 +165,7 @@ For each section:
 | 2 | Security Controls and Monitoring | 78 | 100 |  | +22 |
 | 2 | Threats, Attacks, and Vulnerabilities | 78 | 99 |  | +21 |
 | 3 | SOC Engagements | 45 | 60 |  | +15 |
-| 3 | SOC Report Content and Structure | 20 | 60 |  | +40 |
+| 3 | SOC Report Content and Structure | 50 | 60 |  | +10 |
 | 3 | SOC Reporting | 38 | 60 |  | +22 |
 | 3 | SOC Reporting and Trust Services Criteria | 41 | 60 |  | +19 |
 | 3 | SOC Testing Controls | 38 | 60 |  | +22 |
@@ -182,7 +182,7 @@ For each section:
 | 2 | Entity Formation and Liquidation | 78 | 105 |  | +27 |
 | 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 51 | 105 |  | +54 |
 | 2 | International Tax | 54 | 105 |  | +51 |
-| 2 | Owner-Entity Transactions | 50 | 105 |  | +55 |
+| 2 | Owner-Entity Transactions | 80 | 105 |  | +25 |
 | 3 | Capital Structure Tax Planning | 40 | 56 |  | +16 |
 | 3 | Entity Choice and Planning | 44 | 56 |  | +12 |
 | 3 | Multi-Jurisdictional Tax Planning | 20 | 56 |  | +36 |
@@ -219,3 +219,7 @@ For each section:
 | 2026-03-24 | 00501_generate_tcp_batch12.sql | TCP | Entity Formation and Liquidation | 30 | Sec 332 mandatory, holding period tacking, 338(h)(10) S corp, partial liq 5-yr test, 362(e)(2) built-in loss, Sec 381 attribute carryover, 707(a)(2)(B) disguised sale, 334(a) FMV basis, short-term notes as boot, 338 vs 338(h)(10), corporate-level partial liq test, step transaction, 721(b) investment company, S corp single-tax advantage, A/R as property, 336(d)(1) related-party loss, Sec 332 timing, accommodation transferor, 736(a) unstated goodwill, 453B installment acceleration, 357(b) tax avoidance, 731(a)(2) loss rules, 1245 recapture deferral, 332 continuous ownership, nonvoting stock control test, 302(b)(4) noncorporate only, multiparty boot isolation, 453(h) shareholder installment, 351 vs 721 liability comparison, 338(h)(10) stepped-up basis |
 | 2026-03-24 | 00502_generate_isc_batch15.sql | ISC | Security and Control Frameworks | 30 | CIA triad, NIST Tier 1/3/4 characteristics, COBIT Level 3 capability, ALE/SLE calculations, ITGC-application control dependency, check digit input controls, batch total processing controls, output controls, corrective controls, ISMS definition, ISO 27001 PDCA Do/Act phases, COSO Risk Assessment/Info-Comm IT application, detective/preventive control classification, COBIT APO/DSS domains, CIS IG3, multi-framework integration, zero trust concurrent functions |
 | 2026-03-24 | 00497_generate_aud_batch88.sql | AUD | Understanding the Entity and Environment | 30 | Declining industry going concern, franchise royalty reliability, rapid growth control strain, engagement letter content, cloud migration IT controls, new accounting standard adoption, governance definition, audit strategy vs plan, cryptocurrency holdings, preliminary analytics, multi-component entity, ownership structure, whistleblower hotline findings, management responsibilities, acquisition strategy, predecessor authorization, budgets/forecasts variance, labor union negotiations, actuarial estimates, interim period changes, control environment definition, revenue concentration, related-party leases, framework transition, engagement letter update, multi-jurisdictional operations, audit committee effectiveness, related-party guarantees, restatement history, nonprofit restricted funding |
+| 2026-03-24 | 00499_generate_bar_batch14.sql | BAR | Financial Valuation Methods | 30 | PEG ratio, implied growth from P/E, bargain purchase ASC 805, FCF yield, adjusted NAV, non-operating assets in DCF, MPEEM contributory charges, accretion/dilution M&A, cost approach intangibles, exit vs entry price ASC 820, probability-weighted scenarios, conglomerate discount, guideline public company method, net debt bridge, TTM normalization, measurement period ASC 805, replacement cost, real options, liquidation preferences waterfall, sensitivity analysis, precedent transaction premiums, EV/EBITDA vs EV/EBIT, market participant assumptions, stub period, payout ratio DDM impact, operating lease EV adjustment, selection bias in transactions, Monte Carlo simulation, key person discount, guideline transaction method |
+| 2026-03-24 | 00504_generate_aud_batch89.sql | AUD | Using the Work of Others | 30 | Bridge letter purpose, carve-out method, component auditor quality concerns, SOC gap period, component materiality, SOC 2 vs SOC 1, internal audit reporting line, group-component communication, service org deficiency impact, direct assistance written acknowledgment, restricted working paper access, specialist assumptions, inclusive vs carve-out, gap period testing, consolidation adjustments, IA quality assurance, group opinion responsibility, service auditor role, shared service center, component instruction deviations, predecessor component papers, subservice org definition, specialist objectivity bias, Type 1 vs Type 2 effect, significant component definition, re-performing IA work, complex estimates at component, SOC report control risk, specialist disagreement, inclusive method definition |
+| 2026-03-24 | 00503_generate_tcp_batch13.sql | TCP | Owner-Entity Transactions | 30 | Thin capitalization, Sec 318 sibling exclusion, current distribution basis cap, Sec 302 failed test basis transfer, constructive dividend (auto/rent/expenses/loans), Sec 302(b)(1)/(b)(3)/(b)(4), Sec 318 option/entity/re-attribution, liquidating distribution loss/basis, Sec 267 in-law exclusion/267(d) loss limit, Sec 351 boot, 704(c) built-in gain, S corp AAA/E&P/basis layering, Sec 311(b) appreciated property, debt-vs-equity multi-factor, Sec 7872 gift/compensation loans |
+| 2026-03-24 | 00505_generate_isc_batch16.sql | ISC | SOC Report Content and Structure | 30 | TSC Security mandatory, Section IV restricted-use reason, change mgmt multi-criteria mapping, bridge letter insufficiency, four report sections, service auditor opinion elements, AT-C 205 standard, Section IV exception evaluation, encryption multi-criteria, SOC 1 audience, SOC 3 Type II only, CC9 risk mitigation, CC6 access controls, restricted-use recipients, gap period conflicting bridge letter, PI1 points of focus, user entity auditor no reference required, COSO CC3 mapping, Privacy P5 access, Availability least-relevant control, MFA multi-criteria, system description components, SSAE 18 AT-C 320, service auditor independence, management assertion Type II, SOC report type selection, CC7 system operations, Confidentiality C1 EXCEPT, typical exam period, incident response multi-criteria |
