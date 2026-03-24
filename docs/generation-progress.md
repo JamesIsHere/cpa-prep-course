@@ -27,7 +27,7 @@ For each section:
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,375 | 1,500 | 1,010 | 105 | 10 | Pending |
 | BAR     | 1,099 | 1,500 | 151 | 552 | 30 | Pending |
-| ISC     | 990 | 1,500 | 78 | 588 | 28 | Pending |
+| ISC     | 1,020 | 1,500 | 78 | 558 | 27 | Pending |
 | TCP     | 953 | 1,500 | 96 | 643 | 29 | Pending |
 
 ## Topic Detail
@@ -162,7 +162,7 @@ For each section:
 | 2 | Incident Response and Recovery | 109 | 100 | -9 |  |
 | 2 | Privacy Requirements and Data Protection | 52 | 100 |  | +48 |
 | 2 | Security and Control Frameworks | 52 | 99 |  | +47 |
-| 2 | Security Controls and Monitoring | 48 | 100 |  | +52 |
+| 2 | Security Controls and Monitoring | 78 | 100 |  | +22 |
 | 2 | Threats, Attacks, and Vulnerabilities | 48 | 99 |  | +51 |
 | 3 | SOC Engagements | 45 | 60 |  | +15 |
 | 3 | SOC Report Content and Structure | 20 | 60 |  | +40 |
@@ -197,6 +197,7 @@ For each section:
 |------|-----------|---------|-------|-------|-------|
 | 2026-03-24 | 00481_generate_isc_batch9.sql | ISC | Change Management | 30 | Rollback plans, CAB composition, CMDB, patch mgmt, RICE framework, change categorization, environment separation |
 | 2026-03-24 | 00482_generate_tcp_batch9.sql | TCP | Individual Tax Planning: Compensation | 30 | SE tax, 83(b) forfeiture, golden parachute 280G, constructive receipt, SARs, phantom stock, QBI 199A, Section 119/129 |
+| 2026-03-24 | 00483_generate_isc_batch10.sql | ISC | Security Controls and Monitoring | 30 | Hashing, SSO risk, CER biometrics, DMZ, DAC/MAC models, log integrity, alerting thresholds, environmental controls, mantraps, bollards, SCADA compensating controls |
 | 2026-03-24 | 00478_generate_aud_batch84.sql | AUD | Analytical Procedures | 30 | Scanning, related-party detection, accounting policy changes, conflicting evidence, disaggregation, review engagement analytics, common-size analysis, seasonality, proof-in-total, cross-sectional analysis |
 | 2026-03-24 | 00479_generate_reg_batch54.sql | REG | Federal Tax Procedures | 30 | Correspondence audit, lien vs levy, 30-day letter, Appeals hazards, FTF/FTP interaction, refund lookback, valuation misstatement, interest netting, estimated tax safe harbor |
 | 2026-03-24 | 00480_generate_bar_batch11.sql | BAR | Risk Management and Economics | 30 | WACC calc, tax shield, trough phase, translation exposure, DOL/DFL/DTL, M&M Props I&II, pecking order, two-stage DDM, PI capital rationing, natural hedging, CAPM blending |
