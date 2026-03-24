@@ -23,7 +23,7 @@ For each section:
 
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status |
 |---------|---------|--------|---------|-------------|-------------|--------|
-| AUD     | 3,474 | 1,500 | 2,355 | 381 | 24 | Pending |
+| AUD     | 3,474 | 1,500 | 2,355 | 351 | 25 | Pending |
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,375 | 1,500 | 1,010 | 105 | 10 | Pending |
 | BAR     | 1,129 | 1,500 | 151 | 522 | 30 | Pending |
@@ -202,5 +202,6 @@ For each section:
 | 2026-03-24 | 00479_generate_reg_batch54.sql | REG | Federal Tax Procedures | 30 | Correspondence audit, lien vs levy, 30-day letter, Appeals hazards, FTF/FTP interaction, refund lookback, valuation misstatement, interest netting, estimated tax safe harbor |
 | 2026-03-24 | 00480_generate_bar_batch11.sql | BAR | Risk Management and Economics | 30 | WACC calc, tax shield, trough phase, translation exposure, DOL/DFL/DTL, M&M Props I&II, pecking order, two-stage DDM, PI capital rationing, natural hedging, CAPM blending |
 | 2026-03-24 | 00484_generate_tcp_batch10.sql | TCP | Wealth Transfer and Gifting Strategies | 30 | QDOT, qualified disclaimer, net gift, Sec 2036 retained life estate, Sec 2035 three-year rule, gift of services, below-market loans, part-gift/part-sale, non-citizen spouse exclusion, reciprocal trust doctrine, Sec 2032A special use valuation, FLP Sec 2036 challenge |
+| 2026-03-24 | 00485_generate_aud_batch85.sql | AUD | Tests of Controls | 30 | Internal audit reliance, upper deviation limit, quarterly 100% testing, detective controls, unpredictability, first-year audit, sequential sampling, test data CAATs, entity-level controls, block selection, access security, change management ITGCs, group audit component reliance, management override evaluation |
 | 2026-03-24 | 00488_generate_isc_batch11.sql | ISC | Threats, Attacks, and Vulnerabilities | 30 | Credential stuffing, watering hole, fileless malware, privilege escalation, OWASP broken access control, DNS poisoning, session hijacking, SSRF, cryptojacking, IoA vs IoC, ARP spoofing, insecure deserialization, STRIDE, SBOM, RaaS, evil twin, buffer overflow, malvertising, API security, STIX/TAXII |
 | 2026-03-24 | 00487_generate_bar_batch12.sql | BAR | Prospective Analysis and Forecasting | 30 | Weighted MA divergence, adjusted R², SGR, deseasonalizing, tracking signal, DuPont strategy, multicollinearity, capital intensity, IGR, Delphi, alpha lag, retention EFN, MAPE, t-stat, Durbin-Watson, pro forma CF, forecast triangulation, CV, heteroscedasticity, MAD |
