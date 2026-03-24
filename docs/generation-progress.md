@@ -28,7 +28,7 @@ For each section:
 | REG     | 2,425 | 1,500 | 1,010 | 39 | 7 | Pending |
 | BAR     | 1,189 | 1,500 | 151 | 462 | 29 | Pending |
 | ISC     | 1,319 | 1,500 | 78 | 259 | 30 | Generating |
-| TCP     | 1,043 | 1,500 | 96 | 553 | 29 | Generating |
+| TCP     | 1,073 | 1,500 | 96 | 523 | 30 | Generating |
 
 ## Topic Detail
 
@@ -187,7 +187,7 @@ For each section:
 | 3 | Entity Choice and Planning | 44 | 56 |  | +12 |
 | 3 | Multi-Jurisdictional Tax Planning | 20 | 56 |  | +36 |
 | 3 | Trusts and Estates | 50 | 56 |  | +6 |
-| 4 | Entity Formation and Restructuring | 20 | 75 |  | +55 |
+| 4 | Entity Formation and Restructuring | 50 | 75 |  | +25 |
 | 4 | Nontaxable Dispositions | 40 | 75 |  | +35 |
 | 4 | Related Party Transactions | 40 | 75 |  | +35 |
 
@@ -229,3 +229,4 @@ For each section:
 | 2026-03-24 | 00509_generate_isc_batch19.sql | ISC | Change Management | 30 | FSC definition, configuration drift, SDLC-ITIL integration, change models, back-out testing, governance escalation, RICE service request vs change, stakeholder communication, environment promotion controls, automated vs manual CAB, change ownership, technical debt backlog, data migration validation, change closure criteria, parallel vs pilot testing, change enablement ITIL 4, audit trail requirements, change collision analysis, maturity overstatement, SDLC requirements sign-off, risk categorization, PIR definition, smoke testing, immutable artifacts, SDLC planning deliverable, success rate calculation, environment separation, merged org framework, BIA-informed priority, SaaS change governance |
 | 2026-03-24 | 00511_generate_isc_batch20.sql | ISC | IT Infrastructure and Architecture | 30 | DHCP, DNS, stateful firewall, multi-tenancy risk, load balancer failover, peer-to-peer controls, RAID 6 dual parity, hot/warm/cold site, MDM, WEP/WPA segmentation, SLA metrics, OSI Application layer, SDN security, subnetting, NAT, IPv6 dual-stack, HA clustering, UPS, forward proxy, star topology, cloud elasticity, thin client VDI, SNMP monitoring, data center tiers, EDR defense-in-depth, routing protocol auth, bandwidth, OSI Physical/Presentation layers, 802.1X port security |
 | 2026-03-24 | 00512_generate_isc_batch21.sql | ISC | System Availability and Change Management | 29 | Version control rollback, SDLC testing/deployment/maintenance phases, active-active failover, patch urgency evaluation, BIA financial impact, segregation of duties, maintenance window analytics, geographic redundancy single-provider risk, change backlog metric, BCP non-IT components, requirements traceability, break-glass access, change request documentation, failed change rate trending, environment separation, rollback archival, DR test design evaluation, BIA interdependency gap, change mgmt maturity metrics, CMDB unauthorized modification detection, patch testing control, DR readiness multi-dimension evaluation, data migration validation, UAT by business stakeholders, clustering |
+| 2026-03-24 | 00510_generate_tcp_batch15.sql | TCP | Entity Formation and Restructuring | 30 | 355(e) anti-Morris Trust, 354(a)(2) securities boot, 368(a)(2)(C) drop-down, 1032 issuing corp, 357(a) liabilities in reorg, 382 testing period, Morris Trust evaluation, 384 preacquisition losses, 368(b) party to reorg, Type E recapitalization excess securities, 355 distribution requirement, net value requirement, Type A flexibility, 355(d) disqualified distribution, 306 taint in recap, 382(h) NUBIL, dissenting shareholders, triangular Type B, consolidation definition, 382(c) COBE, 356 block-by-block, 338(d)(3) QSP, reorg plan requirement, 361(c) distribution, Type C boot+liabilities, 382 value calc, 368(a)(1)(A) cross-border, 355(e) integrated analysis, 382 in reorg, 355 split-up |
