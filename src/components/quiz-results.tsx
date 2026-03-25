@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { getLessonForTopic } from "@/lib/blueprint-utils";
 import type { ExamResult, ExamTopicScore } from "@/lib/quiz";
+import ReportIssueModal from "@/components/report-issue-modal";
 
 interface QuizResultsProps {
 	result: ExamResult;
@@ -66,6 +67,11 @@ export default function QuizResults({
 		};
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
+
+	// Report issue state
+	const [reportingQuestionId, setReportingQuestionId] = useState<number | null>(null);
+	const [reportedIds, setReportedIds] = useState<Set<number>>(new Set());
+
 	const percentage = Math.round((result.score / result.total) * 100);
 	const passed = percentage >= 75;
 	const missedIds = result.questions
@@ -247,6 +253,20 @@ export default function QuizResults({
 											})()
 										)}
 									</div>
+									<div className="mt-3 flex justify-end">
+										{reportedIds.has(q.id) ? (
+											<span className="text-xs text-gray-400 font-medium">
+												Reported — thank you
+											</span>
+										) : (
+											<button
+												onClick={() => setReportingQuestionId(q.id)}
+												className="text-xs text-red-500 hover:text-red-700 font-medium transition-colors"
+											>
+												Report Issue
+											</button>
+										)}
+									</div>
 								</div>
 							)}
 						</div>
@@ -277,6 +297,19 @@ export default function QuizResults({
 					Back to Section
 				</a>
 			</div>
+
+			{/* Report Issue Modal */}
+			{reportingQuestionId && (
+				<ReportIssueModal
+					questionId={reportingQuestionId}
+					quizAttemptId={attemptId}
+					onClose={() => setReportingQuestionId(null)}
+					onSubmitted={() => {
+						setReportedIds((prev) => new Set(prev).add(reportingQuestionId));
+						setReportingQuestionId(null);
+					}}
+				/>
+			)}
 		</div>
 	);
 }

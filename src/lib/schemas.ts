@@ -90,6 +90,16 @@ export const flagQuestionSchema = z.object({
 	notes: z.string().max(1000).default(""),
 });
 
+export const reportQuestionSchema = z.object({
+	reason: z.enum(["wrong_answer", "confusing_wording", "typo", "outdated", "other"]),
+	note: z.string().max(500).default(""),
+	quizAttemptId: z.number().int().optional(),
+});
+
+export const resolveReportSchema = z.object({
+	resolution: z.enum(["fixed", "wont_fix", "duplicate"]),
+});
+
 export const markReviewedSchema = z.object({
 	questionId: z.number().int(),
 	notes: z.string().max(2000).optional(),
