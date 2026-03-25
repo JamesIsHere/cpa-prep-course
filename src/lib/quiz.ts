@@ -65,6 +65,19 @@ export interface ReviewQuestion extends QuizQuestionFull {
 	notes?: string;
 }
 
+// Per-question engagement data collected client-side
+export interface QuestionTiming {
+	questionId: number;
+	timeToAnswerMs: number;
+	flagged: boolean;
+}
+
+// Payload for updating explanation dwell times post-submit
+export interface ExplanationDwellUpdate {
+	questionId: number;
+	timeOnExplanationMs: number;
+}
+
 /**
  * Score a quiz by comparing user answers against full questions.
  * Pure function — no side effects.

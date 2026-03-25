@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import QuizQuestionCard from "@/components/quiz-question";
 import QuizResults from "@/components/quiz-results";
 import ExamNavGrid from "@/components/exam-nav-grid";
-import type { ExamResult, QuizAnswer, QuizQuestion } from "@/lib/quiz";
+import type { ExamResult, QuizAnswer, QuizQuestion, QuestionTiming } from "@/lib/quiz";
 
 interface RecentAttempt {
 	id: number;
@@ -44,6 +44,27 @@ export default function QuizClient({
 	const [result, setResult] = useState<ExamResult | null>(null);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState<string | null>(null);
+
+	// Per-question dwell time tracking
+	const questionShownAtRef = useRef<number>(Date.now());
+	const dwellTimesRef = useRef<Map<number, number>>(new Map());
+
+	const flushDwell = useCallback(() => {
+		if (questions.length === 0) return;
+		const qId = questions[currentIndex]?.id;
+		if (!qId) return;
+		const elapsed = Date.now() - questionShownAtRef.current;
+		const prev = dwellTimesRef.current.get(qId) ?? 0;
+		dwellTimesRef.current.set(qId, prev + elapsed);
+		questionShownAtRef.current = Date.now();
+	}, [questions, currentIndex]);
+
+	// Navigate to a different question, flushing dwell time first
+	const navigateTo = useCallback((index: number) => {
+		if (state === "active") flushDwell();
+		setCurrentIndex(index);
+		questionShownAtRef.current = Date.now();
+	}, [state, flushDwell]);
 
 	// Fetch preloaded attempt for review
 	useEffect(() => {
@@ -86,6 +107,8 @@ export default function QuizClient({
 			setAnswers(new Map());
 			setFlagged(new Set());
 			setStartTime(Date.now());
+			dwellTimesRef.current = new Map();
+			questionShownAtRef.current = Date.now();
 			setState("active");
 		} catch (err) {
 			setError(err instanceof Error ? err.message : "Something went wrong");
@@ -114,6 +137,8 @@ export default function QuizClient({
 			setAnswers(new Map());
 			setFlagged(new Set());
 			setStartTime(Date.now());
+			dwellTimesRef.current = new Map();
+			questionShownAtRef.current = Date.now();
 			setState("active");
 		} catch (err) {
 			setError(err instanceof Error ? err.message : "No missed questions found. Try a regular quiz!");
@@ -124,6 +149,7 @@ export default function QuizClient({
 
 	async function submitQuiz() {
 		if (!attemptId) return;
+		flushDwell(); // capture time on the final question
 		setLoading(true);
 		setError(null);
 		try {
@@ -132,10 +158,15 @@ export default function QuizClient({
 				selectedIndex: answers.get(q.id) ?? -1,
 			}));
 			const durationSeconds = startTime ? Math.floor((Date.now() - startTime) / 1000) : undefined;
+			const questionTimings: QuestionTiming[] = questions.map((q) => ({
+				questionId: q.id,
+				timeToAnswerMs: dwellTimesRef.current.get(q.id) ?? 0,
+				flagged: flagged.has(q.id),
+			}));
 			const res = await fetch(`/api/quizzes/${attemptId}/submit`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ answers: quizAnswers, durationSeconds }),
+				body: JSON.stringify({ answers: quizAnswers, durationSeconds, questionTimings }),
 			});
 			if (!res.ok) {
 				const data = await res.json();
@@ -171,6 +202,8 @@ export default function QuizClient({
 			setAnswers(new Map());
 			setFlagged(new Set());
 			setStartTime(Date.now());
+			dwellTimesRef.current = new Map();
+			questionShownAtRef.current = Date.now();
 			setResult(null);
 			setState("active");
 		} catch (err) {
@@ -363,7 +396,7 @@ export default function QuizClient({
 						answeredIds={answeredIds}
 						flaggedIds={flagged}
 						questionIds={questionIds}
-						onNavigate={setCurrentIndex}
+						onNavigate={navigateTo}
 					/>
 				</div>
 
@@ -382,7 +415,7 @@ export default function QuizClient({
 				<div className="flex items-center justify-between">
 					<div className="flex gap-2">
 						<button
-							onClick={() => setCurrentIndex(Math.max(0, currentIndex - 1))}
+							onClick={() => navigateTo(Math.max(0, currentIndex - 1))}
 							disabled={currentIndex === 0}
 							className="border border-gray-300 text-gray-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-50 transition-colors disabled:opacity-30"
 						>
@@ -390,7 +423,7 @@ export default function QuizClient({
 						</button>
 						<button
 							onClick={() =>
-								setCurrentIndex(Math.min(questions.length - 1, currentIndex + 1))
+								navigateTo(Math.min(questions.length - 1, currentIndex + 1))
 							}
 							disabled={currentIndex === questions.length - 1}
 							className="border border-gray-300 text-gray-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-50 transition-colors disabled:opacity-30"
@@ -420,7 +453,7 @@ export default function QuizClient({
 							</button>
 						) : (
 							<button
-								onClick={() => setCurrentIndex(currentIndex + 1)}
+								onClick={() => navigateTo(currentIndex + 1)}
 								disabled={!hasAnswer}
 								className="bg-emerald-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-emerald-700 transition-colors disabled:opacity-50"
 							>
@@ -441,6 +474,7 @@ export default function QuizClient({
 			<QuizResults
 				result={result}
 				sectionSlug={sectionSlug}
+				attemptId={attemptId}
 				onRetry={handleRetry}
 				onReviewMissed={startReviewQuiz}
 			/>

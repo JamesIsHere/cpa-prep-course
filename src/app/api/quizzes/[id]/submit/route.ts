@@ -60,7 +60,7 @@ export async function POST(
 		);
 	}
 
-	const { answers, durationSeconds } = validation.data;
+	const { answers, durationSeconds, questionTimings } = validation.data;
 
 	// Fetch full questions for scoring
 	const questionIds = answers.map((a) => a.questionId);
@@ -99,6 +99,40 @@ export async function POST(
 			{ error: "Failed to save results" },
 			{ status: 500 },
 		);
+	}
+
+	// Insert per-question engagement data (best-effort, non-blocking)
+	if (questionTimings && questionTimings.length > 0) {
+		const ua = request.headers.get("user-agent") ?? "";
+		let deviceType: "mobile" | "tablet" | "desktop" = "desktop";
+		if (/iPad|Tablet|PlayBook/i.test(ua)) deviceType = "tablet";
+		else if (/Mobile|Android|iPhone|iPod/i.test(ua)) deviceType = "mobile";
+
+		const timingMap = new Map(
+			questionTimings.map((t) => [t.questionId, t]),
+		);
+
+		const responseRows = result.questions.map((q) => {
+			const timing = timingMap.get(q.id);
+			return {
+				quiz_attempt_id: attemptId,
+				question_id: q.id,
+				user_id: user.id,
+				selected_index: q.selectedIndex,
+				correct: q.correct,
+				time_to_answer_ms: timing?.timeToAnswerMs ?? null,
+				flagged: timing?.flagged ?? false,
+				device_type: deviceType,
+			};
+		});
+
+		const { error: responseError } = await supabase
+			.from("question_responses")
+			.insert(responseRows);
+
+		if (responseError) {
+			console.error("Failed to insert question_responses:", responseError);
+		}
 	}
 
 	return NextResponse.json(result);

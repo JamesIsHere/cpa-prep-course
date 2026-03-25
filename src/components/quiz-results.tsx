@@ -1,13 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { getLessonForTopic } from "@/lib/blueprint-utils";
 import type { ExamResult, ExamTopicScore } from "@/lib/quiz";
 
 interface QuizResultsProps {
 	result: ExamResult;
 	sectionSlug: string;
+	attemptId?: number | null;
 	onRetry: () => void;
 	onReviewMissed?: (missedIds: number[]) => void;
 }
@@ -15,10 +16,56 @@ interface QuizResultsProps {
 export default function QuizResults({
 	result,
 	sectionSlug,
+	attemptId,
 	onRetry,
 	onReviewMissed,
 }: QuizResultsProps) {
 	const [expandedId, setExpandedId] = useState<number | null>(null);
+	const prevExpandedIdRef = useRef<number | null>(null);
+	const explanationShownAtRef = useRef<number | null>(null);
+	const explanationDwellsRef = useRef<Map<number, number>>(new Map());
+
+	const flushExplanationDwell = useCallback(() => {
+		const prevId = prevExpandedIdRef.current;
+		if (prevId && explanationShownAtRef.current) {
+			const elapsed = Date.now() - explanationShownAtRef.current;
+			const prev = explanationDwellsRef.current.get(prevId) ?? 0;
+			explanationDwellsRef.current.set(prevId, prev + elapsed);
+		}
+	}, []);
+
+	// Track explanation expand/collapse
+	useEffect(() => {
+		flushExplanationDwell();
+		explanationShownAtRef.current = expandedId ? Date.now() : null;
+		prevExpandedIdRef.current = expandedId;
+	}, [expandedId, flushExplanationDwell]);
+
+	// Send explanation dwells on unmount
+	useEffect(() => {
+		return () => {
+			// Flush current
+			if (prevExpandedIdRef.current && explanationShownAtRef.current) {
+				const elapsed = Date.now() - explanationShownAtRef.current;
+				const prev = explanationDwellsRef.current.get(prevExpandedIdRef.current) ?? 0;
+				explanationDwellsRef.current.set(prevExpandedIdRef.current, prev + elapsed);
+			}
+
+			if (!attemptId) return;
+			const dwells = Array.from(explanationDwellsRef.current.entries())
+				.filter(([, ms]) => ms > 0)
+				.map(([questionId, timeOnExplanationMs]) => ({ questionId, timeOnExplanationMs }));
+
+			if (dwells.length === 0) return;
+
+			// sendBeacon survives page unloads
+			navigator.sendBeacon(
+				`/api/quizzes/${attemptId}/dwell`,
+				new Blob([JSON.stringify({ dwells })], { type: "application/json" }),
+			);
+		};
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 	const percentage = Math.round((result.score / result.total) * 100);
 	const passed = percentage >= 75;
 	const missedIds = result.questions

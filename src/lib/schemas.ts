@@ -13,12 +13,26 @@ export const quizAnswerSchema = z.object({
 	selectedIndex: z.number().int().min(0).max(3),
 });
 
+const questionTimingSchema = z.object({
+	questionId: z.number().int(),
+	timeToAnswerMs: z.number().int().min(0).max(600000),
+	flagged: z.boolean(),
+});
+
 export const submitQuizSchema = z.object({
 	answers: z.array(quizAnswerSchema).min(1, "At least one answer is required"),
 	durationSeconds: z.number().int().optional(),
+	questionTimings: z.array(questionTimingSchema).optional(),
 });
 
 export type SubmitQuizInput = z.infer<typeof submitQuizSchema>;
+
+export const explanationDwellSchema = z.object({
+	dwells: z.array(z.object({
+		questionId: z.number().int(),
+		timeOnExplanationMs: z.number().int().min(0).max(600000),
+	})).min(1),
+});
 
 export const startExamSchema = z.object({
 	sectionCode: z.string().min(2, "Section code is required"),
