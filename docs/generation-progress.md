@@ -28,7 +28,7 @@ For each section:
 | REG     | 2,448 | 1,500 | 1,010 | 16 | 9 | Generating |
 | BAR     | 1,429 | 1,500 | 151 | 222 | 37 | Generating |
 | ISC     | 1,511 | 1,500 | 78 | 67 | 34 | Generating |
-| TCP     | 1,368 | 1,500 | 96 | 228 | 37 | Generating |
+| TCP     | 1,393 | 1,500 | 96 | 203 | 38 | Generating |
 
 ## Topic Detail
 
@@ -182,7 +182,7 @@ For each section:
 | 2 | Entity Formation and Liquidation | 105 | 105 |  |  |
 | 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 81 | 105 |  | +24 |
 | 2 | International Tax | 84 | 105 |  | +21 |
-| 2 | Owner-Entity Transactions | 80 | 105 |  | +25 |
+| 2 | Owner-Entity Transactions | 105 | 105 |  |  |
 | 3 | Capital Structure Tax Planning | 40 | 56 |  | +16 |
 | 3 | Entity Choice and Planning | 44 | 56 |  | +12 |
 | 3 | Multi-Jurisdictional Tax Planning | 50 | 56 |  | +6 |
@@ -268,3 +268,4 @@ For each section:
 | 2026-03-25 | 00548_generate_tcp_batch23.sql | TCP | Related Party Transactions | 30 | Multi-layer attribution, option attribution, cousins not related, 267(a)(2) matching rule, exactly 50% threshold, 1239 non-depreciable land, permanent seller loss, executor-beneficiary, gift alternative, late payment deferral, 1041 spouse override, entity-to-individual attribution, no-chain family attribution, half-siblings, option pushing over 50%, 351 alternative, lease vs sale 1239, buyer cost basis, corp-partnership related, partnership attribution proportional, installment sale 1239, trust fiduciary-beneficiary, gain recognized related party, two partnerships same owner, shareholder-to-corp reverse attribution, 2.5-month payment window, 707(b)(2) capital asset exception, cross-trust fiduciary, in-laws excluded, tax-exempt entity controlling person |
 | 2026-03-25 | 00549_generate_tcp_batch24.sql | TCP | Advanced Basis Calculations | 28 | Sec 705(a) annual adjustments, mid-year admission with liabilities, Sec 733 cash distribution, negative capital account vs outside basis, 736(a) vs 736(b) retiring partner, reverse 704(c) revaluation, 752(a) deemed contribution, Sec 179 pass-through, installment sale 751 ordinary income, 704(d) loss limitation, suspended loss restoration ordering, combined cash+services contribution, 751(b) disproportionate distribution, PTTP loss window, Sec 722 initial basis, minimum gain chargeback, separately stated items basis effect, encumbered property net liability shift, inherited interest Sec 1014, profits interest zero basis, LIFO recapture C-to-S, year-end basis for loss test, syndication vs organizational costs, nondeductible expense ordering, 732(c) tiered allocation, 734(b) gain-triggered step-up, stock basis zero floor, family partnership 704(e) gift |
 | 2026-03-25 | 00551_generate_tcp_batch25.sql | TCP | Entity Formation and Liquidation | 27 | 351(g) nonqualified preferred, 357(a) liability not boot, 704(c) built-in gain allocation, 332 dual 80% test, 737 contributing partner gain, 735 inventory 5-year taint, 751(b) hot assets distribution, de minimis property accommodation transferor, partnership liability outside basis shift, 306 stock taint preferred, partial liquidation corporate-level test, 351 loss deferral, 336(d)(2) anti-stuffing, 1245 recapture deferral in 351, 332 minority shareholder 331 treatment, 362(e)(2)(C) stock basis election, 721 no control requirement, 331 holding period character, 752 encumbered property net shift, stock warrants as boot, 337 subsidiary no gain/loss, assignment of income receivables, 338 buyer-only double tax, 332 plan of liquidation requirement, step transaction prearranged sale, 336(a) general rule, 1223(1) holding period tacking |
+| 2026-03-25 | 00552_generate_tcp_batch26.sql | TCP | Owner-Entity Transactions | 25 | Sec 304 brother-sister acquisition, S corp AAA ordering, C corp distribution ordering, Sec 751 hot assets, Sec 7872 foregone interest definition, 302(c)(2) waiver conditions, Sec 304 E&P analysis, S corp basis ordering, guaranteed payment fiscal year timing, liquidating distribution loss rules, 311(b)(2) liability>FMV, demand vs term loan OID, Sec 267 indirect ownership, Sec 318 double family prohibition, bargain purchase constructive dividend, trust beneficiary attribution, Sec 1239 >50% threshold, zero E&P distribution, 302(b)(2) numerical tests, 267(d) no loss creation, grantor-fiduciary related, chain attribution entity-owner-entity, guaranteed payment ordinary income, distributions reduce stock not debt basis, $10K de minimis exemption |
