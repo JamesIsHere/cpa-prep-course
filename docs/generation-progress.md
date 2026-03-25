@@ -26,9 +26,9 @@ For each section:
 | AUD     | 3,702 | 1,500 | 2,355 | 93 | 33 | Generating |
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,448 | 1,500 | 1,010 | 16 | 9 | Generating |
-| BAR     | 1,309 | 1,500 | 151 | 342 | 33 | Generating |
+| BAR     | 1,339 | 1,500 | 151 | 312 | 34 | Generating |
 | ISC     | 1,511 | 1,500 | 78 | 67 | 34 | Generating |
-| TCP     | 1,223 | 1,500 | 96 | 373 | 33 | Generating |
+| TCP     | 1,253 | 1,500 | 96 | 343 | 33 | Generating |
 
 ## Topic Detail
 
@@ -185,7 +185,7 @@ For each section:
 | 2 | Owner-Entity Transactions | 80 | 105 |  | +25 |
 | 3 | Capital Structure Tax Planning | 40 | 56 |  | +16 |
 | 3 | Entity Choice and Planning | 44 | 56 |  | +12 |
-| 3 | Multi-Jurisdictional Tax Planning | 20 | 56 |  | +36 |
+| 3 | Multi-Jurisdictional Tax Planning | 50 | 56 |  | +6 |
 | 3 | Trusts and Estates | 50 | 56 |  | +6 |
 | 4 | Entity Formation and Restructuring | 50 | 75 |  | +25 |
 | 4 | Nontaxable Dispositions | 40 | 75 |  | +35 |
@@ -259,3 +259,4 @@ For each section:
 | 2026-03-24 | 00539_generate_tcp_batch19.sql | TCP | Wealth Transfer and Gifting Strategies | 30 | Sec 2035(b) gross-up rule, community property full step-up, limited vs general power of appointment, Sec 2702 zero valuation, 5-and-5 power lapse, Sec 6166 installment deferral, Sec 2036(b) retained voting rights, net gift income tax (Diedrich), incomplete gift doctrine, Sec 7872 $100K NII exception, Sec 2043 consideration offset, blockage discount, Totten trust/POD inclusion, Sec 2519 QTIP disposition, disclaimer trust planning, dynasty trust GSTT, annual exclusion indexing, DSUE remarriage limitation, taxable distribution vs termination, inclusion ratio mechanics, Sec 2058 state death tax deduction, alternate valuation restrictions, Sec 2039 annuities, fractional interest discount, Sec 2013 prior transfer credit, ascertainable standard HEMS, split-dollar insurance incidents, gift causa mortis, CRAT remainder actuarial, Sec 2035(a) ILIT 3-year rule |
 | 2026-03-24 | 00540_generate_tcp_batch20.sql | TCP | Retirement Plans and Education Savings | 30 | 401(k) loan rules, QDRO penalty exception, excess IRA contribution 6% tax, 60-day rollover rule, ADP nondiscrimination corrective distributions, Saver's Credit, 529 superfunding 5-year election, safe harbor 401(k), 457(b) plans, profit-sharing discretionary contributions, money purchase pension, 403(b) 15-year catch-up, SIMPLE IRA eligibility, ESOP, in-service distributions, top-heavy rules, education savings bonds, QJSA requirements, ABLE accounts, one-rollover-per-year rule, Roth conversion ordering, HCE definition, in-plan Roth conversion, employer deduction limit, Coverdell K-12 breadth, 402(g) excess deferral, 529 estate tax, Keogh plans, pooled employer plans, 529-to-ABLE rollover |
 | 2026-03-25 | 00541_generate_bar_batch18.sql | BAR | Financial Valuation Methods | 30 | Hamada equation unlevered beta, flotation cost adjustment, build-up method, ASC 820 orderly transaction, APV method, contributory asset charges MPEEM, tax amortization benefit, WARA vs WACC reconciliation, market participant assumptions, PWERM equity allocation, unit of account, residual income model, economic obsolescence cost approach, greenfield method, P/B ratio interpretation, DLOC vs control premium math, backsolve method 409A, sustainable growth rate, guideline transaction vs public company, valuation approach weighting, key person discount, cost approach definition, ASC 350 goodwill impairment, measurement date, reporting unit, Black-Scholes warrant valuation, Level 1 inputs, principal market, distributor method, equity risk premium estimation |
+| 2026-03-25 | 00543_generate_bar_batch19.sql | BAR | Interfund Transactions | 30 | Interfund loan interest, enterprise fund transfer location, deferred inflows property tax availability, GASB 33 provider-recipient asymmetry, nonspendable fund balance advances, fiduciary fund gov-wide exclusion, blended vs discrete component unit elimination, balances not expected repaid reclassification, internal balances netting, grant multiple eligibility requirements, motor fuel tax classification, advance to/from terminology, nonreciprocal types, interfund services definition, reimbursement presentation, voluntary nonexchange time vs purpose, special assessment installment recognition, pass-through grant conduit, services balance elimination, intra-BTA transfer elimination, time requirement deferred inflows, reimbursement dual entry, below-FMV services split, transfer fund balance calc, note disclosures, ISF revenue classification, gov-wide reconciliation, derived tax availability, fines classification, services revenue vs balances |
