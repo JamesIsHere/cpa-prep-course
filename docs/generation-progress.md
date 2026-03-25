@@ -23,7 +23,7 @@ For each section:
 
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status |
 |---------|---------|--------|---------|-------------|-------------|--------|
-| AUD     | 3,618 | 1,500 | 2,355 | 177 | 29 | Generating |
+| AUD     | 3,636 | 1,500 | 2,355 | 159 | 30 | Generating |
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,448 | 1,500 | 1,010 | 16 | 9 | Generating |
 | BAR     | 1,189 | 1,500 | 151 | 462 | 29 | Pending |
@@ -43,7 +43,7 @@ For each section:
 | 1 | Professional Responsibilities | 37 | 38 |  | +1 |
 | 1 | Professional Skepticism and Judgment | 38 | 38 |  |  |
 | 1 | Quality Management | 55 | 38 | -17 |  |
-| 1 | Terms of Engagement | 20 | 38 |  | +18 |
+| 1 | Terms of Engagement | 38 | 38 |  |  |
 | 2 | Audit Planning | 62 | 64 |  | +2 |
 | 2 | Internal Controls | 72 | 64 | -8 |  |
 | 2 | Materiality | 50 | 64 |  | +14 |
@@ -245,3 +245,4 @@ For each section:
 | 2026-03-24 | 00525_generate_isc_batch29.sql | ISC | Privacy Requirements and Data Protection | 18 | GDPR Article 9 special categories, joint controllers Article 26, HIPAA accounting of disclosures TPO exemption, CCPA sale definition valuable consideration, legitimate interest balancing test, designated record set, children's data consent Article 8, ROPA Article 30, psychotherapy notes heightened protection, authorized agent verification, availability breach classification, marketing authorization remuneration, Article 27 EU representative, financial incentive programs, Safe Harbor 18 identifiers, court order PHI disclosure, data protection by default Article 25(2), breach register documentation Article 33(5) |
 | 2026-03-24 | 00526_generate_aud_batch92.sql | AUD | Professional Skepticism and Judgment | 18 | Impediments to skepticism, going concern assumption evaluation, self-review threat, groupthink in teams, management integrity doubt, error vs fraud distinction, control deficiency severity, experience/training role, fair value assumption scrutiny, subsequent event classification, overconfidence bias, consultation for complex judgments, sampling threshold judgment, recency bias, questioning mind definition, fraud triangle elements, motivated reasoning/self-interest, risk-proportionate skepticism |
 | 2026-03-24 | 00528_generate_isc_batch30.sql | ISC | Security and Control Frameworks | 17 | COBIT goals cascade, ISO 27001 risk treatment options, residual risk, NIST SP 800-171 CUI, COBIT governance components, control design vs operating effectiveness, compensating controls, risk appetite, ISO 27001 Annex A SoA justification, NIST CSF informative references, multi-framework gap analysis, COSO 17 principles, NIST RMF Authorize/ATO, residual ALE evaluation, ISO 27001 management review, COBIT focus areas, control environment cascade failure |
+| 2026-03-24 | 00527_generate_aud_batch93.sql | AUD | Terms of Engagement | 18 | Internal audit in engagement terms, representation letter linkage, GAGAS expanded scope, opening balances initial audit, going concern language refusal, peer review access restriction, framework acceptability evaluation, control deficiency communication, governance communication restriction, undisclosed related party merger, auditing standards reference, compilation vs audit terms, fraud responsibility refusal, fiscal year-end change, independence statement purpose, electronic delivery terms, fee dispute provisions, component auditor division |
