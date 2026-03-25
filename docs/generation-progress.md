@@ -26,7 +26,7 @@ For each section:
 | AUD     | 3,702 | 1,500 | 2,355 | 93 | 33 | Generating |
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,448 | 1,500 | 1,010 | 16 | 9 | Generating |
-| BAR     | 1,339 | 1,500 | 151 | 312 | 34 | Generating |
+| BAR     | 1,369 | 1,500 | 151 | 282 | 35 | Generating |
 | ISC     | 1,511 | 1,500 | 78 | 67 | 34 | Generating |
 | TCP     | 1,253 | 1,500 | 96 | 343 | 33 | Generating |
 
@@ -143,7 +143,7 @@ For each section:
 | 2 | Internal-Use Software and Cloud Computing | 39 | 55 |  | +16 |
 | 2 | Pension and Postretirement Benefits | 38 | 55 |  | +17 |
 | 2 | Stock Compensation and Business Combinations | 52 | 55 |  | +3 |
-| 3 | Fund-to-Government-Wide Reconciliation | 39 | 75 |  | +36 |
+| 3 | Fund-to-Government-Wide Reconciliation | 69 | 75 |  | +6 |
 | 3 | Interfund Transactions | 38 | 75 |  | +37 |
 | 3 | State and Local Government Reporting | 56 | 75 |  | +19 |
 
@@ -261,3 +261,4 @@ For each section:
 | 2026-03-25 | 00541_generate_bar_batch18.sql | BAR | Financial Valuation Methods | 30 | Hamada equation unlevered beta, flotation cost adjustment, build-up method, ASC 820 orderly transaction, APV method, contributory asset charges MPEEM, tax amortization benefit, WARA vs WACC reconciliation, market participant assumptions, PWERM equity allocation, unit of account, residual income model, economic obsolescence cost approach, greenfield method, P/B ratio interpretation, DLOC vs control premium math, backsolve method 409A, sustainable growth rate, guideline transaction vs public company, valuation approach weighting, key person discount, cost approach definition, ASC 350 goodwill impairment, measurement date, reporting unit, Black-Scholes warrant valuation, Level 1 inputs, principal market, distributor method, equity risk premium estimation |
 | 2026-03-25 | 00542_generate_tcp_batch21.sql | TCP | Multi-Jurisdictional Tax Planning | 30 | FTC limitation formula, GILTI with QBAI, Subpart F FBCSI, Section 250 post-2025, FTC baskets, BEAT computation, transfer pricing penalties, FDII computation, FTC carryover, CFC aggregation, cross-crediting prohibition, BEAT thresholds, arm's length standard, GILTI vs FDII, Subpart F current inclusion, treaty PE, FPHCI, BEAT minimum tax, base erosion payments, transfer pricing methods, treaty withholding, country-of-incorporation exclusion, Section 962, insurance income, contemporaneous documentation, last-in-time rule |
 | 2026-03-25 | 00543_generate_bar_batch19.sql | BAR | Interfund Transactions | 30 | Interfund loan interest, enterprise fund transfer location, deferred inflows property tax availability, GASB 33 provider-recipient asymmetry, nonspendable fund balance advances, fiduciary fund gov-wide exclusion, blended vs discrete component unit elimination, balances not expected repaid reclassification, internal balances netting, grant multiple eligibility requirements, motor fuel tax classification, advance to/from terminology, nonreciprocal types, interfund services definition, reimbursement presentation, voluntary nonexchange time vs purpose, special assessment installment recognition, pass-through grant conduit, services balance elimination, intra-BTA transfer elimination, time requirement deferred inflows, reimbursement dual entry, below-FMV services split, transfer fund balance calc, note disclosures, ISF revenue classification, gov-wide reconciliation, derived tax availability, fines classification, services revenue vs balances |
+| 2026-03-25 | 00544_generate_bar_batch20.sql | BAR | Fund-to-Government-Wide Reconciliation | 30 | Net OPEB liability, claims/judgments LT portion, modified approach infrastructure, CIP not yet depreciated, net investment in capital assets calc, three net position categories, encumbrances elimination, prepaids consumption method, fiduciary fund exclusion, GASB 87 lease reconciliation, gain on early extinguishment, donated capital assets fair value, accumulated depreciation role, enterprise vs ISF, capital asset impairment GASB 42, landfill closure GASB 18, purchases method supplies, multi-adjustment activity statement, special assessments debt, pollution remediation GASB 49, restricted net position vs fund balance, compensated absences change calc, deferred amount on refunding amortization, tax revenue timing, bond discount amortization, interfund eliminations gov-wide, unrestricted net position, comprehensive balance sheet with GASB 87/pensions, capitalization threshold, prepaids purchases method |
