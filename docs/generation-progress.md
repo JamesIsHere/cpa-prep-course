@@ -23,7 +23,7 @@ For each section:
 
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status |
 |---------|---------|--------|---------|-------------|-------------|--------|
-| AUD     | 3,654 | 1,500 | 2,355 | 141 | 30 | Generating |
+| AUD     | 3,672 | 1,500 | 2,355 | 123 | 31 | Generating |
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,448 | 1,500 | 1,010 | 16 | 9 | Generating |
 | BAR     | 1,189 | 1,500 | 151 | 462 | 29 | Pending |
@@ -62,7 +62,7 @@ For each section:
 | 4 | Attestation Engagements | 46 | 38 | -8 |  |
 | 4 | Audit Reports | 62 | 38 | -24 |  |
 | 4 | Modifications to the Auditor Report | 38 | 38 |  |  |
-| 4 | Other Information and Supplementary Information | 20 | 38 |  | +18 |
+| 4 | Other Information and Supplementary Information | 38 | 38 |  |  |
 | 4 | Review and Compilation | 46 | 38 | -8 |  |
 | 4 | Review/Compilation Engagements | 37 | 38 |  | +1 |
 
@@ -248,3 +248,4 @@ For each section:
 | 2026-03-24 | 00527_generate_aud_batch93.sql | AUD | Terms of Engagement | 18 | Internal audit in engagement terms, representation letter linkage, GAGAS expanded scope, opening balances initial audit, going concern language refusal, peer review access restriction, framework acceptability evaluation, control deficiency communication, governance communication restriction, undisclosed related party merger, auditing standards reference, compilation vs audit terms, fraud responsibility refusal, fiscal year-end change, independence statement purpose, electronic delivery terms, fee dispute provisions, component auditor division |
 | 2026-03-24 | 00530_generate_aud_batch94.sql | AUD | Modifications to the Auditor Report | 18 | Opinion-first format, going concern inadequate disclosure, updated opinion prior-period resolved, report title requirement, multiple departures combined pervasiveness, EOM explicit non-modification statement, comparative FS different opinions, adverse opinion key language, basis section naming convention, going concern evaluation period, disclaimer removes reasonable assurance, predecessor auditor other-matter, CAMs PCAOB-only requirement, report date definition, quantification in basis for adverse, restricted-use other-matter, group audit component reference, EOM placement and heading |
 | 2026-03-24 | 00529_generate_isc_batch31.sql | ISC | SOC Engagements | 15 | SOC for Cybersecurity criteria, SOC for Supply Chain selection, system description boundary components, attestation vs audit classification, SOC for Cybersecurity audience, post-remediation reporting, fair presentation omission, Confidentiality vs Privacy TSC, Type II additional procedures, service organization definition, management assertion elements, Availability criterion, carve-out user entity auditor obligations, SOC for Cybersecurity vs SOC 2 evaluation, SOC 2 restricted-use rationale |
+| 2026-03-24 | 00531_generate_aud_batch95.sql | AUD | Other Information and Supplementary Information | 18 | RSI inconclusive procedures, classification distinction evaluation, voluntary SI disclaimer, multiple inconsistencies mixed resolution, other info definition, RSI inquiry procedures, adverse opinion SI effect, SI reconciliation to records, post-report-date other info, RSI vs SI terminology, RSI contradicting FS disclosures, other-matter paragraph purpose, separate document references, RSI omitted disclosure departure, going concern narrative consistency, AU-C 725 standard identification, misstatement of fact facility count, component unit RSI evaluation |
