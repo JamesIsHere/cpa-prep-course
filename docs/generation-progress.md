@@ -28,7 +28,7 @@ For each section:
 | REG     | 2,448 | 1,500 | 1,010 | 16 | 9 | Generating |
 | BAR     | 1,249 | 1,500 | 151 | 402 | 31 | Generating |
 | ISC     | 1,511 | 1,500 | 78 | 67 | 34 | Generating |
-| TCP     | 1,133 | 1,500 | 96 | 463 | 31 | Generating |
+| TCP     | 1,163 | 1,500 | 96 | 433 | 31 | Generating |
 
 ## Topic Detail
 
@@ -181,7 +181,7 @@ For each section:
 | 2 | Advanced Basis Calculations | 107 | 105 |  |  |
 | 2 | Entity Formation and Liquidation | 78 | 105 |  | +27 |
 | 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 81 | 105 |  | +24 |
-| 2 | International Tax | 54 | 105 |  | +51 |
+| 2 | International Tax | 84 | 105 |  | +21 |
 | 2 | Owner-Entity Transactions | 80 | 105 |  | +25 |
 | 3 | Capital Structure Tax Planning | 40 | 56 |  | +16 |
 | 3 | Entity Choice and Planning | 44 | 56 |  | +12 |
@@ -254,3 +254,4 @@ For each section:
 | 2026-03-24 | 00534_generate_bar_batch15.sql | BAR | Risk Management and Economics | 30 | Coincident indicators, fiscal policy tools, basis risk cross-hedging, demand-pull vs cost-push inflation, open market operations, crowding-out effect, convexity, yield curve theories, M1 money supply, counterparty risk OTC, MIRR vs IRR, economic exposure, fiscal multiplier/MPC, reserve requirements, supply shock policy dilemma, EVA, sensitivity analysis, equivalent annual annuity, currency options asymmetric payoff, breakeven analysis, liquidity trap, hedge effectiveness dollar-offset, country/political risk, cost of preferred stock, elasticity of demand, margin/mark-to-market futures, beta interpretation, scenario analysis, real options, aggregate demand monetary transmission |
 | 2026-03-24 | 00535_generate_tcp_batch17.sql | TCP | Individual Tax Planning: Compensation | 30 | AMT credit carryforward, 409A specified employee delay, restricted stock dividends pre-vesting, NQSO readily ascertainable FMV, 409A short-term deferral exception, employer deduction restricted stock, performance vesting, NUA, ISO exercise price requirement, AMT basis at sale, 409A subsequent deferral, multi-component comp evaluation, Section 132 goods discount, ISO 10-year term, 83(b) 30-day deadline, 10% shareholder ISO rules, no employer deduction qualifying disposition, Section 125 cafeteria, 409A anti-acceleration, split-dollar life insurance, disqualifying disposition deduction, Section 162(m) covered employee, stock option repricing 409A, Section 83 transfer trigger |
 | 2026-03-24 | 00536_generate_bar_batch16.sql | BAR | Prospective Analysis and Forecasting | 30 | Durbin-Watson autocorrelation, SGR formula, multicollinearity VIF, tracking signal, IGR formula, MAPE, coefficient of variation, heteroscedasticity, Holt-Winters triple smoothing, additive vs multiplicative seasonality, t-statistic significance, RE rollforward, structural break, spontaneous vs non-spontaneous assets, residual U-shape nonlinearity, MA lag limitation, AT-C 305 written representations, projection use restrictions, MSE vs MAD, exponential smoothing initialization, DuPont forecast levers, Delphi method, lagged variables, pro forma financing CF, degrees of freedom overfitting, accuracy vs precision, interpolation vs extrapolation, step-fixed costs CVP, responsible party assumptions, homoscedasticity |
+| 2026-03-24 | 00537_generate_tcp_batch18.sql | TCP | International Tax | 30 | Transfer pricing penalties, Section 78 gross-up, GILTI high-tax exclusion, branch vs subsidiary, FTC excess carryover, Section 250 taxable income limitation, QEF annual inclusion, de minimis Subpart F, PTEP Section 959, check-the-box election, tested loss QBAI exclusion, Form 5472, permanent establishment, dual-consolidated loss, full inclusion 70% rule, FBAR threshold, Section 956 guarantee, LOB treaty clause, royalty sourcing, BEAT base erosion payments, Section 367(a) outbound gain, GILTI specified interest expense, Section 960 80% haircut, FATCA Form 8938, same-country exception, GILTI basket, Section 482 arm's length, Section 962 election, Section 245A 100% DRD, Section 988 currency |
