@@ -25,7 +25,7 @@ For each section:
 |---------|---------|--------|---------|-------------|-------------|--------|
 | AUD     | 3,564 | 1,500 | 2,355 | 231 | 26 | Pending |
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
-| REG     | 2,438 | 1,500 | 1,010 | 26 | 8 | Generating |
+| REG     | 2,448 | 1,500 | 1,010 | 16 | 9 | Generating |
 | BAR     | 1,189 | 1,500 | 151 | 462 | 29 | Pending |
 | ISC     | 1,425 | 1,500 | 78 | 153 | 31 | Generating |
 | TCP     | 1,103 | 1,500 | 96 | 493 | 30 | Generating |
@@ -237,3 +237,4 @@ For each section:
 | 2026-03-24 | 00517_generate_isc_batch25.sql | ISC | Threats, Attacks, and Vulnerabilities | 21 | Botnet C2, CVSS base score components, lateral movement, business logic flaws, DNS tunneling, polymorphic malware, adware, reconnaissance phase, MITRE ATT&CK, replay attack, honeypot, shoulder surfing, race condition, cryptographic failures OWASP#2, dumpster diving, scareware, steganography, vulnerable components OWASP#6, ISAC threat sharing, open redirect, typosquatting |
 | 2026-03-24 | 00518_generate_isc_batch26.sql | ISC | SOC Reporting and Trust Services Criteria | 19 | Type I vs Type II distinction, bridge letter sufficiency evaluation, SOC 3 general-use distribution, auditor opinion three elements, multi-criteria control mapping, Section IV restricted-use rationale, user auditor SOC evaluation steps, management assertion content, four-section report structure, adverse opinion pervasive deficiency, alternative procedures no SOC available, gap period significant system changes, SOC 1 vs SOC 2 purpose, user auditor no reference required, management assertion preparer, CUEC implementation gaps, SOC 3 Type II only, SLA monitoring criteria mapping, service auditor competence evaluation |
 | 2026-03-24 | 00519_generate_reg_batch59.sql | REG | Legal Duties and Responsibilities | 13 | §7525 third-party waiver, substantial portion preparer test, §6694(b) offset calc, §6695(g) 3-year retention, OPR vs IRS enforcement, ordinary vs opinion work product, signing preparer definition, dual Circ 230 + statutory exposure, PTIN annual renewal, §6695 aggregate cap, tax shelter more-likely-than-not, §6694(a) reasonable cause defense, Form 8867 requirement |
+| 2026-03-24 | 00521_generate_reg_batch60.sql | REG | Government Regulation of Business | 10 | UCC 2-207 battle of forms, respondeat superior detour/frolic, UCC Art 9 perfection, duty of loyalty, firm offer rule, undisclosed principal liability, agency termination by death, agency formation without consideration, agency coupled with interest, perfect tender rule |
