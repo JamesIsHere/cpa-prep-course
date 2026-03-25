@@ -23,7 +23,7 @@ For each section:
 
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status |
 |---------|---------|--------|---------|-------------|-------------|--------|
-| AUD     | 3,582 | 1,500 | 2,355 | 213 | 27 | Generating |
+| AUD     | 3,600 | 1,500 | 2,355 | 195 | 28 | Generating |
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,448 | 1,500 | 1,010 | 16 | 9 | Generating |
 | BAR     | 1,189 | 1,500 | 151 | 462 | 29 | Pending |
@@ -241,3 +241,4 @@ For each section:
 | 2026-03-24 | 00521_generate_reg_batch60.sql | REG | Government Regulation of Business | 10 | UCC 2-207 battle of forms, respondeat superior detour/frolic, UCC Art 9 perfection, duty of loyalty, firm offer rule, undisclosed principal liability, agency termination by death, agency formation without consideration, agency coupled with interest, perfect tender rule |
 | 2026-03-24 | 00522_generate_isc_batch28.sql | ISC | IT General Controls | 18 | Incident severity classification, change freeze zero-day evaluation, authentication factor categories, job execution log purpose, deprovisioning definition, IT policy hierarchy, dual authorization maker-checker, job dependency definition, automated HR-IT deprovisioning, default credential risk, system hardening, media sanitization disposal, change success rate metrics, warm site DR classification, configuration drift detection, formal access request workflow, job restart checkpoint recovery, escalation procedures definition |
 | 2026-03-24 | 00523_generate_aud_batch90.sql | AUD | Independence | 18 | SEC prohibited non-audit services, management participation threat, de minimis 5% exception, concurring partner rotation, independence in mind, AICPA six principles, Code Part 1 scope, FROR cooling-off, de minimis threshold calc, client oversight requirement, automatic license revocation, familiarity safeguards, lead partner employment cooling-off, self-review personnel separation, intimidation threat, subsidiary partner rotation, state board vs AICPA authority, PCAOB/SEC sanctions |
+| 2026-03-24 | 00524_generate_aud_batch91.sql | AUD | Nature and Scope of Engagements | 18 | Compilation assurance level, audit preconditions mgmt responsibility, AUP findings-only report, professional skepticism, pervasive scope limitation withdrawal, PCAOB vs AICPA applicability, negative assurance review, audit risk model application, engagement letter required content, special purpose regulatory framework, acceptable framework precondition, GAGAS additional scope requirements, compliance vs fair presentation framework, predecessor auditor communication, recurring engagement revised terms, attestation engagement definition, SQMS 1 firm-level quality, audit risk definition |
