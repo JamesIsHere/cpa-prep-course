@@ -26,7 +26,7 @@ For each section:
 | AUD     | 3,702 | 1,500 | 2,355 | 93 | 33 | Generating |
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,448 | 1,500 | 1,010 | 16 | 9 | Generating |
-| BAR     | 1,219 | 1,500 | 151 | 432 | 30 | Generating |
+| BAR     | 1,249 | 1,500 | 151 | 402 | 31 | Generating |
 | ISC     | 1,511 | 1,500 | 78 | 67 | 34 | Generating |
 | TCP     | 1,133 | 1,500 | 96 | 463 | 31 | Generating |
 
@@ -130,7 +130,7 @@ For each section:
 | 1 | Capital Structure and Valuation | 285 | 134 | -151 |  |
 | 1 | Financial Statement Analysis | 116 | 134 |  | +18 |
 | 1 | Financial Valuation Methods | 83 | 134 |  | +51 |
-| 1 | Prospective Analysis and Forecasting | 106 | 134 |  | +28 |
+| 1 | Prospective Analysis and Forecasting | 136 | 134 |  |  |
 | 1 | Risk Management and Economics | 100 | 134 |  | +34 |
 | 2 | Advanced Consolidations | 49 | 55 |  | +6 |
 | 2 | Advanced Lease Transactions | 39 | 55 |  | +16 |
@@ -253,3 +253,4 @@ For each section:
 | 2026-03-24 | 00533_generate_aud_batch97.sql | AUD | Tests of Controls | 15 | NTE interrelationship, minimum reliance requirement, statistical vs non-statistical sampling, roll-forward when controls changed, fraud risk current-period testing, assessed RMM extent effect, no SOC report alternatives, parallel simulation CAAT, non-routine transaction controls, deficiency aggregation, confidence level sample size, interim vs year-end timing, inquiry combination requirement, significant risk annual testing, extent proportional to reliance |
 | 2026-03-24 | 00534_generate_bar_batch15.sql | BAR | Risk Management and Economics | 30 | Coincident indicators, fiscal policy tools, basis risk cross-hedging, demand-pull vs cost-push inflation, open market operations, crowding-out effect, convexity, yield curve theories, M1 money supply, counterparty risk OTC, MIRR vs IRR, economic exposure, fiscal multiplier/MPC, reserve requirements, supply shock policy dilemma, EVA, sensitivity analysis, equivalent annual annuity, currency options asymmetric payoff, breakeven analysis, liquidity trap, hedge effectiveness dollar-offset, country/political risk, cost of preferred stock, elasticity of demand, margin/mark-to-market futures, beta interpretation, scenario analysis, real options, aggregate demand monetary transmission |
 | 2026-03-24 | 00535_generate_tcp_batch17.sql | TCP | Individual Tax Planning: Compensation | 30 | AMT credit carryforward, 409A specified employee delay, restricted stock dividends pre-vesting, NQSO readily ascertainable FMV, 409A short-term deferral exception, employer deduction restricted stock, performance vesting, NUA, ISO exercise price requirement, AMT basis at sale, 409A subsequent deferral, multi-component comp evaluation, Section 132 goods discount, ISO 10-year term, 83(b) 30-day deadline, 10% shareholder ISO rules, no employer deduction qualifying disposition, Section 125 cafeteria, 409A anti-acceleration, split-dollar life insurance, disqualifying disposition deduction, Section 162(m) covered employee, stock option repricing 409A, Section 83 transfer trigger |
+| 2026-03-24 | 00536_generate_bar_batch16.sql | BAR | Prospective Analysis and Forecasting | 30 | Durbin-Watson autocorrelation, SGR formula, multicollinearity VIF, tracking signal, IGR formula, MAPE, coefficient of variation, heteroscedasticity, Holt-Winters triple smoothing, additive vs multiplicative seasonality, t-statistic significance, RE rollforward, structural break, spontaneous vs non-spontaneous assets, residual U-shape nonlinearity, MA lag limitation, AT-C 305 written representations, projection use restrictions, MSE vs MAD, exponential smoothing initialization, DuPont forecast levers, Delphi method, lagged variables, pro forma financing CF, degrees of freedom overfitting, accuracy vs precision, interpolation vs extrapolation, step-fixed costs CVP, responsible party assumptions, homoscedasticity |
