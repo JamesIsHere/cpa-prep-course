@@ -26,7 +26,7 @@ For each section:
 | AUD     | 3,702 | 1,500 | 2,355 | 93 | 33 | Generating |
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,448 | 1,500 | 1,010 | 16 | 9 | Generating |
-| BAR     | 1,429 | 1,500 | 151 | 222 | 37 | Generating |
+| BAR     | 1,459 | 1,500 | 151 | 192 | 38 | Generating |
 | ISC     | 1,511 | 1,500 | 78 | 67 | 34 | Generating |
 | TCP     | 1,517 | 1,500 | 96 | 79 | 42 | Generating |
 
@@ -138,7 +138,7 @@ For each section:
 | 2 | Business Combinations | 20 | 55 |  | +35 |
 | 2 | Derivatives and Hedging | 50 | 55 |  | +5 |
 | 2 | Foreign Currency Transactions | 50 | 55 |  | +5 |
-| 2 | Income Taxes Advanced | 20 | 55 |  | +35 |
+| 2 | Income Taxes Advanced | 50 | 55 |  | +5 |
 | 2 | Intangible Assets Advanced | 20 | 55 |  | +35 |
 | 2 | Internal-Use Software and Cloud Computing | 39 | 55 |  | +16 |
 | 2 | Pension and Postretirement Benefits | 38 | 55 |  | +17 |
@@ -275,3 +275,4 @@ For each section:
 | 2026-03-25 | 00557_generate_tcp_batch30.sql | TCP | International Tax | 21 | Section 1248 + 245A interaction, 954(c)(6) look-through, 6038 penalty, 884 branch profits tax, 267(a)(3) matching rule, PFIC asset test, QBAI ADS depreciation, 863(b) production sourcing, 951(a) inclusion timing, 245A(e) hybrid dividends, Subpart F insurance income, 909 FTC splitter, QBAI definition, 338(g) foreign target, 367(b) inbound rules, treaty tie-breaker, 898 required year, BEAT R&D credit interaction, GILTI tested loss mechanics, 1503(d) domestic use agreement, 304 cross-border redemption |
 | 2026-03-25 | 00558_generate_tcp_batch31.sql | TCP | Wealth Transfer and Gifting Strategies | 17 | Sec 2044 QTIP estate inclusion, Sec 2040(b) spousal 50% rule, encumbered property net gift, Form 709 filing threshold, Sec 2035(a) general scope, reverse QTIP election, gift valuation date, adequate disclosure SOL, Sec 7872 de minimis $10K, unified transfer tax system, Sec 2032A max reduction cap, Sec 6324(b) transferee liability, Sec 2514 power of appointment exercise, Sec 2036(a)(2) retained right to designate, Sec 2703 buy-sell disregarded, adequate consideration exception, GST exemption non-portability |
 | 2026-03-25 | 00559_generate_tcp_batch32.sql | TCP | Capital Structure Tax Planning | 16 | Sec 385 $50M exemption, EBITDA-to-EBIT transition calc, Sec 382 + 163(j) carryforward interaction, principal reclassified as redemption, S corp vs partnership carryforward tracking, 72-month funding rule, proportionality factor, NOL/199A ATI add-backs, floor plan financing definition, death loses carryforward, Sec 385 documentation elements, related-party vs third-party scope, multi-factor subordination evaluation, tax shelter small business exclusion, depreciation not added back post-2021, debt-as-distribution recharacterization |
+| 2026-03-25 | 00560_generate_bar_batch23.sql | BAR | Income Taxes Advanced | 30 | Intra-entity transfer DT (ASU 2016-16), indefinite-lived intangible DTL, competing VA evidence with tax planning strategies, noncurrent classification (ASU 2015-17), warranty accrual DTA, stock compensation excess benefit, goodwill tax amortization DTL, backward tracing prohibition, rate change with VA offset, interim discrete rate enactment, operating lease ROU DT, change in tax status, prepaid insurance DTL, initial recognition exception, enacted vs proposed rates, intraperiod allocation loss/gain, asset impairment DT swing, foreign currency CTA DT, graduated future rates measurement, tax credit carryforward DTA, unearned revenue DTA, consolidated pro rata allocation, pension/OPEB DT split, domestic subsidiary DRD, temporary difference definition, installment sale DTL, equity method investee OCI DT, separate return tax provision, depreciation MACRS vs SL DTL, DTA vs DTL identification |
