@@ -27,7 +27,7 @@ For each section:
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,448 | 1,500 | 1,010 | 16 | 9 | Generating |
 | BAR     | 1,189 | 1,500 | 151 | 462 | 29 | Pending |
-| ISC     | 1,443 | 1,500 | 78 | 135 | 32 | Generating |
+| ISC     | 1,461 | 1,500 | 78 | 117 | 32 | Generating |
 | TCP     | 1,103 | 1,500 | 96 | 493 | 30 | Generating |
 
 ## Topic Detail
@@ -155,7 +155,7 @@ For each section:
 | 1 | Data Management and Lifecycle | 78 | 86 |  | +8 |
 | 1 | ERP and Accounting Information Systems | 78 | 86 |  | +8 |
 | 1 | IT Audit Frameworks | 86 | 86 |  |  |
-| 1 | IT General Controls | 68 | 86 |  | +18 |
+| 1 | IT General Controls | 86 | 86 |  |  |
 | 1 | IT Infrastructure and Architecture | 82 | 86 |  | +4 |
 | 1 | System Availability and Change Management | 86 | 86 |  |  |
 | 2 | Data Protection Technologies | 169 | 100 | -69 |  |
@@ -239,4 +239,5 @@ For each section:
 | 2026-03-24 | 00519_generate_reg_batch59.sql | REG | Legal Duties and Responsibilities | 13 | §7525 third-party waiver, substantial portion preparer test, §6694(b) offset calc, §6695(g) 3-year retention, OPR vs IRS enforcement, ordinary vs opinion work product, signing preparer definition, dual Circ 230 + statutory exposure, PTIN annual renewal, §6695 aggregate cap, tax shelter more-likely-than-not, §6694(a) reasonable cause defense, Form 8867 requirement |
 | 2026-03-24 | 00520_generate_isc_batch27.sql | ISC | IT Audit Frameworks | 18 | EDM02 benefits delivery, EDM05 stakeholder engagement, ITIL 4 progress iteratively, ITIL 4 keep it simple, NIST RMF Implement step, NIST RMF Assess step, NIST RMF Monitor step, APO13 managed security, DSS05 security services, BAI06 IT changes, BAI09 managed assets, MEA01 performance monitoring, MEA02 internal control, COBIT holistic approach, COBIT tailored to enterprise, FIPS 199 low/moderate, COBIT Level 0/5, ISO 38500/27001 |
 | 2026-03-24 | 00521_generate_reg_batch60.sql | REG | Government Regulation of Business | 10 | UCC 2-207 battle of forms, respondeat superior detour/frolic, UCC Art 9 perfection, duty of loyalty, firm offer rule, undisclosed principal liability, agency termination by death, agency formation without consideration, agency coupled with interest, perfect tender rule |
+| 2026-03-24 | 00522_generate_isc_batch28.sql | ISC | IT General Controls | 18 | Incident severity classification, change freeze zero-day evaluation, authentication factor categories, job execution log purpose, deprovisioning definition, IT policy hierarchy, dual authorization maker-checker, job dependency definition, automated HR-IT deprovisioning, default credential risk, system hardening, media sanitization disposal, change success rate metrics, warm site DR classification, configuration drift detection, formal access request workflow, job restart checkpoint recovery, escalation procedures definition |
 | 2026-03-24 | 00523_generate_aud_batch90.sql | AUD | Independence | 18 | SEC prohibited non-audit services, management participation threat, de minimis 5% exception, concurring partner rotation, independence in mind, AICPA six principles, Code Part 1 scope, FROR cooling-off, de minimis threshold calc, client oversight requirement, automatic license revocation, familiarity safeguards, lead partner employment cooling-off, self-review personnel separation, intimidation threat, subsidiary partner rotation, state board vs AICPA authority, PCAOB/SEC sanctions |
