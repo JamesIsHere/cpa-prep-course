@@ -26,9 +26,9 @@ For each section:
 | AUD     | 3,702 | 1,500 | 2,355 | 93 | 33 | Generating |
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,448 | 1,500 | 1,010 | 16 | 9 | Generating |
-| BAR     | 1,189 | 1,500 | 151 | 462 | 29 | Pending |
+| BAR     | 1,219 | 1,500 | 151 | 432 | 30 | Generating |
 | ISC     | 1,511 | 1,500 | 78 | 67 | 34 | Generating |
-| TCP     | 1,103 | 1,500 | 96 | 493 | 30 | Generating |
+| TCP     | 1,133 | 1,500 | 96 | 463 | 31 | Generating |
 
 ## Topic Detail
 
@@ -131,7 +131,7 @@ For each section:
 | 1 | Financial Statement Analysis | 116 | 134 |  | +18 |
 | 1 | Financial Valuation Methods | 83 | 134 |  | +51 |
 | 1 | Prospective Analysis and Forecasting | 106 | 134 |  | +28 |
-| 1 | Risk Management and Economics | 70 | 134 |  | +64 |
+| 1 | Risk Management and Economics | 100 | 134 |  | +34 |
 | 2 | Advanced Consolidations | 49 | 55 |  | +6 |
 | 2 | Advanced Lease Transactions | 39 | 55 |  | +16 |
 | 2 | Advanced Revenue and Intangibles | 49 | 55 |  | +6 |
@@ -174,7 +174,7 @@ For each section:
 
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
-| 1 | Individual Tax Planning: Compensation | 81 | 132 |  | +51 |
+| 1 | Individual Tax Planning: Compensation | 111 | 132 |  | +21 |
 | 1 | Passive Activity and At-Risk Rules | 228 | 132 | -96 |  |
 | 1 | Retirement Plans and Education Savings | 86 | 131 |  | +45 |
 | 1 | Wealth Transfer and Gifting Strategies | 84 | 131 |  | +47 |
@@ -251,3 +251,4 @@ For each section:
 | 2026-03-24 | 00531_generate_aud_batch95.sql | AUD | Other Information and Supplementary Information | 18 | RSI inconclusive procedures, classification distinction evaluation, voluntary SI disclaimer, multiple inconsistencies mixed resolution, other info definition, RSI inquiry procedures, adverse opinion SI effect, SI reconciliation to records, post-report-date other info, RSI vs SI terminology, RSI contradicting FS disclosures, other-matter paragraph purpose, separate document references, RSI omitted disclosure departure, going concern narrative consistency, AU-C 725 standard identification, misstatement of fact facility count, component unit RSI evaluation |
 | 2026-03-24 | 00532_generate_aud_batch96.sql | AUD | Analytical Procedures | 15 | Predictability prerequisite, compilation no AP required, external data independence, related party limitations, tolerable misstatement threshold, skepticism with no anomalies, balance sheet vs income statement suitability, group audit AP, reasonableness vs SAP distinction, acquisition comparability, nonfinancial operating metrics, estimate model verification, low predictability supplementation, segment disaggregation design, SAP sufficiency evaluation |
 | 2026-03-24 | 00533_generate_aud_batch97.sql | AUD | Tests of Controls | 15 | NTE interrelationship, minimum reliance requirement, statistical vs non-statistical sampling, roll-forward when controls changed, fraud risk current-period testing, assessed RMM extent effect, no SOC report alternatives, parallel simulation CAAT, non-routine transaction controls, deficiency aggregation, confidence level sample size, interim vs year-end timing, inquiry combination requirement, significant risk annual testing, extent proportional to reliance |
+| 2026-03-24 | 00534_generate_bar_batch15.sql | BAR | Risk Management and Economics | 30 | Coincident indicators, fiscal policy tools, basis risk cross-hedging, demand-pull vs cost-push inflation, open market operations, crowding-out effect, convexity, yield curve theories, M1 money supply, counterparty risk OTC, MIRR vs IRR, economic exposure, fiscal multiplier/MPC, reserve requirements, supply shock policy dilemma, EVA, sensitivity analysis, equivalent annual annuity, currency options asymmetric payoff, breakeven analysis, liquidity trap, hedge effectiveness dollar-offset, country/political risk, cost of preferred stock, elasticity of demand, margin/mark-to-market futures, beta interpretation, scenario analysis, real options, aggregate demand monetary transmission |
