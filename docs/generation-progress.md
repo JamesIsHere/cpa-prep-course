@@ -26,7 +26,7 @@ For each section:
 | AUD     | 3,702 | 1,500 | 2,355 | 93 | 33 | Generating |
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,448 | 1,500 | 1,010 | 16 | 9 | Generating |
-| BAR     | 1,564 | 1,500 | 151 | 66 | 43 | Generating |
+| BAR     | 1,582 | 1,500 | 151 | 48 | 44 | Generating |
 | ISC     | 1,511 | 1,500 | 78 | 67 | 34 | Generating |
 | TCP     | 1,517 | 1,500 | 96 | 79 | 42 | Generating |
 
@@ -128,7 +128,7 @@ For each section:
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
 | 1 | Capital Structure and Valuation | 285 | 134 | -151 |  |
-| 1 | Financial Statement Analysis | 116 | 134 |  | +18 |
+| 1 | Financial Statement Analysis | 134 | 134 |  |  |
 | 1 | Financial Valuation Methods | 83 | 134 |  | +51 |
 | 1 | Prospective Analysis and Forecasting | 136 | 134 |  |  |
 | 1 | Risk Management and Economics | 100 | 134 |  | +34 |
@@ -281,3 +281,4 @@ For each section:
 | 2026-03-25 | 00563_generate_bar_batch26.sql | BAR | Prospective Analysis and Forecasting | 26 | VIF multicollinearity, log transformation, ARIMA Box-Jenkins, dampened trend, MAE metric, Cook's distance, time-series cross-validation, stepwise regression, CM per unit, dividend policy EFN, Theil's U, pro forma depreciation, WLS heteroscedasticity, pro forma balance sheet, anchoring bias, seasonal index, FVA analysis, alpha range, AR model, growth-EFN relationship, operating cycle, iterative EFN, common-size analysis, partial F-test, trend analysis, asset turnover DuPont |
 | 2026-03-25 | 00564_generate_bar_batch27.sql | BAR | Financial Valuation Methods | 21 | M&M Prop I tax shield calc, M&M Prop II equity cost with leverage, cost of preferred stock, trade-off theory optimal structure, pecking order theory, DFL EPS impact, DOL cost structure shift, DTL interpretation, market vs book value WACC weights, duration definition, interest rate swap hedging, forward contract currency hedge, transaction vs translation exposure, modified duration price change, currency option vs forward asymmetry, business cycle trough, combined leverage analysis, leading indicators, natural hedging, FCFE net borrowing, lagging indicator classification |
 | 2026-03-25 | 00565_generate_bar_batch28.sql | BAR | State and Local Government Reporting | 19 | Major fund 10%/5% criteria, compensated absences fund vs gov-wide, net pension liability calc, nonspendable fund balance, private-purpose trust vs permanent fund, budgetary journal entry, property tax allowance + availability, investment trust fund, pension expense components GASB 68, general vs program revenues, operating vs capital grants, committed fund balance, GASB 68 vs ASC 715 comparison, capital asset depreciation gov-wide, assigned vs unassigned fund balance, statement of net position deferred items, GASB vs FASB revenue recognition, budget reversal year-end, fiduciary fund types |
+| 2026-03-25 | 00566_generate_bar_batch29.sql | BAR | Financial Statement Analysis | 18 | OCF ratio, working capital turnover, interest burden 5-step DuPont, financial leverage effect, capital intensity ratio, book value per share, OCF-to-total-debt, adjusted R² model selection, retention ratio, RNOA decomposition, earnings yield vs P/E, receivables-to-sales trend, enterprise value, tax burden 5-step DuPont, inventory turnover calc, Tobin's Q, price-to-sales ratio, LT debt ratio vs total debt ratio |
