@@ -23,7 +23,7 @@ For each section:
 
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status |
 |---------|---------|--------|---------|-------------|-------------|--------|
-| AUD     | 3,687 | 1,500 | 2,355 | 108 | 32 | Generating |
+| AUD     | 3,702 | 1,500 | 2,355 | 93 | 33 | Generating |
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,448 | 1,500 | 1,010 | 16 | 9 | Generating |
 | BAR     | 1,189 | 1,500 | 151 | 462 | 29 | Pending |
@@ -57,7 +57,7 @@ For each section:
 | 3 | Misstatements and Control Deficiencies | 1649 | 65 | -1584 |  |
 | 3 | Specific Areas and Transactions | 56 | 65 |  | +9 |
 | 3 | Substantive Procedures | 58 | 65 |  | +7 |
-| 3 | Tests of Controls | 20 | 65 |  | +45 |
+| 3 | Tests of Controls | 35 | 65 |  | +30 |
 | 3 | Written Representations | 747 | 65 | -682 |  |
 | 4 | Attestation Engagements | 46 | 38 | -8 |  |
 | 4 | Audit Reports | 62 | 38 | -24 |  |
@@ -250,3 +250,4 @@ For each section:
 | 2026-03-24 | 00529_generate_isc_batch31.sql | ISC | SOC Engagements | 15 | SOC for Cybersecurity criteria, SOC for Supply Chain selection, system description boundary components, attestation vs audit classification, SOC for Cybersecurity audience, post-remediation reporting, fair presentation omission, Confidentiality vs Privacy TSC, Type II additional procedures, service organization definition, management assertion elements, Availability criterion, carve-out user entity auditor obligations, SOC for Cybersecurity vs SOC 2 evaluation, SOC 2 restricted-use rationale |
 | 2026-03-24 | 00531_generate_aud_batch95.sql | AUD | Other Information and Supplementary Information | 18 | RSI inconclusive procedures, classification distinction evaluation, voluntary SI disclaimer, multiple inconsistencies mixed resolution, other info definition, RSI inquiry procedures, adverse opinion SI effect, SI reconciliation to records, post-report-date other info, RSI vs SI terminology, RSI contradicting FS disclosures, other-matter paragraph purpose, separate document references, RSI omitted disclosure departure, going concern narrative consistency, AU-C 725 standard identification, misstatement of fact facility count, component unit RSI evaluation |
 | 2026-03-24 | 00532_generate_aud_batch96.sql | AUD | Analytical Procedures | 15 | Predictability prerequisite, compilation no AP required, external data independence, related party limitations, tolerable misstatement threshold, skepticism with no anomalies, balance sheet vs income statement suitability, group audit AP, reasonableness vs SAP distinction, acquisition comparability, nonfinancial operating metrics, estimate model verification, low predictability supplementation, segment disaggregation design, SAP sufficiency evaluation |
+| 2026-03-24 | 00533_generate_aud_batch97.sql | AUD | Tests of Controls | 15 | NTE interrelationship, minimum reliance requirement, statistical vs non-statistical sampling, roll-forward when controls changed, fraud risk current-period testing, assessed RMM extent effect, no SOC report alternatives, parallel simulation CAAT, non-routine transaction controls, deficiency aggregation, confidence level sample size, interim vs year-end timing, inquiry combination requirement, significant risk annual testing, extent proportional to reliance |
