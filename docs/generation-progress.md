@@ -27,7 +27,7 @@ For each section:
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,448 | 1,500 | 1,010 | 16 | 9 | Generating |
 | BAR     | 1,189 | 1,500 | 151 | 462 | 29 | Pending |
-| ISC     | 1,461 | 1,500 | 78 | 117 | 32 | Generating |
+| ISC     | 1,479 | 1,500 | 78 | 99 | 32 | Generating |
 | TCP     | 1,103 | 1,500 | 96 | 493 | 30 | Generating |
 
 ## Topic Detail
@@ -160,7 +160,7 @@ For each section:
 | 1 | System Availability and Change Management | 86 | 86 |  |  |
 | 2 | Data Protection Technologies | 169 | 100 | -69 |  |
 | 2 | Incident Response and Recovery | 109 | 100 | -9 |  |
-| 2 | Privacy Requirements and Data Protection | 82 | 100 |  | +18 |
+| 2 | Privacy Requirements and Data Protection | 100 | 100 |  |  |
 | 2 | Security and Control Frameworks | 82 | 99 |  | +17 |
 | 2 | Security Controls and Monitoring | 100 | 100 |  |  |
 | 2 | Threats, Attacks, and Vulnerabilities | 99 | 99 |  |  |
@@ -242,4 +242,5 @@ For each section:
 | 2026-03-24 | 00522_generate_isc_batch28.sql | ISC | IT General Controls | 18 | Incident severity classification, change freeze zero-day evaluation, authentication factor categories, job execution log purpose, deprovisioning definition, IT policy hierarchy, dual authorization maker-checker, job dependency definition, automated HR-IT deprovisioning, default credential risk, system hardening, media sanitization disposal, change success rate metrics, warm site DR classification, configuration drift detection, formal access request workflow, job restart checkpoint recovery, escalation procedures definition |
 | 2026-03-24 | 00523_generate_aud_batch90.sql | AUD | Independence | 18 | SEC prohibited non-audit services, management participation threat, de minimis 5% exception, concurring partner rotation, independence in mind, AICPA six principles, Code Part 1 scope, FROR cooling-off, de minimis threshold calc, client oversight requirement, automatic license revocation, familiarity safeguards, lead partner employment cooling-off, self-review personnel separation, intimidation threat, subsidiary partner rotation, state board vs AICPA authority, PCAOB/SEC sanctions |
 | 2026-03-24 | 00524_generate_aud_batch91.sql | AUD | Nature and Scope of Engagements | 18 | Compilation assurance level, audit preconditions mgmt responsibility, AUP findings-only report, professional skepticism, pervasive scope limitation withdrawal, PCAOB vs AICPA applicability, negative assurance review, audit risk model application, engagement letter required content, special purpose regulatory framework, acceptable framework precondition, GAGAS additional scope requirements, compliance vs fair presentation framework, predecessor auditor communication, recurring engagement revised terms, attestation engagement definition, SQMS 1 firm-level quality, audit risk definition |
+| 2026-03-24 | 00525_generate_isc_batch29.sql | ISC | Privacy Requirements and Data Protection | 18 | GDPR Article 9 special categories, joint controllers Article 26, HIPAA accounting of disclosures TPO exemption, CCPA sale definition valuable consideration, legitimate interest balancing test, designated record set, children's data consent Article 8, ROPA Article 30, psychotherapy notes heightened protection, authorized agent verification, availability breach classification, marketing authorization remuneration, Article 27 EU representative, financial incentive programs, Safe Harbor 18 identifiers, court order PHI disclosure, data protection by default Article 25(2), breach register documentation Article 33(5) |
 | 2026-03-24 | 00526_generate_aud_batch92.sql | AUD | Professional Skepticism and Judgment | 18 | Impediments to skepticism, going concern assumption evaluation, self-review threat, groupthink in teams, management integrity doubt, error vs fraud distinction, control deficiency severity, experience/training role, fair value assumption scrutiny, subsequent event classification, overconfidence bias, consultation for complex judgments, sampling threshold judgment, recency bias, questioning mind definition, fraud triangle elements, motivated reasoning/self-interest, risk-proportionate skepticism |
