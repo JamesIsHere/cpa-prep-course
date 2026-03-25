@@ -217,7 +217,13 @@ function validateQuestion(q: ParsedQuestion): void {
 const distributions: { correct_index: number; topic: string }[] = [];
 let questionCount = 0;
 
-const fullSql = sql.replace(/\n/g, " ");
+// Convert dollar-quoted strings ($EXPL$...$EXPL$) to single-quoted strings
+// so the existing regex parsers can handle them. Internal single quotes are doubled.
+const dollarQuoteNormalized = sql.replace(
+	/\$EXPL\$([\s\S]*?)\$EXPL\$/g,
+	(_match, content: string) => `'${content.replace(/'/g, "''")}'`,
+);
+const fullSql = dollarQuoteNormalized.replace(/\n/g, " ");
 
 // ============================================================
 // Parse INSERT statements (8-column: with cognitive_level)

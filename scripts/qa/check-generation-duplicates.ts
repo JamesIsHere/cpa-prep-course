@@ -45,7 +45,12 @@ async function main() {
 
 	// Parse stems from INSERT VALUES tuples
 	// Matches 8-column format: (section_id, 'topic', 'stem', 'choices'::jsonb, correct_index, 'explanation', 'difficulty', cognitive_level)
-	const fullSql = sql.replace(/\n/g, " ");
+	// Convert dollar-quoted strings ($EXPL$...$EXPL$) to single-quoted strings
+	const dollarQuoteNormalized = sql.replace(
+		/\$EXPL\$([\s\S]*?)\$EXPL\$/g,
+		(_match: string, content: string) => `'${content.replace(/'/g, "''")}'`,
+	);
+	const fullSql = dollarQuoteNormalized.replace(/\n/g, " ");
 	const tuplePattern =
 		/\(\s*\d+\s*,\s*'(?:[^']|'')*?'\s*,\s*'((?:[^']|'')*?)'\s*,\s*'\[(?:[^']|'')*?\]'::jsonb\s*,\s*\d+\s*,\s*'(?:[^']|'')*?'\s*,\s*'(?:easy|medium|hard)'\s*,\s*\d+\s*\)/g;
 
