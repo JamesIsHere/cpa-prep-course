@@ -26,9 +26,9 @@ For each section:
 | AUD     | 3,702 | 1,500 | 2,355 | 93 | 33 | Generating |
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,448 | 1,500 | 1,010 | 16 | 9 | Generating |
-| BAR     | 1,399 | 1,500 | 151 | 252 | 36 | Generating |
+| BAR     | 1,429 | 1,500 | 151 | 222 | 37 | Generating |
 | ISC     | 1,511 | 1,500 | 78 | 67 | 34 | Generating |
-| TCP     | 1,283 | 1,500 | 96 | 313 | 34 | Generating |
+| TCP     | 1,313 | 1,500 | 96 | 283 | 35 | Generating |
 
 ## Topic Detail
 
@@ -137,7 +137,7 @@ For each section:
 | 2 | Advanced Revenue and Intangibles | 49 | 55 |  | +6 |
 | 2 | Business Combinations | 20 | 55 |  | +35 |
 | 2 | Derivatives and Hedging | 50 | 55 |  | +5 |
-| 2 | Foreign Currency Transactions | 20 | 55 |  | +35 |
+| 2 | Foreign Currency Transactions | 50 | 55 |  | +5 |
 | 2 | Income Taxes Advanced | 20 | 55 |  | +35 |
 | 2 | Intangible Assets Advanced | 20 | 55 |  | +35 |
 | 2 | Internal-Use Software and Cloud Computing | 39 | 55 |  | +16 |
@@ -189,7 +189,7 @@ For each section:
 | 3 | Trusts and Estates | 50 | 56 |  | +6 |
 | 4 | Entity Formation and Restructuring | 50 | 75 |  | +25 |
 | 4 | Nontaxable Dispositions | 70 | 75 |  | +5 |
-| 4 | Related Party Transactions | 40 | 75 |  | +35 |
+| 4 | Related Party Transactions | 70 | 75 |  | +5 |
 
 ## Batch Log
 
@@ -264,3 +264,5 @@ For each section:
 | 2026-03-25 | 00544_generate_bar_batch20.sql | BAR | Fund-to-Government-Wide Reconciliation | 30 | Net OPEB liability, claims/judgments LT portion, modified approach infrastructure, CIP not yet depreciated, net investment in capital assets calc, three net position categories, encumbrances elimination, prepaids consumption method, fiduciary fund exclusion, GASB 87 lease reconciliation, gain on early extinguishment, donated capital assets fair value, accumulated depreciation role, enterprise vs ISF, capital asset impairment GASB 42, landfill closure GASB 18, purchases method supplies, multi-adjustment activity statement, special assessments debt, pollution remediation GASB 49, restricted net position vs fund balance, compensated absences change calc, deferred amount on refunding amortization, tax revenue timing, bond discount amortization, interfund eliminations gov-wide, unrestricted net position, comprehensive balance sheet with GASB 87/pensions, capitalization threshold, prepaids purchases method |
 | 2026-03-25 | 00545_generate_tcp_batch22.sql | TCP | Nontaxable Dispositions | 30 | Section 453A interest charge, mortgage exceeds basis contract price, selling expenses GP%, Section 1033 voluntary election, NOL expiry elect-out, severance damages, direct conversion, threat of condemnation, Section 453(g) related-party depreciable, automatic installment method, functional use vs taxpayer use test, obligation cancellation, unrecaptured Section 1250, multiple replacement basis allocation, Section 121+1033 combo, IRS extension of replacement period, wrap-around mortgage, Section 1033(i) related party, imputed interest, involuntary conversion definition, replacement period start, IRD installment obligation, drought livestock, mortgage excess deemed payment, Form 6252, severance damages basis reduction, Section 453(l) life insurance, worthless obligation loss, like-kind condemned standard, contingent payment installment |
 | 2026-03-25 | 00546_generate_bar_batch21.sql | BAR | Business Combinations | 30 | Assembled workforce in goodwill, preexisting relationship settlement, replacement awards allocation, restructuring costs post-combination, DTL from fair value step-up, bargain purchase with NCI, contractual-legal criterion, goodwill no amortization public, post-combination compensation vs contingent consideration, indemnification asset, business vs asset acquisition, deferred revenue fair value, defensive intangible, goodwill impairment qualitative, measurement period depreciation adjustment, non-compete amortization, control without consideration, pre-acquisition contingency, customer list recognition, partial vs full goodwill, private company goodwill amortization, marketing intangible indefinite life, inventory fair value, intercompany elimination, order backlog, goodwill reporting unit allocation, pension obligation assumed, goodwill tax deductibility, lease ROU unfavorable terms, technology intangible amortization |
+| 2026-03-25 | 00547_generate_bar_batch22.sql | BAR | Foreign Currency Transactions | 30 | Initial measurement spot rate, forward premium amortization, net investment hedge instrument selection, prepaid expense temporal remeasurement, two-transaction perspective, strengthening dollar CTA effect, functional currency definition, temporal COGS FIFO impact, CHF receivable loss calc, functional currency change prospective, sale transaction loss calc, firm commitment fair value hedge, JPY borrowing loss, speculative forward earnings, partial sale CTA retention, two-step translation HKD-CNY-USD, option time value exclusion, reporting currency definition, net investment hedge with FC debt, retained earnings rollforward, hedge effectiveness discontinuation, common stock historical rate, intercompany profit elimination rate, deferred revenue temporal remeasurement, highly inflationary reclassification, forecasted transaction improbable AOCI, FC transaction scope, depreciation temporal historical rate, balance sheet exposure comparison, hedging earnings volatility reduction |
+| 2026-03-25 | 00548_generate_tcp_batch23.sql | TCP | Related Party Transactions | 30 | Multi-layer attribution, option attribution, cousins not related, 267(a)(2) matching rule, exactly 50% threshold, 1239 non-depreciable land, permanent seller loss, executor-beneficiary, gift alternative, late payment deferral, 1041 spouse override, entity-to-individual attribution, no-chain family attribution, half-siblings, option pushing over 50%, 351 alternative, lease vs sale 1239, buyer cost basis, corp-partnership related, partnership attribution proportional, installment sale 1239, trust fiduciary-beneficiary, gain recognized related party, two partnerships same owner, shareholder-to-corp reverse attribution, 2.5-month payment window, 707(b)(2) capital asset exception, cross-trust fiduciary, in-laws excluded, tax-exempt entity controlling person |
