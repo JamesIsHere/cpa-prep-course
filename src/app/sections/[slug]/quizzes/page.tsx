@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Paywall from "@/components/paywall";
 import { StudyPipeline } from "@/components/study-pipeline";
 import { getSection, sections } from "@/lib/sections";
+import { isAdmin } from "@/lib/admin";
 import { createClient } from "@/lib/supabase/server";
 import QuizClient from "./quiz-client";
 
@@ -62,7 +63,7 @@ export default async function QuizPage({
 		.eq("id", user.id)
 		.single();
 
-	if (profile?.subscription_status !== "active") {
+	if (profile?.subscription_status !== "active" && !isAdmin(user.id)) {
 		return (
 			<main className="max-w-4xl mx-auto px-4 py-12">
 				<Link
