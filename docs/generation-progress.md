@@ -25,9 +25,9 @@ For each section:
 |---------|---------|--------|---------|-------------|-------------|--------|
 | AUD     | 3,564 | 1,500 | 2,355 | 231 | 26 | Pending |
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
-| REG     | 2,425 | 1,500 | 1,010 | 39 | 7 | Pending |
+| REG     | 2,438 | 1,500 | 1,010 | 26 | 8 | Generating |
 | BAR     | 1,189 | 1,500 | 151 | 462 | 29 | Pending |
-| ISC     | 1,406 | 1,500 | 78 | 172 | 31 | Generating |
+| ISC     | 1,425 | 1,500 | 78 | 153 | 31 | Generating |
 | TCP     | 1,103 | 1,500 | 96 | 493 | 30 | Generating |
 
 ## Topic Detail
@@ -100,7 +100,7 @@ For each section:
 |------|-------|---------|--------|------|----------|
 | 1 | Circular 230 | 42 | 45 |  | +3 |
 | 1 | Federal Tax Procedures | 40 | 45 |  | +5 |
-| 1 | Legal Duties and Responsibilities | 32 | 45 |  | +13 |
+| 1 | Legal Duties and Responsibilities | 45 | 45 |  |  |
 | 1 | Professional Ethics in Tax | 29 | 45 |  | +16 |
 | 1 | Tax Procedures | 45 | 45 |  |  |
 | 2 | Agency and Regulation | 66 | 60 | -6 |  |
@@ -167,7 +167,7 @@ For each section:
 | 3 | SOC Engagements | 45 | 60 |  | +15 |
 | 3 | SOC Report Content and Structure | 50 | 60 |  | +10 |
 | 3 | SOC Reporting | 60 | 60 |  |  |
-| 3 | SOC Reporting and Trust Services Criteria | 41 | 60 |  | +19 |
+| 3 | SOC Reporting and Trust Services Criteria | 60 | 60 |  |  |
 | 3 | SOC Testing Controls | 60 | 60 |  |  |
 
 ### TCP
@@ -235,3 +235,5 @@ For each section:
 | 2026-03-24 | 00515_generate_isc_batch23.sql | ISC | SOC Reporting | 22 | Opinion formation 3-step process, scope limitation disclaimer, compensating controls in mgmt response, bridge letter assurance level, CUEC input validation, long gap period procedures, Section V other information, inherent limitations, principal service commitments, carve-out monitoring controls, Type I vs Type II assertion, qualified vs adverse pervasiveness, CUEC configuration mgmt, adverse opinion substantive testing, system requirements, examination-level assurance, TSC mapping, CUEC incident notification, practitioner independence from mgmt response, multi-subservice mixed methods, population quantification, inclusive method coordination |
 | 2026-03-24 | 00516_generate_isc_batch24.sql | ISC | SOC Testing Controls | 22 | Block selection limitations, systematic selection, haphazard selection, population documentation, per-transaction population definition, isolated vs systemic deviations, decision tree ITGC automated, working paper signing, deviation cause analysis, deviation nature classification, inquiry corroboration requirement, random selection default, tests tied to mgmt description, control placement design, authorized personnel operating effectiveness, evidence retention, trust services criteria cross-referencing, prior-period exceptions, key control no compensating, inquiry vs inspection conflict, inherent risk sample sizes, control logic soundness |
 | 2026-03-24 | 00517_generate_isc_batch25.sql | ISC | Threats, Attacks, and Vulnerabilities | 21 | Botnet C2, CVSS base score components, lateral movement, business logic flaws, DNS tunneling, polymorphic malware, adware, reconnaissance phase, MITRE ATT&CK, replay attack, honeypot, shoulder surfing, race condition, cryptographic failures OWASP#2, dumpster diving, scareware, steganography, vulnerable components OWASP#6, ISAC threat sharing, open redirect, typosquatting |
+| 2026-03-24 | 00518_generate_isc_batch26.sql | ISC | SOC Reporting and Trust Services Criteria | 19 | Type I vs Type II distinction, bridge letter sufficiency evaluation, SOC 3 general-use distribution, auditor opinion three elements, multi-criteria control mapping, Section IV restricted-use rationale, user auditor SOC evaluation steps, management assertion content, four-section report structure, adverse opinion pervasive deficiency, alternative procedures no SOC available, gap period significant system changes, SOC 1 vs SOC 2 purpose, user auditor no reference required, management assertion preparer, CUEC implementation gaps, SOC 3 Type II only, SLA monitoring criteria mapping, service auditor competence evaluation |
+| 2026-03-24 | 00519_generate_reg_batch59.sql | REG | Legal Duties and Responsibilities | 13 | §7525 third-party waiver, substantial portion preparer test, §6694(b) offset calc, §6695(g) 3-year retention, OPR vs IRS enforcement, ordinary vs opinion work product, signing preparer definition, dual Circ 230 + statutory exposure, PTIN annual renewal, §6695 aggregate cap, tax shelter more-likely-than-not, §6694(a) reasonable cause defense, Form 8867 requirement |
