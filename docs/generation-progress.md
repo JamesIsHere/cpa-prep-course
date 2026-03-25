@@ -28,7 +28,7 @@ For each section:
 | REG     | 2,448 | 1,500 | 1,010 | 16 | 9 | Generating |
 | BAR     | 1,429 | 1,500 | 151 | 222 | 37 | Generating |
 | ISC     | 1,511 | 1,500 | 78 | 67 | 34 | Generating |
-| TCP     | 1,463 | 1,500 | 96 | 133 | 40 | Generating |
+| TCP     | 1,484 | 1,500 | 96 | 112 | 40 | Generating |
 
 ## Topic Detail
 
@@ -181,7 +181,7 @@ For each section:
 | 2 | Advanced Basis Calculations | 107 | 105 |  |  |
 | 2 | Entity Formation and Liquidation | 105 | 105 |  |  |
 | 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 81 | 105 |  | +24 |
-| 2 | International Tax | 84 | 105 |  | +21 |
+| 2 | International Tax | 105 | 105 |  |  |
 | 2 | Owner-Entity Transactions | 105 | 105 |  |  |
 | 3 | Capital Structure Tax Planning | 40 | 56 |  | +16 |
 | 3 | Entity Choice and Planning | 44 | 56 |  | +12 |
@@ -272,3 +272,4 @@ For each section:
 | 2026-03-25 | 00553_generate_tcp_batch27.sql | TCP | Entity Formation and Restructuring | 25 | 453B installment obligation in 351, 351 control 80% definition, 357(c) liabilities exceed basis, 351 multi-party services contributor, 721 general rule, 362(a) corporate basis, 358 stock basis with boot, 338(h)(10) S corp target, partnership vs corporate liability treatment, partial liquidation 5-year taxable acquisition, 381 tax attribute carryover, 336 corporate-level net gain/loss, 331 capital gain character, 332 mandatory application, 336(d)(1) related party loss, services for capital interest, 351 loss nonrecognition, 721(b) investment partnership exception, 337 no gain to 80% parent, 334(b)(1) carryover basis, 721 no control requirement, 357(b) tax avoidance, 332 vs 331 minority shareholder, 358 zero basis floor, 707(a)(2)(B) disguised sale |
 | 2026-03-25 | 00554_generate_tcp_batch28.sql | TCP | Entity Tax Compliance: NOLs and Consolidated Returns | 24 | Section 382 COBE requirement, intercompany dividend elimination, Section 384 built-in gain limitation, Section 382 anti-stuffing capital contributions, SRLY cumulative register, consolidated return filing mechanism, Section 382 COBE + NUBIG interaction, common parent definition, intercompany interest elimination, Section 384 + Section 382 overlap, Section 382 recognition period, CNOL apportionment departing member, SRLY definition, investment adjustment ordering, Reg 1.1502-36 loss disallowance, intercompany obligation deemed satisfaction, Section 382 equity structure shift reorganization, RBIL during recognition period, consolidated net capital loss carryback, excess charitable contribution carryforward, intercompany like-kind exchange, indirect ownership chain test, Section 382 long-term tax-exempt rate, Section 382(h)(3)(B) de minimis threshold |
 | 2026-03-25 | 00555_generate_tcp_batch29.sql | TCP | Individual Tax Planning: Compensation | 21 | ESPP $25K annual limit, ISO $100K first-exercisable excess becomes NQSO, 409A short-term deferral exception, SAR 409A base price compliance, Sec 83 property vs unfunded promise, ESPP disqualifying disposition calc, 162(m) once-covered-always-covered, ISO vs NQSO when employer has NOLs, ISO nontransferability requirement, 409A change-in-control 50% threshold, ESPP 27-month offering period max, Sec 4999 excise tax computation base, Sec 132(m) retirement planning services, FICA on NQSO vs ISO exercise, S corp reasonable salary reclassification, Sec 83(i) qualified stock election, ISO AMT basis vs regular basis, Sec 404(a)(5) NQDC deduction timing, Sec 125 cafeteria plan eligible benefits, 409A separation from service definition, 409A premium interest penalty |
+| 2026-03-25 | 00557_generate_tcp_batch30.sql | TCP | International Tax | 21 | Section 1248 + 245A interaction, 954(c)(6) look-through, 6038 penalty, 884 branch profits tax, 267(a)(3) matching rule, PFIC asset test, QBAI ADS depreciation, 863(b) production sourcing, 951(a) inclusion timing, 245A(e) hybrid dividends, Subpart F insurance income, 909 FTC splitter, QBAI definition, 338(g) foreign target, 367(b) inbound rules, treaty tie-breaker, 898 required year, BEAT R&D credit interaction, GILTI tested loss mechanics, 1503(d) domestic use agreement, 304 cross-border redemption |
