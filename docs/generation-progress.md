@@ -26,7 +26,7 @@ For each section:
 | AUD     | 3,702 | 1,500 | 2,355 | 93 | 33 | Generating |
 | FAR     | 3,511 | 1,500 | 2,022 | 11 | 2 | Pending |
 | REG     | 2,448 | 1,500 | 1,010 | 16 | 9 | Generating |
-| BAR     | 1,582 | 1,500 | 151 | 48 | 44 | Generating |
+| BAR     | 1,599 | 1,500 | 151 | 31 | 45 | Generating |
 | ISC     | 1,511 | 1,500 | 78 | 67 | 34 | Generating |
 | TCP     | 1,517 | 1,500 | 96 | 79 | 42 | Generating |
 
@@ -141,7 +141,7 @@ For each section:
 | 2 | Income Taxes Advanced | 50 | 55 |  | +5 |
 | 2 | Intangible Assets Advanced | 50 | 55 |  | +5 |
 | 2 | Internal-Use Software and Cloud Computing | 39 | 55 |  | +16 |
-| 2 | Pension and Postretirement Benefits | 38 | 55 |  | +17 |
+| 2 | Pension and Postretirement Benefits | 55 | 55 |  |  |
 | 2 | Stock Compensation and Business Combinations | 52 | 55 |  | +3 |
 | 3 | Fund-to-Government-Wide Reconciliation | 69 | 75 |  | +6 |
 | 3 | Interfund Transactions | 38 | 75 |  | +37 |
@@ -282,3 +282,4 @@ For each section:
 | 2026-03-25 | 00564_generate_bar_batch27.sql | BAR | Financial Valuation Methods | 21 | M&M Prop I tax shield calc, M&M Prop II equity cost with leverage, cost of preferred stock, trade-off theory optimal structure, pecking order theory, DFL EPS impact, DOL cost structure shift, DTL interpretation, market vs book value WACC weights, duration definition, interest rate swap hedging, forward contract currency hedge, transaction vs translation exposure, modified duration price change, currency option vs forward asymmetry, business cycle trough, combined leverage analysis, leading indicators, natural hedging, FCFE net borrowing, lagging indicator classification |
 | 2026-03-25 | 00565_generate_bar_batch28.sql | BAR | State and Local Government Reporting | 19 | Major fund 10%/5% criteria, compensated absences fund vs gov-wide, net pension liability calc, nonspendable fund balance, private-purpose trust vs permanent fund, budgetary journal entry, property tax allowance + availability, investment trust fund, pension expense components GASB 68, general vs program revenues, operating vs capital grants, committed fund balance, GASB 68 vs ASC 715 comparison, capital asset depreciation gov-wide, assigned vs unassigned fund balance, statement of net position deferred items, GASB vs FASB revenue recognition, budget reversal year-end, fiduciary fund types |
 | 2026-03-25 | 00566_generate_bar_batch29.sql | BAR | Financial Statement Analysis | 18 | OCF ratio, working capital turnover, interest burden 5-step DuPont, financial leverage effect, capital intensity ratio, book value per share, OCF-to-total-debt, adjusted R² model selection, retention ratio, RNOA decomposition, earnings yield vs P/E, receivables-to-sales trend, enterprise value, tax burden 5-step DuPont, inventory turnover calc, Tobin's Q, price-to-sales ratio, LT debt ratio vs total debt ratio |
+| 2026-03-25 | 00567_generate_bar_batch30.sql | BAR | Pension and Postretirement Benefits | 17 | Measurement date, multi-employer withdrawal liability, benefit payment funded status effect, OPEB attribution period, AOCI reclassification, special termination benefits, expected return assumption, overfunded plan asset, business combination pension, AOCI components, transition obligation, multi-employer expense, negative return corridor, interim pension cost, mortality assumption, OPEB unfunded payment, pension disclosures |
