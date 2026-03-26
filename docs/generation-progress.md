@@ -24,7 +24,7 @@ For each section:
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status |
 |---------|---------|--------|---------|-------------|-------------|--------|
 | AUD     | 1,407 | 1,500 | 0 | 93 | 11 | Pending |
-| FAR     | 1,549 | 1,500 | 319 | 96 | 15 | Generating |
+| FAR     | 1,549 | 1,500 | 319 | 66 | 16 | Generating |
 | REG     | 1,484 | 1,500 | 0 | 16 | 4 | Pending |
 | BAR     | 1,427 | 1,500 | 0 | 73 | 12 | Pending |
 | ISC     | 1,463 | 1,500 | 0 | 37 | 5 | Pending |
@@ -201,3 +201,4 @@ For each section:
 | 2026-03-26 | 00572_generate_far_batch94.sql | FAR | Financial Statement Ratios | 30 | OCF ratio, fixed asset turnover, CCC, window dressing, sustainable growth, leverage analysis |
 | 2026-03-26 | 00573_generate_far_batch95.sql | FAR | Financial Statement Ratios | 30 | Altman Z-score, DSCR, P/E, defensive interval, EBITDA margin, P/S, DuPont diagnosis, ASC 842 leverage |
 | 2026-03-26 | 00574_generate_far_batch96.sql | FAR | Pension and Postretirement Benefits | 30 | Defined benefit/contribution, PBO, net periodic cost, corridor, curtailment, settlement, OPEB, ASC 960 plan statements |
+| 2026-03-26 | 00575_generate_far_batch97.sql | FAR | Employee Benefit Plans | 30 | Service cost classification, funded status, ASC 712 postemployment, multiemployer, OPEB attribution, ASC 960/965 plan statements, curtailment/settlement |
