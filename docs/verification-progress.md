@@ -10,7 +10,7 @@ Cross-session tracker for the correctness verification audit.
 | FAR     | ~1,005 | 2127     | 2085 | 31   | 11     | Done (00370: 3 deletes + 19 fixes) |
 | REG     | ~1,027 | 1490     | 1410 | 65   | 15     | In progress |
 | AUD     | ~2,732 | 1407     | 1254 | 55   | 98     | In progress |
-| ISC     | ~897   | 0        | 0    | 0    | 0      | Pending |
+| ISC     | ~897   | 10       | 9    | 1    | 0      | In progress |
 | TCP     | ~889   | 0        | 0    | 0    | 0      | Pending |
 
 ## Batch Log
@@ -741,3 +741,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-26 | batch 112 | BAR | 10 | 10 | 0 | 0 | All pass — VIF>10 multicollinearity remove/combine (Q14783), log transform stabilizes heteroscedastic variance (Q14784), Box-Jenkins identify/estimate/diagnose/forecast (Q14785), damping parameter phi trend flattening (Q14786), Cook's distance 2.8>1.0 investigate influential point (Q14788), stepwise regression iterative add/remove by significance (Q14790), pro forma balance sheet forward projection (Q14796), seasonal index 0.80 below-average quarter (Q14798), exponential smoothing alpha 0<α<1 weighting (Q14800), operating cycle 365/8+365/12=76 days (Q14803) |
 | 2026-03-26 | batch 113 | BAR | 10 | 10 | 0 | 0 | All pass — trend analysis pattern over time (Q14807), DuPont asset turnover revenue/avg assets (Q14808), pecking order internal financing preference (Q14813), duration interest rate sensitivity (Q14814), pay-fixed receive-floating swap converts variable to fixed (Q14819), transaction vs translation exposure (Q14821), modified duration 6.2×0.75%=4.65% decline (Q14822), trough minimum output high unemployment (Q14824), stock returns and building permits leading indicators (Q14826), natural hedging matching revenue/expense currency (Q14827) |
 | 2026-03-26 | batch 114 | BAR | 9 | 9 | 0 | 0 | All pass — unemployment rate lagging indicator (Q14829), general revenues GASB 34 para 37 (Q14839), GASB 68 vs ASC 715 net pension liability (Q14842), adjusted R-squared model selection parsimony (Q14856), retention ratio plowback ratio definition (Q14857), enterprise value market cap+debt-cash (Q14861), price-to-sales ratio market value per revenue dollar (Q14865), total debt vs long-term debt ratio numerator difference (Q14866), sublease does not affect head lease ASC 842 (Q14892) |
+| 2026-03-26 | batch 1 | ISC | 10 | 9 | 1 | 0 | Q783 fail: keyed answer B (accept 2% variance as immaterial) contradicts explanation which advocates reconciliation controls (choice A). Rest pass — ERP depreciation testing approach, emergency change % threshold (×2), availability formula, detective control classification, ALE formula, MPLS+encryption for PII, ERP integrated database, revenue recognition sales invoice |
