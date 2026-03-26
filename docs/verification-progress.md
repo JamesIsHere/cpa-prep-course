@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 1250     | 1190 | 41   | 19     | Done (00369: 27 deletes + 7 fixes) |
+| BAR     | ~1,016 | 1260     | 1200 | 41   | 19     | Done (00369: 27 deletes + 7 fixes) |
 | FAR     | ~1,005 | 2127     | 2085 | 31   | 11     | Done (00370: 3 deletes + 19 fixes) |
 | REG     | ~1,027 | 1490     | 1410 | 65   | 15     | In progress |
 | AUD     | ~2,732 | 1407     | 1254 | 55   | 98     | In progress |
@@ -640,3 +640,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-25 | batch 11 | BAR | 10 | 10 | 0 | 0 | All pass — sustainable growth rate payout change (Q5635), FCFF calculation (Q5637), convertible bond WACC shift (Q5639), DuPont ROE equity multiplier (Q5640), residual dividend policy (Q5642), APV for LBO valuation (Q5643), interest coverage ratio covenant (Q5644), DOL calculation (Q5647), Gordon Growth terminal value (Q5649), WACC shift from debt retirement (Q5650) |
 | 2026-03-25 | batch 12 | BAR | 10 | 10 | 0 | 0 | All pass — UFCF $2M (Q5652), NPV vs IRR mutually exclusive (Q5653), tangible assets leverage trade-off theory (Q5654), ROIC 12.0% (Q5656), MCC break point $6M (Q5657), accelerated depreciation borrowing capacity (Q5658), P/E multiple $81 (Q5660), NOPAT $4.5M (Q5661), debt-to-total-capital 40% (Q5663), static trade-off theory cross-industry leverage (Q5664) |
 | 2026-03-25 | batch 13 | BAR | 10 | 10 | 0 | 0 | All pass — retention ratio 70% (Q5665), Hamada unlevered beta 0.875 (Q5667), FCFF $2,793K (Q5670), leveraged recap EPS $4.50 (Q5671), CAPM 11.9% (Q5673), debt covenant coverage breach 2.4x (Q5674), market-value WACC weights 75/25 (Q5675), EV-to-equity $38/share (Q5680), TIE ratio 4.0x (Q5682), trade-off theory tax reform optimal debt (Q5683) |
+| 2026-03-25 | batch 14 | BAR | 10 | 10 | 0 | 0 | All pass — EVA $1.2M (Q5684), D/E ratio 0.60 interest-bearing debt (Q5685), convertible bond capital structure dilution (Q5686), residual income $600K (Q5692), EV/EBITDA equity bridge $46.25M (Q5697), DOL 2.0×15%=30% (Q5734), interest coverage 4.5x (Q5738), EV-to-equity $22.50/share (Q5742), FCFF $5.7M (Q5752), EV/EBITDA equity bridge $49.2M (Q5754) |
