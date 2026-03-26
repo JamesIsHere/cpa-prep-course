@@ -10,7 +10,7 @@ Cross-session tracker for the correctness verification audit.
 | FAR     | ~1,005 | 2127     | 2085 | 31   | 11     | Done (00370: 3 deletes + 19 fixes) |
 | REG     | ~1,027 | 1490     | 1410 | 65   | 15     | In progress |
 | AUD     | ~2,732 | 1407     | 1254 | 55   | 98     | In progress |
-| ISC     | ~897   | 20       | 19   | 1    | 0      | In progress |
+| ISC     | ~897   | 30       | 25   | 5    | 0      | In progress |
 | TCP     | ~889   | 0        | 0    | 0    | 0      | Pending |
 
 ## Batch Log
@@ -743,3 +743,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-26 | batch 114 | BAR | 9 | 9 | 0 | 0 | All pass — unemployment rate lagging indicator (Q14829), general revenues GASB 34 para 37 (Q14839), GASB 68 vs ASC 715 net pension liability (Q14842), adjusted R-squared model selection parsimony (Q14856), retention ratio plowback ratio definition (Q14857), enterprise value market cap+debt-cash (Q14861), price-to-sales ratio market value per revenue dollar (Q14865), total debt vs long-term debt ratio numerator difference (Q14866), sublease does not affect head lease ASC 842 (Q14892) |
 | 2026-03-26 | batch 1 | ISC | 10 | 9 | 1 | 0 | Q783 fail: keyed answer B (accept 2% variance as immaterial) contradicts explanation which advocates reconciliation controls (choice A). Rest pass — ERP depreciation testing approach, emergency change % threshold (×2), availability formula, detective control classification, ALE formula, MPLS+encryption for PII, ERP integrated database, revenue recognition sales invoice |
 | 2026-03-26 | batch 2 | ISC | 10 | 10 | 0 | 0 | All pass — ERP tolerance threshold circumvention (Q3479), PO approval routing misconfiguration (Q3488), AR subledger-GL reconciliation (Q3531), emergency change rate 28% vs benchmark (Q3552), rollback plan components (Q3555), double-extortion ransomware (Q3613), baiting social engineering (Q3616), SIEM alert fatigue (Q3661), IDS-to-IPS false positive risk (Q3665), capacity management CPU utilization (Q3816) |
+| 2026-03-26 | batch 3 | ISC | 10 | 6 | 4 | 0 | Q4919 fail: choices from wrong question (change mgmt controls vs AU-C 315 assertions). Q4959 fail: choices from wrong question (SOC controls vs automation bias). Q4965 fail: choices from wrong question (SOC report types vs anchoring bias). Q5781 fail: keyed D contradicted by own explanation — ZKP cannot replace all KYC docs per BSA/AML. Pass: risk transfer insurance (Q3841), unauthorized change rate (Q4909), FHE inference attacks (Q5757), Diffie-Hellman key exchange (Q5784), HYOK sole custody (Q5792), TEE memory isolation (Q5794) |
