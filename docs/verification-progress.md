@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 1320     | 1260 | 41   | 19     | Done (00369: 27 deletes + 7 fixes) |
+| BAR     | ~1,016 | 1330     | 1268 | 42   | 20     | Done (00369: 27 deletes + 7 fixes) |
 | FAR     | ~1,005 | 2127     | 2085 | 31   | 11     | Done (00370: 3 deletes + 19 fixes) |
 | REG     | ~1,027 | 1490     | 1410 | 65   | 15     | In progress |
 | AUD     | ~2,732 | 1407     | 1254 | 55   | 98     | In progress |
@@ -647,3 +647,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-25 | batch 17 | BAR | 10 | 10 | 0 | 0 | All pass — cash flow adequacy ratio 1.24 (Q7858), asset turnover decline from expansion (Q7859), EFN $360K (Q7950), DPO 36.5 days (Q7952), SMA vs WMA $11K difference (Q7953), forecast vs projection AT-C 305 (Q7954), multiple regression omitted variable (Q7955), deseasonalized sales $800K (Q7956), percentage-of-sales AR $750K (Q7957), AT-C 305 no audit on prospective statements (Q7962) |
 | 2026-03-25 | batch 18 | BAR | 10 | 10 | 0 | 0 | All pass — sustainable growth rate payout change 6.4%→11.2% (Q7964), debt ratio 64% (Q7965), equity financing high leverage+thin TIE (Q7967), ROA 12% (Q7968), regression overhead $76K (Q7970), DOL 3.0 (Q7971), EFN $380K percentage-of-sales (Q7974), horizontal analysis 15% revenue growth (Q7975), percentage-of-sales inventory $750K (Q7976), standard error model reliability (Q7979) |
 | 2026-03-25 | batch 19 | BAR | 10 | 10 | 0 | 0 | All pass — WACC 11.60% (Q12724), after-tax debt cost tax increase 5.04% (Q12726), translation exposure yen subsidiary (Q12729), FCFE at WACC overstatement error (Q12730), terminal value 76% of EV (Q12731), NPV ($2,569) negative (Q12732), payback ignores post-cutoff Year 4 $200K (Q12733), PI capital rationing ranking (Q12735), multiple IRR non-conventional cash flows (Q12736), M-M Prop I with taxes $87.5M (Q12737) |
+| 2026-03-25 | batch 20 | BAR | 10 | 8 | 1 | 1 | Q12867 fail: WMA calc yields 478 not 488 — 0.50×520+0.30×460+0.20×400=478, no choice matches correct answer, explanation itself derives 478 and notes discrepancy. Q12753 review: both B (bond prices increase) and D (lower unemployment) are inconsistent with contractionary policy — two defensible correct answers. Rest pass — CAPM portfolio blend 56% (Q12751), natural hedge currency matching (Q12752), prediction vs confidence interval width (Q12975), top-down/bottom-up reconciliation (Q12976), AP spontaneous liability (Q12977), non-recurring gain margin adjustment (Q12981), negative EFN surplus (Q12985), regression slope interpretation $3.50 (Q12987) |
