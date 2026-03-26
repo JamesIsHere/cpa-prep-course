@@ -6,9 +6,9 @@ Per-section target: 1,500 questions. Distributed by AICPA Blueprint area weights
 
 **Batch size:** 30 questions per generation batch.
 
-**To generate:** 484 new questions (~51 batches).
+**To generate:** 513 new questions (~50 batches).
 
-**To trim:** 319 questions to delete (keep best, cut weakest).
+**To trim:** 304 questions to delete (keep best, cut weakest).
 
 **Difficulty targets:** 30% easy / 50% medium / 20% hard.
 
@@ -24,7 +24,7 @@ For each section:
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status |
 |---------|---------|--------|---------|-------------|-------------|--------|
 | AUD     | 1,407 | 1,500 | 0 | 93 | 11 | Pending |
-| FAR     | 1,549 | 1,500 | 319 | 36 | 17 | Generating |
+| FAR     | 1,619 | 1,500 | 304 | 215 | 13 | Pending |
 | REG     | 1,484 | 1,500 | 0 | 16 | 4 | Pending |
 | BAR     | 1,427 | 1,500 | 0 | 73 | 12 | Pending |
 | ISC     | 1,463 | 1,500 | 0 | 37 | 5 | Pending |
@@ -70,12 +70,11 @@ For each section:
 
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
-| 1 | Employee Benefit Plans | 110 | 81 |  |  |
-| 1 | Financial Reporting: For-Profit | 160 | 81 | -79 |  |
-| 1 | Financial Statement Ratios | 60 | 81 |  | +21 |
-| 1 | Public Company Reporting | 80 | 81 |  | +1 |
-| 1 | Special Purpose Frameworks | 80 | 81 |  | +1 |
-| 1 | Statement of Cash Flows | 80 | 81 |  | +1 |
+| 1 | Financial Reporting: For-Profit | 160 | 96 | -64 |  |
+| 1 | Financial Statement Ratios | 60 | 96 |  | +36 |
+| 1 | Public Company Reporting | 80 | 96 |  | +16 |
+| 1 | Special Purpose Frameworks | 80 | 96 |  | +16 |
+| 1 | Statement of Cash Flows | 80 | 96 |  | +16 |
 | 2 | Cash and Cash Equivalents | 16 | 44 |  | +28 |
 | 2 | Debt | 53 | 44 | -9 |  |
 | 2 | Equity | 53 | 44 | -9 |  |
@@ -197,9 +196,4 @@ For each section:
 
 | Date | Migration | Section | Topic | Count | Notes |
 |------|-----------|---------|-------|-------|-------|
-| 2026-03-26 | 00571_generate_far_batch93.sql | FAR | Financial Statement Ratios | 30 | New topic: liquidity, leverage, profitability, turnover, DuPont ratios |
-| 2026-03-26 | 00572_generate_far_batch94.sql | FAR | Financial Statement Ratios | 30 | OCF ratio, fixed asset turnover, CCC, window dressing, sustainable growth, leverage analysis |
-| 2026-03-26 | 00573_generate_far_batch95.sql | FAR | Financial Statement Ratios | 30 | Altman Z-score, DSCR, P/E, defensive interval, EBITDA margin, P/S, DuPont diagnosis, ASC 842 leverage |
-| 2026-03-26 | 00574_generate_far_batch96.sql | FAR | Pension and Postretirement Benefits | 30 | Defined benefit/contribution, PBO, net periodic cost, corridor, curtailment, settlement, OPEB, ASC 960 plan statements |
-| 2026-03-26 | 00575_generate_far_batch97.sql | FAR | Employee Benefit Plans | 30 | Service cost classification, funded status, ASC 712 postemployment, multiemployer, OPEB attribution, ASC 960/965 plan statements, curtailment/settlement |
-| 2026-03-26 | 00576_generate_far_batch98.sql | FAR | Employee Benefit Plans | 30 | Corridor gain amortization, salary progression, asset allocation effect, OPEB APBO attribution, substantive plan, discount rate source, special termination benefits, negative amendments |
+| 2026-03-26 | 00578_generate_far_batch100.sql | FAR | Financial Statement Ratios | 30 | Batch 100: CCC, DFL, GMROI, RONA, EV/EBITDA, diluted EPS, net debt, LBO effects, goodwill impairment, seasonal distortion |
