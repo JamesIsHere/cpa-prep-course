@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 1300     | 1240 | 41   | 19     | Done (00369: 27 deletes + 7 fixes) |
+| BAR     | ~1,016 | 1310     | 1250 | 41   | 19     | Done (00369: 27 deletes + 7 fixes) |
 | FAR     | ~1,005 | 2127     | 2085 | 31   | 11     | Done (00370: 3 deletes + 19 fixes) |
 | REG     | ~1,027 | 1490     | 1410 | 65   | 15     | In progress |
 | AUD     | ~2,732 | 1407     | 1254 | 55   | 98     | In progress |
@@ -645,3 +645,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-25 | batch 16 | BAR | 10 | 10 | 0 | 0 | All pass — DOL 3.0 (Q7841), net profit margin 11.25% (Q7842), current ratio increase to 1.75 with unchanged WC (Q7843), DFL Summit 1.50 vs Orion 1.09 earnings volatility (Q7844), accruals ratio 13.3% poor earnings quality (Q7849), DSCR 2.18× exceeds covenant (Q7851), common-size PP&E→intangibles strategic shift (Q7852), regression shipping cost $153K (Q7854), common-size SG&A offsets gross margin gain (Q7856), debt vs equity EPS $2.44/$2.25 (Q7857) |
 | 2026-03-25 | batch 17 | BAR | 10 | 10 | 0 | 0 | All pass — cash flow adequacy ratio 1.24 (Q7858), asset turnover decline from expansion (Q7859), EFN $360K (Q7950), DPO 36.5 days (Q7952), SMA vs WMA $11K difference (Q7953), forecast vs projection AT-C 305 (Q7954), multiple regression omitted variable (Q7955), deseasonalized sales $800K (Q7956), percentage-of-sales AR $750K (Q7957), AT-C 305 no audit on prospective statements (Q7962) |
 | 2026-03-25 | batch 18 | BAR | 10 | 10 | 0 | 0 | All pass — sustainable growth rate payout change 6.4%→11.2% (Q7964), debt ratio 64% (Q7965), equity financing high leverage+thin TIE (Q7967), ROA 12% (Q7968), regression overhead $76K (Q7970), DOL 3.0 (Q7971), EFN $380K percentage-of-sales (Q7974), horizontal analysis 15% revenue growth (Q7975), percentage-of-sales inventory $750K (Q7976), standard error model reliability (Q7979) |
+| 2026-03-25 | batch 19 | BAR | 10 | 10 | 0 | 0 | All pass — WACC 11.60% (Q12724), after-tax debt cost tax increase 5.04% (Q12726), translation exposure yen subsidiary (Q12729), FCFE at WACC overstatement error (Q12730), terminal value 76% of EV (Q12731), NPV ($2,569) negative (Q12732), payback ignores post-cutoff Year 4 $200K (Q12733), PI capital rationing ranking (Q12735), multiple IRR non-conventional cash flows (Q12736), M-M Prop I with taxes $87.5M (Q12737) |
