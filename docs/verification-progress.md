@@ -11,7 +11,7 @@ Cross-session tracker for the correctness verification audit.
 | REG     | ~1,027 | 1490     | 1410 | 65   | 15     | In progress |
 | AUD     | ~2,732 | 1407     | 1254 | 55   | 98     | In progress |
 | ISC     | ~897   | 1463     | 1388 | 57   | 18     | In progress |
-| TCP     | ~889   | 1450     | 1344 | 70   | 36     | In progress |
+| TCP     | ~889   | 1451     | 1345 | 70   | 36     | In progress |
 
 ## Batch Log
 
@@ -1034,3 +1034,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-26 | batch 143 | TCP | 10 | 10 | 0 | 0 | All pass — §7872(c)(3) $10K de minimis threshold (Q14567), §351/368(c) 80% control definition (Q14569), §721 no gain/loss on partnership contribution (Q14572), §721(b) investment partnership exception (Q14585), §337 nonrecognition to 80%+ parent in §332 liquidation (Q14586), §351 requires 80% control vs §721 none (Q14588), §382(c) COBE failure zeros limitation (Q14593), Reg §1.1502-75(a) consolidated return election by filing (Q14598), §1504(a)(1) common parent agent role (Q14600), §382(h)(7) 5-year recognition period (Q14603) |
 | 2026-03-26 | batch 144 | TCP | 10 | 10 | 0 | 0 | All pass — Reg §1.1502-32(b) investment adjustment ordering (Q14606), §170(d)(2) corporate charitable 5-year carryforward (Q14612), §423(b)(8) ESPP $25K annual limit at grant-date FMV (Q14617), §422(b)(5) ISO nontransferability only transferred options disqualified (Q14625), §132(m) qualified retirement planning services exclusion (Q14629), §125 cafeteria plan health/dependent care qualified benefits (Q14635), Reg §1.409A-1(h) separation from service 20% threshold (Q14636), §6038(b) Form 5471 $10K penalty + $10K/30-day continuation (Q14641), §884 branch profits tax 30% on dividend equivalent amount (Q14642), Reg §1.863-3 all-U.S. production = 100% U.S.-source (Q14646) |
 | 2026-03-26 | batch 145 | TCP | 10 | 10 | 0 | 0 | All pass — §951(a)(1) Subpart F inclusion last day CFC year (Q14647), §951A(d) QBAI average ADS tangible depreciable bases (Q14651), treaty tie-breaker permanent home/center of vital interests (Q14654), §898 CFC conforms to majority U.S. shareholder year (Q14655), Form 709 required when gift exceeds annual exclusion (Q14663), §2652(a)(3) reverse QTIP keeps decedent as GST transferor (Q14665), §§2001/2502 unified rate schedule and exemption (Q14669), §2512(b) full consideration negates gift (Q14675), §385 debt-to-equity reclassification §302 redemption analysis (Q14680), §163(j)(9) floor plan financing motor vehicle dealers (Q14685) |
+| 2026-03-26 | batch 146 | TCP | 1 | 1 | 0 | 0 | All pass — §163(j)(3) tax shelters excluded from small business exception (Q14690) |
