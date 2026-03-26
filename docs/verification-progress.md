@@ -11,7 +11,7 @@ Cross-session tracker for the correctness verification audit.
 | REG     | ~1,027 | 1490     | 1410 | 65   | 15     | In progress |
 | AUD     | ~2,732 | 1407     | 1254 | 55   | 98     | In progress |
 | ISC     | ~897   | 1463     | 1388 | 57   | 18     | In progress |
-| TCP     | ~889   | 200      | 188  | 6    | 6      | In progress |
+| TCP     | ~889   | 210      | 197  | 6    | 7      | In progress |
 
 ## Batch Log
 
@@ -909,3 +909,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-26 | batch 18 | TCP | 10 | 10 | 0 | 0 | All pass — §72(t) disability exception (Q4051), RMD calculation $500K/25.5=$19,608 (Q4052), 401(k) tiered match 100%/3%+50%/2%=$3,200 (Q4053), backdoor Roth strategy at $250K MAGI (Q4056), age-55 separation from service penalty exception §72(t)(2)(A)(v) (Q4058), SIMPLE IRA 2% nonelective $1,200 (Q4059), backdoor Roth $0 taxable no other IRA assets (Q4060), SEP IRA $70K cap on 25%×$350K (Q4061), SECURE 2.0 RMD excise 25%×$10K shortfall=$2,500 (Q4062), pro-rata rule $40K taxable on $50K conversion (Q4063) |
 | 2026-03-26 | batch 19 | TCP | 10 | 10 | 0 | 0 | All pass — 529 plan $10K K-12 tuition limit (Q4064), Roth IRA qualified distribution age 62+5yr (Q4065), solo 401(k) max contribution vs SEP/SIMPLE/IRA (Q4066), post-TCJA indefinite NOL carryforward (Q4068), NOL 80% limitation $400K deduction on $500K TI (Q4069), NOL remaining $260K after $240K deduction (Q4070), 85% ownership affiliated group election (Q4072), 75% ownership below 80% threshold (Q4073), intercompany inventory gain deferral $0 (Q4075), consolidated gain $70K on external resale (Q4076) |
 | 2026-03-26 | batch 20 | TCP | 10 | 10 | 0 | 0 | All pass — SRLY 80% limitation $48K on $60K contribution (Q4077), intercompany loss deferral on equipment sale (Q4079), excess loss account $75K negative basis (Q4080), NUBIG $300K built-in gain calculation (Q4082), non-large corp estimated tax lesser-of rule (Q4083), large corp first-installment-only prior-year safe harbor (Q4084), farming loss 2-year carryback (Q4086), consolidated taxable income $250K offset (Q4087), §382 limitation $80K annual cap (Q4089), CNOL 80% limitation $320K deduction (Q4091) |
+| 2026-03-26 | batch 21 | TCP | 10 | 9 | 0 | 1 | Q4096 review: keyed $440K total NOL deduction but CNOL $300K + SRLY $200K (80%×$250K) = $500K — explanation self-contradicts, claims $140K SRLY via "sequential computation" with no basis. Rest pass — intercompany land sale matching rule $200K (Q4092), SRLY 80% $40K (Q4094), NUBIL $250K (Q4095), CNOL 80% tax liability $31,500 (Q4098), ELA $50K (Q4100), §382 annual limit $135K (Q4101), ELA departure gain $250K (Q4103), NOL 80% remaining TI $2M (Q4104), §951(a) Subpart F inclusion (Q4106) |
