@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 1240     | 1180 | 41   | 19     | Done (00369: 27 deletes + 7 fixes) |
+| BAR     | ~1,016 | 1250     | 1190 | 41   | 19     | Done (00369: 27 deletes + 7 fixes) |
 | FAR     | ~1,005 | 2127     | 2085 | 31   | 11     | Done (00370: 3 deletes + 19 fixes) |
 | REG     | ~1,027 | 1490     | 1410 | 65   | 15     | In progress |
 | AUD     | ~2,732 | 1407     | 1254 | 55   | 98     | In progress |
@@ -639,3 +639,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-25 | batch 10 | BAR | 10 | 8 | 1 | 1 | Q5629 fail: 0.914×1.30=1.19 not 1.12 — Hamada levered beta arithmetic error, correct answer not among choices; same duplicate template as Q6133. Q5630 review: FCFE₁=$6.695M/0.08=$83,687,500 not $83,718,750 — $31K rounding discrepancy, B still best choice; same pattern as Q6134. Rest pass — EV-to-equity $17.50/share (Q5619), Hamada levered beta 1.37 (Q5620), CAPM>DDM erratic dividends (Q5621), covenant D/E equity issuance (Q5625), 2-for-1 stock split effects (Q5626), tax rate increase WACC 10.13% (Q5627), EV/EBITDA equity bridge $99M (Q5631), WACC 8.81% (Q5632) |
 | 2026-03-25 | batch 11 | BAR | 10 | 10 | 0 | 0 | All pass — sustainable growth rate payout change (Q5635), FCFF calculation (Q5637), convertible bond WACC shift (Q5639), DuPont ROE equity multiplier (Q5640), residual dividend policy (Q5642), APV for LBO valuation (Q5643), interest coverage ratio covenant (Q5644), DOL calculation (Q5647), Gordon Growth terminal value (Q5649), WACC shift from debt retirement (Q5650) |
 | 2026-03-25 | batch 12 | BAR | 10 | 10 | 0 | 0 | All pass — UFCF $2M (Q5652), NPV vs IRR mutually exclusive (Q5653), tangible assets leverage trade-off theory (Q5654), ROIC 12.0% (Q5656), MCC break point $6M (Q5657), accelerated depreciation borrowing capacity (Q5658), P/E multiple $81 (Q5660), NOPAT $4.5M (Q5661), debt-to-total-capital 40% (Q5663), static trade-off theory cross-industry leverage (Q5664) |
+| 2026-03-25 | batch 13 | BAR | 10 | 10 | 0 | 0 | All pass — retention ratio 70% (Q5665), Hamada unlevered beta 0.875 (Q5667), FCFF $2,793K (Q5670), leveraged recap EPS $4.50 (Q5671), CAPM 11.9% (Q5673), debt covenant coverage breach 2.4x (Q5674), market-value WACC weights 75/25 (Q5675), EV-to-equity $38/share (Q5680), TIE ratio 4.0x (Q5682), trade-off theory tax reform optimal debt (Q5683) |
