@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 1290     | 1230 | 41   | 19     | Done (00369: 27 deletes + 7 fixes) |
+| BAR     | ~1,016 | 1300     | 1240 | 41   | 19     | Done (00369: 27 deletes + 7 fixes) |
 | FAR     | ~1,005 | 2127     | 2085 | 31   | 11     | Done (00370: 3 deletes + 19 fixes) |
 | REG     | ~1,027 | 1490     | 1410 | 65   | 15     | In progress |
 | AUD     | ~2,732 | 1407     | 1254 | 55   | 98     | In progress |
@@ -644,3 +644,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-25 | batch 15 | BAR | 10 | 10 | 0 | 0 | All pass — share repurchase EPS $2.19 with forgone return (Q5755), net working capital $240K (Q7830), debt ratio 0.60 (Q7831), EFN formula $250K (Q7832), R-squared 0.47 model inadequacy (Q7835), scenario analysis interconnected variables (Q7836), AP turnover 5.0× (Q7837), FCFF $550K excludes dividends (Q7838), weighted moving average 10,050 units (Q7839), deseasonalized sales $1,200K (Q7840) |
 | 2026-03-25 | batch 16 | BAR | 10 | 10 | 0 | 0 | All pass — DOL 3.0 (Q7841), net profit margin 11.25% (Q7842), current ratio increase to 1.75 with unchanged WC (Q7843), DFL Summit 1.50 vs Orion 1.09 earnings volatility (Q7844), accruals ratio 13.3% poor earnings quality (Q7849), DSCR 2.18× exceeds covenant (Q7851), common-size PP&E→intangibles strategic shift (Q7852), regression shipping cost $153K (Q7854), common-size SG&A offsets gross margin gain (Q7856), debt vs equity EPS $2.44/$2.25 (Q7857) |
 | 2026-03-25 | batch 17 | BAR | 10 | 10 | 0 | 0 | All pass — cash flow adequacy ratio 1.24 (Q7858), asset turnover decline from expansion (Q7859), EFN $360K (Q7950), DPO 36.5 days (Q7952), SMA vs WMA $11K difference (Q7953), forecast vs projection AT-C 305 (Q7954), multiple regression omitted variable (Q7955), deseasonalized sales $800K (Q7956), percentage-of-sales AR $750K (Q7957), AT-C 305 no audit on prospective statements (Q7962) |
+| 2026-03-25 | batch 18 | BAR | 10 | 10 | 0 | 0 | All pass — sustainable growth rate payout change 6.4%→11.2% (Q7964), debt ratio 64% (Q7965), equity financing high leverage+thin TIE (Q7967), ROA 12% (Q7968), regression overhead $76K (Q7970), DOL 3.0 (Q7971), EFN $380K percentage-of-sales (Q7974), horizontal analysis 15% revenue growth (Q7975), percentage-of-sales inventory $750K (Q7976), standard error model reliability (Q7979) |
