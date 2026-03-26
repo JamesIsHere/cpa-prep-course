@@ -11,7 +11,7 @@ test.describe("Lesson Navigation — Public", () => {
 	});
 
 	test("gated lesson shows paywall for unauthed user", async ({ page }) => {
-		await page.goto("/sections/far/lessons/02-financial-statements");
+		await page.goto("/sections/far/lessons/02-financial-statement-presentation");
 
 		await expect(
 			page.locator("text=This lesson requires a subscription"),

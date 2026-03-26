@@ -84,7 +84,7 @@ Each batch gets its own headless `claude --print` invocation with a fresh contex
 | `src/lib/blueprint.ts`                        | AICPA Blueprint data + types (121 groups)  |
 | `src/lib/blueprint-utils.ts`                  | Blueprint lookup, filtering, slug helpers  |
 | `src/lib/blueprint-coverage.ts`               | Coverage analysis + gap identification     |
-| `src/lib/sections.ts`                         | All section + lesson metadata (96 lessons) |
+| `src/lib/sections.ts`                         | All section + lesson metadata (101 lessons) |
 | `src/lib/stripe.ts`                           | Lazy Stripe client (`getStripe()`)         |
 | `src/lib/supabase/client.ts`                  | Browser Supabase client                    |
 | `src/lib/supabase/server.ts`                  | Server Supabase client                     |
@@ -162,13 +162,13 @@ Each batch gets its own headless `claude --print` invocation with a fresh contex
 | Section | Code | Lessons | Questions | Framework Items | Topics                                            |
 |---------|------|---------|-----------|-----------------|---------------------------------------------------|
 | AUD     | aud  | 13      | ~3,180    | 37              | Ethics, planning, risk, controls, evidence, sampling, reports, review/compilation, attestation, quality mgmt, government auditing |
-| FAR     | far  | 18      | ~2,801    | 60              | Financial statements, revenue, inventory, fixed/intangible assets, leases, bonds, equity, tax, govt, NFP, consolidations, contingencies, fair value |
+| FAR     | far  | 23      | ~1,489    | 60              | Financial statements, cash flows, EPS, revenue, inventory, fixed/intangible assets, payables, leases, bonds, equity, accounting changes, tax, govt, NFP, consolidations, contingencies, fair value |
 | REG     | reg  | 18      | ~2,219    | 60              | Circular 230, contracts, agency, business structures, basis, gains/losses, 1031, individual tax, credits, filing status, C/S corps, partnerships, tax procedures, legal duties, debtor-creditor, tax-exempt orgs |
 | BAR     | bar  | 16      | ~1,047    | 40              | Financial analysis, valuation, capital structure, derivatives, consolidations, govt reporting, fund reconciliation, interfund transactions |
 | ISC     | isc  | 16      | ~948      | 39              | IT infrastructure, ERP, data management, security frameworks, threats, privacy, SOC, SOC testing, SOC reporting |
 | TCP     | tcp  | 15      | ~910      | 44              | Individual planning, passive/at-risk, wealth transfer, retirement, international tax, trusts, capital structure tax, nontaxable dispositions, related parties |
 
-**Totals:** 96 lessons, ~11,105 questions (target: 30,000), 280 framework items across 6 sections
+**Totals:** 101 lessons, ~9,000 questions (target: 9,000), 280 framework items across 6 sections
 
 ## Database Tables
 

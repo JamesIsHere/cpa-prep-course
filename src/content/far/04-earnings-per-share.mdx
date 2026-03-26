@@ -1,0 +1,138 @@
+# Earnings Per Share
+
+## Learning Objectives
+
+- Compute basic earnings per share using weighted-average common shares outstanding
+- Calculate diluted EPS using the treasury stock method and the if-converted method
+- Apply the antidilution sequencing rules to determine which securities to include
+- Understand the presentation and disclosure requirements of ASC 260
+
+## Overview of ASC 260
+
+**ASC 260, Earnings Per Share**, requires public entities to present both **basic EPS** and **diluted EPS** on the face of the income statement. EPS must be shown for income from continuing operations and for net income. If an entity reports discontinued operations, EPS for that line item must also be presented.
+
+Private companies are not required to present EPS but may elect to do so.
+
+## Basic Earnings Per Share
+
+Basic EPS measures the income available to each share of common stock outstanding during the period:
+
+**Basic EPS = (Net Income − Preferred Dividends) / Weighted-Average Common Shares Outstanding**
+
+Key rules for the computation:
+
+- **Preferred dividends** — Subtract dividends declared on noncumulative preferred stock. For cumulative preferred stock, subtract the annual dividend whether or not declared.
+- **Weighted-average shares** — Shares are weighted by the fraction of the period they were outstanding. If 10,000 shares were issued on April 1, they count for 9/12 of the year.
+- **Stock dividends and stock splits** — Treated as if they occurred at the beginning of the earliest period presented. All prior periods are retroactively adjusted.
+- **Treasury stock** — Repurchased shares reduce the weighted-average from the date of repurchase.
+
+### Worked Example — Basic EPS
+
+| Item | Amount |
+|------|--------|
+| Net income | $500,000 |
+| Cumulative preferred dividends (annual) | $40,000 |
+| Common shares outstanding, Jan. 1 | 100,000 |
+| Shares issued on July 1 | 20,000 |
+
+Weighted-average shares = 100,000 + (20,000 × 6/12) = **110,000**
+
+Basic EPS = ($500,000 − $40,000) / 110,000 = **$4.18**
+
+## Diluted Earnings Per Share
+
+Diluted EPS shows the worst-case scenario: what EPS would be if all dilutive securities were converted or exercised. It captures the potential dilution from stock options, warrants, convertible bonds, and convertible preferred stock.
+
+**Diluted EPS = (Adjusted Net Income) / (Weighted-Average Shares + Dilutive Potential Shares)**
+
+Two methods are used depending on the type of security:
+
+### Treasury Stock Method (Options and Warrants)
+
+Used for stock options and warrants. It assumes the options are exercised at the beginning of the period (or date of grant, if later) and the proceeds are used to buy back shares at the average market price.
+
+**Incremental shares = Shares issuable − Shares repurchasable**
+
+Shares repurchasable = (Exercise price × Shares issuable) / Average market price
+
+Options and warrants are dilutive only when the **exercise price is below the average market price** (they are "in the money"). If the exercise price exceeds the average market price, the security is antidilutive and excluded.
+
+### Worked Example — Treasury Stock Method
+
+| Item | Amount |
+|------|--------|
+| Options outstanding | 10,000 |
+| Exercise price | $20 |
+| Average market price | $50 |
+
+Proceeds from assumed exercise = 10,000 × $20 = $200,000
+
+Shares repurchased = $200,000 / $50 = 4,000
+
+Incremental dilutive shares = 10,000 − 4,000 = **6,000**
+
+### If-Converted Method (Convertible Securities)
+
+Used for convertible bonds and convertible preferred stock. It assumes conversion at the beginning of the period (or date of issuance, if later).
+
+**For convertible bonds:**
+- Add back after-tax interest expense to the numerator: Interest × (1 − Tax rate)
+- Add shares that would be issued upon conversion to the denominator
+
+**For convertible preferred stock:**
+- Add back preferred dividends to the numerator (they were already subtracted in basic EPS)
+- Add shares that would be issued upon conversion to the denominator
+
+### Worked Example — If-Converted Method (Bonds)
+
+| Item | Amount |
+|------|--------|
+| Convertible bonds, face value | $1,000,000 |
+| Interest rate | 6% |
+| Tax rate | 25% |
+| Conversion ratio | 50 shares per $1,000 bond |
+
+After-tax interest = $1,000,000 × 6% × (1 − 0.25) = **$45,000** (added to numerator)
+
+Shares from conversion = ($1,000,000 / $1,000) × 50 = **50,000** (added to denominator)
+
+## Antidilution Sequencing
+
+Not all potentially dilutive securities are included in diluted EPS. A security is included only if it **reduces** EPS. The process:
+
+1. Compute basic EPS
+2. Rank each potentially dilutive security by its **per-share effect** (impact on numerator / impact on denominator), from most dilutive to least dilutive
+3. Add each security one at a time — if adding the security reduces EPS, include it; if adding it increases EPS (antidilutive), exclude it and stop
+4. Once an antidilutive security is encountered, all remaining securities are also excluded
+
+> Options and warrants have no numerator effect, so their per-share impact is zero — they are always the most dilutive and are tested first. A convertible bond with high interest and few conversion shares will have a large per-share effect and may be antidilutive.
+
+## Contingently Issuable Shares
+
+Shares that will be issued upon meeting certain conditions (such as reaching an earnings target) are included in diluted EPS if the conditions are currently satisfied at the end of the reporting period. They are included in basic EPS only if all conditions have been met and the shares will be issued with no further contingencies.
+
+## Special Situations
+
+- **Stock splits and stock dividends** during the period are applied retroactively to all prior periods and to the entire current period, regardless of when they occurred
+- **Rights issues** at below market price contain a bonus element — an adjustment factor must be applied to the weighted-average shares for periods before the rights issue
+- **Year-to-date vs. quarterly EPS** — Quarterly EPS is not simply annual EPS divided by four. Each quarter is computed independently, and the sum of quarterly figures may not equal the annual figure due to share changes during the year.
+
+## Presentation Requirements
+
+ASC 260 requires:
+
+- Basic and diluted EPS presented on the face of the income statement for:
+  - Income from continuing operations
+  - Net income
+- EPS for discontinued operations may be presented on the face or in the notes
+- If basic and diluted EPS are the same, a single line may be presented (with dual labeling)
+- Entities must disclose a reconciliation of the numerators and denominators used in basic and diluted EPS
+
+## Key Terms
+
+- **Basic EPS** — Net income available to common shareholders divided by the weighted-average common shares outstanding
+- **Diluted EPS** — EPS adjusted to reflect the maximum potential dilution from all convertible securities, options, and warrants
+- **Treasury stock method** — Assumes option/warrant proceeds are used to repurchase shares at the average market price
+- **If-converted method** — Assumes convertible securities were converted at the beginning of the period, with corresponding adjustments to income and shares
+- **Antidilutive** — A security whose inclusion would increase (rather than decrease) EPS; excluded from diluted EPS
+- **Weighted-average shares** — Common shares weighted by the fraction of the reporting period they were outstanding

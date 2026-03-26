@@ -666,7 +666,7 @@ export const cpaBlueprint: CpaBlueprint = [
 								name: "Statement of comprehensive income",
 							},
 						],
-						lessonSlugs: ["02-financial-statements"],
+						lessonSlugs: ["02-financial-statement-presentation"],
 						questionTopics: ["Financial Statements"],
 					},
 					{
@@ -682,7 +682,7 @@ export const cpaBlueprint: CpaBlueprint = [
 								name: "Direct and indirect methods",
 							},
 						],
-						lessonSlugs: ["02-financial-statements"],
+						lessonSlugs: ["03-statement-of-cash-flows"],
 						questionTopics: ["Statement of Cash Flows"],
 					},
 					{
@@ -695,7 +695,7 @@ export const cpaBlueprint: CpaBlueprint = [
 								name: "Diluted EPS and convertible securities",
 							},
 						],
-						lessonSlugs: ["02-financial-statements"],
+						lessonSlugs: ["04-earnings-per-share"],
 						questionTopics: ["Earnings Per Share"],
 					},
 					{
@@ -715,7 +715,7 @@ export const cpaBlueprint: CpaBlueprint = [
 								name: "Postretirement benefits other than pensions",
 							},
 						],
-						lessonSlugs: ["15-employee-benefit-plans"],
+						lessonSlugs: ["05-employee-benefit-plans"],
 						questionTopics: ["Employee Benefit Plans"],
 					},
 					{
@@ -732,7 +732,7 @@ export const cpaBlueprint: CpaBlueprint = [
 								name: "Regulatory and contractual bases",
 							},
 						],
-						lessonSlugs: ["16-special-purpose-frameworks"],
+						lessonSlugs: ["06-special-purpose-frameworks"],
 						questionTopics: ["Special Purpose Frameworks"],
 					},
 				],
@@ -755,7 +755,7 @@ export const cpaBlueprint: CpaBlueprint = [
 								name: "Allowance for credit losses (CECL)",
 							},
 						],
-						lessonSlugs: ["14-cash-and-receivables"],
+						lessonSlugs: ["07-cash-and-receivables"],
 						questionTopics: ["Cash and Receivables"],
 					},
 					{
@@ -775,7 +775,7 @@ export const cpaBlueprint: CpaBlueprint = [
 								name: "Performance obligations and timing",
 							},
 						],
-						lessonSlugs: ["03-revenue-recognition"],
+						lessonSlugs: ["08-revenue-recognition"],
 						questionTopics: ["Revenue Recognition"],
 					},
 					{
@@ -791,7 +791,7 @@ export const cpaBlueprint: CpaBlueprint = [
 								name: "Lower of cost or net realizable value",
 							},
 						],
-						lessonSlugs: ["04-inventory"],
+						lessonSlugs: ["09-inventory"],
 						questionTopics: ["Inventory"],
 					},
 					{
@@ -811,7 +811,7 @@ export const cpaBlueprint: CpaBlueprint = [
 								name: "Asset retirement obligations",
 							},
 						],
-						lessonSlugs: ["05-fixed-assets"],
+						lessonSlugs: ["10-fixed-assets"],
 						questionTopics: ["Fixed Assets"],
 					},
 					{
@@ -825,7 +825,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							{ id: "far.2.E.2", name: "Goodwill and impairment testing" },
 							{ id: "far.2.E.3", name: "Research and development costs" },
 						],
-						lessonSlugs: ["06-intangible-assets"],
+						lessonSlugs: ["11-intangible-assets"],
 						questionTopics: ["Intangible Assets"],
 					},
 					{
@@ -841,7 +841,7 @@ export const cpaBlueprint: CpaBlueprint = [
 								name: "Compensated absences",
 							},
 						],
-						lessonSlugs: ["02-financial-statements"],
+						lessonSlugs: ["12-payables-and-accrued-liabilities"],
 						questionTopics: ["Payables and Accrued Liabilities"],
 					},
 					{
@@ -858,7 +858,7 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 							{ id: "far.2.G.3", name: "Lessor accounting" },
 						],
-						lessonSlugs: ["07-leases"],
+						lessonSlugs: ["13-leases"],
 						questionTopics: ["Leases"],
 					},
 					{
@@ -878,7 +878,7 @@ export const cpaBlueprint: CpaBlueprint = [
 								name: "Debt extinguishment gains/losses",
 							},
 						],
-						lessonSlugs: ["08-bonds-and-debt"],
+						lessonSlugs: ["14-bonds-and-debt"],
 						questionTopics: ["Bonds and Debt"],
 					},
 					{
@@ -898,7 +898,7 @@ export const cpaBlueprint: CpaBlueprint = [
 								name: "Retained earnings and dividends",
 							},
 						],
-						lessonSlugs: ["09-equity"],
+						lessonSlugs: ["15-equity"],
 						questionTopics: ["Equity"],
 					},
 				],
@@ -921,7 +921,7 @@ export const cpaBlueprint: CpaBlueprint = [
 								name: "Changes in estimate and error corrections",
 							},
 						],
-						lessonSlugs: ["02-financial-statements"],
+						lessonSlugs: ["16-accounting-changes"],
 						questionTopics: ["Accounting Changes and Error Corrections"],
 					},
 					{
@@ -955,7 +955,7 @@ export const cpaBlueprint: CpaBlueprint = [
 								name: "Intraperiod and interperiod allocation",
 							},
 						],
-						lessonSlugs: ["10-income-taxes"],
+						lessonSlugs: ["18-income-taxes"],
 						questionTopics: ["Income Taxes"],
 					},
 					{
@@ -975,7 +975,7 @@ export const cpaBlueprint: CpaBlueprint = [
 								name: "Intercompany eliminations",
 							},
 						],
-						lessonSlugs: ["13-consolidations"],
+						lessonSlugs: ["19-consolidations"],
 						questionTopics: ["Consolidations"],
 					},
 					{
@@ -991,7 +991,7 @@ export const cpaBlueprint: CpaBlueprint = [
 								name: "Valuation techniques and inputs",
 							},
 						],
-						lessonSlugs: ["18-fair-value"],
+						lessonSlugs: ["20-fair-value"],
 						questionTopics: ["Fair Value"],
 					},
 					{
@@ -1011,7 +1011,7 @@ export const cpaBlueprint: CpaBlueprint = [
 								name: "NFP financial statement presentation",
 							},
 						],
-						lessonSlugs: ["12-not-for-profit"],
+						lessonSlugs: ["21-not-for-profit"],
 						questionTopics: ["Not-for-Profit Accounting"],
 					},
 					{
@@ -1031,7 +1031,7 @@ export const cpaBlueprint: CpaBlueprint = [
 								name: "Budgetary accounting",
 							},
 						],
-						lessonSlugs: ["11-governmental-accounting"],
+						lessonSlugs: ["22-governmental-accounting-fundamentals"],
 						questionTopics: ["Governmental Accounting Fundamentals"],
 					},
 				],
@@ -1058,7 +1058,7 @@ export const cpaBlueprint: CpaBlueprint = [
 								name: "Proprietary and fiduciary funds",
 							},
 						],
-						lessonSlugs: ["11-governmental-accounting"],
+						lessonSlugs: ["23-government-financial-statements"],
 						questionTopics: ["Governmental Accounting"],
 					},
 				],
