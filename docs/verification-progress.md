@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 1830     | 1751 | 55   | 24     | Done (00369: 27 deletes + 7 fixes) |
+| BAR     | ~1,016 | 1840     | 1759 | 57   | 24     | Done (00369: 27 deletes + 7 fixes) |
 | FAR     | ~1,005 | 2127     | 2085 | 31   | 11     | Done (00370: 3 deletes + 19 fixes) |
 | REG     | ~1,027 | 1490     | 1410 | 65   | 15     | In progress |
 | AUD     | ~2,732 | 1407     | 1254 | 55   | 98     | In progress |
@@ -91,6 +91,7 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 69 | BAR | 10 | 10 | 0 | 0 | All pass — retained earnings breakpoint, underinvestment agency cost (debt overhang), Gordon growth terminal value, interest coverage ratio, trade-off theory distress analysis, share repurchase tax advantage, equity carve-out vs spin-off, EV-to-equity per share, credit downgrade new debt cost, market vs book WACC weights |
 | 2026-03-01 | batch 70 | BAR | 10 | 10 | 0 | 0 | All pass — rights offering shares/rights calc, debt covenant technical default, FCFF calculation, sustainable growth rate, EV/EBITDA equity bridge, share repurchase EPS with forgone return, treasury stock EPS effect, risk-free rate WACC impact, recap trade-off analysis, EVA calculation |
 | 2026-03-01 | batch 71 | BAR | 10 | 10 | 0 | 0 | All pass — FCFF calculation, enterprise value, residual income, Gordon growth equity valuation, M-M dividend irrelevance tax deviation, terminal value with growth factor, P/E comparable undervaluation, diluted EPS convertible bonds, BVPS preferred deduction, APV with distress costs |
+| 2026-03-25 | batch 72 | BAR | 10 | 8 | 2 | 0 | Q12978 fail: keyed B says causation confirmed but explanation says correlation≠causation — correct answer is C (confounding variable). Q12980 fail: keyed D says models equivalent but explanation says Model B is best — correct answer is C (adjusted R² logic). Rest pass — P/E growth expectations, Delphi technique, SOTP valuation, EV/EBITDA compression, exponential smoothing alpha, P/B below 1.0, demand shift alpha, Holt's double smoothing |
 | 2026-03-01 | batch 72 | BAR | 10 | 10 | 0 | 0 | All pass — ASC 842 finance lease leverage, bond-yield-plus-risk-premium, equity vs debt signaling theory, treasury stock method diluted EPS, common equity market cap, Hamada unlevered beta, capital rationing NPV maximization, trade-off theory leverage, incremental EVA analysis, FCFF calculation |
 | 2026-03-01 | batch 73 | BAR | 10 | 10 | 0 | 0 | All pass — DOL sales decline amplification, interest coverage expansion impact, book vs market WACC weights, comparable company P/E valuation, residual income calculation, APV vs WACC for changing leverage, TIE ratio, pure-play Hamada beta (unlever/relever), sustainable growth rate, EV-to-equity per share |
 | 2026-03-01 | batch 74 | BAR | 10 | 10 | 0 | 0 | All pass — two-stage DDM valuation, retained earnings breakpoint, debt covenant D/E analysis, country risk premium CAPM, ROIC calculation, market capitalization, convertible debt cost in WACC, DSCR covenant, IRR vs marginal cost of capital, EV/EBITDA equity bridge per share |
