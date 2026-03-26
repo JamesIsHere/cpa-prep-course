@@ -10,7 +10,7 @@ Cross-session tracker for the correctness verification audit.
 | FAR     | ~1,005 | 2127     | 2085 | 31   | 11     | Done (00370: 3 deletes + 19 fixes) |
 | REG     | ~1,027 | 1490     | 1410 | 65   | 15     | In progress |
 | AUD     | ~2,732 | 1407     | 1254 | 55   | 98     | In progress |
-| ISC     | ~897   | 40       | 35   | 5    | 0      | In progress |
+| ISC     | ~897   | 50       | 45   | 5    | 0      | In progress |
 | TCP     | ~889   | 0        | 0    | 0    | 0      | Pending |
 
 ## Batch Log
@@ -745,3 +745,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-26 | batch 2 | ISC | 10 | 10 | 0 | 0 | All pass — ERP tolerance threshold circumvention (Q3479), PO approval routing misconfiguration (Q3488), AR subledger-GL reconciliation (Q3531), emergency change rate 28% vs benchmark (Q3552), rollback plan components (Q3555), double-extortion ransomware (Q3613), baiting social engineering (Q3616), SIEM alert fatigue (Q3661), IDS-to-IPS false positive risk (Q3665), capacity management CPU utilization (Q3816) |
 | 2026-03-26 | batch 3 | ISC | 10 | 6 | 4 | 0 | Q4919 fail: choices from wrong question (change mgmt controls vs AU-C 315 assertions). Q4959 fail: choices from wrong question (SOC controls vs automation bias). Q4965 fail: choices from wrong question (SOC report types vs anchoring bias). Q5781 fail: keyed D contradicted by own explanation — ZKP cannot replace all KYC docs per BSA/AML. Pass: risk transfer insurance (Q3841), unauthorized change rate (Q4909), FHE inference attacks (Q5757), Diffie-Hellman key exchange (Q5784), HYOK sole custody (Q5792), TEE memory isolation (Q5794) |
 | 2026-03-26 | batch 4 | ISC | 10 | 10 | 0 | 0 | All pass — homomorphic encryption for outsourced computation (Q5795), digital watermarking forensic tracing (Q5797), SFTP vs FTPS single channel vs dual port (Q5805), zero-knowledge proofs for AML threshold verification (Q5813), data misclassification access scope risk (Q5824), TPM hardware key storage (Q5865), SMPC joint computation (Q5875), SMPC vs trusted third party (Q5892), DLP alert fatigue from false positives (Q5895), BIA-derived RTO below MTD (Q7812) |
+| 2026-03-26 | batch 5 | ISC | 10 | 10 | 0 | 0 | All pass — SQL injection containment decision factor (Q7815), BIA holistic impact assessment for RTO (Q7818), RPO gap nightly tapes vs 15-min requirement (Q7824), BIA criticality ranking wire transfer (Q7829), DR budget proportional to financial impact (Q7909), RTO comparison by hourly impact (Q7915), emergency change ratio 38% circumvention (Q12615), CER biometric accuracy interpretation (Q12756), classified facility low FAR priority (Q12765), column-level encryption PHI performance (Q12778) |
