@@ -24,7 +24,7 @@ For each section:
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status |
 |---------|---------|--------|---------|-------------|-------------|--------|
 | AUD     | 1,407 | 1,500 | 0 | 93 | 11 | Pending |
-| FAR     | 1,619 | 1,500 | 304 | 215 | 13 | Pending |
+| FAR     | 1,619 | 1,500 | 304 | 185 | 14 | Pending |
 | REG     | 1,484 | 1,500 | 0 | 16 | 4 | Pending |
 | BAR     | 1,427 | 1,500 | 0 | 73 | 12 | Pending |
 | ISC     | 1,463 | 1,500 | 0 | 37 | 5 | Pending |
@@ -93,7 +93,7 @@ For each section:
 | 3 | Income Taxes | 58 | 52 | -6 |  |
 | 3 | Not-for-Profit Accounting | 58 | 52 | -6 |  |
 | 3 | State and Local Government | 187 | 52 | -135 |  |
-| 3 | Subsequent Events | 0 | 52 |  | +52 |
+| 3 | Subsequent Events | 30 | 52 |  | +22 |
 
 ### REG
 
@@ -197,3 +197,4 @@ For each section:
 | Date | Migration | Section | Topic | Count | Notes |
 |------|-----------|---------|-------|-------|-------|
 | 2026-03-26 | 00578_generate_far_batch100.sql | FAR | Financial Statement Ratios | 30 | Batch 100: CCC, DFL, GMROI, RONA, EV/EBITDA, diluted EPS, net debt, LBO effects, goodwill impairment, seasonal distortion |
+| 2026-03-26 | 00579_generate_far_batch101.sql | FAR | Subsequent Events | 30 | Batch 101: Type I/II classification, SEC vs non-SEC evaluation dates, going concern, reissuance, debt refinancing, fraud discovery, condemnation, dual dating |
