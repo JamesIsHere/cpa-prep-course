@@ -6,7 +6,7 @@ Cross-session tracker for the correctness verification audit.
 
 | Section | Total  | Verified | Pass | Fail | Review | Status  |
 |---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 1960     | 1878 | 58   | 24     | Done (00369: 27 deletes + 7 fixes) |
+| BAR     | ~1,016 | 1970     | 1888 | 58   | 24     | Done (00369: 27 deletes + 7 fixes) |
 | FAR     | ~1,005 | 2127     | 2085 | 31   | 11     | Done (00370: 3 deletes + 19 fixes) |
 | REG     | ~1,027 | 1490     | 1410 | 65   | 15     | In progress |
 | AUD     | ~2,732 | 1407     | 1254 | 55   | 98     | In progress |
@@ -106,6 +106,7 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-01 | batch 83 | BAR | 10 | 10 | 0 | 0 | All pass — CAPM cost of equity, interest coverage covenant breach, market-value WACC weights, debt vs equity EPS/coverage analysis, Miller personal tax framework, WACC shift from debt retirement, EV-to-equity per share, divisional WACC pure-play principle, TIE ratio, trade-off theory tax reform |
 | 2026-03-01 | batch 84 | BAR | 10 | 10 | 0 | 0 | All pass — EVA calculation, D/E ratio (interest-bearing debt), convertible bond capital structure analysis, CAPM vs DDM divergence, perpetuity growth terminal value, residual income, depreciation tax shield, FCFF calculation, EV/EBITDA equity bridge, sustainable growth rate |
 | 2026-03-01 | batch 85 | BAR | 10 | 10 | 0 | 0 | All pass — convertible bond WACC analysis, forward P/E valuation, retained earnings breakpoint, interest coverage ratio covenant, dividend vs buyback M-M irrelevance, EVA divisional comparison, multi-stage DDM vs Gordon error direction, residual income calculation, capital rationing NPV maximization, pure-play Hamada levered beta |
+| 2026-03-26 | batch 85 | BAR | 10 | 10 | 0 | 0 | All pass — CPI definition, interest rate swap variable→fixed, business cycle phases, natural hedging euro matching, ERM framework purpose, PPP exchange rate theory, call option downside protection, GDP deflator vs CPI scope, net investment hedge ASC 815, stagflation definition |
 | 2026-03-01 | batch 86 | BAR | 10 | 10 | 0 | 0 | All pass — DSCR calculation, FCFE at WACC understatement error, rights offering ex-rights price, retention ratio, trade-off theory flexibility vs tax shield, bond yield vs CAPM divergence, covenant D/EBITDA+IC analysis, weighted avg flotation cost, Hamada unlevered beta, residual dividend model |
 | 2026-03-01 | batch 87 | BAR | 10 | 10 | 0 | 0 | All pass — APV acquisition valuation, FCFE calculation, EPS indifference EBIT, M-M leveraged recap per-share value, EVA calculation, Hamada unlevered beta, DOL amplification, retained earnings breakpoint, underinvestment agency cost (debt overhang), Gordon growth terminal value |
 | 2026-03-01 | batch 88 | BAR | 10 | 10 | 0 | 0 | All pass — interest coverage ratio, trade-off theory D/E distress, share repurchase tax deferral, equity carve-out vs spin-off cash, EV-to-equity per share, credit downgrade new debt cost, market vs book WACC weights, rights offering shares/rights calc, debt covenant technical default, FCFF calculation |
