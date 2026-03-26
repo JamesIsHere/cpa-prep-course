@@ -11,7 +11,7 @@ Cross-session tracker for the correctness verification audit.
 | REG     | ~1,027 | 1490     | 1410 | 65   | 15     | In progress |
 | AUD     | ~2,732 | 1407     | 1254 | 55   | 98     | In progress |
 | ISC     | ~897   | 1463     | 1388 | 57   | 18     | In progress |
-| TCP     | ~889   | 1330     | 1224 | 70   | 36     | In progress |
+| TCP     | ~889   | 1340     | 1234 | 70   | 36     | In progress |
 
 ## Batch Log
 
@@ -1022,3 +1022,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-26 | batch 131 | TCP | 10 | 6 | 4 | 0 | Q7980/7981/7982/7984 fail: TODO placeholder questions with no content. Pass — IRA earned income requirement §219(b)(1) (Q7782), 403(b) $23,500 deferral limit §402(g) (Q7786), 529 no federal deduction §529(c)(1) (Q7788), Roth 401(k) no income limit §402A (Q7790), SECURE 2.0 §302 RMD 25%→10% penalty (Q7797), non-participant full IRA deduction §219(g) (Q7799) |
 | 2026-03-26 | batch 132 | TCP | 10 | 8 | 2 | 0 | Q7988/8001 fail: TODO placeholder questions with no content. Pass — §423(b)(6) ESPP 15% max discount (Q12641), §409A(a)(2) six permissible distribution events only (Q12644), §422(a)(1) ISOs employees only (Q12646), §83(c)(1) substantial risk of forfeiture service condition (Q12652), §1401 SE tax 15.3% combined rate (Q12654), §119(a) employer meals on premises for convenience (Q12656), §409A(a)(4)(B)(i) deferral election before service year (Q12657), §1401 SS wage base caps 12.4% only (Q12658) |
 | 2026-03-26 | batch 133 | TCP | 10 | 10 | 0 | 0 | All pass — §2001(c) 40% top estate/gift tax rate (Q12797), §2502(c) donor primary gift tax liability (Q12802), §2612(a) taxable termination skip persons only remain (Q12804), §2503(b) present interest annual exclusion (Q12806), §2031 gross estate FMV all property interests (Q12807), §2010(c)(4) portability DSUE transfer (Q12808), §2056(d) marital deduction US citizen requirement (Q12809), Reg §1.704-2 partnership minimum gain nonrecourse debt (Q12913), Reg §1.1367-2(a) open account $25K threshold (Q12916), Reg §1.704-2(e) nonrecourse deductions profit-sharing allocation (Q12918) |
+| 2026-03-26 | batch 134 | TCP | 10 | 10 | 0 | 0 | All pass — §1367(a)(1)(A) tax-exempt income increases S corp basis (Q12932), §302(e)(2) partial liquidation 5-year active business safe harbor (Q13253), §334(a) FMV basis in complete liquidation (Q13257), §351 short-term note is boot (Q13258), §731(a)(2) loss on liquidating distribution cash/receivables/inventory only (Q13271), §1245(b)(3) recapture deferred in §351 transfer (Q13272), §302(b)(4) partial liquidation noncorporate only (Q13275), §318 constructive ownership for control/redemption (Q13498), §302 stock redemption definition (Q13507), constructive dividend economic benefit (Q13508) |
