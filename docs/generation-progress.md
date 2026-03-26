@@ -24,7 +24,7 @@ For each section:
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status |
 |---------|---------|--------|---------|-------------|-------------|--------|
 | AUD     | 1,407 | 1,500 | 0 | 93 | 11 | Pending |
-| FAR     | 1,519 | 1,500 | 319 | 186 | 13 | Generating |
+| FAR     | 1,519 | 1,500 | 319 | 156 | 14 | Generating |
 | REG     | 1,484 | 1,500 | 0 | 16 | 4 | Pending |
 | BAR     | 1,427 | 1,500 | 0 | 73 | 12 | Pending |
 | ISC     | 1,463 | 1,500 | 0 | 37 | 5 | Pending |
@@ -72,7 +72,7 @@ For each section:
 |------|-------|---------|--------|------|----------|
 | 1 | Employee Benefit Plans | 80 | 81 |  | +1 |
 | 1 | Financial Reporting: For-Profit | 160 | 81 | -79 |  |
-| 1 | Financial Statement Ratios | 30 | 81 |  | +51 |
+| 1 | Financial Statement Ratios | 60 | 81 |  | +21 |
 | 1 | Public Company Reporting | 80 | 81 |  | +1 |
 | 1 | Special Purpose Frameworks | 80 | 81 |  | +1 |
 | 1 | Statement of Cash Flows | 80 | 81 |  | +1 |
@@ -198,3 +198,4 @@ For each section:
 | Date | Migration | Section | Topic | Count | Notes |
 |------|-----------|---------|-------|-------|-------|
 | 2026-03-26 | 00571_generate_far_batch93.sql | FAR | Financial Statement Ratios | 30 | New topic: liquidity, leverage, profitability, turnover, DuPont ratios |
+| 2026-03-26 | 00572_generate_far_batch94.sql | FAR | Financial Statement Ratios | 30 | OCF ratio, fixed asset turnover, CCC, window dressing, sustainable growth, leverage analysis |
