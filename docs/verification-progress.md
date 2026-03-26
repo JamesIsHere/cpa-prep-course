@@ -11,7 +11,7 @@ Cross-session tracker for the correctness verification audit.
 | REG     | ~1,027 | 1490     | 1410 | 65   | 15     | In progress |
 | AUD     | ~2,732 | 1407     | 1254 | 55   | 98     | In progress |
 | ISC     | ~897   | 1463     | 1388 | 57   | 18     | In progress |
-| TCP     | ~889   | 230      | 217  | 6    | 7      | In progress |
+| TCP     | ~889   | 240      | 227  | 6    | 7      | In progress |
 
 ## Batch Log
 
@@ -912,3 +912,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-26 | batch 21 | TCP | 10 | 9 | 0 | 1 | Q4096 review: keyed $440K total NOL deduction but CNOL $300K + SRLY $200K (80%×$250K) = $500K — explanation self-contradicts, claims $140K SRLY via "sequential computation" with no basis. Rest pass — intercompany land sale matching rule $200K (Q4092), SRLY 80% $40K (Q4094), NUBIL $250K (Q4095), CNOL 80% tax liability $31,500 (Q4098), ELA $50K (Q4100), §382 annual limit $135K (Q4101), ELA departure gain $250K (Q4103), NOL 80% remaining TI $2M (Q4104), §951(a) Subpart F inclusion (Q4106) |
 | 2026-03-26 | batch 22 | TCP | 10 | 10 | 0 | 0 | All pass — GILTI inclusion $1.2M after 10% QBAI DTIR (Q4108), GILTI effective rate 10.5% via §250 50% deduction (Q4109), FDDEI $1.5M foreign-derived income calculation (Q4110), §904 FTC limitation $300K full credit (Q4112), excess FTC $50K carryforward (Q4113), §960(d) 80% deemed-paid GILTI credit (Q4116), §962 election corporate rate for individuals (Q4117), PFIC MTM $40K ordinary income (Q4120), Form 5471 CFC reporting (Q4121), BEAT $5M additional tax (Q4124) |
 | 2026-03-26 | batch 23 | TCP | 10 | 10 | 0 | 0 | All pass — §954(e) foreign base company services income Subpart F (Q4126), GILTI $3M net inclusion after DTIR (Q4127), net US GILTI tax $60K after §250+FTC (Q4128), FDII $2.4M via DII×FDDEI/DEI ratio (Q4129), passive category FTC limitation $42K (Q4130), §956 CFC loan deemed dividend (Q4132), §245A 100% participation exemption (Q4133), PFIC default no current inclusion (Q4135), FTC limitation $210K capped (Q4136), DTIR $300K = 10%×QBAI (Q4137) |
+| 2026-03-26 | batch 24 | TCP | 10 | 10 | 0 | 0 | All pass — Subpart F E&P limitation $450K (Q4138), treaty withholding 15% $30K (Q4139), GILTI net US tax $10K after §250+FTC (Q4141), FPHCI as subset of FBCI (Q4142), guaranteed payment ordinary+SE (Q4143), partnership income after GP $120K (Q4144), GP+distributive share $90K (Q4145), S corp wage reclassification $30K (Q4146), disguised sale gain $150K (Q4149), §7872 imputed interest $25K constructive dividend (Q4150) |
