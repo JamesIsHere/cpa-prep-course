@@ -10,7 +10,7 @@ Cross-session tracker for the correctness verification audit.
 | FAR     | ~1,005 | 2127     | 2085 | 31   | 11     | Done (00370: 3 deletes + 19 fixes) |
 | REG     | ~1,027 | 1490     | 1410 | 65   | 15     | In progress |
 | AUD     | ~2,732 | 1407     | 1254 | 55   | 98     | In progress |
-| ISC     | ~897   | 90       | 84   | 6    | 0      | In progress |
+| ISC     | ~897   | 100      | 94   | 6    | 0      | In progress |
 | TCP     | ~889   | 0        | 0    | 0    | 0      | Pending |
 
 ## Batch Log
@@ -750,3 +750,4 @@ Cross-session tracker for the correctness verification audit.
 | 2026-03-26 | batch 7 | ISC | 10 | 10 | 0 | 0 | All pass — ALE flood vs fire comparison (Q13288), hash total processing control (Q13289), bank reconciliation detective control (Q13300), SOC 2 Availability least-supporting control (Q13418), archived tape integrity checks (Q13455), ETL weekly exception review gap (Q13459), SSN hash total batch control (Q13463), master data dual-approval root cause (Q13465), edit check threshold alert (Q13471), payroll cutoff accrual procedure (Q13480) |
 | 2026-03-26 | batch 8 | ISC | 10 | 10 | 0 | 0 | All pass — ERP split-ordering aggregation control (Q13484), ERP customization upgrade risk (Q13485), run-to-run total reconciliation (Q13489), broadly defined standard change models inflating metrics (Q13547), change success rate inclusion-exclusion 90.5% (Q13554), peer-to-peer architecture control weakness (Q13594), SLA contractual uptime guarantee (Q13599), cloud elasticity auto-scaling (Q13609), colocation 99.995% uptime single network path disqualifier (Q13612), BIA revenue impact quantification (Q13623) |
 | 2026-03-26 | batch 9 | ISC | 10 | 10 | 0 | 0 | All pass — change failure root cause staff turnover (Q13632), backlog leading indicator 325% growth (Q13641), DR three critical gaps subsidiary RTO/RPO mismatch (Q13644), phishing reporting rate as behavioral change metric (Q13664), push MFA for older demographic usability (Q13670), SOC 2 operating effectiveness step (Q13675), adverse SOC 1 expand substantive testing (Q13688), CVSS base score components (Q13720), TOCTOU race condition row locking (Q13731), MD5 unsalted OWASP A02 cryptographic failures (Q13732) |
+| 2026-03-26 | batch 10 | ISC | 10 | 10 | 0 | 0 | All pass — job execution log purpose (Q13851), change mgmt KPI maturity trend (Q13860), configuration drift from incident response (Q13862), checkpoint restart duplicate prevention (Q13864), GDPR Art 8 Germany age 16 consent (Q13911), CCPA financial incentive proportionality (Q13918), design vs operating effectiveness 30% deviation (Q13946), residual ALE SLE×ARO $100K (Q13954), COBIT separation of environments (Q801), COBIT Level 2 Managed capability (Q810) |
