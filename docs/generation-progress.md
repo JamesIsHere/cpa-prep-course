@@ -24,7 +24,7 @@ For each section:
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status |
 |---------|---------|--------|---------|-------------|-------------|--------|
 | AUD     | 1,407 | 1,500 | 0 | 93 | 11 | Pending |
-| FAR     | 1,649 | 1,500 | 304 | 125 | 15 | Pending |
+| FAR     | 1,679 | 1,500 | 304 | 95 | 14 | Pending |
 | REG     | 1,484 | 1,500 | 0 | 16 | 4 | Pending |
 | BAR     | 1,427 | 1,500 | 0 | 73 | 12 | Pending |
 | ISC     | 1,463 | 1,500 | 0 | 37 | 5 | Pending |
@@ -71,7 +71,7 @@ For each section:
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
 | 1 | Financial Reporting: For-Profit | 160 | 96 | -64 |  |
-| 1 | Financial Statement Ratios | 60 | 96 |  | +36 |
+| 1 | Financial Statement Ratios | 90 | 96 |  | +6 |
 | 1 | Public Company Reporting | 80 | 96 |  | +16 |
 | 1 | Special Purpose Frameworks | 80 | 96 |  | +16 |
 | 1 | Statement of Cash Flows | 80 | 96 |  | +16 |
@@ -200,3 +200,4 @@ For each section:
 | 2026-03-26 | 00579_generate_far_batch101.sql | FAR | Subsequent Events | 30 | Batch 101: Type I/II classification, SEC vs non-SEC evaluation dates, going concern, reissuance, debt refinancing, fraud discovery, condemnation, dual dating |
 | 2026-03-26 | 00580_generate_far_batch102.sql | FAR | Investments | 30 | Batch 102: HTM/AFS/trading classification, equity method basics, ASC 321 fair value, credit loss model, intercompany profit elimination, impairment, NAV expedient, loss of influence |
 | 2026-03-27 | 00581_generate_far_batch103.sql | FAR | Investments | 30 | Batch 103: HTM amortization, AFS OCI effects, debt vs equity classification, equity method differential, premium/discount accretion, AFS-to-HTM transfer, VIE consolidation, fair value option, step acquisition, dilution |
+| 2026-03-27 | 00582_generate_far_batch104.sql | FAR | Financial Statement Ratios | 30 | Batch 104: TIE, cash ratio, funded debt/NWC, 5-factor DuPont tax interaction, fixed charge coverage, revenue/employee, window dressing, operating expense ratio, capitalize vs expense on TIE, OCF ratio, invested capital turnover, Beneish M-Score, EVA, debt yield, FCF yield, margin distinction, PEG ratio, LT D/E, P/CF, DOL, BEP, DTL, EV components, Tobin's Q, AR turnover, diluted EPS preferred, NOPAT margin, cash ROA, off-balance-sheet leverage, DuPont tax burden |
