@@ -24,7 +24,7 @@ For each section:
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status |
 |---------|---------|--------|---------|-------------|-------------|--------|
 | AUD     | 1,407 | 1,500 | 0 | 93 | 11 | Pending |
-| FAR     | 1,619 | 1,500 | 304 | 185 | 14 | Pending |
+| FAR     | 1,649 | 1,500 | 304 | 155 | 14 | Pending |
 | REG     | 1,484 | 1,500 | 0 | 16 | 4 | Pending |
 | BAR     | 1,427 | 1,500 | 0 | 73 | 12 | Pending |
 | ISC     | 1,463 | 1,500 | 0 | 37 | 5 | Pending |
@@ -80,7 +80,7 @@ For each section:
 | 2 | Equity | 53 | 44 | -9 |  |
 | 2 | Intangible Assets | 53 | 44 | -9 |  |
 | 2 | Inventory | 53 | 44 | -9 |  |
-| 2 | Investments | 0 | 44 |  | +44 |
+| 2 | Investments | 30 | 44 |  | +14 |
 | 2 | Leases | 53 | 44 | -9 |  |
 | 2 | Payables and Accrued Liabilities | 50 | 44 | -6 |  |
 | 2 | Property, Plant and Equipment | 53 | 44 | -9 |  |
@@ -198,3 +198,4 @@ For each section:
 |------|-----------|---------|-------|-------|-------|
 | 2026-03-26 | 00578_generate_far_batch100.sql | FAR | Financial Statement Ratios | 30 | Batch 100: CCC, DFL, GMROI, RONA, EV/EBITDA, diluted EPS, net debt, LBO effects, goodwill impairment, seasonal distortion |
 | 2026-03-26 | 00579_generate_far_batch101.sql | FAR | Subsequent Events | 30 | Batch 101: Type I/II classification, SEC vs non-SEC evaluation dates, going concern, reissuance, debt refinancing, fraud discovery, condemnation, dual dating |
+| 2026-03-26 | 00580_generate_far_batch102.sql | FAR | Investments | 30 | Batch 102: HTM/AFS/trading classification, equity method basics, ASC 321 fair value, credit loss model, intercompany profit elimination, impairment, NAV expedient, loss of influence |

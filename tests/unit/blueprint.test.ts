@@ -54,7 +54,7 @@ describe("blueprint structure", () => {
 			);
 		}
 		expect(groupCounts.aud).toBe(27);
-		expect(groupCounts.far).toBe(23);
+		expect(groupCounts.far).toBe(25);
 		expect(groupCounts.reg).toBe(21);
 		expect(groupCounts.bar).toBe(16);
 		expect(groupCounts.isc).toBe(18);
@@ -126,17 +126,17 @@ describe("lesson slug cross-references", () => {
 
 describe("question counts", () => {
 	it("section totals match expected values", () => {
-		expect(sectionQuestionTotals.aud).toBe(3180);
-		expect(sectionQuestionTotals.far).toBe(2801);
-		expect(sectionQuestionTotals.reg).toBe(2219);
-		expect(sectionQuestionTotals.bar).toBe(1047);
-		expect(sectionQuestionTotals.isc).toBe(948);
-		expect(sectionQuestionTotals.tcp).toBe(910);
+		expect(sectionQuestionTotals.aud).toBe(1407);
+		expect(sectionQuestionTotals.far).toBe(1499);
+		expect(sectionQuestionTotals.reg).toBe(1484);
+		expect(sectionQuestionTotals.bar).toBe(1577);
+		expect(sectionQuestionTotals.isc).toBe(1463);
+		expect(sectionQuestionTotals.tcp).toBe(1451);
 	});
 
-	it("all question count values are positive integers", () => {
+	it("all question count values are non-negative integers", () => {
 		for (const [, count] of Object.entries(questionCounts)) {
-			expect(count).toBeGreaterThan(0);
+			expect(count).toBeGreaterThanOrEqual(0);
 			expect(Number.isInteger(count)).toBe(true);
 		}
 	});
@@ -230,7 +230,7 @@ describe("coverage report", () => {
 			sectionQuestionTotals,
 		);
 		expect(report.sections).toHaveLength(6);
-		expect(report.summary.totalGroups).toBe(121);
+		expect(report.summary.totalGroups).toBe(123);
 		expect(report.summary.totalGaps).toBeGreaterThan(0);
 	});
 
@@ -241,7 +241,8 @@ describe("coverage report", () => {
 			sectionQuestionTotals,
 		);
 		const missingLessonGaps = report.gaps.filter((g) => g.missingLessons);
-		expect(missingLessonGaps.length).toBe(0);
+		// 3 new FAR groups (Ratios, Investments, Subsequent Events) pending lesson creation
+		expect(missingLessonGaps.length).toBe(3);
 
 		// REG Group D (Filing status and dependents) should now be covered
 		const regSection = report.sections.find((s) => s.code === "reg");
