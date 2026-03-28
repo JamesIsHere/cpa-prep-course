@@ -65,7 +65,7 @@ export const questionCounts: Record<string, number> = {
 	"Understanding the Entity and Environment": 50,
 	"Using the Work of Others": 50,
 	"Written Representations": 65,
-	// FAR (1,499 total — synced with live DB 2026-03-27)
+	// FAR (1,559 total — synced with live DB 2026-03-27)
 	"Accounting Changes and Error Corrections": 58,
 	"Cash and Cash Equivalents": 16,
 	Consolidations: 58,
@@ -74,10 +74,11 @@ export const questionCounts: Record<string, number> = {
 	Equity: 53,
 	"Fair Value": 58,
 	"Financial Reporting: For-Profit": 160,
-	"Financial Statement Ratios": 60,
+	"Financial Statement Ratios": 90,
 	"Income Taxes": 58,
 	"Intangible Assets": 53,
 	Inventory: 53,
+	Investments: 30,
 	Leases: 53,
 	"Not-for-Profit Accounting": 58,
 	"Payables and Accrued Liabilities": 50,
@@ -89,7 +90,6 @@ export const questionCounts: Record<string, number> = {
 	"Statement of Cash Flows": 80,
 	"Subsequent Events": 30,
 	"Trade Receivables": 37,
-	Investments: 0, // AICPA II.E — pending generation
 	// REG (1,484 total — synced with live DB 2026-03-27)
 	"Agency and Regulation": 60,
 	"Alternative Minimum Tax": 68,
@@ -175,7 +175,7 @@ export const questionCounts: Record<string, number> = {
 
 export const sectionQuestionTotals: Record<string, number> = {
 	aud: 1407,
-	far: 1499,
+	far: 1559,
 	reg: 1484,
 	bar: 1577,
 	isc: 1463,

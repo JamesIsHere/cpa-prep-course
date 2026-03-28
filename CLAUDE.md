@@ -161,14 +161,14 @@ Each batch gets its own headless `claude --print` invocation with a fresh contex
 
 | Section | Code | Lessons | Questions | Framework Items | Topics                                            |
 |---------|------|---------|-----------|-----------------|---------------------------------------------------|
-| AUD     | aud  | 13      | ~3,180    | 37              | Ethics, planning, risk, controls, evidence, sampling, reports, review/compilation, attestation, quality mgmt, government auditing |
-| FAR     | far  | 23      | ~1,489    | 60              | Financial statements, cash flows, EPS, revenue, inventory, fixed/intangible assets, payables, leases, bonds, equity, accounting changes, tax, govt, NFP, consolidations, contingencies, fair value |
-| REG     | reg  | 18      | ~2,219    | 60              | Circular 230, contracts, agency, business structures, basis, gains/losses, 1031, individual tax, credits, filing status, C/S corps, partnerships, tax procedures, legal duties, debtor-creditor, tax-exempt orgs |
-| BAR     | bar  | 16      | ~1,047    | 40              | Financial analysis, valuation, capital structure, derivatives, consolidations, govt reporting, fund reconciliation, interfund transactions |
-| ISC     | isc  | 16      | ~948      | 39              | IT infrastructure, ERP, data management, security frameworks, threats, privacy, SOC, SOC testing, SOC reporting |
-| TCP     | tcp  | 15      | ~910      | 44              | Individual planning, passive/at-risk, wealth transfer, retirement, international tax, trusts, capital structure tax, nontaxable dispositions, related parties |
+| AUD     | aud  | 13      | ~1,407    | 37              | Ethics, planning, risk, controls, evidence, sampling, reports, review/compilation, attestation, quality mgmt, government auditing |
+| FAR     | far  | 23      | ~1,559    | 60              | Financial reporting (for-profit), cash flows, consolidations, NFP, state/local govt, public company/EPS, special purpose frameworks, ratios, cash, receivables, inventory, PP&E, investments, intangibles, payables, debt, equity, accounting changes, contingencies, revenue, income taxes, fair value, leases, subsequent events |
+| REG     | reg  | 18      | ~1,484    | 60              | Circular 230, contracts, agency, business structures, basis, gains/losses, 1031, individual tax, credits, filing status, C/S corps, partnerships, tax procedures, legal duties, debtor-creditor, tax-exempt orgs |
+| BAR     | bar  | 16      | ~1,577    | 40              | Financial analysis, valuation, capital structure, derivatives, consolidations, govt reporting, fund reconciliation, interfund transactions |
+| ISC     | isc  | 16      | ~1,463    | 39              | IT infrastructure, ERP, data management, security frameworks, threats, privacy, SOC, SOC testing, SOC reporting |
+| TCP     | tcp  | 15      | ~1,451    | 44              | Individual planning, passive/at-risk, wealth transfer, retirement, international tax, trusts, capital structure tax, nontaxable dispositions, related parties |
 
-**Totals:** 101 lessons, ~9,000 questions (target: 9,000), 280 framework items across 6 sections
+**Totals:** 101 lessons, ~8,941 questions (target: ~9,000), 280 framework items across 6 sections
 
 ## Database Tables
 
@@ -212,12 +212,12 @@ All build phases complete. Active work is marketing and content connectivity.
 - **Migration validator:** `npm run validate-migration <file>` checks INSERT, UPDATE, and explanation-only UPDATE migrations against the rubric (stem length, explanation quality, citation/contrast checks, TODO detection)
 - **Migration generator:** `npm run generate-migration` reads candidate JSON from stdin and outputs UPDATE scaffold SQL. Supports `--mode=blooms|difficulty|citation`
 - **Rule:** All new question migrations must pass `validate-migration` before commit. No questions scoring 0-3 (critical) should be deployed.
-- **Current status:** 0 critical, 0 moderate, 4,987 acceptable (100% at score 7+, avg 8.2/10)
+- **Current status:** 0 critical, 0 moderate — all questions at score 7+ (avg 8.2/10)
 - **Bloom's L3 rebalancing:** Complete — REG 9%→25%, BAR 16%→30%, FAR 16%→26%, TCP 15%→20%. Total: 389 rewrites. Tracker: `docs/blooms-rebalancing.md`
 - **Bloom's L1/L4 rebalancing:** Complete — BAR (23), FAR (51), TCP (71), REG (169), AUD (190), ISC (284). Total: 788/788 rewrites. Tracker: `docs/blooms-l1-l4-rebalancing.md`
 - **Difficulty rebalancing:** In progress — target 30/50/20 easy/medium/hard. ~533 easy→medium rewrites needed. Tracker: `docs/difficulty-rebalancing.md`
 - **Citation coverage:** In progress — 2,970/4,993 explanations originally lacked citations (~59%). Working worst-coverage-first. AUD complete (14/14 batches, 98% coverage, migrations 00130–00145). ISC complete (14/14 batches, 100% coverage). Next: BAR→REG→FAR→TCP. Batches of 50, orchestrated via `scripts/orchestrate.ps1`. Tracker: `docs/citation-coverage.md`
-- **Question generation (30K scale):** Pipeline built — `plan-distribution.ts` → `select-generation-batch.ts` → `generate-insert-scaffold.ts` → Claude fills → `validate-migration` + `check-generation-duplicates.ts`. All sections target 5,000. ~18,895 new questions needed in batches of 30 (~630 batches). Live DB: 11,105 unique questions (post-dedup cleanup 2026-03-05). Tracker: `docs/generation-progress.md`
+- **Question generation (1,500/section):** Pipeline built — `plan-distribution.ts` → `select-generation-batch.ts` → `generate-insert-scaffold.ts` → Claude fills → `validate-migration` + `check-generation-duplicates.ts`. All sections target ~1,500. Live DB: ~8,941 questions (synced 2026-03-27). FAR topics realigned to AICPA 2026 Blueprint. Tracker: `docs/generation-progress.md`
 
 ## Spec Reference
 

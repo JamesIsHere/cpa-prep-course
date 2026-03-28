@@ -1,6 +1,6 @@
 # Slayer CPA
 
-Full-scope CPA exam prep for $29.99/month. 96 lessons, 5,000+ practice questions, timed exams, and downloadable study frameworks across all 6 CPA sections.
+Full-scope CPA exam prep for $29.99/month. 100+ lessons, 8,500+ practice questions, timed exams, and downloadable study frameworks across all 6 CPA sections.
 
 **Live:** [slayer-cpa.com](https://www.slayer-cpa.com)
 
@@ -8,12 +8,12 @@ Full-scope CPA exam prep for $29.99/month. 96 lessons, 5,000+ practice questions
 
 | Section | Code | Lessons | Questions | Topics |
 |---------|------|---------|-----------|--------|
-| Auditing and Attestation | AUD | 13 | ~1,055 | Ethics, planning, risk, controls, evidence, sampling, reports |
-| Financial Accounting and Reporting | FAR | 18 | ~860   | Revenue, leases, bonds, equity, govt, NFP, consolidations |
-| Regulation | REG | 18 | ~850   | Contracts, business structures, individual/entity tax, procedures |
-| Business Analysis and Reporting | BAR | 16 | ~780   | Valuation, capital structure, derivatives, govt reporting |
-| Information Systems and Controls | ISC | 16 | ~749   | IT infrastructure, security, privacy, SOC engagements |
-| Tax Compliance and Planning | TCP | 15 | ~699   | Individual/entity planning, wealth transfer, international tax |
+| Auditing and Attestation | AUD | 13 | ~1,407 | Ethics, planning, risk, controls, evidence, sampling, reports |
+| Financial Accounting and Reporting | FAR | 23 | ~1,559 | Financial reporting, cash flows, consolidations, NFP, govt, investments, revenue, leases, fair value |
+| Regulation | REG | 18 | ~1,484 | Contracts, business structures, individual/entity tax, procedures |
+| Business Analysis and Reporting | BAR | 16 | ~1,577 | Valuation, capital structure, derivatives, govt reporting |
+| Information Systems and Controls | ISC | 16 | ~1,463 | IT infrastructure, security, privacy, SOC engagements |
+| Tax Compliance and Planning | TCP | 15 | ~1,451 | Individual/entity planning, wealth transfer, international tax |
 
 ## Features
 
@@ -65,13 +65,13 @@ Copy `.env.local.example` to `.env.local` and fill in:
 src/
   app/           Routes (App Router)
   components/    React components
-  content/       MDX lesson files (96 across 6 sections)
+  content/       MDX lesson files (101 across 6 sections)
   lib/           Data layer, utilities, study frameworks
 tests/
-  unit/          Vitest (94 tests)
-  e2e/           Playwright (152 tests)
+  unit/          Vitest
+  e2e/           Playwright
 supabase/
-  migrations/    127 SQL migrations (schema + seed + question upgrades)
+  migrations/    500+ SQL migrations (schema + seed + questions)
 ```
 
 ## License

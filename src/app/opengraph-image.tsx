@@ -38,7 +38,7 @@ export default function OgImage() {
 					lineHeight: 1.4,
 				}}
 			>
-				96 lessons, 5,000+ questions, and study frameworks covering all 6 CPA
+				100+ lessons, 8,500+ questions, and study frameworks covering all 6 CPA
 				exam sections.
 			</div>
 		</div>,
