@@ -1,0 +1,195 @@
+# Investments
+
+## Learning Objectives
+
+- Identify investments that are measured at fair value versus amortized cost
+- Calculate the carrying amount and investment income for fair value investments
+- Calculate impairment losses on investments measured at fair value and at amortized cost
+- Apply the equity method of accounting for investments with significant influence
+- Prepare journal entries for acquisitions, income recognition, dividends, and disposals under each method
+
+## Investment Classification Overview
+
+The accounting for investments depends on the **type of instrument** and the **investor's intent and influence**. The AICPA Blueprint organizes this into three categories:
+
+1. **Financial assets at fair value** — equity securities and certain debt securities
+2. **Financial assets at amortized cost** — held-to-maturity debt securities
+3. **Equity method investments** — significant influence (typically 20-50% ownership)
+
+## Financial Assets at Fair Value
+
+### Equity Securities (ASC 321)
+
+Under ASC 321, **all equity securities with readily determinable fair values** are measured at fair value through net income. There is no more "available-for-sale" classification for equity securities.
+
+**Key rules:**
+- Measure at **fair value** each reporting period
+- Unrealized gains and losses are recognized in **net income** (not OCI)
+- No impairment model — changes in fair value flow through earnings automatically
+
+**Journal entry — Purchase:**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Investment in Equity Securities | XXX | |
+| Cash | | XXX |
+
+**Journal entry — Fair value increase at period end:**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Investment in Equity Securities | XXX | |
+| Unrealized Gain on Investments | | XXX |
+
+**Journal entry — Dividend received:**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Cash | XXX | |
+| Dividend Income | | XXX |
+
+### Equity Securities Without Readily Determinable Fair Values
+
+An entity may elect a **measurement alternative**: report at cost minus impairment, adjusted for observable price changes in orderly transactions for identical or similar investments.
+
+### Debt Securities — Trading
+
+Trading debt securities are held for **short-term resale**:
+- Measured at **fair value** each period
+- Unrealized gains and losses in **net income**
+- Interest income recognized separately
+
+### Debt Securities — Available-for-Sale (AFS)
+
+AFS debt securities are neither trading nor held-to-maturity:
+- Measured at **fair value** each period
+- Unrealized gains and losses in **other comprehensive income (OCI)**
+- Reclassified to net income when sold
+- Subject to the **CECL impairment model** for credit losses
+
+**Impairment of AFS debt securities:**
+
+When fair value drops below amortized cost:
+1. Determine if any portion of the decline is due to **credit loss** (expected cash flow shortfall)
+2. Credit losses → recognized in net income through an **allowance** (reversible)
+3. Non-credit portion → remains in OCI
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Credit Loss Expense | XXX | |
+| Allowance for Credit Losses — AFS | | XXX |
+
+## Financial Assets at Amortized Cost
+
+### Held-to-Maturity (HTM) Debt Securities
+
+Debt securities that the entity has the **positive intent and ability** to hold until maturity:
+- Measured at **amortized cost** (face value adjusted for premium/discount)
+- Interest income recognized using the **effective interest method**
+- No fair value adjustments on the balance sheet
+- Subject to the **CECL impairment model**
+
+**Journal entry — Purchase at a premium:**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Investment in HTM Securities | XXX | |
+| Cash | | XXX |
+
+**Journal entry — Interest receipt and premium amortization:**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Cash | XXX | |
+| Investment in HTM Securities | | XXX |
+| Interest Income | | XXX |
+
+Cash received = face value × stated rate. Interest income = carrying amount × market rate. The difference amortizes the premium.
+
+**CECL impairment for HTM:**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Credit Loss Expense | XXX | |
+| Allowance for Credit Losses — HTM | | XXX |
+
+Unlike AFS, the entire fair value decline is not analyzed — only expected credit losses are recognized.
+
+## Equity Method Investments (ASC 323)
+
+### When to Apply
+
+The equity method applies when the investor has **significant influence** over the investee — generally presumed at **20% to 50% ownership** of voting stock. Indicators of significant influence include:
+
+- Board representation
+- Participation in policy-making
+- Material intercompany transactions
+- Interchange of managerial personnel
+- Technological dependency
+
+### Initial Recognition
+
+Record at **cost** (purchase price plus direct acquisition costs):
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Investment in Equity Method Investee | XXX | |
+| Cash | | XXX |
+
+### Recognizing Investee Income
+
+The investor records its **proportionate share** of the investee's net income:
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Investment in Equity Method Investee | XXX | |
+| Equity in Earnings of Investee | | XXX |
+
+This is a **single-line consolidation** — the investor picks up its share of earnings without consolidating individual assets and liabilities.
+
+### Dividends Received
+
+Dividends **reduce the investment balance** (they are a return of investment, not income):
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Cash | XXX | |
+| Investment in Equity Method Investee | | XXX |
+
+### Carrying Amount Formula
+
+**Ending Balance = Cost + Share of Income − Dividends Received − Impairment**
+
+### Impairment
+
+Equity method investments are evaluated for impairment when events indicate the carrying amount may not be recoverable. If the decline in value is **other than temporary**, write down to fair value:
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Loss on Impairment of Investment | XXX | |
+| Investment in Equity Method Investee | | XXX |
+
+### Basis Differences
+
+When the investor pays more than book value for the investee's net assets, the excess is allocated to:
+1. **Identifiable assets** (e.g., undervalued land, equipment) — amortized over useful life
+2. **Goodwill** — not amortized, but considered in impairment analysis
+
+The amortization of basis differences **reduces** the investor's equity in earnings each period.
+
+## Summary Comparison
+
+| Feature | Fair Value (Equity) | Fair Value (AFS Debt) | Amortized Cost (HTM) | Equity Method |
+|---------|--------------------|-----------------------|----------------------|---------------|
+| Measurement | Fair value | Fair value | Amortized cost | Cost + share of earnings |
+| Unrealized G/L | Net income | OCI | N/A | N/A |
+| Income recognition | Dividends | Interest (effective rate) | Interest (effective rate) | Share of net income |
+| Impairment | N/A (FV through NI) | CECL (credit portion) | CECL | Other-than-temporary |
+
+## Key Exam Tips
+
+1. **Equity securities always go through net income** — there is no more AFS classification for stocks under ASC 321
+2. **AFS debt impairment splits credit vs. non-credit** — credit losses hit income, non-credit stays in OCI
+3. **HTM requires intent AND ability** — if either is lacking, reclassify to AFS
+4. **Equity method dividends reduce the investment** — they are not income
+5. **Basis differences must be amortized** — they reduce equity in earnings each period

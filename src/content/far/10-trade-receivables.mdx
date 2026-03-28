@@ -1,0 +1,160 @@
+# Trade Receivables
+
+## Learning Objectives
+
+- Calculate trade receivables balances and the allowance for credit losses
+- Apply the current expected credit loss (CECL) model under ASC 326
+- Prepare journal entries for transfers of receivables including factoring, assignment, and pledging
+- Prepare a rollforward of the trade receivables account balance
+- Reconcile and investigate differences between subledger and general ledger for receivables
+
+## Trade Receivables Overview
+
+Trade receivables arise from the sale of goods or services on credit in the ordinary course of business. They are classified as current assets on the balance sheet and reported at **net realizable value** — the gross amount less the allowance for credit losses.
+
+The AICPA Blueprint tests your ability to calculate receivable balances, apply the CECL model, and account for transfers of receivables.
+
+## Recognition and Measurement
+
+Trade receivables are recognized when the entity has an **unconditional right to consideration** — typically at the point of sale or service delivery.
+
+### Initial Measurement
+
+Record at the **transaction price** under ASC 606 (Revenue Recognition). For short-term receivables, the time value of money is generally immaterial and no discounting is required.
+
+### Subsequent Measurement
+
+Report at amortized cost less the allowance for credit losses. For most trade receivables, amortized cost equals face value since they are short-term and non-interest-bearing.
+
+## Allowance for Credit Losses (CECL Model)
+
+ASC 326 requires entities to estimate **expected** credit losses over the life of the receivable at the time of recognition — not wait until a loss is probable (the old incurred-loss model).
+
+### Key Concepts
+
+- **Lifetime expected losses**: Estimate must consider historical experience, current conditions, and reasonable and supportable forecasts
+- **Pool-based approach**: Receivables with similar risk characteristics can be grouped and assessed collectively
+- **Day-one allowance**: An allowance must be established when the receivable is first recognized, not just when evidence of impairment appears
+
+### Journal Entries
+
+**Establishing the allowance:**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Credit Loss Expense | XXX | |
+| Allowance for Credit Losses | | XXX |
+
+**Writing off a specific receivable:**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Allowance for Credit Losses | XXX | |
+| Accounts Receivable | | XXX |
+
+Write-offs reduce both the gross receivable and the allowance — there is **no income statement impact** at the time of write-off because the expense was already recognized when the allowance was established.
+
+**Recovery of a previously written-off receivable:**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Accounts Receivable | XXX | |
+| Allowance for Credit Losses | | XXX |
+| Cash | XXX | |
+| Accounts Receivable | | XXX |
+
+### Calculating the Allowance
+
+Common methods include:
+
+1. **Aging schedule**: Apply different loss rates to receivable balances based on how long past due
+2. **Historical loss rate**: Use historical write-off percentages adjusted for current conditions
+3. **Migration analysis**: Track how receivable balances move through aging buckets over time
+
+**Example — Aging Schedule Method:**
+
+| Age Bucket | Balance | Loss Rate | Expected Loss |
+|------------|---------|-----------|---------------|
+| Current | 500,000 | 1% | 5,000 |
+| 1-30 days past due | 80,000 | 5% | 4,000 |
+| 31-60 days past due | 30,000 | 15% | 4,500 |
+| Over 60 days | 10,000 | 40% | 4,000 |
+| **Total** | **620,000** | | **17,500** |
+
+The ending allowance balance should be **$17,500**. If the current balance is $12,000, record additional credit loss expense of $5,500.
+
+## Transfers of Receivables
+
+Entities may transfer receivables to accelerate cash collection. The accounting depends on whether the transfer qualifies as a **sale** or a **secured borrowing**.
+
+### Sale Treatment (ASC 860)
+
+A transfer qualifies as a sale when the transferor surrenders control. Three conditions must all be met:
+
+1. Transferred assets are **isolated** from the transferor (beyond reach of creditors in bankruptcy)
+2. Transferee has the right to **pledge or exchange** the assets
+3. Transferor does **not maintain effective control** (no repurchase agreements at fixed prices)
+
+**Journal entry — Sale of receivables (factoring without recourse):**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Cash | XXX | |
+| Loss on Sale of Receivables | XXX | |
+| Accounts Receivable | | XXX |
+
+The loss equals the difference between the carrying amount and the cash received.
+
+### Secured Borrowing Treatment
+
+If the transfer does not meet all three sale conditions, it is accounted for as a **collateralized borrowing**:
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Cash | XXX | |
+| Liability (Borrowing on Receivables) | | XXX |
+
+The receivable remains on the transferor's balance sheet.
+
+### Factoring
+
+**Factoring without recourse**: The factor assumes the credit risk. If sale conditions are met, derecognize the receivables.
+
+**Factoring with recourse**: The transferor retains credit risk. Must evaluate whether the arrangement qualifies as a sale or secured borrowing. Even if a sale, the recourse obligation is recognized as a liability.
+
+### Assignment and Pledging
+
+- **Assignment**: Specific receivables are designated as collateral for a loan. The receivables remain on the books; collections are remitted to the lender.
+- **Pledging**: A general claim against receivables as collateral, without designating specific accounts. Disclosed in notes.
+
+## Receivables Rollforward
+
+The exam may require preparing a rollforward analysis:
+
+| | Amount |
+|---|--------|
+| Beginning balance | XXX |
+| + Credit sales | XXX |
+| - Cash collections | (XXX) |
+| - Write-offs | (XXX) |
+| + Recoveries | XXX |
+| = Ending balance | XXX |
+
+## Subledger-to-General Ledger Reconciliation
+
+The accounts receivable subledger (individual customer accounts) must agree to the general ledger control account. Common causes of differences:
+
+- Cash receipts recorded in subledger but not yet posted to GL (or vice versa)
+- Sales recorded in GL but individual customer account not updated
+- Write-offs approved but not yet processed in one system
+- Credit memos or returns recorded in only one system
+
+When differences are found, investigate and determine whether a **journal entry adjustment** is necessary.
+
+## Key Exam Tips
+
+1. **CECL is forward-looking**: Unlike the old incurred-loss model, you must estimate expected losses from day one
+2. **Write-offs do not hit the income statement**: The expense was recognized when the allowance was established
+3. **Factoring without recourse usually qualifies as a sale**: The key is whether the transferor surrenders control
+4. **Receivable transfers are either sales or borrowings**: There is no third option under ASC 860
+5. **Use net realizable value**: Balance sheet always shows gross receivables less the allowance

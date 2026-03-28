@@ -629,6 +629,7 @@ export const cpaBlueprint: CpaBlueprint = [
 		code: "far",
 		title: "Financial Accounting and Reporting",
 		areas: [
+			// ── Area I: Financial Reporting (30-40%) — AICPA 2026 Blueprint ──
 			{
 				area: 1,
 				name: "Financial Reporting",
@@ -636,104 +637,139 @@ export const cpaBlueprint: CpaBlueprint = [
 				groups: [
 					{
 						letter: "A",
-						name: "Conceptual framework and standards",
+						name: "General-purpose financial reporting: for-profit business entities",
 						topics: [
 							{
 								id: "far.1.A.1",
-								name: "FASB Conceptual Framework",
+								name: "Balance sheet / Statement of financial position",
 							},
 							{
 								id: "far.1.A.2",
-								name: "GAAP hierarchy and standard-setting",
+								name: "Income statement / Statement of profit or loss",
+							},
+							{
+								id: "far.1.A.3",
+								name: "Statement of comprehensive income",
+							},
+							{
+								id: "far.1.A.4",
+								name: "Statement of changes in equity",
+							},
+							{
+								id: "far.1.A.5",
+								name: "Statement of cash flows",
+							},
+							{
+								id: "far.1.A.6",
+								name: "Consolidated financial statements (including NCI)",
+							},
+							{
+								id: "far.1.A.7",
+								name: "Notes to financial statements",
 							},
 						],
-						lessonSlugs: ["01-intro"],
-						questionTopics: ["Financial Reporting: For-Profit"],
+						lessonSlugs: [
+							"01-financial-reporting-for-profit",
+							"02-statement-of-cash-flows",
+							"03-consolidated-financial-statements",
+						],
+						questionTopics: [
+							"Financial Reporting: For-Profit",
+							"Statement of Cash Flows",
+							"Consolidations",
+						],
 					},
 					{
 						letter: "B",
-						name: "Financial statement presentation",
+						name: "General-purpose financial reporting: nongovernmental not-for-profit entities",
 						topics: [
 							{
 								id: "far.1.B.1",
-								name: "Balance sheet classification and presentation",
+								name: "Statement of financial position",
 							},
 							{
 								id: "far.1.B.2",
-								name: "Income statement formats",
+								name: "Statement of activities",
 							},
 							{
 								id: "far.1.B.3",
-								name: "Statement of comprehensive income",
+								name: "Statement of cash flows",
+							},
+							{
+								id: "far.1.B.4",
+								name: "Notes to the financial statements",
 							},
 						],
-						lessonSlugs: ["02-financial-statement-presentation"],
-						questionTopics: [],
+						lessonSlugs: ["04-not-for-profit"],
+						questionTopics: ["Not-for-Profit Accounting"],
 					},
 					{
 						letter: "C",
-						name: "Statement of cash flows",
+						name: "State and local government concepts",
 						topics: [
 							{
 								id: "far.1.C.1",
-								name: "Operating, investing, and financing activities",
+								name: "Measurement focus and basis of accounting",
 							},
 							{
 								id: "far.1.C.2",
-								name: "Direct and indirect methods",
+								name: "Purpose of funds",
 							},
 						],
-						lessonSlugs: ["03-statement-of-cash-flows"],
-						questionTopics: ["Statement of Cash Flows"],
+						lessonSlugs: ["05-state-local-government"],
+						questionTopics: ["State and Local Government"],
 					},
 					{
 						letter: "D",
-						name: "Earnings per share",
+						name: "Public company reporting topics",
 						topics: [
-							{ id: "far.1.D.1", name: "Basic EPS computation" },
+							{
+								id: "far.1.D.1",
+								name: "SEC Forms 10-Q / 10-K / 8-K",
+							},
 							{
 								id: "far.1.D.2",
-								name: "Diluted EPS and convertible securities",
+								name: "Earnings per share",
 							},
 						],
-						lessonSlugs: ["04-earnings-per-share"],
+						lessonSlugs: ["06-public-company-reporting"],
 						questionTopics: ["Public Company Reporting"],
 					},
 					{
-						letter: "F",
+						letter: "E",
 						name: "Special purpose frameworks",
 						topics: [
 							{
-								id: "far.1.F.1",
+								id: "far.1.E.1",
 								name: "Cash and modified cash basis",
 							},
-							{ id: "far.1.F.2", name: "Tax basis financial statements" },
 							{
-								id: "far.1.F.3",
-								name: "Regulatory and contractual bases",
+								id: "far.1.E.2",
+								name: "Tax basis financial statements",
 							},
 						],
-						lessonSlugs: ["06-special-purpose-frameworks"],
+						lessonSlugs: ["07-special-purpose-frameworks"],
 						questionTopics: ["Special Purpose Frameworks"],
 					},
 					{
-						letter: "G",
-						name: "Financial Statement Ratios and Performance Metrics",
+						letter: "F",
+						name: "Financial statement ratios and performance metrics",
 						topics: [
 							{
-								id: "far.1.G.1",
-								name: "Profitability, liquidity, solvency ratios",
+								id: "far.1.F.1",
+								name: "Profitability, liquidity, and solvency ratios",
 							},
 							{
-								id: "far.1.G.2",
+								id: "far.1.F.2",
 								name: "Performance metrics and budget variances",
 							},
 						],
-						lessonSlugs: [],
+						lessonSlugs: ["08-financial-statement-ratios"],
 						questionTopics: ["Financial Statement Ratios"],
 					},
 				],
 			},
+			// ── Area II: Select Balance Sheet Accounts (30-40%) ──
 			{
 				area: 2,
 				name: "Select Balance Sheet Accounts",
@@ -741,39 +777,35 @@ export const cpaBlueprint: CpaBlueprint = [
 				groups: [
 					{
 						letter: "A",
-						name: "Cash and receivables",
+						name: "Cash and cash equivalents",
 						topics: [
 							{
 								id: "far.2.A.1",
-								name: "Cash and bank reconciliations",
+								name: "Cash and cash equivalents balances",
 							},
 							{
 								id: "far.2.A.2",
-								name: "Allowance for credit losses (CECL)",
+								name: "Bank reconciliations",
 							},
 						],
-						lessonSlugs: ["07-cash-and-receivables"],
-						questionTopics: ["Cash and Cash Equivalents", "Trade Receivables"],
+						lessonSlugs: ["09-cash-and-cash-equivalents"],
+						questionTopics: ["Cash and Cash Equivalents"],
 					},
 					{
 						letter: "B",
-						name: "Revenue recognition",
+						name: "Trade receivables",
 						topics: [
 							{
 								id: "far.2.B.1",
-								name: "ASC 606 five-step model",
+								name: "Trade receivables and allowances (CECL)",
 							},
 							{
 								id: "far.2.B.2",
-								name: "Contract modifications and variable consideration",
-							},
-							{
-								id: "far.2.B.3",
-								name: "Performance obligations and timing",
+								name: "Transfer of receivables (factoring, assignment, pledging)",
 							},
 						],
-						lessonSlugs: ["08-revenue-recognition"],
-						questionTopics: ["Revenue Recognition"],
+						lessonSlugs: ["10-trade-receivables"],
+						questionTopics: ["Trade Receivables"],
 					},
 					{
 						letter: "C",
@@ -788,12 +820,12 @@ export const cpaBlueprint: CpaBlueprint = [
 								name: "Lower of cost or net realizable value",
 							},
 						],
-						lessonSlugs: ["09-inventory"],
+						lessonSlugs: ["11-inventory"],
 						questionTopics: ["Inventory"],
 					},
 					{
 						letter: "D",
-						name: "Fixed assets and depreciation",
+						name: "Property, plant and equipment",
 						topics: [
 							{
 								id: "far.2.D.1",
@@ -805,97 +837,82 @@ export const cpaBlueprint: CpaBlueprint = [
 							},
 							{
 								id: "far.2.D.3",
-								name: "Asset retirement obligations",
+								name: "Assets held for sale",
 							},
 						],
-						lessonSlugs: ["10-fixed-assets"],
+						lessonSlugs: ["12-property-plant-equipment"],
 						questionTopics: ["Property, Plant and Equipment"],
 					},
 					{
-						letter: "J",
+						letter: "E",
 						name: "Investments",
 						topics: [
 							{
-								id: "far.2.J.1",
+								id: "far.2.E.1",
 								name: "Financial assets at fair value",
 							},
 							{
-								id: "far.2.J.2",
+								id: "far.2.E.2",
 								name: "Financial assets at amortized cost",
 							},
 							{
-								id: "far.2.J.3",
+								id: "far.2.E.3",
 								name: "Equity method investments",
 							},
 						],
-						lessonSlugs: [],
+						lessonSlugs: ["13-investments"],
 						questionTopics: ["Investments"],
 					},
 					{
-						letter: "E",
+						letter: "F",
 						name: "Intangible assets",
 						topics: [
 							{
-								id: "far.2.E.1",
-								name: "Finite vs. indefinite-lived intangibles",
-							},
-							{ id: "far.2.E.2", name: "Goodwill and impairment testing" },
-							{ id: "far.2.E.3", name: "Research and development costs" },
-						],
-						lessonSlugs: ["11-intangible-assets"],
-						questionTopics: ["Intangible Assets"],
-					},
-					{
-						letter: "F",
-						name: "Payables and accrued liabilities",
-						topics: [
-							{
 								id: "far.2.F.1",
-								name: "Accounts payable and accruals",
+								name: "Finite vs. indefinite-lived intangibles",
 							},
 							{
 								id: "far.2.F.2",
-								name: "Compensated absences",
+								name: "Purchased software and cloud computing",
 							},
 						],
-						lessonSlugs: ["12-payables-and-accrued-liabilities"],
-						questionTopics: ["Payables and Accrued Liabilities"],
+						lessonSlugs: ["14-intangible-assets"],
+						questionTopics: ["Intangible Assets"],
 					},
 					{
 						letter: "G",
-						name: "Leases",
+						name: "Payables and accrued liabilities",
 						topics: [
 							{
 								id: "far.2.G.1",
-								name: "ASC 842 lessee accounting",
+								name: "Accounts payable and accrued liabilities",
 							},
 							{
 								id: "far.2.G.2",
-								name: "Operating vs. finance lease classification",
+								name: "Asset retirement obligations",
 							},
-							{ id: "far.2.G.3", name: "Lessor accounting" },
+							{
+								id: "far.2.G.3",
+								name: "Exit and disposal activities",
+							},
 						],
-						lessonSlugs: ["13-leases"],
-						questionTopics: ["Leases"],
+						lessonSlugs: ["15-payables-and-accrued-liabilities"],
+						questionTopics: ["Payables and Accrued Liabilities"],
 					},
 					{
 						letter: "H",
-						name: "Bonds and long-term debt",
+						name: "Debt (financial liabilities)",
 						topics: [
 							{
 								id: "far.2.H.1",
-								name: "Bond issuance and amortization",
+								name: "Notes and bonds payable",
 							},
 							{
 								id: "far.2.H.2",
-								name: "Troubled debt restructuring",
-							},
-							{
-								id: "far.2.H.3",
-								name: "Debt extinguishment gains/losses",
+								name: "Debt covenant compliance",
 							},
 						],
-						lessonSlugs: ["14-bonds-and-debt"],
+						lessonSlugs: ["16-debt"],
 						questionTopics: ["Debt"],
 					},
 					{
@@ -904,22 +921,15 @@ export const cpaBlueprint: CpaBlueprint = [
 						topics: [
 							{
 								id: "far.2.I.1",
-								name: "Common and preferred stock",
-							},
-							{
-								id: "far.2.I.2",
-								name: "Treasury stock (cost and par methods)",
-							},
-							{
-								id: "far.2.I.3",
-								name: "Retained earnings and dividends",
+								name: "Equity issuance, dividends, splits, and treasury stock",
 							},
 						],
-						lessonSlugs: ["15-equity"],
+						lessonSlugs: ["17-equity"],
 						questionTopics: ["Equity"],
 					},
 				],
 			},
+			// ── Area III: Select Transactions (25-35%) ──
 			{
 				area: 3,
 				name: "Select Transactions",
@@ -938,7 +948,7 @@ export const cpaBlueprint: CpaBlueprint = [
 								name: "Changes in estimate and error corrections",
 							},
 						],
-						lessonSlugs: ["16-accounting-changes"],
+						lessonSlugs: ["18-accounting-changes"],
 						questionTopics: ["Accounting Changes and Error Corrections"],
 					},
 					{
@@ -949,51 +959,57 @@ export const cpaBlueprint: CpaBlueprint = [
 								id: "far.3.B.1",
 								name: "Loss contingencies (ASC 450)",
 							},
-							{ id: "far.3.B.2", name: "Gain contingencies" },
+							{
+								id: "far.3.B.2",
+								name: "Gain contingencies",
+							},
 							{
 								id: "far.3.B.3",
 								name: "Guarantees and commitments",
 							},
 						],
-						lessonSlugs: ["17-contingencies"],
+						lessonSlugs: ["19-contingencies"],
 						questionTopics: ["Contingencies"],
 					},
 					{
 						letter: "C",
-						name: "Income taxes",
+						name: "Revenue recognition",
 						topics: [
 							{
 								id: "far.3.C.1",
-								name: "Deferred tax assets and liabilities",
+								name: "ASC 606 five-step model",
 							},
-							{ id: "far.3.C.2", name: "Valuation allowances" },
+							{
+								id: "far.3.C.2",
+								name: "Contract costs and modifications",
+							},
 							{
 								id: "far.3.C.3",
-								name: "Intraperiod and interperiod allocation",
+								name: "NFP contribution recognition",
 							},
 						],
-						lessonSlugs: ["18-income-taxes"],
-						questionTopics: ["Income Taxes"],
+						lessonSlugs: ["20-revenue-recognition"],
+						questionTopics: ["Revenue Recognition"],
 					},
 					{
 						letter: "D",
-						name: "Consolidations",
+						name: "Accounting for income taxes",
 						topics: [
 							{
 								id: "far.3.D.1",
-								name: "Business combinations (ASC 805)",
+								name: "Deferred tax assets and liabilities",
 							},
 							{
 								id: "far.3.D.2",
-								name: "Consolidation procedures and NCI",
+								name: "Valuation allowances",
 							},
 							{
 								id: "far.3.D.3",
-								name: "Intercompany eliminations",
+								name: "Uncertainty in income taxes",
 							},
 						],
-						lessonSlugs: ["19-consolidations"],
-						questionTopics: ["Consolidations"],
+						lessonSlugs: ["21-income-taxes"],
+						questionTopics: ["Income Taxes"],
 					},
 					{
 						letter: "E",
@@ -1001,98 +1017,51 @@ export const cpaBlueprint: CpaBlueprint = [
 						topics: [
 							{
 								id: "far.3.E.1",
-								name: "ASC 820 scope and fair value hierarchy",
+								name: "ASC 820 fair value hierarchy",
 							},
 							{
 								id: "far.3.E.2",
 								name: "Valuation techniques and inputs",
 							},
 						],
-						lessonSlugs: ["20-fair-value"],
+						lessonSlugs: ["22-fair-value"],
 						questionTopics: ["Fair Value"],
 					},
 					{
 						letter: "F",
-						name: "Not-for-profit accounting",
+						name: "Lessee accounting",
 						topics: [
 							{
 								id: "far.3.F.1",
-								name: "Net asset classifications",
+								name: "Lease classification (operating vs. finance)",
 							},
 							{
 								id: "far.3.F.2",
-								name: "Revenue recognition for contributions",
+								name: "Right-of-use assets and lease liabilities",
 							},
 							{
 								id: "far.3.F.3",
-								name: "NFP financial statement presentation",
+								name: "Lease cost recognition",
 							},
 						],
-						lessonSlugs: ["21-not-for-profit"],
-						questionTopics: ["Not-for-Profit Accounting"],
+						lessonSlugs: ["23-lessee-accounting"],
+						questionTopics: ["Leases"],
 					},
 					{
 						letter: "G",
-						name: "Governmental accounting fundamentals",
-						topics: [
-							{
-								id: "far.3.G.1",
-								name: "GASB standards and modified accrual",
-							},
-							{
-								id: "far.3.G.2",
-								name: "Fund types and fund accounting",
-							},
-							{
-								id: "far.3.G.3",
-								name: "Budgetary accounting",
-							},
-						],
-						lessonSlugs: ["22-governmental-accounting-fundamentals"],
-						questionTopics: ["State and Local Government"],
-					},
-					{
-						letter: "H",
 						name: "Subsequent events",
 						topics: [
 							{
-								id: "far.3.H.1",
+								id: "far.3.G.1",
 								name: "Identifying and classifying subsequent events",
 							},
 							{
-								id: "far.3.H.2",
+								id: "far.3.G.2",
 								name: "Adjustments and disclosures for subsequent events",
 							},
 						],
-						lessonSlugs: [],
+						lessonSlugs: ["24-subsequent-events"],
 						questionTopics: ["Subsequent Events"],
-					},
-				],
-			},
-			{
-				area: 4,
-				name: "State and Local Governments",
-				weight: [5, 15],
-				groups: [
-					{
-						letter: "A",
-						name: "Government-wide and fund financial statements",
-						topics: [
-							{
-								id: "far.4.A.1",
-								name: "Government-wide financial statements",
-							},
-							{
-								id: "far.4.A.2",
-								name: "Governmental fund statements",
-							},
-							{
-								id: "far.4.A.3",
-								name: "Proprietary and fiduciary funds",
-							},
-						],
-						lessonSlugs: ["23-government-financial-statements"],
-						questionTopics: [],
 					},
 				],
 			},

@@ -6,8 +6,6 @@ export const startQuizSchema = z.object({
 	topics: z.array(z.string()).optional(),
 });
 
-export type StartQuizInput = z.infer<typeof startQuizSchema>;
-
 export const quizAnswerSchema = z.object({
 	questionId: z.number().int(),
 	selectedIndex: z.number().int().min(0).max(3),
@@ -24,8 +22,6 @@ export const submitQuizSchema = z.object({
 	durationSeconds: z.number().int().optional(),
 	questionTimings: z.array(questionTimingSchema).optional(),
 });
-
-export type SubmitQuizInput = z.infer<typeof submitQuizSchema>;
 
 export const explanationDwellSchema = z.object({
 	dwells: z.array(z.object({
@@ -75,8 +71,6 @@ export const reviewFilterSchema = z.object({
 	cursor: z.coerce.number().int().optional(),
 	limit: z.coerce.number().int().min(1).max(100).default(50),
 });
-
-export type ReviewFilterInput = z.infer<typeof reviewFilterSchema>;
 
 export const flagQuestionSchema = z.object({
 	questionId: z.number().int(),

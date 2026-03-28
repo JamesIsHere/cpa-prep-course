@@ -54,7 +54,7 @@ describe("blueprint structure", () => {
 			);
 		}
 		expect(groupCounts.aud).toBe(27);
-		expect(groupCounts.far).toBe(25);
+		expect(groupCounts.far).toBe(22);
 		expect(groupCounts.reg).toBe(21);
 		expect(groupCounts.bar).toBe(16);
 		expect(groupCounts.isc).toBe(18);
@@ -230,7 +230,7 @@ describe("coverage report", () => {
 			sectionQuestionTotals,
 		);
 		expect(report.sections).toHaveLength(6);
-		expect(report.summary.totalGroups).toBe(123);
+		expect(report.summary.totalGroups).toBe(120);
 		expect(report.summary.totalGaps).toBeGreaterThan(0);
 	});
 
@@ -241,8 +241,8 @@ describe("coverage report", () => {
 			sectionQuestionTotals,
 		);
 		const missingLessonGaps = report.gaps.filter((g) => g.missingLessons);
-		// 3 new FAR groups (Ratios, Investments, Subsequent Events) pending lesson creation
-		expect(missingLessonGaps.length).toBe(3);
+		// All FAR groups now have lessons after AICPA 2026 restructure
+		expect(missingLessonGaps.length).toBe(0);
 
 		// REG Group D (Filing status and dependents) should now be covered
 		const regSection = report.sections.find((s) => s.code === "reg");

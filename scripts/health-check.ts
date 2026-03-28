@@ -1,10 +1,15 @@
-// Health Check CLI
-// Usage: npm run health [-- --url=https://www.slayer-cpa.com] [-- --json]
+// Health Check CLI — self-contained: starts dev server, runs all checks, stops server
+// Usage: npm run health [-- --url=https://www.slayer-cpa.com] [-- --json] [-- --no-server]
+//
+// Default (no --url): starts dev server on localhost:3000, runs checks, stops server
+// With --url: skips dev server lifecycle, checks the provided URL
+// With --no-server: skips dev server lifecycle, checks localhost (assumes already running)
 
 import { config } from "dotenv";
 import { dirname, resolve, join } from "path";
 import { existsSync, readdirSync, readFileSync } from "fs";
 import { fileURLToPath } from "url";
+import { spawn, execSync, type ChildProcess } from "child_process";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const envPath = resolve(__dirname, "../.env.local");
@@ -21,8 +26,10 @@ const urlFlag = process.argv
 	.join("=");
 const outputJson = process.argv.some((a) => a === "--json");
 const verbose = process.argv.some((a) => a === "--verbose");
+const noServer = process.argv.some((a) => a === "--no-server");
 
 const targetUrl = (urlFlag || "http://localhost:3000").replace(/\/$/, "");
+const needsDevServer = !urlFlag && !noServer && targetUrl === "http://localhost:3000";
 const log = outputJson ? console.error : console.log;
 
 // ANSI colors
@@ -506,6 +513,118 @@ async function checkMigrationSync(): Promise<CheckResult> {
 	}
 }
 
+// ── Dev server lifecycle ──
+
+let devServerProcess: ChildProcess | null = null;
+
+async function startDevServer(): Promise<CheckResult> {
+	const start = Date.now();
+	try {
+		const projectRoot = resolve(__dirname, "..");
+		devServerProcess = spawn("npm", ["run", "dev"], {
+			cwd: projectRoot,
+			stdio: "ignore",
+			shell: true,
+		});
+
+		let spawnError: string | null = null;
+		devServerProcess.on("error", (err) => { spawnError = err.message; });
+
+		// Give spawn a moment to initialize
+		await new Promise((r) => setTimeout(r, 2000));
+
+		if (spawnError) {
+			return { name: "Dev server started", status: "fail", message: spawnError, ms: Date.now() - start };
+		}
+
+		// Wait for server to be ready (poll up to 30s)
+		const maxWait = 30000;
+		const pollInterval = 500;
+		let elapsed = 0;
+		while (elapsed < maxWait) {
+			await new Promise((r) => setTimeout(r, pollInterval));
+			elapsed += pollInterval;
+			try {
+				const res = await fetch(targetUrl, { signal: AbortSignal.timeout(2000) });
+				if (res.ok || res.status < 500) {
+					const ms = Date.now() - start;
+					return { name: "Dev server started", status: "pass", message: `Ready in ${ms}ms`, ms };
+				}
+			} catch {
+				// Not ready yet
+			}
+		}
+		return { name: "Dev server started", status: "fail", message: `Timed out after ${maxWait}ms`, ms: Date.now() - start };
+	} catch (err) {
+		return { name: "Dev server started", status: "fail", message: err instanceof Error ? err.message : String(err), ms: Date.now() - start };
+	}
+}
+
+function stopDevServer(): void {
+	if (!devServerProcess) return;
+	try {
+		if (process.platform === "win32" && devServerProcess.pid) {
+			// On Windows, shell: true creates a cmd.exe wrapper — kill the whole tree
+			try {
+				execSync(`taskkill /pid ${devServerProcess.pid} /T /F 2>nul`, { stdio: "ignore" });
+			} catch {
+				// Also try killing by port in case pid-based kill missed child processes
+				try {
+					const portPid = execSync('netstat -ano | findstr ":3000.*LISTENING"', { encoding: "utf-8" }).trim();
+					const pidMatch = portPid.match(/\s+(\d+)\s*$/m);
+					if (pidMatch) execSync(`taskkill /pid ${pidMatch[1]} /T /F 2>nul`, { stdio: "ignore" });
+				} catch { /* no process on port */ }
+			}
+		} else {
+			devServerProcess.kill("SIGTERM");
+		}
+	} catch {
+		// Process may have already exited
+	}
+	devServerProcess = null;
+}
+
+// ── Unit tests ──
+
+function stripAnsi(s: string): string {
+	return s.replace(/\x1b\[[0-9;]*m/g, "");
+}
+
+async function checkUnitTests(): Promise<CheckResult> {
+	const start = Date.now();
+	try {
+		const projectRoot = resolve(__dirname, "..");
+		// Strip NEXT_PUBLIC_ACTIVE_SECTIONS so tests see all 6 sections
+		const testEnv = { ...process.env };
+		delete testEnv.NEXT_PUBLIC_ACTIVE_SECTIONS;
+		const raw = execSync("npx vitest run", {
+			cwd: projectRoot,
+			encoding: "utf-8",
+			timeout: 60000,
+			shell: true,
+			env: testEnv,
+		});
+		const ms = Date.now() - start;
+		const output = stripAnsi(raw);
+		const testsLine = output.match(/Tests\s+(\d+) passed\s+\((\d+)\)/);
+		const filesLine = output.match(/Test Files\s+(\d+) passed\s+\((\d+)\)/);
+		const passCount = testsLine ? testsLine[1] : "all";
+		const fileCount = filesLine ? filesLine[1] : "?";
+		return { name: `Unit tests: ${passCount} passed (${fileCount} files)`, status: "pass", message: "All tests passed", ms };
+	} catch (err) {
+		const ms = Date.now() - start;
+		const rawStdout = err instanceof Error && "stdout" in err ? String((err as { stdout: string }).stdout) : "";
+		const rawStderr = err instanceof Error && "stderr" in err ? String((err as { stderr: string }).stderr) : "";
+		const output = stripAnsi(rawStdout + rawStderr);
+		const failMatch = output.match(/(\d+) failed/);
+		const passMatch = output.match(/Tests\s+(\d+) passed/);
+		if (failMatch) {
+			return { name: `Unit tests: ${failMatch[1]} failed, ${passMatch?.[1] || "?"} passed`, status: "fail", message: `${failMatch[1]} tests failed`, ms };
+		}
+		return { name: "Unit tests", status: "fail", message: "Tests failed", ms };
+	}
+}
+
 // ── Main ──
 
 async function main() {
@@ -515,8 +634,29 @@ async function main() {
 	vlog("========================");
 	vlog(`Target: ${targetUrl}\n`);
 
+	const preflightResults: CheckResult[] = [];
+
+	// Run unit tests and build check first (before dev server)
+	vlog(bold("Preflight Checks"));
+	const testResult = await checkUnitTests();
+	preflightResults.push(testResult);
+	vlog(formatResult(testResult));
+
+	// Start dev server if needed
+	if (needsDevServer) {
+		vlog(`\n${bold("Dev Server")}`);
+		const serverResult = await startDevServer();
+		preflightResults.push(serverResult);
+		vlog(formatResult(serverResult));
+		if (serverResult.status === "fail") {
+			log(red("Dev server failed to start — skipping route checks"));
+			stopDevServer();
+			process.exit(1);
+		}
+	}
+
 	// Remote checks
-	vlog(bold("Remote Checks"));
+	vlog(`\n${bold("Remote Checks")}`);
 	const remoteResults: CheckResult[] = [];
 
 	const [homepage, health] = await Promise.all([checkHomepage(), checkHealthEndpoint()]);
@@ -563,8 +703,14 @@ async function main() {
 		vlog(formatResult(r));
 	}
 
+	// Stop dev server
+	if (needsDevServer) {
+		stopDevServer();
+		vlog(`\nDev server stopped`);
+	}
+
 	// Summary
-	const all = [...remoteResults, ...directResults];
+	const all = [...preflightResults, ...remoteResults, ...directResults];
 	const passed = all.filter((r) => r.status === "pass").length;
 	const failed = all.filter((r) => r.status === "fail").length;
 	const warned = all.filter((r) => r.status === "warn").length;
@@ -586,6 +732,8 @@ async function main() {
 
 	// Short display labels for grid — keyed by prefix match on check name
 	const SHORT_LABELS: [RegExp, string][] = [
+		[/^Unit tests/, "Unit Tests"],
+		[/^Dev server/, "Dev Server"],
 		[/^Homepage/, "Homepage"],
 		[/^Health endpoint/, "Health API"],
 		[/checkout/i, "Checkout"],
@@ -676,7 +824,13 @@ async function main() {
 	process.exit(failed > 0 ? 1 : 0);
 }
 
+// Ensure dev server is cleaned up on unexpected exit
+process.on("SIGINT", () => { stopDevServer(); process.exit(130); });
+process.on("SIGTERM", () => { stopDevServer(); process.exit(143); });
+process.on("uncaughtException", (err) => { stopDevServer(); console.error(err); process.exit(1); });
+
 main().catch((err) => {
+	stopDevServer();
 	console.error("Fatal error:", err);
 	process.exit(1);
 });

@@ -50,11 +50,11 @@ describe("getSection", () => {
 
 describe("getLesson", () => {
 	it("returns section and lesson by slugs", () => {
-		const result = getLesson("far", "01-intro");
+		const result = getLesson("far", "01-financial-reporting-for-profit");
 		expect(result).toBeDefined();
 		expect(result?.section.code).toBe("far");
 		expect(result?.lesson.title).toBe(
-			"Introduction to Financial Accounting and Reporting",
+			"Financial Reporting: For-Profit Entities",
 		);
 	});
 
