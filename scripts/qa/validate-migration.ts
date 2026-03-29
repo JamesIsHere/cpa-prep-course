@@ -1,8 +1,9 @@
 // Pre-migration validator — checks question INSERTs and UPDATEs against the style guide rubric
 // Usage: npm run validate-migration supabase/migrations/00040_upgrade_aud_questions.sql
 
-import { readFileSync } from "fs";
-import { resolve } from "path";
+import { readFileSync, writeFileSync, existsSync } from "fs";
+import { dirname, resolve } from "path";
+import { fileURLToPath } from "url";
 import { questionCounts } from "../../src/lib/blueprint";
 
 const validTopics = new Set(Object.keys(questionCounts));
@@ -488,6 +489,85 @@ if (distributions.length >= 10) {
 				severity: "error",
 				message: `Mechanical answer distribution in topic "${topic}": pattern ${pattern} repeats ${repeats + 1} times`,
 			});
+		}
+	}
+}
+
+// ============================================================
+// Stale verified-ids.json detection
+// ============================================================
+// Extract all question IDs touched by UPDATE/DELETE in this migration
+// and warn if any are still sitting in fail/review lists.
+const touchedIds = new Set<number>();
+
+const updateIdPattern =
+	/UPDATE\s+questions\s+SET[\s\S]*?WHERE\s+id\s*=\s*(\d+)\s*;/gi;
+let uidMatch: RegExpExecArray | null;
+while ((uidMatch = updateIdPattern.exec(fullSql)) !== null) {
+	touchedIds.add(parseInt(uidMatch[1]));
+}
+
+const deleteIdPattern =
+	/DELETE\s+FROM\s+questions\s+WHERE\s+id\s*=\s*(\d+)\s*;/gi;
+while ((uidMatch = deleteIdPattern.exec(fullSql)) !== null) {
+	touchedIds.add(parseInt(uidMatch[1]));
+}
+
+const deleteInIdPattern =
+	/DELETE\s+FROM\s+questions\s+WHERE\s+id\s+IN\s*\(([^)]+)\)\s*;/gi;
+while ((uidMatch = deleteInIdPattern.exec(fullSql)) !== null) {
+	for (const n of uidMatch[1].split(",")) {
+		const id = parseInt(n.trim());
+		if (!isNaN(id)) touchedIds.add(id);
+	}
+}
+
+if (touchedIds.size > 0) {
+	const __dirname2 = dirname(fileURLToPath(import.meta.url));
+	const verifiedPath = resolve(__dirname2, "../../docs/verified-ids.json");
+	if (existsSync(verifiedPath)) {
+		try {
+			const verifiedData = JSON.parse(readFileSync(verifiedPath, "utf-8"));
+			const staleIds: { id: number; section: string; list: string }[] = [];
+
+			for (const [section, lists] of Object.entries(verifiedData) as [
+				string,
+				{ fail: number[]; review: number[] },
+			][]) {
+				for (const id of lists.fail ?? []) {
+					if (touchedIds.has(id))
+						staleIds.push({ id, section, list: "fail" });
+				}
+				for (const id of lists.review ?? []) {
+					if (touchedIds.has(id))
+						staleIds.push({ id, section, list: "review" });
+				}
+			}
+
+			if (staleIds.length > 0) {
+				// Auto-clean: remove fixed IDs from fail/review arrays
+				for (const { id, section, list } of staleIds) {
+					const arr = verifiedData[section][list] as number[];
+					const idx = arr.indexOf(id);
+					if (idx !== -1) arr.splice(idx, 1);
+				}
+				writeFileSync(
+					verifiedPath,
+					JSON.stringify(verifiedData, null, 2) + "\n",
+				);
+
+				const idList = staleIds
+					.map((s) => `Q${s.id} (${s.section}.${s.list})`)
+					.join(", ");
+				console.log(
+					`\n  Auto-cleaned ${staleIds.length} fixed IDs from verified-ids.json: ${idList}`,
+				);
+				console.log(
+					`  Remember to include docs/verified-ids.json in your commit.`,
+				);
+			}
+		} catch {
+			// Non-fatal — skip if verified-ids.json is malformed
 		}
 	}
 }

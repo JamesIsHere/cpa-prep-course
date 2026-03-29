@@ -805,11 +805,13 @@ $questionBlock
 
 STEPS:
 1. Verify each question, write your reasoning for each
-2. Output a JSON result block with per-question verdicts
-3. Update verified-ids.json at $vf — add each question ID to the appropriate verdict array under "$Section"
-4. Update tracker at ${tf}
-   - Update the $su row (increment Verified, update Pass/Fail/Review counts)
-   - Add a row to the Batch Log with date, batch $BatchNum, section $su, question count, pass/fail/review counts, and note
+2. Output a VERDICTS JSON block with per-question results (the orchestrator will update verified-ids.json):
+
+VERDICTS_JSON:
+[{"id":123,"verdict":"pass"},{"id":456,"verdict":"fail"},{"id":789,"verdict":"review"}]
+END_VERDICTS
+
+3. Do NOT attempt to write files — you are running headless.
 
 When finished, output this EXACT line as your final message:
 ORCHESTRATOR_RESULT:{"status":"ok","questions":$batchCount,"pass":P,"fail":F,"review":R,"file":"batch${BatchNum}"}
@@ -973,6 +975,49 @@ for ($i = 0; $i -lt $Batches; $i++) {
     if ($claudeResult.status -eq 'error') {
         Write-Step 'Claude' "reported error: $($claudeResult.message)" 'Red'
         $stopped = $true; break
+    }
+
+    # ── 4.5. Parse verdicts and sync verified-ids.json (verify mode) ──
+    if ($Mode -eq 'verify') {
+        $verifiedIdsFile = Join-Path (Join-Path $RepoRoot 'docs') 'verified-ids.json'
+        $verdictMatch = [regex]::Match($claudeOutput, '(?s)VERDICTS_JSON:\s*(\[.*?\])\s*END_VERDICTS')
+        if ($verdictMatch.Success) {
+            try {
+                $verdicts = $verdictMatch.Groups[1].Value | ConvertFrom-Json
+                $vData = Get-Content $verifiedIdsFile -Raw | ConvertFrom-Json
+                $added = 0
+                foreach ($v in $verdicts) {
+                    $vid = [int]$v.id
+                    $vList = $v.verdict  # pass, fail, or review
+                    $secData = $vData.$Section
+                    if ($secData -and $vList -in @('pass','fail','review')) {
+                        $arr = @($secData.$vList)
+                        if ($vid -notin $arr) {
+                            $arr += $vid
+                            $secData.$vList = $arr
+                            $added++
+                        }
+                    }
+                }
+                $vData | ConvertTo-Json -Depth 5 | Set-Content $verifiedIdsFile -NoNewline
+                # Append newline
+                Add-Content $verifiedIdsFile ''
+                Write-Step 'Verdicts' "$added IDs synced to verified-ids.json"
+            } catch {
+                Write-Step 'Verdicts' "JSON parse error — manual sync needed" 'Yellow'
+            }
+        } else {
+            Write-Step 'Verdicts' 'no VERDICTS_JSON block found — manual sync needed' 'Yellow'
+        }
+
+        # Update tracker file
+        $trackerContent = Get-Content $TrackerFile -Raw
+        $dateStr = (Get-Date).ToString('yyyy-MM-dd')
+        $p = if ($claudeResult.pass) { $claudeResult.pass } else { 0 }
+        $f = if ($claudeResult.fail) { $claudeResult.fail } else { 0 }
+        $r = if ($claudeResult.review) { $claudeResult.review } else { 0 }
+        # The tracker update is best-effort; Claude may have already updated it
+        Write-Step 'Tracker' "P:$p F:$f R:$r"
     }
 
     # ── 5. Validate (double-check even if Claude said ok) ──────

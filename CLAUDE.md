@@ -31,6 +31,8 @@ npm run qa -- --output=json  # QA audit with JSON output (for scripting)
 npm run sync-counts          # Sync questionCounts from live DB → blueprint.ts + tests
 npm run validate-migration <file>  # Validate question migration against style guide
 npm run generate-migration   # Generate UPDATE scaffold from piped candidate JSON
+npm run cleanup-ids <file>   # Remove fixed IDs from verified-ids.json (auto-detect from migration)
+npm run cleanup-ids -- --ids=444,2047 --section=far  # Remove specific IDs
 npm run verify -- --section=bar --limit=50   # Substantive correctness verification
 npm run verify -- --migration=path/to/file.sql  # Verify migration before commit
 npm run verify -- --ids=1234,1235 --brief    # Verify specific IDs (compact output)
@@ -152,6 +154,7 @@ Each batch gets its own headless `claude --print` invocation with a fresh contex
 | `scripts/qa/sync-question-counts.ts`          | Sync DB topic counts → blueprint.ts + test assertions      |
 | `scripts/qa/utils.ts`                         | Shared utilities (migration numbering, file lock, trigrams) |
 | `scripts/qa/validate-migration.ts`            | Pre-commit migration validator (INSERT + UPDATE + explanation-only) |
+| `scripts/qa/cleanup-verified-ids.ts`          | Remove fixed/deleted IDs from verified-ids.json fail/review lists  |
 | `scripts/qa/verify-correctness.ts`            | Substantive correctness verifier (Claude-as-reviewer)              |
 | `scripts/qa/select-verify-candidates.ts`      | Risk-prioritized candidate selector for verification               |
 | `scripts/qa/generate-fix-scaffold.ts`         | UPDATE scaffold generator for failed verifications                 |

@@ -16,7 +16,8 @@
     "generate-migration": "tsx scripts/qa/generate-migration.ts",
     "health": "tsx scripts/health-check.ts",
     "sync-counts": "tsx scripts/qa/sync-question-counts.ts && tsx scripts/qa/plan-distribution.ts",
-    "verify": "tsx scripts/qa/verify-correctness.ts"
+    "verify": "tsx scripts/qa/verify-correctness.ts",
+    "cleanup-ids": "tsx scripts/qa/cleanup-verified-ids.ts"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
