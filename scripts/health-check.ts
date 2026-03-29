@@ -115,6 +115,8 @@ interface RouteCheck {
 	path: string;
 	body?: string;
 	contentType?: string;
+	/** Skip when running against local dev server (Turbopack limitations) */
+	skipLocal?: boolean;
 }
 
 const ROUTE_CHECKS: RouteCheck[] = [
@@ -127,11 +129,14 @@ const ROUTE_CHECKS: RouteCheck[] = [
 	{ method: "POST", path: "/api/exams/999999/submit", body: "{}", contentType: "application/json" },
 	{ method: "POST", path: "/api/feedback", body: "{}", contentType: "application/json" },
 	{ method: "POST", path: "/api/webhooks/stripe", body: "", contentType: "application/json" },
-	{ method: "GET", path: "/api/study-frameworks/aud" },
+	{ method: "GET", path: "/api/study-frameworks/aud", skipLocal: true },
 ];
 
 async function checkRoute(route: RouteCheck): Promise<CheckResult> {
 	const name = `${route.method} ${route.path}`;
+	if (route.skipLocal && needsDevServer) {
+		return { name: `study-frameworks (prod only)`, status: "skip", message: "Turbopack limitation", ms: 0 };
+	}
 	const init: RequestInit = { method: route.method };
 	if (route.body !== undefined) {
 		init.body = route.body;
