@@ -115,7 +115,7 @@ export const questionCounts: Record<string, number> = {
 	"S Corporations": 82,
 	"Tax Procedures": 45,
 	"Tax-Exempt Organizations": 77,
-	// BAR (1,585 total — synced with live DB 2026-03-29)
+	// BAR (1,584 total — synced with live DB 2026-03-29)
 	"Advanced Consolidations": 49,
 	"Advanced Lease Transactions": 55,
 	"Advanced Revenue and Intangibles": 47,
@@ -131,7 +131,7 @@ export const questionCounts: Record<string, number> = {
 	"Interfund Transactions": 68,
 	"Internal-Use Software and Cloud Computing": 39,
 	"Pension and Postretirement Benefits": 144,
-	"Prospective Analysis and Forecasting": 134,
+	"Prospective Analysis and Forecasting": 133,
 	"Risk Management and Economics": 130,
 	"State and Local Government Reporting": 75,
 	"Stock Compensation and Business Combinations": 52,
@@ -177,7 +177,7 @@ export const sectionQuestionTotals: Record<string, number> = {
 	aud: 1398,
 	far: 1570,
 	reg: 1469,
-	bar: 1585,
+	bar: 1584,
 	isc: 1462,
 	tcp: 1439,
 };

@@ -129,7 +129,7 @@ describe("question counts", () => {
 		expect(sectionQuestionTotals.aud).toBe(1398);
 		expect(sectionQuestionTotals.far).toBe(1570);
 		expect(sectionQuestionTotals.reg).toBe(1469);
-		expect(sectionQuestionTotals.bar).toBe(1585);
+		expect(sectionQuestionTotals.bar).toBe(1584);
 		expect(sectionQuestionTotals.isc).toBe(1462);
 		expect(sectionQuestionTotals.tcp).toBe(1439);
 	});

@@ -8,7 +8,7 @@ Per-section target: 1,500 questions. Distributed by AICPA Blueprint area weights
 
 **Batch size:** 30 questions per generation batch.
 
-**To generate:** 518 new questions (~71 batches).
+**To generate:** 519 new questions (~72 batches).
 
 **To trim:** 441 questions to delete (keep best, cut weakest).
 
@@ -28,7 +28,7 @@ For each section:
 | AUD     | 1,398 | 1,500 |       0 |         102 |          14 | Generate Needed |
 | FAR     | 1,570 | 1,500 |     268 |         198 |          19 | Trim + Generate |
 | REG     | 1,469 | 1,500 |       0 |          31 |          10 | Generate Needed |
-| BAR     | 1,585 | 1,500 |     173 |          88 |          13 | Trim + Generate |
+| BAR     | 1,584 | 1,500 |     173 |          89 |          14 | Trim + Generate |
 | ISC     | 1,462 | 1,500 |       0 |          38 |           6 | Generate Needed |
 | TCP     | 1,439 | 1,500 |       0 |          61 |           9 | Generate Needed |
 
@@ -133,7 +133,7 @@ For each section:
 | 1 | Capital Structure and Valuation | 122 | 134 |  | +12 |
 | 1 | Financial Statement Analysis | 189 | 134 | -55 |  |
 | 1 | Financial Valuation Methods | 163 | 134 | -29 |  |
-| 1 | Prospective Analysis and Forecasting | 134 | 134 |  |  |
+| 1 | Prospective Analysis and Forecasting | 133 | 134 |  | +1 |
 | 1 | Risk Management and Economics | 130 | 134 |  | +4 |
 | 2 | Advanced Consolidations | 49 | 55 |  | +6 |
 | 2 | Advanced Lease Transactions | 55 | 55 |  |  |
