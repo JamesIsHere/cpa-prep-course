@@ -3,7 +3,7 @@
 -- Purpose: Expand 50 short stems with scenario context for FAR section
 -- Affected topics: Accounting Changes and Error Corrections, Consolidations, Contingencies, Debt, Fair Value, Financial Reporting: For-Profit, Financial Statement Ratios, Income Taxes, Intangible Assets, Inventory, Investments, Leases, Not-for-Profit Accounting, Payables and Accrued Liabilities, Property, Plant and Equipment, Revenue Recognition, Special Purpose Frameworks, State and Local Government, Statement of Cash Flows, Subsequent Events
 
-BEGIN;
+
 
 -- ============================================================
 -- ACCOUNTING CHANGES AND ERROR CORRECTIONS (2 questions)
@@ -385,4 +385,4 @@ UPDATE questions SET
   stem = $EXPL$Belmont Corp., an SEC registrant, has a December 31, 2025, year-end. The financial statements were completed on February 20 and filed with the SEC on February 28. Through what date must an SEC-filing entity evaluate subsequent events?$EXPL$
 WHERE id = 15141;
 
-COMMIT;
+

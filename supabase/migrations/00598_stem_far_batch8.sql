@@ -3,7 +3,7 @@
 -- Purpose: Expand 31 short stems with scenario context for FAR section
 -- Affected topics: Accounting Changes and Error Corrections, Cash and Cash Equivalents, Consolidations, Contingencies, Debt, Fair Value, Financial Statement Ratios, Income Taxes, Intangible Assets, Inventory, Investments, Leases, Not-for-Profit Accounting, Payables and Accrued Liabilities, Property, Plant and Equipment, Revenue Recognition, Special Purpose Frameworks, State and Local Government, Statement of Cash Flows, Subsequent Events, Trade Receivables
 
-BEGIN;
+
 
 -- ============================================================
 -- ACCOUNTING CHANGES AND ERROR CORRECTIONS (2 questions)
@@ -275,4 +275,4 @@ UPDATE questions SET
   stem = $EXPL$Harbor Freight Distributors is implementing ASC 326 and selecting a methodology for its allowance for credit losses on trade receivables. The CFO asks the accounting team to evaluate several estimation approaches. Which of the following is NOT a permitted methodology under the CECL model?$EXPL$
 WHERE id = 1103;
 
-COMMIT;
+

@@ -3,7 +3,7 @@
 -- Purpose: Expand 50 short stems with scenario context for FAR section
 -- Affected topics: Accounting Changes and Error Corrections, Cash and Cash Equivalents, Consolidations, Contingencies, Debt, Fair Value, Financial Reporting: For-Profit, Financial Statement Ratios, Income Taxes, Intangible Assets, Inventory, Investments, Leases, Not-for-Profit Accounting, Payables and Accrued Liabilities, Property, Plant and Equipment, Revenue Recognition, Special Purpose Frameworks, State and Local Government, Statement of Cash Flows, Subsequent Events, Trade Receivables
 
-BEGIN;
+
 
 -- ============================================================
 -- ACCOUNTING CHANGES AND ERROR CORRECTIONS (2 questions)
@@ -393,4 +393,4 @@ UPDATE questions SET
   stem = $EXPL$In March 2025, Belmont Distributors receives a $15,000 payment from a customer whose account had been written off as uncollectible in the prior year. Under the CECL model, how should Belmont account for this recovery?$EXPL$
 WHERE id = 2269;
 
-COMMIT;
+

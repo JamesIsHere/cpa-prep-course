@@ -3,7 +3,7 @@
 -- Purpose: Expand 50 short stems with scenario context for FAR section
 -- Affected topics: Accounting Changes and Error Corrections, Cash and Cash Equivalents, Consolidations, Contingencies, Debt, Fair Value, Financial Reporting: For-Profit, Financial Statement Ratios, Income Taxes, Intangible Assets, Inventory, Investments, Leases, Not-for-Profit Accounting, Payables and Accrued Liabilities, Property, Plant and Equipment, Revenue Recognition, Special Purpose Frameworks, State and Local Government, Statement of Cash Flows, Subsequent Events, Trade Receivables
 
-BEGIN;
+
 
 -- ============================================================
 -- ACCOUNTING CHANGES AND ERROR CORRECTIONS (2 questions)
@@ -393,4 +393,4 @@ UPDATE questions SET
   stem = $EXPL$Midland Distributors sells $400,000 of accounts receivable to Capital Finance Corp. without recourse, receiving $380,000 in cash. Capital Finance assumes all credit risk on the transferred receivables. This transaction is accounted for as:$EXPL$
 WHERE id = 2251;
 
-COMMIT;
+

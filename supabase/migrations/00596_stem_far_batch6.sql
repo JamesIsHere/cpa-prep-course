@@ -3,7 +3,7 @@
 -- Purpose: Expand 50 short stems with scenario context for FAR section
 -- Affected topics: Accounting Changes and Error Corrections, Consolidations, Contingencies, Debt, Fair Value, Financial Reporting: For-Profit, Financial Statement Ratios, Income Taxes, Intangible Assets, Investments, Not-for-Profit Accounting, Payables and Accrued Liabilities, Property, Plant and Equipment, Revenue Recognition, Special Purpose Frameworks, State and Local Government, Statement of Cash Flows, Trade Receivables
 
-BEGIN;
+
 
 -- ============================================================
 -- ACCOUNTING CHANGES AND ERROR CORRECTIONS (3 questions)
@@ -377,4 +377,4 @@ UPDATE questions SET
   stem = $EXPL$Langford Supply offers a 20% trade discount off its catalog price to wholesale customers. A distributor places an order for items listed at $50,000. How is this trade discount handled in Langford''s accounting records?$EXPL$
 WHERE id = 11970;
 
-COMMIT;
+

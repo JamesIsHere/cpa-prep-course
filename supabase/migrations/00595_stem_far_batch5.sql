@@ -3,7 +3,7 @@
 -- Purpose: Expand 50 short stems with scenario context for FAR section
 -- Affected topics: Accounting Changes and Error Corrections, Cash and Cash Equivalents, Consolidations, Contingencies, Debt, Equity, Fair Value, Financial Reporting: For-Profit, Financial Statement Ratios, Income Taxes, Intangible Assets, Inventory, Investments, Leases, Not-for-Profit Accounting, Payables and Accrued Liabilities, Property, Plant and Equipment, Public Company Reporting, Revenue Recognition, Special Purpose Frameworks, State and Local Government, Statement of Cash Flows, Subsequent Events, Trade Receivables
 
-BEGIN;
+
 
 -- ============================================================
 -- ACCOUNTING CHANGES AND ERROR CORRECTIONS (2 questions)
@@ -401,4 +401,4 @@ UPDATE questions SET
   stem = $EXPL$Whitfield Distributors ships $250,000 of product to a new customer on December 15, 2025, creating a trade receivable. The controller is implementing the CECL model under ASC 326. On the date this receivable is first recognized, what must Whitfield do?$EXPL$
 WHERE id = 2248;
 
-COMMIT;
+

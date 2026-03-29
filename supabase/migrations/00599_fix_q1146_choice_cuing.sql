@@ -2,7 +2,7 @@
 -- Date: 2026-03-29
 -- Purpose: Q1146 choice length cuing + difficulty mislabel; Q2127 difficulty mislabel (hard/L1 → easy/L1)
 
-BEGIN;
+
 
 UPDATE questions SET
   stem = $EXPL$Clearwater Corp. acquires a specialized manufacturing machine for $850,000 (entry price) in an arm''s-length transaction. On the same date, an identical machine could be sold in the principal market for $790,000 (exit price) due to installation costs, dealer margins, and market conditions. Under ASC 820, what amount should the controller report as fair value for disclosure purposes?$EXPL$,
@@ -28,4 +28,4 @@ UPDATE questions SET
   difficulty = 'medium'
 WHERE id = 1125;
 
-COMMIT;
+

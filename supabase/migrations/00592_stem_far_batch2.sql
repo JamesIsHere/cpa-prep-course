@@ -3,7 +3,7 @@
 -- Purpose: Expand 50 short stems with scenario context for FAR section
 -- Affected topics: Accounting Changes and Error Corrections, Cash and Cash Equivalents, Consolidations, Contingencies, Debt, Fair Value, Financial Reporting: For-Profit, Financial Statement Ratios, Income Taxes, Intangible Assets, Inventory, Investments, Leases, Not-for-Profit Accounting, Payables and Accrued Liabilities, Property, Plant and Equipment, Revenue Recognition, Special Purpose Frameworks, State and Local Government, Statement of Cash Flows, Subsequent Events, Trade Receivables
 
-BEGIN;
+
 
 -- ============================================================
 -- ACCOUNTING CHANGES AND ERROR CORRECTIONS (2 questions)
@@ -393,4 +393,4 @@ UPDATE questions SET
   stem = $EXPL$At December 31, 2025, Kensington Wholesale reports gross accounts receivable of $1.8 million and an estimated allowance for credit losses of $54,000. The controller is preparing the classified balance sheet. How is the allowance for credit losses classified on the balance sheet?$EXPL$
 WHERE id = 11998;
 
-COMMIT;
+
