@@ -18,7 +18,7 @@ param(
     [ValidateSet('aud','far','reg','bar','isc','tcp')]
     [string]$Section,
 
-    [ValidateSet('citation','difficulty','blooms','generate','moderate','verify','cleanup')]
+    [ValidateSet('citation','difficulty','blooms','generate','moderate','verify','cleanup','stem')]
     [string]$Mode = 'citation',
 
     [Parameter(Mandatory)]
@@ -61,6 +61,7 @@ $TrackerMap = @{
     'generate'  = Join-Path (Join-Path $RepoRoot 'docs') 'generation-progress.md'
     'verify'    = Join-Path (Join-Path $RepoRoot 'docs') 'verification-progress.md'
     'cleanup'   = Join-Path (Join-Path $RepoRoot 'docs') 'cleanup-progress.md'
+    'stem'      = Join-Path (Join-Path $RepoRoot 'docs') 'stem-expansion-progress.md'
 }
 $TrackerFile = $TrackerMap[$Mode]
 
@@ -73,6 +74,7 @@ $SelectorMap = @{
     'moderate'  = 'pull-moderate-candidates.ts'
     'verify'    = 'select-verify-candidates.ts'
     'cleanup'   = 'select-cleanup-candidates.ts'
+    'stem'      = 'select-stem-candidates.ts'
 }
 
 # Section citation patterns (passed to Claude in prompt)
@@ -94,6 +96,7 @@ $ModeLabel = switch ($Mode) {
     'moderate'  { 'Quality upgrade' }
     'verify'    { 'Correctness verification' }
     'cleanup'   { 'FAR cleanup' }
+    'stem'      { 'Stem expansion' }
 }
 
 # File pattern for detecting existing batches
@@ -105,6 +108,7 @@ $FilePattern = switch ($Mode) {
     'moderate'  { "*_upgrade_${Section}_batch*.sql" }
     'verify'    { "*_verify_fix_${Section}_batch*.sql" }
     'cleanup'   { "*_cleanup_${Section}_batch*.sql" }
+    'stem'      { "*_stem_${Section}_batch*.sql" }
 }
 
 # ═══════════════════════════════════════════════════════════════
@@ -817,6 +821,93 @@ When finished, output this EXACT line as your final message:
 ORCHESTRATOR_RESULT:{"status":"ok","questions":$batchCount,"pass":P,"fail":F,"review":R,"file":"batch${BatchNum}"}
 
 If unrecoverable error:
+ORCHESTRATOR_RESULT:{"status":"error","message":"brief description"}
+"@
+        }
+
+        'stem' {
+            $candidates = Get-Content $CandidateFile -Raw | ConvertFrom-Json
+            $batchCount = @($candidates).Count
+            $cit = $CitPatterns[$Section]
+
+            # Aggregate unique lesson slugs
+            $slugs = @()
+            foreach ($c in $candidates) {
+                if ($c.lessonSlugs) {
+                    foreach ($s in $c.lessonSlugs) {
+                        if ($slugs -notcontains $s) { $slugs += $s }
+                    }
+                }
+            }
+
+            # Load Lesson Content
+            $lessonContent = ""
+            foreach ($slug in $slugs) {
+                $lessonPath = Join-Path (Join-Path (Join-Path $RepoRoot 'src') 'content') $Section
+                $lessonFile = Join-Path $lessonPath "${slug}.mdx"
+                if (Test-Path $lessonFile) {
+                    $lessonContent += "`n--- LESSON: $slug ---`n"
+                    $lessonContent += Get-Content $lessonFile -Raw
+                }
+            }
+
+            return @"
+You are running headless as part of an automated batch pipeline. Execute autonomously — do not ask questions, do not create task lists, do not use TodoWrite.
+
+TASK: Stem expansion for $su section, batch $BatchNum ($batchCount questions).
+
+FILES:
+- Migration scaffold (fill every TODO): $sf
+- Original short-stem questions: $cf
+- Progress tracker to update: $tf
+
+SOURCE LESSON CONTENT (Use for accuracy and realistic scenario details):
+$lessonContent
+
+INSTRUCTIONS:
+
+You are expanding short, textbook-style question stems into CPA-exam-style mini case scenarios.
+
+CRITICAL RULE: You are ONLY rewriting the stem. Do NOT change the answer, choices, explanation, difficulty, cognitive_level, or correct_index. The UPDATE statement only touches the stem column.
+
+1. Read the scaffold and candidate JSON. Each question has a short stem (often a bare "What is X?" or "Which of the following..." question). The -- ORIGINAL STEM comment shows the current text.
+
+2. For EVERY TODO placeholder, write an expanded stem that:
+   a) Opens with a realistic 2-4 sentence business scenario: named entity (realistic company/person name), specific transaction or situation, relevant dates and dollar amounts where appropriate
+   b) Naturally leads to the SAME question being asked — the concept tested must not change
+   c) Targets 25-50 words total
+   d) Does NOT add irrelevant complexity that changes which answer is correct
+   e) Does NOT turn it into a simulation (TBS) — keep it multiple choice appropriate
+   f) Avoids boilerplate like "You are an auditor..." — put the candidate in the scenario implicitly
+
+EXAMPLES of good expansions:
+
+BEFORE: "What is the primary purpose of an engagement letter?"
+AFTER: "Harrison & Cole LLP has been approached by a new client, Apex Manufacturing, to perform an annual audit. Before beginning any fieldwork, the firm prepares a formal written agreement. What is the primary purpose of this document?"
+
+BEFORE: "Which inventory method results in the highest COGS during inflation?"
+AFTER: "During 2025, Meridian Hardware experienced steadily rising purchase costs for its lumber inventory. The controller is evaluating which cost flow assumption to adopt for financial reporting. Which method would result in the highest cost of goods sold?"
+
+BEFORE: "Under ASC 842, what is a right-of-use asset?"
+AFTER: "On January 1, 2025, Nova Logistics signs a five-year lease for warehouse space with annual payments of `$120,000. Under ASC 842, how should Nova recognize the asset arising from this lease arrangement?"
+
+3. SQL rules:
+   - Escape all single quotes as '' (two single quotes)
+   - CRITICAL: Use `$EXPL`$ dollar-quote delimiters for stem values (NOT `$`$ — content has dollar amounts)
+   - Each UPDATE should be: UPDATE questions SET stem = `$EXPL`$...`$EXPL`$ WHERE id = N;
+
+4. After filling ALL TODOs, validate:
+   npm run validate-migration $sf
+   Fix any errors and re-validate. Warnings are acceptable.
+
+5. Update tracker at ${tf}:
+   - Update the $su row in Section Progress (increment Batches Done, update Expanded count)
+   - Add a row to the Batch Log with: date, filename ($fn), section ($su), question count, avg word count of new stems, notes
+
+When finished, output this EXACT line as your final message:
+ORCHESTRATOR_RESULT:{"status":"ok","questions":$batchCount,"file":"$fn"}
+
+If you encounter an unrecoverable error, output:
 ORCHESTRATOR_RESULT:{"status":"error","message":"brief description"}
 "@
         }

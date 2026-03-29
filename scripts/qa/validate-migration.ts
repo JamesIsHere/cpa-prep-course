@@ -465,6 +465,62 @@ while ((match = updateExplanationOnlyPattern.exec(fullSql)) !== null) {
 }
 
 // ============================================================
+// Parse UPDATE statements (stem-only, for stem expansion)
+// ============================================================
+// Matches: UPDATE questions SET
+//   stem = '...'
+// WHERE id = N;
+const updateStemOnlyPattern =
+	/UPDATE\s+questions\s+SET\s+stem\s*=\s*'((?:[^']|'')*?)'\s*WHERE\s+id\s*=\s*(\d+)\s*;/g;
+
+while ((match = updateStemOnlyPattern.exec(fullSql)) !== null) {
+	// Skip if this was already matched by a full UPDATE pattern (has choices after stem)
+	const after = fullSql.slice(
+		match.index + match[0].length - 30,
+		match.index + match[0].length + 30,
+	);
+	if (/choices\s*=/i.test(after)) continue;
+	// Also skip if there's a comma after the stem value (means more SET columns follow)
+	const stemEnd = fullSql.slice(
+		match.index,
+		match.index + match[0].length,
+	);
+	// Our pattern already anchors to WHERE, so no false positives from full UPDATEs
+
+	questionCount++;
+	const [, stem, idStr] = match;
+	const id = parseInt(idStr);
+	const stemClean = stem.replace(/''/g, "'");
+	const charsBefore = fullSql.slice(0, match.index);
+	const approxLine = (charsBefore.match(/ {50}/g) ?? []).length + 1;
+
+	// TODO detection
+	if (/\bTODO\b/.test(stemClean)) {
+		issues.push({
+			line: approxLine,
+			severity: "error",
+			message: `Stem contains TODO placeholder: "${stemClean.slice(0, 60)}..."`,
+		});
+	}
+
+	// Stem word count floor for rewrites (must actually add substance)
+	const stemWords = countWords(stemClean);
+	if (stemWords < 20) {
+		issues.push({
+			line: approxLine,
+			severity: "error",
+			message: `Stem too short after rewrite (${stemWords} words, minimum 20): Q${id}`,
+		});
+	} else if (stemWords < 25) {
+		issues.push({
+			line: approxLine,
+			severity: "warn",
+			message: `Stem borderline short after rewrite (${stemWords} words, target 25+): Q${id}`,
+		});
+	}
+}
+
+// ============================================================
 // Check answer distribution (mechanical 5x0, 5x1 pattern)
 // ============================================================
 if (distributions.length >= 10) {

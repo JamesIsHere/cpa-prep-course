@@ -2,6 +2,7 @@
 // Usage (blooms):     ... | npx tsx scripts/qa/generate-migration.ts --mode=blooms --target=l1 --section=bar --batch=1
 // Usage (difficulty): ... | npx tsx scripts/qa/generate-migration.ts --mode=difficulty --section=isc --batch=1
 // Usage (citation):   ... | npx tsx scripts/qa/generate-migration.ts --mode=citation --section=aud --batch=1
+// Usage (stem):       ... | npx tsx scripts/qa/generate-migration.ts --mode=stem --section=aud --batch=1
 
 import { writeFileSync } from "fs";
 import { resolve } from "path";
@@ -16,7 +17,7 @@ const migrationsDir = getMigrationsDir();
 // Parse CLI args
 const modeArg = (process.argv
 	.find((a) => a.startsWith("--mode="))
-	?.split("=")[1] || "blooms") as "blooms" | "difficulty" | "citation";
+	?.split("=")[1] || "blooms") as "blooms" | "difficulty" | "citation" | "stem";
 const targetArg = process.argv
 	.find((a) => a.startsWith("--target="))
 	?.split("=")[1] as "l1" | "l3" | "l4" | undefined;
@@ -35,7 +36,7 @@ if (modeArg === "blooms" && (!targetArg || !sectionArg || !batchArg)) {
 	process.exit(1);
 }
 if (
-	(modeArg === "difficulty" || modeArg === "citation") &&
+	(modeArg === "difficulty" || modeArg === "citation" || modeArg === "stem") &&
 	(!sectionArg || !batchArg)
 ) {
 	console.error(
@@ -61,6 +62,10 @@ if (modeArg === "blooms") {
 		console.error(`Invalid target: ${targetArg}. Must be l1, l3, or l4.`);
 		process.exit(1);
 	}
+}
+
+function countWords(text: string): number {
+	return text.trim().split(/\s+/).filter(Boolean).length;
 }
 
 interface Candidate {
@@ -104,7 +109,15 @@ async function main() {
 	let fileName: string;
 	let headerLines: string[];
 
-	if (modeArg === "difficulty") {
+	if (modeArg === "stem") {
+		fileName = `${migNum}_stem_${sectionArg}_batch${batchArg}.sql`;
+		headerLines = [
+			`-- Migration: Stem expansion — ${sectionUpper} batch ${batchArg} (${candidates.length} questions)`,
+			`-- Date: ${date}`,
+			`-- Purpose: Expand ${candidates.length} short stems with scenario context for ${sectionUpper} section`,
+			`-- Affected topics: ${topicList}`,
+		];
+	} else if (modeArg === "difficulty") {
 		fileName = `${migNum}_difficulty_${sectionArg}_batch${batchArg}.sql`;
 		headerLines = [
 			`-- Migration: Difficulty rebalancing — ${sectionUpper} batch ${batchArg} (${candidates.length} questions)`,
@@ -146,7 +159,16 @@ async function main() {
 		);
 
 		for (const q of items) {
-			if (modeArg === "citation") {
+			if (modeArg === "stem") {
+				lines.push("");
+				lines.push(`-- ID ${q.id}: ${q.topic} (${countWords(q.stem)} words)`);
+				lines.push(`-- ORIGINAL STEM: ${q.stem}`);
+				lines.push("UPDATE questions SET");
+				lines.push(
+					`  stem = 'TODO: expand stem with 2-4 sentence business scenario (target 25-50 words)'`,
+				);
+				lines.push(`WHERE id = ${q.id};`);
+			} else if (modeArg === "citation") {
 				lines.push("");
 				lines.push(`-- ID ${q.id}: ${q.topic}`);
 				lines.push("UPDATE questions SET");
@@ -201,7 +223,9 @@ async function main() {
 	console.error(
 		`  ${candidates.length} question scaffolds across ${byTopic.size} topics`,
 	);
-	if (modeArg === "difficulty") {
+	if (modeArg === "stem") {
+		console.error(`  Mode: stem-only expansion (scenario context)`);
+	} else if (modeArg === "difficulty") {
 		console.error(`  Target: medium (difficulty='medium', cognitive_level=2)`);
 	} else if (modeArg === "citation") {
 		console.error(`  Mode: explanation-only citation backfill`);
