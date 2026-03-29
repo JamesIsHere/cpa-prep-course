@@ -1,5 +1,6 @@
 // Sync questionCounts and sectionQuestionTotals in src/lib/blueprint.ts
-// with live DB data. Also updates test assertions in tests/unit/blueprint.test.ts.
+// with live DB data. Also updates test assertions in tests/unit/blueprint.test.ts
+// and question counts in CLAUDE.md (Content Summary table + totals).
 //
 // Usage: npm run sync-counts
 
@@ -12,6 +13,7 @@ import { cpaBlueprint } from "../../src/lib/blueprint";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const blueprintPath = resolve(__dirname, "../../src/lib/blueprint.ts");
 const testPath = resolve(__dirname, "../../tests/unit/blueprint.test.ts");
+const claudeMdPath = resolve(__dirname, "../../CLAUDE.md");
 
 interface TopicRow {
 	topic: string;
@@ -231,8 +233,54 @@ async function main() {
 		console.log("Updated tests/unit/blueprint.test.ts");
 	}
 
-	// Summary
+	// Update CLAUDE.md — Content Summary table + totals line + generation line
+	const today = new Date().toISOString().slice(0, 10);
 	const totalQuestions = Object.values(sectionTotals).reduce((a, b) => a + b, 0);
+	let claudeMd = readFileSync(claudeMdPath, "utf-8");
+	let claudeUpdated = false;
+
+	// Update per-section question counts in the Content Summary table
+	// Each row looks like: | AUD     | aud  | 13      | ~1,407    | 37   ...
+	for (const code of sectionOrder) {
+		const upper = sectionNames[code];
+		const rowRegex = new RegExp(
+			`(\\| ${upper}\\s+\\| ${code}\\s+\\| \\d+\\s+\\| )~?[\\d,]+(\\s+\\|)`,
+		);
+		if (rowRegex.test(claudeMd)) {
+			claudeMd = claudeMd.replace(
+				rowRegex,
+				`$1~${sectionTotals[code].toLocaleString()}$2`,
+			);
+			claudeUpdated = true;
+		}
+	}
+
+	// Update the Totals line: **Totals:** 102 lessons, ~8,941 questions (target: ~9,000), ...
+	const totalsLineRegex = /(\*\*Totals:\*\* \d+ lessons, )~?[\d,]+( questions)/;
+	if (totalsLineRegex.test(claudeMd)) {
+		claudeMd = claudeMd.replace(
+			totalsLineRegex,
+			`$1~${totalQuestions.toLocaleString()}$2`,
+		);
+		claudeUpdated = true;
+	}
+
+	// Update the generation status line: Live DB: ~8,941 questions (synced 2026-03-27)
+	const genLineRegex = /Live DB: ~?[\d,]+ questions \(synced \d{4}-\d{2}-\d{2}\)/;
+	if (genLineRegex.test(claudeMd)) {
+		claudeMd = claudeMd.replace(
+			genLineRegex,
+			`Live DB: ~${totalQuestions.toLocaleString()} questions (synced ${today})`,
+		);
+		claudeUpdated = true;
+	}
+
+	if (claudeUpdated) {
+		writeFileSync(claudeMdPath, claudeMd);
+		console.log("Updated CLAUDE.md");
+	}
+
+	// Summary
 	console.log(`\nSync complete — ${totalQuestions.toLocaleString()} total questions across ${sectionOrder.length} sections:`);
 	for (const code of sectionOrder) {
 		console.log(`  ${sectionNames[code]}: ${sectionTotals[code].toLocaleString()}`);
