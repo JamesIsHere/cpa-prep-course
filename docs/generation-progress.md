@@ -8,9 +8,9 @@ Per-section target: 1,500 questions. Distributed by AICPA Blueprint area weights
 
 **Batch size:** 30 questions per generation batch.
 
-**To generate:** 473 new questions (~57 batches).
+**To generate:** 518 new questions (~71 batches).
 
-**To trim:** 460 questions to delete (keep best, cut weakest).
+**To trim:** 441 questions to delete (keep best, cut weakest).
 
 **Difficulty targets:** 30% easy / 50% medium / 20% hard.
 
@@ -25,12 +25,12 @@ For each section:
 
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status          |
 |---------|---------|--------|---------|-------------|-------------|-----------------|
-| AUD     | 1,401 | 1,500 |       0 |          99 |          11 | Generate Needed |
-| FAR     | 1,588 | 1,500 |     281 |         193 |          19 | Trim + Generate |
-| REG     | 1,484 | 1,500 |       0 |          16 |           4 | Generate Needed |
-| BAR     | 1,606 | 1,500 |     179 |          73 |          12 | Trim + Generate |
-| ISC     | 1,463 | 1,500 |       0 |          37 |           5 | Generate Needed |
-| TCP     | 1,445 | 1,500 |       0 |          55 |           6 | Generate Needed |
+| AUD     | 1,398 | 1,500 |       0 |         102 |          14 | Generate Needed |
+| FAR     | 1,570 | 1,500 |     268 |         198 |          19 | Trim + Generate |
+| REG     | 1,469 | 1,500 |       0 |          31 |          10 | Generate Needed |
+| BAR     | 1,585 | 1,500 |     173 |          88 |          13 | Trim + Generate |
+| ISC     | 1,462 | 1,500 |       0 |          38 |           6 | Generate Needed |
+| TCP     | 1,439 | 1,500 |       0 |          61 |           9 | Generate Needed |
 
 ## Topic Detail
 
@@ -54,13 +54,13 @@ For each section:
 | 2 | Understanding the Entity and Environment | 50 | 64 |  | +14 |
 | 2 | Using the Work of Others | 50 | 64 |  | +14 |
 | 3 | Analytical Procedures | 65 | 65 |  |  |
-| 3 | Audit Evidence | 65 | 65 |  |  |
+| 3 | Audit Evidence | 64 | 65 |  | +1 |
 | 3 | Audit Sampling | 52 | 65 |  | +13 |
-| 3 | Misstatements and Control Deficiencies | 65 | 65 |  |  |
+| 3 | Misstatements and Control Deficiencies | 64 | 65 |  | +1 |
 | 3 | Specific Areas and Transactions | 50 | 65 |  | +15 |
 | 3 | Substantive Procedures | 58 | 65 |  | +7 |
 | 3 | Tests of Controls | 65 | 65 |  |  |
-| 3 | Written Representations | 65 | 65 |  |  |
+| 3 | Written Representations | 64 | 65 |  | +1 |
 | 4 | Attestation Engagements | 38 | 38 |  |  |
 | 4 | Audit Reports | 38 | 38 |  |  |
 | 4 | Modifications to the Auditor Report | 38 | 38 |  |  |
@@ -73,25 +73,25 @@ For each section:
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
 | 1 | Consolidations | 58 | 66 |  | +8 |
-| 1 | Financial Reporting: For-Profit | 160 | 67 | -93 |  |
+| 1 | Financial Reporting: For-Profit | 159 | 67 | -92 |  |
 | 1 | Financial Statement Ratios | 90 | 66 | -24 |  |
 | 1 | Not-for-Profit Accounting | 58 | 66 |  | +8 |
-| 1 | Public Company Reporting | 80 | 66 | -14 |  |
-| 1 | Special Purpose Frameworks | 80 | 66 | -14 |  |
-| 1 | State and Local Government | 187 | 66 | -121 |  |
+| 1 | Public Company Reporting | 71 | 66 | -5 |  |
+| 1 | Special Purpose Frameworks | 79 | 66 | -13 |  |
+| 1 | State and Local Government | 186 | 66 | -120 |  |
 | 1 | Statement of Cash Flows | 80 | 67 | -13 |  |
 | 2 | Cash and Cash Equivalents | 16 | 58 |  | +42 |
-| 2 | Debt | 53 | 58 |  | +5 |
-| 2 | Equity | 53 | 58 |  | +5 |
-| 2 | Intangible Assets | 53 | 58 |  | +5 |
+| 2 | Debt | 52 | 58 |  | +6 |
+| 2 | Equity | 52 | 58 |  | +6 |
+| 2 | Intangible Assets | 51 | 58 |  | +7 |
 | 2 | Inventory | 53 | 58 |  | +5 |
-| 2 | Investments | 60 | 58 | -2 |  |
+| 2 | Investments | 59 | 58 | -1 |  |
 | 2 | Payables and Accrued Liabilities | 50 | 58 |  | +8 |
 | 2 | Property, Plant and Equipment | 53 | 58 |  | +5 |
 | 2 | Trade Receivables | 37 | 58 |  | +21 |
 | 3 | Accounting Changes and Error Corrections | 58 | 64 |  | +6 |
 | 3 | Contingencies | 58 | 64 |  | +6 |
-| 3 | Fair Value | 58 | 64 |  | +6 |
+| 3 | Fair Value | 57 | 64 |  | +7 |
 | 3 | Income Taxes | 58 | 64 |  | +6 |
 | 3 | Leases | 53 | 64 |  | +11 |
 | 3 | Revenue Recognition | 53 | 64 |  | +11 |
@@ -114,39 +114,39 @@ For each section:
 | 3 | Like-Kind Exchanges | 50 | 50 |  |  |
 | 3 | Property Transactions: Basis | 50 | 50 |  |  |
 | 3 | Property Transactions: Gains/Losses | 44 | 50 |  | +6 |
-| 4 | Alternative Minimum Tax | 68 | 68 |  |  |
+| 4 | Alternative Minimum Tax | 66 | 68 |  | +2 |
 | 4 | Individual Taxation: Credits | 68 | 68 |  |  |
 | 4 | Individual Taxation: Credits/AMT | 68 | 68 |  |  |
 | 4 | Individual Taxation: Deductions | 66 | 68 |  | +2 |
 | 4 | Individual Taxation: Filing/Credits | 68 | 68 |  |  |
 | 4 | Individual Taxation: Income | 68 | 68 |  |  |
-| 5 | C Corporations | 83 | 83 |  |  |
-| 5 | Estate and Gift Tax | 84 | 84 |  |  |
-| 5 | Partnerships | 83 | 83 |  |  |
-| 5 | S Corporations | 83 | 83 |  |  |
-| 5 | Tax-Exempt Organizations | 84 | 84 |  |  |
+| 5 | C Corporations | 82 | 83 |  | +1 |
+| 5 | Estate and Gift Tax | 82 | 84 |  | +2 |
+| 5 | Partnerships | 81 | 83 |  | +2 |
+| 5 | S Corporations | 82 | 83 |  | +1 |
+| 5 | Tax-Exempt Organizations | 77 | 84 |  | +7 |
 
 ### BAR
 
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
-| 1 | Capital Structure and Valuation | 134 | 134 |  |  |
-| 1 | Financial Statement Analysis | 194 | 134 | -60 |  |
+| 1 | Capital Structure and Valuation | 122 | 134 |  | +12 |
+| 1 | Financial Statement Analysis | 189 | 134 | -55 |  |
 | 1 | Financial Valuation Methods | 163 | 134 | -29 |  |
 | 1 | Prospective Analysis and Forecasting | 134 | 134 |  |  |
 | 1 | Risk Management and Economics | 130 | 134 |  | +4 |
 | 2 | Advanced Consolidations | 49 | 55 |  | +6 |
 | 2 | Advanced Lease Transactions | 55 | 55 |  |  |
-| 2 | Advanced Revenue and Intangibles | 49 | 55 |  | +6 |
+| 2 | Advanced Revenue and Intangibles | 47 | 55 |  | +8 |
 | 2 | Business Combinations | 50 | 55 |  | +5 |
 | 2 | Derivatives and Hedging | 50 | 55 |  | +5 |
 | 2 | Foreign Currency Transactions | 50 | 55 |  | +5 |
 | 2 | Income Taxes Advanced | 50 | 55 |  | +5 |
 | 2 | Intangible Assets Advanced | 50 | 55 |  | +5 |
 | 2 | Internal-Use Software and Cloud Computing | 39 | 55 |  | +16 |
-| 2 | Pension and Postretirement Benefits | 145 | 55 | -90 |  |
+| 2 | Pension and Postretirement Benefits | 144 | 55 | -89 |  |
 | 2 | Stock Compensation and Business Combinations | 52 | 55 |  | +3 |
-| 3 | Fund-to-Government-Wide Reconciliation | 69 | 75 |  | +6 |
+| 3 | Fund-to-Government-Wide Reconciliation | 68 | 75 |  | +7 |
 | 3 | Interfund Transactions | 68 | 75 |  | +7 |
 | 3 | State and Local Government Reporting | 75 | 75 |  |  |
 
@@ -163,7 +163,7 @@ For each section:
 | 1 | System Availability and Change Management | 86 | 86 |  |  |
 | 2 | Data Protection Technologies | 100 | 100 |  |  |
 | 2 | Incident Response and Recovery | 100 | 100 |  |  |
-| 2 | Privacy Requirements and Data Protection | 100 | 100 |  |  |
+| 2 | Privacy Requirements and Data Protection | 99 | 100 |  | +1 |
 | 2 | Security and Control Frameworks | 99 | 99 |  |  |
 | 2 | Security Controls and Monitoring | 100 | 100 |  |  |
 | 2 | Threats, Attacks, and Vulnerabilities | 99 | 99 |  |  |
@@ -177,11 +177,11 @@ For each section:
 
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
-| 1 | Individual Tax Planning: Compensation | 132 | 132 |  |  |
-| 1 | Passive Activity and At-Risk Rules | 132 | 132 |  |  |
+| 1 | Individual Tax Planning: Compensation | 130 | 132 |  | +2 |
+| 1 | Passive Activity and At-Risk Rules | 131 | 132 |  | +1 |
 | 1 | Retirement Plans and Education Savings | 110 | 131 |  | +21 |
 | 1 | Wealth Transfer and Gifting Strategies | 131 | 131 |  |  |
-| 2 | Advanced Basis Calculations | 105 | 105 |  |  |
+| 2 | Advanced Basis Calculations | 103 | 105 |  | +2 |
 | 2 | Entity Formation and Liquidation | 105 | 105 |  |  |
 | 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 105 | 105 |  |  |
 | 2 | International Tax | 105 | 105 |  |  |
@@ -191,7 +191,7 @@ For each section:
 | 3 | Multi-Jurisdictional Tax Planning | 50 | 56 |  | +6 |
 | 3 | Trusts and Estates | 50 | 56 |  | +6 |
 | 4 | Entity Formation and Restructuring | 75 | 75 |  |  |
-| 4 | Nontaxable Dispositions | 70 | 75 |  | +5 |
+| 4 | Nontaxable Dispositions | 69 | 75 |  | +6 |
 | 4 | Related Party Transactions | 70 | 75 |  | +5 |
 
 ## Batch Log

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-29T13:38:47.494Z",
+  "generatedAt": "2026-03-29T13:43:53.064Z",
   "totalTarget": 9000,
   "batchSize": 30,
   "difficultyTargets": {
@@ -11,11 +11,11 @@
     {
       "section": "aud",
       "sectionId": 1,
-      "currentTotal": 1401,
+      "currentTotal": 1398,
       "targetTotal": 1500,
-      "toGenerate": 99,
+      "toGenerate": 102,
       "toTrim": 0,
-      "totalBatches": 11,
+      "totalBatches": 14,
       "topics": [
         {
           "topic": "Ethics and Independence",
@@ -425,21 +425,21 @@
             30,
             40
           ],
-          "currentCount": 65,
+          "currentCount": 64,
           "targetCount": 65,
-          "toGenerate": 0,
+          "toGenerate": 1,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 0,
-            "medium": 0,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
             "l1": 0,
             "l2": 0,
             "l3": 0,
-            "l4": 0
+            "l4": 1
           }
         },
         {
@@ -475,21 +475,21 @@
             30,
             40
           ],
-          "currentCount": 65,
+          "currentCount": 64,
           "targetCount": 65,
-          "toGenerate": 0,
+          "toGenerate": 1,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 0,
-            "medium": 0,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
             "l1": 0,
             "l2": 0,
             "l3": 0,
-            "l4": 0
+            "l4": 1
           }
         },
         {
@@ -575,21 +575,21 @@
             30,
             40
           ],
-          "currentCount": 65,
+          "currentCount": 64,
           "targetCount": 65,
-          "toGenerate": 0,
+          "toGenerate": 1,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 0,
-            "medium": 0,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
             "l1": 0,
             "l2": 0,
             "l3": 0,
-            "l4": 0
+            "l4": 1
           }
         },
         {
@@ -747,10 +747,10 @@
     {
       "section": "far",
       "sectionId": 2,
-      "currentTotal": 1588,
+      "currentTotal": 1570,
       "targetTotal": 1500,
-      "toGenerate": 193,
-      "toTrim": 281,
+      "toGenerate": 198,
+      "toTrim": 268,
       "totalBatches": 19,
       "topics": [
         {
@@ -786,10 +786,10 @@
             30,
             40
           ],
-          "currentCount": 160,
+          "currentCount": 159,
           "targetCount": 67,
           "toGenerate": 0,
-          "toTrim": 93,
+          "toTrim": 92,
           "batches": 0,
           "difficulty": {
             "easy": 0,
@@ -861,10 +861,10 @@
             30,
             40
           ],
-          "currentCount": 80,
+          "currentCount": 71,
           "targetCount": 66,
           "toGenerate": 0,
-          "toTrim": 14,
+          "toTrim": 5,
           "batches": 0,
           "difficulty": {
             "easy": 0,
@@ -886,10 +886,10 @@
             30,
             40
           ],
-          "currentCount": 80,
+          "currentCount": 79,
           "targetCount": 66,
           "toGenerate": 0,
-          "toTrim": 14,
+          "toTrim": 13,
           "batches": 0,
           "difficulty": {
             "easy": 0,
@@ -911,10 +911,10 @@
             30,
             40
           ],
-          "currentCount": 187,
+          "currentCount": 186,
           "targetCount": 66,
           "toGenerate": 0,
-          "toTrim": 121,
+          "toTrim": 120,
           "batches": 0,
           "difficulty": {
             "easy": 0,
@@ -986,21 +986,21 @@
             30,
             40
           ],
-          "currentCount": 53,
+          "currentCount": 52,
           "targetCount": 58,
-          "toGenerate": 5,
+          "toGenerate": 6,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
             "easy": 2,
             "medium": 3,
-            "hard": 0
+            "hard": 1
           },
           "blooms": {
-            "l1": 1,
+            "l1": 2,
             "l2": 2,
-            "l3": 1,
-            "l4": 1
+            "l3": 2,
+            "l4": 0
           }
         },
         {
@@ -1011,21 +1011,21 @@
             30,
             40
           ],
-          "currentCount": 53,
+          "currentCount": 52,
           "targetCount": 58,
-          "toGenerate": 5,
+          "toGenerate": 6,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
             "easy": 2,
             "medium": 3,
-            "hard": 0
+            "hard": 1
           },
           "blooms": {
-            "l1": 1,
+            "l1": 2,
             "l2": 2,
-            "l3": 1,
-            "l4": 1
+            "l3": 2,
+            "l4": 0
           }
         },
         {
@@ -1036,20 +1036,20 @@
             30,
             40
           ],
-          "currentCount": 53,
+          "currentCount": 51,
           "targetCount": 58,
-          "toGenerate": 5,
+          "toGenerate": 7,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
             "easy": 2,
-            "medium": 3,
-            "hard": 0
+            "medium": 4,
+            "hard": 1
           },
           "blooms": {
-            "l1": 1,
+            "l1": 2,
             "l2": 2,
-            "l3": 1,
+            "l3": 2,
             "l4": 1
           }
         },
@@ -1086,10 +1086,10 @@
             30,
             40
           ],
-          "currentCount": 60,
+          "currentCount": 59,
           "targetCount": 58,
           "toGenerate": 0,
-          "toTrim": 2,
+          "toTrim": 1,
           "batches": 0,
           "difficulty": {
             "easy": 0,
@@ -1236,21 +1236,21 @@
             25,
             35
           ],
-          "currentCount": 58,
+          "currentCount": 57,
           "targetCount": 64,
-          "toGenerate": 6,
+          "toGenerate": 7,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
             "easy": 2,
-            "medium": 3,
+            "medium": 4,
             "hard": 1
           },
           "blooms": {
             "l1": 2,
             "l2": 2,
             "l3": 2,
-            "l4": 0
+            "l4": 1
           }
         },
         {
@@ -1358,11 +1358,11 @@
     {
       "section": "reg",
       "sectionId": 3,
-      "currentTotal": 1484,
+      "currentTotal": 1469,
       "targetTotal": 1500,
-      "toGenerate": 16,
+      "toGenerate": 31,
       "toTrim": 0,
-      "totalBatches": 4,
+      "totalBatches": 10,
       "topics": [
         {
           "topic": "Circular 230",
@@ -1697,21 +1697,21 @@
             22,
             32
           ],
-          "currentCount": 68,
+          "currentCount": 66,
           "targetCount": 68,
-          "toGenerate": 0,
+          "toGenerate": 2,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
-            "easy": 0,
-            "medium": 0,
+            "easy": 1,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
+            "l1": 1,
+            "l2": 1,
+            "l3": 1,
+            "l4": -1
           }
         },
         {
@@ -1847,21 +1847,21 @@
             23,
             33
           ],
-          "currentCount": 83,
+          "currentCount": 82,
           "targetCount": 83,
-          "toGenerate": 0,
+          "toGenerate": 1,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 0,
-            "medium": 0,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
             "l1": 0,
             "l2": 0,
             "l3": 0,
-            "l4": 0
+            "l4": 1
           }
         },
         {
@@ -1872,21 +1872,21 @@
             23,
             33
           ],
-          "currentCount": 84,
+          "currentCount": 82,
           "targetCount": 84,
-          "toGenerate": 0,
+          "toGenerate": 2,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
-            "easy": 0,
-            "medium": 0,
+            "easy": 1,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
+            "l1": 1,
+            "l2": 1,
+            "l3": 1,
+            "l4": -1
           }
         },
         {
@@ -1897,21 +1897,21 @@
             23,
             33
           ],
-          "currentCount": 83,
+          "currentCount": 81,
           "targetCount": 83,
-          "toGenerate": 0,
+          "toGenerate": 2,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
-            "easy": 0,
-            "medium": 0,
+            "easy": 1,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
+            "l1": 1,
+            "l2": 1,
+            "l3": 1,
+            "l4": -1
           }
         },
         {
@@ -1922,21 +1922,21 @@
             23,
             33
           ],
-          "currentCount": 83,
+          "currentCount": 82,
           "targetCount": 83,
-          "toGenerate": 0,
+          "toGenerate": 1,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 0,
-            "medium": 0,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
             "l1": 0,
             "l2": 0,
             "l3": 0,
-            "l4": 0
+            "l4": 1
           }
         },
         {
@@ -1947,21 +1947,21 @@
             23,
             33
           ],
-          "currentCount": 84,
+          "currentCount": 77,
           "targetCount": 84,
-          "toGenerate": 0,
+          "toGenerate": 7,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
-            "easy": 0,
-            "medium": 0,
-            "hard": 0
+            "easy": 2,
+            "medium": 4,
+            "hard": 1
           },
           "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
+            "l1": 2,
+            "l2": 2,
+            "l3": 2,
+            "l4": 1
           }
         }
       ]
@@ -1969,11 +1969,11 @@
     {
       "section": "bar",
       "sectionId": 4,
-      "currentTotal": 1606,
+      "currentTotal": 1585,
       "targetTotal": 1500,
-      "toGenerate": 73,
-      "toTrim": 179,
-      "totalBatches": 12,
+      "toGenerate": 88,
+      "toTrim": 173,
+      "totalBatches": 13,
       "topics": [
         {
           "topic": "Capital Structure and Valuation",
@@ -1983,21 +1983,21 @@
             40,
             50
           ],
-          "currentCount": 134,
+          "currentCount": 122,
           "targetCount": 134,
-          "toGenerate": 0,
+          "toGenerate": 12,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
-            "easy": 0,
-            "medium": 0,
-            "hard": 0
+            "easy": 4,
+            "medium": 6,
+            "hard": 2
           },
           "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
+            "l1": 2,
+            "l2": 4,
+            "l3": 4,
+            "l4": 2
           }
         },
         {
@@ -2008,10 +2008,10 @@
             40,
             50
           ],
-          "currentCount": 194,
+          "currentCount": 189,
           "targetCount": 134,
           "toGenerate": 0,
-          "toTrim": 60,
+          "toTrim": 55,
           "batches": 0,
           "difficulty": {
             "easy": 0,
@@ -2158,19 +2158,19 @@
             35,
             45
           ],
-          "currentCount": 49,
+          "currentCount": 47,
           "targetCount": 55,
-          "toGenerate": 6,
+          "toGenerate": 8,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
             "easy": 2,
-            "medium": 3,
-            "hard": 1
+            "medium": 4,
+            "hard": 2
           },
           "blooms": {
-            "l1": 1,
-            "l2": 2,
+            "l1": 2,
+            "l2": 3,
             "l3": 2,
             "l4": 1
           }
@@ -2333,10 +2333,10 @@
             35,
             45
           ],
-          "currentCount": 145,
+          "currentCount": 144,
           "targetCount": 55,
           "toGenerate": 0,
-          "toTrim": 90,
+          "toTrim": 89,
           "batches": 0,
           "difficulty": {
             "easy": 0,
@@ -2383,21 +2383,21 @@
             10,
             20
           ],
-          "currentCount": 69,
+          "currentCount": 68,
           "targetCount": 75,
-          "toGenerate": 6,
+          "toGenerate": 7,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
             "easy": 2,
-            "medium": 3,
+            "medium": 4,
             "hard": 1
           },
           "blooms": {
             "l1": 1,
             "l2": 2,
             "l3": 2,
-            "l4": 1
+            "l4": 2
           }
         },
         {
@@ -2455,11 +2455,11 @@
     {
       "section": "isc",
       "sectionId": 5,
-      "currentTotal": 1463,
+      "currentTotal": 1462,
       "targetTotal": 1500,
-      "toGenerate": 37,
+      "toGenerate": 38,
       "toTrim": 0,
-      "totalBatches": 5,
+      "totalBatches": 6,
       "topics": [
         {
           "topic": "Change Management",
@@ -2694,21 +2694,21 @@
             35,
             45
           ],
-          "currentCount": 100,
+          "currentCount": 99,
           "targetCount": 100,
-          "toGenerate": 0,
+          "toGenerate": 1,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 0,
-            "medium": 0,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
             "l1": 0,
             "l2": 0,
             "l3": 0,
-            "l4": 0
+            "l4": 1
           }
         },
         {
@@ -2916,11 +2916,11 @@
     {
       "section": "tcp",
       "sectionId": 6,
-      "currentTotal": 1445,
+      "currentTotal": 1439,
       "targetTotal": 1500,
-      "toGenerate": 55,
+      "toGenerate": 61,
       "toTrim": 0,
-      "totalBatches": 6,
+      "totalBatches": 9,
       "topics": [
         {
           "topic": "Individual Tax Planning: Compensation",
@@ -2930,20 +2930,20 @@
             30,
             40
           ],
-          "currentCount": 132,
+          "currentCount": 130,
           "targetCount": 132,
-          "toGenerate": 0,
+          "toGenerate": 2,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
-            "easy": 0,
-            "medium": 0,
+            "easy": 1,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
             "l1": 0,
-            "l2": 0,
-            "l3": 0,
+            "l2": 1,
+            "l3": 1,
             "l4": 0
           }
         },
@@ -2955,21 +2955,21 @@
             30,
             40
           ],
-          "currentCount": 132,
+          "currentCount": 131,
           "targetCount": 132,
-          "toGenerate": 0,
+          "toGenerate": 1,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 0,
-            "medium": 0,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
             "l1": 0,
             "l2": 0,
             "l3": 0,
-            "l4": 0
+            "l4": 1
           }
         },
         {
@@ -3030,20 +3030,20 @@
             30,
             40
           ],
-          "currentCount": 105,
+          "currentCount": 103,
           "targetCount": 105,
-          "toGenerate": 0,
+          "toGenerate": 2,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
-            "easy": 0,
-            "medium": 0,
+            "easy": 1,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
             "l1": 0,
-            "l2": 0,
-            "l3": 0,
+            "l2": 1,
+            "l3": 1,
             "l4": 0
           }
         },
@@ -3280,21 +3280,21 @@
             10,
             20
           ],
-          "currentCount": 70,
+          "currentCount": 69,
           "targetCount": 75,
-          "toGenerate": 5,
+          "toGenerate": 6,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
             "easy": 2,
             "medium": 3,
-            "hard": 0
+            "hard": 1
           },
           "blooms": {
             "l1": 1,
             "l2": 2,
             "l3": 2,
-            "l4": 0
+            "l4": 1
           }
         },
         {
@@ -3326,10 +3326,10 @@
     }
   ],
   "summary": {
-    "totalCurrent": 8987,
+    "totalCurrent": 8923,
     "totalTarget": 9000,
-    "totalToGenerate": 473,
-    "totalToTrim": 460,
-    "totalBatches": 57
+    "totalToGenerate": 518,
+    "totalToTrim": 441,
+    "totalBatches": 71
   }
 }
