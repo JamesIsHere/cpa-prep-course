@@ -10,9 +10,9 @@ Expanding short textbook-style stems (<=20 words) into CPA-exam-style mini case 
 | ISC     | 484         | 0        | 484       | 0            |
 | REG     | 451         | 0        | 451       | 0            |
 | BAR     | 409         | 0        | 409       | 0            |
-| FAR     | 333         | 300      | 33        | 6            |
+| FAR     | 350         | 350      | 0         | 7            |
 | TCP     | 297         | 0        | 297       | 0            |
-| **Total** | **2,547** | **300**  | **2,247** | **6**        |
+| **Total** | **2,564** | **350**  | **2,214** | **7**        |
 
 ## Batch Log
 
@@ -24,3 +24,4 @@ Expanding short textbook-style stems (<=20 words) into CPA-exam-style mini case 
 | 2026-03-29 | 00594_stem_far_batch4.sql | FAR | 50 | ~40 | 20 topics covered |
 | 2026-03-29 | 00595_stem_far_batch5.sql | FAR | 50 | ~42 | 24 topics covered |
 | 2026-03-29 | 00596_stem_far_batch6.sql | FAR | 50 | ~42 | 18 topics covered |
+| 2026-03-29 | 00597_stem_far_batch7.sql | FAR | 50 | ~40 | 22 topics covered, FAR complete |
