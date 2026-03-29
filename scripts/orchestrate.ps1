@@ -1175,6 +1175,32 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
         }
     }
 
+    # ── 6.9. Pre-commit guardrails ────────────────────────────
+    if ($Mode -ne 'verify' -and (Test-Path $scaffoldPath)) {
+        # Guard 1: Reject unfilled TODO scaffolds
+        $todoHits = Select-String -Path $scaffoldPath -Pattern '\bTODO\b' -SimpleMatch
+        if ($todoHits) {
+            $todoCount = @($todoHits).Count
+            Write-Host ''
+            Write-Host "   STOPPED: migration contains $todoCount TODO placeholders — Claude did not fill the scaffold" -ForegroundColor Red
+            Write-Host "   File: $scaffoldPath" -ForegroundColor DarkGray
+            Write-Log "Guard  BLOCKED: $todoCount TODO placeholders in $scaffoldPath"
+            $stopped = $true; break
+        }
+
+        # Guard 2: Reject duplicate migration numbers
+        $migFilename = Split-Path $scaffoldPath -Leaf
+        $migNum = $migFilename.Split('_')[0]
+        $dupes = @(Get-ChildItem $Migrations -Filter "${migNum}_*" | Where-Object { $_.FullName -ne (Resolve-Path $scaffoldPath).Path })
+        if ($dupes.Count -gt 0) {
+            Write-Host ''
+            Write-Host "   STOPPED: migration number $migNum already exists: $($dupes.Name -join ', ')" -ForegroundColor Red
+            Write-Host "   File: $scaffoldPath" -ForegroundColor DarkGray
+            Write-Log "Guard  BLOCKED: duplicate migration number $migNum"
+            $stopped = $true; break
+        }
+    }
+
     # ── 7. Commit ──────────────────────────────────────────────
     $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
     if ($Mode -eq 'verify') {

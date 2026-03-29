@@ -1,7 +1,7 @@
 // Generate UPDATE migration scaffold for questions flagged as failed by verification
 // Usage: cat verification-report.json | npx tsx scripts/qa/generate-fix-scaffold.ts --section=bar --batch=1
 
-import { writeFileSync } from "fs";
+import { writeFileSync, unlinkSync, existsSync } from "fs";
 import { resolve } from "path";
 import {
 	getNextMigrationNumberSafe,
@@ -101,6 +101,12 @@ async function main() {
 
 	const outputPath = resolve(migrationsDir, fileName);
 	writeFileSync(outputPath, lines.join("\n"));
+
+	// Clean up the placeholder file created by getNextMigrationNumberSafe
+	const placeholder = resolve(migrationsDir, `${migNum}_reserved.sql`);
+	if (existsSync(placeholder)) {
+		unlinkSync(placeholder);
+	}
 
 	console.log(outputPath);
 

@@ -69,12 +69,18 @@ export function releaseMigrationLock(): void {
 
 /**
  * Get next migration number with file lock protection.
+ * Creates a placeholder file to reserve the number before releasing the lock,
+ * preventing TOCTOU races where parallel callers get the same number.
  * Use this instead of getNextMigrationNumber() for parallel safety.
  */
-export function getNextMigrationNumberSafe(): string {
+export function getNextMigrationNumberSafe(suffix = "reserved"): string {
 	acquireMigrationLock();
 	try {
-		return getNextMigrationNumber();
+		const num = getNextMigrationNumber();
+		// Reserve the number by creating a placeholder file before releasing lock
+		const placeholder = resolve(migrationsDir, `${num}_${suffix}.sql`);
+		writeFileSync(placeholder, `-- placeholder: reserved by pid ${process.pid}\n`);
+		return num;
 	} finally {
 		releaseMigrationLock();
 	}

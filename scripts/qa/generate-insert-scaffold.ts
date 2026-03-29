@@ -1,7 +1,7 @@
 // Generate INSERT migration scaffold from batch spec JSON (stdin)
 // Usage: cat batch-spec.json | npx tsx scripts/qa/generate-insert-scaffold.ts --section=aud --batch=1
 
-import { writeFileSync } from "fs";
+import { writeFileSync, unlinkSync, existsSync } from "fs";
 import { resolve } from "path";
 import {
 	getNextMigrationNumberSafe,
@@ -149,6 +149,12 @@ async function main() {
 
 	const outputPath = resolve(migrationsDir, fileName);
 	writeFileSync(outputPath, lines.join("\n"));
+
+	// Clean up the placeholder file created by getNextMigrationNumberSafe
+	const placeholder = resolve(migrationsDir, `${migNum}_reserved.sql`);
+	if (existsSync(placeholder)) {
+		unlinkSync(placeholder);
+	}
 
 	// Output file path to stdout for orchestrator
 	console.log(outputPath);
