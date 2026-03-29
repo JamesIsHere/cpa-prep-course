@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Orchestrator for CPA question batch operations.
 .DESCRIPTION
@@ -985,7 +985,7 @@ for ($i = 0; $i -lt $Batches; $i++) {
     Write-Host " Batch $batchNum ($($i + 1)/$Batches) ----------------------------------------" -ForegroundColor Cyan
     Write-Log "--- Batch $batchNum ($($i + 1)/$Batches) ---"
 
-    # ── 1. Select candidates ───────────────────────────────────
+    # -- 1. Select candidates -----------------------------------
     try {
         $candidateFile = Select-Candidates -BatchNum $batchNum
         $candidates    = Get-Content $candidateFile -Raw | ConvertFrom-Json
@@ -1016,7 +1016,7 @@ for ($i = 0; $i -lt $Batches; $i++) {
         $stopped = $true; break
     }
 
-    # ── 2. Generate scaffold (skip for verify mode) ──────────────
+    # -- 2. Generate scaffold (skip for verify mode) --------------
     $scaffoldPath = $null
     if ($Mode -ne 'verify') {
         try {
@@ -1031,7 +1031,7 @@ for ($i = 0; $i -lt $Batches; $i++) {
         Write-Step 'Scaffold' 'n/a (verify mode)' 'DarkGray'
     }
 
-    # ── 3. DRY RUN shortcut ───────────────────────────────────
+    # -- 3. DRY RUN shortcut -----------------------------------
     if ($DryRun) {
         Write-Step 'Claude' 'skipped (dry run)' 'DarkGray'
         $totalQuestions += $batchCount
@@ -1040,7 +1040,7 @@ for ($i = 0; $i -lt $Batches; $i++) {
         continue
     }
 
-    # ── 4. Invoke Claude ───────────────────────────────────────
+    # -- 4. Invoke Claude ---------------------------------------
     $claudeLabel = if ($Mode -eq 'verify') { 'verifying...' } else { 'filling content...' }
     Write-Step 'Claude' $claudeLabel 'Yellow'
 
@@ -1068,7 +1068,7 @@ for ($i = 0; $i -lt $Batches; $i++) {
         $stopped = $true; break
     }
 
-    # ── 4.5. Parse verdicts and sync verified-ids.json (verify mode) ──
+    # -- 4.5. Parse verdicts and sync verified-ids.json (verify mode) --
     if ($Mode -eq 'verify') {
         $verifiedIdsFile = Join-Path (Join-Path $RepoRoot 'docs') 'verified-ids.json'
         $verdictMatch = [regex]::Match($claudeOutput, '(?s)VERDICTS_JSON:\s*(\[.*?\])\s*END_VERDICTS')
@@ -1111,7 +1111,7 @@ for ($i = 0; $i -lt $Batches; $i++) {
         Write-Step 'Tracker' "P:$p F:$f R:$r"
     }
 
-    # ── 5. Validate (double-check even if Claude said ok) ──────
+    # -- 5. Validate (double-check even if Claude said ok) ------
     #       Skip for verify mode (no migration file to validate)
     if ($Mode -eq 'verify') {
         Write-Step 'Validate' 'n/a (verify mode)' 'DarkGray'
@@ -1176,7 +1176,7 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
 
     } # end: skip validate for verify mode
 
-    # ── 6. Duplicate check (generate mode only) ─────────────────
+    # -- 6. Duplicate check (generate mode only) -----------------
     if ($Mode -eq 'generate') {
         $dupScript = Join-Path $QaScripts 'check-generation-duplicates.ts'
         Push-Location $RepoRoot
@@ -1240,7 +1240,7 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
             }
         }
 
-        # ── 6.5. Correctness verification (generate mode) ──────────
+        # -- 6.5. Correctness verification (generate mode) ----------
         $verifyScript = Join-Path $QaScripts 'verify-correctness.ts'
         if (Test-Path $verifyScript) {
             Write-Step 'Verify' 'checking correctness...' 'Yellow'
@@ -1311,7 +1311,7 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
         }
     }
 
-    # ── 6.9. Pre-commit guardrails ────────────────────────────
+    # -- 6.9. Pre-commit guardrails ----------------------------
     if ($Mode -ne 'verify' -and (Test-Path $scaffoldPath)) {
         # Guard 1: Reject unfilled TODO scaffolds
         $todoHits = Select-String -Path $scaffoldPath -Pattern '\bTODO\b' -SimpleMatch
@@ -1337,7 +1337,7 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
         }
     }
 
-    # ── 7. Commit ──────────────────────────────────────────────
+    # -- 7. Commit ----------------------------------------------
     $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
     if ($Mode -eq 'verify') {
         $verifiedIdsFile = Join-Path (Join-Path $RepoRoot 'docs') 'verified-ids.json'
@@ -1346,16 +1346,17 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
         & git -C $RepoRoot add $scaffoldPath $TrackerFile 2>&1 | Out-Null
     }
 
-    $commitBody = "$ModeLabel $su batch $batchNum -- $batchCount questions + tracker update"
+    $commitBody = '{0} {1} batch {2} -- {3} questions + tracker update' -f $ModeLabel, $su, $batchNum, $batchCount
     $commitMsgFile = Join-Path $TempDir "commit_b${batchNum}.txt"
-    [System.IO.File]::WriteAllText($commitMsgFile, "$commitBody`n`nCo-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>`n")
+    $coAuthor = 'Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>'
+    [System.IO.File]::WriteAllText($commitMsgFile, "$commitBody`n`n$coAuthor`n")
 
     & git -C $RepoRoot commit --file=$commitMsgFile 2>&1 | Out-Null
     $commitHash = (& git -C $RepoRoot rev-parse --short HEAD).Trim()
     $ErrorActionPreference = $prevEAP
     Write-Step 'Commit' $commitHash
 
-    # ── 7.5. Apply migration to DB (generate mode only) ────────
+    # -- 7.5. Apply migration to DB -------------------------------
     # Without this, the next batch's selector sees stale DB counts and
     # keeps generating for already-filled topics, overshooting targets.
     if ($Mode -in @('generate','stem') -and (Test-Path $scaffoldPath)) {
@@ -1375,7 +1376,7 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
         }
     }
 
-    # ── 8. Update running state ────────────────────────────────
+    # -- 8. Update running state --------------------------------
     $totalQuestions += $batchCount
     $completedBatches++
 
@@ -1423,7 +1424,7 @@ Write-Host ''
 $statusWord = if ($stopped) { 'STOPPED' } elseif ($DryRun) { 'DRY_RUN' } else { 'COMPLETE' }
 Write-Log "=== SESSION END: $statusWord | $totalQuestions questions | $completedBatches batches | $elapsedFmt | commits: $commits ==="
 
-# ── Post-run sync: update blueprint.ts, generation-progress.md, generation-plan.json from live DB ──
+# -- Post-run sync: update blueprint.ts, generation-progress.md, generation-plan.json from live DB --
 if (-not $DryRun -and $completedBatches -gt 0) {
     Write-Host ''
     Write-Host '  Syncing question counts from live DB...' -ForegroundColor DarkCyan
@@ -1437,5 +1438,5 @@ if (-not $DryRun -and $completedBatches -gt 0) {
     }
 }
 
-# ── Cleanup ────────────────────────────────────────────────────
+# -- Cleanup ----------------------------------------------------
 Remove-Item $TempDir -Recurse -Force -ErrorAction SilentlyContinue
