@@ -8,7 +8,7 @@ Per-section target: 1,500 questions. Distributed by AICPA Blueprint area weights
 
 **Batch size:** 30 questions per generation batch.
 
-**To generate:** 472 new questions (~57 batches).
+**To generate:** 473 new questions (~57 batches).
 
 **To trim:** 460 questions to delete (keep best, cut weakest).
 
@@ -26,7 +26,7 @@ For each section:
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status          |
 |---------|---------|--------|---------|-------------|-------------|-----------------|
 | AUD     | 1,401 | 1,500 |       0 |          99 |          11 | Generate Needed |
-| FAR     | 1,589 | 1,500 |     281 |         192 |          19 | Trim + Generate |
+| FAR     | 1,588 | 1,500 |     281 |         193 |          19 | Trim + Generate |
 | REG     | 1,484 | 1,500 |       0 |          16 |           4 | Generate Needed |
 | BAR     | 1,606 | 1,500 |     179 |          73 |          12 | Trim + Generate |
 | ISC     | 1,463 | 1,500 |       0 |          37 |           5 | Generate Needed |
@@ -95,7 +95,7 @@ For each section:
 | 3 | Income Taxes | 58 | 64 |  | +6 |
 | 3 | Leases | 53 | 64 |  | +11 |
 | 3 | Revenue Recognition | 53 | 64 |  | +11 |
-| 3 | Subsequent Events | 30 | 64 |  | +34 |
+| 3 | Subsequent Events | 29 | 64 |  | +35 |
 
 ### REG
 

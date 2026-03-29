@@ -170,13 +170,13 @@ Each batch gets its own headless `claude --print` invocation with a fresh contex
 | Section | Code | Lessons | Questions | Framework Items | Topics                                            |
 |---------|------|---------|-----------|-----------------|---------------------------------------------------|
 | AUD     | aud  | 13      | ~1,401    | 37              | Ethics, planning, risk, controls, evidence, sampling, reports, review/compilation, attestation, quality mgmt, government auditing |
-| FAR     | far  | 24      | ~1,589    | 60              | Financial reporting (for-profit), cash flows, consolidations, NFP, state/local govt, public company/EPS, special purpose frameworks, ratios, cash, receivables, inventory, PP&E, investments, intangibles, payables, debt, equity, accounting changes, contingencies, revenue, income taxes, fair value, leases, subsequent events |
+| FAR     | far  | 24      | ~1,588    | 60              | Financial reporting (for-profit), cash flows, consolidations, NFP, state/local govt, public company/EPS, special purpose frameworks, ratios, cash, receivables, inventory, PP&E, investments, intangibles, payables, debt, equity, accounting changes, contingencies, revenue, income taxes, fair value, leases, subsequent events |
 | REG     | reg  | 18      | ~1,484    | 60              | Circular 230, contracts, agency, business structures, basis, gains/losses, 1031, individual tax, credits, filing status, C/S corps, partnerships, tax procedures, legal duties, debtor-creditor, tax-exempt orgs |
 | BAR     | bar  | 16      | ~1,606    | 40              | Financial analysis, valuation, capital structure, derivatives, consolidations, govt reporting, fund reconciliation, interfund transactions |
 | ISC     | isc  | 16      | ~1,463    | 39              | IT infrastructure, ERP, data management, security frameworks, threats, privacy, SOC, SOC testing, SOC reporting |
 | TCP     | tcp  | 15      | ~1,445    | 44              | Individual planning, passive/at-risk, wealth transfer, retirement, international tax, trusts, capital structure tax, nontaxable dispositions, related parties |
 
-**Totals:** 102 lessons, ~8,988 questions (target: ~9,000), 280 framework items across 6 sections
+**Totals:** 102 lessons, ~8,987 questions (target: ~9,000), 280 framework items across 6 sections
 
 ## Database Tables
 
@@ -239,7 +239,7 @@ Some values in this file are kept in sync automatically; others are point-in-tim
 - **Bloom's L1/L4 rebalancing:** Complete (2026-02) — 788 rewrites. Tracker: `docs/blooms-l1-l4-rebalancing.md`
 - **Difficulty rebalancing:** Complete (2026-02) — target 30/50/20 reached. Tracker: `docs/difficulty-rebalancing.md`
 - **Citation coverage:** AUD complete, ISC complete. BAR/REG/FAR/TCP pending. Tracker: `docs/citation-coverage.md`
-- **Question generation (1,500/section):** Pipeline built — `plan-distribution.ts` → `select-generation-batch.ts` → `generate-insert-scaffold.ts` → Claude fills → `validate-migration` + `check-generation-duplicates.ts`. All sections target ~1,500. Live DB: ~8,988 questions (synced 2026-03-29). FAR topics realigned to AICPA 2026 Blueprint. Tracker: `docs/generation-progress.md`
+- **Question generation (1,500/section):** Pipeline built — `plan-distribution.ts` → `select-generation-batch.ts` → `generate-insert-scaffold.ts` → Claude fills → `validate-migration` + `check-generation-duplicates.ts`. All sections target ~1,500. Live DB: ~8,987 questions (synced 2026-03-29). FAR topics realigned to AICPA 2026 Blueprint. Tracker: `docs/generation-progress.md`
 
 ## Spec Reference
 

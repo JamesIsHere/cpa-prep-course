@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-29T10:20:32.258Z",
+  "generatedAt": "2026-03-29T11:48:36.080Z",
   "totalTarget": 9000,
   "batchSize": 30,
   "difficultyTargets": {
@@ -747,9 +747,9 @@
     {
       "section": "far",
       "sectionId": 2,
-      "currentTotal": 1589,
+      "currentTotal": 1588,
       "targetTotal": 1500,
-      "toGenerate": 192,
+      "toGenerate": 193,
       "toTrim": 281,
       "totalBatches": 19,
       "topics": [
@@ -1336,21 +1336,21 @@
             25,
             35
           ],
-          "currentCount": 30,
+          "currentCount": 29,
           "targetCount": 64,
-          "toGenerate": 34,
+          "toGenerate": 35,
           "toTrim": 0,
           "batches": 2,
           "difficulty": {
-            "easy": 10,
-            "medium": 17,
-            "hard": 7
+            "easy": 11,
+            "medium": 18,
+            "hard": 6
           },
           "blooms": {
             "l1": 9,
             "l2": 12,
             "l3": 9,
-            "l4": 4
+            "l4": 5
           }
         }
       ]
@@ -3326,9 +3326,9 @@
     }
   ],
   "summary": {
-    "totalCurrent": 8988,
+    "totalCurrent": 8987,
     "totalTarget": 9000,
-    "totalToGenerate": 472,
+    "totalToGenerate": 473,
     "totalToTrim": 460,
     "totalBatches": 57
   }
