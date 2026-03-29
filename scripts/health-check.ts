@@ -601,7 +601,7 @@ async function checkUnitTests(): Promise<CheckResult> {
 			cwd: projectRoot,
 			encoding: "utf-8",
 			timeout: 60000,
-			shell: true,
+			shell: "bash",
 			env: testEnv,
 		});
 		const ms = Date.now() - start;
