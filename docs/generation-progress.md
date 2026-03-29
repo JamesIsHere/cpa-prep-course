@@ -1,14 +1,16 @@
 # Question Curation Plan
 
+> Auto-synced from live DB on 2026-03-29 via `npm run sync-counts`
+
 Per-section target: 1,500 questions. Distributed by AICPA Blueprint area weights.
 
 **Goal:** 9,000 total questions across all sections.
 
 **Batch size:** 30 questions per generation batch.
 
-**To generate:** 513 new questions (~50 batches).
+**To generate:** 472 new questions (~57 batches).
 
-**To trim:** 304 questions to delete (keep best, cut weakest).
+**To trim:** 460 questions to delete (keep best, cut weakest).
 
 **Difficulty targets:** 30% easy / 50% medium / 20% hard.
 
@@ -21,14 +23,14 @@ For each section:
 
 ## Section Overview
 
-| Section | Current | Target | To Trim | To Generate | Gen Batches | Status |
-|---------|---------|--------|---------|-------------|-------------|--------|
-| AUD     | 1,407 | 1,500 | 0 | 93 | 11 | Pending |
-| FAR     | 1,679 | 1,500 | 304 | 95 | 14 | Pending |
-| REG     | 1,484 | 1,500 | 0 | 16 | 4 | Pending |
-| BAR     | 1,427 | 1,500 | 0 | 73 | 12 | Pending |
-| ISC     | 1,463 | 1,500 | 0 | 37 | 5 | Pending |
-| TCP     | 1,451 | 1,500 | 0 | 49 | 6 | Pending |
+| Section | Current | Target | To Trim | To Generate | Gen Batches | Status          |
+|---------|---------|--------|---------|-------------|-------------|-----------------|
+| AUD     | 1,401 | 1,500 |       0 |          99 |          11 | Generate Needed |
+| FAR     | 1,589 | 1,500 |     281 |         192 |          19 | Trim + Generate |
+| REG     | 1,484 | 1,500 |       0 |          16 |           4 | Generate Needed |
+| BAR     | 1,606 | 1,500 |     179 |          73 |          12 | Trim + Generate |
+| ISC     | 1,463 | 1,500 |       0 |          37 |           5 | Generate Needed |
+| TCP     | 1,445 | 1,500 |       0 |          55 |           6 | Generate Needed |
 
 ## Topic Detail
 
@@ -55,7 +57,7 @@ For each section:
 | 3 | Audit Evidence | 65 | 65 |  |  |
 | 3 | Audit Sampling | 52 | 65 |  | +13 |
 | 3 | Misstatements and Control Deficiencies | 65 | 65 |  |  |
-| 3 | Specific Areas and Transactions | 56 | 65 |  | +9 |
+| 3 | Specific Areas and Transactions | 50 | 65 |  | +15 |
 | 3 | Substantive Procedures | 58 | 65 |  | +7 |
 | 3 | Tests of Controls | 65 | 65 |  |  |
 | 3 | Written Representations | 65 | 65 |  |  |
@@ -70,30 +72,30 @@ For each section:
 
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
-| 1 | Financial Reporting: For-Profit | 160 | 96 | -64 |  |
-| 1 | Financial Statement Ratios | 90 | 96 |  | +6 |
-| 1 | Public Company Reporting | 80 | 96 |  | +16 |
-| 1 | Special Purpose Frameworks | 80 | 96 |  | +16 |
-| 1 | Statement of Cash Flows | 80 | 96 |  | +16 |
-| 2 | Cash and Cash Equivalents | 16 | 44 |  | +28 |
-| 2 | Debt | 53 | 44 | -9 |  |
-| 2 | Equity | 53 | 44 | -9 |  |
-| 2 | Intangible Assets | 53 | 44 | -9 |  |
-| 2 | Inventory | 53 | 44 | -9 |  |
-| 2 | Investments | 30 | 44 |  | +14 |
-| 2 | Leases | 53 | 44 | -9 |  |
-| 2 | Payables and Accrued Liabilities | 50 | 44 | -6 |  |
-| 2 | Property, Plant and Equipment | 53 | 44 | -9 |  |
-| 2 | Revenue Recognition | 53 | 44 | -9 |  |
-| 2 | Trade Receivables | 37 | 44 |  | +7 |
-| 3 | Accounting Changes and Error Corrections | 58 | 52 | -6 |  |
-| 3 | Consolidations | 58 | 52 | -6 |  |
-| 3 | Contingencies | 58 | 52 | -6 |  |
-| 3 | Fair Value | 58 | 52 | -6 |  |
-| 3 | Income Taxes | 58 | 52 | -6 |  |
-| 3 | Not-for-Profit Accounting | 58 | 52 | -6 |  |
-| 3 | State and Local Government | 187 | 52 | -135 |  |
-| 3 | Subsequent Events | 30 | 52 |  | +22 |
+| 1 | Consolidations | 58 | 66 |  | +8 |
+| 1 | Financial Reporting: For-Profit | 160 | 67 | -93 |  |
+| 1 | Financial Statement Ratios | 90 | 66 | -24 |  |
+| 1 | Not-for-Profit Accounting | 58 | 66 |  | +8 |
+| 1 | Public Company Reporting | 80 | 66 | -14 |  |
+| 1 | Special Purpose Frameworks | 80 | 66 | -14 |  |
+| 1 | State and Local Government | 187 | 66 | -121 |  |
+| 1 | Statement of Cash Flows | 80 | 67 | -13 |  |
+| 2 | Cash and Cash Equivalents | 16 | 58 |  | +42 |
+| 2 | Debt | 53 | 58 |  | +5 |
+| 2 | Equity | 53 | 58 |  | +5 |
+| 2 | Intangible Assets | 53 | 58 |  | +5 |
+| 2 | Inventory | 53 | 58 |  | +5 |
+| 2 | Investments | 60 | 58 | -2 |  |
+| 2 | Payables and Accrued Liabilities | 50 | 58 |  | +8 |
+| 2 | Property, Plant and Equipment | 53 | 58 |  | +5 |
+| 2 | Trade Receivables | 37 | 58 |  | +21 |
+| 3 | Accounting Changes and Error Corrections | 58 | 64 |  | +6 |
+| 3 | Contingencies | 58 | 64 |  | +6 |
+| 3 | Fair Value | 58 | 64 |  | +6 |
+| 3 | Income Taxes | 58 | 64 |  | +6 |
+| 3 | Leases | 53 | 64 |  | +11 |
+| 3 | Revenue Recognition | 53 | 64 |  | +11 |
+| 3 | Subsequent Events | 30 | 64 |  | +34 |
 
 ### REG
 
@@ -129,8 +131,8 @@ For each section:
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
 | 1 | Capital Structure and Valuation | 134 | 134 |  |  |
-| 1 | Financial Statement Analysis | 134 | 134 |  |  |
-| 1 | Financial Valuation Methods | 134 | 134 |  |  |
+| 1 | Financial Statement Analysis | 194 | 134 | -60 |  |
+| 1 | Financial Valuation Methods | 163 | 134 | -29 |  |
 | 1 | Prospective Analysis and Forecasting | 134 | 134 |  |  |
 | 1 | Risk Management and Economics | 130 | 134 |  | +4 |
 | 2 | Advanced Consolidations | 49 | 55 |  | +6 |
@@ -142,7 +144,7 @@ For each section:
 | 2 | Income Taxes Advanced | 50 | 55 |  | +5 |
 | 2 | Intangible Assets Advanced | 50 | 55 |  | +5 |
 | 2 | Internal-Use Software and Cloud Computing | 39 | 55 |  | +16 |
-| 2 | Pension and Postretirement Benefits | 55 | 55 |  |  |
+| 2 | Pension and Postretirement Benefits | 145 | 55 | -90 |  |
 | 2 | Stock Compensation and Business Combinations | 52 | 55 |  | +3 |
 | 3 | Fund-to-Government-Wide Reconciliation | 69 | 75 |  | +6 |
 | 3 | Interfund Transactions | 68 | 75 |  | +7 |
@@ -177,7 +179,7 @@ For each section:
 |------|-------|---------|--------|------|----------|
 | 1 | Individual Tax Planning: Compensation | 132 | 132 |  |  |
 | 1 | Passive Activity and At-Risk Rules | 132 | 132 |  |  |
-| 1 | Retirement Plans and Education Savings | 116 | 131 |  | +15 |
+| 1 | Retirement Plans and Education Savings | 110 | 131 |  | +21 |
 | 1 | Wealth Transfer and Gifting Strategies | 131 | 131 |  |  |
 | 2 | Advanced Basis Calculations | 105 | 105 |  |  |
 | 2 | Entity Formation and Liquidation | 105 | 105 |  |  |

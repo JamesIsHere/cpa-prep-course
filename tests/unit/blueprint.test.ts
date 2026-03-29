@@ -126,12 +126,12 @@ describe("lesson slug cross-references", () => {
 
 describe("question counts", () => {
 	it("section totals match expected values", () => {
-		expect(sectionQuestionTotals.aud).toBe(1407);
-		expect(sectionQuestionTotals.far).toBe(1559);
+		expect(sectionQuestionTotals.aud).toBe(1401);
+		expect(sectionQuestionTotals.far).toBe(1589);
 		expect(sectionQuestionTotals.reg).toBe(1484);
-		expect(sectionQuestionTotals.bar).toBe(1577);
+		expect(sectionQuestionTotals.bar).toBe(1606);
 		expect(sectionQuestionTotals.isc).toBe(1463);
-		expect(sectionQuestionTotals.tcp).toBe(1451);
+		expect(sectionQuestionTotals.tcp).toBe(1445);
 	});
 
 	it("all question count values are non-negative integers", () => {

@@ -1,7 +1,7 @@
 // Compute per-section, per-topic question targets and write a generation plan
 // Usage: npx tsx scripts/qa/plan-distribution.ts [--total=9000] [--batch-size=30]
 
-import { writeFileSync } from "fs";
+import { existsSync, readFileSync, writeFileSync } from "fs";
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 import { cpaBlueprint } from "../../src/lib/blueprint";
@@ -114,13 +114,36 @@ async function main() {
 		sectionIdMap.set(s.code, s.id);
 	}
 
-	// Count questions per section_id per topic
+	// Build topic → section code map from blueprint (authoritative)
+	const topicToSectionCode = new Map<string, string>();
+	for (const bp2 of cpaBlueprint) {
+		for (const area of bp2.areas) {
+			for (const group of area.groups) {
+				for (const t of group.questionTopics) {
+					topicToSectionCode.set(t, bp2.code);
+				}
+			}
+		}
+	}
+
+	// Build section_id → code reverse map
+	const sectionIdToCode = new Map<number, string>();
+	for (const s of sections) {
+		sectionIdToCode.set(s.id, s.code as string);
+	}
+
+	// Count questions per section per topic using blueprint mapping
+	// (falls back to DB section_id if topic not in blueprint)
 	const perSectionTopicCounts = new Map<number, Map<string, number>>();
 	for (const q of allQuestions) {
-		if (!perSectionTopicCounts.has(q.section_id)) {
-			perSectionTopicCounts.set(q.section_id, new Map());
+		const blueprintCode = topicToSectionCode.get(q.topic) ?? sectionIdToCode.get(q.section_id);
+		const resolvedSectionId = blueprintCode
+			? sectionIdMap.get(blueprintCode) ?? q.section_id
+			: q.section_id;
+		if (!perSectionTopicCounts.has(resolvedSectionId)) {
+			perSectionTopicCounts.set(resolvedSectionId, new Map());
 		}
-		const m = perSectionTopicCounts.get(q.section_id)!;
+		const m = perSectionTopicCounts.get(resolvedSectionId)!;
 		m.set(q.topic, (m.get(q.topic) || 0) + 1);
 	}
 
@@ -289,9 +312,17 @@ async function main() {
 	writeFileSync(planPath, JSON.stringify(plan, null, 2) + "\n");
 	console.error(`\nWrote: ${planPath}`);
 
-	// Initialize progress tracker
+	// Regenerate progress tracker, preserving batch log if it exists
 	const progressPath = resolve(docsDir, "generation-progress.md");
-	const progressMd = buildProgressMarkdown(plan);
+	let existingBatchLog = "";
+	if (existsSync(progressPath)) {
+		const existing = readFileSync(progressPath, "utf-8");
+		const batchLogIdx = existing.indexOf("## Batch Log");
+		if (batchLogIdx !== -1) {
+			existingBatchLog = existing.slice(batchLogIdx);
+		}
+	}
+	const progressMd = buildProgressMarkdown(plan, existingBatchLog);
 	writeFileSync(progressPath, progressMd);
 	console.error(`Wrote: ${progressPath}`);
 
@@ -301,9 +332,19 @@ async function main() {
 	console.error(`  Trim:     ${totalToTrim} to delete`);
 }
 
-function buildProgressMarkdown(plan: GenerationPlan): string {
+function computeSectionStatus(sp: SectionPlan): string {
+	if (sp.toGenerate === 0 && sp.toTrim === 0) return "On Target";
+	if (sp.toTrim > 0 && sp.toGenerate > 0) return "Trim + Generate";
+	if (sp.toTrim > 0) return "Trim Needed";
+	return "Generate Needed";
+}
+
+function buildProgressMarkdown(plan: GenerationPlan, existingBatchLog: string): string {
+	const today = new Date().toISOString().slice(0, 10);
 	const lines: string[] = [
 		"# Question Curation Plan",
+		"",
+		`> Auto-synced from live DB on ${today} via \`npm run sync-counts\``,
 		"",
 		"Per-section target: 1,500 questions. Distributed by AICPA Blueprint area weights.",
 		"",
@@ -326,13 +367,15 @@ function buildProgressMarkdown(plan: GenerationPlan): string {
 		"",
 		"## Section Overview",
 		"",
-		"| Section | Current | Target | To Trim | To Generate | Gen Batches | Status |",
-		"|---------|---------|--------|---------|-------------|-------------|--------|",
+		"| Section | Current | Target | To Trim | To Generate | Gen Batches | Status          |",
+		"|---------|---------|--------|---------|-------------|-------------|-----------------|",
 	];
 
 	for (const sp of plan.sections) {
+		const status = computeSectionStatus(sp);
+		const sect = sp.section.toUpperCase().padEnd(7);
 		lines.push(
-			`| ${sp.section.toUpperCase()}     | ${sp.currentTotal.toLocaleString()} | ${sp.targetTotal.toLocaleString()} | ${sp.toTrim.toLocaleString()} | ${sp.toGenerate.toLocaleString()} | ${sp.totalBatches} | Pending |`,
+			`| ${sect} | ${sp.currentTotal.toLocaleString().padStart(5)} | ${sp.targetTotal.toLocaleString().padStart(5)} | ${sp.toTrim.toLocaleString().padStart(7)} | ${sp.toGenerate.toLocaleString().padStart(11)} | ${String(sp.totalBatches).padStart(11)} | ${status.padEnd(15)} |`,
 		);
 	}
 
@@ -355,11 +398,17 @@ function buildProgressMarkdown(plan: GenerationPlan): string {
 		lines.push("");
 	}
 
-	lines.push("## Batch Log");
-	lines.push("");
-	lines.push("| Date | Migration | Section | Topic | Count | Notes |");
-	lines.push("|------|-----------|---------|-------|-------|-------|");
-	lines.push("");
+	// Preserve existing batch log, or create empty one
+	if (existingBatchLog) {
+		lines.push(existingBatchLog.trimEnd());
+		lines.push("");
+	} else {
+		lines.push("## Batch Log");
+		lines.push("");
+		lines.push("| Date | Migration | Section | Topic | Count | Notes |");
+		lines.push("|------|-----------|---------|-------|-------|-------|");
+		lines.push("");
+	}
 
 	return lines.join("\n");
 }

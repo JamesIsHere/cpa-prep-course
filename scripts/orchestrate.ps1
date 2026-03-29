@@ -1288,5 +1288,19 @@ Write-Host ''
 $statusWord = if ($stopped) { 'STOPPED' } elseif ($DryRun) { 'DRY_RUN' } else { 'COMPLETE' }
 Write-Log "=== SESSION END: $statusWord | $totalQuestions questions | $completedBatches batches | $elapsedFmt | commits: $commits ==="
 
+# ── Post-run sync: update blueprint.ts, generation-progress.md, generation-plan.json from live DB ──
+if (-not $DryRun -and $completedBatches -gt 0) {
+    Write-Host ''
+    Write-Host '  Syncing question counts from live DB...' -ForegroundColor DarkCyan
+    try {
+        $syncOutput = & npm run sync-counts 2>&1
+        $syncOutput | ForEach-Object { Write-Log "sync: $_" }
+        Write-Host '  Sync complete — blueprint.ts, generation-progress.md, generation-plan.json updated' -ForegroundColor Green
+    } catch {
+        Write-Host "  Sync failed: $_" -ForegroundColor Yellow
+        Write-Log "sync: FAILED — $_"
+    }
+}
+
 # ── Cleanup ────────────────────────────────────────────────────
 Remove-Item $TempDir -Recurse -Force -ErrorAction SilentlyContinue
