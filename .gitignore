@@ -62,5 +62,8 @@ docs/orchestrator-logs/
 # security audit (local only, contains sensitive context)
 security/
 
+# James's study framework design workspace (HTML prototypes, Excel drafts, images)
+frameworks/
+
 .vercel
 .env*.local

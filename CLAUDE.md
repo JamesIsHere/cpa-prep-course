@@ -130,10 +130,10 @@ Each batch gets its own headless `claude --print` invocation with a fresh contex
 | `supabase/migrations/00128–00129`                     | Difficulty rebalancing — ISC (68 questions)               |
 | `supabase/migrations/00130–00145`                     | Citation backfill — AUD batches 1-14 (complete, 566 questions) |
 | `supabase/migrations/00146–00159`                     | Citation backfill — ISC batches 1-14 (complete, 677 questions) |
-| `supabase/migrations/00160–00393`                     | Question generation — 247 batches across all sections    |
+| `supabase/migrations/00160–00434`                     | Question generation (~280 batches across all sections)   |
 | `supabase/migrations/00435–00440`                     | Dedup cleanup — 6,244 duplicates + 90 TODOs deleted (2026-03-05) |
-| `supabase/migrations/00400–00434`                     | Question generation — FAR batches 52-86                  |
 | `supabase/migrations/00246–00248`                     | RLS hardening + auth optimization                        |
+| `supabase/migrations/00441–00586`                     | Verification fixes + continued generation/curation       |
 | `docs/question-style-guide.md`                | Question writing rubric (all new questions must meet this) |
 | `scripts/apply-migrations.mjs`                | Apply pending SQL migrations via exec_sql RPC            |
 | `scripts/health-check.ts`                     | Health check CLI (migration sync, DB, Stripe, Vercel, SEO) |
@@ -213,6 +213,20 @@ All build phases complete. Active work is marketing and content connectivity.
 - `@next/mdx` requires `mdx-components.tsx` at the `src/` root (not `app/` root) for App Router
 - `generateStaticParams` only pre-renders free lessons; gated lessons are dynamic due to auth check in the page component
 
+## Data Freshness
+
+Some values in this file are kept in sync automatically; others are point-in-time snapshots.
+
+| What | How it stays current | Command |
+|------|---------------------|---------|
+| Per-section question counts (Content Summary table) | `sync-counts` writes to this file | `npm run sync-counts` |
+| `blueprint.ts` questionCounts + test assertions | `sync-counts` | `npm run sync-counts` |
+| QA quality scores (critical/moderate/avg) | **Not auto-synced** — run QA for live numbers | `npm run qa` |
+| Bloom's / difficulty / citation status | **Not auto-synced** — see tracker files in `docs/` | `npm run qa --output=json` |
+| Duplicate count | **Not auto-synced** — reported by QA | `npm run qa` |
+
+**Rule for Claude:** Do not report "everything is in sync" unless you have run the relevant commands in this session. Prose claims in this file may be stale.
+
 ## Question Quality
 
 - **Style guide:** `docs/question-style-guide.md` — rubric for stem, distractor, explanation, difficulty, and Bloom's level standards
@@ -220,11 +234,11 @@ All build phases complete. Active work is marketing and content connectivity.
 - **Migration validator:** `npm run validate-migration <file>` checks INSERT, UPDATE, and explanation-only UPDATE migrations against the rubric (stem length, explanation quality, citation/contrast checks, TODO detection)
 - **Migration generator:** `npm run generate-migration` reads candidate JSON from stdin and outputs UPDATE scaffold SQL. Supports `--mode=blooms|difficulty|citation`
 - **Rule:** All new question migrations must pass `validate-migration` before commit. No questions scoring 0-3 (critical) should be deployed.
-- **Current status:** 0 critical, 0 moderate — all questions at score 7+ (avg 8.2/10)
-- **Bloom's L3 rebalancing:** Complete — REG 9%→25%, BAR 16%→30%, FAR 16%→26%, TCP 15%→20%. Total: 389 rewrites. Tracker: `docs/blooms-rebalancing.md`
-- **Bloom's L1/L4 rebalancing:** Complete — BAR (23), FAR (51), TCP (71), REG (169), AUD (190), ISC (284). Total: 788/788 rewrites. Tracker: `docs/blooms-l1-l4-rebalancing.md`
-- **Difficulty rebalancing:** In progress — target 30/50/20 easy/medium/hard. ~533 easy→medium rewrites needed. Tracker: `docs/difficulty-rebalancing.md`
-- **Citation coverage:** In progress — 2,970/4,993 explanations originally lacked citations (~59%). Working worst-coverage-first. AUD complete (14/14 batches, 98% coverage, migrations 00130–00145). ISC complete (14/14 batches, 100% coverage). Next: BAR→REG→FAR→TCP. Batches of 50, orchestrated via `scripts/orchestrate.ps1`. Tracker: `docs/citation-coverage.md`
+- **Current status:** Run `npm run qa` for live scores. Latest report: `docs/qa-reports/` (dated). `sync-counts` keeps question counts current; QA scores are point-in-time snapshots.
+- **Bloom's L3 rebalancing:** Complete (2026-02) — 389 rewrites. Tracker: `docs/blooms-rebalancing.md`
+- **Bloom's L1/L4 rebalancing:** Complete (2026-02) — 788 rewrites. Tracker: `docs/blooms-l1-l4-rebalancing.md`
+- **Difficulty rebalancing:** Complete (2026-02) — target 30/50/20 reached. Tracker: `docs/difficulty-rebalancing.md`
+- **Citation coverage:** AUD complete, ISC complete. BAR/REG/FAR/TCP pending. Tracker: `docs/citation-coverage.md`
 - **Question generation (1,500/section):** Pipeline built — `plan-distribution.ts` → `select-generation-batch.ts` → `generate-insert-scaffold.ts` → Claude fills → `validate-migration` + `check-generation-duplicates.ts`. All sections target ~1,500. Live DB: ~8,988 questions (synced 2026-03-29). FAR topics realigned to AICPA 2026 Blueprint. Tracker: `docs/generation-progress.md`
 
 ## Spec Reference
@@ -236,10 +250,7 @@ Full product specification with all 7 phases, data model, and acceptance criteri
 
 Repository: https://github.com/JamesIsHere/cpa-prep-course
 Branch: `master`
-Latest commits:
-- `cf41e21` Bloom's L1/L4 rebalancing AUD + ISC: 474 questions rewritten, all sections complete
-- `5d40326` Bloom's L1/L4 rebalancing BAR + FAR + TCP + REG: 314 questions rewritten
-- `cb40246` Bloom's L3 rebalancing FAR + TCP: 125 questions rewritten, all sections complete
+Use `git log --oneline -10` for recent commits — do not hardcode commit hashes here.
 
 
 
