@@ -1346,9 +1346,9 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
         & git -C $RepoRoot add $scaffoldPath $TrackerFile 2>&1 | Out-Null
     }
 
-    $commitBody = "$ModeLabel $su batch $batchNum ($batchCount questions) + tracker update"
+    $commitBody = "$ModeLabel $su batch $batchNum -- $batchCount questions + tracker update"
     $commitMsgFile = Join-Path $TempDir "commit_b${batchNum}.txt"
-    [System.IO.File]::WriteAllText($commitMsgFile, "$commitBody`n`nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>`n")
+    [System.IO.File]::WriteAllText($commitMsgFile, "$commitBody`n`nCo-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>`n")
 
     & git -C $RepoRoot commit --file=$commitMsgFile 2>&1 | Out-Null
     $commitHash = (& git -C $RepoRoot rev-parse --short HEAD).Trim()
@@ -1358,7 +1358,7 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
     # ── 7.5. Apply migration to DB (generate mode only) ────────
     # Without this, the next batch's selector sees stale DB counts and
     # keeps generating for already-filled topics, overshooting targets.
-    if ($Mode -eq 'generate' -and (Test-Path $scaffoldPath)) {
+    if ($Mode -in @('generate','stem') -and (Test-Path $scaffoldPath)) {
         Push-Location $RepoRoot
         $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
         try {

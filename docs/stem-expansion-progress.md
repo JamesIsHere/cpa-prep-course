@@ -6,13 +6,13 @@ Expanding short textbook-style stems (<=20 words) into CPA-exam-style mini case 
 
 | Section | Short Stems | Expanded | Remaining | Batches Done |
 |---------|-------------|----------|-----------|--------------|
-| AUD     | 573         | 0        | 573       | 0            |
-| ISC     | 484         | 0        | 484       | 0            |
-| REG     | 451         | 0        | 451       | 0            |
-| BAR     | 409         | 0        | 409       | 0            |
+| AUD     | 552         | 0        | 552       | 0            |
+| REG     | 446         | 0        | 446       | 0            |
+| BAR     | 404         | 0        | 404       | 0            |
+| ISC     | 477         | 0        | 477       | 0            |
+| TCP     | 293         | 0        | 293       | 0            |
 | FAR     | 350         | 350      | 0         | 8            |
-| TCP     | 297         | 0        | 297       | 0            |
-| **Total** | **2,564** | **350**  | **2,214** | **8**        |
+| **Total** | **2,522** | **350**  | **2,172** | **8**        |
 
 ## Batch Log
 
