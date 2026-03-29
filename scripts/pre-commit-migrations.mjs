@@ -69,7 +69,7 @@ if (URL && KEY) {
         if (!tracked.has(filename)) {
           process.stdout.write(`\n❌ BLOCKED: ${filename} is not in applied_migrations\n`);
           process.stdout.write(`   This migration has not been applied to the database.\n`);
-          process.stdout.write(`   Run: node scripts/apply-migrations.mjs\n`);
+          process.stdout.write(`   Run: npm run migrate\n`);
           failed = true;
         }
       }
@@ -146,7 +146,7 @@ if (URL && KEY) {
             process.stdout.write(`\n❌ BLOCKED: Question count drift detected\n`);
             process.stdout.write(`   DB total: ${totalDb}\n`);
             process.stdout.write(`   CLAUDE.md claims: ${claudeTotal}\n`);
-            process.stdout.write(`   Run: npm run sync-counts\n`);
+            process.stdout.write(`   Run: npm run migrate (it syncs counts automatically)\n`);
             failed = true;
           }
         }

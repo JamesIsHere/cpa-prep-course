@@ -1362,8 +1362,7 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
         Push-Location $RepoRoot
         $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
         try {
-            $migNum = [int]([System.IO.Path]::GetFileName($scaffoldPath).Split('_')[0])
-            $applyOutput = & node scripts/apply-migrations.mjs --from=$migNum 2>&1 | Out-String
+            $applyOutput = & node scripts/migrate.mjs 2>&1 | Out-String
             if ($LASTEXITCODE -eq 0) {
                 Write-Step 'Apply' 'migration applied to DB'
             } else {

@@ -28,6 +28,9 @@ npm run test:e2e             # Playwright e2e tests (all browsers)
 npm run qa                   # Question quality audit (all sections)
 npm run qa -- --section=aud  # QA audit for single section
 npm run qa -- --output=json  # QA audit with JSON output (for scripting)
+npm run migrate              # Apply pending migrations → track → sync counts (THE one command)
+npm run migrate:status       # Show pending migrations + DB counts (no changes)
+npm run migrate:dry          # Show what would be applied (no changes)
 npm run sync-counts          # Sync questionCounts from live DB → blueprint.ts + tests
 npm run validate-migration <file>  # Validate question migration against style guide
 npm run generate-migration   # Generate UPDATE scaffold from piped candidate JSON
