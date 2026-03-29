@@ -1,5 +1,5 @@
 import XLSX from "xlsx";
-import { readFileSync, writeFileSync, copyFileSync } from "fs";
+import { readFileSync, copyFileSync } from "fs";
 import { resolve } from "path";
 
 const wb = XLSX.utils.book_new();

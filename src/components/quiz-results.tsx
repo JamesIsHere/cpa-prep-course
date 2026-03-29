@@ -44,16 +44,19 @@ export default function QuizResults({
 
 	// Send explanation dwells on unmount
 	useEffect(() => {
+		const dwellsMap = explanationDwellsRef.current;
+		const prevExpandedId = prevExpandedIdRef.current;
+		const explanationShownAt = explanationShownAtRef.current;
 		return () => {
 			// Flush current
-			if (prevExpandedIdRef.current && explanationShownAtRef.current) {
-				const elapsed = Date.now() - explanationShownAtRef.current;
-				const prev = explanationDwellsRef.current.get(prevExpandedIdRef.current) ?? 0;
-				explanationDwellsRef.current.set(prevExpandedIdRef.current, prev + elapsed);
+			if (prevExpandedId && explanationShownAt) {
+				const elapsed = Date.now() - explanationShownAt;
+				const prev = dwellsMap.get(prevExpandedId) ?? 0;
+				dwellsMap.set(prevExpandedId, prev + elapsed);
 			}
 
 			if (!attemptId) return;
-			const dwells = Array.from(explanationDwellsRef.current.entries())
+			const dwells = Array.from(dwellsMap.entries())
 				.filter(([, ms]) => ms > 0)
 				.map(([questionId, timeOnExplanationMs]) => ({ questionId, timeOnExplanationMs }));
 

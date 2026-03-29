@@ -480,11 +480,6 @@ while ((match = updateStemOnlyPattern.exec(fullSql)) !== null) {
 		match.index + match[0].length + 30,
 	);
 	if (/choices\s*=/i.test(after)) continue;
-	// Also skip if there's a comma after the stem value (means more SET columns follow)
-	const stemEnd = fullSql.slice(
-		match.index,
-		match.index + match[0].length,
-	);
 	// Our pattern already anchors to WHERE, so no false positives from full UPDATEs
 
 	questionCount++;

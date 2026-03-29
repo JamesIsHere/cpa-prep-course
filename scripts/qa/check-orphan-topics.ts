@@ -45,7 +45,6 @@ async function main() {
     process.exit(1);
   }
   const sectionIdToCode = new Map(sections.map((s: { id: number; code: string }) => [s.id, s.code]));
-  const sectionCodeToId = new Map(sections.map((s: { id: number; code: string }) => [s.code, s.id]));
 
   // Fetch all distinct topics with counts per section
   const { data: topicRows, error } = await supabase.rpc("exec_sql", {

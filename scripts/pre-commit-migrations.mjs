@@ -129,14 +129,7 @@ if (URL && KEY) {
           dbBySection[code] = (dbBySection[code] || 0) + count;
         }
 
-        // Check CLAUDE.md for section counts too
-        let drifted = false;
-        for (const [code, dbCount] of Object.entries(dbBySection)) {
-          // blueprint.ts stores per-topic, we need section totals
-          // Actually questionCounts is per-topic, let's just compare totals
-        }
-
-        // Simpler: compare total DB count vs what CLAUDE.md says
+        // Compare total DB count vs what CLAUDE.md says
         const totalDb = Object.values(dbCounts).reduce((a, b) => a + b, 0);
         const claudeMd = readFileSync('CLAUDE.md', 'utf-8');
         const totalMatch = claudeMd.match(/\*\*Totals:\*\*.*?([\d,]+)\s*questions/);

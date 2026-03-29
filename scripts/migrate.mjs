@@ -196,7 +196,7 @@ console.log(`\nSyncing question counts...`);
 try {
   execSync('npm run sync-counts', { stdio: 'pipe' });
   console.log('✅ Counts synced (blueprint.ts, tests, CLAUDE.md)');
-} catch (err) {
+} catch (_err) {
   console.error('⚠️  sync-counts failed — run manually: npm run sync-counts');
 }
 

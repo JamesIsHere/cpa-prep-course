@@ -3,7 +3,7 @@
 
 import { readFileSync } from "fs";
 import { resolve } from "path";
-import { fetchAllQuestions, supabase } from "./db-client";
+import { fetchAllQuestions } from "./db-client";
 import { cpaBlueprint } from "../../src/lib/blueprint";
 import { getFrameworkItemsForGroup, type GroupFrameworkItems } from "../../src/lib/blueprint-utils";
 
