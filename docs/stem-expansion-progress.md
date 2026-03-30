@@ -6,7 +6,7 @@ Expanding short textbook-style stems (<=20 words) into CPA-exam-style mini case 
 
 | Section | Short Stems | Expanded | Remaining | Batches Done |
 |---------|-------------|----------|-----------|--------------|
-| AUD     | 552         | 752      | 0         | 17           |
+| AUD     | 552         | 760      | 0         | 18           |
 | REG     | 446         | 643      | 0         | 13           |
 | BAR     | 404         | 579      | 0         | 13           |
 | ISC     | 477         | 614      | 0         | 13           |
@@ -92,3 +92,4 @@ Expanding short textbook-style stems (<=20 words) into CPA-exam-style mini case 
 | 2026-03-30 | 01000_stemfix_reg_batch4.sql | REG | 47 | ~42 | Citation removal + scenario expansion, 14 topics covered |
 | 2026-03-30 | 01002_stemfix_tcp_batch5.sql | TCP | 12 | ~40 | Citation removal + scenario expansion, 5 topics covered |
 | 2026-03-30 | 01001_stemfix_aud_batch4.sql | AUD | 50 | ~42 | Citation removal + scenario expansion, 14 topics covered |
+| 2026-03-30 | 01003_stemfix_aud_batch5.sql | AUD | 8 | ~42 | Scenario expansion, 4 topics covered |
