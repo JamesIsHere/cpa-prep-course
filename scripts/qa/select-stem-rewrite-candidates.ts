@@ -34,14 +34,16 @@ if (!sectionArg) {
 // ─── Detection patterns ──────────────────────────────────────
 
 // Citations that should not appear in CPA exam stems
+// Note: "Under GAAP" is a framework name (not a citation) and is excluded.
+// "Section 754" etc. are commonly used by number even on the real exam — excluded.
 const CITATION_IN_STEM =
-	/\b(ASC\s+\d|AU-C\s+\d|IRC\s+(Section|Sec\.?\s*)\d|Section\s+\d{3,}|GASB\s+\d|SSAE\s+\d|UCC\s+(Section|Sec\.?\s*)\d|Under\s+(ASC|AU-C|IRC|GAAP|GASB|Section|PCAOB|SSAE|SSARS|Circular|UCC|FASB)|Circular\s+230|AT-C\s+\d|AR-C\s+\d|SSARS\s+\d|PCAOB\s+AS\s*\d|SAS\s+No\.\s*\d|SOX\s+Section\s+\d)/i;
+	/\b(ASC\s+\d|AU-C\s+\d|IRC\s+(Section|Sec\.?\s*)\d|GASB\s+\d|SSAE\s+\d|UCC\s+(Section|Sec\.?\s*)\d|Under\s+(ASC|AU-C|IRC|GASB|PCAOB|SSAE|SSARS|Circular|UCC|FASB)|Circular\s+230|AT-C\s+\d|AR-C\s+\d|SSARS\s+\d|PCAOB\s+AS\s*\d|SAS\s+No\.\s*\d|SOX\s+Section\s+\d)/i;
 
 // Entity/scenario indicators — if present, the stem has a scenario
 const HAS_ENTITY =
 	/\b(Corp|Inc|LLC|Co\b|Ltd|LLP|Partners|Company|Enterprises|Industries|Group|Foundation|Association|Manufacturing|Consulting|Technologies|Insurance|Hospital|University|Bank|Trust)\b/i;
 const HAS_GOVT =
-	/\b(Town of|City of|County of|State of|Department of|Municipality|District)\b/i;
+	/\b(Town of|City of|County of|State of|Department of|Municipality|District|Township|A city\b|A county\b|A state\b|A government\b|The city\b|The county\b|The state\b|The government\b)/i;
 const HAS_PERSON =
 	/\b[A-Z][a-z]{2,}(,\s*(a|an|the|age)\s+|'s\s+|\s+(is|has|was|owns|sells|receives|transfers|files|pays|earns|contributes|converts|invests|donates|declares|reports|operates|manages|works|retired|purchases|exchanges|contributes|prepares|engages|hires|maintains))/;
 
