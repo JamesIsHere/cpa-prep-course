@@ -75,7 +75,7 @@ $SelectorMap = @{
     'moderate'  = 'pull-moderate-candidates.ts'
     'verify'    = 'select-verify-candidates.ts'
     'cleanup'   = 'select-cleanup-candidates.ts'
-    'stem'      = 'select-stem-candidates.ts'
+    'stem'      = 'select-stem-rewrite-candidates.ts'
     'quality'   = 'select-quality-candidates.ts'
 }
 
@@ -98,7 +98,7 @@ $ModeLabel = switch ($Mode) {
     'moderate'  { 'Quality upgrade' }
     'verify'    { 'Correctness verification' }
     'cleanup'   { 'FAR cleanup' }
-    'stem'      { 'Stem expansion' }
+    'stem'      { 'Stem rewrite' }
     'quality'   { 'Quality fix' }
 }
 
@@ -111,7 +111,7 @@ $FilePattern = switch ($Mode) {
     'moderate'  { "*_upgrade_${Section}_batch*.sql" }
     'verify'    { "*_verify_fix_${Section}_batch*.sql" }
     'cleanup'   { "*_cleanup_${Section}_batch*.sql" }
-    'stem'      { "*_stem_${Section}_batch*.sql" }
+    'stem'      { "*_stemfix_${Section}_batch*.sql" }
     'quality'   { "*_quality_${Section}_batch*.sql" }
 }
 
@@ -317,6 +317,20 @@ function New-Scaffold {
     } elseif ($Mode -eq 'cleanup') {
         # Cleanup mode: custom scaffold generator
         $scriptPath = Join-Path $QaScripts 'generate-cleanup-scaffold.ts'
+        $genArgs = @("--section=$Section", "--batch=$BatchNum")
+
+        Push-Location $RepoRoot
+        $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
+        try {
+            Get-Content $CandidateFile -Raw | & npx tsx $scriptPath @genArgs 2>&1 | Out-Null
+            $exitCode = $LASTEXITCODE
+        } finally {
+            $ErrorActionPreference = $prevEAP
+            Pop-Location
+        }
+    } elseif ($Mode -eq 'stem') {
+        # Stem rewrite mode: custom scaffold generator
+        $scriptPath = Join-Path $QaScripts 'generate-stem-rewrite-scaffold.ts'
         $genArgs = @("--section=$Section", "--batch=$BatchNum")
 
         Push-Location $RepoRoot
@@ -878,7 +892,7 @@ ORCHESTRATOR_RESULT:{"status":"error","message":"brief description"}
             return @"
 You are running headless as part of an automated batch pipeline. Execute autonomously — do not ask questions, do not create task lists, do not use TodoWrite.
 
-TASK: Stem expansion for $su section, batch $BatchNum ($batchCount questions).
+TASK: Stem rewrite for $su section, batch $BatchNum ($batchCount questions).
 
 FILES:
 - Migration scaffold (fill every TODO): $sf
@@ -890,19 +904,26 @@ $lessonContent
 
 INSTRUCTIONS:
 
-You are expanding short, textbook-style question stems into CPA-exam-style mini case scenarios.
+You are rewriting question stems to match CPA exam style. Each candidate has issues listed (#10 = citation in stem, #11 = short/no scenario, or both).
 
 CRITICAL RULE: You are ONLY rewriting the stem. Do NOT change the answer, choices, explanation, difficulty, cognitive_level, or correct_index. The UPDATE statement only touches the stem column.
 
-1. Read the scaffold and candidate JSON. Each question has a short stem (often a bare "What is X?" or "Which of the following..." question). The -- ORIGINAL STEM comment shows the current text.
+1. Read the scaffold and candidate JSON. The -- Original stem comment shows the current text, and -- Issues shows what needs fixing.
 
-2. For EVERY TODO placeholder, write an expanded stem that:
-   a) Opens with a realistic 2-4 sentence business scenario: named entity (realistic company/person name), specific transaction or situation, relevant dates and dollar amounts where appropriate
-   b) Naturally leads to the SAME question being asked — the concept tested must not change
-   c) Targets 25-50 words total
-   d) Does NOT add irrelevant complexity that changes which answer is correct
-   e) Does NOT turn it into a simulation (TBS) — keep it multiple choice appropriate
-   f) Avoids boilerplate like "You are an auditor..." — put the candidate in the scenario implicitly
+2. For EVERY TODO placeholder, rewrite the stem following these rules:
+
+   IF #10 (citation in stem): Remove all standard references (ASC, AU-C, IRC Section, GASB, etc.) from the stem. Real CPA questions describe the situation and the candidate figures out which standard applies. Replace "Under IRC Section 351" with plain language like "in a tax-free incorporation" or just describe the transaction.
+
+   IF #11 (short/no scenario): Expand into a mini case scenario with a named entity, specific situation, dates/amounts where relevant. Target 25-50 words.
+
+   IF BOTH: Remove the citation AND add a scenario.
+
+   ALL rewrites must:
+   a) Lead to the SAME question being asked — the concept tested must not change
+   b) Use realistic company/person names and specific transactions
+   c) NOT add complexity that changes which answer is correct
+   d) NOT turn it into a simulation (TBS) — keep it multiple choice appropriate
+   e) Avoid boilerplate like "You are an auditor..." — put the candidate in the scenario implicitly
 
 EXAMPLES of good expansions:
 
