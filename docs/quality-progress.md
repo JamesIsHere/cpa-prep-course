@@ -268,3 +268,4 @@
 | 2026-03-30 | 00946_quality_isc_batch38.sql  | ISC     | 30        | 30x#3         | 30 per-choice explanations restructured          |
 | 2026-03-30 | 00944_quality_tcp_batch37.sql  | TCP     | 30        | 30x#3         | 30 per-choice explanations restructured          |
 | 2026-03-30 | 00947_quality_far_batch38.sql  | FAR     | 30        | 30x#3         | 30 per-choice explanations restructured          |
+| 2026-03-30 | 00948_quality_reg_batch50.sql  | REG     | 30        | 30x#3         | 30 per-choice explanations restructured          |
