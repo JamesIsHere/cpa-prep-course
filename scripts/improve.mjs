@@ -79,9 +79,10 @@ for (const sec of sectionsToRun) {
       `npx tsx scripts/qa/select-quality-candidates.ts --section=${sec} --count=99999`,
       { encoding: 'utf-8', stdio: ['pipe', 'pipe', 'pipe'], timeout: 120000 }
     );
-    // Strip dotenv banner lines before parsing JSON
-    const jsonStart = result.indexOf('[');
-    const clean = jsonStart >= 0 ? result.substring(jsonStart) : result.trim();
+    // Strip dotenv banner lines before parsing JSON array
+    // Look for [{ or [\n which starts the JSON array, not [dotenv...
+    const jsonMatch = result.match(/\n(\[[\s\S]*)/);
+    const clean = jsonMatch ? jsonMatch[1].trim() : result.trim();
     const candidates = JSON.parse(clean || '[]');
     if (candidates.length > 0) {
       const batches = Math.ceil(candidates.length / 30);
@@ -91,8 +92,8 @@ for (const sec of sectionsToRun) {
     } else {
       console.log(`  ${sec.toUpperCase().padEnd(5)}     0 questions  ✅`);
     }
-  } catch {
-    console.log(`  ${sec.toUpperCase().padEnd(5)}  (scan failed)`);
+  } catch (err) {
+    console.log(`  ${sec.toUpperCase().padEnd(5)}  (scan failed: ${err.message?.substring(0, 100) || 'unknown'})`);
   }
 }
 
