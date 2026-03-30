@@ -9,10 +9,10 @@ Expanding short textbook-style stems (<=20 words) into CPA-exam-style mini case 
 | AUD     | 552         | 602      | 0         | 14           |
 | REG     | 446         | 496      | 0         | 10           |
 | BAR     | 404         | 503      | 0         | 11           |
-| ISC     | 477         | 527      | 0         | 11           |
+| ISC     | 477         | 577      | 0         | 12           |
 | TCP     | 293         | 393      | 0         | 8            |
 | FAR     | 350         | 400      | 0         | 9            |
-| **Total** | **2,522** | **2,594** | **28**    | **55**       |
+| **Total** | **2,522** | **2,644** | **28**    | **56**       |
 
 ## Batch Log
 
