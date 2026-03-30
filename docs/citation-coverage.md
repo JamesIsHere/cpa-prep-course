@@ -4,11 +4,9 @@ Cross-session tracker for adding standard citations to question explanations.
 
 **Goal:** Every explanation references the relevant authoritative standard (ASC, AU-C, IRC, FASB, GASB, etc.)
 
-**Total backlog:** 2,970 questions missing citations across 6 sections (~59% of 4,993).
+**Status (2026-03-30):** AUD 95%, FAR 100%, REG 96%, BAR 87%, ISC 87%, TCP 96%.
 
-**Batch size:** 50 questions per migration (matches prior rebalancing pattern).
-
-**Estimated batches:** ~60 total (6–14 per section).
+**Remaining gaps:** BAR (~200 missing), ISC (~187 missing). All other sections effectively complete.
 
 ## How to Resume
 
@@ -24,12 +22,12 @@ Each session:
 
 | Section | Missing | Total | Coverage Start | Coverage Now | Batches Done | Batches Left | Status      |
 |---------|---------|-------|----------------|--------------|--------------|--------------|-------------|
-| AUD     | 489     | 1,055 | 39%            | 98%          | 14/14        | 0            | Complete    |
-| ISC     | 677     | 749   | 10%            | 100%         | 14/14        | 0            | Complete    |
-| BAR     | 446     | 780   | 36%            | 98%          | 10/10        | 0            | Complete    |
-| REG     | 441     | 850   | 48%            | 100%         | 9/9          | 0            | Complete    |
-| FAR     | 425     | 860   | 51%            | 63%          | 3/9          | 6            | In Progress |
-| TCP     | 292     | 699   | 58%            | 100%         | 6/6          | 0            | Complete    |
+| AUD     | 489     | 1,446 | 39%            | 95%          | 14           | 0            | Complete    |
+| ISC     | 677     | 1,452 | 10%            | 87%          | 14           | ~4           | Gap         |
+| BAR     | 446     | 1,534 | 36%            | 87%          | 10           | ~4           | Gap         |
+| REG     | 441     | 1,446 | 48%            | 96%          | 9            | 0            | Complete    |
+| FAR     | 425     | 1,554 | 51%            | 100%         | 3+gen        | 0            | Complete    |
+| TCP     | 292     | 1,421 | 58%            | 96%          | 6            | 0            | Complete    |
 
 **Section order:** Worst coverage first (ISC 10% → AUD 39% → BAR 36% → REG 48% → FAR 51% → TCP 58%).
 

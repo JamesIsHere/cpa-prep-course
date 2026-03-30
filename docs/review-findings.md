@@ -1,6 +1,8 @@
 # Human Review Findings
 
-Patterns found during 30-question statistical reviews. Each pattern is a candidate for automated bulk detection and fix.
+> **Status (2026-03-30):** All 10 patterns below have been automated and resolved via `npm run improve`. See `docs/quality-progress.md` for details.
+
+Patterns found during 30-question statistical reviews. All patterns now have automated detection and bulk fixes.
 
 ## Recurring Issues
 
