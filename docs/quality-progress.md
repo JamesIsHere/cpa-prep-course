@@ -275,3 +275,4 @@
 | 2026-03-30 | 00955_quality_bar_batch43.sql  | BAR     | 30        | 25x#1, 5x#3   | 25 choices equalized + 5 per-choice explanations  |
 | 2026-03-30 | 00952_quality_tcp_batch38.sql  | TCP     | 30        | 30x#3         | 30 per-choice explanations restructured          |
 | 2026-03-30 | 00953_quality_far_batch39.sql  | FAR     | 30        | 9x#1, 21x#3   | 9 choices equalized + 21 per-choice explanations  |
+| 2026-03-30 | 00954_quality_reg_batch51.sql  | REG     | 30        | 30x#3         | 30 per-choice explanations restructured          |
