@@ -302,3 +302,4 @@
 | 2026-03-30 | 00979_quality_reg_batch57.sql  | REG     | 30        | 30x#3         | 30 per-choice explanations restructured           |
 | 2026-03-30 | 00980_quality_reg_batch58.sql  | REG     | 30        | 30x#3         | 30 per-choice explanations restructured           |
 | 2026-03-30 | 00981_quality_reg_batch59.sql  | REG     | 30        | 4x#1, 26x#3  | 4 choices equalized + 26 per-choice explanations  |
+| 2026-03-30 | 00982_quality_reg_batch60.sql  | REG     | 15        | 5x#1, 10x#3  | 5 choices equalized + 10 per-choice explanations  |
