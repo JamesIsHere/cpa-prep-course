@@ -8,7 +8,7 @@ Per-section target: 1,500 questions. Distributed by AICPA Blueprint area weights
 
 **Batch size:** 30 questions per generation batch.
 
-**To generate:** 683 new questions (~102 batches).
+**To generate:** 683 new questions (~25 batches).
 
 **To trim:** 424 questions to delete (keep best, cut weakest).
 
@@ -25,12 +25,12 @@ For each section:
 
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status          |
 |---------|---------|--------|---------|-------------|-------------|-----------------|
-| AUD     | 1,369 | 1,500 |       0 |         131 |          20 | Generate Needed |
-| FAR     | 1,567 | 1,500 |     267 |         200 |          19 | Trim + Generate |
-| REG     | 1,456 | 1,500 |       0 |          44 |          16 | Generate Needed |
-| BAR     | 1,539 | 1,500 |     157 |         118 |          16 | Trim + Generate |
-| ISC     | 1,420 | 1,500 |       0 |          80 |          15 | Generate Needed |
-| TCP     | 1,390 | 1,500 |       0 |         110 |          16 | Generate Needed |
+| AUD     | 1,369 | 1,500 |       0 |         131 |           5 | Generate Needed |
+| FAR     | 1,567 | 1,500 |     267 |         200 |           7 | Trim + Generate |
+| REG     | 1,456 | 1,500 |       0 |          44 |           2 | Generate Needed |
+| BAR     | 1,539 | 1,500 |     157 |         118 |           4 | Trim + Generate |
+| ISC     | 1,420 | 1,500 |       0 |          80 |           3 | Generate Needed |
+| TCP     | 1,390 | 1,500 |       0 |         110 |           4 | Generate Needed |
 
 ## Topic Detail
 

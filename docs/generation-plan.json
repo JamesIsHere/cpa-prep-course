@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-30T17:54:09.892Z",
+  "generatedAt": "2026-03-30T18:07:58.038Z",
   "totalTarget": 9000,
   "batchSize": 30,
   "difficultyTargets": {
@@ -15,7 +15,7 @@
       "targetTotal": 1500,
       "toGenerate": 131,
       "toTrim": 0,
-      "totalBatches": 20,
+      "totalBatches": 5,
       "topics": [
         {
           "topic": "Ethics and Independence",
@@ -751,7 +751,7 @@
       "targetTotal": 1500,
       "toGenerate": 200,
       "toTrim": 267,
-      "totalBatches": 19,
+      "totalBatches": 7,
       "topics": [
         {
           "topic": "Consolidations",
@@ -1362,7 +1362,7 @@
       "targetTotal": 1500,
       "toGenerate": 44,
       "toTrim": 0,
-      "totalBatches": 16,
+      "totalBatches": 2,
       "topics": [
         {
           "topic": "Circular 230",
@@ -1973,7 +1973,7 @@
       "targetTotal": 1500,
       "toGenerate": 118,
       "toTrim": 157,
-      "totalBatches": 16,
+      "totalBatches": 4,
       "topics": [
         {
           "topic": "Capital Structure and Valuation",
@@ -2459,7 +2459,7 @@
       "targetTotal": 1500,
       "toGenerate": 80,
       "toTrim": 0,
-      "totalBatches": 15,
+      "totalBatches": 3,
       "topics": [
         {
           "topic": "Change Management",
@@ -2920,7 +2920,7 @@
       "targetTotal": 1500,
       "toGenerate": 110,
       "toTrim": 0,
-      "totalBatches": 16,
+      "totalBatches": 4,
       "topics": [
         {
           "topic": "Individual Tax Planning: Compensation",
@@ -3330,6 +3330,6 @@
     "totalTarget": 9000,
     "totalToGenerate": 683,
     "totalToTrim": 424,
-    "totalBatches": 102
+    "totalBatches": 25
   }
 }

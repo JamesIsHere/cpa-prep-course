@@ -268,7 +268,9 @@ async function main() {
 
 		const sectionToGenerate = topicPlans.reduce((s, t) => s + t.toGenerate, 0);
 		const sectionToTrim = topicPlans.reduce((s, t) => s + t.toTrim, 0);
-		const totalBatches = topicPlans.reduce((s, t) => s + t.batches, 0);
+		// Compute batches from section total, not sum of per-topic batches
+		// (per-topic batches inflate because each topic gets ceil(n/30) >= 1)
+		const totalBatches = Math.ceil(sectionToGenerate / batchSize);
 		grandTotalBatches += totalBatches;
 
 		sectionPlans.push({
