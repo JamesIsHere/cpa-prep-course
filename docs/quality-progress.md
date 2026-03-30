@@ -292,4 +292,5 @@
 | 2026-03-30 | 00961_quality_reg_batch52.sql  | REG     | 30        | 30x#3         | 30 per-choice explanations restructured           |
 | 2026-03-30 | 00970_quality_aud_batch50.sql  | AUD     | 30        | 5x#1, 25x#3  | 5 choices equalized + 25 per-choice explanations  |
 | 2026-03-30 | 00971_quality_tcp_batch43.sql  | TCP     | 12        | 9x#1, 3x#3   | 9 choices equalized + 3 per-choice explanations   |
+| 2026-03-30 | 00972_quality_reg_batch53.sql  | REG     | 30        | 30x#3         | 30 per-choice explanations restructured           |
 | 2026-03-30 | 00973_quality_aud_batch51.sql  | AUD     | 30        | 30x#1         | 30 choices equalized (longest ≤1.8x shortest)     |
