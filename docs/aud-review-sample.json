@@ -1,0 +1,452 @@
+[
+  {
+    "id": 324,
+    "topic": "Substantive Procedures",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "While testing purchase transactions at Harmon Enterprises, the auditor inspects each selected purchase order for an authorized signature and also verifies the accuracy of the recorded dollar amount. Under AU-C 330, what does this dual-purpose test simultaneously evaluate?",
+    "choices": [
+      "Two different financial statement assertions",
+      "Two different accounting periods",
+      "Controls and substantive evidence in a single procedure",
+      "Revenue and expenses in the same transaction cycle"
+    ],
+    "correct_index": 2,
+    "explanation": "Correct (C): Under AU-C 330.A23, a dual-purpose test serves as both a test of controls and a substantive test of details in a single procedure. This approach is efficient because it addresses both control effectiveness and account balance accuracy from the same sample of transactions. (A) is wrong because testing two assertions is not what defines a dual-purpose test — the dual purpose refers to combining control and substantive testing. (B) is wrong because testing two periods describes roll-forward procedures, not dual-purpose tests. (D) is wrong because combining revenue and expense testing is not the defining characteristic of a dual-purpose test."
+  },
+  {
+    "id": 1403,
+    "topic": "Quality Management",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "Calloway & Drake LLP is implementing its quality management system under SQMS No. 1. The managing partner is reviewing the eight required components and focusing on how engagements are carried out. The engagement performance component addresses which of the following?",
+    "choices": [
+      "The direction, supervision, and review of engagement work and the exercise of professional judgment",
+      "How the firm markets its services to prospective clients",
+      "The firm's compensation and promotion policies for partners",
+      "The firm's real estate and office lease management"
+    ],
+    "correct_index": 0,
+    "explanation": "The engagement performance component addresses the quality of work performed on individual engagements, including direction, supervision, and review of engagement work, the exercise of professional judgment and professional skepticism, and consultation on difficult or contentious matters. It ensures that engagements are performed consistently with professional standards."
+  },
+  {
+    "id": 13987,
+    "topic": "Modifications to the Auditor Report",
+    "difficulty": "hard",
+    "cognitive_level": 3,
+    "stem": "Meridian Technologies receives an adverse opinion because it failed to consolidate a significant subsidiary, distorting virtually every line item. The auditor is preparing the Basis for Adverse Opinion section. Under AU-C 705, when is the auditor required to quantify the effects of the misstatement in the basis paragraph?",
+    "choices": [
+      "Always, regardless of circumstances",
+      "Only when the misstatement is isolated to one financial statement line item",
+      "When practicable, describing and quantifying the financial effects of the misstatement",
+      "Never, because quantification could imply an alternative opinion"
+    ],
+    "correct_index": 2,
+    "explanation": "Correct (C): AU-C 705.20-.22. When issuing a qualified or adverse opinion due to material misstatement, the basis section should describe and quantify the financial effects of the misstatement when practicable. If quantification is not practicable, the auditor should so state.\nWrong (A): Quantification is required when practicable, not in all circumstances; sometimes the pervasive nature makes quantification impracticable.\nWrong (B): The requirement is not limited to single line items; it applies to any misstatement when effects can be reasonably determined.\nWrong (D): Auditing standards explicitly require quantification when practicable; there is no prohibition."
+  },
+  {
+    "id": 1321,
+    "topic": "Ethics and Independence",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "Torres & Vega LLP audits Crestline Manufacturing and has also been asked to represent Crestline in a dispute with the IRS over disallowed deductions. Under the AICPA Code, what type of threat does representing an audit client before the IRS create?",
+    "choices": [
+      "Self-interest threat",
+      "Familiarity threat",
+      "Management participation threat",
+      "Advocacy threat, which is permissible if the matter is administrative and not adversarial"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Representing a client before the IRS creates an advocacy threat. Under the AICPA Code, the threat may be acceptable if the representation involves routine administrative tax matters such as responding to IRS inquiries. However, representing the client in adversarial proceedings such as Tax Court would likely impair independence. (A) is wrong because self-interest threats involve the auditor's financial interests, not representing the client. (B) is wrong because familiarity threats arise from personal relationships, not from providing representation services."
+  },
+  {
+    "id": 6095,
+    "topic": "Misstatements and Control Deficiencies",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "The auditor of Ridgeway Construction Inc. plans to test accounts receivable using audit sampling. The population totals $3.2 million, and overall materiality is $160,000. The auditor sets tolerable misstatement for the receivables account at $96,000. Under AU-C 530, tolerable misstatement in the context of audit sampling represents:",
+    "choices": [
+      "The maximum dollar amount of misstatement that can exist in the population without affecting the audit opinion",
+      "The application of performance materiality to a particular sampling procedure, representing the maximum misstatement in the population that the auditor is willing to accept",
+      "The total projected misstatement from the sample extrapolated to the full population",
+      "The threshold below which individual misstatements are considered clearly trivial"
+    ],
+    "correct_index": 1,
+    "explanation": "Under AU-C 530.05, tolerable misstatement is the application of performance materiality to a particular sampling procedure and represents the maximum amount of misstatement the auditor can accept in the population while still concluding the sample result supports the account balance. Choice D is incorrect because the clearly trivial threshold is a separate, much lower amount used to determine which misstatements need not be accumulated."
+  },
+  {
+    "id": 4479,
+    "topic": "Terms of Engagement",
+    "difficulty": "hard",
+    "cognitive_level": null,
+    "stem": "When an entity's financial statements are required by law to be audited, and management attempts to limit the scope of the engagement, the auditor should:",
+    "choices": [
+      "Accept whatever scope management proposes since the law requires an audit",
+      "Issue an unmodified opinion noting the scope limitation",
+      "Withdraw immediately without further discussion",
+      "Communicate with those charged with governance about the scope limitation and consider whether the engagement can still be performed in compliance with standards"
+    ],
+    "correct_index": 3,
+    "explanation": "When law or regulation requires an audit and management attempts to impose scope limitations, the auditor should communicate with those charged with governance (such as the board or audit committee) about the limitation. The auditor should determine whether the scope limitation can be resolved and whether it is still possible to perform the audit in compliance with professional standards."
+  },
+  {
+    "id": 1666,
+    "topic": "Audit Sampling",
+    "difficulty": "hard",
+    "cognitive_level": 2,
+    "stem": "An auditor is designing a monetary unit sampling application and must determine the sampling interval. Which formula correctly calculates the sampling interval?",
+    "choices": [
+      "Sampling interval = Population size / Sample size",
+      "Sampling interval = Recorded population amount / Sample size",
+      "Sampling interval = Tolerable misstatement / Confidence factor",
+      "Sampling interval = Population standard deviation / Sample size"
+    ],
+    "correct_index": 2,
+    "explanation": "In MUS, the sampling interval is typically calculated as tolerable misstatement divided by the confidence factor (reliability factor) for the desired confidence level with zero expected misstatements. For example, at 95% confidence with zero expected errors, the reliability factor is approximately 3.0, so the interval = tolerable misstatement / 3.0."
+  },
+  {
+    "id": 13097,
+    "topic": "Responding to Assessed Risks",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Ridgeway Electronics processes over 500,000 sales transactions per year through its ERP system. The auditor is considering using computer-assisted audit techniques to analyze the entire population of transactions for unusual patterns. Compared to traditional manual sampling, what is the most significant advantage of this approach for responding to assessed risks?",
+    "choices": [
+      "It eliminates the need for the auditor to exercise professional judgment about identified anomalies",
+      "It allows the auditor to test 100% of transactions, improving the likelihood of detecting anomalies that sampling might miss",
+      "It satisfies the requirement for tests of controls without separate control testing",
+      "It removes sampling risk entirely and replaces the need for professional skepticism"
+    ],
+    "correct_index": 2,
+    "explanation": "Correct (C): Under AU-C 330.A21, computer-assisted audit techniques enable the auditor to test entire populations rather than samples, improving detection of unusual items, outliers, and patterns. This is especially valuable for high-volume transaction environments where sampling risk could cause anomalies to go undetected. Wrong (A): CAATs do not replace professional judgment; the auditor must still evaluate results and determine their audit significance. Wrong (B): CAATs provide substantive evidence but do not substitute for separate tests of controls. Wrong (D): While CAATs eliminate sampling risk, they do not replace the need for professional skepticism when evaluating results."
+  },
+  {
+    "id": 1504,
+    "topic": "Risk Assessment",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "An auditor identifies that the entity is under financial pressure to meet analyst earnings forecasts. Under AU-C 240, this condition most likely represents:",
+    "choices": [
+      "A control deficiency",
+      "An inherent limitation of the audit",
+      "An incentive or pressure to commit fraudulent financial reporting",
+      "A reason to increase the audit fee"
+    ],
+    "correct_index": 2,
+    "explanation": "Under AU-C 240.A26, financial pressure to meet earnings forecasts represents an incentive or pressure — one of the three conditions in the fraud risk triangle described in AU-C 240.A1 (incentive/pressure, opportunity, and attitude/rationalization). This type of pressure can motivate management to manipulate earnings through improper revenue recognition, understatement of expenses, or other fraudulent financial reporting schemes. Choice A is incorrect because an \"opportunity\" refers to circumstances that allow fraud to be perpetrated, such as weak internal controls, not the motivation to commit fraud. Choice C is incorrect because \"attitude/rationalization\" refers to a mindset that justifies the fraudulent act, not the external pressure itself."
+  },
+  {
+    "id": 1380,
+    "topic": "Quality Management",
+    "difficulty": "medium",
+    "cognitive_level": 1,
+    "stem": "During a partner meeting at Chambers & Liu LLP, the quality management partner presents the firm''s SQMS No. 1 compliance plan and references the standard''s eight required components. Which of the following correctly identifies the eight components of a quality management system?",
+    "choices": [
+      "Governance, ethics, engagement acceptance, resources, engagement performance, information systems, monitoring, and risk assessment",
+      "Planning, fieldwork, reporting, supervision, review, consultation, documentation, and ethics",
+      "Tone at the top, staff training, client screening, technology, outsourcing, documentation, peer review, and budgeting",
+      "Leadership, human resources, marketing, technology, quality control, billing, risk management, and compliance"
+    ],
+    "correct_index": 0,
+    "explanation": "The eight components of SQMS No. 1 are: (1) the firm's risk assessment process, (2) governance and leadership, (3) relevant ethical requirements, (4) acceptance and continuance, (5) engagement performance, (6) resources, (7) information and communication, and (8) the monitoring and remediation process. The first answer choice accurately captures these components."
+  },
+  {
+    "id": 4548,
+    "topic": "Using the Work of Others",
+    "difficulty": "medium",
+    "cognitive_level": null,
+    "stem": "A group audit engagement partner is responsible for the audit of consolidated financial statements. With respect to component auditors, the group engagement partner:",
+    "choices": [
+      "Has no responsibility for the work performed by component auditors",
+      "May share responsibility equally with each component auditor",
+      "Is responsible for the direction, supervision, and performance of the group audit engagement, including work performed by component auditors",
+      "Only needs to review the component auditor's report, not their workpapers"
+    ],
+    "correct_index": 2,
+    "explanation": "The group engagement partner has overall responsibility for the direction, supervision, and performance of the group audit engagement. This includes determining the type and extent of work to be performed on components, evaluating the sufficiency and appropriateness of audit evidence obtained, and forming the group audit opinion. The group engagement partner cannot delegate this responsibility."
+  },
+  {
+    "id": 13088,
+    "topic": "Responding to Assessed Risks",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Last year, Valley Enterprises had three audit adjustments totaling $185,000 related to improper revenue cutoff. In planning the current year's audit, the engagement team is designing further audit procedures for revenue. How should the prior year findings most likely affect the current year's risk response?",
+    "choices": [
+      "The auditor should treat the prior year adjustments as resolved and maintain the same risk assessment",
+      "The auditor should increase the assessed risk for revenue cutoff and design more extensive year-end cutoff testing procedures",
+      "The auditor should issue a qualified opinion because the recurring nature suggests a material weakness",
+      "The auditor should require management to hire additional accounting staff before the audit begins"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): Under AU-C 315.32, the auditor considers prior period misstatements when assessing current period risks. Recurring cutoff issues indicate a persistent control weakness or process failure, warranting heightened risk assessment and more extensive cutoff procedures such as testing transactions before and after the reporting date. Wrong (A): Ignoring the pattern of prior misstatements violates the requirement to consider historical audit information in risk assessment. Wrong (C): Prior year adjustments alone do not dictate the current year opinion; the auditor must first test the current period. Wrong (D): The auditor cannot require management to hire staff; the auditor responds through the design of audit procedures."
+  },
+  {
+    "id": 276,
+    "topic": "Risk Assessment",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "The audit team for Northpoint Energy classifies the allowance for doubtful accounts as a significant risk due to high estimation uncertainty and subjective judgment. Under AU-C 330, what must the auditor perform when a significant risk has been identified?",
+    "choices": [
+      "Rely solely on analytical procedures to test the area",
+      "Substantive procedures specifically responsive to the identified significant risk",
+      "Issue a qualified opinion because a significant risk was identified",
+      "Withdraw from the engagement"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): Under AU-C 330.15, when a significant risk is identified, the auditor must perform substantive procedures specifically designed to address that risk. The auditor cannot rely solely on analytical procedures for significant risks — tests of details are required. (A) is wrong because AU-C 330 prohibits relying exclusively on analytical procedures for significant risks. (C) is wrong because identifying a significant risk does not automatically require opinion modification — it requires a responsive audit approach."
+  },
+  {
+    "id": 4599,
+    "topic": "Analytical Procedures",
+    "difficulty": "medium",
+    "cognitive_level": null,
+    "stem": "The audit of Lakewood Hospitality Group''s 2025 financial statements is nearly complete. The engagement team performs its final overall review by reading the financial statements and accompanying notes. During this final analytical review, the auditor evaluates whether:",
+    "choices": [
+      "All account balances match the prior year exactly",
+      "All estimates have been recorded at the most conservative amounts",
+      "Management has maximized reported net income",
+      "The financial statements, including disclosures, conform with the auditor's understanding of the entity based on the audit evidence obtained"
+    ],
+    "correct_index": 3,
+    "explanation": "During the final analytical review, the auditor reads the financial statements and considers whether the overall presentation, including disclosures, is consistent with the auditor's understanding of the entity and its environment obtained during the audit. This includes assessing whether trends, ratios, and relationships in the final financial statements are reasonable given the audit evidence obtained."
+  },
+  {
+    "id": 6482,
+    "topic": "Misstatements and Control Deficiencies",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "At the conclusion of the audit of Bayshore Medical Center, the auditor has accumulated three uncorrected misstatements totaling $45,000, below the $300,000 materiality level. When obtaining the management representation letter under AU-C 580, the auditor should:",
+    "choices": [
+      "Omit any reference to uncorrected misstatements since they are below materiality",
+      "Request that management acknowledge the uncorrected misstatements and state that their effects are immaterial to the financial statements",
+      "Include a detailed schedule of the misstatements but not require management to assess their materiality",
+      "Require management to certify that no misstatements exist in the financial statements"
+    ],
+    "correct_index": 1,
+    "explanation": "Under AU-C 580.A10, the management representation letter should include management's acknowledgment that the effects of uncorrected misstatements are immaterial, individually and in the aggregate, to the financial statements as a whole. A summary of these items is typically attached. Omitting reference would fail to document management's responsibility, while requiring a certification that no misstatements exist would be inaccurate given the known errors."
+  },
+  {
+    "id": 1695,
+    "topic": "Substantive Procedures",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "The auditor of Delta Packaging is performing a search for unrecorded liabilities as part of year-end substantive procedures for accounts payable as of December 31, 2025. What time period does this search for unrecorded liabilities cover?",
+    "choices": [
+      "Only the last week of the fiscal year",
+      "Only transactions before the fiscal year began",
+      "Only transactions expected to occur in the next fiscal year",
+      "Cash disbursements and invoices received after year-end through the completion of fieldwork"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): The search for unrecorded liabilities examines cash disbursements made after year-end, invoices received after year-end, and unmatched receiving reports to identify obligations that existed at year-end but were not recorded. This procedure tests the completeness assertion for liabilities and covers the period from year-end through the completion of fieldwork. (A) is wrong because the search focuses on the post-year-end period, not the last week of the fiscal year. (B) is wrong because transactions before the fiscal year are not the focus of this procedure. (C) is wrong because the search looks backward to identify unrecorded year-end obligations, not forward to future transactions."
+  },
+  {
+    "id": 4,
+    "topic": "Audit Planning",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "During audit planning, the auditor establishes materiality for the financial statements as a whole. Which of the following best describes the purpose of this determination?",
+    "choices": [
+      "To decide whether to accept the engagement",
+      "To determine the scope of audit procedures and evaluate misstatements",
+      "To establish the audit fee",
+      "To assess the client's going concern status"
+    ],
+    "correct_index": 1,
+    "explanation": "Materiality is established during planning to determine the nature, timing, and extent of audit procedures and to evaluate whether identified misstatements, individually or in aggregate, are material to the financial statements. It is a key planning tool that drives the entire audit approach, not a factor in engagement acceptance, fee setting, or going concern evaluation."
+  },
+  {
+    "id": 1459,
+    "topic": "Audit Planning",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Chen & Associates is planning the 2025 audit of Coastal Relief Foundation, a nonprofit with $8 million in total expenses and no significant revenue-generating activities. When determining materiality for this entity, which benchmark is most appropriate?",
+    "choices": [
+      "3% of earnings per share",
+      "10% of stockholders' equity",
+      "5% of net income",
+      "1% of total revenues or total expenses"
+    ],
+    "correct_index": 3,
+    "explanation": "Under AU-C 320.A6, the auditor uses professional judgment to select an appropriate benchmark for determining materiality. For nonprofit organizations, total revenues or total expenses are commonly used benchmarks because these entities do not have traditional profit metrics such as income before taxes. AU-C 320.A7 notes that the chosen benchmark should be relevant to the users of the financial statements and reflect the entity's nature. Choice A is incorrect because net income is typically not a meaningful measure for nonprofits, which are not profit-driven. Choice B is incorrect because total assets, while sometimes used, is generally less relevant for nonprofits where the focus of financial statement users is on the flow of resources through revenues and expenses."
+  },
+  {
+    "id": 4648,
+    "topic": "Specific Areas and Transactions",
+    "difficulty": "medium",
+    "cognitive_level": null,
+    "stem": "If the auditor concludes that substantial doubt exists about the entity's ability to continue as a going concern and management's plans adequately mitigate the doubt, the auditor should:",
+    "choices": [
+      "Issue an adverse opinion",
+      "Issue a disclaimer of opinion",
+      "Issue an unmodified opinion with an emphasis-of-matter paragraph if disclosure is adequate",
+      "Issue a qualified opinion"
+    ],
+    "correct_index": 2,
+    "explanation": "When substantial doubt exists but is adequately mitigated by management's plans and appropriate disclosures are made, the auditor issues an unmodified opinion. However, the auditor should include an emphasis-of-matter paragraph that draws attention to the going concern uncertainty and the related note disclosures in the financial statements."
+  },
+  {
+    "id": 26,
+    "topic": "Attestation Engagements",
+    "difficulty": "medium",
+    "cognitive_level": 1,
+    "stem": "A practitioner is engaged to perform an agreed-upon procedures engagement on a client's compliance with certain loan covenants. Which of the following is a characteristic of this type of engagement?",
+    "choices": [
+      "The practitioner expresses an opinion on overall compliance",
+      "The practitioner must be independent of the engaging party",
+      "The practitioner provides negative assurance on the subject matter",
+      "The report is restricted to specified parties who agreed to the procedures"
+    ],
+    "correct_index": 3,
+    "explanation": "Under AT-C 215.04, in an agreed-upon procedures engagement, the practitioner performs specific procedures that the engaging party and other specified parties have agreed upon and reports the findings without providing an opinion or conclusion. AT-C 215.34 requires the practitioner's report to state that use of the report is restricted to the specified parties because only those parties understand the context in which the procedures were agreed upon and the sufficiency of the procedures for their purposes. Choice A is incorrect because the practitioner does not express an opinion on the subject matter in an agreed-upon procedures engagement. Choice C is incorrect because the report is restricted to specified parties, not available for general use."
+  },
+  {
+    "id": 1545,
+    "topic": "Internal Controls",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "Lakeshore Financial recently implemented a new accounts payable module that automatically rejects invoices exceeding pre-set dollar limits without supervisor approval. The auditor is classifying this control. Which of the following best describes an application control in an IT environment?",
+    "choices": [
+      "A control that ensures backups are performed nightly",
+      "A control that restricts physical access to the server room",
+      "A control embedded in a software application that validates input data, ensures accurate processing, and verifies output completeness",
+      "A control over the hiring of IT personnel"
+    ],
+    "correct_index": 2,
+    "explanation": "Under AU-C 315.A99, application controls operate within specific IT applications to ensure the completeness, accuracy, authorization, and validity of data capture and transaction processing. These include input controls (validation checks ensuring data meets defined criteria), processing controls (ensuring calculations and data manipulations are correct), and output controls (verifying completeness and proper distribution). Choice A is incorrect because password policies are access security controls classified as ITGCs under AU-C 315.A98. Choice B is incorrect because backup procedures are computer operations controls, another category of ITGCs, not application controls."
+  },
+  {
+    "id": 1547,
+    "topic": "Internal Controls",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "During the audit of Ridgeway Corp., the engagement team identifies a situation where the design of a particular control does not allow staff to prevent or detect errors in a timely manner. Under AU-C 265, a control deficiency exists when:",
+    "choices": [
+      "The design or operation of a control does not allow timely prevention or detection of misstatements",
+      "The entity has not implemented every control recommended by external auditors",
+      "Any error of any dollar amount is discovered during audit fieldwork procedures",
+      "The entity has chosen not to establish a formal internal audit function"
+    ],
+    "correct_index": 0,
+    "explanation": "Under AU-C 265.07, a control deficiency exists when the design or operation of a control does not allow management or employees to prevent, or detect and correct, misstatements on a timely basis. AU-C 265.A1 distinguishes two types: a design deficiency exists when a necessary control is missing or not properly designed, and an operating deficiency exists when a properly designed control does not operate as intended or is performed by unqualified personnel. Choice A is incorrect because a control weakness goes beyond simply having fewer controls — it requires that the deficiency could lead to misstatements not being prevented or detected. Choice C is incorrect because the definition focuses on the ability to prevent or detect misstatements, not on whether a misstatement has actually occurred."
+  },
+  {
+    "id": 4518,
+    "topic": "Materiality",
+    "difficulty": "medium",
+    "cognitive_level": null,
+    "stem": "During the audit of Orion Pharmaceuticals, the engagement team identifies a $15,000 misstatement in executive travel expenses—well below the $400,000 materiality threshold. The senior manager questions whether the misstatement could still be considered material. Which qualitative factor might make a quantitatively small misstatement material?",
+    "choices": [
+      "The misstatement involves concealment or fraud",
+      "The misstatement is in a large account balance",
+      "The misstatement was identified late in the audit",
+      "The misstatement relates to a routine transaction"
+    ],
+    "correct_index": 0,
+    "explanation": "Qualitative factors that can make quantitatively small misstatements material include: involvement of fraud or illegal acts, misstatements that affect compliance with regulatory requirements or loan covenants, misstatements that change a loss to a profit or vice versa, misstatements affecting executive compensation or bonus calculations, and misstatements involving concealment."
+  },
+  {
+    "id": 1468,
+    "topic": "Audit Planning",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "An auditor determines that a significant component in a group audit will be audited by a component auditor in another country. The group engagement team should:",
+    "choices": [
+      "Accept the component auditor's work without review since they are licensed in their jurisdiction",
+      "Evaluate the component auditor's competence, determine the work to be performed, and establish communication requirements",
+      "Decline the group audit engagement because a component auditor is involved",
+      "Issue a separate auditor's report for the component and a separate report for the group"
+    ],
+    "correct_index": 1,
+    "explanation": "Under AU-C 600, the group engagement team must evaluate the component auditor's professional competence, determine the type and extent of work to be performed on the component, and establish requirements for communication between the group and component auditors. Simply accepting work without review or declining the engagement is not appropriate."
+  },
+  {
+    "id": 1528,
+    "topic": "Risk Assessment",
+    "difficulty": "hard",
+    "cognitive_level": 2,
+    "stem": "The auditor is assessing fraud risk and identifies that the entity has experienced unusual revenue growth in the fourth quarter that is inconsistent with industry trends and the entity's own historical patterns. Additionally, the entity extended unusually generous payment terms to customers during this period. The auditor should:",
+    "choices": [
+      "Accept the growth as evidence of successful sales initiatives",
+      "Evaluate whether the revenue growth and extended terms indicate fictitious revenue, channel stuffing, or other fraudulent schemes, and design procedures to test the existence and proper timing of recorded revenue",
+      "Only test revenue transactions from the first three quarters",
+      "Reduce the presumed fraud risk in revenue recognition"
+    ],
+    "correct_index": 1,
+    "explanation": "Unusual fourth-quarter revenue growth inconsistent with industry trends, combined with extended payment terms, is a strong indicator of potential channel stuffing, premature revenue recognition, or fictitious sales. The auditor must evaluate these as fraud risk factors and design procedures to test the existence and cutoff of revenue, examine subsequent returns, and verify the substance of transactions."
+  },
+  {
+    "id": 5025,
+    "topic": "Misstatements and Control Deficiencies",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "At Eastfield Pharmaceuticals, uncorrected misstatements total $150,000 against overall materiality of $120,000. The misstatements are concentrated entirely in inventory valuation and do not affect other line items or disclosures. Under AU-C 705, the auditor should consider issuing:",
+    "choices": [
+      "An unmodified opinion with an emphasis-of-matter paragraph",
+      "An adverse opinion due to pervasive material misstatement",
+      "A disclaimer of opinion due to inability to obtain evidence",
+      "A qualified opinion because the material misstatement is not pervasive"
+    ],
+    "correct_index": 3,
+    "explanation": "AU-C 705.08-.09 distinguishes between material misstatements that are pervasive and those that are not. Pervasive effects are those not confined to specific elements, affect a substantial proportion of the financial statements, or are fundamental to users' understanding. Although the $150,000 misstatement exceeds materiality ($120,000), it is confined to inventory valuation, warranting a qualified opinion rather than an adverse opinion that would be appropriate only for pervasive misstatements."
+  },
+  {
+    "id": 1458,
+    "topic": "Audit Planning",
+    "difficulty": "medium",
+    "cognitive_level": 1,
+    "stem": "For the 2025 audit of Pinnacle Insurance Corp., the engagement team engages an independent actuary to evaluate the $42 million loss reserve estimate. After incorporating the specialist''s findings, the auditor''s report should:",
+    "choices": [
+      "Disclaim an opinion due to the involvement of a specialist",
+      "Include the specialist's report as an appendix",
+      "Always reference the specialist to share responsibility for the opinion",
+      "Not reference the specialist when issuing an unmodified opinion"
+    ],
+    "correct_index": 3,
+    "explanation": "Under AU-C 620.15, when issuing an unmodified opinion the auditor should not reference the specialist in the auditor's report because such a reference might be misunderstood as a qualification of the opinion or a division of responsibility. The auditor is solely responsible for the opinion expressed. AU-C 620.16 permits reference to a specialist only when issuing a modified opinion, to explain the basis for the modification. Choice A is incorrect because always disclosing the specialist's name regardless of opinion type is not required by auditing standards. Choice C is incorrect because referencing the specialist in an unmodified opinion could mislead users about the level of assurance provided."
+  },
+  {
+    "id": 12842,
+    "topic": "Tests of Controls",
+    "difficulty": "hard",
+    "cognitive_level": 3,
+    "stem": "Atlas Retail operates 45 stores, each processing sales transactions through a centralized point-of-sale system with identical automated controls. The auditor plans to rely on the automated cash register controls for the sales cycle. ITGCs over the centralized system have been tested and found effective. In determining the extent of direct testing of the application control across locations, the auditor should consider that:",
+    "choices": [
+      "Because the automated control is identical at all locations and ITGCs are effective, the auditor may test the control at one or a few locations rather than all 45",
+      "The auditor must test the control at every location because each store represents a separate population",
+      "The auditor should test at least 25 of the 45 locations to achieve a representative sample",
+      "Automated controls cannot be relied upon across multiple locations without separate ITGC testing at each store"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): AU-C 330.A30. When an automated control operates identically across locations through a centralized system and ITGCs are effective, the auditor can rely on the consistent operation of the control without testing at every location. The uniform application logic means the control either works everywhere or nowhere, so testing at one or a few locations is sufficient. Wrong (B): When controls are identical and centrally managed, each store does not represent a separate population requiring independent testing. Wrong (C): There is no requirement to test a majority of locations for a centrally administered automated control with effective ITGCs. Wrong (D): ITGCs over the centralized system cover all locations using that system; separate ITGC testing at each store is unnecessary."
+  },
+  {
+    "id": 1759,
+    "topic": "Review and Compilation",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "Greenfield Advisors CPAs has been asked by a nonissuer client to perform a review of its 2025 financial statements. The engagement partner evaluates potential independence concerns. Is an accountant required to be independent when performing a review engagement under SSARS?",
+    "choices": [
+      "No, independence is optional for review engagements",
+      "Independence is only required if the financial statements include disclosures",
+      "Independence is only required if the entity is publicly traded",
+      "Yes, the accountant must be independent for a review engagement"
+    ],
+    "correct_index": 3,
+    "explanation": "Independence is required for a review engagement under SSARS. If the accountant is not independent, the accountant cannot perform a review and must consider whether a compilation or preparation engagement would be appropriate. This is a key distinction from compilation and preparation engagements."
+  },
+  {
+    "id": 13880,
+    "topic": "Nature and Scope of Engagements",
+    "difficulty": "hard",
+    "cognitive_level": 4,
+    "stem": "Becker, CPA, has audited Maxwell Corp for three years under an ongoing engagement letter. In the current year, Maxwell undergoes a significant restructuring, adopts a new financial reporting framework, and replaces its entire senior management team. Becker reviews the existing engagement terms. Under AU-C 210, what is Becker's obligation regarding the engagement letter?",
+    "choices": [
+      "No action is required because the original engagement letter covers recurring engagements",
+      "Becker should send a reminder letter referencing the original terms",
+      "Becker should assess whether circumstances require revised engagement terms and establish a new or revised engagement letter",
+      "Becker must withdraw from the engagement and require Maxwell to seek a new auditor"
+    ],
+    "correct_index": 2,
+    "explanation": "Correct (C): AU-C 210.13 states that in recurring audits, the auditor should assess whether circumstances require the terms to be revised and whether there is a need to remind the entity of the existing terms. AU-C 210.A27 identifies changes in senior management, significant changes in the nature or size of the entity, and changes in the financial reporting framework as factors that may necessitate a new engagement letter with revised terms.\nWrong (A): The original letter does not automatically cover changed circumstances; the auditor must evaluate whether revised terms are needed.\nWrong (B): A simple reminder is insufficient when the fundamental nature of the engagement circumstances has changed.\nWrong (D): Changed circumstances do not require withdrawal; they require reassessment and potential revision of the engagement terms."
+  }
+]
