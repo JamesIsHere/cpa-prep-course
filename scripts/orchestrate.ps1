@@ -18,7 +18,7 @@ param(
     [ValidateSet('aud','far','reg','bar','isc','tcp')]
     [string]$Section,
 
-    [ValidateSet('citation','difficulty','blooms','generate','moderate','verify','cleanup','stem')]
+    [ValidateSet('citation','difficulty','blooms','generate','moderate','verify','cleanup','stem','quality')]
     [string]$Mode = 'citation',
 
     [Parameter(Mandatory)]
@@ -62,6 +62,7 @@ $TrackerMap = @{
     'verify'    = Join-Path (Join-Path $RepoRoot 'docs') 'verification-progress.md'
     'cleanup'   = Join-Path (Join-Path $RepoRoot 'docs') 'cleanup-progress.md'
     'stem'      = Join-Path (Join-Path $RepoRoot 'docs') 'stem-expansion-progress.md'
+    'quality'   = Join-Path (Join-Path $RepoRoot 'docs') 'quality-progress.md'
 }
 $TrackerFile = $TrackerMap[$Mode]
 
@@ -75,6 +76,7 @@ $SelectorMap = @{
     'verify'    = 'select-verify-candidates.ts'
     'cleanup'   = 'select-cleanup-candidates.ts'
     'stem'      = 'select-stem-candidates.ts'
+    'quality'   = 'select-quality-candidates.ts'
 }
 
 # Section citation patterns (passed to Claude in prompt)
@@ -97,6 +99,7 @@ $ModeLabel = switch ($Mode) {
     'verify'    { 'Correctness verification' }
     'cleanup'   { 'FAR cleanup' }
     'stem'      { 'Stem expansion' }
+    'quality'   { 'Quality fix' }
 }
 
 # File pattern for detecting existing batches
@@ -109,6 +112,7 @@ $FilePattern = switch ($Mode) {
     'verify'    { "*_verify_fix_${Section}_batch*.sql" }
     'cleanup'   { "*_cleanup_${Section}_batch*.sql" }
     'stem'      { "*_stem_${Section}_batch*.sql" }
+    'quality'   { "*_quality_${Section}_batch*.sql" }
 }
 
 # ═══════════════════════════════════════════════════════════════
@@ -134,6 +138,12 @@ if ($Mode -eq 'verify') {
     # Override batch size default for verify mode (deeper reasoning per question)
     if (-not $PSBoundParameters.ContainsKey('BatchSize')) {
         $BatchSize = 10
+    }
+}
+
+if ($Mode -eq 'quality') {
+    if (-not $PSBoundParameters.ContainsKey('BatchSize')) {
+        $BatchSize = 30
     }
 }
 
@@ -279,6 +289,20 @@ function New-Scaffold {
     if ($Mode -eq 'generate') {
         # Generate mode: pipe batch spec to generate-insert-scaffold.ts
         $scriptPath = Join-Path $QaScripts 'generate-insert-scaffold.ts'
+        $genArgs = @("--section=$Section", "--batch=$BatchNum")
+
+        Push-Location $RepoRoot
+        $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
+        try {
+            Get-Content $CandidateFile -Raw | & npx tsx $scriptPath @genArgs 2>&1 | Out-Null
+            $exitCode = $LASTEXITCODE
+        } finally {
+            $ErrorActionPreference = $prevEAP
+            Pop-Location
+        }
+    } elseif ($Mode -eq 'quality') {
+        # Quality mode: custom scaffold generator
+        $scriptPath = Join-Path $QaScripts 'generate-quality-scaffold.ts'
         $genArgs = @("--section=$Section", "--batch=$BatchNum")
 
         Push-Location $RepoRoot
@@ -911,6 +935,69 @@ If you encounter an unrecoverable error, output:
 ORCHESTRATOR_RESULT:{"status":"error","message":"brief description"}
 "@
         }
+
+        'quality' {
+            $candidates = Get-Content $CandidateFile -Raw | ConvertFrom-Json
+            $batchCount = @($candidates).Count
+            $cit = $CitPatterns[$Section]
+
+            return @"
+You are running headless as part of an automated batch pipeline. Execute autonomously -- do not ask questions, do not create task lists, do not use TodoWrite.
+
+TASK: Quality fix for $su section, batch $BatchNum ($batchCount questions).
+
+FILES:
+- Migration scaffold (fill every TODO): $sf
+- Original questions with issues: $cf
+- Progress tracker to update: $tf
+
+INSTRUCTIONS:
+
+Each candidate has an 'issues' field listing what needs fixing: #1 (giveaway longest answer), #3 (incomplete explanation), or both.
+
+For EACH question, fix ONLY the flagged issues:
+
+IF #3 (incomplete explanation):
+Rewrite the explanation in this EXACT format:
+Correct (X): [Why this is the right answer. Cite the relevant standard ($cit). 2-3 sentences.]
+Wrong (Y): [Why this specific choice is wrong. 1-2 sentences.]
+Wrong (Z): [Why wrong. 1-2 sentences.]
+Wrong (W): [Why wrong. 1-2 sentences.]
+
+CRITICAL: Preserve all factual content from the original explanation. Restructure into per-choice format. Do NOT invent new facts. Target 60-120 words total.
+
+IF #1 (giveaway longest answer):
+Rewrite all 4 choices so that:
+- The correct answer is NOT disproportionately longer than wrong answers
+- Word count ratio: longest choice max 1.8x shortest
+- Keep the SAME correct concept -- do NOT change which answer is right
+- Maintain parallel grammatical structure across all 4 choices
+- Make wrong choices plausible (real misconceptions, not straw men)
+
+IF BOTH #1 and #3:
+Fix both. Rewrite choices first, then write the explanation referencing the new choice text.
+
+Do NOT change: stem, correct_index, difficulty, cognitive_level.
+
+SQL rules:
+- Escape all single quotes as '' (two single quotes)
+- CRITICAL: Use `$EXPL`$ dollar-quote delimiters for all string values (NOT `$`$ -- content has dollar amounts)
+- For choices: output as `$EXPL`$["choice A","choice B","choice C","choice D"]`$EXPL`$::jsonb
+
+After filling ALL TODOs, validate:
+  npm run validate-migration $sf
+  Fix any errors and re-validate. Warnings are acceptable.
+
+Update tracker at ${tf}:
+  - Add a row to the Batch Log with: date, filename ($fn), section ($su), question count, issues fixed, notes
+
+When finished, output this EXACT line as your final message:
+ORCHESTRATOR_RESULT:{"status":"ok","questions":$batchCount,"file":"$fn"}
+
+If you encounter an unrecoverable error, output:
+ORCHESTRATOR_RESULT:{"status":"error","message":"brief description"}
+"@
+        }
     }
 }
 
@@ -1359,7 +1446,7 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
     # -- 7.5. Apply migration to DB -------------------------------
     # Without this, the next batch's selector sees stale DB counts and
     # keeps generating for already-filled topics, overshooting targets.
-    if ($Mode -in @('generate','stem') -and (Test-Path $scaffoldPath)) {
+    if ($Mode -in @('generate','stem','quality') -and (Test-Path $scaffoldPath)) {
         Push-Location $RepoRoot
         $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
         try {

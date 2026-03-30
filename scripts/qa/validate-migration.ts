@@ -516,6 +516,86 @@ while ((match = updateStemOnlyPattern.exec(fullSql)) !== null) {
 }
 
 // ============================================================
+// Parse UPDATE statements (choices + explanation, for quality fixes)
+// ============================================================
+const updateChoicesExplPattern =
+	/UPDATE\s+questions\s+SET\s+choices\s*=\s*'(\[(?:[^']|'')*?\])'::jsonb\s*,\s*explanation\s*=\s*'((?:[^']|'')*?)'\s*WHERE\s+id\s*=\s*(\d+)\s*;/g;
+
+while ((match = updateChoicesExplPattern.exec(fullSql)) !== null) {
+	questionCount++;
+	const [, choicesRaw, explanation, idStr] = match;
+	const id = parseInt(idStr);
+	const explClean = explanation.replace(/''/g, "'");
+	const charsBefore = fullSql.slice(0, match.index);
+	const approxLine = (charsBefore.match(/ {50}/g) ?? []).length + 1;
+
+	if (/\bTODO\b/.test(choicesRaw) || /\bTODO\b/.test(explClean)) {
+		issues.push({ line: approxLine, severity: "error", message: `TODO placeholder in choices or explanation: Q${id}` });
+	}
+
+	// Parse choices JSON
+	try {
+		const choices = JSON.parse(choicesRaw.replace(/''/g, "'"));
+		if (Array.isArray(choices) && choices.length === 4) {
+			const lens = choices.map((c: string) => c.split(/\s+/).length);
+			const ratio = Math.max(...lens) / Math.min(...lens);
+			if (ratio > 3) {
+				issues.push({ line: approxLine, severity: "error", message: `Choice length ratio ${ratio.toFixed(1)}x exceeds 3x limit: Q${id}` });
+			} else if (ratio > 2) {
+				issues.push({ line: approxLine, severity: "warn", message: `Choice length ratio ${ratio.toFixed(1)}x (target <2x): Q${id}` });
+			}
+		}
+	} catch {
+		issues.push({ line: approxLine, severity: "error", message: `Invalid choices JSON: Q${id}` });
+	}
+
+	// Explanation checks
+	if (countWords(explClean) < 30) {
+		issues.push({ line: approxLine, severity: "error", message: `Explanation too short (${countWords(explClean)} words): Q${id}` });
+	}
+	if (!STANDARD_PATTERN.test(explClean)) {
+		issues.push({ line: approxLine, severity: "warn", message: `No standard citation in explanation: Q${id}` });
+	}
+}
+
+// ============================================================
+// Parse UPDATE statements (choices-only, for quality fixes)
+// ============================================================
+const updateChoicesOnlyPattern =
+	/UPDATE\s+questions\s+SET\s+choices\s*=\s*'(\[(?:[^']|'')*?\])'::jsonb\s*WHERE\s+id\s*=\s*(\d+)\s*;/g;
+
+while ((match = updateChoicesOnlyPattern.exec(fullSql)) !== null) {
+	// Skip if already matched by choices+explanation pattern
+	const afterSnippet = fullSql.slice(match.index, match.index + match[0].length + 20);
+	if (/explanation\s*=/i.test(afterSnippet)) continue;
+
+	questionCount++;
+	const [, choicesRaw, idStr] = match;
+	const id = parseInt(idStr);
+	const charsBefore = fullSql.slice(0, match.index);
+	const approxLine = (charsBefore.match(/ {50}/g) ?? []).length + 1;
+
+	if (/\bTODO\b/.test(choicesRaw)) {
+		issues.push({ line: approxLine, severity: "error", message: `TODO placeholder in choices: Q${id}` });
+	}
+
+	try {
+		const choices = JSON.parse(choicesRaw.replace(/''/g, "'"));
+		if (Array.isArray(choices) && choices.length === 4) {
+			const lens = choices.map((c: string) => c.split(/\s+/).length);
+			const ratio = Math.max(...lens) / Math.min(...lens);
+			if (ratio > 3) {
+				issues.push({ line: approxLine, severity: "error", message: `Choice length ratio ${ratio.toFixed(1)}x exceeds 3x limit: Q${id}` });
+			} else if (ratio > 2) {
+				issues.push({ line: approxLine, severity: "warn", message: `Choice length ratio ${ratio.toFixed(1)}x (target <2x): Q${id}` });
+			}
+		}
+	} catch {
+		issues.push({ line: approxLine, severity: "error", message: `Invalid choices JSON: Q${id}` });
+	}
+}
+
+// ============================================================
 // Check answer distribution (mechanical 5x0, 5x1 pattern)
 // ============================================================
 if (distributions.length >= 10) {

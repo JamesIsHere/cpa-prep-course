@@ -22,9 +22,6 @@ function checkIncompleteExplanation(q: DbQuestion): string | null {
 	const labels = ["A", "B", "C", "D"];
 	const correctLabel = labels[q.correct_index];
 
-	// Check for "Correct (X)" or "correct" or just the right answer discussion
-	const hasCorrect = new RegExp(`Correct\\s*\\(?${correctLabel}\\)?|^${correctLabel}[):\\.]`, "im").test(expl);
-
 	// Check for "Wrong (X)" or "Incorrect (X)" or "(X) is wrong/incorrect"
 	const missingWrong: string[] = [];
 	for (const label of labels) {
@@ -126,11 +123,6 @@ async function main() {
 		["#6 Label mismatch", checkLabelMismatch],
 		["#9 Citation in stem", checkCitationInStem],
 	];
-
-	// Group by section for reporting
-	const sectionMap = new Map<number, string>();
-	// We don't have section codes from fetchAllQuestions, so we'll just report totals
-	// unless --section is specified
 
 	for (const q of questions) {
 		for (const [issueKey, checker] of checkers) {

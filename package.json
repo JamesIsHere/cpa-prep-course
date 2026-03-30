@@ -20,7 +20,8 @@
     "cleanup-ids": "tsx scripts/qa/cleanup-verified-ids.ts",
     "migrate": "node scripts/migrate.mjs",
     "migrate:status": "node scripts/migrate.mjs --status",
-    "migrate:dry": "node scripts/migrate.mjs --dry-run"
+    "migrate:dry": "node scripts/migrate.mjs --dry-run",
+    "improve": "node scripts/improve.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
