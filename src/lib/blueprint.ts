@@ -35,7 +35,7 @@ export type CpaBlueprint = BlueprintSection[];
 // --- Question counts by topic (synced from live DB via `npm run sync-counts`) ---
 
 export const questionCounts: Record<string, number> = {
-	// AUD (1,369 total — synced with live DB 2026-03-30)
+	// AUD (1,450 total — synced with live DB 2026-03-30)
 	"Analytical Procedures": 65,
 	"Attestation Engagements": 37,
 	"Audit Evidence": 64,
@@ -46,7 +46,7 @@ export const questionCounts: Record<string, number> = {
 	"Government Auditing Standards": 34,
 	Independence: 37,
 	"Internal Controls": 64,
-	Materiality: 50,
+	Materiality: 64,
 	"Misstatements and Control Deficiencies": 64,
 	"Modifications to the Auditor Report": 35,
 	"Nature and Scope of Engagements": 33,
@@ -54,16 +54,16 @@ export const questionCounts: Record<string, number> = {
 	"Professional Responsibilities": 37,
 	"Professional Skepticism and Judgment": 38,
 	"Quality Management": 38,
-	"Responding to Assessed Risks": 42,
+	"Responding to Assessed Risks": 64,
 	"Review and Compilation": 37,
 	"Review/Compilation Engagements": 31,
 	"Risk Assessment": 64,
-	"Specific Areas and Transactions": 50,
+	"Specific Areas and Transactions": 65,
 	"Substantive Procedures": 58,
 	"Terms of Engagement": 38,
 	"Tests of Controls": 65,
-	"Understanding the Entity and Environment": 49,
-	"Using the Work of Others": 49,
+	"Understanding the Entity and Environment": 64,
+	"Using the Work of Others": 64,
 	"Written Representations": 64,
 	// FAR (1,567 total — synced with live DB 2026-03-30)
 	"Accounting Changes and Error Corrections": 58,
@@ -135,9 +135,9 @@ export const questionCounts: Record<string, number> = {
 	"Risk Management and Economics": 130,
 	"State and Local Government Reporting": 72,
 	"Stock Compensation and Business Combinations": 52,
-	// ISC (1,420 total — synced with live DB 2026-03-30)
-	"Change Management": 73,
-	"Data Management and Lifecycle": 76,
+	// ISC (1,454 total — synced with live DB 2026-03-30)
+	"Change Management": 86,
+	"Data Management and Lifecycle": 86,
 	"Data Protection Technologies": 97,
 	"ERP and Accounting Information Systems": 78,
 	"Incident Response and Recovery": 100,
@@ -148,38 +148,38 @@ export const questionCounts: Record<string, number> = {
 	"Security and Control Frameworks": 95,
 	"Security Controls and Monitoring": 93,
 	"SOC Engagements": 58,
-	"SOC Report Content and Structure": 49,
+	"SOC Report Content and Structure": 60,
 	"SOC Reporting": 59,
 	"SOC Reporting and Trust Services Criteria": 58,
 	"SOC Testing Controls": 60,
 	"System Availability and Change Management": 86,
 	"Threats, Attacks, and Vulnerabilities": 97,
-	// TCP (1,390 total — synced with live DB 2026-03-30)
+	// TCP (1,434 total — synced with live DB 2026-03-30)
 	"Advanced Basis Calculations": 96,
 	"Capital Structure Tax Planning": 53,
-	"Entity Choice and Planning": 44,
+	"Entity Choice and Planning": 56,
 	"Entity Formation and Liquidation": 98,
 	"Entity Formation and Restructuring": 67,
 	"Entity Tax Compliance: NOLs and Consolidated Returns": 101,
 	"Individual Tax Planning: Compensation": 126,
 	"International Tax": 104,
-	"Multi-Jurisdictional Tax Planning": 45,
+	"Multi-Jurisdictional Tax Planning": 56,
 	"Nontaxable Dispositions": 67,
 	"Owner-Entity Transactions": 103,
 	"Passive Activity and At-Risk Rules": 131,
 	"Related Party Transactions": 66,
-	"Retirement Plans and Education Savings": 110,
+	"Retirement Plans and Education Savings": 131,
 	"Trusts and Estates": 50,
 	"Wealth Transfer and Gifting Strategies": 129,
 };
 
 export const sectionQuestionTotals: Record<string, number> = {
-	aud: 1369,
+	aud: 1450,
 	far: 1567,
 	reg: 1456,
 	bar: 1539,
-	isc: 1420,
-	tcp: 1390,
+	isc: 1454,
+	tcp: 1434,
 };
 
 // --- Blueprint Data ---

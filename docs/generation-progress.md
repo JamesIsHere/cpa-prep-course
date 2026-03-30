@@ -8,7 +8,7 @@ Per-section target: 1,500 questions. Distributed by AICPA Blueprint area weights
 
 **Batch size:** 30 questions per generation batch.
 
-**To generate:** 321 new questions (~12 batches).
+**To generate:** 0 new questions (~0 batches).
 
 **To trim:** 0 questions to delete (keep best, cut weakest).
 
@@ -25,12 +25,12 @@ For each section:
 
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status          |
 |---------|---------|--------|---------|-------------|-------------|-----------------|
-| AUD     | 1,369 | 1,500 |       0 |         131 |           5 | Generate Needed |
+| AUD     | 1,450 | 1,500 |       0 |           0 |           0 | On Target       |
 | FAR     | 1,567 | 1,500 |       0 |           0 |           0 | On Target       |
 | REG     | 1,456 | 1,500 |       0 |           0 |           0 | On Target       |
 | BAR     | 1,539 | 1,500 |       0 |           0 |           0 | On Target       |
-| ISC     | 1,420 | 1,500 |       0 |          80 |           3 | Generate Needed |
-| TCP     | 1,390 | 1,500 |       0 |         110 |           4 | Generate Needed |
+| ISC     | 1,454 | 1,500 |       0 |           0 |           0 | On Target       |
+| TCP     | 1,434 | 1,500 |       0 |           0 |           0 | On Target       |
 
 ## Topic Detail
 
@@ -39,34 +39,34 @@ For each section:
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
 | 1 | Ethics and Independence | 38 | 38 |  |  |
-| 1 | Government Auditing Standards | 34 | 38 |  | +4 |
-| 1 | Independence | 37 | 38 |  | +1 |
-| 1 | Nature and Scope of Engagements | 33 | 38 |  | +5 |
-| 1 | Professional Responsibilities | 37 | 38 |  | +1 |
+| 1 | Government Auditing Standards | 34 | 38 |  |  |
+| 1 | Independence | 37 | 38 |  |  |
+| 1 | Nature and Scope of Engagements | 33 | 38 |  |  |
+| 1 | Professional Responsibilities | 37 | 38 |  |  |
 | 1 | Professional Skepticism and Judgment | 38 | 38 |  |  |
 | 1 | Quality Management | 38 | 38 |  |  |
 | 1 | Terms of Engagement | 38 | 38 |  |  |
-| 2 | Audit Planning | 62 | 64 |  | +2 |
+| 2 | Audit Planning | 62 | 64 |  |  |
 | 2 | Internal Controls | 64 | 64 |  |  |
-| 2 | Materiality | 50 | 64 |  | +14 |
-| 2 | Responding to Assessed Risks | 42 | 64 |  | +22 |
+| 2 | Materiality | 64 | 64 |  |  |
+| 2 | Responding to Assessed Risks | 64 | 64 |  |  |
 | 2 | Risk Assessment | 64 | 64 |  |  |
-| 2 | Understanding the Entity and Environment | 49 | 64 |  | +15 |
-| 2 | Using the Work of Others | 49 | 64 |  | +15 |
+| 2 | Understanding the Entity and Environment | 64 | 64 |  |  |
+| 2 | Using the Work of Others | 64 | 64 |  |  |
 | 3 | Analytical Procedures | 65 | 65 |  |  |
-| 3 | Audit Evidence | 64 | 65 |  | +1 |
-| 3 | Audit Sampling | 52 | 65 |  | +13 |
-| 3 | Misstatements and Control Deficiencies | 64 | 65 |  | +1 |
-| 3 | Specific Areas and Transactions | 50 | 65 |  | +15 |
-| 3 | Substantive Procedures | 58 | 65 |  | +7 |
+| 3 | Audit Evidence | 64 | 65 |  |  |
+| 3 | Audit Sampling | 52 | 65 |  |  |
+| 3 | Misstatements and Control Deficiencies | 64 | 65 |  |  |
+| 3 | Specific Areas and Transactions | 65 | 65 |  |  |
+| 3 | Substantive Procedures | 58 | 65 |  |  |
 | 3 | Tests of Controls | 65 | 65 |  |  |
-| 3 | Written Representations | 64 | 65 |  | +1 |
-| 4 | Attestation Engagements | 37 | 38 |  | +1 |
+| 3 | Written Representations | 64 | 65 |  |  |
+| 4 | Attestation Engagements | 37 | 38 |  |  |
 | 4 | Audit Reports | 38 | 38 |  |  |
-| 4 | Modifications to the Auditor Report | 35 | 38 |  | +3 |
-| 4 | Other Information and Supplementary Information | 36 | 38 |  | +2 |
-| 4 | Review and Compilation | 37 | 38 |  | +1 |
-| 4 | Review/Compilation Engagements | 31 | 38 |  | +7 |
+| 4 | Modifications to the Auditor Report | 35 | 38 |  |  |
+| 4 | Other Information and Supplementary Information | 36 | 38 |  |  |
+| 4 | Review and Compilation | 37 | 38 |  |  |
+| 4 | Review/Compilation Engagements | 31 | 38 |  |  |
 
 ### FAR
 
@@ -154,45 +154,45 @@ For each section:
 
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
-| 1 | Change Management | 73 | 86 |  | +13 |
-| 1 | Data Management and Lifecycle | 76 | 86 |  | +10 |
-| 1 | ERP and Accounting Information Systems | 78 | 86 |  | +8 |
-| 1 | IT Audit Frameworks | 85 | 86 |  | +1 |
-| 1 | IT General Controls | 79 | 86 |  | +7 |
-| 1 | IT Infrastructure and Architecture | 82 | 86 |  | +4 |
+| 1 | Change Management | 86 | 86 |  |  |
+| 1 | Data Management and Lifecycle | 86 | 86 |  |  |
+| 1 | ERP and Accounting Information Systems | 78 | 86 |  |  |
+| 1 | IT Audit Frameworks | 85 | 86 |  |  |
+| 1 | IT General Controls | 79 | 86 |  |  |
+| 1 | IT Infrastructure and Architecture | 82 | 86 |  |  |
 | 1 | System Availability and Change Management | 86 | 86 |  |  |
-| 2 | Data Protection Technologies | 97 | 100 |  | +3 |
+| 2 | Data Protection Technologies | 97 | 100 |  |  |
 | 2 | Incident Response and Recovery | 100 | 100 |  |  |
-| 2 | Privacy Requirements and Data Protection | 95 | 100 |  | +5 |
-| 2 | Security and Control Frameworks | 95 | 99 |  | +4 |
-| 2 | Security Controls and Monitoring | 93 | 100 |  | +7 |
-| 2 | Threats, Attacks, and Vulnerabilities | 97 | 99 |  | +2 |
-| 3 | SOC Engagements | 58 | 60 |  | +2 |
-| 3 | SOC Report Content and Structure | 49 | 60 |  | +11 |
-| 3 | SOC Reporting | 59 | 60 |  | +1 |
-| 3 | SOC Reporting and Trust Services Criteria | 58 | 60 |  | +2 |
+| 2 | Privacy Requirements and Data Protection | 95 | 100 |  |  |
+| 2 | Security and Control Frameworks | 95 | 99 |  |  |
+| 2 | Security Controls and Monitoring | 93 | 100 |  |  |
+| 2 | Threats, Attacks, and Vulnerabilities | 97 | 99 |  |  |
+| 3 | SOC Engagements | 58 | 60 |  |  |
+| 3 | SOC Report Content and Structure | 60 | 60 |  |  |
+| 3 | SOC Reporting | 59 | 60 |  |  |
+| 3 | SOC Reporting and Trust Services Criteria | 58 | 60 |  |  |
 | 3 | SOC Testing Controls | 60 | 60 |  |  |
 
 ### TCP
 
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
-| 1 | Individual Tax Planning: Compensation | 126 | 132 |  | +6 |
-| 1 | Passive Activity and At-Risk Rules | 131 | 132 |  | +1 |
-| 1 | Retirement Plans and Education Savings | 110 | 131 |  | +21 |
-| 1 | Wealth Transfer and Gifting Strategies | 129 | 131 |  | +2 |
-| 2 | Advanced Basis Calculations | 96 | 105 |  | +9 |
-| 2 | Entity Formation and Liquidation | 98 | 105 |  | +7 |
-| 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 101 | 105 |  | +4 |
-| 2 | International Tax | 104 | 105 |  | +1 |
-| 2 | Owner-Entity Transactions | 103 | 105 |  | +2 |
-| 3 | Capital Structure Tax Planning | 53 | 56 |  | +3 |
-| 3 | Entity Choice and Planning | 44 | 56 |  | +12 |
-| 3 | Multi-Jurisdictional Tax Planning | 45 | 56 |  | +11 |
-| 3 | Trusts and Estates | 50 | 56 |  | +6 |
-| 4 | Entity Formation and Restructuring | 67 | 75 |  | +8 |
-| 4 | Nontaxable Dispositions | 67 | 75 |  | +8 |
-| 4 | Related Party Transactions | 66 | 75 |  | +9 |
+| 1 | Individual Tax Planning: Compensation | 126 | 132 |  |  |
+| 1 | Passive Activity and At-Risk Rules | 131 | 132 |  |  |
+| 1 | Retirement Plans and Education Savings | 131 | 131 |  |  |
+| 1 | Wealth Transfer and Gifting Strategies | 129 | 131 |  |  |
+| 2 | Advanced Basis Calculations | 96 | 105 |  |  |
+| 2 | Entity Formation and Liquidation | 98 | 105 |  |  |
+| 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 101 | 105 |  |  |
+| 2 | International Tax | 104 | 105 |  |  |
+| 2 | Owner-Entity Transactions | 103 | 105 |  |  |
+| 3 | Capital Structure Tax Planning | 53 | 56 |  |  |
+| 3 | Entity Choice and Planning | 56 | 56 |  |  |
+| 3 | Multi-Jurisdictional Tax Planning | 56 | 56 |  |  |
+| 3 | Trusts and Estates | 50 | 56 |  |  |
+| 4 | Entity Formation and Restructuring | 67 | 75 |  |  |
+| 4 | Nontaxable Dispositions | 67 | 75 |  |  |
+| 4 | Related Party Transactions | 66 | 75 |  |  |
 
 ## Batch Log
 
@@ -203,3 +203,14 @@ For each section:
 | 2026-03-26 | 00580_generate_far_batch102.sql | FAR | Investments | 30 | Batch 102: HTM/AFS/trading classification, equity method basics, ASC 321 fair value, credit loss model, intercompany profit elimination, impairment, NAV expedient, loss of influence |
 | 2026-03-27 | 00581_generate_far_batch103.sql | FAR | Investments | 30 | Batch 103: HTM amortization, AFS OCI effects, debt vs equity classification, equity method differential, premium/discount accretion, AFS-to-HTM transfer, VIE consolidation, fair value option, step acquisition, dilution |
 | 2026-03-27 | 00582_generate_far_batch104.sql | FAR | Financial Statement Ratios | 30 | Batch 104: TIE, cash ratio, funded debt/NWC, 5-factor DuPont tax interaction, fixed charge coverage, revenue/employee, window dressing, operating expense ratio, capitalize vs expense on TIE, OCF ratio, invested capital turnover, Beneish M-Score, EVA, debt yield, FCF yield, margin distinction, PEG ratio, LT D/E, P/CF, DOL, BEP, DTL, EV components, Tobin's Q, AR turnover, diluted EPS preferred, NOPAT margin, cash ROA, off-balance-sheet leverage, DuPont tax burden |
+| 2026-03-30 | 00901_generate_tcp_batch32.sql | TCP | Retirement Plans and Education Savings | 21 | Batch 32: NUA strategy, QCD vs standard deduction, IRA deadline, DB investment risk, loan default deemed distribution, SIMPLE 2-year rollover, Coverdell K-12 breadth, 529 non-qualified penalty calc, SEP establishment deadline, SECURE 2.0 super catch-up 60-63, direct rollover withholding, inherited Roth IRA, IRA prohibited transaction, auto-enrollment, trustee transfer vs 60-day, 403(b) universal availability, QJSA default, employer match taxation timing, conversion recharacterization prohibition, excess contribution 6% accumulation, annual RMDs within 10-year rule |
+| 2026-03-30 | 00899_generate_aud_batch97.sql | AUD | Responding to Assessed Risks | 22 | Batch 97: risk reassessment mid-audit, further audit procedure categories, staffing as overall response, confirmation non-responses, substantive analytical procedures, management representations, supervision as response, observation limitations, data analytics extent, judgment-based item selection, tracing direction/completeness, recalculation definition, strong controls effect on nature, disclosure assertions, stand-back requirement, subsequent events classification, modifying approach for control deviations, fair value external evidence, IT-dependent environment, engagement quality review, walkthroughs for design/implementation, external confirmation definition |
+| 2026-03-30 | 00900_generate_isc_batch31.sql | ISC | Change Management | 13 | Batch 31: config baseline, back-out criteria, tiered change authority, RFC lifecycle states, SDLC maintenance phase, DR site RTO/cost tradeoff, RPO backup frequency, active-active vs active-passive, BIA purpose, patch prioritization, clustering, decision tree testing gap |
+| 2026-03-30 | 00902_generate_isc_batch32.sql | ISC | SOC Report Content and Structure | 11 | Batch 32: CC4 monitoring, adverse opinion, CC1 control environment, CSOCs carve-out, Section IV reperformance, Privacy P1 notice, CC2 communication, Type I vs Type II, user auditor documentation, A1 DR testing, management description responsibility |
+| 2026-03-30 | 00903_generate_aud_batch98.sql | AUD | Understanding the Entity and Environment | 15 | Batch 98: management philosophy/operating style, group audit components, significant estimates, information systems/business processes, entity life cycle, new accounting standards, fraud risk factors, economic conditions, financing activities, governance inquiries, significant unusual transactions, going concern indicators, compounding risk evaluation, organizational restructuring, business risk vs RMM |
+| 2026-03-30 | 00904_generate_isc_batch33.sql | ISC | Data Management and Lifecycle | 10 | Batch 33: graph DB for fraud detection, ACID isolation dirty reads, third-party sharing agreements, column-family time-series, IRS retention periods, classification at creation, ACID durability, exception reports, SEC broker-dealer retention, data mart definition |
+| 2026-03-30 | 00905_generate_aud_batch99.sql | AUD | Using the Work of Others | 15 | Batch 99: CUECs impact on control risk, SOC 1 restricted use, IA charter evaluation, SOC 3 definition, agreed-upon procedures alternative, component auditor communications, direct assistance written agreement, management assertion in SOC 1, IA lower-risk areas, group audit documentation, carve-out subservice breach, direct assistance definition, roll-forward gap procedures, working paper access restriction, IA systematic approach |
+| 2026-03-30 | 00906_generate_aud_batch100.sql | AUD | Specific Areas and Transactions | 15 | Batch 100: attorney letter litigation, negative confirmations, inventory NRV, purchase cutoff, positive vs negative confirmation, management specialist evaluation, disaggregation precision, written representations estimates, PP&E additions vouching, lease ROU audit, journal entry fraud, analytical threshold investigation, substantive procedure categories, revenue side agreements, goodwill impairment |
+| 2026-03-30 | 00907_generate_tcp_batch33.sql | TCP | Entity Choice and Planning | 12 | Batch 33: check-the-box per se corporation, PTET SALT cap bypass, LIFO recapture on S election, Section 199A W-2/UBIA limitation, assets-over conversion method, Section 1375 passive income penalty, family attribution rule, AAA frozen on S-to-C ordering, IRC 721 no control test, SSTB complete phase-out, single sales factor apportionment, Form 2553 election deadline |
+| 2026-03-30 | 00908_generate_tcp_batch34.sql | TCP | Multi-Jurisdictional Tax Planning | 11 | Batch 34: market-based sourcing vs cost-of-performance, addback statutes, UDITPA purpose, allocation vs apportionment, bonus depreciation decoupling, Joyce vs Finnigan rule, water's-edge vs worldwide combined, VDAs, nonbusiness income allocation, state NOL limitations, static conformity |
+| 2026-03-30 | 00909_generate_aud_batch101.sql | AUD | Materiality | 14 | Batch 101: accumulated misstatements approaching PM, earnings trend reversal, comparative statements materiality, aggregation risk PM%, users as a group, interim review materiality, non-dollar disclosure omission, projected misstatement vs tolerable, multiple benchmarks, engagement letter exclusion, nature of procedures, overstatement/understatement, reassessing completed work, AU-C 450 management communication |
