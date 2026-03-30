@@ -232,3 +232,4 @@
 | 2026-03-30 | 00895_quality_reg_batch42.sql  | REG     | 30        | 30x#3         | 30 per-choice explanations restructured          |
 | 2026-03-30 | 00896_quality_reg_batch43.sql  | REG     | 30        | 30x#3         | 30 per-choice explanations restructured          |
 | 2026-03-30 | 00897_quality_reg_batch44.sql  | REG     | 30        | 30x#3         | 30 per-choice explanations restructured          |
+| 2026-03-30 | 00912_quality_isc_batch33.sql  | ISC     | 30        | 30x#3         | 30 per-choice explanations restructured          |
