@@ -54,7 +54,7 @@ async function main() {
 		process.exit(0);
 	}
 
-	const migNum = getNextMigrationNumberSafe();
+	const migNum = getNextMigrationNumberSafe(`stemfix_${sectionArg}_batch${batchArg}`);
 	const filename = `${migNum}_stemfix_${sectionArg}_batch${batchArg}.sql`;
 	const filepath = resolve(getMigrationsDir(), filename);
 

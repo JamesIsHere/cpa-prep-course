@@ -73,6 +73,11 @@ export function releaseMigrationLock(): void {
  * preventing TOCTOU races where parallel callers get the same number.
  * Use this instead of getNextMigrationNumber() for parallel safety.
  */
+/**
+ * Get next migration number with file lock protection.
+ * If suffix is provided, creates a placeholder file to reserve the number.
+ * Call cleanupReservedMigration() after writing the real file to remove the placeholder.
+ */
 export function getNextMigrationNumberSafe(suffix = "reserved"): string {
 	acquireMigrationLock();
 	try {
@@ -84,6 +89,15 @@ export function getNextMigrationNumberSafe(suffix = "reserved"): string {
 	} finally {
 		releaseMigrationLock();
 	}
+}
+
+/**
+ * Remove the reserved placeholder after the real migration file has been written.
+ * Must be called after getNextMigrationNumberSafe() once the real file exists.
+ */
+export function cleanupReservedMigration(migNum: string, suffix = "reserved"): void {
+	const placeholder = resolve(migrationsDir, `${migNum}_${suffix}.sql`);
+	try { unlinkSync(placeholder); } catch { /* already gone */ }
 }
 
 // ─── Text similarity (trigrams + Jaccard) ───────────────────────
