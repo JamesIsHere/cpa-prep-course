@@ -139,8 +139,8 @@ async function main() {
 	log(`Total questions: ${questions.length}`);
 	log(`Quality distribution:`);
 	log(`  Critical (0-3):   ${quality.distribution.critical}`);
-	log(`  Moderate (4-6):   ${quality.distribution.moderate}`);
-	log(`  Acceptable (7-10): ${quality.distribution.acceptable}`);
+	log(`  Moderate (4):     ${quality.distribution.moderate}`);
+	log(`  Acceptable (5+):  ${quality.distribution.acceptable}`);
 	log(`  Average score:    ${Math.round(quality.avgScore * 10) / 10}/10`);
 	log(
 		`\nDuplicate pairs: ${duplicates.pairs.length} (${duplicates.likelyDuplicateCount} likely, ${duplicates.nearDuplicateCount} near)`,

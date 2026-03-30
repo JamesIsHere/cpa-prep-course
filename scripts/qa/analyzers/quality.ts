@@ -131,8 +131,8 @@ export function analyzeQuality(questions: DbQuestion[]): QualityAnalysis {
 	const scores = questions.map(scoreQuestion);
 
 	const critical = scores.filter((s) => s.score <= 3).length;
-	const moderate = scores.filter((s) => s.score >= 4 && s.score <= 6).length;
-	const acceptable = scores.filter((s) => s.score >= 7).length;
+	const moderate = scores.filter((s) => s.score === 4).length;
+	const acceptable = scores.filter((s) => s.score >= 5).length;
 
 	const avgScore =
 		scores.length > 0

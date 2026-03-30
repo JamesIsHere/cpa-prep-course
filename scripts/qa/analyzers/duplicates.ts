@@ -41,7 +41,7 @@ export function analyzeDuplicates(questions: DbQuestion[]): DuplicateAnalysis {
 		// Pairwise comparison with size-based pre-filter
 		for (let i = 0; i < trigramCache.length; i++) {
 			for (let j = i + 1; j < trigramCache.length; j++) {
-				// Skip pairs where set size difference makes Jaccard > 0.6 impossible
+				// Skip pairs where set size difference makes Jaccard > 0.65 impossible
 				const sizeA = trigramCache[i].tris.size;
 				const sizeB = trigramCache[j].tris.size;
 				const maxSize = Math.max(sizeA, sizeB);
@@ -58,7 +58,7 @@ export function analyzeDuplicates(questions: DbQuestion[]): DuplicateAnalysis {
 						trigramCache[j].normTris,
 					),
 				);
-				if (sim > 0.6) {
+				if (sim >= 0.65) {
 					pairs.push({
 						id1: trigramCache[i].q.id,
 						id2: trigramCache[j].q.id,
@@ -66,7 +66,7 @@ export function analyzeDuplicates(questions: DbQuestion[]): DuplicateAnalysis {
 						similarity: Math.round(sim * 1000) / 1000,
 						stem1: trigramCache[i].q.stem.slice(0, 100),
 						stem2: trigramCache[j].q.stem.slice(0, 100),
-						severity: sim > 0.7 ? "likely-duplicate" : "near-duplicate",
+						severity: sim >= 0.7 ? "likely-duplicate" : "near-duplicate",
 					});
 				}
 			}
