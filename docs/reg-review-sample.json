@@ -1,0 +1,452 @@
+[
+  {
+    "id": 12697,
+    "topic": "Federal Tax Procedures",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "Porter owes $85,000 in assessed but unpaid federal income taxes for 2023. The IRS sent a demand for payment, and Porter did not respond. The IRS is now taking steps to protect the government''s claim against Porter''s assets. What is a federal tax lien?",
+    "choices": [
+      "A seizure of property to satisfy a tax debt",
+      "An IRS payment plan for delinquent taxpayers",
+      "A criminal charge for tax evasion",
+      "A legal claim against a taxpayer's property arising upon assessment and demand for payment"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Under IRC Section 6321, a federal tax lien is a legal claim (encumbrance) against all of a taxpayer's property and rights to property that arises automatically when tax is assessed and the taxpayer fails to pay after demand. Wrong (A): A seizure of property describes a tax levy, not a lien. Wrong (B): A payment plan is an installment agreement, which is a separate IRS collection alternative. Wrong (C): A criminal charge relates to tax fraud prosecution, not the civil collection process."
+  },
+  {
+    "id": 11320,
+    "topic": "Alternative Minimum Tax",
+    "difficulty": "hard",
+    "cognitive_level": 4,
+    "stem": "Blake, a single filer, has regular tax liability of $62,000 and tentative minimum tax of $52,000 for 2026. She claims $6,000 in nonrefundable personal credits and has an $8,000 minimum tax credit carryforward from prior ISO exercises. Evaluate Blake's total tax liability and remaining MTC carryforward.",
+    "choices": [
+      "$48,000 total tax with $0 MTC remaining, because both credits fully offset without limitation",
+      "$56,000 total tax with $8,000 MTC remaining, because MTC cannot be used when personal credits are also claimed",
+      "$52,000 total tax with $0 MTC remaining, because MTC fully offsets the difference between regular tax and TMT",
+      "$52,000 total tax with $4,000 MTC remaining, because only $4,000 of MTC can be used against the excess over TMT"
+    ],
+    "correct_index": 3,
+    "explanation": "Under IRC Sections 26(a) and 53, personal credits reduce regular tax from $62,000 to $56,000. The MTC is limited to the excess of regular tax (after other credits) over TMT: $56,000 minus $52,000 equals $4,000. Only $4,000 of the $8,000 MTC is used, leaving $4,000 to carry forward. Total tax is $52,000. Choice A incorrectly applies the full $14,000 in credits without recognizing the TMT floor limitation on MTC."
+  },
+  {
+    "id": 10965,
+    "topic": "Individual Taxation: Credits/AMT",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Morrison and Taylor (MFJ, AGI $180,000) claim three dependents: a 10-year-old daughter, a 17-year-old son, and Taylor's 68-year-old mother who lives with them. Apply the rules under IRC Section 24 to determine the family's total combined child-related credits.",
+    "choices": [
+      "$6,000",
+      "$4,000",
+      "$2,000",
+      "$3,000"
+    ],
+    "correct_index": 3,
+    "explanation": "Under IRC Section 24, the $2,000 CTC applies only to qualifying children under age 17. The 10-year-old qualifies for the $2,000 CTC. The 17-year-old and the dependent mother each qualify for the $500 Credit for Other Dependents. Total: $2,000 + $500 + $500 = $3,000. The $6,000 answer incorrectly applies the full $2,000 CTC to all three dependents, ignoring the age-17 cutoff."
+  },
+  {
+    "id": 210,
+    "topic": "Business Structures",
+    "difficulty": "medium",
+    "cognitive_level": 1,
+    "stem": "Three CPAs are forming a new accounting practice and are considering organizing as a limited liability partnership. They want to understand how LLP status affects personal exposure for firm obligations. Which of the following is true about an LLP?",
+    "choices": [
+      "Partners have no personal liability for any debts, obligations, or torts of the partnership",
+      "LLPs cannot be formed by professional service firms such as CPA or law practices under state law",
+      "LLPs are taxed as C corporations and subject to double taxation on all distributed earnings",
+      "Partners are shielded from other partners' malpractice but remain liable for their own acts"
+    ],
+    "correct_index": 0,
+    "explanation": "Under the Revised Uniform Partnership Act (RUPA) Section 306(c), partners in an LLP are not personally liable for obligations arising from the negligence, malpractice, or misconduct of other partners. Each partner remains fully liable for their own professional errors and for general contractual obligations of the partnership. While an LLC provides a complete liability shield for all member obligations, an LLP provides only a partial shield — protecting partners from vicarious liability for other partners' wrongful acts but not from their own professional negligence or partnership contract debts."
+  },
+  {
+    "id": 2545,
+    "topic": "Property Transactions: Basis",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "Under Section 1015, what basis does the donee take when the FMV is between the donor's cost and the donor's adjusted basis?",
+    "choices": [
+      "The donee takes the fair market value at the date of the gift as basis for all purposes",
+      "If the gift property has a fair market value below the donor's basis, the donee uses the donor's basis for gain and the FMV for loss",
+      "The donee takes the average of the donor's basis and the fair market value at the gift date",
+      "The donee takes the donor's original cost basis without any adjustments"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): Under Section 1015(a), when property is gifted and the FMV at the date of gift is less than the donor's adjusted basis, the dual basis rule applies. The donee uses the donor's adjusted basis for determining gain and the FMV at the date of gift for determining loss. If the amount realized on a subsequent sale falls between these two figures, no gain or loss is recognized. (A) is wrong because the donee does not use FMV for gain purposes. (C) is wrong because no averaging method exists under Section 1015. (D) is wrong because the donor's basis is the adjusted basis (reflecting depreciation, improvements, etc.), not original unadjusted cost."
+  },
+  {
+    "id": 11012,
+    "topic": "Individual Taxation: Filing/Credits",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "The Garcias filed a joint return for 2024. The IRS later determined a $12,000 deficiency related to unreported income earned solely by one spouse. What does joint and several liability mean on a married filing jointly return?",
+    "choices": [
+      "Each spouse is liable only for the tax on their own income",
+      "Liability is split equally between both spouses",
+      "The IRS may collect the entire tax from either spouse individually",
+      "Only the higher-earning spouse is liable for the total tax"
+    ],
+    "correct_index": 2,
+    "explanation": "Under IRC Section 6013(d)(3), when a married couple files jointly, both spouses are jointly and severally liable for the entire tax due on the return. The IRS can collect the full amount from either spouse, regardless of who earned the income. The liability is not limited to each spouse's proportionate share — either spouse can be held responsible for the full amount."
+  },
+  {
+    "id": 2897,
+    "topic": "Debtor-Creditor Relationships",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Sureties A and B are co-sureties on a $120,000 obligation. Surety A agreed to cover up to $80,000, and Surety B agreed to cover up to $40,000. The debtor defaults on the full $120,000, and Surety A pays the entire $120,000 to the creditor. How much can Surety A recover from Surety B?",
+    "choices": [
+      "$40,000",
+      "$60,000",
+      "$80,000",
+      "$120,000"
+    ],
+    "correct_index": 0,
+    "explanation": "Under the Restatement (Third) of Suretyship and Guaranty Section 55, co-sureties have a right of contribution from each other based on their proportional maximum liability. Surety B's proportional share is $40,000/$120,000 (one-third), making B responsible for $40,000 of the default — which also equals B's maximum commitment. Since Surety A paid the full $120,000, A can recover $40,000 from B. Unlike subrogation — where the surety steps into the creditor's rights against the principal debtor — contribution is a right among co-sureties to equalize the burden of payment."
+  },
+  {
+    "id": 2874,
+    "topic": "Legal Duties and Responsibilities",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "CPA Thornton provided written tax advice to a corporate client regarding a complex transaction. When the IRS later initiated proceedings, the client sought to invoke the Section 7525 practitioner privilege to shield those communications. The Section 7525 tax practitioner privilege does NOT apply in which of the following situations?",
+    "choices": [
+      "Federal tax advice given by a CPA in noncriminal proceedings",
+      "Tax advice given by an enrolled agent regarding an IRS audit",
+      "Written tax shelter advice provided to a corporate client",
+      "Tax advice given by a CPA in a federal court proceeding"
+    ],
+    "correct_index": 2,
+    "explanation": "Section 7525 privilege does not apply to written communications regarding tax shelters. Congress specifically excluded tax shelter advice from the privilege to prevent abusive tax shelter promotion from being hidden behind privilege claims. The privilege also does not apply in criminal matters or state tax proceedings."
+  },
+  {
+    "id": 524,
+    "topic": "Property Transactions: Gains/Losses",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "The Nguyens, married filing jointly, have MAGI of $310,000, including wages, rental income, dividends, and capital gains from stock sales. Their CPA is identifying which items trigger the 3.8% surtax. Which types of income are subject to the 3.8% net investment income tax?",
+    "choices": [
+      "Interest, dividends, capital gains, rental income, and passive activity income",
+      "Only long-term capital gains and qualified dividends",
+      "Wages, salaries, and self-employment income above the threshold",
+      "Distributions from tax-deferred retirement accounts such as traditional IRAs"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): Under Section 1411(c), net investment income includes interest, dividends, annuities, royalties, rents, capital gains, and income from passive activities and from trading in financial instruments or commodities. (B) is wrong because the NIIT applies to all investment income types listed in Section 1411(c), not only long-term capital gains and qualified dividends. (C) is wrong because wages, salaries, and self-employment income are excluded from the NIIT. (D) is wrong because distributions from qualified retirement plans and IRAs are generally excluded from net investment income under Section 1411(c)(5)."
+  },
+  {
+    "id": 10973,
+    "topic": "Individual Taxation: Credits/AMT",
+    "difficulty": "hard",
+    "cognitive_level": 4,
+    "stem": "Gutierrez, a single parent with earned income of $12,000 and three qualifying children under age 17, has a regular tax liability of $0 after the standard deduction. The Child Tax Credit is $2,000 per child. The Additional Child Tax Credit is refundable for up to $1,700 per child, computed as 15% of earned income exceeding $2,500. Analyze Gutierrez's total CTC benefit.",
+    "choices": [
+      "$6,000",
+      "$5,100",
+      "$0",
+      "$1,425"
+    ],
+    "correct_index": 3,
+    "explanation": "Under IRC Section 24(d), the Additional Child Tax Credit is refundable, computed as 15% of earned income exceeding $2,500, up to $1,700 per child. With $0 tax liability, the nonrefundable CTC provides no benefit. The ACTC is 15% × ($12,000 − $2,500) = $1,425, which is below the $5,100 maximum (3 × $1,700). The $5,100 answer ignores the earned income formula, which is the binding constraint here."
+  },
+  {
+    "id": 2624,
+    "topic": "Individual Taxation: Income",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "David and Susan divorced in 2016. Under their divorce decree, David pays Susan $2,000 per month in alimony. How is this treated for federal income tax purposes in 2026?",
+    "choices": [
+      "Deductible by David and taxable to Susan",
+      "Not deductible by David and not taxable to Susan",
+      "Deductible by David but not taxable to Susan",
+      "Not deductible by David but taxable to Susan"
+    ],
+    "correct_index": 0,
+    "explanation": "Under IRC Sec. 215 and Section 71 (pre-TCJA), for divorce or separation agreements executed before January 1, 2019, alimony is deductible by the payor and includible in the recipient's gross income. David and Susan's 2016 decree falls under these pre-TCJA rules, so David deducts the $2,000 monthly payments and Susan includes them in income. Unlike agreements executed after December 31, 2018 — where Section 11051 of the TCJA eliminated both the deduction and the income inclusion — pre-2019 agreements retain the traditional tax treatment."
+  },
+  {
+    "id": 1179,
+    "topic": "Debtor-Creditor Relationships",
+    "difficulty": "medium",
+    "cognitive_level": 1,
+    "stem": "Franco, an individual, has filed a voluntary Chapter 7 bankruptcy petition. Among his outstanding obligations are credit card balances, medical bills, and several other categories of debt. Which of the following debts is generally nondischargeable in Franco''s Chapter 7 proceeding?",
+    "choices": [
+      "Credit card debt from personal purchases",
+      "Medical bills for services already provided",
+      "Domestic support obligations such as child support and alimony",
+      "Deficiency balance remaining after a mortgage foreclosure"
+    ],
+    "correct_index": 2,
+    "explanation": "Under Section 523(a)(5) of the Bankruptcy Code, domestic support obligations — including child support and alimony — are nondischargeable in any bankruptcy chapter. This priority reflects the policy of protecting dependents and former spouses. In contrast, credit card debt, medical bills, and mortgage deficiency balances are generally dischargeable in a Chapter 7 liquidation, as they are unsecured consumer debts without special nondischargeability protection."
+  },
+  {
+    "id": 65,
+    "topic": "Business Law: Contracts",
+    "difficulty": "hard",
+    "cognitive_level": 3,
+    "stem": "On Monday, Allen mails an offer to Baker. On Wednesday, Allen mails a revocation. On Thursday, before receiving the revocation, Baker mails an acceptance. Allen argues the revocation was sent before the acceptance. How does the mailbox rule resolve this conflict, and what would happen differently if Baker had mailed a rejection on Wednesday and then mailed an acceptance on Thursday?",
+    "choices": [
+      "The acceptance on Thursday creates a binding contract because under the mailbox rule, acceptance is effective upon dispatch (mailing), while revocation is effective only upon receipt — since Baker mailed the acceptance before receiving the revocation, the contract formed Thursday. If Baker had mailed a rejection Wednesday followed by an acceptance Thursday, the mailbox rule would not protect the acceptance because the first response dispatched was a rejection, making whichever communication arrives first controlling",
+      "No contract was formed because the revocation was mailed before the acceptance, and the mailbox rule applies to both revocations and acceptances equally",
+      "The contract formed on Wednesday when Allen mailed the revocation, because revocations take priority over acceptances under the UCC",
+      "The contract formed on Friday when Baker receives the revocation, because all contract communications are effective upon receipt"
+    ],
+    "correct_index": 1,
+    "explanation": "Under the common law mailbox rule (Restatement (Second) of Contracts Section 63), an acceptance is effective upon dispatch, while a revocation is effective only upon receipt. Baker's Thursday acceptance was effective the moment it was mailed, before Allen's Wednesday revocation arrived, forming a valid contract. However, if Baker had mailed a rejection first on Wednesday and then an acceptance on Thursday, the mailbox rule would not apply because the offeree dispatched a rejection first, and whichever communication arrives first controls the outcome."
+  },
+  {
+    "id": 11214,
+    "topic": "Business Law: Contracts",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Walters pays Henderson $15,000 as a deposit for a custom boat. Henderson begins construction, spending $8,000 on materials, but then breaches the contract by refusing to complete the boat. Walters sues for restitution. What amount is Walters most likely to recover?",
+    "choices": [
+      "$15,000, the deposit paid, to prevent Henderson's unjust enrichment",
+      "$8,000, the amount Henderson spent on materials",
+      "$7,000, the deposit minus Henderson's expenditures",
+      "$23,000, the deposit plus Henderson's material costs"
+    ],
+    "correct_index": 0,
+    "explanation": "Under the Restatement (Second) of Contracts Section 373, a non-breaching party is entitled to restitution of any benefit conferred on the breaching party to prevent unjust enrichment. Because Henderson breached by refusing to complete the boat, Walters may recover the full $15,000 deposit. Henderson's own expenditures of $8,000 on materials do not reduce the restitution amount, whereas expectation damages would measure the benefit of the bargain rather than the benefit actually conferred on the breaching party."
+  },
+  {
+    "id": 4792,
+    "topic": "Government Regulation of Business",
+    "difficulty": "medium",
+    "cognitive_level": null,
+    "stem": "Hartwell Manufacturing, which employs 120 workers, is updating its hiring policies to comply with federal anti-discrimination law. The HR director is reviewing the protected categories. Title VII of the Civil Rights Act of 1964 prohibits employment discrimination based on which of the following?",
+    "choices": [
+      "Age over 40",
+      "Disability status",
+      "Race, color, religion, sex, or national origin",
+      "Veteran status"
+    ],
+    "correct_index": 2,
+    "explanation": "Under Title VII of the Civil Rights Act of 1964 Section 703(a), it is unlawful for an employer with 15 or more employees to discriminate based on race, color, religion, sex, or national origin. These five protected categories are the exclusive scope of Title VII. While age discrimination for individuals over 40 is addressed by the Age Discrimination in Employment Act (ADEA) and disability discrimination by the Americans with Disabilities Act (ADA), those are separate federal statutes — unlike Title VII which is limited to the five enumerated categories."
+  },
+  {
+    "id": 2726,
+    "topic": "Individual Taxation: Filing/Credits",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "Thompson''s wife died in October 2024. He has not remarried and maintains a home for their 10-year-old dependent child. Thompson filed jointly for 2024. How many years after a spouse''s death can the surviving spouse use qualifying surviving spouse status?",
+    "choices": [
+      "Two tax years following the year of the spouse's death",
+      "One tax year following the year of the spouse's death",
+      "Three tax years following the year of the spouse's death",
+      "Five tax years following the year of the spouse's death"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): Under Section 2(a), the qualifying surviving spouse filing status is available for two tax years following the year of the spouse's death, provided the surviving spouse has not remarried and maintains a household for a qualifying dependent child. For example, if a spouse dies in 2025, the surviving spouse may use this status for tax years 2026 and 2027. (B) is wrong because the benefit extends for two years, not one. (C) is wrong because the duration is two years, not three. (D) is wrong because five years exceeds the statutory period."
+  },
+  {
+    "id": 215,
+    "topic": "Property Transactions: Gains/Losses",
+    "difficulty": "easy",
+    "cognitive_level": 2,
+    "stem": "Medina sells two blocks of identical stock: Block A was held for 8 months and sold at a $10,000 gain, while Block B was held for 14 months and sold at a $10,000 gain. Both gains are $10,000, but Medina's CPA advises that the tax consequences differ significantly. How does the holding period affect the character and tax rate applied to each gain, and what is the practical impact on Medina's total tax?",
+    "choices": [
+      "Both gains are taxed identically because the holding period distinction was eliminated by the TCJA",
+      "Block A's gain is taxed at Medina's ordinary income rate and Block B is also taxed at ordinary rates, but Block B qualifies for a $3,000 exclusion",
+      "Block A's gain is a long-term capital gain (favorable rate) and Block B's is a short-term capital gain (ordinary rate), because shorter holding periods receive preferential treatment",
+      "Block A's $10,000 gain is short-term (held one year or less) and taxed at Medina's ordinary income rate, while Block B's $10,000 gain is long-term (held more than one year) and taxed at preferential rates of 0%, 15%, or 20% — for a taxpayer in the 32% ordinary bracket, this holding period difference on identical $10,000 gains could mean paying $3,200 vs. $1,500 in tax"
+    ],
+    "correct_index": 1,
+    "explanation": "Under IRC Section 1222, the one-year holding period is the dividing line between short-term and long-term capital gains. Block A, held 8 months, produces a short-term capital gain taxed at ordinary income rates (up to 37%) under Section 1(h). Block B, held 14 months, produces a long-term capital gain taxed at the preferential rates of 0%, 15%, or 20% established under IRC Section 1(h)(1). For a taxpayer in the 32% bracket, the same $10,000 gain results in approximately $3,200 tax (short-term) versus $1,500 (long-term at 15%). While the $3,000 figure under Section 1211(b) relates to capital loss deductions against ordinary income, it has no application to capital gain rate calculations."
+  },
+  {
+    "id": 11193,
+    "topic": "Business Law: Contracts",
+    "difficulty": "hard",
+    "cognitive_level": 4,
+    "stem": "Garrison, an elderly non-English-speaking homeowner, signs a home repair contract with ProFix Corp. after a door-to-door salesperson presents the 30-page contract only in English and pressures Garrison to sign immediately. The contract requires Garrison to pay $50,000 for $3,000 worth of repairs, with a mandatory arbitration provision that prohibits any appeals. Evaluate the enforceability of this contract.",
+    "choices": [
+      "Enforceable, because Garrison voluntarily signed the contract",
+      "Voidable only for procedural unconscionability due to the high-pressure tactics",
+      "Voidable only for substantive unconscionability due to the $50,000 price term",
+      "Likely unenforceable because both procedural and substantive unconscionability are present"
+    ],
+    "correct_index": 3,
+    "explanation": "Under UCC Section 2-302 and the Restatement (Second) of Contracts Section 208, a court may refuse to enforce a contract or clause that is unconscionable at the time it was made. Procedural unconscionability exists here due to the language barrier, high-pressure tactics, and lack of meaningful choice, while substantive unconscionability exists because of the grossly inflated price ($50,000 for $3,000 of work). Unlike a claim of mutual mistake, which requires both parties to share an erroneous assumption, unconscionability focuses on whether the bargaining process and resulting terms are fundamentally unfair."
+  },
+  {
+    "id": 10910,
+    "topic": "Alternative Minimum Tax",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "The Caldwell Family Irrevocable Trust reports AMTI of $100,000 before the exemption for 2026. Trusts and estates receive an AMT exemption of $29,900. What is the trust's AMTI subject to AMT rates?",
+    "choices": [
+      "$100,000 because trusts are not eligible for any AMT exemption",
+      "$11,900 after applying the individual exemption of $88,100",
+      "$0 because the trust's income is below the exemption phase-out threshold",
+      "$70,100 after subtracting the $29,900 trust exemption"
+    ],
+    "correct_index": 3,
+    "explanation": "Under IRC Section 55(d)(1)(D), trusts and estates receive a separate AMT exemption substantially lower than the individual exemption. The trust's AMTI subject to AMT rates is $100,000 − $29,900 = $70,100. Choice B is incorrect because it applies the $88,100 single-filer exemption, whereas trusts receive a separate, much lower exemption that makes them more susceptible to AMT."
+  },
+  {
+    "id": 11295,
+    "topic": "Government Regulation of Business",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "On April 20, 2026, Crestview Holdings, a publicly traded company, enters into a definitive merger agreement to acquire Lakewood Partners for $180 million. Under the Securities Exchange Act of 1934, which report must Crestview file with the SEC to disclose this event?",
+    "choices": [
+      "Form 10-K, because the acquisition affects annual financial reporting",
+      "Form 10-Q, because the merger agreement was signed during the fiscal quarter",
+      "Form S-1, because the merger involves the potential issuance of new securities",
+      "Form 8-K, because entering into a material definitive agreement is a current reportable event"
+    ],
+    "correct_index": 3,
+    "explanation": "Under the Securities Exchange Act of 1934 Section 13(a) and SEC Rule 13a-11, publicly traded companies must file a Form 8-K within four business days of specified triggering events, including entry into a material definitive agreement such as a merger. Item 1.01 of Form 8-K specifically covers this disclosure requirement. Unlike Form 10-K, which is an annual report filed after fiscal year end, Form 8-K provides timely disclosure of material current events to ensure investors receive prompt notice of significant corporate developments."
+  },
+  {
+    "id": 5477,
+    "topic": "Estate and Gift Tax",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "On October 1, 2026, Montgomery transfers $2,000,000 to a charitable remainder annuity trust that pays Montgomery $120,000 annually for 15 years, after which the remainder passes to a qualified charity. The present value of the charitable remainder interest is $820,000 under the Section 7520 tables. What is Montgomery's gift tax charitable deduction?",
+    "choices": [
+      "$820,000, the present value of the charitable remainder interest",
+      "$2,000,000, the full value of the property transferred",
+      "$1,180,000, the present value of the annuity interest",
+      "$0, because Montgomery retained an income interest"
+    ],
+    "correct_index": 0,
+    "explanation": "Under IRC Section 2522(c)(2), a gift tax charitable deduction is allowed for the present value of the remainder interest passing to a qualifying charity from a charitable remainder annuity trust. The deduction equals $820,000, the actuarially determined value of the charity's remainder interest. Choice D is incorrect because retaining an income interest does not disqualify the charitable deduction; the Code specifically provides for split-interest trust deductions when the trust meets CRAT requirements."
+  },
+  {
+    "id": 11237,
+    "topic": "Business Structures",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Oakmont Industries files Chapter 11 bankruptcy and proposes a reorganization plan. The unsecured creditors' committee votes to reject the plan. The bankruptcy court confirms the plan over the committee's objection. Under bankruptcy law, this judicial action is known as:",
+    "choices": [
+      "Automatic stay extension",
+      "Preference avoidance",
+      "Cramdown",
+      "Discharge injunction"
+    ],
+    "correct_index": 2,
+    "explanation": "Under 11 U.S.C. Section 1129(b), the bankruptcy court may confirm a reorganization plan over the objection of a dissenting class of creditors through cramdown, provided the plan does not discriminate unfairly and is fair and equitable to the dissenting class. This allows viable businesses to reorganize even without unanimous creditor support. Choice B (preference avoidance) refers to the trustee's power to recover pre-petition preferential transfers, unrelated to plan confirmation."
+  },
+  {
+    "id": 518,
+    "topic": "Property Transactions: Basis",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Thornton Industries places a $40,000 asset in service and elects the Alternative Depreciation System (ADS), while a competitor, Waverly Corp., places an identical $40,000 asset in service using the General Depreciation System (GDS) with 200% declining balance. Both assets have a 5-year GDS recovery period and a 9-year ADS recovery period. How does Thornton's ADS election affect its depreciation deductions compared to Waverly's GDS treatment, and what is the most likely reason a company would voluntarily choose the slower method?",
+    "choices": [
+      "No meaningful difference — both methods produce the same total deduction, just with different labels on the tax return",
+      "Thornton claims larger deductions in early years because ADS uses accelerated rates over a longer recovery period, benefiting cash flow",
+      "Thornton claims smaller annual deductions spread over 9 years using straight-line, while Waverly front-loads deductions using 200% declining balance over 5 years — a company might elect ADS to avoid generating losses that trigger AMT adjustments or to preserve NOLs for more valuable future use",
+      "Thornton deducts the full $40,000 immediately under ADS while Waverly must spread deductions over 5 years, because ADS is more favorable than GDS for all asset types"
+    ],
+    "correct_index": 2,
+    "explanation": "Under IRC Section 168(g), the Alternative Depreciation System (ADS) requires straight-line depreciation over a longer recovery period (9 years for this asset class versus 5 years under GDS), producing smaller annual deductions than the 200% declining balance method under GDS. While total depreciation over the asset's life is identical ($40,000), the timing difference significantly affects cash flow. A company might voluntarily elect ADS under Section 168(g)(7) to avoid creating unusable net operating losses, to eliminate AMT depreciation adjustments under former Section 56(a)(1), or to smooth income. Unlike GDS which front-loads deductions through accelerated methods, ADS spreads deductions evenly across the longer recovery period."
+  },
+  {
+    "id": 1171,
+    "topic": "Legal Duties and Responsibilities",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "A preparer fails to satisfy due diligence requirements under Section 6695(g) for three credits claimed on the same return: the Earned Income Credit, the Child Tax Credit, and the American Opportunity Credit. The penalty is $560 per failure for the current year. Analyze why the penalty is assessed per credit rather than per return, and calculate the preparer's total exposure if this pattern repeats across 40 returns during the filing season.",
+    "choices": [
+      "The penalty is $560 per return regardless of how many credits are claimed, because due diligence is a return-level obligation — total exposure for 40 returns is $22,400",
+      "The penalty is assessed per credit per return because each credit has its own due diligence requirements, separate documentation standards, and distinct eligibility criteria — failing three credits on one return produces $1,680 (3 × $560); across 40 returns with the same failures, total exposure is $67,200 (40 × $1,680); the per-credit structure exists because Congress recognized that each credit presents independent fraud risk and requires the preparer to verify different eligibility factors (income, dependents, enrollment) — a per-return penalty would create insufficient deterrence for preparers who routinely rubber-stamp multiple credits without verification",
+      "The penalty applies only once per preparer per tax season, capped at $560 total regardless of the number of returns or credits",
+      "The penalty is assessed per credit but only for the Earned Income Credit — the CTC and AOTC are exempt from due diligence penalties"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): Section 6695(g) imposes the due diligence penalty separately for each applicable credit on each return. The four covered credits (EIC, CTC/ACTC/ODC, AOTC, and HOH filing status) each require independent verification of different eligibility factors. For EIC, the preparer must verify income, filing status, and qualifying children. For CTC, the preparer must verify dependent eligibility and income thresholds. For AOTC, the preparer must verify enrollment status, educational institution, and qualified expenses. A preparer who fails all three on one return owes $1,680 ($560 × 3). Across 40 returns, total exposure reaches $67,200. The per-credit structure creates meaningful deterrence: a per-return penalty would allow preparers to claim multiple unverified credits for only a single penalty, undermining the due diligence purpose. These credits are frequent targets of fraud — particularly EIC and AOTC — and the cumulative penalty structure reflects the heightened compliance risk. Choice A is incorrect because the penalty is per credit, not per return. Choice C is incorrect because there is no season-level cap. Choice D is incorrect because all four covered items trigger independent penalties."
+  },
+  {
+    "id": 13011,
+    "topic": "Professional Ethics in Tax",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "Under Section 6695, what is the penalty per failure for a tax return preparer who fails to include a Preparer Tax Identification Number (PTIN) on a return?",
+    "choices": [
+      "$25 per failure, maximum $10,000 per year",
+      "$100 per failure, maximum $50,000 per year",
+      "No monetary penalty, only a warning letter from the IRS",
+      "$50 per failure, maximum $28,000 per year"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Section 6695 imposes a $50 penalty per failure for administrative items such as failing to include a PTIN, failing to furnish a return copy to the taxpayer, or failing to sign the return. Each penalty type is capped at $28,000 per year.\nWrong (A): The $25 amount and $10,000 cap are not the correct figures under Section 6695.\nWrong (B): The $100 per failure amount overstates the Section 6695 penalty.\nWrong (C): Section 6695 does impose monetary penalties, not merely warning letters."
+  },
+  {
+    "id": 2542,
+    "topic": "Property Transactions: Basis",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "In 2025, Robert gifts stock to his daughter Megan. Robert''s adjusted basis is $30,000 and the stock''s fair market value at the date of the gift is $22,000. Under Section 1015, what is the dual basis rule for gifts of depreciated property?",
+    "choices": [
+      "The donee always takes the fair market value as basis for both gain and loss purposes",
+      "The donee takes the donor's basis for both gain and loss, reduced by any gift tax paid",
+      "For gain the donee uses the donor's basis; for loss the donee uses the fair market value at the date of the gift",
+      "The donee chooses whichever basis — donor's cost or fair market value — produces the smaller tax liability"
+    ],
+    "correct_index": 2,
+    "explanation": "Correct (C): Under Section 1015(a), when the fair market value of gifted property on the date of the gift is less than the donor's adjusted basis, a dual basis rule applies. For purposes of determining gain, the donee uses the donor's adjusted basis. For purposes of determining loss, the donee uses the fair market value at the date of the gift. If the selling price falls between these two amounts, no gain or loss is recognized. (A) is wrong because the donee uses the donor's basis for gain purposes, not fair market value. (B) is wrong because the loss basis is the lower fair market value, not the donor's basis. (D) is wrong because the taxpayer does not choose; the Code prescribes which basis applies based on whether a gain or loss would result."
+  },
+  {
+    "id": 2834,
+    "topic": "S Corporations",
+    "difficulty": "hard",
+    "cognitive_level": 2,
+    "stem": "Shareholder V has stock basis of $20,000 and debt basis of $15,000 in Poplar Corp, an S corporation. In Year 1, V's share of ordinary loss is $30,000. In Year 2, V's share of ordinary income is $18,000. What is V's stock basis at the end of Year 2?",
+    "choices": [
+      "$3,000",
+      "$13,000",
+      "$8,000",
+      "$18,000"
+    ],
+    "correct_index": 2,
+    "explanation": "Under IRC Section 1366(d)(1), S corporation losses first reduce the shareholder's stock basis, then debt basis. In Year 1, the $30,000 loss reduces V's stock basis from $20,000 to $0 ($20,000 absorbed), then reduces debt basis from $15,000 by the remaining $10,000 to $5,000. In Year 2, under IRC Section 1367(b)(2)(B), income of $18,000 must first restore debt basis from $5,000 to $15,000 ($10,000 used), then the remaining $8,000 increases stock basis from $0 to $8,000. Unlike partnerships — where debt basis is calculated differently under IRC Section 752 — S corporation debt basis requires the shareholder to have personally loaned funds to the corporation."
+  },
+  {
+    "id": 2578,
+    "topic": "Property Transactions: Gains/Losses",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "An investor holds stock in a corporation that files for bankruptcy. The stock becomes completely worthless on December 15, 2026. How is the loss treated for tax purposes?",
+    "choices": [
+      "Ordinary loss in the year the stock becomes worthless",
+      "Long-term capital loss deemed to occur on the last day of the tax year",
+      "Short-term capital loss deemed to occur on the date of bankruptcy filing",
+      "No loss is recognized until the stock is formally canceled"
+    ],
+    "correct_index": 1,
+    "explanation": "Under Section 165(g), a loss from worthless securities is treated as a capital loss deemed to occur on the last day of the tax year in which the security becomes worthless (December 31, 2026). The holding period is measured to that deemed date. If held more than one year, it is a long-term capital loss. The taxpayer does not need to sell the stock to recognize the loss."
+  },
+  {
+    "id": 11096,
+    "topic": "C Corporations",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "Atlas Manufacturing, a C corporation, made $500,000 in charitable contributions during 2026, but its 10% taxable income limitation only permits a current deduction of $320,000. How many years may Atlas carry forward the $180,000 excess?",
+    "choices": [
+      "10 years",
+      "5 years",
+      "20 years",
+      "3 years"
+    ],
+    "correct_index": 1,
+    "explanation": "Under IRC Section 170(d)(2), a C corporation may carry forward excess charitable contributions for 5 years. Contributions are applied on a first-in, first-out basis, with the oldest carryforward used before more recent excess amounts. Choice A (10 years) is incorrect because the 10-year carryforward period applies to individual taxpayers under certain circumstances, not to corporations."
+  },
+  {
+    "id": 11033,
+    "topic": "Individual Taxation: Filing/Credits",
+    "difficulty": "hard",
+    "cognitive_level": 3,
+    "stem": "Reeves is a fifth-year graduate student pursuing a master's degree. She previously claimed the AOTC for four undergraduate years. Her 2025 qualified education expenses total $8,000, and her AGI is $55,000 (Single). Analyze which education credit is available and calculate its amount.",
+    "choices": [
+      "AOTC of $2,500, because the four-year limit resets for graduate programs",
+      "AOTC of $2,000, because graduate studies receive a reduced credit rate",
+      "LLC of $2,500, because the LLC matches the AOTC maximum for graduate students",
+      "LLC of $1,600, because the AOTC is limited to the first four years and the LLC provides 20% of up to $10,000 in expenses"
+    ],
+    "correct_index": 3,
+    "explanation": "Under IRC Section 25A(b)(2), the AOTC is limited to the first four tax years of postsecondary education. Since Reeves already claimed it for four undergraduate years, she cannot claim it for graduate school. Under Section 25A(c), the Lifetime Learning Credit provides 20% of the first $10,000 in qualified expenses. With $8,000 in expenses, the LLC is $1,600 (20% x $8,000). The AOTC four-year limit does not reset for a new degree program."
+  }
+]

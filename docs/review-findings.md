@@ -49,6 +49,11 @@ Patterns found during 30-question statistical reviews. Each pattern is a candida
 **Automated check idea:** Harder to automate — may need AI-assisted review to check whether distractor text is factually true.
 **Found in:** Q26
 
+### 9. Citation in stem
+**Pattern:** Stem references specific standard numbers (AU-C 330, ASC 606, IRC Section 1015, etc.). Real CPA exam rarely does this — citations belong in explanations, not stems.
+**Automated check idea:** Regex for AU-C/ASC/GASB/IRC/PCAOB + number in stem text. Exception: when the standard itself is the concept being tested (e.g., "What does Section 7525 cover?").
+**Found in:** Q2545, Q2542, and 1,257 questions flagged by detector
+
 ## Review Log
 
 | Question | Section | Action | Issues |
@@ -84,3 +89,34 @@ Patterns found during 30-question statistical reviews. Each pattern is a candida
 | Q12842   | AUD     | Keep    | Strong question — multi-location ITGC reliance |
 | Q1759    | AUD     | Fixed   | #3 incomplete explanation (added B/C) |
 | Q13880   | AUD     | Keep    | Strong question — recurring engagement reassessment |
+| **REG Review (30 questions)** | | | |
+| Q12697   | REG     | Keep    | — |
+| Q11320   | REG     | Fixed   | #3 incomplete explanation (added B/C) |
+| Q10965   | REG     | Fixed   | #3 incomplete explanation (added B/C) |
+| Q210     | REG     | Fixed   | Wrong answer keyed (A said "no liability for any" but D was correct) |
+| Q2545    | REG     | Fixed   | Stem/answer mismatch + #9 citation in stem |
+| Q11012   | REG     | Keep    | — |
+| Q2897    | REG     | Keep    | Strong calculation question |
+| Q2874    | REG     | Fixed   | #3 incomplete explanation (added A/B/D) |
+| Q524     | REG     | Keep    | — |
+| Q10973   | REG     | Keep    | Strong L4 calculation |
+| Q2624    | REG     | Keep    | — |
+| Q1179    | REG     | Keep    | — |
+| Q65      | REG     | Fixed   | #1 extreme giveaway (A was 70+ words) |
+| Q11214   | REG     | Keep    | — |
+| Q4792    | REG     | Fixed   | #4 null cognitive_level |
+| Q2726    | REG     | Keep    | — |
+| Q215     | REG     | Fixed   | Wrong answer keyed + #1 giveaway longest |
+| Q11193   | REG     | Keep    | — |
+| Q10910   | REG     | Keep    | — |
+| Q11295   | REG     | Keep    | — |
+| Q5477    | REG     | Keep    | — |
+| Q11237   | REG     | Keep    | — |
+| Q518     | REG     | Fixed   | #1 giveaway (C was 50+ words) |
+| Q1171    | REG     | Fixed   | #1 extreme giveaway (B was 80+ words) + #7 recite-all |
+| Q13011   | REG     | Keep    | — |
+| Q2542    | REG     | Fixed   | #9 citation in stem |
+| Q2834    | REG     | Keep    | Strong S corp basis question |
+| Q2578    | REG     | Keep    | — |
+| Q11096   | REG     | Keep    | — |
+| Q11033   | REG     | Keep    | — |
