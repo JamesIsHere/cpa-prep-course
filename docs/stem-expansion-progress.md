@@ -79,3 +79,4 @@ Expanding short textbook-style stems (<=20 words) into CPA-exam-style mini case 
 | 2026-03-30 | 00987_stemfix_isc_batch1.sql | ISC | 50 | ~42 | Citation removal + scenario expansion, 15 topics covered |
 | 2026-03-30 | 00988_stemfix_tcp_batch1.sql | TCP | 50 | ~42 | Citation removal + scenario expansion, 15 topics covered |
 | 2026-03-30 | 00989_stemfix_aud_batch2.sql | AUD | 50 | ~42 | Citation removal + scenario expansion, 10 topics covered |
+| 2026-03-30 | 00990_stemfix_far_batch2.sql | FAR | 42 | ~42 | Citation removal + scenario expansion, 12 topics covered |
