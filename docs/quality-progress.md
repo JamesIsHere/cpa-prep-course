@@ -260,3 +260,4 @@
 | 2026-03-30 | 00938_quality_bar_batch40.sql  | BAR     | 30        | 15x#1, 15x#3  | 15 choices equalized + 15 per-choice explanations |
 | 2026-03-30 | 00937_quality_tcp_batch36.sql  | TCP     | 30        | 30x#3         | 30 per-choice explanations restructured          |
 | 2026-03-30 | 00939_quality_aud_batch43.sql  | AUD     | 30        | 30x#3         | 30 per-choice explanations restructured          |
+| 2026-03-30 | 00940_quality_isc_batch37.sql  | ISC     | 30        | 30x#3         | 30 per-choice explanations restructured          |
