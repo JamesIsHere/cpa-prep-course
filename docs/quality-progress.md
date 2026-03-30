@@ -279,3 +279,4 @@
 | 2026-03-30 | 00958_quality_bar_batch44.sql  | BAR     | 3         | 3x#1          | 3 choices equalized (longest ≤1.8x shortest)     |
 | 2026-03-30 | 00956_quality_isc_batch40.sql  | ISC     | 30        | 30x#1         | 30 choices equalized (longest ≤1.8x shortest)     |
 | 2026-03-30 | 00960_quality_far_batch40.sql  | FAR     | 7         | 5x#1, 2x#3   | 5 choices equalized + 2 per-choice explanations   |
+| 2026-03-30 | 00957_quality_aud_batch46.sql  | AUD     | 30        | 1x#1, 29x#3  | 1 choices equalized + 29 per-choice explanations  |
