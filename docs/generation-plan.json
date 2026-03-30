@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-30T20:22:50.688Z",
+  "generatedAt": "2026-03-30T20:49:39.633Z",
   "totalTarget": 9000,
   "batchSize": 30,
   "difficultyTargets": {
@@ -11,7 +11,7 @@
     {
       "section": "aud",
       "sectionId": 1,
-      "currentTotal": 1450,
+      "currentTotal": 1447,
       "targetTotal": 1500,
       "toGenerate": 0,
       "toTrim": 0,
@@ -225,21 +225,21 @@
             25,
             35
           ],
-          "currentCount": 62,
+          "currentCount": 61,
           "targetCount": 64,
           "toGenerate": 0,
           "toTrim": 0,
           "batches": 0,
           "difficulty": {
             "easy": 1,
-            "medium": 1,
+            "medium": 2,
             "hard": 0
           },
           "blooms": {
             "l1": 1,
             "l2": 1,
             "l3": 1,
-            "l4": -1
+            "l4": 0
           }
         },
         {
@@ -550,31 +550,6 @@
             30,
             40
           ],
-          "currentCount": 65,
-          "targetCount": 65,
-          "toGenerate": 0,
-          "toTrim": 0,
-          "batches": 0,
-          "difficulty": {
-            "easy": 0,
-            "medium": 0,
-            "hard": 0
-          },
-          "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
-          }
-        },
-        {
-          "topic": "Written Representations",
-          "section": "aud",
-          "areaNumber": 3,
-          "areaWeight": [
-            30,
-            40
-          ],
           "currentCount": 64,
           "targetCount": 65,
           "toGenerate": 0,
@@ -590,6 +565,31 @@
             "l2": 0,
             "l3": 0,
             "l4": 1
+          }
+        },
+        {
+          "topic": "Written Representations",
+          "section": "aud",
+          "areaNumber": 3,
+          "areaWeight": [
+            30,
+            40
+          ],
+          "currentCount": 63,
+          "targetCount": 65,
+          "toGenerate": 0,
+          "toTrim": 0,
+          "batches": 0,
+          "difficulty": {
+            "easy": 1,
+            "medium": 1,
+            "hard": 0
+          },
+          "blooms": {
+            "l1": 1,
+            "l2": 1,
+            "l3": 1,
+            "l4": -1
           }
         },
         {
@@ -747,7 +747,7 @@
     {
       "section": "far",
       "sectionId": 2,
-      "currentTotal": 1567,
+      "currentTotal": 1554,
       "targetTotal": 1500,
       "toGenerate": 0,
       "toTrim": 0,
@@ -861,21 +861,21 @@
             30,
             40
           ],
-          "currentCount": 71,
+          "currentCount": 65,
           "targetCount": 66,
           "toGenerate": 0,
           "toTrim": 0,
           "batches": 0,
           "difficulty": {
             "easy": 0,
-            "medium": 0,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
             "l1": 0,
             "l2": 0,
             "l3": 0,
-            "l4": 0
+            "l4": 1
           }
         },
         {
@@ -1011,21 +1011,21 @@
             30,
             40
           ],
-          "currentCount": 52,
+          "currentCount": 51,
           "targetCount": 58,
           "toGenerate": 0,
           "toTrim": 0,
           "batches": 0,
           "difficulty": {
             "easy": 2,
-            "medium": 3,
+            "medium": 4,
             "hard": 1
           },
           "blooms": {
             "l1": 2,
             "l2": 2,
             "l3": 2,
-            "l4": 0
+            "l4": 1
           }
         },
         {
@@ -1061,21 +1061,21 @@
             30,
             40
           ],
-          "currentCount": 52,
+          "currentCount": 51,
           "targetCount": 58,
           "toGenerate": 0,
           "toTrim": 0,
           "batches": 0,
           "difficulty": {
             "easy": 2,
-            "medium": 3,
+            "medium": 4,
             "hard": 1
           },
           "blooms": {
             "l1": 2,
             "l2": 2,
             "l3": 2,
-            "l4": 0
+            "l4": 1
           }
         },
         {
@@ -1136,21 +1136,21 @@
             30,
             40
           ],
-          "currentCount": 53,
+          "currentCount": 49,
           "targetCount": 58,
           "toGenerate": 0,
           "toTrim": 0,
           "batches": 0,
           "difficulty": {
-            "easy": 2,
-            "medium": 3,
-            "hard": 0
+            "easy": 3,
+            "medium": 5,
+            "hard": 1
           },
           "blooms": {
-            "l1": 1,
-            "l2": 2,
-            "l3": 1,
-            "l4": 1
+            "l1": 2,
+            "l2": 3,
+            "l3": 2,
+            "l4": 2
           }
         },
         {
@@ -1286,13 +1286,13 @@
             25,
             35
           ],
-          "currentCount": 53,
+          "currentCount": 52,
           "targetCount": 64,
           "toGenerate": 0,
           "toTrim": 0,
           "batches": 0,
           "difficulty": {
-            "easy": 3,
+            "easy": 4,
             "medium": 6,
             "hard": 2
           },
@@ -1300,7 +1300,7 @@
             "l1": 3,
             "l2": 4,
             "l3": 3,
-            "l4": 1
+            "l4": 2
           }
         },
         {
@@ -1358,7 +1358,7 @@
     {
       "section": "reg",
       "sectionId": 3,
-      "currentTotal": 1456,
+      "currentTotal": 1446,
       "targetTotal": 1500,
       "toGenerate": 0,
       "toTrim": 0,
@@ -1647,21 +1647,21 @@
             5,
             15
           ],
-          "currentCount": 48,
+          "currentCount": 47,
           "targetCount": 50,
           "toGenerate": 0,
           "toTrim": 0,
           "batches": 0,
           "difficulty": {
             "easy": 1,
-            "medium": 1,
+            "medium": 2,
             "hard": 0
           },
           "blooms": {
             "l1": 1,
             "l2": 1,
             "l3": 1,
-            "l4": -1
+            "l4": 0
           }
         },
         {
@@ -1672,21 +1672,21 @@
             5,
             15
           ],
-          "currentCount": 44,
+          "currentCount": 43,
           "targetCount": 50,
           "toGenerate": 0,
           "toTrim": 0,
           "batches": 0,
           "difficulty": {
             "easy": 2,
-            "medium": 3,
+            "medium": 4,
             "hard": 1
           },
           "blooms": {
             "l1": 2,
             "l2": 2,
             "l3": 2,
-            "l4": 0
+            "l4": 1
           }
         },
         {
@@ -1747,21 +1747,21 @@
             22,
             32
           ],
-          "currentCount": 67,
+          "currentCount": 66,
           "targetCount": 68,
           "toGenerate": 0,
           "toTrim": 0,
           "batches": 0,
           "difficulty": {
-            "easy": 0,
+            "easy": 1,
             "medium": 1,
             "hard": 0
           },
           "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 1
+            "l1": 1,
+            "l2": 1,
+            "l3": 1,
+            "l4": -1
           }
         },
         {
@@ -1822,33 +1822,8 @@
             22,
             32
           ],
-          "currentCount": 68,
+          "currentCount": 67,
           "targetCount": 68,
-          "toGenerate": 0,
-          "toTrim": 0,
-          "batches": 0,
-          "difficulty": {
-            "easy": 0,
-            "medium": 0,
-            "hard": 0
-          },
-          "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
-          }
-        },
-        {
-          "topic": "C Corporations",
-          "section": "reg",
-          "areaNumber": 5,
-          "areaWeight": [
-            23,
-            33
-          ],
-          "currentCount": 82,
-          "targetCount": 83,
           "toGenerate": 0,
           "toTrim": 0,
           "batches": 0,
@@ -1865,15 +1840,15 @@
           }
         },
         {
-          "topic": "Estate and Gift Tax",
+          "topic": "C Corporations",
           "section": "reg",
           "areaNumber": 5,
           "areaWeight": [
             23,
             33
           ],
-          "currentCount": 82,
-          "targetCount": 84,
+          "currentCount": 81,
+          "targetCount": 83,
           "toGenerate": 0,
           "toTrim": 0,
           "batches": 0,
@@ -1890,6 +1865,31 @@
           }
         },
         {
+          "topic": "Estate and Gift Tax",
+          "section": "reg",
+          "areaNumber": 5,
+          "areaWeight": [
+            23,
+            33
+          ],
+          "currentCount": 78,
+          "targetCount": 84,
+          "toGenerate": 0,
+          "toTrim": 0,
+          "batches": 0,
+          "difficulty": {
+            "easy": 2,
+            "medium": 3,
+            "hard": 1
+          },
+          "blooms": {
+            "l1": 2,
+            "l2": 2,
+            "l3": 2,
+            "l4": 0
+          }
+        },
+        {
           "topic": "Partnerships",
           "section": "reg",
           "areaNumber": 5,
@@ -1897,7 +1897,7 @@
             23,
             33
           ],
-          "currentCount": 80,
+          "currentCount": 79,
           "targetCount": 83,
           "toGenerate": 0,
           "toTrim": 0,
@@ -1905,13 +1905,13 @@
           "difficulty": {
             "easy": 1,
             "medium": 2,
-            "hard": 0
+            "hard": 1
           },
           "blooms": {
             "l1": 1,
             "l2": 1,
             "l3": 1,
-            "l4": 0
+            "l4": 1
           }
         },
         {
@@ -1969,7 +1969,7 @@
     {
       "section": "bar",
       "sectionId": 4,
-      "currentTotal": 1539,
+      "currentTotal": 1534,
       "targetTotal": 1500,
       "toGenerate": 0,
       "toTrim": 0,
@@ -2008,7 +2008,7 @@
             40,
             50
           ],
-          "currentCount": 189,
+          "currentCount": 188,
           "targetCount": 134,
           "toGenerate": 0,
           "toTrim": 0,
@@ -2308,21 +2308,21 @@
             35,
             45
           ],
-          "currentCount": 39,
+          "currentCount": 38,
           "targetCount": 55,
           "toGenerate": 0,
           "toTrim": 0,
           "batches": 0,
           "difficulty": {
             "easy": 5,
-            "medium": 8,
+            "medium": 9,
             "hard": 3
           },
           "blooms": {
             "l1": 3,
             "l2": 6,
             "l3": 5,
-            "l4": 2
+            "l4": 3
           }
         },
         {
@@ -2333,7 +2333,7 @@
             35,
             45
           ],
-          "currentCount": 144,
+          "currentCount": 142,
           "targetCount": 55,
           "toGenerate": 0,
           "toTrim": 0,
@@ -2433,7 +2433,7 @@
             10,
             20
           ],
-          "currentCount": 72,
+          "currentCount": 71,
           "targetCount": 75,
           "toGenerate": 0,
           "toTrim": 0,
@@ -2441,13 +2441,13 @@
           "difficulty": {
             "easy": 1,
             "medium": 2,
-            "hard": 0
+            "hard": 1
           },
           "blooms": {
             "l1": 1,
             "l2": 1,
             "l3": 1,
-            "l4": 0
+            "l4": 1
           }
         }
       ]
@@ -2916,7 +2916,7 @@
     {
       "section": "tcp",
       "sectionId": 6,
-      "currentTotal": 1434,
+      "currentTotal": 1426,
       "targetTotal": 1500,
       "toGenerate": 0,
       "toTrim": 0,
@@ -2955,21 +2955,21 @@
             30,
             40
           ],
-          "currentCount": 131,
+          "currentCount": 129,
           "targetCount": 132,
           "toGenerate": 0,
           "toTrim": 0,
           "batches": 0,
           "difficulty": {
-            "easy": 0,
-            "medium": 1,
+            "easy": 1,
+            "medium": 2,
             "hard": 0
           },
           "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 1
+            "l1": 1,
+            "l2": 1,
+            "l3": 1,
+            "l4": 0
           }
         },
         {
@@ -3030,6 +3030,31 @@
             30,
             40
           ],
+          "currentCount": 95,
+          "targetCount": 105,
+          "toGenerate": 0,
+          "toTrim": 0,
+          "batches": 0,
+          "difficulty": {
+            "easy": 3,
+            "medium": 5,
+            "hard": 2
+          },
+          "blooms": {
+            "l1": 2,
+            "l2": 4,
+            "l3": 3,
+            "l4": 1
+          }
+        },
+        {
+          "topic": "Entity Formation and Liquidation",
+          "section": "tcp",
+          "areaNumber": 2,
+          "areaWeight": [
+            30,
+            40
+          ],
           "currentCount": 96,
           "targetCount": 105,
           "toGenerate": 0,
@@ -3048,31 +3073,6 @@
           }
         },
         {
-          "topic": "Entity Formation and Liquidation",
-          "section": "tcp",
-          "areaNumber": 2,
-          "areaWeight": [
-            30,
-            40
-          ],
-          "currentCount": 98,
-          "targetCount": 105,
-          "toGenerate": 0,
-          "toTrim": 0,
-          "batches": 0,
-          "difficulty": {
-            "easy": 2,
-            "medium": 4,
-            "hard": 1
-          },
-          "blooms": {
-            "l1": 1,
-            "l2": 2,
-            "l3": 2,
-            "l4": 2
-          }
-        },
-        {
           "topic": "Entity Tax Compliance: NOLs and Consolidated Returns",
           "section": "tcp",
           "areaNumber": 2,
@@ -3080,50 +3080,25 @@
             30,
             40
           ],
-          "currentCount": 101,
+          "currentCount": 100,
           "targetCount": 105,
           "toGenerate": 0,
           "toTrim": 0,
           "batches": 0,
           "difficulty": {
-            "easy": 1,
-            "medium": 2,
-            "hard": 1
+            "easy": 2,
+            "medium": 3,
+            "hard": 0
           },
           "blooms": {
             "l1": 1,
-            "l2": 1,
-            "l3": 1,
-            "l4": 1
+            "l2": 2,
+            "l3": 2,
+            "l4": 0
           }
         },
         {
           "topic": "International Tax",
-          "section": "tcp",
-          "areaNumber": 2,
-          "areaWeight": [
-            30,
-            40
-          ],
-          "currentCount": 104,
-          "targetCount": 105,
-          "toGenerate": 0,
-          "toTrim": 0,
-          "batches": 0,
-          "difficulty": {
-            "easy": 0,
-            "medium": 1,
-            "hard": 0
-          },
-          "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 1
-          }
-        },
-        {
-          "topic": "Owner-Entity Transactions",
           "section": "tcp",
           "areaNumber": 2,
           "areaWeight": [
@@ -3142,6 +3117,31 @@
           },
           "blooms": {
             "l1": 0,
+            "l2": 1,
+            "l3": 1,
+            "l4": 0
+          }
+        },
+        {
+          "topic": "Owner-Entity Transactions",
+          "section": "tcp",
+          "areaNumber": 2,
+          "areaWeight": [
+            30,
+            40
+          ],
+          "currentCount": 102,
+          "targetCount": 105,
+          "toGenerate": 0,
+          "toTrim": 0,
+          "batches": 0,
+          "difficulty": {
+            "easy": 1,
+            "medium": 2,
+            "hard": 0
+          },
+          "blooms": {
+            "l1": 1,
             "l2": 1,
             "l3": 1,
             "l4": 0
@@ -3326,7 +3326,7 @@
     }
   ],
   "summary": {
-    "totalCurrent": 8900,
+    "totalCurrent": 8861,
     "totalTarget": 9000,
     "totalToGenerate": 0,
     "totalToTrim": 0,
