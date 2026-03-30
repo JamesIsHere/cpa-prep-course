@@ -6,13 +6,13 @@ Expanding short textbook-style stems (<=20 words) into CPA-exam-style mini case 
 
 | Section | Short Stems | Expanded | Remaining | Batches Done |
 |---------|-------------|----------|-----------|--------------|
-| AUD     | 552         | 552      | 0         | 13           |
-| REG     | 446         | 446      | 0         | 9            |
-| BAR     | 404         | 403      | 1         | 9            |
-| ISC     | 477         | 477      | 0         | 10           |
-| TCP     | 293         | 293      | 0         | 6            |
-| FAR     | 350         | 350      | 0         | 8            |
-| **Total** | **2,522** | **2,244** | **278**   | **48**       |
+| AUD     | 552         | 602      | 0         | 14           |
+| REG     | 446         | 496      | 0         | 10           |
+| BAR     | 404         | 453      | 0         | 10           |
+| ISC     | 477         | 527      | 0         | 11           |
+| TCP     | 293         | 343      | 0         | 7            |
+| FAR     | 350         | 400      | 0         | 9            |
+| **Total** | **2,522** | **2,494** | **28**    | **53**       |
 
 ## Batch Log
 
@@ -72,3 +72,9 @@ Expanding short textbook-style stems (<=20 words) into CPA-exam-style mini case 
 | 2026-03-29 | 00650_stem_aud_batch13.sql | AUD | 2 | ~48 | 2 topics covered, AUD complete |
 | 2026-03-29 | 00649_stem_bar_batch8.sql | BAR | 50 | ~42 | 18 topics covered |
 | 2026-03-29 | 00651_stem_bar_batch9.sql | BAR | 4 | ~42 | 4 topics covered |
+| 2026-03-30 | 00984_stemfix_far_batch1.sql | FAR | 50 | ~40 | Citation removal + scenario expansion, 18 topics covered |
+| 2026-03-30 | 00985_stemfix_reg_batch1.sql | REG | 50 | ~38 | Citation removal + scenario expansion, 12 topics covered |
+| 2026-03-30 | 00983_stemfix_aud_batch1.sql | AUD | 50 | ~42 | Citation removal + scenario expansion, 13 topics covered |
+| 2026-03-30 | 00986_stemfix_bar_batch1.sql | BAR | 50 | ~40 | Citation removal + scenario expansion, 15 topics covered |
+| 2026-03-30 | 00987_stemfix_isc_batch1.sql | ISC | 50 | ~42 | Citation removal + scenario expansion, 15 topics covered |
+| 2026-03-30 | 00988_stemfix_tcp_batch1.sql | TCP | 50 | ~42 | Citation removal + scenario expansion, 15 topics covered |
