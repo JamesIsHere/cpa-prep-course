@@ -235,6 +235,7 @@
 | 2026-03-30 | 00912_quality_isc_batch33.sql  | ISC     | 30        | 30x#3         | 30 per-choice explanations restructured          |
 | 2026-03-30 | 00913_quality_tcp_batch32.sql  | TCP     | 30        | 30x#3         | 30 per-choice explanations restructured          |
 | 2026-03-30 | 00916_quality_aud_batch38.sql  | AUD     | 30        | 30x#3         | 30 per-choice explanations restructured          |
+| 2026-03-30 | 00917_quality_isc_batch34.sql  | ISC     | 30        | 30x#3         | 30 per-choice explanations restructured          |
 | 2026-03-30 | 00914_quality_far_batch32.sql  | FAR     | 30        | 30x#3         | 30 per-choice explanations restructured          |
 | 2026-03-30 | 00915_quality_bar_batch37.sql  | BAR     | 30        | 30x#3         | 30 per-choice explanations restructured          |
 | 2026-03-30 | 00918_quality_tcp_batch33.sql  | TCP     | 30        | 30x#3         | 30 per-choice explanations restructured          |
