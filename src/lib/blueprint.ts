@@ -35,7 +35,7 @@ export type CpaBlueprint = BlueprintSection[];
 // --- Question counts by topic (synced from live DB via `npm run sync-counts`) ---
 
 export const questionCounts: Record<string, number> = {
-	// AUD (1,398 total — synced with live DB 2026-03-29)
+	// AUD (1,398 total — synced with live DB 2026-03-30)
 	"Analytical Procedures": 65,
 	"Attestation Engagements": 38,
 	"Audit Evidence": 64,
@@ -65,7 +65,7 @@ export const questionCounts: Record<string, number> = {
 	"Understanding the Entity and Environment": 50,
 	"Using the Work of Others": 50,
 	"Written Representations": 64,
-	// FAR (1,570 total — synced with live DB 2026-03-29)
+	// FAR (1,570 total — synced with live DB 2026-03-30)
 	"Accounting Changes and Error Corrections": 58,
 	"Cash and Cash Equivalents": 16,
 	Consolidations: 58,
@@ -90,7 +90,7 @@ export const questionCounts: Record<string, number> = {
 	"Statement of Cash Flows": 80,
 	"Subsequent Events": 29,
 	"Trade Receivables": 37,
-	// REG (1,469 total — synced with live DB 2026-03-29)
+	// REG (1,469 total — synced with live DB 2026-03-30)
 	"Agency and Regulation": 60,
 	"Alternative Minimum Tax": 66,
 	"Business Law: Contracts": 60,
@@ -115,7 +115,7 @@ export const questionCounts: Record<string, number> = {
 	"S Corporations": 82,
 	"Tax Procedures": 45,
 	"Tax-Exempt Organizations": 77,
-	// BAR (1,584 total — synced with live DB 2026-03-29)
+	// BAR (1,584 total — synced with live DB 2026-03-30)
 	"Advanced Consolidations": 49,
 	"Advanced Lease Transactions": 55,
 	"Advanced Revenue and Intangibles": 47,
@@ -135,7 +135,7 @@ export const questionCounts: Record<string, number> = {
 	"Risk Management and Economics": 130,
 	"State and Local Government Reporting": 75,
 	"Stock Compensation and Business Combinations": 52,
-	// ISC (1,462 total — synced with live DB 2026-03-29)
+	// ISC (1,462 total — synced with live DB 2026-03-30)
 	"Change Management": 79,
 	"Data Management and Lifecycle": 78,
 	"Data Protection Technologies": 100,
@@ -154,7 +154,7 @@ export const questionCounts: Record<string, number> = {
 	"SOC Testing Controls": 60,
 	"System Availability and Change Management": 86,
 	"Threats, Attacks, and Vulnerabilities": 99,
-	// TCP (1,439 total — synced with live DB 2026-03-29)
+	// TCP (1,439 total — synced with live DB 2026-03-30)
 	"Advanced Basis Calculations": 103,
 	"Capital Structure Tax Planning": 56,
 	"Entity Choice and Planning": 44,
