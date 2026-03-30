@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-30T15:29:19.676Z",
+  "generatedAt": "2026-03-30T17:54:09.892Z",
   "totalTarget": 9000,
   "batchSize": 30,
   "difficultyTargets": {
@@ -11,11 +11,11 @@
     {
       "section": "aud",
       "sectionId": 1,
-      "currentTotal": 1398,
+      "currentTotal": 1369,
       "targetTotal": 1500,
-      "toGenerate": 102,
+      "toGenerate": 131,
       "toTrim": 0,
-      "totalBatches": 14,
+      "totalBatches": 20,
       "topics": [
         {
           "topic": "Ethics and Independence",
@@ -75,21 +75,21 @@
             15,
             25
           ],
-          "currentCount": 38,
+          "currentCount": 37,
           "targetCount": 38,
-          "toGenerate": 0,
+          "toGenerate": 1,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 0,
-            "medium": 0,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
             "l1": 0,
             "l2": 0,
             "l3": 0,
-            "l4": 0
+            "l4": 1
           }
         },
         {
@@ -100,21 +100,21 @@
             15,
             25
           ],
-          "currentCount": 38,
+          "currentCount": 33,
           "targetCount": 38,
-          "toGenerate": 0,
+          "toGenerate": 5,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
-            "easy": 0,
-            "medium": 0,
+            "easy": 2,
+            "medium": 3,
             "hard": 0
           },
           "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
+            "l1": 1,
+            "l2": 2,
+            "l3": 1,
+            "l4": 1
           }
         },
         {
@@ -300,21 +300,21 @@
             25,
             35
           ],
-          "currentCount": 50,
+          "currentCount": 42,
           "targetCount": 64,
-          "toGenerate": 14,
+          "toGenerate": 22,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
-            "easy": 4,
-            "medium": 7,
-            "hard": 3
+            "easy": 7,
+            "medium": 11,
+            "hard": 4
           },
           "blooms": {
-            "l1": 4,
-            "l2": 5,
-            "l3": 4,
-            "l4": 1
+            "l1": 6,
+            "l2": 8,
+            "l3": 6,
+            "l4": 2
           }
         },
         {
@@ -350,21 +350,21 @@
             25,
             35
           ],
-          "currentCount": 50,
+          "currentCount": 49,
           "targetCount": 64,
-          "toGenerate": 14,
+          "toGenerate": 15,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
-            "easy": 4,
-            "medium": 7,
-            "hard": 3
+            "easy": 5,
+            "medium": 8,
+            "hard": 2
           },
           "blooms": {
             "l1": 4,
             "l2": 5,
             "l3": 4,
-            "l4": 1
+            "l4": 2
           }
         },
         {
@@ -375,21 +375,21 @@
             25,
             35
           ],
-          "currentCount": 50,
+          "currentCount": 49,
           "targetCount": 64,
-          "toGenerate": 14,
+          "toGenerate": 15,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
-            "easy": 4,
-            "medium": 7,
-            "hard": 3
+            "easy": 5,
+            "medium": 8,
+            "hard": 2
           },
           "blooms": {
             "l1": 4,
             "l2": 5,
             "l3": 4,
-            "l4": 1
+            "l4": 2
           }
         },
         {
@@ -600,21 +600,21 @@
             10,
             20
           ],
-          "currentCount": 38,
+          "currentCount": 37,
           "targetCount": 38,
-          "toGenerate": 0,
+          "toGenerate": 1,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 0,
-            "medium": 0,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
             "l1": 0,
             "l2": 0,
             "l3": 0,
-            "l4": 0
+            "l4": 1
           }
         },
         {
@@ -650,20 +650,20 @@
             10,
             20
           ],
-          "currentCount": 38,
+          "currentCount": 35,
           "targetCount": 38,
-          "toGenerate": 0,
+          "toGenerate": 3,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
-            "easy": 0,
-            "medium": 0,
+            "easy": 1,
+            "medium": 2,
             "hard": 0
           },
           "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
+            "l1": 1,
+            "l2": 1,
+            "l3": 1,
             "l4": 0
           }
         },
@@ -675,50 +675,25 @@
             10,
             20
           ],
-          "currentCount": 38,
+          "currentCount": 36,
           "targetCount": 38,
-          "toGenerate": 0,
+          "toGenerate": 2,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
-            "easy": 0,
-            "medium": 0,
+            "easy": 1,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
+            "l1": 1,
+            "l2": 1,
+            "l3": 1,
+            "l4": -1
           }
         },
         {
           "topic": "Review and Compilation",
-          "section": "aud",
-          "areaNumber": 4,
-          "areaWeight": [
-            10,
-            20
-          ],
-          "currentCount": 38,
-          "targetCount": 38,
-          "toGenerate": 0,
-          "toTrim": 0,
-          "batches": 0,
-          "difficulty": {
-            "easy": 0,
-            "medium": 0,
-            "hard": 0
-          },
-          "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
-          }
-        },
-        {
-          "topic": "Review/Compilation Engagements",
           "section": "aud",
           "areaNumber": 4,
           "areaWeight": [
@@ -741,16 +716,41 @@
             "l3": 0,
             "l4": 1
           }
+        },
+        {
+          "topic": "Review/Compilation Engagements",
+          "section": "aud",
+          "areaNumber": 4,
+          "areaWeight": [
+            10,
+            20
+          ],
+          "currentCount": 31,
+          "targetCount": 38,
+          "toGenerate": 7,
+          "toTrim": 0,
+          "batches": 1,
+          "difficulty": {
+            "easy": 2,
+            "medium": 4,
+            "hard": 1
+          },
+          "blooms": {
+            "l1": 2,
+            "l2": 2,
+            "l3": 2,
+            "l4": 1
+          }
         }
       ]
     },
     {
       "section": "far",
       "sectionId": 2,
-      "currentTotal": 1570,
+      "currentTotal": 1567,
       "targetTotal": 1500,
-      "toGenerate": 198,
-      "toTrim": 268,
+      "toGenerate": 200,
+      "toTrim": 267,
       "totalBatches": 19,
       "topics": [
         {
@@ -786,10 +786,10 @@
             30,
             40
           ],
-          "currentCount": 159,
+          "currentCount": 158,
           "targetCount": 67,
           "toGenerate": 0,
-          "toTrim": 92,
+          "toTrim": 91,
           "batches": 0,
           "difficulty": {
             "easy": 0,
@@ -1061,21 +1061,21 @@
             30,
             40
           ],
-          "currentCount": 53,
+          "currentCount": 52,
           "targetCount": 58,
-          "toGenerate": 5,
+          "toGenerate": 6,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
             "easy": 2,
             "medium": 3,
-            "hard": 0
+            "hard": 1
           },
           "blooms": {
-            "l1": 1,
+            "l1": 2,
             "l2": 2,
-            "l3": 1,
-            "l4": 1
+            "l3": 2,
+            "l4": 0
           }
         },
         {
@@ -1161,21 +1161,21 @@
             30,
             40
           ],
-          "currentCount": 37,
+          "currentCount": 36,
           "targetCount": 58,
-          "toGenerate": 21,
+          "toGenerate": 22,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
-            "easy": 6,
+            "easy": 7,
             "medium": 11,
             "hard": 4
           },
           "blooms": {
-            "l1": 5,
-            "l2": 7,
-            "l3": 5,
-            "l4": 4
+            "l1": 6,
+            "l2": 8,
+            "l3": 6,
+            "l4": 2
           }
         },
         {
@@ -1358,11 +1358,11 @@
     {
       "section": "reg",
       "sectionId": 3,
-      "currentTotal": 1469,
+      "currentTotal": 1456,
       "targetTotal": 1500,
-      "toGenerate": 31,
+      "toGenerate": 44,
       "toTrim": 0,
-      "totalBatches": 10,
+      "totalBatches": 16,
       "topics": [
         {
           "topic": "Circular 230",
@@ -1472,21 +1472,21 @@
             10,
             20
           ],
-          "currentCount": 45,
+          "currentCount": 44,
           "targetCount": 45,
-          "toGenerate": 0,
+          "toGenerate": 1,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 0,
-            "medium": 0,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
             "l1": 0,
             "l2": 0,
             "l3": 0,
-            "l4": 0
+            "l4": 1
           }
         },
         {
@@ -1597,21 +1597,21 @@
             15,
             25
           ],
-          "currentCount": 60,
+          "currentCount": 58,
           "targetCount": 60,
-          "toGenerate": 0,
+          "toGenerate": 2,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
-            "easy": 0,
-            "medium": 0,
+            "easy": 1,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
+            "l1": 1,
+            "l2": 1,
+            "l3": 1,
+            "l4": -1
           }
         },
         {
@@ -1622,21 +1622,21 @@
             5,
             15
           ],
-          "currentCount": 50,
+          "currentCount": 48,
           "targetCount": 50,
-          "toGenerate": 0,
+          "toGenerate": 2,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
-            "easy": 0,
-            "medium": 0,
+            "easy": 1,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
+            "l1": 1,
+            "l2": 1,
+            "l3": 1,
+            "l4": -1
           }
         },
         {
@@ -1647,21 +1647,21 @@
             5,
             15
           ],
-          "currentCount": 50,
+          "currentCount": 48,
           "targetCount": 50,
-          "toGenerate": 0,
+          "toGenerate": 2,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
-            "easy": 0,
-            "medium": 0,
+            "easy": 1,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
+            "l1": 1,
+            "l2": 1,
+            "l3": 1,
+            "l4": -1
           }
         },
         {
@@ -1697,21 +1697,21 @@
             22,
             32
           ],
-          "currentCount": 66,
+          "currentCount": 65,
           "targetCount": 68,
-          "toGenerate": 2,
+          "toGenerate": 3,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
             "easy": 1,
-            "medium": 1,
+            "medium": 2,
             "hard": 0
           },
           "blooms": {
             "l1": 1,
             "l2": 1,
             "l3": 1,
-            "l4": -1
+            "l4": 0
           }
         },
         {
@@ -1722,21 +1722,21 @@
             22,
             32
           ],
-          "currentCount": 68,
+          "currentCount": 67,
           "targetCount": 68,
-          "toGenerate": 0,
+          "toGenerate": 1,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 0,
-            "medium": 0,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
             "l1": 0,
             "l2": 0,
             "l3": 0,
-            "l4": 0
+            "l4": 1
           }
         },
         {
@@ -1747,21 +1747,21 @@
             22,
             32
           ],
-          "currentCount": 68,
+          "currentCount": 67,
           "targetCount": 68,
-          "toGenerate": 0,
+          "toGenerate": 1,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 0,
-            "medium": 0,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
             "l1": 0,
             "l2": 0,
             "l3": 0,
-            "l4": 0
+            "l4": 1
           }
         },
         {
@@ -1772,21 +1772,21 @@
             22,
             32
           ],
-          "currentCount": 66,
+          "currentCount": 64,
           "targetCount": 68,
-          "toGenerate": 2,
+          "toGenerate": 4,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
             "easy": 1,
-            "medium": 1,
-            "hard": 0
+            "medium": 2,
+            "hard": 1
           },
           "blooms": {
             "l1": 1,
             "l2": 1,
             "l3": 1,
-            "l4": -1
+            "l4": 1
           }
         },
         {
@@ -1897,21 +1897,21 @@
             23,
             33
           ],
-          "currentCount": 81,
+          "currentCount": 80,
           "targetCount": 83,
-          "toGenerate": 2,
+          "toGenerate": 3,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
             "easy": 1,
-            "medium": 1,
+            "medium": 2,
             "hard": 0
           },
           "blooms": {
             "l1": 1,
             "l2": 1,
             "l3": 1,
-            "l4": -1
+            "l4": 0
           }
         },
         {
@@ -1969,11 +1969,11 @@
     {
       "section": "bar",
       "sectionId": 4,
-      "currentTotal": 1584,
+      "currentTotal": 1539,
       "targetTotal": 1500,
-      "toGenerate": 89,
-      "toTrim": 173,
-      "totalBatches": 14,
+      "toGenerate": 118,
+      "toTrim": 157,
+      "totalBatches": 16,
       "topics": [
         {
           "topic": "Capital Structure and Valuation",
@@ -2033,10 +2033,10 @@
             40,
             50
           ],
-          "currentCount": 163,
+          "currentCount": 147,
           "targetCount": 134,
           "toGenerate": 0,
-          "toTrim": 29,
+          "toTrim": 13,
           "batches": 0,
           "difficulty": {
             "easy": 0,
@@ -2058,20 +2058,20 @@
             40,
             50
           ],
-          "currentCount": 133,
+          "currentCount": 128,
           "targetCount": 134,
-          "toGenerate": 1,
+          "toGenerate": 6,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
-            "easy": 0,
-            "medium": 1,
-            "hard": 0
+            "easy": 2,
+            "medium": 3,
+            "hard": 1
           },
           "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
+            "l1": 1,
+            "l2": 2,
+            "l3": 2,
             "l4": 1
           }
         },
@@ -2133,21 +2133,21 @@
             35,
             45
           ],
-          "currentCount": 55,
+          "currentCount": 54,
           "targetCount": 55,
-          "toGenerate": 0,
+          "toGenerate": 1,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 0,
-            "medium": 0,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
             "l1": 0,
             "l2": 0,
             "l3": 0,
-            "l4": 0
+            "l4": 1
           }
         },
         {
@@ -2183,21 +2183,21 @@
             35,
             45
           ],
-          "currentCount": 50,
+          "currentCount": 41,
           "targetCount": 55,
-          "toGenerate": 5,
+          "toGenerate": 14,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
-            "easy": 2,
-            "medium": 3,
-            "hard": 0
+            "easy": 4,
+            "medium": 7,
+            "hard": 3
           },
           "blooms": {
-            "l1": 1,
-            "l2": 2,
-            "l3": 2,
-            "l4": 0
+            "l1": 3,
+            "l2": 5,
+            "l3": 4,
+            "l4": 2
           }
         },
         {
@@ -2233,21 +2233,21 @@
             35,
             45
           ],
-          "currentCount": 50,
+          "currentCount": 43,
           "targetCount": 55,
-          "toGenerate": 5,
+          "toGenerate": 12,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
-            "easy": 2,
-            "medium": 3,
-            "hard": 0
+            "easy": 4,
+            "medium": 6,
+            "hard": 2
           },
           "blooms": {
-            "l1": 1,
-            "l2": 2,
-            "l3": 2,
-            "l4": 0
+            "l1": 2,
+            "l2": 4,
+            "l3": 4,
+            "l4": 2
           }
         },
         {
@@ -2258,21 +2258,21 @@
             35,
             45
           ],
-          "currentCount": 50,
+          "currentCount": 48,
           "targetCount": 55,
-          "toGenerate": 5,
+          "toGenerate": 7,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
             "easy": 2,
-            "medium": 3,
-            "hard": 0
+            "medium": 4,
+            "hard": 1
           },
           "blooms": {
             "l1": 1,
             "l2": 2,
             "l3": 2,
-            "l4": 0
+            "l4": 2
           }
         },
         {
@@ -2383,119 +2383,8 @@
             10,
             20
           ],
-          "currentCount": 68,
+          "currentCount": 67,
           "targetCount": 75,
-          "toGenerate": 7,
-          "toTrim": 0,
-          "batches": 1,
-          "difficulty": {
-            "easy": 2,
-            "medium": 4,
-            "hard": 1
-          },
-          "blooms": {
-            "l1": 1,
-            "l2": 2,
-            "l3": 2,
-            "l4": 2
-          }
-        },
-        {
-          "topic": "Interfund Transactions",
-          "section": "bar",
-          "areaNumber": 3,
-          "areaWeight": [
-            10,
-            20
-          ],
-          "currentCount": 68,
-          "targetCount": 75,
-          "toGenerate": 7,
-          "toTrim": 0,
-          "batches": 1,
-          "difficulty": {
-            "easy": 2,
-            "medium": 4,
-            "hard": 1
-          },
-          "blooms": {
-            "l1": 1,
-            "l2": 2,
-            "l3": 2,
-            "l4": 2
-          }
-        },
-        {
-          "topic": "State and Local Government Reporting",
-          "section": "bar",
-          "areaNumber": 3,
-          "areaWeight": [
-            10,
-            20
-          ],
-          "currentCount": 75,
-          "targetCount": 75,
-          "toGenerate": 0,
-          "toTrim": 0,
-          "batches": 0,
-          "difficulty": {
-            "easy": 0,
-            "medium": 0,
-            "hard": 0
-          },
-          "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
-          }
-        }
-      ]
-    },
-    {
-      "section": "isc",
-      "sectionId": 5,
-      "currentTotal": 1462,
-      "targetTotal": 1500,
-      "toGenerate": 38,
-      "toTrim": 0,
-      "totalBatches": 6,
-      "topics": [
-        {
-          "topic": "Change Management",
-          "section": "isc",
-          "areaNumber": 1,
-          "areaWeight": [
-            35,
-            45
-          ],
-          "currentCount": 79,
-          "targetCount": 86,
-          "toGenerate": 7,
-          "toTrim": 0,
-          "batches": 1,
-          "difficulty": {
-            "easy": 2,
-            "medium": 4,
-            "hard": 1
-          },
-          "blooms": {
-            "l1": 1,
-            "l2": 2,
-            "l3": 2,
-            "l4": 2
-          }
-        },
-        {
-          "topic": "Data Management and Lifecycle",
-          "section": "isc",
-          "areaNumber": 1,
-          "areaWeight": [
-            35,
-            45
-          ],
-          "currentCount": 78,
-          "targetCount": 86,
           "toGenerate": 8,
           "toTrim": 0,
           "batches": 1,
@@ -2508,6 +2397,117 @@
             "l1": 2,
             "l2": 3,
             "l3": 2,
+            "l4": 1
+          }
+        },
+        {
+          "topic": "Interfund Transactions",
+          "section": "bar",
+          "areaNumber": 3,
+          "areaWeight": [
+            10,
+            20
+          ],
+          "currentCount": 67,
+          "targetCount": 75,
+          "toGenerate": 8,
+          "toTrim": 0,
+          "batches": 1,
+          "difficulty": {
+            "easy": 2,
+            "medium": 4,
+            "hard": 2
+          },
+          "blooms": {
+            "l1": 2,
+            "l2": 3,
+            "l3": 2,
+            "l4": 1
+          }
+        },
+        {
+          "topic": "State and Local Government Reporting",
+          "section": "bar",
+          "areaNumber": 3,
+          "areaWeight": [
+            10,
+            20
+          ],
+          "currentCount": 72,
+          "targetCount": 75,
+          "toGenerate": 3,
+          "toTrim": 0,
+          "batches": 1,
+          "difficulty": {
+            "easy": 1,
+            "medium": 2,
+            "hard": 0
+          },
+          "blooms": {
+            "l1": 1,
+            "l2": 1,
+            "l3": 1,
+            "l4": 0
+          }
+        }
+      ]
+    },
+    {
+      "section": "isc",
+      "sectionId": 5,
+      "currentTotal": 1420,
+      "targetTotal": 1500,
+      "toGenerate": 80,
+      "toTrim": 0,
+      "totalBatches": 15,
+      "topics": [
+        {
+          "topic": "Change Management",
+          "section": "isc",
+          "areaNumber": 1,
+          "areaWeight": [
+            35,
+            45
+          ],
+          "currentCount": 73,
+          "targetCount": 86,
+          "toGenerate": 13,
+          "toTrim": 0,
+          "batches": 1,
+          "difficulty": {
+            "easy": 4,
+            "medium": 7,
+            "hard": 2
+          },
+          "blooms": {
+            "l1": 3,
+            "l2": 5,
+            "l3": 4,
+            "l4": 1
+          }
+        },
+        {
+          "topic": "Data Management and Lifecycle",
+          "section": "isc",
+          "areaNumber": 1,
+          "areaWeight": [
+            35,
+            45
+          ],
+          "currentCount": 76,
+          "targetCount": 86,
+          "toGenerate": 10,
+          "toTrim": 0,
+          "batches": 1,
+          "difficulty": {
+            "easy": 3,
+            "medium": 5,
+            "hard": 2
+          },
+          "blooms": {
+            "l1": 2,
+            "l2": 4,
+            "l3": 3,
             "l4": 1
           }
         },
@@ -2544,21 +2544,21 @@
             35,
             45
           ],
-          "currentCount": 86,
+          "currentCount": 85,
           "targetCount": 86,
-          "toGenerate": 0,
+          "toGenerate": 1,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 0,
-            "medium": 0,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
             "l1": 0,
             "l2": 0,
             "l3": 0,
-            "l4": 0
+            "l4": 1
           }
         },
         {
@@ -2569,21 +2569,21 @@
             35,
             45
           ],
-          "currentCount": 86,
+          "currentCount": 79,
           "targetCount": 86,
-          "toGenerate": 0,
+          "toGenerate": 7,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
-            "easy": 0,
-            "medium": 0,
-            "hard": 0
+            "easy": 2,
+            "medium": 4,
+            "hard": 1
           },
           "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
+            "l1": 1,
+            "l2": 2,
+            "l3": 2,
+            "l4": 2
           }
         },
         {
@@ -2644,20 +2644,20 @@
             35,
             45
           ],
-          "currentCount": 100,
+          "currentCount": 97,
           "targetCount": 100,
-          "toGenerate": 0,
+          "toGenerate": 3,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
-            "easy": 0,
-            "medium": 0,
+            "easy": 1,
+            "medium": 2,
             "hard": 0
           },
           "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
+            "l1": 1,
+            "l2": 1,
+            "l3": 1,
             "l4": 0
           }
         },
@@ -2694,8 +2694,158 @@
             35,
             45
           ],
-          "currentCount": 99,
+          "currentCount": 95,
           "targetCount": 100,
+          "toGenerate": 5,
+          "toTrim": 0,
+          "batches": 1,
+          "difficulty": {
+            "easy": 2,
+            "medium": 3,
+            "hard": 0
+          },
+          "blooms": {
+            "l1": 1,
+            "l2": 2,
+            "l3": 2,
+            "l4": 0
+          }
+        },
+        {
+          "topic": "Security and Control Frameworks",
+          "section": "isc",
+          "areaNumber": 2,
+          "areaWeight": [
+            35,
+            45
+          ],
+          "currentCount": 95,
+          "targetCount": 99,
+          "toGenerate": 4,
+          "toTrim": 0,
+          "batches": 1,
+          "difficulty": {
+            "easy": 1,
+            "medium": 2,
+            "hard": 1
+          },
+          "blooms": {
+            "l1": 1,
+            "l2": 1,
+            "l3": 1,
+            "l4": 1
+          }
+        },
+        {
+          "topic": "Security Controls and Monitoring",
+          "section": "isc",
+          "areaNumber": 2,
+          "areaWeight": [
+            35,
+            45
+          ],
+          "currentCount": 93,
+          "targetCount": 100,
+          "toGenerate": 7,
+          "toTrim": 0,
+          "batches": 1,
+          "difficulty": {
+            "easy": 2,
+            "medium": 4,
+            "hard": 1
+          },
+          "blooms": {
+            "l1": 1,
+            "l2": 2,
+            "l3": 2,
+            "l4": 2
+          }
+        },
+        {
+          "topic": "Threats, Attacks, and Vulnerabilities",
+          "section": "isc",
+          "areaNumber": 2,
+          "areaWeight": [
+            35,
+            45
+          ],
+          "currentCount": 97,
+          "targetCount": 99,
+          "toGenerate": 2,
+          "toTrim": 0,
+          "batches": 1,
+          "difficulty": {
+            "easy": 1,
+            "medium": 1,
+            "hard": 0
+          },
+          "blooms": {
+            "l1": 0,
+            "l2": 1,
+            "l3": 1,
+            "l4": 0
+          }
+        },
+        {
+          "topic": "SOC Engagements",
+          "section": "isc",
+          "areaNumber": 3,
+          "areaWeight": [
+            15,
+            25
+          ],
+          "currentCount": 58,
+          "targetCount": 60,
+          "toGenerate": 2,
+          "toTrim": 0,
+          "batches": 1,
+          "difficulty": {
+            "easy": 1,
+            "medium": 1,
+            "hard": 0
+          },
+          "blooms": {
+            "l1": 0,
+            "l2": 1,
+            "l3": 1,
+            "l4": 0
+          }
+        },
+        {
+          "topic": "SOC Report Content and Structure",
+          "section": "isc",
+          "areaNumber": 3,
+          "areaWeight": [
+            15,
+            25
+          ],
+          "currentCount": 49,
+          "targetCount": 60,
+          "toGenerate": 11,
+          "toTrim": 0,
+          "batches": 1,
+          "difficulty": {
+            "easy": 3,
+            "medium": 6,
+            "hard": 2
+          },
+          "blooms": {
+            "l1": 2,
+            "l2": 4,
+            "l3": 3,
+            "l4": 2
+          }
+        },
+        {
+          "topic": "SOC Reporting",
+          "section": "isc",
+          "areaNumber": 3,
+          "areaWeight": [
+            15,
+            25
+          ],
+          "currentCount": 59,
+          "targetCount": 60,
           "toGenerate": 1,
           "toTrim": 0,
           "batches": 1,
@@ -2712,156 +2862,6 @@
           }
         },
         {
-          "topic": "Security and Control Frameworks",
-          "section": "isc",
-          "areaNumber": 2,
-          "areaWeight": [
-            35,
-            45
-          ],
-          "currentCount": 99,
-          "targetCount": 99,
-          "toGenerate": 0,
-          "toTrim": 0,
-          "batches": 0,
-          "difficulty": {
-            "easy": 0,
-            "medium": 0,
-            "hard": 0
-          },
-          "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
-          }
-        },
-        {
-          "topic": "Security Controls and Monitoring",
-          "section": "isc",
-          "areaNumber": 2,
-          "areaWeight": [
-            35,
-            45
-          ],
-          "currentCount": 100,
-          "targetCount": 100,
-          "toGenerate": 0,
-          "toTrim": 0,
-          "batches": 0,
-          "difficulty": {
-            "easy": 0,
-            "medium": 0,
-            "hard": 0
-          },
-          "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
-          }
-        },
-        {
-          "topic": "Threats, Attacks, and Vulnerabilities",
-          "section": "isc",
-          "areaNumber": 2,
-          "areaWeight": [
-            35,
-            45
-          ],
-          "currentCount": 99,
-          "targetCount": 99,
-          "toGenerate": 0,
-          "toTrim": 0,
-          "batches": 0,
-          "difficulty": {
-            "easy": 0,
-            "medium": 0,
-            "hard": 0
-          },
-          "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
-          }
-        },
-        {
-          "topic": "SOC Engagements",
-          "section": "isc",
-          "areaNumber": 3,
-          "areaWeight": [
-            15,
-            25
-          ],
-          "currentCount": 60,
-          "targetCount": 60,
-          "toGenerate": 0,
-          "toTrim": 0,
-          "batches": 0,
-          "difficulty": {
-            "easy": 0,
-            "medium": 0,
-            "hard": 0
-          },
-          "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
-          }
-        },
-        {
-          "topic": "SOC Report Content and Structure",
-          "section": "isc",
-          "areaNumber": 3,
-          "areaWeight": [
-            15,
-            25
-          ],
-          "currentCount": 50,
-          "targetCount": 60,
-          "toGenerate": 10,
-          "toTrim": 0,
-          "batches": 1,
-          "difficulty": {
-            "easy": 3,
-            "medium": 5,
-            "hard": 2
-          },
-          "blooms": {
-            "l1": 2,
-            "l2": 4,
-            "l3": 3,
-            "l4": 1
-          }
-        },
-        {
-          "topic": "SOC Reporting",
-          "section": "isc",
-          "areaNumber": 3,
-          "areaWeight": [
-            15,
-            25
-          ],
-          "currentCount": 60,
-          "targetCount": 60,
-          "toGenerate": 0,
-          "toTrim": 0,
-          "batches": 0,
-          "difficulty": {
-            "easy": 0,
-            "medium": 0,
-            "hard": 0
-          },
-          "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
-          }
-        },
-        {
           "topic": "SOC Reporting and Trust Services Criteria",
           "section": "isc",
           "areaNumber": 3,
@@ -2869,20 +2869,20 @@
             15,
             25
           ],
-          "currentCount": 60,
+          "currentCount": 58,
           "targetCount": 60,
-          "toGenerate": 0,
+          "toGenerate": 2,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
-            "easy": 0,
-            "medium": 0,
+            "easy": 1,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
             "l1": 0,
-            "l2": 0,
-            "l3": 0,
+            "l2": 1,
+            "l3": 1,
             "l4": 0
           }
         },
@@ -2916,11 +2916,11 @@
     {
       "section": "tcp",
       "sectionId": 6,
-      "currentTotal": 1437,
+      "currentTotal": 1390,
       "targetTotal": 1500,
-      "toGenerate": 63,
+      "toGenerate": 110,
       "toTrim": 0,
-      "totalBatches": 10,
+      "totalBatches": 16,
       "topics": [
         {
           "topic": "Individual Tax Planning: Compensation",
@@ -2930,21 +2930,21 @@
             30,
             40
           ],
-          "currentCount": 130,
+          "currentCount": 126,
           "targetCount": 132,
-          "toGenerate": 2,
+          "toGenerate": 6,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
-            "easy": 1,
-            "medium": 1,
-            "hard": 0
+            "easy": 2,
+            "medium": 3,
+            "hard": 1
           },
           "blooms": {
-            "l1": 0,
-            "l2": 1,
-            "l3": 1,
-            "l4": 0
+            "l1": 1,
+            "l2": 2,
+            "l3": 2,
+            "l4": 1
           }
         },
         {
@@ -3005,25 +3005,125 @@
             30,
             40
           ],
-          "currentCount": 131,
+          "currentCount": 129,
           "targetCount": 131,
-          "toGenerate": 0,
+          "toGenerate": 2,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
+          "difficulty": {
+            "easy": 1,
+            "medium": 1,
+            "hard": 0
+          },
+          "blooms": {
+            "l1": 0,
+            "l2": 1,
+            "l3": 1,
+            "l4": 0
+          }
+        },
+        {
+          "topic": "Advanced Basis Calculations",
+          "section": "tcp",
+          "areaNumber": 2,
+          "areaWeight": [
+            30,
+            40
+          ],
+          "currentCount": 96,
+          "targetCount": 105,
+          "toGenerate": 9,
+          "toTrim": 0,
+          "batches": 1,
+          "difficulty": {
+            "easy": 3,
+            "medium": 5,
+            "hard": 1
+          },
+          "blooms": {
+            "l1": 2,
+            "l2": 3,
+            "l3": 3,
+            "l4": 1
+          }
+        },
+        {
+          "topic": "Entity Formation and Liquidation",
+          "section": "tcp",
+          "areaNumber": 2,
+          "areaWeight": [
+            30,
+            40
+          ],
+          "currentCount": 98,
+          "targetCount": 105,
+          "toGenerate": 7,
+          "toTrim": 0,
+          "batches": 1,
+          "difficulty": {
+            "easy": 2,
+            "medium": 4,
+            "hard": 1
+          },
+          "blooms": {
+            "l1": 1,
+            "l2": 2,
+            "l3": 2,
+            "l4": 2
+          }
+        },
+        {
+          "topic": "Entity Tax Compliance: NOLs and Consolidated Returns",
+          "section": "tcp",
+          "areaNumber": 2,
+          "areaWeight": [
+            30,
+            40
+          ],
+          "currentCount": 101,
+          "targetCount": 105,
+          "toGenerate": 4,
+          "toTrim": 0,
+          "batches": 1,
+          "difficulty": {
+            "easy": 1,
+            "medium": 2,
+            "hard": 1
+          },
+          "blooms": {
+            "l1": 1,
+            "l2": 1,
+            "l3": 1,
+            "l4": 1
+          }
+        },
+        {
+          "topic": "International Tax",
+          "section": "tcp",
+          "areaNumber": 2,
+          "areaWeight": [
+            30,
+            40
+          ],
+          "currentCount": 104,
+          "targetCount": 105,
+          "toGenerate": 1,
+          "toTrim": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 0,
-            "medium": 0,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
             "l1": 0,
             "l2": 0,
             "l3": 0,
-            "l4": 0
+            "l4": 1
           }
         },
         {
-          "topic": "Advanced Basis Calculations",
+          "topic": "Owner-Entity Transactions",
           "section": "tcp",
           "areaNumber": 2,
           "areaWeight": [
@@ -3048,106 +3148,6 @@
           }
         },
         {
-          "topic": "Entity Formation and Liquidation",
-          "section": "tcp",
-          "areaNumber": 2,
-          "areaWeight": [
-            30,
-            40
-          ],
-          "currentCount": 105,
-          "targetCount": 105,
-          "toGenerate": 0,
-          "toTrim": 0,
-          "batches": 0,
-          "difficulty": {
-            "easy": 0,
-            "medium": 0,
-            "hard": 0
-          },
-          "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
-          }
-        },
-        {
-          "topic": "Entity Tax Compliance: NOLs and Consolidated Returns",
-          "section": "tcp",
-          "areaNumber": 2,
-          "areaWeight": [
-            30,
-            40
-          ],
-          "currentCount": 105,
-          "targetCount": 105,
-          "toGenerate": 0,
-          "toTrim": 0,
-          "batches": 0,
-          "difficulty": {
-            "easy": 0,
-            "medium": 0,
-            "hard": 0
-          },
-          "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
-          }
-        },
-        {
-          "topic": "International Tax",
-          "section": "tcp",
-          "areaNumber": 2,
-          "areaWeight": [
-            30,
-            40
-          ],
-          "currentCount": 105,
-          "targetCount": 105,
-          "toGenerate": 0,
-          "toTrim": 0,
-          "batches": 0,
-          "difficulty": {
-            "easy": 0,
-            "medium": 0,
-            "hard": 0
-          },
-          "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
-          }
-        },
-        {
-          "topic": "Owner-Entity Transactions",
-          "section": "tcp",
-          "areaNumber": 2,
-          "areaWeight": [
-            30,
-            40
-          ],
-          "currentCount": 105,
-          "targetCount": 105,
-          "toGenerate": 0,
-          "toTrim": 0,
-          "batches": 0,
-          "difficulty": {
-            "easy": 0,
-            "medium": 0,
-            "hard": 0
-          },
-          "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
-          }
-        },
-        {
           "topic": "Capital Structure Tax Planning",
           "section": "tcp",
           "areaNumber": 3,
@@ -3155,20 +3155,20 @@
             10,
             20
           ],
-          "currentCount": 56,
+          "currentCount": 53,
           "targetCount": 56,
-          "toGenerate": 0,
+          "toGenerate": 3,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
-            "easy": 0,
-            "medium": 0,
+            "easy": 1,
+            "medium": 2,
             "hard": 0
           },
           "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
+            "l1": 1,
+            "l2": 1,
+            "l3": 1,
             "l4": 0
           }
         },
@@ -3205,20 +3205,20 @@
             10,
             20
           ],
-          "currentCount": 49,
+          "currentCount": 45,
           "targetCount": 56,
-          "toGenerate": 7,
+          "toGenerate": 11,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
-            "easy": 2,
-            "medium": 4,
-            "hard": 1
+            "easy": 3,
+            "medium": 6,
+            "hard": 2
           },
           "blooms": {
-            "l1": 1,
-            "l2": 2,
-            "l3": 2,
+            "l1": 2,
+            "l2": 4,
+            "l3": 3,
             "l4": 2
           }
         },
@@ -3255,20 +3255,20 @@
             10,
             20
           ],
-          "currentCount": 74,
+          "currentCount": 67,
           "targetCount": 75,
-          "toGenerate": 1,
+          "toGenerate": 8,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
-            "easy": 0,
-            "medium": 1,
-            "hard": 0
+            "easy": 2,
+            "medium": 4,
+            "hard": 2
           },
           "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
+            "l1": 2,
+            "l2": 3,
+            "l3": 2,
             "l4": 1
           }
         },
@@ -3280,19 +3280,19 @@
             10,
             20
           ],
-          "currentCount": 69,
+          "currentCount": 67,
           "targetCount": 75,
-          "toGenerate": 6,
+          "toGenerate": 8,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
             "easy": 2,
-            "medium": 3,
-            "hard": 1
+            "medium": 4,
+            "hard": 2
           },
           "blooms": {
-            "l1": 1,
-            "l2": 2,
+            "l1": 2,
+            "l2": 3,
             "l3": 2,
             "l4": 1
           }
@@ -3305,31 +3305,31 @@
             10,
             20
           ],
-          "currentCount": 70,
+          "currentCount": 66,
           "targetCount": 75,
-          "toGenerate": 5,
+          "toGenerate": 9,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
-            "easy": 2,
-            "medium": 3,
-            "hard": 0
+            "easy": 3,
+            "medium": 5,
+            "hard": 1
           },
           "blooms": {
-            "l1": 1,
-            "l2": 2,
-            "l3": 2,
-            "l4": 0
+            "l1": 2,
+            "l2": 3,
+            "l3": 3,
+            "l4": 1
           }
         }
       ]
     }
   ],
   "summary": {
-    "totalCurrent": 8920,
+    "totalCurrent": 8741,
     "totalTarget": 9000,
-    "totalToGenerate": 521,
-    "totalToTrim": 441,
-    "totalBatches": 73
+    "totalToGenerate": 683,
+    "totalToTrim": 424,
+    "totalBatches": 102
   }
 }

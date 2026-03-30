@@ -8,9 +8,9 @@ Per-section target: 1,500 questions. Distributed by AICPA Blueprint area weights
 
 **Batch size:** 30 questions per generation batch.
 
-**To generate:** 521 new questions (~73 batches).
+**To generate:** 683 new questions (~102 batches).
 
-**To trim:** 441 questions to delete (keep best, cut weakest).
+**To trim:** 424 questions to delete (keep best, cut weakest).
 
 **Difficulty targets:** 30% easy / 50% medium / 20% hard.
 
@@ -25,12 +25,12 @@ For each section:
 
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status          |
 |---------|---------|--------|---------|-------------|-------------|-----------------|
-| AUD     | 1,398 | 1,500 |       0 |         102 |          14 | Generate Needed |
-| FAR     | 1,570 | 1,500 |     268 |         198 |          19 | Trim + Generate |
-| REG     | 1,469 | 1,500 |       0 |          31 |          10 | Generate Needed |
-| BAR     | 1,584 | 1,500 |     173 |          89 |          14 | Trim + Generate |
-| ISC     | 1,462 | 1,500 |       0 |          38 |           6 | Generate Needed |
-| TCP     | 1,437 | 1,500 |       0 |          63 |          10 | Generate Needed |
+| AUD     | 1,369 | 1,500 |       0 |         131 |          20 | Generate Needed |
+| FAR     | 1,567 | 1,500 |     267 |         200 |          19 | Trim + Generate |
+| REG     | 1,456 | 1,500 |       0 |          44 |          16 | Generate Needed |
+| BAR     | 1,539 | 1,500 |     157 |         118 |          16 | Trim + Generate |
+| ISC     | 1,420 | 1,500 |       0 |          80 |          15 | Generate Needed |
+| TCP     | 1,390 | 1,500 |       0 |         110 |          16 | Generate Needed |
 
 ## Topic Detail
 
@@ -40,8 +40,8 @@ For each section:
 |------|-------|---------|--------|------|----------|
 | 1 | Ethics and Independence | 38 | 38 |  |  |
 | 1 | Government Auditing Standards | 34 | 38 |  | +4 |
-| 1 | Independence | 38 | 38 |  |  |
-| 1 | Nature and Scope of Engagements | 38 | 38 |  |  |
+| 1 | Independence | 37 | 38 |  | +1 |
+| 1 | Nature and Scope of Engagements | 33 | 38 |  | +5 |
 | 1 | Professional Responsibilities | 37 | 38 |  | +1 |
 | 1 | Professional Skepticism and Judgment | 38 | 38 |  |  |
 | 1 | Quality Management | 38 | 38 |  |  |
@@ -49,10 +49,10 @@ For each section:
 | 2 | Audit Planning | 62 | 64 |  | +2 |
 | 2 | Internal Controls | 64 | 64 |  |  |
 | 2 | Materiality | 50 | 64 |  | +14 |
-| 2 | Responding to Assessed Risks | 50 | 64 |  | +14 |
+| 2 | Responding to Assessed Risks | 42 | 64 |  | +22 |
 | 2 | Risk Assessment | 64 | 64 |  |  |
-| 2 | Understanding the Entity and Environment | 50 | 64 |  | +14 |
-| 2 | Using the Work of Others | 50 | 64 |  | +14 |
+| 2 | Understanding the Entity and Environment | 49 | 64 |  | +15 |
+| 2 | Using the Work of Others | 49 | 64 |  | +15 |
 | 3 | Analytical Procedures | 65 | 65 |  |  |
 | 3 | Audit Evidence | 64 | 65 |  | +1 |
 | 3 | Audit Sampling | 52 | 65 |  | +13 |
@@ -61,19 +61,19 @@ For each section:
 | 3 | Substantive Procedures | 58 | 65 |  | +7 |
 | 3 | Tests of Controls | 65 | 65 |  |  |
 | 3 | Written Representations | 64 | 65 |  | +1 |
-| 4 | Attestation Engagements | 38 | 38 |  |  |
+| 4 | Attestation Engagements | 37 | 38 |  | +1 |
 | 4 | Audit Reports | 38 | 38 |  |  |
-| 4 | Modifications to the Auditor Report | 38 | 38 |  |  |
-| 4 | Other Information and Supplementary Information | 38 | 38 |  |  |
-| 4 | Review and Compilation | 38 | 38 |  |  |
-| 4 | Review/Compilation Engagements | 37 | 38 |  | +1 |
+| 4 | Modifications to the Auditor Report | 35 | 38 |  | +3 |
+| 4 | Other Information and Supplementary Information | 36 | 38 |  | +2 |
+| 4 | Review and Compilation | 37 | 38 |  | +1 |
+| 4 | Review/Compilation Engagements | 31 | 38 |  | +7 |
 
 ### FAR
 
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
 | 1 | Consolidations | 58 | 66 |  | +8 |
-| 1 | Financial Reporting: For-Profit | 159 | 67 | -92 |  |
+| 1 | Financial Reporting: For-Profit | 158 | 67 | -91 |  |
 | 1 | Financial Statement Ratios | 90 | 66 | -24 |  |
 | 1 | Not-for-Profit Accounting | 58 | 66 |  | +8 |
 | 1 | Public Company Reporting | 71 | 66 | -5 |  |
@@ -84,11 +84,11 @@ For each section:
 | 2 | Debt | 52 | 58 |  | +6 |
 | 2 | Equity | 52 | 58 |  | +6 |
 | 2 | Intangible Assets | 51 | 58 |  | +7 |
-| 2 | Inventory | 53 | 58 |  | +5 |
+| 2 | Inventory | 52 | 58 |  | +6 |
 | 2 | Investments | 59 | 58 | -1 |  |
 | 2 | Payables and Accrued Liabilities | 50 | 58 |  | +8 |
 | 2 | Property, Plant and Equipment | 53 | 58 |  | +5 |
-| 2 | Trade Receivables | 37 | 58 |  | +21 |
+| 2 | Trade Receivables | 36 | 58 |  | +22 |
 | 3 | Accounting Changes and Error Corrections | 58 | 64 |  | +6 |
 | 3 | Contingencies | 58 | 64 |  | +6 |
 | 3 | Fair Value | 57 | 64 |  | +7 |
@@ -105,24 +105,24 @@ For each section:
 | 1 | Federal Tax Procedures | 40 | 45 |  | +5 |
 | 1 | Legal Duties and Responsibilities | 45 | 45 |  |  |
 | 1 | Professional Ethics in Tax | 45 | 45 |  |  |
-| 1 | Tax Procedures | 45 | 45 |  |  |
+| 1 | Tax Procedures | 44 | 45 |  | +1 |
 | 2 | Agency and Regulation | 60 | 60 |  |  |
 | 2 | Business Law: Contracts | 60 | 60 |  |  |
 | 2 | Business Structures | 60 | 60 |  |  |
 | 2 | Debtor-Creditor Relationships | 60 | 60 |  |  |
-| 2 | Government Regulation of Business | 60 | 60 |  |  |
-| 3 | Like-Kind Exchanges | 50 | 50 |  |  |
-| 3 | Property Transactions: Basis | 50 | 50 |  |  |
+| 2 | Government Regulation of Business | 58 | 60 |  | +2 |
+| 3 | Like-Kind Exchanges | 48 | 50 |  | +2 |
+| 3 | Property Transactions: Basis | 48 | 50 |  | +2 |
 | 3 | Property Transactions: Gains/Losses | 44 | 50 |  | +6 |
-| 4 | Alternative Minimum Tax | 66 | 68 |  | +2 |
-| 4 | Individual Taxation: Credits | 68 | 68 |  |  |
-| 4 | Individual Taxation: Credits/AMT | 68 | 68 |  |  |
-| 4 | Individual Taxation: Deductions | 66 | 68 |  | +2 |
+| 4 | Alternative Minimum Tax | 65 | 68 |  | +3 |
+| 4 | Individual Taxation: Credits | 67 | 68 |  | +1 |
+| 4 | Individual Taxation: Credits/AMT | 67 | 68 |  | +1 |
+| 4 | Individual Taxation: Deductions | 64 | 68 |  | +4 |
 | 4 | Individual Taxation: Filing/Credits | 68 | 68 |  |  |
 | 4 | Individual Taxation: Income | 68 | 68 |  |  |
 | 5 | C Corporations | 82 | 83 |  | +1 |
 | 5 | Estate and Gift Tax | 82 | 84 |  | +2 |
-| 5 | Partnerships | 81 | 83 |  | +2 |
+| 5 | Partnerships | 80 | 83 |  | +3 |
 | 5 | S Corporations | 82 | 83 |  | +1 |
 | 5 | Tax-Exempt Organizations | 77 | 84 |  | +7 |
 
@@ -132,67 +132,67 @@ For each section:
 |------|-------|---------|--------|------|----------|
 | 1 | Capital Structure and Valuation | 122 | 134 |  | +12 |
 | 1 | Financial Statement Analysis | 189 | 134 | -55 |  |
-| 1 | Financial Valuation Methods | 163 | 134 | -29 |  |
-| 1 | Prospective Analysis and Forecasting | 133 | 134 |  | +1 |
+| 1 | Financial Valuation Methods | 147 | 134 | -13 |  |
+| 1 | Prospective Analysis and Forecasting | 128 | 134 |  | +6 |
 | 1 | Risk Management and Economics | 130 | 134 |  | +4 |
 | 2 | Advanced Consolidations | 49 | 55 |  | +6 |
-| 2 | Advanced Lease Transactions | 55 | 55 |  |  |
+| 2 | Advanced Lease Transactions | 54 | 55 |  | +1 |
 | 2 | Advanced Revenue and Intangibles | 47 | 55 |  | +8 |
-| 2 | Business Combinations | 50 | 55 |  | +5 |
+| 2 | Business Combinations | 41 | 55 |  | +14 |
 | 2 | Derivatives and Hedging | 50 | 55 |  | +5 |
-| 2 | Foreign Currency Transactions | 50 | 55 |  | +5 |
-| 2 | Income Taxes Advanced | 50 | 55 |  | +5 |
+| 2 | Foreign Currency Transactions | 43 | 55 |  | +12 |
+| 2 | Income Taxes Advanced | 48 | 55 |  | +7 |
 | 2 | Intangible Assets Advanced | 50 | 55 |  | +5 |
 | 2 | Internal-Use Software and Cloud Computing | 39 | 55 |  | +16 |
 | 2 | Pension and Postretirement Benefits | 144 | 55 | -89 |  |
 | 2 | Stock Compensation and Business Combinations | 52 | 55 |  | +3 |
-| 3 | Fund-to-Government-Wide Reconciliation | 68 | 75 |  | +7 |
-| 3 | Interfund Transactions | 68 | 75 |  | +7 |
-| 3 | State and Local Government Reporting | 75 | 75 |  |  |
+| 3 | Fund-to-Government-Wide Reconciliation | 67 | 75 |  | +8 |
+| 3 | Interfund Transactions | 67 | 75 |  | +8 |
+| 3 | State and Local Government Reporting | 72 | 75 |  | +3 |
 
 ### ISC
 
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
-| 1 | Change Management | 79 | 86 |  | +7 |
-| 1 | Data Management and Lifecycle | 78 | 86 |  | +8 |
+| 1 | Change Management | 73 | 86 |  | +13 |
+| 1 | Data Management and Lifecycle | 76 | 86 |  | +10 |
 | 1 | ERP and Accounting Information Systems | 78 | 86 |  | +8 |
-| 1 | IT Audit Frameworks | 86 | 86 |  |  |
-| 1 | IT General Controls | 86 | 86 |  |  |
+| 1 | IT Audit Frameworks | 85 | 86 |  | +1 |
+| 1 | IT General Controls | 79 | 86 |  | +7 |
 | 1 | IT Infrastructure and Architecture | 82 | 86 |  | +4 |
 | 1 | System Availability and Change Management | 86 | 86 |  |  |
-| 2 | Data Protection Technologies | 100 | 100 |  |  |
+| 2 | Data Protection Technologies | 97 | 100 |  | +3 |
 | 2 | Incident Response and Recovery | 100 | 100 |  |  |
-| 2 | Privacy Requirements and Data Protection | 99 | 100 |  | +1 |
-| 2 | Security and Control Frameworks | 99 | 99 |  |  |
-| 2 | Security Controls and Monitoring | 100 | 100 |  |  |
-| 2 | Threats, Attacks, and Vulnerabilities | 99 | 99 |  |  |
-| 3 | SOC Engagements | 60 | 60 |  |  |
-| 3 | SOC Report Content and Structure | 50 | 60 |  | +10 |
-| 3 | SOC Reporting | 60 | 60 |  |  |
-| 3 | SOC Reporting and Trust Services Criteria | 60 | 60 |  |  |
+| 2 | Privacy Requirements and Data Protection | 95 | 100 |  | +5 |
+| 2 | Security and Control Frameworks | 95 | 99 |  | +4 |
+| 2 | Security Controls and Monitoring | 93 | 100 |  | +7 |
+| 2 | Threats, Attacks, and Vulnerabilities | 97 | 99 |  | +2 |
+| 3 | SOC Engagements | 58 | 60 |  | +2 |
+| 3 | SOC Report Content and Structure | 49 | 60 |  | +11 |
+| 3 | SOC Reporting | 59 | 60 |  | +1 |
+| 3 | SOC Reporting and Trust Services Criteria | 58 | 60 |  | +2 |
 | 3 | SOC Testing Controls | 60 | 60 |  |  |
 
 ### TCP
 
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
-| 1 | Individual Tax Planning: Compensation | 130 | 132 |  | +2 |
+| 1 | Individual Tax Planning: Compensation | 126 | 132 |  | +6 |
 | 1 | Passive Activity and At-Risk Rules | 131 | 132 |  | +1 |
 | 1 | Retirement Plans and Education Savings | 110 | 131 |  | +21 |
-| 1 | Wealth Transfer and Gifting Strategies | 131 | 131 |  |  |
-| 2 | Advanced Basis Calculations | 103 | 105 |  | +2 |
-| 2 | Entity Formation and Liquidation | 105 | 105 |  |  |
-| 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 105 | 105 |  |  |
-| 2 | International Tax | 105 | 105 |  |  |
-| 2 | Owner-Entity Transactions | 105 | 105 |  |  |
-| 3 | Capital Structure Tax Planning | 56 | 56 |  |  |
+| 1 | Wealth Transfer and Gifting Strategies | 129 | 131 |  | +2 |
+| 2 | Advanced Basis Calculations | 96 | 105 |  | +9 |
+| 2 | Entity Formation and Liquidation | 98 | 105 |  | +7 |
+| 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 101 | 105 |  | +4 |
+| 2 | International Tax | 104 | 105 |  | +1 |
+| 2 | Owner-Entity Transactions | 103 | 105 |  | +2 |
+| 3 | Capital Structure Tax Planning | 53 | 56 |  | +3 |
 | 3 | Entity Choice and Planning | 44 | 56 |  | +12 |
-| 3 | Multi-Jurisdictional Tax Planning | 49 | 56 |  | +7 |
+| 3 | Multi-Jurisdictional Tax Planning | 45 | 56 |  | +11 |
 | 3 | Trusts and Estates | 50 | 56 |  | +6 |
-| 4 | Entity Formation and Restructuring | 74 | 75 |  | +1 |
-| 4 | Nontaxable Dispositions | 69 | 75 |  | +6 |
-| 4 | Related Party Transactions | 70 | 75 |  | +5 |
+| 4 | Entity Formation and Restructuring | 67 | 75 |  | +8 |
+| 4 | Nontaxable Dispositions | 67 | 75 |  | +8 |
+| 4 | Related Party Transactions | 66 | 75 |  | +9 |
 
 ## Batch Log
 
