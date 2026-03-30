@@ -282,3 +282,4 @@
 | 2026-03-30 | 00957_quality_aud_batch46.sql  | AUD     | 30        | 1x#1, 29x#3  | 1 choices equalized + 29 per-choice explanations  |
 | 2026-03-30 | 00959_quality_tcp_batch39.sql  | TCP     | 30        | 5x#1, 25x#3  | 5 choices equalized + 25 per-choice explanations  |
 | 2026-03-30 | 00962_quality_isc_batch41.sql  | ISC     | 30        | 30x#1         | 30 choices equalized (longest ≤1.8x shortest)     |
+| 2026-03-30 | 00965_quality_isc_batch42.sql  | ISC     | 9         | 9x#1          | 9 choices equalized (longest ≤1.8x shortest)      |
