@@ -256,3 +256,4 @@
 | 2026-03-30 | 00934_quality_aud_batch42.sql  | AUD     | 30        | 30x#3         | 30 per-choice explanations restructured          |
 | 2026-03-30 | 00933_quality_isc_batch36.sql  | ISC     | 30        | 30x#3         | 30 per-choice explanations restructured          |
 | 2026-03-30 | 00936_quality_reg_batch48.sql  | REG     | 30        | 30x#3         | 30 per-choice explanations restructured          |
+| 2026-03-30 | 00935_quality_far_batch36.sql  | FAR     | 30        | 30x#3         | 30 per-choice explanations restructured          |
