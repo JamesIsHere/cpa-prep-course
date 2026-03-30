@@ -1112,6 +1112,10 @@ for ($i = 0; $i -lt $Batches; $i++) {
             Write-Step 'Scaffold' $scaffoldName
         } catch {
             Write-Step 'Scaffold' "FAILED: $_" 'Red'
+            if ($scaffoldPath -and (Test-Path $scaffoldPath)) {
+                Remove-Item $scaffoldPath -Force -ErrorAction SilentlyContinue
+                Write-Log "Cleanup  Deleted failed scaffold: $scaffoldPath"
+            }
             $stopped = $true; break
         }
     } else {
@@ -1152,6 +1156,10 @@ for ($i = 0; $i -lt $Batches; $i++) {
 
     if ($claudeResult.status -eq 'error') {
         Write-Step 'Claude' "reported error: $($claudeResult.message)" 'Red'
+        if ($scaffoldPath -and (Test-Path $scaffoldPath)) {
+            Remove-Item $scaffoldPath -Force -ErrorAction SilentlyContinue
+            Write-Log "Cleanup  Deleted failed scaffold: $scaffoldPath"
+        }
         $stopped = $true; break
     }
 
@@ -1257,6 +1265,9 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
             Write-Host ''
             Write-Host '   STOPPED: validation failed after retries' -ForegroundColor Red
             Write-Host "   File: $scaffoldPath" -ForegroundColor DarkGray
+            Remove-Item $scaffoldPath -Force -ErrorAction SilentlyContinue
+            Write-Step 'Cleanup' 'deleted failed scaffold'
+            Write-Log "Cleanup  Deleted failed scaffold: $scaffoldPath"
             $stopped = $true; break
         }
     }
@@ -1323,6 +1334,9 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
                 Write-Host ''
                 Write-Host '   STOPPED: duplicate check failed after retry' -ForegroundColor Red
                 Write-Host "   File: $scaffoldPath" -ForegroundColor DarkGray
+                Remove-Item $scaffoldPath -Force -ErrorAction SilentlyContinue
+                Write-Step 'Cleanup' 'deleted failed scaffold'
+                Write-Log "Cleanup  Deleted failed scaffold: $scaffoldPath"
                 $stopped = $true; break
             }
         }
@@ -1392,6 +1406,9 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
                     Write-Host ''
                     Write-Host '   STOPPED: verification failed after retry' -ForegroundColor Red
                     Write-Host "   File: $scaffoldPath" -ForegroundColor DarkGray
+                    Remove-Item $scaffoldPath -Force -ErrorAction SilentlyContinue
+                    Write-Step 'Cleanup' 'deleted failed scaffold'
+                    Write-Log "Cleanup  Deleted failed scaffold: $scaffoldPath"
                     $stopped = $true; break
                 }
             }
@@ -1408,6 +1425,9 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
             Write-Host "   STOPPED: migration contains $todoCount TODO placeholders — Claude did not fill the scaffold" -ForegroundColor Red
             Write-Host "   File: $scaffoldPath" -ForegroundColor DarkGray
             Write-Log "Guard  BLOCKED: $todoCount TODO placeholders in $scaffoldPath"
+            Remove-Item $scaffoldPath -Force -ErrorAction SilentlyContinue
+            Write-Step 'Cleanup' 'deleted failed scaffold'
+            Write-Log "Cleanup  Deleted failed scaffold: $scaffoldPath"
             $stopped = $true; break
         }
 
@@ -1420,11 +1440,44 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
             Write-Host "   STOPPED: migration number $migNum already exists: $($dupes.Name -join ', ')" -ForegroundColor Red
             Write-Host "   File: $scaffoldPath" -ForegroundColor DarkGray
             Write-Log "Guard  BLOCKED: duplicate migration number $migNum"
+            Remove-Item $scaffoldPath -Force -ErrorAction SilentlyContinue
+            Write-Step 'Cleanup' 'deleted failed scaffold'
+            Write-Log "Cleanup  Deleted failed scaffold: $scaffoldPath"
             $stopped = $true; break
         }
     }
 
-    # -- 7. Commit ----------------------------------------------
+    # -- 7. Apply migration to DB FIRST (before commit) ----------
+    # Uses --file= mode so each orchestrator instance only applies its
+    # own migration. No races with other concurrent instances.
+    if ($Mode -ne 'verify' -and (Test-Path $scaffoldPath)) {
+        $migFilename = Split-Path $scaffoldPath -Leaf
+        Push-Location $RepoRoot
+        $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
+        try {
+            $applyOutput = & node scripts/migrate.mjs "--file=$migFilename" 2>&1 | Out-String
+            $applyExit = $LASTEXITCODE
+        } finally {
+            $ErrorActionPreference = $prevEAP
+            Pop-Location
+        }
+
+        if ($applyExit -eq 0) {
+            Write-Step 'Apply' "DB updated ($migFilename)"
+        } else {
+            Write-Host ''
+            Write-Host "   STOPPED: migration apply to DB failed — not committing to git" -ForegroundColor Red
+            Write-Host "   File: $scaffoldPath" -ForegroundColor DarkGray
+            Write-Host "   Output: $($applyOutput.Trim())" -ForegroundColor DarkGray
+            Write-Log "Apply  FAILED: $applyOutput"
+            # Clean up the unapplied scaffold
+            Remove-Item $scaffoldPath -Force -ErrorAction SilentlyContinue
+            Write-Log "Cleanup  Deleted failed scaffold: $scaffoldPath"
+            $stopped = $true; break
+        }
+    }
+
+    # -- 7.5. Commit (only after DB apply succeeded) ---------------
     $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
     if ($Mode -eq 'verify') {
         $verifiedIdsFile = Join-Path (Join-Path $RepoRoot 'docs') 'verified-ids.json'
@@ -1442,26 +1495,6 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
     $commitHash = (& git -C $RepoRoot rev-parse --short HEAD).Trim()
     $ErrorActionPreference = $prevEAP
     Write-Step 'Commit' $commitHash
-
-    # -- 7.5. Apply migration to DB -------------------------------
-    # Without this, the next batch's selector sees stale DB counts and
-    # keeps generating for already-filled topics, overshooting targets.
-    if ($Mode -in @('generate','stem','quality') -and (Test-Path $scaffoldPath)) {
-        Push-Location $RepoRoot
-        $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
-        try {
-            $applyOutput = & node scripts/migrate.mjs 2>&1 | Out-String
-            if ($LASTEXITCODE -eq 0) {
-                Write-Step 'Apply' 'migration applied to DB'
-            } else {
-                Write-Step 'Apply' 'WARNING: migration apply failed — DB counts may be stale' 'Yellow'
-                Write-Log "Apply  WARNING: $applyOutput"
-            }
-        } finally {
-            $ErrorActionPreference = $prevEAP
-            Pop-Location
-        }
-    }
 
     # -- 8. Update running state --------------------------------
     $totalQuestions += $batchCount

@@ -14,6 +14,7 @@
  *   npm run migrate              # Apply all pending
  *   npm run migrate -- --dry-run # Show what would happen
  *   npm run migrate -- --status  # Just show sync status, apply nothing
+ *   node scripts/migrate.mjs --file=00682_quality_aud_batch1.sql  # Apply ONE file (concurrency-safe)
  *
  * This is the ONLY way to apply migrations. Do not use exec_sql directly,
  * do not run SQL in the Supabase dashboard. If you do, the tracking table
@@ -38,6 +39,7 @@ if (!SUPABASE_URL || !SERVICE_KEY) {
 const args = process.argv.slice(2);
 const dryRun = args.includes('--dry-run');
 const statusOnly = args.includes('--status');
+const singleFileArg = args.find(a => a.startsWith('--file='))?.split('=')[1];
 
 // ─── Helpers ───────────────────────────────────────────────────
 
@@ -105,7 +107,48 @@ async function getQuestionCounts() {
   return counts;
 }
 
-// ─── Main ──────────────────────────────────────────────────────
+// ─── Single-file mode (concurrency-safe) ──────────────────────
+
+if (singleFileArg) {
+  const filePath = join(MIGRATIONS_DIR, singleFileArg);
+  let sql;
+  try {
+    sql = readFileSync(filePath, 'utf8');
+  } catch {
+    console.error(`File not found: ${filePath}`);
+    process.exit(1);
+  }
+
+  // Check if already applied
+  const tracked = await fetchTracked();
+  if (tracked.has(singleFileArg)) {
+    console.log(`Already applied: ${singleFileArg}`);
+    process.exit(0);
+  }
+
+  // Check for TODOs
+  const todos = sql.match(/TODO[:\s]/gi);
+  if (todos) {
+    console.error(`${singleFileArg} contains ${todos.length} TODO placeholder(s)`);
+    process.exit(1);
+  }
+
+  // Strip transaction wrappers
+  sql = sql.replace(/^\s*BEGIN\s*;\s*$/gm, '').replace(/^\s*COMMIT\s*;\s*$/gm, '');
+
+  // Apply
+  try {
+    await execSQL(sql);
+    await trackMigration(singleFileArg);
+    console.log(`OK ${singleFileArg}`);
+    process.exit(0);
+  } catch (err) {
+    console.error(`FAILED ${singleFileArg}: ${err.message.substring(0, 300)}`);
+    process.exit(1);
+  }
+}
+
+// ─── Main (bulk mode) ─────────────────────────────────────────
 
 // 1. Scan disk and tracking table
 const allFiles = readdirSync(MIGRATIONS_DIR).filter(f => f.endsWith('.sql')).sort();
