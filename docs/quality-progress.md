@@ -271,3 +271,4 @@
 | 2026-03-30 | 00948_quality_reg_batch50.sql  | REG     | 30        | 30x#3         | 30 per-choice explanations restructured          |
 | 2026-03-30 | 00949_quality_bar_batch42.sql  | BAR     | 30        | 30x#1          | 30 choices equalized (longest ≤1.8x shortest)    |
 | 2026-03-30 | 00951_quality_isc_batch39.sql  | ISC     | 30        | 3x#1, 27x#3   | 3 choices equalized + 27 per-choice explanations |
+| 2026-03-30 | 00950_quality_aud_batch45.sql  | AUD     | 30        | 30x#3         | 30 per-choice explanations restructured          |
