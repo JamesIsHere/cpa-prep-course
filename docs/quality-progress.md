@@ -277,4 +277,5 @@
 | 2026-03-30 | 00953_quality_far_batch39.sql  | FAR     | 30        | 9x#1, 21x#3   | 9 choices equalized + 21 per-choice explanations  |
 | 2026-03-30 | 00954_quality_reg_batch51.sql  | REG     | 30        | 30x#3         | 30 per-choice explanations restructured          |
 | 2026-03-30 | 00958_quality_bar_batch44.sql  | BAR     | 3         | 3x#1          | 3 choices equalized (longest ≤1.8x shortest)     |
+| 2026-03-30 | 00956_quality_isc_batch40.sql  | ISC     | 30        | 30x#1         | 30 choices equalized (longest ≤1.8x shortest)     |
 | 2026-03-30 | 00960_quality_far_batch40.sql  | FAR     | 7         | 5x#1, 2x#3   | 5 choices equalized + 2 per-choice explanations   |
