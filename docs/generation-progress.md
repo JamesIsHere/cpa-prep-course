@@ -8,7 +8,7 @@ Per-section target: 1,500 questions. Distributed by AICPA Blueprint area weights
 
 **Batch size:** 30 questions per generation batch.
 
-**To generate:** 77 new questions (~3 batches).
+**To generate:** 79 new questions (~3 batches).
 
 **To trim:** 0 questions to delete (keep best, cut weakest).
 
@@ -30,7 +30,7 @@ For each section:
 | REG     | 1,446 | 1,500 |       0 |           0 |           0 | On Target       |
 | BAR     | 1,534 | 1,500 |       0 |           0 |           0 | On Target       |
 | ISC     | 1,452 | 1,500 |       0 |           0 |           0 | On Target       |
-| TCP     | 1,423 | 1,500 |       0 |          77 |           3 | Generate Needed |
+| TCP     | 1,421 | 1,500 |       0 |          79 |           3 | Generate Needed |
 
 ## Topic Detail
 
@@ -178,11 +178,11 @@ For each section:
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
 | 1 | Individual Tax Planning: Compensation | 126 | 132 |  | +6 |
-| 1 | Passive Activity and At-Risk Rules | 129 | 132 |  | +3 |
+| 1 | Passive Activity and At-Risk Rules | 128 | 132 |  | +4 |
 | 1 | Retirement Plans and Education Savings | 131 | 131 |  |  |
 | 1 | Wealth Transfer and Gifting Strategies | 129 | 131 |  | +2 |
 | 2 | Advanced Basis Calculations | 95 | 105 |  | +10 |
-| 2 | Entity Formation and Liquidation | 95 | 105 |  | +10 |
+| 2 | Entity Formation and Liquidation | 94 | 105 |  | +11 |
 | 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 100 | 105 |  | +5 |
 | 2 | International Tax | 103 | 105 |  | +2 |
 | 2 | Owner-Entity Transactions | 102 | 105 |  | +3 |

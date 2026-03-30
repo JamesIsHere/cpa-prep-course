@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-30T21:26:35.267Z",
+  "generatedAt": "2026-03-30T23:34:25.327Z",
   "totalTarget": 9000,
   "batchSize": 30,
   "difficultyTargets": {
@@ -2916,9 +2916,9 @@
     {
       "section": "tcp",
       "sectionId": 6,
-      "currentTotal": 1423,
+      "currentTotal": 1421,
       "targetTotal": 1500,
-      "toGenerate": 77,
+      "toGenerate": 79,
       "toTrim": 0,
       "totalBatches": 3,
       "topics": [
@@ -2955,21 +2955,21 @@
             30,
             40
           ],
-          "currentCount": 129,
+          "currentCount": 128,
           "targetCount": 132,
-          "toGenerate": 3,
+          "toGenerate": 4,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
             "easy": 1,
             "medium": 2,
-            "hard": 0
+            "hard": 1
           },
           "blooms": {
             "l1": 1,
             "l2": 1,
             "l3": 1,
-            "l4": 0
+            "l4": 1
           }
         },
         {
@@ -3055,21 +3055,21 @@
             30,
             40
           ],
-          "currentCount": 95,
+          "currentCount": 94,
           "targetCount": 105,
-          "toGenerate": 10,
+          "toGenerate": 11,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
             "easy": 3,
-            "medium": 5,
+            "medium": 6,
             "hard": 2
           },
           "blooms": {
             "l1": 2,
             "l2": 4,
             "l3": 3,
-            "l4": 1
+            "l4": 2
           }
         },
         {
@@ -3326,9 +3326,9 @@
     }
   ],
   "summary": {
-    "totalCurrent": 8855,
+    "totalCurrent": 8853,
     "totalTarget": 9000,
-    "totalToGenerate": 77,
+    "totalToGenerate": 79,
     "totalToTrim": 0,
     "totalBatches": 3
   }
