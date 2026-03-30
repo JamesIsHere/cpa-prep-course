@@ -79,7 +79,10 @@ for (const sec of sectionsToRun) {
       `npx tsx scripts/qa/select-quality-candidates.ts --section=${sec} --count=99999`,
       { encoding: 'utf-8', stdio: ['pipe', 'pipe', 'pipe'], timeout: 120000 }
     );
-    const candidates = JSON.parse(result.trim() || '[]');
+    // Strip dotenv banner lines before parsing JSON
+    const jsonStart = result.indexOf('[');
+    const clean = jsonStart >= 0 ? result.substring(jsonStart) : result.trim();
+    const candidates = JSON.parse(clean || '[]');
     if (candidates.length > 0) {
       const batches = Math.ceil(candidates.length / 30);
       commands.push({ section: sec, count: candidates.length, batches });
