@@ -8,9 +8,9 @@ Per-section target: 1,500 questions. Distributed by AICPA Blueprint area weights
 
 **Batch size:** 30 questions per generation batch.
 
-**To generate:** 683 new questions (~25 batches).
+**To generate:** 321 new questions (~12 batches).
 
-**To trim:** 424 questions to delete (keep best, cut weakest).
+**To trim:** 0 questions to delete (keep best, cut weakest).
 
 **Difficulty targets:** 30% easy / 50% medium / 20% hard.
 
@@ -26,9 +26,9 @@ For each section:
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status          |
 |---------|---------|--------|---------|-------------|-------------|-----------------|
 | AUD     | 1,369 | 1,500 |       0 |         131 |           5 | Generate Needed |
-| FAR     | 1,567 | 1,500 |     267 |         200 |           7 | Trim + Generate |
-| REG     | 1,456 | 1,500 |       0 |          44 |           2 | Generate Needed |
-| BAR     | 1,539 | 1,500 |     157 |         118 |           4 | Trim + Generate |
+| FAR     | 1,567 | 1,500 |       0 |           0 |           0 | On Target       |
+| REG     | 1,456 | 1,500 |       0 |           0 |           0 | On Target       |
+| BAR     | 1,539 | 1,500 |       0 |           0 |           0 | On Target       |
 | ISC     | 1,420 | 1,500 |       0 |          80 |           3 | Generate Needed |
 | TCP     | 1,390 | 1,500 |       0 |         110 |           4 | Generate Needed |
 
@@ -72,83 +72,83 @@ For each section:
 
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
-| 1 | Consolidations | 58 | 66 |  | +8 |
-| 1 | Financial Reporting: For-Profit | 158 | 67 | -91 |  |
-| 1 | Financial Statement Ratios | 90 | 66 | -24 |  |
-| 1 | Not-for-Profit Accounting | 58 | 66 |  | +8 |
-| 1 | Public Company Reporting | 71 | 66 | -5 |  |
-| 1 | Special Purpose Frameworks | 79 | 66 | -13 |  |
-| 1 | State and Local Government | 186 | 66 | -120 |  |
-| 1 | Statement of Cash Flows | 80 | 67 | -13 |  |
-| 2 | Cash and Cash Equivalents | 16 | 58 |  | +42 |
-| 2 | Debt | 52 | 58 |  | +6 |
-| 2 | Equity | 52 | 58 |  | +6 |
-| 2 | Intangible Assets | 51 | 58 |  | +7 |
-| 2 | Inventory | 52 | 58 |  | +6 |
-| 2 | Investments | 59 | 58 | -1 |  |
-| 2 | Payables and Accrued Liabilities | 50 | 58 |  | +8 |
-| 2 | Property, Plant and Equipment | 53 | 58 |  | +5 |
-| 2 | Trade Receivables | 36 | 58 |  | +22 |
-| 3 | Accounting Changes and Error Corrections | 58 | 64 |  | +6 |
-| 3 | Contingencies | 58 | 64 |  | +6 |
-| 3 | Fair Value | 57 | 64 |  | +7 |
-| 3 | Income Taxes | 58 | 64 |  | +6 |
-| 3 | Leases | 53 | 64 |  | +11 |
-| 3 | Revenue Recognition | 53 | 64 |  | +11 |
-| 3 | Subsequent Events | 29 | 64 |  | +35 |
+| 1 | Consolidations | 58 | 66 |  |  |
+| 1 | Financial Reporting: For-Profit | 158 | 67 |  |  |
+| 1 | Financial Statement Ratios | 90 | 66 |  |  |
+| 1 | Not-for-Profit Accounting | 58 | 66 |  |  |
+| 1 | Public Company Reporting | 71 | 66 |  |  |
+| 1 | Special Purpose Frameworks | 79 | 66 |  |  |
+| 1 | State and Local Government | 186 | 66 |  |  |
+| 1 | Statement of Cash Flows | 80 | 67 |  |  |
+| 2 | Cash and Cash Equivalents | 16 | 58 |  |  |
+| 2 | Debt | 52 | 58 |  |  |
+| 2 | Equity | 52 | 58 |  |  |
+| 2 | Intangible Assets | 51 | 58 |  |  |
+| 2 | Inventory | 52 | 58 |  |  |
+| 2 | Investments | 59 | 58 |  |  |
+| 2 | Payables and Accrued Liabilities | 50 | 58 |  |  |
+| 2 | Property, Plant and Equipment | 53 | 58 |  |  |
+| 2 | Trade Receivables | 36 | 58 |  |  |
+| 3 | Accounting Changes and Error Corrections | 58 | 64 |  |  |
+| 3 | Contingencies | 58 | 64 |  |  |
+| 3 | Fair Value | 57 | 64 |  |  |
+| 3 | Income Taxes | 58 | 64 |  |  |
+| 3 | Leases | 53 | 64 |  |  |
+| 3 | Revenue Recognition | 53 | 64 |  |  |
+| 3 | Subsequent Events | 29 | 64 |  |  |
 
 ### REG
 
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
-| 1 | Circular 230 | 42 | 45 |  | +3 |
-| 1 | Federal Tax Procedures | 40 | 45 |  | +5 |
+| 1 | Circular 230 | 42 | 45 |  |  |
+| 1 | Federal Tax Procedures | 40 | 45 |  |  |
 | 1 | Legal Duties and Responsibilities | 45 | 45 |  |  |
 | 1 | Professional Ethics in Tax | 45 | 45 |  |  |
-| 1 | Tax Procedures | 44 | 45 |  | +1 |
+| 1 | Tax Procedures | 44 | 45 |  |  |
 | 2 | Agency and Regulation | 60 | 60 |  |  |
 | 2 | Business Law: Contracts | 60 | 60 |  |  |
 | 2 | Business Structures | 60 | 60 |  |  |
 | 2 | Debtor-Creditor Relationships | 60 | 60 |  |  |
-| 2 | Government Regulation of Business | 58 | 60 |  | +2 |
-| 3 | Like-Kind Exchanges | 48 | 50 |  | +2 |
-| 3 | Property Transactions: Basis | 48 | 50 |  | +2 |
-| 3 | Property Transactions: Gains/Losses | 44 | 50 |  | +6 |
-| 4 | Alternative Minimum Tax | 65 | 68 |  | +3 |
-| 4 | Individual Taxation: Credits | 67 | 68 |  | +1 |
-| 4 | Individual Taxation: Credits/AMT | 67 | 68 |  | +1 |
-| 4 | Individual Taxation: Deductions | 64 | 68 |  | +4 |
+| 2 | Government Regulation of Business | 58 | 60 |  |  |
+| 3 | Like-Kind Exchanges | 48 | 50 |  |  |
+| 3 | Property Transactions: Basis | 48 | 50 |  |  |
+| 3 | Property Transactions: Gains/Losses | 44 | 50 |  |  |
+| 4 | Alternative Minimum Tax | 65 | 68 |  |  |
+| 4 | Individual Taxation: Credits | 67 | 68 |  |  |
+| 4 | Individual Taxation: Credits/AMT | 67 | 68 |  |  |
+| 4 | Individual Taxation: Deductions | 64 | 68 |  |  |
 | 4 | Individual Taxation: Filing/Credits | 68 | 68 |  |  |
 | 4 | Individual Taxation: Income | 68 | 68 |  |  |
-| 5 | C Corporations | 82 | 83 |  | +1 |
-| 5 | Estate and Gift Tax | 82 | 84 |  | +2 |
-| 5 | Partnerships | 80 | 83 |  | +3 |
-| 5 | S Corporations | 82 | 83 |  | +1 |
-| 5 | Tax-Exempt Organizations | 77 | 84 |  | +7 |
+| 5 | C Corporations | 82 | 83 |  |  |
+| 5 | Estate and Gift Tax | 82 | 84 |  |  |
+| 5 | Partnerships | 80 | 83 |  |  |
+| 5 | S Corporations | 82 | 83 |  |  |
+| 5 | Tax-Exempt Organizations | 77 | 84 |  |  |
 
 ### BAR
 
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
-| 1 | Capital Structure and Valuation | 122 | 134 |  | +12 |
-| 1 | Financial Statement Analysis | 189 | 134 | -55 |  |
-| 1 | Financial Valuation Methods | 147 | 134 | -13 |  |
-| 1 | Prospective Analysis and Forecasting | 128 | 134 |  | +6 |
-| 1 | Risk Management and Economics | 130 | 134 |  | +4 |
-| 2 | Advanced Consolidations | 49 | 55 |  | +6 |
-| 2 | Advanced Lease Transactions | 54 | 55 |  | +1 |
-| 2 | Advanced Revenue and Intangibles | 47 | 55 |  | +8 |
-| 2 | Business Combinations | 41 | 55 |  | +14 |
-| 2 | Derivatives and Hedging | 50 | 55 |  | +5 |
-| 2 | Foreign Currency Transactions | 43 | 55 |  | +12 |
-| 2 | Income Taxes Advanced | 48 | 55 |  | +7 |
-| 2 | Intangible Assets Advanced | 50 | 55 |  | +5 |
-| 2 | Internal-Use Software and Cloud Computing | 39 | 55 |  | +16 |
-| 2 | Pension and Postretirement Benefits | 144 | 55 | -89 |  |
-| 2 | Stock Compensation and Business Combinations | 52 | 55 |  | +3 |
-| 3 | Fund-to-Government-Wide Reconciliation | 67 | 75 |  | +8 |
-| 3 | Interfund Transactions | 67 | 75 |  | +8 |
-| 3 | State and Local Government Reporting | 72 | 75 |  | +3 |
+| 1 | Capital Structure and Valuation | 122 | 134 |  |  |
+| 1 | Financial Statement Analysis | 189 | 134 |  |  |
+| 1 | Financial Valuation Methods | 147 | 134 |  |  |
+| 1 | Prospective Analysis and Forecasting | 128 | 134 |  |  |
+| 1 | Risk Management and Economics | 130 | 134 |  |  |
+| 2 | Advanced Consolidations | 49 | 55 |  |  |
+| 2 | Advanced Lease Transactions | 54 | 55 |  |  |
+| 2 | Advanced Revenue and Intangibles | 47 | 55 |  |  |
+| 2 | Business Combinations | 41 | 55 |  |  |
+| 2 | Derivatives and Hedging | 50 | 55 |  |  |
+| 2 | Foreign Currency Transactions | 43 | 55 |  |  |
+| 2 | Income Taxes Advanced | 48 | 55 |  |  |
+| 2 | Intangible Assets Advanced | 50 | 55 |  |  |
+| 2 | Internal-Use Software and Cloud Computing | 39 | 55 |  |  |
+| 2 | Pension and Postretirement Benefits | 144 | 55 |  |  |
+| 2 | Stock Compensation and Business Combinations | 52 | 55 |  |  |
+| 3 | Fund-to-Government-Wide Reconciliation | 67 | 75 |  |  |
+| 3 | Interfund Transactions | 67 | 75 |  |  |
+| 3 | State and Local Government Reporting | 72 | 75 |  |  |
 
 ### ISC
 

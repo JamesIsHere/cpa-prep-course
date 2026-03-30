@@ -19,13 +19,16 @@ const batchSize = parseInt(
 );
 
 // Section targets: 1500 each across all 6 sections (9,000 total)
+// Tolerance: within 5% of target (1,425–1,575) is acceptable — no trim/generate needed
+const SECTION_TARGET = 1500;
+const SECTION_TOLERANCE = 0.05; // 5%
 const SECTION_TARGETS: Record<string, number> = {
-	aud: 1500,
-	far: 1500,
-	reg: 1500,
-	bar: 1500,
-	isc: 1500,
-	tcp: 1500,
+	aud: SECTION_TARGET,
+	far: SECTION_TARGET,
+	reg: SECTION_TARGET,
+	bar: SECTION_TARGET,
+	isc: SECTION_TARGET,
+	tcp: SECTION_TARGET,
 };
 
 // Bloom's distribution targets per section type
@@ -266,8 +269,18 @@ async function main() {
 		// Sort by area number then topic name
 		topicPlans.sort((a, b) => a.areaNumber - b.areaNumber || a.topic.localeCompare(b.topic));
 
-		const sectionToGenerate = topicPlans.reduce((s, t) => s + t.toGenerate, 0);
-		const sectionToTrim = topicPlans.reduce((s, t) => s + t.toTrim, 0);
+		let sectionToGenerate = topicPlans.reduce((s, t) => s + t.toGenerate, 0);
+		let sectionToTrim = topicPlans.reduce((s, t) => s + t.toTrim, 0);
+
+		// If section is within tolerance, skip trim/generate entirely
+		const lo = Math.floor(sectionTarget * (1 - SECTION_TOLERANCE));
+		const hi = Math.ceil(sectionTarget * (1 + SECTION_TOLERANCE));
+		if (currentTotal >= lo && currentTotal <= hi) {
+			sectionToGenerate = 0;
+			sectionToTrim = 0;
+			for (const tp of topicPlans) { tp.toGenerate = 0; tp.toTrim = 0; tp.batches = 0; }
+		}
+
 		// Compute batches from section total, not sum of per-topic batches
 		// (per-topic batches inflate because each topic gets ceil(n/30) >= 1)
 		const totalBatches = Math.ceil(sectionToGenerate / batchSize);
@@ -284,9 +297,14 @@ async function main() {
 			topics: topicPlans,
 		});
 
-		const trimNote = sectionToTrim > 0 ? `, trim ${sectionToTrim}` : "";
-		const genNote = sectionToGenerate > 0 ? `, generate ${sectionToGenerate}` : "";
-		console.error(`  ${bp.code.toUpperCase()}: ${currentTotal} → ${sectionTarget}${trimNote}${genNote} (${totalBatches} gen batches)`);
+		const withinTolerance = currentTotal >= lo && currentTotal <= hi;
+		if (withinTolerance) {
+			console.error(`  ${bp.code.toUpperCase()}: ${currentTotal} → ${sectionTarget} ✓ within ${Math.round(SECTION_TOLERANCE * 100)}% tolerance`);
+		} else {
+			const trimNote = sectionToTrim > 0 ? `, trim ${sectionToTrim}` : "";
+			const genNote = sectionToGenerate > 0 ? `, generate ${sectionToGenerate}` : "";
+			console.error(`  ${bp.code.toUpperCase()}: ${currentTotal} → ${sectionTarget}${trimNote}${genNote} (${totalBatches} gen batches)`);
+		}
 	}
 
 	// Summary
