@@ -35,7 +35,7 @@ export type CpaBlueprint = BlueprintSection[];
 // --- Question counts by topic (synced from live DB via `npm run sync-counts`) ---
 
 export const questionCounts: Record<string, number> = {
-	// AUD (1,447 total — synced with live DB 2026-03-30)
+	// AUD (1,446 total — synced with live DB 2026-03-30)
 	"Analytical Procedures": 65,
 	"Attestation Engagements": 37,
 	"Audit Evidence": 64,
@@ -49,7 +49,7 @@ export const questionCounts: Record<string, number> = {
 	Materiality: 64,
 	"Misstatements and Control Deficiencies": 64,
 	"Modifications to the Auditor Report": 35,
-	"Nature and Scope of Engagements": 33,
+	"Nature and Scope of Engagements": 32,
 	"Other Information and Supplementary Information": 36,
 	"Professional Responsibilities": 37,
 	"Professional Skepticism and Judgment": 38,
@@ -135,8 +135,8 @@ export const questionCounts: Record<string, number> = {
 	"Risk Management and Economics": 130,
 	"State and Local Government Reporting": 71,
 	"Stock Compensation and Business Combinations": 52,
-	// ISC (1,454 total — synced with live DB 2026-03-30)
-	"Change Management": 86,
+	// ISC (1,452 total — synced with live DB 2026-03-30)
+	"Change Management": 85,
 	"Data Management and Lifecycle": 86,
 	"Data Protection Technologies": 97,
 	"ERP and Accounting Information Systems": 78,
@@ -148,23 +148,23 @@ export const questionCounts: Record<string, number> = {
 	"Security and Control Frameworks": 95,
 	"Security Controls and Monitoring": 93,
 	"SOC Engagements": 58,
-	"SOC Report Content and Structure": 60,
+	"SOC Report Content and Structure": 59,
 	"SOC Reporting": 59,
 	"SOC Reporting and Trust Services Criteria": 58,
 	"SOC Testing Controls": 60,
 	"System Availability and Change Management": 86,
 	"Threats, Attacks, and Vulnerabilities": 97,
-	// TCP (1,426 total — synced with live DB 2026-03-30)
+	// TCP (1,423 total — synced with live DB 2026-03-30)
 	"Advanced Basis Calculations": 95,
-	"Capital Structure Tax Planning": 53,
+	"Capital Structure Tax Planning": 52,
 	"Entity Choice and Planning": 56,
-	"Entity Formation and Liquidation": 96,
+	"Entity Formation and Liquidation": 95,
 	"Entity Formation and Restructuring": 67,
 	"Entity Tax Compliance: NOLs and Consolidated Returns": 100,
 	"Individual Tax Planning: Compensation": 126,
 	"International Tax": 103,
 	"Multi-Jurisdictional Tax Planning": 56,
-	"Nontaxable Dispositions": 67,
+	"Nontaxable Dispositions": 66,
 	"Owner-Entity Transactions": 102,
 	"Passive Activity and At-Risk Rules": 129,
 	"Related Party Transactions": 66,
@@ -174,12 +174,12 @@ export const questionCounts: Record<string, number> = {
 };
 
 export const sectionQuestionTotals: Record<string, number> = {
-	aud: 1447,
+	aud: 1446,
 	far: 1554,
 	reg: 1446,
 	bar: 1534,
-	isc: 1454,
-	tcp: 1426,
+	isc: 1452,
+	tcp: 1423,
 };
 
 // --- Blueprint Data ---

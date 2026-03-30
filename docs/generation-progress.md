@@ -8,7 +8,7 @@ Per-section target: 1,500 questions. Distributed by AICPA Blueprint area weights
 
 **Batch size:** 30 questions per generation batch.
 
-**To generate:** 0 new questions (~0 batches).
+**To generate:** 77 new questions (~3 batches).
 
 **To trim:** 0 questions to delete (keep best, cut weakest).
 
@@ -25,12 +25,12 @@ For each section:
 
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status          |
 |---------|---------|--------|---------|-------------|-------------|-----------------|
-| AUD     | 1,447 | 1,500 |       0 |           0 |           0 | On Target       |
+| AUD     | 1,446 | 1,500 |       0 |           0 |           0 | On Target       |
 | FAR     | 1,554 | 1,500 |       0 |           0 |           0 | On Target       |
 | REG     | 1,446 | 1,500 |       0 |           0 |           0 | On Target       |
 | BAR     | 1,534 | 1,500 |       0 |           0 |           0 | On Target       |
-| ISC     | 1,454 | 1,500 |       0 |           0 |           0 | On Target       |
-| TCP     | 1,426 | 1,500 |       0 |           0 |           0 | On Target       |
+| ISC     | 1,452 | 1,500 |       0 |           0 |           0 | On Target       |
+| TCP     | 1,423 | 1,500 |       0 |          77 |           3 | Generate Needed |
 
 ## Topic Detail
 
@@ -41,7 +41,7 @@ For each section:
 | 1 | Ethics and Independence | 38 | 38 |  |  |
 | 1 | Government Auditing Standards | 34 | 38 |  |  |
 | 1 | Independence | 37 | 38 |  |  |
-| 1 | Nature and Scope of Engagements | 33 | 38 |  |  |
+| 1 | Nature and Scope of Engagements | 32 | 38 |  |  |
 | 1 | Professional Responsibilities | 37 | 38 |  |  |
 | 1 | Professional Skepticism and Judgment | 38 | 38 |  |  |
 | 1 | Quality Management | 38 | 38 |  |  |
@@ -154,7 +154,7 @@ For each section:
 
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
-| 1 | Change Management | 86 | 86 |  |  |
+| 1 | Change Management | 85 | 86 |  |  |
 | 1 | Data Management and Lifecycle | 86 | 86 |  |  |
 | 1 | ERP and Accounting Information Systems | 78 | 86 |  |  |
 | 1 | IT Audit Frameworks | 85 | 86 |  |  |
@@ -168,7 +168,7 @@ For each section:
 | 2 | Security Controls and Monitoring | 93 | 100 |  |  |
 | 2 | Threats, Attacks, and Vulnerabilities | 97 | 99 |  |  |
 | 3 | SOC Engagements | 58 | 60 |  |  |
-| 3 | SOC Report Content and Structure | 60 | 60 |  |  |
+| 3 | SOC Report Content and Structure | 59 | 60 |  |  |
 | 3 | SOC Reporting | 59 | 60 |  |  |
 | 3 | SOC Reporting and Trust Services Criteria | 58 | 60 |  |  |
 | 3 | SOC Testing Controls | 60 | 60 |  |  |
@@ -177,22 +177,22 @@ For each section:
 
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
-| 1 | Individual Tax Planning: Compensation | 126 | 132 |  |  |
-| 1 | Passive Activity and At-Risk Rules | 129 | 132 |  |  |
+| 1 | Individual Tax Planning: Compensation | 126 | 132 |  | +6 |
+| 1 | Passive Activity and At-Risk Rules | 129 | 132 |  | +3 |
 | 1 | Retirement Plans and Education Savings | 131 | 131 |  |  |
-| 1 | Wealth Transfer and Gifting Strategies | 129 | 131 |  |  |
-| 2 | Advanced Basis Calculations | 95 | 105 |  |  |
-| 2 | Entity Formation and Liquidation | 96 | 105 |  |  |
-| 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 100 | 105 |  |  |
-| 2 | International Tax | 103 | 105 |  |  |
-| 2 | Owner-Entity Transactions | 102 | 105 |  |  |
-| 3 | Capital Structure Tax Planning | 53 | 56 |  |  |
+| 1 | Wealth Transfer and Gifting Strategies | 129 | 131 |  | +2 |
+| 2 | Advanced Basis Calculations | 95 | 105 |  | +10 |
+| 2 | Entity Formation and Liquidation | 95 | 105 |  | +10 |
+| 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 100 | 105 |  | +5 |
+| 2 | International Tax | 103 | 105 |  | +2 |
+| 2 | Owner-Entity Transactions | 102 | 105 |  | +3 |
+| 3 | Capital Structure Tax Planning | 52 | 56 |  | +4 |
 | 3 | Entity Choice and Planning | 56 | 56 |  |  |
 | 3 | Multi-Jurisdictional Tax Planning | 56 | 56 |  |  |
-| 3 | Trusts and Estates | 50 | 56 |  |  |
-| 4 | Entity Formation and Restructuring | 67 | 75 |  |  |
-| 4 | Nontaxable Dispositions | 67 | 75 |  |  |
-| 4 | Related Party Transactions | 66 | 75 |  |  |
+| 3 | Trusts and Estates | 50 | 56 |  | +6 |
+| 4 | Entity Formation and Restructuring | 67 | 75 |  | +8 |
+| 4 | Nontaxable Dispositions | 66 | 75 |  | +9 |
+| 4 | Related Party Transactions | 66 | 75 |  | +9 |
 
 ## Batch Log
 
