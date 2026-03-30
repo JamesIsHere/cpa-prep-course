@@ -299,3 +299,4 @@
 | 2026-03-30 | 00976_quality_aud_batch53.sql  | AUD     | 5         | 5x#1          | 5 choices equalized (longest ≤1.8x shortest)      |
 | 2026-03-30 | 00977_quality_reg_batch55.sql  | REG     | 30        | 30x#3         | 30 per-choice explanations restructured           |
 | 2026-03-30 | 00978_quality_reg_batch56.sql  | REG     | 30        | 30x#3         | 30 per-choice explanations restructured           |
+| 2026-03-30 | 00979_quality_reg_batch57.sql  | REG     | 30        | 30x#3         | 30 per-choice explanations restructured           |
