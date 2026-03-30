@@ -12,7 +12,7 @@ Expanding short textbook-style stems (<=20 words) into CPA-exam-style mini case 
 | ISC     | 477         | 527      | 0         | 11           |
 | TCP     | 293         | 343      | 0         | 7            |
 | FAR     | 350         | 400      | 0         | 9            |
-| **Total** | **2,522** | **2,494** | **28**    | **53**       |
+| **Total** | **2,522** | **2,544** | **28**    | **54**       |
 
 ## Batch Log
 
