@@ -248,3 +248,4 @@
 | 2026-03-30 | 00925_quality_far_batch34.sql  | FAR     | 30        | 30x#3         | 30 per-choice explanations restructured          |
 | 2026-03-30 | 00924_quality_tcp_batch34.sql  | TCP     | 30        | 30x#3         | 30 per-choice explanations restructured          |
 | 2026-03-30 | 00927_quality_isc_batch35.sql  | ISC     | 30        | 30x#3         | 30 per-choice explanations restructured          |
+| 2026-03-30 | 00928_quality_aud_batch41.sql  | AUD     | 30        | 30x#3         | 30 per-choice explanations restructured          |
