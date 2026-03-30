@@ -7,12 +7,12 @@ Expanding short textbook-style stems (<=20 words) into CPA-exam-style mini case 
 | Section | Short Stems | Expanded | Remaining | Batches Done |
 |---------|-------------|----------|-----------|--------------|
 | AUD     | 552         | 702      | 0         | 16           |
-| REG     | 446         | 546      | 0         | 11           |
+| REG     | 446         | 596      | 0         | 12           |
 | BAR     | 404         | 579      | 0         | 13           |
 | ISC     | 477         | 614      | 0         | 13           |
-| TCP     | 293         | 443      | 0         | 9            |
+| TCP     | 293         | 493      | 0         | 10           |
 | FAR     | 350         | 442      | 0         | 10           |
-| **Total** | **2,522** | **2,849** | **28**    | **61**       |
+| **Total** | **2,522** | **2,899** | **28**    | **62**       |
 
 ## Batch Log
 
@@ -85,3 +85,4 @@ Expanding short textbook-style stems (<=20 words) into CPA-exam-style mini case 
 | 2026-03-30 | 00991_stemfix_bar_batch2.sql | BAR | 50 | ~42 | Citation removal + scenario expansion, 14 topics covered |
 | 2026-03-30 | 00994_stemfix_isc_batch2.sql | ISC | 37 | ~42 | Scenario expansion, 14 topics covered |
 | 2026-03-30 | 00998_stemfix_bar_batch3.sql | BAR | 26 | ~42 | Citation removal + scenario expansion, 12 topics covered |
+| 2026-03-30 | 00996_stemfix_tcp_batch3.sql | TCP | 50 | ~42 | Citation removal + scenario expansion, 14 topics covered |
