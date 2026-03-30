@@ -244,3 +244,4 @@
 | 2026-03-30 | 00921_quality_far_batch33.sql  | FAR     | 30        | 30x#3         | 30 per-choice explanations restructured          |
 | 2026-03-30 | 00922_quality_bar_batch38.sql  | BAR     | 30        | 30x#3         | 30 per-choice explanations restructured          |
 | 2026-03-30 | 00923_quality_aud_batch40.sql  | AUD     | 30        | 5x#1, 25x#3   | 5 choice rewrites + 25 per-choice explanations   |
+| 2026-03-30 | 00926_quality_reg_batch46.sql  | REG     | 30        | 30x#3         | 30 per-choice explanations restructured          |
