@@ -1,0 +1,452 @@
+[
+  {
+    "id": 14761,
+    "topic": "Risk Management and Economics",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Ironbridge Corp. has $40 million in variable-rate debt tied to SOFR. The treasurer purchases an interest rate cap at 6% and simultaneously sells an interest rate floor at 3%. SOFR rises to 7.5% at the next reset date. The net effect of the collar on Ironbridge's effective borrowing cost is:",
+    "choices": [
+      "Ironbridge's effective rate is capped at 6% because the cap pays Ironbridge 1.5%, offsetting the excess above the cap strike, while the floor is not triggered",
+      "Ironbridge pays the full 7.5% because the collar only protects when rates fall below 3%",
+      "Ironbridge pays 6% minus the floor premium received, yielding an effective rate below 6%",
+      "Ironbridge pays 7.5% because the cap only applies if SOFR exceeds 10%"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): At SOFR of 7.5%, the 6% cap triggers and the cap writer pays Ironbridge the 1.5% difference on $40 million. Ironbridge pays 7.5% on its debt but receives 1.5% from the cap, netting 6%. The 3% floor is not triggered because SOFR is well above 3%. The collar bounds Ironbridge's effective rate between 3% and 6%.\nWrong (B): The cap protects against rates rising above 6%, which is exactly the scenario here. The floor obligates Ironbridge to compensate the counterparty only if SOFR falls below 3%.\nWrong (C): The floor premium offsets the cap premium at inception to reduce net upfront cost. It does not reduce the effective borrowing rate below the cap strike during periods when SOFR exceeds the cap.\nWrong (D): The cap strike is 6%, not 10%. Any SOFR reset above 6% triggers the cap payment."
+  },
+  {
+    "id": 3413,
+    "topic": "Interfund Transactions",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "An internal service fund charges the General Fund $150,000 for IT services (actual cost $130,000). On the government-wide statements, the $20,000 overcharge is:",
+    "choices": [
+      "Reported as profit of the internal service fund",
+      "Eliminated to reduce the expenditure in governmental activities to actual cost",
+      "Reported as miscellaneous revenue",
+      "Ignored"
+    ],
+    "correct_index": 1,
+    "explanation": "On the government-wide statements, the internal service fund is consolidated with governmental activities. The $20,000 markup is eliminated because the government cannot profit from transactions with itself. The expense in governmental activities is reduced to the actual $130,000 cost."
+  },
+  {
+    "id": 3395,
+    "topic": "Pension and Postretirement Benefits",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "Westbrook Corp. sponsors a 401(k) plan in which the company matches employee contributions up to 4% of salary. The company bears no obligation beyond its annual matching contribution. A defined contribution plan differs from a defined benefit plan in that:",
+    "choices": [
+      "The employer promises a specific retirement benefit based on a formula",
+      "The employer's obligation is limited to making specified contributions; the investment risk is borne by employees",
+      "Only defined contribution plans require actuarial calculations for funding",
+      "Defined contribution plans are exempt from ERISA reporting requirements"
+    ],
+    "correct_index": 1,
+    "explanation": "In a defined contribution plan (e.g., 401(k)), the employer contributes a specified amount and employees bear the investment risk. The employer's expense equals its required contribution. In a defined benefit plan, the employer guarantees a specific benefit and bears the investment and actuarial risk."
+  },
+  {
+    "id": 14783,
+    "topic": "Prospective Analysis and Forecasting",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Redfield Analytics builds a multiple regression model to forecast quarterly COGS for Holbrook Manufacturing using three predictors: machine hours, direct labor hours, and raw material weight. The variance inflation factor (VIF) for direct labor hours is 12.4. Apply your understanding of regression diagnostics to determine what action the analyst should take.",
+    "choices": [
+      "Remove or combine the direct labor hours variable because a VIF above 10 indicates severe multicollinearity that inflates standard errors and makes individual coefficient tests unreliable",
+      "Retain all three variables because a high VIF confirms that direct labor hours is the strongest predictor in the model",
+      "Add additional independent variables to dilute the multicollinearity effect and lower the VIF",
+      "Increase the sample size until the VIF drops below the acceptable threshold of 5"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): A VIF above 10 is the standard threshold indicating severe multicollinearity, meaning the predictor is largely explained by other predictors. This inflates coefficient standard errors and makes t-tests unreliable. The remedy is to remove, combine, or replace the collinear variable.\nWrong (B): A high VIF indicates redundancy, not predictive strength. Multicollinearity makes individual coefficients unstable and difficult to interpret.\nWrong (C): Adding more variables does not reduce multicollinearity among existing predictors and may worsen overfitting.\nWrong (D): Increasing sample size reduces standard errors generally but does not eliminate the collinearity relationship among predictors. VIF measures structural correlation, not sample adequacy."
+  },
+  {
+    "id": 4867,
+    "topic": "Intangible Assets Advanced",
+    "difficulty": "easy",
+    "cognitive_level": null,
+    "stem": "Beacon Corp. acquires a customer relationship intangible in a business combination valued at $3,000,000. The expected useful life is 10 years with no residual value. What annual amortization should be recorded?",
+    "choices": [
+      "$0 — customer relationships are indefinite-lived",
+      "$300,000",
+      "$3,000,000",
+      "$150,000"
+    ],
+    "correct_index": 1,
+    "explanation": "Under ASC 350-30-35-6, finite-lived intangible assets acquired in a business combination must be amortized over their estimated useful life. Customer relationships are typically classified as finite-lived because the economic benefit diminishes over time. Annual amortization equals $3,000,000 / 10 years = $300,000 using the straight-line method. Unlike goodwill, which is an indefinite-lived intangible tested for impairment annually under ASC 350-20 rather than amortized, customer relationships have determinable useful lives and are systematically amortized."
+  },
+  {
+    "id": 3149,
+    "topic": "Stock Compensation and Business Combinations",
+    "difficulty": "medium",
+    "cognitive_level": 1,
+    "stem": "During the purchase price allocation for its acquisition of Linden Technologies, Cascade Corp.''s valuation team identifies a skilled engineering team as a potential intangible asset. Under ASC 805, assembled workforce is:",
+    "choices": [
+      "An identifiable intangible asset recognized separately from goodwill",
+      "A tangible asset",
+      "Not separately recognized under ASC 805 and is subsumed within goodwill",
+      "Expensed as incurred"
+    ],
+    "correct_index": 2,
+    "explanation": "Under ASC 805, assembled workforce does not meet the criteria for separate recognition as an identifiable intangible asset because it generally is not separable and does not arise from contractual or legal rights. Its value is subsumed within goodwill."
+  },
+  {
+    "id": 14890,
+    "topic": "Advanced Lease Transactions",
+    "difficulty": "hard",
+    "cognitive_level": 4,
+    "stem": "Redwood Partners leases an entire office building from the owner under a 15-year operating lease. Redwood then subleases the third floor to Juniper LLC for 6 years. Redwood's controller must determine both the accounting for the sublease and its effect on the head lease. Evaluate the following: (1) the basis Redwood should use to classify the sublease, and (2) the effect on Redwood's original lease accounting.",
+    "choices": [
+      "Redwood classifies the sublease using the underlying asset's fair value and useful life, and derecognizes the proportional ROU asset for the subleased floor",
+      "Redwood classifies the sublease using the underlying asset's fair value and useful life, and continues to recognize the full ROU asset and lease liability from the head lease",
+      "Redwood classifies the sublease using the right-of-use asset as the reference, and continues to recognize the full ROU asset and lease liability from the head lease",
+      "Redwood classifies the sublease using the right-of-use asset as the reference, and derecognizes the proportional ROU asset for the subleased floor"
+    ],
+    "correct_index": 2,
+    "explanation": "Correct (C): ASC 842-10-25-33. An intermediate lessor classifies a sublease using the right-of-use asset (not the underlying asset's fair value or useful life) as the reference for classification. Additionally, the original head lease remains fully on Redwood's books — the ROU asset and lease liability are not derecognized or partially removed due to the sublease. Sublease income is recognized separately.\nWrong (A): Uses the wrong classification basis (underlying asset) and incorrectly derecognizes the proportional ROU asset.\nWrong (B): Uses the wrong classification basis. The ROU asset, not the underlying asset, is the reference for sublease classification.\nWrong (D): While the classification basis is correct, the head lease ROU asset is not derecognized when a sublease is executed."
+  },
+  {
+    "id": 14916,
+    "topic": "Financial Statement Analysis",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Meridian Corp. has current assets of $200,000 and current liabilities of $80,000. The company purchases $40,000 of inventory on account. What is the current ratio after this transaction?",
+    "choices": [
+      "2.50:1",
+      "2.00:1",
+      "3.00:1",
+      "2.40:1"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): Per ASC 210-10-45, the current ratio equals current assets divided by current liabilities. After the purchase, current assets increase to $240,000 (inventory up) and current liabilities increase to $120,000 (accounts payable up). Current ratio = $240,000 / $120,000 = 2.00:1. Wrong (A): 2.50 is the original ratio before the transaction ($200,000 / $80,000). Wrong (C): 3.00 does not correspond to any valid calculation from these figures. Wrong (D): 2.40 incorrectly adds inventory without adjusting liabilities."
+  },
+  {
+    "id": 14964,
+    "topic": "Financial Statement Analysis",
+    "difficulty": "hard",
+    "cognitive_level": 4,
+    "stem": "Prescott Inc. has total assets of $5,000,000, total liabilities of $2,000,000, net income of $450,000, and 500,000 shares outstanding. The company uses $1,000,000 in cash to repurchase shares. Assuming net income is unchanged, which combination of ratio effects is most accurate after the buyback?",
+    "choices": [
+      "ROE decreases, EPS decreases, debt-to-equity decreases",
+      "ROE increases, EPS increases, debt-to-equity remains unchanged",
+      "ROE increases, EPS increases, debt-to-equity increases",
+      "ROE decreases, EPS increases, debt-to-equity decreases"
+    ],
+    "correct_index": 2,
+    "explanation": "Correct (C): Before buyback: equity = $3,000,000, ROE = 15%, D/E = 0.67. After: cash decreases $1,000,000, so total assets = $4,000,000 and equity = $2,000,000. ROE = $450,000 / $2,000,000 = 22.5% (increase). Shares repurchased at book value ($6/share) = 166,667 shares; remaining = 333,333. EPS rises from $0.90 to $1.35 (increase). D/E = $2,000,000 / $2,000,000 = 1.0 (increase from 0.67). Wrong (A): All three effects are stated in the wrong direction. Wrong (B): Debt-to-equity increases because equity decreases while debt stays constant. Wrong (D): ROE increases, not decreases, because equity decreased while income held constant."
+  },
+  {
+    "id": 15611,
+    "topic": "Financial Valuation Methods",
+    "difficulty": "hard",
+    "cognitive_level": 3,
+    "stem": "Atlas Automotive, a U.S. company, earns 40% of revenue in euros from European sales and currently hedges this exposure with rolling 6-month currency forward contracts at an annual cost of $2.4 million. The CFO proposes issuing euro-denominated bonds to finance European operations instead. Analyze the advantages of this natural hedging strategy compared to the current derivative-based approach.",
+    "choices": [
+      "Natural hedging through euro-denominated debt matches euro revenues with euro interest payments, reducing net currency exposure without recurring derivative costs and eliminating rollover risk inherent in short-term forwards",
+      "Natural hedging eliminates all currency risk because debt and revenue are in the same currency, making derivative hedging unnecessary",
+      "Natural hedging is inferior because euro-denominated debt exposes the company to foreign interest rate risk that forwards avoid",
+      "Natural hedging only works when the company's revenues and debt maturities are perfectly matched in timing and amount"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): Natural hedging matches cash inflows (euro revenue) with cash outflows (euro interest/principal) in the same currency, reducing net exposure. It eliminates recurring derivative costs ($2.4M annually) and rollover risk from continuously renewing short-term forwards. This structural hedge provides long-term, cost-effective protection. Wrong (B): Natural hedging reduces but does not eliminate all currency risk — mismatches in timing and amount between revenue and debt service will leave residual exposure. Wrong (C): While euro debt does carry foreign interest rate risk, this is typically manageable and outweighed by the benefits of eliminating ongoing forward contract costs and rollover risk. Wrong (D): Perfect matching is ideal but not required; even partial matching provides meaningful risk reduction."
+  },
+  {
+    "id": 702,
+    "topic": "Advanced Consolidations",
+    "difficulty": "medium",
+    "cognitive_level": 1,
+    "stem": "Redwood Industries owns 80% of Cedar Corp. Cedar sells finished goods to Redwood (an upstream intercompany sale) at a markup. At year-end, $120,000 of unrealized intercompany profit exists in Redwood's inventory. When preparing consolidated statements, the noncontrolling interest in Cedar:",
+    "choices": [
+      "Bears no share of the profit elimination",
+      "Bears its proportionate share of the profit elimination",
+      "Bears 100% of the profit elimination",
+      "Is not affected by intercompany transactions"
+    ],
+    "correct_index": 1,
+    "explanation": "Under ASC 810-10-45-1, in an upstream intercompany sale the subsidiary initiates the transaction, so the noncontrolling interest bears its proportionate share of the unrealized profit elimination. Cedar''s NCI is reduced by 20% of the $120,000 unrealized profit ($24,000) because NCI shares in the subsidiary''s adjusted earnings. This differs from a downstream sale, where the parent initiates the transaction and the entire unrealized profit elimination is attributed to the controlling interest, whereas in upstream sales the NCI must absorb its share of the eliminated profit."
+  },
+  {
+    "id": 1186,
+    "topic": "Fund-to-Government-Wide Reconciliation",
+    "difficulty": "easy",
+    "cognitive_level": 2,
+    "stem": "The City of Grandview reports a governmental fund balance of $6,000,000. The government-wide net position is substantially higher. The three largest reconciling items are capital assets (net of depreciation) of $45,000,000, long-term debt of $28,000,000, and internal service fund net position of $1,200,000. Analyze why the fund balance and net position differ so significantly, and explain why the different measurement focuses (current financial resources vs economic resources) necessitate each adjustment.",
+    "choices": [
+      "The difference is an accounting error that should be corrected by adjusting the fund balance to match the net position",
+      "Governmental funds use the current financial resources measurement focus, which excludes long-term assets and long-term liabilities — capital assets ($45M) are not reported in funds because they are not current financial resources, and long-term debt ($28M) is excluded because it does not require current resources; the reconciliation adds capital assets (+$45M), subtracts long-term debt (−$28M), and adds internal service fund net position (+$1.2M), bridging the $18.2M gap between fund balance and net position",
+      "The government-wide statements are less accurate because they include estimated values for capital assets and debt that do not affect current operations",
+      "Fund balance is always higher than net position because funds report all assets while government-wide statements report only current items"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): Under GASB 34, governmental funds report using the current financial resources measurement focus and modified accrual basis, which deliberately excludes capital assets and long-term obligations. Government-wide statements use the economic resources measurement focus and full accrual basis, which includes all assets and liabilities. Capital assets ($45M net) are not current financial resources, so they appear only at the government-wide level. Long-term debt ($28M) is not a claim on current financial resources, so it is excluded from fund statements. Internal service fund net position ($1.2M) is included because internal service funds are consolidated into governmental activities at the government-wide level. Each adjustment bridges a conceptual gap between what the two measurement focuses capture. The reconciliation is required by GASB 34 to help financial statement users understand how the two perspectives relate. Choice A incorrectly treats the difference as an error. Choice C mischaracterizes which set is broader. Choice D reverses the relationship — net position is typically higher when capital assets exceed long-term debt."
+  },
+  {
+    "id": 4844,
+    "topic": "Business Combinations",
+    "difficulty": "easy",
+    "cognitive_level": null,
+    "stem": "Greystone Holdings signed a definitive merger agreement with Crestline Technologies on March 1, 2025, and received regulatory approval on April 15, 2025. The transaction closed on May 1, 2025. Under ASC 805, the acquisition date is defined as:",
+    "choices": [
+      "The date the merger agreement is signed",
+      "The date regulatory approval is obtained",
+      "The date the acquirer obtains control of the acquiree",
+      "The date due diligence is completed"
+    ],
+    "correct_index": 2,
+    "explanation": "The acquisition date is the date on which the acquirer obtains control of the acquiree. This is generally the closing date — the date on which the acquirer legally transfers consideration, acquires the assets, and assumes the liabilities. All recognition and measurement is determined as of this date."
+  },
+  {
+    "id": 5228,
+    "topic": "Capital Structure and Valuation",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Wentworth Holdings has an enterprise value of $85,000,000, total debt of $22,000,000, preferred stock of $3,000,000, and cash of $7,000,000. There are 4,000,000 common shares outstanding. Determine the implied equity value per share.",
+    "choices": [
+      "$15.00",
+      "$21.25",
+      "$16.75",
+      "$15.75"
+    ],
+    "correct_index": 2,
+    "explanation": "Under ASC 820 fair value measurement principles, equity value is derived from enterprise value by subtracting debt and preferred stock claims, then adding excess cash: $85,000,000 minus $22,000,000 minus $3,000,000 plus $7,000,000 = $67,000,000. Dividing by 4,000,000 shares yields $16.75 per share. While choice D ($15.75) only subtracts debt from enterprise value without removing preferred stock or adding cash, a proper equity bridge must account for all senior claims and liquid assets."
+  },
+  {
+    "id": 643,
+    "topic": "Financial Valuation Methods",
+    "difficulty": "easy",
+    "cognitive_level": 2,
+    "stem": "An acquirer is evaluating two targets: Ironclad Industries (70% debt-financed, 35% effective tax rate) and Freeport Systems (100% equity-financed, 15% effective tax rate due to tax credits). Both companies report identical net income of $10 million. Analyze why the acquirer would prefer EV/EBITDA over P/E as a valuation metric when comparing these two targets, and identify the specific distortions that P/E introduces.",
+    "choices": [
+      "P/E is preferable because net income reflects the actual returns available to equity holders after all obligations, making it a more conservative metric",
+      "EV/EBITDA is preferable because it strips out the effects of capital structure (interest expense) and tax policy differences — Ironclad's heavy debt reduces its net income through interest expense, depressing P/E relative to its operating performance, while Freeport's tax credits inflate net income relative to pre-tax operations; EV/EBITDA measures operating performance before these financing and tax effects, providing a more comparable basis for acquisition valuation",
+      "EV/EBITDA is preferable only because it produces a lower number, making the targets appear cheaper and easier to justify to the board",
+      "Both metrics are equally valid because identical net income means the companies are equally profitable regardless of capital structure or tax rates"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): EV/EBITDA is the preferred multiple for comparing companies with different capital structures and tax situations because it neutralizes both financing and tax distortions. Per valuation practice consistent with ASC 820, enterprise value captures total firm value regardless of financing mix, and EBITDA measures operating performance before interest, taxes, depreciation, and amortization. Ironclad''s 70% debt financing creates substantial interest expense that depresses net income, making its P/E appear artificially high, while Freeport''s tax credits inflate net income, making its P/E appear artificially low. (A) is incorrect because P/E''s sensitivity to financing and tax differences makes it less comparable. (D) is incorrect because identical net income does not mean equal operating profitability when leverage and tax rates differ."
+  },
+  {
+    "id": 14697,
+    "topic": "Income Taxes Advanced",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Oakmont Electronics accrues a $750,000 warranty liability in its December 31, 2025, financial statements under ASC 460. For tax purposes, warranty costs are deductible only when paid. Oakmont expects to pay $300,000 in 2026 and $450,000 in 2027. The enacted tax rate is 21% for all years. What deferred tax asset should Oakmont recognize at December 31, 2025?",
+    "choices": [
+      "$157,500",
+      "$63,000",
+      "$94,500",
+      "$750,000"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): Under ASC 740-10-25-20, a deductible temporary difference exists because the warranty liability creates a book basis of $750,000 with a tax basis of $0 (not yet deductible). The DTA equals $750,000 × 21% = $157,500. The timing of expected payments does not affect the total DTA when the rate is constant across years. Wrong (B): This incorrectly calculates 21% × $300,000, using only the 2026 portion. Wrong (C): This incorrectly calculates 21% × $450,000, using only the 2027 portion. Wrong (D): This incorrectly uses the full temporary difference amount without applying the 21% tax rate; the DTA is the difference times the rate, not the gross amount."
+  },
+  {
+    "id": 15036,
+    "topic": "Pension and Postretirement Benefits",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Langford Pharmaceuticals contributes $1,450,000 to its defined benefit pension plan during 2026. The net periodic pension cost for the year is $1,180,000. At the beginning of the year, the plan had a prepaid pension asset of $225,000. What is the prepaid pension asset or accrued pension liability at year-end?",
+    "choices": [
+      "Prepaid pension asset of $270,000",
+      "Accrued pension liability of $270,000",
+      "Prepaid pension asset of $495,000",
+      "Accrued pension liability of $955,000"
+    ],
+    "correct_index": 2,
+    "explanation": "Correct (C): The prepaid/accrued pension status is tracked as: beginning balance + contributions - pension expense. Beginning prepaid asset of $225,000 + $1,450,000 contribution - $1,180,000 expense = $495,000 prepaid pension asset. However, under ASC 715, the balance sheet reports funded status (PBO - plan assets), not this cumulative calculation. Wrong (A): Uses only the current year excess of contributions over expense ($1,450,000 - $1,180,000 = $270,000), ignoring the beginning balance. Wrong (B): Reverses the relationship; contributions exceeded expense, increasing the prepaid asset. Wrong (D): Incorrectly treats the full expense less beginning balance as a liability."
+  },
+  {
+    "id": 3273,
+    "topic": "Advanced Lease Transactions",
+    "difficulty": "medium",
+    "cognitive_level": 1,
+    "stem": "Midway through a 7-year operating lease, Garrison Manufacturing exercises an option to add additional floor space to its leased facility — an option the lessee initially assessed as not reasonably certain to exercise. The lessee's controller must determine whether to reassess the lease. Under ASC 842, lease reassessment is required when:",
+    "choices": [
+      "Market interest rates change relative to the rate used at lease commencement",
+      "A significant event within the lessee's control affects the assessment of lease options",
+      "The lessee's common stock price changes by more than 10% during the reporting period",
+      "At every quarterly or annual reporting date regardless of any change in circumstances"
+    ],
+    "correct_index": 1,
+    "explanation": "ASC 842 requires reassessment of lease term and purchase option assessments when a significant event or change in circumstances occurs that is within the lessee's control and directly affects the likelihood of exercising (or not exercising) an option. General market changes alone do not trigger reassessment."
+  },
+  {
+    "id": 7857,
+    "topic": "Financial Statement Analysis",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Harborview Inc. is raising $2,000,000 to fund an expansion and must choose between issuing 10% long-term debt or issuing 100,000 shares of common stock at $20 per share. Currently, Harborview has 400,000 shares outstanding, EBIT of $1,500,000, and a 25% tax rate. What is the EPS under each financing alternative?",
+    "choices": [
+      "Debt: $2.63; Equity: $2.44",
+      "Debt: $2.25; Equity: $2.44",
+      "Debt: $3.25; Equity: $3.00",
+      "Debt: $2.44; Equity: $2.25"
+    ],
+    "correct_index": 3,
+    "explanation": "Under debt financing: EBT = $1,500,000 minus $200,000 interest = $1,300,000; NI = $1,300,000 x 0.75 = $975,000; EPS = $975,000 / 400,000 = $2.44. Under equity: NI = $1,500,000 x 0.75 = $1,125,000; EPS = $1,125,000 / 500,000 = $2.25 (ASC 260-10 EPS guidance). Debt produces higher EPS because the interest tax shield reduces after-tax cost and shares remain constant. Choice B reverses the results."
+  },
+  {
+    "id": 2939,
+    "topic": "Financial Statement Analysis",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "When comparing two companies in the same industry, Company A has a return on assets of 12% and Company B has a return on assets of 8%. Company A's asset turnover is 3.0 and Company B's is 2.0. What are each company's net profit margins?",
+    "choices": [
+      "A: 4%, B: 4%",
+      "A: 4%, B: 6%",
+      "A: 36%, B: 16%",
+      "A: 6%, B: 4%"
+    ],
+    "correct_index": 0,
+    "explanation": "The correct answer is that both companies have a 4% net profit margin. Under the DuPont decomposition of ROA consistent with ASC 220 income statement presentation, ROA equals net profit margin multiplied by asset turnover. Company A: 12% / 3.0 = 4%. Company B: 8% / 2.0 = 4%. Despite identical margins, Company A achieves higher ROA through superior asset efficiency (turnover of 3.0 vs. 2.0). While it might appear that higher ROA implies higher profitability, the DuPont analysis reveals that Company A's advantage lies entirely in asset utilization rather than margin improvement."
+  },
+  {
+    "id": 14448,
+    "topic": "Foreign Currency Transactions",
+    "difficulty": "hard",
+    "cognitive_level": 4,
+    "stem": "Ashford Industries (U.S.) designated a forward contract as a cash flow hedge of a forecasted GBP-denominated purchase. At the end of Q3, a quantitative effectiveness test shows the dollar-offset ratio is 72%, outside the 80-125% acceptable range. Management believes the hedge will return to effectiveness in Q4. Under ASC 815-30, what is the most appropriate course of action?",
+    "choices": [
+      "Discontinue hedge accounting prospectively and reclassify the balance in AOCI to earnings immediately",
+      "Continue hedge accounting because one quarter of ineffectiveness is permitted before discontinuation",
+      "Recognize the full change in derivative fair value in earnings for Q3 while retaining the prior AOCI balance",
+      "Discontinue hedge accounting prospectively, leaving prior AOCI amounts until the forecasted transaction affects earnings"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Under ASC 815-30-40, when a cash flow hedge fails the effectiveness test, hedge accounting is discontinued prospectively. Amounts previously accumulated in AOCI remain there and are reclassified to earnings when the forecasted transaction affects earnings (assuming the transaction is still probable). The derivative continues to be marked to fair value with changes in earnings going forward. Wrong (A): Prior AOCI balances are not immediately reclassified to earnings upon discontinuation — they remain until the hedged transaction occurs or is no longer probable. Wrong (B): ASC 815 does not provide a grace period for ineffectiveness; once the hedge fails the test, discontinuation is required. Wrong (C): While Q3 derivative changes do go to earnings after discontinuation, this choice incorrectly implies hedge accounting continues — it must be formally discontinued."
+  },
+  {
+    "id": 4840,
+    "topic": "Business Combinations",
+    "difficulty": "hard",
+    "cognitive_level": null,
+    "stem": "Voss Corp. acquires Webb Inc. and the acquiree has an operating lease as a lessee with terms favorable relative to market. Under ASC 805, how is the favorable lease recognized?",
+    "choices": [
+      "As a separate intangible asset at fair value",
+      "As part of the right-of-use asset measurement",
+      "As goodwill",
+      "As a deferred credit (liability)"
+    ],
+    "correct_index": 1,
+    "explanation": "Under ASC 842 and ASC 805, the acquirer does not recognize separate favorable or unfavorable lease intangibles/liabilities for operating leases as lessee. Instead, the lease is measured at the present value of remaining payments, and the right-of-use asset is adjusted for any off-market terms."
+  },
+  {
+    "id": 15014,
+    "topic": "Pension and Postretirement Benefits",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "Ashford Electronics sponsors a defined benefit pension plan with a PBO of $12,000,000 and plan assets with a fair value of $10,500,000 at year-end 2025. How is the funded status reported on Ashford''s balance sheet under ASC 715?",
+    "choices": [
+      "As the difference between the projected benefit obligation and the fair value of plan assets",
+      "As the accumulated benefit obligation minus plan contributions to date",
+      "As the vested benefit obligation less the market value of plan investments",
+      "As the expected postretirement benefit obligation net of trust assets"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): Under ASC 715-30-25-1, an employer must recognize the funded status of each defined benefit plan as the difference between the projected benefit obligation and the fair value of plan assets. An overfunded plan is reported as a noncurrent asset, and an underfunded plan as a current or noncurrent liability. Wrong (B): The accumulated benefit obligation excludes future salary increases and is not used for balance sheet recognition. Wrong (C): The vested benefit obligation is a subset of the ABO and is not the measure used for funded status. Wrong (D): The EPBO relates to other postretirement benefits, not pensions."
+  },
+  {
+    "id": 4856,
+    "topic": "Foreign Currency Transactions",
+    "difficulty": "hard",
+    "cognitive_level": null,
+    "stem": "When a U.S. parent has an intercompany receivable from a foreign subsidiary that is of a long-term investment nature and settlement is not planned or anticipated in the foreseeable future, the exchange gain or loss on this receivable is:",
+    "choices": [
+      "Recognized in consolidated net income each period",
+      "Deferred until the receivable is settled",
+      "Eliminated entirely in consolidation",
+      "Reported in other comprehensive income (CTA)"
+    ],
+    "correct_index": 3,
+    "explanation": "Under ASC 830-20-35, foreign currency transaction gains and losses on intercompany balances that are of a long-term investment nature (settlement not planned or anticipated) are reported in OCI as part of the cumulative translation adjustment, similar to the treatment of translation adjustments. They are not recognized in income."
+  },
+  {
+    "id": 12748,
+    "topic": "Risk Management and Economics",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "The National Bureau of Economic Research declares that the economy entered an expansion phase in early 2025 following a brief contraction. During the expansion phase of the business cycle, which condition is most likely to occur?",
+    "choices": [
+      "Rising GDP and falling unemployment",
+      "Falling GDP and rising unemployment",
+      "Maximum output with stable prices",
+      "Minimum output with deflation"
+    ],
+    "correct_index": 0,
+    "explanation": "Under macroeconomic analysis frameworks consistent with FASB ASC 280-10 and AICPA financial planning guidance, the expansion phase of the business cycle is characterized by rising GDP, increasing employment, growing consumer spending, and generally rising price levels as the economy moves upward from trough toward peak. This represents the most favorable phase for corporate earnings growth and investment activity. Choice B is incorrect because falling GDP and rising unemployment describe a contraction or recession, which is the opposite phase of the business cycle where economic output declines rather than expands."
+  },
+  {
+    "id": 3085,
+    "topic": "Risk Management and Economics",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "A company with operations in Japan has a net investment of 5 billion yen. To hedge this exposure, the company would use:",
+    "choices": [
+      "A fair value hedge",
+      "A cash flow hedge",
+      "A net investment hedge",
+      "An economic hedge only"
+    ],
+    "correct_index": 2,
+    "explanation": "A net investment hedge under ASC 815 is specifically designed to hedge the foreign currency exposure of a net investment in a foreign operation. The effective portion of the gain/loss is reported in the cumulative translation adjustment (CTA) within other comprehensive income."
+  },
+  {
+    "id": 5662,
+    "topic": "Capital Structure and Valuation",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "A finance professor asks students to analyze a firm operating in a frictionless market with no taxes, no bankruptcy costs, and perfect information. Under Modigliani-Miller Proposition II without taxes, what happens to the cost of equity as the firm increases its leverage?",
+    "choices": [
+      "The cost of equity increases linearly with the debt-to-equity ratio, compensating shareholders for added financial risk",
+      "The cost of equity remains constant regardless of the capital structure",
+      "The cost of equity decreases because debt is cheaper and lowers the overall cost",
+      "The cost of equity first decreases then increases in a U-shaped pattern"
+    ],
+    "correct_index": 0,
+    "explanation": "Under ASC 820 valuation principles, Modigliani-Miller Proposition II (1958) without taxes states that ke = k0 + (k0 − kd) × (D/E), where the cost of equity rises linearly with leverage. This increase exactly offsets the benefit of cheaper debt, keeping WACC constant per Proposition I. Choice B is incorrect because it describes firm value constancy (Proposition I), not cost of equity behavior (Proposition II), which explicitly rises with leverage."
+  },
+  {
+    "id": 14418,
+    "topic": "Business Combinations",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "Under the private company alternative in ASC 350, what is the maximum amortization period for goodwill elected by a private company?",
+    "choices": [
+      "10 years",
+      "15 years",
+      "20 years",
+      "40 years"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): ASC 350-20-35-63. Under the private company alternative, entities may elect to amortize goodwill on a straight-line basis over 10 years or less if a shorter useful life is more appropriate. This is an irrevocable election. Wrong (B): The 15-year period applies to tax amortization of goodwill under Section 197, not the GAAP private company alternative. Wrong (C): Twenty years is not the maximum period under the private company goodwill alternative. Wrong (D): The 40-year maximum was from APB Opinion No. 17, which was superseded by ASC 350."
+  },
+  {
+    "id": 14821,
+    "topic": "Financial Valuation Methods",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Prescott Dynamics, a U.S. manufacturer, signs a contract to sell equipment to a Japanese firm for JPY 500 million payable in 60 days. Separately, Prescott's Japanese subsidiary reports its financial statements in yen, which must be converted to U.S. dollars for consolidated reporting. The equipment sale and the subsidiary's financial statement conversion represent, respectively:",
+    "choices": [
+      "Transaction exposure and translation exposure",
+      "Economic exposure and transaction exposure",
+      "Translation exposure and economic exposure",
+      "Transaction exposure and economic exposure"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): Transaction exposure arises from existing contractual commitments denominated in a foreign currency — the JPY 500 million receivable. Translation exposure arises when converting a foreign subsidiary's financial statements into the parent's reporting currency for consolidation. Wrong (B): Economic exposure relates to long-term competitive effects of exchange rate changes, not a specific contractual receivable. Wrong (C): Reverses the classification; the sale is transactional, and the consolidation is translational. Wrong (D): The subsidiary conversion is translation exposure (financial statement conversion), not economic exposure."
+  },
+  {
+    "id": 14444,
+    "topic": "Foreign Currency Transactions",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Marlowe Corp. (U.S.) purchases a put option on EUR 2,000,000 to hedge a forecasted euro-denominated sale. The option is designated as a cash flow hedge, and Marlowe elects to exclude time value from the effectiveness assessment under ASC 815-20-25. At a reporting date, the option's total fair value change is a $30,000 gain, of which $22,000 relates to intrinsic value and $8,000 relates to time value. How are these components reported?",
+    "choices": [
+      "$22,000 gain in OCI and $8,000 gain amortized to earnings over the hedge term",
+      "$30,000 gain entirely in OCI",
+      "$22,000 gain in earnings and $8,000 gain in OCI",
+      "$30,000 gain entirely in earnings"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): Under ASC 815-20-25, when time value is excluded from the effectiveness assessment for an option, the change in intrinsic value ($22,000) is recorded in OCI as the effective hedge portion. The excluded time value component ($8,000) is recognized in earnings on a systematic and rational basis over the hedge term. Wrong (B): Recording the full $30,000 in OCI would fail to separately account for the excluded component. Wrong (C): Intrinsic value (the assessed component) goes to OCI, not earnings, while time value goes to earnings. Wrong (D): Only an undesignated derivative would have the full change in earnings; hedge designation routes the effective portion to OCI."
+  }
+]

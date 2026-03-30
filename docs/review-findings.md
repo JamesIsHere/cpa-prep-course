@@ -120,3 +120,34 @@ Patterns found during 30-question statistical reviews. Each pattern is a candida
 | Q2578    | REG     | Keep    | — |
 | Q11096   | REG     | Keep    | — |
 | Q11033   | REG     | Keep    | — |
+| **BAR Review (30 questions)** | | | |
+| Q14761   | BAR     | Keep    | #1 mild (1.9x), acceptable |
+| Q3413    | BAR     | Keep    | #3 unstructured explanation (bulk fix later) |
+| Q3395    | BAR     | Keep    | #3 unstructured |
+| Q14783   | BAR     | Keep    | Clean |
+| Q4867    | BAR     | Fixed   | #4 null cognitive → L1 |
+| Q3149    | BAR     | Fixed   | #1 giveaway, #9 citation in stem, rewritten |
+| Q14890   | BAR     | Keep    | Clean |
+| Q14916   | BAR     | Keep    | Clean |
+| Q14964   | BAR     | Keep    | Clean |
+| Q15611   | BAR     | Keep    | Clean |
+| Q702     | BAR     | Keep    | #3 unstructured |
+| Q1186    | BAR     | Keep    | #1 giveaway, #3 unstructured (bulk fix later) |
+| Q4844    | BAR     | Fixed   | #4 null cognitive → L2 |
+| Q5228    | BAR     | Keep    | #3 unstructured |
+| Q643     | BAR     | Keep    | #1 giveaway, #3 unstructured |
+| Q14697   | BAR     | Keep    | #9 citation (concept-testing, acceptable) |
+| Q15036   | BAR     | Keep    | Clean |
+| Q3273    | BAR     | Keep    | #9, #3 unstructured |
+| Q7857    | BAR     | Keep    | #3 unstructured |
+| Q2939    | BAR     | Keep    | #3 unstructured |
+| Q14448   | BAR     | Keep    | #9 citation |
+| Q4840    | BAR     | Fixed   | #4 null cognitive → L2 |
+| Q15014   | BAR     | Keep    | #9 citation |
+| Q4856    | BAR     | Fixed   | #4 null cognitive → L2 |
+| Q12748   | BAR     | Keep    | #3 unstructured |
+| Q3085    | BAR     | Keep    | #3 unstructured |
+| Q5662    | BAR     | Keep    | #3 unstructured |
+| Q14418   | BAR     | Keep    | Clean |
+| Q14821   | BAR     | Keep    | Clean |
+| Q14444   | BAR     | Keep    | #9, #1 mild |
