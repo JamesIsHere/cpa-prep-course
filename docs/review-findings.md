@@ -54,6 +54,11 @@ Patterns found during 30-question statistical reviews. Each pattern is a candida
 **Automated check idea:** Regex for AU-C/ASC/GASB/IRC/PCAOB + number in stem text. Exception: when the standard itself is the concept being tested (e.g., "What does Section 7525 cover?").
 **Found in:** Q2545, Q2542, and 1,257 questions flagged by detector
 
+### 10. Wrong section placement
+**Pattern:** Question content doesn't match the section it's assigned to. E.g., an AUD question (AU-C 210) placed in TCP.
+**Automated check idea:** Keyword-match stems against section-specific terms (AU-C/SAS → AUD, IRC/Section → REG/TCP, ASC → FAR/BAR, NIST/SOC → ISC). Flag mismatches.
+**Found in:** Q4974 (AUD in TCP), Q4991 (AUD in TCP)
+
 ## Review Log
 
 | Question | Section | Action | Issues |
@@ -151,3 +156,11 @@ Patterns found during 30-question statistical reviews. Each pattern is a candida
 | Q14418   | BAR     | Keep    | Clean |
 | Q14821   | BAR     | Keep    | Clean |
 | Q14444   | BAR     | Keep    | #9, #1 mild |
+| **ISC Review (30 questions)** | | | |
+| Q3460    | ISC     | Fixed   | #1 extreme giveaway (3.8x), rebalanced choices |
+| All others | ISC   | Keep    | 15 clean, 14 with #3 unstructured only. No wrong answers, no null cognitives. |
+| **TCP Review (30 questions)** | | | |
+| Q4974    | TCP     | Deleted | #10 wrong section — AUD content (AU-C 210) in TCP |
+| Q4991    | TCP     | Deleted | #10 wrong section — AUD content (AU-C 315) in TCP |
+| Q4199    | TCP     | Fixed   | Wrong answer keyed — said step-down but correct is step-up |
+| All others | TCP   | Keep    | 8 clean, 19 with #3 unstructured only. Solid TCP content. |

@@ -1,0 +1,452 @@
+[
+  {
+    "id": 1303,
+    "topic": "International Tax",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Atlas Global Inc., a U.S. C corporation, has a significant GILTI inclusion from its controlled foreign corporations for its 2026 tax year. The tax director is calculating the Section 250 deduction to reduce the effective tax rate on the GILTI amount. For tax years beginning after December 31, 2025, the Section 250 deduction for GILTI is:",
+    "choices": [
+      "50%",
+      "37.5%",
+      "25%",
+      "21%"
+    ],
+    "correct_index": 1,
+    "explanation": "Under the TCJA, the Section 250 GILTI deduction was 50% for tax years beginning before 2026, then scheduled to drop to 37.5% for tax years beginning after December 31, 2025. This reduction means the effective tax rate on GILTI increases. The 37.5% deduction applied to a 21% corporate rate yields an effective GILTI rate of approximately 13.125%."
+  },
+  {
+    "id": 3935,
+    "topic": "Individual Tax Planning: Compensation",
+    "difficulty": "easy",
+    "cognitive_level": 2,
+    "stem": "A newly hired executive negotiates a signing bonus of $75,000. The employer also provides a $10,000 moving expense reimbursement. What total amount must be included in the executive's 2026 gross income?",
+    "choices": [
+      "$85,000",
+      "$75,000",
+      "$10,000",
+      "$0 because both are excludable hiring incentives"
+    ],
+    "correct_index": 0,
+    "explanation": "The correct answer is $85,000. Under IRC Sec. 61(a), both the $75,000 signing bonus and the $10,000 moving expense reimbursement are includable in gross income. The TCJA suspended the exclusion for employer-paid moving expenses under Sec. 132(a)(6) for tax years 2018 through 2025, and this suspension has been extended. The only exception under Sec. 217(g) applies to active-duty military members. Unlike pre-TCJA treatment where qualified moving expenses were excludable, current law requires the full $85,000 to be reported as taxable compensation."
+  },
+  {
+    "id": 6080,
+    "topic": "Passive Activity and At-Risk Rules",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "Dr. Holt, a full-time surgeon, owns a 30% interest in a restaurant where she spends fewer than 50 hours per year. She is determining how to classify the restaurant for tax purposes. What is the general definition of a passive activity under Section 469?",
+    "choices": [
+      "Any activity generating less than $25,000 of annual income",
+      "Any trade or business in which the taxpayer does not materially participate, or any rental activity",
+      "Any investment activity that produces portfolio income",
+      "Any activity conducted through a limited liability company"
+    ],
+    "correct_index": 1,
+    "explanation": "Section 469(c) defines a passive activity as any trade or business in which the taxpayer does not materially participate, plus any rental activity (subject to exceptions). This two-part definition captures both non-participatory business activities and rental activities. Unlike the third choice suggests, portfolio income (interest, dividends, royalties) is specifically excluded from the passive activity category under Section 469(e)."
+  },
+  {
+    "id": 4276,
+    "topic": "Trusts and Estates",
+    "difficulty": "easy",
+    "cognitive_level": 2,
+    "stem": "A trust makes a charitable contribution of $10,000 from gross income. The trust instrument authorizes charitable contributions. How is this deduction treated on Form 1041?",
+    "choices": [
+      "Subject to the 60% AGI limitation",
+      "Subject to the 30% AGI limitation",
+      "Deductible in full with no AGI limitation",
+      "Not deductible by trusts"
+    ],
+    "correct_index": 2,
+    "explanation": "Under Section 642(c), a trust that is authorized by its governing instrument to make charitable contributions can deduct the full amount paid from gross income for charitable purposes. Unlike individual taxpayers, trusts and estates are not subject to the AGI percentage limitations that apply under Section 170."
+  },
+  {
+    "id": 13757,
+    "topic": "Entity Tax Compliance: NOLs and Consolidated Returns",
+    "difficulty": "easy",
+    "cognitive_level": 2,
+    "stem": "Cascade Holdings files a consolidated return with two wholly owned subsidiaries. For estimated tax purposes, how does the consolidated group make its quarterly estimated tax payments?",
+    "choices": [
+      "Each subsidiary makes its own estimated tax payments independently",
+      "The common parent makes a single estimated tax payment on behalf of the entire group",
+      "Estimated tax payments are not required for consolidated groups",
+      "Only the subsidiary with the highest income makes the payments"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): Under Treas. Reg. Section 1.1502-5, the consolidated group makes a single estimated tax payment through the common parent corporation. The parent computes estimated tax based on consolidated taxable income and remits payments on behalf of all members. Wrong (A): Subsidiaries do not make separate estimated tax payments when included in a consolidated return. Wrong (C): Consolidated groups are still required to make estimated tax payments. Wrong (D): The payment obligation rests with the parent, not a specific subsidiary."
+  },
+  {
+    "id": 4307,
+    "topic": "Entity Choice and Planning",
+    "difficulty": "hard",
+    "cognitive_level": 2,
+    "stem": "An LLC elects to be taxed as a C corporation by filing Form 8832. Later, the LLC wants to elect S corporation status. How soon after the C corporation election can the S election be made?",
+    "choices": [
+      "Immediately",
+      "After 60 months (5 years)",
+      "After 12 months",
+      "After 36 months (3 years)"
+    ],
+    "correct_index": 0,
+    "explanation": "Under IRC Section 1362(a) and the Form 2553 filing rules, an LLC taxed as a C corporation may elect S status at any time without a mandatory waiting period. The S election can be effective for the current year if filed within two months and 15 days of the year's start, or for the following year. However, unlike the S election, revoking a prior entity classification election on Form 8832 under Treas. Reg. Section 301.7701-3(c)(1)(iv) requires a 60-month waiting period before a new classification change."
+  },
+  {
+    "id": 14173,
+    "topic": "Wealth Transfer and Gifting Strategies",
+    "difficulty": "hard",
+    "cognitive_level": 4,
+    "stem": "Claudia Fenton transferred 80% of the voting stock in her controlled corporation to an irrevocable trust for her children in 2020 but retained the right to vote the transferred shares through a proxy agreement. Claudia dies in 2026 when the shares are worth $9,000,000. Her estate planning attorney argues the shares were removed from the estate because the transfer was a completed gift. Evaluate the estate tax consequence under Section 2036(b).",
+    "choices": [
+      "The shares are excluded from the gross estate because the gift was completed and irrevocable",
+      "Only 20% of the share value is included because Claudia directly owned only 20% at death",
+      "The full $9,000,000 is included in Claudia's gross estate because Section 2036(b) treats retained voting rights in a controlled corporation as a retained life estate",
+      "Only the value at the date of the original transfer is included, not the date-of-death value"
+    ],
+    "correct_index": 2,
+    "explanation": "Correct (C): Section 2036(b) specifically provides that the retention of voting rights in transferred stock of a controlled corporation is treated as the retention of the enjoyment of the transferred property under Section 2036(a)(1). Because Claudia retained voting control through the proxy agreement, the full date-of-death value of $9,000,000 is pulled back into her gross estate despite the completed gift. Wrong (A): A completed gift does not prevent estate inclusion when the donor retains rights described in Section 2036, including voting rights in a controlled corporation. Wrong (B): Estate inclusion is based on the transferred shares over which voting rights were retained, not merely the shares directly owned at death. Wrong (D): Section 2036 causes inclusion at the date-of-death value (or alternate valuation date), not the transfer-date value."
+  },
+  {
+    "id": 5917,
+    "topic": "Passive Activity and At-Risk Rules",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "What is the maximum annual rental loss that an active participant may deduct against nonpassive income under the Section 469(i) special allowance?",
+    "choices": [
+      "$10,000",
+      "$15,000",
+      "$25,000",
+      "$50,000"
+    ],
+    "correct_index": 2,
+    "explanation": "Under IRC Section 469(i)(2), taxpayers who actively participate in rental real estate activities may deduct up to $25,000 of rental losses against nonpassive income, subject to the AGI phase-out beginning at $100,000. Choice A is incorrect because the $25,000 threshold is the statutory maximum, not $10,000. The allowance phases out completely at $150,000 AGI."
+  },
+  {
+    "id": 4103,
+    "topic": "Entity Tax Compliance: NOLs and Consolidated Returns",
+    "difficulty": "hard",
+    "cognitive_level": 2,
+    "stem": "A consolidated group recognizes a $200,000 gain on the sale of Sub A's stock to an outside buyer. Sub A has $50,000 in its excess loss account. How does the ELA affect the gain computation?",
+    "choices": [
+      "The ELA is added to the gain, increasing it to $250,000",
+      "The ELA reduces the gain to $150,000",
+      "The ELA has no effect on the stock sale",
+      "The ELA converts the gain to ordinary income"
+    ],
+    "correct_index": 0,
+    "explanation": "Under Treas. Reg. Section 1.1502-19(b), when a subsidiary departs the consolidated group, any excess loss account is triggered and recognized as additional gain. The $50,000 ELA is added to the $200,000 gain on the stock sale, producing total recognized gain of $250,000. While the stock sale gain reflects the arm's-length transaction price, the ELA recapture is required because the parent previously deducted losses that reduced basis below zero, and departure is a recognition event under the consolidated return regulations."
+  },
+  {
+    "id": 4974,
+    "topic": "Multi-Jurisdictional Tax Planning",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "Under AU-C 210, what is the primary purpose of referencing the expected form and content of reports in the engagement letter?",
+    "choices": [
+      "To provide the client with a draft copy of the final audit report",
+      "To limit the auditor's legal liability in a negligence claim",
+      "To establish the client's expectations regarding the nature and limitations of the engagement",
+      "To specify the exact wording that will appear in the opinion paragraph"
+    ],
+    "correct_index": 2,
+    "explanation": "Correct (C): Under AU-C 210.10, referencing the expected form and content of reports in the engagement letter helps manage the client's expectations regarding what the audit will and will not accomplish. It clarifies the nature and limitations of the engagement and ensures both parties have a mutual understanding. (B) is wrong because the engagement letter is not primarily a liability-limitation instrument — its purpose is to document agreed-upon terms. (D) is wrong because the exact opinion wording depends on audit findings and cannot be predetermined."
+  },
+  {
+    "id": 14553,
+    "topic": "Owner-Entity Transactions",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Clearwater Inc., a C corporation, declares a property dividend of land (basis $60,000, FMV $150,000) encumbered by a $180,000 mortgage assumed by the recipient shareholder. The mortgage exceeds FMV by $30,000. Under Section 311(b)(2), what gain must Clearwater recognize, and why does the liability affect the computation?",
+    "choices": [
+      "$90,000 — computed as FMV ($150,000) minus basis ($60,000), ignoring the mortgage entirely",
+      "$60,000 — the corporation only recognizes gain on the equity portion of the property",
+      "$120,000 — when the liability exceeds FMV, Section 311(b)(2) treats FMV as equal to the liability ($180,000), producing gain of $180,000 minus $60,000 basis",
+      "$150,000 — the full fair market value is treated as the amount realized"
+    ],
+    "correct_index": 2,
+    "explanation": "Correct (C): Under IRC Section 311(b)(2), when distributed property is subject to a liability exceeding its FMV, the FMV is deemed to be not less than the amount of the liability. The gain is $180,000 (deemed FMV) minus $60,000 basis = $120,000. This prevents corporations from distributing underwater mortgaged property to shift economic losses. Wrong (A): This ignores the liability floor rule. When the mortgage exceeds FMV, the corporation cannot use the lower FMV to compute gain. Wrong (B): There is no \"equity portion\" concept in Section 311(b). The gain computation uses the higher of FMV or liability minus basis. Wrong (D): While $150,000 is the actual FMV, Section 311(b)(2) substitutes the $180,000 liability because it exceeds FMV, making $150,000 the wrong figure."
+  },
+  {
+    "id": 4371,
+    "topic": "Nontaxable Dispositions",
+    "difficulty": "hard",
+    "cognitive_level": 2,
+    "stem": "A taxpayer's principal residence is condemned. The condemnation award is $450,000 and the basis is $200,000. The taxpayer purchases a new residence for $420,000. Can the taxpayer use both Section 121 (home sale exclusion) and Section 1033 (involuntary conversion)?",
+    "choices": [
+      "No, the taxpayer must choose one",
+      "Yes, but only Section 1033 applies",
+      "No, condemnations do not qualify under either section",
+      "Yes, Section 121 exclusion applies first, then Section 1033 deferral on remaining gain"
+    ],
+    "correct_index": 3,
+    "explanation": "A taxpayer may use both Section 121 and Section 1033 for a condemned principal residence. First, the Section 121 exclusion ($250,000/$500,000) reduces the gain. Any remaining gain may be deferred under Section 1033 by reinvesting in replacement property within the replacement period. This combination can eliminate or defer the entire gain."
+  },
+  {
+    "id": 4991,
+    "topic": "Entity Formation and Restructuring",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "During the planning phase of a financial statement audit, a senior auditor at Kellner & Associates is documenting the procedures required by AU-C 315. Why is the auditor required to obtain an understanding of the entity and its environment?",
+    "choices": [
+      "To guarantee that the financial statements are free from all misstatements",
+      "To determine the appropriate tax treatment for the entity's transactions",
+      "To provide management with business consulting recommendations",
+      "To identify and assess the risks of material misstatement in the financial statements"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Under AU-C 315.04, the auditor obtains an understanding of the entity and its environment, including internal control, to identify and assess the risks of material misstatement of the financial statements, whether due to fraud or error. This understanding forms the basis for designing further audit procedures. (A) is wrong because the auditor provides reasonable, not absolute, assurance and cannot guarantee freedom from all misstatements. (B) is wrong because determining tax treatment is a management and tax advisor responsibility, not the purpose of AU-C 315."
+  },
+  {
+    "id": 4190,
+    "topic": "Advanced Basis Calculations",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "An S corporation shareholder has stock basis of $40,000 at the beginning of the year. The corporation allocates $60,000 of ordinary income and distributes $85,000 to the shareholder. What is the shareholder's ending stock basis?",
+    "choices": [
+      "$15,000",
+      "$0",
+      "$100,000",
+      "$25,000"
+    ],
+    "correct_index": 0,
+    "explanation": "Under IRC Sec. 1368 and the ordering rules in Sec. 1367(a), the shareholder first increases basis for income ($40,000 + $60,000 = $100,000), then reduces basis for distributions ($100,000 - $85,000 = $15,000). The distribution does not exceed the income-adjusted basis, so it is entirely tax-free under Sec. 1368(b). However, if the distribution had exceeded $100,000, the excess would be treated as capital gain under Sec. 1368(b)(2) rather than simply reducing basis further."
+  },
+  {
+    "id": 13564,
+    "topic": "Entity Formation and Restructuring",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Pinnacle Corp plans to spin off its technology division into a newly formed subsidiary, TechCo. The technology division has been operated as a separate business unit for three years. Pinnacle has operated its core manufacturing business for fifteen years. Pinnacle distributes all TechCo stock to its shareholders. Under Section 355, what is the likely tax consequence?",
+    "choices": [
+      "The transaction qualifies under Section 355 because the manufacturing business has been active for more than five years",
+      "The transaction fails the Section 355 requirements because the technology division has not been conducted as an active trade or business for at least five years",
+      "The transaction qualifies because the combined active business history exceeds five years",
+      "The transaction qualifies if TechCo has at least $1 million in gross revenues"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): Section 355(b)(2)(B) requires that both the distributing corporation and the controlled corporation be engaged in the active conduct of a trade or business that has been actively conducted throughout the five-year period ending on the date of the distribution. Because the technology division has operated for only three years, this requirement is not met.\nWrong (A): Both businesses must independently satisfy the five-year active business requirement, not just one of them.\nWrong (C): The five-year test applies to each business separately; combined history across different businesses is not permitted.\nWrong (D): There is no minimum revenue threshold in Section 355; the test is whether each business has been actively conducted for five years."
+  },
+  {
+    "id": 14524,
+    "topic": "Entity Formation and Liquidation",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Kimura contributes land (basis $60,000, FMV $200,000) subject to a $90,000 recourse mortgage to a general partnership for a 50% interest. The other partner contributes $110,000 cash. Under partnership formation rules, what is Kimura's outside basis in the partnership interest immediately after contribution?",
+    "choices": [
+      "$15,000, because Kimura's basis is reduced by the full liability and increased by the 50% share",
+      "$60,000, because the carryover basis is not adjusted for liabilities",
+      "$105,000, because Kimura adds the full liability to the carryover basis",
+      "($30,000), because the liability exceeds basis creating a negative basis"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): Under Section 722, Kimura's initial outside basis is the $60,000 carryover basis of the land. Under Section 752, Kimura is treated as receiving a distribution for the portion of liability shifted to the other partner (50% of $90,000 = $45,000 decrease) and contributing for the retained share (50% of $90,000 = $45,000). Net effect: $60,000 - $45,000 + $0 = $15,000. Wrong (B): Liabilities must be accounted for; the carryover basis is adjusted by the net liability shift under Section 752. Wrong (C): Kimura does not add the full liability — only the share Kimura retains, while the shifted portion reduces basis. Wrong (D): Partnership basis cannot go negative; if it did, gain would be recognized, but the calculation here yields a positive $15,000."
+  },
+  {
+    "id": 4323,
+    "topic": "Capital Structure Tax Planning",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Crossroads LLC, a retail business, has averaged $22 million in annual gross receipts over the prior three tax years. The company''s CPA is evaluating whether Section 163(j) applies. The Section 163(j) business interest limitation does not apply to which of the following taxpayers?",
+    "choices": [
+      "A corporation with $50 million in average annual gross receipts",
+      "A small business with average annual gross receipts of $25 million",
+      "A real estate investment trust",
+      "A large partnership with $100 million in revenue"
+    ],
+    "correct_index": 1,
+    "explanation": "The Section 163(j) limitation includes a small business exception for taxpayers with average annual gross receipts of $30 million or less for the three prior tax years. A business with $25 million average gross receipts qualifies for this exception and is not subject to the interest limitation."
+  },
+  {
+    "id": 4199,
+    "topic": "Advanced Basis Calculations",
+    "difficulty": "hard",
+    "cognitive_level": 2,
+    "stem": "Under Section 734(b), a partnership with a Section 754 election distributes property with an inside basis of $40,000 to a partner whose outside basis is $60,000 in a liquidating distribution. The partner takes a $60,000 basis in the property. What is the Section 734(b) adjustment?",
+    "choices": [
+      "$20,000 step-down to remaining partnership assets",
+      "$20,000 step-up to remaining partnership assets",
+      "$0 — no adjustment needed",
+      "$60,000 step-down"
+    ],
+    "correct_index": 0,
+    "explanation": "Under Section 734(b), when a partner's basis in distributed property exceeds the property's inside basis (as in a liquidating distribution), the partnership must decrease the basis of its remaining assets by the difference. The partner took a $60,000 basis in property with a $40,000 inside basis, so the partnership reduces remaining asset basis by $20,000."
+  },
+  {
+    "id": 4040,
+    "topic": "Retirement Plans and Education Savings",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "A 45-year-old taxpayer takes a $30,000 distribution from their traditional IRA to purchase a first home. How much of the distribution is subject to the 10% early withdrawal penalty?",
+    "choices": [
+      "$0",
+      "$10,000",
+      "$20,000",
+      "$30,000"
+    ],
+    "correct_index": 2,
+    "explanation": "The first-time homebuyer exception to the 10% early withdrawal penalty under Section 72(t)(2)(F) is limited to $10,000 per lifetime. The first $10,000 of the $30,000 distribution is exempt from the penalty. The remaining $20,000 is subject to the 10% penalty ($2,000). The entire $30,000 is included in ordinary income regardless of the penalty exception. The taxpayer must not have owned a home in the prior 2 years."
+  },
+  {
+    "id": 4301,
+    "topic": "Entity Choice and Planning",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "An S corporation has an NOL of $50,000. Shareholder A has stock basis of $30,000 and no debt basis. How much of the NOL can Shareholder A deduct currently?",
+    "choices": [
+      "$30,000",
+      "$50,000",
+      "$0",
+      "$20,000"
+    ],
+    "correct_index": 0,
+    "explanation": "Under IRC Sec. 1366(d)(1), an S corporation shareholder may deduct pass-through losses only to the extent of stock basis plus direct debt basis (loans from the shareholder to the corporation). Shareholder A''s $30,000 stock basis limits the current deduction to $30,000 of the $50,000 NOL. The remaining $20,000 is suspended under Sec. 1366(d)(2) and carries forward indefinitely until basis is restored. Unlike partnership losses where a partner''s share of entity-level debt creates basis, S corporation shareholders receive debt basis only from direct personal loans to the corporation."
+  },
+  {
+    "id": 7777,
+    "topic": "Retirement Plans and Education Savings",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Ridgeview Analytics uses a 3-year cliff vesting schedule for employer 401(k) matching contributions. Data analyst Megan Foster leaves the company after 2 years and 10 months of service. Her account shows $12,500 in employee deferrals and $8,400 in employer matching contributions. How much does Megan receive from the 401(k) upon separation?",
+    "choices": [
+      "$20,900, because all amounts vest after 2 years of service",
+      "$12,500, because the employer match is forfeited under cliff vesting",
+      "$16,700, because 50% of the employer match vests after 2 years",
+      "$8,400, because only the employer match transfers upon separation"
+    ],
+    "correct_index": 1,
+    "explanation": "Under IRC Section 411(a)(2)(A), 3-year cliff vesting provides 0% vesting until the employee completes 3 full years of service, then 100% vests immediately. Megan left at 2 years and 10 months — short of the 3-year cliff — so the $8,400 employer match is forfeited. Employee deferrals ($12,500) are always 100% vested. Choice C is incorrect because cliff vesting provides no partial vesting — it is all-or-nothing at the 3-year mark."
+  },
+  {
+    "id": 993,
+    "topic": "Owner-Entity Transactions",
+    "difficulty": "easy",
+    "cognitive_level": 2,
+    "stem": "A shareholder of an S corporation receives a distribution of $50,000. His stock basis is $35,000. The corporation has no accumulated E&P. The tax treatment is:",
+    "choices": [
+      "$35,000 tax-free return of basis, $15,000 capital gain",
+      "$50,000 dividend income",
+      "$50,000 tax-free",
+      "$15,000 ordinary income"
+    ],
+    "correct_index": 0,
+    "explanation": "Under IRC Section 1368(b), distributions from an S corporation with no accumulated earnings and profits are tax-free to the extent of the shareholder''s stock basis. The first $35,000 reduces stock basis to zero as a nontaxable return of capital. The excess $15,000 ($50,000 - $35,000) is treated as gain from the sale or exchange of stock under Section 1368(b)(2), taxed as capital gain. Unlike distributions from an S corporation with accumulated E&P under Section 1368(c), which follow a more complex ordering rule involving the accumulated adjustments account (AAA), distributions with no E&P are applied entirely against stock basis first."
+  },
+  {
+    "id": 4351,
+    "topic": "Nontaxable Dispositions",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "A taxpayer's office building is condemned by the government. Insurance proceeds are $800,000 and the adjusted basis is $400,000. The condemned real property replacement period is:",
+    "choices": [
+      "2 years from the end of the tax year of condemnation",
+      "5 years from the date of condemnation",
+      "2 years from the date of condemnation",
+      "3 years from the end of the tax year of condemnation"
+    ],
+    "correct_index": 3,
+    "explanation": "The correct answer is 3 years. Under IRC Sec. 1033(g)(4), when real property held for productive use in a trade or business or for investment is involuntarily converted through condemnation, the replacement period extends to 3 years from the close of the first taxable year in which any gain is realized. This longer period recognizes the difficulty of replacing condemned real estate. Unlike voluntary conversions and conversions of personal property, which allow only a 2-year replacement period under Sec. 1033(a)(2)(B), condemned real property receives the extended 3-year window."
+  },
+  {
+    "id": 13744,
+    "topic": "Entity Tax Compliance: NOLs and Consolidated Returns",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "Falcon Industries acquires 100% of Eagle Manufacturing, which had been using a June 30 fiscal year end. Eagle will now join Falcon''s existing consolidated return group. What tax year must all members of a consolidated return group use?",
+    "choices": [
+      "The common parent's tax year",
+      "Each member's independently elected fiscal year",
+      "A calendar year regardless of the parent's year",
+      "The tax year of the member with the most revenue"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): Under Treas. Reg. Section 1.1502-76(a), all members of a consolidated group must use the common parent's tax year. A subsidiary joining an existing group must change its tax year to conform to the parent's. Wrong (B): Members cannot retain independent fiscal years; they must conform to the parent. Wrong (C): The group uses the parent's year, which may be a fiscal year rather than a calendar year. Wrong (D): Revenue size has no bearing on tax year selection for consolidated groups."
+  },
+  {
+    "id": 14176,
+    "topic": "Wealth Transfer and Gifting Strategies",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Nathaniel Drake lends $80,000 to his adult son at 0% interest. The applicable federal rate is 4.5%. The son's net investment income for the year is $800. Under Section 7872, the imputed interest on gift loans of $100,000 or less is limited to the borrower's net investment income. What is the deemed gift from Nathaniel to his son for the year?",
+    "choices": [
+      "$3,600 representing the full AFR interest that should have been charged",
+      "$800 because the imputed interest is limited to the borrower's net investment income",
+      "There is no deemed gift because loans under $100,000 are fully exempt from Section 7872",
+      "$0 because the borrower's net investment income does not exceed $1,000"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Under Section 7872(d)(1), for gift loans between individuals of $100,000 or less, the imputed interest (and therefore the deemed gift) is limited to the borrower's net investment income. However, Section 7872(d)(1)(E) provides that if the borrower's net investment income does not exceed $1,000, it is treated as zero. Since the son's NII of $800 does not exceed $1,000, the deemed gift is $0. Wrong (A): The full AFR calculation does not apply because the $100,000 exception limits imputed interest to the borrower's NII. Wrong (B): While NII normally caps the deemed gift, the de minimis rule treats NII below $1,000 as zero. Wrong (C): Loans under $100,000 are not fully exempt; they are subject to Section 7872 but with the NII limitation."
+  },
+  {
+    "id": 14505,
+    "topic": "Advanced Basis Calculations",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Porter contributes equipment with an adjusted basis of $30,000, FMV of $120,000, and subject to a $50,000 nonrecourse liability to a partnership in exchange for a 25% interest. The other partners assume 75% of the liability ($37,500) under Section 752. Porter's share of the partnership's total liabilities includes $12,500 (25% of $50,000). What is Porter's initial outside basis in the partnership interest?",
+    "choices": [
+      "$30,000",
+      "$5,000",
+      "$42,500",
+      "$17,500"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): Under IRC Sections 722 and 752, Porter's initial basis starts at $30,000 (adjusted basis of contributed property). Under Section 752(b), the $37,500 liability assumed by other partners is treated as a deemed distribution, reducing basis by $37,500. Under Section 752(a), Porter's $12,500 share of partnership liabilities is a deemed contribution, increasing basis. Net: $30,000 - $37,500 + $12,500 = $5,000.\nWrong (A): This ignores the liability adjustments under Section 752 entirely.\nWrong (C): This adds Porter's $12,500 liability share to basis ($42,500) but fails to subtract the $37,500 deemed distribution for the liability assumed by others.\nWrong (D): This subtracts Porter's own $12,500 share from basis ($17,500) instead of subtracting the other partners' $37,500 share."
+  },
+  {
+    "id": 4159,
+    "topic": "Owner-Entity Transactions",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "ABC Partnership makes a guaranteed payment of $100,000 to Partner E for the use of capital (interest on capital). How does the partnership treat this payment?",
+    "choices": [
+      "As a reduction in Partner E's capital account only",
+      "As a nondeductible payment",
+      "As a distribution to Partner E",
+      "As a deductible expense in computing partnership ordinary income"
+    ],
+    "correct_index": 3,
+    "explanation": "Guaranteed payments for the use of capital under Section 707(c) are treated the same as guaranteed payments for services — they are deductible by the partnership in computing ordinary income. Partner E includes the $100,000 as ordinary income. Unlike distributive shares, guaranteed payments are determined without regard to the partnership's actual income."
+  },
+  {
+    "id": 4169,
+    "topic": "Owner-Entity Transactions",
+    "difficulty": "hard",
+    "cognitive_level": 2,
+    "stem": "Under Section 267(a)(2), an accrual-method corporation accrues a $50,000 bonus payable to its cash-method sole shareholder on December 31. The bonus is paid on March 15 of the following year. When does the corporation deduct the bonus?",
+    "choices": [
+      "December 31 of the accrual year",
+      "March 15 when it is paid",
+      "Ratably over both years",
+      "The deduction is permanently disallowed"
+    ],
+    "correct_index": 1,
+    "explanation": "Section 267(a)(2) requires matching of deductions and inclusions between related parties using different accounting methods. The accrual-method corporation cannot deduct the bonus until the cash-method shareholder includes it in income. Since the shareholder reports the bonus when received (March 15), the corporation deducts it in that year."
+  },
+  {
+    "id": 4170,
+    "topic": "Owner-Entity Transactions",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Robert owns 55% of Sigma Corp and sells a patent (depreciable/amortizable property) to Sigma for $500,000. Robert's basis in the patent is $100,000. Under Section 1239, what is Robert's gain and its character?",
+    "choices": [
+      "$400,000 capital gain",
+      "$500,000 ordinary income",
+      "$100,000 capital gain",
+      "$400,000 ordinary income"
+    ],
+    "correct_index": 3,
+    "explanation": "Under Section 1239, gain on the sale of depreciable property to a related party (more than 50% ownership) is recharacterized as ordinary income. Robert's gain is $500,000 - $100,000 = $400,000, all treated as ordinary income. Without Section 1239, this gain would likely be long-term capital gain, making the recharacterization significant."
+  },
+  {
+    "id": 14375,
+    "topic": "Nontaxable Dispositions",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Oakmont Properties learns that the city plans to condemn its warehouse for a highway project. Before formal proceedings begin, Oakmont sells the warehouse to a private buyer for $750,000 (adjusted basis $400,000) after receiving a written notice of intent to condemn. Oakmont purchases a replacement warehouse for $780,000 within 3 years. Can Oakmont defer the $350,000 gain under Section 1033?",
+    "choices": [
+      "No, because Section 1033 requires an actual condemnation, not just a threat",
+      "No, because the sale to a private buyer disqualifies the transaction from involuntary conversion treatment",
+      "No, because the replacement period for threat-of-condemnation sales is only 2 years",
+      "Yes, because a sale under threat or imminence of condemnation qualifies as an involuntary conversion under Section 1033"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Section 1033(a) treats a disposition under threat or imminence of condemnation as an involuntary conversion. The taxpayer must show the threat existed and the sale was made because of the threat. With written notice and full reinvestment ($780,000 > $750,000), Oakmont defers the entire $350,000 gain. Wrong (A): Section 1033 explicitly includes sales made under threat of condemnation, not just completed condemnations. Wrong (B): The identity of the buyer is irrelevant when the sale occurs under threat of condemnation. Wrong (C): Condemned real property held for investment receives a 3-year replacement period under Section 1033(g)(4)."
+  }
+]

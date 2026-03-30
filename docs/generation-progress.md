@@ -8,7 +8,7 @@ Per-section target: 1,500 questions. Distributed by AICPA Blueprint area weights
 
 **Batch size:** 30 questions per generation batch.
 
-**To generate:** 519 new questions (~72 batches).
+**To generate:** 521 new questions (~73 batches).
 
 **To trim:** 441 questions to delete (keep best, cut weakest).
 
@@ -30,7 +30,7 @@ For each section:
 | REG     | 1,469 | 1,500 |       0 |          31 |          10 | Generate Needed |
 | BAR     | 1,584 | 1,500 |     173 |          89 |          14 | Trim + Generate |
 | ISC     | 1,462 | 1,500 |       0 |          38 |           6 | Generate Needed |
-| TCP     | 1,439 | 1,500 |       0 |          61 |           9 | Generate Needed |
+| TCP     | 1,437 | 1,500 |       0 |          63 |          10 | Generate Needed |
 
 ## Topic Detail
 
@@ -188,9 +188,9 @@ For each section:
 | 2 | Owner-Entity Transactions | 105 | 105 |  |  |
 | 3 | Capital Structure Tax Planning | 56 | 56 |  |  |
 | 3 | Entity Choice and Planning | 44 | 56 |  | +12 |
-| 3 | Multi-Jurisdictional Tax Planning | 50 | 56 |  | +6 |
+| 3 | Multi-Jurisdictional Tax Planning | 49 | 56 |  | +7 |
 | 3 | Trusts and Estates | 50 | 56 |  | +6 |
-| 4 | Entity Formation and Restructuring | 75 | 75 |  |  |
+| 4 | Entity Formation and Restructuring | 74 | 75 |  | +1 |
 | 4 | Nontaxable Dispositions | 69 | 75 |  | +6 |
 | 4 | Related Party Transactions | 70 | 75 |  | +5 |
 

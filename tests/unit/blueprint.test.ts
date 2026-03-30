@@ -131,7 +131,7 @@ describe("question counts", () => {
 		expect(sectionQuestionTotals.reg).toBe(1469);
 		expect(sectionQuestionTotals.bar).toBe(1584);
 		expect(sectionQuestionTotals.isc).toBe(1462);
-		expect(sectionQuestionTotals.tcp).toBe(1439);
+		expect(sectionQuestionTotals.tcp).toBe(1437);
 	});
 
 	it("all question count values are non-negative integers", () => {

@@ -1,0 +1,452 @@
+[
+  {
+    "id": 7811,
+    "topic": "Incident Response and Recovery",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "On January 20, 2026, Sterling Analytics detects a SQL injection attack on its customer portal. The SOC analyst confirms the breach and immediately begins removing the malicious code, patching the vulnerable web application, and rebuilding the compromised database server—without first isolating the affected systems from the network. Using the PICERL framework, which phase did the team incorrectly skip?",
+    "choices": [
+      "Preparation",
+      "Identification",
+      "Lessons Learned",
+      "Containment"
+    ],
+    "correct_index": 3,
+    "explanation": "The PICERL mnemonic (Preparation, Identification, Containment, Eradication, Recovery, Lessons Learned) represents the required sequence per NIST SP 800-61. The team moved directly from Identification to Eradication (removing malicious code and patching), skipping Containment. Without containment first, the attacker may still have active access, evidence may be destroyed, and the attack could spread to other systems."
+  },
+  {
+    "id": 13558,
+    "topic": "Change Management",
+    "difficulty": "hard",
+    "cognitive_level": 3,
+    "stem": "Maplewood Accounting migrates its practice management application to a SaaS platform. Three months later, the SaaS vendor deploys an automatic update that changes the report formatting for client invoices, breaking the firm's customized templates. The firm's IT manager had no advance notice of the update and no ability to test it before deployment. The managing partner asks the IT manager how to prevent this from occurring again. Which recommendation MOST effectively addresses this risk within the constraints of a SaaS model?",
+    "choices": [
+      "Migrate back to an on-premises solution where all changes are controlled internally",
+      "Negotiate contractual provisions requiring advance notification of updates, access to a pre-release testing environment, and defined rollback procedures for changes that affect customized configurations",
+      "Accept vendor updates without controls since SaaS platforms are the vendor's responsibility",
+      "Implement a firewall rule to block automatic updates from the SaaS vendor"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): COBIT APO09 (Manage Service Agreements) and NIST SP 800-145 recommend that organizations using SaaS establish contractual provisions addressing change management. These provisions should include advance notification of updates affecting functionality, access to sandbox or pre-release environments for testing, and defined rollback procedures. This extends the organization's change management controls to vendor-managed changes through contractual governance.\nWrong (A): Migrating back to on-premises is disproportionate and sacrifices the benefits of SaaS; the issue can be addressed through contractual and governance controls.\nWrong (C): Accepting vendor updates without controls abdicates the organization's responsibility to manage risk; the firm is still accountable for the integrity of its client-facing outputs.\nWrong (D): Blocking automatic updates from a SaaS vendor is typically not technically feasible since the vendor controls the infrastructure, and it would prevent the firm from receiving security patches and functionality improvements."
+  },
+  {
+    "id": 772,
+    "topic": "ERP and Accounting Information Systems",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Westbrook Manufacturing is preparing for its first SOX Section 404 audit. The external auditors request evidence that the ERP system enforces segregation of duties between accounts payable clerks and payment approvers. Which ERP configuration provides the strongest evidence for this control?",
+    "choices": [
+      "Role-based access controls with a documented segregation of duties matrix showing that AP entry and payment approval roles are assigned to different users with no conflicts",
+      "A company policy memo stating that employees should not approve their own payment requests",
+      "Super-user accounts shared among the accounting team with a verbal agreement to segregate duties",
+      "An ERP configuration that logs all transactions but allows any user to perform any function"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): SOX Section 404 requires management to assess and report on internal controls over financial reporting. Role-based access controls with a documented SoD matrix provide system-enforced preventive controls that auditors can test directly. While choice B (a policy memo) establishes management intent, it lacks system enforcement — users could still violate the policy without detection. System-enforced role separation provides stronger evidence than detective or administrative controls alone."
+  },
+  {
+    "id": 7826,
+    "topic": "Incident Response and Recovery",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Crossroads Financial operates in five U.S. states and discovers a breach affecting customers in all five jurisdictions on February 12, 2026. The compliance officer finds that notification deadlines range from 30 days in one state to 90 days in another. When developing the notification timeline, which approach should the compliance team take?",
+    "choices": [
+      "Notify all affected individuals within the shortest applicable deadline across all jurisdictions",
+      "Use the 90-day deadline since it provides the most time for investigation",
+      "Average the notification deadlines and use the midpoint of 60 days",
+      "Notify customers in each state according to that state's individual deadline"
+    ],
+    "correct_index": 0,
+    "explanation": "When multiple state breach notification laws apply, best practice dictates meeting the most restrictive deadline to ensure compliance across all jurisdictions. Using the longest deadline (B) would violate the 30-day state's requirement. Averaging deadlines (C) is not a recognized compliance approach. While per-state notification (D) is technically compliant, it creates operational risk; the safest approach is to meet the shortest deadline for all."
+  },
+  {
+    "id": 3460,
+    "topic": "IT Infrastructure and Architecture",
+    "difficulty": "hard",
+    "cognitive_level": 2,
+    "stem": "An auditor is reviewing a client's data center and notes that the primary and backup power supplies feed through the same electrical conduit. What type of infrastructure weakness does this represent?",
+    "choices": [
+      "A common mode failure where a single conduit failure eliminates both primary and backup power",
+      "A logical access vulnerability",
+      "A software configuration error",
+      "A network segmentation issue"
+    ],
+    "correct_index": 0,
+    "explanation": "Per NIST SP 800-53 Rev. 5, control PE-11 (Emergency Power), redundant systems must use diverse physical paths to avoid common mode failure—also known as single point of failure. Routing both primary and backup power through the same electrical conduit means that damage to that conduit (from fire, water, or physical impact) eliminates both power sources simultaneously. Unlike independent routing where each power feed follows a separate physical path, shared conduit routing defeats the purpose of redundancy by creating a single failure point that can disable both supplies at once."
+  },
+  {
+    "id": 13808,
+    "topic": "IT Audit Frameworks",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Ashford County Library maintains a public-facing website that provides library hours, event calendars, and catalog search functionality. The website does not process personal data or financial transactions. During NIST RMF categorization, the IT security officer must assign a FIPS 199 impact level. A temporary loss of confidentiality, integrity, or availability of this system would have limited adverse effect on operations. What impact level should be assigned?",
+    "choices": [
+      "High — the public nature of the system increases its risk exposure",
+      "Moderate — any government-related system requires at least moderate categorization",
+      "Low — limited adverse effect on operations, assets, or individuals",
+      "Moderate — catalog search functionality constitutes a mission-critical service"
+    ],
+    "correct_index": 2,
+    "explanation": "Correct (C): FIPS 199 defines a low-impact system as one where the loss of confidentiality, integrity, or availability would have a limited adverse effect on organizational operations, assets, or individuals. A public informational website with no personal or financial data processing fits this classification. Wrong (A): Being public-facing does not automatically elevate the impact level; FIPS 199 classifies based on the potential adverse effect of a security breach, not the system's visibility. Wrong (B): FIPS 199 does not mandate minimum impact levels based on whether the organization is a government entity; classification depends on the potential consequences of a breach. Wrong (D): A library catalog search is not mission-critical, and the scenario states that a loss would have only limited adverse effect."
+  },
+  {
+    "id": 1223,
+    "topic": "SOC Reporting",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "Horizon Payroll Services is preparing its management assertion letter for inclusion in its SOC 2 Type II report covering January through December 2025. In a SOC 2 Type II report, management asserts all of the following EXCEPT:",
+    "choices": [
+      "The system description fairly presents the system as designed, implemented, and operated",
+      "The controls were suitably designed to achieve the applicable trust services criteria",
+      "The controls operated effectively throughout the examination period",
+      "The controls will continue to operate effectively for the next 12 months"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Management's assertion in a SOC 2 Type II covers fair presentation of the system description, suitability of control design, and operating effectiveness throughout the examination period. Management does NOT assert that controls will continue to be effective in the future because the SOC report covers a historical period, not a prospective guarantee. (A) is wrong because fair presentation of the system description is part of management's assertion. (B) is wrong because suitability of design is part of management's assertion."
+  },
+  {
+    "id": 13946,
+    "topic": "Security and Control Frameworks",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Westfield Insurance's internal audit team reviews the access provisioning control for the claims processing system. The written policy requires manager approval before granting system access. However, testing reveals that 30% of new accounts were created without documented manager approval during the audit period. What should the audit team conclude?",
+    "choices": [
+      "The control is deficient in both design and operating effectiveness",
+      "The control is suitably designed but deficient in operating effectiveness",
+      "The control is deficient in design but operating effectively",
+      "The control is functioning as intended with minor exceptions"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): The control is suitably designed because the policy requiring manager approval is appropriate to mitigate unauthorized access risk. However, the 30% exception rate demonstrates that the control is not operating effectively because personnel are not consistently following the established procedure. Wrong (A): The design is adequate because the policy appropriately addresses the risk; the failure is in execution, not in the control's conceptual design. Wrong (C): A control cannot be operating effectively if 30% of transactions bypass the required approval; this is an operating effectiveness deficiency. Wrong (D): A 30% deviation rate is not a minor exception; it represents a significant operating effectiveness deficiency requiring remediation."
+  },
+  {
+    "id": 13463,
+    "topic": "ERP and Accounting Information Systems",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Greenfield Corp processes payroll in weekly batches. Before submitting a batch of 200 payroll transactions, the payroll supervisor calculates the sum of all employee Social Security numbers in the batch. This sum is compared to the same calculation after processing. Which type of batch control total does this represent?",
+    "choices": [
+      "Record count",
+      "Hash total",
+      "Financial total",
+      "Run-to-run total"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): Per COBIT DSS06.02, a hash total sums a non-financial field (such as Social Security numbers) to verify batch completeness. The sum has no financial meaning but detects missing or added records during processing. Wrong (A): A record count tracks only the number of transactions, not the content of specific fields. Wrong (C): A financial total sums monetary amounts such as gross pay, not non-financial identifiers. Wrong (D): A run-to-run total reconciles ending totals of one processing cycle to the beginning of the next, not within a single batch."
+  },
+  {
+    "id": 13613,
+    "topic": "IT Infrastructure and Architecture",
+    "difficulty": "hard",
+    "cognitive_level": 4,
+    "stem": "Meridian Consulting Group experienced a ransomware incident that bypassed its traditional signature-based antivirus. Management asks the IT director to redesign the endpoint protection strategy. The IT director proposes: (1) deploying Endpoint Detection and Response (EDR) that uses behavioral analysis, (2) implementing application whitelisting on all workstations, (3) maintaining the existing signature-based antivirus as a secondary layer, and (4) enabling full-disk encryption on all endpoints. The CFO questions whether all four layers are necessary. Which assessment of the proposed strategy is MOST accurate?",
+    "choices": [
+      "All four layers are complementary — EDR detects novel behaviors, whitelisting blocks unauthorized programs, signatures catch known malware, and encryption protects data from physical theft",
+      "Application whitelisting makes EDR redundant since no unauthorized code can execute",
+      "Full-disk encryption prevents ransomware from encrypting files, making the other layers unnecessary",
+      "Signature-based antivirus should be removed since EDR replaces all of its functions"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): Per NIST SP 800-83 Rev. 1 and COBIT 2019 DSS05.01, defense-in-depth requires multiple complementary controls. Each proposed layer addresses a distinct threat: EDR detects novel attack behaviors, whitelisting blocks unauthorized executables, signatures catch known threats efficiently, and encryption protects data at rest from physical theft — none fully substitutes for another.\nWrong (B): Whitelisting can be bypassed through living-off-the-land attacks using legitimate system tools, so EDR behavioral monitoring remains essential.\nWrong (C): Full-disk encryption protects data from unauthorized physical access but does not prevent ransomware from encrypting files during an active authenticated session.\nWrong (D): Signature-based antivirus efficiently blocks known malware with minimal performance overhead and complements EDR''s behavioral analysis for comprehensive coverage."
+  },
+  {
+    "id": 1056,
+    "topic": "IT Audit Frameworks",
+    "difficulty": "easy",
+    "cognitive_level": 4,
+    "stem": "Which IT governance framework distinguishes between governance objectives (Evaluate, Direct, Monitor) and management objectives?",
+    "choices": [
+      "ITIL 4",
+      "COBIT 2019",
+      "NIST Cybersecurity Framework",
+      "ISO 27001"
+    ],
+    "correct_index": 1,
+    "explanation": "Under COBIT 2019 Section EDM (Evaluate, Direct, and Monitor), board-level activities of evaluating, directing, and monitoring IT fall within the governance domain, which is distinct from the four management domains (COBIT 2019, Governance and Management Objectives). EDM ensures the governing body sets direction and oversees IT alignment with strategic objectives. The APO (Align, Plan, and Organize) domain is incorrect because it is a management function performed by executives, not a governance function reserved for the board."
+  },
+  {
+    "id": 845,
+    "topic": "Privacy Requirements and Data Protection",
+    "difficulty": "medium",
+    "cognitive_level": 1,
+    "stem": "A Dublin-based marketing firm is reviewing whether it has a valid legal justification for each of its data processing activities involving EU residents'' personal information. Under GDPR, which of the following is NOT a lawful basis for processing personal data?",
+    "choices": [
+      "Consent of the data subject",
+      "Performance of a contract",
+      "The data controller's commercial interest in maximizing revenue",
+      "Compliance with a legal obligation"
+    ],
+    "correct_index": 2,
+    "explanation": "Under GDPR Article 6 (Section II, Principles), the six lawful bases for processing personal data are consent, contract performance, legal obligation, vital interests, public task, and legitimate interests. Commercial revenue maximization is not among them and cannot serve as a lawful basis for processing. While legitimate interests exists as a lawful basis, it is incorrect to equate it with profit maximization because legitimate interests requires a documented balancing test weighing the organization's interests against the individual's rights and freedoms."
+  },
+  {
+    "id": 13594,
+    "topic": "IT Infrastructure and Architecture",
+    "difficulty": "easy",
+    "cognitive_level": 2,
+    "stem": "A small CPA firm allows its five employees to share files by accessing each other''s computers directly, with no central server managing access permissions or logging file activity. Which architecture does this describe, and what is the PRIMARY control weakness?",
+    "choices": [
+      "Client-server architecture; lack of endpoint encryption",
+      "Peer-to-peer architecture; lack of centralized access controls and audit logging",
+      "Hybrid cloud architecture; insufficient network bandwidth",
+      "Mesh network architecture; excessive redundancy"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): Per COBIT 2019 DSS05, a peer-to-peer architecture allows each device to act as both client and server. Without a central server, there are no centralized access controls, authentication, or audit trails — making it unsuitable for environments requiring governance over sensitive data.\nWrong (A): Client-server architecture uses a dedicated server to manage resources; the scenario describes direct device-to-device sharing without a central server.\nWrong (C): Hybrid cloud involves combining on-premises and cloud infrastructure, which is unrelated to the local file-sharing arrangement described.\nWrong (D): A mesh network topology describes how devices are physically or logically interconnected, not how resources are shared and controlled."
+  },
+  {
+    "id": 3471,
+    "topic": "ERP and Accounting Information Systems",
+    "difficulty": "medium",
+    "cognitive_level": 1,
+    "stem": "A company is integrating its CRM system with its ERP system using RESTful APIs that synchronize customer data in real time. Compared to a batch file transfer approach, what is the PRIMARY benefit of real-time API integration?",
+    "choices": [
+      "Lower implementation cost",
+      "No error handling is needed with API integration",
+      "API integration does not require security controls",
+      "Customer data is immediately consistent across both systems, enabling real-time credit decisions and order processing"
+    ],
+    "correct_index": 3,
+    "explanation": "Under COBIT 2019 Section BAI03 (Manage Solutions Identification and Build), real-time API integration ensures that data changes in one system are immediately reflected in connected systems, enabling accurate and timely business decisions. For CRM-to-ERP integration, credit limit updates and customer changes are instantly available for order processing. Unlike batch file transfers, which introduce latency between synchronization windows and risk decisions based on stale data, real-time APIs maintain continuous data currency across integrated systems."
+  },
+  {
+    "id": 7899,
+    "topic": "Incident Response and Recovery",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Evergreen Mutual Bank's board of directors mandates a DR test in March 2026 that shuts down the primary data center entirely and routes all customer-facing operations to the backup facility for 48 hours. The CTO warns that this approach carries the highest risk of any DR testing method. Which test type is the board requiring?",
+    "choices": [
+      "Parallel test",
+      "Tabletop walkthrough",
+      "Full interruption test",
+      "Simulation test"
+    ],
+    "correct_index": 2,
+    "explanation": "Per NIST SP 800-34, a full interruption test shuts down production systems and transfers all operations to the DR site, providing the most realistic validation of recovery capabilities. The CTO's warning is correct — this carries the highest disruption level because a failure at the backup site could leave the bank without operational systems. A parallel test (choice A) avoids this risk by keeping the primary site running simultaneously."
+  },
+  {
+    "id": 13529,
+    "topic": "Change Management",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "Oakmont Insurance''s IT operations team maintains a calendar that consolidates all upcoming approved changes across production systems. The team uses this calendar to coordinate deployment windows and minimize conflicts. What is a forward schedule of changes (FSC) in IT service management?",
+    "choices": [
+      "A calendar listing all approved upcoming changes with their planned implementation dates",
+      "A historical log of all changes completed in the prior fiscal year",
+      "A risk register documenting potential future threats to IT systems",
+      "A list of emergency changes that bypassed the standard approval process"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): ITIL defines the forward schedule of changes as a document listing all approved changes and their planned implementation dates. The FSC enables coordination across teams by providing visibility into upcoming modifications, helping prevent scheduling conflicts and ensuring adequate resource allocation.\nWrong (B): A historical log is a change record or change log, not a forward schedule. The FSC is forward-looking by definition.\nWrong (C): A risk register tracks threats and vulnerabilities, which is a risk management tool, not a change scheduling artifact.\nWrong (D): Emergency changes that bypassed approval would appear in an emergency change log or audit trail, not in a forward schedule of planned changes."
+  },
+  {
+    "id": 12602,
+    "topic": "Change Management",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Pinnacle Manufacturing's IT department reports 247 approved changes awaiting implementation, up from 83 last quarter. The IT audit team flags this trend during their quarterly review. Which risk does a growing change backlog MOST directly indicate?",
+    "choices": [
+      "Insufficient segregation of duties in the approval process",
+      "Excessive emergency changes bypassing normal procedures",
+      "Inadequate implementation capacity leading to delayed security patches and operational improvements",
+      "Lack of post-implementation reviews causing recurring change failures"
+    ],
+    "correct_index": 2,
+    "explanation": "Correct (C): COBIT 2019 BAI06 identifies change backlog as a key performance indicator. A growing backlog signals that the organization lacks sufficient resources or deployment windows to implement approved changes, which can delay critical security patches and operational improvements, increasing exposure to known vulnerabilities. Wrong (A): The backlog reflects implementation capacity, not approval-process segregation issues. Wrong (B): Emergency changes bypass the queue rather than contributing to backlog growth. Wrong (D): Post-implementation review failures affect change success rates, not the volume of pending changes."
+  },
+  {
+    "id": 13212,
+    "topic": "Privacy Requirements and Data Protection",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "Luxmore Retail, a U.S.-based e-commerce company, ships products to customers throughout the European Union. Its privacy counsel is classifying the individuals whose personal data the company collects and processes. Under GDPR, what is a \"data subject\"?",
+    "choices": [
+      "The regulatory authority responsible for enforcing GDPR compliance",
+      "The organization that determines the purposes of data processing",
+      "The third-party vendor that stores personal data on behalf of a controller",
+      "An identified or identifiable natural person whose personal data is being processed"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Under GDPR Article 4(1), a data subject is an identified or identifiable natural person — the individual whose personal data is collected, stored, or otherwise processed by a controller or processor. The data subject is the person to whom the data relates.\nWrong (A): The regulatory authority is the supervisory authority, not the data subject.\nWrong (B): The organization determining processing purposes is the data controller, not the data subject.\nWrong (C): A third-party vendor storing data is a data processor, not the data subject."
+  },
+  {
+    "id": 5863,
+    "topic": "Data Protection Technologies",
+    "difficulty": "easy",
+    "cognitive_level": 2,
+    "stem": "In March 2026, Beacon Software Inc. adds a unique random value to each user's password before applying the hash function and storing the result. This prevents two users with identical passwords from having identical stored hash values. What is this random value called?",
+    "choices": [
+      "An initialization vector",
+      "A cryptographic salt",
+      "A single-use nonce",
+      "A server-side pepper"
+    ],
+    "correct_index": 1,
+    "explanation": "Per NIST SP 800-63B Section 5.1.1.2, a salt is a unique random value appended to each password before hashing to ensure that identical passwords produce different hash outputs. A salt is correct because it defeats precomputed dictionary attacks (rainbow tables) by making each stored hash unique even for duplicate passwords. Unlike an initialization vector (choice A), which is used with symmetric encryption algorithms to randomize ciphertext blocks, a salt is specifically associated with password hashing operations."
+  },
+  {
+    "id": 12765,
+    "topic": "Security Controls and Monitoring",
+    "difficulty": "hard",
+    "cognitive_level": 4,
+    "stem": "Oakmont Defense installs a fingerprint scanner for its classified research facility. During initial configuration, the security team must choose the biometric sensitivity threshold. A more sensitive setting reduces the False Acceptance Rate (FAR) to 0.01% but increases the False Rejection Rate (FRR) to 12%, meaning authorized researchers are frequently locked out and must call security for manual verification. A less sensitive setting reduces FRR to 1% but increases FAR to 3%. Which recommendation BEST balances security requirements with operational impact for a classified environment?",
+    "choices": [
+      "Use the less sensitive setting because researcher productivity is more important than access security",
+      "Disable the biometric system and use badge-only access to eliminate both error types",
+      "Use a moderate sensitivity setting that sets FAR and FRR to approximately equal levels",
+      "Use the more sensitive setting (low FAR) because preventing unauthorized access to classified data outweighs the inconvenience of occasional false rejections"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Per NIST SP 800-76, environments handling classified data must prioritize preventing unauthorized access (low FAR) over user convenience. The 12% FRR creates operational friction but can be mitigated with a manual verification fallback, whereas a 3% FAR in a classified facility represents an unacceptable risk of unauthorized access to sensitive materials. Wrong (A): In a classified environment, security requirements take precedence over convenience; a 3% false acceptance rate is too high. Wrong (B): Eliminating biometrics removes a strong authentication factor and weakens the overall security posture. Wrong (C): The Crossover Error Rate (CER) balances both rates but may not be appropriate for high-security environments where preventing unauthorized access is paramount."
+  },
+  {
+    "id": 13596,
+    "topic": "IT Infrastructure and Architecture",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Ashford Financial maintains a disaster recovery facility that has pre-installed servers, networking equipment, and a current copy of the operating environment, but does not have real-time data replication from the production site. In a disaster, the team estimates it would take 4-8 hours to restore the most recent backups before operations resume. Which type of disaster recovery site does this describe?",
+    "choices": [
+      "Hot site",
+      "Reciprocal agreement",
+      "Cold site",
+      "Warm site"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Per NIST SP 800-34 Rev. 1, a warm site has pre-configured hardware and network infrastructure but requires restoration of recent data backups before operations can resume, typically resulting in recovery times of several hours.\nWrong (A): A hot site maintains real-time or near-real-time data replication and can resume operations within minutes, not hours.\nWrong (B): A reciprocal agreement is an arrangement between two organizations to share facilities during a disaster, not a specific site readiness classification.\nWrong (C): A cold site provides only basic facilities (power, space, connectivity) with no pre-installed hardware, requiring days or weeks to become operational."
+  },
+  {
+    "id": 3782,
+    "topic": "SOC Reporting and Trust Services Criteria",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Which common criteria group in the Trust Services framework addresses the entity's change management processes, including changes to infrastructure, data, software, and procedures?",
+    "choices": [
+      "CC6 — Logical and Physical Access Controls",
+      "CC7 — System Operations",
+      "CC8 — Change Management",
+      "CC9 — Risk Mitigation"
+    ],
+    "correct_index": 2,
+    "explanation": "Under the AICPA Trust Services Criteria (2017), CC8 (Change Management) addresses how the entity authorizes, designs, develops, configures, documents, tests, approves, and implements changes to infrastructure, data, software, and procedures. Effective change management prevents changes from introducing vulnerabilities or disrupting service commitments. Unlike CC7, which governs system operations monitoring and incident detection and response, CC8 specifically ensures that all modifications to the system follow a controlled, authorized process."
+  },
+  {
+    "id": 13643,
+    "topic": "System Availability and Change Management",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Redfield Manufacturing's IT policy requires that all vendor patches be tested in a non-production environment before deployment to production servers. A systems administrator applies a critical operating system patch directly to a production file server during business hours, skipping the staging environment. The patch causes a compatibility issue that takes the file server offline for 3 hours. Which control was violated?",
+    "choices": [
+      "The requirement to test patches in a non-production environment before deploying to production",
+      "The requirement to obtain CAB approval for all changes",
+      "The requirement to maintain offsite backups",
+      "The requirement to document the patch in the CMDB after installation"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): NIST SP 800-40 Rev. 4 Section 4.4 requires testing patches in a representative non-production environment before production deployment. Skipping this step directly caused the outage because the compatibility issue would have been detected in staging.\nWrong (B): While CAB approval may also have been missing, the direct cause of the outage was deploying an untested patch, not the absence of approval.\nWrong (C): Offsite backups are a data protection control unrelated to the patch deployment failure.\nWrong (D): CMDB documentation is a post-implementation activity; its absence did not cause the outage."
+  },
+  {
+    "id": 3792,
+    "topic": "SOC Reporting and Trust Services Criteria",
+    "difficulty": "hard",
+    "cognitive_level": 1,
+    "stem": "While designing controls for its SOC 2 engagement, Pinnacle SaaS reviews the specific considerations listed under each Trust Services Criterion to guide its control implementation. Points of focus in the Trust Services Criteria serve which of the following purposes?",
+    "choices": [
+      "They are mandatory requirements that must be addressed by every service organization",
+      "They replace the common criteria for organizations that choose not to adopt COSO",
+      "They define the specific tests that the service auditor must perform",
+      "They provide guidance on important characteristics of each criterion to help the entity design and evaluate controls"
+    ],
+    "correct_index": 3,
+    "explanation": "Per the AICPA 2017 Trust Services Criteria (TSP Section 100), points of focus are characteristics that may be important to addressing a criterion but are not mandatory requirements. They provide guidance to help management design controls and help auditors evaluate whether controls sufficiently address each criterion. Although an entity should consider all relevant points of focus, it may satisfy a criterion without explicitly addressing every one if the criterion is otherwise met, whereas treating points of focus as rigid mandatory requirements would incorrectly constrain implementation flexibility and override professional judgment."
+  },
+  {
+    "id": 3666,
+    "topic": "Security Controls and Monitoring",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "Fortis Bank''s information security policy requires that AES-256 encryption keys used for customer data at rest be rotated every 90 days. A junior analyst asks why this effort is necessary. Why is regular encryption key rotation considered a security best practice?",
+    "choices": [
+      "It limits the volume of data exposed if a single key is compromised and reduces the window for cryptanalysis",
+      "It makes encrypted data permanently unrecoverable",
+      "Key rotation is only necessary for asymmetric keys, not symmetric keys",
+      "Longer key usage improves encryption efficiency"
+    ],
+    "correct_index": 0,
+    "explanation": "Per NIST SP 800-57 Part 1 (Recommendation for Key Management), Section 5.3, regular key rotation limits the cryptoperiod, reducing the exposure window if a key is compromised and limiting the volume of ciphertext available for cryptanalysis against any single key. Shorter cryptoperiods contain the potential impact of key compromise to a bounded timeframe. Unlike extending key usage periods, which increases the amount of data at risk and provides more ciphertext material for cryptanalytic attacks, regular rotation bounds the blast radius of any single key compromise."
+  },
+  {
+    "id": 13864,
+    "topic": "IT General Controls",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Crestwood Manufacturing's nightly batch processing for inventory valuation fails midway through execution due to a database connection timeout. The operations team restarts the job from the beginning, causing 4,200 inventory transactions that were already processed before the failure to be duplicated. Which computer operations control would have MOST effectively prevented this outcome?",
+    "choices": [
+      "Job restart and recovery procedures that resume from the last successful checkpoint",
+      "Increasing the database connection timeout threshold to prevent future failures",
+      "Running the batch job during daytime hours when more support staff are available",
+      "Adding a second backup of the inventory database before each nightly batch run"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): COBIT DSS01 (Managed Operations) requires job restart and recovery procedures that include checkpoint capabilities. These controls enable batch jobs to resume from the last successful checkpoint rather than reprocessing from the beginning, preventing duplicate transaction processing. Wrong (B): Increasing the timeout may reduce failures; however, it does not address the need for proper restart procedures because any failure — regardless of cause — requires the ability to resume without duplication. Wrong (C): Scheduling during business hours does not prevent duplicate processing, whereas checkpoint/restart logic directly prevents reprocessing of already-completed transactions. Wrong (D): An additional backup preserves data but does not prevent the operational error of reprocessing, unlike restart procedures which eliminate duplicate transaction risk."
+  },
+  {
+    "id": 13420,
+    "topic": "SOC Report Content and Structure",
+    "difficulty": "easy",
+    "cognitive_level": 2,
+    "stem": "Thornton Data Services is drafting the system description (Section III) for its SOC 2 Type II report. The engagement team explains that the description must identify the five components of the system. These components are:",
+    "choices": [
+      "Hardware, operating systems, databases, firewalls, and backups",
+      "Infrastructure, software, people, procedures, and data",
+      "Risk assessment, control activities, monitoring, information, and communication",
+      "Policies, standards, guidelines, procedures, and baselines"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): Per AICPA SOC 2 guidance, the system description must identify five components: infrastructure, software, people, procedures, and data. These define the boundaries and scope of the system being examined.\nWrong (A): While these may be elements of infrastructure and software, they do not represent the five system components defined by AICPA guidance.\nWrong (C): These are the five components of the COSO internal control framework, not the system description components.\nWrong (D): These represent a hierarchy of governance documents, not the SOC 2 system description components."
+  },
+  {
+    "id": 13815,
+    "topic": "IT Audit Frameworks",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Haverford Insurance's IT operations center monitors server uptime, manages batch job scheduling, oversees environmental controls in the data center, and responds to infrastructure alerts around the clock. Under COBIT 2019, which management objective governs these day-to-day operational activities?",
+    "choices": [
+      "APO09 — Managed Service Level Agreements",
+      "DSS01 — Managed Operations",
+      "BAI10 — Managed Configuration",
+      "MEA01 — Managed Performance and Conformance Monitoring"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): COBIT 2019 DSS01 (Managed Operations) within the Deliver, Service, and Support domain governs the day-to-day execution of IT operations, including system monitoring, batch processing, environmental controls, and infrastructure management. Wrong (A): APO09 manages service level agreements and service expectations, not the execution of daily IT operations. Wrong (C): BAI10 manages configuration items and baselines, not the operational monitoring and execution of IT services. Wrong (D): MEA01 monitors whether processes achieve their performance targets, but it is a monitoring and evaluation function, not the operational execution itself."
+  },
+  {
+    "id": 13851,
+    "topic": "IT General Controls",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "Sterling Payroll Services runs nightly batch jobs to process direct deposits for 400 employer clients. The operations team reviews a detailed record each morning that shows job start times, completion status, and any errors. What is the purpose of a job execution log in computer operations?",
+    "choices": [
+      "To store encrypted copies of backup media offsite for disaster recovery",
+      "To record the start time, completion time, status, and errors of each scheduled job",
+      "To track user login attempts and failed authentication events",
+      "To document software change requests submitted to the change advisory board"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): COBIT DSS01 (Managed Operations) requires execution logs that provide a complete audit trail of job execution times, completion status, and any errors encountered. These logs enable operations staff to verify that batch jobs ran successfully and to investigate failures. Wrong (A): Storing backup media offsite is a backup and recovery procedure rather than a job execution logging function. Wrong (C): Tracking login attempts is a logical access control function, whereas execution logs specifically record batch job processing activity. Wrong (D): Documenting change requests is a program change management activity, unlike execution logs which focus on operational job processing records."
+  },
+  {
+    "id": 12619,
+    "topic": "Change Management",
+    "difficulty": "hard",
+    "cognitive_level": 4,
+    "stem": "Sentinel Corp's IT audit team uses data analytics to correlate change management logs with system event logs. The analysis reveals 23 configuration changes to firewall rules that occurred outside scheduled maintenance windows and have no corresponding change tickets in the change management system. The IT operations team claims the changes were made by an automated network management tool. Which audit action is MOST appropriate?",
+    "choices": [
+      "Accept the explanation and document that automated tools are exempt from change management",
+      "Recommend disabling all automated network management tools until a full investigation is complete",
+      "Close the finding since automated changes are inherently lower risk than manual changes",
+      "Verify whether the automated tool's changes are governed by a pre-approved standard change process, and if not, report the 23 changes as unauthorized modifications requiring remediation"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): COBIT 2019 BAI06.01 requires that all changes, including those made by automated tools, be subject to change management controls. The auditor should verify whether the automated tool operates under a pre-approved standard change template. If the changes lack proper authorization framework, they must be reported as unauthorized modifications that circumvent change controls. Wrong (A): Automated tools are not exempt from change management; they must operate within approved parameters. Wrong (B): Disabling tools without investigation is disproportionate and may disrupt network operations. Wrong (C): Automated changes carry the same risk of misconfiguration as manual changes and require the same governance."
+  }
+]
