@@ -24,7 +24,7 @@ Each session:
 |---------|---------|-------|----------------|--------------|--------------|--------------|-------------|
 | AUD     | 489     | 1,446 | 39%            | 95%          | 14           | 0            | Complete    |
 | ISC     | 677     | 1,452 | 10%            | 90%          | 15           | ~3           | Gap         |
-| BAR     | 446     | 1,534 | 36%            | 100%         | 11           | 0            | Complete    |
+| BAR     | 446     | 1,534 | 36%            | 100%         | 12           | 0            | Complete    |
 | REG     | 441     | 1,446 | 48%            | 96%          | 9            | 0            | Complete    |
 | FAR     | 425     | 1,554 | 51%            | 100%         | 3+gen        | 0            | Complete    |
 | TCP     | 292     | 1,421 | 58%            | 96%          | 6            | 0            | Complete    |
@@ -93,6 +93,7 @@ Each session:
 | 2026-03-30 | 00680_citation_bar_batch10.sql         | BAR     | 50    | 98%           | Final BAR batch — 16 topics covered (Adv Consolidations, Adv Revenue/Intangibles, Capital Structure/Valuation, Derivatives/Hedging, Fin Statement Analysis, Fin Valuation, Foreign Currency, Fund Reconciliation, Income Taxes Adv, Intangibles Adv, Interfund, Pension, Prospective Analysis, Risk Mgmt/Econ, State/Local Govt, Stock Comp); BAR section complete |
 | 2026-03-30 | 01005_citation_bar_batch11.sql         | BAR     | 50    | 100%          | 7 topics covered (Adv Consolidations, Fin Statement Analysis, Fin Valuation, Fund Reconciliation, Internal-Use Software, Prospective Analysis, Risk Mgmt/Econ); BAR section finalized |
 | 2026-03-30 | 01006_citation_isc_batch15.sql         | ISC     | 50    | 90%           | 7 topics covered (Change Mgmt, Data Mgmt, IT Audit, Privacy, SOC Testing, Security Frameworks, Threats) |
+| 2026-03-30 | 01007_citation_bar_batch12.sql         | BAR     | 50    | 100%          | 7 topics covered (Adv Consolidations, Fin Statement Analysis, Fin Valuation, Fund Reconciliation, Prospective Analysis, Risk Mgmt/Econ, State/Local Govt) |
 
 ## Workflow
 
