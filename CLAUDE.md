@@ -245,7 +245,7 @@ Some values in this file are kept in sync automatically; others are point-in-tim
 - **Bloom's L1/L4 rebalancing:** Complete (2026-02) — 788 rewrites. Tracker: `docs/blooms-l1-l4-rebalancing.md`
 - **Difficulty rebalancing:** Complete (2026-02) — target 30/50/20 reached. Tracker: `docs/difficulty-rebalancing.md`
 - **Citation coverage:** AUD complete, ISC complete. BAR/REG/FAR/TCP pending. Tracker: `docs/citation-coverage.md`
-- **Question generation (1,500/section):** Pipeline built — `plan-distribution.ts` → `select-generation-batch.ts` → `generate-insert-scaffold.ts` → Claude fills → `validate-migration` + `check-generation-duplicates.ts`. All sections target ~1,500. Live DB: ~8,853 questions (synced 2026-03-30). FAR topics realigned to AICPA 2026 Blueprint. Tracker: `docs/generation-progress.md`
+- **Question generation (1,500/section):** Pipeline built — `plan-distribution.ts` → `select-generation-batch.ts` → `generate-insert-scaffold.ts` → Claude fills → `validate-migration` + `check-generation-duplicates.ts`. All sections target ~1,500. Live DB: ~8,853 questions (synced 2026-03-31). FAR topics realigned to AICPA 2026 Blueprint. Tracker: `docs/generation-progress.md`
 
 ## Spec Reference
 
