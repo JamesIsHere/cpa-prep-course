@@ -24,7 +24,7 @@ Each session:
 |---------|---------|-------|----------------|--------------|--------------|--------------|-------------|
 | AUD     | 489     | 1,446 | 39%            | 95%          | 14           | 0            | Complete    |
 | ISC     | 677     | 1,452 | 10%            | 93%          | 16           | ~2           | Gap         |
-| BAR     | 446     | 1,534 | 36%            | 100%         | 14           | 0            | Complete    |
+| BAR     | 446     | 1,534 | 36%            | 100%         | 15           | 0            | Complete    |
 | REG     | 441     | 1,446 | 48%            | 96%          | 9            | 0            | Complete    |
 | FAR     | 425     | 1,554 | 51%            | 100%         | 3+gen        | 0            | Complete    |
 | TCP     | 292     | 1,421 | 58%            | 96%          | 6            | 0            | Complete    |
@@ -97,6 +97,7 @@ Each session:
 | 2026-03-30 | 01008_citation_isc_batch16.sql         | ISC     | 32    | 93%           | 8 topics covered (Change Mgmt, Data Mgmt, IT Audit, Privacy, SOC Report Content, SOC Testing, Security Frameworks, Threats) |
 | 2026-03-30 | 01009_citation_bar_batch13.sql         | BAR     | 50    | 100%          | 8 topics covered (Adv Consolidations, Capital Structure/Valuation, Fin Statement Analysis, Fin Valuation, Fund Reconciliation, Internal-Use Software, Prospective Analysis, Risk Mgmt/Econ) |
 | 2026-03-30 | 01010_citation_bar_batch14.sql         | BAR     | 50    | 100%          | 7 topics covered (Business Combinations, Fin Statement Analysis, Fin Valuation, Foreign Currency, Fund Reconciliation, Prospective Analysis, Risk Mgmt/Econ) |
+| 2026-03-30 | 01011_citation_bar_batch15.sql         | BAR     | 16    | 100%          | 5 topics covered (Fin Statement Analysis, Fin Valuation, Intangibles Adv, Prospective Analysis, Risk Mgmt/Econ) |
 
 ## Workflow
 
