@@ -27,7 +27,7 @@ Each session:
 | BAR     | 446     | 1,534 | 36%            | 100%         | 15           | 0            | Complete    |
 | REG     | 441     | 1,446 | 48%            | 96%          | 9            | 0            | Complete    |
 | FAR     | 425     | 1,554 | 51%            | 100%         | 3+gen        | 0            | Complete    |
-| TCP     | 292     | 1,421 | 58%            | 96%          | 6            | 0            | Complete    |
+| TCP     | 292     | 1,421 | 58%            | 97%          | 7            | 0            | Complete    |
 
 **Section order:** Worst coverage first (ISC 10% → AUD 39% → BAR 36% → REG 48% → FAR 51% → TCP 58%).
 
@@ -99,6 +99,7 @@ Each session:
 | 2026-03-30 | 01010_citation_bar_batch14.sql         | BAR     | 50    | 100%          | 7 topics covered (Business Combinations, Fin Statement Analysis, Fin Valuation, Foreign Currency, Fund Reconciliation, Prospective Analysis, Risk Mgmt/Econ) |
 | 2026-03-30 | 01011_citation_bar_batch15.sql         | BAR     | 16    | 100%          | 5 topics covered (Fin Statement Analysis, Fin Valuation, Intangibles Adv, Prospective Analysis, Risk Mgmt/Econ) |
 | 2026-03-31 | 01012_citation_aud_batch15.sql         | AUD     | 28    | 97%           | 7 topics covered (Audit Sampling, Ethics/Independence, GAGAS, Independence, Professional Responsibilities, Risk Assessment, Substantive Procedures) |
+| 2026-03-31 | 01013_citation_tcp_batch7.sql          | TCP     | 18    | 97%           | 7 topics covered (Entity Choice, Entity Formation/Restructuring, Compensation, Multi-Jurisdictional, Owner-Entity, Passive/At-Risk, Retirement) |
 
 ## Workflow
 
