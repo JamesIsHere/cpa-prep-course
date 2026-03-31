@@ -4,9 +4,9 @@ Cross-session tracker for adding standard citations to question explanations.
 
 **Goal:** Every explanation references the relevant authoritative standard (ASC, AU-C, IRC, FASB, GASB, etc.)
 
-**Status (2026-03-30):** AUD 95%, FAR 100%, REG 100%, BAR 100%, ISC 90%, TCP 100%.
+**Status (2026-03-30):** AUD 95%, FAR 100%, REG 100%, BAR 100%, ISC 93%, TCP 100%.
 
-**Remaining gaps:** ISC (~137 missing). All other sections effectively complete.
+**Remaining gaps:** ISC (~105 missing). All other sections effectively complete.
 
 ## How to Resume
 
@@ -23,7 +23,7 @@ Each session:
 | Section | Missing | Total | Coverage Start | Coverage Now | Batches Done | Batches Left | Status      |
 |---------|---------|-------|----------------|--------------|--------------|--------------|-------------|
 | AUD     | 489     | 1,446 | 39%            | 95%          | 14           | 0            | Complete    |
-| ISC     | 677     | 1,452 | 10%            | 90%          | 15           | ~3           | Gap         |
+| ISC     | 677     | 1,452 | 10%            | 93%          | 16           | ~2           | Gap         |
 | BAR     | 446     | 1,534 | 36%            | 100%         | 12           | 0            | Complete    |
 | REG     | 441     | 1,446 | 48%            | 96%          | 9            | 0            | Complete    |
 | FAR     | 425     | 1,554 | 51%            | 100%         | 3+gen        | 0            | Complete    |
@@ -94,6 +94,7 @@ Each session:
 | 2026-03-30 | 01005_citation_bar_batch11.sql         | BAR     | 50    | 100%          | 7 topics covered (Adv Consolidations, Fin Statement Analysis, Fin Valuation, Fund Reconciliation, Internal-Use Software, Prospective Analysis, Risk Mgmt/Econ); BAR section finalized |
 | 2026-03-30 | 01006_citation_isc_batch15.sql         | ISC     | 50    | 90%           | 7 topics covered (Change Mgmt, Data Mgmt, IT Audit, Privacy, SOC Testing, Security Frameworks, Threats) |
 | 2026-03-30 | 01007_citation_bar_batch12.sql         | BAR     | 50    | 100%          | 7 topics covered (Adv Consolidations, Fin Statement Analysis, Fin Valuation, Fund Reconciliation, Prospective Analysis, Risk Mgmt/Econ, State/Local Govt) |
+| 2026-03-30 | 01008_citation_isc_batch16.sql         | ISC     | 32    | 93%           | 8 topics covered (Change Mgmt, Data Mgmt, IT Audit, Privacy, SOC Report Content, SOC Testing, Security Frameworks, Threats) |
 
 ## Workflow
 
