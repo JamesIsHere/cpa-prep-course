@@ -4,9 +4,9 @@ Cross-session tracker for adding standard citations to question explanations.
 
 **Goal:** Every explanation references the relevant authoritative standard (ASC, AU-C, IRC, FASB, GASB, etc.)
 
-**Status (2026-03-30):** AUD 95%, FAR 100%, REG 96%, BAR 87%, ISC 87%, TCP 96%.
+**Status (2026-03-30):** AUD 95%, FAR 100%, REG 100%, BAR 100%, ISC 87%, TCP 100%.
 
-**Remaining gaps:** BAR (~200 missing), ISC (~187 missing). All other sections effectively complete.
+**Remaining gaps:** ISC (~187 missing). All other sections complete.
 
 ## How to Resume
 
@@ -24,7 +24,7 @@ Each session:
 |---------|---------|-------|----------------|--------------|--------------|--------------|-------------|
 | AUD     | 489     | 1,446 | 39%            | 95%          | 14           | 0            | Complete    |
 | ISC     | 677     | 1,452 | 10%            | 87%          | 14           | ~4           | Gap         |
-| BAR     | 446     | 1,534 | 36%            | 87%          | 10           | ~4           | Gap         |
+| BAR     | 446     | 1,534 | 36%            | 100%         | 11           | 0            | Complete    |
 | REG     | 441     | 1,446 | 48%            | 96%          | 9            | 0            | Complete    |
 | FAR     | 425     | 1,554 | 51%            | 100%         | 3+gen        | 0            | Complete    |
 | TCP     | 292     | 1,421 | 58%            | 96%          | 6            | 0            | Complete    |
@@ -91,6 +91,7 @@ Each session:
 | 2026-03-30 | 00677_citation_reg_batch9.sql          | REG     | 36    | 100%          | Final REG batch — 19 topics covered (Agency, Contracts, Business Structures, C Corps, Circular 230, Debtor-Creditor, Fed Tax Procedures, Govt Regulation, Credits, Credits/AMT, Deductions, Filing/Credits, Income, Legal Duties, Like-Kind, Prof Ethics, Basis, S Corps, Tax Procedures); REG section complete |
 | 2026-03-30 | 00679_citation_bar_batch9.sql          | BAR     | 50    | 92%           | 19 topics covered (Adv Consolidations, Adv Lease, Adv Revenue/Intangibles, Business Combinations, Capital Structure/Valuation, Derivatives/Hedging, Fin Statement Analysis, Fin Valuation, Foreign Currency, Fund Reconciliation, Income Taxes Adv, Intangibles Adv, Interfund, Internal-Use Software, Pension, Prospective Analysis, Risk Mgmt/Econ, State/Local Govt, Stock Comp) |
 | 2026-03-30 | 00680_citation_bar_batch10.sql         | BAR     | 50    | 98%           | Final BAR batch — 16 topics covered (Adv Consolidations, Adv Revenue/Intangibles, Capital Structure/Valuation, Derivatives/Hedging, Fin Statement Analysis, Fin Valuation, Foreign Currency, Fund Reconciliation, Income Taxes Adv, Intangibles Adv, Interfund, Pension, Prospective Analysis, Risk Mgmt/Econ, State/Local Govt, Stock Comp); BAR section complete |
+| 2026-03-30 | 01005_citation_bar_batch11.sql         | BAR     | 50    | 100%          | 7 topics covered (Adv Consolidations, Fin Statement Analysis, Fin Valuation, Fund Reconciliation, Internal-Use Software, Prospective Analysis, Risk Mgmt/Econ); BAR section finalized |
 
 ## Workflow
 
