@@ -75,6 +75,17 @@ async function main() {
 	log("Running duplicate detection...");
 	const duplicates = analyzeDuplicates(questions);
 
+	// Citation coverage (uses same STANDARD_PATTERN as find-missing-citations.ts)
+	log("Running citation coverage...");
+	const CITE_PATTERN = /\b(AU-C|ASC|IRC|FASB|GASB|SSARS|AT-C|AR-C|SAS|PCAOB|Sec\.|Section|SQMS|SSAE|GAGAS|AICPA|NIST|COBIT|ITIL|GDPR|FIPS|ISO|RFC|IETF|COSO)\b/i;
+	const citationStats: Record<string, { total: number; cited: number }> = {};
+	for (const q of questions) {
+		const sec = sectionCodeMap.get(String(q.section_id)) ?? String(q.section_id);
+		if (!citationStats[sec]) citationStats[sec] = { total: 0, cited: 0 };
+		citationStats[sec].total++;
+		if (CITE_PATTERN.test(q.explanation ?? "")) citationStats[sec].cited++;
+	}
+
 	// JSON output mode
 	if (outputJson) {
 		const jsonOutput = {
@@ -105,6 +116,7 @@ async function main() {
 				likelyDuplicateCount: duplicates.likelyDuplicateCount,
 				pairCount: duplicates.pairs.length,
 			},
+			citations: citationStats,
 		};
 		console.log(JSON.stringify(jsonOutput, null, 2));
 		return;
@@ -147,6 +159,12 @@ async function main() {
 	);
 	log(`Orphaned topics: ${coverage.orphanedTopics.length}`);
 	log(`Low-coverage groups: ${coverage.coverageGaps.length}`);
+
+	log(`\nCitation coverage:`);
+	for (const [sec, stats] of Object.entries(citationStats).sort()) {
+		const pct = Math.round((stats.cited / stats.total) * 100);
+		log(`  ${sec.toUpperCase().padEnd(5)} ${stats.cited}/${stats.total} (${pct}%)`);
+	}
 
 	// Bloom's summary with source stats
 	log(
