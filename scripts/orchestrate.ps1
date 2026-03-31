@@ -1041,6 +1041,34 @@ function Parse-ClaudeResult {
 }
 
 # ═══════════════════════════════════════════════════════════════
+# CLAUDE INVOCATION (with timeout)
+# ═══════════════════════════════════════════════════════════════
+
+$ClaudeTimeoutMin = 15  # Kill Claude if it hangs longer than this
+
+function Invoke-Claude {
+    param([string]$InputFile, [switch]$CaptureOutput)
+
+    $job = Start-Job -ScriptBlock {
+        param($inputPath, $repoRoot)
+        Set-Location $repoRoot
+        Get-Content $inputPath -Raw | claude --print --dangerously-skip-permissions 2>&1
+    } -ArgumentList $InputFile, $RepoRoot
+
+    $finished = $job | Wait-Job -Timeout ($script:ClaudeTimeoutMin * 60)
+    if ($finished) {
+        $raw = Receive-Job $job
+        Remove-Job $job -Force -ErrorAction SilentlyContinue
+        if ($CaptureOutput) { return $raw }
+        return $null
+    } else {
+        Stop-Job $job -ErrorAction SilentlyContinue
+        Remove-Job $job -Force -ErrorAction SilentlyContinue
+        throw "Claude timed out after $($script:ClaudeTimeoutMin) minutes"
+    }
+}
+
+# ═══════════════════════════════════════════════════════════════
 # VALIDATION
 # ═══════════════════════════════════════════════════════════════
 
@@ -1161,13 +1189,12 @@ for ($i = 0; $i -lt $Batches; $i++) {
     $prompt | Out-String | ForEach-Object { [System.IO.File]::WriteAllText($promptFile, $_) }
 
     $claudeStart = Get-Date
-    Push-Location $RepoRoot
-    $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
     try {
-        $claudeRaw = Get-Content $promptFile -Raw | claude --print --dangerously-skip-permissions 2>&1
-    } finally {
-        $ErrorActionPreference = $prevEAP
-        Pop-Location
+        $claudeRaw = Invoke-Claude -InputFile $promptFile -CaptureOutput
+    } catch {
+        # Timeout or other failure
+        $claudeRaw = "ORCHESTRATOR_RESULT:{`"status`":`"error`",`"message`":`"$_`"}"
+        Write-Step 'Claude' "$_" 'Red'
     }
     $claudeOutput  = $claudeRaw | Out-String
     $claudeElapsed = (Get-Date) - $claudeStart
@@ -1261,13 +1288,11 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
             $retryFile = Join-Path $TempDir "retry_b${batchNum}_r${r}.txt"
             $retryPrompt | Out-String | ForEach-Object { [System.IO.File]::WriteAllText($retryFile, $_) }
 
-            Push-Location $RepoRoot
-            $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
             try {
-                Get-Content $retryFile -Raw | claude --print --dangerously-skip-permissions 2>&1 | Out-Null
-            } finally {
-                $ErrorActionPreference = $prevEAP
-                Pop-Location
+                Invoke-Claude -InputFile $retryFile
+            } catch {
+                Write-Step "Retry $r" "Claude failed: $_" 'Red'
+                break
             }
 
             $val = Invoke-Validate -ScaffoldPath $scaffoldPath
@@ -1329,13 +1354,10 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
             $dupRetryFile = Join-Path $TempDir "dedup_b${batchNum}.txt"
             $dupRetryPrompt | Out-String | ForEach-Object { [System.IO.File]::WriteAllText($dupRetryFile, $_) }
 
-            Push-Location $RepoRoot
-            $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
             try {
-                Get-Content $dupRetryFile -Raw | claude --print --dangerously-skip-permissions 2>&1 | Out-Null
-            } finally {
-                $ErrorActionPreference = $prevEAP
-                Pop-Location
+                Invoke-Claude -InputFile $dupRetryFile
+            } catch {
+                Write-Step 'Dedup' "Claude failed: $_" 'Red'
             }
 
             # Re-check
@@ -1401,13 +1423,10 @@ If stuck: ORCHESTRATOR_RESULT:{"status":"error","message":"description"}
                 $verifyRetryFile = Join-Path $TempDir "verify_b${batchNum}.txt"
                 $verifyRetryPrompt | Out-String | ForEach-Object { [System.IO.File]::WriteAllText($verifyRetryFile, $_) }
 
-                Push-Location $RepoRoot
-                $prevEAP = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
                 try {
-                    Get-Content $verifyRetryFile -Raw | claude --print --dangerously-skip-permissions 2>&1 | Out-Null
-                } finally {
-                    $ErrorActionPreference = $prevEAP
-                    Pop-Location
+                    Invoke-Claude -InputFile $verifyRetryFile
+                } catch {
+                    Write-Step 'Verify' "Claude failed: $_" 'Red'
                 }
 
                 # Re-verify
