@@ -24,7 +24,7 @@ if (!sectionArg) {
 
 // Standard citation pattern — aligned with validate-migration.ts
 const STANDARD_PATTERN =
-	/\b(AU-C|ASC|IRC|FASB|GASB|SSARS|AT-C|AR-C|SAS|PCAOB|Sec\.|Section|SQMS|SSAE|GAGAS|AICPA|NIST|COBIT|ITIL|GDPR|FIPS|ISO|RFC|IETF|COSO)\b/i;
+	/\b(AU-C|ASC|IRC|FASB|GASB|SSARS|AT-C|AR-C|SAS|PCAOB|Sec\.|Section|SQMS|SSAE|GAGAS|AICPA|NIST|COBIT|ITIL|GDPR|FIPS|ISO|RFC|IETF|COSO|SSTS|SFAC|UCC|Restatement)\b/i;
 
 async function main() {
 	// Load exclude IDs if provided

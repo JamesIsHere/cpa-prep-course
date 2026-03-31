@@ -23,7 +23,7 @@ export interface QualityAnalysis {
 
 // Standard citation patterns — aligned with validate-migration.ts
 const STANDARD_PATTERN =
-	/\b(AU-C|ASC|IRC|FASB|GASB|SSARS|AT-C|AR-C|SAS|PCAOB|Sec\.|Section|SQMS|SSAE|GAGAS|AICPA|NIST|COBIT|ITIL|GDPR|FIPS|ISO|RFC|IETF|COSO)\b/i;
+	/\b(AU-C|ASC|IRC|FASB|GASB|SSARS|AT-C|AR-C|SAS|PCAOB|Sec\.|Section|SQMS|SSAE|GAGAS|AICPA|NIST|COBIT|ITIL|GDPR|FIPS|ISO|RFC|IETF|COSO|SSTS|SFAC|UCC|Restatement)\b/i;
 
 // "Addresses wrong answers" patterns
 const WRONG_ANSWER_PATTERN =

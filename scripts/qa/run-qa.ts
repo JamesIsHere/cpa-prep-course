@@ -77,7 +77,8 @@ async function main() {
 
 	// Citation coverage (uses same STANDARD_PATTERN as find-missing-citations.ts)
 	log("Running citation coverage...");
-	const CITE_PATTERN = /\b(AU-C|ASC|IRC|FASB|GASB|SSARS|AT-C|AR-C|SAS|PCAOB|Sec\.|Section|SQMS|SSAE|GAGAS|AICPA|NIST|COBIT|ITIL|GDPR|FIPS|ISO|RFC|IETF|COSO)\b/i;
+	// Must match find-missing-citations.ts STANDARD_PATTERN exactly
+	const CITE_PATTERN = /\b(AU-C|ASC|IRC|FASB|GASB|SSARS|AT-C|AR-C|SAS|PCAOB|Sec\.|Section|SQMS|SSAE|GAGAS|AICPA|NIST|COBIT|ITIL|GDPR|FIPS|ISO|RFC|IETF|COSO|SSTS|SFAC|UCC|Restatement)\b/i;
 	const citationStats: Record<string, { total: number; cited: number }> = {};
 	for (const q of questions) {
 		const sec = sectionCodeMap.get(String(q.section_id)) ?? String(q.section_id);

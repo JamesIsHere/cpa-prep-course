@@ -28,7 +28,6 @@ if (!sectionArg || !batchArg) {
 }
 
 const section = sectionArg;
-const batch = batchArg;
 
 interface Candidate {
 	id: number;
