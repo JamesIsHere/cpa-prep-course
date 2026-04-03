@@ -65,7 +65,7 @@ Each batch gets its own headless `claude --print` invocation with a fresh contex
 - **MDX for content** — lessons are `.mdx` files in `src/content/{section}/`, imported dynamically via `await import(\`@/content/${path}.mdx\`)`
 - **Static data layer** — section/lesson metadata in `src/lib/sections.ts` (not in DB yet)
 - **Server components by default** — client components only where interactivity is required (forms, nav, sidebar)
-- **`mdx-components.tsx`** at `src/` root — custom Tailwind-styled overrides for all MDX elements
+- **`mdx-components.tsx`** at `src/` root — custom Tailwind-styled overrides for all MDX elements. **Lesson component patterns documented in `docs/lesson-component-guide.md` — read before writing or modifying any MDX lesson.**
 - **Supabase SSR auth** — `@supabase/ssr` with browser client (`src/lib/supabase/client.ts`), server client (`src/lib/supabase/server.ts`), and middleware (`src/lib/supabase/middleware.ts`)
 - **Stripe lazy init** — `getStripe()` in `src/lib/stripe.ts` to avoid build-time errors from missing env vars
 - **Stripe webhooks** — `src/app/api/webhooks/stripe/route.ts` uses service role client (bypasses RLS)
@@ -106,6 +106,7 @@ Each batch gets its own headless `claude --print` invocation with a fresh contex
 | `src/lib/supabase/middleware.ts`               | Auth redirect logic                        |
 | `middleware.ts`                                | Next.js middleware entry point             |
 | `src/mdx-components.tsx`                      | MDX component overrides                    |
+| `docs/lesson-component-guide.md`              | **Lesson component style guide — READ BEFORE WRITING MDX** |
 | `src/components/study-pipeline.tsx`               | 4-step pipeline visual (full + compact)    |
 | `src/lib/quiz.ts`                               | Quiz types + scoring logic                 |
 | `supabase/migrations/00001_initial_schema.sql` | Full DB schema + seed data                 |

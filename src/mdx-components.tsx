@@ -1,9 +1,25 @@
 import type { MDXComponents } from "mdx/types";
 import QuickCheck from "@/components/quick-check";
+import DeepDive from "@/components/deep-dive";
+import RateWaterfall from "@/components/rate-waterfall";
+import {
+	FrameworkConceptMap,
+	FrameworkDecisionTree,
+	FrameworkFormula,
+	FrameworkTable,
+	FrameworkMnemonic,
+} from "@/components/framework-inline";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
 	return {
 		QuickCheck,
+		DeepDive,
+		RateWaterfall,
+		FrameworkConceptMap,
+		FrameworkDecisionTree,
+		FrameworkFormula,
+		FrameworkTable,
+		FrameworkMnemonic,
 		h1: ({ children }) => (
 			<h1 className="text-3xl font-bold mb-6 text-gray-900">{children}</h1>
 		),

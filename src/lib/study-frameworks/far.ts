@@ -154,6 +154,7 @@ export const farFramework: StudyFramework = {
 						children: [
 							{ label: "Taxable income × tax rate" },
 							{ label: "Based on tax return amounts" },
+							{ label: "= Total Current Tax Expense" },
 						],
 					},
 					{
@@ -165,6 +166,7 @@ export const farFramework: StudyFramework = {
 									{ label: "Future deductible amounts" },
 									{ label: "NOL/credit carryforwards" },
 									{ label: "Valuation allowance if needed" },
+									{ label: "= Net DTA" },
 								],
 							},
 							{
@@ -172,10 +174,13 @@ export const farFramework: StudyFramework = {
 								children: [
 									{ label: "Future taxable amounts" },
 									{ label: "Accelerated depreciation" },
+									{ label: "= Total DTL" },
 								],
 							},
+							{ label: "= Net Deferred Tax Expense (DTL − DTA)" },
 						],
 					},
+					{ label: "= Income Tax Provision (Current ± Deferred)" },
 				],
 			},
 		},
