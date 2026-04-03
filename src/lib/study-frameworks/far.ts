@@ -145,7 +145,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "Income Tax Accounting (ASC 740)",
-			blueprintGroups: ["far.3.C"],
+			blueprintGroups: ["far.3.D"],
 			root: {
 				label: "Income Tax Provision",
 				children: [
@@ -206,7 +206,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "Consolidation and Investment Hierarchy",
-			blueprintGroups: ["far.3.D"],
+			blueprintGroups: ["far.1.A"],
 			root: {
 				label: "Level of Influence",
 				children: [
@@ -1096,7 +1096,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "Uncertain Tax Position (ASC 740-10)",
-			blueprintGroups: ["far.3.C"],
+			blueprintGroups: ["far.3.D"],
 			root: {
 				question:
 					"Is it more likely than not (>50%) that the tax position will be sustained on technical merits?",
@@ -1382,7 +1382,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			name: "Deferred Tax Asset/Liability",
-			blueprintGroups: ["far.3.C"],
+			blueprintGroups: ["far.3.D"],
 			formula: "Temporary Difference × Enacted Tax Rate",
 			description: "Use rate expected to be in effect when difference reverses",
 		},
@@ -1415,7 +1415,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			name: "Goodwill (Acquisition Method)",
-			blueprintGroups: ["far.3.D"],
+			blueprintGroups: ["far.1.A"],
 			formula:
 				"Goodwill = Consideration Transferred + FV of NCI + FV of Previously Held Interest − FV of Net Identifiable Assets",
 			description:
@@ -1808,7 +1808,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			title: "Temporary vs. Permanent Differences",
-			blueprintGroups: ["far.3.C"],
+			blueprintGroups: ["far.3.D"],
 			headers: ["Item", "Type", "Creates Deferred Tax?"],
 			rows: [
 				["Accelerated tax depreciation", "Temporary", "DTL"],
@@ -1917,7 +1917,7 @@ export const farFramework: StudyFramework = {
 	mnemonics: [
 		{
 			acronym: "DR DIGS",
-			blueprintGroups: ["far.3.C"],
+			blueprintGroups: ["far.3.D"],
 			expansion:
 				"Depreciation, Rent, Depletion, Interest (on bonds), Goodwill (amortization/impairment), Start-up costs",
 			explanation:
@@ -1980,7 +1980,7 @@ export const farFramework: StudyFramework = {
 		},
 		{
 			acronym: "WUCC",
-			blueprintGroups: ["far.3.C"],
+			blueprintGroups: ["far.3.D"],
 			expansion:
 				"Warranties (accrued), Unearned revenue (taxed on receipt), Compensation (accrued), Credit losses (estimated)",
 			explanation:
