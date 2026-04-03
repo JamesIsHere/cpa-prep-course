@@ -13,8 +13,8 @@ export interface Section {
 	lessons: Lesson[];
 }
 
-// All sections (used internally for lookups — always complete)
-const allSections: Section[] = [
+// All sections (always complete — not filtered by NEXT_PUBLIC_ACTIVE_SECTIONS)
+export const allSections: Section[] = [
 	{
 		code: "aud",
 		title: "Auditing and Attestation",

@@ -1,6 +1,6 @@
 # Question Curation Plan
 
-> Auto-synced from live DB on 2026-03-31 via `npm run sync-counts`
+> Auto-synced from live DB on 2026-04-03 via `npm run sync-counts`
 
 Per-section target: 1,500 questions. Distributed by AICPA Blueprint area weights.
 

@@ -16,6 +16,7 @@
     "generate-migration": "tsx scripts/qa/generate-migration.ts",
     "health": "tsx scripts/health-check.ts",
     "sync-counts": "tsx scripts/qa/sync-question-counts.ts && tsx scripts/qa/plan-distribution.ts",
+    "sync-alignment": "tsx scripts/qa/sync-alignment.ts",
     "verify": "tsx scripts/qa/verify-correctness.ts",
     "cleanup-ids": "tsx scripts/qa/cleanup-verified-ids.ts",
     "migrate": "node scripts/migrate.mjs",

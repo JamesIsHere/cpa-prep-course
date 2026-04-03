@@ -32,6 +32,8 @@ npm run migrate              # Apply pending migrations → track → sync count
 npm run migrate:status       # Show pending migrations + DB counts (no changes)
 npm run migrate:dry          # Show what would be applied (no changes)
 npm run sync-counts          # Sync questionCounts from live DB → blueprint.ts + tests
+npm run sync-alignment       # Validate alignment CSVs against sections.ts + MDX files
+npm run sync-alignment -- --check  # Read-only validation (exit 1 if stale)
 npm run validate-migration <file>  # Validate question migration against style guide
 npm run generate-migration   # Generate UPDATE scaffold from piped candidate JSON
 npm run cleanup-ids <file>   # Remove fixed IDs from verified-ids.json (auto-detect from migration)
@@ -155,6 +157,7 @@ Each batch gets its own headless `claude --print` invocation with a fresh contex
 | `scripts/qa/extract-topic-stems.ts`           | Fetch existing stems for dedup context |
 | `scripts/qa/check-generation-duplicates.ts`   | Post-generation trigram duplicate check |
 | `scripts/qa/sync-question-counts.ts`          | Sync DB topic counts → blueprint.ts + test assertions      |
+| `scripts/qa/sync-alignment.ts`                | Validate alignment CSV status against sections.ts + MDX    |
 | `scripts/qa/utils.ts`                         | Shared utilities (migration numbering, file lock, trigrams) |
 | `scripts/qa/validate-migration.ts`            | Pre-commit migration validator (INSERT + UPDATE + explanation-only) |
 | `scripts/qa/cleanup-verified-ids.ts`          | Remove fixed/deleted IDs from verified-ids.json fail/review lists  |
@@ -176,13 +179,13 @@ Each batch gets its own headless `claude --print` invocation with a fresh contex
 | Section | Code | Lessons | Questions | Framework Items | Topics                                            |
 |---------|------|---------|-----------|-----------------|---------------------------------------------------|
 | AUD     | aud  | 13      | ~1,446    | 37              | Ethics, planning, risk, controls, evidence, sampling, reports, review/compilation, attestation, quality mgmt, government auditing |
-| FAR     | far  | 24      | ~1,554    | 60              | Financial reporting (for-profit), cash flows, consolidations, NFP, state/local govt, public company/EPS, special purpose frameworks, ratios, cash, receivables, inventory, PP&E, investments, intangibles, payables, debt, equity, accounting changes, contingencies, revenue, income taxes, fair value, leases, subsequent events |
+| FAR     | far  | 24      | ~1,554    | 126             | Financial reporting (for-profit), cash flows, consolidations, NFP, state/local govt, public company/EPS, special purpose frameworks, ratios, cash, receivables, inventory, PP&E, investments, intangibles, payables, debt, equity, accounting changes, contingencies, revenue, income taxes, fair value, leases, subsequent events |
 | REG     | reg  | 18      | ~1,446    | 60              | Circular 230, contracts, agency, business structures, basis, gains/losses, 1031, individual tax, credits, filing status, C/S corps, partnerships, tax procedures, legal duties, debtor-creditor, tax-exempt orgs |
 | BAR     | bar  | 16      | ~1,534    | 40              | Financial analysis, valuation, capital structure, derivatives, consolidations, govt reporting, fund reconciliation, interfund transactions |
 | ISC     | isc  | 16      | ~1,452    | 39              | IT infrastructure, ERP, data management, security frameworks, threats, privacy, SOC, SOC testing, SOC reporting |
 | TCP     | tcp  | 15      | ~1,421    | 44              | Individual planning, passive/at-risk, wealth transfer, retirement, international tax, trusts, capital structure tax, nontaxable dispositions, related parties |
 
-**Totals:** 102 lessons, ~8,853 questions (target: ~9,000), 280 framework items across 6 sections
+**Totals:** 102 lessons, ~8,853 questions (target: ~9,000), 346 framework items across 6 sections
 
 ## Database Tables
 
@@ -230,6 +233,7 @@ Some values in this file are kept in sync automatically; others are point-in-tim
 | QA quality scores (critical/moderate/avg) | **Not auto-synced** — run QA for live numbers | `npm run qa` |
 | Bloom's / difficulty / citation status | **Not auto-synced** — see tracker files in `docs/` | `npm run qa --output=json` |
 | Duplicate count | **Not auto-synced** — reported by QA | `npm run qa` |
+| AICPA mapping CSV lesson status (`alignment/csv/`) | `sync-alignment` validates against `sections.ts` + MDX | `npm run sync-alignment` |
 
 **Rule for Claude:** Do not report "everything is in sync" unless you have run the relevant commands in this session. Prose claims in this file may be stale.
 
@@ -245,7 +249,7 @@ Some values in this file are kept in sync automatically; others are point-in-tim
 - **Bloom's L1/L4 rebalancing:** Complete (2026-02) — 788 rewrites. Tracker: `docs/blooms-l1-l4-rebalancing.md`
 - **Difficulty rebalancing:** Complete (2026-02) — target 30/50/20 reached. Tracker: `docs/difficulty-rebalancing.md`
 - **Citation coverage:** AUD complete, ISC complete. BAR/REG/FAR/TCP pending. Tracker: `docs/citation-coverage.md`
-- **Question generation (1,500/section):** Pipeline built — `plan-distribution.ts` → `select-generation-batch.ts` → `generate-insert-scaffold.ts` → Claude fills → `validate-migration` + `check-generation-duplicates.ts`. All sections target ~1,500. Live DB: ~8,853 questions (synced 2026-03-31). FAR topics realigned to AICPA 2026 Blueprint. Tracker: `docs/generation-progress.md`
+- **Question generation (1,500/section):** Pipeline built — `plan-distribution.ts` → `select-generation-batch.ts` → `generate-insert-scaffold.ts` → Claude fills → `validate-migration` + `check-generation-duplicates.ts`. All sections target ~1,500. Live DB: ~8,853 questions (synced 2026-04-03). FAR topics realigned to AICPA 2026 Blueprint. Tracker: `docs/generation-progress.md`
 
 ## Spec Reference
 
