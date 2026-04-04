@@ -1,93 +1,222 @@
-# Not-for-Profit Accounting
+# Financial Reporting: Not-for-Profit Entities
 
 ## Learning Objectives
 
-- Understand the financial reporting framework for not-for-profit entities under ASC 958
-- Distinguish between contributions with and without donor restrictions
-- Apply revenue recognition principles for contributions, grants, and exchange transactions
-- Prepare and interpret the required financial statements for NFP entities
+- Explain why NFP accounting differs from for-profit accounting using the conservation framework
+- Classify net assets as with or without donor restrictions under ASC 958
+- Distinguish between conditional and unconditional contributions and determine recognition timing
+- Prepare and interpret the four required NFP financial statements
+- Apply recognition criteria for contributed services and in-kind donations
+- Distinguish exchange transactions from contributions
+- Account for endowments, including investment return allocation
+- Classify NFP cash flows, including donor-restricted contributions
 
-## Overview of NFP Financial Reporting
+## The Core Idea: Conservation Without Owners
 
-**Not-for-profit (NFP)** entities follow FASB standards (not GASB), but with specialized guidance under **ASC 958**. NFPs include charities, foundations, private universities, voluntary health and welfare organizations, religious organizations, and similar entities that receive significant resources from donors who do not expect a financial return.
+A not-for-profit entity obeys the same conservation law as any other entity — value is conserved, every transaction has a source and a destination, debits equal credits. But there is one structural difference that rewrites the entire reporting framework: **there are no owners.**
 
-The key conceptual difference from for-profit accounting is the absence of owners' equity. Instead, NFPs report **net assets**, classified into two categories:
+In a for-profit entity, equity is the residual claim of the owners. The income statement measures how much value the entity created for those owners. Dividends distribute that value. The equity section tracks the running score. Every financial statement ultimately answers the question: what happened to the owners' wealth?
 
-- **Net assets without donor restrictions** — Resources available for any purpose at the board's discretion
-- **Net assets with donor restrictions** — Resources subject to donor-imposed restrictions, either purpose restrictions (must be used for a specified purpose) or time restrictions (must be used in or after a specified period)
+An NFP has no owners and no equity. Resources arrive as contributions, grants, and fees. They leave as program expenditures and operating costs. The residual is not anyone's wealth — it is the entity's capacity to fulfill its mission. The balance sheet's equity section is replaced by **net assets**, classified not by ownership type but by **donor intent** — what the donor said the money could be used for.
 
-> ASU 2016-14 simplified net asset classification from three categories to two. The old categories — unrestricted, temporarily restricted, and permanently restricted — were replaced by "without donor restrictions" and "with donor restrictions." The exam uses the current two-category model.
+This is not a cosmetic relabeling. It fundamentally changes what the financial statements communicate. A for-profit income statement answers "how much richer did the owners get?" An NFP statement of activities answers "how did the entity's capacity to serve its mission change?" The conservation law is the same; the economic question it answers is different.
 
-## Required Financial Statements
+<DeepDive title="The directed graph with no terminal node">
 
-NFP entities prepare four financial statements:
+In Framework 8 (The GL as a Directed Graph), every for-profit entity's transaction graph has a clear terminal node: retained earnings, the reservoir where accumulated profits pool. Dividends are the drain valve that releases value to the owners who are the ultimate destination of the system.
 
-1. **Statement of Financial Position** — Similar to a balance sheet. Reports total assets, total liabilities, and net assets (classified as with or without donor restrictions).
+An NFP's directed graph has no terminal node in this sense. Value enters through contribution nodes and exits through program expense nodes. The "retained earnings" equivalent — net assets without donor restrictions — is not a reservoir being filled for eventual distribution. It is operating capacity. The graph is a throughput system, not an accumulation system.
 
-2. **Statement of Activities** — Reports revenues, expenses, gains, and losses, showing changes in each net asset category. Must present expenses by both **functional classification** (program services vs. supporting activities) and **natural classification** (salaries, rent, supplies). The functional breakdown can be shown on the face of the statement or in the notes.
+This explains why NFP financial analysis focuses on different metrics than for-profit analysis. Profitability ratios are meaningless when there is no profit motive. Instead, the relevant questions are throughput efficiency (what percentage of resources reach program activities vs. administrative overhead?) and sustainability (are inflows sufficient to maintain the current level of program activity?).
 
-3. **Statement of Cash Flows** — Follows the same format as for-profit entities (operating, investing, financing activities). NFPs may use either the direct or indirect method.
+The cash flow statement serves the same translation function it does in for-profit reporting — converting accrual measurements to cash reality. But the classification of donor-restricted contributions for long-term purposes as financing activities (not operating) reflects the directed graph structure: these inflows are structural capital, not operating throughput. They fund the entity's long-term capacity, analogous to how debt and equity fund a for-profit's capital structure.
 
-4. **Statement of Functional Expenses** — Reports expenses by both function and nature in a matrix format. Required for voluntary health and welfare organizations and encouraged for all NFPs under ASU 2016-14.
+</DeepDive>
 
-## Contributions
+## Net Asset Classification
 
-A **contribution** is an unconditional transfer of assets to an NFP, with no expectation of receiving anything of equal value in return. Contributions are the primary revenue source for most NFPs.
+The two-category net asset model is the organizing principle of NFP accounting. Every balance, every transaction, every disclosure ultimately maps back to this classification.
+
+<FrameworkConceptMap groupId="far.3.F" title="NFP Net Asset Classification" />
+
+**Net assets without donor restrictions** are available for any purpose at the governing board's discretion. This includes board-designated funds — resources the board has earmarked for a specific purpose internally. Board designations are not donor restrictions. They can be reversed by the board at any time. The exam tests this distinction frequently.
+
+**Net assets with donor restrictions** carry donor-imposed limitations on use. These come in three forms:
+
+- **Purpose restrictions** — Must be used for a specified activity (e.g., "for scholarship programs only")
+- **Time restrictions** — Must be used in or after a specified period (e.g., "not available until 2027")
+- **Perpetual restrictions** — Principal must be maintained indefinitely (endowments). Only investment return may be spent, subject to the donor's stipulation and applicable state law (UPMIFA)
+
+When a purpose or time restriction is satisfied, the NFP reclassifies the amount from with donor restrictions to without donor restrictions. This reclassification is reported as **net assets released from restrictions** on the statement of activities — a line that has no equivalent in for-profit reporting.
+
+> ASU 2016-14 simplified net asset classification from three categories (unrestricted, temporarily restricted, permanently restricted) to two. The exam uses the current two-category model exclusively.
+
+## Contributions: The Recognition Framework
+
+A **contribution** is an unconditional transfer of assets with no expectation of receiving something of equal value in return. Contributions are the primary revenue source for most NFPs, and their recognition depends on two questions: Is it conditional? And does it carry restrictions?
+
+<FrameworkDecisionTree groupId="far.1.B" title="NFP Contribution: With or Without Donor Restrictions?" />
 
 ### Unconditional Contributions
 
-Recognized as revenue in the period received or pledged. The classification depends on donor restrictions:
+Recognized as revenue in the period received or pledged. Classification follows donor intent:
 
 - **No restriction** — Revenue without donor restrictions
 - **Purpose or time restriction** — Revenue with donor restrictions
 
-When a restriction is satisfied (the purpose is fulfilled or the time period elapses), the NFP reclassifies the amount from net assets with donor restrictions to net assets without donor restrictions. This reclassification is reported as **net assets released from restrictions** on the statement of activities.
+A multi-year pledge (promise to give) is recognized at the **present value** of estimated future cash flows in the period the pledge is made — not as cash is received. The discount unwind is recognized as contribution revenue in subsequent periods.
 
 ### Conditional Contributions
 
-A **conditional contribution** depends on a future and uncertain event — a barrier that must be overcome and a right of return exists if the condition is not met. Conditional contributions are **not recognized as revenue** until the conditions are substantially met. Until then, amounts received are recorded as a **refundable advance** (liability).
+A **conditional contribution** has two elements: a **barrier** that must be overcome and a **right of return** (or right of release) if the condition is not met. Conditional contributions are **not recognized as revenue** until the conditions are substantially met.
 
-**Example:** A foundation pledges $500,000 to a university on the condition that the university raises $500,000 in matching funds. Until the university meets the matching requirement, the pledge is conditional and not recognized as revenue.
+Until conditions are met, amounts received are recorded as a **refundable advance** (liability on the statement of financial position).
 
-> The distinction between a condition and a restriction is critical on the exam. A condition involves a barrier plus a right of return or release — it delays recognition. A restriction limits how already-recognized revenue can be used — it affects classification, not timing.
+**Example:** A foundation pledges $500,000 to a university on the condition that the university raises $500,000 in matching funds. Until the match is secured, the pledge is conditional — no revenue is recognized. If $200,000 is received in advance, it is recorded as a refundable advance.
+
+<QuickCheck
+  question="A donor pledges $100,000 to an NFP, stipulating the funds must be used for cancer research. There are no conditions — the pledge is unconditional. How does the NFP classify this contribution?"
+  answer="Revenue with donor restrictions (purpose restriction). The pledge is unconditional, so it is recognized as revenue immediately upon the pledge. It carries a purpose restriction (cancer research only), so it increases net assets with donor restrictions. When the NFP spends the funds on cancer research, it reclassifies the amount to net assets without donor restrictions as 'net assets released from restrictions.'"
+/>
+
+> The distinction between a condition and a restriction is critical. A **condition** delays recognition — it is a barrier plus a right of return. A **restriction** affects classification, not timing — it limits how already-recognized revenue can be used. The exam loves to conflate these.
 
 ### Contributed Services
 
-Contributed services are recognized as revenue only if they:
+Contributed services are recognized as revenue only if they meet one of two criteria:
 
-1. Create or enhance a **nonfinancial asset**, or
-2. Require **specialized skills**, are provided by individuals possessing those skills, and would typically need to be purchased if not donated
+1. **Create or enhance a nonfinancial asset** — e.g., an electrician volunteers to wire a new building
+2. **Require specialized skills**, are provided by individuals possessing those skills, and would typically need to be purchased if not donated — e.g., a CPA volunteers to perform the annual audit
 
-**Example:** A CPA volunteers to perform the annual audit for a charity. This is recognized as contribution revenue and a corresponding expense because it requires specialized skills and would otherwise be purchased. A volunteer who answers phones at a fundraising event would not be recognized.
+A volunteer who answers phones at a fundraiser does not meet either criterion — no revenue is recognized.
+
+When contributed services are recognized, the NFP records both **contribution revenue** and a corresponding **expense** (or capitalizes the asset, if criterion 1 applies). The net effect on net assets is zero, but both the resource inflow and the resource consumption are visible in the statements.
 
 ### Contributed Nonfinancial Assets (In-Kind Donations)
 
-Under ASU 2020-07, NFPs must present contributed nonfinancial assets as a **separate line item** on the statement of activities and provide detailed disclosures about the valuation techniques used, donor restrictions, and whether the assets were monetized or used in operations.
+Under ASU 2020-07, contributed nonfinancial assets must be presented as a **separate line item** on the statement of activities. Disclosures include valuation techniques, donor restrictions, and whether the assets were monetized or used in operations. This transparency requirement responded to concerns about NFPs inflating revenue with hard-to-value in-kind contributions.
 
 ## Exchange Transactions vs. Contributions
 
-Not all revenue received by an NFP is a contribution. **Exchange transactions** — where both parties give and receive approximately equal value — are accounted for under the same standards as for-profit entities (e.g., ASC 606 for revenue from contracts with customers).
+Not all NFP revenue is contributions. **Exchange transactions** — where both parties give and receive approximately equal value — follow the same standards as for-profit entities (e.g., ASC 606).
 
-| Transaction | Classification |
-|------------|---------------|
-| Donation with no strings attached | Contribution — without donor restrictions |
-| Grant requiring specific research outcomes | Conditional contribution (barrier + right of return) |
-| Tuition charged by a private university | Exchange transaction (ASC 606) |
-| Membership dues with no tangible benefits | Contribution |
-| Membership dues with significant benefits | Exchange transaction |
-| Government grant for general operations | Contribution — may have restrictions |
+| Transaction | Classification | Why |
+|------------|---------------|-----|
+| Donation with no strings attached | Contribution — without donor restrictions | Donor expects nothing in return |
+| Grant requiring specific research outcomes | Conditional contribution (barrier + right of return) | Barrier must be overcome before recognition |
+| Tuition charged by a private university | Exchange transaction (ASC 606) | Student receives education of equal value |
+| Membership dues with no tangible benefits | Contribution | Member expects nothing of equal value |
+| Membership dues with significant benefits | Exchange transaction | Member receives services of equal value |
+| Government grant for general operations | Contribution — may have restrictions | No commensurate value exchanged |
+
+The classification test is economic substance, not label. A "grant" that requires the NFP to deliver specific services to the grantor is an exchange transaction, regardless of what the parties call it.
+
+## Required Financial Statements
+
+NFP entities prepare four financial statements. The names are different from for-profit reporting, but the conservation logic is identical — assets = liabilities + net assets at every moment, and the period's activity explains the change.
+
+<FrameworkConceptMap groupId="far.1.B" title="NFP Financial Statements vs. For-Profit" />
+
+<FrameworkTable groupId="far.1.B" title="NFP vs. For-Profit Financial Statements" />
+
+### Statement of Financial Position
+
+The NFP equivalent of the balance sheet. Reports total assets, total liabilities, and net assets classified as with or without donor restrictions. The equity section is replaced entirely by the net asset categories.
+
+### Statement of Activities
+
+Reports revenues, expenses, gains, and losses, organized by their effect on each net asset class. Shows the change in net assets for the period — the NFP equivalent of net income, though the concept it measures is mission capacity rather than owner wealth.
+
+The statement must present expenses by **functional classification**: program services (mission-related) versus supporting activities (management and general, fundraising). Natural classification (salaries, rent, supplies, depreciation) must also be presented — either on the face of the statement or in the notes.
+
+### Statement of Functional Expenses
+
+A matrix showing expenses by both function (columns) and nature (rows). **Required** for voluntary health and welfare organizations. Encouraged for all NFPs under ASU 2016-14.
+
+This statement answers the question external users care about most: what percentage of resources went to actual programs versus overhead? It is the primary tool for evaluating operational efficiency.
+
+### Statement of Cash Flows
+
+Same three-category structure as for-profit (operating, investing, financing). Either direct or indirect method is permitted.
+
+**Key NFP classification difference:** Donor-restricted contributions received for **long-term purposes** (endowments, capital campaigns) are classified as **financing activities**, not operating activities. This reflects their structural role — they fund long-term capacity, analogous to debt or equity issuances in for-profit entities.
+
+<DeepDive title="Why donor-restricted long-term contributions are financing activities">
+
+The cash flow statement translates accrual measurements into cash reality. The classification structure sorts cash flows by the economic role they play: operating (day-to-day throughput), investing (capital deployment), and financing (structural funding).
+
+A donor-restricted endowment contribution is structural capital. It funds the NFP's permanent asset base, and only the return on that capital feeds operating capacity. This is economically identical to a for-profit issuing equity — cash comes in, it funds a permanent base, and the return on that base drives operations. Classifying it as financing, not operating, correctly reflects the economic substance.
+
+Unrestricted contributions, by contrast, are operating inflows — they directly fund current-period mission activities, like revenue from customers funds current-period operations in a for-profit. The restriction, not the label "contribution," determines the classification.
+
+</DeepDive>
 
 ## Endowments
 
-An **endowment** is a contribution where the donor stipulates that the principal must be maintained permanently (or for a specified term). Only the investment return may be spent.
+An endowment is a contribution where the donor stipulates that the principal must be maintained permanently (or for a specified term). The NFP invests the principal and spends only the investment return, subject to the donor's stipulation and state law.
 
-- The principal is reported as net assets **with donor restrictions** (permanently restricted under old terminology)
-- Investment income follows the donor's stipulation and applicable state law (UPMIFA). Unrestricted income increases net assets without donor restrictions; restricted income increases net assets with donor restrictions.
+- **Principal** — Reported as net assets with donor restrictions (the perpetual restriction keeps it there permanently)
+- **Investment return** — Classification depends on donor stipulation:
+  - If the donor specifies the return must be used for a particular purpose → net assets with donor restrictions
+  - If the donor places no restriction on the return → net assets without donor restrictions
+  - State law (UPMIFA) may impose a prudence standard on spending, which is not a donor restriction but may limit distributions
+
+### UPMIFA (Uniform Prudent Management of Institutional Funds Act)
+
+UPMIFA provides a spending framework for endowments. It replaces the old "historic dollar value" concept with a **prudence standard** — the board may spend endowment funds as it determines prudent, considering the fund's purposes, preservation of purchasing power, general economic conditions, expected returns, and other relevant factors.
+
+An endowment fund is considered **underwater** when its fair value falls below the original gift amount (or the amount required to be maintained by the donor). Underwater endowments are still reported as net assets with donor restrictions. The losses reduce the restricted class — they do not shift to unrestricted.
+
+<QuickCheck
+  question="A donor contributes $1,000,000 to a university's endowment, stipulating that the principal must be maintained permanently and investment income must be used for scholarships. In Year 1, the endowment earns $60,000 in investment income. How is the $60,000 classified?"
+  answer="Net assets with donor restrictions (purpose restriction). The donor specified the income must be used for scholarships — that is a purpose restriction. The $60,000 is recognized as investment revenue with donor restrictions. When the university awards scholarships from these funds, it reclassifies the amount to without donor restrictions as net assets released from restrictions."
+/>
+
+## GASB vs. FASB: Which Framework Applies?
+
+Not all not-for-profit entities follow FASB. The controlling question is **who controls the entity**.
+
+- **Private NFPs** (Red Cross, private universities, YMCA) → FASB / ASC 958
+- **Governmental NFPs** (public universities, government hospitals) → GASB
+
+The test: if a government appoints the majority of the board or can impose its will on the entity, it is governmental and follows GASB. Otherwise, FASB.
+
+This distinction matters because the reporting frameworks are fundamentally different. Private NFPs report net assets in two categories with donor-restriction-based classification. Governmental entities use fund accounting with governmental, proprietary, and fiduciary fund types, each with different measurement focus and basis of accounting.
+
+> Private NFPs may use fund accounting **internally** for management purposes, but they must present **unified financial statements** externally under FASB. Governmental entities use fund accounting for external reporting. The exam tests whether you know which entities must present fund-level statements to external users.
+
+## OCI in the NFP Context
+
+Other comprehensive income components affect NFPs just as they affect for-profit entities — unrealized gains on AFS debt securities, pension adjustments, foreign currency translation, and hedging gains/losses all bypass the statement of activities and accumulate in net assets.
+
+<FrameworkTable groupId="far.1.B" title="OCI Components" />
+
+<FrameworkMnemonic groupId="far.1.B" acronym="PUFER" />
+
+For NFPs, OCI items are reported as changes in the appropriate net asset class on the statement of activities. They do not create a separate "accumulated other comprehensive income" line as in for-profit equity — instead, they are embedded within the net asset categories.
+
+## Lease Accounting for NFPs
+
+NFPs follow the same lease standards as for-profit entities under ASC 842. The classification criteria and measurement principles are identical.
+
+<FrameworkDecisionTree groupId="far.3.F" title="Lease Classification (Lessee — ASC 842)" />
+
+<FrameworkMnemonic groupId="far.3.F" acronym="OWES LIFE" />
+
+The key NFP-specific consideration: when a donor provides a building to an NFP through a below-market lease, the difference between the lease payments and the fair market rent is a **contributed nonfinancial asset** (in-kind donation). The NFP recognizes both the ROU asset at fair value and contribution revenue for the below-market element.
+
+<QuickCheck
+  question="A charity receives the use of office space worth $5,000 per month in rent. The lease requires the charity to pay only $1,000 per month. Under ASC 842 and ASC 958, what does the charity recognize?"
+  answer="The charity recognizes the ROU asset and lease liability based on the $1,000 contractual payments (per ASC 842). The $4,000 monthly difference between fair market rent and actual rent is recognized as contribution revenue — a contributed nonfinancial asset (in-kind donation of space). The charity also recognizes a corresponding rent expense for the full $5,000 fair value, making the net effect on net assets zero while showing both the resource inflow and consumption."
+/>
 
 ## Key Terms
 
-- **Net assets without donor restrictions** — Resources available for any purpose at the discretion of the NFP's governing board
-- **Net assets with donor restrictions** — Resources subject to donor-imposed purpose or time restrictions
-- **Conditional contribution** — A contribution that depends on a future and uncertain event; not recognized until conditions are substantially met
-- **Net assets released from restrictions** — A reclassification on the statement of activities when a donor restriction is satisfied
-- **Functional classification** — Grouping expenses by their purpose: program services (mission-related) versus supporting activities (management, fundraising)
+- **Net assets without donor restrictions** — Resources available for any purpose at the board's discretion; includes board-designated funds
+- **Net assets with donor restrictions** — Resources subject to donor-imposed purpose, time, or perpetual restrictions
+- **Conditional contribution** — A contribution with a barrier plus a right of return; not recognized until conditions are substantially met
+- **Unconditional contribution** — A contribution recognized as revenue when received or pledged; classification depends on donor restrictions
+- **Net assets released from restrictions** — Reclassification reported on the statement of activities when a donor restriction is satisfied
+- **Functional classification** — Grouping expenses by purpose: program services vs. supporting activities (management, fundraising)
+- **UPMIFA** — Uniform Prudent Management of Institutional Funds Act; provides the spending framework for endowment funds
+- **Refundable advance** — Liability recorded when cash is received for a conditional contribution before conditions are met

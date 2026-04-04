@@ -2,83 +2,162 @@
 
 ## Learning Objectives
 
-- Apply the major cost flow assumptions: FIFO, LIFO, and weighted average
-- Calculate ending inventory and cost of goods sold under each method
-- Apply the lower of cost or net realizable value rule
-- Distinguish between periodic and perpetual inventory systems
+- Explain inventory as a consumable asset whose release rate is demand-driven, not time-driven
+- Apply the cost flow assumptions (FIFO, LIFO, weighted average) and trace their effects on COGS, ending inventory, and net income
+- Calculate ending inventory and COGS under periodic and perpetual systems
+- Apply the lower of cost or net realizable value (NRV) rule and distinguish it from the LIFO/retail "lower of cost or market" rule
+- Estimate ending inventory using the gross profit method and the retail inventory method
+- Account for purchase commitments and LIFO liquidations
+
+## The Core Idea: Inventory as a Consumable Reservoir
+
+Inventory is the purest example of a **consumable asset** — value that is depleted directly in production. Unlike equipment (which enables output without being consumed per unit) or cash (which sits until deployed), inventory flows through the entity at the pace of sales. Every unit sold drains the reservoir. Every purchase refills it. The balance sheet line item is a snapshot of what remains in the reservoir at a point in time.
+
+The release mechanism is COGS: when a unit sells, its cost transfers from the balance sheet (Inventory) to the income statement (Cost of Goods Sold). The conservation equation holds perfectly — no value is created or destroyed. The entity exchanges inventory at cost for cash or receivables at selling price. The difference — gross profit — is the net wealth created by the transaction.
+
+This is why the cost flow assumption matters so much. The question is not "which physical unit did we ship?" but "which cost layer do we assign to the units that left the reservoir?" The answer changes COGS, ending inventory, net income, and tax liability — all from the same physical transaction.
+
+<DeepDive title="Why inventory metabolism is demand-driven">
+
+In systems dynamics terms, inventory follows a stock-flow equation: the stock level changes at a rate equal to purchases minus units sold times cost per unit. The release rate is gated by operational tempo — high sales volume accelerates the drain, slow periods let inventory accumulate.
+
+This is fundamentally different from capacity assets like equipment, where cost release (depreciation) follows a time-decay function regardless of utilization. Inventory turnover (COGS / Average Inventory) measures the velocity of this specific compartment. A company with 12x turnover cycles its entire inventory monthly. One with 4x turnover holds inventory for three months before it reaches the income statement.
+
+The cash conversion cycle — Inventory Days + Receivable Days - Payable Days — captures how long it takes value to complete the full circuit from cash outflow (purchase) through the inventory reservoir and back to cash inflow (collection). Inventory days is the bottleneck in most manufacturing and retail businesses.
+
+</DeepDive>
 
 ## Cost Flow Assumptions
 
-When identical goods are purchased at different prices over time, an entity must select a **cost flow assumption** to determine which costs are assigned to cost of goods sold (COGS) and which remain in ending inventory. The three primary methods are:
+When identical goods are purchased at different prices over time, the entity must select a **cost flow assumption** to determine which costs drain from the reservoir into COGS and which remain in ending inventory. The assumption does not need to match physical flow — it is a cost allocation method.
 
-**FIFO (First-In, First-Out)** — The oldest costs are assigned to COGS first. Ending inventory reflects the most recent purchase prices. During periods of rising prices, FIFO produces the highest ending inventory, lowest COGS, and highest net income.
+<FrameworkTable groupId="far.2.C" title="Inventory Methods Comparison" />
 
-**LIFO (Last-In, First-Out)** — The most recent costs are assigned to COGS first. Ending inventory reflects the oldest purchase prices. During periods of rising prices, LIFO produces the lowest ending inventory, highest COGS, and lowest net income (providing a tax advantage). LIFO is permitted under U.S. GAAP but prohibited under IFRS.
+### FIFO (First-In, First-Out)
 
-**Weighted Average** — A single average cost per unit is computed and applied to both COGS and ending inventory.
+The oldest costs flow to COGS first. Ending inventory reflects the most recent purchase prices.
 
-> The **LIFO conformity rule** requires that if an entity uses LIFO for tax purposes, it must also use LIFO for financial reporting. This is one of the rare cases where tax and GAAP methods must align.
+**In rising prices:** FIFO produces the highest ending inventory, lowest COGS, and highest net income. The balance sheet is more current (recent costs), but the income statement matches old costs against current revenues.
+
+### LIFO (Last-In, First-Out)
+
+The most recent costs flow to COGS first. Ending inventory reflects the oldest purchase prices.
+
+**In rising prices:** LIFO produces the lowest ending inventory, highest COGS, and lowest net income — providing a tax advantage. The income statement is more current (recent costs matched against current revenues), but the balance sheet is stale.
+
+LIFO is permitted under U.S. GAAP but **prohibited under IFRS**. The **LIFO conformity rule** requires that if an entity uses LIFO for tax purposes, it must also use LIFO for financial reporting — one of the rare cases where tax and GAAP methods must align.
+
+### Weighted Average
+
+A single average cost per unit is computed and applied uniformly.
+
+<FrameworkFormula groupId="far.2.C" name="Weighted-Average Cost (Inventory)" />
+
+### Specific Identification
+
+Each unit is tracked individually. Used for unique or high-value items (jewelry, automobiles, real estate). Not a cost flow assumption per se — it matches actual cost to actual unit.
 
 ### Worked Example
 
-A company has the following inventory data for the month:
+A company has the following inventory data:
 
-| Transaction | Units | Cost/Unit |
-|------------|-------|-----------|
-| Beginning inventory | 100 | $10 |
-| Purchase — Mar 10 | 200 | $12 |
-| Purchase — Mar 20 | 150 | $14 |
+| Transaction         | Units | Cost/Unit |
+|---------------------|-------|-----------|
+| Beginning inventory | 100   | $10       |
+| Purchase — Mar 10   | 200   | $12       |
+| Purchase — Mar 20   | 150   | $14       |
 
-Total goods available for sale: 450 units. During the month, 300 units were sold.
+Total goods available: 450 units at a total cost of $5,500. During the month, 300 units were sold.
 
-**FIFO (300 units sold):**
+**FIFO (300 sold):**
 - 100 units at $10 = $1,000
 - 200 units at $12 = $2,400
 - COGS = **$3,400**
 - Ending inventory: 150 units at $14 = **$2,100**
 
-**LIFO (300 units sold):**
+**LIFO (300 sold):**
 - 150 units at $14 = $2,100
 - 150 units at $12 = $1,800
 - COGS = **$3,900**
-- Ending inventory: 100 units at $10 + 50 units at $12 = **$1,600**
+- Ending inventory: 100 at $10 + 50 at $12 = **$1,600**
 
 **Weighted Average:**
-- Total cost = (100 x $10) + (200 x $12) + (150 x $14) = $5,500
-- Weighted average cost = $5,500 / 450 = **$12.22 per unit**
-- COGS = 300 x $12.22 = **$3,666**
+- Average cost = $5,500 / 450 = **$12.22/unit**
+- COGS = 300 x $12.22 = **$3,667**
 - Ending inventory = 150 x $12.22 = **$1,833**
 
-## Lower of Cost or Net Realizable Value
+Notice: the same 300 physical units were sold. The only thing that changed was the cost assignment. LIFO COGS is $500 higher than FIFO — that difference flows straight to the bottom line and the tax return.
 
-Under U.S. GAAP, inventory is reported at the **lower of cost or net realizable value (NRV)** for entities using FIFO or weighted average. **Net realizable value** is the estimated selling price in the ordinary course of business, less reasonably predictable costs of completion, disposal, and transportation.
+<QuickCheck question="In a period of rising prices, which cost flow method reports the highest net income? Which reports the lowest ending inventory?" answer="FIFO reports the highest net income (lowest COGS). LIFO reports the lowest ending inventory (oldest, cheapest costs remain on the balance sheet)." />
 
-If NRV falls below cost, the inventory is written down with a corresponding loss recognized in the period. Once written down, the new cost basis cannot be written back up under U.S. GAAP.
+## The COGS Equation
 
-For entities using **LIFO or the retail inventory method**, the rule is the **lower of cost or market**, where market is defined as current replacement cost, subject to a ceiling (NRV) and a floor (NRV minus normal profit margin).
+<FrameworkFormula groupId="far.2.C" name="COGS (Periodic)" />
 
-> The distinction between "lower of cost or NRV" and "lower of cost or market" based on the cost flow method is a common exam trap. Remember: FIFO and weighted average use NRV; LIFO uses market (with ceiling and floor).
+This is the fundamental identity for periodic inventory systems: **Beginning Inventory + Purchases - Ending Inventory = COGS.** It is a conservation equation — total goods available must either remain in inventory or have been sold. There is no third option (assuming no shrinkage, damage, or theft — which are separate write-down events).
 
 ## Periodic vs. Perpetual Systems
 
-**Periodic system** — Inventory counts and COGS are determined at the end of the period. No running balance is maintained during the period. Purchases are recorded in a temporary Purchases account.
+**Periodic system** — Inventory counts and COGS are determined at period end. No running balance is maintained. Purchases go to a temporary Purchases account. COGS is computed as a plug: Beginning Inventory + Net Purchases - Ending Inventory (per physical count).
 
-**Perpetual system** — Inventory and COGS are updated continuously with each transaction. The Inventory account is adjusted directly for every purchase and sale.
+**Perpetual system** — Inventory and COGS are updated in real time with each transaction. The Inventory account is adjusted directly for every purchase and sale.
 
-Under FIFO, the periodic and perpetual systems produce the same results because the oldest costs flow out first regardless of when the calculation is done. Under LIFO and weighted average, however, results differ because the "most recent" cost depends on whether the calculation is performed transaction by transaction (perpetual) or at period end (periodic).
+**Key insight:** Under FIFO, periodic and perpetual produce identical results — the oldest costs flow out first regardless of when you calculate. Under LIFO and weighted average, results differ because "most recent" and "average" depend on whether the calculation window is each transaction (perpetual) or the full period (periodic).
+
+## Lower of Cost or Net Realizable Value
+
+Inventory is subject to a **ceiling test** — it cannot be reported above the amount the entity expects to recover from selling it. This is the conservatism principle in action: anticipate losses, do not anticipate gains.
+
+<FrameworkDecisionTree groupId="far.2.C" title="Inventory: Lower of Cost or Net Realizable Value" />
+
+### The Two Regimes
+
+The specific rule depends on the cost flow method:
+
+| Cost Flow Method | Valuation Rule | Definition of "Market" |
+|-----------------|---------------|----------------------|
+| FIFO or Weighted Average | Lower of cost or **NRV** | NRV = Selling price - costs to complete and sell |
+| LIFO or Retail Method | Lower of cost or **market** | Market = Replacement cost, bounded by ceiling (NRV) and floor (NRV - normal profit margin) |
+
+This distinction is a common exam trap. The LIFO/retail rule uses a three-part "market" test:
+- **Ceiling:** NRV (cannot exceed)
+- **Floor:** NRV minus normal profit margin (cannot go below)
+- **Market:** Current replacement cost, clamped between ceiling and floor
+
+Compare the clamped replacement cost to historical cost. Use the lower amount.
+
+### Write-Down Mechanics
+
+When NRV (or market, for LIFO) falls below cost:
+- Write inventory down to the lower amount
+- Recognize the loss in the current period (typically within COGS or as a separate loss line)
+- The written-down value becomes the **new cost basis**
+- Under U.S. GAAP, once written down, inventory **cannot be written back up** (IFRS permits reversal up to original cost)
+
+**Journal entry for write-down:**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Loss on inventory write-down (or COGS) | $XX | |
+| Inventory | | $XX |
+
+<QuickCheck question="An entity uses FIFO. Inventory cost is $50,000. NRV is $42,000. What is reported on the balance sheet?" answer="$42,000. Under FIFO, the rule is lower of cost or NRV. Since NRV ($42,000) is below cost ($50,000), the inventory is written down to NRV. The $8,000 loss is recognized in the current period." />
+
+### LIFO Reserve and LIFO Liquidation
+
+The **LIFO reserve** is the difference between inventory under LIFO and what it would be under FIFO. It is disclosed in the footnotes and allows analysts to convert LIFO financial statements to FIFO for comparability.
+
+**LIFO liquidation** occurs when units sold exceed units purchased, forcing the entity to dip into older, lower-cost LIFO layers. This artificially inflates gross profit and net income — the entity is reporting old costs against current revenues. Footnote disclosure is required when material.
 
 ## Inventory Estimation Methods
 
-When a physical count is not possible, inventory can be estimated using the gross profit method or the retail inventory method.
+When a physical count is impractical (fire loss, interim reporting), inventory can be estimated from financial data.
 
 ### Gross Profit Method
 
-The gross profit method estimates ending inventory by working backward from sales using a historical gross profit percentage.
+<FrameworkFormula groupId="far.2.C" name="Gross Profit Method (Ending Inventory)" />
 
-**Steps:**
-1. Calculate goods available for sale = Beginning inventory + Net purchases
-2. Estimate COGS = Net sales x (1 - Gross profit %)
-3. Estimated ending inventory = Goods available for sale - Estimated COGS
+The logic: if you know the historical gross profit percentage, you can estimate COGS from sales, and then back into ending inventory as the residual.
 
 **Worked example:**
 
@@ -89,44 +168,53 @@ The gross profit method estimates ending inventory by working backward from sale
 | Net sales | $280,000 |
 | Historical gross profit % | 30% |
 
-- Goods available for sale = $50,000 + $200,000 = **$250,000**
-- Estimated COGS = $280,000 x (1 - 0.30) = $280,000 x 0.70 = **$196,000**
-- Estimated ending inventory = $250,000 - $196,000 = **$54,000**
+1. Goods available for sale = $50,000 + $200,000 = **$250,000**
+2. Estimated COGS = $280,000 x (1 - 0.30) = **$196,000**
+3. Estimated ending inventory = $250,000 - $196,000 = **$54,000**
+
+> The gross profit method is not acceptable for annual financial statements — it is an estimation technique for interim reporting, insurance claims, and reasonableness checks.
 
 ### Retail Inventory Method
 
-The retail inventory method tracks both cost and retail amounts to calculate a **cost-to-retail ratio**, which converts ending inventory at retail to an estimated cost.
+The retail method tracks goods at both cost and retail, computes a **cost-to-retail ratio**, and converts ending inventory at retail to an estimated cost.
 
 **Steps:**
-1. Calculate goods available for sale at both cost and retail
-2. Compute cost-to-retail ratio = Cost of goods available / Retail value of goods available
-3. Determine ending inventory at retail = Goods available at retail - Net sales
-4. Convert to cost: Ending inventory at cost = Ending inventory at retail x Cost-to-retail ratio
+1. Calculate goods available at both cost and retail
+2. Compute: Cost-to-Retail Ratio = Cost of Goods Available / Retail Value of Goods Available
+3. Ending inventory at retail = Goods available at retail - Net sales
+4. Ending inventory at cost = Ending inventory at retail x Cost-to-retail ratio
 
-The ratio calculation varies depending on the cost flow assumption:
-- **Average cost** — Include both beginning inventory and net markups/markdowns in the ratio
-- **FIFO** — Exclude beginning inventory from the ratio (only current period layers)
-- **Lower of cost or market (conventional)** — Include net markups but exclude net markdowns from the ratio (produces a lower, more conservative ratio)
+The ratio calculation varies by method:
 
-**Markups** increase the retail price above original retail. **Markdowns** decrease the retail price below original retail. Net markups = markups - markup cancellations. Net markdowns = markdowns - markdown cancellations.
+| Variant | Include in Ratio | Effect |
+|---------|-----------------|--------|
+| Average cost | Beginning inventory + net markups + net markdowns | Averages all layers |
+| FIFO | Exclude beginning inventory | Current period layers only |
+| Conventional (LCM) | Include net markups, **exclude** net markdowns | Lower, more conservative ratio |
 
-> The conventional retail method (excluding markdowns from the ratio) approximates lower of cost or market and is the most commonly tested version on the CPA exam.
+**Markups** increase retail price above original retail. **Markdowns** decrease it below original retail. Net markups = markups - markup cancellations. Net markdowns = markdowns - markdown cancellations.
 
-### Purchase Commitments
+> The conventional retail method (excluding markdowns) approximates lower of cost or market and is the most commonly tested version on the CPA exam.
 
-A **purchase commitment** is a noncancelable agreement to purchase inventory at a specified future date and price. Under U.S. GAAP:
+## Purchase Commitments
 
-- If the **market value drops below the commitment price** before the purchase date, the entity recognizes a **loss** in the period the decline occurs and reports the commitment as a liability
-- When the goods are received, inventory is recorded at the lower market value
-- If market value **recovers** before delivery, the recovery is recognized as a gain (but only up to the previously recognized loss)
-- If market value is at or above the commitment price, no entry is required — only footnote disclosure of material purchase commitments
+A **purchase commitment** is a noncancelable agreement to buy inventory at a specified future price. Under U.S. GAAP:
 
-> Purchase commitments are an easy-to-miss exam topic. Remember: losses are recognized when they become probable (market drops below commitment price), not when the goods are delivered.
+- If **market value drops below the commitment price** before delivery: recognize a loss and liability in the period the decline occurs
+- When goods are received: record inventory at the lower market value
+- If market value **recovers** before delivery: recognize a gain up to the previously recorded loss
+- If market value equals or exceeds the commitment price: no entry — footnote disclosure only for material commitments
 
-## Key Terms
+> Losses on purchase commitments are recognized when they become probable, not when the goods arrive. This is the same conservatism principle that drives the lower of cost or NRV rule — anticipate losses, never gains.
 
-- **Cost flow assumption** — The method used to assign costs to COGS and ending inventory when identical goods are purchased at different prices
-- **Net realizable value (NRV)** — Estimated selling price minus costs of completion, disposal, and transportation
-- **LIFO reserve** — The difference between inventory reported under LIFO and what it would be under FIFO, disclosed in the footnotes
-- **LIFO liquidation** — Occurs when units sold exceed units purchased, dipping into older, lower-cost LIFO layers and artificially inflating income
-- **Goods available for sale** — Beginning inventory plus purchases, the total pool from which COGS and ending inventory are derived
+<QuickCheck question="A company uses the gross profit method. Beginning inventory is $80,000, net purchases are $320,000, net sales are $500,000, and the historical gross profit percentage is 35%. What is estimated ending inventory?" answer="Goods available = $80,000 + $320,000 = $400,000. Estimated COGS = $500,000 x (1 - 0.35) = $325,000. Ending inventory = $400,000 - $325,000 = $75,000." />
+
+<DeepDive title="The LIFO conformity rule and its economic logic">
+
+The LIFO conformity rule (IRC §472(c)) is unusual — it requires that if you use LIFO for tax, you must use LIFO for GAAP reporting. Most of the time, GAAP and tax are free to diverge (that divergence is what creates deferred taxes). Why the exception?
+
+The economic logic: LIFO's primary benefit is tax deferral. In rising prices, LIFO assigns the newest (highest) costs to COGS, reducing taxable income. Congress decided that if a company wants this tax benefit, it cannot simultaneously present rosier numbers to shareholders using FIFO. You get the tax break, but you live with the financial reporting consequences.
+
+This creates a real economic tension. Companies using LIFO report lower earnings and lower inventory values, which can affect debt covenants, management bonuses, and stock valuations. The LIFO reserve disclosure exists partly to let analysts undo this effect and compare LIFO companies to FIFO companies on an apples-to-apples basis.
+
+</DeepDive>

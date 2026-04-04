@@ -2,163 +2,274 @@
 
 ## Learning Objectives
 
-- Calculate and interpret profitability ratios including gross profit margin, return on assets, and return on equity
-- Calculate and interpret liquidity ratios including current ratio, quick ratio, and turnover ratios
-- Calculate and interpret solvency ratios including debt-to-equity and times interest earned
-- Compute performance metrics such as EBITDA, price-to-earnings, and dividend payout ratios
-- Analyze variances between budget and actual results
+- Explain why financial ratios are projections of a multi-dimensional system, not standalone metrics
+- Calculate and interpret profitability ratios: gross profit margin, return on assets, return on equity, and return on sales
+- Calculate and interpret liquidity ratios: current ratio, quick ratio, and turnover ratios (AR, inventory, AP)
+- Calculate and interpret solvency ratios: debt-to-equity, total debt ratio, and times interest earned
+- Decompose return on equity using DuPont analysis and explain what each component reveals
+- Compute the cash conversion cycle and explain its operational significance
+- Analyze budget-to-actual variances and distinguish favorable from unfavorable results
 
-## Why Ratios Matter on the CPA Exam
+## The Core Idea: Ratios as Projections
 
-The AICPA Blueprint explicitly tests your ability to **identify, calculate, and apply** financial statement ratios. This isn't just about memorizing formulas — the exam expects you to know *which* ratio answers a given analytical question, compute it correctly, and interpret what it means for the entity's financial health.
+A set of financial statements is a multi-dimensional object. The balance sheet has dozens of line items. The income statement has dozens more. The cash flow statement adds a third axis. No human can hold all of these dimensions in working memory simultaneously.
 
-Ratios fall into four categories: **profitability, liquidity, solvency, and performance metrics.**
+Financial ratios exist to solve this problem. Each ratio is a **projection** — it collapses the multi-dimensional financial position onto a single axis that answers one specific question. This is the same operation as taking a three-dimensional object and casting its shadow on a wall. The shadow is not the object. It loses information. But a well-chosen shadow reveals structure that would be invisible in the full 3D view.
+
+The categories of ratios correspond to the angles from which you shine the light:
+
+- **Shine from the "can we pay our bills?" angle** — the shadow is liquidity ratios
+- **Shine from the "are we making money?" angle** — the shadow is profitability ratios
+- **Shine from the "can we survive long-term?" angle** — the shadow is solvency ratios
+- **Shine from the "how efficiently do we use resources?" angle** — the shadow is efficiency and performance metrics
+
+No single projection tells the whole story. A company can look healthy from the profitability angle and critically ill from the liquidity angle — profitable but cash-starved. This kills businesses. The art of financial analysis is choosing the right projections for the question being asked.
+
+<DeepDive title="Why dimensionless numbers are both powerful and dangerous">
+
+Ratios are dimensionless — they have no units. That is their strength (comparability across firms of different sizes) and their weakness (loss of scale information). A current ratio of 2.0 looks identical whether the company has $2 million in current assets against $1 million in current liabilities or $200 billion against $100 billion. The risk profiles of these two companies are radically different, but the ratio cannot distinguish them.
+
+Ratios also inherit any distortion in the underlying financial statements. Return on assets for a company with fully depreciated but still productive equipment looks spectacular — not because the company is efficient, but because the denominator is artificially small. If assets are carried at historical cost far below fair value, every ratio computed from those amounts inherits the measurement bias.
+
+This is why the CPA exam tests interpretation, not just computation. Knowing that ROA = Net Income / Average Total Assets is arithmetic. Knowing that a high ROA might reflect an understated asset base rather than genuine efficiency — that is analysis.
+
+</DeepDive>
+
+<FrameworkConceptMap groupId="far.1.F" title="Financial Ratio Taxonomy" />
+
+<FrameworkMnemonic groupId="far.1.F" acronym="PLSPE" />
 
 ## Profitability Ratios
 
-Profitability ratios measure how effectively an entity generates earnings relative to revenue, assets, or equity.
+Profitability ratios measure how effectively an entity generates earnings relative to revenue, assets, or equity. They answer: **is this entity creating wealth?**
 
 ### Gross Profit Margin
 
-**Gross Profit Margin = (Revenue − Cost of Goods Sold) / Revenue**
+<FrameworkFormula groupId="far.1.F" name="Gross Profit Margin" />
 
-Measures the percentage of revenue retained after direct costs. A declining gross margin signals rising input costs or pricing pressure.
-
-### Return on Sales (Net Profit Margin)
-
-**Return on Sales = Net Income / Revenue**
-
-Shows how much of each dollar of revenue flows to the bottom line after all expenses.
+This is the most persistent earnings metric. Gross margin measures the percentage of revenue retained after direct costs — it reflects pricing power and production efficiency. A declining gross margin signals rising input costs, competitive pricing pressure, or a shift in product mix toward lower-margin items.
 
 ### Return on Assets (ROA)
 
-**ROA = Net Income / Average Total Assets**
+<FrameworkFormula groupId="far.1.F" name="Return on Assets (ROA)" />
 
-Measures how efficiently management uses assets to generate profit. Use **average** total assets (beginning + ending ÷ 2) unless the problem specifies otherwise.
+ROA measures how efficiently management uses assets to generate profit. Always use **average** total assets (beginning + ending / 2) unless the problem specifies otherwise. The average smooths out the effect of major asset acquisitions or disposals during the period.
 
-### Return on Equity (ROE)
+### Return on Equity (ROE) and DuPont Decomposition
 
-**ROE = Net Income / Average Stockholders' Equity**
+<FrameworkFormula groupId="far.1.F" name="Return on Equity (ROE)" />
 
-Measures the return generated on shareholders' investment. ROE can be decomposed using the **DuPont formula**:
+ROE measures the return generated on shareholders' investment. By itself it is useful. Decomposed, it is revelatory. The **DuPont identity** breaks ROE into its three constituent drivers:
 
-**ROE = Net Profit Margin × Asset Turnover × Equity Multiplier**
+**ROE = Net Profit Margin x Asset Turnover x Equity Multiplier**
+
+| Component | Formula | What It Measures |
+|-----------|---------|-----------------|
+| Net profit margin | Net Income / Net Sales | Profitability — how much of each revenue dollar flows to the bottom line |
+| Asset turnover | Net Sales / Average Total Assets | Efficiency — how much revenue each dollar of assets generates |
+| Equity multiplier | Average Total Assets / Average Equity | Leverage — how much debt amplifies the equity base |
+
+This is not three separate ratios that happen to multiply together. It is a **decomposition of a single question** — "what return are shareholders getting?" — into its three channels. Every change in ROE must come from one of these three:
+
+1. The entity kept more of each revenue dollar (margin improvement)
+2. The entity generated more revenue per dollar of assets (efficiency improvement)
+3. The entity used more debt relative to equity (leverage increase)
+
+The critical insight: **leverage amplifies both returns and risk.** A company can boost ROE by borrowing more, but this does not improve the underlying business — it just magnifies whatever profitability and efficiency already exist. If the underlying business deteriorates, leverage amplifies the losses just as readily.
+
+### Worked Example — DuPont Decomposition
+
+Company A and Company B both report ROE of 15%. Identical headline number. But the decomposition reveals radically different businesses:
+
+| Component | Company A | Company B |
+|-----------|-----------|-----------|
+| Net profit margin | 10% | 3% |
+| Asset turnover | 1.0x | 1.0x |
+| Equity multiplier | 1.5x | 5.0x |
+| **ROE** | **15%** | **15%** |
+
+Company A earns a healthy margin with modest leverage. Company B earns a thin margin and compensates with heavy leverage. Same ROE, completely different risk profiles. In a downturn, Company A has margin to absorb losses. Company B has almost none — and its debt obligations remain fixed.
+
+<QuickCheck question="A company has net income of $90,000, net sales of $600,000, average total assets of $1,000,000, and average equity of $400,000. What is the ROE, and what does DuPont tell you about its source?" answer="ROE = $90,000 / $400,000 = 22.5%. DuPont: Margin = 15%, Turnover = 0.6x, Equity Multiplier = 2.5x. The company is profitable (high margin) but asset-heavy (low turnover) with moderate leverage. The ROE is driven primarily by profit margin, not leverage — a healthy sign." />
 
 ## Liquidity Ratios
 
-Liquidity ratios assess an entity's ability to meet short-term obligations.
+Liquidity ratios assess an entity's ability to meet short-term obligations. They answer: **can this entity pay its bills?**
 
 ### Current Ratio
 
-**Current Ratio = Current Assets / Current Liabilities**
+<FrameworkFormula groupId="far.1.F" name="Current Ratio" />
 
-A ratio above 1.0 indicates more current assets than current liabilities. However, a very high current ratio may signal inefficient use of assets.
+A ratio above 1.0 means current assets exceed current liabilities. But context matters — a very high current ratio may signal inefficient use of assets (excess cash sitting idle, slow-moving inventory). Industries with predictable cash flows (utilities) can operate comfortably at lower current ratios than industries with volatile revenues (construction).
 
 ### Quick Ratio (Acid-Test)
 
-**Quick Ratio = (Cash + Short-Term Investments + Net Receivables) / Current Liabilities**
+<FrameworkFormula groupId="far.1.F" name="Quick (Acid-Test) Ratio" />
 
-Excludes inventory and prepaid expenses — assets that may not convert to cash quickly.
+The quick ratio strips out inventory and prepaid expenses — assets that may not convert to cash quickly. It is the more conservative liquidity measure. If a company has a healthy current ratio but a weak quick ratio, it may be sitting on slow-moving or obsolete inventory.
 
 ### Accounts Receivable Turnover
 
-**AR Turnover = Net Credit Sales / Average Accounts Receivable**
+<FrameworkFormula groupId="far.1.F" name="Accounts Receivable Turnover" />
 
-**Days Sales Outstanding = 365 / AR Turnover**
-
-Higher turnover means faster collection. Days sales outstanding (DSO) converts the ratio to average collection period.
+Higher turnover means faster collection. Days sales outstanding (DSO = 365 / AR Turnover) converts the ratio to an average collection period in days. If DSO is climbing, the entity is taking longer to collect — a potential cash flow warning.
 
 ### Inventory Turnover
 
-**Inventory Turnover = Cost of Goods Sold / Average Inventory**
+<FrameworkFormula groupId="far.1.F" name="Inventory Turnover" />
 
-**Days Inventory Outstanding = 365 / Inventory Turnover**
+Higher turnover means inventory sells through faster. Days inventory outstanding (DIO = 365 / Inventory Turnover) measures how long inventory sits before being sold. A declining turnover ratio may signal obsolescence, overproduction, or weakening demand.
 
 ### Accounts Payable Turnover
 
-**AP Turnover = Cost of Goods Sold / Average Accounts Payable**
+<FrameworkFormula groupId="far.1.F" name="Accounts Payable Turnover" />
 
-**Days Payable Outstanding = 365 / AP Turnover**
+Days payable outstanding (DPO = 365 / AP Turnover) measures how long the entity takes to pay suppliers. A longer DPO preserves cash but may strain supplier relationships or signal financial distress.
 
-### Cash Conversion Cycle
+### The Cash Conversion Cycle
 
-**CCC = DSO + DIO − DPO**
+The cash conversion cycle combines all three turnover metrics into a single measure of how long cash is tied up in operating activities:
 
-The cash conversion cycle combines receivable, inventory, and payable turnover into a single measure of how long cash is tied up in operating activities.
+**CCC = DSO + DIO - DPO**
+
+| Component | What It Measures | Effect on CCC |
+|-----------|-----------------|---------------|
+| DSO (Days Sales Outstanding) | How long to collect from customers | Higher DSO = longer CCC |
+| DIO (Days Inventory Outstanding) | How long inventory sits before sale | Higher DIO = longer CCC |
+| DPO (Days Payable Outstanding) | How long before paying suppliers | Higher DPO = shorter CCC |
+
+A shorter CCC means cash circulates faster through the business. A negative CCC (rare but possible — e.g., Amazon) means the entity collects from customers before it pays suppliers.
+
+### Worked Example — Cash Conversion Cycle
+
+| Metric | Calculation | Result |
+|--------|------------|--------|
+| AR Turnover | $1,200,000 / $150,000 avg AR | 8.0x |
+| DSO | 365 / 8.0 | 45.6 days |
+| Inventory Turnover | $800,000 / $200,000 avg inventory | 4.0x |
+| DIO | 365 / 4.0 | 91.3 days |
+| AP Turnover | $800,000 / $100,000 avg AP | 8.0x |
+| DPO | 365 / 8.0 | 45.6 days |
+| **CCC** | 45.6 + 91.3 - 45.6 | **91.3 days** |
+
+Cash is tied up for about 91 days from the time inventory is purchased to the time customer payment is collected, net of the time the entity delays paying its own suppliers.
+
+<QuickCheck question="If a company speeds up collections (reducing DSO by 10 days) and negotiates longer payment terms (increasing DPO by 5 days), what happens to the cash conversion cycle?" answer="CCC decreases by 15 days (10 from faster collections + 5 from slower payments). Both changes release cash from the operating cycle — the business needs less working capital to fund the same level of operations." />
 
 ## Solvency Ratios
 
-Solvency ratios evaluate an entity's ability to meet long-term obligations and its capital structure.
+Solvency ratios evaluate an entity's ability to meet long-term obligations and the structure of its capital. They answer: **can this entity survive?**
 
 ### Debt-to-Equity Ratio
 
-**Debt-to-Equity = Total Liabilities / Total Stockholders' Equity**
+<FrameworkFormula groupId="far.1.F" name="Debt-to-Equity Ratio" />
 
-Higher values indicate greater financial leverage and risk.
-
-### Total Debt Ratio
-
-**Total Debt Ratio = Total Liabilities / Total Assets**
-
-Shows the proportion of assets financed by debt rather than equity.
+Higher values indicate greater financial leverage and risk. A debt-to-equity of 2.0 means the entity has twice as much debt as equity — creditors have provided more capital than shareholders.
 
 ### Times Interest Earned (Interest Coverage)
 
-**TIE = Earnings Before Interest and Taxes (EBIT) / Interest Expense**
+<FrameworkFormula groupId="far.1.F" name="Times Interest Earned" />
 
-Measures how comfortably the entity can cover its interest payments from operating earnings. A ratio below 1.5 is generally considered a warning sign.
+This ratio measures how comfortably the entity can cover its interest payments from operating earnings. A ratio below 1.5 is a warning sign — the entity is barely generating enough to service its debt. A ratio below 1.0 means operating earnings do not cover interest, and the entity is burning reserves or borrowing to pay interest.
 
 ## Performance Metrics
 
 ### EBITDA
 
-**EBITDA = Net Income + Interest + Taxes + Depreciation + Amortization**
+<FrameworkFormula groupId="far.1.F" name="EBITDA" />
 
-A proxy for operating cash flow, widely used in valuation and debt covenants. Note: EBITDA is not a GAAP measure — the exam may test your understanding of its limitations.
+EBITDA strips out financing decisions (interest), tax structure (income tax expense), and non-cash charges (depreciation and amortization) to approximate operating cash flow. It is widely used in valuation and debt covenants.
+
+**Important:** EBITDA is not a GAAP measure. The exam may test your understanding of its limitations — it ignores capital expenditure requirements, working capital changes, and the real cost of debt. A company can have strong EBITDA and still be cash-flow negative if it requires heavy capital investment.
 
 ### Price-to-Earnings (P/E) Ratio
 
-**P/E = Market Price per Share / Earnings per Share**
+<FrameworkFormula groupId="far.1.F" name="Price-to-Earnings (P/E) Ratio" />
 
-Measures how much investors are willing to pay per dollar of earnings.
-
-### Dividend Payout Ratio
-
-**Dividend Payout = Dividends per Share / Earnings per Share**
-
-Shows the percentage of earnings distributed to shareholders versus retained.
+P/E measures how much investors are willing to pay per dollar of earnings. A high P/E may signal growth expectations (investors paying a premium for future earnings) or overvaluation. A low P/E may signal value or distress — context determines which.
 
 ### Asset Turnover
 
-**Asset Turnover = Net Revenue / Average Total Assets**
+<FrameworkFormula groupId="far.1.F" name="Asset Turnover" />
 
-Measures how efficiently the entity uses its assets to generate revenue.
+Asset turnover measures revenue efficiency per dollar of assets. It is the middle component of the DuPont decomposition. Asset-light businesses (consulting firms, software companies) typically have high turnover. Asset-heavy businesses (manufacturing, utilities) have low turnover but may compensate with higher margins.
+
+## The Ratio Reference
+
+<FrameworkTable groupId="far.1.F" title="Financial Ratio Quick Reference" />
 
 ## Budget-to-Actual Variance Analysis
 
-The CPA exam tests your ability to calculate and interpret variances between budgeted and actual results.
+Variance analysis compares planned results to actual results and identifies the causes of deviation. This is a different type of projection — instead of comparing two companies, you are comparing the entity against its own expectations.
 
-### Favorable vs. Unfavorable Variances
+### The Basic Formula
 
-- **Favorable variance**: Actual revenue exceeds budget, or actual expense is less than budget
-- **Unfavorable variance**: Actual revenue is below budget, or actual expense exceeds budget
+<FrameworkFormula groupId="far.1.F" name="Budget Variance" />
 
-### Calculating Variances
+The sign convention depends on the line item:
+- **Revenue:** Positive variance (actual > budget) is favorable
+- **Expenses:** Negative variance (actual < budget) is favorable
 
-**Variance = Actual − Budget**
+### Variance Decomposition
 
-For revenue items, a positive variance is favorable. For expense items, a negative variance (actual < budget) is favorable.
+The most useful variance analysis decomposes the total variance into its components:
 
-### Variance Percentage
+**Price variance** = (Actual Price - Standard Price) x Actual Quantity
+**Volume variance** = (Actual Quantity - Standard Quantity) x Standard Price
 
-**Variance % = ((Actual − Budget) / Budget) × 100**
+This decomposition matters because price and volume variances have different causes and different remedies. A materials price variance may reflect commodity market changes outside management's control. A labor efficiency variance may reflect training deficiencies that management can fix.
 
-Variance analysis is most meaningful when you identify the **cause** — volume changes, price changes, or efficiency changes — not just the dollar amount.
+### Worked Example — Variance Analysis
 
-## Key Exam Tips
+Budget: 10,000 units at $50 each = $500,000 revenue
+Actual: 9,500 units at $52 each = $494,000 revenue
 
-1. **Always use averages** for balance sheet items in ratio denominators unless told otherwise
-2. **Know which ratio answers which question** — the exam often describes a scenario and asks you to select the appropriate ratio
-3. **Understand directional impact** — if inventory increases, what happens to current ratio? To inventory turnover?
-4. **Watch for non-GAAP metrics** — EBITDA is useful but has limitations; the exam may test your awareness of these
-5. **Budget variances require context** — a favorable expense variance from cutting maintenance may signal future problems
+| Variance | Calculation | Amount | F/U |
+|----------|------------|--------|-----|
+| Price | ($52 - $50) x 9,500 | $19,000 | Favorable |
+| Volume | (9,500 - 10,000) x $50 | ($25,000) | Unfavorable |
+| **Total** | $494,000 - $500,000 | **($6,000)** | **Unfavorable** |
+
+The entity charged more per unit (favorable) but sold fewer units (unfavorable). The volume shortfall more than offset the pricing gain. This tells management the problem is demand, not pricing — a very different strategic response than if the total variance were driven by price erosion.
+
+<DeepDive title="The interconnected system: how one transaction ripples through multiple ratios">
+
+This is the highest-yield exam pattern: a single transaction changes multiple ratios simultaneously, and the exam tests whether you can trace the ripple effects.
+
+**Example: Inventory write-down of $50,000**
+
+The entry: DR Cost of Goods Sold (or Loss on Write-Down) $50,000, CR Inventory $50,000.
+
+Now trace the projections:
+- **Current ratio** — decreases (current assets drop by $50,000; current liabilities unchanged)
+- **Quick ratio** — unchanged (inventory is excluded from the quick ratio)
+- **Inventory turnover** — increases (COGS rises or stays the same; average inventory decreases)
+- **Gross profit margin** — decreases (COGS increases relative to revenue)
+- **ROA** — decreases (net income drops; assets drop, but the income effect dominates)
+- **Debt-to-equity** — increases (equity drops from the net income hit; debt unchanged)
+
+One transaction, six ratio effects. The exam expects you to trace the full chain, not just identify the most obvious one. This is why understanding ratios as projections of an interconnected system matters — a single perturbation propagates through every dimension.
+
+**Another classic: FIFO to LIFO switch in rising prices**
+
+- COGS rises (newer, higher-cost inventory flows to income statement)
+- Ending inventory falls (older, lower-cost inventory remains on balance sheet)
+- Net income falls (higher COGS)
+- Current ratio falls (lower inventory in current assets)
+- Inventory turnover rises (lower average inventory in denominator)
+- Tax payable falls (lower taxable income — this is the primary reason companies switch)
+
+One accounting policy change, and every ratio tells a different version of the story. The financial statements are the same underlying object viewed through different lenses, and changing the measurement method changes every shadow.
+
+</DeepDive>
+
+<QuickCheck question="A company issues $200,000 of long-term debt and uses the proceeds to purchase equipment. What happens to the current ratio, debt-to-equity ratio, and asset turnover?" answer="Current ratio: unchanged (neither current assets nor current liabilities affected — the debt is long-term and the equipment is non-current). Debt-to-equity: increases (total liabilities increase; equity unchanged). Asset turnover: decreases (total assets increase; revenue unchanged in the period of purchase)." />
+
+## Key Exam Patterns
+
+1. **Always use averages** for balance sheet items in ratio denominators unless the problem specifies otherwise
+2. **Know which ratio answers which question** — the exam describes a scenario and asks you to select the appropriate ratio, not just compute one
+3. **Understand directional impact** — given a transaction, which ratios improve and which deteriorate?
+4. **DuPont is the master decomposition** — if the exam asks why ROE changed, decompose it into margin, turnover, and leverage
+5. **EBITDA is not GAAP** — know its limitations (ignores capex, working capital, cost of debt)
+6. **Budget variances require context** — a favorable expense variance from cutting maintenance may signal future problems, not current success

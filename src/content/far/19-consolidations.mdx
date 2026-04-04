@@ -1,111 +1,184 @@
-# Consolidations
+# Consolidated Financial Statements
 
 ## Learning Objectives
 
-- Understand when and why consolidated financial statements are required
-- Apply the acquisition method for business combinations under ASC 805
+- Explain why consolidated financial statements exist using the conservation law
+- Distinguish between acquisitions, mergers, and consolidations based on legal form
+- Apply the acquisition method under ASC 805, including goodwill and bargain purchase calculations
 - Account for noncontrolling interests in consolidated financial statements
-- Distinguish between the equity method and full consolidation
+- Eliminate intercompany transactions and unrealized profits
+- Identify variable interest entities and determine the primary beneficiary
+- Apply the equity method for investments with significant influence
+- Account for step acquisitions and basis differences
 
-## Business Combinations Under ASC 805
+## The Core Idea: One Entity, Many Legal Shells
 
-A **business combination** occurs when an acquirer obtains control of one or more businesses. Under **ASC 805**, all business combinations are accounted for using the **acquisition method**. The key steps are:
+The conservation law — the axiom that value is conserved within the boundary of an entity — has a boundary problem when multiple legal entities operate as a single economic unit. A parent company and its subsidiaries are separate legal persons. Each maintains its own books, its own bank accounts, its own tax returns. But economically, they function as one enterprise. The parent directs strategy, allocates capital, and absorbs the economic consequences.
+
+Consolidated financial statements solve the boundary problem by redrawing the entity line around the entire economic unit. They treat the parent and all controlled subsidiaries as if they were a single entity. Every asset, every liability, every revenue and expense gets combined — and every transaction between entities inside the boundary gets eliminated, because you cannot transact with yourself.
+
+This is the same conservation logic applied at a higher level. Within a single entity, debits equal credits and the equation closes. Within the consolidated group, the same constraint applies — but now the "entity" includes multiple legal persons, and the internal flows between them must be stripped out to avoid double-counting.
+
+<DeepDive title="Conservation across legal boundaries: the physics analogy">
+
+Think of a parent company with three subsidiaries as a system of four containers connected by pipes. Water (value) flows freely between containers through internal pipes (intercompany transactions). From outside the system, you cannot see the pipes — you can only see the total water level across all four containers and the flow in and out of the system as a whole.
+
+Consolidated financial statements are the external view. They report total water level (combined assets, liabilities, equity) and total external flows (revenue from outside customers, expenses paid to outside vendors). The internal pipe flows are invisible because they net to zero within the system — what leaves one container arrives at another.
+
+If you reported each container separately without eliminating the pipe flows, you would overstate total activity. Container A sold $5M of inventory to Container B, who resold it externally for $7M. The economic reality is $7M of revenue and $5M of cost ($2M profit). Reporting both containers separately without elimination shows $12M of revenue — a number that exists nowhere in economic reality.
+
+The consolidation process is a conservation enforcement mechanism. It ensures the financial statements reflect the economic boundary, not the legal boundary.
+
+</DeepDive>
+
+## How Control Determines Accounting Treatment
+
+The level of influence an investor has over an investee determines the entire accounting model. This is not a spectrum — it is a classification system with discrete thresholds, each triggering a fundamentally different approach.
+
+<FrameworkConceptMap groupId="far.1.A" title="Consolidation and Investment Hierarchy" />
+
+The hierarchy works because each level represents a different degree of access to the investee's economic substance. At control, you direct the investee's activities — so you report its individual assets and liabilities as your own. At significant influence, you can affect decisions but not dictate them — so you report a single-line investment that adjusts for your share of results. Below significant influence, you are a passive investor — so you report the investment at fair value, treating price changes as your return signal.
+
+## The Acquisition Method: ASC 805
+
+Every business combination — regardless of legal form — is accounted for using the acquisition method. The legal form determines *where* the entries are recorded, but the measurement principles are identical.
+
+### The One-Question Shortcut
+
+When a business combination occurs, one structural question determines the journal entry form: **Does the target entity still exist after the transaction?**
+
+**If the target survives (acquisition):** The acquirer records a single-line entry — DR Investment in Subsidiary, CR Cash. The target's individual assets and liabilities remain on the target's own books. The fair value allocation (step-ups, intangible recognition, goodwill) appears only on the **consolidation worksheet**, never on the parent's separate books.
+
+**If the target dissolves (merger):** The acquirer records every individual asset and liability at fair value directly on its own books. There is no investment account because there is no subsidiary — the target's assets transferred to the acquirer by operation of law.
+
+**If both dissolve (consolidation):** A new entity forms and records everything at fair value. Same logic as a merger but applied to a new legal shell. One predecessor is still identified as the accounting acquirer under ASC 805.
+
+The fair value allocation details — excess to identifiable intangibles, residual to goodwill, bargain purchase gain if consideration < net FV — are the same regardless of legal form. What changes is the ledger that records them.
+
+### The Four Steps
 
 1. **Identify the acquirer** — The entity that obtains control of the acquiree
 2. **Determine the acquisition date** — The date the acquirer obtains control
-3. **Recognize and measure identifiable assets acquired, liabilities assumed, and any noncontrolling interest**
-4. **Recognize and measure goodwill or a gain from a bargain purchase**
-
-On the acquisition date, the acquirer measures all identifiable assets acquired and liabilities assumed at their **acquisition-date fair values**. This is true regardless of the percentage acquired — even a 60% acquisition requires measuring 100% of the acquiree's assets and liabilities at fair value.
+3. **Recognize and measure** identifiable assets acquired and liabilities assumed at acquisition-date fair values (100% of the acquiree, regardless of ownership percentage)
+4. **Recognize goodwill** or a bargain purchase gain
 
 ### Goodwill Calculation
 
-**Goodwill = Consideration transferred + Fair value of NCI + Fair value of previously held equity interest - Fair value of net identifiable assets**
+<FrameworkFormula groupId="far.1.A" name="Goodwill (Acquisition Method)" />
 
-<QuickCheck 
-  question="Parent Company acquires 70% of Subsidiary for $700,000. The fair value of Subsidiary's identifiable net assets is $800,000 and the fair value of the 30% noncontrolling interest is $300,000. What is the amount of goodwill?"
-  choices={["$100,000", "$200,000", "$300,000", "$0 (Bargain Purchase)"]}
-  correctIndex={1}
-  explanation="Goodwill = $700,000 (Consideration) + $300,000 (NCI) - $800,000 (Net Assets) = $200,000. Remember that 100% of the assets and liabilities are measured at fair value, but goodwill is the excess over the total business value (Acquisition + NCI)."
-/>
-
-If the fair value of net identifiable assets exceeds the total of consideration and NCI, the result is a **bargain purchase gain**, which is recognized immediately in earnings. Before recording a bargain purchase gain, the acquirer must reassess whether all assets and liabilities have been properly identified and measured.
+If the result is negative — net identifiable assets exceed total consideration plus NCI — the acquirer has a **bargain purchase**. Before recording the gain, reassess whether all assets and liabilities have been properly identified and measured. If the negative amount persists after reassessment, recognize it immediately in earnings.
 
 ### Worked Example
 
-Parent Company acquires 80% of Subsidiary for $800,000 in cash. The fair value of Subsidiary's identifiable net assets is $900,000. The fair value of the 20% noncontrolling interest is $180,000.
+Parent acquires 80% of Subsidiary for $800,000 cash. The fair value of Subsidiary's identifiable net assets is $900,000. The fair value of the 20% NCI is $180,000.
 
-- Goodwill = $800,000 + $180,000 - $900,000 = **$80,000**
+Goodwill = $800,000 + $180,000 - $900,000 = **$80,000**
 
 | Account | Debit | Credit |
 |---------|-------|--------|
 | Identifiable assets (at fair value) | $900,000 | |
 | Goodwill | $80,000 | |
-| Liabilities assumed (at fair value) | | (included in net assets) |
 | Cash | | $800,000 |
 | Noncontrolling interest | | $180,000 |
 
+<QuickCheck
+  question="Parent Company acquires 70% of Subsidiary for $700,000. The fair value of Subsidiary's identifiable net assets is $800,000 and the fair value of the 30% noncontrolling interest is $300,000. What is the amount of goodwill?"
+  answer="$200,000. Goodwill = $700,000 (consideration) + $300,000 (NCI) - $800,000 (net identifiable assets) = $200,000. The formula uses 100% of the acquiree's net assets at fair value — the ownership percentage affects only the split between parent equity and NCI, not the goodwill calculation."
+/>
+
 ## Consolidation Procedures
 
-Consolidated financial statements present the parent and its subsidiaries as a single economic entity. The consolidation process requires several adjustments:
+Once the acquisition is recorded, the ongoing consolidation process requires several worksheet adjustments each period. These are not journal entries on anyone's books — they exist only on the consolidation worksheet to produce combined statements.
 
-### Elimination of Investment
+### Elimination of the Investment
 
-The parent's investment account and the subsidiary's equity accounts are eliminated against each other. Any difference between the investment balance and the subsidiary's book value equity is allocated to fair value adjustments and goodwill.
+The parent's Investment in Subsidiary account and the subsidiary's stockholders' equity accounts are reciprocal. They represent the same economic interest from two perspectives — the parent's ownership claim (asset) and the subsidiary's capital structure (equity). Eliminating both removes the internal ownership layer and replaces it with the subsidiary's actual assets and liabilities.
+
+Any difference between the investment carrying amount and the subsidiary's book value equity is allocated to fair value adjustments (step-ups/step-downs on specific assets) and goodwill.
 
 ### Elimination of Intercompany Transactions
 
-All transactions between the parent and subsidiary must be eliminated to avoid double-counting:
+All transactions between entities inside the consolidated boundary must be eliminated:
 
-- **Intercompany sales and purchases** — Eliminate the revenue and cost of goods sold
-- **Intercompany receivables and payables** — Eliminate balances owed between entities
-- **Intercompany profit in inventory** — If goods sold intercompany are still in the buyer's ending inventory, the unrealized profit must be eliminated
-- **Intercompany profit in fixed assets** — If one entity sells a fixed asset to another at a gain, the gain and any excess depreciation must be eliminated
-- **Intercompany dividends** — The parent's share of subsidiary dividends is eliminated
+- **Intercompany sales and purchases** — Eliminate the revenue and COGS. The goods did not leave the economic entity.
+- **Intercompany receivables and payables** — Eliminate balances owed between entities. You cannot owe money to yourself.
+- **Intercompany profit in inventory** — If goods sold intercompany remain in the buyer's ending inventory, the unrealized profit is eliminated.
+- **Intercompany profit in fixed assets** — If one entity sold a fixed asset to another at a gain, the gain and any excess depreciation are eliminated until the asset leaves the group.
+- **Intercompany dividends** — The parent's share of subsidiary dividends is eliminated. Dividends within the group are internal transfers, not distributions to outside owners.
 
-### Intercompany Inventory Profit Elimination
+### Unrealized Profit in Inventory
 
-**Downstream sale** (parent sells to subsidiary) — 100% of the unrealized profit is eliminated against the parent's income.
+**Downstream sale** (parent sells to subsidiary): 100% of unrealized profit is eliminated against the parent's income. The parent initiated the transaction — the full profit is attributed to the parent.
 
-**Upstream sale** (subsidiary sells to parent) — 100% of the unrealized profit is eliminated, but the effect is split between the parent's share and the noncontrolling interest's share.
+**Upstream sale** (subsidiary sells to parent): 100% of unrealized profit is eliminated, but the effect is split between the parent's share and the NCI's share. The subsidiary earned the profit, and NCI owns part of the subsidiary.
 
-**Example:** Parent sells inventory to Subsidiary for $50,000 (cost to Parent: $30,000). At year-end, 40% of the goods remain in Subsidiary's inventory.
+**Example:** Parent sells inventory to Subsidiary for $50,000 (cost to Parent: $30,000). At year-end, 40% remains in Subsidiary's inventory.
 
 - Unrealized profit = ($50,000 - $30,000) x 40% = **$8,000**
-- Eliminate $8,000 of intercompany profit from consolidated income and reduce ending inventory by $8,000
+- Eliminate $8,000 from consolidated income and reduce ending inventory by $8,000
+
+<QuickCheck
+  question="Subsidiary sells inventory to Parent for $120,000 (cost: $80,000). At year-end, 25% of the goods remain in Parent's inventory. Parent owns 70% of Subsidiary. How much unrealized profit is eliminated from (a) consolidated income and (b) the NCI's share?"
+  answer="Total unrealized profit = ($120,000 - $80,000) x 25% = $10,000. This is an upstream sale, so the profit is split: (a) Parent's share = $10,000 x 70% = $7,000 eliminated from parent's consolidated income. (b) NCI's share = $10,000 x 30% = $3,000 eliminated from NCI's share of subsidiary income. Total elimination = $10,000."
+/>
 
 ## Noncontrolling Interest (NCI)
 
-When a parent owns less than 100% of a subsidiary, the portion owned by outside shareholders is the **noncontrolling interest**. Under U.S. GAAP:
+When a parent owns less than 100% of a subsidiary, the outside shareholders' interest is the noncontrolling interest. Under U.S. GAAP:
 
 - NCI is measured at **fair value** on the acquisition date (the full goodwill method)
-- NCI is presented as a separate component of **equity** on the consolidated balance sheet (not as a liability or mezzanine item)
-- The NCI's share of the subsidiary's net income is reported as a separate line item on the consolidated income statement, below consolidated net income
+- NCI is presented as a separate component of **equity** on the consolidated balance sheet — not as a liability or mezzanine item
+- The NCI's share of subsidiary net income is reported as a separate line on the consolidated income statement, below consolidated net income
 
 **NCI's share of income = Subsidiary's adjusted net income x NCI ownership percentage**
 
-Adjusted net income reflects any fair value amortization (e.g., amortization of identifiable intangible assets that were stepped up to fair value at acquisition).
+Adjusted net income reflects fair value amortization (e.g., amortization of identifiable intangible assets that were stepped up at acquisition). NCI bears its proportionate share of these adjustments because it owns a proportionate share of the subsidiary.
 
-> On the CPA exam, NCI questions frequently test whether you know to present NCI in equity (not liabilities) and whether you allocate the NCI's share of subsidiary income correctly after fair value adjustments.
+> On the CPA exam, NCI questions frequently test two things: (1) NCI is in equity, not liabilities, and (2) NCI's share of income is calculated after fair value adjustments to subsidiary income.
+
+## Variable Interest Entities (VIEs)
+
+The consolidation hierarchy above uses voting control as the primary test. But some entities are structured so that voting rights do not convey economic control. A **variable interest entity** is an entity where the equity investors lack one or more characteristics of a controlling financial interest through voting rights.
+
+### Identifying a VIE
+
+An entity is a VIE if any of these apply:
+
+- Equity at risk is **insufficient** to finance activities without additional subordinated financial support
+- Equity investors as a group lack **decision-making power** over the activities that most significantly impact economic performance
+- Equity investors lack the obligation to **absorb losses** or the right to **receive returns**
+
+### Primary Beneficiary
+
+The entity that must consolidate a VIE is the **primary beneficiary** — the entity with **both**:
+
+1. **Power** — The ability to direct the VIE's most significant activities
+2. **Economics** — The obligation to absorb potentially significant losses or the right to receive potentially significant benefits
+
+If one entity has power and another has significant economics, neither is the primary beneficiary — a judgment call that often results in neither entity consolidating.
+
+> VIE consolidation does NOT depend on voting ownership. An entity can consolidate a VIE it owns 0% of, or not consolidate one it owns 49% of. The test is power + economics, not votes.
 
 ## The Equity Method
 
-The **equity method** applies when an investor has **significant influence** over an investee but does not have control. Significant influence is presumed when the investor holds **20% to 50%** of the voting stock.
+The equity method applies when an investor has **significant influence** (presumed at 20-50% ownership) but not control. It is sometimes called "one-line consolidation" because it collapses the investee's entire financial position into a single investment line on the balance sheet and a single income line on the income statement.
 
-Under the equity method:
+### Core Mechanics
 
-- The investment is initially recorded at **cost**
-- The investor recognizes its share of the investee's **net income** as an increase to the investment and as equity income
-- **Dividends received** reduce the investment balance (they are a return of investment, not revenue)
-- The investor amortizes any excess of cost over the investor's share of the investee's book value (typically attributable to identifiable intangible assets or goodwill)
+- Record investment at **cost** initially
+- Increase for the investor's share of investee **net income**
+- Decrease for **dividends received** (return of investment, not revenue)
+- Amortize any **basis differences** — excess purchase price allocated to specific assets
 
-**Example:** Investor acquires 30% of Investee for $300,000. Investee reports net income of $100,000 and pays dividends of $40,000.
+### Worked Example
+
+Investor acquires 30% of Investee for $300,000. Investee reports net income of $100,000 and pays dividends of $40,000.
 
 | Transaction | Investment Balance |
 |-------------|-------------------|
 | Initial investment | $300,000 |
-| Share of net income: $100,000 x 30% = $30,000 | $330,000 |
-| Share of dividends: $40,000 x 30% = ($12,000) | $318,000 |
+| Share of net income: $100,000 x 30% | $330,000 |
+| Share of dividends: $40,000 x 30% | $318,000 |
 
 **Journal entries:**
 
@@ -113,97 +186,53 @@ Under the equity method:
 |---------|-------|--------|
 | Investment in Investee | $30,000 | |
 | Equity in earnings of Investee | | $30,000 |
+
+| Account | Debit | Credit |
+|---------|-------|--------|
 | Cash | $12,000 | |
 | Investment in Investee | | $12,000 |
 
-### Equity Method vs. Consolidation
-
-| Feature | Equity Method | Full Consolidation |
-|---------|--------------|-------------------|
-| Ownership | 20-50% (significant influence) | >50% (control) |
-| Financial statements | Single line on balance sheet and income statement | Line-by-line combination of all accounts |
-| Intercompany eliminations | Investor's share of unrealized profits eliminated | All intercompany transactions eliminated |
-| NCI presentation | Not applicable | Reported in equity and on the income statement |
-
-## Variable Interest Entities (VIEs)
-
-A **variable interest entity** is an entity in which the equity investors do not have sufficient equity at risk, or do not have the characteristics of a controlling financial interest through voting rights. ASC 810 requires that the **primary beneficiary** consolidate a VIE, even without majority voting ownership.
-
-### Identifying a VIE
-
-An entity is a VIE if any of these apply:
-- Total equity at risk is **insufficient** to finance activities without additional subordinated financial support
-- The equity investors as a group lack **decision-making power** (the power to direct activities that most significantly impact economic performance)
-- The equity investors lack the obligation to **absorb losses** or the right to **receive returns**
-
-### Identifying the Primary Beneficiary
-
-The primary beneficiary is the entity that has **both**:
-1. **Power** — The ability to direct the activities of the VIE that most significantly impact its economic performance
-2. **Economics** — The obligation to absorb losses or the right to receive benefits that could potentially be significant
-
-<QuickCheck 
-  question="Entity A owns 10% of the voting stock of a Variable Interest Entity (VIE). However, Entity A has a management contract giving it the power to direct the VIE's most significant activities and is obligated to absorb 80% of any losses. Does Entity A consolidate the VIE?"
-  choices={["No, because it owns less than 50% of the voting stock.", "No, because 10% ownership is not considered significant influence.", "Yes, because it meets the power and economics criteria as the primary beneficiary.", "Yes, but only using the equity method."]}
-  correctIndex={2}
-  explanation="Correct! Consolidation of a VIE is based on identifying the primary beneficiary (Power + Economics), not voting control. Since Entity A has the power to direct activities and the obligation to absorb significant losses, it must consolidate the VIE regardless of its low ownership percentage."
-/>
-
-If one entity has power and another has significant economics, no single entity meets both criteria — a judgment call is required, often resulting in neither entity consolidating.
-
-> VIE consolidation does NOT depend on voting ownership percentages. An entity can be required to consolidate a VIE it owns 0% of, or not consolidate an entity it owns 49% of. The test is power + economics, not votes.
-
-### Common VIE Structures
-- Special purpose entities (SPEs) used for securitization
-- Joint ventures structured with insufficient equity
-- Research and development arrangements
-- Leasing entities with limited equity
-
-## Step Acquisitions
-
-A **step acquisition** occurs when an investor achieves control over an investee through multiple transactions over time (e.g., first acquires 25%, later acquires an additional 30% for majority control).
-
-Under ASC 805:
-- On the date control is obtained, the acquirer **remeasures** its previously held equity interest at **acquisition-date fair value**
-- Any difference between fair value and the carrying amount of the previously held interest is recognized as a **gain or loss** in earnings
-- The full acquisition is then accounted for using the acquisition method (as if 100% were acquired on that date, with NCI for the unowned portion)
-
-**Example:** An investor holds 25% of an investee (equity method, carrying amount $200,000). It acquires an additional 35% for $400,000, gaining control. The fair value of the previously held 25% is $250,000.
-
-- Gain on remeasurement = $250,000 - $200,000 = **$50,000** (recognized in earnings)
-- Total consideration for goodwill calculation = $400,000 (new purchase) + $250,000 (remeasured old interest) = $650,000
-- Proceed with standard acquisition method using $650,000 as total consideration for the 60% held
-
-## Equity Method — Additional Topics
-
 ### Basis Differences
 
-When an investor pays more than its proportionate share of the investee's book value, the excess is attributed to specific assets (fair value adjustments) and goodwill, similar to a full acquisition:
+When an investor pays more than its share of the investee's book value, the excess is attributed to specific assets and goodwill:
 
-- **Excess allocated to depreciable/amortizable assets** — The investor amortizes its share of the excess against equity income over the asset's remaining life
-- **Excess allocated to goodwill** — Not amortized, but tested for impairment
-- **Excess allocated to inventory** — Recognized in the period the inventory is sold
+- **Depreciable/amortizable assets** — Amortize the excess against equity income over the asset's remaining life
+- **Goodwill** — Not amortized, but tested for impairment (OTTI model)
+- **Inventory** — Recognized when inventory is sold
 
-**Example:** Investor pays $500,000 for 30% of Investee (book value $1,200,000, so investor's share of book = $360,000). The $140,000 excess is attributed: $100,000 to a building with 20 years remaining life, $40,000 to goodwill.
+**Example:** Investor pays $500,000 for 30% of Investee (book value $1,200,000, investor's share of book = $360,000). The $140,000 excess: $100,000 to a building with 20 years remaining, $40,000 to goodwill.
 
-- Annual amortization of basis difference: $100,000 / 20 = **$5,000**
-- Each year, equity income is reduced by $5,000 for the building amortization
-
-### Equity Method Impairment
-
-If the fair value of an equity method investment drops below its carrying amount, the investor must assess whether the decline is **other than temporary (OTTI)**. If the decline is deemed other than temporary, the investment is written down to fair value and the loss is recognized in earnings. Unlike goodwill for consolidated entities, equity method goodwill impairment follows the OTTI model.
+- Annual basis difference amortization: $100,000 / 20 = **$5,000** (reduces equity income each year)
 
 ### Equity Method Intercompany Transactions
 
-- **Upstream** (investee sells to investor) — The investor eliminates its proportionate share of unrealized profit from equity income
-- **Downstream** (investor sells to investee) — The investor eliminates its proportionate share of unrealized profit from equity income
-- In both cases, profit is recognized when the goods are sold to an outside party
+Both upstream (investee to investor) and downstream (investor to investee) unrealized profits are eliminated — but only the investor's **proportionate share**. This contrasts with full consolidation, where 100% of unrealized profit is eliminated.
 
-## Key Terms
+## Step Acquisitions
 
-- **Acquisition method** — The required method for accounting for business combinations, in which identifiable assets and liabilities are measured at fair value on the acquisition date
-- **Noncontrolling interest** — The portion of a subsidiary's equity not attributable to the parent, presented as a separate component of consolidated equity
-- **Goodwill** — The excess of the consideration transferred plus NCI fair value over the fair value of net identifiable assets acquired
-- **Equity method** — A method of accounting for investments where the investor has significant influence; the investment is adjusted for the investor's share of income and dividends
-- **Intercompany elimination** — The removal of transactions between a parent and subsidiary to prevent double-counting in consolidated financial statements
-- **Bargain purchase** — A business combination in which the fair value of net identifiable assets exceeds the total consideration and NCI, resulting in a gain recognized in earnings
+A **step acquisition** occurs when an investor achieves control through multiple transactions over time.
+
+Under ASC 805, on the date control is obtained:
+
+1. **Remeasure** the previously held equity interest at acquisition-date fair value
+2. Recognize any **gain or loss** on remeasurement in earnings
+3. Apply the **acquisition method** as if the entire combination occurred on that date
+
+**Example:** Investor holds 25% (equity method, carrying amount $200,000). Acquires additional 35% for $400,000, gaining 60% control. Fair value of previously held 25% = $250,000.
+
+- Gain on remeasurement = $250,000 - $200,000 = **$50,000** (recognized in earnings)
+- Total consideration for goodwill = $400,000 + $250,000 = $650,000
+- Proceed with standard acquisition method using $650,000
+
+<QuickCheck
+  question="An entity holds a 15% investment in another company at fair value ($180,000 carrying amount). It then acquires an additional 45% for $600,000, obtaining control. The fair value of the 15% interest on the acquisition date is $200,000. What is the total consideration used in the goodwill calculation?"
+  answer="$800,000. The previously held 15% is remeasured to fair value ($200,000), creating a $20,000 gain in earnings. Total consideration = $600,000 (new purchase) + $200,000 (remeasured prior interest) = $800,000. This total, plus the fair value of the 40% NCI, is compared against the fair value of net identifiable assets to compute goodwill."
+/>
+
+## IFRS vs. GAAP: Key Differences
+
+Consolidation standards are broadly similar between IFRS and U.S. GAAP, but several significant differences appear on the exam.
+
+<FrameworkTable groupId="far.1.A" title="Key IFRS vs. GAAP Differences" />
+
+The most exam-relevant IFRS differences for consolidations: IFRS allows the choice of measuring NCI at either fair value (full goodwill) or at the NCI's proportionate share of identifiable net assets (partial goodwill). U.S. GAAP requires fair value only. IFRS also permits reversal of goodwill impairment losses, which U.S. GAAP prohibits.

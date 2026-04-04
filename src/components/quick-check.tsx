@@ -2,19 +2,87 @@
 
 import { useState } from "react";
 
-interface QuickCheckProps {
+interface MultipleChoiceProps {
 	question: string;
 	choices: string[];
 	correctIndex: number;
 	explanation?: string;
+	answer?: never;
 }
 
-export default function QuickCheck({
+interface FreeResponseProps {
+	question: string;
+	answer: string;
+	choices?: never;
+	correctIndex?: never;
+	explanation?: never;
+}
+
+type QuickCheckProps = MultipleChoiceProps | FreeResponseProps;
+
+export default function QuickCheck(props: QuickCheckProps) {
+	if ("answer" in props && props.answer) {
+		return <FreeResponseCheck question={props.question} answer={props.answer} />;
+	}
+	return (
+		<MultipleChoiceCheck
+			question={props.question}
+			choices={props.choices!}
+			correctIndex={props.correctIndex!}
+			explanation={props.explanation}
+		/>
+	);
+}
+
+function FreeResponseCheck({ question, answer }: { question: string; answer: string }) {
+	const [revealed, setRevealed] = useState(false);
+
+	return (
+		<div className="my-8 border-2 border-emerald-100 rounded-xl bg-emerald-50/30 p-6 sm:p-8">
+			<div className="flex items-center gap-2 mb-4">
+				<span className="bg-emerald-600 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
+					Quick Check
+				</span>
+				<span className="text-sm font-medium text-emerald-800">
+					Test your understanding
+				</span>
+			</div>
+
+			<h4 className="text-lg font-bold text-gray-900 mb-4">{question}</h4>
+
+			{!revealed ? (
+				<button
+					onClick={() => setRevealed(true)}
+					className="bg-emerald-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-emerald-700 transition-all shadow-sm"
+				>
+					Reveal Answer
+				</button>
+			) : (
+				<div className="mt-2 p-4 rounded-lg border-l-4 bg-emerald-100/50 border-emerald-500">
+					<p className="text-sm text-gray-700 leading-relaxed">{answer}</p>
+					<button
+						onClick={() => setRevealed(false)}
+						className="mt-4 text-xs font-bold text-emerald-700 hover:text-emerald-800 uppercase tracking-wider"
+					>
+						Hide answer
+					</button>
+				</div>
+			)}
+		</div>
+	);
+}
+
+function MultipleChoiceCheck({
 	question,
 	choices,
 	correctIndex,
 	explanation,
-}: QuickCheckProps) {
+}: {
+	question: string;
+	choices: string[];
+	correctIndex: number;
+	explanation?: string;
+}) {
 	const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 	const [revealed, setRevealed] = useState(false);
 
@@ -37,7 +105,7 @@ export default function QuickCheck({
 				{choices.map((choice, i) => {
 					const isSelected = selectedIndex === i;
 					const isAnswerCorrect = i === correctIndex;
-					
+
 					let buttonClass = "border-gray-200 bg-white text-gray-700 hover:border-emerald-300 hover:bg-emerald-50";
 					let dotClass = "bg-gray-100 text-gray-400";
 

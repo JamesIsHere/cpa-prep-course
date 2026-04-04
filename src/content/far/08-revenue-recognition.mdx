@@ -5,133 +5,227 @@
 - Apply the five-step revenue recognition model under ASC 606
 - Identify and account for distinct performance obligations within a contract
 - Determine the transaction price, including variable consideration and the constraint
+- Allocate the transaction price to multiple performance obligations using relative standalone selling prices
 - Recognize revenue at the appropriate point in time or over time
+- Account for contract modifications, licensing arrangements, and principal vs. agent considerations
+- Distinguish contract assets, contract liabilities, and accounts receivable
 
-## Overview of ASC 606
+## The Core Idea: Control Transfer as the Revenue Event
 
-**ASC 606, Revenue from Contracts with Customers**, replaced virtually all prior industry-specific revenue guidance with a single, principles-based framework. The core principle is straightforward: an entity recognizes revenue to depict the transfer of promised goods or services to customers in an amount that reflects the consideration the entity expects to be entitled to in exchange.
+Before ASC 606, revenue recognition was governed by a patchwork of industry-specific rules. Software companies followed one standard, construction companies another, franchise companies a third. The result was a system where economically similar transactions received different accounting treatment depending on the industry label attached to the entity.
 
-The standard applies to all contracts with customers except leases, insurance contracts, financial instruments, and certain nonmonetary exchanges.
+ASC 606 replaced all of that with a single, principles-based framework built on one structural insight: **revenue is recognized when control of a promised good or service transfers to the customer.** Not when cash is received. Not when risk passes. Not when the contract is signed. When *control* transfers.
 
-## The Five-Step Model
+This is a conservation event. The entity's performance obligation (a liability, conceptually — the entity owes the customer something) converts into revenue. The customer's payment obligation (a receivable, or cash already received) converts from a contract liability into earned revenue. Value changes form on both sides of the transaction. The equation closes.
 
-### Step 1 — Identify the Contract with a Customer
+The five-step model is the systematic method for identifying when that conservation event occurs and how much value it represents.
 
-A **contract** exists when all of the following criteria are met:
+<FrameworkConceptMap groupId="far.3.C" title="Revenue Recognition (ASC 606)" />
 
-- The parties have approved the contract and are committed to their obligations
-- Each party's rights regarding goods or services can be identified
-- Payment terms can be identified
-- The contract has **commercial substance** (future cash flows are expected to change)
-- It is **probable** the entity will collect the consideration it is entitled to
+<DeepDive title="Why one standard replaced dozens">
 
-If these criteria are not met at inception, the entity continues to reassess. Revenue is not recognized until a valid contract exists.
+The proliferation of industry-specific revenue guidance created an arbitrage problem. Entities with economically identical transactions could report different revenue amounts and timing depending on which guidance they followed. A software company delivering a bundled product-plus-service arrangement might defer revenue under SOP 97-2 while a non-software company delivering the same economic substance recognized it immediately under SAB 104.
 
-### Step 2 — Identify the Performance Obligations
+ASC 606 eliminates this by asking a single question that applies universally: has control transferred? The answer depends on the economic substance of the transaction, not the industry of the entity. This is the same impulse behind the conservation law — one set of rules, universally applied, so that the financial statements of different entities are comparable.
 
-A **performance obligation** is a promise to transfer a distinct good or service (or a series of distinct goods or services) to the customer. A good or service is distinct if:
+The trade-off is complexity. A single framework that handles everything from simple retail sales to multi-element software arrangements with variable consideration must be sophisticated enough to accommodate all of them. That sophistication lives in the five steps.
 
-1. The customer can **benefit** from it on its own or with readily available resources, and
-2. The promise is **separately identifiable** from other promises in the contract
+</DeepDive>
 
-For example, a software company sells a license bundled with two years of customer support. The license and support are distinct performance obligations because the customer can benefit from each independently and they are not highly interrelated.
+## Step 1: Identify the Contract
 
-### Step 3 — Determine the Transaction Price
+A contract exists when five criteria are met simultaneously. Miss any one and no contract exists — which means no revenue can be recognized.
 
-The **transaction price** is the amount of consideration the entity expects to be entitled to. It may include:
+<FrameworkMnemonic groupId="far.3.C" acronym="CARINV" />
 
-- **Fixed consideration** — A stated price in the contract
-- **Variable consideration** — Discounts, rebates, refunds, performance bonuses, penalties, or rights of return
-- **Noncash consideration** — Measured at fair value
-- **Consideration payable to the customer** — Generally reduces the transaction price
+The criteria in full:
 
-**Variable consideration** is estimated using either the **expected value** method (probability-weighted amounts) or the **most likely amount** method, whichever better predicts the outcome. It is included in the transaction price only to the extent it is probable that a significant revenue reversal will not occur — this is the **constraint on variable consideration**.
+1. **Contract identified** — The parties have approved the contract and are committed to their obligations
+2. **Approval/commitment** — Each party's rights regarding goods or services can be identified
+3. **Rights identifiable** — Payment terms can be identified
+4. **IN-substance commercial** — The contract has commercial substance (expected future cash flows will change)
+5. **Variable/fixed consideration measurable** — It is probable the entity will collect the consideration it is entitled to
 
-> The constraint is a frequent exam topic. Remember: include variable consideration in the transaction price only when it is probable that a significant reversal will NOT occur when the uncertainty is resolved.
+If these criteria are not met at inception, the entity continues to reassess. No revenue is recognized until a valid contract exists. Any consideration received before a contract exists is recorded as a liability (not revenue) until the criteria are met or one of two events occurs: the entity has no remaining obligations and all consideration is nonrefundable, or the contract has been terminated and consideration is nonrefundable.
 
-### Step 4 — Allocate the Transaction Price
+### Contract Combinations
 
-When a contract has multiple performance obligations, the transaction price is allocated to each based on **relative standalone selling prices**. If a standalone selling price is not directly observable, the entity estimates it using:
+Two or more contracts entered into at or near the same time with the same customer are combined and treated as a single contract if any of these conditions are met:
 
-- **Adjusted market assessment approach** — What would the market pay?
+- Negotiated as a package with a single commercial objective
+- Consideration in one contract depends on the other contract
+- Goods or services promised are a single performance obligation
+
+## Step 2: Identify Performance Obligations
+
+A **performance obligation** is a promise to transfer a distinct good or service (or a bundle of goods or services that are not distinct individually but are distinct as a bundle). A good or service is **distinct** when two criteria are met:
+
+1. **Capable of being distinct** — The customer can benefit from the good or service on its own or with readily available resources
+2. **Distinct within the context of the contract** — The promise is separately identifiable from other promises (not highly interrelated or interdependent)
+
+**Example:** A software company sells a license bundled with two years of customer support. The license is functional on its own (capable of being distinct). The support is not required to use the license and does not significantly modify it (distinct in context). Result: two separate performance obligations.
+
+**Counter-example:** A construction company promises to design and build a custom facility. The design and construction are highly interdependent — the design cannot be used without the construction, and the construction integrates the design into the final output. Result: single performance obligation.
+
+A **series** of distinct goods or services that are substantially the same and have the same pattern of transfer (e.g., monthly cleaning services) is treated as a single performance obligation.
+
+## Step 3: Determine the Transaction Price
+
+The transaction price is the amount of consideration the entity expects to be entitled to in exchange for transferring goods or services. Four elements can complicate the determination:
+
+### Variable Consideration
+
+Discounts, rebates, refunds, performance bonuses, penalties, and rights of return all create variable consideration. The entity must estimate the variable component using one of two methods:
+
+<FrameworkTable groupId="far.3.C" title="ASC 606 Variable Consideration Methods" />
+
+Include variable consideration in the transaction price only to the extent that it is **probable that a significant revenue reversal will not occur** when the uncertainty resolves. This is the **constraint on variable consideration** — one of the most tested concepts in ASC 606.
+
+**Worked example:** A construction company has a $10 million contract with a $500,000 performance bonus if completed by June 30. Management assesses a 70% probability of meeting the deadline. Using the most likely amount method (binary outcome), the most likely amount is $500,000 (70% > 50%). Is a significant reversal probable? If not, include the $500,000 in the transaction price. If uncertainty is high (e.g., the project is in early stages), the constraint may require excluding it until more information is available.
+
+### Significant Financing Component
+
+If the timing of payments differs significantly from the timing of transfer, the contract may contain a financing element. Adjust the transaction price for the time value of money. A practical expedient allows ignoring the financing component if the period between payment and transfer is one year or less.
+
+### Non-cash Consideration
+
+Measured at fair value at contract inception.
+
+### Consideration Payable to the Customer
+
+Coupons, vouchers, or credits payable to the customer generally reduce the transaction price (not recorded as an expense) unless the payment is for a distinct good or service received from the customer.
+
+<QuickCheck question="A retailer offers a $50 coupon to customers who purchase more than $500. Is this variable consideration or consideration payable to a customer?" answer="It is consideration payable to the customer — it reduces the transaction price. The $50 coupon is not payment for a distinct good or service from the customer, so it is treated as a price reduction, not an expense." />
+
+## Step 4: Allocate the Transaction Price
+
+When a contract contains multiple performance obligations, allocate the transaction price based on **relative standalone selling prices (SSP)**.
+
+If SSP is not directly observable, estimate using:
+- **Adjusted market assessment approach** — What would the market pay for this item?
 - **Expected cost plus a margin approach** — Forecast costs plus a reasonable margin
-- **Residual approach** — Allowed only when the selling price is highly variable or uncertain
+- **Residual approach** — Used only when the SSP is highly variable or uncertain
 
-**Worked example:**
+### Worked Example: Multi-Element Allocation
 
-A company sells Product A and Service B in a bundle for $900. Standalone selling prices are $600 for Product A and $400 for Service B.
+A company sells Product A and Service B in a bundle for $900. Standalone selling prices: Product A = $600, Service B = $400.
 
 | Obligation | Standalone Price | Ratio | Allocated Price |
 |------------|-----------------|-------|-----------------|
-| Product A | $600 | 600/1,000 = 60% | $900 x 60% = **$540** |
-| Service B | $400 | 400/1,000 = 40% | $900 x 40% = **$360** |
+| Product A | $600 | 60% | $540 |
+| Service B | $400 | 40% | $360 |
 | **Total** | **$1,000** | **100%** | **$900** |
 
-### Step 5 — Recognize Revenue
+Product A is delivered at contract inception (point in time). Service B is provided over 12 months (over time). At inception, recognize $540 of revenue for Product A. Recognize $360 ratably over 12 months ($30/month) as Service B is delivered.
 
-Revenue is recognized when (or as) a performance obligation is satisfied by transferring control of the good or service to the customer.
+### Discount Allocation
 
-**Over time** recognition applies if any one of these criteria is met:
+A discount in a bundled arrangement is allocated proportionally to all performance obligations unless the entity has observable evidence that the entire discount relates to only some of the obligations. In that case, allocate the discount to those specific obligations.
 
-1. The customer simultaneously receives and consumes the benefits (e.g., routine cleaning services)
-2. The entity's performance creates or enhances an asset the customer controls (e.g., building on customer land)
-3. The entity's performance does not create an asset with alternative use, and the entity has an enforceable right to payment for work completed to date
+## Step 5: Recognize Revenue
 
-If none of these criteria are met, revenue is recognized **at a point in time**, using indicators of control transfer such as physical possession, legal title, risks and rewards, and customer acceptance.
+Revenue is recognized when (or as) a performance obligation is satisfied by transferring control to the customer.
+
+<FrameworkDecisionTree groupId="far.3.C" title="Revenue Recognition: Over Time or Point in Time? (ASC 606 Step 5)" />
+
+<FrameworkMnemonic groupId="far.3.C" acronym="SOAR" />
+
+### Over Time Recognition
+
+If any one of the three SOAR criteria is met, recognize revenue over time using a measure of progress:
+
+- **Output methods** — Units delivered, milestones reached, surveys of work performed
+- **Input methods** — Costs incurred relative to total expected costs (percentage of completion), labor hours, machine hours
+
+**Worked example (input method):** A construction contract for $5,000,000 with estimated total costs of $4,000,000. Costs incurred to date: $1,200,000.
+
+- Progress: $1,200,000 / $4,000,000 = **30%**
+- Revenue recognized to date: $5,000,000 x 30% = **$1,500,000**
+- Gross profit to date: $1,500,000 - $1,200,000 = **$300,000**
+
+### Point in Time Recognition
+
+If none of the over-time criteria are met, revenue is recognized at the point when control transfers. Indicators of control transfer:
+
+- Entity has a present right to payment
+- Customer has legal title
+- Entity has transferred physical possession
+- Customer has significant risks and rewards of ownership
+- Customer has accepted the asset
+
+<QuickCheck question="A consulting firm provides monthly advisory services. The client receives and consumes the benefits simultaneously. Is revenue recognized over time or at a point in time?" answer="Over time. The first SOAR criterion is met: the customer simultaneously receives and consumes the benefits as the entity performs. Revenue is recognized as the services are delivered each month." />
+
+## Contract Assets and Liabilities
+
+The timing relationship between performance and payment creates three possible balance sheet presentations:
+
+<FrameworkTable groupId="far.3.C" title="Revenue Recognition — Contract Assets and Liabilities" />
+
+**Contract asset** — The entity has performed (earned revenue) but payment is conditional on something other than the passage of time. Once the right to payment becomes unconditional, the contract asset reclassifies to accounts receivable.
+
+**Accounts receivable** — The entity has an unconditional right to consideration. Only the passage of time separates the entity from payment.
+
+**Contract liability** — The entity has received (or is owed) consideration but has not yet performed. This is deferred/unearned revenue.
+
+### Worked Example: Contract Asset vs. Receivable
+
+A software company delivers Module 1 of a two-module system. The contract states payment of $200,000 for Module 1 is due only after Module 2 is also delivered.
+
+- At delivery of Module 1: DR Contract Asset $200,000, CR Revenue $200,000
+- At delivery of Module 2: DR Accounts Receivable $200,000, CR Contract Asset $200,000
+
+The right to payment was conditional on completing Module 2 (a contract asset). Once Module 2 is delivered, the right becomes unconditional (an accounts receivable).
 
 ## Contract Modifications
 
-A **contract modification** is a change in the scope or price of an existing contract that is approved by both parties. ASC 606 requires different accounting depending on the nature of the modification:
+A contract modification is a change in scope or price approved by both parties. Three possible treatments:
 
-**Treated as a separate contract** — When the modification adds distinct goods or services at their standalone selling prices (i.e., the price reflects the value of the new items). Account for the new items independently from the original contract.
+**Separate contract** — The modification adds distinct goods or services at their standalone selling prices. Account for the new items independently from the original contract.
 
-**Prospective treatment** — When the remaining goods or services are distinct from those already transferred. Reallocate the remaining transaction price (including the modification) to the remaining performance obligations going forward.
+**Prospective treatment** — The remaining goods or services are distinct from those already transferred. Reallocate the remaining transaction price to remaining performance obligations going forward.
 
-**Cumulative catch-up** — When the remaining goods or services are NOT distinct from those already transferred (part of a single performance obligation partially satisfied). Update the transaction price and measure of progress, then recognize a cumulative catch-up adjustment in the period of modification.
+**Cumulative catch-up** — The remaining goods or services are **not** distinct from those already transferred (part of a single, partially satisfied performance obligation). Update the measure of progress and recognize a cumulative catch-up adjustment in the modification period.
 
-> Contract modifications are frequently tested. The key decision point is whether the remaining goods/services are distinct. If yes → prospective. If no → cumulative catch-up. If new items at standalone price → separate contract.
+> The key decision point: Are the remaining goods/services distinct from what was already transferred? If yes, prospective. If no, cumulative catch-up. If the modification adds new items at standalone price, it is a separate contract entirely.
 
 ## Licensing
 
-Licensing arrangements under ASC 606 require the entity to determine whether a license is a **right to access** the entity's intellectual property (recognized over time) or a **right to use** the intellectual property as it exists at a point in time (recognized at a point in time).
+Licensing arrangements require determining whether a license is a **right to access** (over time) or a **right to use** (point in time).
 
-**Right to access (over time)** — The license provides access to IP that changes over the license period. All three of these criteria must be met:
+**Right to access (over time)** — All three criteria must be met:
 1. The entity will undertake activities that significantly affect the IP
 2. The customer is exposed to the positive or negative effects of those activities
 3. Those activities do not transfer a separate good or service
 
-Examples: franchise licenses where the franchisor continues marketing and operations support, software licenses with ongoing updates that change functionality.
+*Examples: franchise licenses with ongoing franchisor support, software with ongoing updates that change functionality.*
 
-**Right to use (point in time)** — The license provides a right to use the IP as it exists at the point of transfer. Recognized when the license is transferred and the customer can use and benefit from it.
+**Right to use (point in time)** — The license provides a right to use the IP as it exists at the point of transfer.
 
-Examples: music licenses, movie licenses, completed software without ongoing updates.
+*Examples: music licenses, movie licenses, completed software without ongoing updates.*
 
-**Sales-based and usage-based royalties** for IP licenses are recognized as the sale or usage occurs (the royalty constraint), not estimated in advance.
+**Sales-based and usage-based royalties** for IP licenses are recognized as the sale or usage occurs (the royalty constraint) — not estimated in advance.
 
 ## Principal vs. Agent
 
-When another party is involved in providing goods or services to a customer, the entity must determine whether it is acting as a **principal** or an **agent**:
+When another party is involved in providing goods or services, the entity must determine whether it controls the good or service **before** it is transferred to the customer:
 
-- **Principal** — Controls the good or service before it is transferred to the customer. Reports revenue **gross** (the full amount charged to the customer).
-- **Agent** — Arranges for the other party to provide the good or service. Reports revenue **net** (only the fee or commission earned).
+- **Principal** — Controls the good or service before transfer. Reports revenue **gross** (full amount charged to the customer)
+- **Agent** — Arranges for another party to provide the good or service. Reports revenue **net** (only the fee or commission)
 
-Indicators of control (principal):
-- The entity is primarily responsible for fulfilling the promise
-- The entity has inventory risk (before or after transfer, or during shipping)
-- The entity has discretion in establishing the price
+Indicators of control (principal status):
+- Primarily responsible for fulfilling the promise
+- Has inventory risk (before, during, or after transfer)
+- Has discretion in establishing the price
 
-> The gross vs. net determination affects revenue but not profit. A principal and an agent reporting the same transaction will have the same net income — only the revenue line differs. Exam questions test whether to report $100 of revenue or $15 of commission revenue.
+> The gross vs. net determination affects revenue but **not** profit. A principal reports $100 of revenue and $85 of cost ($15 profit). An agent reports $15 of commission revenue ($15 profit). Same bottom line — different top line.
 
 ## Contract Costs
 
-Under ASC 606, **incremental costs of obtaining a contract** (such as sales commissions) are capitalized as an asset if the entity expects to recover them. These costs are amortized on a systematic basis consistent with the transfer of goods or services. A practical expedient allows expensing these costs immediately if the amortization period is one year or less.
+**Incremental costs of obtaining a contract** (e.g., sales commissions) are capitalized as an asset if the entity expects to recover them. Amortize on a systematic basis consistent with the transfer of goods or services. A practical expedient allows immediate expensing if the amortization period is one year or less.
 
-**Costs to fulfill a contract** are capitalized only if they relate directly to a specific contract, generate or enhance resources used to satisfy obligations, and are expected to be recovered.
+**Costs to fulfill a contract** are capitalized only if they:
+1. Relate directly to a specific contract (or anticipated contract)
+2. Generate or enhance resources used to satisfy performance obligations
+3. Are expected to be recovered
 
-## Key Terms
-
-- **Performance obligation** — A promise in a contract to transfer a distinct good or service to the customer
-- **Transaction price** — The amount of consideration an entity expects to be entitled to in exchange for transferring goods or services
-- **Variable consideration** — Components of the transaction price that are contingent on future events, such as discounts, bonuses, or penalties
-- **Standalone selling price** — The price at which an entity would sell a promised good or service separately to a customer
-- **Constraint** — The requirement that variable consideration be included in the transaction price only when a significant reversal is not probable
+<QuickCheck question="A company pays $20,000 in sales commissions to acquire a 3-year service contract. How is the commission accounted for?" answer="Capitalize as a contract cost asset ($20,000) and amortize over the 3-year service period ($6,667/year). The practical expedient for immediate expensing does not apply because the amortization period exceeds one year." />

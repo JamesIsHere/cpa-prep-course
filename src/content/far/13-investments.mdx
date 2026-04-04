@@ -2,46 +2,58 @@
 
 ## Learning Objectives
 
-- Identify investments that are measured at fair value versus amortized cost
-- Calculate the carrying amount and investment income for fair value investments
-- Calculate impairment losses on investments measured at fair value and at amortized cost
-- Apply the equity method of accounting for investments with significant influence
-- Prepare journal entries for acquisitions, income recognition, dividends, and disposals under each method
+- Classify financial assets into the correct measurement category based on instrument type and investor intent
+- Apply fair value through net income, fair value through OCI, and amortized cost measurement models
+- Calculate carrying amounts and investment income under the equity method
+- Distinguish between CECL and OTTI impairment models and apply each to the appropriate category
+- Account for bond premium/discount amortization using the effective interest method
+- Prepare journal entries for acquisitions, fair value changes, income recognition, dividends, and disposals
 
-## Investment Classification Overview
+## The Core Idea: Classification Drives Everything
 
-The accounting for investments depends on the **type of instrument** and the **investor's intent and influence**. The AICPA Blueprint organizes this into three categories:
+Here is the structural reality of investment accounting: **there is no single "investment" account.** The moment an entity acquires a financial asset, the accounting system must classify it — and that classification decision locks in the measurement basis, the income recognition pattern, the impairment model, and the balance sheet presentation. Get the classification right and everything else follows mechanically. Get it wrong and every subsequent entry is wrong.
 
-1. **Financial assets at fair value** — equity securities and certain debt securities
-2. **Financial assets at amortized cost** — held-to-maturity debt securities
-3. **Equity method investments** — significant influence (typically 20-50% ownership)
+This is not a memorization exercise. It is a *routing problem*. The investor arrives at the classification gate carrying two pieces of information: **what kind of instrument is this** (debt vs. equity) and **what is the investor's relationship to it** (intent, influence, ability). The answers route the investment into one of four lanes, and each lane has its own complete set of accounting rules.
 
-## Financial Assets at Fair Value
+The framework below is the routing map. Learn it as a decision process, not a list.
+
+<FrameworkConceptMap groupId="far.2.E" title="Investment Classification and Measurement" />
+
+<FrameworkDecisionTree groupId="far.2.E" title="Investment Classification: How to Account for a Financial Asset" />
+
+<FrameworkMnemonic groupId="far.2.E" acronym="THAT" />
+
+<QuickCheck question="An entity acquires 15% of a company's voting stock with no intent to actively trade. The stock trades on the NYSE. How is this investment classified?" answer="Fair value through net income (default for equity securities). No significant influence (below 20%), readily determinable fair value, and no FV-OCI election — so the default applies: unrealized gains and losses flow through earnings." />
+
+## Lane 1: Fair Value Through Net Income
+
+This is the **default lane** for equity securities and the required lane for trading debt securities. The logic is simple: measure at fair value each period, and run all changes through the income statement.
 
 ### Equity Securities (ASC 321)
 
-Under ASC 321, **all equity securities with readily determinable fair values** are measured at fair value through net income. There is no more "available-for-sale" classification for equity securities.
+Under ASC 321, all equity securities with readily determinable fair values are measured at fair value through net income. There is no "available-for-sale" classification for equity securities — that ended with ASU 2016-01.
 
-**Key rules:**
-- Measure at **fair value** each reporting period
-- Unrealized gains and losses are recognized in **net income** (not OCI)
-- No impairment model — changes in fair value flow through earnings automatically
+**Key mechanics:**
+- Measure at fair value each reporting period
+- Unrealized gains and losses hit **net income** — not OCI
+- No separate impairment model needed (fair value changes already flow through earnings)
+- Dividends recognized as income when received
 
-**Journal entry — Purchase:**
+**Purchase:**
 
 | Account | Debit | Credit |
 |---------|-------|--------|
 | Investment in Equity Securities | XXX | |
 | Cash | | XXX |
 
-**Journal entry — Fair value increase at period end:**
+**Fair value increase at period end:**
 
 | Account | Debit | Credit |
 |---------|-------|--------|
 | Investment in Equity Securities | XXX | |
 | Unrealized Gain on Investments | | XXX |
 
-**Journal entry — Dividend received:**
+**Dividend received:**
 
 | Account | Debit | Credit |
 |---------|-------|--------|
@@ -50,146 +62,216 @@ Under ASC 321, **all equity securities with readily determinable fair values** a
 
 ### Equity Securities Without Readily Determinable Fair Values
 
-An entity may elect a **measurement alternative**: report at cost minus impairment, adjusted for observable price changes in orderly transactions for identical or similar investments.
+When fair value is not readily determinable, the entity may elect a **measurement alternative** under ASC 321: report at cost minus impairment, adjusted for observable price changes in orderly transactions for identical or similar investments. This is a practical accommodation — the entity uses cost as the anchor and only adjusts when it observes a real transaction that provides evidence of value.
 
-### Debt Securities — Trading
+### Trading Debt Securities
 
-Trading debt securities are held for **short-term resale**:
+Trading securities are debt instruments held for **short-term resale**. Same measurement model as equity: fair value through net income. Interest income is recognized separately (unlike equity, where dividends are the income component).
+
+## Lane 2: Fair Value Through OCI
+
+This lane exists only for **available-for-sale (AFS) debt securities** and equity securities subject to an irrevocable FV-OCI election.
+
+### AFS Debt Securities
+
+AFS is the residual category for debt securities that are neither trading nor held-to-maturity:
 - Measured at **fair value** each period
-- Unrealized gains and losses in **net income**
-- Interest income recognized separately
-
-### Debt Securities — Available-for-Sale (AFS)
-
-AFS debt securities are neither trading nor held-to-maturity:
-- Measured at **fair value** each period
-- Unrealized gains and losses in **other comprehensive income (OCI)**
-- Reclassified to net income when sold
+- Unrealized gains and losses go to **other comprehensive income (OCI)** — not the income statement
+- Reclassified ("recycled") to net income when the security is sold
 - Subject to the **CECL impairment model** for credit losses
+
+The OCI treatment means unrealized changes hit equity (through AOCI) but bypass the income statement. This reflects the intent: the entity is not actively trading but also has not committed to holding to maturity.
 
 **Impairment of AFS debt securities:**
 
 When fair value drops below amortized cost:
 1. Determine if any portion of the decline is due to **credit loss** (expected cash flow shortfall)
-2. Credit losses → recognized in net income through an **allowance** (reversible)
-3. Non-credit portion → remains in OCI
+2. Credit losses are recognized in net income through a reversible **allowance**
+3. The non-credit portion remains in OCI
 
 | Account | Debit | Credit |
 |---------|-------|--------|
 | Credit Loss Expense | XXX | |
 | Allowance for Credit Losses — AFS | | XXX |
 
-## Financial Assets at Amortized Cost
+This split is critical for exam purposes: only the credit piece hits income; the rest stays in equity.
 
-### Held-to-Maturity (HTM) Debt Securities
+<DeepDive title="Why the credit/non-credit split matters">
 
-Debt securities that the entity has the **positive intent and ability** to hold until maturity:
-- Measured at **amortized cost** (face value adjusted for premium/discount)
-- Interest income recognized using the **effective interest method**
+The split reflects two different economic phenomena. The credit loss represents a genuine deterioration in the issuer's ability to pay — the entity expects to collect less cash than promised. That is a real economic loss and belongs in the income statement.
+
+The non-credit decline represents a market price movement — interest rate changes, liquidity shifts, risk appetite changes — that does not affect expected cash collections. Since the entity does not intend to sell (it's not trading), and the decline is not caused by the issuer's inability to pay, routing it through OCI rather than income better represents the economics. The entity holds the bond, collects its cash flows, and the market fluctuation is irrelevant to the eventual outcome.
+
+This is a direct application of the matching principle: report economic events in the component of comprehensive income that best reflects their nature.
+
+</DeepDive>
+
+## Lane 3: Amortized Cost (Held-to-Maturity)
+
+Held-to-maturity (HTM) debt securities require two conditions: the entity has the **positive intent** and the **ability** to hold the security until maturity. If either condition fails, the security must be reclassified to AFS.
+
+**Key mechanics:**
+- Measured at **amortized cost** (face value adjusted for unamortized premium or discount)
 - No fair value adjustments on the balance sheet
+- Interest income recognized using the **effective interest method**
 - Subject to the **CECL impairment model**
 
-**Journal entry — Purchase at a premium:**
+### Premium and Discount Amortization
+
+<FrameworkFormula groupId="far.2.E" name="Bond Investment Premium/Discount Amortization (Effective Interest)" />
+
+**Worked Example — Premium Bond:**
+
+An entity purchases a $100,000 bond at 104 ($104,000). Stated rate: 6%. Market rate at purchase: 5%. Semiannual payments.
+
+**Period 1:**
+- Cash received: $100,000 × 3% = **$3,000**
+- Interest revenue: $104,000 × 2.5% = **$2,600**
+- Premium amortization: $3,000 − $2,600 = **$400**
+- New carrying amount: $104,000 − $400 = **$103,600**
 
 | Account | Debit | Credit |
 |---------|-------|--------|
-| Investment in HTM Securities | XXX | |
-| Cash | | XXX |
+| Cash | $3,000 | |
+| Investment in HTM Securities | | $400 |
+| Interest Revenue | | $2,600 |
 
-**Journal entry — Interest receipt and premium amortization:**
+The carrying amount converges toward face value over the bond's life. For a premium bond, cash received exceeds interest revenue each period, and the difference reduces the carrying amount. For a discount bond, the pattern reverses — interest revenue exceeds cash, and the difference increases the carrying amount.
 
-| Account | Debit | Credit |
-|---------|-------|--------|
-| Cash | XXX | |
-| Investment in HTM Securities | | XXX |
-| Interest Income | | XXX |
+<QuickCheck question="A company buys a $50,000 HTM bond at 97. The market rate is higher than the stated rate. Each period, will interest revenue be greater than or less than cash received?" answer="Greater than. At a discount, the market rate exceeds the stated rate. Interest revenue (carrying amount x market rate) is larger than cash (face x stated rate). The excess increases the carrying amount toward face value." />
 
-Cash received = face value × stated rate. Interest income = carrying amount × market rate. The difference amortizes the premium.
-
-**CECL impairment for HTM:**
+### CECL Impairment for HTM
 
 | Account | Debit | Credit |
 |---------|-------|--------|
 | Credit Loss Expense | XXX | |
 | Allowance for Credit Losses — HTM | | XXX |
 
-Unlike AFS, the entire fair value decline is not analyzed — only expected credit losses are recognized.
+Unlike AFS, there is no credit/non-credit split — the entire fair value decline analysis is irrelevant. CECL measures only expected credit losses: the present value of cash flows the entity does not expect to collect.
 
-## Equity Method Investments (ASC 323)
+## Lane 4: Equity Method (ASC 323)
 
-### When to Apply
+The equity method applies when the investor has **significant influence** over the investee — generally presumed at **20% to 50% ownership** of voting stock. This is a fundamentally different model: instead of measuring the investment at fair value or amortized cost, the investor treats the investment as a **single-line consolidation**.
 
-The equity method applies when the investor has **significant influence** over the investee — generally presumed at **20% to 50% ownership** of voting stock. Indicators of significant influence include:
-
+Indicators of significant influence beyond the 20% threshold:
 - Board representation
 - Participation in policy-making
 - Material intercompany transactions
 - Interchange of managerial personnel
 - Technological dependency
 
-### Initial Recognition
+### The Carrying Amount Formula
 
-Record at **cost** (purchase price plus direct acquisition costs):
+<FrameworkFormula groupId="far.2.E" name="Equity Method Investment Carrying Amount" />
 
-| Account | Debit | Credit |
-|---------|-------|--------|
-| Investment in Equity Method Investee | XXX | |
-| Cash | | XXX |
+This formula captures the entire equity method lifecycle:
 
-### Recognizing Investee Income
+1. **Initial recognition** — record at cost
+2. **Each period** — increase for share of investee income; decrease for dividends received
+3. **Impairment** — write down for other-than-temporary impairment
 
-The investor records its **proportionate share** of the investee's net income:
+### Why Dividends Reduce the Investment
+
+This is counterintuitive and heavily tested. Under the equity method, dividends are **not income** — they are a return of investment. The investor already picked up its share of the investee's earnings through the income pickup entry. When the investee then distributes cash, it is distributing earnings the investor already recognized. Taking it as income again would be double-counting.
+
+**Income pickup:**
 
 | Account | Debit | Credit |
 |---------|-------|--------|
 | Investment in Equity Method Investee | XXX | |
 | Equity in Earnings of Investee | | XXX |
 
-This is a **single-line consolidation** — the investor picks up its share of earnings without consolidating individual assets and liabilities.
-
-### Dividends Received
-
-Dividends **reduce the investment balance** (they are a return of investment, not income):
+**Dividend received:**
 
 | Account | Debit | Credit |
 |---------|-------|--------|
 | Cash | XXX | |
 | Investment in Equity Method Investee | | XXX |
 
-### Carrying Amount Formula
+### Worked Example
 
-**Ending Balance = Cost + Share of Income − Dividends Received − Impairment**
+Investor acquires 30% of Investee for $900,000. In Year 1, Investee reports net income of $200,000 and pays dividends of $50,000.
 
-### Impairment
+**Income pickup:** $200,000 × 30% = **$60,000**
+**Dividends:** $50,000 × 30% = **$15,000**
 
-Equity method investments are evaluated for impairment when events indicate the carrying amount may not be recoverable. If the decline in value is **other than temporary**, write down to fair value:
-
-| Account | Debit | Credit |
-|---------|-------|--------|
-| Loss on Impairment of Investment | XXX | |
-| Investment in Equity Method Investee | | XXX |
+Ending balance: $900,000 + $60,000 − $15,000 = **$945,000**
 
 ### Basis Differences
 
 When the investor pays more than book value for the investee's net assets, the excess is allocated to:
-1. **Identifiable assets** (e.g., undervalued land, equipment) — amortized over useful life
-2. **Goodwill** — not amortized, but considered in impairment analysis
+1. **Identifiable assets** with fair values exceeding book values (e.g., undervalued equipment) — amortized over remaining useful life
+2. **Goodwill** — the residual; not separately amortized but considered in OTTI analysis
 
-The amortization of basis differences **reduces** the investor's equity in earnings each period.
+The amortization of basis differences **reduces** the investor's equity in earnings each period. This reflects the reality that the investor overpaid relative to book value, and that premium must be consumed over time.
 
-## Summary Comparison
+**Extended example:** Investor pays $900,000 for 30% of Investee. Investee's book value of net assets: $2,400,000 (investor's share: $720,000). Fair value of equipment exceeds book by $200,000 (investor's share: $60,000, remaining life 10 years). Goodwill: $900,000 − $720,000 − $60,000 = **$120,000**.
 
-| Feature | Fair Value (Equity) | Fair Value (AFS Debt) | Amortized Cost (HTM) | Equity Method |
-|---------|--------------------|-----------------------|----------------------|---------------|
-| Measurement | Fair value | Fair value | Amortized cost | Cost + share of earnings |
-| Unrealized G/L | Net income | OCI | N/A | N/A |
-| Income recognition | Dividends | Interest (effective rate) | Interest (effective rate) | Share of net income |
-| Impairment | N/A (FV through NI) | CECL (credit portion) | CECL | Other-than-temporary |
+Each year, amortization of equipment basis difference: $60,000 / 10 = **$6,000** reduction to equity in earnings.
+
+### Impairment
+
+Equity method investments use the **other-than-temporary impairment (OTTI)** model — not CECL. If the decline in value is judged to be other than temporary, write down to fair value. This loss is not reversible.
+
+<QuickCheck question="An investor owns 25% of an investee. The investee reports a net loss of $100,000 and pays no dividends. What is the effect on the investment's carrying amount?" answer="Decrease of $25,000 (25% × $100,000 loss). The equity method picks up the investor's share of losses just as it picks up income — the investment balance decreases." />
+
+## The Complete Comparison
+
+<FrameworkTable groupId="far.2.E" title="Investment Categories — Measurement and Income Recognition" />
+
+## Impairment Models at a Glance
+
+The impairment model depends entirely on the classification lane:
+
+| Lane | Model | Trigger | Measurement |
+|------|-------|---------|-------------|
+| FV through NI | None needed | FV changes flow through income | N/A |
+| FV through OCI (AFS debt) | CECL | Credit loss component | Allowance = expected credit losses |
+| Amortized cost (HTM) | CECL | Expected credit losses | Allowance = PV of cash flows not expected to collect |
+| Equity method | OTTI | Decline other than temporary | Write down to fair value (permanent) |
+| Measurement alternative | Qualitative | Impairment indicators present | Quantitative if qualitative fails |
+
+## Software Cost Capitalization
+
+Software development costs follow a specialized capitalization model that depends on the software's intended use. This decision tree routes to the correct standard:
+
+<FrameworkDecisionTree groupId="far.2.E" title="Software Cost Capitalization" />
+
+### External-Use Software (ASC 985)
+
+Costs are expensed until **technological feasibility** is established (typically when a detailed program design or working model is completed). After that milestone:
+- Capitalize coding, testing, and production costs
+- Stop capitalizing when available for general release
+- Amortize at the **greater of** revenue ratio or straight-line over remaining useful life
+- Report at the lower of unamortized cost or NRV (assessed each period)
+
+### Internal-Use Software (ASC 350-40)
+
+Three-stage model:
+- **Preliminary project stage** — expense (conceptual planning, evaluating alternatives)
+- **Application development stage** — capitalize (coding, testing, installation, data conversion)
+- **Post-implementation stage** — expense (training, maintenance, minor upgrades)
+
+<DeepDive title="Why software gets special treatment">
+
+Software is one of the few areas where U.S. GAAP allows capitalization of internally developed intangible assets. The logic is pragmatic: software development has identifiable phases with clear milestones, making it possible to distinguish the "research" phase (uncertain outcome) from the "development" phase (technically feasible, outcome reasonably assured). The FASB drew the line at technological feasibility for external software and at the application development stage for internal software — both serving as the point where uncertainty drops enough to justify capitalization.
+
+This contrasts sharply with other R&D, where GAAP expenses everything as incurred because the point of "probable future benefit" is too difficult to identify reliably. IFRS takes the opposite approach, requiring capitalization of all development costs that meet six criteria — making the GAAP/IFRS treatment of development costs one of the most frequently tested international differences on FAR.
+
+</DeepDive>
+
+## Impairment Testing for Indefinite-Lived Intangible Assets
+
+Though this impairment framework applies broadly to indefinite-lived intangible assets (covered in greater depth in the Intangible Assets lesson), the decision tree is tagged here because indefinite-lived assets often arise in investment contexts:
+
+<FrameworkDecisionTree groupId="far.2.E" title="Impairment Testing — Indefinite-Lived Intangible Assets" />
 
 ## Key Exam Tips
 
-1. **Equity securities always go through net income** — there is no more AFS classification for stocks under ASC 321
-2. **AFS debt impairment splits credit vs. non-credit** — credit losses hit income, non-credit stays in OCI
+1. **Equity securities always go through net income** — there is no AFS classification for stocks under ASC 321
+2. **AFS debt impairment splits credit vs. non-credit** — credit losses hit income through an allowance, non-credit stays in OCI
 3. **HTM requires intent AND ability** — if either is lacking, reclassify to AFS
-4. **Equity method dividends reduce the investment** — they are not income
+4. **Equity method dividends reduce the investment** — they are not income; the income was already recognized in the earnings pickup
 5. **Basis differences must be amortized** — they reduce equity in earnings each period
+6. **Software capitalization has two different standards** — ASC 985 for external (tech feasibility trigger) and ASC 350-40 for internal (application development stage trigger)
+7. **CECL vs. OTTI** — debt securities use CECL; equity method uses OTTI. Do not confuse them.

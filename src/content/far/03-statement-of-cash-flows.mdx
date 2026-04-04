@@ -2,43 +2,95 @@
 
 ## Learning Objectives
 
-- Classify transactions into operating, investing, and financing activities
-- Prepare operating cash flows using the indirect method and the direct method
-- Handle common classification edge cases (interest, dividends, taxes)
+- Explain why the statement of cash flows exists as a conservation check on accrual accounting
+- Classify transactions into operating, investing, and financing activities using the decision tree
+- Prepare operating cash flows using the indirect method (four-step conservation approach)
+- Convert accrual income statement items to cash equivalents using the direct method
+- Handle classification edge cases (interest, dividends, taxes) under GAAP and IFRS
 - Account for noncash investing and financing activities in supplemental disclosures
 
-## Purpose of the Statement of Cash Flows
+## The Core Idea: Why Cash Flows Exist
 
-The **statement of cash flows** explains the change in cash and cash equivalents during a reporting period. It answers a question the income statement cannot: where did the cash come from and where did it go?
+The income statement measures wealth creation under accrual accounting. But accrual accounting, by design, separates the recognition of economic events from the movement of cash. Revenue is recognized when earned, not when collected. Expenses are recognized when incurred, not when paid. This means a profitable company can be hemorrhaging cash, and a cash-rich company can be destroying wealth.
 
-Cash equivalents are short-term, highly liquid investments that are readily convertible to known amounts of cash and are so near maturity that they present insignificant risk of changes in value (generally original maturities of three months or less). Examples include Treasury bills, commercial paper, and money market funds.
+The statement of cash flows closes this gap. It answers the question the income statement cannot: **where did the cash actually come from, and where did it go?**
 
-The statement is organized into three sections:
+In conservation terms, the income statement tracks Morphology 4 (wealth creation/destruction) through the accrual lens. The statement of cash flows tracks the same entity's cash reservoir — every inflow, every outflow, classified by the economic purpose of the movement. Together, they provide complementary views of the same conservation system.
 
-- **Operating activities** — Cash flows from the entity's core revenue-producing activities
-- **Investing activities** — Cash flows from the purchase and sale of long-term assets and investments
-- **Financing activities** — Cash flows from transactions with owners and creditors (issuing stock, borrowing, paying dividends)
+<DeepDive title="The accrual-cash divergence as a diagnostic signal">
 
-## Operating Activities — Indirect Method
+The gap between net income and operating cash flow is one of the most powerful diagnostic signals in financial analysis. A company reporting strong net income but weak operating cash flow may be:
 
-The **indirect method** starts with net income and adjusts for items that affected net income but did not involve cash:
+- Extending generous credit terms (AR growing faster than revenue)
+- Building inventory ahead of demand (cash consumed, no matching revenue yet)
+- Using aggressive revenue recognition (income recognized, cash not yet received)
+- Capitalizing costs that should be expensed (cash outflow classified as investing, not operating)
 
-**Step 1:** Start with net income
+Conversely, a company reporting weak net income but strong operating cash flow may be:
+- Recording large noncash charges (depreciation, amortization, impairment) that reduce income but not cash
+- Collecting on previously recognized receivables faster than new sales
+- Running a capital-light business model with low depreciation relative to cash generation
 
-**Step 2:** Add back noncash expenses (depreciation, amortization, impairment losses)
+The reconciliation between accrual income and cash flow is not just a reporting requirement — it is a forensic tool. The adjustments tell you exactly where accrual accounting and cash reality diverge.
 
-**Step 3:** Remove gains and add back losses on investing/financing activities (these are reclassified to the appropriate section)
+</DeepDive>
 
-**Step 4:** Adjust for changes in operating assets and liabilities (working capital changes)
+## The Three Activity Classifications
+
+Cash flows are classified by the economic purpose of the transaction, not by the account involved. The decision tree makes this classification mechanical:
+
+<FrameworkDecisionTree groupId="far.1.A" title="Cash Flow Classification" />
+
+**Operating activities** are the default. If a cash flow does not fit investing or financing, it is operating. This includes cash received from customers, cash paid to suppliers and employees, interest paid and received (under GAAP), and income taxes paid.
+
+**Investing activities** involve buying and selling long-term assets and investments. Purchase of PP&E, proceeds from asset sales, purchase and maturity of investment securities, loans made to other entities, and collection of loan principal.
+
+**Financing activities** involve transactions with the entity's owners and creditors that change the capital structure. Issuing stock, repurchasing treasury stock, borrowing, repaying debt principal, and paying dividends.
+
+<FrameworkConceptMap groupId="far.1.A" title="Financial Statements Overview" />
+
+### Classification Edge Cases
+
+These distinctions between GAAP and IFRS are among the most frequently tested rules on the CPA exam:
+
+| Item | U.S. GAAP | IFRS |
+|------|-----------|------|
+| Interest paid | Operating | Operating or Financing (policy choice) |
+| Interest received | Operating | Operating or Investing (policy choice) |
+| Dividends paid | Financing | Operating or Financing (policy choice) |
+| Dividends received | Operating | Operating or Investing (policy choice) |
+| Income taxes paid | Operating | Operating (unless identifiable with investing/financing) |
+
+> Under U.S. GAAP, interest paid and received are always operating. Under IFRS, the entity has a policy choice. This is one of the most commonly tested classification rules.
+
+<QuickCheck question="A company pays $50,000 in interest on its bonds payable. Under U.S. GAAP, how is this classified on the statement of cash flows?" answer="Operating activity. Under U.S. GAAP, interest paid is always classified as operating — even though the underlying debt is a financing arrangement. IFRS allows a policy choice between operating and financing." />
+
+## Operating Cash Flows: The Indirect Method
+
+The indirect method is by far the most common in practice. It starts with net income and works backward to cash — applying the four-step conservation method to strip out every accrual adjustment.
+
+### The Logic
+
+Net income includes items that affected earnings but not cash, and excludes cash movements that did not affect earnings. The indirect method makes three categories of adjustments:
+
+**1. Add back noncash expenses.** Depreciation, amortization, and impairment reduced net income but consumed no cash. Add them back.
+
+**2. Remove gains/add back losses on investing and financing activities.** A gain on sale of equipment increased net income, but the full cash proceeds belong in investing activities. Remove the gain from operating to avoid double-counting. Same logic applies to losses — add them back because the full cash impact is in investing or financing.
+
+**3. Adjust for working capital changes.** Changes in operating assets and liabilities represent the timing gap between accrual recognition and cash movement.
 
 ### Working Capital Adjustments
 
-| Change | Effect on Cash |
-|--------|---------------|
-| Increase in current assets (AR, inventory, prepaids) | **Subtract** — cash was used |
-| Decrease in current assets | **Add** — cash was freed up |
-| Increase in current liabilities (AP, accrued expenses) | **Add** — cash was conserved |
-| Decrease in current liabilities | **Subtract** — cash was paid out |
+The working capital adjustment logic follows directly from conservation:
+
+| Change | Effect on Cash | Why |
+|--------|---------------|-----|
+| Increase in current assets (AR, inventory, prepaids) | **Subtract** | Cash was consumed or not yet collected |
+| Decrease in current assets | **Add** | Cash was freed up or collected |
+| Increase in current liabilities (AP, accrued expenses) | **Add** | Cash was conserved (obligation incurred but not yet paid) |
+| Decrease in current liabilities | **Subtract** | Cash was paid out |
+
+The mnemonic: current assets move opposite to cash (asset up = cash down). Current liabilities move with cash (liability up = cash up, because you got the benefit without paying yet).
 
 ### Worked Example — Indirect Method
 
@@ -55,9 +107,13 @@ The **indirect method** starts with net income and adjusts for items that affect
 | Decrease in accrued liabilities | (4,000) |
 | **Cash from operating activities** | **$143,000** |
 
-## Operating Activities — Direct Method
+Trace each adjustment: Depreciation and amortization added back ($30,000 noncash). Gain removed ($8,000 is in investing). Loss added back ($3,000 is in financing). Working capital adjustments net to ($2,000). Total: $120,000 + $30,000 - $8,000 + $3,000 - $2,000 = $143,000.
 
-The **direct method** reports gross cash receipts and payments from operating activities. It shows the actual cash flows rather than reconciling from net income:
+<QuickCheck question="Accounts receivable increased by $20,000 during the period. How does this affect operating cash flows under the indirect method, and why?" answer="Subtract $20,000. Revenue was recognized (increasing net income) but the cash was not collected. The AR increase represents the gap between accrual revenue and cash received from customers. You are reversing out the portion of revenue that did not produce cash." />
+
+## Operating Cash Flows: The Direct Method
+
+The direct method reports gross cash receipts and payments. Instead of adjusting net income, it converts each income statement line item to its cash equivalent:
 
 | Item | Amount |
 |------|--------|
@@ -68,87 +124,78 @@ The **direct method** reports gross cash receipts and payments from operating ac
 | Cash paid for income taxes | (40,000) |
 | **Cash from operating activities** | **$85,000** |
 
-### Converting Accrual Amounts to Cash (Direct Method)
+### Conversion Formulas
 
-To prepare the direct method, convert each income statement line item to its cash equivalent:
+Each conversion strips out the accrual adjustment to isolate the cash movement:
 
-**Cash received from customers** = Revenue + Decrease in AR (or − Increase in AR)
+**Cash received from customers** = Revenue + Decrease in AR (or - Increase in AR)
 
-**Cash paid to suppliers** = COGS + Increase in inventory (or − Decrease) − Increase in AP (or + Decrease)
+**Cash paid to suppliers** = COGS + Increase in Inventory (or - Decrease) - Increase in AP (or + Decrease)
 
-**Cash paid for interest** = Interest expense − Increase in interest payable (or + Decrease) + Amortization of bond premium (or − Discount amortization)
+**Cash paid for interest** = Interest Expense - Increase in Interest Payable (or + Decrease) + Amortization of Bond Premium (or - Discount Amortization)
 
-Although the FASB encourages the direct method, the indirect method is far more commonly used in practice. If an entity uses the direct method, a reconciliation of net income to operating cash flows (essentially the indirect method) must be provided in a supplemental schedule.
+**Cash paid for income taxes** = Income Tax Expense - Increase in Income Tax Payable (or + Decrease) - Increase in DTA (or + Decrease) + Increase in DTL (or - Decrease)
+
+Although the FASB encourages the direct method, the indirect method dominates in practice. If an entity uses the direct method, it must also provide the indirect method reconciliation as a supplemental schedule — making the direct method strictly more work.
 
 ## Investing Activities
 
-Investing activities involve changes in long-term assets:
+| Transaction | Cash Effect |
+|-------------|-------------|
+| Purchase of PP&E or intangible assets | Outflow |
+| Proceeds from sale of PP&E | Inflow (gross proceeds, not gain) |
+| Purchase of investments (stocks, bonds HTM) | Outflow |
+| Proceeds from sale/maturity of investments | Inflow |
+| Loans made to other entities | Outflow |
+| Collection of loan principal | Inflow |
 
-| Transaction | Classification |
-|-------------|---------------|
-| Purchase of PP&E or intangible assets | Cash outflow |
-| Proceeds from sale of PP&E | Cash inflow |
-| Purchase of investments (stocks, bonds held to maturity) | Cash outflow |
-| Proceeds from sale/maturity of investments | Cash inflow |
-| Loans made to other entities | Cash outflow |
-| Collection of loan principal | Cash inflow |
-
-> The gain or loss on sale of equipment is removed from operating activities (indirect method) because the total cash proceeds are reported as an investing inflow. Including both would double-count the cash effect.
+> The gain or loss on sale of equipment is removed from operating activities (indirect method) because the total cash proceeds are reported as an investing inflow. Including both would double-count the cash effect. This is one of the most common exam traps.
 
 ## Financing Activities
 
-Financing activities involve changes in long-term liabilities and equity:
+| Transaction | Cash Effect |
+|-------------|-------------|
+| Proceeds from issuing bonds or notes | Inflow |
+| Repayment of debt principal | Outflow |
+| Proceeds from issuing stock | Inflow |
+| Repurchase of treasury stock | Outflow |
+| Dividends paid to shareholders | Outflow |
+| Debt issuance costs paid | Outflow |
 
-| Transaction | Classification |
-|-------------|---------------|
-| Proceeds from issuing bonds or notes | Cash inflow |
-| Repayment of debt principal | Cash outflow |
-| Proceeds from issuing stock | Cash inflow |
-| Repurchase of treasury stock | Cash outflow |
-| Dividends paid to shareholders | Cash outflow |
-| Debt issuance costs paid | Cash outflow |
-
-## Classification Edge Cases
-
-These frequently tested rules distinguish U.S. GAAP from IFRS:
-
-| Item | U.S. GAAP | IFRS |
-|------|-----------|------|
-| Interest paid | Operating | Operating or Financing (policy choice) |
-| Interest received | Operating | Operating or Investing (policy choice) |
-| Dividends paid | Financing | Operating or Financing (policy choice) |
-| Dividends received | Operating | Operating or Investing (policy choice) |
-| Income taxes paid | Operating (unless identifiable with investing/financing) | Operating (unless identifiable with investing/financing) |
-
-> Under U.S. GAAP, interest paid and received are always operating. This is one of the most commonly tested classification rules on the CPA exam.
+Note that dividends **declared** create a liability (dividends payable) — no cash effect until payment. Dividends **paid** are the financing outflow. The declaration date entry is a working capital change; the payment date entry is the cash flow.
 
 ## Noncash Investing and Financing Activities
 
-Transactions that do not involve cash but are significant investing or financing activities are disclosed in a **supplemental schedule** — not in the body of the statement of cash flows. Examples include:
+Transactions that do not involve cash but are significant investing or financing activities are disclosed in a **supplemental schedule** — not in the body of the statement. Examples:
 
 - Converting debt to equity
-- Acquiring assets by assuming liabilities (e.g., purchasing a building by signing a mortgage)
-- Obtaining an asset through a capital lease
+- Acquiring assets by assuming liabilities (purchasing a building with a mortgage)
+- Obtaining an asset through a finance lease (ROU asset and lease liability recognized simultaneously)
 - Exchanging noncash assets
 
-These disclosures ensure that users understand the full scope of investing and financing activities, even when no cash changed hands.
+These disclosures ensure users understand the full scope of investing and financing activity, even when no cash changed hands. In conservation terms, these are bilateral expansions or form swaps that bypass the cash account entirely.
 
-## The T-Account Approach
+## The T-Account Method
 
-A common technique for preparing the statement of cash flows is to set up T-accounts for every balance sheet account and "explain" each change. Since the balance sheet must balance, every change in a non-cash account must be offset by a change in cash or another non-cash account. By systematically working through each account, you can identify every cash flow and ensure the statement is complete.
+For exam preparation, the T-account approach systematically identifies every cash flow:
 
-Steps:
 1. Set up a T-account for cash and one for every other balance sheet account
-2. Enter the beginning and ending balances
+2. Enter beginning and ending balances
 3. For each non-cash account, identify the transactions that caused the change
-4. Record each transaction's cash effect in the cash T-account, classified as operating, investing, or financing
+4. Record each transaction's cash effect in the cash T-account, classified by activity
 
-## Key Terms
+Since the balance sheet must balance, every change in a non-cash account must be offset by a change in cash or another non-cash account. By working through each account, you can identify every cash flow and verify the statement is complete.
 
-- **Cash equivalents** — Short-term, highly liquid investments with original maturities of three months or less
-- **Indirect method** — A method of presenting operating cash flows that begins with net income and adjusts for noncash items and working capital changes
-- **Direct method** — A method of presenting operating cash flows that reports gross cash receipts and payments from operations
-- **Noncash investing and financing activities** — Significant transactions that do not involve cash, disclosed in a supplemental schedule to the statement of cash flows
-- **Operating activities** — Cash flows from the entity's core revenue-producing business operations
-- **Investing activities** — Cash flows from the purchase and sale of long-term assets and investments
-- **Financing activities** — Cash flows from transactions with the entity's owners and creditors
+<QuickCheck question="A company acquired a building by signing a $500,000 mortgage. No cash was exchanged. How does this appear on the statement of cash flows?" answer="It does not appear in the body of the statement at all — no cash moved. It is disclosed as a noncash investing and financing activity in the supplemental schedule. The company acquired a long-term asset (investing) by incurring a long-term liability (financing) without any cash flow." />
+
+<DeepDive title="Cash flow as the metabolism measure">
+
+The statement of cash flows, viewed through the balance sheet metabolism framework, reveals the speed at which different asset compartments convert to and from cash. Operating cash flows measure the metabolic rate of working capital — how fast receivables collect, how fast inventory sells, how fast payables are settled. The cash conversion cycle (Inventory Days + AR Days - AP Days) is the aggregate metabolism metric for this compartment.
+
+Investing cash flows reveal the capital deployment rate — how aggressively the entity is converting stored value (cash) into capacity assets (PP&E) or enabling assets (acquisitions). High investing outflows signal growth or replacement cycles. Low outflows may signal maturity, underinvestment, or a capital-light model.
+
+Financing cash flows reveal management's capital allocation decisions — the balance between debt and equity, the level of shareholder returns, the willingness to take on leverage. Over time, the pattern of financing cash flows tells a story about management's philosophy: growth-oriented (net inflows) vs. returning capital (net outflows).
+
+The three sections together provide a complete metabolic profile of the entity's cash reservoir.
+
+</DeepDive>

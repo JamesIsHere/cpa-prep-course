@@ -1,127 +1,259 @@
-# Fixed Assets
+# Property, Plant and Equipment
 
 ## Learning Objectives
 
-- Determine the cost of a fixed asset at acquisition
-- Calculate depreciation under straight-line, declining balance, and units-of-production methods
-- Apply impairment testing rules for long-lived assets under ASC 360
-- Account for disposals and nonmonetary exchanges of assets
+- Determine the capitalized cost of a fixed asset at acquisition, including interest capitalization
+- Calculate depreciation under straight-line, double-declining balance, sum-of-years-digits, and units-of-production methods
+- Apply the two-step impairment test for long-lived assets under ASC 360
+- Account for asset disposals and nonmonetary exchanges under ASC 845
+- Measure and account for asset retirement obligations under ASC 410-20
+- Distinguish between capitalizable expenditures and period expenses after an asset is placed in service
 
-## Acquisition Costs
+## The Core Idea: The Asset Lifecycle
 
-**Property, plant, and equipment (PP&E)** are tangible long-lived assets used in operations and not held for sale. Under U.S. GAAP, a fixed asset is initially recorded at its **historical cost**, which includes all expenditures necessary to acquire the asset and prepare it for its intended use:
+PP&E follows a four-stage lifecycle, and every accounting question maps to one of these stages:
 
-- Purchase price (less any trade discounts)
+1. **Acquire** — Determine cost (what goes on the balance sheet)
+2. **Use** — Allocate cost over time (depreciation)
+3. **Evaluate** — Test whether the remaining cost is recoverable (impairment)
+4. **Dispose** — Remove from the books and recognize gain or loss
+
+This is the structure of PP&E accounting. Every rule, every journal entry, every exam question is a question about which stage you are in and what the rules are for that stage. The lifecycle framing eliminates the need to memorize disconnected rules — you identify the stage, then apply the logic for that stage.
+
+The deeper principle: PP&E is a **capacity asset**. Unlike inventory (consumed per unit sold), equipment enables production without being depleted by each transaction. Its cost release is time-driven (depreciation), not demand-driven. The balance sheet carries the remaining undepreciated cost — the portion of the asset's economic benefit that has not yet been consumed and transferred to the income statement.
+
+<DeepDive title="Capacity assets vs. consumable assets — why the accounting differs">
+
+In systems dynamics, capacity assets follow a different metabolic equation than consumables. Inventory is drained by output volume: sell more, deplete faster. Equipment is drained by time (or, with units-of-production, by cumulative utilization). This fundamental difference explains why:
+
+- Inventory uses cost flow assumptions (FIFO, LIFO) to assign specific cost layers to specific sales events
+- PP&E uses systematic allocation methods (straight-line, DDB) to spread cost across periods regardless of individual transactions
+
+Both are conservation equations — cost enters the balance sheet and must eventually exit through the income statement. The difference is the release trigger: demand-driven for inventory, time-driven (or utilization-driven) for PP&E.
+
+The balance sheet metabolism ratio for capacity assets is asset turnover at the component level: Revenue / Net Book Value. A fully utilized asset earns at rate rho; an idle asset still depreciates but generates nothing. This is why impairment testing exists — it catches assets whose remaining book value exceeds the cash flows they can generate.
+
+</DeepDive>
+
+## Stage 1: Acquisition Cost
+
+A fixed asset is recorded at **historical cost** — all expenditures necessary to acquire the asset and prepare it for its intended use:
+
+- Purchase price (less trade discounts)
 - Sales tax
 - Freight and delivery charges
 - Installation and setup costs
-- Testing costs incurred before the asset is ready for use
+- Testing costs before the asset is ready for use
 - Legal fees for title transfer
+- Site preparation (grading, clearing, demolition of existing structures)
 
-Costs incurred **after** the asset is placed in service are capitalized only if they extend the useful life, increase capacity, or improve efficiency. Routine repairs and maintenance are expensed as incurred.
+**After** the asset is placed in service, expenditures are capitalized only if they **extend the useful life, increase capacity, or improve efficiency.** Routine repairs and maintenance are expensed as incurred.
 
-**Interest capitalization** applies when an entity constructs an asset for its own use. Under ASC 835, interest is capitalized during the construction period based on the weighted-average accumulated expenditures, up to the amount of actual interest incurred.
+> **Land is never depreciated.** Land costs include grading, clearing, and demolishing existing structures. But land improvements (parking lots, fences, lighting) are separately depreciated.
 
-> On the exam, remember that land is never depreciated. Also, the cost of land includes grading, clearing, and razing existing structures — but land improvements (parking lots, fences) are separately depreciated.
+### Interest Capitalization (ASC 835)
 
-## Depreciation Methods
+When an entity constructs an asset for its own use, interest incurred during the construction period is capitalized as part of the asset's cost.
 
-Depreciation is the systematic allocation of an asset's cost (less salvage value) over its useful life. The three primary methods are:
-
-### Straight-Line
-
-The most common method. Equal expense each period.
-
-**Annual depreciation = (Cost - Salvage value) / Useful life**
-
-### Declining Balance
-
-An accelerated method that applies a constant rate to the declining book value. The most common variant is **double-declining balance (DDB)**, which uses twice the straight-line rate. Salvage value is not subtracted in the calculation, but the asset is never depreciated below salvage value.
-
-**Annual depreciation = Book value at beginning of year x (2 / Useful life)**
-
-### Units of Production
-
-Depreciation varies with actual usage, making it appropriate for assets whose wear is driven by output rather than time.
-
-**Depreciation per unit = (Cost - Salvage value) / Total estimated units**
-**Annual depreciation = Depreciation per unit x Units produced in the period**
-
-### Worked Example
-
-A machine is purchased for $100,000, with a $10,000 salvage value and a 5-year useful life.
-
-**Straight-line:**
-- Annual depreciation = ($100,000 - $10,000) / 5 = **$18,000 per year**
-
-**Double-declining balance (Year 1 and Year 2):**
-- DDB rate = 2 / 5 = 40%
-- Year 1: $100,000 x 40% = **$40,000** (book value drops to $60,000)
-- Year 2: $60,000 x 40% = **$24,000** (book value drops to $36,000)
-- Continue until book value reaches salvage value of $10,000
-
-> Under DDB, entities often switch to straight-line in the year when straight-line depreciation on the remaining book value exceeds the DDB amount. This maximizes the deduction and ensures the asset is fully depreciated to salvage value.
-
-## Asset Retirement Obligations (ARO)
-
-An **asset retirement obligation** is a legal obligation to dismantle, remove, or remediate a long-lived asset at the end of its useful life. Common examples include decommissioning oil rigs, removing underground storage tanks, and restoring leased property to its original condition.
-
-Under **ASC 410-20**, when an ARO is incurred:
-
-1. **Measure the liability** at fair value (typically the present value of estimated future retirement costs) using a credit-adjusted, risk-free discount rate
-2. **Capitalize the same amount** as an addition to the carrying amount of the related fixed asset
-3. **Accrete the liability** over the asset's life using the effective interest method (debit accretion expense, credit ARO liability)
-4. **Depreciate the capitalized cost** over the asset's useful life along with the rest of the asset
+**Rules:**
+- **Capitalization period** begins when expenditures are being made, construction is underway, and interest is being incurred. It ends when the asset is substantially complete.
+- **Avoidable interest** = Weighted-average accumulated expenditures x Interest rate
+  - Use the specific borrowing rate first (if a loan was taken for the project)
+  - For remaining expenditures, use the weighted-average rate on all other outstanding debt
+- **Capitalize the lesser of** avoidable interest and actual total interest incurred
+- Interest revenue on temporarily invested construction funds is **not** offset against capitalized interest — it is recognized separately
 
 **Worked example:**
 
-A company installs an underground tank and has a legal obligation to remove it in 10 years at an estimated cost of $50,000. The credit-adjusted risk-free rate is 5%.
+A company builds a warehouse. Weighted-average accumulated expenditures during the year: $2,000,000. Construction loan at 8%: $1,500,000. Other debt weighted-average rate: 6%. Total actual interest incurred during the year: $200,000.
 
-- Initial ARO liability = $50,000 / (1.05)^10 = **$30,696**
-- Capitalize $30,696 as part of the tank's cost
-- Annual accretion expense = ARO liability x 5% (grows each year)
-- Year 1 accretion = $30,696 x 5% = **$1,535**
+- Avoidable interest on specific borrowing: $1,500,000 x 8% = $120,000
+- Remaining expenditures: $2,000,000 - $1,500,000 = $500,000
+- Avoidable interest on other debt: $500,000 x 6% = $30,000
+- Total avoidable interest: $120,000 + $30,000 = **$150,000**
+- Actual interest: $200,000
+- Capitalize: lesser of $150,000 and $200,000 = **$150,000**
+- Remaining $50,000 is expensed as interest expense
 
-At the end of 10 years, the liability accretes to approximately $50,000, matching the expected retirement cost. Any difference between the actual settlement cost and the liability balance at settlement is recognized as a gain or loss.
+<QuickCheck question="An entity purchases equipment for $80,000, pays $3,000 for delivery, $2,000 for installation, and $500 for a maintenance contract covering the first year. What is the capitalized cost?" answer="$85,000. The purchase price ($80,000), delivery ($3,000), and installation ($2,000) are all necessary to prepare the asset for its intended use. The $500 maintenance contract is a period expense — it maintains the asset after it is already in service." />
 
-> AROs only arise from **legal obligations** — not from planned maintenance or voluntary cleanup. The obligation must be imposed by law, regulation, or contract.
+## Stage 2: Depreciation
 
-## Capitalized Interest — Expanded
+Depreciation is the systematic allocation of a capacity asset's cost (less salvage value) over its useful life. It is not a valuation technique — it is a cost allocation process. The asset may be worth more than book value; depreciation continues regardless.
 
-Interest capitalization under **ASC 835** applies to assets constructed for the entity's own use and assets manufactured as discrete projects for sale (e.g., ships, real estate developments). It does **not** apply to routine inventory production or assets already in use.
+### Straight-Line
 
-**Key rules:**
-- **Capitalization period** begins when expenditures are being made, construction activities are underway, and interest is being incurred. It ends when the asset is substantially complete and ready for use.
-- **Avoidable interest** = Weighted-average accumulated expenditures x Interest rate
-  - If specific borrowing exists for the project, use that rate first
-  - For remaining expenditures, use the weighted-average rate on all other borrowings
-- **Capitalized amount** = The lesser of avoidable interest and actual interest incurred during the period
-- Interest revenue on temporarily invested construction funds is **not** offset against interest to be capitalized — it is recognized as revenue separately
+<FrameworkFormula groupId="far.2.D" name="Straight-Line Depreciation" />
 
-## Impairment of Long-Lived Assets
+Equal expense each period. The most common method. Appropriate when the asset provides roughly equal benefit each period.
 
-Under **ASC 360**, long-lived assets held for use are tested for impairment when events or changes in circumstances indicate the carrying amount may not be recoverable. The test is a two-step process:
+### Double-Declining Balance (DDB)
 
-**Step 1 — Recoverability test:** Compare the asset's carrying amount to the sum of its estimated **undiscounted** future cash flows. If the carrying amount exceeds undiscounted cash flows, the asset is impaired.
+<FrameworkFormula groupId="far.2.D" name="Double-Declining Balance" />
 
-**Step 2 — Measurement:** The impairment loss equals the carrying amount minus the asset's **fair value**.
+An accelerated method — higher expense in early years, lower in later years. The rate is twice the straight-line rate applied to the **declining book value** (not depreciable base). Salvage value is not subtracted in the computation, but the asset is never depreciated below salvage.
+
+> Entities often switch from DDB to straight-line in the year when straight-line on the remaining book value exceeds the DDB amount. This maximizes the deduction and ensures the asset reaches salvage value by the end of its useful life.
+
+### Sum-of-Years-Digits (SYD)
+
+<FrameworkFormula groupId="far.2.D" name="Sum-of-Years-Digits" />
+
+Another accelerated method. The fraction applied each year has the remaining useful life as the numerator and n(n+1)/2 as the denominator. Unlike DDB, SYD applies to the depreciable base (Cost - Salvage), not book value.
+
+### Units of Production
+
+Depreciation varies with actual usage:
+
+**Depreciation per unit = (Cost - Salvage) / Total estimated units**
+
+**Period depreciation = Depreciation per unit x Units produced**
+
+This method mirrors the consumable-asset logic — the release rate is demand-driven. It is appropriate for assets whose wear is driven by output (printing presses, delivery vehicles) rather than the passage of time.
+
+### Comprehensive Worked Example
+
+A machine costs $100,000, has a $10,000 salvage value, and a 5-year useful life.
+
+**Straight-line:**
+- Annual depreciation = ($100,000 - $10,000) / 5 = **$18,000/year**
+
+**DDB (first 3 years):**
+- Rate = 2/5 = 40%
+- Year 1: $100,000 x 40% = **$40,000** → BV = $60,000
+- Year 2: $60,000 x 40% = **$24,000** → BV = $36,000
+- Year 3: $36,000 x 40% = **$14,400** → BV = $21,600
+- Year 4: Switch to SL on remaining BV. SL = ($21,600 - $10,000) / 2 = $5,800. DDB = $21,600 x 40% = $8,640. DDB > SL, so use DDB: **$8,640** → BV = $12,960
+- Year 5: SL = ($12,960 - $10,000) / 1 = **$2,960** → BV = $10,000 (salvage)
+
+**SYD (first 2 years):**
+- Sum of digits = 5(6)/2 = 15
+- Year 1: ($90,000) x 5/15 = **$30,000**
+- Year 2: ($90,000) x 4/15 = **$24,000**
+
+**Partial-year depreciation:** When an asset is acquired mid-year, depreciation is prorated. A machine purchased April 1 gets 9/12 of the first year's depreciation. This applies to all methods.
+
+<QuickCheck question="Equipment with a $200,000 cost and $20,000 salvage value has a 10-year life. Using DDB, what is Year 1 depreciation? Year 2?" answer="DDB rate = 2/10 = 20%. Year 1: $200,000 x 20% = $40,000 (BV = $160,000). Year 2: $160,000 x 20% = $32,000 (BV = $128,000). Note: salvage value is not subtracted in DDB — it only acts as a floor." />
+
+## Stage 3: Impairment (ASC 360)
+
+Long-lived assets held for use are tested for impairment when **triggering events** indicate the carrying amount may not be recoverable. Examples: significant decrease in market price, adverse change in the asset's use, operating losses, negative cash flow projections.
+
+### Two-Step Test
+
+**Step 1 — Recoverability:** Compare the carrying amount to the sum of estimated **undiscounted** future cash flows from the asset.
+- If carrying amount ≤ undiscounted cash flows → **not impaired** (stop here)
+- If carrying amount > undiscounted cash flows → **impaired** (proceed to Step 2)
+
+**Step 2 — Measurement:** Impairment loss = Carrying amount - **Fair value**
+
+Note the asymmetry: Step 1 uses undiscounted cash flows (a generous test — you only fail if you cannot recover even the nominal dollars). Step 2 uses fair value (a stricter measure that incorporates discounting and market conditions). This two-step design means many assets pass Step 1 that would fail a direct fair-value comparison.
 
 Once recognized, an impairment loss on an asset held for use **cannot be reversed** under U.S. GAAP.
 
-For assets **held for sale**, the asset is written down to fair value less costs to sell. No further depreciation is recorded. Subsequent recoveries are allowed, but only up to the cumulative loss previously recognized.
+### Assets Held for Sale
 
-## Disposals and Exchanges
+When an asset is reclassified to held for sale:
+- Write down to **fair value less costs to sell**
+- **Stop depreciating** — the asset is no longer being used
+- Subsequent recoveries are permitted, but only up to the cumulative loss previously recognized
 
-When an asset is disposed of, the entity removes the asset's cost and accumulated depreciation from the books. The difference between the net proceeds and the carrying amount is recognized as a gain or loss.
+**Worked example:**
 
-**Nonmonetary exchanges** are governed by ASC 845. The general rule is that nonmonetary exchanges are recorded at **fair value**, with gains and losses recognized. However, if the exchange **lacks commercial substance** (the entity's future cash flows are not expected to change significantly), the exchange is recorded at the **carrying amount** of the asset given up, and no gain is recognized.
+Equipment with a carrying amount of $500,000 generates estimated undiscounted future cash flows of $420,000. Fair value is $350,000.
 
-An exchange has **commercial substance** if the configuration (timing, risk, or amount) of future cash flows changes as a result of the exchange.
+- Step 1: $500,000 > $420,000 → impaired
+- Step 2: $500,000 - $350,000 = **$150,000 impairment loss**
 
-## Key Terms
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Impairment loss | $150,000 | |
+| Equipment (or accumulated depreciation) | | $150,000 |
 
-- **Historical cost** — The total expenditure to acquire an asset and prepare it for its intended use
-- **Salvage value** — The estimated amount the entity expects to receive when the asset is retired
-- **Accumulated depreciation** — The total depreciation recognized on an asset since it was placed in service
-- **Impairment** — A condition in which the carrying amount of an asset exceeds its fair value and is not recoverable through future cash flows
-- **Commercial substance** — An exchange has commercial substance if the entity's future cash flows change significantly as a result
+New carrying amount: $350,000. Future depreciation is based on this reduced amount.
+
+## Stage 4: Disposal and Exchange
+
+### Simple Disposal
+
+Remove the asset's cost and accumulated depreciation. Recognize the difference between net proceeds and carrying amount as gain or loss.
+
+**Worked example:**
+
+Equipment cost: $80,000. Accumulated depreciation: $55,000. Sold for $30,000.
+
+- Carrying amount = $80,000 - $55,000 = $25,000
+- Gain = $30,000 - $25,000 = **$5,000**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Cash | $30,000 | |
+| Accumulated depreciation | $55,000 | |
+| Equipment | | $80,000 |
+| Gain on disposal | | $5,000 |
+
+### Nonmonetary Exchanges (ASC 845)
+
+The default rule: nonmonetary exchanges are recorded at **fair value**, with gains and losses recognized.
+
+**Exception:** If the exchange **lacks commercial substance** — the entity's future cash flows are not expected to change significantly as a result — the exchange is recorded at the **carrying amount** of the asset given up. No gain is recognized.
+
+An exchange has **commercial substance** if the configuration (timing, risk, or amount) of future cash flows changes as a result.
+
+**Example lacking commercial substance:** Trading one delivery truck for an identical delivery truck. Future cash flows are unchanged. Record at carrying amount of the old truck.
+
+**Example with commercial substance:** Trading a delivery truck for specialized manufacturing equipment. The entity's cash flow profile changes significantly. Record at fair value; recognize gain or loss.
+
+> When an exchange lacks commercial substance and boot (cash) is received, a proportional gain may be recognized: Gain recognized = Boot received / (Boot received + FV of asset received) x Total gain. This is a partial exception to the no-gain rule.
+
+## Asset Retirement Obligations (ASC 410-20)
+
+An **asset retirement obligation (ARO)** is a legal obligation to dismantle, remove, or remediate a long-lived asset at the end of its useful life. Common examples: decommissioning oil rigs, removing underground storage tanks, restoring leased property.
+
+<FrameworkFormula groupId="far.2.D" name="Asset Retirement Obligation (Initial)" />
+
+### Accounting Treatment
+
+1. **At inception:** Record the ARO liability at fair value (present value of estimated future cost). Capitalize the same amount as an increase to the related asset's carrying amount.
+2. **Each period:** Accrete the liability using the effective interest method (DR Accretion Expense, CR ARO Liability). Depreciate the capitalized ARO cost along with the rest of the asset.
+3. **At settlement:** Any difference between actual cost and the accreted liability balance is a gain or loss.
+
+**Worked example:**
+
+A company installs an underground tank with a legal obligation to remove it in 10 years. Estimated removal cost: $50,000. Credit-adjusted risk-free rate: 5%.
+
+- Initial ARO = $50,000 / (1.05)^10 = **$30,696**
+- Capitalize $30,696 to the tank's cost
+- Year 1 accretion = $30,696 x 5% = **$1,535**
+
+**Initial journal entry:**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Tank (PP&E) | $30,696 | |
+| Asset retirement obligation | | $30,696 |
+
+**Year 1 accretion:**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Accretion expense | $1,535 | |
+| Asset retirement obligation | | $1,535 |
+
+At Year 10, the liability accretes to approximately $50,000, matching the expected settlement cost.
+
+> AROs arise only from **legal obligations** — law, regulation, or contract. Planned maintenance and voluntary cleanup do not create AROs. The obligation must exist regardless of whether management wants to act.
+
+<QuickCheck question="An asset with a carrying amount of $300,000 generates estimated undiscounted future cash flows of $310,000. Fair value is $250,000. Is the asset impaired under ASC 360?" answer="No. Step 1 compares carrying amount ($300,000) to undiscounted cash flows ($310,000). Since $300,000 < $310,000, the asset passes the recoverability test. You never reach Step 2. The fact that fair value ($250,000) is below carrying amount is irrelevant — the undiscounted cash flow screen must be failed first." />
+
+<DeepDive title="Why the impairment test uses undiscounted cash flows in Step 1">
+
+This is a deliberate design choice by the FASB, and it generates more debate than almost any other measurement rule. Using undiscounted cash flows as the screening test means an asset passes as long as the entity will recover the nominal dollars invested — regardless of the time value of money. An asset with a $100,000 book value that will generate $101,000 in cash flows over 20 years passes the recoverability test, even though the present value of those flows might be only $60,000.
+
+The FASB's rationale: impairment should capture situations where an asset's service potential is clearly impaired, not situations where the return is merely suboptimal. The undiscounted cash flow screen is intentionally generous — it triggers write-downs only for assets that are genuinely unrecoverable in nominal terms.
+
+Critics argue this allows entities to carry assets at inflated values for years. The FASB's counterargument: the alternative (annual fair-value testing) would introduce excessive volatility and measurement cost for assets that are performing adequately.
+
+IFRS takes the opposite approach under IAS 36 — it compares carrying amount directly to the higher of fair value less costs of disposal and value in use (which uses discounted cash flows). No undiscounted screen. This is one of the significant GAAP/IFRS differences and is frequently tested.
+
+</DeepDive>

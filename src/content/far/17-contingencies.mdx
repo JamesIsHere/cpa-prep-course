@@ -5,198 +5,198 @@
 - Apply ASC 450 to determine when a loss contingency should be accrued, disclosed, or neither
 - Distinguish between loss contingencies and gain contingencies and their asymmetric treatment
 - Account for litigation contingencies, environmental liabilities, and guarantees
-- Prepare journal entries for loss contingency accruals
+- Prepare journal entries for loss contingency accruals and warranty accruals
 - Identify the disclosure requirements for contingencies and commitments
+- Evaluate commitments for potential loss recognition
 
-## ASC 450: Loss Contingencies
+## The Core Idea: Uncertainty Meets Conservation
 
-A **contingency** is an existing condition, situation, or set of circumstances involving uncertainty about a possible gain or loss that will be resolved when one or more future events occur or fail to occur. The accounting treatment depends on the likelihood and estimability of the outcome.
+Contingency accounting is where the conservation law collides with incomplete information. Every framework in this course rests on the premise that value is conserved — debits equal credits, the equation closes, every transaction has two sides. But what happens when you know a transaction *might* occur in the future, but you do not know the amount, the timing, or even whether it will happen at all?
 
-ASC 450-20 classifies the likelihood of a future event confirming a loss into three categories:
+That is the problem ASC 450 solves. It provides a classification system for uncertainty and a set of rules that determine when uncertainty is severe enough to require recognition on the financial statements versus when disclosure in the notes is sufficient versus when no reporting is required at all.
 
-| Likelihood | Definition | Accounting Treatment |
-|-----------|------------|---------------------|
-| **Probable** | The future event is likely to occur | Accrue if amount can be reasonably estimated; disclose if not estimable |
-| **Reasonably possible** | The chance is more than remote but less than likely | Disclose in the notes (do not accrue) |
-| **Remote** | The chance is slight | Generally no disclosure required |
+The structural insight is this: **contingency accounting is a threshold system, not a measurement system.** You are not asked to compute a precise liability. You are asked to classify the uncertainty into one of three buckets — probable, reasonably possible, or remote — and then apply the corresponding treatment. The classification drives the accounting. Get the classification right, and the journal entry writes itself.
 
-### Recognition Criteria
+<DeepDive title="Why contingencies are a judgment concentration point">
 
-A loss contingency is **accrued** (recognized on the financial statements) when both conditions are met:
+Framework V2 identifies judgment concentration in accounting: the areas where financial statement quality depends most heavily on subjective inputs rather than mechanical calculation. Loss contingencies sit squarely in the high-judgment zone.
 
-1. It is **probable** that a loss has been incurred as of the balance sheet date
-2. The amount of the loss can be **reasonably estimated**
+The conservation law works perfectly on completed, observed transactions. When you sell inventory for cash, every number is known. When you accrue a warranty liability, you are estimating future claims based on historical patterns — the numbers are predictions, not observations. When you assess a pending lawsuit, you are making a probability judgment about a legal outcome that depends on judge behavior, jury composition, opposing counsel strategy, and settlement dynamics. The inputs to the conservation equation become educated guesses.
 
-If both conditions are met, the entity records the loss. If a range of loss is probable and no amount within the range is a better estimate than any other, the entity accrues the **minimum amount** of the range and discloses the nature of the contingency and the range.
+This is why auditors spend disproportionate time on contingencies. It is also why the CPA exam tests them heavily — not because the journal entries are complex (they are simple), but because the classification decision requires applying a framework to ambiguous facts. The exam gives you a fact pattern and asks: is this probable, reasonably possible, or remote? That is a judgment exercise, not a calculation exercise.
+
+</DeepDive>
+
+## The Three-Bucket Classification
+
+ASC 450-20 classifies the likelihood of a future confirming event into three categories. This classification is the single most important decision in contingency accounting — everything downstream depends on it.
+
+<FrameworkTable groupId="far.3.B" title="Loss Contingency Treatment (ASC 450)" />
+
+The boundaries between these categories are deliberately qualitative. "Probable" does not mean 90% or 75% — it means "likely to occur." "Reasonably possible" means more than remote but less than probable. "Remote" means slight. The standard intentionally avoids numerical thresholds because the assessment is inherently judgmental and fact-specific.
+
+<FrameworkMnemonic groupId="far.3.B" acronym="PRE" />
+
+## The Decision Framework
+
+When you encounter a contingency on the exam, run through this decision tree systematically. It captures every branch of ASC 450 in a single visual flow.
+
+<FrameworkDecisionTree groupId="far.3.B" title="How to Account for a Loss Contingency (ASC 450)" />
+
+The critical subtlety is the range scenario. When a loss is probable and estimable but falls within a range with no single best estimate, you accrue the **minimum** of the range — not the midpoint, not the expected value, not the maximum. This is conservative and frequently tested. You then disclose the nature of the contingency and the range of possible additional loss.
+
+<QuickCheck question="A company estimates a probable loss between $200,000 and $500,000, with no amount in the range more likely than another. What amount is accrued?" answer="$200,000 — the minimum of the range. The company also discloses the nature of the contingency and the possible additional loss of up to $300,000." />
+
+## Loss Contingencies in Practice
+
+### Warranty Accruals
+
+Warranties are the cleanest example of a loss contingency because both conditions for accrual are almost always met: warranty claims are probable (they will happen) and reasonably estimable (historical data provides a reliable basis).
+
+<FrameworkFormula groupId="far.3.B" name="Warranty Expense Accrual" />
 
 ### Worked Example: Warranty Accrual
 
-**Facts:** TechCorp sells electronic devices and provides a two-year warranty. Based on historical data, TechCorp estimates that warranty costs will be 3% of annual sales. During 2025, sales totaled $10,000,000. Actual warranty claims paid during 2025 were $180,000.
+**Facts:** TechCorp sells electronic devices with a two-year warranty. Historical data shows warranty costs run 3% of annual sales. During 2025, sales totaled $10,000,000. Actual warranty claims paid during 2025 were $180,000.
 
-**Journal entry to accrue estimated warranty expense:**
+**Accrual entry (estimated warranty expense):**
 
-```
-Dr. Warranty Expense           300,000
-    Cr. Estimated Warranty Liability     300,000
-(3% × $10,000,000 = $300,000)
-```
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Warranty Expense | $300,000 | |
+| Estimated Warranty Liability | | $300,000 |
 
-**Journal entry to record actual warranty claims paid:**
+*($10,000,000 x 3% = $300,000)*
 
-```
-Dr. Estimated Warranty Liability   180,000
-    Cr. Cash (or Parts/Labor)              180,000
-```
+**Claims paid entry:**
 
-At year-end, the Estimated Warranty Liability has a balance of $120,000 ($300,000 - $180,000), representing the remaining estimated costs for warranties on 2025 sales.
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Estimated Warranty Liability | $180,000 | |
+| Cash / Parts / Labor | | $180,000 |
 
-> Warranties are the most common and straightforward example of a loss contingency. The loss is probable (warranties will be claimed) and reasonably estimable (historical data provides a reliable basis). This is a heavily tested topic.
+Year-end Estimated Warranty Liability balance: $300,000 - $180,000 = **$120,000**, representing remaining estimated costs for warranties on 2025 sales.
 
-## Litigation Contingencies
+The conservation check: the expense hits the income statement in the period of sale (matching principle). The liability represents the future cash outflow. As claims are paid, the liability converts to cash — value changes form, but the equation closes.
 
-Pending or threatened litigation is one of the most complex areas of loss contingency accounting. The determination of likelihood and amount involves significant judgment.
+### Litigation Contingencies
 
-### Assessment Framework
+Pending or threatened litigation is the most judgment-intensive loss contingency. The entity, in consultation with legal counsel, must assess three things:
 
-The entity, in consultation with legal counsel, assesses:
-
-1. The **period in which the underlying cause of action occurred** — The loss must relate to an event that occurred on or before the balance sheet date
-2. The **probability of an unfavorable outcome** — Based on the nature of the claim, legal counsel's assessment, and relevant precedent
-3. The **ability to estimate the loss** — Whether a reasonable estimate or range can be determined
+1. **Did the underlying cause of action occur before the balance sheet date?** If the event that gives rise to the claim occurred after year-end, it is not a contingency of the current period.
+2. **What is the probability of an unfavorable outcome?** This is the classification decision — probable, reasonably possible, or remote.
+3. **Can the loss be reasonably estimated?** Even if probable, a loss is not accrued unless it can be estimated.
 
 ### Worked Example: Pending Lawsuit
 
-**Facts:** On November 1, 2025, GreenCo was sued for $2,000,000 related to an environmental contamination event that occurred in September 2025. As of December 31, 2025 (the balance sheet date), GreenCo's attorneys advise:
+**Facts:** On November 1, 2025, GreenCo was sued for $2,000,000 related to environmental contamination that occurred in September 2025. As of December 31, 2025, legal counsel advises:
 - An unfavorable outcome is **probable**
 - The expected settlement range is $500,000 to $800,000
 - No amount within the range is more likely than another
 
-**Analysis:**
-- The underlying event (contamination) occurred before the balance sheet date
-- Loss is probable
-- Amount is estimable as a range ($500,000 to $800,000)
-- No single best estimate exists within the range
-
 **Journal entry at December 31, 2025:**
 
-```
-Dr. Litigation Loss              500,000
-    Cr. Litigation Liability             500,000
-(Minimum of the range when no better estimate exists)
-```
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Litigation Loss | $500,000 | |
+| Litigation Liability | | $500,000 |
 
-**Disclosure:** GreenCo must disclose the nature of the litigation, the amount accrued ($500,000), and the reasonably possible additional loss of up to $300,000 (the excess of the range maximum over the accrued amount).
+*(Minimum of the range when no better estimate exists)*
 
-### Subsequent Events and Litigation
+**Required disclosure:** Nature of the litigation, amount accrued ($500,000), and the reasonably possible additional loss of up to $300,000 ($800,000 - $500,000).
 
-If the lawsuit is filed **after** the balance sheet date but the underlying cause of action occurred **before** the balance sheet date, the contingency still relates to the balance sheet date and should be evaluated for accrual or disclosure. However, if the underlying cause of action occurred after the balance sheet date, no accrual or disclosure is required for the reporting period (it is a Type II subsequent event to be evaluated in the subsequent period).
+> A common exam trap: A lawsuit filed in January 2026 for events that occurred in October 2025 must be evaluated as of December 31, 2025. The filing date does not determine the reporting period — the date of the underlying event does. This connects to subsequent events (ASC 855): a post-balance-sheet settlement of a pre-existing condition is a Type I subsequent event that adjusts the financial statements.
 
-> A common exam trap: A lawsuit filed in January 2026 for events that occurred in October 2025 must be evaluated as of the December 31, 2025 balance sheet date. The filing date does not determine the reporting period — the date of the underlying event does.
+### Environmental Remediation Liabilities
 
-## Gain Contingencies
+Environmental contamination creates loss contingencies under ASC 410-30. When an entity is identified as a **potentially responsible party (PRP)**:
 
-ASC 450-30 treats gain contingencies **conservatively** — gains are recognized only when realized. This asymmetric treatment reflects the conservatism principle:
+- Accrue when remediation is probable and costs are estimable
+- Costs may be recognized on a **component basis** as specific elements become estimable (investigation, feasibility study, cleanup, post-cleanup monitoring)
+- **Discounting** to present value is permitted only when payment timing is reliably determinable
+- **Insurance recoveries** are recognized as a separate asset (receivable) when recovery is probable — they do **not** reduce the accrued liability
 
-| Scenario | Treatment |
-|----------|-----------|
-| Gain is virtually certain | Recognize the gain |
-| Gain is probable | **Do not** recognize — disclose if material |
-| Gain is reasonably possible | May disclose, but exercise caution to avoid misleading implications |
-| Gain is remote | No disclosure |
+**Accrual entry:**
 
-**Example:** A company has filed a lawsuit against a competitor for patent infringement and expects to win $5,000,000. Even if legal counsel considers the outcome probable, the gain is **not accrued**. The company may disclose the pending litigation in the notes but should avoid misleading language that suggests the gain is certain.
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Environmental Remediation Expense | $1,200,000 | |
+| Environmental Remediation Liability | | $1,200,000 |
 
-> Gain contingencies are NOT accrued until the gain is realized or virtually certain. This is the opposite treatment from loss contingencies, where probable losses are accrued. This asymmetry is a frequently tested concept.
+**Probable insurance recovery of $400,000:**
 
-## Environmental Remediation Liabilities
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Insurance Receivable | $400,000 | |
+| Gain on Insurance Recovery | | $400,000 |
 
-Environmental contamination often creates loss contingencies that require specialized accounting treatment under ASC 410-30. An entity that is a **potentially responsible party (PRP)** for contamination must:
+The liability and recovery are reported **gross** — the $1,200,000 liability is not netted against the $400,000 receivable. This is a frequently tested detail.
 
-1. Determine if it is probable that a liability has been incurred (typically, when the entity is identified as a PRP and remediation is probable)
-2. Estimate the cost of remediation using available information
-3. Accrue the estimated cost, which may be recognized on a **component basis** as specific cost elements become reasonably estimable
+<QuickCheck question="An entity accrues a $3 million environmental remediation liability and expects to recover $1 million from insurance. How are these reported on the balance sheet?" answer="As separate items: a $3 million liability and a $1 million receivable. They are not netted. The liability represents the entity's obligation; the receivable represents the insurer's obligation to the entity." />
 
-### Measurement Considerations
+## Gain Contingencies: The Asymmetry
 
-- Remediation costs typically include investigation, feasibility studies, actual cleanup, and post-cleanup monitoring
-- The liability is measured at the entity's best estimate; discounting to present value is permitted only when the timing of payments is reliably determinable
-- Potential insurance recoveries are evaluated separately and recorded as an **asset** (receivable) only when recovery is **probable** — they do not reduce the accrued liability
+Loss contingencies and gain contingencies receive fundamentally different treatment. This asymmetry is one of the most tested concepts in FAR.
 
-**Journal entry for environmental remediation accrual:**
+<FrameworkTable groupId="far.3.B" title="Contingency Treatment — Gains vs. Losses" />
 
-```
-Dr. Environmental Remediation Expense    1,200,000
-    Cr. Environmental Remediation Liability        1,200,000
-```
+The asymmetry reflects conservatism (or, in the Conceptual Framework's language, prudence). Losses are recognized when probable and estimable. Gains are recognized only when **realized or virtually certain**. Even a probable gain is not accrued — it is disclosed at most, and with caution to avoid misleading language suggesting certainty.
 
-**If insurance recovery of $400,000 is probable:**
+**Example:** A company has filed a patent infringement lawsuit and expects to win $5,000,000. Even if legal counsel considers the outcome probable, the gain is **not accrued**. The company may disclose the pending litigation in the notes but should avoid language implying the gain is certain.
 
-```
-Dr. Insurance Receivable                 400,000
-    Cr. Gain on Insurance Recovery               400,000
-```
+This asymmetry connects back to the conservation framework. The system prefers to understate assets and overstate liabilities when uncertainty exists, because the consequences of overstating assets (misleading investors into overpaying) are considered worse than the consequences of understating them. The conservation equation tolerates temporary pessimism; it does not tolerate temporary optimism.
 
-Note that the liability and the recovery are reported **gross** — the liability is not netted against the expected recovery.
+## Guarantees (ASC 460)
 
-## Guarantees and Commitments
+A **guarantee** contingently requires the guarantor to make payments based on changes in an underlying variable or a third party's failure to perform. ASC 460 requires dual measurement:
 
-### Guarantees (ASC 460)
+- **Initial recognition:** Record a liability at the **fair value** of the guarantee obligation (the stand-ready obligation) at inception
+- **Subsequent measurement:** The higher of (a) the initial fair value amount, less cumulative amortization, or (b) the contingent liability amount under ASC 450
 
-A **guarantee** is a contract that contingently requires the guarantor to make payments to a guaranteed party based on changes in an underlying or a third party's failure to perform. ASC 460 requires:
+Common guarantees include parent company guarantees of subsidiary debt, indemnification provisions in contracts, and standby letters of credit.
 
-- **Initial recognition** — At inception, recognize a liability for the fair value of the guarantee obligation (the stand-ready obligation)
-- **Subsequent measurement** — After initial recognition, the higher of the initial fair value or the contingent liability amount under ASC 450
+> Guarantees are an exception to the general rule that remote contingencies require no disclosure. A guarantee of another entity's debt must be disclosed **regardless of likelihood** — even if the chance of having to perform is remote.
 
-Common guarantees include:
-- Parent company guarantee of a subsidiary's debt
-- Indemnification provisions in contracts
-- Standby letters of credit
+## Commitments
 
-### Commitments
+**Commitments** are contractual obligations that do not yet meet recognition criteria but require note disclosure. Common examples:
 
-**Commitments** are contractual obligations that do not yet meet the criteria for recognition as liabilities but require disclosure. Common examples:
-
-- Purchase commitments (e.g., long-term supply contracts at fixed prices)
-- Operating lease commitments (disclosed under ASC 842)
+- Purchase commitments (long-term supply contracts at fixed prices)
 - Capital expenditure commitments
 - Take-or-pay contracts
 
-If a purchase commitment is at a price **above current market value** and the decline is expected to be other-than-temporary, the entity recognizes a loss:
+The critical recognition trigger: if a purchase commitment is at a price **above current market value** and the decline is expected to be other-than-temporary, the entity recognizes a loss immediately.
 
-```
-Dr. Loss on Purchase Commitment    150,000
-    Cr. Accrued Loss on Purchase Commitment    150,000
-```
+**Journal entry for above-market purchase commitment:**
 
-> Purchase commitments at above-market prices require loss recognition — this mirrors the lower-of-cost-or-NRV principle applied to inventory. The loss is the excess of the commitment price over the current market price, recognized when the decline is expected to be other-than-temporary.
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Loss on Purchase Commitment | $150,000 | |
+| Accrued Loss on Purchase Commitment | | $150,000 |
+
+This mirrors the lower-of-cost-or-NRV principle applied to inventory. The loss is the excess of the commitment price over the current market price, recognized when the decline is expected to be other-than-temporary.
+
+<QuickCheck question="A company has a non-cancelable purchase commitment to buy raw materials for $500,000. Market value of those materials has fallen to $380,000 and the decline is expected to be permanent. What entry is required?" answer="DR Loss on Purchase Commitment $120,000, CR Accrued Loss on Purchase Commitment $120,000. The $120,000 excess of commitment price over market value is recognized as a loss immediately." />
 
 ## Disclosure Requirements
 
-### Required Disclosures for Loss Contingencies
+### Loss Contingencies — Accrued
 
-Even when a loss contingency is accrued, entities must disclose:
+Even when accrued, disclose:
+- Nature of the contingency
+- Amount accrued (if not prejudicial to the entity's litigation position)
+- Range of possible additional loss, or a statement that an estimate cannot be made
 
-- The nature of the contingency
-- The amount accrued (if not prejudicial to the entity's position in litigation)
-- The range of possible additional loss, or a statement that an estimate cannot be made
-- Information about significant estimates and assumptions used
+### Loss Contingencies — Not Accrued (Reasonably Possible)
 
-For **reasonably possible** contingencies that are not accrued, disclosure must include:
-
-- The nature of the contingency
-- An estimate of the possible loss or range of loss, or a statement that an estimate cannot be made
+Disclose:
+- Nature of the contingency
+- Estimate of possible loss or range, or a statement that an estimate cannot be made
 
 ### Unasserted Claims
 
-When an unasserted claim is probable of being asserted and there is a reasonable possibility that the outcome will be unfavorable, disclosure may be required. Common example: a company is aware of potential regulatory violations that have not yet resulted in a formal investigation.
+When an unasserted claim is probable of being asserted **and** there is a reasonable possibility of an unfavorable outcome, disclosure may be required. Example: a company is aware of potential regulatory violations that have not yet resulted in a formal investigation.
 
-## Key Terms
+### Remote Contingencies
 
-- **Loss contingency** — An existing condition involving uncertainty about a possible loss that depends on one or more future events
-- **Probable** — The future event is likely to occur
-- **Reasonably possible** — More than remote but less than likely
-- **Remote** — The chance of the future event occurring is slight
-- **Gain contingency** — An existing condition involving uncertainty about a possible gain; recognized only when virtually certain
-- **Guarantee** — A contract requiring contingent payments based on an underlying event or third-party failure to perform
-- **Commitment** — A contractual obligation that does not yet qualify for recognition but requires disclosure
-- **Questioned costs** — Expenditures identified as potentially unallowable, undocumented, or unreasonable (in government auditing context)
+Generally no disclosure — except guarantees of others' debt, which must always be disclosed regardless of likelihood.

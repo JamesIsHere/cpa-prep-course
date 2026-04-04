@@ -1,191 +1,169 @@
-# Cash and Receivables
+# Cash and Cash Equivalents
 
 ## Learning Objectives
 
 - Classify cash, cash equivalents, restricted cash, and compensating balances on the balance sheet
-- Prepare a complete bank reconciliation and identify book vs. bank adjustments
-- Account for accounts receivable and apply the allowance method under ASC 326 (CECL)
-- Distinguish between factoring receivables with and without recourse
-- Calculate the allowance for credit losses using expected loss methodologies
+- Distinguish items that qualify as cash equivalents from those that do not
+- Prepare a bank reconciliation and identify book-side vs. bank-side adjustments
+- Record journal entries for book-side reconciling items
+- Apply the CECL model (ASC 326) to estimate the allowance for credit losses on short-term financial assets
 
-## Cash and Cash Equivalents
+## The Core Idea: Cash as Stored Value
 
-**Cash** includes currency on hand, demand deposits, and amounts on deposit with financial institutions that are available for immediate withdrawal. **Cash equivalents** are short-term, highly liquid investments that are readily convertible to known amounts of cash and are so near maturity that they present insignificant risk of changes in value — typically original maturities of **three months or less** from the date of purchase.
+Cash is the most liquid asset on the balance sheet — and the only one with zero conversion friction. Every other asset must be transformed before it can settle an obligation: inventory must be sold, receivables must be collected, equipment must generate revenue over years. Cash is already in final form. It is potential energy — value parked, awaiting deployment.
 
-Examples of cash equivalents: Treasury bills, commercial paper, and money market funds. Examples that are NOT cash equivalents: equity securities (no maturity), certificates of deposit with maturities over three months, and restricted funds.
+This is why cash classification matters so much on the CPA exam. The balance sheet must distinguish between cash that is immediately available for general use and cash that is restricted, pledged, or otherwise constrained. A dollar in your checking account and a dollar locked in a sinking fund are both "cash" in the colloquial sense, but they represent fundamentally different levels of liquidity. The classification rules exist to prevent financial statement users from overestimating an entity's ability to meet obligations.
 
-### Restricted Cash
+The three-month rule for cash equivalents follows the same logic: an investment qualifies as a cash equivalent only if the conversion back to a known amount of cash is so close in time and so certain in amount that the distinction between "cash" and "not cash" is economically meaningless.
 
-**Restricted cash** is cash set aside for a specific purpose and not available for general use. Common examples include sinking fund deposits for bond retirement, compensating balances required by loan agreements, and escrow deposits. Restricted cash is classified as current or noncurrent based on when the restriction is expected to be released.
+<DeepDive title="Cash as a reservoir: the systems dynamics view">
 
-### Compensating Balances
+In systems dynamics, cash is a **stored-value reservoir** — it has inflows (operating receipts, financing proceeds, asset sales) and outflows (operating payments, capital expenditures, debt service, dividends). The state variable at any moment is the cash balance. The differential equation is simply the cash flow statement reframed:
 
-A **compensating balance** is a minimum deposit a borrower must maintain with a lending bank as a condition of a loan. If the compensating balance is legally restricted, it must be reported separately from unrestricted cash. If the related borrowing is short-term, the restricted balance is classified as a current asset; if long-term, it is noncurrent.
+dC/dt = Operating Inflows - Operating Outflows - CAPEX + Financing
+
+Unlike consumable assets (inventory, which metabolizes proportionally to output) or capacity assets (equipment, which depreciates over time), cash has no inherent release mechanism. It sits until management deploys it. This makes **cash dwell time** — how long a dollar sits before conversion to another asset — a key measure of capital efficiency. Long dwell time signals either prudent reserve-building or capital inefficiency, depending on context.
+
+The bank reconciliation, viewed through this lens, is a measurement calibration exercise. The entity and the bank are two independent sensors measuring the same reservoir. They disagree because of timing lags (deposits in transit, outstanding checks) and information asymmetry (bank charges the entity hasn't recorded, collections the entity doesn't know about). The reconciliation synchronizes the two sensors to arrive at the true reservoir level.
+
+</DeepDive>
+
+## Cash and Cash Equivalents — Classification
+
+The starting point for any cash question is classification. What counts, what doesn't, and where do the borderline items go?
+
+<FrameworkConceptMap groupId="far.2.A" title="Cash and Cash Equivalents — Classification" />
+
+### The Three-Month Rule
+
+Cash equivalents must have an **original maturity of three months or less from the date of purchase** — not from the balance sheet date. A 6-month Treasury bill purchased with 2 months remaining is NOT a cash equivalent because its original maturity exceeded three months. A 90-day commercial paper note purchased at issuance IS a cash equivalent.
+
+This distinction trips up candidates regularly. The measurement anchor is the instrument's original term, not its remaining life when the entity acquires it.
+
+### Items That Are NOT Cash
+
+Several items look like cash but fail the classification test:
+
+- **Restricted cash** — Cash set aside for a specific purpose (sinking fund deposits, escrow accounts, legally restricted compensating balances). Report separately as current or noncurrent based on when the restriction expires.
+- **Compensating balances** — Minimum deposits required by a lending agreement. If legally restricted, reclassify out of cash and disclose. If informal (no legal restriction), leave in cash but disclose.
+- **Bank overdrafts** — Negative cash balances. Reclassify to current liabilities. Exception: if the entity has other accounts at the same bank with positive balances sufficient to cover the overdraft, netting is acceptable.
+- **Postdated checks received** — Not yet negotiable. These are receivables, not cash.
+
+<QuickCheck question="A company purchases a 180-day Treasury bill when it has 60 days remaining until maturity. Is this a cash equivalent?" answer="No. The original maturity of the instrument was 180 days, which exceeds three months. The remaining time to maturity at purchase is irrelevant — the test is based on original maturity from the date of purchase by the entity. However, note: if the entity purchased a NEW T-bill with a 60-day original maturity, that would qualify." />
 
 ## Bank Reconciliations
 
-A bank reconciliation explains the difference between the bank statement balance and the company's book (general ledger) balance of cash at a specific date. The reconciliation adjusts both balances to arrive at the **adjusted (true) cash balance**.
+The bank reconciliation is a control procedure that explains the difference between two independent records of the same cash balance: the bank statement and the company's general ledger. Both start from the same reality but diverge because of timing differences and information gaps.
 
-### Reconciling Items
+The critical exam skill: **knowing which side to adjust and whether a journal entry is required.**
 
-| Item | Adjust Bank or Book? | Add or Subtract? |
-|------|---------------------|------------------|
-| Deposits in transit | Bank | Add |
-| Outstanding checks | Bank | Subtract |
-| Bank errors (overcharges) | Bank | Add |
-| NSF (bounced) checks | Book | Subtract |
-| Bank service charges | Book | Subtract |
-| Interest earned (credited by bank) | Book | Add |
-| Note collected by bank | Book | Add |
-| Book errors (overstated payment) | Book | Depends on error |
+<FrameworkDecisionTree groupId="far.2.A" title="Bank Reconciliation: Book Adjustment or Bank Adjustment?" />
 
-> On the CPA exam, the key distinction is: **bank-side adjustments** involve items the company knows about but the bank does not (deposits in transit, outstanding checks). **Book-side adjustments** involve items the bank knows about but the company has not yet recorded (NSF checks, service charges, collections).
+### The Rule
 
-### Worked Example — Bank Reconciliation
+- **Bank-side adjustments**: Items the company has recorded but the bank has not yet processed. No journal entry needed — these will clear automatically. Examples: deposits in transit, outstanding checks.
+- **Book-side adjustments**: Items the bank has recorded but the company has not. Journal entries ARE required to update the books. Examples: NSF checks, service charges, interest earned, notes collected by the bank, EFT transactions.
 
-Maplewood Corp. has a bank statement balance of $47,500 and a book balance of $44,200 on December 31. The following items are identified:
+Both sides must arrive at the same **adjusted (true) cash balance**.
 
-- Deposits in transit: $3,800
-- Outstanding checks: $5,600
-- NSF check from a customer: $1,200
-- Bank service charges: $75
-- Note collected by the bank on Maplewood's behalf: $2,675
+### Worked Example
+
+Kensington Inc. reports a bank statement balance of $52,300 and a book balance of $48,750 on December 31. Investigation reveals:
+
+| Reconciling Item | Amount |
+|-----------------|--------|
+| Deposits in transit | $4,200 |
+| Outstanding checks | $6,800 |
+| NSF check returned | $950 |
+| Bank service charges | $100 |
+| Note collected by bank (including $200 interest) | $3,700 |
+| Bank error — charged Kensington for another company's check | $1,000 |
 
 **Bank side:**
-$47,500 + $3,800 - $5,600 = **$45,700**
+
+| | Amount |
+|---|--------|
+| Bank statement balance | $52,300 |
+| + Deposits in transit | $4,200 |
+| - Outstanding checks | ($6,800) |
+| + Bank error correction | $1,000 |
+| = **Adjusted bank balance** | **$50,700** |
 
 **Book side:**
-$44,200 - $1,200 - $75 + $2,675 = **$45,600**
 
-If the two sides do not match, an error exists that must be investigated. In this case, the $100 difference would indicate a book error or missing reconciling item.
+| | Amount |
+|---|--------|
+| Book balance | $48,750 |
+| - NSF check | ($950) |
+| - Service charges | ($100) |
+| + Note collected (principal + interest) | $3,700 |
+| = **Adjusted book balance** | **$51,400** |
 
-**Journal entries required (book-side adjustments only):**
+These two sides do not agree ($50,700 vs. $51,400), indicating an additional error or missing reconciling item of $700 that must be investigated.
+
+**Journal entries required (book-side only):**
 
 | Account | Debit | Credit |
 |---------|-------|--------|
-| Accounts Receivable (NSF) | $1,200 | |
-| Cash | | $1,200 |
-| Bank Service Charge Expense | $75 | |
-| Cash | | $75 |
-| Cash | $2,675 | |
-| Notes Receivable | | $2,675 |
+| Accounts Receivable | $950 | |
+| Cash | | $950 |
 
-Bank-side adjustments require no journal entry — they will clear automatically as the bank processes the items.
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Bank Service Charge Expense | $100 | |
+| Cash | | $100 |
 
-## Accounts Receivable
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Cash | $3,700 | |
+| Notes Receivable | | $3,500 |
+| Interest Revenue | | $200 |
 
-Accounts receivable are amounts owed by customers from the sale of goods or services on credit. They are initially recorded at the **transaction price** under ASC 606. The primary accounting issue is measuring the amount expected to be collected — the **net realizable value**.
+Bank-side items (deposits in transit, outstanding checks, bank errors) require no journal entry by the company — they will clear as the bank processes them. The bank error should be reported to the bank for correction on their records.
 
-### Trade Discounts vs. Cash Discounts
+<QuickCheck question="A company discovers that the bank collected a $5,000 note receivable on its behalf, but the company has not recorded this. Is this a book adjustment or a bank adjustment? Is a journal entry required?" answer="Book adjustment — the bank has information the company hasn't recorded yet. A journal entry IS required: DR Cash, CR Notes Receivable (and CR Interest Revenue if interest was included)." />
 
-**Trade discounts** reduce the list price and are never recorded — only the net amount is recognized. **Cash (sales) discounts** (e.g., 2/10, n/30) offer a reduction for early payment. Under the gross method, revenue is recorded at full price and the discount is recognized only if taken. Under the net method, revenue is recorded net of the discount.
+## The CECL Model — Overview
 
-## Allowance for Credit Losses — ASC 326 (CECL)
+While the full CECL model is covered in depth in the Trade Receivables lesson, cash-related financial assets at amortized cost (such as certificates of deposit held as investments) also fall within the scope of ASC 326. The core principle: estimate **lifetime expected credit losses at origination**, not when a loss becomes probable.
 
-**ASC 326, Financial Instruments — Credit Losses**, replaced the incurred loss model with the **current expected credit losses (CECL)** model. Under CECL, entities recognize an allowance for **lifetime expected credit losses** at the time a financial asset is recognized — not when a loss is incurred or probable.
+<FrameworkConceptMap groupId="far.2.A" title="CECL Expected Credit Loss Model (ASC 326)" />
 
-### Key Differences: Incurred Loss vs. CECL
+<FrameworkFormula groupId="far.2.A" name="Allowance for Credit Losses (CECL — ASC 326)" />
 
-| Feature | Old Model (Incurred Loss) | CECL Model (ASC 326) |
-|---------|--------------------------|----------------------|
-| When losses are recognized | When probable and estimable | At inception, for lifetime expected losses |
-| Forward-looking info | Not required | Required — forecasts, economic conditions |
-| Threshold | Loss must be "probable" | Any expected loss, no probability threshold |
-| Income statement effect | Higher losses later | Higher losses earlier (front-loaded) |
+The CECL model requires three inputs at every measurement date:
 
-### CECL Methodologies
+1. **Historical loss experience** — what has the entity's actual loss rate been for similar assets?
+2. **Current economic conditions** — are conditions today different from the historical period?
+3. **Reasonable and supportable forecasts** — what does the entity expect going forward?
 
-Entities may use any reasonable methodology to estimate expected credit losses. Common approaches include:
-
-- **Vintage analysis** — Groups receivables by origination year and applies historical loss rates to each vintage
-- **Probability-of-default (PD) method** — Estimates the probability of default multiplied by the loss given default for each category
-- **Discounted cash flow (DCF) method** — Projects expected cash flows and discounts them at the effective interest rate; the difference between amortized cost and the present value of expected cash flows is the allowance
-- **Loss-rate method** — Applies historical loss percentages adjusted for current conditions and forecasts
-
-All methods must incorporate **historical experience, current conditions, and reasonable and supportable forecasts** of future economic conditions.
+For short-term, high-quality instruments near the cash end of the spectrum (money market funds, short-term CDs, Treasury bills), expected credit losses are typically immaterial. The CECL model has real teeth for trade receivables and longer-duration financial assets — topics covered in the next lesson.
 
 ### Allowance Mechanics
 
-**Allowance for Credit Losses (T-account):**
+The allowance for credit losses is a **contra-asset**. It reduces the amortized cost basis of the financial asset to net realizable value on the balance sheet.
+
+**The T-account rollforward:**
 
 | | Debit | Credit |
 |---|-------|--------|
 | Beginning balance | | $XX |
-| Write-offs | $XX | |
-| Recoveries | | $XX |
+| Write-offs during period | $XX | |
+| Recoveries of prior write-offs | | $XX |
 | Provision (credit loss expense) | | $XX |
 | **Ending balance** | | **$XX** |
 
-**Ending Allowance = Beginning Allowance - Write-offs + Recoveries + Provision**
+The **provision** is the plug — it is whatever amount is needed to bring the allowance to the level required by the CECL estimate. If write-offs exceed expectations, the provision increases. If the economy improves and forecast losses decline, the provision may be negative (a benefit).
 
-The **provision** (credit loss expense) is the plug figure — it is the amount needed to bring the allowance to the required balance based on the CECL estimate.
+<QuickCheck question="Under the CECL model, when must an entity first recognize an allowance for credit losses on a new trade receivable?" answer="At origination — the moment the receivable is recognized. CECL requires estimation of lifetime expected losses from day one, not when a loss event occurs or becomes probable." />
 
-### Worked Example — CECL Allowance
+## Key Exam Distinctions
 
-Rivera Inc. has $500,000 in accounts receivable on December 31. The beginning allowance balance is $12,000. During the year, $8,000 of receivables were written off, and $1,500 was recovered. Based on a vintage analysis incorporating current economic forecasts, management estimates that 3.5% of ending receivables are expected to be uncollectible.
-
-- Required ending allowance: $500,000 x 3.5% = **$17,500**
-- Beginning balance: $12,000
-- Less: Write-offs: ($8,000)
-- Plus: Recoveries: $1,500
-- Balance before provision: $5,500
-- **Provision needed: $17,500 - $5,500 = $12,000**
-
-**Journal entries:**
-
-| Account | Debit | Credit |
-|---------|-------|--------|
-| Credit Loss Expense | $12,000 | |
-| Allowance for Credit Losses | | $12,000 |
-
-### Write-offs and Recoveries
-
-When a specific account is deemed uncollectible, it is **written off**:
-
-| Account | Debit | Credit |
-|---------|-------|--------|
-| Allowance for Credit Losses | $XX | |
-| Accounts Receivable | | $XX |
-
-A write-off does not affect net realizable value or income — it reduces both the gross receivable and the allowance by the same amount. If a previously written-off account is later collected, the **recovery** reverses the write-off, then records the cash receipt.
-
-## Factoring Receivables
-
-**Factoring** is the sale of receivables to a third party (the factor) for immediate cash. The critical accounting issue is whether the transfer is a **sale** or a **secured borrowing**.
-
-### Factoring Without Recourse
-
-The factor assumes the credit risk. The transferor derecognizes the receivables and recognizes a **gain or loss** on the sale. The loss equals the difference between the carrying amount and the proceeds received (factoring fee).
-
-**Example:** A company factors $100,000 of receivables without recourse. The factor charges a 4% fee and withholds 5% as a holdback. Cash received: $100,000 - $4,000 - $5,000 = $91,000.
-
-| Account | Debit | Credit |
-|---------|-------|--------|
-| Cash | $91,000 | |
-| Due from Factor (holdback) | $5,000 | |
-| Loss on Sale of Receivables | $4,000 | |
-| Accounts Receivable | | $100,000 |
-
-### Factoring With Recourse
-
-The transferor retains the credit risk. If the factor cannot collect, the transferor must reimburse the factor. This is recorded as a sale only if the transferor surrenders control; otherwise, it is a **secured borrowing** (the receivables remain on the books and cash received is a liability).
-
-### Pledging
-
-**Pledging** (assigning) receivables means using receivables as collateral for a loan. The receivables remain on the borrower's balance sheet with a note disclosure. This is not a sale — it is a borrowing arrangement.
-
-## Key Terms
-
-- **Cash equivalents** — Short-term, highly liquid investments with original maturities of three months or less
-- **Restricted cash** — Cash set aside for a designated purpose, not available for general operations
-- **Compensating balance** — A minimum deposit required by a lender as a condition of borrowing
-- **Deposits in transit** — Cash deposits recorded by the company but not yet credited by the bank
-- **Outstanding checks** — Checks issued by the company but not yet cleared by the bank
-- **NSF check** — A check returned by the bank because the maker's account had insufficient funds
-- **CECL** — Current Expected Credit Losses model under ASC 326, requiring recognition of lifetime expected losses at inception
-- **Vintage analysis** — A CECL methodology grouping receivables by origination period and applying historical loss rates
-- **Write-off** — The removal of an uncollectible account from both the receivable and the allowance
-- **Recovery** — The collection of a previously written-off receivable
-- **Factoring** — The sale of receivables to a third party for immediate cash
-- **Recourse** — An obligation to reimburse the factor if the receivable is not collected
-- **Net realizable value** — The gross amount of receivables less the allowance for credit losses
+| Topic | Key Rule | Common Trap |
+|-------|----------|-------------|
+| Cash equivalents | Original maturity ≤ 3 months from **purchase date** | Using remaining maturity instead of original |
+| Restricted cash | Report separately; classify current/noncurrent by restriction release date | Including restricted amounts in unrestricted cash |
+| Compensating balances | Disclose; reclassify if legally restricted | Ignoring the legal vs. informal distinction |
+| Bank overdrafts | Reclassify to current liabilities | Leaving negative balance in cash |
+| Bank reconciliation | Only book-side adjustments require journal entries | Recording entries for deposits in transit or outstanding checks |
+| CECL timing | Allowance established at origination | Waiting for a loss event (that is the old incurred-loss model) |
