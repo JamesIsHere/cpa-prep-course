@@ -1,0 +1,217 @@
+# Fair Value Measurements
+
+## Learning Objectives
+
+- Define fair value under ASC 820 as an exit price and explain why exit price matters
+- Apply the three-level fair value hierarchy to classify measurement inputs
+- Select among the three valuation approaches (market, income, cost) for a given asset or liability
+- Distinguish between recurring and nonrecurring fair value measurements
+- Evaluate the fair value option under ASC 825 and its income statement effects
+- Identify ASC 820 disclosure requirements, especially for Level 3 measurements
+
+## The Core Idea: Exit Price as the Measurement Anchor
+
+Here is the structural insight that makes all of ASC 820 self-derivable: **fair value is the price at which value would leave the entity in an orderly transaction.** Not what you paid. Not what it cost to build. Not what you hope it is worth. The exit price — the amount a knowledgeable, willing market participant would pay to take the asset off your hands (or accept to assume your liability) right now, under normal conditions.
+
+Why exit price? Because the balance sheet reports what the entity *has*, and the most objective measure of what you have is what the market would give you for it. Entry price (historical cost) tells you what you gave up in the past. Exit price tells you what you hold today. Every element of ASC 820 — the hierarchy, the valuation techniques, the disclosure requirements — is a consequence of this single measurement anchor.
+
+The entity determines the **principal market** (greatest volume and activity) or, absent one, the **most advantageous market** (maximizes proceeds for an asset, minimizes transfer price for a liability, net of transaction costs). The fair value measurement itself excludes transaction costs — those are a friction cost of executing a transaction, not a characteristic of the asset's value.
+
+<DeepDive title="Why exit price and not entry price? The economic reasoning">
+
+Think of it this way: if you bought a machine for $500,000 three years ago, that tells you something about the past transaction. But if the market for that machine has shifted — technology advanced, demand collapsed, supply flooded — the $500,000 is a historical artifact. The exit price asks: given everything the market knows today, what is this asset worth to the next buyer?
+
+This connects directly to the conservation framework. The balance sheet is a snapshot of value stocks at a point in time. If you want the snapshot to reflect economic reality, you need current values, not historical ones. Historical cost is reliable (it actually happened) but potentially irrelevant. Fair value is relevant (it reflects current conditions) but potentially unreliable (it requires estimation). ASC 820's entire architecture — the hierarchy, the disclosure requirements — is designed to manage this reliability-relevance tradeoff.
+
+The exit price concept also explains why fair value uses **market participant assumptions**, not entity-specific assumptions. Even for Level 3 measurements where inputs are unobservable, the entity must estimate what the market would assume, not what the entity itself plans to do. The asset's value is not what it is worth to *you* — it is what it is worth to the *market*.
+
+</DeepDive>
+
+> **Exam tip:** ASC 820 defines *how* to measure fair value but does not dictate *when* fair value must be used. Other standards (ASC 350, 805, 815, 320, etc.) determine whether fair value applies. If a topic has its own measurement guidance that differs from ASC 820 (such as ASC 718 for stock compensation), that guidance takes precedence.
+
+## The Fair Value Hierarchy
+
+The hierarchy is the reliability spectrum of ASC 820. It prioritizes inputs from most observable (Level 1) to least observable (Level 3), reflecting a simple principle: the more the market tells you directly, the less you need to estimate.
+
+<FrameworkDecisionTree groupId="far.3.E" title="Fair Value Hierarchy: Which Level?" />
+
+<FrameworkTable groupId="far.3.E" title="ASC 820 Fair Value Hierarchy" />
+
+### Level 1 — Quoted Prices in Active Markets
+
+The gold standard. No adjustment permitted. Quoted prices for **identical** assets or liabilities in markets where transactions occur with sufficient frequency and volume to provide pricing information on an ongoing basis.
+
+**Examples:** Exchange-traded equity securities, U.S. Treasury bonds, actively traded commodity futures.
+
+**Why no adjustments?** The market is directly telling you the price. Any adjustment would substitute the entity's judgment for the market's judgment, defeating the purpose of using the most observable input.
+
+**Example:** A company holds 10,000 shares of a publicly traded stock. The closing price on the measurement date is $245/share. Fair value = 10,000 x $245 = **$2,450,000** (Level 1). No discount for the size of the holding, no premium for a control position — the quoted price is used unadjusted.
+
+### Level 2 — Observable Inputs (Other Than Level 1)
+
+Inputs that are observable for the asset or liability, either directly or indirectly, but do not qualify as Level 1. These require some adjustment or interpolation, but the adjustments are grounded in market data.
+
+Types of Level 2 inputs:
+- Quoted prices for **similar** (not identical) assets in active markets
+- Quoted prices for identical or similar assets in **inactive** markets
+- Observable market data: interest rates, yield curves, credit spreads, prepayment speeds
+- **Market-corroborated inputs** — derived from or confirmed by observable data through correlation
+
+**Examples:** Corporate bonds valued using trade data from comparable issuers and maturities. Interest rate swaps priced using observable yield curves. Real estate appraised using comparable sales with adjustments for location and condition.
+
+### Level 3 — Unobservable Inputs
+
+The entity's own assumptions about what market participants would use. Level 3 is used only when observable inputs are unavailable. These measurements carry the highest estimation uncertainty and require the most extensive disclosure.
+
+**Key constraint:** Even though the inputs are unobservable, they must reflect **market participant assumptions**, not entity-specific plans. The question is not "what is this worth to us?" but "what would a knowledgeable buyer assume?"
+
+**Examples:** Long-term cash flow projections for a reporting unit (goodwill impairment). Internal models for complex derivatives with no observable market. Projected revenues used to value customer relationship intangibles in a business combination.
+
+<QuickCheck question="A company values a derivative using mostly Level 2 inputs (observable yield curves) but one significant input is a management-estimated default probability with no market corroboration. What level is the overall measurement?" answer="Level 3. The overall fair value measurement is categorized at the lowest level of significant input. One significant Level 3 input pulls the entire measurement to Level 3." />
+
+### Categorization Rule
+
+The overall measurement is categorized at the **lowest level of any significant input**. A measurement using mostly Level 2 inputs but one significant Level 3 input is classified as Level 3 overall. The hierarchy is conservative — it reports the weakest link, not the strongest.
+
+## Valuation Approaches
+
+ASC 820 provides three approaches. The entity selects the one (or combination) most appropriate for the circumstances, consistent with how market participants would value the asset or liability.
+
+<FrameworkMnemonic groupId="far.3.E" acronym="MIC" />
+
+### Market Approach
+
+Uses prices and other relevant information from **market transactions** involving identical or comparable assets or liabilities.
+
+- **Comparable company analysis** — Multiples (P/E, EV/EBITDA) from publicly traded peers
+- **Comparable transactions** — Pricing from recent transactions involving similar assets
+- **Matrix pricing** — Used for debt securities, based on the security's relationship to benchmark quoted prices
+
+Best used when: Active markets exist for identical or similar items. Market data is the most direct evidence of exit price.
+
+### Income Approach
+
+Converts **future amounts** (cash flows, earnings) to a single present value using a risk-adjusted discount rate.
+
+- **Discounted cash flow (DCF)** — Projects expected cash flows, discounts at an appropriate rate
+- **Multi-period excess earnings method** — Isolates the cash flow contribution of a specific intangible asset
+- **Option pricing models** — Black-Scholes or binomial models for options and contingent consideration
+
+Best used when: The asset's value derives from future economic benefits that can be projected. Common for intangible assets, business units, and complex financial instruments.
+
+### Cost Approach
+
+Based on the amount required to **replace the service capacity** of an asset (current replacement cost).
+
+- **Replacement cost method** — Cost to acquire or construct a substitute asset of equivalent utility
+- Adjusts for physical deterioration, functional obsolescence, and economic obsolescence
+
+Best used when: The asset is tangible, specialized, and lacks an active market. The logic is: what would a market participant pay to get equivalent capacity?
+
+### Worked Example: Valuing an Intangible Asset
+
+**Facts:** AcquireCo purchases a customer relationship intangible in a business combination. No observable market price exists. AcquireCo uses the multi-period excess earnings method (income approach):
+
+| Year | Projected Cash Flows | PV Factor (12%) | Present Value |
+|------|---------------------|-----------------|---------------|
+| 1    | $500,000            | 0.8929          | $446,450      |
+| 2    | $450,000            | 0.7972          | $358,740      |
+| 3    | $350,000            | 0.7118          | $249,130      |
+| 4    | $200,000            | 0.6355          | $127,100      |
+| **Total** |                |                 | **$1,181,420** |
+
+**Fair value:** $1,181,420 (Level 3 — inputs are management's projections of future cash flows with no market corroboration).
+
+## Highest and Best Use
+
+<FrameworkMnemonic groupId="far.3.E" acronym="HBUM" />
+
+For **nonfinancial assets**, fair value is based on the asset's **highest and best use** by market participants. This may differ from the entity's current use. The highest and best use must be:
+
+- **Physically possible** — The asset can physically be used that way
+- **Legally permissible** — Zoning, regulations, and contractual restrictions allow it
+- **Financially feasible** — The use generates adequate returns
+
+**Example:** A company uses a downtown building as a warehouse. Market participants would value the property as office space (higher value). Fair value is measured based on the office-space use, even though the entity currently uses it as a warehouse.
+
+For **financial assets and liabilities**, the highest-and-best-use concept does not apply. Financial instruments do not have alternative physical uses — their value is determined by contractual cash flows and market conditions.
+
+## Recurring vs. Nonrecurring Measurements
+
+**Recurring** — Measured at fair value each reporting period:
+- Trading securities and AFS debt securities
+- Derivatives (ASC 815)
+- Equity securities measured at fair value
+
+**Nonrecurring** — Measured at fair value only when triggered by a specific event:
+- Long-lived assets written down upon impairment (ASC 360)
+- Goodwill written down upon impairment (ASC 350)
+- Assets acquired in a business combination (ASC 805, at acquisition date only)
+- Assets held for sale (fair value less costs to sell)
+
+Both require disclosure, but recurring measurements require more extensive disclosure — especially Level 3 recurring measurements, which need a full roll-forward reconciliation.
+
+<QuickCheck question="A company writes down impaired equipment to fair value at year-end. Is this a recurring or nonrecurring fair value measurement?" answer="Nonrecurring. Equipment is normally carried at historical cost less depreciation. It is measured at fair value only when an impairment trigger occurs, not every period." />
+
+## The Fair Value Option (ASC 825)
+
+ASC 825 provides an **irrevocable, instrument-by-instrument election** to measure certain financial assets and liabilities at fair value that would otherwise be measured at amortized cost.
+
+### Eligible Items
+- Recognized financial assets and financial liabilities (with exceptions)
+- Firm commitments involving financial instruments
+- Written loan commitments
+
+### Excluded Items (Cannot Elect)
+- Investments in consolidated subsidiaries
+- Interests in consolidated VIEs
+- Pension and postretirement obligations
+- Financial assets/liabilities under lease accounting
+- Deposit liabilities of depository institutions
+
+### Accounting Treatment
+
+When elected:
+- Measure at fair value each reporting period
+- Changes in fair value go through **net income** (not OCI)
+- Upfront costs and fees expensed immediately (not deferred)
+
+**Special rule for liabilities:** Changes in fair value attributable to **instrument-specific credit risk** (the entity's own credit deterioration or improvement) are recognized in **OCI**, not net income. All other changes (market risk, interest rates) go through net income.
+
+**Why the split?** Without it, a company whose credit quality deteriorated would record a gain on its liabilities (they are worth less because the company is less likely to pay). Recognizing that "gain" in income would be economically perverse — the worse your credit, the better your income statement looks. The OCI carve-out prevents this.
+
+### Worked Example
+
+**Facts:** BankCo issues a $1,000,000 note payable at par and elects the fair value option. At year-end, the note's fair value is $980,000 due to rising market interest rates (not credit deterioration).
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Note payable | $20,000 | |
+| Gain on fair value adjustment | | $20,000 |
+
+The full $20,000 decrease in the liability goes through net income because it is caused by market interest rate changes, not the entity's own credit risk.
+
+## Disclosure Requirements
+
+ASC 820 requires extensive disclosures, with depth increasing as you move down the hierarchy:
+
+### All Levels
+- Fair value at the reporting date
+- Level within the hierarchy (1, 2, or 3)
+- Valuation technique(s) and inputs used
+- For nonrecurring measurements, the reason for the measurement
+
+### Level 3 Additional Disclosures
+- **Roll-forward reconciliation** — Beginning balance, purchases, sales, issuances, settlements, gains/losses in earnings, gains/losses in OCI, transfers in/out of Level 3, ending balance
+- Description of valuation process and how unobservable inputs are developed
+- Quantitative information about significant unobservable inputs
+- **Sensitivity analysis** — How changes in unobservable inputs would affect the measurement
+
+### Transfers Between Levels
+Entities must disclose transfers between Level 1 and Level 2, and transfers into and out of Level 3, with the reasons for each transfer.
+
+<QuickCheck question="Why does Level 3 require a roll-forward reconciliation that Level 1 and Level 2 do not?" answer="Level 3 measurements use unobservable inputs, making them the least verifiable. The roll-forward forces the entity to show users exactly how the balance changed — what came from market movements, what came from management assumptions, and what was bought or sold. It is the primary mechanism for users to assess the reliability of these measurements." />
+
+## The Complete Framework
+
+<FrameworkConceptMap groupId="far.3.E" title="Fair Value Measurement Framework (ASC 820)" />

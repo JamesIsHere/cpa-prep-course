@@ -1,0 +1,285 @@
+# Bonds and Debt
+
+## Learning Objectives
+
+- Explain bond pricing as a conservation-law consequence of rate mismatch
+- Calculate bond issue prices and record issuance at par, premium, and discount
+- Apply the effective interest method to amortize premiums and discounts
+- Compute gain or loss on early extinguishment of debt
+- Apply the 10% test to distinguish debt modification from extinguishment under ASC 470-50
+- Account for convertible debt under ASU 2020-06
+- Understand the fair value option for financial liabilities under ASC 825
+
+## The Core Idea: A Bond Is Conservation with a Time-Value Correction
+
+When a company issues a bond, the conservation law holds perfectly — cash in equals obligation created. But when the coupon rate the issuer offers differs from the rate the market demands, the issue price adjusts so that the market gets its required return regardless. **The premium or discount is not a gain or loss. It is a time-value adjustment that will unwind over the bond's life.**
+
+This is the single structural insight that makes everything else in this lesson mechanical:
+
+- **At par** — the coupon rate equals the market rate. No adjustment needed. Cash received = face value.
+- **At a premium** — the coupon overcompensates investors. They pay *more* than face value for the right to receive above-market interest. The premium is the present value of the excess coupon payments.
+- **At a discount** — the coupon undercompensates investors. They pay *less* than face value, and the discount represents additional return they will receive at maturity. The discount is the present value of the coupon shortfall.
+
+In every case, the investor's total return is exactly the market rate. The bond's price is the mechanism that enforces this.
+
+<DeepDive title="The spring analogy — why carrying amount converges to face value">
+
+Think of a bond's carrying amount as a spring displaced from its resting position (face value). A premium displaces the carrying amount above face. A discount displaces it below face. The amortization process is the restoring force that returns the spring to rest.
+
+The effective interest method governs the rate of return to equilibrium. Each period, the spring moves closer to face value. At maturity, the system is at rest — carrying amount equals face value, all premium or discount has been fully amortized, and the total interest cost over the bond's life equals exactly what the market demanded.
+
+This is why the total cost of borrowing is knowable at issuance:
+
+**Total Interest Cost = Total Cash Paid - Total Cash Received = (All Coupons + Face at Maturity) - Issue Price**
+
+For a premium: total cost is less than total coupons (the premium subsidized interest). For a discount: total cost exceeds total coupons (the discount added to interest). The effective interest method is just the allocation of this already-known total across periods.
+
+</DeepDive>
+
+<FrameworkTable groupId="far.2.H" title="Bond Issuance — Premium vs. Discount" />
+
+## Bond Issuance Mechanics
+
+The issue price is the present value of all future cash flows (coupons + principal) discounted at the market rate:
+
+**Issue Price = PV of Annuity (coupons) + PV of Lump Sum (face value)**
+
+### Worked Example — Discount Bond
+
+A company issues a $500,000 bond, 8% stated rate, 10-year term, interest paid semiannually. The market rate is 10%.
+
+**Step 1 — Identify the variables:**
+- Semiannual coupon = $500,000 x 8% / 2 = **$20,000**
+- Periods = 10 x 2 = **20**
+- Market rate per period = 10% / 2 = **5%**
+
+**Step 2 — Calculate present values:**
+- PV of coupons = $20,000 x PV annuity factor (5%, 20 periods) = $20,000 x 12.4622 = **$249,244**
+- PV of principal = $500,000 x PV single sum factor (5%, 20 periods) = $500,000 x 0.3769 = **$188,450**
+
+**Issue price = $249,244 + $188,450 = $437,694**
+
+**Discount = $500,000 - $437,694 = $62,306**
+
+**Journal entry at issuance:**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Cash | $437,694 | |
+| Discount on Bonds Payable | $62,306 | |
+| Bonds Payable | | $500,000 |
+
+Conservation check: the entity received $437,694 of cash and created a $500,000 face obligation, but the net carrying amount is $437,694 (face minus discount). The balance sheet balances. The discount is deferred interest — additional cost the entity will recognize over the bond's life.
+
+### Premium Bond — Entry Pattern
+
+If the same bond were issued when the market rate was 6% (coupon 8% > market 6%), investors would pay above face value:
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Cash | $XXX,XXX | |
+| Bonds Payable | | $500,000 |
+| Premium on Bonds Payable | | $XX,XXX |
+
+The premium is not income — it is prepaid interest. Investors overpaid today and will be "repaid" over the bond's life through coupon payments that exceed the economic cost of borrowing.
+
+## The Effective Interest Method
+
+U.S. GAAP requires the effective interest method for amortizing premiums and discounts. Three lines, every period:
+
+<FrameworkFormula groupId="far.2.H" name="Effective Interest (Bond Amort.)" />
+
+The full computation each period:
+
+1. **Interest Expense** = Carrying Amount x Market Rate (per period)
+2. **Cash Interest Paid** = Face Value x Stated Rate (per period)
+3. **Amortization** = |Interest Expense - Cash Paid|
+
+<FrameworkFormula groupId="far.2.H" name="Bond Carrying Amount" />
+
+### Discount Amortization Schedule (First 3 Periods)
+
+Using the worked example above ($500,000 face, 8% stated, 10% market, semiannual):
+
+| Period | Carrying Amount (Start) | Interest Expense (5%) | Cash Paid (4%) | Amortization | Carrying Amount (End) |
+|--------|------------------------|----------------------|----------------|--------------|----------------------|
+| 1 | $437,694 | $21,885 | $20,000 | $1,885 | $439,579 |
+| 2 | $439,579 | $21,979 | $20,000 | $1,979 | $441,558 |
+| 3 | $441,558 | $22,078 | $20,000 | $2,078 | $443,636 |
+
+**Pattern for discounts:** Interest expense exceeds cash paid. The difference amortizes the discount. Carrying amount *increases* toward face value each period. Interest expense grows because the base (carrying amount) grows — this is compounding.
+
+**Pattern for premiums:** Cash paid exceeds interest expense. The difference amortizes the premium. Carrying amount *decreases* toward face value each period. Interest expense shrinks because the base shrinks.
+
+**Journal entry — discount amortization (Period 1):**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Interest Expense | $21,885 | |
+| Discount on Bonds Payable | | $1,885 |
+| Cash | | $20,000 |
+
+> The straight-line method is acceptable only if results are not materially different from effective interest. The CPA exam expects the effective interest method.
+
+<QuickCheck question="A bond has a carrying amount of $520,000 (premium bond). The market rate at issuance was 4% semiannually, and the stated rate is 5% semiannually on a $500,000 face bond. What is interest expense for the current period?" answer="$520,000 x 4% = $20,800. Cash paid is $500,000 x 5% = $25,000. Premium amortization is $25,000 - $20,800 = $4,200. The carrying amount decreases to $515,800." />
+
+## Debt Issuance Costs
+
+Underwriting fees, legal fees, and registration costs are presented as a **direct deduction from the carrying amount** of the bond — similar to a discount. They increase the effective interest rate because the entity received less net cash but owes the same face amount.
+
+**Example:** $500,000 bond issued at par with $15,000 of issuance costs.
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Cash | $485,000 | |
+| Debt Issuance Costs | $15,000 | |
+| Bonds Payable | | $500,000 |
+
+The issuance costs amortize over the bond's life using the effective interest method, adding to interest expense each period.
+
+> On the balance sheet, debt issuance costs are a direct deduction from the bond liability — not reported as a separate asset. Carrying amount = Face ± premium/discount - unamortized issuance costs.
+
+## Bond Retirement and Early Extinguishment
+
+When bonds are retired before maturity, compare the reacquisition price to the carrying amount:
+
+<FrameworkFormula groupId="far.2.H" name="Gain on Extinguishment of Debt" />
+
+- **Reacquisition price > Carrying amount** → Loss on extinguishment
+- **Reacquisition price < Carrying amount** → Gain on extinguishment
+
+Gains and losses on extinguishment are reported in **income from continuing operations**.
+
+### Worked Example — Early Retirement
+
+A $1,000,000 face bond has an unamortized discount of $40,000 and unamortized issuance costs of $10,000. The entity calls the bond at 103 (103% of face).
+
+**Carrying amount** = $1,000,000 - $40,000 - $10,000 = **$950,000**
+
+**Reacquisition price** = $1,000,000 x 103% = **$1,030,000**
+
+**Loss** = $950,000 - $1,030,000 = **($80,000)**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Bonds Payable | $1,000,000 | |
+| Loss on Extinguishment | $80,000 | |
+| Discount on Bonds Payable | | $40,000 |
+| Debt Issuance Costs | | $10,000 |
+| Cash | | $1,030,000 |
+
+Conservation check: the $1,000,000 liability and $40,000 discount (net $960,000 obligation including issuance costs) are removed. Cash of $1,030,000 exits. The $80,000 difference reduces equity through the loss — the equation closes.
+
+## Debt Modification vs. Extinguishment — ASC 470-50
+
+When existing debt terms are changed, the accounting depends on whether the modification is substantial enough to be treated as an extinguishment of old debt and creation of new debt:
+
+<FrameworkDecisionTree groupId="far.2.H" title="Debt Modification vs. Extinguishment (ASC 470-50)" />
+
+### The 10% Test
+
+If the same creditor remains, compare the present value of cash flows under the new terms to the present value under the old terms. If they differ by **more than 10%**, the change is substantial enough to constitute an extinguishment.
+
+**Extinguishment treatment:**
+- Derecognize the old debt
+- Record the new debt at fair value
+- Recognize gain or loss on the difference
+- Capitalize new fees (they are costs of the new debt)
+
+**Modification treatment:**
+- Keep the old debt on the books
+- Adjust the effective interest rate prospectively to equate the carrying amount with the new cash flows
+- Expense third-party fees immediately
+- Adjust carrying amount for creditor fees
+
+### Creditor Change
+
+If the creditor changes (new lender replaces the original), it is always an extinguishment — regardless of the 10% test. The original obligation has been settled; a new one exists with a different party.
+
+<QuickCheck question="A company renegotiates its bank loan with the same lender. The present value of remaining payments under new terms is 8% less than under the original terms. Is this a modification or extinguishment?" answer="Modification. The 10% test is not met (8% < 10%), so the change is not substantial enough for extinguishment treatment. The company keeps the old debt on the books and adjusts the effective interest rate prospectively." />
+
+## Troubled Debt Restructuring — ASC 470-60
+
+A **troubled debt restructuring (TDR)** occurs when a creditor grants a concession it would not normally consider, due to the debtor's financial difficulty. Two forms exist from the debtor's perspective:
+
+### Transfer of Assets or Equity
+
+The debtor transfers assets or equity interests to settle the debt. Two separate gains/losses may arise:
+
+1. **Gain on restructuring** = Carrying amount of debt - Fair value of assets/equity transferred
+2. **Gain/loss on asset disposition** = Fair value of assets - Carrying amount of assets
+
+### Modification of Terms
+
+The creditor reduces the interest rate, extends maturity, reduces face, or forgives accrued interest.
+
+**If total future cash payments < Carrying amount of debt:**
+- Reduce the liability to total future cash payments
+- Recognize a gain for the difference
+- No interest expense recognized going forward (all future payments reduce the liability)
+
+**If total future cash payments ≥ Carrying amount of debt:**
+- No gain recognized
+- Compute a new effective interest rate that equates the carrying amount with the new cash flows
+- Apply prospectively
+
+> ASU 2022-02 eliminated TDR-specific guidance for *creditors* and replaced it with the general loan modification framework. However, *debtor-side* TDR guidance under ASC 470 remains in effect and is tested on the CPA exam.
+
+## Convertible Debt — ASU 2020-06
+
+**Convertible bonds** give holders the right to convert the bond into a specified number of common shares. ASU 2020-06 simplified the accounting significantly by eliminating the prior beneficial conversion feature and cash conversion models.
+
+### Key Rules (Post-ASU 2020-06)
+
+- **At issuance** — record the full proceeds as a **single liability**. No bifurcation into debt and equity components. No APIC entry for the conversion feature.
+- **Amortization** — amortize any discount using the effective interest method over the bond's life
+- **On conversion** — reclassify the carrying amount of the debt to equity. **No gain or loss** is recognized.
+- **Induced conversion** — if the issuer offers additional consideration (a "sweetener") to encourage conversion, the fair value of the additional consideration is recognized as **conversion expense**
+
+### Diluted EPS — If-Converted Method
+
+Convertible debt affects diluted EPS using the if-converted method:
+
+1. **Numerator adjustment:** Add back after-tax interest expense on the convertible debt (because if converted, there would be no interest)
+2. **Denominator adjustment:** Add the shares that would be issued upon conversion
+3. **Include only if dilutive** — if the result increases EPS, exclude (anti-dilutive)
+
+<DeepDive title="Why ASU 2020-06 simplified matters">
+
+Before ASU 2020-06, convertible debt accounting was fragmented across multiple models depending on settlement mechanics. The beneficial conversion feature model required bifurcating proceeds into debt and equity components at issuance for instruments where the conversion price was below the stock price (in-the-money). The cash conversion model applied when the issuer could settle in cash. Each model produced different carrying amounts, different interest expense, and different EPS effects.
+
+The simplification collapsed these into a single model: the whole instrument is debt, period. This eliminated the day-one discount that the old models created (which inflated interest expense over the bond's life) and removed the judgment calls about which model applied. The trade-off: diluted EPS now uses the if-converted method for all convertible instruments, which may be more dilutive than the old treasury stock method applied under certain legacy models.
+
+</DeepDive>
+
+## In-Substance Defeasance — ASC 405-20
+
+An entity cannot derecognize debt simply by placing assets in a trust to service it. Under ASC 405-20, debt is extinguished only when:
+
+1. The debtor **pays the creditor** and is relieved of the obligation, OR
+2. The debtor is **legally released** from being the primary obligor
+
+Placing assets in an irrevocable trust (in-substance defeasance) does **not** qualify as extinguishment unless the debtor is legally released. The liability and the trust assets remain on the balance sheet.
+
+## Fair Value Option — ASC 825
+
+ASC 825 permits entities to elect the fair value option for certain financial liabilities, including bonds payable:
+
+- Elected **instrument-by-instrument** at initial recognition
+- The election is **irrevocable**
+- The liability is measured at **fair value each reporting period**
+- Changes in fair value flow through **earnings** (not OCI)
+- Eliminates the need for discount/premium amortization — carrying amount simply equals fair value
+
+The fair value option is useful when an entity has economic hedges that don't qualify for hedge accounting. Measuring the liability at fair value reduces the accounting mismatch between the hedge instrument (at fair value through earnings) and the hedged item.
+
+> A counterintuitive result: when an entity's credit risk deteriorates, the fair value of its debt *decreases* (investors would pay less for it), which creates a **gain** in earnings. The entity's own financial distress improves its reported income. This is economically correct (the obligation is worth less) but often confuses readers.
+
+## Debt with Covenants — Classification Impact
+
+If a debtor violates a debt covenant, long-term debt is reclassified as **current** unless:
+
+1. The creditor **waives the violation** for a period of more than one year after the balance sheet date, OR
+2. It is **probable** the debtor can cure the violation within the specified grace period (and the grace period extends at least one year)
+
+This mirrors the current/noncurrent classification rules from the payables lesson — the existence of the lender's right to demand payment, not its exercise, determines classification.

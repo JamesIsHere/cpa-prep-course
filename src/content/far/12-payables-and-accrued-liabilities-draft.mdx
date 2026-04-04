@@ -1,0 +1,280 @@
+# Payables and Accrued Liabilities
+
+## Learning Objectives
+
+- Explain why accrued liabilities exist as a consequence of accrual accounting
+- Classify and measure trade payables, accrued expenses, and advance payments
+- Apply ASC 710-10 to compensated absences, including the sick pay exception
+- Account for asset retirement obligations under ASC 410-20
+- Determine when to recognize exit and disposal liabilities under ASC 420
+- Distinguish between current and noncurrent liability classification, including the refinancing exception
+
+## The Core Idea: Liabilities as Timing Gaps
+
+Every liability on the balance sheet represents a single structural reality: **the entity has consumed value but has not yet transferred cash.** The goods arrived. The employees worked. The interest accrued. The obligation exists. Cash has not moved yet.
+
+This is the accrual basis doing exactly what it was designed to do — recognizing economic events when they occur, not when cash changes hands. A cash-basis entity has no accounts payable, no accrued wages, no interest payable. It also has no accurate picture of what it owes. The liability section of the balance sheet is the gap between economic reality and cash settlement, measured in dollars.
+
+The conservation check applies to every liability: when the entity eventually pays, Cash decreases and the liability decreases by the same amount. The equation closes. The only question is *when* to recognize the obligation — and that question drives everything in this lesson.
+
+<DeepDive title="Liabilities and the stock-flow distinction">
+
+Liabilities are stock variables — they represent the accumulated level of unpaid obligations at a point in time. The expenses that created them are flow variables — they measure the rate of obligation creation over a period. The adjusting entry at period-end (DR Expense, CR Liability) is the mechanism that converts the flow into a stock.
+
+This is the same stock-flow logic that governs every balance sheet account. Retained earnings is the stock; net income is the flow. Inventory is the stock; purchases minus COGS is the net flow. For liabilities, the stock grows when obligations are incurred (expenses recognized) and shrinks when cash is paid. The balance at any moment tells you how much the entity owes but hasn't paid — the cumulative gap between accrual recognition and cash settlement.
+
+Understanding this distinction prevents a common exam error: confusing an expense (flow) with a payable (stock). Wage expense is how much compensation was earned during the period. Wages payable is how much of that compensation remains unpaid at period-end. They are related but not the same number.
+
+</DeepDive>
+
+## The Landscape of Current Liabilities
+
+Before diving into mechanics, orient yourself to the full scope of what falls under payables and accrued liabilities. This concept map shows the classification hierarchy:
+
+<FrameworkConceptMap groupId="far.2.G" title="Payables and Accrued Liabilities — Classification" />
+
+Every item in that map follows the same recognition principle: record the liability when the obligation is incurred, not when it is paid. The differences are in *what triggers* the obligation and *how you measure* it.
+
+<FrameworkTable groupId="far.2.G" title="Accrued Liabilities — Recognition Triggers" />
+
+## Trade Payables
+
+**Accounts payable (trade payables)** are the simplest liability — the entity received goods or services from a supplier and owes the invoice amount. Recognition turns on one question: has title passed?
+
+**Cutoff rules by shipping terms:**
+- **FOB shipping point** — title passes when goods leave the seller's dock. The buyer records the payable (and inventory) when goods are shipped, even if they are in transit at year-end.
+- **FOB destination** — title passes when goods arrive at the buyer's location. Goods in transit at year-end belong to the seller. No payable recorded until delivery.
+
+**Trade discount methods:**
+
+| Method | At Invoice | If Discount Taken | If Discount Lapses |
+|--------|-----------|-------------------|-------------------|
+| **Gross method** | Record at full invoice amount | DR AP, CR Cash, CR Purchase Discounts | Pay full amount (no adjustment) |
+| **Net method** | Record net of discount | DR AP, CR Cash | DR Interest Expense for forfeited discount |
+
+The net method is theoretically superior — it treats the discount as the "real" price and the lapse as a financing cost. But the gross method dominates practice because it is simpler to administer.
+
+<QuickCheck question="A company receives goods on December 28 shipped FOB shipping point. The invoice is dated December 29. The goods arrive January 2. In which period does the buyer record the payable?" answer="December (the period of shipment). Under FOB shipping point, title passes when goods leave the seller's dock. The invoice date and arrival date are irrelevant — the obligation arose when the goods were shipped on December 28." />
+
+## Accrued Liabilities
+
+Accrued liabilities require an adjusting entry because no invoice triggers the recording. The entity must recognize the obligation based on the passage of time, services received, or events that have occurred.
+
+### Wages and Salaries
+
+Employees work continuously, but payday is periodic. At any period-end that falls between paydays, the entity owes compensation for days worked but not yet paid.
+
+**Example:** Employees earn $50,000 per 5-day work week. The fiscal year ends on a Wednesday. Three days of wages have accrued:
+
+Accrual = $50,000 x 3/5 = **$30,000**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Wage Expense | $30,000 | |
+| Wages Payable | | $30,000 |
+
+When payday arrives in the next period, the entity pays the full week and reverses the accrual:
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Wages Payable | $30,000 | |
+| Wage Expense | $20,000 | |
+| Cash | | $50,000 |
+
+### Interest Payable
+
+Interest accrues continuously on outstanding debt. The formula is always:
+
+**Interest = Principal x Annual Rate x (Time Elapsed / 12)**
+
+**Example:** $600,000 note at 8% annual interest, dated September 1. At December 31, four months of interest have accrued:
+
+Interest = $600,000 x 8% x 4/12 = **$16,000**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Interest Expense | $16,000 | |
+| Interest Payable | | $16,000 |
+
+### Property Taxes
+
+Property taxes are typically assessed for a calendar year but may span fiscal periods. The entity accrues property tax expense ratably over the period to which the tax relates, recognizing a payable as each month passes.
+
+### Dividends Payable
+
+A cash dividend becomes a liability on the **declaration date** — not the record date and not the payment date. On declaration, the board has created an irrevocable obligation. The record date merely determines *who* receives payment. The payment date is when cash moves.
+
+| Event | Journal Entry |
+|-------|--------------|
+| Declaration date | DR Retained Earnings, CR Dividends Payable |
+| Record date | No entry |
+| Payment date | DR Dividends Payable, CR Cash |
+
+## Compensated Absences — ASC 710-10
+
+ASC 710-10 governs when an employer must accrue a liability for future paid absences — vacation, holidays, illness, and other PTO. The standard requires accrual when **all four conditions** are met:
+
+1. The obligation relates to services **already rendered** by employees
+2. The rights **vest** or **accumulate**
+3. Payment is **probable**
+4. The amount can be **reasonably estimated**
+
+**Key definitions:**
+- **Vesting** — the employer must pay for unused time upon termination (stronger right)
+- **Accumulating** — unused time carries forward to future periods but is not necessarily paid on termination (weaker right)
+
+Both vesting and accumulating rights trigger accrual (if the other three conditions are met). The critical distinction is in sick pay.
+
+### The Sick Pay Exception
+
+Sick pay that **accumulates but does not vest** need not be accrued (though accrual is permitted). The logic: sick pay requires an illness to trigger payment, making it inherently less certain than vacation pay. However, if sick pay **vests** (paid out upon termination regardless of illness), it must be accrued — the vesting right removes the contingency.
+
+**Decision matrix:**
+
+| Type | Vests? | Accumulates? | Must Accrue? |
+|------|--------|-------------|-------------|
+| Vacation | Yes | Yes | **Yes** |
+| Sick pay | Yes | Yes | **Yes** (vesting overrides the exception) |
+| Sick pay | No | Yes | **No** (permitted but not required) |
+| Sick pay | No | No | **No** |
+| Sabbatical (enhances services) | N/A | N/A | **Yes** — accrue over required service period |
+| Sabbatical (does not enhance) | N/A | N/A | **No** — expense when taken |
+
+### Worked Example — Vacation Accrual
+
+An employee earns 20 vacation days per year ($250/day). By December 31, the employee has used 12 days. The remaining 8 days vest (payable on termination).
+
+Accrual = 8 days x $250 = **$2,000**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Compensation Expense | $2,000 | |
+| Accrued Compensated Absences | | $2,000 |
+
+<QuickCheck question="An employer's sick pay policy allows employees to accumulate unused sick days but does not pay them out upon termination. Must the employer accrue a liability for the unused sick days?" answer="No. Sick pay that accumulates but does not vest need not be accrued under ASC 710-10. The employer may choose to accrue, but it is not required. If the sick pay vested (payable on termination), accrual would be mandatory." />
+
+## Asset Retirement Obligations — ASC 410-20
+
+An **asset retirement obligation (ARO)** is a legal obligation to dismantle, remove, or restore a long-lived asset at the end of its useful life. Common examples: dismantling an oil rig, decommissioning a nuclear plant, remediating a contaminated site.
+
+### Initial Recognition
+
+When a legal obligation exists (at asset acquisition or when the obligation is incurred), the entity:
+
+1. **Measures the ARO** at the present value of estimated future retirement costs, using a credit-adjusted risk-free rate
+2. **Records the liability** at that present value
+3. **Capitalizes the same amount** as part of the related asset's carrying amount
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Asset (PP&E) | $XX | |
+| Asset Retirement Obligation | | $XX |
+
+This is conservation in action — the entity has recognized both the asset (future economic benefit of using the property) and the obligation (future cost of restoring it) simultaneously.
+
+### Subsequent Measurement
+
+Each period, two things happen:
+
+**1. Accretion expense** — the ARO liability grows toward its full settlement amount as the discount unwinds:
+
+<FrameworkFormula groupId="far.2.G" name="Accretion Expense (ARO)" />
+
+This is the time value of money working on the liability — conceptually identical to interest expense on a discount bond. The liability was recorded at present value; it must grow to future value by the settlement date.
+
+**2. Depreciation** — the capitalized asset retirement cost is depreciated over the asset's useful life along with the rest of the asset's cost.
+
+### Worked Example — ARO
+
+A company acquires a mining site for $5,000,000. Legal obligations require restoration at an estimated future cost of $800,000 in 20 years. The credit-adjusted risk-free rate is 6%.
+
+**PV of ARO** = $800,000 / (1.06)^20 = $800,000 / 3.2071 = **$249,444**
+
+**Initial entry:**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Mining Property | $5,249,444 | |
+| Cash | | $5,000,000 |
+| Asset Retirement Obligation | | $249,444 |
+
+**Year 1 accretion:**
+
+Accretion = $249,444 x 6% = **$14,967**
+
+| Account | Debit | Credit |
+|---------|-------|--------|
+| Accretion Expense | $14,967 | |
+| Asset Retirement Obligation | | $14,967 |
+
+The ARO liability is now $264,411. Each year, the accretion grows because the base is larger — the same compounding effect as compound interest.
+
+## Exit and Disposal Activities — ASC 420
+
+When a company restructures — closing a facility, terminating employees, exiting a product line — costs arise that must be recognized as liabilities. ASC 420 governs the timing of recognition for these costs.
+
+The key principle: **recognize the liability when it is incurred, not when a plan is committed to.** This is a critical distinction from older guidance that allowed recognition at the plan commitment date.
+
+<FrameworkDecisionTree groupId="far.2.G" title="Exit or Disposal Activity: When to Recognize a Liability (ASC 420)" />
+
+### Three Categories of Exit Costs
+
+**1. One-time termination benefits** — severance packages for employees being let go
+- If no future service required: recognize at the **communication date** (when employees are told)
+- If future service required beyond a minimum retention period: recognize **ratably** over the service period
+- Measure at fair value
+
+**2. Contract termination costs** — penalties for breaking leases or other contracts early
+- Recognize when the entity **terminates the contract** in accordance with its terms
+- Measure at fair value of the remaining obligation
+
+**3. Other associated costs** — relocation, retraining, consolidation
+- Recognize when the liability is **incurred** (i.e., when goods/services are received)
+- Not at the plan commitment date
+
+## Advance Payments and Deposits
+
+**Customer advances** and **refundable deposits** represent the mirror image of accrued liabilities — cash arrived before the obligation was satisfied. The entity has the cash but owes performance.
+
+- **Customer advances** — DR Cash, CR Unearned Revenue. Revenue recognized when the performance obligation is satisfied under ASC 606.
+- **Refundable deposits** — reported as a liability until deposit conditions are met (e.g., customer returns rental equipment). If the deposit is nonrefundable, recognize as revenue immediately.
+
+## Current vs. Noncurrent Classification
+
+A liability is **current** if it will be settled within one year or the operating cycle (whichever is longer). Three exam-critical rules complicate this:
+
+### The Refinancing Exception
+
+A short-term obligation may be classified as **noncurrent** if the entity demonstrates both:
+1. **Intent** to refinance on a long-term basis, AND
+2. **Ability** to do so — demonstrated by either:
+   - Actually refinancing before the financial statements are issued, or
+   - Having an existing noncancelable financing agreement from a financially capable lender
+
+Intent alone is never sufficient. The entity must prove it can execute.
+
+### Covenant Violations and Callable Debt
+
+If a debt covenant is violated, **long-term debt is reclassified as current** — even if the lender has not called the debt — unless the lender **waives the right** for at least 12 months after the balance sheet date.
+
+The logic: a covenant violation gives the lender the legal right to demand immediate payment. The existence of that right, not its exercise, determines classification.
+
+### Demand Notes
+
+**Always current**, regardless of the lender's actual intentions. If the lender can demand payment at any time, the liability is current by definition.
+
+<QuickCheck question="A company has a $2 million note payable due in 6 months. Before the financial statements are issued, the company signs a 5-year noncancelable refinancing agreement with a creditworthy bank. How is the note classified?" answer="Noncurrent. The entity has demonstrated both intent (it entered the agreement) and ability (the agreement is noncancelable and the lender is financially capable). The refinancing exception applies, allowing the short-term obligation to be classified as long-term." />
+
+<DeepDive title="Why classification matters more than you think">
+
+Liability classification is not just a presentation exercise — it directly affects key financial ratios that lenders, analysts, and rating agencies monitor. Reclassifying $10 million of long-term debt to current because of a covenant violation:
+
+- **Increases the current ratio denominator** — the entity looks less liquid
+- **Decreases the debt-to-equity ratio's long-term component** — but the total is unchanged
+- **May trigger cross-default provisions** — other lenders may have covenants tied to the current ratio or working capital, creating a cascading effect
+
+This is why the covenant violation rules are so strict. A single technical default can trigger a chain reaction across an entity's entire debt structure. The classification rules force transparent reporting of this risk.
+
+The refinancing exception exists because GAAP recognizes economic substance: if the entity genuinely will not need to use current resources to settle the obligation (because it will be refinanced into long-term debt), classifying it as current would overstate the entity's short-term cash needs.
+
+</DeepDive>
