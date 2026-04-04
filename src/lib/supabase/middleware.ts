@@ -52,6 +52,11 @@ export async function updateSession(request: NextRequest) {
 		return NextResponse.redirect(loginUrl);
 	}
 
+	// Let password reset flow through — never redirect away from /update-password
+	if (pathname === "/update-password") {
+		return response;
+	}
+
 	// Redirect authenticated users away from auth pages
 	if (user && (pathname === "/login" || pathname === "/signup")) {
 		const url = request.nextUrl.clone();
