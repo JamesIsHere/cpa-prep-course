@@ -2,16 +2,32 @@
 
 Cross-session tracker for the correctness verification audit.
 
-## Section Progress
+## Section Progress (as of 2026-04-11 trust-audit reconciliation)
 
-| Section | Total  | Verified | Pass | Fail | Review | Status  |
-|---------|--------|----------|------|------|--------|---------|
-| BAR     | ~1,016 | 2259     | 2174 | 60   | 25     | Done (00369: 27 deletes + 7 fixes) |
-| FAR     | ~1,005 | 2127     | 2085 | 31   | 11     | Done (00370: 3 deletes + 19 fixes) |
-| REG     | ~1,027 | 1490     | 1410 | 65   | 15     | In progress |
-| AUD     | ~2,732 | 1407     | 1254 | 55   | 98     | In progress |
-| ISC     | ~897   | 1463     | 1388 | 57   | 18     | In progress |
-| TCP     | ~889   | 1451     | 1345 | 70   | 36     | In progress |
+Historical fail/review counts are captured in the batch log below. `Pass (live)` reflects the
+current state of `verified-ids.json` after the 2026-04-11 reconciliation, which (a) removed
+1,478 stale pass IDs left over from the 2026-03-05 dedup sweep and (b) promoted 488 IDs whose
+strongest migration touch was a substantive review (quality/fix/verify/upgrade/critical/rewrite).
+Questions touched only by metadata migrations (citation/blooms/difficulty) or stem rewrites
+remain in the unverified column — they need a real `verify-correctness` pass.
+
+| Section | Live | Pass (live) | Unverified | Coverage | Status |
+|---------|-----:|------------:|-----------:|---------:|--------|
+| AUD     | 1446 |        1380 |         66 |    95.4% | Phase 2 — 7 batches remaining |
+| FAR     | 1554 |        1492 |         62 |    96.0% | Phase 2 — 7 batches remaining |
+| REG     | 1446 |        1441 |          5 |    99.7% | Phase 2 — 1 batch remaining |
+| BAR     | 1534 |        1393 |        141 |    90.8% | Phase 2 — 15 batches remaining (mostly stem-rewrite-only coverage) |
+| ISC     | 1452 |        1423 |         29 |    98.0% | Phase 2 — 3 batches remaining |
+| TCP     | 1421 |        1379 |         42 |    97.0% | Phase 2 — 5 batches remaining |
+| **TOT** | **8853** | **8508** | **345** | **96.1%** | ~38 orchestrator batches to full coverage |
+
+**Coupling fix:** `scripts/qa/validate-migration.ts` now (a) promotes UPDATEd IDs from
+fail/review to pass and (b) removes DELETEd IDs from pass, so the file cannot accumulate the
+same drift again. `scripts/qa/trust-audit-reconcile.ts` is available for future one-time
+reconciliations if additional drift appears.
+
+**Phase 3 (pending):** second-pass sampling audit on the 8,508 passed questions to estimate
+miss rate of the first-pass verifier. See the trust-audit conversation notes for design.
 
 ## Batch Log
 
