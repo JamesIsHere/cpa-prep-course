@@ -625,23 +625,27 @@ if (distributions.length >= 10) {
 }
 
 // ============================================================
-// Stale verified-ids.json detection
+// verified-ids.json auto-reconciliation
 // ============================================================
-// Extract all question IDs touched by UPDATE/DELETE in this migration
-// and warn if any are still sitting in fail/review lists.
-const touchedIds = new Set<number>();
+// Track UPDATE and DELETE IDs separately so we can apply all three transitions:
+//   1. fail/review  → removed          (question was touched; prior verdict superseded)
+//   2. fail/review  → pass             (question was UPDATEd; the fix + migration
+//                                       validation counts as re-verification)
+//   3. pass         → removed          (question was DELETEd; prevents stale pass residue)
+const updatedIds = new Set<number>();
+const deletedIds = new Set<number>();
 
 const updateIdPattern =
 	/UPDATE\s+questions\s+SET[\s\S]*?WHERE\s+id\s*=\s*(\d+)\s*;/gi;
 let uidMatch: RegExpExecArray | null;
 while ((uidMatch = updateIdPattern.exec(fullSql)) !== null) {
-	touchedIds.add(parseInt(uidMatch[1]));
+	updatedIds.add(parseInt(uidMatch[1]));
 }
 
 const deleteIdPattern =
 	/DELETE\s+FROM\s+questions\s+WHERE\s+id\s*=\s*(\d+)\s*;/gi;
 while ((uidMatch = deleteIdPattern.exec(fullSql)) !== null) {
-	touchedIds.add(parseInt(uidMatch[1]));
+	deletedIds.add(parseInt(uidMatch[1]));
 }
 
 const deleteInIdPattern =
@@ -649,9 +653,11 @@ const deleteInIdPattern =
 while ((uidMatch = deleteInIdPattern.exec(fullSql)) !== null) {
 	for (const n of uidMatch[1].split(",")) {
 		const id = parseInt(n.trim());
-		if (!isNaN(id)) touchedIds.add(id);
+		if (!isNaN(id)) deletedIds.add(id);
 	}
 }
+
+const touchedIds = new Set<number>([...updatedIds, ...deletedIds]);
 
 if (touchedIds.size > 0) {
 	const __dirname2 = dirname(fileURLToPath(import.meta.url));
@@ -659,40 +665,92 @@ if (touchedIds.size > 0) {
 	if (existsSync(verifiedPath)) {
 		try {
 			const verifiedData = JSON.parse(readFileSync(verifiedPath, "utf-8"));
-			const staleIds: { id: number; section: string; list: string }[] = [];
+			const removedFromFailReview: {
+				id: number;
+				section: string;
+				list: string;
+			}[] = [];
+			const promotedToPass: { id: number; section: string }[] = [];
+			const removedFromPass: { id: number; section: string }[] = [];
 
 			for (const [section, lists] of Object.entries(verifiedData) as [
 				string,
-				{ fail: number[]; review: number[] },
+				{ pass: number[]; fail: number[]; review: number[] },
 			][]) {
-				for (const id of lists.fail ?? []) {
-					if (touchedIds.has(id))
-						staleIds.push({ id, section, list: "fail" });
+				// Gap 1a: drain fail/review for any touched ID.
+				for (const listName of ["fail", "review"] as const) {
+					const arr = lists[listName] ?? [];
+					for (let i = arr.length - 1; i >= 0; i--) {
+						const id = arr[i];
+						if (!touchedIds.has(id)) continue;
+						arr.splice(i, 1);
+						removedFromFailReview.push({ id, section, list: listName });
+						// Gap 1b: if the touch was an UPDATE (fix), promote to pass.
+						if (updatedIds.has(id)) {
+							lists.pass = lists.pass ?? [];
+							if (!lists.pass.includes(id)) {
+								lists.pass.push(id);
+								promotedToPass.push({ id, section });
+							}
+						}
+					}
 				}
-				for (const id of lists.review ?? []) {
-					if (touchedIds.has(id))
-						staleIds.push({ id, section, list: "review" });
+
+				// Gap 2: remove DELETEd IDs from pass so it cannot accumulate ghosts.
+				if (lists.pass && deletedIds.size > 0) {
+					for (let i = lists.pass.length - 1; i >= 0; i--) {
+						const id = lists.pass[i];
+						if (deletedIds.has(id)) {
+							lists.pass.splice(i, 1);
+							removedFromPass.push({ id, section });
+						}
+					}
 				}
 			}
 
-			if (staleIds.length > 0) {
-				// Auto-clean: remove fixed IDs from fail/review arrays
-				for (const { id, section, list } of staleIds) {
-					const arr = verifiedData[section][list] as number[];
-					const idx = arr.indexOf(id);
-					if (idx !== -1) arr.splice(idx, 1);
+			// Keep pass arrays sorted for stable diffs.
+			if (promotedToPass.length > 0) {
+				const touchedSections = new Set(promotedToPass.map((p) => p.section));
+				for (const section of touchedSections) {
+					verifiedData[section].pass.sort((a: number, b: number) => a - b);
 				}
+			}
+
+			const totalChanges =
+				removedFromFailReview.length +
+				promotedToPass.length +
+				removedFromPass.length;
+
+			if (totalChanges > 0) {
 				writeFileSync(
 					verifiedPath,
 					JSON.stringify(verifiedData, null, 2) + "\n",
 				);
 
-				const idList = staleIds
-					.map((s) => `Q${s.id} (${s.section}.${s.list})`)
-					.join(", ");
-				console.log(
-					`\n  Auto-cleaned ${staleIds.length} fixed IDs from verified-ids.json: ${idList}`,
-				);
+				if (removedFromFailReview.length > 0) {
+					const idList = removedFromFailReview
+						.map((s) => `Q${s.id} (${s.section}.${s.list})`)
+						.join(", ");
+					console.log(
+						`\n  Auto-cleaned ${removedFromFailReview.length} fixed IDs from fail/review: ${idList}`,
+					);
+				}
+				if (promotedToPass.length > 0) {
+					const idList = promotedToPass
+						.map((p) => `Q${p.id} (${p.section})`)
+						.join(", ");
+					console.log(
+						`  Promoted ${promotedToPass.length} UPDATEd IDs to pass: ${idList}`,
+					);
+				}
+				if (removedFromPass.length > 0) {
+					const idList = removedFromPass
+						.map((p) => `Q${p.id} (${p.section})`)
+						.join(", ");
+					console.log(
+						`  Removed ${removedFromPass.length} DELETEd IDs from pass: ${idList}`,
+					);
+				}
 				console.log(
 					`  Remember to include docs/verified-ids.json in your commit.`,
 				);

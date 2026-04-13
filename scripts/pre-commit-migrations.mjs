@@ -54,16 +54,28 @@ for (const f of staged) {
 }
 
 // ─── Check 2: Migration applied to DB ─────────────────────────
+// Page through applied_migrations — Supabase REST caps each request at 1000
+// rows by default, so without pagination every migration beyond row 1000 is
+// silently invisible and the hook falsely blocks commits.
 if (URL && KEY) {
   try {
-    const resp = await fetch(
-      `${URL}/rest/v1/applied_migrations?select=filename&order=filename`,
-      { headers: { 'apikey': KEY, 'Authorization': `Bearer ${KEY}` } }
-    );
-    if (resp.ok) {
+    const tracked = new Set();
+    const pageSize = 1000;
+    let offset = 0;
+    let lastStatus = 200;
+    while (true) {
+      const resp = await fetch(
+        `${URL}/rest/v1/applied_migrations?select=filename&order=filename&limit=${pageSize}&offset=${offset}`,
+        { headers: { 'apikey': KEY, 'Authorization': `Bearer ${KEY}` } }
+      );
+      lastStatus = resp.status;
+      if (!resp.ok) break;
       const rows = await resp.json();
-      const tracked = new Set(rows.map(r => r.filename));
-
+      for (const r of rows) tracked.add(r.filename);
+      if (rows.length < pageSize) break;
+      offset += pageSize;
+    }
+    if (lastStatus >= 200 && lastStatus < 300) {
       for (const f of staged) {
         const filename = f.split('/').pop();
         if (!tracked.has(filename)) {
@@ -74,7 +86,7 @@ if (URL && KEY) {
         }
       }
     } else {
-      process.stdout.write(`\n⚠️  WARNING: Could not reach applied_migrations table (HTTP ${resp.status})\n`);
+      process.stdout.write(`\n⚠️  WARNING: Could not reach applied_migrations table (HTTP ${lastStatus})\n`);
       process.stdout.write(`   Skipping DB tracking check — verify manually.\n`);
     }
   } catch (err) {

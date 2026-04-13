@@ -60,14 +60,23 @@ async function execSQL(sql) {
 }
 
 async function fetchTracked() {
+  // Page through applied_migrations — Supabase REST caps each request at 1000 rows,
+  // so without pagination any tracker beyond row #1000 is silently invisible and every
+  // later migration looks "pending" forever.
   const applied = new Set();
+  const pageSize = 1000;
+  let offset = 0;
   try {
-    const resp = await fetch(
-      `${SUPABASE_URL}/rest/v1/applied_migrations?select=filename`,
-      { headers: { 'apikey': SERVICE_KEY, 'Authorization': `Bearer ${SERVICE_KEY}` } }
-    );
-    if (resp.ok) {
-      for (const row of await resp.json()) applied.add(row.filename);
+    while (true) {
+      const resp = await fetch(
+        `${SUPABASE_URL}/rest/v1/applied_migrations?select=filename&order=filename&limit=${pageSize}&offset=${offset}`,
+        { headers: { 'apikey': SERVICE_KEY, 'Authorization': `Bearer ${SERVICE_KEY}` } }
+      );
+      if (!resp.ok) break;
+      const rows = await resp.json();
+      for (const row of rows) applied.add(row.filename);
+      if (rows.length < pageSize) break;
+      offset += pageSize;
     }
   } catch { /* table doesn't exist yet */ }
   return applied;

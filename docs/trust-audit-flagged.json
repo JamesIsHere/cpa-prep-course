@@ -1,0 +1,439 @@
+[
+  {
+    "id": 15814,
+    "section": "aud",
+    "verdict": "fail",
+    "topic": "Specific Areas and Transactions",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Northgate Holdings recorded $22 million in goodwill from a 2023 acquisition. For the December 31, 2025 annual assessment, management concludes that the reporting unit's fair value exceeds its carrying amount by 8%, so no impairment is recorded. The engagement team at Palmer & Kline notes that the reporting unit's revenue declined 15% during 2025. The auditor should:",
+    "choices": [
+      "Accept management's conclusion because a positive cushion of 8% demonstrates no impairment exists",
+      "Evaluate the reasonableness of management's fair value assumptions, particularly given the revenue decline, and consider whether alternative assumptions would change the conclusion",
+      "Require management to record a full impairment write-down because the revenue decline indicates the goodwill is worthless",
+      "Limit testing to verifying the mathematical accuracy of management's model without evaluating the underlying assumptions"
+    ],
+    "correct_index": 2,
+    "correct_letter": "C",
+    "correct_text": "Require management to record a full impairment write-down because the revenue decline indicates the goodwill is worthless",
+    "explanation": "Correct (C): AU-C 540.13-.15. When auditing goodwill impairment, the auditor must evaluate the reasonableness of significant assumptions used in the fair value measurement. A 15% revenue decline combined with only an 8% cushion increases estimation uncertainty. The auditor should challenge whether growth rates, discount rates, and projections are realistic given current conditions and assess sensitivity to alternative assumptions.\nWrong (A): A narrow cushion combined with deteriorating performance warrants skeptical evaluation of assumptions, not automatic acceptance of management's conclusion.\nWrong (B): Revenue decline alone does not mean goodwill is worthless. The auditor evaluates whether fair value still exceeds carrying amount using reasonable assumptions, not whether to write off the entire balance.\nWrong (D): Verifying only mathematical accuracy without evaluating assumptions is insufficient for estimates with high uncertainty. AU-C 540 requires evaluation of methods, data, and assumptions."
+  },
+  {
+    "id": 15837,
+    "section": "aud",
+    "verdict": "fail",
+    "topic": "Materiality",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "During the 2025 audit of Baxter Supply Co., the engagement team identifies an unrecorded liability of $85,000 and an overstatement of revenue totaling $62,000. The team is evaluating whether these items are material to the financial statements. A misstatement in the financial statements can be material if it involves:",
+    "choices": [
+      "Only an overstatement of assets or revenues that inflates the entity's financial position",
+      "Only an understatement of liabilities or expenses that conceals obligations",
+      "Either an overstatement or an understatement of any financial statement element, whether resulting from error or fraud",
+      "Only misstatements that exceed 5% of net income before taxes"
+    ],
+    "correct_index": 3,
+    "correct_letter": "D",
+    "correct_text": "Only misstatements that exceed 5% of net income before taxes",
+    "explanation": "Correct (D): AU-C 320.02. A misstatement is material if it could reasonably influence user decisions. Both overstatements and understatements, whether from error or fraud, can meet this threshold. There is no directional restriction on what constitutes a material misstatement.\nWrong (A): Understatements of assets or overstatements of liabilities can also be material.\nWrong (B): Overstatements of liabilities or expenses are equally capable of being material misstatements.\nWrong (C): While this answer is closest, the 5% threshold is a common guideline, not an absolute rule; materiality also considers qualitative factors."
+  },
+  {
+    "id": 12837,
+    "section": "aud",
+    "verdict": "fail",
+    "topic": "Tests of Controls",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "An auditor visits the Oakmont Bank branch to observe the teller supervisor''s daily cash-drawer reconciliation process. The audit manager reminds the team that observation as a control testing method is limited because it provides evidence only about:",
+    "choices": [
+      "Controls that are performed by senior management",
+      "Controls that involve mathematical calculations",
+      "The point in time at which the observation takes place",
+      "Controls in the revenue cycle but not other cycles"
+    ],
+    "correct_index": 3,
+    "correct_letter": "D",
+    "correct_text": "Controls in the revenue cycle but not other cycles",
+    "explanation": "Correct (D): AU-C 330.A26. Observation provides evidence that a control is being performed at the time of observation but does not provide evidence about how the control operated at other times during the audit period. This point-in-time limitation means observation alone is generally insufficient to conclude on operating effectiveness for the full period. Wrong (A): Observation can be applied to controls performed by any level of personnel, not only senior management. Wrong (B): Observation is not limited to mathematical controls; it can apply to any visible control activity. Wrong (C): While this is the correct concept, the answer choice labeled D more precisely states the limitation — observation provides evidence only at the time it occurs."
+  },
+  {
+    "id": 13093,
+    "section": "aud",
+    "verdict": "fail",
+    "topic": "Responding to Assessed Risks",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "A staff auditor on the Belmont Manufacturing engagement proposes relying primarily on inquiries of management to address several assessed risks during fieldwork. The engagement manager reviews the proposed approach. Which statement is true about the use of inquiry when responding to assessed risks?",
+    "choices": [
+      "Inquiry alone is sufficient to test the operating effectiveness of controls",
+      "Inquiry may corroborate other evidence but is not sufficient by itself as the sole audit procedure for any assertion",
+      "Inquiry is the most reliable form of audit evidence available to the auditor",
+      "Inquiry of management is required only when fraud risk factors are present"
+    ],
+    "correct_index": 2,
+    "correct_letter": "C",
+    "correct_text": "Inquiry is the most reliable form of audit evidence available to the auditor",
+    "explanation": "Correct (C): Under AU-C 500.A23-.A25, inquiry alone is generally not sufficient to provide appropriate audit evidence. While inquiry is an important procedure that the auditor uses extensively, it must be combined with other procedures such as inspection, observation, or reperformance to provide sufficient appropriate evidence. Wrong (A): Tests of controls require procedures beyond inquiry, such as observation, inspection, or reperformance per AU-C 330.10. Wrong (B): Oral inquiry is among the least reliable forms of evidence. Wrong (D): Inquiry of management is a standard procedure throughout the audit, not limited to fraud situations."
+  },
+  {
+    "id": 13869,
+    "section": "aud",
+    "verdict": "fail",
+    "topic": "Nature and Scope of Engagements",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "During the audit of Veritas Financial Group, the engagement partner reminds the team that all evidence must be evaluated with a questioning mind, especially given an aggressive revenue recognition environment. What does professional skepticism require of an auditor?",
+    "choices": [
+      "Assuming management is dishonest until proven otherwise",
+      "Accepting all management representations without question",
+      "Maintaining a questioning mind and critically assessing audit evidence",
+      "Relying exclusively on external third-party confirmations"
+    ],
+    "correct_index": 3,
+    "correct_letter": "D",
+    "correct_text": "Relying exclusively on external third-party confirmations",
+    "explanation": "Correct (D): AU-C 200.14 defines professional skepticism as an attitude that includes a questioning mind, being alert to conditions that may indicate possible misstatement, and a critical assessment of audit evidence. It does not presume dishonesty but also does not assume unquestioned honesty.\nWrong (A): Professional skepticism does not presume dishonesty; it maintains a neutral questioning attitude.\nWrong (B): Accepting representations without question is the opposite of professional skepticism.\nWrong (C): Relying exclusively on external confirmations ignores other valid forms of evidence and does not define skepticism."
+  },
+  {
+    "id": 4754,
+    "section": "far",
+    "verdict": "fail",
+    "topic": "Accounting Changes and Error Corrections",
+    "difficulty": "hard",
+    "cognitive_level": 3,
+    "stem": "In Year 3, a company discovers that it overstated ending inventory by $30,000 in Year 1 (Year 1 statements are not presented comparatively). Assuming a 25% tax rate, the correcting entry in Year 3 includes a debit to:",
+    "choices": [
+      "Retained earnings for $22,500",
+      "Inventory for $30,000",
+      "Cost of goods sold for $30,000",
+      "Retained earnings for $30,000"
+    ],
+    "correct_index": 0,
+    "correct_letter": "A",
+    "correct_text": "Retained earnings for $22,500",
+    "explanation": "Correct (A): Under ASC 250-10-45-23, prior-period errors are corrected by restating previously issued financial statements. The Year 1 ending inventory overstatement understated COGS and overstated net income by $30,000 pre-tax. Because Year 1 is not presented comparatively, the correction adjusts opening retained earnings: after-tax effect = $30,000 x (1 - 0.25) = $22,500. The entry debits Retained Earnings $22,500 and Deferred Tax Asset $7,500, crediting Inventory $30,000.\nWrong (B): Debiting Inventory for $30,000 would increase inventory, worsening the overstatement rather than correcting it. The inventory must be credited (reduced) by $30,000.\nWrong (C): Debiting Cost of Goods Sold $30,000 would be appropriate only if the error were discovered and corrected in Year 2 (a self-correcting error in the current period). For a Year 1 error corrected in Year 3, retained earnings is adjusted directly.\nWrong (D): Debiting Retained Earnings for the full $30,000 ignores the tax effect. The after-tax impact on retained earnings is $22,500, with the remaining $7,500 reflected as a deferred tax asset adjustment."
+  },
+  {
+    "id": 15148,
+    "section": "far",
+    "verdict": "fail",
+    "topic": "Subsequent Events",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Linden Corp. has a $3,000,000 note payable classified as a current liability at December 31, Year 1 because it matures on April 1, Year 2. On February 20, Year 2, before financial statements are issued, Linden refinances the note with a new 5-year term loan. Can Linden reclassify the liability as noncurrent at December 31?",
+    "choices": [
+      "Yes, because the refinancing eliminates the current obligation",
+      "No, because refinancing after the balance sheet date does not change the classification",
+      "Yes, but only if the refinancing agreement was completed before December 31",
+      "No, unless the entity has both the intent and demonstrated ability to refinance on a long-term basis"
+    ],
+    "correct_index": 2,
+    "correct_letter": "C",
+    "correct_text": "Yes, but only if the refinancing agreement was completed before December 31",
+    "explanation": "Correct (C): Per ASC 470-10-45-14, short-term obligations can be excluded from current liabilities only if the entity intends to refinance on a long-term basis and demonstrates the ability to do so, which requires either a post-balance-sheet refinancing or a financing agreement that meets specific criteria. However, the refinancing agreement must meet the conditions of ASC 470-10-45-14(b), including being in place before the financial statements are issued. A completed refinancing after year-end but before issuance satisfies this. Wrong (A): Simply completing a refinancing does not automatically justify reclassification without meeting ASC 470 criteria. Wrong (B): Post-balance-sheet refinancing can support reclassification if it meets the criteria in ASC 470. Wrong (D): While intent and ability are required, the completed refinancing before issuance already demonstrates both."
+  },
+  {
+    "id": 15149,
+    "section": "far",
+    "verdict": "fail",
+    "topic": "Subsequent Events",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Maxton Corp., a nonpublic entity, completes its December 31, Year 1 financial statements on March 15, Year 2 and provides them to its bank and investors on March 20. What date should Maxton disclose as the date through which subsequent events have been evaluated?",
+    "choices": [
+      "December 31, Year 1",
+      "March 15, Year 2",
+      "March 20, Year 2",
+      "The date of the auditor's report"
+    ],
+    "correct_index": 3,
+    "correct_letter": "D",
+    "correct_text": "The date of the auditor's report",
+    "explanation": "Correct (D): Per ASC 855-10-50-1, an entity must disclose the date through which subsequent events have been evaluated and whether that date is the date the financial statements were issued or were available to be issued. For a non-SEC filer, the relevant date is when the statements are available to be issued. Since Maxton provides them on March 20, that is the evaluation date to disclose. Wrong (A): The balance sheet date is not the subsequent event evaluation date. Wrong (B): The completion date does not determine when statements are available to be issued if distribution occurs later. Wrong (C): While March 20 is the distribution date, the entity discloses this as the date through which events were evaluated, identified as when statements were available to be issued."
+  },
+  {
+    "id": 15150,
+    "section": "far",
+    "verdict": "fail",
+    "topic": "Subsequent Events",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Preston Corp. has a December 31, Year 1 year-end. On January 28, Year 2, new federal tax legislation is enacted that significantly reduces the corporate tax rate effective for Year 2 onwards. Preston has $800,000 in deferred tax assets measured at the old rate. How should this event be treated in the Year 1 financial statements?",
+    "choices": [
+      "Remeasure deferred tax assets at the new rate in the Year 1 financial statements",
+      "Disclose the tax rate change and its estimated impact in the notes to Year 1 financial statements",
+      "No action is required because the legislation was enacted in Year 2",
+      "Record the deferred tax adjustment as an extraordinary item in Year 1"
+    ],
+    "correct_index": 0,
+    "correct_letter": "A",
+    "correct_text": "Remeasure deferred tax assets at the new rate in the Year 1 financial statements",
+    "explanation": "Correct (A): Per ASC 740-10-45-15, the effects of a change in tax law are recognized in the period that includes the enactment date. Since the law was enacted January 28, Year 2, the remeasurement is a Year 2 event. However, per ASC 855-10-25-3, this is a Type II nonrecognized event requiring disclosure. But per ASC 740-10-25-47, deferred taxes are adjusted in the enactment period. The correct treatment is to disclose the impact in Year 1 notes as a Type II event. Wrong (B): This is actually the correct treatment — disclosure in the notes. Wrong (C): Material subsequent events must be disclosed even when not recognized. Wrong (D): Extraordinary item classification was eliminated under ASU 2015-01."
+  },
+  {
+    "id": 15202,
+    "section": "far",
+    "verdict": "review",
+    "topic": "Financial Statement Ratios",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Glenmore Corp. spends $3,000,000 on a major equipment overhaul. Under one approach, the cost is capitalized and depreciated over 5 years. Under the alternative, the entire cost is expensed immediately. Interest expense is $500,000 in both scenarios. In Year 1, how does capitalizing the cost (versus expensing) affect Glenmore's times interest earned ratio?",
+    "choices": [
+      "TIE is higher under capitalizing because EBIT increases by $2,400,000",
+      "TIE is unchanged because total cash outflow is identical under both approaches",
+      "TIE is lower under capitalizing because total assets increase, reducing efficiency",
+      "TIE is higher under capitalizing because only $600,000 depreciation hits EBIT versus $3,000,000 expense"
+    ],
+    "correct_index": 0,
+    "correct_letter": "A",
+    "correct_text": "TIE is higher under capitalizing because EBIT increases by $2,400,000",
+    "explanation": "Correct (A): Per ASC 360-10, capitalizing the $3,000,000 cost and depreciating over 5 years creates $600,000 annual depreciation. EBIT is reduced by only $600,000 instead of the full $3,000,000. This increases EBIT by $2,400,000 relative to expensing, substantially improving the TIE ratio (EBIT / interest expense).\nWrong (B): While cash outflow is identical, accrual-based ratios like TIE use EBIT, which differs materially between capitalizing and expensing.\nWrong (C): Higher total assets may lower asset turnover, but TIE depends on EBIT and interest, not total assets.\nWrong (D): This identifies the correct direction but option A states the precise EBIT difference of $2,400,000 ($3,000,000 − $600,000)."
+  },
+  {
+    "id": 14936,
+    "section": "bar",
+    "verdict": "fail",
+    "topic": "Financial Statement Analysis",
+    "difficulty": "hard",
+    "cognitive_level": 4,
+    "stem": "Company A has ROE of 18%, net profit margin of 6%, and asset turnover of 1.5. Company B has ROE of 18%, net profit margin of 9%, and asset turnover of 1.0. Both have the same ROE. Using DuPont analysis, which statement best evaluates the relative risk profiles?",
+    "choices": [
+      "Company B is riskier because its equity multiplier must be 2.0 versus Company A's 2.0",
+      "Company A is riskier because it relies more heavily on financial leverage to achieve its ROE",
+      "Both companies have identical risk profiles since their ROEs are equal",
+      "Company B is riskier because its lower asset turnover indicates operational inefficiency"
+    ],
+    "correct_index": 0,
+    "correct_letter": "A",
+    "correct_text": "Company B is riskier because its equity multiplier must be 2.0 versus Company A's 2.0",
+    "explanation": "The correct answer is that both companies have identical leverage-based risk profiles, as demonstrated through DuPont analysis consistent with ASC 280-10 performance measurement principles. Company A: equity multiplier = 18% / (6% x 1.5) = 2.0. Company B: equity multiplier = 18% / (9% x 1.0) = 2.0. Both have the same financial leverage of 2.0, meaning their capital structures carry equal risk. While Company B has lower asset turnover and higher margins, this reflects different operating strategies rather than higher financial risk, unlike what the equity multiplier difference would suggest."
+  },
+  {
+    "id": 15051,
+    "section": "bar",
+    "verdict": "fail",
+    "topic": "Pension and Postretirement Benefits",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "Norwood Manufacturing contributed $1.8 million to its defined benefit plan to satisfy federal funding requirements, but the pension expense calculated for financial reporting purposes is only $1.5 million. What is the relationship between minimum funding requirements and pension expense recognized for financial reporting?",
+    "choices": [
+      "ERISA funding requirements and GAAP pension expense are always identical amounts",
+      "ERISA minimum funding is based on tax law and actuarial standards while GAAP expense follows ASC 715",
+      "GAAP pension expense is always greater than the ERISA minimum funding requirement",
+      "ERISA funding directly determines the amount of pension expense reported on the income statement"
+    ],
+    "correct_index": 3,
+    "correct_letter": "D",
+    "correct_text": "ERISA funding directly determines the amount of pension expense reported on the income statement",
+    "explanation": "Correct (D): ERISA minimum funding requirements are determined under IRC and actuarial standards (e.g., IRC Section 430), while GAAP pension expense is calculated under ASC 715-30-35. The two amounts typically differ because they use different assumptions, methods, and objectives. ERISA governs cash contributions; ASC 715 governs financial reporting. Wrong (A): The two amounts are calculated independently and rarely match. Wrong (B): While partially correct in distinguishing the frameworks, this choice incorrectly implies ERISA is solely tax-law-based. Wrong (C): GAAP expense may be greater or less than ERISA funding in any given year."
+  },
+  {
+    "id": 15058,
+    "section": "bar",
+    "verdict": "fail",
+    "topic": "Pension and Postretirement Benefits",
+    "difficulty": "hard",
+    "cognitive_level": 4,
+    "stem": "Bellingham Corp. sponsors both a defined benefit pension plan and a retiree health care plan (OPEB). The OPEB plan provides medical benefits to retirees over age 55 with at least 15 years of service. A newly hired 40-year-old employee will reach full eligibility at age 55. How does the attribution period for this employee's OPEB benefits differ from the pension benefit attribution, and what is the practical consequence?",
+    "choices": [
+      "OPEB benefits are attributed from hire date to expected retirement date, identical to pension benefits",
+      "OPEB cost is front-loaded because the attribution period ends at the full eligibility date rather than the expected retirement date",
+      "OPEB benefits use the expected retirement date while pension benefits use the full eligibility date for attribution",
+      "There is no difference; both OPEB and pension benefits are attributed over the same service period"
+    ],
+    "correct_index": 2,
+    "correct_letter": "C",
+    "correct_text": "OPEB benefits use the expected retirement date while pension benefits use the full eligibility date for attribution",
+    "explanation": "Correct (C): ASC 715-60-35-6 requires OPEB benefits to be attributed from the employee's date of hire to the full eligibility date (age 55 with 15 years of service), not the expected retirement date. This is unlike pensions, where benefits accrue until retirement. This front-loads OPEB cost recognition because the attribution period is shorter. Wrong (A): OPEB attribution ends at full eligibility, not expected retirement; this is a key distinction from pension accounting. Wrong (B): While the result is correct (front-loading), the answer choice reverses which plan uses which date. Wrong (D): The attribution periods differ significantly between OPEB and pension plans, which is a fundamental distinction under ASC 715."
+  },
+  {
+    "id": 15060,
+    "section": "bar",
+    "verdict": "fail",
+    "topic": "Pension and Postretirement Benefits",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Langley Inc. expected a return of $600,000 on plan assets but earned an actual return of $820,000 during Year 10. The beginning-of-year net actuarial loss in accumulated OCI was $200,000, and the corridor threshold is $350,000. How does the $220,000 asset gain affect Langley's financial statements for Year 10?",
+    "choices": [
+      "Recognized as a credit to other comprehensive income, reducing the net actuarial loss in AOCI to a net loss of zero",
+      "Recognized as a $220,000 gain in net periodic pension cost immediately",
+      "Recognized in OCI, reducing the net actuarial loss in AOCI from $200,000 to a net gain of $20,000",
+      "Offset against the $200,000 existing loss, with the $20,000 excess deferred"
+    ],
+    "correct_index": 0,
+    "correct_letter": "A",
+    "correct_text": "Recognized as a credit to other comprehensive income, reducing the net actuarial loss in AOCI to a net loss of zero",
+    "explanation": "Correct (A): ASC 715-30-35-22 requires the difference between actual and expected return ($820,000 − $600,000 = $220,000 gain) to be recognized in OCI. This reduces the net actuarial loss in AOCI from $200,000 to a net gain position. However, the net amount at year-end determines corridor amortization, not immediate income recognition. Wrong (B): Asset-related gains and losses are not immediately recognized in pension expense; they flow through OCI first. Wrong (C): While the direction is correct, the net position would be a $20,000 gain (credit), not just reducing to zero. Wrong (D): The full $220,000 gain goes to OCI; there is no deferral mechanism separate from the OCI process."
+  },
+  {
+    "id": 15062,
+    "section": "bar",
+    "verdict": "fail",
+    "topic": "Pension and Postretirement Benefits",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Noble Corp. eliminates a division, resulting in a curtailment that reduces the PBO by $1,800,000. At the curtailment date, Noble has unrecognized prior service cost of $600,000 and a net actuarial loss in AOCI of $400,000. The proportion of future service eliminated is 40%. What is the net curtailment gain or loss?",
+    "choices": [
+      "Net curtailment gain of $1,800,000",
+      "Net curtailment gain of $1,560,000",
+      "Net curtailment gain of $1,640,000",
+      "Net curtailment gain of $1,200,000"
+    ],
+    "correct_index": 2,
+    "correct_letter": "C",
+    "correct_text": "Net curtailment gain of $1,640,000",
+    "explanation": "Correct (C): ASC 715-30-35-93 requires recognizing in curtailment: (1) the unrecognized prior service cost associated with eliminated service = 40% × $600,000 = $240,000 loss, and (2) if the curtailment reduces the PBO, a gain equal to the PBO decrease minus the proportionate share of net loss = $1,800,000. The net actuarial loss proportion recognized = 40% × $400,000 = $160,000. Net curtailment effect = $1,800,000 − $240,000 + $240,000 − $160,000 = $1,640,000 gain. Wrong (A): This ignores the required acceleration of prior service cost and net loss. Wrong (B): This only accounts for the prior service cost acceleration but omits the net actuarial loss acceleration. Wrong (D): This incorrectly nets only the PBO reduction less prior service cost without addressing actuarial losses."
+  },
+  {
+    "id": 15595,
+    "section": "bar",
+    "verdict": "fail",
+    "topic": "Financial Valuation Methods",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Ashworth Manufacturing currently has no debt and a firm value of $120 million. The CFO is evaluating how much debt to add. According to trade-off theory, the optimal capital structure is reached at the point where:",
+    "choices": [
+      "The cost of equity equals the cost of debt",
+      "Total firm value is maximized and WACC is minimized",
+      "The debt-to-equity ratio reaches 1.0",
+      "The marginal tax benefit of debt equals zero"
+    ],
+    "correct_index": 3,
+    "correct_letter": "D",
+    "correct_text": "The marginal tax benefit of debt equals zero",
+    "explanation": "The correct answer is that the optimal capital structure occurs where the marginal tax shield equals the marginal distress cost, per trade-off theory consistent with capital structure analysis under ASC 470-10 and the framework underlying FASB''s debt classification standards. At this point, WACC is minimized and firm value is maximized. Unlike the suggestion that the cost of equity equals the cost of debt at the optimum, equity always commands a risk premium over debt due to its residual claim, so the two costs never equalize in practice."
+  },
+  {
+    "id": 15614,
+    "section": "bar",
+    "verdict": "fail",
+    "topic": "Financial Valuation Methods",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Fairview Pension Fund has a liability of $50 million due in 7 years. The fund manager holds Bond A (modified duration 4.2 years, value $25 million) and Bond B (modified duration 9.8 years, value $25 million). Interest rates rise by 50 basis points. Analyze whether the portfolio is immunized against this rate change and explain the role duration plays in the immunization strategy.",
+    "choices": [
+      "The portfolio is not immunized because both bonds will lose value when rates rise",
+      "The portfolio is not immunized because the weighted duration of 7.0 years only matches by coincidence and convexity mismatches create residual risk, but the duration matching provides a first-order hedge against the rate change",
+      "The portfolio is fully immunized because the weighted average duration equals the liability horizon, guaranteeing the fund will meet its obligation regardless of rate changes",
+      "The portfolio is immunized only if rates rise; a rate decrease would create a shortfall"
+    ],
+    "correct_index": 3,
+    "correct_letter": "D",
+    "correct_text": "The portfolio is immunized only if rates rise; a rate decrease would create a shortfall",
+    "explanation": "Per ASC 715-30-35 and fixed-income immunization theory, portfolio duration equals (0.5 × 4.2) + (0.5 × 9.8) = 7.0 years, matching the 7-year liability horizon. Duration matching provides first-order immunization — price losses from rising rates are approximately offset by higher reinvestment income on coupons. However, perfect immunization also requires matching convexity. The claim that rising rates simply cause bond losses overlooks the reinvestment offset that is the essence of immunization, whereas duration matching provides substantial but not perfect protection since convexity mismatches and non-parallel shifts create residual risk."
+  },
+  {
+    "id": 14456,
+    "section": "bar",
+    "verdict": "review",
+    "topic": "Foreign Currency Transactions",
+    "difficulty": "hard",
+    "cognitive_level": 3,
+    "stem": "Prescott Global (U.S.) has a foreign subsidiary with local currency functional currency. The subsidiary has total assets of LC 80,000,000 and total liabilities of LC 50,000,000. Within assets, LC 30,000,000 are nonmonetary (inventory and fixed assets at historical cost). The local currency depreciated 10% during the year. If the subsidiary's functional currency were changed to USD (requiring the temporal method instead of the current rate method), how would the translation exposure change?",
+    "choices": [
+      "Exposure decreases from LC 30,000,000 net assets to LC 20,000,000 net monetary liabilities, and the direction of the gain/loss reverses",
+      "Exposure increases because both monetary and nonmonetary items are exposed under the temporal method",
+      "Exposure remains the same because both methods translate the same total net assets",
+      "Exposure decreases from LC 80,000,000 total assets to LC 50,000,000 net monetary assets"
+    ],
+    "correct_index": 0,
+    "correct_letter": "A",
+    "correct_text": "Exposure decreases from LC 30,000,000 net assets to LC 20,000,000 net monetary liabilities, and the direction of the gain/loss reverses",
+    "explanation": "Per ASC 830-10-45, under the current rate method all net assets (LC 80M − LC 50M = LC 30M) are exposed to translation because all assets and liabilities are translated at the current exchange rate. Under the temporal method per ASC 830-10-55, only net monetary items are exposed: monetary assets (LC 50M) minus monetary liabilities (LC 50M) yields a near-zero net monetary position, since nonmonetary items (LC 30M) are translated at historical rates. The exposure shifts from LC 30M net asset exposure to a near-zero net monetary position, whereas the claim that both methods produce identical exposures is incorrect because the temporal method excludes nonmonetary items from current-rate translation."
+  },
+  {
+    "id": 15094,
+    "section": "bar",
+    "verdict": "review",
+    "topic": "Pension and Postretirement Benefits",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Foxworth Manufacturing amends its defined benefit pension plan, creating $900,000 of prior service cost. The remaining service years of the 60 active plan participants are as follows: 20 employees have 5 years remaining, 25 employees have 10 years remaining, and 15 employees have 15 years remaining. Using the straight-line method, what is the annual amortization of prior service cost?",
+    "choices": [
+      "$90,000",
+      "$60,000",
+      "$100,000",
+      "$64,286"
+    ],
+    "correct_index": 0,
+    "correct_letter": "A",
+    "correct_text": "$90,000",
+    "explanation": "Correct (A): Under ASC 715-30-35-11, an alternative straight-line amortization method divides the total prior service cost by the average remaining service period. The average remaining service period = (20 x 5 + 25 x 10 + 15 x 15) / 60 = (100 + 250 + 225) / 60 = 575 / 60 = 9.58 years. However, using the simple average remaining years of expected future service: $900,000 / 9.58 ≈ $93,945. The simpler approach uses the average: (5 + 10 + 15) / 3 = 10 years, yielding $900,000 / 10 = $90,000. Wrong (B): Divides by the longest service period (15 years) rather than the weighted average. Wrong (C): Divides by the weighted period but rounds down the service years incorrectly. Wrong (D): Uses a 14-year average computed incorrectly from total service years."
+  },
+  {
+    "id": 15749,
+    "section": "isc",
+    "verdict": "fail",
+    "topic": "Data Management and Lifecycle",
+    "difficulty": "medium",
+    "cognitive_level": 2,
+    "stem": "Oakmont Financial's controller discovers that vendor payment amounts in the accounts payable system occasionally exceed contract limits, but these overages are not detected until the monthly close review. The controller wants an automated control that flags data quality issues in near real time. Which control BEST addresses this need?",
+    "choices": [
+      "Encrypting all vendor payment records at rest",
+      "Requiring dual approval for all vendor payments",
+      "Implementing automated data quality exception reports that flag out-of-range values",
+      "Scheduling quarterly data quality audits of the vendor master file"
+    ],
+    "correct_index": 3,
+    "correct_letter": "D",
+    "correct_text": "Scheduling quarterly data quality audits of the vendor master file",
+    "explanation": "Correct (D): Per COBIT 2019 DSS06.03 and NIST SP 800-53 SI-4, automated exception reports that trigger when data values fall outside defined thresholds provide near-real-time detection of data quality issues. This directly addresses the controller's need to identify contract-limit overages before the monthly close. Wrong (A): Encryption at rest protects confidentiality but does not detect or flag data quality anomalies such as overpayments. Wrong (B): Dual approval is a preventive authorization control, not a detective monitoring control for data quality deviations. Wrong (C): Quarterly audits are periodic, not near real time, and would not resolve the timing gap the controller identified."
+  },
+  {
+    "id": 15794,
+    "section": "tcp",
+    "verdict": "fail",
+    "topic": "Entity Choice and Planning",
+    "difficulty": "easy",
+    "cognitive_level": 1,
+    "stem": "The Warren family owns all shares of Cedar Ridge Construction Inc., an S corporation. The family includes 14 members across three generations who each hold stock individually. The company''s CPA is evaluating whether the corporation can add new non-family investors without exceeding the 100-shareholder limit. For purposes of the S corporation shareholder limit, how are members of the same family treated?",
+    "choices": [
+      "Each family member counts as a separate shareholder regardless of relationship",
+      "Family members within six generations of a common ancestor are counted as one shareholder",
+      "Only spouses are counted as one shareholder; all others count separately",
+      "Family members are counted as one shareholder only if they hold stock jointly"
+    ],
+    "correct_index": 2,
+    "correct_letter": "C",
+    "correct_text": "Only spouses are counted as one shareholder; all others count separately",
+    "explanation": "Correct (C): Under IRC Section 1361(c)(1), members of a family — defined as a common ancestor and all lineal descendants within six generations, plus their spouses — are treated as a single shareholder for the 100-shareholder limit. This allows large family-owned businesses to maintain S status. Wrong (A): Family attribution specifically reduces the shareholder count by grouping family members. Wrong (B): While this correctly states the six-generation rule, the answer to the question is that they are counted as one shareholder, which is choice C. Wrong (D): Joint ownership is not the operative rule; the family attribution applies regardless of how shares are titled."
+  },
+  {
+    "id": 14194,
+    "section": "tcp",
+    "verdict": "review",
+    "topic": "Wealth Transfer and Gifting Strategies",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Dr. Philip Hartwell, terminally ill, transfers $500,000 in securities to his nephew three weeks before his death, telling the nephew \"I want you to have this since I won't be here much longer.\" The transfer is characterized as a gift causa mortis under state property law. Assess the federal transfer tax treatment of this gift.",
+    "choices": [
+      "The gift is exempt from all transfer taxes because gifts causa mortis are treated as testamentary transfers governed only by state law",
+      "The gift is subject to gift tax as an inter vivos transfer; federal tax law does not distinguish between gifts causa mortis and other lifetime gifts",
+      "The gift is subject to estate tax only and is not a taxable gift because the donor died shortly after the transfer",
+      "The gift is subject to both gift tax and estate tax, resulting in double taxation of the transferred property"
+    ],
+    "correct_index": 3,
+    "correct_letter": "D",
+    "correct_text": "The gift is subject to both gift tax and estate tax, resulting in double taxation of the transferred property",
+    "explanation": "Correct (D): For federal transfer tax purposes, a gift causa mortis is treated as a completed gift subject to gift tax at the time of transfer under Section 2501. Additionally, under Section 2035(a), because the transfer was made within three years of death and was motivated by the donor's contemplation of death, the property may be included in the gross estate. However, Section 2001(b) provides a credit for gift taxes paid to prevent full double taxation. Wrong (A): Federal tax law applies its own classification rules regardless of state property law characterization; gifts causa mortis are subject to federal transfer tax. Wrong (B): While the gift is subject to gift tax, the analysis is incomplete because Section 2035 may also cause estate inclusion for transfers in contemplation of death. Wrong (C): The transfer is not solely subject to estate tax; it is a completed lifetime gift subject to gift tax, with potential estate inclusion under Section 2035."
+  },
+  {
+    "id": 15795,
+    "section": "tcp",
+    "verdict": "review",
+    "topic": "Entity Choice and Planning",
+    "difficulty": "medium",
+    "cognitive_level": 3,
+    "stem": "Prescott Industries was an S corporation for 10 years, accumulating an AAA balance of $250,000. The company revokes its S election and becomes a C corporation. In its first year as a C corporation, Prescott earns $150,000 and distributes $300,000 to its sole shareholder. The shareholder's stock basis is $400,000. In what order are the distributions sourced?",
+    "choices": [
+      "First from AAA ($250,000 tax-free return of basis), then from current E&P ($50,000 taxable dividend)",
+      "First from current E&P ($150,000 taxable dividend), then from the frozen AAA balance ($150,000 tax-free return of basis)",
+      "Entirely from current E&P ($150,000 taxable dividend) and then return of basis ($150,000 reducing stock basis)",
+      "First from current E&P ($150,000 taxable dividend), then from AAA ($150,000 tax-free), with no basis reduction"
+    ],
+    "correct_index": 3,
+    "correct_letter": "D",
+    "correct_text": "First from current E&P ($150,000 taxable dividend), then from AAA ($150,000 tax-free), with no basis reduction",
+    "explanation": "Correct (D): When an S corporation converts to a C corporation, the AAA balance is frozen. Under IRC Section 1371(e), distributions are sourced first from current E&P ($150,000 taxable as a dividend), then from accumulated E&P (none here), then from the frozen AAA balance ($150,000 tax-free as a return of previously taxed S corporation income). The AAA distributions are not taxable because they represent income already taxed to the shareholder during S years. Wrong (A): Current E&P must be distributed before AAA under C corporation distribution ordering rules. Wrong (B): Close but incorrectly characterizes the AAA distribution as return of basis rather than return of previously taxed income. Wrong (C): This ignores the frozen AAA balance, which is available before reducing stock basis."
+  }
+]
