@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-14T11:22:53.931Z",
+  "generatedAt": "2026-04-14T15:47:26.646Z",
   "totalTarget": 9000,
   "batchSize": 30,
   "difficultyTargets": {
@@ -11,7 +11,7 @@
     {
       "section": "aud",
       "sectionId": 1,
-      "currentTotal": 1446,
+      "currentTotal": 1435,
       "targetTotal": 1500,
       "toGenerate": 0,
       "toTrim": 0,
@@ -225,21 +225,21 @@
             25,
             35
           ],
-          "currentCount": 61,
+          "currentCount": 53,
           "targetCount": 64,
           "toGenerate": 0,
           "toTrim": 0,
           "batches": 0,
           "difficulty": {
-            "easy": 1,
-            "medium": 2,
-            "hard": 0
+            "easy": 3,
+            "medium": 6,
+            "hard": 2
           },
           "blooms": {
-            "l1": 1,
-            "l2": 1,
-            "l3": 1,
-            "l4": 0
+            "l1": 3,
+            "l2": 4,
+            "l3": 3,
+            "l4": 1
           }
         },
         {
@@ -275,20 +275,20 @@
             25,
             35
           ],
-          "currentCount": 64,
+          "currentCount": 61,
           "targetCount": 64,
           "toGenerate": 0,
           "toTrim": 0,
           "batches": 0,
           "difficulty": {
-            "easy": 0,
-            "medium": 0,
+            "easy": 1,
+            "medium": 2,
             "hard": 0
           },
           "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
+            "l1": 1,
+            "l2": 1,
+            "l3": 1,
             "l4": 0
           }
         },
@@ -1358,11 +1358,11 @@
     {
       "section": "reg",
       "sectionId": 3,
-      "currentTotal": 1437,
+      "currentTotal": 1410,
       "targetTotal": 1500,
-      "toGenerate": 0,
+      "toGenerate": 90,
       "toTrim": 0,
-      "totalBatches": 0,
+      "totalBatches": 3,
       "topics": [
         {
           "topic": "Circular 230",
@@ -1374,9 +1374,9 @@
           ],
           "currentCount": 42,
           "targetCount": 45,
-          "toGenerate": 0,
+          "toGenerate": 3,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 1,
             "medium": 2,
@@ -1399,9 +1399,9 @@
           ],
           "currentCount": 40,
           "targetCount": 45,
-          "toGenerate": 0,
+          "toGenerate": 5,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 2,
             "medium": 3,
@@ -1474,9 +1474,9 @@
           ],
           "currentCount": 44,
           "targetCount": 45,
-          "toGenerate": 0,
+          "toGenerate": 1,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 0,
             "medium": 1,
@@ -1599,9 +1599,9 @@
           ],
           "currentCount": 58,
           "targetCount": 60,
-          "toGenerate": 0,
+          "toGenerate": 2,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 1,
             "medium": 1,
@@ -1624,9 +1624,9 @@
           ],
           "currentCount": 48,
           "targetCount": 50,
-          "toGenerate": 0,
+          "toGenerate": 2,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 1,
             "medium": 1,
@@ -1649,9 +1649,9 @@
           ],
           "currentCount": 47,
           "targetCount": 50,
-          "toGenerate": 0,
+          "toGenerate": 3,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 1,
             "medium": 2,
@@ -1674,9 +1674,9 @@
           ],
           "currentCount": 43,
           "targetCount": 50,
-          "toGenerate": 0,
+          "toGenerate": 7,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 2,
             "medium": 4,
@@ -1699,9 +1699,9 @@
           ],
           "currentCount": 65,
           "targetCount": 68,
-          "toGenerate": 0,
+          "toGenerate": 3,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 1,
             "medium": 2,
@@ -1724,9 +1724,9 @@
           ],
           "currentCount": 67,
           "targetCount": 68,
-          "toGenerate": 0,
+          "toGenerate": 1,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 0,
             "medium": 1,
@@ -1749,9 +1749,9 @@
           ],
           "currentCount": 66,
           "targetCount": 68,
-          "toGenerate": 0,
+          "toGenerate": 2,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 1,
             "medium": 1,
@@ -1774,9 +1774,9 @@
           ],
           "currentCount": 64,
           "targetCount": 68,
-          "toGenerate": 0,
+          "toGenerate": 4,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 1,
             "medium": 2,
@@ -1824,9 +1824,9 @@
           ],
           "currentCount": 67,
           "targetCount": 68,
-          "toGenerate": 0,
+          "toGenerate": 1,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 0,
             "medium": 1,
@@ -1849,9 +1849,9 @@
           ],
           "currentCount": 71,
           "targetCount": 83,
-          "toGenerate": 0,
+          "toGenerate": 12,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 4,
             "medium": 6,
@@ -1874,9 +1874,9 @@
           ],
           "currentCount": 78,
           "targetCount": 84,
-          "toGenerate": 0,
+          "toGenerate": 6,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 2,
             "medium": 3,
@@ -1897,21 +1897,21 @@
             23,
             33
           ],
-          "currentCount": 79,
+          "currentCount": 52,
           "targetCount": 83,
-          "toGenerate": 0,
+          "toGenerate": 31,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 2,
           "difficulty": {
-            "easy": 1,
-            "medium": 2,
-            "hard": 1
+            "easy": 9,
+            "medium": 16,
+            "hard": 6
           },
           "blooms": {
-            "l1": 1,
-            "l2": 1,
-            "l3": 1,
-            "l4": 1
+            "l1": 8,
+            "l2": 11,
+            "l3": 8,
+            "l4": 4
           }
         },
         {
@@ -1949,9 +1949,9 @@
           ],
           "currentCount": 77,
           "targetCount": 84,
-          "toGenerate": 0,
+          "toGenerate": 7,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
             "easy": 2,
             "medium": 4,
@@ -2916,11 +2916,11 @@
     {
       "section": "tcp",
       "sectionId": 6,
-      "currentTotal": 1399,
+      "currentTotal": 1293,
       "targetTotal": 1500,
-      "toGenerate": 101,
+      "toGenerate": 207,
       "toTrim": 0,
-      "totalBatches": 4,
+      "totalBatches": 7,
       "topics": [
         {
           "topic": "Individual Tax Planning: Compensation",
@@ -3030,21 +3030,21 @@
             30,
             40
           ],
-          "currentCount": 95,
+          "currentCount": 85,
           "targetCount": 105,
-          "toGenerate": 10,
+          "toGenerate": 20,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
-            "easy": 3,
-            "medium": 5,
-            "hard": 2
+            "easy": 6,
+            "medium": 10,
+            "hard": 4
           },
           "blooms": {
-            "l1": 2,
-            "l2": 4,
-            "l3": 3,
-            "l4": 1
+            "l1": 4,
+            "l2": 7,
+            "l3": 6,
+            "l4": 3
           }
         },
         {
@@ -3055,21 +3055,21 @@
             30,
             40
           ],
-          "currentCount": 105,
+          "currentCount": 86,
           "targetCount": 105,
-          "toGenerate": 0,
+          "toGenerate": 19,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
-            "easy": 0,
-            "medium": 0,
-            "hard": 0
+            "easy": 6,
+            "medium": 10,
+            "hard": 3
           },
           "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
+            "l1": 4,
+            "l2": 7,
+            "l3": 6,
+            "l4": 2
           }
         },
         {
@@ -3130,21 +3130,21 @@
             30,
             40
           ],
-          "currentCount": 102,
+          "currentCount": 74,
           "targetCount": 105,
-          "toGenerate": 3,
+          "toGenerate": 31,
           "toTrim": 0,
-          "batches": 1,
+          "batches": 2,
           "difficulty": {
-            "easy": 1,
-            "medium": 2,
-            "hard": 0
+            "easy": 9,
+            "medium": 16,
+            "hard": 6
           },
           "blooms": {
-            "l1": 1,
-            "l2": 1,
-            "l3": 1,
-            "l4": 0
+            "l1": 6,
+            "l2": 11,
+            "l3": 9,
+            "l4": 5
           }
         },
         {
@@ -3155,20 +3155,20 @@
             10,
             20
           ],
-          "currentCount": 52,
+          "currentCount": 50,
           "targetCount": 56,
-          "toGenerate": 4,
+          "toGenerate": 6,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
-            "easy": 1,
-            "medium": 2,
+            "easy": 2,
+            "medium": 3,
             "hard": 1
           },
           "blooms": {
             "l1": 1,
-            "l2": 1,
-            "l3": 1,
+            "l2": 2,
+            "l3": 2,
             "l4": 1
           }
         },
@@ -3180,21 +3180,21 @@
             10,
             20
           ],
-          "currentCount": 56,
+          "currentCount": 48,
           "targetCount": 56,
-          "toGenerate": 0,
+          "toGenerate": 8,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 1,
           "difficulty": {
-            "easy": 0,
-            "medium": 0,
-            "hard": 0
+            "easy": 2,
+            "medium": 4,
+            "hard": 2
           },
           "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
+            "l1": 2,
+            "l2": 3,
+            "l3": 2,
+            "l4": 1
           }
         },
         {
@@ -3205,21 +3205,21 @@
             10,
             20
           ],
-          "currentCount": 56,
+          "currentCount": 24,
           "targetCount": 56,
-          "toGenerate": 0,
+          "toGenerate": 32,
           "toTrim": 0,
-          "batches": 0,
+          "batches": 2,
           "difficulty": {
-            "easy": 0,
-            "medium": 0,
-            "hard": 0
+            "easy": 10,
+            "medium": 16,
+            "hard": 6
           },
           "blooms": {
-            "l1": 0,
-            "l2": 0,
-            "l3": 0,
-            "l4": 0
+            "l1": 6,
+            "l2": 11,
+            "l3": 10,
+            "l4": 5
           }
         },
         {
@@ -3255,21 +3255,21 @@
             10,
             20
           ],
-          "currentCount": 67,
+          "currentCount": 60,
           "targetCount": 75,
-          "toGenerate": 8,
+          "toGenerate": 15,
           "toTrim": 0,
           "batches": 1,
           "difficulty": {
-            "easy": 2,
-            "medium": 4,
+            "easy": 5,
+            "medium": 8,
             "hard": 2
           },
           "blooms": {
-            "l1": 2,
-            "l2": 3,
-            "l3": 2,
-            "l4": 1
+            "l1": 3,
+            "l2": 5,
+            "l3": 5,
+            "l4": 2
           }
         },
         {
@@ -3326,10 +3326,10 @@
     }
   ],
   "summary": {
-    "totalCurrent": 8786,
+    "totalCurrent": 8642,
     "totalTarget": 9000,
-    "totalToGenerate": 101,
+    "totalToGenerate": 297,
     "totalToTrim": 0,
-    "totalBatches": 4
+    "totalBatches": 10
   }
 }

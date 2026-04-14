@@ -35,18 +35,18 @@ export type CpaBlueprint = BlueprintSection[];
 // --- Question counts by topic (synced from live DB via `npm run sync-counts`) ---
 
 export const questionCounts: Record<string, number> = {
-	// AUD (1,446 total — synced with live DB 2026-04-14)
+	// AUD (1,435 total — synced with live DB 2026-04-14)
 	"Analytical Procedures": 65,
 	"Attestation Engagements": 37,
 	"Audit Evidence": 64,
-	"Audit Planning": 61,
+	"Audit Planning": 53,
 	"Audit Reports": 38,
 	"Audit Sampling": 52,
 	"Ethics and Independence": 38,
 	"Government Auditing Standards": 34,
 	Independence: 37,
 	"Internal Controls": 64,
-	Materiality: 64,
+	Materiality: 61,
 	"Misstatements and Control Deficiencies": 64,
 	"Modifications to the Auditor Report": 35,
 	"Nature and Scope of Engagements": 32,
@@ -154,16 +154,16 @@ export const questionCounts: Record<string, number> = {
 	"SOC Testing Controls": 60,
 	"System Availability and Change Management": 86,
 	"Threats, Attacks, and Vulnerabilities": 97,
-	// TCP (1,361 total — synced with live DB 2026-04-14)
+	// TCP (1,293 total — synced with live DB 2026-04-14)
 	"Advanced Basis Calculations": 85,
-	"Capital Structure Tax Planning": 52,
-	"Entity Choice and Planning": 56,
-	"Entity Formation and Liquidation": 105,
-	"Entity Formation and Restructuring": 67,
+	"Capital Structure Tax Planning": 50,
+	"Entity Choice and Planning": 48,
+	"Entity Formation and Liquidation": 86,
+	"Entity Formation and Restructuring": 60,
 	"Entity Tax Compliance: NOLs and Consolidated Returns": 100,
 	"Individual Tax Planning: Compensation": 126,
 	"International Tax": 105,
-	"Multi-Jurisdictional Tax Planning": 56,
+	"Multi-Jurisdictional Tax Planning": 24,
 	"Nontaxable Dispositions": 66,
 	"Owner-Entity Transactions": 74,
 	"Passive Activity and At-Risk Rules": 93,
@@ -174,12 +174,12 @@ export const questionCounts: Record<string, number> = {
 };
 
 export const sectionQuestionTotals: Record<string, number> = {
-	aud: 1446,
+	aud: 1435,
 	far: 1539,
 	reg: 1410,
 	bar: 1513,
 	isc: 1452,
-	tcp: 1361,
+	tcp: 1293,
 };
 
 // --- Blueprint Data ---

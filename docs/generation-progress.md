@@ -8,7 +8,7 @@ Per-section target: 1,500 questions. Distributed by AICPA Blueprint area weights
 
 **Batch size:** 30 questions per generation batch.
 
-**To generate:** 229 new questions (~8 batches).
+**To generate:** 297 new questions (~10 batches).
 
 **To trim:** 0 questions to delete (keep best, cut weakest).
 
@@ -25,12 +25,12 @@ For each section:
 
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status          |
 |---------|---------|--------|---------|-------------|-------------|-----------------|
-| AUD     | 1,446 | 1,500 |       0 |           0 |           0 | On Target       |
+| AUD     | 1,435 | 1,500 |       0 |           0 |           0 | On Target       |
 | FAR     | 1,539 | 1,500 |       0 |           0 |           0 | On Target       |
 | REG     | 1,410 | 1,500 |       0 |          90 |           3 | Generate Needed |
 | BAR     | 1,513 | 1,500 |       0 |           0 |           0 | On Target       |
 | ISC     | 1,452 | 1,500 |       0 |           0 |           0 | On Target       |
-| TCP     | 1,361 | 1,500 |       0 |         139 |           5 | Generate Needed |
+| TCP     | 1,293 | 1,500 |       0 |         207 |           7 | Generate Needed |
 
 ## Topic Detail
 
@@ -46,9 +46,9 @@ For each section:
 | 1 | Professional Skepticism and Judgment | 38 | 38 |  |  |
 | 1 | Quality Management | 38 | 38 |  |  |
 | 1 | Terms of Engagement | 38 | 38 |  |  |
-| 2 | Audit Planning | 61 | 64 |  |  |
+| 2 | Audit Planning | 53 | 64 |  |  |
 | 2 | Internal Controls | 64 | 64 |  |  |
-| 2 | Materiality | 64 | 64 |  |  |
+| 2 | Materiality | 61 | 64 |  |  |
 | 2 | Responding to Assessed Risks | 64 | 64 |  |  |
 | 2 | Risk Assessment | 64 | 64 |  |  |
 | 2 | Understanding the Entity and Environment | 64 | 64 |  |  |
@@ -182,15 +182,15 @@ For each section:
 | 1 | Retirement Plans and Education Savings | 131 | 131 |  |  |
 | 1 | Wealth Transfer and Gifting Strategies | 129 | 131 |  | +2 |
 | 2 | Advanced Basis Calculations | 85 | 105 |  | +20 |
-| 2 | Entity Formation and Liquidation | 105 | 105 |  |  |
+| 2 | Entity Formation and Liquidation | 86 | 105 |  | +19 |
 | 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 100 | 105 |  | +5 |
 | 2 | International Tax | 105 | 105 |  |  |
 | 2 | Owner-Entity Transactions | 74 | 105 |  | +31 |
-| 3 | Capital Structure Tax Planning | 52 | 56 |  | +4 |
-| 3 | Entity Choice and Planning | 56 | 56 |  |  |
-| 3 | Multi-Jurisdictional Tax Planning | 56 | 56 |  |  |
+| 3 | Capital Structure Tax Planning | 50 | 56 |  | +6 |
+| 3 | Entity Choice and Planning | 48 | 56 |  | +8 |
+| 3 | Multi-Jurisdictional Tax Planning | 24 | 56 |  | +32 |
 | 3 | Trusts and Estates | 50 | 56 |  | +6 |
-| 4 | Entity Formation and Restructuring | 67 | 75 |  | +8 |
+| 4 | Entity Formation and Restructuring | 60 | 75 |  | +15 |
 | 4 | Nontaxable Dispositions | 66 | 75 |  | +9 |
 | 4 | Related Party Transactions | 66 | 75 |  | +9 |
 

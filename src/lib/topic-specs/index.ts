@@ -29,6 +29,20 @@ import { spec as audRiskAssessment } from "./aud-risk-assessment";
 import { spec as tcpAdvancedBasisCalculations } from "./tcp-advanced-basis-calculations";
 import { spec as barForeignCurrencyTransactions } from "./bar-foreign-currency-transactions";
 import { spec as audUsingTheWorkOfOthers } from "./aud-using-the-work-of-others";
+import { spec as audAuditSampling } from "./aud-audit-sampling";
+import { spec as tcpCapitalStructureTaxPlanning } from "./tcp-capital-structure-tax-planning";
+import { spec as tcpEntityChoiceAndPlanning } from "./tcp-entity-choice-and-planning";
+import { spec as regIndividualTaxationDeductions } from "./reg-individual-taxation-deductions";
+import { spec as audMateriality } from "./aud-materiality";
+import { spec as audAuditPlanning } from "./aud-audit-planning";
+import { spec as tcpMultiJurisdictionalTaxPlanning } from "./tcp-multi-jurisdictional-tax-planning";
+import { spec as tcpEntityFormationAndLiquidation } from "./tcp-entity-formation-and-liquidation";
+import { spec as tcpEntityFormationAndRestructuring } from "./tcp-entity-formation-and-restructuring";
+import { spec as iscSocEngagements } from "./isc-soc-engagements";
+import { spec as iscSocReporting } from "./isc-soc-reporting";
+import { spec as iscSocTestingControls } from "./isc-soc-testing-controls";
+import { spec as iscSocReportContentAndStructure } from "./isc-soc-report-content-and-structure";
+import { spec as iscSocReportingAndTrustServicesCriteria } from "./isc-soc-reporting-and-trust-services-criteria";
 
 const SPECS: Record<string, TopicSpec> = {
 	[barProspective.topic]: barProspective,
@@ -51,6 +65,20 @@ const SPECS: Record<string, TopicSpec> = {
 	[tcpAdvancedBasisCalculations.topic]: tcpAdvancedBasisCalculations,
 	[barForeignCurrencyTransactions.topic]: barForeignCurrencyTransactions,
 	[audUsingTheWorkOfOthers.topic]: audUsingTheWorkOfOthers,
+	[audAuditSampling.topic]: audAuditSampling,
+	[tcpCapitalStructureTaxPlanning.topic]: tcpCapitalStructureTaxPlanning,
+	[tcpEntityChoiceAndPlanning.topic]: tcpEntityChoiceAndPlanning,
+	[regIndividualTaxationDeductions.topic]: regIndividualTaxationDeductions,
+	[audMateriality.topic]: audMateriality,
+	[audAuditPlanning.topic]: audAuditPlanning,
+	[tcpMultiJurisdictionalTaxPlanning.topic]: tcpMultiJurisdictionalTaxPlanning,
+	[tcpEntityFormationAndLiquidation.topic]: tcpEntityFormationAndLiquidation,
+	[tcpEntityFormationAndRestructuring.topic]: tcpEntityFormationAndRestructuring,
+	[iscSocEngagements.topic]: iscSocEngagements,
+	[iscSocReporting.topic]: iscSocReporting,
+	[iscSocTestingControls.topic]: iscSocTestingControls,
+	[iscSocReportContentAndStructure.topic]: iscSocReportContentAndStructure,
+	[iscSocReportingAndTrustServicesCriteria.topic]: iscSocReportingAndTrustServicesCriteria,
 };
 
 /** Look up the topic spec for a given questions.topic value. Returns undefined if none. */
