@@ -5,8 +5,44 @@ import { readFileSync, writeFileSync, existsSync } from "fs";
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 import { questionCounts } from "../../src/lib/blueprint";
+import { getTopicSpec, type BannedTerm } from "../../src/lib/topic-specs";
 
 const validTopics = new Set(Object.keys(questionCounts));
+
+// Compiled banned-terms cache: topic string -> array of {regex, term, category}.
+// Populated lazily on first question for each topic so specs without bannedTerms
+// cost nothing to audit.
+interface CompiledBannedTerm {
+	term: string;
+	regex: RegExp;
+	category?: string;
+}
+const compiledBannedTermsCache = new Map<string, CompiledBannedTerm[] | null>();
+
+function escapeRegexForBannedTerm(s: string): string {
+	return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function getCompiledBannedTerms(topic: string): CompiledBannedTerm[] | null {
+	if (compiledBannedTermsCache.has(topic)) {
+		return compiledBannedTermsCache.get(topic)!;
+	}
+	const spec = getTopicSpec(topic);
+	if (!spec || !spec.bannedTerms || spec.bannedTerms.length === 0) {
+		compiledBannedTermsCache.set(topic, null);
+		return null;
+	}
+	const compiled: CompiledBannedTerm[] = spec.bannedTerms.map((t: BannedTerm) => ({
+		term: t.term,
+		category: t.category,
+		regex: new RegExp(
+			t.pattern ?? `\\b${escapeRegexForBannedTerm(t.term)}\\b`,
+			"gi",
+		),
+	}));
+	compiledBannedTermsCache.set(topic, compiled);
+	return compiled;
+}
 
 // Parse CLI arg
 const migrationFile = process.argv[2];
@@ -226,6 +262,44 @@ function validateQuestion(q: ParsedQuestion): void {
 			severity: "error",
 			message: `Unknown topic "${q.topic}" — not in questionCounts dict`,
 		});
+	}
+
+	// Spec-aware scope check: if the question's topic has a topic spec with
+	// bannedTerms, compile them and scan stem + choices + explanation. Any
+	// match is an ERROR — the migration will block until the question is
+	// rewritten to exclude the out-of-scope term. UPDATEs that omit the topic
+	// field skip this check (post-apply audit catches those).
+	if (q.topic) {
+		const bannedTerms = getCompiledBannedTerms(q.topic);
+		if (bannedTerms) {
+			const scanFields: Array<{ name: "stem" | "choices" | "explanation"; text: string }> = [
+				{ name: "stem", text: stemClean },
+				{ name: "choices", text: choices.join(" | ") },
+				{ name: "explanation", text: explanationClean },
+			];
+			const hitsByTerm = new Map<string, Array<{ field: string; snippet: string }>>();
+			for (const { name, text } of scanFields) {
+				for (const bt of bannedTerms) {
+					bt.regex.lastIndex = 0;
+					const m = bt.regex.exec(text);
+					if (!m) continue;
+					const idx = m.index ?? 0;
+					const start = Math.max(0, idx - 30);
+					const end = Math.min(text.length, idx + m[0].length + 30);
+					const snippet = (start > 0 ? "…" : "") + text.slice(start, end) + (end < text.length ? "…" : "");
+					if (!hitsByTerm.has(bt.term)) hitsByTerm.set(bt.term, []);
+					hitsByTerm.get(bt.term)!.push({ field: name, snippet: snippet.replace(/\s+/g, " ") });
+				}
+			}
+			for (const [term, hits] of hitsByTerm) {
+				const firstHit = hits[0];
+				issues.push({
+					line: q.approxLine,
+					severity: "error",
+					message: `Spec violation — banned term "${term}" in ${firstHit.field} for topic "${q.topic}" (Q${q.id ?? "?"}): "${firstHit.snippet}"`,
+				});
+			}
+		}
 	}
 }
 

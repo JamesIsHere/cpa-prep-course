@@ -15,6 +15,31 @@
 
 export type Difficulty = "easy" | "medium" | "hard" | "mixed";
 
+/**
+ * A single banned-term entry used by the audit pipeline and the spec-aware
+ * validator. The human-readable `outOfScope` list on the spec is the authoring
+ * source of truth; `bannedTerms` is its machine-readable projection — short
+ * regex patterns with categories that can be compiled and grep-scanned.
+ *
+ * Authors should keep the two in sync manually. The split exists because the
+ * natural-language `outOfScope` sentences are too verbose to regex-match
+ * directly, while compiled term patterns are too terse to communicate the
+ * "why" to a reviewer reading the spec.
+ */
+export interface BannedTerm {
+	/** Display name for the banned term or concept (e.g., "GILTI", "Section 1374"). */
+	term: string;
+	/**
+	 * Optional custom regex pattern. If omitted, the validator uses
+	 * `\b<escaped term>\b` with a case-insensitive match.
+	 */
+	pattern?: string;
+	/** Loose grouping for the term (e.g., "named provision", "code section"). */
+	category?: string;
+	/** One-sentence editorial note on why this term is out of scope. */
+	why?: string;
+}
+
 export interface TopicSpec {
 	/** Matches the `topic` column on the questions table verbatim. */
 	topic: string;
@@ -73,6 +98,16 @@ export interface TopicSpec {
 
 	/** Typical difficulty band for questions in this topic. */
 	representativeDifficulty: Difficulty;
+
+	/**
+	 * Machine-readable projection of the `outOfScope` list. When present, both
+	 * the audit pipeline (`scripts/qa/audit-topic-content.ts`) and the pre-commit
+	 * migration validator (`scripts/qa/validate-migration.ts`) compile these
+	 * patterns and reject any new question content that matches. Optional —
+	 * specs without `bannedTerms` get no spec-aware enforcement, falling back
+	 * to pre-spec validator behavior for that topic.
+	 */
+	bannedTerms?: BannedTerm[];
 
 	/** Freeform editorial notes, drafting reminders, or scope-edge commentary. */
 	notes?: string;

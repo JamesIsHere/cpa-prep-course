@@ -38,4 +38,4 @@ export function specifiedTopics(): string[] {
 	return Object.keys(SPECS);
 }
 
-export type { TopicSpec } from "./types";
+export type { TopicSpec, BannedTerm } from "./types";

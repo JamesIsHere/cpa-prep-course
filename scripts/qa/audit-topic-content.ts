@@ -6,15 +6,24 @@
 //   npx tsx scripts/qa/audit-topic-content.ts \
 //     --topic="International Tax" \
 //     --section=tcp \
-//     --terms=docs/topic-audits/international-tax-terms.json \
+//     [--terms=path/to/terms.json] \
 //     [--out=docs/topic-audits/international-tax-audit.md]
 //
-// Banned-terms file is a JSON array of term entries:
-//   [
-//     { "term": "GILTI", "pattern": "\\bGILTI\\b", "category": "named provision",
-//       "why": "AICPA 2026 Blueprint restricts TCP/II/A/4 to sourcing concepts..." },
-//     { "term": "Subpart F", "pattern": "\\bSubpart\\s*F\\b", ... }
-//   ]
+// Term source resolution (first match wins):
+//   1. --terms=<path>    Explicit JSON file override (legacy; still supported)
+//   2. spec.bannedTerms  Inline on the topic-spec (preferred going forward —
+//                        keeps the banned terms in the same file as the spec
+//                        they belong to, so audits and the spec-aware
+//                        validator cannot drift out of sync)
+//
+// If neither source provides any terms, the audit exits with an error —
+// running an audit on a topic with no banned-terms configured is almost
+// always user error.
+//
+// BannedTerm shape (see src/lib/topic-specs/types.ts for the canonical
+// definition):
+//   { term: "GILTI", pattern?: "\\bGILTI\\b", category?: "named provision",
+//     why?: "AICPA 2026 Blueprint restricts TCP/II/A/4 to sourcing concepts..." }
 //
 // If `pattern` is omitted, the script auto-escapes `term` into a word-boundary
 // case-insensitive regex. Use `pattern` for anything fancy (e.g., matching both
@@ -26,17 +35,10 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 import { fetchAllQuestions, type DbQuestion } from "./db-client";
-import { getTopicSpec } from "../../src/lib/topic-specs";
+import { getTopicSpec, type BannedTerm } from "../../src/lib/topic-specs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(__dirname, "../..");
-
-interface BannedTerm {
-	term: string;
-	pattern?: string;
-	category?: string;
-	why?: string;
-}
 
 interface CompiledTerm extends BannedTerm {
 	regex: RegExp;
@@ -139,9 +141,9 @@ async function main() {
 	const termsPath = parseArg("terms");
 	const outPath = parseArg("out");
 
-	if (!topic || !sectionCode || !termsPath) {
+	if (!topic || !sectionCode) {
 		console.error(
-			"Usage: npx tsx scripts/qa/audit-topic-content.ts --topic=\"Name\" --section=<code> --terms=<path> [--out=<path>]",
+			'Usage: npx tsx scripts/qa/audit-topic-content.ts --topic="Name" --section=<code> [--terms=<path>] [--out=<path>]',
 		);
 		process.exit(2);
 	}
@@ -161,19 +163,34 @@ async function main() {
 		process.exit(2);
 	}
 
-	// Load banned terms
-	const absTermsPath = resolve(repoRoot, termsPath);
-	if (!existsSync(absTermsPath)) {
-		console.error(`Banned-terms file not found: ${absTermsPath}`);
+	// Resolve banned terms: explicit --terms path wins; otherwise fall back to
+	// spec.bannedTerms inline. Erroring out when neither is present catches
+	// the common "forgot to author terms" user error.
+	let raw: BannedTerm[];
+	let source: string;
+	if (termsPath) {
+		const absTermsPath = resolve(repoRoot, termsPath);
+		if (!existsSync(absTermsPath)) {
+			console.error(`Banned-terms file not found: ${absTermsPath}`);
+			process.exit(2);
+		}
+		raw = JSON.parse(readFileSync(absTermsPath, "utf-8"));
+		source = termsPath;
+	} else if (spec.bannedTerms && spec.bannedTerms.length > 0) {
+		raw = spec.bannedTerms;
+		source = `spec.bannedTerms (inline in ${spec.section}-${slugify(spec.topic)}.ts)`;
+	} else {
+		console.error(
+			`No banned terms available for "${topic}". Either pass --terms=<path> or add a bannedTerms[] field to the topic spec.`,
+		);
 		process.exit(2);
 	}
-	const raw: BannedTerm[] = JSON.parse(readFileSync(absTermsPath, "utf-8"));
 	if (!Array.isArray(raw) || raw.length === 0) {
-		console.error("Banned-terms file is empty or malformed.");
+		console.error("Banned-terms source is empty or malformed.");
 		process.exit(2);
 	}
 	const terms = compileTerms(raw);
-	console.error(`Loaded ${terms.length} banned terms from ${termsPath}`);
+	console.error(`Loaded ${terms.length} banned terms from ${source}`);
 
 	// Fetch questions by section, filter to the topic
 	const allForSection = await fetchAllQuestions(sectionCode);
@@ -210,7 +227,7 @@ async function main() {
 	lines.push("");
 	lines.push(`Spec anchor: \`${spec.blueprintRef}\``);
 	lines.push(`Spec file: \`src/lib/topic-specs/${sectionCode.toLowerCase()}-${slugify(topic)}.ts\``);
-	lines.push(`Terms file: \`${termsPath}\` (${terms.length} terms)`);
+	lines.push(`Terms source: \`${source}\` (${terms.length} terms)`);
 	lines.push("");
 	lines.push("## Summary");
 	lines.push("");
