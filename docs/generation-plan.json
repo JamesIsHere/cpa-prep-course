@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-14T10:37:29.771Z",
+  "generatedAt": "2026-04-14T10:52:47.063Z",
   "totalTarget": 9000,
   "batchSize": 30,
   "difficultyTargets": {
@@ -1969,7 +1969,7 @@
     {
       "section": "bar",
       "sectionId": 4,
-      "currentTotal": 1525,
+      "currentTotal": 1518,
       "targetTotal": 1500,
       "toGenerate": 0,
       "toTrim": 0,
@@ -2008,7 +2008,7 @@
             40,
             50
           ],
-          "currentCount": 187,
+          "currentCount": 180,
           "targetCount": 134,
           "toGenerate": 0,
           "toTrim": 0,
@@ -3326,7 +3326,7 @@
     }
   ],
   "summary": {
-    "totalCurrent": 8848,
+    "totalCurrent": 8841,
     "totalTarget": 9000,
     "totalToGenerate": 0,
     "totalToTrim": 0,
