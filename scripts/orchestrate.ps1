@@ -588,6 +588,59 @@ ORCHESTRATOR_RESULT:{"status":"error","message":"brief description"}
             $stemsJson = ($existingStems | ConvertTo-Json -Compress)
             if (-not $stemsJson -or $stemsJson -eq 'null') { $stemsJson = '[]' }
 
+            # Format topic-spec constraints, if a spec was authored for this topic.
+            # Spec is the generator-side hard constraint on what is testable per
+            # the 2026 AICPA Blueprint. Topics without a spec (the majority as of
+            # the pilot commit) get an empty string and the prompt falls back to
+            # pre-spec behavior.
+            $topicSpecBlock = ""
+            if ($batchSpec.topicSpec) {
+                $ts = $batchSpec.topicSpec
+                $inScopeText = ($ts.inScope | ForEach-Object { "  - $_" }) -join "`n"
+                $outOfScopeText = ($ts.outOfScope | ForEach-Object { "  - $_" }) -join "`n"
+                $miscText = ($ts.commonMisconceptions | ForEach-Object { "  - $_" }) -join "`n"
+                $topicSpecBlock = @"
+
+TOPIC SPEC CONSTRAINTS (HARD LIMITS — NON-NEGOTIABLE):
+
+This topic has a curriculum-team-authored scope specification that anchors
+Slayer's "$($ts.topic)" tagging vocabulary to AICPA Blueprint path $($ts.blueprintRef).
+The spec defines exactly what is testable on the CPA exam for this topic
+under the 2026 AICPA Blueprint. This is the same structural fix that
+corrected the BAR/Prospective Analysis econometric drift (20 off-blueprint
+questions deleted) — your batch will be rejected if it drifts the same way.
+
+IN-SCOPE (you MAY test these — ONLY these):
+$inScopeText
+
+OUT-OF-SCOPE (you MUST NOT test these — named drift surfaces):
+$outOfScopeText
+
+COMMON MISCONCEPTIONS (use these to design distractors that test real
+candidate confusion, not arbitrary wrong answers):
+$miscText
+
+SPEC ENFORCEMENT RULES:
+  (a) Every question must test a concept from the IN-SCOPE list. If your
+      question tests a concept NOT in the in-scope list, delete the question
+      and replace it with one that does.
+  (b) No question may reference any term, technique, or concept in the
+      OUT-OF-SCOPE list — not in the stem, not in the choices, not in the
+      explanation. The out-of-scope list is a drift-surface registry, not
+      a suggestion. Terms that appear in the out-of-scope list are rejected
+      even when mentioned as "this is NOT tested" or "beyond scope" framing.
+  (c) Distractors should test misconceptions from the COMMON MISCONCEPTIONS
+      list when possible. Generic "off by one" or "arithmetic error"
+      distractors are weaker than misconceptions-based distractors.
+  (d) If a concept is neither clearly in-scope nor clearly out-of-scope,
+      default to excluding it. Scope creep is what the spec exists to
+      prevent; prefer a narrower question over a wider one.
+  (e) validate-migration will check stems, explanations, and distractors
+      against the out-of-scope patterns. Violations will block the batch.
+
+"@
+            }
+
             return @"
 You are running headless as part of an automated batch pipeline. Execute autonomously — do not ask questions, do not create task lists, do not use TodoWrite.
 
@@ -607,7 +660,7 @@ $lessonContent
 
 STUDY FRAMEWORKS (Integrate these! Create questions that require applying these mnemonics or following these decision paths):
 $frameworkJson
-
+$topicSpecBlock
 RULES:
 1. CONCEPTUAL RESEARCH: Before generating, read the EXISTING STEMS and the SOURCE LESSON CONTENT. Identify the specific sub-topics/concepts already covered. List at least 5 concepts within "$genTopic" that are NOT yet tested by the existing stems.
 2. STEM: L1 = "What is...?" (10-20 words). L2+ = scenario-first with named

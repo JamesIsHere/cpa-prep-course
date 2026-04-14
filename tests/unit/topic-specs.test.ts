@@ -84,7 +84,7 @@ describe("topic-specs: blueprintRef resolver basics", () => {
 	it("resolves a known good ref (BAR/I/B/1)", () => {
 		const node = resolveBlueprintRef("BAR/I/B/1");
 		expect(node).not.toBeNull();
-		expect(node?.topic.name).toContain("Budgeting");
+		expect(node?.topic?.name).toContain("Budgeting");
 	});
 
 	it("returns null for a malformed ref", () => {

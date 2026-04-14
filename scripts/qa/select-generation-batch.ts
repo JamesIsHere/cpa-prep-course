@@ -7,6 +7,7 @@ import { fileURLToPath } from "url";
 import { fetchAllQuestions } from "./db-client";
 import { cpaBlueprint } from "../../src/lib/blueprint";
 import { getFrameworkItemsForGroup, type GroupFrameworkItems } from "../../src/lib/blueprint-utils";
+import { getTopicSpec, type TopicSpec } from "../../src/lib/topic-specs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const docsDir = resolve(__dirname, "../../docs");
@@ -54,6 +55,17 @@ interface TopicPlan {
 	newNeeded: number;
 }
 
+// Subset of TopicSpec used by the generator prompt. We don't ship keyStandards,
+// notes, or representativeDifficulty to the prompt because those are authoring
+// context, not generation constraints.
+interface TopicSpecForBatch {
+	topic: string;
+	blueprintRef: string;
+	inScope: string[];
+	outOfScope: string[];
+	commonMisconceptions: string[];
+}
+
 interface BatchSpec {
 	section: string;
 	sectionId: number;
@@ -65,6 +77,7 @@ interface BatchSpec {
 	citationPatterns: string;
 	lessonSlugs: string[];
 	frameworkItems: GroupFrameworkItems | null;
+	topicSpec: TopicSpecForBatch | null;
 }
 
 async function main() {
@@ -162,6 +175,21 @@ async function main() {
 	// Get existing stems for dedup context
 	const existingStems = stemsByTopic.get(picked.topic) || [];
 
+	// Look up the topic spec if one has been authored for this Slayer topic tag.
+	// Specs are the generator-side hard constraints on what is testable for this
+	// topic under the 2026 AICPA Blueprint; topics without a spec (~125/130 as
+	// of the pilot commit) fall back to pre-spec behavior.
+	const fullSpec: TopicSpec | undefined = getTopicSpec(picked.topic);
+	const topicSpec: TopicSpecForBatch | null = fullSpec
+		? {
+				topic: fullSpec.topic,
+				blueprintRef: fullSpec.blueprintRef,
+				inScope: fullSpec.inScope,
+				outOfScope: fullSpec.outOfScope,
+				commonMisconceptions: fullSpec.commonMisconceptions,
+			}
+		: null;
+
 	const batchSpec: BatchSpec = {
 		section: section,
 		sectionId: sectionPlan.sectionId,
@@ -173,6 +201,7 @@ async function main() {
 		citationPatterns: CITATION_PATTERNS[section] || "",
 		lessonSlugs,
 		frameworkItems,
+		topicSpec,
 	};
 
 	// Output JSON to stdout
@@ -182,6 +211,11 @@ async function main() {
 	console.error(`\nSelected topic: "${picked.topic}" (${picked.current}/${picked.target}, ${picked.remaining} remaining)`);
 	console.error(`Batch: ${count} questions (${easy}E/${medium}M/${hard}H, L1:${l1}/L2:${l2}/L3:${l3}/L4:${l4})`);
 	console.error(`Existing stems for dedup: ${existingStems.length}`);
+	console.error(
+		topicSpec
+			? `Topic spec: ✓ (${fullSpec!.blueprintRef}, ${topicSpec.inScope.length} inScope, ${topicSpec.outOfScope.length} outOfScope)`
+			: `Topic spec: — (no spec authored for "${picked.topic}"; generator runs without scope constraints)`,
+	);
 }
 
 main();
