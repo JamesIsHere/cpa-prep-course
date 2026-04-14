@@ -154,7 +154,7 @@ export const questionCounts: Record<string, number> = {
 	"SOC Testing Controls": 60,
 	"System Availability and Change Management": 86,
 	"Threats, Attacks, and Vulnerabilities": 97,
-	// TCP (1,434 total — synced with live DB 2026-04-14)
+	// TCP (1,399 total — synced with live DB 2026-04-14)
 	"Advanced Basis Calculations": 95,
 	"Capital Structure Tax Planning": 52,
 	"Entity Choice and Planning": 56,
@@ -166,7 +166,7 @@ export const questionCounts: Record<string, number> = {
 	"Multi-Jurisdictional Tax Planning": 56,
 	"Nontaxable Dispositions": 66,
 	"Owner-Entity Transactions": 102,
-	"Passive Activity and At-Risk Rules": 128,
+	"Passive Activity and At-Risk Rules": 93,
 	"Related Party Transactions": 66,
 	"Retirement Plans and Education Savings": 131,
 	"Trusts and Estates": 50,
@@ -179,7 +179,7 @@ export const sectionQuestionTotals: Record<string, number> = {
 	reg: 1437,
 	bar: 1518,
 	isc: 1452,
-	tcp: 1434,
+	tcp: 1399,
 };
 
 // --- Blueprint Data ---

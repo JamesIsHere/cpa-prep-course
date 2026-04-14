@@ -8,7 +8,7 @@ Per-section target: 1,500 questions. Distributed by AICPA Blueprint area weights
 
 **Batch size:** 30 questions per generation batch.
 
-**To generate:** 0 new questions (~0 batches).
+**To generate:** 101 new questions (~4 batches).
 
 **To trim:** 0 questions to delete (keep best, cut weakest).
 
@@ -30,7 +30,7 @@ For each section:
 | REG     | 1,437 | 1,500 |       0 |           0 |           0 | On Target       |
 | BAR     | 1,518 | 1,500 |       0 |           0 |           0 | On Target       |
 | ISC     | 1,452 | 1,500 |       0 |           0 |           0 | On Target       |
-| TCP     | 1,434 | 1,500 |       0 |           0 |           0 | On Target       |
+| TCP     | 1,399 | 1,500 |       0 |         101 |           4 | Generate Needed |
 
 ## Topic Detail
 
@@ -177,22 +177,22 @@ For each section:
 
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
-| 1 | Individual Tax Planning: Compensation | 126 | 132 |  |  |
-| 1 | Passive Activity and At-Risk Rules | 128 | 132 |  |  |
+| 1 | Individual Tax Planning: Compensation | 126 | 132 |  | +6 |
+| 1 | Passive Activity and At-Risk Rules | 93 | 132 |  | +39 |
 | 1 | Retirement Plans and Education Savings | 131 | 131 |  |  |
-| 1 | Wealth Transfer and Gifting Strategies | 129 | 131 |  |  |
-| 2 | Advanced Basis Calculations | 95 | 105 |  |  |
+| 1 | Wealth Transfer and Gifting Strategies | 129 | 131 |  | +2 |
+| 2 | Advanced Basis Calculations | 95 | 105 |  | +10 |
 | 2 | Entity Formation and Liquidation | 105 | 105 |  |  |
-| 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 100 | 105 |  |  |
+| 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 100 | 105 |  | +5 |
 | 2 | International Tax | 105 | 105 |  |  |
-| 2 | Owner-Entity Transactions | 102 | 105 |  |  |
-| 3 | Capital Structure Tax Planning | 52 | 56 |  |  |
+| 2 | Owner-Entity Transactions | 102 | 105 |  | +3 |
+| 3 | Capital Structure Tax Planning | 52 | 56 |  | +4 |
 | 3 | Entity Choice and Planning | 56 | 56 |  |  |
 | 3 | Multi-Jurisdictional Tax Planning | 56 | 56 |  |  |
-| 3 | Trusts and Estates | 50 | 56 |  |  |
-| 4 | Entity Formation and Restructuring | 67 | 75 |  |  |
-| 4 | Nontaxable Dispositions | 66 | 75 |  |  |
-| 4 | Related Party Transactions | 66 | 75 |  |  |
+| 3 | Trusts and Estates | 50 | 56 |  | +6 |
+| 4 | Entity Formation and Restructuring | 67 | 75 |  | +8 |
+| 4 | Nontaxable Dispositions | 66 | 75 |  | +9 |
+| 4 | Related Party Transactions | 66 | 75 |  | +9 |
 
 ## Batch Log
 
