@@ -8,7 +8,7 @@ Per-section target: 1,500 questions. Distributed by AICPA Blueprint area weights
 
 **Batch size:** 30 questions per generation batch.
 
-**To generate:** 79 new questions (~3 batches).
+**To generate:** 165 new questions (~6 batches).
 
 **To trim:** 0 questions to delete (keep best, cut weakest).
 
@@ -30,7 +30,7 @@ For each section:
 | REG     | 1,446 | 1,500 |       0 |           0 |           0 | On Target       |
 | BAR     | 1,513 | 1,500 |       0 |           0 |           0 | On Target       |
 | ISC     | 1,452 | 1,500 |       0 |           0 |           0 | On Target       |
-| TCP     | 1,421 | 1,500 |       0 |          79 |           3 | Generate Needed |
+| TCP     | 1,335 | 1,500 |       0 |         165 |           6 | Generate Needed |
 
 ## Topic Detail
 
@@ -184,7 +184,7 @@ For each section:
 | 2 | Advanced Basis Calculations | 95 | 105 |  | +10 |
 | 2 | Entity Formation and Liquidation | 94 | 105 |  | +11 |
 | 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 100 | 105 |  | +5 |
-| 2 | International Tax | 103 | 105 |  | +2 |
+| 2 | International Tax | 17 | 105 |  | +88 |
 | 2 | Owner-Entity Transactions | 102 | 105 |  | +3 |
 | 3 | Capital Structure Tax Planning | 52 | 56 |  | +4 |
 | 3 | Entity Choice and Planning | 56 | 56 |  |  |

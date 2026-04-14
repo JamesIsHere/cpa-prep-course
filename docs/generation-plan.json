@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-14T05:59:43.485Z",
+  "generatedAt": "2026-04-14T07:30:20.001Z",
   "totalTarget": 9000,
   "batchSize": 30,
   "difficultyTargets": {
@@ -2916,11 +2916,11 @@
     {
       "section": "tcp",
       "sectionId": 6,
-      "currentTotal": 1421,
+      "currentTotal": 1335,
       "targetTotal": 1500,
-      "toGenerate": 79,
+      "toGenerate": 165,
       "toTrim": 0,
-      "totalBatches": 3,
+      "totalBatches": 6,
       "topics": [
         {
           "topic": "Individual Tax Planning: Compensation",
@@ -3105,21 +3105,21 @@
             30,
             40
           ],
-          "currentCount": 103,
+          "currentCount": 17,
           "targetCount": 105,
-          "toGenerate": 2,
+          "toGenerate": 88,
           "toTrim": 0,
-          "batches": 1,
+          "batches": 3,
           "difficulty": {
-            "easy": 1,
-            "medium": 1,
-            "hard": 0
+            "easy": 26,
+            "medium": 44,
+            "hard": 18
           },
           "blooms": {
-            "l1": 0,
-            "l2": 1,
-            "l3": 1,
-            "l4": 0
+            "l1": 18,
+            "l2": 31,
+            "l3": 26,
+            "l4": 13
           }
         },
         {
@@ -3326,10 +3326,10 @@
     }
   ],
   "summary": {
-    "totalCurrent": 8832,
+    "totalCurrent": 8746,
     "totalTarget": 9000,
-    "totalToGenerate": 79,
+    "totalToGenerate": 165,
     "totalToTrim": 0,
-    "totalBatches": 3
+    "totalBatches": 6
   }
 }
