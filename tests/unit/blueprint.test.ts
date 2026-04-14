@@ -128,10 +128,10 @@ describe("question counts", () => {
 	it("section totals match expected values", () => {
 		expect(sectionQuestionTotals.aud).toBe(1446);
 		expect(sectionQuestionTotals.far).toBe(1554);
-		expect(sectionQuestionTotals.reg).toBe(1417);
+		expect(sectionQuestionTotals.reg).toBe(1447);
 		expect(sectionQuestionTotals.bar).toBe(1525);
 		expect(sectionQuestionTotals.isc).toBe(1452);
-		expect(sectionQuestionTotals.tcp).toBe(1335);
+		expect(sectionQuestionTotals.tcp).toBe(1434);
 	});
 
 	it("all question count values are non-negative integers", () => {

@@ -1117,7 +1117,7 @@ function Parse-ClaudeResult {
 # CLAUDE INVOCATION (with timeout)
 # ═══════════════════════════════════════════════════════════════
 
-$ClaudeTimeoutMin = 15  # Kill Claude if it hangs longer than this
+$ClaudeTimeoutMin = 25  # Kill Claude if it hangs longer than this
 
 function Invoke-Claude {
     param([string]$InputFile, [switch]$CaptureOutput)

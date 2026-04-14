@@ -90,7 +90,7 @@ export const questionCounts: Record<string, number> = {
 	"Statement of Cash Flows": 80,
 	"Subsequent Events": 29,
 	"Trade Receivables": 36,
-	// REG (1,417 total — synced with live DB 2026-04-14)
+	// REG (1,447 total — synced with live DB 2026-04-14)
 	"Agency and Regulation": 60,
 	"Alternative Minimum Tax": 65,
 	"Business Law: Contracts": 60,
@@ -112,7 +112,7 @@ export const questionCounts: Record<string, number> = {
 	"Professional Ethics in Tax": 45,
 	"Property Transactions: Basis": 47,
 	"Property Transactions: Gains/Losses": 43,
-	"S Corporations": 53,
+	"S Corporations": 83,
 	"Tax Procedures": 44,
 	"Tax-Exempt Organizations": 77,
 	// BAR (1,525 total — synced with live DB 2026-04-14)
@@ -154,15 +154,15 @@ export const questionCounts: Record<string, number> = {
 	"SOC Testing Controls": 60,
 	"System Availability and Change Management": 86,
 	"Threats, Attacks, and Vulnerabilities": 97,
-	// TCP (1,335 total — synced with live DB 2026-04-14)
+	// TCP (1,434 total — synced with live DB 2026-04-14)
 	"Advanced Basis Calculations": 95,
 	"Capital Structure Tax Planning": 52,
 	"Entity Choice and Planning": 56,
-	"Entity Formation and Liquidation": 94,
+	"Entity Formation and Liquidation": 105,
 	"Entity Formation and Restructuring": 67,
 	"Entity Tax Compliance: NOLs and Consolidated Returns": 100,
 	"Individual Tax Planning: Compensation": 126,
-	"International Tax": 17,
+	"International Tax": 105,
 	"Multi-Jurisdictional Tax Planning": 56,
 	"Nontaxable Dispositions": 66,
 	"Owner-Entity Transactions": 102,
@@ -176,10 +176,10 @@ export const questionCounts: Record<string, number> = {
 export const sectionQuestionTotals: Record<string, number> = {
 	aud: 1446,
 	far: 1554,
-	reg: 1417,
+	reg: 1447,
 	bar: 1525,
 	isc: 1452,
-	tcp: 1335,
+	tcp: 1434,
 };
 
 // --- Blueprint Data ---

@@ -8,7 +8,7 @@ Per-section target: 1,500 questions. Distributed by AICPA Blueprint area weights
 
 **Batch size:** 30 questions per generation batch.
 
-**To generate:** 248 new questions (~9 batches).
+**To generate:** 0 new questions (~0 batches).
 
 **To trim:** 0 questions to delete (keep best, cut weakest).
 
@@ -27,10 +27,10 @@ For each section:
 |---------|---------|--------|---------|-------------|-------------|-----------------|
 | AUD     | 1,446 | 1,500 |       0 |           0 |           0 | On Target       |
 | FAR     | 1,554 | 1,500 |       0 |           0 |           0 | On Target       |
-| REG     | 1,417 | 1,500 |       0 |          83 |           3 | Generate Needed |
+| REG     | 1,447 | 1,500 |       0 |           0 |           0 | On Target       |
 | BAR     | 1,525 | 1,500 |       0 |           0 |           0 | On Target       |
 | ISC     | 1,452 | 1,500 |       0 |           0 |           0 | On Target       |
-| TCP     | 1,335 | 1,500 |       0 |         165 |           6 | Generate Needed |
+| TCP     | 1,434 | 1,500 |       0 |           0 |           0 | On Target       |
 
 ## Topic Detail
 
@@ -101,30 +101,30 @@ For each section:
 
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
-| 1 | Circular 230 | 42 | 45 |  | +3 |
-| 1 | Federal Tax Procedures | 40 | 45 |  | +5 |
+| 1 | Circular 230 | 42 | 45 |  |  |
+| 1 | Federal Tax Procedures | 40 | 45 |  |  |
 | 1 | Legal Duties and Responsibilities | 45 | 45 |  |  |
 | 1 | Professional Ethics in Tax | 45 | 45 |  |  |
-| 1 | Tax Procedures | 44 | 45 |  | +1 |
+| 1 | Tax Procedures | 44 | 45 |  |  |
 | 2 | Agency and Regulation | 60 | 60 |  |  |
 | 2 | Business Law: Contracts | 60 | 60 |  |  |
 | 2 | Business Structures | 60 | 60 |  |  |
 | 2 | Debtor-Creditor Relationships | 60 | 60 |  |  |
-| 2 | Government Regulation of Business | 58 | 60 |  | +2 |
-| 3 | Like-Kind Exchanges | 48 | 50 |  | +2 |
-| 3 | Property Transactions: Basis | 47 | 50 |  | +3 |
-| 3 | Property Transactions: Gains/Losses | 43 | 50 |  | +7 |
-| 4 | Alternative Minimum Tax | 65 | 68 |  | +3 |
-| 4 | Individual Taxation: Credits | 67 | 68 |  | +1 |
-| 4 | Individual Taxation: Credits/AMT | 66 | 68 |  | +2 |
-| 4 | Individual Taxation: Deductions | 64 | 68 |  | +4 |
+| 2 | Government Regulation of Business | 58 | 60 |  |  |
+| 3 | Like-Kind Exchanges | 48 | 50 |  |  |
+| 3 | Property Transactions: Basis | 47 | 50 |  |  |
+| 3 | Property Transactions: Gains/Losses | 43 | 50 |  |  |
+| 4 | Alternative Minimum Tax | 65 | 68 |  |  |
+| 4 | Individual Taxation: Credits | 67 | 68 |  |  |
+| 4 | Individual Taxation: Credits/AMT | 66 | 68 |  |  |
+| 4 | Individual Taxation: Deductions | 64 | 68 |  |  |
 | 4 | Individual Taxation: Filing/Credits | 68 | 68 |  |  |
-| 4 | Individual Taxation: Income | 67 | 68 |  | +1 |
-| 5 | C Corporations | 81 | 83 |  | +2 |
-| 5 | Estate and Gift Tax | 78 | 84 |  | +6 |
-| 5 | Partnerships | 79 | 83 |  | +4 |
-| 5 | S Corporations | 53 | 83 |  | +30 |
-| 5 | Tax-Exempt Organizations | 77 | 84 |  | +7 |
+| 4 | Individual Taxation: Income | 67 | 68 |  |  |
+| 5 | C Corporations | 81 | 83 |  |  |
+| 5 | Estate and Gift Tax | 78 | 84 |  |  |
+| 5 | Partnerships | 79 | 83 |  |  |
+| 5 | S Corporations | 83 | 83 |  |  |
+| 5 | Tax-Exempt Organizations | 77 | 84 |  |  |
 
 ### BAR
 
@@ -177,22 +177,22 @@ For each section:
 
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
-| 1 | Individual Tax Planning: Compensation | 126 | 132 |  | +6 |
-| 1 | Passive Activity and At-Risk Rules | 128 | 132 |  | +4 |
+| 1 | Individual Tax Planning: Compensation | 126 | 132 |  |  |
+| 1 | Passive Activity and At-Risk Rules | 128 | 132 |  |  |
 | 1 | Retirement Plans and Education Savings | 131 | 131 |  |  |
-| 1 | Wealth Transfer and Gifting Strategies | 129 | 131 |  | +2 |
-| 2 | Advanced Basis Calculations | 95 | 105 |  | +10 |
-| 2 | Entity Formation and Liquidation | 94 | 105 |  | +11 |
-| 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 100 | 105 |  | +5 |
-| 2 | International Tax | 17 | 105 |  | +88 |
-| 2 | Owner-Entity Transactions | 102 | 105 |  | +3 |
-| 3 | Capital Structure Tax Planning | 52 | 56 |  | +4 |
+| 1 | Wealth Transfer and Gifting Strategies | 129 | 131 |  |  |
+| 2 | Advanced Basis Calculations | 95 | 105 |  |  |
+| 2 | Entity Formation and Liquidation | 105 | 105 |  |  |
+| 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 100 | 105 |  |  |
+| 2 | International Tax | 105 | 105 |  |  |
+| 2 | Owner-Entity Transactions | 102 | 105 |  |  |
+| 3 | Capital Structure Tax Planning | 52 | 56 |  |  |
 | 3 | Entity Choice and Planning | 56 | 56 |  |  |
 | 3 | Multi-Jurisdictional Tax Planning | 56 | 56 |  |  |
-| 3 | Trusts and Estates | 50 | 56 |  | +6 |
-| 4 | Entity Formation and Restructuring | 67 | 75 |  | +8 |
-| 4 | Nontaxable Dispositions | 66 | 75 |  | +9 |
-| 4 | Related Party Transactions | 66 | 75 |  | +9 |
+| 3 | Trusts and Estates | 50 | 56 |  |  |
+| 4 | Entity Formation and Restructuring | 67 | 75 |  |  |
+| 4 | Nontaxable Dispositions | 66 | 75 |  |  |
+| 4 | Related Party Transactions | 66 | 75 |  |  |
 
 ## Batch Log
 
@@ -215,3 +215,9 @@ For each section:
 | 2026-03-30 | 00908_generate_tcp_batch34.sql | TCP | Multi-Jurisdictional Tax Planning | 11 | Batch 34: market-based sourcing vs cost-of-performance, addback statutes, UDITPA purpose, allocation vs apportionment, bonus depreciation decoupling, Joyce vs Finnigan rule, water's-edge vs worldwide combined, VDAs, nonbusiness income allocation, state NOL limitations, static conformity |
 | 2026-03-30 | 00909_generate_aud_batch101.sql | AUD | Materiality | 14 | Batch 101: accumulated misstatements approaching PM, earnings trend reversal, comparative statements materiality, aggregation risk PM%, users as a group, interim review materiality, non-dollar disclosure omission, projected misstatement vs tolerable, multiple benchmarks, engagement letter exclusion, nature of procedures, overstatement/understatement, reassessing completed work, AU-C 450 management communication |
 | 2026-04-14 | 01030_generate_bar_batch32.sql | BAR | Prospective Analysis and Forecasting | 26 | Batch 32: high-low method (limitation, calculation, fixed cost), budget variance (favorable/unfavorable, offsetting, driver analysis, management by exception, volume vs price), cash budget (ending balance, collections pattern, borrowing evaluation), mixed cost definition, horizontal/vertical analysis, relevant range, correlation (positive/negative), CVP operating income, scenario vs sensitivity, CVP assumptions, CF classification, pro forma mix shift, regression Y-intercept |
+| 2026-04-14 | 01034_generate_tcp_batch35.sql | TCP | International Tax | 30 | Batch 35: interest/dividend/rental/real property/personal property/services income sourcing, branch vs subsidiary deferral, CFC 10% and 50% thresholds, constructive ownership, PE (fixed place, dependent agent, preparatory/auxiliary, construction duration), 30% FDAP withholding, bilateral rate reduction, ECI vs FDAP, worldwide taxation, sourcing vs taxability distinction, anti-deferral concept, multi-income-type analysis |
+| 2026-04-14 | 01035_generate_tcp_batch36.sql | TCP | International Tax | 30 | Batch 36: multi-entity CFC ownership, purchased inventory title passage sourcing, mixed-location services allocation, independent agent no PE, ECI net vs FDAP gross taxation, U.S. person definition, ECI/FDAP tax base comparison, branch losses deductible vs subsidiary losses, foreign-payer interest sourcing, preparatory/auxiliary PE exclusion, CFC vote-or-value disjunctive test, worldwide taxation for citizens abroad, real property rental situs sourcing, withholding as collection mechanism, ECI definition, CFC consequence for shareholders, 30% default rate, partnership attribution, construction PE duration, subsidiary deferral until distribution, multi-item sourcing analysis, 10% at-least threshold, withholding on payment types, worldwide taxation for corporations, withholding agent responsibility, PE prevents business profit taxation, royalty sourcing by use location, ECI filing obligation, dependent agent PE, goods payments exempt from withholding |
+| 2026-04-14 | 01036_generate_reg_batch61.sql | REG | S Corporations | 20 | Batch 61: voluntary revocation consent, family aggregation, partnership ineligible shareholder, per-share/per-day allocation, 100-shareholder limit termination, ordinary business income computation, nonresident alien termination, eligible trust types, distributions vs debt basis, foreign taxes separately stated, pass-through taxation, rescission of revocation, multi-factor eligibility, unanimous election consent, guaranteed loan no debt basis, revocation effective date, AAA tax-exempt exclusion, new shareholder no consent, domestic corporation requirement |
+| 2026-04-14 | 01037_generate_tcp_batch37.sql | TCP | International Tax | 28 | Batch 37: produced-and-sold inventory split sourcing, multi-income sourcing synthesis, U.S. sub dividend to foreign parent, 30% default rate, services allocation, branch vs subsidiary loss utilization, personal property sale seller's residence, withholding agent, equipment rental sourcing by use, CFC 10% threshold with no qualifying shareholders, PE temporary trade show, real property rental situs, CFC indirect ownership through foreign intermediary, source vs taxability misconception, ECI vs unrelated investment classification, FDAP-only foreign corp withholding at source, worldwide taxation persons, withholding on gross amount, interest U.S. borrower to foreign lender, subsidiary deferral concept, PE construction duration extension, CFC status consequence, stock sale gain seller's residence, depreciable property gain, no withholding on goods, foreign corp portfolio no ECI, services entirely in U.S., branch vs subsidiary legal distinction |
+| 2026-04-14 | 01038_generate_reg_batch62.sql | REG | S Corporations | 10 | Batch 62: QSST eligibility, stock+debt basis loss limit (guarantee excluded), revocation within 2.5 months effective date, foreign taxes separately stated, basis ordering with nondeductible life insurance, AAA nondeductible expense decrease, AAA definition, initial purchase basis, cash contribution in basis ordering, mid-year sale gain with per-share/per-day allocation |
+| 2026-04-14 | 01039_generate_tcp_batch38.sql | TCP | Entity Formation and Liquidation | 11 | Batch 38: Form 966 filing deadline, Section 331 multi-year liquidating distributions basis recovery, Section 334(a) FMV basis rule, Section 332 3-year timing requirement, Section 357(c)(3) cash-basis payables exclusion, profits interest safe harbor (Rev. Proc. 93-27), Section 336(d)(1) related-party loss disallowance, partial liquidation 5-year active business requirement, securities vs. boot (note term length), Section 362(e)(2)(C) election for net built-in loss, Section 721(b) investment company diversification |
