@@ -87,6 +87,31 @@ export const spec: TopicSpec = {
 
 	representativeDifficulty: "hard",
 
+	bannedTerms: [
+		{ term: "vega", pattern: "\\bvega\\b", category: "option Greek", why: "Option Greeks by name (vega, delta, gamma, theta, rho) are out of scope — directional sensitivity language is fine, but the named Greeks are graduate finance." },
+		{ term: "option Greek", pattern: "option\\s+Greek|Greek\\s+letter.{0,30}option", category: "option Greek", why: "Option Greeks collectively — out of scope." },
+		{ term: "d1 d2", pattern: "\\bd[_\\s]?1\\b.{0,30}d[_\\s]?2\\b|\\bN\\(d[_\\s]?[12]\\)", category: "Black-Scholes derivation", why: "Black-Scholes d1/d2 formula and N(d1)/N(d2) — out of scope." },
+		{ term: "cumulative normal distribution", pattern: "cumulative\\s+normal\\s+distribution\\s+function", category: "Black-Scholes derivation", why: "Black-Scholes mechanics — out of scope." },
+		{ term: "binomial tree", pattern: "binomial\\s+(?:tree|option\\s+pricing\\s+model|lattice)|binomial\\s+model", category: "lattice models", why: "Lattice / binomial tree option pricing beyond mentioning it exists — out of scope." },
+		{ term: "lattice model", pattern: "lattice\\s+(?:model|method|approach)\\s+(?:for|option)", category: "lattice models", why: "Lattice option pricing — out of scope." },
+		{ term: "risk-neutral probability", pattern: "risk[-\\s]neutral\\s+(?:probability|pricing|measure|valuation)", category: "lattice models", why: "Risk-neutral pricing theory — out of scope." },
+		{ term: "backward induction", pattern: "backward\\s+induction", category: "lattice models", why: "Backward induction on a lattice — out of scope." },
+		{ term: "martingale measure", pattern: "martingale\\s+measure|equivalent\\s+martingale", category: "advanced theory", why: "Martingale measures — out of scope." },
+		{ term: "geometric Brownian motion", pattern: "geometric\\s+Brownian\\s+motion|Wiener\\s+process|Itô'?s?\\s+lemma|stochastic\\s+differential\\s+equation", category: "stochastic calculus", why: "Stochastic calculus — out of scope." },
+		{ term: "Asian option", pattern: "Asian\\s+option", category: "exotic option", why: "Exotic options — out of scope." },
+		{ term: "barrier option", pattern: "barrier\\s+option", category: "exotic option", why: "Exotic options — out of scope." },
+		{ term: "lookback option", pattern: "lookback\\s+option", category: "exotic option", why: "Exotic options — out of scope." },
+		{ term: "compound option", pattern: "compound\\s+option|chooser\\s+option|digital\\s+option", category: "exotic option", why: "Exotic options — out of scope." },
+		{ term: "implied volatility surface", pattern: "implied\\s+volatility\\s+surface|volatility\\s+smile|volatility\\s+term\\s+structure", category: "volatility modeling", why: "Volatility surfaces — out of scope." },
+		{ term: "Heston model", pattern: "Heston\\s+model|local\\s+volatility\\s+model|stochastic\\s+volatility\\s+model|GARCH", category: "volatility modeling", why: "Stochastic / local volatility models — out of scope." },
+		{ term: "adjusted present value", pattern: "adjusted\\s+present\\s+value\\s+(?:framework|method|approach)|\\bAPV\\b", category: "advanced valuation", why: "APV framework — out of scope for this topic." },
+		{ term: "MM Proposition", pattern: "MM\\s+Proposition|Modigliani[-\\s]Miller\\s+(?:proof|proposition)", category: "advanced valuation", why: "MM Proposition I/II algebraic proofs — out of scope (conclusions live in capital structure topic)." },
+		{ term: "LBO model", pattern: "\\bLBO\\s+(?:model|modeling|analysis)|leveraged\\s+buyout\\s+model", category: "advanced valuation", why: "LBO modeling — out of scope." },
+		{ term: "exit multiple expansion", pattern: "exit\\s+multiple\\s+expansion|debt\\s+paydown\\s+schedule", category: "advanced valuation", why: "LBO mechanics — out of scope." },
+		{ term: "multistage dividend discount", pattern: "multi[-\\s]stage\\s+dividend\\s+discount|H[-\\s]model|two[-\\s]stage\\s+DDM", category: "DDM variants", why: "DDM variants beyond constant-growth Gordon — out of scope." },
+		{ term: "country risk premium", pattern: "country\\s+risk\\s+premium|Damodaran", category: "advanced valuation", why: "Country risk premium build-up / Damodaran-style adjustments — out of scope." },
+	],
+
 	notes:
 		"This is the most computationally demanding BAR topic. The single sharpest editorial line is the Black-Scholes boundary: AICPA names the model explicitly, so candidates must understand the inputs and their directional effects, but the formula itself, lattice alternatives, and named Greeks are graduate finance material. The 2026-04-13 audit retained Q14268 (which referenced 'vega' by name) as borderline-acceptable; under this spec, future content should not use Greek names — describe the sensitivity in plain language ('the option's sensitivity to volatility changes') instead. Real options should always be qualitative — never quantify a real option using Black-Scholes inputs. WACC mechanics belong here (as the discount rate input to DCF); WACC structural decisions and cost-of-capital calculations belong in the Capital Structure and Valuation topic. Both topics live in the same group so generator drift between them is low-risk, but reviewers should still tag stems by which decision the candidate is making.",
 };

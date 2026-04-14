@@ -83,6 +83,29 @@ export const spec: TopicSpec = {
 
 	representativeDifficulty: "hard",
 
+	bannedTerms: [
+		{ term: "regression-based effectiveness", pattern: "regression[-\\s]based\\s+effectiveness", category: "effectiveness methodology", why: "Regression-based effectiveness testing — out of scope." },
+		{ term: "dollar-offset method", pattern: "dollar[-\\s]offset\\s+method", category: "effectiveness methodology", why: "Dollar-offset method calculations — out of scope." },
+		{ term: "hypothetical derivative", pattern: "hypothetical\\s+derivative\\s+method", category: "effectiveness methodology", why: "Hypothetical derivative method for measuring ineffectiveness — out of scope." },
+		{ term: "critical terms match", pattern: "critical\\s+terms\\s+match\\s+method", category: "effectiveness methodology", why: "Critical terms match method beyond qualitative mention — out of scope." },
+		{ term: "long-haul method", pattern: "long[-\\s]haul\\s+method", category: "effectiveness methodology", why: "Long-haul vs short-cut method quantitative comparisons — out of scope." },
+		{ term: "80-125 range", pattern: "80[-\\s]?(?:to|–|-)\\s*125(?:\\s*percent)?\\s*range|80/125\\s*range", category: "effectiveness threshold", why: "The 80–125% effectiveness range beyond binary awareness — out of scope at quantitative depth." },
+		{ term: "yield curve construction", pattern: "yield\\s+curve\\s+construction|bootstrap(?:ping)?\\s+(?:the\\s+)?zero\\s+rates?|forward\\s+rate\\s+derivation", category: "advanced pricing", why: "Yield curve construction for derivative valuation — out of scope." },
+		{ term: "LIBOR SOFR transition", pattern: "LIBOR\\s+(?:to\\s+)?SOFR\\s+transition|SOFR\\s+transition|reference\\s+rate\\s+reform|ASU\\s+2020[-\\s]04|Topic\\s+848", category: "reference rate reform", why: "Reference rate reform / LIBOR-SOFR transition mechanics — out of scope." },
+		{ term: "cross-currency swap", pattern: "cross[-\\s]currency\\s+swap\\s+(?:mechanics|decomposition|valuation)", category: "advanced instrument", why: "Cross-currency swap mechanics — out of scope." },
+		{ term: "credit default swap", pattern: "credit[-\\s]default\\s+swap|\\bCDS\\b", category: "credit derivative", why: "Credit default swaps — out of scope." },
+		{ term: "total return swap", pattern: "total[-\\s]return\\s+swap", category: "credit derivative", why: "Total return swaps — out of scope." },
+		{ term: "credit-linked note", pattern: "credit[-\\s]linked\\s+note", category: "credit derivative", why: "Credit-linked notes — out of scope." },
+		{ term: "variance swap", pattern: "variance\\s+swap|volatility\\s+swap", category: "exotic derivative", why: "Variance / volatility swaps — out of scope." },
+		{ term: "weather derivative", pattern: "weather\\s+derivative|catastrophe\\s+bond", category: "exotic derivative", why: "Weather derivatives / catastrophe bonds — out of scope." },
+		{ term: "CVA", pattern: "\\bCVA\\b|credit\\s+valuation\\s+adjustment", category: "counterparty risk", why: "Counterparty credit valuation adjustment — out of scope." },
+		{ term: "DVA", pattern: "\\bDVA\\b|debit\\s+valuation\\s+adjustment", category: "counterparty risk", why: "Debit valuation adjustment — out of scope." },
+		{ term: "FVA", pattern: "\\bFVA\\b|funding\\s+valuation\\s+adjustment", category: "counterparty risk", why: "Funding valuation adjustment — out of scope." },
+		{ term: "ISDA Master", pattern: "ISDA\\s+Master\\s+Agreement|ISDA\\s+netting|netting\\s+opinion", category: "ISDA mechanics", why: "ISDA Master Agreement / netting mechanics — out of scope." },
+		{ term: "variation margin", pattern: "variation\\s+margin\\s+posting|collateral\\s+posting\\s+calculation", category: "ISDA mechanics", why: "Collateral / variation margin posting — out of scope." },
+		{ term: "day-1 P&L", pattern: "day[-\\s]1\\s+P&L|level[-\\s]3\\s+derivative\\s+valuation", category: "advanced valuation", why: "Day-1 P&L recognition for level-3 derivatives — out of scope." },
+	],
+
 	notes:
 		"The single biggest editorial trap in this topic is the gap between ASC 815's volume and the AICPA's narrow representative tasks. ASC 815 has hundreds of pages on effectiveness assessment methodologies, hypothetical derivatives, long-haul vs short-cut, and quantitative ineffectiveness measurement — none of which the AICPA blueprint tests. New questions should focus on: (a) what is a derivative, (b) what is an embedded derivative that must be bifurcated, (c) does this hedge qualify for hedge accounting, (d) which type of hedge is this, (e) where do the gains and losses go (P&L vs OCI), (f) JE for an interest rate swap from given inputs. Effectiveness testing should appear only as 'highly effective' / 'expected to be highly effective' phrasing, not as a calculation. Distractors should test the P&L-vs-OCI confusion (the most common candidate failure) and the pay-fixed-vs-pay-floating swap mapping, not effectiveness math. Counterparty credit risk, ISDA mechanics, and exotic derivatives are FRM/CFA territory and must not appear.",
 };

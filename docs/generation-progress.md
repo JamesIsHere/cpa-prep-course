@@ -28,7 +28,7 @@ For each section:
 | AUD     | 1,446 | 1,500 |       0 |           0 |           0 | On Target       |
 | FAR     | 1,554 | 1,500 |       0 |           0 |           0 | On Target       |
 | REG     | 1,417 | 1,500 |       0 |          83 |           3 | Generate Needed |
-| BAR     | 1,513 | 1,500 |       0 |           0 |           0 | On Target       |
+| BAR     | 1,539 | 1,500 |       0 |           0 |           0 | On Target       |
 | ISC     | 1,452 | 1,500 |       0 |           0 |           0 | On Target       |
 | TCP     | 1,335 | 1,500 |       0 |         165 |           6 | Generate Needed |
 
@@ -133,7 +133,7 @@ For each section:
 | 1 | Capital Structure and Valuation | 122 | 134 |  |  |
 | 1 | Financial Statement Analysis | 187 | 134 |  |  |
 | 1 | Financial Valuation Methods | 147 | 134 |  |  |
-| 1 | Prospective Analysis and Forecasting | 108 | 134 |  |  |
+| 1 | Prospective Analysis and Forecasting | 134 | 134 |  |  |
 | 1 | Risk Management and Economics | 130 | 134 |  |  |
 | 2 | Advanced Consolidations | 49 | 55 |  |  |
 | 2 | Advanced Lease Transactions | 54 | 55 |  |  |
@@ -214,3 +214,4 @@ For each section:
 | 2026-03-30 | 00907_generate_tcp_batch33.sql | TCP | Entity Choice and Planning | 12 | Batch 33: check-the-box per se corporation, PTET SALT cap bypass, LIFO recapture on S election, Section 199A W-2/UBIA limitation, assets-over conversion method, Section 1375 passive income penalty, family attribution rule, AAA frozen on S-to-C ordering, IRC 721 no control test, SSTB complete phase-out, single sales factor apportionment, Form 2553 election deadline |
 | 2026-03-30 | 00908_generate_tcp_batch34.sql | TCP | Multi-Jurisdictional Tax Planning | 11 | Batch 34: market-based sourcing vs cost-of-performance, addback statutes, UDITPA purpose, allocation vs apportionment, bonus depreciation decoupling, Joyce vs Finnigan rule, water's-edge vs worldwide combined, VDAs, nonbusiness income allocation, state NOL limitations, static conformity |
 | 2026-03-30 | 00909_generate_aud_batch101.sql | AUD | Materiality | 14 | Batch 101: accumulated misstatements approaching PM, earnings trend reversal, comparative statements materiality, aggregation risk PM%, users as a group, interim review materiality, non-dollar disclosure omission, projected misstatement vs tolerable, multiple benchmarks, engagement letter exclusion, nature of procedures, overstatement/understatement, reassessing completed work, AU-C 450 management communication |
+| 2026-04-14 | 01030_generate_bar_batch32.sql | BAR | Prospective Analysis and Forecasting | 26 | Batch 32: high-low method (limitation, calculation, fixed cost), budget variance (favorable/unfavorable, offsetting, driver analysis, management by exception, volume vs price), cash budget (ending balance, collections pattern, borrowing evaluation), mixed cost definition, horizontal/vertical analysis, relevant range, correlation (positive/negative), CVP operating income, scenario vs sensitivity, CVP assumptions, CF classification, pro forma mix shift, regression Y-intercept |

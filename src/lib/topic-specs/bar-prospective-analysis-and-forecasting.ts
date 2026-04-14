@@ -72,6 +72,34 @@ export const spec: TopicSpec = {
 
 	representativeDifficulty: "medium",
 
+	bannedTerms: [
+		{ term: "adjusted R-squared", pattern: "adjusted\\s+R[-\\s]?(?:squared|²)|R[-\\s]bar\\s+squared", category: "regression diagnostic", why: "Model-selection / overfitting detection via adjusted R² — graduate stats, not CPA." },
+		{ term: "p-value", pattern: "p[-\\s]value", category: "hypothesis test", why: "Hypothesis testing on regression coefficients is out of scope." },
+		{ term: "t-statistic", pattern: "\\bt[-\\s]statistics?\\b|\\bt[-\\s]stat\\b", category: "hypothesis test", why: "t-statistic testing of regression coefficients is out of scope." },
+		{ term: "F-statistic", pattern: "\\bF[-\\s]statistics?\\b|\\bF[-\\s]stat\\b", category: "hypothesis test", why: "F-statistic testing on regression models is out of scope." },
+		{ term: "hypothesis testing", pattern: "hypothesis\\s+test(?:ing)?", category: "hypothesis test", why: "Formal hypothesis testing on coefficients is out of scope." },
+		{ term: "confidence interval", pattern: "confidence\\s+interval", category: "regression diagnostic", why: "Regression confidence intervals are out of scope." },
+		{ term: "prediction interval", pattern: "prediction\\s+interval", category: "regression diagnostic", why: "Forecast prediction intervals are out of scope." },
+		{ term: "multicollinearity", pattern: "multi[-\\s]?collinearity", category: "regression diagnostic", why: "Multicollinearity diagnostics are graduate stats." },
+		{ term: "VIF", pattern: "\\bVIF\\b|variance\\s+inflation\\s+factor", category: "regression diagnostic", why: "Variance inflation factor — out of scope." },
+		{ term: "heteroscedasticity", pattern: "heteros?cedastic|heteroskedastic", category: "regression diagnostic", why: "Heteroscedasticity diagnostics — out of scope." },
+		{ term: "autocorrelation", pattern: "auto[-\\s]?correlation|serial\\s+correlation", category: "regression diagnostic", why: "Autocorrelation / serial correlation diagnostics — out of scope." },
+		{ term: "Durbin-Watson", pattern: "Durbin[-\\s]Watson", category: "regression diagnostic", why: "Durbin-Watson statistic — out of scope." },
+		{ term: "ARIMA", pattern: "\\bARIMA\\b", category: "time series", why: "ARIMA and Box-Jenkins methodology — out of scope." },
+		{ term: "Box-Jenkins", pattern: "Box[-\\s]Jenkins", category: "time series", why: "Box-Jenkins methodology — out of scope." },
+		{ term: "Holt-Winters", pattern: "Holt[-\\s]Winters", category: "time series", why: "Multi-parameter exponential smoothing variants with seasonality — out of scope." },
+		{ term: "2SLS", pattern: "\\b2SLS\\b|two[-\\s]stage\\s+least\\s+squares", category: "econometrics", why: "Two-stage least squares / instrumental variables — out of scope." },
+		{ term: "instrumental variable", pattern: "instrumental\\s+variable", category: "econometrics", why: "Instrumental variables — out of scope." },
+		{ term: "maximum likelihood", pattern: "maximum\\s+likelihood(?:\\s+estimation)?|\\bMLE\\b", category: "econometrics", why: "MLE — out of scope." },
+		{ term: "method of moments", pattern: "method\\s+of\\s+moments", category: "econometrics", why: "Method of moments estimator — out of scope." },
+		{ term: "Bayesian", pattern: "Bayesian\\s+(?:inference|analysis|method)|Markov\\s+chain\\s+Monte\\s+Carlo|\\bMCMC\\b", category: "econometrics", why: "Bayesian inference, MCMC — out of scope." },
+		{ term: "stochastic process", pattern: "stochastic\\s+process|Brownian\\s+motion|Wiener\\s+process", category: "advanced math", why: "Stochastic processes — out of scope." },
+		{ term: "eigenvalue", pattern: "eigenvalue\\s+decomposition|singular\\s+value\\s+decomposition|\\bSVD\\b|principal\\s+component\\s+analysis|\\bPCA\\b", category: "advanced math", why: "Eigenvalue / SVD / PCA — out of scope." },
+		{ term: "partial derivative", pattern: "partial\\s+derivative|differential\\s+equation", category: "advanced math", why: "Calculus beyond basic slope/rate language is out of scope." },
+		{ term: "Lagrangian", pattern: "Lagrangian\\s+(?:optimization|multiplier|method)|simplex\\s+method|formal\\s+linear\\s+programming", category: "optimization", why: "Lagrangian / simplex / formal LP — out of scope." },
+		{ term: "Granger causality", pattern: "Granger\\s+causality|cointegration|vector\\s+auto[-\\s]?regression|\\bVAR\\s+model\\b", category: "time series", why: "Granger causality, cointegration, VAR — out of scope." },
+	],
+
 	notes:
 		"This topic was the source of the 2026-04-13 off-blueprint audit that deleted 20 questions for graduate-level econometric content. Generator and validator should both enforce the out-of-scope list as ERROR-level for any new content. Stem rewrites and explanation edits should also avoid out-of-scope vocabulary. The single trickiest in-scope item is regression — basic R-squared interpretation is fine, but anything testing model selection, coefficient significance, or diagnostics is out.",
 };
