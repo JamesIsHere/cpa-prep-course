@@ -115,11 +115,11 @@ export const questionCounts: Record<string, number> = {
 	"S Corporations": 83,
 	"Tax Procedures": 44,
 	"Tax-Exempt Organizations": 77,
-	// BAR (1,518 total — synced with live DB 2026-04-14)
+	// BAR (1,513 total — synced with live DB 2026-04-14)
 	"Advanced Consolidations": 49,
 	"Advanced Lease Transactions": 54,
 	"Advanced Revenue and Intangibles": 47,
-	"Business Combinations": 41,
+	"Business Combinations": 36,
 	"Capital Structure and Valuation": 115,
 	"Derivatives and Hedging": 50,
 	"Financial Statement Analysis": 180,
@@ -177,7 +177,7 @@ export const sectionQuestionTotals: Record<string, number> = {
 	aud: 1446,
 	far: 1539,
 	reg: 1437,
-	bar: 1518,
+	bar: 1513,
 	isc: 1452,
 	tcp: 1399,
 };

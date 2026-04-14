@@ -23,6 +23,7 @@ import { spec as barFinancialStatementAnalysis } from "./bar-financial-statement
 import { spec as regPartnerships } from "./reg-partnerships";
 import { spec as tcpPassiveActivityAndAtRiskRules } from "./tcp-passive-activity-and-at-risk-rules";
 import { spec as farLeases } from "./far-leases";
+import { spec as barBusinessCombinations } from "./bar-business-combinations";
 
 const SPECS: Record<string, TopicSpec> = {
 	[barProspective.topic]: barProspective,
@@ -39,6 +40,7 @@ const SPECS: Record<string, TopicSpec> = {
 	[regPartnerships.topic]: regPartnerships,
 	[tcpPassiveActivityAndAtRiskRules.topic]: tcpPassiveActivityAndAtRiskRules,
 	[farLeases.topic]: farLeases,
+	[barBusinessCombinations.topic]: barBusinessCombinations,
 };
 
 /** Look up the topic spec for a given questions.topic value. Returns undefined if none. */

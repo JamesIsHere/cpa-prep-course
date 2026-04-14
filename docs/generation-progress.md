@@ -28,7 +28,7 @@ For each section:
 | AUD     | 1,446 | 1,500 |       0 |           0 |           0 | On Target       |
 | FAR     | 1,539 | 1,500 |       0 |           0 |           0 | On Target       |
 | REG     | 1,437 | 1,500 |       0 |           0 |           0 | On Target       |
-| BAR     | 1,518 | 1,500 |       0 |           0 |           0 | On Target       |
+| BAR     | 1,513 | 1,500 |       0 |           0 |           0 | On Target       |
 | ISC     | 1,452 | 1,500 |       0 |           0 |           0 | On Target       |
 | TCP     | 1,399 | 1,500 |       0 |         101 |           4 | Generate Needed |
 
@@ -138,7 +138,7 @@ For each section:
 | 2 | Advanced Consolidations | 49 | 55 |  |  |
 | 2 | Advanced Lease Transactions | 54 | 55 |  |  |
 | 2 | Advanced Revenue and Intangibles | 47 | 55 |  |  |
-| 2 | Business Combinations | 41 | 55 |  |  |
+| 2 | Business Combinations | 36 | 55 |  |  |
 | 2 | Derivatives and Hedging | 50 | 55 |  |  |
 | 2 | Foreign Currency Transactions | 43 | 55 |  |  |
 | 2 | Income Taxes Advanced | 48 | 55 |  |  |
