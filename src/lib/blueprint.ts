@@ -90,7 +90,7 @@ export const questionCounts: Record<string, number> = {
 	"Statement of Cash Flows": 80,
 	"Subsequent Events": 29,
 	"Trade Receivables": 36,
-	// REG (1,446 total — synced with live DB 2026-04-14)
+	// REG (1,417 total — synced with live DB 2026-04-14)
 	"Agency and Regulation": 60,
 	"Alternative Minimum Tax": 65,
 	"Business Law: Contracts": 60,
@@ -112,7 +112,7 @@ export const questionCounts: Record<string, number> = {
 	"Professional Ethics in Tax": 45,
 	"Property Transactions: Basis": 47,
 	"Property Transactions: Gains/Losses": 43,
-	"S Corporations": 82,
+	"S Corporations": 53,
 	"Tax Procedures": 44,
 	"Tax-Exempt Organizations": 77,
 	// BAR (1,513 total — synced with live DB 2026-04-14)
@@ -176,7 +176,7 @@ export const questionCounts: Record<string, number> = {
 export const sectionQuestionTotals: Record<string, number> = {
 	aud: 1446,
 	far: 1554,
-	reg: 1446,
+	reg: 1417,
 	bar: 1513,
 	isc: 1452,
 	tcp: 1335,

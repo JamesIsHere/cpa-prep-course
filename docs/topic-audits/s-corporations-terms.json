@@ -1,0 +1,254 @@
+[
+  {
+    "term": "Section 1374",
+    "pattern": "(?:Section\\s*|§\\s*|Sec\\.?\\s*|IRC\\s*§?\\s*)1374\\b",
+    "category": "code section",
+    "why": "Built-in gains tax code section. Out of scope per reg-s-corporations spec: AICPA REG/V/C tests eligibility, ordinary income/AAA, and basis — not the BIG tax mechanics."
+  },
+  {
+    "term": "built-in gains tax",
+    "pattern": "built[-\\s]in\\s+gains?\\s+tax",
+    "category": "named provision",
+    "why": "BIG tax under Sec 1374 — out of scope."
+  },
+  {
+    "term": "BIG tax",
+    "pattern": "\\bBIG\\s+tax\\b",
+    "category": "named provision",
+    "why": "Same as built-in gains tax — out of scope."
+  },
+  {
+    "term": "net unrealized built-in gain",
+    "pattern": "net\\s+unrealized\\s+built[-\\s]in\\s+gain",
+    "category": "Sec 1374 terminology",
+    "why": "NUBIG is a Sec 1374 construct — out of scope."
+  },
+  {
+    "term": "NUBIG",
+    "pattern": "\\bNUBIG\\b",
+    "category": "Sec 1374 terminology",
+    "why": "Net unrealized built-in gain acronym — out of scope."
+  },
+  {
+    "term": "recognition period",
+    "pattern": "(?:5[-\\s]year\\s+)?recognition\\s+period",
+    "category": "Sec 1374 terminology",
+    "why": "The 5-year (formerly 10-year) BIG recognition period is a Sec 1374 concept — out of scope."
+  },
+  {
+    "term": "Section 1375",
+    "pattern": "(?:Section\\s*|§\\s*|Sec\\.?\\s*|IRC\\s*§?\\s*)1375\\b",
+    "category": "code section",
+    "why": "Passive investment income tax (sting tax) code section — out of scope."
+  },
+  {
+    "term": "passive investment income tax",
+    "pattern": "passive\\s+investment\\s+income\\s+tax",
+    "category": "named provision",
+    "why": "Sec 1375 sting tax — out of scope."
+  },
+  {
+    "term": "sting tax",
+    "pattern": "\\bsting\\s+tax\\b",
+    "category": "named provision",
+    "why": "Sec 1375 nickname — out of scope."
+  },
+  {
+    "term": "excess net passive income",
+    "pattern": "excess\\s+net\\s+passive\\s+income|\\bENPI\\b",
+    "category": "Sec 1375 terminology",
+    "why": "Sec 1375 terminology — out of scope."
+  },
+  {
+    "term": "Section 1362(d)(3)",
+    "pattern": "(?:Section\\s*|§\\s*|Sec\\.?\\s*|IRC\\s*§?\\s*)1362\\(d\\)\\(3\\)",
+    "category": "code section",
+    "why": "Termination of S status for three consecutive years of excess net passive income — Sec 1375 adjunct, out of scope."
+  },
+  {
+    "term": "three consecutive years",
+    "pattern": "three\\s+consecutive\\s+years.{0,60}passive\\s+investment\\s+income|three\\s+consecutive\\s+years.{0,60}passive\\s+income",
+    "category": "Sec 1362(d)(3) trigger",
+    "why": "The Sec 1362(d)(3) termination trigger — out of scope."
+  },
+  {
+    "term": "post-termination transition period",
+    "pattern": "post[-\\s]termination\\s+transition\\s+period",
+    "category": "named provision",
+    "why": "PTTP under Sec 1377(b) — out of scope."
+  },
+  {
+    "term": "PTTP",
+    "pattern": "\\bPTTP\\b",
+    "category": "named provision",
+    "why": "Post-termination transition period acronym — out of scope."
+  },
+  {
+    "term": "Section 1377(b)",
+    "pattern": "(?:Section\\s*|§\\s*|Sec\\.?\\s*|IRC\\s*§?\\s*)1377\\(b\\)",
+    "category": "code section",
+    "why": "PTTP code section — out of scope."
+  },
+  {
+    "term": "Section 1377(a)(2)",
+    "pattern": "(?:Section\\s*|§\\s*|Sec\\.?\\s*|IRC\\s*§?\\s*)1377\\(a\\)\\(2\\)",
+    "category": "code section",
+    "why": "Closing-of-the-books election — out of scope."
+  },
+  {
+    "term": "closing of the books",
+    "pattern": "closing[-\\s]of[-\\s]the[-\\s]books|close\\s+the\\s+books.{0,40}election",
+    "category": "Sec 1377(a)(2) election",
+    "why": "Closing-of-the-books election under Sec 1377(a)(2) — out of scope."
+  },
+  {
+    "term": "per-share per-day",
+    "pattern": "per[-\\s]share[-\\s]per[-\\s]day",
+    "category": "Sec 1377(a)(2) default",
+    "why": "Per-share-per-day default allocation under Sec 1377(a)(2) — out of scope."
+  },
+  {
+    "term": "AAA freezing",
+    "pattern": "AAA\\s+(?:freez|bypass)",
+    "category": "Sec 1368(e)(3) election",
+    "why": "AAA freezing / bypass election under Sec 1368(e)(3) is out of scope. NOTE: the accumulated adjustments account itself IS in scope — this pattern targets only the bypass-specific phrasing."
+  },
+  {
+    "term": "Section 1368(e)(3)",
+    "pattern": "(?:Section\\s*|§\\s*|Sec\\.?\\s*|IRC\\s*§?\\s*)1368\\(e\\)\\(3\\)",
+    "category": "code section",
+    "why": "AAA bypass election code section — out of scope."
+  },
+  {
+    "term": "Section 1362(f)",
+    "pattern": "(?:Section\\s*|§\\s*|Sec\\.?\\s*|IRC\\s*§?\\s*)1362\\(f\\)",
+    "category": "code section",
+    "why": "Inadvertent termination relief — out of scope (the termination trigger itself is in scope; the relief mechanics are not)."
+  },
+  {
+    "term": "inadvertent termination",
+    "pattern": "inadvertent\\s+termination.{0,40}relief|inadvertent\\s+termination.{0,40}Section",
+    "category": "Sec 1362(f)",
+    "why": "Inadvertent termination RELIEF under Sec 1362(f) — out of scope. The concept that inadvertent termination CAN occur is in scope; IRS relief mechanics are not."
+  },
+  {
+    "term": "QSub",
+    "pattern": "\\bQSub\\b|qualified\\s+subchapter\\s+S\\s+subsidiary",
+    "category": "named election",
+    "why": "QSub election under Sec 1361(b)(3) — out of scope."
+  },
+  {
+    "term": "Section 1361(b)(3)",
+    "pattern": "(?:Section\\s*|§\\s*|Sec\\.?\\s*|IRC\\s*§?\\s*)1361\\(b\\)\\(3\\)",
+    "category": "code section",
+    "why": "QSub election code section — out of scope."
+  },
+  {
+    "term": "Section 444",
+    "pattern": "(?:Section\\s*|§\\s*|Sec\\.?\\s*|IRC\\s*§?\\s*)444\\b",
+    "category": "code section",
+    "why": "Sec 444 fiscal year elections — out of scope."
+  },
+  {
+    "term": "Section 7519",
+    "pattern": "(?:Section\\s*|§\\s*|Sec\\.?\\s*|IRC\\s*§?\\s*)7519\\b",
+    "category": "code section",
+    "why": "Required payments under Sec 7519 (pairs with Sec 444) — out of scope."
+  },
+  {
+    "term": "LIFO recapture tax",
+    "pattern": "LIFO\\s+recapture",
+    "category": "C-to-S conversion",
+    "why": "LIFO recapture tax on C-to-S conversion — out of scope (the basic election is in scope; conversion-specific taxes are not)."
+  },
+  {
+    "term": "five-year re-election bar",
+    "pattern": "(?:5|five)[-\\s]year\\s+(?:re[-\\s]?election|waiting)\\s+(?:bar|period)",
+    "category": "C-to-S conversion",
+    "why": "The 5-year bar on re-electing S status after termination — out of scope."
+  },
+  {
+    "term": "Schedule M-2",
+    "pattern": "Schedule\\s+M[-\\s]2",
+    "category": "form schedule",
+    "why": "Schedule M-2 line-by-line reconciliation — out of scope. The AAA concept is in scope; the Schedule M-2 mechanics are not."
+  },
+  {
+    "term": "other adjustments account",
+    "pattern": "other\\s+adjustments\\s+account|\\bOAA\\b",
+    "category": "AAA-adjacent",
+    "why": "OAA detailed mechanics — out of scope (AAA is in scope; OAA is not)."
+  },
+  {
+    "term": "accumulated E&P",
+    "pattern": "accumulated\\s+earnings\\s+and\\s+profits|\\bAE&P\\b|\\bAEP\\b(?=.{0,20}distribution)",
+    "category": "C-corp E&P interaction",
+    "why": "Accumulated E&P from prior C years and the AAA/AE&P/OAA/paid-in-capital distribution ordering rules — out of scope per spec."
+  },
+  {
+    "term": "reasonable compensation",
+    "pattern": "reasonable\\s+compensation",
+    "category": "TCP scope",
+    "why": "Reasonable compensation vs. distributions is a TCP owner-entity transactions topic, not a REG S Corporations topic — belongs elsewhere."
+  },
+  {
+    "term": "self-employment tax",
+    "pattern": "self[-\\s]employment\\s+tax.{0,40}(?:shareholder|S\\s+corporation|S\\s+corp)",
+    "category": "TCP scope",
+    "why": "SE tax treatment of S corp distributions is TCP owner-entity territory — out of scope here."
+  },
+  {
+    "term": "Section 199A",
+    "pattern": "(?:Section\\s*|§\\s*|Sec\\.?\\s*|IRC\\s*§?\\s*)199A\\b",
+    "category": "code section",
+    "why": "QBI deduction at the calculation level is out of scope for this topic (belongs in individual taxation)."
+  },
+  {
+    "term": "qualified business income",
+    "pattern": "qualified\\s+business\\s+income\\s+deduction|\\bQBI\\s+deduction",
+    "category": "Sec 199A",
+    "why": "QBI deduction — out of scope at the calculation level."
+  },
+  {
+    "term": "at-risk limitation",
+    "pattern": "at[-\\s]risk\\s+(?:limitation|rule)",
+    "category": "loss limitation scope",
+    "why": "At-risk limitations on S corp losses belong in REG individual loss limitations topic, not here."
+  },
+  {
+    "term": "passive activity loss",
+    "pattern": "passive\\s+activity\\s+loss\\s+(?:limitation|rule)",
+    "category": "loss limitation scope",
+    "why": "PAL limitations on S corp losses — not tested under this topic."
+  },
+  {
+    "term": "BBA partnership audit",
+    "pattern": "BBA\\s+partnership\\s+audit|Bipartisan\\s+Budget\\s+Act\\s+(?:of\\s+2015\\s+)?audit",
+    "category": "audit procedure",
+    "why": "BBA/TEFRA audit rules — out of scope (and do not apply to S corps in any event, but generators sometimes confuse the two)."
+  },
+  {
+    "term": "TEFRA audit",
+    "pattern": "TEFRA\\s+audit",
+    "category": "audit procedure",
+    "why": "TEFRA audit rules — out of scope."
+  },
+  {
+    "term": "composite return",
+    "pattern": "composite\\s+return",
+    "category": "state tax",
+    "why": "State composite returns for nonresident S corp shareholders — state-level conformity, out of scope."
+  },
+  {
+    "term": "nonresident shareholder withholding",
+    "pattern": "nonresident\\s+shareholder\\s+withholding|nonresident\\s+withholding.{0,40}shareholder",
+    "category": "state tax",
+    "why": "State nonresident shareholder withholding — out of scope."
+  },
+  {
+    "term": "multi-state apportionment",
+    "pattern": "multi[-\\s]state\\s+(?:apportionment|allocation)",
+    "category": "state tax",
+    "why": "State apportionment for S corps — belongs in the REG/V/B State and local tax topic, not here."
+  }
+]
