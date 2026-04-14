@@ -1,158 +1,112 @@
-# Topic-specs pilot — session handoff (2026-04-14, end-of-session)
+# Topic specs — session handoff (2026-04-14, end of rollout wave)
 
-**Status:** Pilot complete and proven end-to-end. All 3 rollout gaps closed. Orchestrator prompt injection validated in production. Read this first if you're picking up the work in a fresh Claude Code session.
+**Status:** 17 specs live. 8 cleanups complete at 0 drift. 2 backlog topics with frozen audit lists ready for triage. The full-bank review strategy is laid out but not started. Read this first if you're picking up the work in a fresh Claude Code session.
 
 ## State of the world
 
-**Bank state:** 8,729 questions (was 8,832 at session start). Net change: −103 (−129 off-blueprint removed, +26 new spec-constrained generation from batch 32). `verified-ids.json` in sync.
+**Bank state:** 8,786 questions. Drift test 91/91 passing. 17 topic specs registered in `src/lib/topic-specs/index.ts` covering ~14% of the bank.
 
-**Authored specs (7):** Five pilot specs plus two authored from scaffolder stubs during the rollout session:
+**Authored specs (17):**
 
-| # | File | AICPA Ref | Authored |
-|---|------|-----------|----------|
-| 1 | `bar-prospective-analysis-and-forecasting.ts` | BAR/I/B/1 | Pilot |
-| 2 | `bar-financial-valuation-methods.ts` | BAR/I/B/3 | Pilot |
-| 3 | `bar-derivatives-and-hedging.ts` | BAR/II/H/0 | Pilot |
-| 4 | `tcp-international-tax.ts` | TCP/II/A/4 | Pilot |
-| 5 | `reg-s-corporations.ts` | REG/V/C | Pilot (group-level ref) |
-| 6 | `bar-capital-structure-and-valuation.ts` | BAR/I/B/2 | Rollout (first stub→authored) |
-| 7 | `bar-risk-management-and-economics.ts` | BAR/I/B/4 (+/B/5 in notes) | Rollout |
+| # | Topic | Section | Anchor | Clean? |
+|---|---|---|---|---|
+| 1 | Prospective Analysis and Forecasting | BAR | BAR/I/B/1 | ✓ |
+| 2 | Financial Valuation Methods | BAR | BAR/I/B/3 | ✓ |
+| 3 | Derivatives and Hedging | BAR | BAR/II/H/0 | ✓ |
+| 4 | International Tax | TCP | TCP/II/A/4 | ✓ |
+| 5 | S Corporations | REG | REG/V/C | ✓ |
+| 6 | Capital Structure and Valuation | BAR | BAR/I/B/2 | ✓ |
+| 7 | Risk Management and Economics | BAR | BAR/I/B/4 | ✓ |
+| 8 | Fair Value | FAR | FAR/III/E/0 | ✓ |
+| 9 | C Corporations | REG | REG/V/B | ✓ |
+| 10 | Owner-Entity Transactions | TCP | TCP/IV/C | **backlog** |
+| 11 | Financial Statement Analysis | BAR | BAR/I/A/1 | ✓ |
+| 12 | Partnerships | REG | REG/V/D | **backlog** |
+| 13 | Passive Activity and At-Risk Rules | TCP | TCP/I/B/0 | ✓ |
+| 14 | Leases | FAR | FAR/III/F/0 | ✓ |
+| 15 | Business Combinations | BAR | BAR/II/F/0 | ✓ |
+| 16 | Audit Evidence | AUD | AUD/III/B | ✓ |
+| 17 | Risk Assessment | AUD | AUD/II/E/0 | ✓ |
 
-**Stubs remaining:** 123 in `src/lib/topic-specs/` (generated 2026-04-14 by `scripts/qa/scaffold-topic-spec.ts --all-unspecced`). 10 have `blueprintRef: "TODO"` needing manual resolution — mostly ISC SOC topics where Slayer's decomposition doesn't match the AICPA JSON. Find them with:
+**Authoritative session-wrap doc (read this next):** `docs/session-log-2026-04-14-specs-rollout.md` — drift rates per topic, cleanup dispositions, migration filenames, the strategic question about full-bank review, the 5-stage recommendation.
 
-```bash
-grep -l 'blueprintRef: "TODO"' src/lib/topic-specs/
-```
+## Immediate next task — Stage 1 of the full-bank plan
 
-**Drift test:** `npx vitest run tests/unit/topic-specs.test.ts` — 41/41 passing.
-
-## The three rollout gaps (all closed)
-
-### Gap 1 — Orchestrator injection proven in production ✓
-
-First spec-constrained generation batch committed as `01030_generate_bar_batch32.sql` (26 questions, BAR Prospective Analysis and Forecasting). Post-batch audit showed **25 of 26 questions fully on-spec** (96% clean). The single drift question (Q14788, autocorrelation in a distractor) was cleaned up in `01031`. In-scope content saturation confirmed by term-scan: 45 "variance", 27 "Forecast", 15 "correlation", 10 "breakeven", 9 "high-low", 8 "CVP", etc. Zero hits on out-of-scope terms in the new stems.
-
-**Implication:** the orchestrator prompt injection works. Future generation batches under spec constraints can be trusted at ~96% clean, with the spec-aware validator catching the residual at write time.
-
-### Gap 2 — Spec-aware validator at write time ✓
-
-`scripts/qa/validate-migration.ts` now runs a per-question scope check against `getTopicSpec(q.topic).bannedTerms`. Any INSERT/UPDATE whose stem, choices, or explanation matches a compiled banned-term pattern gets an ERROR and blocks the migration. End-to-end verified with a synthetic GILTI-testing migration that was blocked with 4 banned-term errors.
-
-**Authoring convention:** each spec's `bannedTerms` is the machine-readable projection of its `outOfScope` list. Keep them in sync by editing both when adding an out-of-scope item. See any of the 7 authored specs for the shape — TCP International Tax has the most (77 terms), BAR Derivatives has the fewest (20).
-
-### Gap 3 — Bulk spec-stub scaffolder ✓
-
-`scripts/qa/scaffold-topic-spec.ts` generates stub files for every unspecced topic in `blueprint.ts`. Two modes:
+**Close the 2 backlog topics.** Both have frozen audit lists captured in backlog docs at the time of the first audit. The work is triage (KEEP / REWRITE / DELETE) plus writing a single cleanup migration per topic.
 
 ```bash
-# Single topic
-npx tsx scripts/qa/scaffold-topic-spec.ts --topic="Topic Name"
-
-# Bulk (all unspecced topics at once)
-npx tsx scripts/qa/scaffold-topic-spec.ts --all-unspecced [--dry-run]
+# For each backlog topic: re-run the audit, fetch the full question bodies,
+# triage, and write a cleanup migration.
+npx tsx scripts/qa/audit-topic-content.ts --topic="Owner-Entity Transactions" --section=tcp
+npx tsx scripts/qa/audit-topic-content.ts --topic="Partnerships" --section=reg
 ```
 
-Stubs are DORMANT until registered in `src/lib/topic-specs/index.ts`. The drift test only sees registered specs, so 123 stubs sitting on disk with empty inScope/outOfScope arrays don't break anything. Each stub has pre-populated topic, section, blueprintRef (auto-resolved or "TODO"), and a ready-to-paste import/register line.
+**Backlog docs:**
+- `docs/owner-entity-cleanup-backlog.md` — 38 flagged questions (expected ~10-15 deletes, ~5 rewrites after triage)
+- `docs/partnerships-cleanup-backlog.md` — 43 flagged questions (expected ~15-25 deletes given drift density)
 
-**Authoring speedup measured:** ~40 min per topic from scratch (spec #1) → ~15 min per topic from stub (spec #6). 3× acceleration. The stub eliminates boilerplate authoring; the remaining time is the domain work of writing the scope lists.
+**Important:** both topics use group-level `blueprintRef` because they are hybrids that span REG foundational and TCP advanced material. The specs' inScope lists are intentionally permissive — during triage, KEEP questions that test in-scope concepts even if they trip a section-citation ban (e.g., a question about naming Sec 302 safe harbor categories is in-scope for Owner-Entity). DELETE only when the question's substantive teaching is out of scope.
 
-## Cleanup cadence across the 5 audited topics
+**Expected outcome:** after Stage 1, all 17 authored specs have 0 drift. Topic counts drop further: Owner-Entity ~85-90, Partnerships ~45-55. Both topics will need spec-constrained regeneration in a later stage.
 
-| Topic | Pre | Post | Δ | Drift rate | Migration |
-|---|---:|---:|---:|---:|---|
-| TCP International Tax | 103 | 17 | −86 | 87% | 01028 |
-| REG S Corporations | 82 | 53 | −29 | 37% | 01029 |
-| BAR Prospective Analysis | 134 | 132 | −2 + 2 rewrites | residual | 01031 |
-| BAR Capital Structure | 122 | 115 | −7 | 5.7% | 01032 |
-| BAR Risk Management | 130 | 125 | −5 | 3.8% | 01033 |
+## After Stage 1 — the staged full-bank review
 
-**Pattern:** drift rates drop sharply as we move beyond the early-drift topics. International Tax and S Corporations were the outliers (because named provisions like GILTI/Subpart F clustered tightly). Most future topics will audit in the 3–8% range, meaning the cleanup-per-spec is small and fast.
+The 17 specs cover the highest-risk topics from the original rollout handoff, but ~103 topics across 6 sections remain unspecced (~86% of the bank). Drift rates observed in the 17 topics (5%-54%, averaging ~20%) suggest 1,000-1,500 drifted questions likely exist in the unspecced topics.
 
-## Running instructions for the next session
+The recommended path (detail in the session wrap doc):
 
-### Immediate next task (per session-end discussion): orchestrator regeneration
+**Stage 2 — Drift census (1 session, cheap).** Run a cross-cutting sniff test across all unspecced topics using the banned-term patterns from the existing 17 specs as a universal filter. Many drift markers are universal (graduate M&A sections, case-law names, sampling theory terms). Output: a ranked list of unspecced topics by apparent drift density.
 
-The International Tax topic dropped from 103 to 17 questions and S Corporations from 82 to 53. Both are below the 100-question target per the generation plan. The spec-constrained orchestrator is proven (Gap 1), so regeneration is now safe.
+**Stage 3 — Next wave of specs (5-8 sessions).** Let Stage 2 drive priorities. Continue the author → audit → clean cycle from this session.
 
-**Run these in a standalone PowerShell terminal, NOT inside Claude Code:**
+**Stage 4 — Regen cleaned topics to target (background orchestrator).** Several cleaned topics dropped below their generation targets (Passive Activity 128→93, C Corps 81→71, after Stage 1 also Owner-Entity and Partnerships). Use the proven spec-constrained orchestrator to regen.
 
-```powershell
-# International Tax regeneration (targets ~83 new questions across 3 batches)
-./scripts/orchestrate.ps1 -Section tcp -Mode generate -Batches 3
+**Stage 5 — Optional null-spec.** A bank-wide universal-bans filter for topics that stay unspecced. Crude but high-ROI.
 
-# S Corporations regeneration (targets ~47 new questions across 2 batches)
-./scripts/orchestrate.ps1 -Section reg -Mode generate -Batches 2
-```
+Budget: ~10-15 sessions total to reach full spec coverage and a regenerated bank.
 
-The selector (`scripts/qa/select-generation-batch.ts`) will automatically pick the biggest-gap topic in each section. If the gap is International Tax or S Corporations, the batch generates under spec constraints. If a different topic gets picked instead, that's also fine — the orchestrator will still inject any available spec constraints when the topic has one, and otherwise run normal generation.
+## Tooling state (don't forget)
 
-**After each batch, audit the new content:**
+- **`scripts/orchestrate.ps1`** — ClaudeTimeoutMin bumped from 15 to 25 at line 1120 this session. Load-bearing for spec-constrained fills.
+- **Orchestrator commit bug** — the session's first regen run (TCP batches 35-38 + REG batches 61-62) silently failed to create git commits even though migrations applied to the DB. Recovered manually in commit `34e9db8`. Root cause is in the git commit step of `scripts/orchestrate.ps1` — **tracked but not fixed**. If you run the orchestrator and see "Commit <hash>" lines that all show the same hash, check `git status` — the commits may not have landed.
+- **Validator works correctly** — `scripts/qa/validate-migration.ts` auto-strips deleted IDs from `verified-ids.json` and blocks banned-term violations. Trustworthy.
+- **Audit tool works correctly** — `scripts/qa/audit-topic-content.ts` reads the spec's bannedTerms inline. Accurate.
 
-```bash
-npx tsx scripts/qa/audit-topic-content.ts --topic="International Tax" --section=tcp
-npx tsx scripts/qa/audit-topic-content.ts --topic="S Corporations" --section=reg
-```
+## Known architectural facts
 
-Expected drift: 0–2 questions per batch based on the 96% clean rate from batch 32. Any drift that slips through the prompt injection will also be blocked by `validate-migration` at write time (Gap 2), so the orchestrator won't even commit a drifted batch — it'll fail in the validate step and you'll see explicit banned-term errors.
+- **`blueprint.ts` and `alignment/aicpa-blueprint-tasks.json` structurally diverge at the group level.** Slayer sometimes reorganizes AICPA groups. Specs anchor `topic` to Slayer's tagging vocabulary and `blueprintRef` to AICPA's path.
+- **Resolver supports 3-part group-level refs** (e.g., `REG/V/D`) and 4-part topic-level refs (e.g., `BAR/I/A/1`). Drift test enforces both.
+- **Group-level refs are CORRECT** for hybrid topics that span AICPA groups — see C Corporations (`REG/V/B`), S Corporations (`REG/V/C`), Partnerships (`REG/V/D`), Owner-Entity Transactions (`TCP/IV/C`).
+- **The scaffolder sometimes misfires on group letter assignment.** C Corporations stub was `REG/V/A` but correct is `REG/V/B`. Partnerships stub was `REG/V/C` but correct is `REG/V/D`. Owner-Entity stub was `TCP/II/C` but that's Partnerships in AICPA — correct is `TCP/IV/C`. Always verify against the JSON.
 
-### After regeneration — continuing the spec rollout
-
-Priority order for authoring the next ~10 specs (highest drift risk first):
-
-1. **FAR Fair Value** — ASC 820 mechanics + valuation hierarchy. Drift risk: advanced valuation techniques beyond Level 1/2/3 classification (DCF at depth belongs in BAR Financial Valuation).
-2. **REG C Corporations** — Sec 351 formation, E&P calculations, distributions. Drift risk: Sec 338(h)(10), Sec 355 spin-off mechanics, Section 1202 QSBS, consolidated return elections beyond basic mechanics.
-3. **TCP Owner-Entity Transactions** — reasonable compensation, Sec 1202, Sec 1244, distributions in redemption. Drift risk: economic substance doctrine beyond concept, Sec 302/303/304 attribution webs.
-4. **BAR Financial Statement Analysis** — ratio analysis, trend analysis. Drift risk: DuPont decomposition at multi-level depth, economic value added formulas.
-5. **REG Partnerships** — partner basis, 704(b)/(c) allocations, disguised sales. Drift risk: advanced 704(b) capital account maintenance, Section 754 elections at depth.
-6. **TCP Passive Activity and At-Risk Rules** — Sec 469 groupings, material participation. Drift risk: Sec 469 publicly-traded-partnership rules, retired-farmer exception, trade-or-business grouping elections.
-7. **FAR Leases** — ASC 842. Drift risk: sale-leaseback complex structures, variable lease payments beyond simple CPI indexing.
-8. **BAR Business Combinations** — ASC 805 mechanics. Drift risk: bargain purchase remeasurement, pre-existing relationships, step acquisitions beyond the basic model.
-9. **AUD Audit Evidence** — sufficiency and appropriateness. Drift risk: formal sampling theory (ASA/BSA depth) belongs in Audit Sampling topic.
-10. **AUD Risk Assessment** — entity and environment, RMM. Drift risk: COSO framework at depth beyond the basic five components.
-
-Each spec becomes one `npx tsx scripts/qa/scaffold-topic-spec.ts --topic="..."` → open file → fill in lists → register → drift test → audit → cleanup cycle. Budget ~15 min per spec + ~5 min per cleanup migration.
-
-### Known follow-up backlog
-
-- **10 stubs with `blueprintRef: "TODO"`** need manual resolution against the AICPA PDF. Hand-fix order: read the ISC section PDF pages, match each Slayer topic to an AICPA path, edit the stub. Takes ~30 min total.
-- **Cross-topic tagging audit** needed. The S Corporations audit surfaced 5 questions that belonged to OTHER topics (reasonable compensation → TCP, at-risk → REG individual, NIIT → REG individual). Topic specs don't directly prevent this failure mode — a separate audit tool that compares question content against its tagged topic's scope vs. sibling topics' scopes would surface cross-topic misplacement. Design deferred.
-- **4 residual BAR Prospective candidates** reviewed and executed in 01031: Q12978 deleted (had a class-1 key desync + p-values drift), Q14788 deleted (Cook's distance is graduate regression), Q619 and Q12990 rewritten in place (core content in scope, marginal framing fixed).
-- **Phase 3 trust audit** confirmed true bank error rate at 0.75% (95% Wilson CI 0.16–2.18%) — see `docs/phase3-report.md`. Predates this session but still valid.
-
-## Critical architectural facts to remember
-
-- **`blueprint.ts` and `alignment/aicpa-blueprint-tasks.json` structurally diverge at the group level.** Slayer sometimes reorganizes AICPA groups into different teaching units. Specs handle this by anchoring `topic` to Slayer's tagging vocabulary and `blueprintRef` to AICPA's path. Both are validated independently.
-- **The resolver supports two `blueprintRef` forms:** 4-part (e.g., `BAR/I/B/1`) for topic-level anchors and 3-part (e.g., `REG/V/C`) for group-level anchors when a Slayer topic spans multiple AICPA topics in the same group. The drift test enforces both.
-- **The JSON extraction script had multiple bugs** — TCP/II/A and TCP/II/B were dropped entirely; REG/V/B and REG/V/C were merged/corrupted; REG Area III was destroyed and Area IV was duplicated. All fixed in 01028/d4368e0. A reconciliation script (`scripts/qa/reconcile-blueprint-json.py`) now diffs the JSON against the PDF — the remaining 11 flags in its last run are all scanner false positives verified in situ. Re-run if the PDF or JSON ever change.
-- **`docs/verified-ids.json.pre-reconcile.bak` and `docs/verified-ids.json.pre-unverify.bak`** are James's safety backups left untracked. Do not commit them.
-
-## Commit log for the 2026-04-14 rollout session (15 commits)
+## Commit log for the 2026-04-14 rollout wave
 
 ```
-d73ede3 01033 — Delete 5 off-blueprint BAR Risk Management questions
-0393889 Spec #7: bar-risk-management-and-economics — closes out bar.1.B group
-dd7bc2c 01032 — Delete 7 off-blueprint BAR Capital Structure questions
-d762505 Spec #6: bar-capital-structure-and-valuation — first stub-to-authored pass
-6714035 01031 — BAR Prospective residual cleanup: 2 deletes + 2 rewrites
-79b78d0 Gap 1 closed: first spec-constrained generation batch (01030) + BAR bannedTerms
-80f1183 Bulk scaffold 125 topic-spec stubs (Gap 3 of rollout plan)
-8963d92 Spec-aware validation at write time + inline bannedTerms on topic specs
-b691d8c blueprint.ts: rename off-blueprint sub-topics for TCP/INT and REG/S Corps
-7957b83 01029 — S Corporations audit + delete 29 off-blueprint questions
-0ffd366 01028 — Delete 86 off-blueprint International Tax questions + rewrite 2
-5775510 International Tax content audit: 86 delete + 2 rewrite candidates
-301dabe Wire topic specs into the question generator (Step 4 of pilot handoff)
-d4368e0 Blueprint JSON reconciliation + Tier 1 cleanup
-316e2f3 Topic-specs pilot complete: 4 new specs + JSON repairs + group-level refs
+a160876 Session wrap: topic-specs rollout wave (2026-04-14 evening)
+41e0ffb Spec #17: aud-risk-assessment — final spec of the rollout wave, 0 drift
+6144952 Spec #16: aud-audit-evidence — cleanest drift yet (3.1%), 2 rewrites, 0 deletes
+65f244d Spec #15: bar-business-combinations — tight scope, small clean cleanup
+0bb3d38 Spec #14: far-leases — lessee-only scope, lessor drift cleaned out
+054d3c6 Spec #13: tcp-passive-activity-and-at-risk-rules — clean cleanup, 35 bulk deletes
+9ce2b25 Spec #12: reg-partnerships — spec committed, cleanup deferred
+7593c8b Sync counts after C Corporations spec cleanup
+832a953 Spec #9: reg-c-corporations — second spec of the rollout wave, first hybrid REG/TCP anchor
+dac579e Spec #10: tcp-owner-entity-transactions — spec committed, cleanup deferred
+6cf4752 Spec #11: bar-financial-statement-analysis — tight, narrow drift, clean cleanup
+1cf2b22 Spec #8: far-fair-value — first FAR spec, starts the next rollout wave
+34e9db8 Spec-constrained regen: International Tax + S Corporations + orchestrator timeout bump
 ```
 
-Read any of these commit messages for the "why" behind the current state — they're written long-form for exactly this kind of cold pickup.
+Read any of these commit messages for the "why" behind the current state — they are written long-form for exactly this kind of cold pickup.
 
 ## When in doubt
 
 - Ask James one item at a time.
 - Show the actual numbers, not assertions.
-- Default to delete over rewrite when content is off-blueprint.
-- Don't try to run the orchestrator from inside Claude Code — it spawns nested `claude --print` processes and James runs it manually in a standalone PowerShell terminal.
+- The Stage 1 work (backlog cleanup) is scoped and mechanical — don't over-engineer it.
+- The Stage 2 census is a strategy decision — don't launch Stage 2 without James's explicit approval.
 - The drift test is cheap: run it after any change to `src/lib/topic-specs/`.
-- If something feels like drift, audit it with `audit-topic-content.ts` before jumping to cleanup.
+
+---
+
+> *"Scope is a line you hold, not a checklist you complete."*
