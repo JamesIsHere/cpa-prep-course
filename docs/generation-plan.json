@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-14T08:19:17.673Z",
+  "generatedAt": "2026-04-14T08:23:35.805Z",
   "totalTarget": 9000,
   "batchSize": 30,
   "difficultyTargets": {
@@ -1969,7 +1969,7 @@
     {
       "section": "bar",
       "sectionId": 4,
-      "currentTotal": 1539,
+      "currentTotal": 1537,
       "targetTotal": 1500,
       "toGenerate": 0,
       "toTrim": 0,
@@ -2058,20 +2058,20 @@
             40,
             50
           ],
-          "currentCount": 134,
+          "currentCount": 132,
           "targetCount": 134,
           "toGenerate": 0,
           "toTrim": 0,
           "batches": 0,
           "difficulty": {
-            "easy": 0,
-            "medium": 0,
+            "easy": 1,
+            "medium": 1,
             "hard": 0
           },
           "blooms": {
             "l1": 0,
-            "l2": 0,
-            "l3": 0,
+            "l2": 1,
+            "l3": 1,
             "l4": 0
           }
         },
@@ -3326,7 +3326,7 @@
     }
   ],
   "summary": {
-    "totalCurrent": 8743,
+    "totalCurrent": 8741,
     "totalTarget": 9000,
     "totalToGenerate": 248,
     "totalToTrim": 0,
