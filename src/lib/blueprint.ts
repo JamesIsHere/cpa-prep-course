@@ -65,7 +65,7 @@ export const questionCounts: Record<string, number> = {
 	"Understanding the Entity and Environment": 64,
 	"Using the Work of Others": 64,
 	"Written Representations": 63,
-	// FAR (1,554 total — synced with live DB 2026-04-14)
+	// FAR (1,539 total — synced with live DB 2026-04-14)
 	"Accounting Changes and Error Corrections": 58,
 	"Cash and Cash Equivalents": 16,
 	Consolidations: 58,
@@ -79,7 +79,7 @@ export const questionCounts: Record<string, number> = {
 	"Intangible Assets": 51,
 	Inventory: 51,
 	Investments: 59,
-	Leases: 52,
+	Leases: 37,
 	"Not-for-Profit Accounting": 58,
 	"Payables and Accrued Liabilities": 50,
 	"Property, Plant and Equipment": 49,
@@ -175,7 +175,7 @@ export const questionCounts: Record<string, number> = {
 
 export const sectionQuestionTotals: Record<string, number> = {
 	aud: 1446,
-	far: 1554,
+	far: 1539,
 	reg: 1437,
 	bar: 1518,
 	isc: 1452,

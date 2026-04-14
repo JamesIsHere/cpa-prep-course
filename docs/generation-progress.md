@@ -26,7 +26,7 @@ For each section:
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status          |
 |---------|---------|--------|---------|-------------|-------------|-----------------|
 | AUD     | 1,446 | 1,500 |       0 |           0 |           0 | On Target       |
-| FAR     | 1,554 | 1,500 |       0 |           0 |           0 | On Target       |
+| FAR     | 1,539 | 1,500 |       0 |           0 |           0 | On Target       |
 | REG     | 1,437 | 1,500 |       0 |           0 |           0 | On Target       |
 | BAR     | 1,518 | 1,500 |       0 |           0 |           0 | On Target       |
 | ISC     | 1,452 | 1,500 |       0 |           0 |           0 | On Target       |
@@ -93,7 +93,7 @@ For each section:
 | 3 | Contingencies | 58 | 64 |  |  |
 | 3 | Fair Value | 57 | 64 |  |  |
 | 3 | Income Taxes | 58 | 64 |  |  |
-| 3 | Leases | 52 | 64 |  |  |
+| 3 | Leases | 37 | 64 |  |  |
 | 3 | Revenue Recognition | 53 | 64 |  |  |
 | 3 | Subsequent Events | 29 | 64 |  |  |
 
