@@ -18,6 +18,7 @@ import { spec as barCapitalStructureAndValuation } from "./bar-capital-structure
 import { spec as barRiskManagementAndEconomics } from "./bar-risk-management-and-economics";
 import { spec as farFairValue } from "./far-fair-value";
 import { spec as regCCorporations } from "./reg-c-corporations";
+import { spec as tcpOwnerEntityTransactions } from "./tcp-owner-entity-transactions";
 
 const SPECS: Record<string, TopicSpec> = {
 	[barProspective.topic]: barProspective,
@@ -29,6 +30,7 @@ const SPECS: Record<string, TopicSpec> = {
 	[barRiskManagementAndEconomics.topic]: barRiskManagementAndEconomics,
 	[farFairValue.topic]: farFairValue,
 	[regCCorporations.topic]: regCCorporations,
+	[tcpOwnerEntityTransactions.topic]: tcpOwnerEntityTransactions,
 };
 
 /** Look up the topic spec for a given questions.topic value. Returns undefined if none. */
