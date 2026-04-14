@@ -23,8 +23,14 @@ export interface TopicSpec {
 	section: "aud" | "far" | "reg" | "bar" | "isc" | "tcp";
 
 	/**
-	 * Path into `alignment/aicpa-blueprint-tasks.json`, formatted as
-	 * `<SECTION>/<AREA>/<GROUP>/<TOPIC_NUMBER>` (e.g. "BAR/I/B/1").
+	 * Path into `alignment/aicpa-blueprint-tasks.json`. Two forms supported:
+	 *   - Topic-level (4-part): `<SECTION>/<AREA>/<GROUP>/<TOPIC_NUMBER>` (e.g. "BAR/I/B/1") —
+	 *     anchors the spec to a single AICPA topic. Use this when a Slayer tagging string
+	 *     maps 1:1 to an AICPA topic.
+	 *   - Group-level (3-part): `<SECTION>/<AREA>/<GROUP>` (e.g. "REG/V/C") — anchors the
+	 *     spec to an entire AICPA group. Use this when a Slayer tagging string covers
+	 *     multiple AICPA topics in the same group (e.g., REG "S Corporations" spans
+	 *     eligibility, ordinary income, and basis as separate AICPA topics).
 	 *
 	 * IMPORTANT: this anchors the spec to the AICPA canonical structure, NOT to
 	 * Slayer's `blueprint.ts` group structure. The two diverge — Slayer reorganizes
@@ -32,8 +38,8 @@ export interface TopicSpec {
 	 * `topic` (Slayer tagging vocabulary) and `blueprintRef` (AICPA structure) are
 	 * validated independently against their respective sources of truth.
 	 *
-	 * The blueprint task text and skill levels for this topic are pulled at runtime
-	 * from the JSON; they are NOT duplicated in the spec.
+	 * The blueprint task text and skill levels for this topic/group are pulled at
+	 * runtime from the JSON; they are NOT duplicated in the spec.
 	 */
 	blueprintRef: string;
 

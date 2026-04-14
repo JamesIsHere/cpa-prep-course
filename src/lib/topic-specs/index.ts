@@ -10,9 +10,17 @@
 
 import type { TopicSpec } from "./types";
 import { spec as barProspective } from "./bar-prospective-analysis-and-forecasting";
+import { spec as barFinancialValuation } from "./bar-financial-valuation-methods";
+import { spec as barDerivatives } from "./bar-derivatives-and-hedging";
+import { spec as tcpInternational } from "./tcp-international-tax";
+import { spec as regSCorporations } from "./reg-s-corporations";
 
 const SPECS: Record<string, TopicSpec> = {
 	[barProspective.topic]: barProspective,
+	[barFinancialValuation.topic]: barFinancialValuation,
+	[barDerivatives.topic]: barDerivatives,
+	[tcpInternational.topic]: tcpInternational,
+	[regSCorporations.topic]: regSCorporations,
 };
 
 /** Look up the topic spec for a given questions.topic value. Returns undefined if none. */

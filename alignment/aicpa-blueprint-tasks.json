@@ -2477,10 +2477,16 @@
                 },
                 {
                   "skill": "Analysis",
-                  "task": "Review a C corporation’s adjusted book trial balance and supporting documentation, including relevant source data used to create the trial balance, to determine the completeness and accuracy of the book/tax differences reported on Form 1120 – U.S. Corporation Income Tax Return . B. C corporations."
+                  "task": "Review a C corporation’s adjusted book trial balance and supporting documentation, including relevant source data used to create the trial balance, to determine the completeness and accuracy of the book/tax differences reported on Form 1120 – U.S. Corporation Income Tax Return."
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "letter": "B",
+          "name": "C corporations",
+          "topics": [
             {
               "number": 1,
               "name": "Computations of taxable income, tax liability and allowable credits",
@@ -2501,11 +2507,79 @@
             },
             {
               "number": 2,
-              "name": "State and local tax issues Define\tthe\tgeneral\tconcept\tand\trationale\tof\tnexus\twith\trespect\tto\tstate and local taxation. Define\tthe\tgeneral\tconcept\tand\trationale\tof\tapportionment\tand\tallocation with respect to state and local taxation.",
+              "name": "State and local tax issues",
               "tasks": [
+                {
+                  "skill": "Remembering and Understanding",
+                  "task": "Define the general concept and rationale of nexus with respect to state and local taxation."
+                },
+                {
+                  "skill": "Remembering and Understanding",
+                  "task": "Define the general concept and rationale of apportionment and allocation with respect to state and local taxation."
+                },
                 {
                   "skill": "Application",
                   "task": "Calculate state taxable income using the applicable apportionment factors given a specific scenario."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "letter": "C",
+          "name": "S corporations",
+          "topics": [
+            {
+              "number": 1,
+              "name": "Eligibility and election",
+              "tasks": [
+                {
+                  "skill": "Remembering and Understanding",
+                  "task": "Recall eligible shareholders for an S corporation for tax purposes."
+                },
+                {
+                  "skill": "Remembering and Understanding",
+                  "task": "Recall S corporation eligibility requirements for tax purposes."
+                },
+                {
+                  "skill": "Remembering and Understanding",
+                  "task": "Identify situations in which S corporation status would be revoked or terminated for tax purposes."
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "name": "Determination of ordinary business income (loss) and separately stated items",
+              "tasks": [
+                {
+                  "skill": "Application",
+                  "task": "Calculate ordinary business income (loss) and separately stated items for an S corporation for tax purposes."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Calculate the impact of current year operations on an S corporation’s accumulated adjustments account."
+                },
+                {
+                  "skill": "Analysis",
+                  "task": "Review federal Form 1120S – U.S. Income Tax Return for an S Corporation and supporting documentation, including any source data used to create the return, to determine the completeness and accuracy of the classification of items as ordinary business income (loss), separately stated or nondeductible."
+                },
+                {
+                  "skill": "Analysis",
+                  "task": "Review and resolve discrepancies identified by automated diagnostic and validation checks to ensure the completeness and accuracy of the ordinary business income (loss) and separately stated items reported on Form 1120S – U.S. Income Tax Return for an S Corporation based on the source data used to prepare the form."
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "name": "Basis of shareholder’s interest",
+              "tasks": [
+                {
+                  "skill": "Application",
+                  "task": "Calculate a shareholder’s stock basis in an S corporation for tax purposes resulting from business operations, cash contributions by the shareholder and cash distributions to the shareholder."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Calculate changes in a shareholder’s debt basis in an S corporation resulting from current year repayment of debt."
                 }
               ]
             }
@@ -3975,6 +4049,150 @@
       "name": "Entity Tax Compliance",
       "weight": "30–40%",
       "groups": [
+        {
+          "letter": "A",
+          "name": "C corporations",
+          "topics": [
+            {
+              "number": 1,
+              "name": "Net operating and capital loss utilization",
+              "tasks": [
+                {
+                  "skill": "Remembering and Understanding",
+                  "task": "Recall the limitations on the use of net operating losses when there is an ownership change."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Calculate the amount of a C corporation’s net operating loss for a given year and any related carryforward."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Calculate the amount of a C corporation’s capital loss utilized in the current year and the related carryforward or carryback."
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "name": "Transactions between a shareholder and a C corporation (contributions to and distributions from a corporation and loans)",
+              "tasks": [
+                {
+                  "skill": "Application",
+                  "task": "Calculate a shareholder’s tax realized and recognized gain (loss) on the contribution of noncash property to a C corporation, and the C corporation’s basis in the property contributed."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Calculate the tax realized and recognized gain (loss) for both a C corporation and shareholders on a nonliquidating distribution of noncash property, and the shareholders’ basis in the property received."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Calculate the tax realized and recognized gain (loss) for both a C corporation and shareholders on a liquidating distribution of noncash property, and the shareholders’ basis in the property received."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Calculate the amount and treatment of the cash distributions to shareholders in excess of a C corporation’s current and accumulated earnings and profits (E & P)."
+                },
+                {
+                  "skill": "Analysis",
+                  "task": "Review loan documents and supporting documentation to determine the tax implications of a loan between a shareholder and C corporation, including imputed interest."
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "name": "Consolidated tax returns",
+              "tasks": [
+                {
+                  "skill": "Remembering and Understanding",
+                  "task": "Recall the requirements for filing a consolidated federal Form 1120 — U.S. Corporation Income Tax Return."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Calculate taxable income for a consolidated federal Form 1120 — U.S. Corporation Income Tax Return, including elimination of intercompany transactions."
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "name": "International tax issues",
+              "tasks": [
+                {
+                  "skill": "Remembering and Understanding",
+                  "task": "Explain the sourcing of income for a U.S. corporation with foreign operations."
+                },
+                {
+                  "skill": "Remembering and Understanding",
+                  "task": "Explain the sourcing of income for a foreign corporation with U.S. operations, including consideration of federal tax withholding requirements."
+                },
+                {
+                  "skill": "Remembering and Understanding",
+                  "task": "Explain the concept of a controlled foreign corporation (CFC) and the impact on a U.S. corporation’s taxable income."
+                },
+                {
+                  "skill": "Remembering and Understanding",
+                  "task": "Explain the concept of permanent establishment for a corporation and the activities that would create it."
+                },
+                {
+                  "skill": "Remembering and Understanding",
+                  "task": "Explain the difference between a foreign branch and foreign subsidiary with respect to federal income taxation to a U.S. corporation."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Calculate U.S. and foreign source income given a specific scenario."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "letter": "B",
+          "name": "S corporations",
+          "topics": [
+            {
+              "number": 1,
+              "name": "Basis of shareholder’s interest",
+              "tasks": [
+                {
+                  "skill": "Application",
+                  "task": "Calculate the impact on a shareholder’s stock basis in an S corporation for tax purposes resulting from contributions of noncash property, including an S corporation’s assumption of debt on the contributed property."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Calculate the impact on a shareholder’s stock basis in an S corporation for tax purposes resulting from nonliquidating distributions of noncash property."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Calculate the impact on a shareholder’s debt basis in an S corporation for tax purposes resulting from loans made by a shareholder to an S corporation."
+                },
+                {
+                  "skill": "Analysis",
+                  "task": "Review a shareholder’s stock and debt basis schedules in an S corporation for tax purposes and supporting documentation, including any source data used to create the schedule, to determine the accuracy of transactions reflected."
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "name": "Transactions between a shareholder and an S corporation (contributions to and distributions from a corporation)",
+              "tasks": [
+                {
+                  "skill": "Application",
+                  "task": "Calculate a shareholder’s tax realized and recognized gain (loss) on the contribution of noncash property to an S corporation, and the S corporation’s basis in the property contributed."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Calculate the tax realized and recognized gain (loss) for both an S corporation and shareholders on a nonliquidating distribution of noncash property, and the shareholders’ basis in the property received."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Calculate the tax realized and recognized gain (loss) for both an S corporation and shareholders on a liquidating distribution, and the shareholders’ basis in the property received."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Calculate the allocation of S corporation income (loss) after the sale of a shareholder’s ownership interest in the S corporation for tax purposes."
+                }
+              ]
+            }
+          ]
+        },
         {
           "letter": "C",
           "name": "Partnerships",

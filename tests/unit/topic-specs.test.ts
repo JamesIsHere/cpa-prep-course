@@ -89,8 +89,17 @@ describe("topic-specs: blueprintRef resolver basics", () => {
 
 	it("returns null for a malformed ref", () => {
 		expect(resolveBlueprintRef("nonsense")).toBeNull();
-		expect(resolveBlueprintRef("BAR/I/B")).toBeNull();
+		expect(resolveBlueprintRef("BAR/I")).toBeNull();
 		expect(resolveBlueprintRef("BAR/I/B/999")).toBeNull();
+		expect(resolveBlueprintRef("BAR/I/Z")).toBeNull();
 		expect(resolveBlueprintRef("BAD/I/A/1")).toBeNull();
+	});
+
+	it("resolves a 3-part group-level ref (REG/V/C) and concatenates topic tasks", () => {
+		const node = resolveBlueprintRef("REG/V/C");
+		expect(node).not.toBeNull();
+		expect(node?.topic).toBeNull();
+		expect(node?.group.name).toContain("S corporations");
+		expect((node?.tasks.length ?? 0)).toBeGreaterThan(0);
 	});
 });
