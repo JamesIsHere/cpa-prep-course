@@ -1,0 +1,101 @@
+{
+  "total": 8832,
+  "sectionCounts": {
+    "AUD": 0,
+    "FAR": 1,
+    "REG": 0,
+    "BAR": 4,
+    "ISC": 1,
+    "TCP": 0
+  },
+  "topicCounts": {
+    "far/Equity": 1,
+    "bar/Stock Compensation and Business Combinations": 3,
+    "bar/Financial Valuation Methods": 1,
+    "isc/Data Protection Technologies": 1
+  },
+  "categoryCounts": {
+    "options-pricing": 5,
+    "advanced-distributions": 1
+  },
+  "signalCounts": {
+    "Black-Scholes": 5,
+    "binomial-lattice": 1,
+    "chi-squared": 1
+  },
+  "hits": [
+    {
+      "id": 437,
+      "section": "far",
+      "topic": "Equity",
+      "stem": "Tremont Technologies grants 10,000 stock options to its executives on March 1, 2025. The options vest over thr",
+      "signals": [
+        "Black-Scholes",
+        "binomial-lattice"
+      ],
+      "categories": [
+        "options-pricing"
+      ]
+    },
+    {
+      "id": 676,
+      "section": "bar",
+      "topic": "Stock Compensation and Business Combinations",
+      "stem": "Waverly Technologies grants 10,000 stock options to its CFO on March 1, 2025, when the stock price is $45 and ",
+      "signals": [
+        "Black-Scholes"
+      ],
+      "categories": [
+        "options-pricing"
+      ]
+    },
+    {
+      "id": 3135,
+      "section": "bar",
+      "topic": "Stock Compensation and Business Combinations",
+      "stem": "Zenith Corp. granted 100,000 employee stock options on January 1, 2025, and the compensation committee is gath",
+      "signals": [
+        "Black-Scholes"
+      ],
+      "categories": [
+        "options-pricing"
+      ]
+    },
+    {
+      "id": 3365,
+      "section": "bar",
+      "topic": "Stock Compensation and Business Combinations",
+      "stem": "Prairie Holdings, a privately held company, grants stock options to key executives in January 2025. Because it",
+      "signals": [
+        "Black-Scholes"
+      ],
+      "categories": [
+        "options-pricing"
+      ]
+    },
+    {
+      "id": 14268,
+      "section": "bar",
+      "topic": "Financial Valuation Methods",
+      "stem": "Westfield Corp. issued warrants as part of a debt offering. Each warrant grants the holder the right to purcha",
+      "signals": [
+        "Black-Scholes"
+      ],
+      "categories": [
+        "options-pricing"
+      ]
+    },
+    {
+      "id": 5841,
+      "section": "isc",
+      "topic": "Data Protection Technologies",
+      "stem": "In February 2026, Cobalt Defense Corp. suspects that a departing employee embedded proprietary schematics with",
+      "signals": [
+        "chi-squared"
+      ],
+      "categories": [
+        "advanced-distributions"
+      ]
+    }
+  ]
+}

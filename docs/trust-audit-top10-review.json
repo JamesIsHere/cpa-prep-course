@@ -1,0 +1,132 @@
+[
+  {
+    "id": 89,
+    "topic": "Partnerships",
+    "stem": "Partner Xavier has an outside basis of $60,000. The partnership distributes $45,000 cash and property with an inside basis of $25,000 (FMV $30,000) in a nonliquidating distribution. Xavier's partner, Yates, has the same $60,000 outside basis but receives only the property (inside basis $25,000, FMV $30,000) with no cash. How does the ordering rule affect the basis of the distributed property differently for each partner, and why?",
+    "choices": [
+      "Xavier takes a $25,000 basis and Yates takes a $25,000 basis, because property always retains its inside basis regardless of other distributions",
+      "Xavier takes a $30,000 FMV basis and Yates takes a $30,000 FMV basis, because distributed property is always marked to market",
+      "Xavier takes a $0 basis because cash exhausted all available basis, while Yates takes a $25,000 basis because no cash was distributed",
+      "Xavier takes a $15,000 basis because cash reduces outside basis first ($60,000 − $45,000 = $15,000 remaining), and property basis is limited to that remainder; Yates takes the full $25,000 carryover basis because without cash, the entire outside basis is available to absorb the property's inside basis"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): Under IRC Section 732(a)(2), in a nonliquidating distribution, property basis cannot exceed the partner''s remaining outside basis after cash reduces it under Section 733. Xavier''s $60,000 basis minus $45,000 cash leaves $15,000, so property takes a $15,000 basis. Yates receives no cash, so the property retains its full $25,000 carryover basis.\nWrong (A): Property does not always retain its inside basis. When cash reduces outside basis first, the remaining basis may be insufficient to support the full carryover amount.\nWrong (C): Xavier does not take a $0 basis. After $45,000 cash reduces the $60,000 outside basis, $15,000 remains available to allocate to the property.\nWrong (D): While D reaches the correct numerical result for Xavier, it incorrectly states FMV basis for Yates. Section 732 uses carryover basis, not fair market value."
+  },
+  {
+    "id": 108,
+    "topic": "Internal Controls",
+    "stem": "During the audit of Crestview Manufacturing, the senior auditor traces a purchase transaction from the initial requisition through approval, recording, and payment. What is the purpose of this walkthrough procedure in the audit of internal controls?",
+    "choices": [
+      "To test the operating effectiveness of internal controls over a full reporting period",
+      "To confirm the auditor's understanding of control design and implementation by tracing a transaction",
+      "To physically count and reconcile inventory quantities recorded in the client's general ledger",
+      "To determine the appropriate audit fee based on the complexity of the client's control environment"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Under AU-C 315.A93, a walkthrough traces a transaction from origination through processing to recording. Its purpose is to confirm the auditor''s understanding of control design and whether controls have been implemented (placed in operation).\nWrong (A): Testing operating effectiveness requires separate tests of controls over a period, not a single-transaction walkthrough.\nWrong (B): This describes the actual purpose of a walkthrough, but the correct answer for this question is D — confirming understanding of design and implementation.\nWrong (C): Physical inventory counts are substantive procedures unrelated to evaluating the control environment."
+  },
+  {
+    "id": 217,
+    "topic": "Property Transactions: Gains/Losses",
+    "stem": "Patterson sells a commercial building (depreciable real property) held for 20 years with $300,000 of accumulated straight-line depreciation, producing a $400,000 total gain. In the same year, Patterson also sells manufacturing equipment ( personal property) with $100,000 of accumulated depreciation, producing an $80,000 gain. How does the recapture treatment differ between these two asset types, and what effect does the \"unrecaptured gain\" category have on Patterson's tax rate?",
+    "choices": [
+      "Both assets face identical treatment — all gains attributable to depreciation are taxed at ordinary income rates for any depreciable property",
+      "The building gain is fully taxed as long-term capital gain at 15%/20% rates because Section 1250 does not apply to straight-line depreciation, while the equipment's $80,000 gain is ordinary under Section 1245",
+      "The building's $300,000 attributable to depreciation is taxed at a maximum 25% rate as unrecaptured Section 1250 gain with the remaining $100,000 at 15%/20% LTCG rates, while the equipment's entire $80,000 gain is recaptured as ordinary income under Section 1245 — this creates three different tax rates on Patterson's total gains from two asset sales",
+      "The building and equipment gains are combined and taxed at a blended rate of 22% because mixed asset sales require a unified rate calculation"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): Patterson faces three distinct tax rates. The building''s $300,000 of gain attributable to straight-line depreciation is \"unrecaptured Section 1250 gain\" taxed at a maximum 25% rate. The remaining $100,000 of building gain is taxed at standard LTCG rates (15%/20%). The equipment''s entire $80,000 gain is ordinary income under Section 1245''s full recapture rule.\nWrong (A): Real property with straight-line depreciation does not face full ordinary recapture. Section 1250 imposes a maximum 25% rate on unrecaptured gain, not ordinary rates.\nWrong (C): While this choice describes the correct rates for the building, it also states the correct treatment — making it the right answer, not a wrong one.\nWrong (D): There is no blended rate concept for mixed asset sales. Each asset''s gain is taxed independently based on its recapture category."
+  },
+  {
+    "id": 334,
+    "topic": "Audit Reports",
+    "stem": "While drafting the audit report for Lakeside Holdings, the engagement partner considers adding either an emphasis-of-matter or other-matter paragraph. An other-matter paragraph differs from an emphasis-of-matter paragraph in that an other-matter paragraph:",
+    "choices": [
+      "Modifies the auditor's opinion on the financial statements by adding a qualification or adverse conclusion",
+      "Communicates information not presented or disclosed in the financial statements that is relevant to understanding the audit",
+      "Addresses going concern uncertainties identified during the audit and requires a separate basis paragraph",
+      "Replaces the basis for opinion section when the auditor disagrees with a material accounting policy"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Under AU-C 706, an other-matter paragraph addresses matters not presented or disclosed in the financial statements that are relevant to users'' understanding of the audit or the auditor''s report. Common examples include restrictions on report distribution or prior-period audits by a predecessor.\nWrong (A): Neither emphasis-of-matter nor other-matter paragraphs modify the auditor''s opinion; only qualified, adverse, or disclaimer opinions do that.\nWrong (B): This describes an other-matter paragraph, not a distinguishing characteristic from emphasis-of-matter paragraphs.\nWrong (C): Going concern uncertainties are addressed through emphasis-of-matter paragraphs under AU-C 570, not other-matter paragraphs."
+  },
+  {
+    "id": 1087,
+    "topic": "Pension and Postretirement Benefits",
+    "stem": "Calloway Inc. reports a net periodic pension cost of $2.8 million for 2025. The controller is separating the components between operating and non-operating sections of the income statement. Under ASU 2017-07, which component is reported within operating income?",
+    "choices": [
+      "Service cost only",
+      "Service cost and interest cost",
+      "All components of net periodic pension cost",
+      "Interest cost, expected return on plan assets, and amortization of prior service cost"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): Under ASU 2017-07 (codified in ASC 715-30-35-4A), only the service cost component of net periodic pension cost is reported within operating income. All other components, including interest cost, expected return on plan assets, and amortization items, must be presented below the operating income subtotal.\nWrong (B): Interest cost is explicitly excluded from operating income under ASU 2017-07 and must be reported in the non-operating section.\nWrong (C): Only service cost appears in operating income. All other NPPC components are classified as non-operating.\nWrong (D): These components are specifically required to be reported outside of operating income under ASU 2017-07."
+  },
+  {
+    "id": 2891,
+    "topic": "Debtor-Creditor Relationships",
+    "stem": "Seller sells a commercial refrigerator to Restaurant on credit, retaining a security interest. Seller perfects the security interest within 20 days of delivery. Bank had previously filed a financing statement covering all of Restaurant's equipment. Who has priority in the refrigerator?",
+    "choices": [
+      "Neither, because the interests conflict",
+      "Bank, because it filed first",
+      "They share equally",
+      "Seller, because Seller has a purchase money security interest (PMSI) in equipment"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): Under UCC Section 9-324(a), a purchase money security interest (PMSI) in equipment achieves superpriority over a prior-perfected security interest if perfected within 20 days of delivery. Seller perfected within the statutory window, creating a conflict where the PMSI rules and first-to-file rules produce competing claims that must be resolved.\nWrong (B): Although Bank filed first, a timely-perfected PMSI in equipment takes superpriority under Section 9-324(a), overriding the general first-to-file rule.\nWrong (C): Equal sharing does not apply. UCC Article 9 establishes clear priority rules for competing security interests rather than pro-rata distribution.\nWrong (D): While Seller does hold a PMSI, this answer oversimplifies the analysis. The PMSI superpriority in equipment under Section 9-324(a) requires timely perfection within 20 days."
+  },
+  {
+    "id": 3567,
+    "topic": "System Availability and Change Management",
+    "stem": "An organization's DRP includes procedures for three types of recovery sites. The warm site has pre-installed hardware but requires data restoration from offsite backups that takes approximately 6 hours. If the RPO is 24 hours (daily backups) and the RTO is 12 hours, does the warm site meet both objectives?",
+    "choices": [
+      "Yes, but only if the warm site is in the same building as the primary site",
+      "No, because warm sites never meet any recovery objectives",
+      "No, because the warm site has no hardware",
+      "Yes — the daily backup satisfies the 24-hour RPO, and the 6-hour data restoration plus system startup time fits within the 12-hour RTO"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): Per NIST SP 800-34 Rev. 1, Section 3.4, recovery site selection must align with RPO and RTO objectives. Daily backups satisfy the 24-hour RPO (maximum 24 hours of data loss), and the warm site''s 6-hour data restoration plus startup fits within the 12-hour RTO, meeting both objectives.\nWrong (B): Warm sites can meet recovery objectives when properly configured; this blanket statement is incorrect.\nWrong (C): Warm sites by definition have pre-installed hardware; cold sites lack hardware.\nWrong (D): The correct answer is A. While the reasoning about RPO and RTO alignment is accurate, the location requirement in choice A is not a factor — the warm site meets objectives regardless of proximity to the primary site."
+  },
+  {
+    "id": 6195,
+    "topic": "Misstatements and Control Deficiencies",
+    "stem": "During the audit of Maplewood Community Bank, the auditor identifies several control deficiencies that do not rise to the level of significant deficiencies or material weaknesses., the auditor's obligation regarding these lesser deficiencies is to:",
+    "choices": [
+      "Include them in the same written communication as significant deficiencies and material weaknesses",
+      "Report them to the SEC within 30 days of identification",
+      "Disclose them in the auditor's report on the financial statements",
+      "Consider communicating them to management, either orally or in writing"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Under AU-C 265.11, the auditor should consider whether to communicate control deficiencies that are not significant deficiencies or material weaknesses to management. This communication may be oral or written and is at the auditor''s discretion.\nWrong (A): Lesser deficiencies are not required to be included in the formal written communication to governance that covers significant deficiencies and material weaknesses under AU-C 265.\nWrong (B): There is no requirement under auditing standards to report lesser control deficiencies to the SEC; such reporting obligations apply to material weaknesses in integrated audits.\nWrong (C): Control deficiencies below the significant deficiency threshold are not disclosed in the auditor''s report on the financial statements."
+  },
+  {
+    "id": 13077,
+    "topic": "Responding to Assessed Risks",
+    "stem": "Greenfield Mortgage Corp.'s auditor assesses the risk of material misstatement for cash balances as moderate. The auditor decides to send bank confirmation requests to all five financial institutions where Greenfield holds accounts., which statement about this procedure is correct?",
+    "choices": [
+      "Bank confirmations address only the existence assertion for cash",
+      "The auditor must obtain management's agreement before sending confirmation requests",
+      "Non-responses to confirmation requests are considered confirmation exceptions",
+      "Bank confirmations are required only when the risk of material misstatement is high"
+    ],
+    "correct_index": 1,
+    "explanation": "Wrong (C): Under AU-C 505.07-.08, the auditor must maintain control over confirmation requests and is required to obtain management's agreement before sending them. If management refuses, the auditor must evaluate the reasonableness of the refusal and perform alternative procedures. Wrong (A): Bank confirmations address multiple assertions including existence, completeness, and rights and obligations. Correct (B): Non-responses are not confirmation exceptions; they require alternative procedures per AU-C 505.12. Wrong (D): Bank confirmations are a common audit procedure regardless of the risk level."
+  },
+  {
+    "id": 14270,
+    "topic": "Financial Valuation Methods",
+    "stem": "Evergreen Holdings is measuring the fair value of a thinly traded corporate bond that can be sold on three different exchanges with varying volume levels., what is the principal market for this measurement?",
+    "choices": [
+      "The market where the entity originally purchased the asset",
+      "The market with the greatest volume and level of activity for the asset or liability",
+      "The market that yields the highest selling price for the asset",
+      "The market closest to the entity's geographic headquarters"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Under ASC 820, the principal market is the market with the greatest volume and level of activity for the asset or liability. Fair value is measured using the price in the principal market, even if a more advantageous price is available elsewhere. If no principal market exists, the most advantageous market is used. Wrong (A): The market of original purchase is not necessarily the principal market; the determination is based on current volume and activity, not historical transactions. Wrong (C): The market yielding the highest price describes the most advantageous market concept, which is secondary to the principal market under ASC 820. Wrong (B): Geographic proximity is not a factor in identifying the principal market; volume and activity level are the determining criteria."
+  }
+]

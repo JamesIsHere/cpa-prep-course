@@ -1,6 +1,6 @@
 # Question Curation Plan
 
-> Auto-synced from live DB on 2026-04-11 via `npm run sync-counts`
+> Auto-synced from live DB on 2026-04-14 via `npm run sync-counts`
 
 Per-section target: 1,500 questions. Distributed by AICPA Blueprint area weights.
 
@@ -28,7 +28,7 @@ For each section:
 | AUD     | 1,446 | 1,500 |       0 |           0 |           0 | On Target       |
 | FAR     | 1,554 | 1,500 |       0 |           0 |           0 | On Target       |
 | REG     | 1,446 | 1,500 |       0 |           0 |           0 | On Target       |
-| BAR     | 1,534 | 1,500 |       0 |           0 |           0 | On Target       |
+| BAR     | 1,513 | 1,500 |       0 |           0 |           0 | On Target       |
 | ISC     | 1,452 | 1,500 |       0 |           0 |           0 | On Target       |
 | TCP     | 1,421 | 1,500 |       0 |          79 |           3 | Generate Needed |
 
@@ -131,9 +131,9 @@ For each section:
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
 | 1 | Capital Structure and Valuation | 122 | 134 |  |  |
-| 1 | Financial Statement Analysis | 188 | 134 |  |  |
+| 1 | Financial Statement Analysis | 187 | 134 |  |  |
 | 1 | Financial Valuation Methods | 147 | 134 |  |  |
-| 1 | Prospective Analysis and Forecasting | 128 | 134 |  |  |
+| 1 | Prospective Analysis and Forecasting | 108 | 134 |  |  |
 | 1 | Risk Management and Economics | 130 | 134 |  |  |
 | 2 | Advanced Consolidations | 49 | 55 |  |  |
 | 2 | Advanced Lease Transactions | 54 | 55 |  |  |

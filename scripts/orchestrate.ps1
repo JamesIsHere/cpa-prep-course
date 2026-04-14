@@ -469,7 +469,7 @@ INSTRUCTIONS:
    a) STEM: Add a realistic scenario with a named entity, specific dollar amounts, specific dates, and a complicating factor. Target 20-40 words. INTEGRATE the provided frameworkItems.
    b) CHOICES: Write four choices with parallel grammatical structure. No "all of the above" patterns. Longest choice max 2x shortest length.
    c) EXPLANATION: First sentence cites the controlling standard ($cit) by section number. Second sentence explains why correct. Third uses contrast language to address the most plausible wrong answer. Target 50-100 words.
-   d) Set correct_index (0-based). Vary the distribution.
+   d) SLOT CONSISTENCY (CRITICAL): Decide what the correct answer is, place that exact content at the position you intend correct_index to name (0=A, 1=B, 2=C, 3=D), then write the explanation starting with "Correct (X):" where X equals "ABCD"[correct_index]. Self-check by re-reading the choice at correct_index and confirming it matches what your explanation argues for. validate-migration ENFORCES letter/index consistency as an ERROR — desync will block the batch. You MAY change correct_index from the original if your rewrite puts the correct answer at a different slot; what you may NOT do is leave correct_index, the letter label, and the choice content disagreeing.
    e) Keep difficulty='medium' and cognitive_level=2.
    f) CRITICAL: escape single quotes as '' in SQL. Format choices as valid JSON arrays.
 
@@ -532,7 +532,7 @@ INSTRUCTIONS:
    a) STEM: If the stem is a simple question, rewrite it as a scenario with a named entity, specific numbers, and professional context. 20-40 words. INTEGRATE the provided frameworkItems (e.g., require applying a specific mnemonic).
    b) CHOICES: Ensure 4 parallel-grammar choices. Fix any "all of the above" or "length-cuing" issues.
    c) EXPLANATION: First sentence MUST cite the standard ($cit) by section. Second explains why correct. Third MUST use contrast language. 50-100 words.
-   d) Set correct_index (0-based) and escape single quotes as ''.
+   d) SLOT CONSISTENCY (CRITICAL): Decide what the correct answer is, place that exact content at the position you intend correct_index to name (0=A, 1=B, 2=C, 3=D), and write the explanation starting with "Correct (X):" where X equals "ABCD"[correct_index]. validate-migration ENFORCES letter/index consistency as an ERROR. Re-read the choice at correct_index after writing and confirm it matches the "Correct (X):" content. Escape single quotes as ''.
 
 3. Validate: npm run validate-migration $sf
    Fix errors, re-validate.
@@ -614,12 +614,32 @@ RULES:
    entity, dollar amounts, dates (20-60 words). No "What is X?" for medium/hard.
 3. CHOICES: 4 parallel-grammar choices. Wrong answers = real misconceptions.
    No all/none of above. Longest max 2x shortest.
+3a. SLOT CONSISTENCY (CRITICAL — read this before writing any choices):
+   The scaffold has PRE-ASSIGNED ``correct_index`` for each question (rotating 0,1,2,3
+   to balance answer distribution). The position of the correct answer is FIXED by the
+   scaffold and you MUST NOT change ``correct_index``. Your job is to write the choices
+   such that the conceptually-correct answer lives at the scaffolded position.
+   Procedure for EACH question:
+     (a) Note the scaffolded ``correct_index`` (0=A, 1=B, 2=C, 3=D).
+     (b) Decide what the correct answer to your stem should be.
+     (c) Place that correct content at the slot named in (a).
+     (d) Place three plausible distractors in the other slots.
+     (e) Write the explanation starting with "Correct (X):" where X is the LETTER
+         corresponding to the scaffolded ``correct_index`` (NOT some other letter).
+     (f) Self-check: re-read the choice at correct_index and confirm its content
+         matches what your "Correct (X):" explanation argues for.
+   Past generation runs have produced two failure modes: (1) explanation says "Correct (B)"
+   while correct_index=2 (letter desync), and (2) the content placed at the scaffolded
+   slot is one of the wrong answers because the writer thought naturally in a different
+   order. Both failures will be caught by validate-migration as ERRORS and block the
+   batch — fix them at write time, not after.
 4. EXPLANATION (mandatory structured format, 50-100 words):
    Correct (X): [Cite standard ($cit) by section number]. [Explain why correct in 2-3 sentences].
    Wrong (Y): [Capitalize first word. Why this choice is wrong — 1-2 sentences].
    Wrong (Z): [Why wrong].
    Wrong (W): [Why wrong].
    Every explanation MUST start with "Correct (X):" and contain three "Wrong (X):" blocks.
+   The X letter MUST equal "ABCD"[correct_index] — validate-migration enforces this.
 5. VARIETY: Each question in this batch must test a DIFFERENT concept identified in your research.
    Vary entities, amounts, correct_index distribution (roughly equal 0-3).
 6. SEMANTIC UNIQUENESS: Changing entity names, dollar amounts, or percentages does NOT make
@@ -702,7 +722,7 @@ INSTRUCTIONS:
    a) STEM: Rewrite to match $tgt stem patterns. Use named entities, specific amounts/dates. INTEGRATE the provided frameworkItems (mnemonics, decision trees).
    b) CHOICES: Four parallel-grammar choices. No banned patterns. Longest max 2x shortest.
    c) EXPLANATION: First sentence cites standard ($cit). Second explains why correct. Third contrasts most plausible wrong answer using contrast language. 50-100 words.
-   d) Set correct_index (0-based), vary distribution.
+   d) SLOT CONSISTENCY (CRITICAL): Decide what the correct answer is, place that exact content at the position you intend correct_index to name (0=A, 1=B, 2=C, 3=D), and write the explanation starting with "Correct (X):" where X equals "ABCD"[correct_index]. validate-migration ENFORCES letter/index consistency as an ERROR. Re-read the choice at correct_index after writing and confirm it matches the "Correct (X):" content.
    e) CRITICAL: escape single quotes as '' in SQL. Format choices as valid JSON.
 
 3. Validate: npm run validate-migration $sf

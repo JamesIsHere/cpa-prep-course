@@ -1,0 +1,201 @@
+{
+  "totalInTopic": 128,
+  "hardHits": [
+    {
+      "id": 12982,
+      "stem": "Brighton Consulting builds a multiple regression model to forecast quarterly revenue for a retail client. Reve",
+      "correct_index": 1,
+      "signals": [
+        "multicollinearity"
+      ]
+    },
+    {
+      "id": 12984,
+      "stem": "Beacon Industries has experienced a steady upward trend in monthly unit sales over the past two years. The dem",
+      "correct_index": 3,
+      "signals": [
+        "Holt_Winters"
+      ]
+    },
+    {
+      "id": 12995,
+      "stem": "Ashford Economic Research models the relationship between consumer spending and national income for a macroeco",
+      "correct_index": 2,
+      "signals": [
+        "2SLS",
+        "instrumental_variable",
+        "simultaneity"
+      ]
+    },
+    {
+      "id": 14103,
+      "stem": "Whitfield Analytics runs a simple regression of monthly overhead costs against direct labor hours for Norris I",
+      "correct_index": 0,
+      "signals": [
+        "autocorrelation",
+        "Durbin_Watson"
+      ]
+    },
+    {
+      "id": 14105,
+      "stem": "Lakeshore Financial builds a multiple regression model for Sterling Corp.'s quarterly operating expenses using",
+      "correct_index": 2,
+      "signals": [
+        "multicollinearity"
+      ]
+    },
+    {
+      "id": 14110,
+      "stem": "Aldridge Research builds a regression model for Trenton Manufacturing's shipping costs based on units shipped.",
+      "correct_index": 3,
+      "signals": [
+        "heteroscedasticity"
+      ]
+    },
+    {
+      "id": 14111,
+      "stem": "Oakmont Retail has four years of monthly sales data showing both an upward trend and strong seasonal peaks in ",
+      "correct_index": 0,
+      "signals": [
+        "Holt_Winters"
+      ]
+    },
+    {
+      "id": 14117,
+      "stem": "Blackwood Consulting builds a regression model for utility costs at Thornton Chemical: Y = $22,000 + $6.50X (R",
+      "correct_index": 2,
+      "signals": [
+        "autocorrelation",
+        "Durbin_Watson"
+      ]
+    },
+    {
+      "id": 14132,
+      "stem": "An analyst at Cordova Manufacturing built a regression model predicting overhead costs based on machine hours.",
+      "correct_index": 1,
+      "signals": [
+        "multicollinearity",
+        "heteroscedasticity"
+      ]
+    },
+    {
+      "id": 14783,
+      "stem": "Redfield Analytics builds a multiple regression model to forecast quarterly COGS for Holbrook Manufacturing us",
+      "correct_index": 0,
+      "signals": [
+        "multicollinearity"
+      ]
+    },
+    {
+      "id": 14784,
+      "stem": "Mercer Analytics regresses monthly advertising expense against revenue for Dalton Retail. The residual plot sh",
+      "correct_index": 1,
+      "signals": [
+        "heteroscedasticity",
+        "autocorrelation",
+        "Durbin_Watson"
+      ]
+    },
+    {
+      "id": 14785,
+      "stem": "Calloway Analytics has 120 months of revenue data for a telecommunications client. The data exhibits a non-sta",
+      "correct_index": 2,
+      "signals": [
+        "ARIMA"
+      ]
+    },
+    {
+      "id": 14795,
+      "stem": "Prescott Analytics estimates a cost model for Thornfield Chemical using ordinary least squares (OLS): Y = $15,",
+      "correct_index": 0,
+      "signals": [
+        "heteroscedasticity",
+        "autocorrelation"
+      ]
+    }
+  ],
+  "mediumOnlyHits": [
+    {
+      "id": 627,
+      "stem": "Oakridge Manufacturing runs a simple linear regression of monthly overhead costs against machine hours. The co",
+      "correct_index": 1,
+      "signals": [
+        "t_statistic"
+      ]
+    },
+    {
+      "id": 12975,
+      "stem": "Hallmark Analytics uses a regression model (Y = $25,000 + $14X, R² = 0.91) to forecast overhead costs for Ston",
+      "correct_index": 2,
+      "signals": [
+        "confidence_interval"
+      ]
+    },
+    {
+      "id": 12980,
+      "stem": "Eastwood Analytics builds three regression models for Glendale Corp.'s quarterly overhead costs. Model A uses ",
+      "correct_index": 2,
+      "signals": [
+        "adjusted_R_squared"
+      ]
+    },
+    {
+      "id": 12990,
+      "stem": "An analyst at Pinnacle Advisory is preparing a financial forecast for a client seeking bank financing. The ana",
+      "correct_index": 1,
+      "signals": [
+        "confidence_interval"
+      ]
+    },
+    {
+      "id": 12993,
+      "stem": "Kirkland Research builds a multiple regression model with three independent variables to forecast quarterly op",
+      "correct_index": 0,
+      "signals": [
+        "p_value"
+      ]
+    },
+    {
+      "id": 14113,
+      "stem": "Harper Analytics estimates a multiple regression for Caldwell Inc.'s quarterly marketing expense: Y = $80,000 ",
+      "correct_index": 2,
+      "signals": [
+        "p_value",
+        "t_statistic"
+      ]
+    },
+    {
+      "id": 14125,
+      "stem": "Greenfield Economics builds a revenue forecasting model for a consumer electronics firm. The model includes cu",
+      "correct_index": 2,
+      "signals": [
+        "t_statistic"
+      ]
+    },
+    {
+      "id": 14127,
+      "stem": "Pinnacle Research builds a multiple regression model with 5 independent variables using only 12 quarterly obse",
+      "correct_index": 0,
+      "signals": [
+        "adjusted_R_squared"
+      ]
+    }
+  ],
+  "hardCounts": {
+    "multicollinearity": 4,
+    "Holt_Winters": 2,
+    "2SLS": 1,
+    "instrumental_variable": 1,
+    "simultaneity": 1,
+    "autocorrelation": 4,
+    "Durbin_Watson": 3,
+    "heteroscedasticity": 4,
+    "ARIMA": 1
+  },
+  "medCounts": {
+    "t_statistic": 3,
+    "confidence_interval": 2,
+    "adjusted_R_squared": 2,
+    "p_value": 2
+  }
+}

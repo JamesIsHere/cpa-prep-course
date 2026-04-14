@@ -1,0 +1,561 @@
+[
+  {
+    "id": 61,
+    "topic": "Circular 230",
+    "stem": "An enrolled agent (EA) who passed the Special Enrollment Examination represents a client in an IRS audit. A bookkeeper with 15 years of experience at the same firm requests permission to represent a different client before the IRS Appeals Office. How does the regulation governing tax practitioners distinguish between the two practitioners'' authority, and why does the distinction exist?",
+    "choices": [
+      "Both have unlimited practice rights because any tax professional with sufficient experience may represent clients before the IRS",
+      "The EA has unlimited practice rights before the IRS because passing the SEE demonstrates competency tested by the Treasury Department, while the bookkeeper has no practice rights regardless of experience — Circular 230 limits authorized practitioners to CPAs, attorneys, and enrolled agents to protect taxpayers from unqualified representation",
+      "The bookkeeper has greater authority because practical experience outweighs examination credentials under Circular 230",
+      "Neither may represent clients because only attorneys are authorized to practice before the IRS"
+    ],
+    "correct_index": 2,
+    "explanation": "Correct (C): Under Treasury Circular 230 Section 10.3, only enrolled agents, CPAs, and attorneys have unlimited rights to practice before the IRS. The bookkeeper, regardless of experience, is limited under Section 10.7 to representing clients only before revenue agents for returns they personally prepared — practical experience does not substitute for credentialed authorization.\nWrong (A): Not all tax professionals have unlimited practice rights. Circular 230 restricts unlimited representation to CPAs, attorneys, and enrolled agents.\nWrong (B): While the EA''s unlimited rights are correctly stated, the explanation incorrectly implies the bookkeeper has zero practice rights — unenrolled preparers have limited rights under Section 10.7.\nWrong (D): Attorneys are not the only authorized practitioners. CPAs and enrolled agents also have unlimited practice rights under Section 10.3."
+  },
+  {
+    "id": 64,
+    "topic": "Business Law: Contracts",
+    "stem": "Henderson orally agrees to sell a parcel of land to Mitchell for $50,000. Separately, Torres orally agrees to paint Chen's house for $8,000, completing the job within two weeks. When Henderson attempts to enforce the oral land sale, Mitchell raises the Statute of Frauds. Torres's client, Chen, attempts the same defense. How does the Statute of Frauds affect these two contracts differently, and what policy purpose does the distinction serve?",
+    "choices": [
+      "Henderson cannot enforce the oral land sale because real property transfers must be in writing under the Statute of Frauds — the risk of fraud in land transactions is high due to their value and complexity. Torres can enforce the oral painting contract because it is for services capable of completion within one year and does not fall within any Statute of Frauds category, regardless of the dollar amount",
+      "Both contracts are unenforceable because any oral contract exceeding $5,000 falls within the Statute of Frauds",
+      "Both contracts are enforceable because the Statute of Frauds was abolished in most jurisdictions",
+      "The painting contract requires writing because it exceeds $500, while the land sale is enforceable orally because both parties verbally agreed"
+    ],
+    "correct_index": 2,
+    "explanation": "Correct (C): Under the Statute of Frauds (Restatement (Second) of Contracts Section 110), certain categories of contracts must be in writing: real property transfers, contracts not performable within one year, goods of $500+ under UCC Section 2-201, suretyship promises, and marriage consideration contracts. Henderson''s land sale falls within the real property category and is unenforceable without writing; Torres''s painting contract is performable within two weeks and involves services, so it falls outside every category despite its $8,000 value.\nWrong (A): While the land sale analysis is correct, this choice is the correct answer — the question asks which statement is accurate.\nWrong (B): The Statute of Frauds does not apply based on a $5,000 threshold. The categories are based on subject matter (land, suretyship) or specific UCC thresholds ($500 for goods).\nWrong (D): The $500 threshold applies only to goods under UCC Section 2-201, not to service contracts. Additionally, oral land sales are unenforceable, not enforceable."
+  },
+  {
+    "id": 74,
+    "topic": "Like-Kind Exchanges",
+    "stem": "Ramirez wants to exchange a rental warehouse for a retail shopping center. Her business partner, Cho, wants to exchange 1,000 shares of stock in a real estate company for a different portfolio of real estate stocks. Both believe they qualify for like-kind exchange treatment. How does distinguish between these two exchanges, and what is the consequence for each taxpayer?",
+    "choices": [
+      "Ramirez qualifies for Section 1031 because both the warehouse and shopping center are real property held for investment or used in a trade or business — the exchange of one type of real estate for another satisfies the like-kind requirement. Cho does not qualify because stocks, bonds, and other securities are explicitly excluded from Section 1031 regardless of the underlying assets they represent — Cho must recognize any gain or loss immediately",
+      "Both qualify because real estate stocks represent indirect ownership of real property, which satisfies the like-kind requirement",
+      "Neither qualifies because Section 1031 was fully repealed by the TCJA in 2017",
+      "Ramirez does not qualify because a warehouse and a shopping center are different property types, while Cho qualifies because stock-for-stock exchanges are like-kind"
+    ],
+    "correct_index": 2,
+    "explanation": "Correct (C): Section 1031 allows tax-deferred exchanges of real property held for productive use in a trade or business or for investment. Ramirez''s warehouse-for-shopping-center exchange qualifies because both are real property. Cho''s stock exchange fails because Section 1031(a)(2) explicitly excludes stocks, bonds, and securities, even if the underlying companies own real estate.\nWrong (A): While the analysis of Ramirez is correct, this choice also correctly states Cho does not qualify — making it the right answer rather than a wrong one.\nWrong (B): Securities representing indirect ownership of real property do not satisfy Section 1031. The taxpayer must exchange real property directly.\nWrong (D): Different types of real estate (warehouse vs. shopping center) are considered like-kind under Section 1031. The like-kind standard for real estate is broad."
+  },
+  {
+    "id": 75,
+    "topic": "Like-Kind Exchanges",
+    "stem": "Callahan exchanges an investment property (adjusted basis $200,000, FMV $350,000) for like-kind property (FMV $300,000) plus $50,000 cash. Callahan's neighbor, Drake, completes a similar exchange but receives like-kind property (FMV $350,000) with no cash. How does the receipt of boot affect Callahan's gain recognition compared to Drake's, and what is the policy rationale for this treatment?",
+    "choices": [
+      "Both recognize $0 gain because Section 1031 provides complete nonrecognition for any exchange of like-kind property, regardless of whether cash is involved",
+      "Callahan recognizes $50,000 gain (limited to boot received) while Drake recognizes $0 — boot triggers gain recognition because the taxpayer has received liquid value that is not reinvested in like-kind property, breaking the continuity of investment that justifies deferral",
+      "Callahan recognizes $150,000 (full realized gain) while Drake recognizes $0, because receiving any boot requires full gain recognition",
+      "Callahan recognizes $50,000 and Drake recognizes $150,000, because pure exchanges without boot receive harsher treatment"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): In a Section 1031 exchange, gain is recognized to the extent of boot (cash or non-like-kind property) received, but never exceeds the realized gain. Callahan''s realized gain is $150,000 ($350,000 FMV minus $200,000 basis), but recognition is limited to the $50,000 boot received. Drake receives no boot, so no gain is recognized.\nWrong (B): This choice incorrectly states both recognize $0. Callahan must recognize gain equal to the $50,000 boot received because that portion was not reinvested in like-kind property.\nWrong (C): Boot does not trigger full gain recognition. Under Section 1031(b), gain is recognized only to the extent of boot received, not the entire realized gain.\nWrong (D): Pure exchanges without boot receive the most favorable treatment ($0 recognition), not harsher treatment. This reverses the actual rule."
+  },
+  {
+    "id": 83,
+    "topic": "C Corporations",
+    "stem": "Apex Industries owns 25% of Beacon Corp and receives $100,000 in dividends. Apex's subsidiary, Crest Holdings, owns 85% of Delta Corp and also receives $100,000 in dividends. How does the ownership percentage affect the dividends received deduction (DRD) for each entity, and what policy goal does the tiered DRD structure serve?",
+    "choices": [
+      "Apex deducts $50,000 (50%) and Crest deducts $100,000 (100%), because the tiers are set at below 20%, 20-79%, and 80%+",
+      "Both deduct $65,000 (65%) because the DRD is a flat rate regardless of ownership percentage",
+      "Apex deducts $100,000 (100%) and Crest deducts $65,000 (65%), because smaller ownership stakes receive larger deductions to encourage portfolio diversification",
+      "Apex deducts $65,000 (65%) and Crest deducts $100,000 (100%), because the DRD increases with ownership level — at 80%+ ownership the full deduction eliminates triple taxation, while the 65% rate for 20-79% ownership provides partial relief from economic double taxation"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): Under IRC Section 243, the DRD has three tiers: less than 20% ownership receives 50%, 20-79% ownership receives 65%, and 80%+ ownership receives 100%. Apex''s 25% stake qualifies for the 65% tier ($65,000 deduction), while Crest''s 85% stake qualifies for 100% ($100,000 deduction). The tiered structure provides greater relief as economic integration increases.\nWrong (A): This choice correctly identifies the tier thresholds but applies the wrong rates. The 20-79% tier receives 65%, not 50%.\nWrong (C): This reverses the DRD logic. Smaller ownership stakes receive smaller deductions (50%), not larger ones. The policy encourages integration, not diversification.\nWrong (D): While the rates stated here are correct, the answer choice claims they are wrong — the DRD does increase with ownership level, making this the correct answer."
+  },
+  {
+    "id": 89,
+    "topic": "Partnerships",
+    "stem": "Partner Xavier has an outside basis of $60,000. The partnership distributes $45,000 cash and property with an inside basis of $25,000 (FMV $30,000) in a nonliquidating distribution. Xavier's partner, Yates, has the same $60,000 outside basis but receives only the property (inside basis $25,000, FMV $30,000) with no cash. How does the ordering rule affect the basis of the distributed property differently for each partner, and why?",
+    "choices": [
+      "Xavier takes a $25,000 basis and Yates takes a $25,000 basis, because property always retains its inside basis regardless of other distributions",
+      "Xavier takes a $30,000 FMV basis and Yates takes a $30,000 FMV basis, because distributed property is always marked to market",
+      "Xavier takes a $0 basis because cash exhausted all available basis, while Yates takes a $25,000 basis because no cash was distributed",
+      "Xavier takes a $15,000 basis because cash reduces outside basis first ($60,000 − $45,000 = $15,000 remaining), and property basis is limited to that remainder; Yates takes the full $25,000 carryover basis because without cash, the entire outside basis is available to absorb the property's inside basis"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): Under IRC Section 732(a)(2), in a nonliquidating distribution, property basis cannot exceed the partner''s remaining outside basis after cash reduces it under Section 733. Xavier''s $60,000 basis minus $45,000 cash leaves $15,000, so property takes a $15,000 basis. Yates receives no cash, so the property retains its full $25,000 carryover basis.\nWrong (A): Property does not always retain its inside basis. When cash reduces outside basis first, the remaining basis may be insufficient to support the full carryover amount.\nWrong (C): Xavier does not take a $0 basis. After $45,000 cash reduces the $60,000 outside basis, $15,000 remains available to allocate to the property.\nWrong (D): While D reaches the correct numerical result for Xavier, it incorrectly states FMV basis for Yates. Section 732 uses carryover basis, not fair market value."
+  },
+  {
+    "id": 108,
+    "topic": "Internal Controls",
+    "stem": "During the audit of Crestview Manufacturing, the senior auditor traces a purchase transaction from the initial requisition through approval, recording, and payment. What is the purpose of this walkthrough procedure in the audit of internal controls?",
+    "choices": [
+      "To test the operating effectiveness of internal controls over a full reporting period",
+      "To confirm the auditor's understanding of control design and implementation by tracing a transaction",
+      "To physically count and reconcile inventory quantities recorded in the client's general ledger",
+      "To determine the appropriate audit fee based on the complexity of the client's control environment"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Under AU-C 315.A93, a walkthrough traces a transaction from origination through processing to recording. Its purpose is to confirm the auditor''s understanding of control design and whether controls have been implemented (placed in operation).\nWrong (A): Testing operating effectiveness requires separate tests of controls over a period, not a single-transaction walkthrough.\nWrong (B): This describes the actual purpose of a walkthrough, but the correct answer for this question is D — confirming understanding of design and implementation.\nWrong (C): Physical inventory counts are substantive procedures unrelated to evaluating the control environment."
+  },
+  {
+    "id": 201,
+    "topic": "Business Law: Contracts",
+    "stem": "Dawson promises Henderson $5,000 if Henderson will refrain from filing a legitimate lawsuit against Dawson. Separately, Martinez promises to pay her neighbor $1,000 in gratitude for helping her move three months ago. Why does Henderson's forbearance constitute valid consideration while Martinez's promise does not, and how does this distinction affect contract enforceability?",
+    "choices": [
+      "Henderson's forbearance is valid consideration because surrendering or promising to forbear from exercising a legal right constitutes a bargained-for legal detriment — Henderson is giving up something of value (the right to sue). Martinez's promise is unenforceable because past consideration is not valid consideration; the neighbor's help occurred before the promise, so there was no bargained-for exchange at the time of the promise",
+      "Both promises lack valid consideration because money must flow both ways for a contract to be enforceable",
+      "Both promises constitute valid consideration because any promise of payment creates a binding obligation",
+      "Martinez's promise is enforceable because moral obligation is sufficient consideration, while Henderson's forbearance fails because not suing is not a legal detriment"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Under the Restatement (Second) of Contracts Section 71, valid consideration requires a bargained-for exchange of legal value at the time of agreement. Henderson''s forbearance from filing a legitimate lawsuit is a present legal detriment constituting valid consideration. Martinez''s promise fails because past consideration is not valid — the neighbor''s help was completed before the promise was made, so no bargained-for exchange existed at the time of contracting.\nWrong (A): This choice correctly analyzes Henderson''s forbearance but incorrectly analyzes Martinez''s promise, making it the correct answer rather than a wrong choice.\nWrong (B): Consideration does not require money to flow both ways. Legal detriment (such as forbearance) or a promise to act or refrain from acting suffices.\nWrong (C): Not every promise of payment creates a binding obligation. Without a bargained-for exchange at the time of the promise, the agreement lacks consideration."
+  },
+  {
+    "id": 212,
+    "topic": "Property Transactions: Basis",
+    "stem": "Kowalski purchases a rental property for $250,000, with $50,000 allocated to land and $200,000 to the building. His neighbor, Park, purchases a nearly identical property for $250,000 but allocates $100,000 to land and $150,000 to the building based on a different appraisal. How does the allocation difference affect the two investors' annual depreciation deductions and why?",
+    "choices": [
+      "No effect — both properties cost $250,000 so both produce the same depreciation deduction",
+      "Park gets larger depreciation deductions because a higher land allocation increases the depreciable basis",
+      "Kowalski gets smaller depreciation deductions because the IRS requires equal allocation between land and building",
+      "Kowalski gets larger annual depreciation deductions because only the building portion is depreciable, and his building allocation ($200,000) exceeds Park's ($150,000)"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): Under IRC Section 167(a) and Treasury Regulation Section 1.167(a)-2, land is never depreciable because it lacks a determinable useful life. Only the building portion creates a depreciable basis. Kowalski''s $200,000 building allocation produces larger annual depreciation than Park''s $150,000 allocation over the 27.5-year recovery period under IRC Section 168(c).\nWrong (A): Total cost is irrelevant to annual depreciation when land allocations differ. Only the building portion is depreciable, so different allocations produce different deductions.\nWrong (C): The IRS does not require equal allocation between land and building. Allocations must reflect fair market values supported by appraisal evidence.\nWrong (D): This choice states the correct rule but arrives at the wrong conclusion — it contradicts choice B''s claim that Park gets larger deductions. Kowalski''s higher building allocation ($200,000 vs. $150,000) does produce larger depreciation."
+  },
+  {
+    "id": 217,
+    "topic": "Property Transactions: Gains/Losses",
+    "stem": "Patterson sells a commercial building (depreciable real property) held for 20 years with $300,000 of accumulated straight-line depreciation, producing a $400,000 total gain. In the same year, Patterson also sells manufacturing equipment ( personal property) with $100,000 of accumulated depreciation, producing an $80,000 gain. How does the recapture treatment differ between these two asset types, and what effect does the \"unrecaptured gain\" category have on Patterson's tax rate?",
+    "choices": [
+      "Both assets face identical treatment — all gains attributable to depreciation are taxed at ordinary income rates for any depreciable property",
+      "The building gain is fully taxed as long-term capital gain at 15%/20% rates because Section 1250 does not apply to straight-line depreciation, while the equipment's $80,000 gain is ordinary under Section 1245",
+      "The building's $300,000 attributable to depreciation is taxed at a maximum 25% rate as unrecaptured Section 1250 gain with the remaining $100,000 at 15%/20% LTCG rates, while the equipment's entire $80,000 gain is recaptured as ordinary income under Section 1245 — this creates three different tax rates on Patterson's total gains from two asset sales",
+      "The building and equipment gains are combined and taxed at a blended rate of 22% because mixed asset sales require a unified rate calculation"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): Patterson faces three distinct tax rates. The building''s $300,000 of gain attributable to straight-line depreciation is \"unrecaptured Section 1250 gain\" taxed at a maximum 25% rate. The remaining $100,000 of building gain is taxed at standard LTCG rates (15%/20%). The equipment''s entire $80,000 gain is ordinary income under Section 1245''s full recapture rule.\nWrong (A): Real property with straight-line depreciation does not face full ordinary recapture. Section 1250 imposes a maximum 25% rate on unrecaptured gain, not ordinary rates.\nWrong (C): While this choice describes the correct rates for the building, it also states the correct treatment — making it the right answer, not a wrong one.\nWrong (D): There is no blended rate concept for mixed asset sales. Each asset''s gain is taxed independently based on its recapture category."
+  },
+  {
+    "id": 220,
+    "topic": "Like-Kind Exchanges",
+    "stem": "Patel transfers relinquished property on March 1 in a deferred exchange. Patel identifies three replacement properties by April 14 but cannot close on any of them by the 45-day deadline. Patel's CPA suggests identifying a fourth property on April 20. Meanwhile, Patel's colleague, Sharma, transferred property on the same date and identified one replacement by April 10, closing on July 15. How do the two exchange timelines compare, and what is the consequence of Patel's late identification?",
+    "choices": [
+      "Patel can identify the fourth property on April 20 because the 45-day rule allows modifications until closing, and Sharma's exchange qualifies because closing occurred within 180 days",
+      "Both exchanges fail because the IRS requires identification and closing within 45 days total",
+      "Patel's attempt to identify a fourth property on April 20 fails because the 45-day identification deadline (April 15) has passed — any identification after that date is invalid and the exchange fails if no timely-identified property is acquired; Sharma's exchange succeeds because identification occurred within 45 days (April 10) and closing within 180 days (July 15 = 136 days)",
+      "Patel's exchange succeeds with a 10% penalty for late identification, while Sharma's exchange is standard"
+    ],
+    "correct_index": 3,
+    "explanation": "Wrong (C): Under Section 1031, deferred like-kind exchanges require replacement property identification within 45 days and closing within 180 days of the relinquished property transfer. Patel's March 1 transfer sets the 45-day deadline at April 15, making the April 20 identification attempt invalid with no extension or penalty option. Sharma met both deadlines (identified April 10, closed July 15 at 136 days).\nWrong (A): The 45-day identification deadline is absolute and does not permit modifications or extensions after expiration.\nWrong (B): Identification and closing have separate deadlines of 45 and 180 days respectively, not a combined 45-day window.\nCorrect (D): No penalty option exists for late identification — the exchange simply fails if no timely-identified property is acquired within 180 days."
+  },
+  {
+    "id": 229,
+    "topic": "Individual Taxation: Filing/Credits",
+    "stem": "The Andersons (MFJ) have three qualifying children under 17 and AGI of $400,000. The Garcias (MFJ) also have three qualifying children under 17 but have AGI of $450,000. How does the phase-out mechanism affect the child tax credit differently for each family, and what is the effect on the credit amount per child?",
+    "choices": [
+      "The Andersons receive the full $6,000 credit ($2,000 × 3 children) because their AGI is at the $400,000 MFJ threshold, while the Garcias' credit is reduced by $2,500 ($50 per $1,000 of AGI above $400,000 × $50,000 excess) to $3,500 — the phase-out targets the benefit away from higher-income households while preserving it fully for those at or below the threshold",
+      "Both families receive $6,000 because the phase-out does not begin until $500,000 for MFJ filers",
+      "Neither family receives any credit because the phase-out completely eliminates the credit at $400,000 AGI",
+      "The Garcias receive more credit because higher AGI increases the refundable portion of the child tax credit"
+    ],
+    "correct_index": 2,
+    "explanation": "Wrong (A): Under IRC Section 24(a), the child tax credit is $2,000 per qualifying child under 17. The phase-out under Section 24(b) begins at $400,000 AGI for MFJ, reducing the credit by $50 per $1,000 above the threshold. The Andersons at exactly $400,000 receive the full $6,000. The Garcias' $50,000 excess reduces their credit by $2,500, leaving $3,500.\nWrong (B): The phase-out begins at $400,000 for MFJ filers, not $500,000.\nCorrect (C): The phase-out is gradual, not a cliff — the Andersons at $400,000 receive the full credit since they are at the threshold, not above it.\nWrong (D): Higher AGI reduces the credit through the phase-out mechanism; it does not increase the refundable portion."
+  },
+  {
+    "id": 334,
+    "topic": "Audit Reports",
+    "stem": "While drafting the audit report for Lakeside Holdings, the engagement partner considers adding either an emphasis-of-matter or other-matter paragraph. An other-matter paragraph differs from an emphasis-of-matter paragraph in that an other-matter paragraph:",
+    "choices": [
+      "Modifies the auditor's opinion on the financial statements by adding a qualification or adverse conclusion",
+      "Communicates information not presented or disclosed in the financial statements that is relevant to understanding the audit",
+      "Addresses going concern uncertainties identified during the audit and requires a separate basis paragraph",
+      "Replaces the basis for opinion section when the auditor disagrees with a material accounting policy"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Under AU-C 706, an other-matter paragraph addresses matters not presented or disclosed in the financial statements that are relevant to users'' understanding of the audit or the auditor''s report. Common examples include restrictions on report distribution or prior-period audits by a predecessor.\nWrong (A): Neither emphasis-of-matter nor other-matter paragraphs modify the auditor''s opinion; only qualified, adverse, or disclaimer opinions do that.\nWrong (B): This describes an other-matter paragraph, not a distinguishing characteristic from emphasis-of-matter paragraphs.\nWrong (C): Going concern uncertainties are addressed through emphasis-of-matter paragraphs under AU-C 570, not other-matter paragraphs."
+  },
+  {
+    "id": 496,
+    "topic": "Business Law: Contracts",
+    "stem": "DataTech Corp receives a shipment of 500 computer monitors from ScreenPro. Upon inspection, 100 monitors have dead pixels, 200 have minor packaging damage but work perfectly, and 200 are fully conforming. What remedies are available to DataTech, and how does the ability to accept part and reject part affect DataTech''s strategic decision-making compared to an all-or-nothing approach?",
+    "choices": [
+      "DataTech must accept all 500 monitors and can only recover damages for the 100 defective units through a separate lawsuit",
+      "DataTech must reject all 500 monitors because partial acceptance is not permitted under the UCC — the perfect tender rule requires total rejection or total acceptance",
+      "DataTech has no remedy because it inspected the goods before rejecting, which constitutes implied acceptance",
+      "DataTech may reject the 100 dead-pixel monitors, accept the 400 functioning monitors (including the 200 with packaging damage), and recover damages for the nonconforming units — this partial acceptance option allows DataTech to retain usable goods while rejecting defective ones, which is strategically superior to total rejection because it avoids supply disruption for the 400 working units"
+    ],
+    "correct_index": 0,
+    "explanation": "Wrong (D): Under UCC Section 2-601, the buyer may accept the whole, reject the whole, or accept any commercial unit(s) and reject the rest. DataTech can reject the 100 dead-pixel monitors while accepting the 400 functioning units (including those with minor packaging damage), avoiding supply disruption. Under Section 2-714, DataTech can recover damages for nonconforming units.\nCorrect (A): The buyer is never required to accept all goods — the UCC provides three options including partial acceptance by commercial unit.\nWrong (B): Partial acceptance is explicitly permitted under Section 2-601; the perfect tender rule does not mandate all-or-nothing treatment.\nWrong (C): Inspection does not constitute acceptance — the UCC provides a reasonable time to inspect before acceptance occurs under Section 2-606."
+  },
+  {
+    "id": 783,
+    "topic": "Data Management and Lifecycle",
+    "stem": "A company performs an Extract, Transform, Load (ETL) process to populate its financial data warehouse. During testing, the auditor discovers that 2% of source records were dropped during transformation. What should the auditor recommend?",
+    "choices": [
+      "Implement reconciliation controls comparing record counts and totals between source and target after each ETL run",
+      "Accept the 2% variance as immaterial since it falls below a standard 5% testing threshold",
+      "Replace the automated ETL process with manual data entry to ensure every record is individually verified",
+      "Reduce the frequency of ETL runs from daily to weekly to allow more time for data validation checks"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): Under COSO IC-1 (Information and Communication), a 2% record loss could be material depending on which transactions were dropped. Accepting an arbitrary 5% threshold ignores the nature and materiality of lost records and fails to implement proper reconciliation controls to detect and correct data loss.\nWrong (A): Implementing reconciliation controls is actually the recommended action. Comparing record counts and totals between source and target after each ETL run addresses the root cause of undetected data loss.\nWrong (C): Replacing automated ETL with manual data entry is impractical, introduces human error risk, and does not scale for large financial datasets.\nWrong (D): Reducing ETL frequency from daily to weekly does not address the transformation logic causing record drops and would delay financial data availability."
+  },
+  {
+    "id": 882,
+    "topic": "SOC Engagements",
+    "stem": "Pinnacle SaaS provides a billing platform to 200 mid-size retailers. Several of its largest clients have requested ongoing evidence that Pinnacle''s security and availability controls are operating effectively, with no gaps in coverage between reporting periods. How frequently should Pinnacle obtain a SOC 2 Type II report to satisfy this requirement?",
+    "choices": [
+      "Every five years, coinciding with the organization's strategic planning cycle and technology refresh",
+      "Monthly, providing continuous assurance to user entities and their auditors throughout the fiscal year",
+      "Only when a user entity specifically requests it as part of their vendor due diligence process",
+      "Annually, covering a 12-month examination period with no gaps between consecutive report periods"
+    ],
+    "correct_index": 1,
+    "explanation": "Wrong (D): Best practice under SSAE 18 (AT-C Section 320) is to obtain a SOC 2 Type II report annually, covering a continuous 12-month examination period that aligns with the prior report''s end date to avoid coverage gaps. This provides user entity auditors with current, uninterrupted evidence of control operating effectiveness.\nWrong (A): A five-year cycle would leave user entities without current assurance for unacceptably long periods, undermining the purpose of continuous monitoring.\nCorrect (B): Monthly reporting is impractical and unnecessary; annual coverage with no gaps between periods satisfies assurance requirements efficiently.\nWrong (C): Obtaining reports only on request creates unpredictable gaps in coverage and does not provide the continuous assurance user entities need."
+  },
+  {
+    "id": 952,
+    "topic": "Entity Tax Compliance: NOLs and Consolidated Returns",
+    "stem": "Caldwell Manufacturing generates a $3,000,000 net operating loss in 2025. In 2026, the company has taxable income of $4,000,000 before the NOL deduction. The CFO asks whether the company can eliminate its entire 2026 tax liability using the NOL carryforward. How does the post-TCJA 80% limitation 2) affect Caldwell's 2026 taxable income, and what is the strategic implication of the remaining taxable income that cannot be offset?",
+    "choices": [
+      "Caldwell can offset the full $3,000,000 because the 80% limitation applies only to pre-2018 NOLs, not post-TCJA losses",
+      "The 80% cap is $3,200,000, but the $3,000,000 NOL is fully usable since it falls below that cap, leaving $1,000,000 of taxable income",
+      "Caldwell can deduct only $2,400,000 (80% of the $3,000,000 NOL) and must carry the remaining $600,000 forward indefinitely",
+      "The full $3,000,000 offsets income because NOL carryforwards face no percentage limitation when the carryforward period exceeds five years"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Under IRC Section 172(a)(2), as amended by the TCJA, post-2017 NOLs can offset only 80% of taxable income in any carryforward year (with indefinite carryforward but no carryback for most taxpayers). Caldwell's 80% cap is $3,200,000 (80% x $4,000,000). Since the available NOL ($3,000,000) is less than the cap ($3,200,000), Caldwell uses the entire $3,000,000, leaving $1,000,000 taxable. The strategic implication is significant: even with massive NOL carryforwards, a corporation will always pay tax on at least 20% of its pre-NOL taxable income. This is a fundamental shift from pre-TCJA law, where NOLs could reduce taxable income to zero. Companies must now incorporate this 'minimum taxable income floor' into cash flow projections and estimated tax payments. (A) is wrong because the 80% limitation applies to post-2017 NOLs, not pre-2018 NOLs. (B) reaches the correct numbers but frames the analysis less completely. (C) is wrong because the 80% applies to taxable income, not the NOL amount itself."
+  },
+  {
+    "id": 984,
+    "topic": "Owner-Entity Transactions",
+    "stem": "Diana Marsh owns 600 of the 1,000 outstanding shares of Clearwater Industries, a C corporation. The corporation redeems 200 shares from Diana, reducing her ownership to 400 of 889 remaining outstanding shares — approximately 45%. Diana''s tax advisor is applying the substantially disproportionate redemption test. Does the redemption qualify as substantially disproportionate?",
+    "choices": [
+      "Yes — she meets both the less-than-50% and the 80% tests",
+      "No — she still owns too large a percentage",
+      "Yes — but only because she owns less than 50%",
+      "No — the test requires complete termination"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): Under IRC Section 302(b)(2), a redemption qualifies as substantially disproportionate if the shareholder owns less than 50% of total voting power after the redemption and the post-redemption percentage is less than 80% of the pre-redemption percentage. Here, 80% x 60% = 48%, and 45% satisfies both prongs (45% < 50% and 45% < 48%).\nWrong (B): The shareholder does meet the test because 45% is both below 50% and below the 80% threshold of 48%.\nWrong (C): Both prongs must be satisfied; meeting only the less-than-50% test without the 80% test would not qualify.\nWrong (D): Complete termination is a separate test under Section 302(b)(3); the substantially disproportionate test does not require it."
+  },
+  {
+    "id": 1474,
+    "topic": "Audit Planning",
+    "stem": "An auditor is planning the audit of a company with significant estimates, including warranty reserves and pension obligations. The auditor's planning should include:",
+    "choices": [
+      "Identifying areas involving significant estimates and planning procedures to evaluate the reasonableness of those estimates",
+      "Disclosing to users that estimates cannot be audited",
+      "Limiting procedures to recalculation of management's estimates",
+      "Accepting management's estimates as presented since management has the most knowledge"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Under AU-C 540, accepting management''s estimates without evaluation is incorrect. The auditor must identify areas with significant estimates and plan procedures to evaluate their reasonableness, including understanding management''s process, evaluating assumptions, and considering the need for a specialist.\nWrong (A): This choice actually describes the correct audit approach. Identifying significant estimates and planning evaluation procedures is required under AU-C 540.\nWrong (B): Estimates are auditable. The auditor cannot disclaim responsibility by disclosing that estimates cannot be audited.\nWrong (C): Limiting procedures to recalculation alone is insufficient. The auditor must also evaluate assumptions and methodologies underlying management''s estimates."
+  },
+  {
+    "id": 2693,
+    "topic": "Individual Taxation: Credits",
+    "stem": "Robert and Jennifer (MFJ) pay $4,500 in qualified tuition for their daughter's first year of college and $8,000 for Robert's MBA program. Can they claim both the AOTC and Lifetime Learning Credit on the same return?",
+    "choices": [
+      "No — MBA programs do not qualify for any education credit",
+      "No — only one education credit can be claimed per return",
+      "Yes — but they must split the credits equally",
+      "Yes — they can claim the AOTC for the daughter and the LLC for Robert"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): Under IRC Sec. 25A(a), taxpayers may claim both the AOTC (Sec. 25A(b)) and the Lifetime Learning Credit (Sec. 25A(c)) on the same return for different students. However, the AOTC applies to the daughter''s undergraduate education, and the LLC would apply to Robert''s MBA. Sec. 25A(c)(2)(A) prohibits claiming both credits for the same student in the same year.\nWrong (B): Multiple education credits can be claimed on one return, provided they apply to different students under Sec. 25A(a).\nWrong (C): There is no requirement to split credits equally. Each credit is calculated independently based on the student''s qualified expenses.\nWrong (D): While this arrangement is generally permissible for different students, the correct answer depends on whether the specific program qualifies under Sec. 25A(c)."
+  },
+  {
+    "id": 2740,
+    "topic": "Individual Taxation: Filing/Credits",
+    "stem": "Pratt, a self-employed graphic designer, expects net earnings of $60,000 for 2026 and has no tax withholding. Pratt''s CPA advises making quarterly estimated tax payments. These payments are due on which dates?",
+    "choices": [
+      "Quarterly on the last day of each quarter",
+      "January 15, April 15, July 15, October 15",
+      "March 15, June 15, September 15, December 15",
+      "April 15, June 15, September 15, January 15 (of next year)"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): Under IRC Section 6654(c)(2), estimated tax payments for individuals are due quarterly. The specific dates are April 15, June 15, September 15, and January 15 of the following year, which correspond to the last day of each required installment period.\nWrong (B): January 15 is a payment date but for the prior year''s fourth quarter, not the start of the cycle. The sequence begins with April 15, not January 15.\nWrong (C): March 15, June 15, September 15, and December 15 are not the statutory due dates — March 15 and December 15 are corporate deadlines, not individual.\nWrong (D): While the specific dates listed in this choice are correct, the choice labels them differently from the quarterly framework described in the statute."
+  },
+  {
+    "id": 2813,
+    "topic": "S Corporations",
+    "stem": "Novak and Wells incorporated Cedar Ridge Inc. on January 5, 2025, as a calendar-year corporation and want S status effective immediately. By what date must the S election on Form 2553 be filed to be effective for the current tax year?",
+    "choices": [
+      "By December 31 of the current tax year",
+      "By April 15 of the following tax year",
+      "By June 30 of the current tax year",
+      "By March 15 for a calendar-year corporation"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Under Section 1362(b), to be effective for the current tax year, the S election on Form 2553 must be filed no later than two months and 15 days after the beginning of the tax year. For a calendar-year corporation, this deadline is March 15. If the election is filed after this date, it becomes effective for the following tax year. All shareholders must consent to the election. (A) is wrong because filing by the last day of the year would make the election effective for the following year, not the current year. (B) is wrong because April 15 is past the deadline for calendar-year corporations. (C) is wrong because June 30 is past the March 15 deadline for calendar-year corporations."
+  },
+  {
+    "id": 2891,
+    "topic": "Debtor-Creditor Relationships",
+    "stem": "Seller sells a commercial refrigerator to Restaurant on credit, retaining a security interest. Seller perfects the security interest within 20 days of delivery. Bank had previously filed a financing statement covering all of Restaurant's equipment. Who has priority in the refrigerator?",
+    "choices": [
+      "Neither, because the interests conflict",
+      "Bank, because it filed first",
+      "They share equally",
+      "Seller, because Seller has a purchase money security interest (PMSI) in equipment"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): Under UCC Section 9-324(a), a purchase money security interest (PMSI) in equipment achieves superpriority over a prior-perfected security interest if perfected within 20 days of delivery. Seller perfected within the statutory window, creating a conflict where the PMSI rules and first-to-file rules produce competing claims that must be resolved.\nWrong (B): Although Bank filed first, a timely-perfected PMSI in equipment takes superpriority under Section 9-324(a), overriding the general first-to-file rule.\nWrong (C): Equal sharing does not apply. UCC Article 9 establishes clear priority rules for competing security interests rather than pro-rata distribution.\nWrong (D): While Seller does hold a PMSI, this answer oversimplifies the analysis. The PMSI superpriority in equipment under Section 9-324(a) requires timely perfection within 20 days."
+  },
+  {
+    "id": 3567,
+    "topic": "System Availability and Change Management",
+    "stem": "An organization's DRP includes procedures for three types of recovery sites. The warm site has pre-installed hardware but requires data restoration from offsite backups that takes approximately 6 hours. If the RPO is 24 hours (daily backups) and the RTO is 12 hours, does the warm site meet both objectives?",
+    "choices": [
+      "Yes, but only if the warm site is in the same building as the primary site",
+      "No, because warm sites never meet any recovery objectives",
+      "No, because the warm site has no hardware",
+      "Yes — the daily backup satisfies the 24-hour RPO, and the 6-hour data restoration plus system startup time fits within the 12-hour RTO"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): Per NIST SP 800-34 Rev. 1, Section 3.4, recovery site selection must align with RPO and RTO objectives. Daily backups satisfy the 24-hour RPO (maximum 24 hours of data loss), and the warm site''s 6-hour data restoration plus startup fits within the 12-hour RTO, meeting both objectives.\nWrong (B): Warm sites can meet recovery objectives when properly configured; this blanket statement is incorrect.\nWrong (C): Warm sites by definition have pre-installed hardware; cold sites lack hardware.\nWrong (D): The correct answer is A. While the reasoning about RPO and RTO alignment is accurate, the location requirement in choice A is not a factor — the warm site meets objectives regardless of proximity to the primary site."
+  },
+  {
+    "id": 3707,
+    "topic": "Incident Response and Recovery",
+    "stem": "During incident recovery, the IR team restores a compromised server from a backup taken two days before the incident. After restoration, what verification step is MOST important before returning the server to production?",
+    "choices": [
+      "Confirming that the server boots successfully and basic services start normally",
+      "Renaming the server to a new hostname before reconnecting to the network",
+      "Verifying the backup is clean, validating system integrity, and monitoring for compromise indicators",
+      "Updating the server''s visual configuration settings and desktop appearance"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Per NIST SP 800-61 Rev. 2, Section 3.4, before returning a restored system to production, the team must verify the backup predates the compromise, validate system integrity, apply missing patches, and monitor for indicators of compromise during a controlled reintroduction period.\nWrong (A): A successful boot confirms basic functionality but does not verify the backup is free of attacker persistence mechanisms.\nWrong (B): Renaming the server is an administrative action that provides no security assurance about the restored system''s integrity.\nWrong (C): Updating desktop appearance is a cosmetic change with no relevance to verifying system integrity or security posture."
+  },
+  {
+    "id": 3828,
+    "topic": "IT General Controls",
+    "stem": "An organization's change advisory board (CAB) reviews all proposed changes to production systems before approval. Which of the following best describes the CAB's role?",
+    "choices": [
+      "To monitor production systems for performance issues",
+      "To develop and write the code for proposed changes",
+      "To perform all testing of proposed changes",
+      "To evaluate proposed changes for risk, impact, resource requirements, and scheduling before authorizing deployment"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): Under ITIL 4 Change Enablement and COBIT 2019 BAI06.01, a change advisory board (CAB) evaluates proposed changes to assess risk, potential impact on services, resource requirements, and appropriate scheduling. The CAB provides multi-perspective review from operations, security, and business stakeholders.\nWrong (B): The CAB advises on and authorizes changes but does not develop or write the code; implementation belongs to the technical teams proposing the change.\nWrong (C): Testing is performed by the technical teams, not the CAB; the CAB reviews test results as part of its risk and impact evaluation.\nWrong (D): This describes the CAB''s actual function of evaluating changes for risk and impact before authorization, which overlaps with the CAB''s advisory and governance role."
+  },
+  {
+    "id": 3846,
+    "topic": "IT Audit Frameworks",
+    "stem": "Apex Industries is adopting COBIT 2019 to strengthen IT governance. The CIO asks the IT steering committee to focus first on the Evaluate, Direct, and Monitor (EDM) domain. What does this governance domain encompass?",
+    "choices": [
+      "Help desk and end-user support activities",
+      "Day-to-day IT operations and system maintenance",
+      "Software development and testing procedures",
+      "Setting governance direction, evaluating stakeholder needs, and monitoring performance and compliance"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): This choice is incorrect as a description of EDM. Per COBIT 2019 Framework: Governance and Management Objectives, the EDM domain encompasses the governing body''s responsibilities for evaluating stakeholder needs, setting strategic direction, and monitoring performance and compliance. Help desk activities fall under the DSS (Deliver, Service, Support) management domain.\nWrong (B): Day-to-day IT operations belong to the DSS management domain, not the governance-level EDM domain.\nWrong (C): Software development and testing fall under the BAI (Build, Acquire, Implement) management domain, not EDM.\nWrong (D): This accurately describes the EDM domain''s scope. Setting governance direction, evaluating stakeholder needs, and monitoring performance and compliance are the core EDM responsibilities."
+  },
+  {
+    "id": 5989,
+    "topic": "Passive Activity and At-Risk Rules",
+    "stem": "Ingram invests $100,000 cash in a limited partnership that acquires a building with $600,000 of qualified nonrecourse bank financing 6). Ingram's 25% share gives her a $250,000 debt allocation. In year one, the partnership allocates $200,000 of losses to Ingram. She has no passive income and AGI of $200,000. As a limited partner she does not actively participate. What is Ingram's maximum deductible loss?",
+    "choices": [
+      "$200,000, because qualified nonrecourse financing provides sufficient at-risk and basis amounts",
+      "$25,000, under the active participation rental real estate allowance for eligible taxpayers",
+      "$150,000, limited to the qualified nonrecourse financing amount allocated to Ingram",
+      "$0, because the passive activity rules suspend the entire loss with no offsetting income"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Under Section 469 and Section 465(b)(6), Ingram''s basis ($350,000) and at-risk amount ($350,000 with qualified nonrecourse financing) both exceed the $200,000 loss. However, as a limited partner without active participation and AGI above $150,000, the $25,000 allowance is fully phased out. With no passive income to offset, the entire $200,000 loss is suspended.\nWrong (A): While basis and at-risk amounts are sufficient, the passive activity limitation under Section 469 is the binding constraint that suspends the loss.\nWrong (B): Limited partners cannot claim active participation under Section 469(i)(6)(C), and even if eligible, the $25,000 allowance phases out completely at AGI above $150,000.\nWrong (C): The $150,000 figure does not correspond to any applicable limitation in this scenario."
+  },
+  {
+    "id": 12643,
+    "topic": "Individual Tax Planning: Compensation",
+    "stem": "Freelance architect Tomás Rivera earns $180,000 in net self-employment income for 2026. His calculated self-employment tax is $22,239. Rivera wants to understand how the SE tax deduction affects his individual tax return. What is the correct treatment of the deduction for one-half of self-employment tax?",
+    "choices": [
+      "It reduces the self-employment tax base, lowering the SE tax owed",
+      "It is a deduction from AGI (reduces the SE tax itself and is taken as an above-the-line deduction)",
+      "It reduces Rivera's AGI as an above-the-line deduction but does not reduce his self-employment tax liability",
+      "It is an itemized deduction on Schedule A"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): Under IRC Section 164(f), a self-employed individual may deduct one-half of the self-employment tax as an above-the-line deduction in computing AGI. For Rivera, the deduction is $11,120 ($22,239 / 2), reported on Schedule 1 (Form 1040). This deduction reduces AGI but does not reduce the SE tax itself.\nWrong (A): The deduction does not reduce the self-employment tax base or the SE tax owed. It is a separate adjustment to AGI on the income tax return.\nWrong (C): This is partially correct about AGI reduction but incorrectly states it does not affect AGI-sensitive items. The deduction does reduce AGI.\nWrong (D): The SE tax deduction is an above-the-line deduction under Section 62(a)(1), not an itemized deduction on Schedule A."
+  },
+  {
+    "id": 12789,
+    "topic": "Wealth Transfer and Gifting Strategies",
+    "stem": "Howard Brennan dies in 2026, leaving $3 million to his adult son, Kevin. Kevin does not need the funds and wants them to pass directly to his own children without making a taxable gift. Kevin''s attorney advises him to execute a qualified disclaimer. Which requirement must Kevin satisfy for the disclaimer to be valid?",
+    "choices": [
+      "Kevin must disclaim in writing within 9 months of Howard''s death without having accepted any benefits",
+      "Kevin must disclaim within 12 months of Howard''s death via oral or written refusal",
+      "Kevin must disclaim within 6 months of learning about the bequest through the executor",
+      "Kevin must file a gift tax return reporting the disclaimer as a non-taxable transfer event"
+    ],
+    "correct_index": 2,
+    "explanation": "Correct (C): Under IRC Section 2518, a qualified disclaimer must be an irrevocable, unqualified written refusal made within 9 months of the transfer (or the date the disclaimant turns 21). The disclaimant must not have accepted the property or any of its benefits. The property then passes as if the disclaimant predeceased the decedent.\nWrong (A): The deadline is 9 months, not 12 months.\nWrong (B): The 9-month period runs from the date of transfer (death), not from when the beneficiary learns of the bequest.\nWrong (D): No gift tax return is required for a qualified disclaimer because the disclaimant is treated as never having received the property."
+  },
+  {
+    "id": 12856,
+    "topic": "Tax Procedures",
+    "stem": "Nakamura LLC demonstrates reasonable cause for its $25,000 tax underpayment, showing it relied in good faith on advice from a qualified CPA. The IRS agrees that reasonable cause exists. Analyze how reasonable cause affects the accuracy-related penalty and the interest on Nakamura's underpayment.",
+    "choices": [
+      "The penalty is waived and interest is abated because reasonable cause applies to both penalties and interest",
+      "The penalty is waived but interest continues to accrue because interest generally cannot be abated for reasonable cause",
+      "Both the penalty and interest are reduced by 50% when reasonable cause is established",
+      "Interest is abated but the penalty still applies because penalties require a higher standard than reasonable cause"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): Under IRC Section 6664(c)(1), demonstrating reasonable cause and good faith reliance on a qualified CPA''s advice waives the accuracy-related penalty under Section 6662. Under IRC Section 6601(a), interest on underpayments accrues from the due date regardless of reasonable cause and generally cannot be abated on that basis.\nWrong (B): While the penalty is waived, interest continues to accrue because interest represents the time value of money owed to the government and is independent of fault or reasonable cause.\nWrong (C): There is no 50% reduction mechanism; the accuracy-related penalty is either fully waived upon showing reasonable cause or fully imposed.\nWrong (D): Reasonable cause is the standard for waiving accuracy-related penalties; interest accrues independently and is not subject to a separate higher standard."
+  },
+  {
+    "id": 12865,
+    "topic": "Tax Procedures",
+    "stem": "Hoffman receives a statutory notice of deficiency for $120,000. She has the financial resources to pay the full amount but wants to choose the court forum strategically. Analyze which courts require Hoffman to pay the disputed tax before filing suit and how this affects her litigation options.",
+    "choices": [
+      "All three courts — Tax Court, District Court, and Court of Federal Claims — require prepayment before filing",
+      "Only Tax Court requires prepayment; District Court and Court of Federal Claims allow suit without payment",
+      "Both District Court and Court of Federal Claims require prepayment, while Tax Court allows Hoffman to litigate without paying first",
+      "Only Court of Federal Claims requires prepayment; Tax Court and District Court allow suit without payment"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): Under IRC Section 6213(a), Tax Court is the only forum where a taxpayer may contest a deficiency without first paying the disputed tax. To litigate in U.S. District Court or the Court of Federal Claims, the taxpayer must pay the full assessed amount and file a refund claim under IRC Section 7422(a).\nWrong (A): Not all three courts require prepayment. Tax Court specifically allows litigation before payment, which is its primary advantage for taxpayers who cannot or choose not to prepay.\nWrong (C): This reverses the actual rule. Tax Court does not require prepayment, while both District Court and Court of Federal Claims do require it.\nWrong (D): Both the Court of Federal Claims and District Court require prepayment, not only the Court of Federal Claims."
+  },
+  {
+    "id": 12931,
+    "topic": "Advanced Basis Calculations",
+    "stem": "Nakamura, a single taxpayer, is a 40% limited partner in a real estate partnership. Nakamura has an outside basis of $100,000, an at-risk amount of $80,000 (includes qualified nonrecourse financing), $25,000 of passive income from another partnership, and AGI of $90,000. The partnership allocates $120,000 of losses to Nakamura. Applying the BAP-E hierarchy, determine Nakamura's deductible loss and the amount suspended at each level.",
+    "choices": [
+      "$100,000 deductible; $20,000 suspended at basis level",
+      "$80,000 deductible; $20,000 suspended at basis, $20,000 at at-risk",
+      "$25,000 deductible; $20,000 suspended at basis, $20,000 at at-risk, $55,000 at passive",
+      "No loss deductible because Nakamura is a limited partner"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Under IRC Sections 704(d), 465, and 469, partnership losses must pass through the BAP-E hierarchy: basis, at-risk, then passive activity limits. Nakamura is a limited partner, and limited partners generally cannot satisfy the material participation or active participation requirements under Section 469. With only $25,000 of passive income to offset, the deductible amount is $25,000, and the remainder is suspended at the passive activity level.\nWrong (A): $100,000 stops at the basis level but ignores the at-risk and passive activity limitations that further restrict the deduction.\nWrong (B): $80,000 accounts for the at-risk limit but fails to apply the passive activity restriction under Section 469 to the remaining amount.\nWrong (C): $25,000 is the correct deductible amount after applying all three limits, not zero. This choice correctly applies the hierarchy but matches answer C, not D."
+  },
+  {
+    "id": 12980,
+    "topic": "Prospective Analysis and Forecasting",
+    "stem": "Eastwood Analytics builds three regression models for Glendale Corp.'s quarterly overhead costs. Model A uses one predictor (machine hours) with R² = 0.84 and adjusted R² = 0.83. Model B adds direct labor hours: R² = 0.88, adjusted R² = 0.87. Model C further adds the number of rainy days per quarter: R² = 0.885, adjusted R² = 0.86. Evaluate which model best balances explanatory power with parsimony, and explain the implication of Model C's adjusted R² declining relative to its R².",
+    "choices": [
+      "Model C is best because it has the highest R² at 0.885",
+      "Model A is best because simpler models always outperform complex ones",
+      "Model B is best because adjusted R² penalizes irrelevant predictors, and Model C's drop from 0.87 to 0.86 signals that the third variable adds noise without meaningful explanatory power",
+      "All three models are equivalent because their R² values are within 5% of each other"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Under ASC 275-10 (estimation uncertainty), adjusted R² penalizes each additional predictor that does not sufficiently improve model fit, making it the appropriate metric for comparing models of different complexity. Model B''s adjusted R² of 0.87 is the highest, while Model C''s third variable (rainy days) barely raises R² but actually lowers adjusted R² from 0.87 to 0.86, signaling overfitting.\nWrong (A): Raw R² always increases when variables are added, even irrelevant ones, so the highest R² alone does not indicate the best-fitting model.\nWrong (B): Simpler models do not always outperform complex ones; Model A''s adjusted R² of 0.83 is materially lower than Model B''s 0.87.\nWrong (C): Although the reasoning about adjusted R² penalizing irrelevant predictors is sound, Model B is the clear winner at 0.87 adjusted R²."
+  },
+  {
+    "id": 12995,
+    "topic": "Prospective Analysis and Forecasting",
+    "stem": "Ashford Economic Research models the relationship between consumer spending and national income for a macroeconomic forecast. Consumer spending depends on income (consumption function), but income also depends on consumer spending (through the GDP identity). The research director warns that estimating each equation separately with ordinary least squares will produce biased coefficients. Evaluate why simultaneity creates estimation problems and which technique addresses this limitation.",
+    "choices": [
+      "Ordinary least squares is biased because the two equations create a feedback loop where the independent variable in each equation is correlated with the error term",
+      "Simultaneity has no effect on OLS estimates as long as R² is above 0.80",
+      "The solution is to use simple exponential smoothing instead of regression for both equations",
+      "Adding more observations eliminates simultaneity bias regardless of the estimation technique"
+    ],
+    "correct_index": 2,
+    "explanation": "Correct (C): Under econometric principles consistent with AICPA guidance on prospective financial analysis, simultaneity occurs when dependent and independent variables are jointly determined, violating OLS''s assumption that regressors are uncorrelated with the error term. Two-stage least squares (2SLS) addresses this by using instrumental variables to isolate exogenous variation.\nWrong (A): While this choice correctly describes the bias mechanism, it identifies the problem rather than the solution technique.\nWrong (B): R² magnitude has no bearing on simultaneity bias, which stems from the structural feedback relationship between equations.\nWrong (D): Adding more observations does not eliminate simultaneity bias; the bias persists regardless of sample size because it is structural."
+  },
+  {
+    "id": 13238,
+    "topic": "Financial Valuation Methods",
+    "stem": "Crestwood Advisors is valuing a privately held regional bank using a DCF model. The analyst derives a WACC of 9.5% based on public bank comparables. However, the subject company's equity cannot be readily sold on a public exchange, and finding a buyer would take 6-12 months. To reflect this liquidity difference, the analyst should most likely:",
+    "choices": [
+      "Reduce the WACC to account for the lower risk of a stable private company",
+      "Apply a higher discount rate by adding an illiquidity premium to the cost of equity component",
+      "Use the public comparable WACC without adjustment since the cash flows are the same",
+      "Replace the DCF model with a net asset value approach to avoid the illiquidity issue"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Under ASC 820-10-35, fair value measurements should reflect market participant assumptions including liquidity considerations. For a privately held bank whose equity cannot be readily sold, the analyst should adjust for reduced marketability by adding an illiquidity premium to the public-comparable WACC, increasing the discount rate to compensate for the 6-to-12-month expected time to find a buyer.\nWrong (A): Reducing the WACC would understate the additional risk of holding an illiquid position in a private company.\nWrong (B): While adding an illiquidity premium to the cost of equity is directionally correct, applying it within the DCF is the standard approach rather than replacing the entire model.\nWrong (C): Using the public WACC without adjustment ignores the material liquidity difference between public and private equity."
+  },
+  {
+    "id": 13579,
+    "topic": "Entity Formation and Restructuring",
+    "stem": "Vertex Corp owns 100% of the stock of Division Corp (basis $2 million, FMV $8 million). In a qualifying transaction, Vertex distributes all Division Corp stock to its shareholders along with $1 million in cash (securities of Division Corp)., what gain, if any, does Vertex recognize on the distribution?",
+    "choices": [
+      "$1 million gain, limited to the boot distributed",
+      "No gain, because the transaction qualifies under Section 355",
+      "$6 million gain on the full appreciation in Division Corp stock",
+      "$7 million gain on the combined stock and boot distribution"
+    ],
+    "correct_index": 0,
+    "explanation": "Correct (A): Under Section 355(c)(2), the distributing corporation does not recognize gain on the distribution of qualified stock in a Section 355 transaction. However, if the distributing corporation distributes other property (boot) such as securities, it recognizes gain as if the boot were sold at FMV, but only to the extent of the boot's value. The gain recognized is limited to $1 million.\nWrong (B): While the stock distribution is tax-free, boot distributed alongside the stock triggers gain recognition at the corporate level under Section 355(c)(2).\nWrong (C): The full $6 million appreciation is not recognized; gain is triggered only with respect to the boot distributed, not the qualified stock.\nWrong (D): The $7 million figure incorrectly combines stock appreciation with boot; gain recognition at the corporate level is limited to the boot distribution."
+  },
+  {
+    "id": 14246,
+    "topic": "Financial Valuation Methods",
+    "stem": "During a goodwill impairment test, Whitfield Corp.''s valuation team must identify appropriate market inputs that reflect an orderly transaction., what does \"orderly transaction\" mean when measuring fair value?",
+    "choices": [
+      "A transaction that occurs on a recognized stock exchange",
+      "A transaction between related parties under common control",
+      "A transaction with adequate market exposure allowing normal marketing activities",
+      "A transaction that must be completed within 30 days of the measurement date"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Under ASC 820, an orderly transaction assumes adequate exposure to the market before the measurement date, allowing for usual and customary marketing activities. It is not a forced liquidation or distressed sale. The key criterion is sufficient time for normal marketing. Wrong (A): Orderly transactions are not limited to stock exchanges; they can occur in any market including dealer or principal-to-principal markets. Wrong (B): Related-party transactions are specifically excluded because they may not represent arm's-length terms between independent market participants. Wrong (C): While market exposure is relevant, ASC 820 does not impose any specific calendar deadline such as 30 days."
+  },
+  {
+    "id": 14250,
+    "topic": "Financial Valuation Methods",
+    "stem": "Drayton Consulting is completing a purchase price allocation (PPA) The company values each acquired asset at its individual fair value using appropriate discount rates: working capital at 4%, fixed assets at 8%, customer relationships at 13%, and trade name at 11%. After weighting each asset by its fair value proportion, the weighted average return on assets (WARA) is 9.8%. The acquirer's WACC is 10.2%. The analyst must evaluate whether the PPA is internally consistent. A WARA that is lower than WACC most likely indicates:",
+    "choices": [
+      "The individual asset values are overstated relative to the total purchase price",
+      "Goodwill, which carries the highest implied return, bridges the gap between WARA and WACC",
+      "The discount rates applied to individual assets are too high",
+      "The purchase price paid by the acquirer was below fair value"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Under ASC 805-20-30-1, WARA should approximate WACC when the PPA is internally consistent. When WARA (excluding goodwill) falls below WACC, goodwill — as the residual asset carrying the highest implied return — bridges the gap, which is the expected and normal outcome in a properly performed PPA.\nWrong (A): A lower WARA does not indicate overstated asset values; tangible and intangible assets inherently carry lower risk than the overall enterprise.\nWrong (B): This describes the normal relationship correctly but is not what the WARA-below-WACC gap indicates — it is the expected outcome, not a separate finding.\nWrong (C): A lower WARA means individual asset discount rates are appropriate; if they were too high, WARA would exceed WACC rather than fall below it."
+  },
+  {
+    "id": 14256,
+    "topic": "Financial Valuation Methods",
+    "stem": "Stratton Advisors is performing a purchase price allocation and needs to value an FCC broadcasting license acquired in the business combination. The analyst considers using the greenfield method, which assumes the license is the only asset owned and the business must be built from scratch. The greenfield method is most appropriate for this asset because it:",
+    "choices": [
+      "uses comparable royalty rates from licensing transactions to estimate value",
+      "values the asset by comparing scenarios with and without the intangible in place",
+      "captures the value of a foundational asset by modeling the cash flows needed to build a business around it, netting out returns to all other contributed assets",
+      "estimates value based on the cost to recreate the license through regulatory proceedings"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): Under ASC 805, the greenfield method models a hypothetical startup owning only the subject intangible (the FCC license), then projects the cash flows and costs needed to build a business around it. This with-and-without approach isolates the intangible''s value by comparing enterprise value with the asset versus starting from scratch.\nWrong (A): Using comparable royalty rates describes the relief-from-royalty method, a different income approach technique that does not model a startup scenario.\nWrong (C): This describes the greenfield method''s ramp-up mechanics but overstates its scope; the method isolates the foundational asset''s value through a with-and-without comparison, not merely by modeling build-out costs.\nWrong (D): Estimating recreation cost describes the cost approach to intangible valuation, not the greenfield income approach method."
+  },
+  {
+    "id": 14266,
+    "topic": "Financial Valuation Methods",
+    "stem": "Holloway Corp. is measuring the fair value of an investment property for its December 31, 2025, financial statements. The controller is determining the appropriate measurement date What is the measurement date under this standard?",
+    "choices": [
+      "The date the asset was originally acquired or the liability was incurred",
+      "The date the financial statements are issued to the public",
+      "The date as of which the fair value of an asset or liability is determined",
+      "The date the valuation report is completed by the appraiser"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Under ASC 820, the measurement date is the specific date as of which the fair value of an asset or liability is determined. Market conditions, assumptions, and inputs are evaluated as of this date. For financial reporting, this is typically the balance sheet date. Wrong (A): The original acquisition date may be a measurement date for initial recognition, but ASC 820 applies to subsequent measurements as well. The measurement date is not fixed to the acquisition date. Wrong (B): The issuance date of financial statements is not the measurement date; fair value is measured as of the balance sheet date, which precedes issuance. Wrong (C): The date the valuation report is completed is an administrative date and may differ from the measurement date, which is the reference date for market conditions. (See ASC 820..)"
+  },
+  {
+    "id": 14270,
+    "topic": "Financial Valuation Methods",
+    "stem": "Evergreen Holdings is measuring the fair value of a thinly traded corporate bond that can be sold on three different exchanges with varying volume levels., what is the principal market for this measurement?",
+    "choices": [
+      "The market where the entity originally purchased the asset",
+      "The market with the greatest volume and level of activity for the asset or liability",
+      "The market that yields the highest selling price for the asset",
+      "The market closest to the entity's geographic headquarters"
+    ],
+    "correct_index": 3,
+    "explanation": "Correct (D): Under ASC 820, the principal market is the market with the greatest volume and level of activity for the asset or liability. Fair value is measured using the price in the principal market, even if a more advantageous price is available elsewhere. If no principal market exists, the most advantageous market is used. Wrong (A): The market of original purchase is not necessarily the principal market; the determination is based on current volume and activity, not historical transactions. Wrong (C): The market yielding the highest price describes the most advantageous market concept, which is secondary to the principal market under ASC 820. Wrong (B): Geographic proximity is not a factor in identifying the principal market; volume and activity level are the determining criteria."
+  },
+  {
+    "id": 15197,
+    "topic": "Financial Statement Ratios",
+    "stem": "An analyst decomposes Zenith Corp.'s ROE using the five-factor DuPont model and finds: tax burden (net income/EBT) = 0.70, interest burden (EBT/EBIT) = 0.85, operating margin (EBIT/sales) = 12%, asset turnover = 1.4, and equity multiplier = 2.0. Zenith's ROE is 20.1%. The CFO proposes refinancing debt to reduce the interest rate, which would improve the interest burden from 0.85 to 0.95 while all other components remain unchanged. What is the most accurate assessment of this proposal?",
+    "choices": [
+      "ROE would increase to approximately 22.4% making the refinancing clearly advantageous for Zenith",
+      "ROE would likely increase but by less than calculated because reduced tax shields partially offset gains",
+      "ROE would remain at 20.1% because lower interest expense reduces the equity multiplier proportionally",
+      "ROE would decrease because a higher tax burden would more than offset the interest expense savings"
+    ],
+    "correct_index": 1,
+    "explanation": "Correct (B): Under the five-factor DuPont framework, lower interest expense improves the interest burden ratio from 0.85 to 0.95. However, higher EBT increases taxable income, raising taxes and reducing the tax burden ratio below 0.70. The naive calculation of 22.4% overstates the benefit by holding the tax burden constant.\nWrong (A): The 22.4% figure ignores the tax offset from losing interest tax shields, overstating the actual ROE improvement.\nWrong (C): Lower interest expense does not mechanically reduce the equity multiplier; leverage structure and ROE are distinct components.\nWrong (D): The tax offset is partial, not total; the net effect on ROE is still positive, just smaller than the naive estimate. (See AICPA guidance on analytical procedures and ratio analysis.)"
+  }
+]

@@ -123,12 +123,27 @@ function validateQuestion(q: ParsedQuestion): void {
 	}
 
 	// Explanation structure: must use Correct (X) / Wrong (Y) format
-	if (!/^Correct\s*\([A-D]\)/i.test(explanationClean)) {
+	const correctLetterMatch = explanationClean.match(/Correct\s*\(([A-D])\)/i);
+	if (!correctLetterMatch) {
 		issues.push({
 			line: q.approxLine,
 			severity: "warn",
 			message: `Explanation missing structured format (should start with "Correct (X):"): Q${q.id ?? "?"}`,
 		});
+	} else {
+		// Letter/index consistency check — catches the "class-1" generator desync where
+		// the scaffold's pre-assigned correct_index disagrees with the letter label the
+		// writer used in "Correct (X):". Independent of whether the content at that slot
+		// is actually correct (which requires semantic analysis the orchestrator does).
+		const expectedLetter = "ABCD"[q.correctIndex];
+		const foundLetter = correctLetterMatch[1].toUpperCase();
+		if (expectedLetter && foundLetter !== expectedLetter) {
+			issues.push({
+				line: q.approxLine,
+				severity: "error",
+				message: `Letter/index desync — explanation says "Correct (${foundLetter})" but correct_index=${q.correctIndex} (${expectedLetter}): Q${q.id ?? "?"}`,
+			});
+		}
 	}
 	const wrongCount = (explanationClean.match(/Wrong\s*\([A-D]\)/gi) ?? []).length;
 	if (wrongCount < 2) {
