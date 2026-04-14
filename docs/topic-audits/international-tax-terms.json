@@ -1,0 +1,464 @@
+[
+  {
+    "term": "GILTI",
+    "pattern": "\\bGILTI\\b",
+    "category": "named provision",
+    "why": "Global Intangible Low-Taxed Income (Section 951A) is out of scope per 2026 AICPA Blueprint TCP/II/A/4 — testing limited to general sourcing concepts, not specific anti-deferral provisions."
+  },
+  {
+    "term": "Global Intangible Low-Taxed Income",
+    "pattern": "Global\\s+Intangible\\s+Low[-\\s]Taxed\\s+Income",
+    "category": "named provision",
+    "why": "Same as GILTI — out of scope."
+  },
+  {
+    "term": "Section 951A",
+    "pattern": "(?:Section\\s*|§\\s*|Sec\\.?\\s*|IRC\\s*§?\\s*)?951A\\b",
+    "category": "code section",
+    "why": "GILTI code section — out of scope."
+  },
+  {
+    "term": "Subpart F",
+    "pattern": "\\bSubpart\\s*F\\b",
+    "category": "named provision",
+    "why": "Subpart F mechanics (categories of FPHC income, foreign base company income, high-tax exception) are out of scope; the general CFC concept is in scope but the Subpart F mechanics are not."
+  },
+  {
+    "term": "Foreign Personal Holding Company",
+    "pattern": "Foreign\\s+Personal\\s+Holding\\s+Company|FPHC",
+    "category": "Subpart F category",
+    "why": "A Subpart F income category — out of scope."
+  },
+  {
+    "term": "Foreign Base Company",
+    "pattern": "Foreign\\s+Base\\s+Company",
+    "category": "Subpart F category",
+    "why": "Subpart F category (FBCSI / FBCSvcI) — out of scope."
+  },
+  {
+    "term": "FDII",
+    "pattern": "\\bFDII\\b",
+    "category": "named provision",
+    "why": "Foreign-Derived Intangible Income (Section 250) — out of scope."
+  },
+  {
+    "term": "Foreign-Derived Intangible Income",
+    "pattern": "Foreign[-\\s]Derived\\s+Intangible\\s+Income",
+    "category": "named provision",
+    "why": "Same as FDII — out of scope."
+  },
+  {
+    "term": "Section 250",
+    "pattern": "(?:Section\\s*|§\\s*|Sec\\.?\\s*|IRC\\s*§?\\s*)250\\b",
+    "category": "code section",
+    "why": "FDII deduction section — out of scope."
+  },
+  {
+    "term": "BEAT",
+    "pattern": "\\bBEAT\\b",
+    "category": "named provision",
+    "why": "Base Erosion and Anti-Abuse Tax (Section 59A) — out of scope."
+  },
+  {
+    "term": "Base Erosion",
+    "pattern": "Base\\s+Erosion\\s+(?:and\\s+Anti[-\\s]Abuse|Tax|Payment)",
+    "category": "named provision",
+    "why": "BEAT full name — out of scope."
+  },
+  {
+    "term": "Section 59A",
+    "pattern": "(?:Section\\s*|§\\s*|Sec\\.?\\s*|IRC\\s*§?\\s*)59A\\b",
+    "category": "code section",
+    "why": "BEAT code section — out of scope."
+  },
+  {
+    "term": "foreign tax credit",
+    "pattern": "foreign\\s+tax\\s+credit",
+    "category": "FTC computation",
+    "why": "FTC computation, limitation, and basket rules are out of scope. The EXISTENCE of FTC is borderline-in-scope; the COMPUTATION is out. Flag for review — legitimate uses at the conceptual level may survive the audit."
+  },
+  {
+    "term": "FTC",
+    "pattern": "\\bFTC\\b",
+    "category": "FTC computation",
+    "why": "Same as foreign tax credit — flag for review."
+  },
+  {
+    "term": "Section 904",
+    "pattern": "(?:Section\\s*|§\\s*|Sec\\.?\\s*|IRC\\s*§?\\s*)904\\b",
+    "category": "code section",
+    "why": "FTC limitation calculation section — out of scope."
+  },
+  {
+    "term": "FTC basket",
+    "pattern": "(?:FTC|foreign\\s+tax\\s+credit)\\s+basket|separate\\s+basket",
+    "category": "FTC computation",
+    "why": "Section 904 basket rules — out of scope."
+  },
+  {
+    "term": "passive basket",
+    "pattern": "passive\\s+(?:category\\s+)?basket",
+    "category": "FTC computation",
+    "why": "FTC basket rules — out of scope."
+  },
+  {
+    "term": "look-through rules",
+    "pattern": "look[-\\s]through\\s+rules?",
+    "category": "FTC computation",
+    "why": "Section 904 look-through rules — out of scope."
+  },
+  {
+    "term": "Section 245A",
+    "pattern": "(?:Section\\s*|§\\s*|Sec\\.?\\s*|IRC\\s*§?\\s*)245A\\b",
+    "category": "code section",
+    "why": "Participation exemption DRD for foreign source dividends — out of scope beyond concept."
+  },
+  {
+    "term": "participation exemption",
+    "pattern": "participation\\s+exemption",
+    "category": "named concept",
+    "why": "Section 245A participation exemption beyond high-level concept is out of scope."
+  },
+  {
+    "term": "Section 163(j)",
+    "pattern": "(?:Section\\s*|§\\s*|Sec\\.?\\s*|IRC\\s*§?\\s*)163\\(?j\\)?",
+    "category": "code section",
+    "why": "Interest expense limitation — out of scope in the international tax context (may be in scope elsewhere)."
+  },
+  {
+    "term": "Section 367",
+    "pattern": "(?:Section\\s*|§\\s*|Sec\\.?\\s*|IRC\\s*§?\\s*)367\\b",
+    "category": "code section",
+    "why": "Outbound transfer rules, branch loss recapture — out of scope."
+  },
+  {
+    "term": "outbound transfer",
+    "pattern": "outbound\\s+transfer",
+    "category": "named concept",
+    "why": "Section 367 outbound transfer rules — out of scope."
+  },
+  {
+    "term": "branch loss recapture",
+    "pattern": "branch\\s+loss\\s+recapture",
+    "category": "named concept",
+    "why": "Section 367 branch loss recapture — out of scope."
+  },
+  {
+    "term": "Section 482",
+    "pattern": "(?:Section\\s*|§\\s*|Sec\\.?\\s*|IRC\\s*§?\\s*)482\\b",
+    "category": "code section",
+    "why": "Transfer pricing — out of scope."
+  },
+  {
+    "term": "transfer pricing",
+    "pattern": "transfer\\s+pricing",
+    "category": "named concept",
+    "why": "Transfer pricing methods and rules — out of scope."
+  },
+  {
+    "term": "comparable uncontrolled price",
+    "pattern": "comparable\\s+uncontrolled\\s+price|\\bCUP\\s+method\\b",
+    "category": "transfer pricing method",
+    "why": "Transfer pricing method — out of scope."
+  },
+  {
+    "term": "resale price method",
+    "pattern": "resale\\s+price\\s+method",
+    "category": "transfer pricing method",
+    "why": "Transfer pricing method — out of scope."
+  },
+  {
+    "term": "cost plus method",
+    "pattern": "cost\\s+plus\\s+method",
+    "category": "transfer pricing method",
+    "why": "Transfer pricing method — out of scope."
+  },
+  {
+    "term": "comparable profits method",
+    "pattern": "comparable\\s+profits\\s+method|\\bCPM\\b",
+    "category": "transfer pricing method",
+    "why": "Transfer pricing method — out of scope."
+  },
+  {
+    "term": "profit split",
+    "pattern": "profit\\s+split\\s+method|profit\\s+split\\s+analysis",
+    "category": "transfer pricing method",
+    "why": "Transfer pricing method — out of scope."
+  },
+  {
+    "term": "TNMM",
+    "pattern": "\\bTNMM\\b|transactional\\s+net\\s+margin\\s+method",
+    "category": "transfer pricing method",
+    "why": "Transfer pricing method — out of scope."
+  },
+  {
+    "term": "arm's length",
+    "pattern": "arm'?s[-\\s]length\\s+(?:standard|principle|test)",
+    "category": "transfer pricing principle",
+    "why": "Formal arm's-length testing is out of scope."
+  },
+  {
+    "term": "advance pricing agreement",
+    "pattern": "advance\\s+pricing\\s+agreement|\\bAPA\\b",
+    "category": "named procedure",
+    "why": "APAs — out of scope."
+  },
+  {
+    "term": "competent authority",
+    "pattern": "competent\\s+authority",
+    "category": "named procedure",
+    "why": "Competent authority / MAP procedures — out of scope."
+  },
+  {
+    "term": "mutual agreement procedure",
+    "pattern": "mutual\\s+agreement\\s+procedure|\\bMAP\\b",
+    "category": "named procedure",
+    "why": "MAP procedures — out of scope."
+  },
+  {
+    "term": "treaty",
+    "pattern": "\\btax\\s+treaty|\\btax\\s+treaties|income\\s+tax\\s+treaty",
+    "category": "treaty",
+    "why": "Specific treaty provisions are out of scope per AICPA ('as opposed to specific foreign laws or treaties'). The WORD treaty may appear legitimately — flag for review rather than auto-delete."
+  },
+  {
+    "term": "limitation on benefits",
+    "pattern": "limitation\\s+on\\s+benefits|\\bLOB\\s+clause",
+    "category": "treaty provision",
+    "why": "LOB provisions — out of scope."
+  },
+  {
+    "term": "treaty shopping",
+    "pattern": "treaty\\s+shopping",
+    "category": "treaty concept",
+    "why": "Treaty shopping — out of scope."
+  },
+  {
+    "term": "OECD",
+    "pattern": "\\bOECD\\b",
+    "category": "named body",
+    "why": "OECD model, BEPS initiative — out of scope."
+  },
+  {
+    "term": "BEPS",
+    "pattern": "\\bBEPS\\b",
+    "category": "named initiative",
+    "why": "Base Erosion and Profit Shifting initiative — out of scope."
+  },
+  {
+    "term": "Pillar One",
+    "pattern": "Pillar\\s+One",
+    "category": "named initiative",
+    "why": "OECD Pillar One — out of scope."
+  },
+  {
+    "term": "Pillar Two",
+    "pattern": "Pillar\\s+Two",
+    "category": "named initiative",
+    "why": "OECD Pillar Two global minimum tax — out of scope."
+  },
+  {
+    "term": "global minimum tax",
+    "pattern": "global\\s+minimum\\s+tax",
+    "category": "named concept",
+    "why": "Pillar Two — out of scope."
+  },
+  {
+    "term": "QDMTT",
+    "pattern": "\\bQDMTT\\b|qualified\\s+domestic\\s+minimum\\s+top[-\\s]up\\s+tax",
+    "category": "Pillar Two mechanism",
+    "why": "Pillar Two QDMTT — out of scope."
+  },
+  {
+    "term": "IIR",
+    "pattern": "\\bIIR\\b|income\\s+inclusion\\s+rule",
+    "category": "Pillar Two mechanism",
+    "why": "Pillar Two income inclusion rule — out of scope."
+  },
+  {
+    "term": "UTPR",
+    "pattern": "\\bUTPR\\b|undertaxed\\s+profits\\s+rule|undertaxed\\s+payments\\s+rule",
+    "category": "Pillar Two mechanism",
+    "why": "Pillar Two undertaxed profits rule — out of scope."
+  },
+  {
+    "term": "country-by-country reporting",
+    "pattern": "country[-\\s]by[-\\s]country\\s+(?:reporting|report)|\\bCbCR\\b",
+    "category": "reporting",
+    "why": "CbCR — out of scope."
+  },
+  {
+    "term": "Master File",
+    "pattern": "Master\\s+File",
+    "category": "reporting",
+    "why": "Transfer pricing documentation — out of scope."
+  },
+  {
+    "term": "Local File",
+    "pattern": "Local\\s+File",
+    "category": "reporting",
+    "why": "Transfer pricing documentation — out of scope."
+  },
+  {
+    "term": "Form 5471",
+    "pattern": "Form\\s*5471",
+    "category": "form",
+    "why": "CFC reporting form — out of scope at the line-item level."
+  },
+  {
+    "term": "Form 8865",
+    "pattern": "Form\\s*8865",
+    "category": "form",
+    "why": "Foreign partnership reporting form — out of scope."
+  },
+  {
+    "term": "Form 8858",
+    "pattern": "Form\\s*8858",
+    "category": "form",
+    "why": "Foreign disregarded entity reporting form — out of scope."
+  },
+  {
+    "term": "Form 1118",
+    "pattern": "Form\\s*1118",
+    "category": "form",
+    "why": "Corporate FTC form — out of scope."
+  },
+  {
+    "term": "Form 5472",
+    "pattern": "Form\\s*5472",
+    "category": "form",
+    "why": "25% foreign-owned U.S. corp reporting form — out of scope."
+  },
+  {
+    "term": "Form 8975",
+    "pattern": "Form\\s*8975",
+    "category": "form",
+    "why": "Country-by-country reporting form — out of scope."
+  },
+  {
+    "term": "check-the-box",
+    "pattern": "check[-\\s]the[-\\s]box",
+    "category": "named concept",
+    "why": "Foreign entity classification election mechanics — out of scope."
+  },
+  {
+    "term": "per se corporation",
+    "pattern": "per\\s+se\\s+corporation",
+    "category": "named concept",
+    "why": "Check-the-box per se corporation list — out of scope."
+  },
+  {
+    "term": "Section 7874",
+    "pattern": "(?:Section\\s*|§\\s*|Sec\\.?\\s*|IRC\\s*§?\\s*)7874\\b",
+    "category": "code section",
+    "why": "Inversion rules — out of scope."
+  },
+  {
+    "term": "inversion",
+    "pattern": "corporate\\s+inversion|inverted\\s+corporation",
+    "category": "named concept",
+    "why": "Inversion transactions — out of scope."
+  },
+  {
+    "term": "earnings stripping",
+    "pattern": "earnings\\s+stripping",
+    "category": "named concept",
+    "why": "Earnings stripping rules — out of scope."
+  },
+  {
+    "term": "anti-conduit",
+    "pattern": "anti[-\\s]conduit",
+    "category": "named concept",
+    "why": "Anti-conduit financing rules — out of scope."
+  },
+  {
+    "term": "Section 965",
+    "pattern": "(?:Section\\s*|§\\s*|Sec\\.?\\s*|IRC\\s*§?\\s*)965\\b",
+    "category": "code section",
+    "why": "Transition tax / repatriation tax — out of scope."
+  },
+  {
+    "term": "transition tax",
+    "pattern": "transition\\s+tax",
+    "category": "named concept",
+    "why": "Section 965 transition tax — out of scope."
+  },
+  {
+    "term": "repatriation tax",
+    "pattern": "repatriation\\s+tax",
+    "category": "named concept",
+    "why": "Section 965 — out of scope."
+  },
+  {
+    "term": "PFIC",
+    "pattern": "\\bPFIC\\b",
+    "category": "named provision",
+    "why": "Passive Foreign Investment Company rules — out of scope."
+  },
+  {
+    "term": "passive foreign investment",
+    "pattern": "passive\\s+foreign\\s+investment\\s+company",
+    "category": "named provision",
+    "why": "PFIC — out of scope."
+  },
+  {
+    "term": "QEF",
+    "pattern": "\\bQEF\\b|qualified\\s+electing\\s+fund",
+    "category": "PFIC election",
+    "why": "PFIC QEF election — out of scope."
+  },
+  {
+    "term": "mark-to-market election",
+    "pattern": "mark[-\\s]to[-\\s]market\\s+election",
+    "category": "PFIC election",
+    "why": "PFIC mark-to-market election — out of scope."
+  },
+  {
+    "term": "Section 988",
+    "pattern": "(?:Section\\s*|§\\s*|Sec\\.?\\s*|IRC\\s*§?\\s*)988\\b",
+    "category": "code section",
+    "why": "Foreign currency tax accounting — out of scope."
+  },
+  {
+    "term": "functional currency",
+    "pattern": "functional\\s+currency",
+    "category": "named concept",
+    "why": "Section 988 functional currency determination — out of scope."
+  },
+  {
+    "term": "QBU",
+    "pattern": "\\bQBU\\b|qualified\\s+business\\s+unit",
+    "category": "named concept",
+    "why": "Section 988 qualified business unit rules — out of scope."
+  },
+  {
+    "term": "tested income",
+    "pattern": "tested\\s+income",
+    "category": "GILTI terminology",
+    "why": "GILTI tested income — out of scope."
+  },
+  {
+    "term": "QBAI",
+    "pattern": "\\bQBAI\\b|qualified\\s+business\\s+asset\\s+investment",
+    "category": "GILTI terminology",
+    "why": "GILTI QBAI 10% deduction — out of scope."
+  },
+  {
+    "term": "high-tax exception",
+    "pattern": "high[-\\s]tax\\s+exception",
+    "category": "Subpart F/GILTI terminology",
+    "why": "Subpart F or GILTI high-tax exception — out of scope."
+  },
+  {
+    "term": "de minimis rule",
+    "pattern": "de\\s+minimis\\s+rule.{0,30}(?:Subpart|CFC|foreign)",
+    "category": "Subpart F terminology",
+    "why": "Subpart F de minimis/full-inclusion rules — out of scope."
+  },
+  {
+    "term": "full-inclusion rule",
+    "pattern": "full[-\\s]inclusion\\s+rule",
+    "category": "Subpart F terminology",
+    "why": "Subpart F full-inclusion rule — out of scope."
+  }
+]
