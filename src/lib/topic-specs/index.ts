@@ -14,6 +14,7 @@ import { spec as barFinancialValuation } from "./bar-financial-valuation-methods
 import { spec as barDerivatives } from "./bar-derivatives-and-hedging";
 import { spec as tcpInternational } from "./tcp-international-tax";
 import { spec as regSCorporations } from "./reg-s-corporations";
+import { spec as barCapitalStructureAndValuation } from "./bar-capital-structure-and-valuation";
 
 const SPECS: Record<string, TopicSpec> = {
 	[barProspective.topic]: barProspective,
@@ -21,6 +22,7 @@ const SPECS: Record<string, TopicSpec> = {
 	[barDerivatives.topic]: barDerivatives,
 	[tcpInternational.topic]: tcpInternational,
 	[regSCorporations.topic]: regSCorporations,
+	[barCapitalStructureAndValuation.topic]: barCapitalStructureAndValuation,
 };
 
 /** Look up the topic spec for a given questions.topic value. Returns undefined if none. */
