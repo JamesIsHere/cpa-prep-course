@@ -703,8 +703,37 @@
           "topics": [
             {
               "number": 1,
-              "name": "Test of controls and test of details Use observation and inspection to obtain evidence. Use recalculation (manually or using automated tools and techniques) to test the mathematical accuracy of information to obtain evidence. Use reperformance to independently execute procedures or controls to obtain evidence. Inquire of management and others to gather evidence and document the results. Analyze responses obtained during structured interviews or informal conversations\twith\tmanagement\tand\tothers,\tincluding\tthose\tin\tnon-financial roles, and ask relevant and effective follow-up questions to understand their perspectives and motivations. Perform tests of operating effectiveness of internal controls, including the analysis of\texceptions\tto\tidentify\tdeficiencies\tin\tan\taudit\tof\tfinancial\tstatements\tor\tan\taudit of internal control. Perform tests of details, including the analysis of exceptions, to identify potential misstatements\tin\tan\taudit\tof\tfinancial\tstatements.",
-              "tasks": []
+              "name": "Test of controls and test of details",
+              "tasks": [
+                {
+                  "skill": "Application",
+                  "task": "Use observation and inspection to obtain evidence."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Use recalculation (manually or using automated tools and techniques) to test the mathematical accuracy of information to obtain evidence."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Use reperformance to independently execute procedures or controls to obtain evidence."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Inquire of management and others to gather evidence and document the results."
+                },
+                {
+                  "skill": "Analysis",
+                  "task": "Analyze responses obtained during structured interviews or informal conversations with management and others, including those in non-financial roles, and ask relevant and effective follow-up questions to understand their perspectives and motivations."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Perform tests of operating effectiveness of internal controls, including the analysis of exceptions to identify deficiencies in an audit of financial statements or an audit of internal control."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Perform tests of details, including the analysis of exceptions, to identify potential misstatements in an audit of financial statements."
+                }
+              ]
             },
             {
               "number": 2,
@@ -997,8 +1026,17 @@
             },
             {
               "number": 3,
-              "name": "Review engagements Identify the factors that an accountant should consider when reporting on an engagement\tto\treview\tan\tentity’s\tfinancial\tstatements. Determine the appropriate form and content of an accountant’s report for a review engagement.",
-              "tasks": []
+              "name": "Review engagements",
+              "tasks": [
+                {
+                  "skill": "Remembering and Understanding",
+                  "task": "Identify the factors that an accountant should consider when reporting on an engagement to review an entity’s financial statements."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Determine the appropriate form and content of an accountant’s report for a review engagement."
+                }
+              ]
             }
           ]
         },
@@ -1048,8 +1086,13 @@
             },
             {
               "number": 3,
-              "name": "Review of interim financial information Identify the factors an auditor should consider when reporting on an engagement to\treview\tinterim\tfinancial\tinformation.",
-              "tasks": []
+              "name": "Review of interim financial information",
+              "tasks": [
+                {
+                  "skill": "Remembering and Understanding",
+                  "task": "Identify the factors an auditor should consider when reporting on an engagement to review interim financial information."
+                }
+              ]
             },
             {
               "number": 4,
@@ -2274,7 +2317,78 @@
     },
     {
       "area": "III",
-      "name": "Federal Taxation of Property Transactions (5– 15%) & UnderstandingApplication Analysis Evaluation Representative Task A. Basis of assets Calculate the tax basis of an asset purchased for use in a trade or business. Calculate the tax basis of an asset converted from personal to business use. Calculate the tax basis of property received as a gift or as an inheritance from a decedent. Calculate the tax basis of stock acquired through a wash sale. Calculate the basis of intangible assets, including organization costs, start-up costs and loan costs. B. Cost recovery (depreciation and amortization) Calculate tax depreciation for tangible business property using MACRS, including\tidentification\tof\tthe\tapplicable\trecovery\tperiod\tand\tconvention. Determine property eligible for a special depreciation allowance (bonus depreciation) or a Section 179 deduction. Calculate tax amortization for intangible assets. Review a tax depreciation and amortization schedule for the current year and supporting documentation, including any source data used to create the schedule, to determine the completeness and accuracy of the expense amounts deducted for tax purposes. Review\tand\tresolve\tdiscrepancies\tidentified\tby\tautomated\tdiagnostic\tand validation checks to ensure the completeness and accuracy of the depreciation and amortization expense reported on a tax return based on the source data used to prepare the return. Area IV – Federal Taxation of Individuals",
+      "name": "Federal Taxation of Property Transactions",
+      "weight": "5–15%",
+      "groups": [
+        {
+          "letter": "A",
+          "name": "Basis of assets",
+          "topics": [
+            {
+              "number": 0,
+              "name": "(direct)",
+              "tasks": [
+                {
+                  "skill": "Application",
+                  "task": "Calculate the tax basis of an asset purchased for use in a trade or business."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Calculate the tax basis of an asset converted from personal to business use."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Calculate the tax basis of property received as a gift or as an inheritance from a decedent."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Calculate the tax basis of stock acquired through a wash sale."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Calculate the basis of intangible assets, including organization costs, start-up costs and loan costs."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "letter": "B",
+          "name": "Cost recovery (depreciation and amortization)",
+          "topics": [
+            {
+              "number": 0,
+              "name": "(direct)",
+              "tasks": [
+                {
+                  "skill": "Application",
+                  "task": "Calculate tax depreciation for tangible business property using MACRS, including identification of the applicable recovery period and convention."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Determine property eligible for a special depreciation allowance (bonus depreciation) or a Section 179 deduction."
+                },
+                {
+                  "skill": "Application",
+                  "task": "Calculate tax amortization for intangible assets."
+                },
+                {
+                  "skill": "Analysis",
+                  "task": "Review a tax depreciation and amortization schedule for the current year and supporting documentation, including any source data used to create the schedule, to determine the completeness and accuracy of the expense amounts deducted for tax purposes."
+                },
+                {
+                  "skill": "Analysis",
+                  "task": "Review and resolve discrepancies identified by automated diagnostic and validation checks to ensure the completeness and accuracy of the depreciation and amortization expense reported on a tax return based on the source data used to prepare the return."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "area": "IV",
+      "name": "Federal Taxation of Individuals",
       "weight": "22–32%",
       "groups": [
         {
@@ -2328,14 +2442,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "area": "IV",
-      "name": "Federal Taxation of Individuals",
-      "weight": "22–32%",
-      "groups": [
+        },
         {
           "letter": "C",
           "name": "Adjustments and deductions to arrive at adjusted gross income and taxable income",
