@@ -90,12 +90,12 @@ export const questionCounts: Record<string, number> = {
 	"Statement of Cash Flows": 80,
 	"Subsequent Events": 29,
 	"Trade Receivables": 36,
-	// REG (1,447 total — synced with live DB 2026-04-14)
+	// REG (1,437 total — synced with live DB 2026-04-14)
 	"Agency and Regulation": 60,
 	"Alternative Minimum Tax": 65,
 	"Business Law: Contracts": 60,
 	"Business Structures": 60,
-	"C Corporations": 81,
+	"C Corporations": 71,
 	"Circular 230": 42,
 	"Debtor-Creditor Relationships": 60,
 	"Estate and Gift Tax": 78,
@@ -176,7 +176,7 @@ export const questionCounts: Record<string, number> = {
 export const sectionQuestionTotals: Record<string, number> = {
 	aud: 1446,
 	far: 1554,
-	reg: 1447,
+	reg: 1437,
 	bar: 1525,
 	isc: 1452,
 	tcp: 1434,

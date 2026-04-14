@@ -27,7 +27,7 @@ For each section:
 |---------|---------|--------|---------|-------------|-------------|-----------------|
 | AUD     | 1,446 | 1,500 |       0 |           0 |           0 | On Target       |
 | FAR     | 1,554 | 1,500 |       0 |           0 |           0 | On Target       |
-| REG     | 1,447 | 1,500 |       0 |           0 |           0 | On Target       |
+| REG     | 1,437 | 1,500 |       0 |           0 |           0 | On Target       |
 | BAR     | 1,525 | 1,500 |       0 |           0 |           0 | On Target       |
 | ISC     | 1,452 | 1,500 |       0 |           0 |           0 | On Target       |
 | TCP     | 1,434 | 1,500 |       0 |           0 |           0 | On Target       |
@@ -120,7 +120,7 @@ For each section:
 | 4 | Individual Taxation: Deductions | 64 | 68 |  |  |
 | 4 | Individual Taxation: Filing/Credits | 68 | 68 |  |  |
 | 4 | Individual Taxation: Income | 67 | 68 |  |  |
-| 5 | C Corporations | 81 | 83 |  |  |
+| 5 | C Corporations | 71 | 83 |  |  |
 | 5 | Estate and Gift Tax | 78 | 84 |  |  |
 | 5 | Partnerships | 79 | 83 |  |  |
 | 5 | S Corporations | 83 | 83 |  |  |
