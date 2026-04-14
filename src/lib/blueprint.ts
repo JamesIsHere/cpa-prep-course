@@ -1439,15 +1439,15 @@ export const cpaBlueprint: CpaBlueprint = [
 						topics: [
 							{
 								id: "reg.5.B.1",
-								name: "S election requirements and termination",
+								name: "Eligibility and election",
 							},
 							{
 								id: "reg.5.B.2",
-								name: "Shareholder basis and distributions",
+								name: "Ordinary business income and separately stated items",
 							},
 							{
 								id: "reg.5.B.3",
-								name: "Built-in gains and passive income",
+								name: "Shareholder stock and debt basis",
 							},
 						],
 						lessonSlugs: ["12-s-corporations"],
@@ -2330,15 +2330,15 @@ export const cpaBlueprint: CpaBlueprint = [
 					},
 					{
 						letter: "B",
-						name: "International tax provisions",
+						name: "International tax issues (C corporation scope)",
 						topics: [
 							{
 								id: "tcp.2.B.1",
-								name: "Subpart F and GILTI",
+								name: "Income sourcing and withholding concepts",
 							},
 							{
 								id: "tcp.2.B.2",
-								name: "Foreign tax credit mechanics",
+								name: "CFC, permanent establishment, and branch vs. subsidiary concepts",
 							},
 						],
 						lessonSlugs: ["07-international-tax"],
