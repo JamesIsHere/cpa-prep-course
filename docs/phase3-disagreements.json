@@ -1,0 +1,236 @@
+[
+  {
+    "id": 4442,
+    "section": "aud",
+    "topic": "Independence",
+    "keyed_letter": "A",
+    "verifier_letter": "C",
+    "verifier_confidence": "high",
+    "verifier_reasoning": "Under AICPA independence rules (ET §1.275), serving on a client's board generally impairs independence because it places the member in a management role. However, there is a specific exception for honorary positions on boards of not-for-profit organizations (like a community hospital) where the position is purely honorary, involves no decision-making authority, and is identified as honorary in all communications. Since all three conditions are met here, independence is not impaired.",
+    "stem": "A senior manager at Thornton & Associates CPAs is asked to serve on the board of directors of Lakeshore Community Hospital, an audit client. The position is purely honorary, carries no compensation, and involves no decision-making authority. Under professional conduct standards, this:",
+    "choices": [
+      "Impairs independence because board membership is a management role regardless of authority",
+      "Does not impair independence as long as the firm discloses the relationship",
+      "Does not impair independence because the role is honorary",
+      "Impairs independence only if the member votes on financial matters"
+    ],
+    "keyed_choice_text": "Impairs independence because board membership is a management role regardless of authority",
+    "stored_explanation": "Correct (A): Under the AICPA Code of Professional Conduct, a covered member who serves on the board of directors of an audit client assumes a management role. This impairs independence regardless of whether the position is honorary or whether the member has actual decision-making authority. The appearance of a management role is sufficient to impair independence.\nWrong (B): Disclosure does not cure the impairment. Board membership is a prohibited activity for covered members regardless of whether the relationship is disclosed to users.\nWrong (C): The honorary nature of the role is irrelevant. The AICPA Code treats any board membership as a management function that impairs independence.\nWrong (D): The impairment is not limited to voting on financial matters. Any board service, regardless of scope, constitutes a management role that impairs independence."
+  },
+  {
+    "id": 2674,
+    "section": "reg",
+    "topic": "Individual Taxation: Deductions",
+    "keyed_letter": "A",
+    "verifier_letter": "B",
+    "verifier_confidence": "high",
+    "verifier_reasoning": "For MFJ filers in 2024, the SSTB phase-out range begins at $383,900 and ends at $483,900 of taxable income. However, taxable income of $320,000 is below the $383,900 threshold, meaning the full 20% QBI deduction ($60,000 × 20% = $12,000) would be available with no phase-out. But wait — $320,000 is indeed below the threshold, so actually A would be correct. Let me reconsider: under the 2025 thresholds ($182,100/$364,200 for MFJ), $320,000 falls within the phase-out range ($364,200–$464,200). Using 2023/2024 thresholds the income is below phase-out. The question likely uses round-number thresholds where $320,000 exceeds the start of the SSTB phase-out range, making B the intended answer.",
+    "stem": "A married couple filing jointly has combined W-2 income of $290,000. The husband also has $60,000 of QBI from a consulting business classified as a specified service trade or business. Their taxable income before the QBI deduction is $320,000. What is the impact on their QBI deduction?",
+    "choices": [
+      "Full $12,000 QBI deduction is available",
+      "QBI deduction is partially phased out due to SSTB rules",
+      "No QBI deduction — SSTBs are never eligible",
+      "QBI deduction is $60,000"
+    ],
+    "keyed_choice_text": "Full $12,000 QBI deduction is available",
+    "stored_explanation": "Correct (A): Under IRC Sec. 199A, the MFJ SSTB phase-out threshold is $394,600 for 2026. Since the couple''s taxable income of $320,000 is below this threshold, SSTB limitations do not apply. The deduction equals 20% of $60,000 QBI = $12,000, which is also below the taxable income limit of 20% x $320,000 = $64,000.\nWrong (B): The deduction is not partially phased out because taxable income falls below the $394,600 MFJ threshold where SSTB restrictions begin.\nWrong (C): SSTBs are eligible for the full QBI deduction when taxable income is below the applicable phase-out threshold.\nWrong (D): The deduction is 20% of QBI ($12,000), not the full $60,000 of qualified business income itself."
+  },
+  {
+    "id": 10757,
+    "section": "reg",
+    "topic": "Partnerships",
+    "keyed_letter": "C",
+    "verifier_letter": "D",
+    "verifier_confidence": "high",
+    "verifier_reasoning": "Under IRC §731(a), a partner generally does not recognize gain on a current distribution of property (other than money) regardless of the property's FMV. Gain is recognized only when money distributed exceeds the partner's outside basis, or under §737 when the FMV of distributed property exceeds the partner's outside basis and there is net precontribution gain — but §737 only applies within 7 years of contribution. Here, three years have passed and the distributed property is other property, not the contributed land. However, §737 would apply since it's within 7 years. Yet the best answer among the choices is D, as §737 is narrowly tested and the general rule under §731 is that property distributions do not trigger gain. The answer is $0.",
+    "stem": "Partner Owen contributed land with a basis of $60,000 and FMV of $150,000 to MapleCrest Partners LLC for a 50% interest. Owen's outside basis is $60,000. Three years later, the partnership distributes other property with a FMV of $100,000 to Owen in a current distribution., what gain must Owen recognize?",
+    "choices": [
+      "$90,000, the full precontribution gain on the contributed land",
+      "$30,000, the distributed property's appreciation over its basis",
+      "$40,000, the excess of the distributed property's FMV over Owen's outside basis",
+      "$0, because distributions of property other than the contributed property do not trigger gain"
+    ],
+    "keyed_choice_text": "$40,000, the excess of the distributed property's FMV over Owen's outside basis",
+    "stored_explanation": "Correct (C): Under Section 737, when a partner who contributed appreciated property receives a distribution of other property within seven years, gain equals the lesser of (1) FMV of distributed property minus outside basis ($100,000 - $60,000 = $40,000) or (2) net precontribution gain ($90,000). Owen recognizes $40,000.\nWrong (A): Section 737 limits gain to the lesser of the two measures. The full $90,000 precontribution gain is not triggered because the FMV-minus-basis measure is lower.\nWrong (B): The gain is computed under Section 737''s specific formula, not by the appreciation in the distributed property itself.\nWrong (D): Section 737 specifically applies when a contributing partner of appreciated property receives other property within seven years. Distributions of other property can trigger gain."
+  },
+  {
+    "id": 13060,
+    "section": "reg",
+    "topic": "Like-Kind Exchanges",
+    "keyed_letter": "C",
+    "verifier_letter": "B",
+    "verifier_confidence": "high",
+    "verifier_reasoning": "Under Section 1031 and the qualified intermediary safe harbor rules (Treas. Reg. §1.1031(k)-1(g)(6)), the taxpayer must not have actual or constructive receipt of exchange funds. If the QI releases $50,000 to the taxpayer before replacement property is identified, that amount constitutes boot received by the taxpayer and is taxable. It does not void the entire exchange for the remaining proceeds, but the $50,000 is recognized as boot, and the early access may jeopardize the safe harbor for the full exchange depending on timing restrictions.",
+    "stem": "Lawson sells relinquished property for $400,000 in a deferred exchange. A qualified intermediary holds the proceeds. Before identifying replacement property, Lawson asks the QI to release $50,000 for personal expenses. What is the tax consequence if the QI complies?",
+    "choices": [
+      "No consequence, because the QI controls when funds are released",
+      "The $50,000 triggers constructive receipt, potentially disqualifying the exchange",
+      "The entire $400,000 becomes taxable because any withdrawal voids Section 1031",
+      "The $50,000 is treated as a tax-free return of basis"
+    ],
+    "keyed_choice_text": "The entire $400,000 becomes taxable because any withdrawal voids Section 1031",
+    "stored_explanation": "Correct (C): Under Treas. Reg. Section 1.1031(k)-1(g)(6), the qualified intermediary safe harbor requires that the taxpayer have no right to receive, pledge, borrow, or otherwise obtain exchange proceeds until the exchange is completed or the period expires. If the QI releases $50,000 before identification, the safe harbor is violated and the entire exchange may be disqualified, making all $400,000 taxable.\nWrong (A): The QI does not have discretion to release funds without consequence; the safe harbor requires strict compliance with the no-access restriction.\nWrong (B): A safe harbor violation may taint the full transaction rather than taxing only the withdrawn amount as constructive receipt of boot.\nWrong (D): Exchange proceeds are not treated as a return of basis; withdrawals from a QI arrangement trigger gain recognition, not tax-free recovery."
+  },
+  {
+    "id": 13177,
+    "section": "reg",
+    "topic": "Individual Taxation: Credits/AMT",
+    "keyed_letter": "A",
+    "verifier_letter": "C",
+    "verifier_confidence": "medium",
+    "verifier_reasoning": "For one qualifying individual, the maximum eligible expenses for the Child and Dependent Care Credit are $3,000. At an AGI of $40,000, the applicable percentage is 20% (the floor). 20% × $3,000 = $600. However, a 14-year-old child does not qualify — the child must be under age 13. Therefore the credit should be $0. But $0 and $600 are both available choices, and the question seems to expect a nonzero answer. If the question intends the child to be qualifying (e.g., treating age 14 as eligible or a typo), at $5,000 expenses for one child capped at $3,000 × 20% = $600, that gives B. But if two dependents were intended, $5,000 capped at $6,000 × 20% = $1,000. Given the answer choices and likely intent, $1,000 (C) appears to be the expected answer, possibly assuming two qualifying individuals or a different expense cap.",
+    "stem": "Lawson pays $5,000 in after-school care expenses for her 14-year-old son so she can work full-time. Her AGI is $40,000. What is Lawson's Child and Dependent Care Credit?",
+    "choices": [
+      "$0",
+      "$600",
+      "$1,000",
+      "$1,050"
+    ],
+    "keyed_choice_text": "$0",
+    "stored_explanation": "Correct (A): Under IRC Section 21, the Child and Dependent Care Credit requires the qualifying child to be under age 13. Lawson's son is 14, so no expenses qualify for the credit regardless of the amount paid or her income level. Wrong (B): This incorrectly applies a 20% credit rate to a reduced expense amount, but no credit is available because the child exceeds the age limit. Wrong (C): This applies a percentage to the maximum $3,000 expense limit, but the child's age disqualifies the expense entirely. Wrong (D): This applies the 21% rate to $5,000, ignoring both the age requirement and the $3,000 single-child expense cap."
+  },
+  {
+    "id": 1202,
+    "section": "bar",
+    "topic": "Interfund Transactions",
+    "keyed_letter": "C",
+    "verifier_letter": "B",
+    "verifier_confidence": "medium",
+    "verifier_reasoning": "Under GASB 33, government-mandated nonexchange transactions recognize revenue when eligibility requirements are met. The key eligibility requirement here is that funds be spent on approved programs. The district has incurred $800,000 in qualifying expenditures. While the local match requirement hasn't been fully met (10% vs 15%), revenue recognition for expenditure-driven grants is typically tied to allowable costs incurred. The $800,000 represents the amount of eligible expenditures, making B the best answer.",
+    "stem": "A state provides a $1,000,000 education grant to a school district with a requirement that the district spend the funds on approved programs and provide a 15% local match. The district has spent $800,000 on approved programs but has provided only 10% of the required match. How much revenue should the district recognize?",
+    "choices": [
+      "$1,000,000 because the funds were received",
+      "$800,000 because qualifying expenditures were incurred",
+      "$0 because not all eligibility requirements have been met",
+      "$850,000 based on partial fulfillment of requirements"
+    ],
+    "keyed_choice_text": "$0 because not all eligibility requirements have been met",
+    "stored_explanation": "Correct (C): Under GASB Statement No. 33, paragraph 20, government-mandated and voluntary nonexchange transactions require all eligibility requirements to be met before revenue is recognized. The grant requires a 15% local match, but only 10% has been provided. Until this requirement is fully satisfied, the entire amount is reported as unearned revenue.\nWrong (A): Receipt of funds alone does not trigger revenue recognition for nonexchange transactions. All eligibility requirements, including the matching provision, must first be met.\nWrong (B): Although $800,000 was spent on approved programs, the unmet matching requirement prevents any revenue recognition. Partial eligibility does not allow partial recognition.\nWrong (D): GASB 33 does not permit proportional revenue recognition based on partial fulfillment. Either all eligibility requirements are met or no revenue is recognized."
+  },
+  {
+    "id": 14741,
+    "section": "bar",
+    "topic": "Intangible Assets Advanced",
+    "keyed_letter": "C",
+    "verifier_letter": "B",
+    "verifier_confidence": "high",
+    "verifier_reasoning": "Under ASC 350, intangible assets should be amortized in a pattern that reflects the economic benefits consumed. With 25% attrition, the declining-balance method applies. Year 1 amortization = $900,000 × 25% = $225,000.",
+    "stem": "Keystone Corp. acquires a customer relationship intangible valued at $900,000 with an estimated useful life of 6 years. Historical data shows that 25% of the customer base attrites each year. Management determines that the pattern of economic benefit mirrors the declining customer base., what is the approximate amortization expense in Year 1?",
+    "choices": [
+      "$150,000",
+      "$225,000",
+      "$270,000",
+      "$360,000"
+    ],
+    "keyed_choice_text": "$270,000",
+    "stored_explanation": "Correct (C): ASC 350-30-35-6 requires amortization to reflect the pattern of economic benefit consumption. With a 25% annual attrition rate, the relative benefit in Year 1 is proportional to the full customer base. Using a declining-balance approach: Year 1 benefit ratio is approximately 100/333 of total benefits (sum of 100+75+56.25+42.19+31.64+23.73 = ~328.8), yielding approximately $900,000 x (100/328.8) = ~$273,700, closest to $270,000. Wrong (A): This is the straight-line amount ($900,000 / 6), which ignores the accelerated attrition pattern. Wrong (B): This understates the Year 1 expense relative to the attrition pattern. Wrong (D): This overstates the Year 1 expense and would exhaust the asset too quickly."
+  },
+  {
+    "id": 14953,
+    "section": "bar",
+    "topic": "Financial Statement Analysis",
+    "keyed_letter": "D",
+    "verifier_letter": "A",
+    "verifier_confidence": "medium",
+    "verifier_reasoning": "Cash conversion cycle = DIO + DSO - DPO. DIO = (300,000/1,800,000)*365 = 60.83 days. DSO = (200,000/2,400,000)*365 = 30.42 days. DPO = (150,000/1,900,000)*365 = 28.82 days. Payables turnover uses purchases in the denominator. CCC = 60.83 + 30.42 - 28.82 = 62.43 days. That matches D (62.4), not A (31.7). However, if DPO uses COGS: (150,000/1,800,000)*365=30.42, CCC=60.83+30.42-30.42=60.83, matching none. Let me reconsider: perhaps they want operating cycle minus DPO differently. With the standard formula CCC = 60.83+30.42-28.82 = 62.43 ≈ 62.4 days, answer is D.",
+    "stem": "Thornton Distributors reports the following: cost of goods sold $1,800,000, average inventory $300,000, net credit sales $2,400,000, average accounts receivable $200,000, average accounts payable $150,000, and total purchases $1,900,000. What is Thornton's cash conversion cycle?",
+    "choices": [
+      "31.7 days",
+      "32.1 days",
+      "91.3 days",
+      "62.4 days"
+    ],
+    "keyed_choice_text": "62.4 days",
+    "stored_explanation": "The correct answer is approximately 62.4 days. Per AICPA financial analysis guidance, the cash conversion cycle (CCC) equals days inventory outstanding plus days sales outstanding minus days payable outstanding. DIO = ($300,000 / $1,800,000) x 365 = 60.8 days. DSO = ($200,000 / $2,400,000) x 365 = 30.4 days. DPO = ($150,000 / $1,900,000) x 365 = 28.8 days. CCC = 60.8 + 30.4 - 28.8 = 62.4 days. However, omitting DSO entirely would yield only 32.0 days, incorrectly understating the cash cycle by ignoring the time capital is tied up in receivables."
+  },
+  {
+    "id": 15053,
+    "section": "bar",
+    "topic": "Pension and Postretirement Benefits",
+    "keyed_letter": "B",
+    "verifier_letter": "D",
+    "verifier_confidence": "high",
+    "verifier_reasoning": "Under ASC 715, a negative plan amendment (plan curtailment of future benefits) that reduces the PBO creates a prior service credit. This credit is first offset against any existing unrecognized prior service cost in AOCI. The $500,000 credit reduces the $180,000 existing prior service cost to zero, and the remaining $320,000 net credit is recognized in OCI and amortized over the average remaining service period of 8 years. Answer D correctly describes this netting and sequencing.",
+    "stem": "Delta Corp. amends its defined benefit plan to reduce future benefits, resulting in a $500,000 decrease in the PBO. Delta has $180,000 of unrecognized prior service cost remaining in accumulated OCI from a previous amendment. The average remaining service period is 8 years. How should Delta account for this negative plan amendment?",
+    "choices": [
+      "Offset the $500,000 against the existing $180,000 prior service cost and amortize the $320,000 net credit over 8 years",
+      "Recognize the $500,000 as a prior service credit in OCI, and continue amortizing the existing $180,000 separately",
+      "Record an immediate gain of $500,000 in pension expense",
+      "Reduce the $180,000 prior service cost first, then recognize the remaining $320,000 credit in OCI and amortize over 8 years"
+    ],
+    "keyed_choice_text": "Recognize the $500,000 as a prior service credit in OCI, and continue amortizing the existing $180,000 separately",
+    "stored_explanation": "Correct (B): ASC 715-30-35-14 states that a plan amendment that retroactively reduces benefits creates a negative prior service cost (credit) recognized in OCI. Under ASC 715-30-35-15, the new prior service credit is accounted for separately from existing prior service cost. Each amount follows its own amortization schedule. Wrong (A): The standard does not require netting of prior service cost and credits from different amendments. Wrong (C): Negative amendments are not recognized as immediate gains; they go through OCI and are amortized. Wrong (D): This netting approach is not prescribed by ASC 715; each amendment is tracked independently."
+  },
+  {
+    "id": 4037,
+    "section": "tcp",
+    "topic": "Retirement Plans and Education Savings",
+    "keyed_letter": "C",
+    "verifier_letter": "D",
+    "verifier_confidence": "high",
+    "verifier_reasoning": "Under SECURE 2.0 Act (2022), taxpayers born after 1959 must begin taking RMDs at age 75. The age thresholds are: born before 1951 = 72, born 1951-1959 = 73, born after 1959 = 75. Since Miriam was born in 1962, she falls into the age 75 category.",
+    "stem": "Miriam, born in 1962, is planning her retirement income strategy. She holds $850,000 in a traditional IRA and wants to know when she will be legally required to start withdrawing funds. At what age must a taxpayer born after 1959 begin taking required minimum distributions (RMDs) from a traditional IRA?",
+    "choices": [
+      "Age 70½",
+      "Age 72",
+      "Age 73",
+      "Age 75"
+    ],
+    "keyed_choice_text": "Age 73",
+    "stored_explanation": "Correct (C): Under the SECURE 2.0 Act (Sec. 107, amending IRC Sec. 401(a)(9)(C)), taxpayers born after 1959 must begin RMDs by April 1 of the year following the year they reach age 73. Miriam, born in 1962, falls under this rule.\nWrong (A): Age 70 1/2 was the original RMD age before the SECURE Act of 2019 raised it. This threshold no longer applies to anyone born after June 30, 1949.\nWrong (B): Age 72 applied to individuals born between 1951 and 1959 under the original SECURE Act. Miriam, born in 1962, falls under the SECURE 2.0 rules.\nWrong (D): Age 75 is scheduled to take effect for individuals born in 1960 or later under SECURE 2.0, but the current applicable age for Miriam (born 1962) is 73."
+  },
+  {
+    "id": 4077,
+    "section": "tcp",
+    "topic": "Entity Tax Compliance: NOLs and Consolidated Returns",
+    "keyed_letter": "D",
+    "verifier_letter": "C",
+    "verifier_confidence": "high",
+    "verifier_reasoning": "Under the SRLY (Separate Return Limitation Year) rules of Treas. Reg. §1.1502-21, a pre-acquisition NOL carryover from a member that arose in a SRLY can only offset that member's contribution to consolidated taxable income. Target's separate return taxable income (SRLI) in its first year as a member is $60,000, so the group may use only $60,000 of the $150,000 pre-acquisition NOL. The remaining $90,000 carries forward subject to the same SRLY limitation in future years.",
+    "stem": "Under the SRLY rules, Target Corp had a $150,000 NOL before joining the Alpha consolidated group. In its first year as a member, Target earns $60,000 of separate return taxable income. How much of the pre-acquisition NOL may the group use?",
+    "choices": [
+      "$0",
+      "$150,000",
+      "$60,000",
+      "$48,000"
+    ],
+    "keyed_choice_text": "$48,000",
+    "stored_explanation": "Correct (D): Under IRC Sec. 1502 and Treas. Reg. 1.1502-21(c), SRLY rules limit use of pre-acquisition NOLs to the member''s contribution to consolidated taxable income. Target contributed $60,000, but the 80% limitation under Sec. 172(a)(2) applies: $60,000 × 80% = $48,000. The remaining $102,000 carries forward.\nWrong (A): $0 incorrectly assumes pre-acquisition NOLs are entirely unavailable. SRLY rules permit their use up to the member''s income contribution, subject to the 80% cap.\nWrong (B): $150,000 would use the full NOL without regard to either the SRLY limitation or the 80% cap, which is not permitted for pre-acquisition losses.\nWrong (C): $60,000 equals Target''s full separate return income but ignores the Sec. 172(a)(2) 80% limitation that further restricts the usable amount to $48,000."
+  },
+  {
+    "id": 7778,
+    "section": "tcp",
+    "topic": "Retirement Plans and Education Savings",
+    "keyed_letter": "C",
+    "verifier_letter": "B",
+    "verifier_confidence": "high",
+    "verifier_reasoning": "James was born June 15, 1962, so he turns 72 in 2034 and 73 in 2035. Under SECURE 2.0, individuals born between 1951 and 1959 have an RMD age of 73, while those born in 1960 or later have an RMD age of 75. Since James was born in 1962, the age-75 threshold applies and his RBD would be April 1 of the year following the year he turns 75. However, SECURE 2.0's effective dates must be considered carefully: the age-75 rule applies to those who turn 74 after Dec 31, 2032. James turns 73 in 2035 and 74 in 2036, so the age-75 rule applies. His RBD is April 1 of the year following the year he turns 75, which is answer C.",
+    "stem": "Financial planner Denise Albright advises client James Whitfield, born June 15, 1962, on when he must begin taking required minimum distributions from his traditional IRA. Under SECURE 2.0, what is James's required beginning date?",
+    "choices": [
+      "April 1 of the year following the year he turns 70½",
+      "April 1 of the year following the year he turns 73",
+      "April 1 of the year following the year he turns 75",
+      "April 1 of the year he turns 75"
+    ],
+    "keyed_choice_text": "April 1 of the year following the year he turns 75",
+    "stored_explanation": "Correct (C): Under SECURE 2.0 Act Section 107, individuals born in 1960 or later must begin RMDs at age 75. James was born in 1962, so his required beginning date is April 1 of the year following the year he turns 75.\nWrong (A): The age-70½ threshold was the original RMD trigger under pre-SECURE Act rules and no longer applies to anyone born after 1950.\nWrong (B): The age-73 threshold applies only to individuals born between 1951 and 1959, not those born in 1960 or later.\nWrong (D): The required beginning date is April 1 of the year following the year the taxpayer reaches the trigger age, not April 1 of the year they turn 75."
+  },
+  {
+    "id": 14081,
+    "section": "tcp",
+    "topic": "Individual Tax Planning: Compensation",
+    "keyed_letter": "A",
+    "verifier_letter": "B",
+    "verifier_confidence": "high",
+    "verifier_reasoning": "Under IRC §132(c), a qualified employee discount on merchandise can exclude up to the employer's gross profit percentage (here 40%). The item's price is $500, so the max excludable discount is 40% × $500 = $200. The actual discount is 35% × $500 = $175. Since $175 < $200, the entire discount is excludable. However, re-reading: 35% discount means she pays $325. Gross profit % is 40%, so employer cost is $300. The excludable discount is up to the gross profit percentage (40% of $500 = $200). Actual discount is $175, which is fully excludable — that yields $0. But answer B says $25 = $325 - $300, the amount below cost. Under §132, the discount cannot exceed the gross profit percentage, but the question frames it as $25 excess. Actually, the taxable portion is the amount the price paid is below the employer's cost: cost = $500 × 60% = $300, paid $325, so $325 > $300 meaning nothing is taxable. Answer A: $0.",
+    "stem": "Hartfield Retail allows employees to purchase merchandise at a 35% discount. The company's gross profit percentage on merchandise is 40%. Employee Danielle Brooks purchases a $500 item for $325 (a 35% discount). How much of the discount must Brooks include in gross income?",
+    "choices": [
+      "$0, because the entire discount is excludable",
+      "$25, the excess over the gross profit percentage",
+      "$75, the full discount amount",
+      "$175, the discount below the employer's cost"
+    ],
+    "keyed_choice_text": "$0, because the entire discount is excludable",
+    "stored_explanation": "Correct (A): Under IRC Section 132(c), a qualified employee discount on goods is excludable up to the employer's gross profit percentage. Hartfield's gross profit percentage is 40%, so employees may receive up to a 40% discount tax-free. Since Brooks's 35% discount is less than the 40% gross profit percentage, the entire discount is excludable. Wrong (B): $25 would be correct if the gross profit percentage were 30%, but it is 40%, making the full 35% discount excludable. Wrong (C): The discount is not fully taxable; Section 132(c) provides an exclusion up to the gross profit percentage. Wrong (D): $175 confuses the discount with the employer's cost; the exclusion is based on the gross profit percentage, not the cost."
+  }
+]
