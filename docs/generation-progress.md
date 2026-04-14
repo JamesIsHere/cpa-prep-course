@@ -28,7 +28,7 @@ For each section:
 | AUD     | 1,446 | 1,500 |       0 |           0 |           0 | On Target       |
 | FAR     | 1,554 | 1,500 |       0 |           0 |           0 | On Target       |
 | REG     | 1,417 | 1,500 |       0 |          83 |           3 | Generate Needed |
-| BAR     | 1,530 | 1,500 |       0 |           0 |           0 | On Target       |
+| BAR     | 1,525 | 1,500 |       0 |           0 |           0 | On Target       |
 | ISC     | 1,452 | 1,500 |       0 |           0 |           0 | On Target       |
 | TCP     | 1,335 | 1,500 |       0 |         165 |           6 | Generate Needed |
 
@@ -134,7 +134,7 @@ For each section:
 | 1 | Financial Statement Analysis | 187 | 134 |  |  |
 | 1 | Financial Valuation Methods | 147 | 134 |  |  |
 | 1 | Prospective Analysis and Forecasting | 132 | 134 |  |  |
-| 1 | Risk Management and Economics | 130 | 134 |  |  |
+| 1 | Risk Management and Economics | 125 | 134 |  |  |
 | 2 | Advanced Consolidations | 49 | 55 |  |  |
 | 2 | Advanced Lease Transactions | 54 | 55 |  |  |
 | 2 | Advanced Revenue and Intangibles | 47 | 55 |  |  |
