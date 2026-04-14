@@ -8,7 +8,7 @@ Per-section target: 1,500 questions. Distributed by AICPA Blueprint area weights
 
 **Batch size:** 30 questions per generation batch.
 
-**To generate:** 101 new questions (~4 batches).
+**To generate:** 219 new questions (~8 batches).
 
 **To trim:** 0 questions to delete (keep best, cut weakest).
 
@@ -27,10 +27,10 @@ For each section:
 |---------|---------|--------|---------|-------------|-------------|-----------------|
 | AUD     | 1,446 | 1,500 |       0 |           0 |           0 | On Target       |
 | FAR     | 1,539 | 1,500 |       0 |           0 |           0 | On Target       |
-| REG     | 1,437 | 1,500 |       0 |           0 |           0 | On Target       |
+| REG     | 1,410 | 1,500 |       0 |          90 |           3 | Generate Needed |
 | BAR     | 1,513 | 1,500 |       0 |           0 |           0 | On Target       |
 | ISC     | 1,452 | 1,500 |       0 |           0 |           0 | On Target       |
-| TCP     | 1,399 | 1,500 |       0 |         101 |           4 | Generate Needed |
+| TCP     | 1,371 | 1,500 |       0 |         129 |           5 | Generate Needed |
 
 ## Topic Detail
 
@@ -101,30 +101,30 @@ For each section:
 
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
-| 1 | Circular 230 | 42 | 45 |  |  |
-| 1 | Federal Tax Procedures | 40 | 45 |  |  |
+| 1 | Circular 230 | 42 | 45 |  | +3 |
+| 1 | Federal Tax Procedures | 40 | 45 |  | +5 |
 | 1 | Legal Duties and Responsibilities | 45 | 45 |  |  |
 | 1 | Professional Ethics in Tax | 45 | 45 |  |  |
-| 1 | Tax Procedures | 44 | 45 |  |  |
+| 1 | Tax Procedures | 44 | 45 |  | +1 |
 | 2 | Agency and Regulation | 60 | 60 |  |  |
 | 2 | Business Law: Contracts | 60 | 60 |  |  |
 | 2 | Business Structures | 60 | 60 |  |  |
 | 2 | Debtor-Creditor Relationships | 60 | 60 |  |  |
-| 2 | Government Regulation of Business | 58 | 60 |  |  |
-| 3 | Like-Kind Exchanges | 48 | 50 |  |  |
-| 3 | Property Transactions: Basis | 47 | 50 |  |  |
-| 3 | Property Transactions: Gains/Losses | 43 | 50 |  |  |
-| 4 | Alternative Minimum Tax | 65 | 68 |  |  |
-| 4 | Individual Taxation: Credits | 67 | 68 |  |  |
-| 4 | Individual Taxation: Credits/AMT | 66 | 68 |  |  |
-| 4 | Individual Taxation: Deductions | 64 | 68 |  |  |
+| 2 | Government Regulation of Business | 58 | 60 |  | +2 |
+| 3 | Like-Kind Exchanges | 48 | 50 |  | +2 |
+| 3 | Property Transactions: Basis | 47 | 50 |  | +3 |
+| 3 | Property Transactions: Gains/Losses | 43 | 50 |  | +7 |
+| 4 | Alternative Minimum Tax | 65 | 68 |  | +3 |
+| 4 | Individual Taxation: Credits | 67 | 68 |  | +1 |
+| 4 | Individual Taxation: Credits/AMT | 66 | 68 |  | +2 |
+| 4 | Individual Taxation: Deductions | 64 | 68 |  | +4 |
 | 4 | Individual Taxation: Filing/Credits | 68 | 68 |  |  |
-| 4 | Individual Taxation: Income | 67 | 68 |  |  |
-| 5 | C Corporations | 71 | 83 |  |  |
-| 5 | Estate and Gift Tax | 78 | 84 |  |  |
-| 5 | Partnerships | 79 | 83 |  |  |
+| 4 | Individual Taxation: Income | 67 | 68 |  | +1 |
+| 5 | C Corporations | 71 | 83 |  | +12 |
+| 5 | Estate and Gift Tax | 78 | 84 |  | +6 |
+| 5 | Partnerships | 52 | 83 |  | +31 |
 | 5 | S Corporations | 83 | 83 |  |  |
-| 5 | Tax-Exempt Organizations | 77 | 84 |  |  |
+| 5 | Tax-Exempt Organizations | 77 | 84 |  | +7 |
 
 ### BAR
 
@@ -185,7 +185,7 @@ For each section:
 | 2 | Entity Formation and Liquidation | 105 | 105 |  |  |
 | 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 100 | 105 |  | +5 |
 | 2 | International Tax | 105 | 105 |  |  |
-| 2 | Owner-Entity Transactions | 102 | 105 |  | +3 |
+| 2 | Owner-Entity Transactions | 74 | 105 |  | +31 |
 | 3 | Capital Structure Tax Planning | 52 | 56 |  | +4 |
 | 3 | Entity Choice and Planning | 56 | 56 |  |  |
 | 3 | Multi-Jurisdictional Tax Planning | 56 | 56 |  |  |
