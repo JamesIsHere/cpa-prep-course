@@ -8,7 +8,7 @@ Per-section target: 1,500 questions. Distributed by AICPA Blueprint area weights
 
 **Batch size:** 30 questions per generation batch.
 
-**To generate:** 219 new questions (~8 batches).
+**To generate:** 229 new questions (~8 batches).
 
 **To trim:** 0 questions to delete (keep best, cut weakest).
 
@@ -30,7 +30,7 @@ For each section:
 | REG     | 1,410 | 1,500 |       0 |          90 |           3 | Generate Needed |
 | BAR     | 1,513 | 1,500 |       0 |           0 |           0 | On Target       |
 | ISC     | 1,452 | 1,500 |       0 |           0 |           0 | On Target       |
-| TCP     | 1,371 | 1,500 |       0 |         129 |           5 | Generate Needed |
+| TCP     | 1,361 | 1,500 |       0 |         139 |           5 | Generate Needed |
 
 ## Topic Detail
 
@@ -181,7 +181,7 @@ For each section:
 | 1 | Passive Activity and At-Risk Rules | 93 | 132 |  | +39 |
 | 1 | Retirement Plans and Education Savings | 131 | 131 |  |  |
 | 1 | Wealth Transfer and Gifting Strategies | 129 | 131 |  | +2 |
-| 2 | Advanced Basis Calculations | 95 | 105 |  | +10 |
+| 2 | Advanced Basis Calculations | 85 | 105 |  | +20 |
 | 2 | Entity Formation and Liquidation | 105 | 105 |  |  |
 | 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 100 | 105 |  | +5 |
 | 2 | International Tax | 105 | 105 |  |  |

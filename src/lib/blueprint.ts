@@ -154,8 +154,8 @@ export const questionCounts: Record<string, number> = {
 	"SOC Testing Controls": 60,
 	"System Availability and Change Management": 86,
 	"Threats, Attacks, and Vulnerabilities": 97,
-	// TCP (1,371 total — synced with live DB 2026-04-14)
-	"Advanced Basis Calculations": 95,
+	// TCP (1,361 total — synced with live DB 2026-04-14)
+	"Advanced Basis Calculations": 85,
 	"Capital Structure Tax Planning": 52,
 	"Entity Choice and Planning": 56,
 	"Entity Formation and Liquidation": 105,
@@ -179,7 +179,7 @@ export const sectionQuestionTotals: Record<string, number> = {
 	reg: 1410,
 	bar: 1513,
 	isc: 1452,
-	tcp: 1371,
+	tcp: 1361,
 };
 
 // --- Blueprint Data ---
