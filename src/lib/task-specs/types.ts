@@ -38,12 +38,22 @@ export type AicpaSkill =
 
 /**
  * Bloom's taxonomy level 1-4, matching the `cognitive_level` column on the
- * questions table. This is derived automatically from `aicpaSkill` and MUST
- * match the Bloom's level of every question tagged to this task.
+ * questions table. This is derived automatically from `aicpaSkill` and is
+ * the CEILING for questions tagged to this task.
  *
- * **Strict Bloom's rule:** one task = one level. No warmup variants at a
- * lower level, no stretch variants at a higher level. If you want a
- * different level, author a different task-spec.
+ * **Bloom's ceiling rule:** the task's `bloomLevel` is the MAXIMUM skill
+ * level a question on this task may test. Questions may sit at the task's
+ * level (the common case) OR at a lower level (foundational-recall content
+ * that prepares students for the task). Questions above the task's level
+ * are forbidden — if you want higher-level content, author a different
+ * task-spec at the higher level. See `docs/topic-specs-pilot-handoff.md`
+ * for the pilot decision that established this rule (2026-04-15).
+ *
+ * Rationale: AICPA representative tasks describe the level at which the
+ * EXAM will test a concept, not a constraint on all prep-bank content.
+ * A student mastering an L2 Application task needs L1 recall warmups on
+ * the underlying concepts. Those warmups are legitimate bank content and
+ * belong under the L2 task as foundational material.
  */
 export type BloomLevel = 1 | 2 | 3 | 4;
 
@@ -95,8 +105,9 @@ export interface TaskSpec {
 
 	/**
 	 * Bloom's level 1-4, derived from `aicpaSkill`. Every question tagged to
-	 * this task MUST have `cognitive_level === bloomLevel`. The validator
-	 * enforces equality.
+	 * this task MUST have `cognitive_level <= bloomLevel` (ceiling rule —
+	 * questions may be at or below the task's level, never above). The
+	 * validator enforces the ceiling.
 	 */
 	bloomLevel: BloomLevel;
 

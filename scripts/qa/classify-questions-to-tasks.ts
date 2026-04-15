@@ -16,7 +16,9 @@
 //   - confidence: "high" | "medium" | "low"
 //   - rationale: one sentence
 //   - homeless: true if no task matches (bank orphan candidate)
-//   - bloom_mismatch: true if the best-match task's bloomLevel != question's cognitive_level
+//   - bloom_overshoot: true if question's cognitive_level > task's bloomLevel
+//     (CEILING rule — questions at or below the task's level are allowed as
+//     foundational-recall content; only overshoots are flagged)
 //
 // Cost: ~3-5 cents per batch of 10 questions via the Claude API. For 83
 // questions that's ~$0.25-$0.40 total.
@@ -72,7 +74,7 @@ interface Classification {
 	confidence: "high" | "medium" | "low";
 	rationale: string;
 	homeless: boolean;
-	bloom_mismatch: boolean;
+	bloom_overshoot: boolean;
 	question_bloom: number | null;
 	task_bloom: number | null;
 }
@@ -127,7 +129,7 @@ async function main() {
 
 	// Process in batches of 5 for cost control
 	const BATCH_SIZE = 5;
-	const BATCH_TIMEOUT_MS = 90_000;
+	const BATCH_TIMEOUT_MS = 180_000;
 	const totalBatches = Math.ceil(questions.length / BATCH_SIZE);
 	for (let i = 0; i < questions.length; i += BATCH_SIZE) {
 		const batch = questions.slice(i, i + BATCH_SIZE);
@@ -144,9 +146,9 @@ ${specSummary}
 ## Rules
 
 1. Match each question to the SINGLE task whose \`inScope\` best describes what the question is testing.
-2. Bloom's level is a tie-breaker: if two tasks could plausibly fit, prefer the one whose \`bloomLevel\` matches the question's \`cognitive_level\`.
+2. Bloom's level is a tie-breaker: if two tasks could plausibly fit, prefer the one whose \`bloomLevel\` is closest to (but not below) the question's \`cognitive_level\`.
 3. **CRITICAL: if no task's inScope reasonably describes the question, mark \`homeless: true\` and set proposed_ref to null. Do NOT force a match — a bad match is worse than a homeless flag.**
-4. If the best-match task's bloomLevel != the question's cognitive_level, set \`bloom_mismatch: true\` (this means the question probably needs re-leveling).
+4. The task's \`bloomLevel\` is a CEILING, not a match. Questions may be at or below the task's level (foundational-recall content is legitimate). Only set \`bloom_overshoot: true\` if the question's \`cognitive_level\` is STRICTLY GREATER than the task's \`bloomLevel\` — that's a real level violation.
 5. \`confidence\` is:
    - "high": the question clearly tests one of the task's inScope entries, and the Bloom's level matches
    - "medium": the question probably tests the task but the fit is imperfect, OR the Bloom's matches but the content is borderline
@@ -176,7 +178,7 @@ Output a JSON array with exactly ${batch.length} objects in the same order as th
   "confidence": "high" | "medium" | "low",
   "rationale": "<one sentence>",
   "homeless": <boolean>,
-  "bloom_mismatch": <boolean>
+  "bloom_overshoot": <boolean>
 }
 
 OUTPUT THE JSON NOW:`;
@@ -221,7 +223,7 @@ OUTPUT THE JSON NOW:`;
 			confidence: "high" | "medium" | "low";
 			rationale: string;
 			homeless: boolean;
-			bloom_mismatch: boolean;
+			bloom_overshoot: boolean;
 		}>;
 		try {
 			parsed = JSON.parse(jsonMatch[0]);
@@ -230,24 +232,25 @@ OUTPUT THE JSON NOW:`;
 			process.exit(1);
 		}
 
-		// Merge in the question's cognitive_level and compute bloom_mismatch
-		// independently (don't trust Claude's bloom_mismatch, verify it)
+		// Merge in the question's cognitive_level and compute bloom_overshoot
+		// independently (don't trust Claude's flag, verify it). CEILING rule:
+		// only flag when question level is STRICTLY GREATER than task level.
 		for (const entry of parsed) {
 			const q = batch.find((bq) => bq.id === entry.question_id);
 			const spec = entry.proposed_ref
 				? specs.find((s) => s.aicpaRef === entry.proposed_ref)
 				: null;
-			const bloomMismatch =
+			const bloomOvershoot =
 				spec != null &&
 				q?.cognitive_level != null &&
-				q.cognitive_level !== spec.bloomLevel;
+				q.cognitive_level > spec.bloomLevel;
 			classifications.push({
 				question_id: entry.question_id,
 				proposed_ref: entry.proposed_ref,
 				confidence: entry.confidence,
 				rationale: entry.rationale,
 				homeless: entry.homeless,
-				bloom_mismatch: bloomMismatch,
+				bloom_overshoot: bloomOvershoot,
 				question_bloom: q?.cognitive_level ?? null,
 				task_bloom: spec?.bloomLevel ?? null,
 			});
@@ -275,7 +278,15 @@ OUTPUT THE JSON NOW:`;
 		medium: classifications.filter((c) => c.confidence === "medium").length,
 		low: classifications.filter((c) => c.confidence === "low").length,
 	};
-	const bloomMismatchCount = classifications.filter((c) => c.bloom_mismatch).length;
+	const overshootCount = classifications.filter((c) => c.bloom_overshoot).length;
+	const foundationalCount = classifications.filter(
+		(c) =>
+			!c.homeless &&
+			c.proposed_ref != null &&
+			c.question_bloom != null &&
+			c.task_bloom != null &&
+			c.question_bloom < c.task_bloom,
+	).length;
 
 	let md = `# Phase 1 report — task-spec pilot on ${groupArg} ${specs[0].section.toUpperCase()} ${topicArg}\n\n`;
 	md += `Generated: ${new Date().toISOString().slice(0, 10)}\n\n`;
@@ -284,17 +295,24 @@ OUTPUT THE JSON NOW:`;
 	md += `- Task-specs available: **${specs.length}**\n`;
 	md += `- Homeless (no task fit): **${homeless.length}** (${Math.round((100 * homeless.length) / classifications.length)}%)\n`;
 	md += `- Confidence: **${byConfidence.high} high**, ${byConfidence.medium} medium, ${byConfidence.low} low\n`;
-	md += `- Bloom's mismatch (question level ≠ task level): **${bloomMismatchCount}** (${Math.round((100 * bloomMismatchCount) / classifications.length)}%)\n\n`;
+	md += `- Bloom's overshoot (question level > task level): **${overshootCount}** (${Math.round((100 * overshootCount) / classifications.length)}%)\n`;
+	md += `- Foundational recall (question level < task level, allowed under ceiling rule): **${foundationalCount}** (${Math.round((100 * foundationalCount) / classifications.length)}%)\n\n`;
 
 	md += `## Per-task coverage vs target\n\n`;
-	md += `| Task ref | Target | Classified | Mismatch (Bloom's) | High-conf | Delta |\n`;
-	md += `|---|---|---|---|---|---|\n`;
+	md += `| Task ref | Target | Classified | Overshoot | Foundational | High-conf | Delta |\n`;
+	md += `|---|---|---|---|---|---|---|\n`;
 	for (const spec of specs) {
 		const matched = byRef[spec.aicpaRef] ?? [];
 		const highConf = matched.filter((m) => m.confidence === "high").length;
-		const mismatches = matched.filter((m) => m.bloom_mismatch).length;
+		const overshoots = matched.filter((m) => m.bloom_overshoot).length;
+		const foundational = matched.filter(
+			(m) =>
+				m.question_bloom != null &&
+				m.task_bloom != null &&
+				m.question_bloom < m.task_bloom,
+		).length;
 		const delta = matched.length - spec.targetCount;
-		md += `| ${spec.aicpaRef} (L${spec.bloomLevel}) | ${spec.targetCount} | ${matched.length} | ${mismatches} | ${highConf} | ${delta > 0 ? "+" : ""}${delta} |\n`;
+		md += `| ${spec.aicpaRef} (L${spec.bloomLevel}) | ${spec.targetCount} | ${matched.length} | ${overshoots} | ${foundational} | ${highConf} | ${delta > 0 ? "+" : ""}${delta} |\n`;
 	}
 	md += `\n`;
 
@@ -309,14 +327,14 @@ OUTPUT THE JSON NOW:`;
 		md += `\n`;
 	}
 
-	md += `## Bloom's mismatches (question level ≠ task level)\n\n`;
-	const mismatches = classifications.filter((c) => c.bloom_mismatch);
-	if (mismatches.length === 0) md += `*none*\n\n`;
+	md += `## Bloom's overshoots (question level > task level)\n\n`;
+	const overshoots = classifications.filter((c) => c.bloom_overshoot);
+	if (overshoots.length === 0) md += `*none*\n\n`;
 	else {
-		md += `These questions matched a task-spec on content, but the question's \`cognitive_level\` differs from the task-spec's \`bloomLevel\`. Per strict Bloom's pinning, one of three fixes applies: (a) rewrite the stem to force the correct skill level, (b) re-classify the question to a different task at the matching level, or (c) delete.\n\n`;
+		md += `Per the CEILING rule (established 2026-04-15): the task's \`bloomLevel\` is the MAXIMUM skill level a question on this task may test. These questions are STRICTLY ABOVE their task's ceiling. Fix options: (a) rewrite the stem to simplify the skill demand down to the task level, (b) re-classify to a different task at a higher level if one exists, or (c) delete. Questions BELOW the task's level are legitimate foundational recall and are NOT listed here.\n\n`;
 		md += `| Question ID | Proposed task | Q bloom | Task bloom | Rationale |\n`;
 		md += `|---|---|---|---|---|\n`;
-		for (const m of mismatches) {
+		for (const m of overshoots) {
 			md += `| Q${m.question_id} | ${m.proposed_ref} | L${m.question_bloom} | L${m.task_bloom} | ${m.rationale.replace(/\|/g, "\\|").slice(0, 100)} |\n`;
 		}
 		md += `\n`;
@@ -346,7 +364,7 @@ OUTPUT THE JSON NOW:`;
 
 	writeFileSync("docs/phase-1-report.md", md);
 	logStep(`Report written to docs/phase-1-report.md`);
-	logStep(`Summary: ${classifications.length} classified, ${homeless.length} homeless, ${bloomMismatchCount} bloom mismatches, ${byConfidence.high} high-confidence`);
+	logStep(`Summary: ${classifications.length} classified, ${homeless.length} homeless, ${overshootCount} overshoots, ${foundationalCount} foundational, ${byConfidence.high} high-confidence`);
 }
 
 main().catch((e) => {

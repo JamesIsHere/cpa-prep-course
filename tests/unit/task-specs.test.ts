@@ -30,7 +30,7 @@ describe("task-specs registry", () => {
 	});
 });
 
-describe("task-specs strict Bloom's pinning", () => {
+describe("task-specs Bloom's derivation", () => {
 	const specs = allTaskSpecs();
 
 	for (const spec of specs) {
