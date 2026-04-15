@@ -12,7 +12,7 @@
 import { writeFileSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
-import { fetchAllQuestions, type DbQuestion } from "./db-client.js";
+import { fetchAllQuestions } from "./db-client.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(__dirname, "../..");

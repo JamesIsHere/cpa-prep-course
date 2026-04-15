@@ -95,7 +95,7 @@ const v2Result = score("v2 (overlap coef + unique tokens + truncation)", v2Flagg
 // Intersection — high-precision subset
 const intersection = new Set<number>();
 for (const id of v1Flagged) if (v2Flagged.has(id)) intersection.add(id);
-const iResult = score("v1 ∩ v2 (intersection — high precision)", intersection);
+score("v1 ∩ v2 (intersection — high precision)", intersection);
 
 // Union — high-recall superset (the union of "candidates we considered")
 const union = new Set<number>([...v1Flagged, ...v2Flagged]);

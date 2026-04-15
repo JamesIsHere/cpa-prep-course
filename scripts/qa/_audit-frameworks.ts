@@ -59,7 +59,7 @@ console.log(
 console.log("─".repeat(38));
 
 let totalAll = 0;
-let zeroGroups: string[] = [];
+const zeroGroups: string[] = [];
 for (const g of expected) {
 	const c = groups[g] || { cm: 0, dt: 0, fm: 0, rt: 0, mn: 0 };
 	const total = c.cm + c.dt + c.fm + c.rt + c.mn;

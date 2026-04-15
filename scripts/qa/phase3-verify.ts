@@ -16,7 +16,6 @@
 
 import {
 	readFileSync,
-	writeFileSync,
 	existsSync,
 	appendFileSync,
 } from "fs";

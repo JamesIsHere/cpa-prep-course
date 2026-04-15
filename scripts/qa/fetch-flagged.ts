@@ -40,11 +40,7 @@ async function main() {
 	const byId = new Map<number, (typeof data)[number]>();
 	for (const q of data!) byId.set(q.id, q);
 
-	// Get section name → id mapping
-	const { data: secs } = await supabase.from("sections").select("id, code");
-	const idToCode = new Map(secs!.map((s) => [s.id, s.code]));
-
-	const out: any[] = [];
+	const out: Array<Record<string, unknown>> = [];
 	for (const [section, lists] of Object.entries(flagged)) {
 		for (const id of lists.fail) {
 			const q = byId.get(id);

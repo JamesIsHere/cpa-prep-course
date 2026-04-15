@@ -34,7 +34,6 @@ import {
 	type DbQuestion,
 } from "./db-client";
 import { allTopicSpecs, specifiedTopics } from "../../src/lib/topic-specs";
-import type { BannedTerm } from "../../src/lib/topic-specs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(__dirname, "../..");

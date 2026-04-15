@@ -90,9 +90,8 @@ function scanField(
 	const hits: TermHit[] = [];
 	for (const t of terms) {
 		t.regex.lastIndex = 0;
-		let m: RegExpExecArray | null;
-		// eslint-disable-next-line no-cond-assign
-		while ((m = t.regex.exec(text)) !== null) {
+		let m: RegExpExecArray | null = t.regex.exec(text);
+		while (m !== null) {
 			hits.push({
 				term: t.term,
 				category: t.category,
@@ -101,6 +100,7 @@ function scanField(
 			});
 			// Avoid infinite loops on zero-width matches
 			if (m.index === t.regex.lastIndex) t.regex.lastIndex++;
+			m = t.regex.exec(text);
 		}
 	}
 	return hits;
