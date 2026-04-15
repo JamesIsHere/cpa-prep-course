@@ -1,10 +1,10 @@
-# Topic specs — session handoff (2026-04-15, post Stage 3 #4-17)
+# Topic specs — session handoff (2026-04-15, post Stage 3 #18-26)
 
-**Status:** 34 specs live, all at 0 drift. Stage 3 largely complete — fourteen specs closed in a single continuous session covering the last census v2 ranked candidates plus the ISC SOC cluster discovered on a fresh census v3 run. Drift test 176/176. Read this first on a cold pickup.
+**Status:** 43 specs live, all at 0 drift. Stage 3 census v3 ranked top list is essentially closed — twenty-three specs authored across Stage 3 (#4-26). Nine of those (#18-26) landed in the most recent wave: TCP NOLs and Consolidated Returns, the full AUD process cluster as 5 INDEPENDENT specs (not shared-base), REG Credits, REG Estate and Gift Tax, and BAR Stock Compensation and Business Combinations. Drift test 221/221. Read this first on a cold pickup.
 
 ## State of the world
 
-**Bank state:** 8,642 questions (down 79 from previous session's 8,721). Drift test 176/176 passing. 34 topic specs registered in `src/lib/topic-specs/index.ts` covering ~30% of the bank.
+**Bank state:** 8,612 questions (down 30 from the prior 8,642 mid-session state). Drift test 221/221 passing. 43 topic specs registered in `src/lib/topic-specs/index.ts` covering ~36% of the bank.
 
 **Authored specs (34):**
 
@@ -43,44 +43,73 @@
 | 31 | **SOC Reporting** | **ISC** | **ISC/III/B** | **Stage 3 #14 (pure rightful-owner)** |
 | 32 | **SOC Testing Controls** | **ISC** | **ISC/III/A** | **Stage 3 #15 (pure rightful-owner)** |
 | 33 | **SOC Report Content and Structure** | **ISC** | **ISC/III/B** | **Stage 3 #16 (pure rightful-owner)** |
-| 34 | **SOC Reporting and Trust Services Criteria** | **ISC** | **ISC/III/B** | **Stage 3 #17 (pure rightful-owner)** |
+| 34 | SOC Reporting and Trust Services Criteria | ISC | ISC/III/B | Stage 3 #17 (pure rightful-owner) |
+| 35 | **Entity Tax Compliance: NOLs and Consolidated Returns** | **TCP** | **TCP/II/A/1** | **Stage 3 #18 (§382 territory)** |
+| 36 | **Internal Controls** | **AUD** | **AUD/II/C** | **Stage 3 #19** |
+| 37 | **Tests of Controls** | **AUD** | **AUD/II/E** | **Stage 3 #20** |
+| 38 | **Audit Reports** | **AUD** | **AUD/V/B** | **Stage 3 #21** |
+| 39 | **Quality Management** | **AUD** | **AUD/I/D** | **Stage 3 #22 (0 cleanup — spec loosening only)** |
+| 40 | **Misstatements and Control Deficiencies** | **AUD** | **AUD/III/F** | **Stage 3 #23** |
+| 41 | **Individual Taxation: Credits** | **REG** | **REG/IV/C** | **Stage 3 #24** |
+| 42 | **Estate and Gift Tax** | **REG** | **REG/IV/E** | **Stage 3 #25 (pure rightful-owner)** |
+| 43 | **Stock Compensation and Business Combinations** | **BAR** | **BAR/II/F** | **Stage 3 #26** |
 
 **Authoritative session-wrap docs:**
-- `docs/session-log-2026-04-15-soc-cluster.md` — this session's detailed record (Stage 3 #4-17, 14 specs, SOC cluster architecture)
+- `docs/session-log-2026-04-15-stage3-18-26.md` — most recent wave (Stage 3 #18-26, 9 specs, AUD cluster as independent specs)
+- `docs/session-log-2026-04-15-soc-cluster.md` — prior wave (Stage 3 #4-17, 14 specs, SOC cluster architecture)
 - `docs/session-log-2026-04-14-stage-1-3.md` — the Stage 1 + 2 + 3 first wave session record
 - `docs/session-log-2026-04-14-specs-rollout.md` — the rollout wave (specs #8-17)
-- `docs/drift-census-2026-04-15.md` — **current** ranked drift census (81 universal bans at ≥2-spec agreement, 28 specs loaded)
+- `docs/drift-census-2026-04-15.md` — **stale** ranked drift census (81 universal bans at ≥2-spec agreement, computed with 28 specs loaded — re-run as v4 before next wave)
 - `docs/drift-census-2026-04-14-v2.md` — previous census (48 universal bans), for historical comparison
 
-## Architectural note: shared scope base modules
+## Architectural note: shared base vs. independent specs for clusters
 
-The ISC SOC cluster (5 topics, specs #30-34) uses a shared base module at `src/lib/topic-specs/_isc-soc-base.ts` exporting `SOC_IN_SCOPE`, `SOC_OUT_OF_SCOPE`, `SOC_KEY_STANDARDS`, `SOC_COMMON_MISCONCEPTIONS`, and `SOC_BANNED_TERMS`. Each of the five topic-spec files is ~30 lines and imports the shared base, with a thin per-topic focus note in the `notes` field.
+Two clusters have been authored now, with opposite architectural decisions — and both were right for their specific scope structure.
 
-**When to use this pattern:** multiple DB topic strings that cover the same AICPA territory at different focus points. The shared base eliminates ~1,500 lines of duplication and makes iterative scope-tuning trivial (loosen once in the base → all cluster topics re-audit clean).
+**Shared base — ISC SOC cluster (specs #30-34, prior wave).** `src/lib/topic-specs/_isc-soc-base.ts` exports `SOC_IN_SCOPE`, `SOC_OUT_OF_SCOPE`, `SOC_KEY_STANDARDS`, `SOC_COMMON_MISCONCEPTIONS`, and `SOC_BANNED_TERMS`. Each of the five topic-spec files is ~30 lines and imports the shared base. Works because the 5 SOC topics are 5 focus points on overlapping AICPA territory — loosen once in the base, all cluster topics re-audit clean.
 
-**Candidates for this pattern next:** the small AUD cluster (Internal Controls, Tests of Controls, Quality Management, Audit Reports, Misstatements) if they turn out to share substantial scope territory; REG Individual Taxation sub-topics (Income, Deductions, Credits, AMT) if needed.
+**Independent — AUD process cluster (specs #36-40, this wave).** Kept as five full specs (131–156 lines each) rather than shared-base. Decision rationale documented in `supabase/migrations/01061_aud_cluster_spec_cleanup.sql` header: each topic needed idiosyncratic ban loosening during cleanup. Quality Management loosened `peer review program` (adjacent concept legitimately referenced in QM questions). Audit Reports loosened `AS 3101` and `component auditor` (CAMs at concept level and group-audit reporting presentation are in-scope). Internal Controls, Tests of Controls, and Misstatements kept stricter bans on those same terms. A shared base would have forced every loosening onto all 5 topics, breaking scope isolation.
+
+**Rule:** shared-base when cluster members genuinely share scope; independent when each member has its own legitimate adjacencies. The test: after authoring one ban, ask whether loosening it for one topic should also loosen it for all siblings. If yes → shared base. If no → independent.
 
 ## Immediate next task
 
-**Author specs for the census v3 remaining candidates.** Ranked list (after filtering out topics already done this session):
+**Two reasonable options — user leans toward deciding after a census v4 run.**
 
-| Rank | Topic | Section | Qs | Flagged | % | Top terms |
-|---|---|---|---|---|---|---|
-| 5 | Entity Tax Compliance: NOLs and Consolidated Returns | TCP | 100 | 14 | 14.0% | `long-term tax-exempt rate` (13); `Section 951A` (1) |
-| 8 | Internal Controls | AUD | 64 | 6 | 9.4% | `SOC 1 Type 2` (4); `SQMS 1` (1); `AS 2201` (1) |
-| 9 | Tests of Controls | AUD | 64 | 6 | 9.4% | `sampling risk` (3); `SOC 1 Type 2` (2); `tolerable rate of deviation` (1) |
-| 10 | Audit Reports | AUD | 38 | 3 | 7.9% | `AS 2201` (2); `component auditor` (1) |
-| 11 | Quality Management | AUD | 38 | 3 | 7.9% | `SQMS 1` (3) |
-| 12 | Misstatements and Control Deficiencies | AUD | 64 | 5 | 7.8% | `tolerable misstatement` (3); `AS 2201` (2); `sampling risk` (1) |
-| 13 | Stock Compensation and Business Combinations | BAR | 52 | 4 | 7.7% | `Black-Scholes` (3); `Monte Carlo simulation` (1) |
-| 14 | Individual Taxation: Credits | REG | 67 | 5 | 7.5% | `Section 904` (5) |
-| 15 | Estate and Gift Tax | REG | 78 | 5 | 6.4% | `Section 7872` (5) |
+### Option A: Re-run drift census as v4
 
-**My lean:** **TCP Entity Tax Compliance: NOLs and Consolidated Returns (#5)**. It owns `long-term tax-exempt rate` (§382 limitation base rate) and `Section 951A` — both explicitly banned by the Entity Formation and Restructuring spec (#29) as "§382 mechanics territory, separate NOLs topic." Clean rightful-owner with the biggest single-topic impact remaining. Good size (100 Qs, 14 flags).
+```
+npx tsx scripts/qa/drift-census.ts --out=docs/drift-census-2026-04-16-v4.md
+```
 
-**Second lean:** After NOLs, consider the small AUD cluster (#8 Internal Controls, #9 Tests of Controls, #11 Quality Management, #10 Audit Reports, #12 Misstatements) — 5 related AUD process topics that might share enough scope to benefit from a shared-base pattern. Worth evaluating whether they warrant one base module or 5 independent specs.
+The v3 census was computed with only 28 specs loaded — the universal ≥2-spec ban set has grown significantly since then (15 more specs including the entire AUD process cluster, each with its own bans). Re-running will:
 
-**Third lean:** Individual Taxation: Credits (#14, §904 FTC limitation — international tax adjacent) and Estate and Gift Tax (#15, §7872 below-market loans).
+- Expand the universal ban set (probably from 81 to ~120+ terms)
+- Re-rank drift percentages across the remaining ~59 unspecced topics
+- Either surface new Stage 3 candidates from the thin tail, or confirm that Stage 3 is essentially done
+
+**Cost:** ~1 minute.
+
+### Option B: Jump to Stage 4 regen queue
+
+Stage 4 regen uses spec-constrained orchestrator batches to fill topics below generation target. Biggest deficits:
+
+| Topic | Current | Target | Deficit |
+|---|---|---|---|
+| Multi-Jurisdictional Tax Planning | 24 | 80 | **56** |
+| Passive Activity and At-Risk Rules | 93 | 130 | 37 |
+| Entity Choice and Planning | 48 | 80 | 32 |
+| Partnerships (REG) | 52 | 80 | 28 |
+| Audit Planning | 53 | ~80 | ~27 |
+| Materiality | 61 | ~80 | ~19 |
+| Owner-Entity Transactions | 74 | 90 | 16 |
+| Entity Formation and Liquidation | 86 | ~100 | ~14 |
+| Advanced Basis Calculations | 85 | 95 | 10 |
+| C Corporations | 71 | 80 | 9 |
+
+Every topic in the queue has a spec authored, so spec-constrained regen can run immediately. Total deficit is ~248 questions, all in specced territory.
+
+**Recommended sequence:** Run census v4 first (cheap), evaluate the tail, then either (a) close any remaining high-signal Stage 3 candidates or (b) switch to Stage 4 and start with TCP Multi-Jurisdictional Tax Planning.
 
 ## Stage 3 recipe — author a spec
 
@@ -100,24 +129,9 @@ The ISC SOC cluster (5 topics, specs #30-34) uses a shared base module at `src/l
 14. **Re-audit** to confirm 0 drift.
 15. **Drift test again.**
 
-## Stage 4 regen queue (deferred until Stage 3 substantially complete)
+## Stage 4 regen queue
 
-Topics below generation target needing spec-constrained regeneration:
-
-| Topic | Section | Current | Target | Deficit |
-|---|---|---|---|---|
-| Multi-Jurisdictional Tax Planning | TCP | 24 | 80 | 56 |
-| Passive Activity and At-Risk Rules | TCP | 93 | 130 | 37 |
-| Entity Choice and Planning | TCP | 48 | 80 | 32 |
-| Partnerships | REG | 52 | 80 | 28 |
-| Audit Planning | AUD | 53 | ~80 | ~27 |
-| Materiality | AUD | 61 | ~80 | ~19 |
-| Owner-Entity Transactions | TCP | 74 | 90 | 16 |
-| Entity Formation and Liquidation | TCP | 86 | ~100 | ~14 |
-| Advanced Basis Calculations | TCP | 85 | 95 | 10 |
-| C Corporations | REG | 71 | 80 | 9 |
-
-**Defer Stage 4 until Stage 3 is substantially complete.** Plan: close ~3-5 more Stage 3 specs, then Stage 4 regen across the queue using orchestrator batches with spec-constrained prompts.
+Stage 3 is now substantially complete — the regen queue is duplicated in the "Immediate next task" section above since it's one of the two active options for the next session.
 
 ## Re-run the census as you go
 
@@ -149,9 +163,11 @@ Each new spec adds terms to the universal ≥2-agreement set. Re-running after e
 - **`scripts/orchestrate.ps1`** — Batch orchestrator. ClaudeTimeoutMin bumped to 25 in earlier session. Load-bearing for spec-constrained fills.
 - **Orchestrator commit bug** — known issue in `scripts/orchestrate.ps1`'s git commit step. Check `git status` after orchestrator runs.
 
-## Commit log for Stage 3 #4-17
+## Commit log
 
 ```
+11d110e Stage 3 #18-26: 9 specs across TCP/AUD/REG/BAR
+2c27507 Session wrap: refresh handoff + write Stage 3 #4-17 session log
 f60f93d Stage 3 #4-17: 14 specs across AUD/TCP/REG/ISC, +5 SOC cluster
 d07e2d8 Session wrap: refresh handoff doc + write Stage 1-3 session log
 208c1f2 Stage 3 #2 + #3: Foreign Currency Transactions + Using the Work of Others
