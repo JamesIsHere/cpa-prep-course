@@ -1,6 +1,6 @@
 # Question Curation Plan
 
-> Auto-synced from live DB on 2026-04-14 via `npm run sync-counts`
+> Auto-synced from live DB on 2026-04-15 via `npm run sync-counts`
 
 Per-section target: 1,500 questions. Distributed by AICPA Blueprint area weights.
 
@@ -8,7 +8,7 @@ Per-section target: 1,500 questions. Distributed by AICPA Blueprint area weights
 
 **Batch size:** 30 questions per generation batch.
 
-**To generate:** 297 new questions (~10 batches).
+**To generate:** 388 new questions (~14 batches).
 
 **To trim:** 0 questions to delete (keep best, cut weakest).
 
@@ -25,12 +25,12 @@ For each section:
 
 | Section | Current | Target | To Trim | To Generate | Gen Batches | Status          |
 |---------|---------|--------|---------|-------------|-------------|-----------------|
-| AUD     | 1,435 | 1,500 |       0 |           0 |           0 | On Target       |
+| AUD     | 1,424 | 1,500 |       0 |          76 |           3 | Generate Needed |
 | FAR     | 1,539 | 1,500 |       0 |           0 |           0 | On Target       |
-| REG     | 1,410 | 1,500 |       0 |          90 |           3 | Generate Needed |
-| BAR     | 1,513 | 1,500 |       0 |           0 |           0 | On Target       |
+| REG     | 1,397 | 1,500 |       0 |         103 |           4 | Generate Needed |
+| BAR     | 1,509 | 1,500 |       0 |           0 |           0 | On Target       |
 | ISC     | 1,452 | 1,500 |       0 |           0 |           0 | On Target       |
-| TCP     | 1,293 | 1,500 |       0 |         207 |           7 | Generate Needed |
+| TCP     | 1,291 | 1,500 |       0 |         209 |           7 | Generate Needed |
 
 ## Topic Detail
 
@@ -39,34 +39,34 @@ For each section:
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
 | 1 | Ethics and Independence | 38 | 38 |  |  |
-| 1 | Government Auditing Standards | 34 | 38 |  |  |
-| 1 | Independence | 37 | 38 |  |  |
-| 1 | Nature and Scope of Engagements | 32 | 38 |  |  |
-| 1 | Professional Responsibilities | 37 | 38 |  |  |
+| 1 | Government Auditing Standards | 34 | 38 |  | +4 |
+| 1 | Independence | 37 | 38 |  | +1 |
+| 1 | Nature and Scope of Engagements | 32 | 38 |  | +6 |
+| 1 | Professional Responsibilities | 37 | 38 |  | +1 |
 | 1 | Professional Skepticism and Judgment | 38 | 38 |  |  |
 | 1 | Quality Management | 38 | 38 |  |  |
 | 1 | Terms of Engagement | 38 | 38 |  |  |
-| 2 | Audit Planning | 53 | 64 |  |  |
-| 2 | Internal Controls | 64 | 64 |  |  |
-| 2 | Materiality | 61 | 64 |  |  |
+| 2 | Audit Planning | 53 | 64 |  | +11 |
+| 2 | Internal Controls | 61 | 64 |  | +3 |
+| 2 | Materiality | 61 | 64 |  | +3 |
 | 2 | Responding to Assessed Risks | 64 | 64 |  |  |
 | 2 | Risk Assessment | 64 | 64 |  |  |
 | 2 | Understanding the Entity and Environment | 64 | 64 |  |  |
 | 2 | Using the Work of Others | 64 | 64 |  |  |
 | 3 | Analytical Procedures | 65 | 65 |  |  |
-| 3 | Audit Evidence | 64 | 65 |  |  |
-| 3 | Audit Sampling | 52 | 65 |  |  |
-| 3 | Misstatements and Control Deficiencies | 64 | 65 |  |  |
+| 3 | Audit Evidence | 64 | 65 |  | +1 |
+| 3 | Audit Sampling | 52 | 65 |  | +13 |
+| 3 | Misstatements and Control Deficiencies | 61 | 65 |  | +4 |
 | 3 | Specific Areas and Transactions | 65 | 65 |  |  |
-| 3 | Substantive Procedures | 58 | 65 |  |  |
-| 3 | Tests of Controls | 64 | 65 |  |  |
-| 3 | Written Representations | 63 | 65 |  |  |
-| 4 | Attestation Engagements | 37 | 38 |  |  |
-| 4 | Audit Reports | 38 | 38 |  |  |
-| 4 | Modifications to the Auditor Report | 35 | 38 |  |  |
-| 4 | Other Information and Supplementary Information | 36 | 38 |  |  |
-| 4 | Review and Compilation | 37 | 38 |  |  |
-| 4 | Review/Compilation Engagements | 31 | 38 |  |  |
+| 3 | Substantive Procedures | 58 | 65 |  | +7 |
+| 3 | Tests of Controls | 60 | 65 |  | +5 |
+| 3 | Written Representations | 63 | 65 |  | +2 |
+| 4 | Attestation Engagements | 37 | 38 |  | +1 |
+| 4 | Audit Reports | 37 | 38 |  | +1 |
+| 4 | Modifications to the Auditor Report | 35 | 38 |  | +3 |
+| 4 | Other Information and Supplementary Information | 36 | 38 |  | +2 |
+| 4 | Review and Compilation | 37 | 38 |  | +1 |
+| 4 | Review/Compilation Engagements | 31 | 38 |  | +7 |
 
 ### FAR
 
@@ -115,7 +115,7 @@ For each section:
 | 3 | Property Transactions: Basis | 47 | 50 |  | +3 |
 | 3 | Property Transactions: Gains/Losses | 43 | 50 |  | +7 |
 | 4 | Alternative Minimum Tax | 65 | 68 |  | +3 |
-| 4 | Individual Taxation: Credits | 67 | 68 |  | +1 |
+| 4 | Individual Taxation: Credits | 54 | 68 |  | +14 |
 | 4 | Individual Taxation: Credits/AMT | 66 | 68 |  | +2 |
 | 4 | Individual Taxation: Deductions | 64 | 68 |  | +4 |
 | 4 | Individual Taxation: Filing/Credits | 68 | 68 |  |  |
@@ -145,7 +145,7 @@ For each section:
 | 2 | Intangible Assets Advanced | 50 | 55 |  |  |
 | 2 | Internal-Use Software and Cloud Computing | 38 | 55 |  |  |
 | 2 | Pension and Postretirement Benefits | 142 | 55 |  |  |
-| 2 | Stock Compensation and Business Combinations | 52 | 55 |  |  |
+| 2 | Stock Compensation and Business Combinations | 48 | 55 |  |  |
 | 3 | Fund-to-Government-Wide Reconciliation | 67 | 75 |  |  |
 | 3 | Interfund Transactions | 67 | 75 |  |  |
 | 3 | State and Local Government Reporting | 71 | 75 |  |  |
@@ -183,7 +183,7 @@ For each section:
 | 1 | Wealth Transfer and Gifting Strategies | 129 | 131 |  | +2 |
 | 2 | Advanced Basis Calculations | 85 | 105 |  | +20 |
 | 2 | Entity Formation and Liquidation | 86 | 105 |  | +19 |
-| 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 100 | 105 |  | +5 |
+| 2 | Entity Tax Compliance: NOLs and Consolidated Returns | 98 | 105 |  | +7 |
 | 2 | International Tax | 105 | 105 |  |  |
 | 2 | Owner-Entity Transactions | 74 | 105 |  | +31 |
 | 3 | Capital Structure Tax Planning | 50 | 56 |  | +6 |

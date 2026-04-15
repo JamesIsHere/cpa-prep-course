@@ -43,6 +43,15 @@ import { spec as iscSocReporting } from "./isc-soc-reporting";
 import { spec as iscSocTestingControls } from "./isc-soc-testing-controls";
 import { spec as iscSocReportContentAndStructure } from "./isc-soc-report-content-and-structure";
 import { spec as iscSocReportingAndTrustServicesCriteria } from "./isc-soc-reporting-and-trust-services-criteria";
+import { spec as tcpEntityTaxComplianceNolsAndConsolidatedReturns } from "./tcp-entity-tax-compliance-nols-and-consolidated-returns";
+import { spec as audInternalControls } from "./aud-internal-controls";
+import { spec as audTestsOfControls } from "./aud-tests-of-controls";
+import { spec as audQualityManagement } from "./aud-quality-management";
+import { spec as audAuditReports } from "./aud-audit-reports";
+import { spec as audMisstatementsAndControlDeficiencies } from "./aud-misstatements-and-control-deficiencies";
+import { spec as regIndividualTaxationCredits } from "./reg-individual-taxation-credits";
+import { spec as regEstateAndGiftTax } from "./reg-estate-and-gift-tax";
+import { spec as barStockCompensationAndBusinessCombinations } from "./bar-stock-compensation-and-business-combinations";
 
 const SPECS: Record<string, TopicSpec> = {
 	[barProspective.topic]: barProspective,
@@ -79,6 +88,15 @@ const SPECS: Record<string, TopicSpec> = {
 	[iscSocTestingControls.topic]: iscSocTestingControls,
 	[iscSocReportContentAndStructure.topic]: iscSocReportContentAndStructure,
 	[iscSocReportingAndTrustServicesCriteria.topic]: iscSocReportingAndTrustServicesCriteria,
+	[tcpEntityTaxComplianceNolsAndConsolidatedReturns.topic]: tcpEntityTaxComplianceNolsAndConsolidatedReturns,
+	[audInternalControls.topic]: audInternalControls,
+	[audTestsOfControls.topic]: audTestsOfControls,
+	[audQualityManagement.topic]: audQualityManagement,
+	[audAuditReports.topic]: audAuditReports,
+	[audMisstatementsAndControlDeficiencies.topic]: audMisstatementsAndControlDeficiencies,
+	[regIndividualTaxationCredits.topic]: regIndividualTaxationCredits,
+	[regEstateAndGiftTax.topic]: regEstateAndGiftTax,
+	[barStockCompensationAndBusinessCombinations.topic]: barStockCompensationAndBusinessCombinations,
 };
 
 /** Look up the topic spec for a given questions.topic value. Returns undefined if none. */
