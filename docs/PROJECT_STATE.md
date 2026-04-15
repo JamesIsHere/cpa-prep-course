@@ -123,6 +123,34 @@ Last updated: 2026-04-15 (session that uncovered the Wave B Bloom's alignment fi
 
 ---
 
+## 6. Discrepancy retirement queue
+
+This is a living inventory of known discrepancies between artifacts, known tech debt, and known cleanup work. It exists to make the "we keep finding issues we already knew" pattern impossible — every known issue is on this list with a documented retirement plan. Rows are **closed** (not deleted) when resolved, with a pointer to the commit or session log where they were addressed.
+
+**Rule:** when a session finds a new discrepancy, it is added to this queue IMMEDIATELY, before any other work. When a session retires one, it is marked closed IMMEDIATELY, before session wrap. This queue is the accountability record.
+
+### Open
+
+| # | Discrepancy | Blocks | Resolution plan | Status |
+|---|---|---|---|---|
+| 1 | blueprint.ts ↔ AICPA JSON group-letter divergence — same letter in different files refers to different groups (example: AUD/I/A is "Nature and scope" in blueprint.ts but "Ethics" in AICPA JSON) | Task-spec anchoring (Phase 1) | Write `docs/blueprint-coordinate-systems.md` declaring AICPA JSON authoritative for task-spec refs; blueprint.ts is the Slayer-lesson view and does not use AICPA letter assignments. Add validator that task-spec refs resolve in AICPA JSON. | **in progress (session 2026-04-15 sweep)** |
+| 2 | 87 scaffolder stub files in `src/lib/topic-specs/` — unauthored, empty arrays, STUB banner | Clean-end-state rule "zero scaffolder stubs in source" | Extract pre-computed metadata to `docs/topic-specs-backlog.md`, delete all 87 `.ts` files, rely on scaffolder to regenerate on demand | **in progress (session 2026-04-15 sweep)** |
+| 3 | 791 ISC questions in DB topic strings that blueprint.ts declares but doesn't route through any AICPA group via `questionTopics` traversal | Phase 3 re-tagging for ISC content | Investigate blueprint.ts ISC area/group structure; either fix routing or re-anchor ISC topic strings to AICPA JSON directly via task-specs | open |
+| 4 | REG Individual Taxation proliferation — 5 topic strings (`Credits`, `Credits/AMT`, `Deductions`, `Filing/Credits`, `Income`) covering 319 questions, two of them sharing the same blueprint anchor REG/IV/C | Phase 3 re-tagging for REG individual content | Decide: merge variants via data migration, OR split with canonical strings. Likely decided via Phase 3 findings. | open |
+| 5 | 4 slash-named mixed-content topics: `Individual Taxation: Credits/AMT` (66 qs), `Individual Taxation: Filing/Credits` (68 qs), `Property Transactions: Gains/Losses` (43 qs), `Review/Compilation Engagements` (31 qs) | Phase 3 re-tagging | Three are probably benign AICPA standard naming (Gains/Losses, Review/Compilation). Credits/AMT and Filing/Credits are genuine mixed-content artifacts. Resolve alongside #4. | open |
+| 6 | ~2,500 questions at Bloom's L1 while AICPA representative tasks have zero L1 content | AICPA-aligned Bloom's distribution end state | Phase 4: re-level by rewriting stems to demand application, OR delete and regenerate from task-spec | open |
+| 7 | 2 pre-existing lint errors + 6 warnings in `scripts/qa/` | Clean-end-state rule "zero lint errors" | Fix `any` in `fetch-flagged.ts:47`, remove unused vars in `phase3-verify.ts`, `scan-content-misplacement.ts`, and others, run `npm run lint` clean | **in progress (session 2026-04-15 sweep)** |
+| 8 | 7 untracked files in working tree: `.bak` files, `cpa-codebase-guide.md/pdf`, `market-research/`, `alignment/csv/far-framework-traceability-final.xlsx` | Clean-end-state rule "zero untracked files" | Decide each: gitignore, delete, or commit. `.bak` files → delete. Market research → gitignore or move out. | **in progress (session 2026-04-15 sweep)** |
+| 9 | Migration ledger delta: 1,049 applied in DB / 1,044 on disk = 5 unexplained applied migrations | Clean-end-state rule "ledger in sync" | Investigate the 5 applied-but-missing migrations; either recover files from git history or record as historical ghosts in a note | open |
+| 10 | 43 existing topic-specs running in parallel with new task-specs during Phases 1-5 | End-state rule "one architecture" | Phase 6: fold topic-spec scope/bans into task-specs as ancestor data (`inheritedFromTopicSpec` field), then delete topic-specs | open |
+| 11 | Known-incomplete verification: 143 recent questions (30 REG + 15 BAR + 98 TCP) have not been through `verify-correctness.ts` | Clean-end-state rule "every question verified against current standards" | Run catch-up verification against these IDs in a dedicated pass; may be absorbed into Phase 3 re-tagging | open |
+
+### Closed
+
+*(Rows move here when retired. Each closed row records the session and commit that retired it.)*
+
+---
+
 ## How to use this file
 
 **At session start:** read sections 1, 4, and 5. If your session's topic is mentioned in section 2, read that row. If mentioned in section 3, DO NOT re-propose unless you have new information.
