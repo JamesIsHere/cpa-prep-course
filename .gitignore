@@ -65,5 +65,15 @@ security/
 # James's study framework design workspace (HTML prototypes, Excel drafts, images)
 frameworks/
 
+# James's market research working dir (reddit scrapes, xlsx drafts, reference data)
+market-research/
+
+# Point-in-time generated codebase references — stay on disk, not tracked
+docs/cpa-codebase-guide.md
+docs/cpa-codebase-guide.pdf
+
+# verified-ids.json backup snapshots — daily filesystem backup covers recovery
+docs/verified-ids.json.pre-*.bak
+
 .vercel
 .env*.local
