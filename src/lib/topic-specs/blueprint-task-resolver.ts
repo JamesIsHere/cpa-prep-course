@@ -86,6 +86,55 @@ export function isValidBlueprintRef(ref: string): boolean {
 	return resolveBlueprintRef(ref) !== null;
 }
 
+/**
+ * Resolve a 5-part task-level ref (`SECTION/AREA/GROUP/TOPIC/TASK`) to the
+ * exact AICPA representative task. Returns the task object plus its context.
+ *
+ * Example: `REG/V/C/1/1` → the first task of topic 1 of group C of area V
+ * in REG (the "Recall eligible shareholders..." task).
+ *
+ * Returns null if any segment is invalid or the task index is out of range.
+ *
+ * This is the canonical anchoring function for task-specs. Task-spec files
+ * must have an `aicpaRef` that returns non-null from this function.
+ */
+export function resolveTaskRef(ref: string): {
+	section: string;
+	area: AicpaArea;
+	group: AicpaGroup;
+	topic: AicpaTopic;
+	taskIndex: number;
+	task: AicpaTask;
+} | null {
+	const parts = ref.split("/");
+	if (parts.length !== 5) return null;
+	const [sectionCode, areaId, groupLetter, topicNumStr, taskNumStr] = parts;
+
+	const topicNode = resolveBlueprintRef(
+		`${sectionCode}/${areaId}/${groupLetter}/${topicNumStr}`,
+	);
+	if (!topicNode || !topicNode.topic) return null;
+
+	const taskIdx = parseInt(taskNumStr, 10);
+	if (isNaN(taskIdx) || taskIdx < 1) return null;
+	const task = topicNode.topic.tasks?.[taskIdx - 1];
+	if (!task) return null;
+
+	return {
+		section: topicNode.section,
+		area: topicNode.area,
+		group: topicNode.group,
+		topic: topicNode.topic,
+		taskIndex: taskIdx,
+		task,
+	};
+}
+
+/** Whether a 5-part task ref resolves in the AICPA JSON. */
+export function isValidTaskRef(ref: string): boolean {
+	return resolveTaskRef(ref) !== null;
+}
+
 /** Get the AICPA-canonical name for a blueprintRef — topic name for 4-part, group name for 3-part. */
 export function getBlueprintTopicName(ref: string): string | null {
 	const node = resolveBlueprintRef(ref);
