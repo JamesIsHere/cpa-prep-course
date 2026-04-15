@@ -40,6 +40,13 @@ const sectionArg = process.argv
 const groupArg =
 	process.argv.find((a) => a.startsWith("--group="))?.split("=")[1] ??
 	"REG/V/C";
+const limitArg = process.argv.find((a) => a.startsWith("--limit="))?.split("=")[1];
+const limit = limitArg ? parseInt(limitArg, 10) : null;
+
+function logStep(msg: string) {
+	const ts = new Date().toISOString().slice(11, 19);
+	process.stderr.write(`[${ts}] ${msg}\n`);
+}
 
 if (!topicArg || !sectionArg) {
 	console.error(
@@ -95,12 +102,13 @@ async function main() {
 		.eq("section_id", sectionId)
 		.eq("topic", topicArg);
 	if (error) throw error;
-	const questions = (rows ?? []) as DbQuestion[];
-	console.log(`Loaded ${questions.length} questions for topic "${topicArg}"`);
+	let questions = (rows ?? []) as DbQuestion[];
+	if (limit) questions = questions.slice(0, limit);
+	logStep(`Loaded ${questions.length} questions for topic "${topicArg}"${limit ? ` (limited to ${limit})` : ""}`);
 
 	// Load task-specs for the group
 	const specs = taskSpecsByGroup(groupArg);
-	console.log(`Loaded ${specs.length} task-specs for group ${groupArg}`);
+	logStep(`Loaded ${specs.length} task-specs for group ${groupArg}`);
 	if (specs.length === 0) {
 		console.error(`No task-specs found for group ${groupArg}. Aborting.`);
 		process.exit(1);
@@ -119,9 +127,13 @@ async function main() {
 
 	// Process in batches of 5 for cost control
 	const BATCH_SIZE = 5;
+	const BATCH_TIMEOUT_MS = 90_000;
+	const totalBatches = Math.ceil(questions.length / BATCH_SIZE);
 	for (let i = 0; i < questions.length; i += BATCH_SIZE) {
 		const batch = questions.slice(i, i + BATCH_SIZE);
-		console.log(`Classifying batch ${Math.floor(i / BATCH_SIZE) + 1}/${Math.ceil(questions.length / BATCH_SIZE)} (${batch.length} questions)...`);
+		const batchNum = Math.floor(i / BATCH_SIZE) + 1;
+		const t0 = Date.now();
+		logStep(`Batch ${batchNum}/${totalBatches} (${batch.length} questions) — spawning claude...`);
 
 		const batchPrompt = `You are classifying CPA exam questions to specific AICPA representative tasks. Each question must be matched to EXACTLY ONE task from the list below, OR marked as "homeless" if no task fits.
 
@@ -177,14 +189,24 @@ OUTPUT THE JSON NOW:`;
 				input: batchPrompt,
 				encoding: "utf-8",
 				maxBuffer: 10 * 1024 * 1024,
+				timeout: BATCH_TIMEOUT_MS,
 			},
 		);
 
+		const elapsed = ((Date.now() - t0) / 1000).toFixed(1);
+
+		if (result.error && (result.error as NodeJS.ErrnoException).code === "ETIMEDOUT") {
+			logStep(`Batch ${batchNum} TIMED OUT after ${elapsed}s (limit ${BATCH_TIMEOUT_MS / 1000}s)`);
+			process.exit(1);
+		}
 		if (result.status !== 0) {
-			console.error(`Claude call failed for batch ${i}: ${result.stderr}`);
+			logStep(`Batch ${batchNum} FAILED (status ${result.status}, ${elapsed}s)`);
+			console.error(`stderr: ${result.stderr}`);
+			console.error(`stdout: ${result.stdout?.slice(0, 500)}`);
 			process.exit(1);
 		}
 
+		logStep(`Batch ${batchNum} returned in ${elapsed}s`);
 		const output = result.stdout.trim();
 		// Extract JSON from the output
 		const jsonMatch = output.match(/\[[\s\S]*\]/);
@@ -230,6 +252,14 @@ OUTPUT THE JSON NOW:`;
 				task_bloom: spec?.bloomLevel ?? null,
 			});
 		}
+
+		// Incremental partial report — overwrite after each batch so progress survives crashes
+		writeFileSync(
+			"docs/phase-1-report.partial.md",
+			`# Phase 1 partial — ${classifications.length}/${questions.length} classified (batch ${batchNum}/${totalBatches})\n\nGenerated: ${new Date().toISOString()}\n\n` +
+				JSON.stringify(classifications, null, 2),
+		);
+		logStep(`Batch ${batchNum} written to partial report (${classifications.length}/${questions.length} total)`);
 	}
 
 	// ─── Aggregate and write the report ───
@@ -315,8 +345,8 @@ OUTPUT THE JSON NOW:`;
 	md += `\n`;
 
 	writeFileSync("docs/phase-1-report.md", md);
-	console.log("\nReport written to docs/phase-1-report.md");
-	console.log(`\nSummary: ${classifications.length} classified, ${homeless.length} homeless, ${bloomMismatchCount} bloom mismatches, ${byConfidence.high} high-confidence`);
+	logStep(`Report written to docs/phase-1-report.md`);
+	logStep(`Summary: ${classifications.length} classified, ${homeless.length} homeless, ${bloomMismatchCount} bloom mismatches, ${byConfidence.high} high-confidence`);
 }
 
 main().catch((e) => {
