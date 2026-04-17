@@ -13,13 +13,14 @@ import type { LessonSpec } from "./types";
 // "Valuation and capital structure" alongside Capital Structure and Risk Management.
 // AICPA places "Investment alternatives using financial valuation decision models" at
 // BAR/I/B/3 inside the "Prospective analysis" group. The spec anchors `topic` to the
-// Slayer tagging string and `blueprintRef` to the AICPA path; both are validated
+// Slayer tagging string and `primaryRef` to the AICPA path; both are validated
 // independently against their respective sources of truth.
 
 export const spec: LessonSpec = {
 	topic: "Financial Valuation Methods",
 	section: "bar",
-	blueprintRef: "BAR/I/B/3",
+	primaryRef: "BAR/I/B/3",
+	secondaryRefs: [],
 
 	inScope: [
 		"Time value of money: present value and future value of single sums and annuities (ordinary and annuity due)",

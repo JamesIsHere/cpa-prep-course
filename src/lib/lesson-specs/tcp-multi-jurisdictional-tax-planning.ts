@@ -66,7 +66,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Multi-Jurisdictional Tax Planning",
 	section: "tcp",
-	blueprintRef: "TCP/III/B",
+	primaryRef: "TCP/III/B",
+	secondaryRefs: [],
 
 	inScope: [
 		"State and local income tax planning concepts: taxpayers may face income tax liability in any state where they have established sufficient nexus (connection) to trigger state taxing authority. Multi-state planning involves structuring operations to manage aggregate state tax liability within legal constraints.",

@@ -22,7 +22,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Fair Value",
 	section: "far",
-	blueprintRef: "FAR/III/E/0",
+	primaryRef: "FAR/III/E/0",
+	secondaryRefs: [],
 
 	inScope: [
 		"Definition of fair value under ASC 820 as the exit price — the amount that would be received to sell an asset or paid to transfer a liability in an orderly transaction between market participants at the measurement date",

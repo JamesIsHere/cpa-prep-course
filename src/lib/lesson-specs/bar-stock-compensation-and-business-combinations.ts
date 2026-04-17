@@ -12,7 +12,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Stock Compensation and Business Combinations",
 	section: "bar",
-	blueprintRef: "BAR/II/F/0",
+	primaryRef: "BAR/II/F/0",
+	secondaryRefs: [],
 
 	inScope: [
 		"ASC 718 Stock Compensation accounting framework: share-based payment awards (stock options, restricted stock, RSUs, ESPPs, stock appreciation rights) are recognized as compensation expense over the requisite service period, measured at grant-date fair value for equity-classified awards.",

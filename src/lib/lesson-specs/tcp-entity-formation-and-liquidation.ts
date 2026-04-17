@@ -71,7 +71,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Entity Formation and Liquidation",
 	section: "tcp",
-	blueprintRef: "TCP/II/A/2",
+	primaryRef: "TCP/II/A/2",
+	secondaryRefs: [],
 
 	inScope: [
 		"§351 tax-free corporate formation: the general rule that no gain or loss is recognized on the transfer of property to a corporation by one or more persons solely in exchange for stock if, immediately after the exchange, such persons are in 'control' of the corporation. Control means ownership of at least 80% of the total combined voting power of all classes of voting stock and at least 80% of the total number of shares of all other classes of stock (§368(c)).",

@@ -7,7 +7,7 @@
 //   3. Stub count (files with STUB banner, legitimately unregistered)
 //   4. Duplicate topic strings across specs
 //   5. Registered spec `topic` strings that don't exist in the DB
-//   6. Registered spec `blueprintRef` anchors that don't resolve in blueprint.ts
+//   6. Registered spec `primaryRef` anchors that don't resolve in blueprint.ts
 //   7. Shared-base (_isc-soc-base.ts) consumers and correctness
 //   8. Drift test assertion count reasonableness (~5 per spec)
 
@@ -46,7 +46,7 @@ const baseModules = allFiles.filter((f) => f.startsWith("_"));
 const specFiles = allFiles.filter((f) => !IGNORE.has(f) && !f.startsWith("_"));
 
 const stubs: string[] = [];
-const authored: Array<{ file: string; topic: string | null; blueprintRef: string | null }> = [];
+const authored: Array<{ file: string; topic: string | null; primaryRef: string | null }> = [];
 
 for (const file of specFiles) {
 	const content = readFileSync(join(SPECS_DIR, file), "utf-8");
@@ -56,11 +56,11 @@ for (const file of specFiles) {
 		continue;
 	}
 	const topicMatch = content.match(/topic:\s*"([^"]+)"/);
-	const brefMatch = content.match(/blueprintRef:\s*"([^"]+)"/);
+	const brefMatch = content.match(/primaryRef:\s*"([^"]+)"/);
 	authored.push({
 		file,
 		topic: topicMatch?.[1] ?? null,
-		blueprintRef: brefMatch?.[1] ?? null,
+		primaryRef: brefMatch?.[1] ?? null,
 	});
 }
 
@@ -135,12 +135,12 @@ if (missing.length === 0) {
 }
 
 // ---------------------------------------------------------------------------
-// Check 5: blueprintRef anchors resolve
+// Check 5: primaryRef anchors resolve
 // ---------------------------------------------------------------------------
 
 const badAnchors: Array<{ topic: string; ref: string }> = [];
 for (const spec of Object.values(SPECS)) {
-	const ref = (spec as { blueprintRef?: string }).blueprintRef;
+	const ref = (spec as { primaryRef?: string }).primaryRef;
 	if (!ref) {
 		badAnchors.push({ topic: spec.topic, ref: "(missing)" });
 		continue;
@@ -150,7 +150,7 @@ for (const spec of Object.values(SPECS)) {
 	}
 }
 if (badAnchors.length === 0) {
-	ok("blueprint-ref-resolve", `All ${registeredCount} blueprintRef anchors resolve.`);
+	ok("blueprint-ref-resolve", `All ${registeredCount} primaryRef anchors resolve.`);
 } else {
 	fail("blueprint-ref-resolve", `${badAnchors.length} anchor(s) do not resolve: ${badAnchors.map((b) => `${b.topic} → ${b.ref}`).join("; ")}`);
 }

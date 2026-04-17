@@ -30,7 +30,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Entity Formation and Restructuring",
 	section: "tcp",
-	blueprintRef: "TCP/II/A/2",
+	primaryRef: "TCP/II/A/2",
+	secondaryRefs: [],
 
 	inScope: [
 		"§368 tax-free corporate reorganizations — general framework: a 'reorganization' is a specific statutorily-defined transaction allowing continuation of corporate form without immediate tax recognition for target shareholders, the target corporation, or the acquiring corporation. The seven reorganization types are A (statutory merger), B (stock-for-stock), C (stock-for-assets), D (divisive or acquisitive), E (recapitalization), F (mere change in identity or form), and G (bankruptcy).",

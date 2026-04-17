@@ -59,7 +59,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Individual Taxation: Deductions",
 	section: "reg",
-	blueprintRef: "REG/IV/C",
+	primaryRef: "REG/IV/C",
+	secondaryRefs: [],
 
 	inScope: [
 		"The individual tax return structure from AGI to taxable income: gross income − above-the-line adjustments (for AGI) = adjusted gross income − standard or itemized deductions = taxable income before the QBI deduction − §199A QBI deduction = taxable income.",

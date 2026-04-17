@@ -8,7 +8,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Quality Management",
 	section: "aud",
-	blueprintRef: "AUD/I/G",
+	primaryRef: "AUD/I/G",
+	secondaryRefs: [],
 
 	inScope: [
 		"The AICPA quality management framework effective for systems of quality management designed and implemented by December 15, 2025: Statement on Quality Management Standards (SQMS) No. 1 'A Firm's System of Quality Management,' SQMS No. 2 'Engagement Quality Reviews,' and AU-C 220 'Quality Management for an Engagement Conducted in Accordance With Generally Accepted Auditing Standards.' This framework replaced the older QC Section 10 quality control standards.",

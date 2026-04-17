@@ -25,7 +25,7 @@ import type { LessonSpec } from "./types";
 //                 basis of partnership assets due to a transfer of a
 //                 partnership interest" — the Sec 743(b) adjustment)
 //
-// The spec anchors blueprintRef to group-level TCP/II/C because the
+// The spec anchors primaryRef to group-level TCP/II/C because the
 // partnership material is the dominant content (outside/inside basis
 // distinction, 754 election mechanics, 743(b) / 734(b) adjustments, 704(c)
 // built-in gain allocation, recourse/nonrecourse liability allocation).
@@ -77,7 +77,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Advanced Basis Calculations",
 	section: "tcp",
-	blueprintRef: "TCP/II/C",
+	primaryRef: "TCP/II/C",
+	secondaryRefs: [],
 
 	inScope: [
 		"S corporation shareholder stock basis adjustment ordering rules: (1) separately stated and nonseparately computed income items increase basis; (2) tax-exempt income increases basis; (3) nondeductible non-capital expenses decrease basis; (4) distributions decrease basis; (5) separately stated and nonseparately computed loss items decrease basis last. Basis cannot go below zero; the ordering matters because income increases basis before distributions reduce it, which can prevent distributions from being taxable.",

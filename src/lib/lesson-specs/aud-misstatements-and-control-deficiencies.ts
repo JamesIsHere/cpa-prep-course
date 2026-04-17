@@ -8,7 +8,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Misstatements and Control Deficiencies",
 	section: "aud",
-	blueprintRef: "AUD/IV/B",
+	primaryRef: "AUD/IV/B",
+	secondaryRefs: [],
 
 	inScope: [
 		"AU-C 450 concept of a misstatement: a difference between the reported amount, classification, presentation, or disclosure of a financial statement item and the amount, classification, presentation, or disclosure required for that item to be in accordance with the applicable financial reporting framework. Misstatements can arise from error or fraud.",

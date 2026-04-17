@@ -48,25 +48,30 @@ export interface LessonSpec {
 	section: "aud" | "far" | "reg" | "bar" | "isc" | "tcp";
 
 	/**
-	 * Path into `alignment/aicpa-blueprint-tasks.json`. Two forms supported:
-	 *   - Topic-level (4-part): `<SECTION>/<AREA>/<GROUP>/<TOPIC_NUMBER>` (e.g. "BAR/I/B/1") —
-	 *     anchors the spec to a single AICPA topic. Use this when a Slayer tagging string
-	 *     maps 1:1 to an AICPA topic.
-	 *   - Group-level (3-part): `<SECTION>/<AREA>/<GROUP>` (e.g. "REG/V/C") — anchors the
-	 *     spec to an entire AICPA group. Use this when a Slayer tagging string covers
-	 *     multiple AICPA topics in the same group (e.g., REG "S Corporations" spans
-	 *     eligibility, ordinary income, and basis as separate AICPA topics).
+	 * Primary AICPA anchor — the core AICPA group or topic this lesson-spec
+	 * teaches. Supports 3-part (group) or 4-part (topic) refs into
+	 * `alignment/aicpa-blueprint-tasks.json`.
 	 *
-	 * IMPORTANT: this anchors the spec to the AICPA canonical structure, NOT to
-	 * Slayer's `blueprint.ts` group structure. The two diverge — Slayer reorganizes
-	 * some AICPA groups into different teaching units. The spec is the bridge:
-	 * `topic` (Slayer tagging vocabulary) and `blueprintRef` (AICPA structure) are
-	 * validated independently against their respective sources of truth.
+	 * Examples:
+	 *   - "REG/V/C" (group-level) — lesson covers all S corporation topics
+	 *   - "BAR/I/B/1" (topic-level) — lesson covers one specific topic
 	 *
-	 * The blueprint task text and skill levels for this topic/group are pulled at
-	 * runtime from the JSON; they are NOT duplicated in the spec.
+	 * This anchors the spec to the AICPA canonical structure, NOT to Slayer's
+	 * `blueprint.ts` group structure. The two may diverge — Slayer reorganizes
+	 * some AICPA groups into different teaching units.
 	 */
-	blueprintRef: string;
+	primaryRef: string;
+
+	/**
+	 * Additional AICPA nodes this lesson-spec touches beyond the primary.
+	 * Used when a Slayer lesson pulls in material from multiple AICPA groups
+	 * (e.g., "Audit Evidence" primarily covers AUD/III/B but also touches
+	 * AUD/III/D/1, AUD/III/D/2, AUD/III/D/3, AUD/III/E).
+	 *
+	 * Accepts 3-part, 4-part, or 5-part refs. Empty array if the lesson-spec
+	 * only covers its primary ref.
+	 */
+	secondaryRefs: string[];
 
 	/**
 	 * Techniques, concepts, and rules that ARE testable at CPA-exam depth for this topic.

@@ -75,7 +75,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Entity Choice and Planning",
 	section: "tcp",
-	blueprintRef: "TCP/III/A",
+	primaryRef: "TCP/III/A",
+	secondaryRefs: [],
 
 	inScope: [
 		"The cross-entity comparison framework for federal income tax purposes: C corporation (entity-level tax at flat 21% plus shareholder-level tax on qualified dividends), S corporation (pass-through to shareholders with preservation of character, no entity-level tax except §1374 built-in gains and §1375 passive investment income tax at concept level), partnership / multi-member LLC (pass-through with flexible allocations subject to §704(b) substantial economic effect at concept level), single-member LLC (disregarded entity for federal tax, reported on the owner's return), and sole proprietorship (Schedule C on the owner's Form 1040).",

@@ -9,7 +9,7 @@ import type { LessonSpec } from "./types";
 // Slayer's topic combines two AICPA topics — BAR/I/B/4 "Risk management" and
 // BAR/I/B/5 "Economic and market influences on business" — into one teaching
 // unit. The spec anchors to BAR/I/B/4 as the primary ref because the resolver
-// currently supports a single blueprintRef per spec; the BAR/I/B/5 content is
+// currently supports a single primaryRef per spec; the BAR/I/B/5 content is
 // documented in notes and the inScope list covers both AICPA topics explicitly.
 //
 // 13 AICPA representative tasks combined:
@@ -37,7 +37,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Risk Management and Economics",
 	section: "bar",
-	blueprintRef: "BAR/I/B/4",
+	primaryRef: "BAR/I/B/4",
+	secondaryRefs: [],
 
 	inScope: [
 		"COSO ERM Framework — purpose, objectives, five components (Governance & Culture, Strategy & Objective-Setting, Performance, Review & Revision, Information/Communication/Reporting), and relationship to internal control",
@@ -129,5 +130,5 @@ export const spec: LessonSpec = {
 	],
 
 	notes:
-		"Slayer's 'Risk Management and Economics' topic spans two AICPA topics — BAR/I/B/4 Risk management (7 tasks) and BAR/I/B/5 Economic and market influences (6 tasks) — combined into a single Slayer teaching unit. The spec's blueprintRef anchors to BAR/I/B/4 because the resolver currently supports one blueprintRef per spec. When authoring new questions or auditing drift, treat BOTH AICPA topics' representative task lists as authoritative. This spec closes out the three-spec coverage of Slayer's bar.1.B group alongside Capital Structure and Valuation (BAR/I/B/2) and Financial Valuation Methods (BAR/I/B/3). The banned-terms list intentionally overlaps with the Capital Structure and Valuation spec on KMV / mean-variance optimization — those drift surfaces are adjacent to both topics. Drift risk for this topic centers on two failure modes: (1) testing VaR / expected shortfall / stress testing at a quantitative depth that belongs in CFA/FRM curricula, and (2) drifting into formal macroeconomics (Phillips curve, DSGE, IS-LM) on the economics side instead of the concept-level market-influence analysis the AICPA actually tests. The Slayer bank for this topic also frequently absorbs questions that conceptually belong in other topics (e.g., derivatives detail belongs in BAR Derivatives and Hedging) — a cross-topic tagging audit would surface those.",
+		"Slayer's 'Risk Management and Economics' topic spans two AICPA topics — BAR/I/B/4 Risk management (7 tasks) and BAR/I/B/5 Economic and market influences (6 tasks) — combined into a single Slayer teaching unit. The spec's primaryRef anchors to BAR/I/B/4 because the resolver currently supports one primaryRef per spec. When authoring new questions or auditing drift, treat BOTH AICPA topics' representative task lists as authoritative. This spec closes out the three-spec coverage of Slayer's bar.1.B group alongside Capital Structure and Valuation (BAR/I/B/2) and Financial Valuation Methods (BAR/I/B/3). The banned-terms list intentionally overlaps with the Capital Structure and Valuation spec on KMV / mean-variance optimization — those drift surfaces are adjacent to both topics. Drift risk for this topic centers on two failure modes: (1) testing VaR / expected shortfall / stress testing at a quantitative depth that belongs in CFA/FRM curricula, and (2) drifting into formal macroeconomics (Phillips curve, DSGE, IS-LM) on the economics side instead of the concept-level market-influence analysis the AICPA actually tests. The Slayer bank for this topic also frequently absorbs questions that conceptually belong in other topics (e.g., derivatives detail belongs in BAR Derivatives and Hedging) — a cross-topic tagging audit would surface those.",
 };

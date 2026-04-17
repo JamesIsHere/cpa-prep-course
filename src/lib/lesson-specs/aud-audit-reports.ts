@@ -7,7 +7,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Audit Reports",
 	section: "aud",
-	blueprintRef: "AUD/IV/A",
+	primaryRef: "AUD/IV/A",
+	secondaryRefs: [],
 
 	inScope: [
 		"The standard unmodified (clean) auditor's opinion under AU-C 700: the basic opinion expressing that the financial statements are presented fairly, in all material respects, in accordance with the applicable financial reporting framework. The standard report includes specific sections — opinion, basis for opinion, responsibilities of management for the financial statements, auditor's responsibilities for the audit, and other reporting responsibilities if applicable.",

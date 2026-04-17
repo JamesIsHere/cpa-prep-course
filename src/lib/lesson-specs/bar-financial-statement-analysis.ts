@@ -38,7 +38,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Financial Statement Analysis",
 	section: "bar",
-	blueprintRef: "BAR/I/A/1",
+	primaryRef: "BAR/I/A/1",
+	secondaryRefs: [],
 
 	inScope: [
 		"Liquidity ratios: current ratio (current assets / current liabilities), quick ratio / acid-test ratio (cash + marketable securities + net receivables / current liabilities), cash ratio (cash + marketable securities / current liabilities); their interpretation as measures of short-term ability to meet obligations",

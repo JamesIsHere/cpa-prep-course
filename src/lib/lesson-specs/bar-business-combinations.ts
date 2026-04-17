@@ -39,7 +39,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Business Combinations",
 	section: "bar",
-	blueprintRef: "BAR/II/F/0",
+	primaryRef: "BAR/II/F/0",
+	secondaryRefs: [],
 
 	inScope: [
 		"The acquisition method under ASC 805: identify the acquirer, determine the acquisition date, recognize and measure the identifiable assets acquired and liabilities assumed at their acquisition-date fair values, recognize and measure goodwill (or a bargain purchase gain) as the residual",

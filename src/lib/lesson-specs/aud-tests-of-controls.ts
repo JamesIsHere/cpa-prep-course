@@ -9,7 +9,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Tests of Controls",
 	section: "aud",
-	blueprintRef: "AUD/III/D/1",
+	primaryRef: "AUD/III/D/1",
+	secondaryRefs: [],
 
 	inScope: [
 		"The purpose of tests of controls: obtaining audit evidence about the operating effectiveness of controls — whether controls operated as designed throughout the period of intended reliance — to support the auditor's planned level of control risk. Without evidence of operating effectiveness, the auditor cannot rely on controls and must use a fully substantive approach.",

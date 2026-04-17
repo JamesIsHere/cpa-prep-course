@@ -60,7 +60,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Materiality",
 	section: "aud",
-	blueprintRef: "AUD/II/D",
+	primaryRef: "AUD/II/D",
+	secondaryRefs: [],
 
 	inScope: [
 		"The AU-C 320 concept of materiality: information is material if omitting, misstating, or obscuring it could reasonably be expected to influence the economic decisions of users taken on the basis of the financial statements. Materiality involves both quantitative and qualitative considerations and is determined by the auditor as a matter of professional judgment.",

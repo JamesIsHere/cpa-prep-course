@@ -225,7 +225,7 @@ async function main() {
 	const lines: string[] = [];
 	lines.push(`# Topic audit — ${topic} (${sectionCode.toUpperCase()})`);
 	lines.push("");
-	lines.push(`Spec anchor: \`${spec.blueprintRef}\``);
+	lines.push(`Spec anchor: \`${spec.primaryRef}\``);
 	lines.push(`Spec file: \`src/lib/topic-specs/${sectionCode.toLowerCase()}-${slugify(topic)}.ts\``);
 	lines.push(`Terms source: \`${source}\` (${terms.length} terms)`);
 	lines.push("");

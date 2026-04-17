@@ -11,7 +11,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Estate and Gift Tax",
 	section: "reg",
-	blueprintRef: "REG/V/E",
+	primaryRef: "REG/V/E",
+	secondaryRefs: [],
 
 	inScope: [
 		"The federal estate and gift tax framework as an integrated transfer tax system under Chapter 11 (estate tax) and Chapter 12 (gift tax) of the IRC. Both chapters share the unified credit (applicable credit amount) and the progressive transfer tax rate schedule up to 40%.",

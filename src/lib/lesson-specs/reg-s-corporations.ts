@@ -30,12 +30,13 @@ import type { LessonSpec } from "./types";
 // "S election requirements and termination," "Shareholder basis and distributions," and
 // "Built-in gains and passive income." The third sub-topic is out of scope per the
 // 2026 AICPA blueprint. Eventually blueprint.ts should be revised; for now the spec
-// anchors `topic` to the Slayer tagging string and `blueprintRef` to the AICPA path.
+// anchors `topic` to the Slayer tagging string and `primaryRef` to the AICPA path.
 
 export const spec: LessonSpec = {
 	topic: "S Corporations",
 	section: "reg",
-	blueprintRef: "REG/V/C",
+	primaryRef: "REG/V/C",
+	secondaryRefs: [],
 
 	inScope: [
 		"S corporation eligibility requirements: domestic corporation, allowable shareholder types (individuals, certain trusts and estates, certain tax-exempt organizations; NOT partnerships, NOT C corporations, NOT most foreign trusts), no more than 100 shareholders, only one class of stock outstanding, and not an ineligible corporation type",

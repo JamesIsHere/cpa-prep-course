@@ -11,14 +11,14 @@
 // Resolution strategy:
 //   1. For each target topic, walk blueprint.ts to find the (section, area,
 //      group) that contains it in a questionTopics[] array.
-//   2. Emit a 3-part (group-level) blueprintRef of the form
+//   2. Emit a 3-part (group-level) primaryRef of the form
 //      `<SECTION>/<AREA_ROMAN>/<GROUP_LETTER>`. This is the safest default
 //      because Slayer and AICPA diverge at the group level (blueprint.ts
 //      reorganizes some AICPA groups into Slayer teaching groups). A group-
 //      level ref resolves against the resolver's 3-part support and lets
 //      the spec author narrow to a topic-level ref later if wanted.
-//   3. Validate the blueprintRef against the AICPA JSON via
-//      resolveBlueprintRef. If it doesn't resolve, emit with `blueprintRef: "TODO"`
+//   3. Validate the primaryRef against the AICPA JSON via
+//      resolveBlueprintRef. If it doesn't resolve, emit with `primaryRef: "TODO"`
 //      and a comment explaining what the scaffolder couldn't match — the author
 //      has to hand-resolve these edge cases (typically Slayer-only groups that
 //      have no AICPA counterpart, or cross-section drift).
@@ -50,8 +50,8 @@ interface ResolvedTopic {
 	areaRoman: string;
 	groupLetter: string;
 	groupName: string;
-	blueprintRefCandidate: string;
-	blueprintRefResolves: boolean;
+	primaryRefCandidate: string;
+	primaryRefResolves: boolean;
 	lessonSlugs: string[];
 }
 
@@ -85,8 +85,8 @@ function resolveTopicInBlueprint(topic: string): ResolvedTopic | null {
 					areaRoman,
 					groupLetter: group.letter,
 					groupName: group.name,
-					blueprintRefCandidate: ref,
-					blueprintRefResolves: resolved !== null,
+					primaryRefCandidate: ref,
+					primaryRefResolves: resolved !== null,
 					lessonSlugs: group.lessonSlugs ?? [],
 				};
 			}
@@ -109,12 +109,12 @@ function collectAllQuestionTopics(): string[] {
 
 function generateStub(r: ResolvedTopic): string {
 	const fileSlug = `${r.section}-${slugify(r.topic)}`;
-	const refField = r.blueprintRefResolves
-		? JSON.stringify(r.blueprintRefCandidate)
+	const refField = r.primaryRefResolves
+		? JSON.stringify(r.primaryRefCandidate)
 		: `"TODO"`;
-	const refNote = r.blueprintRefResolves
-		? `// Anchored to AICPA group ${r.blueprintRefCandidate}. Refine to a 4-part\n// topic-level ref (${r.blueprintRefCandidate}/<N>) if this Slayer topic maps 1:1 to a\n// single AICPA representative-task topic.`
-		: `// blueprintRef="TODO" — the scaffolder could not resolve ${r.blueprintRefCandidate}\n// in alignment/aicpa-blueprint-tasks.json. This usually means Slayer's\n// blueprint.ts uses a group letter that doesn't exist in the AICPA JSON at\n// that area. Hand-resolve by reading the AICPA 2026 Blueprint PDF pages for\n// ${r.sectionUpper} and picking the correct path.`;
+	const refNote = r.primaryRefResolves
+		? `// Anchored to AICPA group ${r.primaryRefCandidate}. Refine to a 4-part\n// topic-level ref (${r.primaryRefCandidate}/<N>) if this Slayer topic maps 1:1 to a\n// single AICPA representative-task topic.`
+		: `// primaryRef="TODO" — the scaffolder could not resolve ${r.primaryRefCandidate}\n// in alignment/aicpa-blueprint-tasks.json. This usually means Slayer's\n// blueprint.ts uses a group letter that doesn't exist in the AICPA JSON at\n// that area. Hand-resolve by reading the AICPA 2026 Blueprint PDF pages for\n// ${r.sectionUpper} and picking the correct path.`;
 
 	const slayerLessons = r.lessonSlugs.length
 		? `\n// Slayer lesson(s): ${r.lessonSlugs.join(", ")}`
@@ -147,7 +147,7 @@ function generateStub(r: ResolvedTopic): string {
 export const spec: LessonSpec = {
 \ttopic: ${JSON.stringify(r.topic)},
 \tsection: "${r.section}",
-\tblueprintRef: ${refField},
+\tprimaryRef: ${refField},
 
 \tinScope: [
 \t\t// TODO: list concepts and tasks that ARE testable for this topic at CPA depth.
@@ -197,11 +197,11 @@ function writeStub(r: ResolvedTopic, dryRun: boolean): string {
 	}
 	const content = generateStub(r);
 	if (dryRun) {
-		console.error(`  DRY  ${fileSlug}.ts (${content.length} bytes${r.blueprintRefResolves ? "" : ", blueprintRef=TODO"})`);
+		console.error(`  DRY  ${fileSlug}.ts (${content.length} bytes${r.primaryRefResolves ? "" : ", primaryRef=TODO"})`);
 	} else {
 		mkdirSync(dirname(filePath), { recursive: true });
 		writeFileSync(filePath, content, "utf-8");
-		console.error(`  WROTE ${fileSlug}.ts${r.blueprintRefResolves ? "" : " (blueprintRef=TODO)"}`);
+		console.error(`  WROTE ${fileSlug}.ts${r.primaryRefResolves ? "" : " (primaryRef=TODO)"}`);
 	}
 	return filePath;
 }
@@ -238,7 +238,7 @@ function main() {
 			continue;
 		}
 		writeStub(r, dryRun);
-		if (!r.blueprintRefResolves) unresolved++;
+		if (!r.primaryRefResolves) unresolved++;
 		wrote++;
 		const fileSlug = `${r.section}-${slugify(r.topic)}`;
 		registerLines.push(
@@ -248,7 +248,7 @@ function main() {
 
 	console.error("");
 	console.error(
-		`Summary: ${wrote} stub${wrote === 1 ? "" : "s"} ${dryRun ? "would be written" : "written"}, ${skipped} already-specced skipped, ${unresolved} with blueprintRef=TODO`,
+		`Summary: ${wrote} stub${wrote === 1 ? "" : "s"} ${dryRun ? "would be written" : "written"}, ${skipped} already-specced skipped, ${unresolved} with primaryRef=TODO`,
 	);
 
 	if (!dryRun && registerLines.length > 0) {

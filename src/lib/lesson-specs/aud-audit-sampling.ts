@@ -51,7 +51,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Audit Sampling",
 	section: "aud",
-	blueprintRef: "AUD/III/C",
+	primaryRef: "AUD/III/C",
+	secondaryRefs: [],
 
 	inScope: [
 		"The distinction between audit sampling and non-sampling audit procedures: sampling applies when the auditor examines less than 100% of a population and intends to draw a conclusion about the entire population. Procedures that do not involve sampling include inquiry, observation, analytical procedures at the substantive level, and complete examination (e.g., testing 100% of items over a threshold).",

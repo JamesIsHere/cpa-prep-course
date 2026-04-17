@@ -20,7 +20,8 @@ import {
 export const spec: LessonSpec = {
 	topic: "SOC Reporting",
 	section: "isc",
-	blueprintRef: "ISC/III/B",
+	primaryRef: "ISC/III/B",
+	secondaryRefs: [],
 	inScope: SOC_IN_SCOPE,
 	outOfScope: SOC_OUT_OF_SCOPE,
 	keyStandards: SOC_KEY_STANDARDS,

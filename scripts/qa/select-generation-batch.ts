@@ -60,7 +60,7 @@ interface TopicPlan {
 // context, not generation constraints.
 interface LessonSpecForBatch {
 	topic: string;
-	blueprintRef: string;
+	primaryRef: string;
 	inScope: string[];
 	outOfScope: string[];
 	commonMisconceptions: string[];
@@ -183,7 +183,7 @@ async function main() {
 	const lessonSpec: LessonSpecForBatch | null = fullSpec
 		? {
 				topic: fullSpec.topic,
-				blueprintRef: fullSpec.blueprintRef,
+				primaryRef: fullSpec.primaryRef,
 				inScope: fullSpec.inScope,
 				outOfScope: fullSpec.outOfScope,
 				commonMisconceptions: fullSpec.commonMisconceptions,
@@ -213,7 +213,7 @@ async function main() {
 	console.error(`Existing stems for dedup: ${existingStems.length}`);
 	console.error(
 		lessonSpec
-			? `Topic spec: ✓ (${fullSpec!.blueprintRef}, ${lessonSpec.inScope.length} inScope, ${lessonSpec.outOfScope.length} outOfScope)`
+			? `Topic spec: ✓ (${fullSpec!.primaryRef}, ${lessonSpec.inScope.length} inScope, ${lessonSpec.outOfScope.length} outOfScope)`
 			: `Topic spec: — (no spec authored for "${picked.topic}"; generator runs without scope constraints)`,
 	);
 }

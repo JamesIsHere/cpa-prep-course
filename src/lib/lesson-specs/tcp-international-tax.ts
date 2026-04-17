@@ -20,7 +20,7 @@ import type { LessonSpec } from "./types";
 // group with sub-topics including "Subpart F and GILTI" and "Foreign tax credit
 // mechanics" — both of which are out of scope per AICPA. The Slayer blueprint structure
 // is wrong on the merits and should eventually be reorganized; for now the spec anchors
-// `topic` to the Slayer tagging string ("International Tax") and `blueprintRef` to the
+// `topic` to the Slayer tagging string ("International Tax") and `primaryRef` to the
 // AICPA path. The blueprint.ts reorganization is a separate ticket — flagged in notes.
 //
 // JSON FIX: TCP/II/A and TCP/II/B were missing entirely from
@@ -30,7 +30,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "International Tax",
 	section: "tcp",
-	blueprintRef: "TCP/II/A/4",
+	primaryRef: "TCP/II/A/4",
+	secondaryRefs: [],
 
 	inScope: [
 		"U.S. source vs. foreign source income classification rules at the conceptual level: where is the income earned and which sourcing rule applies (interest, dividends, personal services, rents and royalties, sale of inventory, sale of real property)",

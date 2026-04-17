@@ -21,7 +21,8 @@ import {
 export const spec: LessonSpec = {
 	topic: "SOC Testing Controls",
 	section: "isc",
-	blueprintRef: "ISC/III/A",
+	primaryRef: "ISC/III/A",
+	secondaryRefs: [],
 	inScope: SOC_IN_SCOPE,
 	outOfScope: SOC_OUT_OF_SCOPE,
 	keyStandards: SOC_KEY_STANDARDS,

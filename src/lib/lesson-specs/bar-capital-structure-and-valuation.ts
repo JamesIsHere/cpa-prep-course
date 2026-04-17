@@ -30,7 +30,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Capital Structure and Valuation",
 	section: "bar",
-	blueprintRef: "BAR/I/B/2",
+	primaryRef: "BAR/I/B/2",
+	secondaryRefs: [],
 
 	inScope: [
 		"Cost of debt: after-tax cost of debt = Kd × (1 - Tc), using yield-to-maturity on outstanding bonds or coupon rate as a proxy",

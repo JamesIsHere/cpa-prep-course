@@ -57,7 +57,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Entity Tax Compliance: NOLs and Consolidated Returns",
 	section: "tcp",
-	blueprintRef: "TCP/II/A/1",
+	primaryRef: "TCP/II/A/1",
+	secondaryRefs: [],
 
 	inScope: [
 		"Net operating loss (NOL) concept for C corporations: an NOL arises when deductions exceed gross income for a tax year. The NOL is carried forward (and historically back) to absorb taxable income in other years, matching the economic income that an entity earns over its cycle rather than artificially taxing a profitable year in isolation from loss years.",

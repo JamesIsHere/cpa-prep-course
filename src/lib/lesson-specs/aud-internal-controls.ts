@@ -8,7 +8,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Internal Controls",
 	section: "aud",
-	blueprintRef: "AUD/II/C",
+	primaryRef: "AUD/II/C",
+	secondaryRefs: [],
 
 	inScope: [
 		"The auditor's responsibility to obtain an understanding of internal control relevant to the audit, sufficient to identify and assess the risks of material misstatement (AU-C 315). The understanding is used to design further audit procedures responsive to those risks.",

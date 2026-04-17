@@ -50,7 +50,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Foreign Currency Transactions",
 	section: "bar",
-	blueprintRef: "BAR/II/G",
+	primaryRef: "BAR/II/G",
+	secondaryRefs: [],
 
 	inScope: [
 		"Transaction gains and losses on monetary transactions denominated in a foreign currency: a U.S. company that enters into a purchase or sale denominated in a foreign currency records the transaction at the spot rate on the transaction date. At each subsequent reporting date (through final settlement), the related monetary payable or receivable is remeasured at the current spot rate, and the resulting exchange gain or loss is recognized in earnings in the period of the rate change.",

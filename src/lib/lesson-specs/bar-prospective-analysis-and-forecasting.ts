@@ -13,7 +13,8 @@ export const spec: LessonSpec = {
 	// "Financial Statement Analysis"; the spec anchors to the AICPA structure, not
 	// blueprint.ts's reorganization. The blueprint task text + skill levels live in
 	// alignment/aicpa-blueprint-tasks.json under this path.
-	blueprintRef: "BAR/I/B/1",
+	primaryRef: "BAR/I/B/1",
+	secondaryRefs: [],
 
 	inScope: [
 		"High-low method for cost behavior estimation (separating fixed and variable components from two data points)",

@@ -8,7 +8,7 @@ import type { LessonSpec } from "./types";
 // reality that Slayer teaches formation → taxable income → distributions as
 // one integrated unit in lesson 11-c-corporations, even though AICPA splits
 // the foundational computation (REG) from the advanced planning material
-// (TCP). Because the REG side is the anchor, the blueprintRef uses the
+// (TCP). Because the REG side is the anchor, the primaryRef uses the
 // group-level REG/V/B reference; the spec's inScope list explicitly calls
 // out the TCP-cross-over topics so the resolver sees them as intended scope.
 //
@@ -38,7 +38,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "C Corporations",
 	section: "reg",
-	blueprintRef: "REG/V/B",
+	primaryRef: "REG/V/B",
+	secondaryRefs: [],
 
 	inScope: [
 		"Section 351 nonrecognition on formation: the three requirements (property transferred to the corporation, in exchange for stock, transferor(s) in control immediately after — 80% of voting power AND 80% of each class of nonvoting stock); services do not count as property toward the control test",
@@ -322,5 +323,5 @@ export const spec: LessonSpec = {
 	],
 
 	notes:
-		"Slayer's C Corporations topic integrates formation (Sec 351), taxable income, DRD, NOL/capital loss, and distributions through E&P into one unit in lesson 11-c-corporations. AICPA 2026 Blueprint splits the foundational computation side (REG/V/B 'C corporations' — taxable income, NOL, credits, state and local) from the advanced planning side (TCP/II/A — NOL/capital loss under ownership change, shareholder-corp transactions, consolidated returns, international tax). The spec anchors blueprintRef to REG/V/B because that is the foundational REG depth, but inScope deliberately includes the shareholder-corp transaction topics (formation, distributions, liquidations) that AICPA places in TCP/II/A/2. This matches how Slayer teaches the material and how the questions are tagged. The alternative — carving the formation/distribution questions into a separate TCP topic — would fragment the bank without pedagogical benefit. Drift risks per the rollout handoff: Sec 338(h)(10), Sec 355 spin-off mechanics, Sec 1202 QSBS, consolidated-return elections beyond basic filing. All are addressed in outOfScope and bannedTerms.",
+		"Slayer's C Corporations topic integrates formation (Sec 351), taxable income, DRD, NOL/capital loss, and distributions through E&P into one unit in lesson 11-c-corporations. AICPA 2026 Blueprint splits the foundational computation side (REG/V/B 'C corporations' — taxable income, NOL, credits, state and local) from the advanced planning side (TCP/II/A — NOL/capital loss under ownership change, shareholder-corp transactions, consolidated returns, international tax). The spec anchors primaryRef to REG/V/B because that is the foundational REG depth, but inScope deliberately includes the shareholder-corp transaction topics (formation, distributions, liquidations) that AICPA places in TCP/II/A/2. This matches how Slayer teaches the material and how the questions are tagged. The alternative — carving the formation/distribution questions into a separate TCP topic — would fragment the bank without pedagogical benefit. Drift risks per the rollout handoff: Sec 338(h)(10), Sec 355 spin-off mechanics, Sec 1202 QSBS, consolidated-return elections beyond basic filing. All are addressed in outOfScope and bannedTerms.",
 };

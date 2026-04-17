@@ -33,7 +33,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Leases",
 	section: "far",
-	blueprintRef: "FAR/III/F/0",
+	primaryRef: "FAR/III/F/0",
+	secondaryRefs: [],
 
 	inScope: [
 		"Lessee classification under ASC 842 using the 5 criteria: (1) ownership transfers to lessee by end of term, (2) lessee has a purchase option that is reasonably certain to be exercised, (3) lease term is a major part (typically 75%+) of the remaining economic life, (4) present value of lease payments plus residual value guaranteed is substantially all (typically 90%+) of the asset's fair value, (5) asset is so specialized that only the lessee can use it without major modifications — meeting any one test triggers finance lease classification",

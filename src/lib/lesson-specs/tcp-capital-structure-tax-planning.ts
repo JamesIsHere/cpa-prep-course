@@ -59,7 +59,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Capital Structure Tax Planning",
 	section: "tcp",
-	blueprintRef: "TCP/III/B",
+	primaryRef: "TCP/III/B",
+	secondaryRefs: [],
 
 	inScope: [
 		"The federal tax distinction between debt and equity: interest payments on debt are generally deductible by the payor whereas dividend distributions on equity are not — this creates a fundamental tax incentive to structure financing as debt. Interest income to the holder is ordinary income taxed at full rates; dividend income to the holder may qualify for preferential qualified-dividend rates.",

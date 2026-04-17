@@ -43,13 +43,13 @@ describe("topic-specs: drift prevention", () => {
 			expect(blueprintTopics.has(spec.topic)).toBe(true);
 		});
 
-		it("blueprintRef resolves in alignment/aicpa-blueprint-tasks.json", () => {
-			const node = resolveBlueprintRef(spec.blueprintRef);
+		it("primaryRef resolves in alignment/aicpa-blueprint-tasks.json", () => {
+			const node = resolveBlueprintRef(spec.primaryRef);
 			expect(node).not.toBeNull();
 		});
 
-		it("section field matches blueprintRef section prefix (case-insensitive)", () => {
-			const refSection = spec.blueprintRef.split("/")[0]?.toLowerCase();
+		it("section field matches primaryRef section prefix (case-insensitive)", () => {
+			const refSection = spec.primaryRef.split("/")[0]?.toLowerCase();
 			expect(refSection).toBe(spec.section);
 		});
 
@@ -80,7 +80,7 @@ describe("topic-specs: drift prevention", () => {
 	});
 });
 
-describe("topic-specs: blueprintRef resolver basics", () => {
+describe("topic-specs: primaryRef resolver basics", () => {
 	it("resolves a known good ref (BAR/I/B/1)", () => {
 		const node = resolveBlueprintRef("BAR/I/B/1");
 		expect(node).not.toBeNull();

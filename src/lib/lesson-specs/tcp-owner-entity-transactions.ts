@@ -15,7 +15,7 @@ import type { LessonSpec } from "./types";
 // transacts with their own entity, the tax system applies special rules to
 // prevent avoidance (imputed interest, reasonable compensation scrutiny,
 // related-party loss disallowance, constructive dividends). The spec anchors
-// blueprintRef to TCP/IV/C because related-party transactions is the
+// primaryRef to TCP/IV/C because related-party transactions is the
 // thematic backbone of the topic as Slayer teaches it; the inScope list
 // deliberately pulls in the owner-transaction material from the other
 // groups. Deep mechanics in any of the contributing areas belong to their
@@ -46,7 +46,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Owner-Entity Transactions",
 	section: "tcp",
-	blueprintRef: "TCP/IV/C",
+	primaryRef: "TCP/IV/C",
+	secondaryRefs: [],
 
 	inScope: [
 		"Guaranteed payments to partners at the concept level: payments to a partner for services rendered or capital provided without regard to partnership income; treated as ordinary income to the receiving partner; deductible by the partnership in computing ordinary business income; subject to self-employment tax in the partner's hands; reported separately on Schedule K-1",

@@ -56,7 +56,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Audit Planning",
 	section: "aud",
-	blueprintRef: "AUD/II/A",
+	primaryRef: "AUD/II/A",
+	secondaryRefs: [],
 
 	inScope: [
 		"The AU-C 300 concept of audit planning as involving the establishment of an overall audit strategy and the development of a more detailed audit plan. Planning is not a discrete phase but a continual and iterative process throughout the engagement; initial planning is performed at the start of the engagement and refined as the auditor obtains additional information.",

@@ -11,7 +11,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Individual Taxation: Credits",
 	section: "reg",
-	blueprintRef: "REG/IV/D",
+	primaryRef: "REG/IV/D",
+	secondaryRefs: [],
 
 	inScope: [
 		"The individual tax return structure from tax before credits to tax after credits: tentative tax from tax tables or schedules, reduced by refundable and nonrefundable credits, equals tax due or refund. Credits are distinct from deductions — credits reduce tax dollar-for-dollar, whereas deductions reduce taxable income.",

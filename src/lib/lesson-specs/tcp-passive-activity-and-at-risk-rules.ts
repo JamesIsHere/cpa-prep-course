@@ -39,7 +39,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Passive Activity and At-Risk Rules",
 	section: "tcp",
-	blueprintRef: "TCP/I/B/0",
+	primaryRef: "TCP/I/B/0",
+	secondaryRefs: [],
 
 	inScope: [
 		"The two-basket loss limitation framework: a loss from a business activity is subjected to the at-risk limitation under Sec 465 first, and any loss that survives at-risk is then subjected to the passive activity loss (PAL) limitation under Sec 469; losses disallowed at either level are suspended and carried forward",

@@ -16,7 +16,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Derivatives and Hedging",
 	section: "bar",
-	blueprintRef: "BAR/II/H/0",
+	primaryRef: "BAR/II/H/0",
+	secondaryRefs: [],
 
 	inScope: [
 		"Definition of a derivative under ASC 815: underlying, notional amount, no or small initial net investment, net settlement",

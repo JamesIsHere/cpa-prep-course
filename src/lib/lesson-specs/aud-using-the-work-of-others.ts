@@ -45,7 +45,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Using the Work of Others",
 	section: "aud",
-	blueprintRef: "AUD/II/F",
+	primaryRef: "AUD/II/F",
+	secondaryRefs: [],
 
 	inScope: [
 		"AU-C 610 reliance on the internal audit function: the external auditor's evaluation of the internal audit function's objectivity (organizational status reporting directly to those charged with governance, absence of conflicting duties, rotation of staff), competence (training, certifications, experience, quality control of internal audit work), and application of a systematic and disciplined approach (adherence to professional standards such as IIA standards).",

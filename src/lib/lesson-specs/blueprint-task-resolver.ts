@@ -1,4 +1,4 @@
-// Helper for resolving a LessonSpec's `blueprintRef` (e.g. "BAR/I/B/1") into the
+// Helper for resolving a LessonSpec's `primaryRef` (e.g. "BAR/I/B/1") into the
 // corresponding node in `alignment/aicpa-blueprint-tasks.json`. The JSON is the canonical
 // source of AICPA representative tasks and skill levels for all 6 sections; specs avoid
 // duplicating it inline by referencing this resolver.
@@ -44,7 +44,7 @@ export interface ResolvedBlueprintNode {
 }
 
 /**
- * Resolve a blueprintRef to its node in the AICPA JSON.
+ * Resolve a primaryRef to its node in the AICPA JSON.
  *
  * Supports two forms:
  *   - Topic-level (4-part), e.g. "BAR/I/B/1" — anchors to a single AICPA topic.
@@ -81,7 +81,7 @@ export function resolveBlueprintRef(ref: string): ResolvedBlueprintNode | null {
 	return { section: sectionCode, area, group, topic, tasks: topic.tasks ?? [] };
 }
 
-/** Whether a blueprintRef is valid (resolves in the AICPA JSON). */
+/** Whether a primaryRef is valid (resolves in the AICPA JSON). */
 export function isValidBlueprintRef(ref: string): boolean {
 	return resolveBlueprintRef(ref) !== null;
 }
@@ -159,7 +159,7 @@ export function isValidRef(ref: string): boolean {
 	return false;
 }
 
-/** Get the AICPA-canonical name for a blueprintRef — topic name for 4-part, group name for 3-part. */
+/** Get the AICPA-canonical name for a primaryRef — topic name for 4-part, group name for 3-part. */
 export function getBlueprintTopicName(ref: string): string | null {
 	const node = resolveBlueprintRef(ref);
 	if (!node) return null;

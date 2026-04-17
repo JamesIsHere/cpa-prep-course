@@ -32,7 +32,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Audit Evidence",
 	section: "aud",
-	blueprintRef: "AUD/III/B",
+	primaryRef: "AUD/III/B",
+	secondaryRefs: [],
 
 	inScope: [
 		"Sufficient appropriate audit evidence concept: SUFFICIENT measures the QUANTITY of evidence (affected by assessed risk of material misstatement and by the quality of evidence — higher quality reduces the quantity required); APPROPRIATE measures QUALITY, which comprises relevance (evidence that relates to the specific assertion being tested) AND reliability",

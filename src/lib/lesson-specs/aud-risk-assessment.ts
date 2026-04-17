@@ -36,7 +36,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Risk Assessment",
 	section: "aud",
-	blueprintRef: "AUD/II/E/0",
+	primaryRef: "AUD/II/E/0",
+	secondaryRefs: [],
 
 	inScope: [
 		"The audit risk model: Audit Risk = Inherent Risk × Control Risk × Detection Risk; the relationships among components (higher IR and CR require lower DR, which means more persuasive procedures); the concept that the auditor can control DR through nature/timing/extent of substantive procedures but cannot control IR or CR",

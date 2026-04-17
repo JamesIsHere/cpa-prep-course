@@ -49,7 +49,8 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Partnerships",
 	section: "reg",
-	blueprintRef: "REG/V/D",
+	primaryRef: "REG/V/D",
+	secondaryRefs: [],
 
 	inScope: [
 		"Partnership formation under Section 721: nonrecognition of gain or loss when a partner contributes property to a partnership in exchange for a partnership interest; no control test requirement (unlike Sec 351 for C corporations); exception for investment partnerships (Sec 721(b) concept)",
