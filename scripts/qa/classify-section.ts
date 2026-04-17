@@ -311,6 +311,15 @@ async function main() {
 			const groupRef = refMatch[1].split("/").slice(0, 3).join("/");
 			topicToGroup[topicMatch[1]] = groupRef;
 		}
+		// Also read topicAliases if present
+		const aliasBlock = content.match(/topicAliases:\s*\[([\s\S]*?)\]/);
+		if (aliasBlock && refMatch) {
+			const groupRef = refMatch[1].split("/").slice(0, 3).join("/");
+			const aliases = [...aliasBlock[1].matchAll(/"([^"]+)"/g)].map((m) => m[1]);
+			for (const alias of aliases) {
+				topicToGroup[alias] = groupRef;
+			}
+		}
 	}
 	logStep(`Topic→group mapping: ${Object.keys(topicToGroup).length} topics mapped`);
 

@@ -4,6 +4,7 @@ import type { LessonSpec } from "./types";
 
 export const spec: LessonSpec = {
 	topic: "Property Transactions: Basis",
+	topicAliases: ["Like-Kind Exchanges"],
 	section: "reg",
 	primaryRef: "REG/III/A",
 	secondaryRefs: [],

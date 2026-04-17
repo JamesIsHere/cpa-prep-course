@@ -4,6 +4,7 @@ import type { LessonSpec } from "./types";
 
 export const spec: LessonSpec = {
 	topic: "Federal Tax Procedures",
+	topicAliases: ["Tax Procedures"],
 	section: "reg",
 	primaryRef: "REG/I/C",
 	secondaryRefs: [],

@@ -44,6 +44,9 @@ export interface LessonSpec {
 	/** Matches the `topic` column on the questions table verbatim. */
 	topic: string;
 
+	/** Additional DB topic values that should route to this lesson-spec's group. */
+	topicAliases?: string[];
+
 	/** Section code: aud / far / reg / bar / isc / tcp. */
 	section: "aud" | "far" | "reg" | "bar" | "isc" | "tcp";
 

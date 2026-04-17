@@ -4,6 +4,7 @@ import type { LessonSpec } from "./types";
 
 export const spec: LessonSpec = {
 	topic: "Individual Taxation: Filing/Credits",
+	topicAliases: ["Alternative Minimum Tax"],
 	section: "reg",
 	primaryRef: "REG/IV/E",
 	secondaryRefs: ["REG/IV/F"],

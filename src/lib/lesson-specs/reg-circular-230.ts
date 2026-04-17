@@ -4,6 +4,7 @@ import type { LessonSpec } from "./types";
 
 export const spec: LessonSpec = {
 	topic: "Circular 230",
+	topicAliases: ["Professional Ethics in Tax"],
 	section: "reg",
 	primaryRef: "REG/I/A",
 	secondaryRefs: ["REG/I/B"],
