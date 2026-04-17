@@ -14,12 +14,9 @@ const root = resolve(__dirname, "../..");
 
 // ── Config ──────────────────────────────────────────────────────────
 // Add new alignment CSVs here as they're created for other sections
-const alignmentFiles: { csv: string; sectionCode: string }[] = [
-	{
-		csv: "alignment/csv/aicpa-far-blueprint-mapping.csv",
-		sectionCode: "far",
-	},
-];
+// FAR CSV migrated to task-specs (Direction W, 2026-04-16). Archived to docs/archive/.
+// Add new alignment CSVs here if created for other sections (unlikely under Direction W).
+const alignmentFiles: { csv: string; sectionCode: string }[] = [];
 
 // ── Helpers ─────────────────────────────────────────────────────────
 
