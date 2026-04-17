@@ -14,8 +14,8 @@ import {
 	allTopicSpecs,
 	getTopicSpec,
 	specifiedTopics,
-} from "@/lib/topic-specs";
-import { resolveBlueprintRef } from "@/lib/topic-specs/blueprint-task-resolver";
+} from "@/lib/lesson-specs";
+import { resolveBlueprintRef } from "@/lib/lesson-specs/blueprint-task-resolver";
 
 // Build the union of all questionTopics across all blueprint groups, once.
 function allQuestionTopics(): Set<string> {

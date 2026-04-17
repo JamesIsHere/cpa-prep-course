@@ -33,7 +33,7 @@ import {
 	supabase,
 	type DbQuestion,
 } from "./db-client";
-import { allTopicSpecs, specifiedTopics } from "../../src/lib/topic-specs";
+import { allTopicSpecs, specifiedTopics } from "../../src/lib/lesson-specs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(__dirname, "../..");

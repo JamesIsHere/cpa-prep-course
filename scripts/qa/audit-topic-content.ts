@@ -35,7 +35,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 import { fetchAllQuestions, type DbQuestion } from "./db-client";
-import { getTopicSpec, type BannedTerm } from "../../src/lib/topic-specs";
+import { getTopicSpec, type BannedTerm } from "../../src/lib/lesson-specs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(__dirname, "../..");

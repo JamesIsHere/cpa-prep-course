@@ -5,7 +5,7 @@ import { readFileSync, writeFileSync, existsSync } from "fs";
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 import { questionCounts } from "../../src/lib/blueprint";
-import { getTopicSpec, type BannedTerm } from "../../src/lib/topic-specs";
+import { getTopicSpec, type BannedTerm } from "../../src/lib/lesson-specs";
 
 const validTopics = new Set(Object.keys(questionCounts));
 

@@ -18,7 +18,7 @@
 //   - `taskSpecsBySection(section)` → TaskSpec[] for a section
 
 import type { TaskSpec } from "./types";
-import { isValidTaskRef } from "../topic-specs/blueprint-task-resolver";
+import { isValidTaskRef } from "../lesson-specs/blueprint-task-resolver";
 
 // REG/V/C S corporations — 9 task-specs
 import { spec as regVC11 } from "./reg-v-c-1-1";

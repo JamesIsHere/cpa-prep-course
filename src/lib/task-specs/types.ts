@@ -18,7 +18,7 @@
 // Slayer lesson, use the explicit `slayerLessonSlug` field to document the
 // cross-system link — do not put blueprint.ts group letters in `aicpaRef`.
 
-import type { BannedTerm, Difficulty } from "../topic-specs/types";
+import type { BannedTerm, Difficulty } from "../lesson-specs/types";
 
 export type { BannedTerm, Difficulty };
 

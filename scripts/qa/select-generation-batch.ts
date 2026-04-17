@@ -7,7 +7,7 @@ import { fileURLToPath } from "url";
 import { fetchAllQuestions } from "./db-client";
 import { cpaBlueprint } from "../../src/lib/blueprint";
 import { getFrameworkItemsForGroup, type GroupFrameworkItems } from "../../src/lib/blueprint-utils";
-import { getTopicSpec, type TopicSpec } from "../../src/lib/topic-specs";
+import { getTopicSpec, type TopicSpec } from "../../src/lib/lesson-specs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const docsDir = resolve(__dirname, "../../docs");

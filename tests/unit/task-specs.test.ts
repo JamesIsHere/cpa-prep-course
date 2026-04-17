@@ -4,7 +4,7 @@ import {
 	validateAllAicpaRefs,
 	SKILL_TO_BLOOM,
 } from "../../src/lib/task-specs/index";
-import { resolveTaskRef } from "../../src/lib/topic-specs/blueprint-task-resolver";
+import { resolveTaskRef } from "../../src/lib/lesson-specs/blueprint-task-resolver";
 
 describe("task-specs registry", () => {
 	const specs = allTaskSpecs();

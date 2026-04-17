@@ -34,8 +34,8 @@ import { writeFileSync, existsSync, mkdirSync } from "fs";
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 import { cpaBlueprint } from "../../src/lib/blueprint";
-import { getTopicSpec } from "../../src/lib/topic-specs";
-import { resolveBlueprintRef } from "../../src/lib/topic-specs/blueprint-task-resolver";
+import { getTopicSpec } from "../../src/lib/lesson-specs";
+import { resolveBlueprintRef } from "../../src/lib/lesson-specs/blueprint-task-resolver";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(__dirname, "../..");
