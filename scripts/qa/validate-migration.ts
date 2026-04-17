@@ -5,7 +5,7 @@ import { readFileSync, writeFileSync, existsSync } from "fs";
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 import { questionCounts } from "../../src/lib/blueprint";
-import { getTopicSpec, type BannedTerm } from "../../src/lib/lesson-specs";
+import { getLessonSpec, type BannedTerm } from "../../src/lib/lesson-specs";
 
 const validTopics = new Set(Object.keys(questionCounts));
 
@@ -27,7 +27,7 @@ function getCompiledBannedTerms(topic: string): CompiledBannedTerm[] | null {
 	if (compiledBannedTermsCache.has(topic)) {
 		return compiledBannedTermsCache.get(topic)!;
 	}
-	const spec = getTopicSpec(topic);
+	const spec = getLessonSpec(topic);
 	if (!spec || !spec.bannedTerms || spec.bannedTerms.length === 0) {
 		compiledBannedTermsCache.set(topic, null);
 		return null;

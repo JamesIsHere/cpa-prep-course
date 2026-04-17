@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Twenty-fourth authored spec — seventh spec of Stage 3. Selected
 // from census v2 as rank #8: 64 questions, 8 flagged (13%) — all on
@@ -56,7 +56,7 @@ import type { TopicSpec } from "./types";
 // the computation); estate, gift, and trust deductions (separate
 // topics); corporate / partnership / S corp entity-level deductions.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Individual Taxation: Deductions",
 	section: "reg",
 	blueprintRef: "REG/IV/C",

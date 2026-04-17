@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Forty-first authored spec — twenty-fourth of Stage 3. Census v3
 // rank #14: 67 questions, 5 flagged (7.5%) on `Section 904` (5).
@@ -8,7 +8,7 @@ import type { TopicSpec } from "./types";
 // blueprint task explicitly lists the Foreign Tax Credit for
 // individuals.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Individual Taxation: Credits",
 	section: "reg",
 	blueprintRef: "REG/IV/D",

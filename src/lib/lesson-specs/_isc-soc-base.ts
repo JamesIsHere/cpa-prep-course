@@ -11,7 +11,7 @@ import type { BannedTerm } from "./types";
 //   - SOC Reporting and Trust Services Criteria
 //
 // Rather than author five near-duplicate specs, each topic-specific
-// file imports this base and spreads it into a TopicSpec object with
+// file imports this base and spreads it into a LessonSpec object with
 // its own topic string and slight scope-emphasis notes. The banned
 // terms are identical because the five topics draw from the same
 // drift surfaces (Using the Work of Others territory, PCAOB AS 2201

@@ -40,7 +40,7 @@ export const spec: TaskSpec = {
 	targetCount: 8,
 	difficultyMix: { easy: 20, medium: 60, hard: 20 },
 
-	inheritedFromTopicSpec: ["reg-s-corporations"],
+	lessonSpec: "reg-s-corporations",
 
 	notes:
 		"L2 task — 'Calculate' (Application). AAA mechanics get easily confused with stock basis mechanics — the two have SIMILAR but not IDENTICAL adjustment rules. Questions should force the candidate to compute AAA end-of-year balance from a multi-item fact pattern. Do NOT test OAA mechanics at the calculation level (base outOfScope). Do NOT test AAA bypass election or AAA freezing (base bannedTerms).",

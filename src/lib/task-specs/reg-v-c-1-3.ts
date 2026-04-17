@@ -34,7 +34,7 @@ export const spec: TaskSpec = {
 	targetCount: 8,
 	difficultyMix: { easy: 40, medium: 50, hard: 10 },
 
-	inheritedFromTopicSpec: ["reg-s-corporations"],
+	lessonSpec: "reg-s-corporations",
 
 	notes:
 		"L1 task — 'Identify situations' (Remembering and Understanding). This task tests TRIGGER RECOGNITION (what event causes revocation or termination) but NOT relief mechanics. Section 1362(f) inadvertent termination relief is out of scope per the base bannedTerms. Section 1362(d)(3) three-year passive income termination is ALSO out of scope. So this task covers only the eligibility-failure triggers and the voluntary revocation trigger.",

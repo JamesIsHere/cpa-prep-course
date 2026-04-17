@@ -33,7 +33,7 @@ export const spec: TaskSpec = {
 	targetCount: 10,
 	difficultyMix: { easy: 50, medium: 40, hard: 10 },
 
-	inheritedFromTopicSpec: ["reg-s-corporations"],
+	lessonSpec: "reg-s-corporations",
 
 	notes:
 		"L1 task — 'Recall' skill level. This task overlaps with 1/1 (eligible shareholders) but is distinct: 1/1 is the SHAREHOLDER side of the eligibility test (who can own stock), and this task is the CORPORATE STRUCTURE side (domestic, ≤100 shareholders, single class of stock, not an ineligible corporation type, timely and unanimous election). Questions about Form 2553 timing and unanimous consent belong here, not in 1/1.",

@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Sixteenth authored spec. Slayer's "Audit Evidence" topic spans several
 // AICPA groups in Area III "Performing Further Procedures and Obtaining
@@ -29,7 +29,7 @@ import type { TopicSpec } from "./types";
 // and belongs to the Audit Sampling topic in Slayer, not Audit Evidence.
 // This spec actively defends against drift into sampling theory.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Audit Evidence",
 	section: "aud",
 	blueprintRef: "AUD/III/B",

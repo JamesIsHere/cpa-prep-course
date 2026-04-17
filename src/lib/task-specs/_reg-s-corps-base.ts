@@ -19,7 +19,7 @@ import type { GroupBase } from "./types";
 export const REG_S_CORPS_BASE: GroupBase = {
 	groupRef: "REG/V/C",
 	groupName: "S corporations",
-	inheritedFromTopicSpec: "reg-s-corporations",
+	lessonSpec: "reg-s-corporations",
 
 	outOfScope: [
 		"Built-in gains tax (BIG) under Section 1374 — calculation, recognition period, net unrealized built-in gain limitation, taxable income limitation, NUBIG carryforwards",

@@ -1,11 +1,11 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Thirty-sixth authored spec — nineteenth of Stage 3. Census v3 rank
 // #8: 64 questions, 6 flagged (9.4%) on `SOC 1 Type 2` (4), `SQMS 1`
 // (1), `AS 2201` (1). Expected mixed — some rightful-owner (ITGC
 // understanding), some drift (SOC depth, QM depth, PCAOB depth).
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Internal Controls",
 	section: "aud",
 	blueprintRef: "AUD/II/C",

@@ -5,10 +5,10 @@
 // its Bloom's level by construction. Questions are generated, validated, and
 // audited at this granularity, replacing the old topic-level bundling.
 //
-// The task-spec architecture coexists with topic-specs during the transition
-// (Phases 1-5). Topic-specs remain the drift defense during Phase 1-3, and
-// Phase 6 retires them by folding their scope knowledge into task-specs as
-// ancestor data (`inheritedFromTopicSpec`).
+// Under Direction W (2026-04-15), task-specs and lesson-specs are two
+// permanent layers: task-specs anchor questions to AICPA representative tasks;
+// lesson-specs define Slayer pedagogical scope. Every task-spec has a required
+// `lessonSpec` field pointing to its parent lesson-spec.
 //
 // **Critical rule: task-specs anchor to alignment/aicpa-blueprint-tasks.json,
 // NEVER to src/lib/blueprint.ts.** The two files use different group-letter
@@ -153,15 +153,14 @@ export interface TaskSpec {
 	difficultyMix: { easy: number; medium: number; hard: number };
 
 	/**
-	 * Topic-spec ancestor(s), if any. When a task-spec inherits scope
-	 * knowledge from an older topic-spec, the topic-spec's filename (without
-	 * `.ts`) goes here. This is how Phase 6 folds the old topic-spec layer
-	 * into the new task-spec layer.
+	 * Parent lesson-spec filename (without `.ts`). Every task-spec must have
+	 * exactly one parent lesson-spec. The lesson-spec is the Slayer pedagogical
+	 * scope container; the task-spec is the AICPA exam scoping anchor.
 	 *
-	 * Multiple ancestors are permitted when a single AICPA task is covered
-	 * by multiple topic-specs (rare, but possible during transition).
+	 * Example: `"reg-s-corporations"` resolves to
+	 * `src/lib/lesson-specs/reg-s-corporations.ts`.
 	 */
-	inheritedFromTopicSpec?: string[];
+	lessonSpec: string;
 
 	/**
 	 * Optional explicit cross-reference to a Slayer lesson (by slug). This
@@ -202,8 +201,8 @@ export interface GroupBase {
 	bannedTerms: BannedTerm[];
 	/** Shared common misconceptions across all tasks in the group. */
 	commonMisconceptions: string[];
-	/** Which topic-spec (if any) this group's knowledge inherits from. */
-	inheritedFromTopicSpec?: string;
+	/** Which lesson-spec (if any) this group's knowledge inherits from. */
+	lessonSpec?: string;
 	/** Editorial note on the group's scope context. */
 	notes?: string;
 }

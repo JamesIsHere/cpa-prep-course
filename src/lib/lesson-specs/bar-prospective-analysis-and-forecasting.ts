@@ -1,11 +1,11 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // First pilot spec — derived from the 2026-04-13 audit that found 20 off-blueprint
 // econometric questions in this topic. Captures James's curriculum boundary: basic
 // regression for cost estimation and simple exponential smoothing are testable,
 // graduate diagnostics and hypothesis testing are not.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Prospective Analysis and Forecasting",
 	section: "bar",
 	// AICPA places "Budgeting, forecasting and projection" at BAR/I/B/1 in the 2026

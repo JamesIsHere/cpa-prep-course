@@ -7,7 +7,7 @@ import { fileURLToPath } from "url";
 import { fetchAllQuestions } from "./db-client";
 import { cpaBlueprint } from "../../src/lib/blueprint";
 import { getFrameworkItemsForGroup, type GroupFrameworkItems } from "../../src/lib/blueprint-utils";
-import { getTopicSpec, type TopicSpec } from "../../src/lib/lesson-specs";
+import { getLessonSpec, type LessonSpec } from "../../src/lib/lesson-specs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const docsDir = resolve(__dirname, "../../docs");
@@ -55,10 +55,10 @@ interface TopicPlan {
 	newNeeded: number;
 }
 
-// Subset of TopicSpec used by the generator prompt. We don't ship keyStandards,
+// Subset of LessonSpec used by the generator prompt. We don't ship keyStandards,
 // notes, or representativeDifficulty to the prompt because those are authoring
 // context, not generation constraints.
-interface TopicSpecForBatch {
+interface LessonSpecForBatch {
 	topic: string;
 	blueprintRef: string;
 	inScope: string[];
@@ -77,7 +77,7 @@ interface BatchSpec {
 	citationPatterns: string;
 	lessonSlugs: string[];
 	frameworkItems: GroupFrameworkItems | null;
-	topicSpec: TopicSpecForBatch | null;
+	lessonSpec: LessonSpecForBatch | null;
 }
 
 async function main() {
@@ -179,8 +179,8 @@ async function main() {
 	// Specs are the generator-side hard constraints on what is testable for this
 	// topic under the 2026 AICPA Blueprint; topics without a spec (~125/130 as
 	// of the pilot commit) fall back to pre-spec behavior.
-	const fullSpec: TopicSpec | undefined = getTopicSpec(picked.topic);
-	const topicSpec: TopicSpecForBatch | null = fullSpec
+	const fullSpec: LessonSpec | undefined = getLessonSpec(picked.topic);
+	const lessonSpec: LessonSpecForBatch | null = fullSpec
 		? {
 				topic: fullSpec.topic,
 				blueprintRef: fullSpec.blueprintRef,
@@ -201,7 +201,7 @@ async function main() {
 		citationPatterns: CITATION_PATTERNS[section] || "",
 		lessonSlugs,
 		frameworkItems,
-		topicSpec,
+		lessonSpec,
 	};
 
 	// Output JSON to stdout
@@ -212,8 +212,8 @@ async function main() {
 	console.error(`Batch: ${count} questions (${easy}E/${medium}M/${hard}H, L1:${l1}/L2:${l2}/L3:${l3}/L4:${l4})`);
 	console.error(`Existing stems for dedup: ${existingStems.length}`);
 	console.error(
-		topicSpec
-			? `Topic spec: ✓ (${fullSpec!.blueprintRef}, ${topicSpec.inScope.length} inScope, ${topicSpec.outOfScope.length} outOfScope)`
+		lessonSpec
+			? `Topic spec: ✓ (${fullSpec!.blueprintRef}, ${lessonSpec.inScope.length} inScope, ${lessonSpec.outOfScope.length} outOfScope)`
 			: `Topic spec: — (no spec authored for "${picked.topic}"; generator runs without scope constraints)`,
 	);
 }

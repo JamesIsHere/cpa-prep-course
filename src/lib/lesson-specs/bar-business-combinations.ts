@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Fifteenth authored spec. AICPA 2026 Blueprint BAR/II/F "Business
 // combinations" has 4 representative tasks:
@@ -36,7 +36,7 @@ import type { TopicSpec } from "./types";
 // Business Combinations' which this spec does NOT cover. This spec is
 // specifically for questions tagged 'Business Combinations' in isolation.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Business Combinations",
 	section: "bar",
 	blueprintRef: "BAR/II/F/0",

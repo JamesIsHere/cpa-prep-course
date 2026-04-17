@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Sixth spec (first authored from a scaffold stub). Slayer's "Capital Structure
 // and Valuation" topic maps 1:1 to AICPA BAR/I/B/2 "Capital structure"
@@ -27,7 +27,7 @@ import type { TopicSpec } from "./types";
 //   - Static trade-off theory proofs
 //   - Dynamic WACC rebalancing, multi-period capital structure theory
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Capital Structure and Valuation",
 	section: "bar",
 	blueprintRef: "BAR/I/B/2",

@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 import {
 	SOC_IN_SCOPE,
 	SOC_OUT_OF_SCOPE,
@@ -18,7 +18,7 @@ import {
 // description criteria (DC section 200 / 200A) govern the system
 // description content.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "SOC Report Content and Structure",
 	section: "isc",
 	blueprintRef: "ISC/III/B",

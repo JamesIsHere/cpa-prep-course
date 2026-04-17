@@ -1,4 +1,4 @@
-// Helper for resolving a TopicSpec's `blueprintRef` (e.g. "BAR/I/B/1") into the
+// Helper for resolving a LessonSpec's `blueprintRef` (e.g. "BAR/I/B/1") into the
 // corresponding node in `alignment/aicpa-blueprint-tasks.json`. The JSON is the canonical
 // source of AICPA representative tasks and skill levels for all 6 sections; specs avoid
 // duplicating it inline by referencing this resolver.

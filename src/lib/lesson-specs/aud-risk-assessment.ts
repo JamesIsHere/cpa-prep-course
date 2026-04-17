@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Seventeenth authored spec — the final spec in the rollout-handoff next-10
 // priority list. Slayer's "Risk Assessment" topic maps to AUD/II/E
@@ -33,7 +33,7 @@ import type { TopicSpec } from "./types";
 // 2013 COSO framework, the points of focus, and the detailed component-
 // level analysis are out.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Risk Assessment",
 	section: "aud",
 	blueprintRef: "AUD/II/E/0",

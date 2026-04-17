@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Second pilot spec — the most quantitative-heavy BAR topic. AICPA explicitly names the
 // Black-Scholes option pricing model in BAR/I/B/3 ("Determine the impact of changes to
@@ -16,7 +16,7 @@ import type { TopicSpec } from "./types";
 // Slayer tagging string and `blueprintRef` to the AICPA path; both are validated
 // independently against their respective sources of truth.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Financial Valuation Methods",
 	section: "bar",
 	blueprintRef: "BAR/I/B/3",

@@ -40,7 +40,7 @@ export interface BannedTerm {
 	why?: string;
 }
 
-export interface TopicSpec {
+export interface LessonSpec {
 	/** Matches the `topic` column on the questions table verbatim. */
 	topic: string;
 

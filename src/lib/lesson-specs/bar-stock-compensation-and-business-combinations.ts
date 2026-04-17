@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Forty-third authored spec — twenty-sixth of Stage 3. Census v3
 // rank #13: 52 questions, 4 flagged (7.7%) on `Black-Scholes` (3),
@@ -9,7 +9,7 @@ import type { TopicSpec } from "./types";
 // Black-Scholes (or lattice models) to value employee stock options
 // at grant. This spec is the rightful home for that use.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Stock Compensation and Business Combinations",
 	section: "bar",
 	blueprintRef: "BAR/II/F/0",

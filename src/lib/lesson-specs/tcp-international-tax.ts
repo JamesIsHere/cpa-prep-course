@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Fourth pilot spec — the most editorially constrained TCP topic. AICPA explicitly states
 // in the TCP section introduction (page 100 of the 2026 Blueprints PDF) that
@@ -27,7 +27,7 @@ import type { TopicSpec } from "./types";
 // alignment/aicpa-blueprint-tasks.json before this work. The JSON was patched in the
 // same commit that introduced this spec. See the resolver and drift test.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "International Tax",
 	section: "tcp",
 	blueprintRef: "TCP/II/A/4",

@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Twenty-second authored spec — fifth spec of Stage 3. Selected from
 // the Stage 2 drift census v2 as rank #2: 52 questions, 26 flagged
@@ -56,7 +56,7 @@ import type { TopicSpec } from "./types";
 // specific country thin-capitalization statutory ratios (international
 // tax topic).
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Capital Structure Tax Planning",
 	section: "tcp",
 	blueprintRef: "TCP/III/B",

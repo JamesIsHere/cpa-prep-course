@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Twenty-eighth authored spec — eleventh spec of Stage 3. Selected
 // from census v2 as rank #7: 105 questions, 14 flagged (13%) on
@@ -68,7 +68,7 @@ import type { TopicSpec } from "./types";
 // change (separate topic); reorganizations under §368 (a separate
 // advanced corporate topic if specced).
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Entity Formation and Liquidation",
 	section: "tcp",
 	blueprintRef: "TCP/II/A/2",

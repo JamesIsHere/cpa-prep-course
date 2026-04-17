@@ -33,7 +33,7 @@ import {
 	supabase,
 	type DbQuestion,
 } from "./db-client";
-import { allTopicSpecs, specifiedTopics } from "../../src/lib/lesson-specs";
+import { allLessonSpecs, specifiedLessons } from "../../src/lib/lesson-specs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(__dirname, "../..");
@@ -77,7 +77,7 @@ function normalizeTerm(t: string): string {
 // categories observed across specs). Only keep terms meeting the agreement
 // threshold.
 function buildUniversalBans(minAgreement: number): CompiledTerm[] {
-	const specs = allTopicSpecs();
+	const specs = allLessonSpecs();
 	const byTerm = new Map<
 		string,
 		{ term: string; pattern: string; specs: Set<string>; categories: Set<string> }
@@ -168,7 +168,7 @@ async function main() {
 
 	const universal = buildUniversalBans(minAgreement);
 	console.error(
-		`Universal ban set: ${universal.length} terms (${allTopicSpecs().length} specs loaded)`,
+		`Universal ban set: ${universal.length} terms (${allLessonSpecs().length} specs loaded)`,
 	);
 	if (universal.length === 0) {
 		console.error(
@@ -177,7 +177,7 @@ async function main() {
 		process.exit(2);
 	}
 
-	const specced = new Set(specifiedTopics());
+	const specced = new Set(specifiedLessons());
 	const sections = await fetchSections();
 
 	// Pull all questions for all sections, grouped by (section_code, topic).
@@ -245,7 +245,7 @@ async function main() {
 	lines.push("");
 	lines.push(`Generated: ${new Date().toISOString().slice(0, 10)}`);
 	lines.push(`Spec agreement threshold: ≥${minAgreement} specs must agree on a ban`);
-	lines.push(`Source specs: ${allTopicSpecs().length} registered`);
+	lines.push(`Source specs: ${allLessonSpecs().length} registered`);
 	lines.push(`Universal ban set size: ${universal.length} terms`);
 	lines.push("");
 	lines.push("## Summary");

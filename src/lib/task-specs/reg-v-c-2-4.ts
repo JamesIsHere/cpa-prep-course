@@ -38,7 +38,7 @@ export const spec: TaskSpec = {
 	targetCount: 4,
 	difficultyMix: { easy: 0, medium: 40, hard: 60 },
 
-	inheritedFromTopicSpec: ["reg-s-corporations"],
+	lessonSpec: "reg-s-corporations",
 
 	notes:
 		"L3 task — 'Review and resolve discrepancies' (Analysis). This is a newer-style AICPA task reflecting the 2026 blueprint's emphasis on automated tax-prep-tool workflows. Questions should present a DIAGNOSTIC warning (e.g., 'Schedule K line 1 exceeds the sum of Schedule K-1 line 1 by $500') and ask the candidate to identify the root cause from several candidate explanations. Target count is low (4) because this is a new and narrower task than 2/3 (which is broader classification review).",

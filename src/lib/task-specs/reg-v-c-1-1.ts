@@ -33,7 +33,7 @@ export const spec: TaskSpec = {
 	targetCount: 8,
 	difficultyMix: { easy: 50, medium: 40, hard: 10 },
 
-	inheritedFromTopicSpec: ["reg-s-corporations"],
+	lessonSpec: "reg-s-corporations",
 
 	notes:
 		"L1 task — 'Recall' skill level. Questions should test the CANDIDATE'S RECOGNITION of eligible vs ineligible shareholders from a closed list. Fact patterns should name a specific shareholder type (e.g., 'a partnership', 'a non-resident alien', 'an ESBT', 'a revocable trust') and ask whether the entity qualifies. Do NOT test Section 1362(f) inadvertent termination relief mechanics when an ineligible shareholder is acquired — that's a relief-mechanics question and out of scope.",

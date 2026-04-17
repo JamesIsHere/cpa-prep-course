@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Tenth authored spec. Slayer's "Owner-Entity Transactions" is a synthesized
 // cross-cutting topic that spans several AICPA groups:
@@ -43,7 +43,7 @@ import type { TopicSpec } from "./types";
 //   - Self-employment tax computation mechanics (individual taxation topic)
 //   - Reasonable compensation multi-factor case-law tests (Mulherin, Elliotts)
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Owner-Entity Transactions",
 	section: "tcp",
 	blueprintRef: "TCP/IV/C",

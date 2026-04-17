@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Twentieth authored spec — third spec of Stage 3. Selected from the
 // Stage 2 drift census as a clean rightful-owner candidate: 64
@@ -42,7 +42,7 @@ import type { TopicSpec } from "./types";
 // territory), quality management standards (Quality Management topic),
 // and ISACA-framework IT audit methodology depth.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Using the Work of Others",
 	section: "aud",
 	blueprintRef: "AUD/II/F",

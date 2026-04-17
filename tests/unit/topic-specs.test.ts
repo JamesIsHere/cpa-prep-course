@@ -11,9 +11,9 @@
 import { describe, expect, it } from "vitest";
 import { cpaBlueprint } from "@/lib/blueprint";
 import {
-	allTopicSpecs,
-	getTopicSpec,
-	specifiedTopics,
+	allLessonSpecs,
+	getLessonSpec,
+	specifiedLessons,
 } from "@/lib/lesson-specs";
 import { resolveBlueprintRef } from "@/lib/lesson-specs/blueprint-task-resolver";
 
@@ -31,7 +31,7 @@ function allQuestionTopics(): Set<string> {
 }
 
 describe("topic-specs: drift prevention", () => {
-	const specs = allTopicSpecs();
+	const specs = allLessonSpecs();
 	const blueprintTopics = allQuestionTopics();
 
 	it("at least one spec is registered (sanity)", () => {
@@ -68,15 +68,15 @@ describe("topic-specs: drift prevention", () => {
 		});
 	});
 
-	it("getTopicSpec returns the registered spec for a known topic", () => {
-		const oneTopic = specifiedTopics()[0];
-		const spec = getTopicSpec(oneTopic);
+	it("getLessonSpec returns the registered spec for a known topic", () => {
+		const oneTopic = specifiedLessons()[0];
+		const spec = getLessonSpec(oneTopic);
 		expect(spec).toBeDefined();
 		expect(spec?.topic).toBe(oneTopic);
 	});
 
-	it("getTopicSpec returns undefined for an unknown topic", () => {
-		expect(getTopicSpec("Nonexistent Topic Name 12345")).toBeUndefined();
+	it("getLessonSpec returns undefined for an unknown topic", () => {
+		expect(getLessonSpec("Nonexistent Topic Name 12345")).toBeUndefined();
 	});
 });
 

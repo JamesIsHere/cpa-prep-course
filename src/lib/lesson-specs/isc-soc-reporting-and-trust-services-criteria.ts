@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 import {
 	SOC_IN_SCOPE,
 	SOC_OUT_OF_SCOPE,
@@ -18,7 +18,7 @@ import {
 // how the TSP section 100 criteria are applied in a SOC 2
 // engagement.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "SOC Reporting and Trust Services Criteria",
 	section: "isc",
 	blueprintRef: "ISC/III/B",

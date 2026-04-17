@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Eighteenth authored spec — first spec of Stage 3 (next wave) of the
 // full-bank review plan, chosen from the Stage 2 drift census as the
@@ -74,7 +74,7 @@ import type { TopicSpec } from "./types";
 //      corporation entity-level tax, not basis
 //   7. Sec 199A QBI — separate topic
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Advanced Basis Calculations",
 	section: "tcp",
 	blueprintRef: "TCP/II/C",

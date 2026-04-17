@@ -1,11 +1,11 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Fortieth authored spec — twenty-third of Stage 3. Census v3 rank
 // #12: 64 questions, 5 flagged (7.8%) on `tolerable misstatement`
 // (3), `AS 2201` (2), `sampling risk` (1). Small drift tail across
 // three adjacent drift surfaces.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Misstatements and Control Deficiencies",
 	section: "aud",
 	blueprintRef: "AUD/IV/B",

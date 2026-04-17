@@ -1,10 +1,10 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Thirty-ninth authored spec — twenty-second of Stage 3. Census v3
 // rank #10: 38 questions, 3 flagged (7.9%) on `AS 2201` (2),
 // `component auditor` (1). Small drift tail.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Audit Reports",
 	section: "aud",
 	blueprintRef: "AUD/IV/A",

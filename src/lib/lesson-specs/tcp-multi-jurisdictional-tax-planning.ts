@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Twenty-seventh authored spec — tenth spec of Stage 3. Selected
 // from census v2 as rank #9: 56 questions, 7 flagged (13%) — 7 on
@@ -63,7 +63,7 @@ import type { TopicSpec } from "./types";
 // the bank belong to AUD topics and should be removed during
 // cleanup).
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Multi-Jurisdictional Tax Planning",
 	section: "tcp",
 	blueprintRef: "TCP/III/B",

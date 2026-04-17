@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Twenty-first authored spec — fourth spec of Stage 3. Selected from
 // the Stage 2 drift census v2 as the clean rightful-owner candidate at
@@ -48,7 +48,7 @@ import type { TopicSpec } from "./types";
 // continuous auditing / full-population testing methodology, and
 // workpaper-review quality management for sampling engagements.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Audit Sampling",
 	section: "aud",
 	blueprintRef: "AUD/III/C",

@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Seventh spec. Completes the three-spec coverage of Slayer's bar.1.B group:
 //
@@ -34,7 +34,7 @@ import type { TopicSpec } from "./types";
 //     - Interpret market influence on strategy/operations/risk [Analysis]
 //     - Compare acquisition and divestiture opportunities [Analysis]
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Risk Management and Economics",
 	section: "bar",
 	blueprintRef: "BAR/I/B/4",

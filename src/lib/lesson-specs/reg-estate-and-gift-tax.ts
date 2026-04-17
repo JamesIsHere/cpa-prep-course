@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Forty-second authored spec — twenty-fifth of Stage 3. Census v3
 // rank #15: 78 questions, 5 flagged (6.4%) on `Section 7872` (5).
@@ -8,7 +8,7 @@ import type { TopicSpec } from "./types";
 // or Individual Tax Interest Income territory." This spec owns
 // below-market loans specifically as they relate to gift tax.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Estate and Gift Tax",
 	section: "reg",
 	blueprintRef: "REG/V/E",

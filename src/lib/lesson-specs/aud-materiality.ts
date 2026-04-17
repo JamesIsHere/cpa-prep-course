@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Twenty-fifth authored spec — eighth spec of Stage 3. Selected from
 // census v2 as rank #10: 64 questions, 5 flagged (8%) on
@@ -57,7 +57,7 @@ import type { TopicSpec } from "./types";
 // Others owns AU-C 600 group audit concepts); fraud procedures at
 // investigation depth.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Materiality",
 	section: "aud",
 	blueprintRef: "AUD/II/D",

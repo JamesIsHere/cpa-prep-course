@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Third pilot spec — ASC 815 hedge accounting. The AICPA representative tasks for this
 // topic are unusually narrow: identify derivatives (freestanding and embedded), recall
@@ -13,7 +13,7 @@ import type { TopicSpec } from "./types";
 // blueprint.ts puts it at bar.2.F with three internal sub-topics, but they all roll up
 // to a single Slayer tagging string "Derivatives and Hedging".
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Derivatives and Hedging",
 	section: "bar",
 	blueprintRef: "BAR/II/H/0",

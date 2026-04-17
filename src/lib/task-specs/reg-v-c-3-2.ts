@@ -41,7 +41,7 @@ export const spec: TaskSpec = {
 	targetCount: 6,
 	difficultyMix: { easy: 20, medium: 50, hard: 30 },
 
-	inheritedFromTopicSpec: ["reg-s-corporations"],
+	lessonSpec: "reg-s-corporations",
 
 	notes:
 		"L2 task — 'Calculate' (Application). Debt basis is narrower than stock basis (task 3/1) so target count is smaller. The trickiest sub-concept is the gain-on-repayment mechanics when prior losses have reduced debt basis — this is the Hard-level question territory. Note the AICPA task is specifically about 'current year repayment of debt,' so guarantee-only fact patterns where no cash moves are less central than fact patterns involving actual loan repayment.",

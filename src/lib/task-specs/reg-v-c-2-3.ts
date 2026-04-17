@@ -41,7 +41,7 @@ export const spec: TaskSpec = {
 	targetCount: 6,
 	difficultyMix: { easy: 0, medium: 50, hard: 50 },
 
-	inheritedFromTopicSpec: ["reg-s-corporations"],
+	lessonSpec: "reg-s-corporations",
 
 	notes:
 		"L3 task — 'Review ... to determine' (Analysis). This task requires the candidate to EVALUATE a presented return/data for errors, not just calculate. Fact patterns should present a Form 1120S or a trial balance with one or more deliberate classification errors, and ask the candidate to identify what's wrong. NO easy-level questions — the skill level is Analysis and the AICPA task explicitly requires reviewing source data. Difficulty skews medium/hard.",

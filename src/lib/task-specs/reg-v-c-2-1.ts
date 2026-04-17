@@ -40,7 +40,7 @@ export const spec: TaskSpec = {
 	targetCount: 8,
 	difficultyMix: { easy: 20, medium: 60, hard: 20 },
 
-	inheritedFromTopicSpec: ["reg-s-corporations"],
+	lessonSpec: "reg-s-corporations",
 
 	notes:
 		"L2 task — 'Calculate' (Application). Questions must require the candidate to PERFORM a computation from a given fact pattern (trial balance, income statement, or shareholder ownership schedule), NOT just define what separately stated items are (that would be L1 and belongs in 1/2). The difficulty mix skews medium/hard because calculation tasks typically require multi-step fact patterns. The per-share per-day allocation is the DEFAULT method; the Section 1377(a)(2) closing-of-the-books election is OUT OF SCOPE per the base.",

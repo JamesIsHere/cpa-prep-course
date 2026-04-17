@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Fifth pilot spec — REG S corporations. SECOND CONSECUTIVE TOPIC where the 2026 AICPA
 // Blueprint scope is dramatically narrower than the handoff doc and standard CPA-prep
@@ -32,7 +32,7 @@ import type { TopicSpec } from "./types";
 // 2026 AICPA blueprint. Eventually blueprint.ts should be revised; for now the spec
 // anchors `topic` to the Slayer tagging string and `blueprintRef` to the AICPA path.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "S Corporations",
 	section: "reg",
 	blueprintRef: "REG/V/C",

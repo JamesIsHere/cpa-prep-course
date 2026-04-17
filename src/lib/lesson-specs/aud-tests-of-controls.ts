@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Thirty-seventh authored spec — twentieth of Stage 3. Census v3 rank
 // #9: 64 questions, 6 flagged (9.4%) on `sampling risk` (3),
@@ -6,7 +6,7 @@ import type { TopicSpec } from "./types";
 // rewrites rather than deletes — the sampling concepts appear at
 // concept level in TOC questions.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Tests of Controls",
 	section: "aud",
 	blueprintRef: "AUD/III/D/1",

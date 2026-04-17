@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Nineteenth authored spec — second spec of Stage 3. Chosen as the #1
 // ranked "rightful owner" candidate from the Stage 2 drift census: 43
@@ -47,7 +47,7 @@ import type { TopicSpec } from "./types";
 // International Tax (already specced). IAS 21 depth and functional-
 // currency-change accounting are out.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Foreign Currency Transactions",
 	section: "bar",
 	blueprintRef: "BAR/II/G",

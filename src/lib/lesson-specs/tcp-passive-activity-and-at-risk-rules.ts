@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Thirteenth authored spec. AICPA 2026 Blueprint TCP/I/B "Compliance for
 // passive activity and at-risk loss limitations (excluding tax credit
@@ -36,7 +36,7 @@ import type { TopicSpec } from "./types";
 // rules, net investment income tax (NIIT) under Sec 1411 as applied to
 // passive activities, and passive activity credit limitations.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Passive Activity and At-Risk Rules",
 	section: "tcp",
 	blueprintRef: "TCP/I/B/0",

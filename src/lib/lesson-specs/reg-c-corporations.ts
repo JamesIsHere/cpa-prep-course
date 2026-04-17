@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Ninth authored spec. Slayer's "C Corporations" topic is a hybrid: it spans
 // REG/V/B (C corporation taxable-income computation, NOL/capital loss,
@@ -35,7 +35,7 @@ import type { TopicSpec } from "./types";
 // drift into graduate M&A, advanced corporate reorganization taxonomy, or
 // consolidated-return elections beyond bare filing requirements.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "C Corporations",
 	section: "reg",
 	blueprintRef: "REG/V/B",

@@ -2,13 +2,13 @@
 //
 // Add a new spec by:
 //   1. Creating src/lib/topic-specs/<section>-<kebab-topic-name>.ts that exports a `spec`
-//      object conforming to TopicSpec
+//      object conforming to LessonSpec
 //   2. Importing and registering it below
 //
 // Topics without a spec return undefined — the generator and validator should treat that
 // as "no scope constraint" (legacy behavior) until specs cover the full bank.
 
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 import { spec as barProspective } from "./bar-prospective-analysis-and-forecasting";
 import { spec as barFinancialValuation } from "./bar-financial-valuation-methods";
 import { spec as barDerivatives } from "./bar-derivatives-and-hedging";
@@ -53,7 +53,7 @@ import { spec as regIndividualTaxationCredits } from "./reg-individual-taxation-
 import { spec as regEstateAndGiftTax } from "./reg-estate-and-gift-tax";
 import { spec as barStockCompensationAndBusinessCombinations } from "./bar-stock-compensation-and-business-combinations";
 
-const SPECS: Record<string, TopicSpec> = {
+const SPECS: Record<string, LessonSpec> = {
 	[barProspective.topic]: barProspective,
 	[barFinancialValuation.topic]: barFinancialValuation,
 	[barDerivatives.topic]: barDerivatives,
@@ -100,18 +100,18 @@ const SPECS: Record<string, TopicSpec> = {
 };
 
 /** Look up the topic spec for a given questions.topic value. Returns undefined if none. */
-export function getTopicSpec(topic: string): TopicSpec | undefined {
+export function getLessonSpec(topic: string): LessonSpec | undefined {
 	return SPECS[topic];
 }
 
 /** All registered topic specs (for audit / overview tooling). */
-export function allTopicSpecs(): TopicSpec[] {
+export function allLessonSpecs(): LessonSpec[] {
 	return Object.values(SPECS);
 }
 
 /** Topics that have a spec written. */
-export function specifiedTopics(): string[] {
+export function specifiedLessons(): string[] {
 	return Object.keys(SPECS);
 }
 
-export type { TopicSpec, BannedTerm } from "./types";
+export type { LessonSpec, BannedTerm } from "./types";

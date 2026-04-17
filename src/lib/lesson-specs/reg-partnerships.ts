@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Twelfth authored spec. Like the C Corporations spec, Partnerships is a
 // hybrid topic in Slayer's organization. AICPA 2026 Blueprint has a
@@ -46,7 +46,7 @@ import type { TopicSpec } from "./types";
 // (Advanced Basis Calculations, Owner-Entity Transactions for related-
 // party mechanics, the dedicated TCP Partnerships topic if one exists).
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Partnerships",
 	section: "reg",
 	blueprintRef: "REG/V/D",

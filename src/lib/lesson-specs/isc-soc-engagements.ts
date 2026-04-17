@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 import {
 	SOC_IN_SCOPE,
 	SOC_OUT_OF_SCOPE,
@@ -22,7 +22,7 @@ import {
 // decisions (SOC 1 vs 2 vs 3, Type 1 vs 2, inclusive vs carve-out,
 // scope of trust services criteria).
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "SOC Engagements",
 	section: "isc",
 	blueprintRef: "ISC/III/A",

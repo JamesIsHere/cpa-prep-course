@@ -43,7 +43,7 @@ export const spec: TaskSpec = {
 	targetCount: 10,
 	difficultyMix: { easy: 20, medium: 60, hard: 20 },
 
-	inheritedFromTopicSpec: ["reg-s-corporations"],
+	lessonSpec: "reg-s-corporations",
 
 	notes:
 		"L2 task — 'Calculate' (Application). This is the single most common S-corp exam topic and should have the highest target count in the group. Questions must give a fact pattern that requires the candidate to compute end-of-year stock basis from multiple moving pieces. Debt basis (task 3/2) is a separate calculation — a question that involves BOTH stock and debt basis simultaneously could go under either task, but the classifier should prefer 3/1 if the stock basis mechanics are the primary test, 3/2 if the debt basis repayment mechanics are the primary test.",

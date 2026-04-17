@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 import {
 	SOC_IN_SCOPE,
 	SOC_OUT_OF_SCOPE,
@@ -18,7 +18,7 @@ import {
 // management, system monitoring, incident response, backup/recovery,
 // vendor management — as tested in SOC 2 engagements.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "SOC Testing Controls",
 	section: "isc",
 	blueprintRef: "ISC/III/A",

@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Eleventh authored spec. Slayer's "Financial Statement Analysis" topic maps
 // cleanly to AICPA BAR/I/A/1 "Financial statement analysis" (not the full
@@ -35,7 +35,7 @@ import type { TopicSpec } from "./types";
 // drift risks from the rollout handoff: DuPont decomposition at multi-level
 // depth and EVA/MVA formula mechanics.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Financial Statement Analysis",
 	section: "bar",
 	blueprintRef: "BAR/I/A/1",

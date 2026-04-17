@@ -17,10 +17,10 @@ config({ path: ".env.local" });
 import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { createClient } from "@supabase/supabase-js";
-import { allTopicSpecs } from "../../src/lib/lesson-specs/index";
+import { allLessonSpecs } from "../../src/lib/lesson-specs/index";
 import { isValidBlueprintRef } from "../../src/lib/lesson-specs/blueprint-task-resolver";
 
-const SPECS = Object.fromEntries(allTopicSpecs().map((s) => [s.topic, s]));
+const SPECS = Object.fromEntries(allLessonSpecs().map((s) => [s.topic, s]));
 
 async function main() {
 

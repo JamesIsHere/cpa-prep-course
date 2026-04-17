@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Thirty-fifth authored spec — eighteenth of Stage 3. Census v3 rank
 // #5: 100 questions, 14 flagged (14.0%) — 13 on `long-term tax-exempt
@@ -54,7 +54,7 @@ import type { TopicSpec } from "./types";
 // (S Corporations REG); trust and estate NOLs (Trusts and Estates
 // if specced).
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Entity Tax Compliance: NOLs and Consolidated Returns",
 	section: "tcp",
 	blueprintRef: "TCP/II/A/1",

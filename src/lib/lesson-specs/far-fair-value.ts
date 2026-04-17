@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Eighth authored spec. AICPA scope at FAR/III/E is deliberately narrow: two
 // representative tasks — "Identify the valuation techniques used to measure
@@ -19,7 +19,7 @@ import type { TopicSpec } from "./types";
 // value", and study material often conflates ASC 820 application with the
 // full BAR valuation toolkit.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Fair Value",
 	section: "far",
 	blueprintRef: "FAR/III/E/0",

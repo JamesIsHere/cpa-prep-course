@@ -1,11 +1,11 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Thirty-eighth authored spec — twenty-first of Stage 3. Census v3
 // rank #11: 38 questions, 3 flagged (7.9%) — all 3 on `SQMS 1`.
 // Clean rightful-owner: every other spec pushes SQMS 1 here as QM
 // territory. Authoring should whitelist all 3.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Quality Management",
 	section: "aud",
 	blueprintRef: "AUD/I/G",

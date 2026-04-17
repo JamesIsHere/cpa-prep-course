@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Twenty-third authored spec — sixth spec of Stage 3. Selected from
 // census v2 as rank #5: 56 questions, 15 flagged (27%). Top terms:
@@ -72,7 +72,7 @@ import type { TopicSpec } from "./types";
 // distributions; §382 NOL limitation mechanics; detailed
 // reasonable-compensation IRS enforcement standards and case law.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Entity Choice and Planning",
 	section: "tcp",
 	blueprintRef: "TCP/III/A",

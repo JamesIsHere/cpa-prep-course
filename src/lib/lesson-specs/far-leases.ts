@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Fourteenth authored spec. AICPA 2026 Blueprint FAR/III/F "Lessee accounting"
 // has a single direct topic with 4 representative tasks:
@@ -30,7 +30,7 @@ import type { TopicSpec } from "./types";
 // remeasurement mechanics, IFRS 16 single-model approach differences, legacy
 // ASC 840 contingent rent, related-party lease recognition and disclosure.
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Leases",
 	section: "far",
 	blueprintRef: "FAR/III/F/0",

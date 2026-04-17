@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 import {
 	SOC_IN_SCOPE,
 	SOC_OUT_OF_SCOPE,
@@ -17,7 +17,7 @@ import {
 // description of the system, modifications to the opinion, and the
 // different report forms (Type 1 vs Type 2, SOC 1 vs 2 vs 3).
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "SOC Reporting",
 	section: "isc",
 	blueprintRef: "ISC/III/B",

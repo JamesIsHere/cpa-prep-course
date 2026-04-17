@@ -1,4 +1,4 @@
-import type { TopicSpec } from "./types";
+import type { LessonSpec } from "./types";
 
 // Twenty-sixth authored spec — ninth spec of Stage 3. Selected from
 // census v2 as rank #6: 61 questions, 9 flagged (15%) — `component
@@ -53,7 +53,7 @@ import type { TopicSpec } from "./types";
 // Responding to Assessed Risks); engagement quality management at
 // the firm or engagement level at depth (Quality Management topic).
 
-export const spec: TopicSpec = {
+export const spec: LessonSpec = {
 	topic: "Audit Planning",
 	section: "aud",
 	blueprintRef: "AUD/II/A",
