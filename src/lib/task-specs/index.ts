@@ -18,7 +18,7 @@
 //   - `taskSpecsBySection(section)` → TaskSpec[] for a section
 
 import type { TaskSpec } from "./types";
-import { isValidTaskRef } from "../lesson-specs/blueprint-task-resolver";
+import { isValidRef } from "../lesson-specs/blueprint-task-resolver";
 
 // REG/V/C S corporations — 9 task-specs
 import { spec as regVC11 } from "./reg-v-c-1-1";
@@ -71,7 +71,7 @@ export function taskSpecsBySection(section: TaskSpec["section"]): TaskSpec[] {
 export function validateAllAicpaRefs(): { ok: true } | { ok: false; invalid: string[] } {
 	const invalid: string[] = [];
 	for (const spec of allTaskSpecs()) {
-		if (!isValidTaskRef(spec.aicpaRef)) {
+		if (!isValidRef(spec.aicpaRef)) {
 			invalid.push(`${spec.aicpaRef} (${spec.section})`);
 		}
 	}

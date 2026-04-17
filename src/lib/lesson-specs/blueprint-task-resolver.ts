@@ -135,6 +135,30 @@ export function isValidTaskRef(ref: string): boolean {
 	return resolveTaskRef(ref) !== null;
 }
 
+/** What level a ref targets based on its part count. */
+export type RefLevel = "group" | "topic" | "task";
+
+/** Determine the hierarchy level of a ref, or null if malformed. */
+export function refLevel(ref: string): RefLevel | null {
+	const n = ref.split("/").length;
+	if (n === 3) return "group";
+	if (n === 4) return "topic";
+	if (n === 5) return "task";
+	return null;
+}
+
+/**
+ * Whether a ref resolves at ANY level in the AICPA JSON.
+ * Accepts 3-part (group), 4-part (topic), or 5-part (task) refs.
+ * This is the unified validator for Direction W multi-level anchoring.
+ */
+export function isValidRef(ref: string): boolean {
+	const level = refLevel(ref);
+	if (level === "task") return resolveTaskRef(ref) !== null;
+	if (level === "group" || level === "topic") return resolveBlueprintRef(ref) !== null;
+	return false;
+}
+
 /** Get the AICPA-canonical name for a blueprintRef — topic name for 4-part, group name for 3-part. */
 export function getBlueprintTopicName(ref: string): string | null {
 	const node = resolveBlueprintRef(ref);

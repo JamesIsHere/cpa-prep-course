@@ -4,7 +4,12 @@ import {
 	validateAllAicpaRefs,
 	SKILL_TO_BLOOM,
 } from "../../src/lib/task-specs/index";
-import { resolveTaskRef } from "../../src/lib/lesson-specs/blueprint-task-resolver";
+import {
+	resolveTaskRef,
+	resolveBlueprintRef,
+	isValidRef,
+	refLevel,
+} from "../../src/lib/lesson-specs/blueprint-task-resolver";
 
 describe("task-specs registry", () => {
 	const specs = allTaskSpecs();
@@ -70,4 +75,67 @@ describe("task-specs Bloom's derivation", () => {
 			});
 		});
 	}
+});
+
+describe("multi-level AICPA ref resolution (Direction W)", () => {
+	describe("refLevel", () => {
+		it("returns 'group' for 3-part refs", () => {
+			expect(refLevel("REG/V/C")).toBe("group");
+		});
+		it("returns 'topic' for 4-part refs", () => {
+			expect(refLevel("REG/V/C/1")).toBe("topic");
+		});
+		it("returns 'task' for 5-part refs", () => {
+			expect(refLevel("REG/V/C/1/1")).toBe("task");
+		});
+		it("returns null for 1, 2, or 6+ part refs", () => {
+			expect(refLevel("REG")).toBeNull();
+			expect(refLevel("REG/V")).toBeNull();
+			expect(refLevel("REG/V/C/1/1/extra")).toBeNull();
+		});
+	});
+
+	describe("isValidRef", () => {
+		it("validates a known 5-part task ref", () => {
+			expect(isValidRef("REG/V/C/1/1")).toBe(true);
+		});
+		it("validates a known 4-part topic ref", () => {
+			expect(isValidRef("REG/V/C/1")).toBe(true);
+		});
+		it("validates a known 3-part group ref", () => {
+			expect(isValidRef("REG/V/C")).toBe(true);
+		});
+		it("rejects an invalid 5-part ref", () => {
+			expect(isValidRef("REG/V/C/1/99")).toBe(false);
+		});
+		it("rejects an invalid 4-part ref", () => {
+			expect(isValidRef("REG/V/C/99")).toBe(false);
+		});
+		it("rejects an invalid 3-part ref", () => {
+			expect(isValidRef("REG/V/Z")).toBe(false);
+		});
+		it("rejects malformed refs", () => {
+			expect(isValidRef("REG")).toBe(false);
+			expect(isValidRef("")).toBe(false);
+		});
+	});
+
+	describe("resolveBlueprintRef at group level", () => {
+		it("resolves REG/V/C to S corporations group", () => {
+			const node = resolveBlueprintRef("REG/V/C");
+			expect(node).not.toBeNull();
+			expect(node!.group.name).toContain("S corporation");
+			expect(node!.topic).toBeNull();
+			expect(node!.tasks.length).toBeGreaterThan(0);
+		});
+	});
+
+	describe("resolveBlueprintRef at topic level", () => {
+		it("resolves REG/V/C/1 to eligibility topic", () => {
+			const node = resolveBlueprintRef("REG/V/C/1");
+			expect(node).not.toBeNull();
+			expect(node!.topic).not.toBeNull();
+			expect(node!.topic!.name).toContain("Eligibility");
+		});
+	});
 });
