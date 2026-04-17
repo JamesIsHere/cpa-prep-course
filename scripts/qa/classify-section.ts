@@ -23,7 +23,12 @@ import { readFileSync, writeFileSync, readdirSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 import { spawnSync } from "child_process";
-import { resolveTaskRef } from "../../src/lib/lesson-specs/blueprint-task-resolver";
+import {
+	resolveTaskRef,
+	resolveBlueprintRef,
+	isValidRef,
+	refLevel,
+} from "../../src/lib/lesson-specs/blueprint-task-resolver";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "../..");
@@ -74,17 +79,38 @@ function loadTaskSpecsFromFiles(section: string): TaskSpecMeta[] {
 		if (!refMatch || !skillMatch || !lessonMatch) continue;
 
 		const ref = refMatch[1];
-		const resolved = resolveTaskRef(ref);
-		if (!resolved) continue;
+		if (!isValidRef(ref)) continue;
 
+		const level = refLevel(ref);
 		const parts = ref.split("/");
 		const groupRef = parts.slice(0, 3).join("/");
 
+		// For task-level (5-part) refs, get canonical task text from AICPA JSON.
+		// For topic/group-level (3-4 part) refs, use the aicpaTask from the file.
+		let aicpaTask: string;
+		let aicpaSkill: string;
+		let bloomLevel: number;
+
+		if (level === "task") {
+			const resolved = resolveTaskRef(ref);
+			if (!resolved) continue;
+			aicpaTask = resolved.task.task;
+			aicpaSkill = resolved.task.skill;
+			bloomLevel = { "Remembering and Understanding": 1, Application: 2, Analysis: 3, Evaluation: 4 }[aicpaSkill] ?? 2;
+		} else {
+			// Residual spec — read aicpaTask and bloomLevel from the file itself
+			const taskTextMatch = content.match(/aicpaTask:\s*\n?\s*"([\s\S]*?)(?:(?<!\\)"),/);
+			aicpaTask = taskTextMatch?.[1]?.replace(/\\"/g, '"') ?? `Residual for ${ref}`;
+			aicpaSkill = skillMatch[1];
+			const bloomMatch = content.match(/bloomLevel:\s*(\d)/);
+			bloomLevel = bloomMatch ? parseInt(bloomMatch[1], 10) : 2;
+		}
+
 		specs.push({
 			aicpaRef: ref,
-			aicpaTask: resolved.task.task,
-			aicpaSkill: resolved.task.skill,
-			bloomLevel: { "Remembering and Understanding": 1, Application: 2, Analysis: 3, Evaluation: 4 }[resolved.task.skill] ?? 2,
+			aicpaTask,
+			aicpaSkill,
+			bloomLevel,
 			lessonSpec: lessonMatch[1],
 			groupRef,
 		});
