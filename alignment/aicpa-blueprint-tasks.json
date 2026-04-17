@@ -1962,7 +1962,7 @@
           "topics": [
             {
               "number": 1,
-              "name": "Regulations governing practice before the Internal Revenue Service",
+              "name": "Regulations governing practice before IRS",
               "tasks": [
                 {
                   "skill": "Remembering and Understanding",
@@ -1976,7 +1976,7 @@
             },
             {
               "number": 2,
-              "name": "Internal Revenue Code and Regulations related to tax return preparers",
+              "name": "IRC and Regulations related to tax return preparers",
               "tasks": [
                 {
                   "skill": "Remembering and Understanding",
@@ -2016,7 +2016,7 @@
           "topics": [
             {
               "number": 1,
-              "name": "Audits, appeals and the judicial process",
+              "name": "Audits, appeals and judicial process",
               "tasks": [
                 {
                   "skill": "Remembering and Understanding",
@@ -2033,7 +2033,7 @@
               "name": "Substantiation and disclosure",
               "tasks": [
                 {
-                  "skill": "Application",
+                  "skill": "Remembering and Understanding",
                   "task": "Summarize the requirements for the appropriate disclosure of a tax return position."
                 },
                 {
@@ -2041,12 +2041,12 @@
                   "task": "Recall requirements to report foreign bank accounts."
                 },
                 {
-                  "skill": "Remembering and Understanding",
+                  "skill": "Application",
                   "task": "Identify situations in which disclosure of tax return positions is required."
                 },
                 {
-                  "skill": "Remembering and Understanding",
-                  "task": "Identify whether substantiation is sufficient given a specific scenario. & UnderstandingApplication Analysis Evaluation Representative Task C. Federal tax procedures (continued)"
+                  "skill": "Application",
+                  "task": "Identify whether substantiation is sufficient given a specific scenario."
                 }
               ]
             },
@@ -2059,7 +2059,7 @@
                   "task": "Recall situations that would result in taxpayer penalties relating to tax returns."
                 },
                 {
-                  "skill": "Remembering and Understanding",
+                  "skill": "Application",
                   "task": "Identify taxpayer penalties given a specific scenario."
                 }
               ]
@@ -2085,12 +2085,12 @@
               "name": "Common law duties and liabilities to clients and third parties",
               "tasks": [
                 {
-                  "skill": "Application",
-                  "task": "Summarize the tax return preparer’s common law duties and liabilities to clients and third parties."
+                  "skill": "Remembering and Understanding",
+                  "task": "Summarize the tax return preparer's common law duties and liabilities to clients and third parties."
                 },
                 {
-                  "skill": "Remembering and Understanding",
-                  "task": "Identify situations which result in violations of the tax return preparer’s common law duties and liabilities to clients and third parties."
+                  "skill": "Application",
+                  "task": "Identify situations which result in violations of the tax return preparer's common law duties and liabilities to clients and third parties."
                 }
               ]
             },
@@ -2099,11 +2099,11 @@
               "name": "Privileged communications, confidentiality and privacy acts",
               "tasks": [
                 {
-                  "skill": "Application",
+                  "skill": "Remembering and Understanding",
                   "task": "Summarize the rules regarding privileged communications as they relate to tax practice."
                 },
                 {
-                  "skill": "Remembering and Understanding",
+                  "skill": "Application",
                   "task": "Identify situations in which communications regarding tax practice are considered privileged."
                 }
               ]
@@ -2115,7 +2115,7 @@
     {
       "area": "II",
       "name": "Business Law",
-      "weight": "15–25%",
+      "weight": "10–20%",
       "groups": [
         {
           "letter": "A",
@@ -2130,7 +2130,7 @@
                   "task": "Recall the types of agent authority."
                 },
                 {
-                  "skill": "Remembering and Understanding",
+                  "skill": "Application",
                   "task": "Identify whether an agency relationship exists given a specific scenario."
                 }
               ]
@@ -2144,7 +2144,7 @@
                   "task": "Explain the various duties and liabilities of agents and principals."
                 },
                 {
-                  "skill": "Remembering and Understanding",
+                  "skill": "Application",
                   "task": "Identify the duty or liability of an agent or principal given a specific scenario."
                 }
               ]
@@ -2160,15 +2160,15 @@
               "name": "Formation",
               "tasks": [
                 {
-                  "skill": "Application",
+                  "skill": "Remembering and Understanding",
                   "task": "Summarize the elements of contract formation between parties."
                 },
                 {
-                  "skill": "Remembering and Understanding",
+                  "skill": "Application",
                   "task": "Identify whether a valid contract was formed given a specific scenario."
                 },
                 {
-                  "skill": "Remembering and Understanding",
+                  "skill": "Application",
                   "task": "Identify different types of contracts (e.g., written, verbal, unilateral, express, implied) given a specific scenario."
                 }
               ]
@@ -2186,11 +2186,11 @@
                   "task": "Explain the different ways in which a contract can be discharged (e.g., performance, agreement, and operation of the law)."
                 },
                 {
-                  "skill": "Remembering and Understanding",
+                  "skill": "Application",
                   "task": "Identify whether a contract has been discharged given a specific scenario."
                 },
                 {
-                  "skill": "Remembering and Understanding",
+                  "skill": "Application",
                   "task": "Identify whether both parties to a contract have fulfilled their performance obligation given a specific scenario."
                 }
               ]
@@ -2200,15 +2200,15 @@
               "name": "Breach and remedies",
               "tasks": [
                 {
-                  "skill": "Application",
+                  "skill": "Remembering and Understanding",
                   "task": "Summarize the different remedies available to a party for breach of contract."
                 },
                 {
-                  "skill": "Remembering and Understanding",
+                  "skill": "Application",
                   "task": "Identify situations involving breach of contract given a specific scenario."
                 },
                 {
-                  "skill": "Remembering and Understanding",
+                  "skill": "Application",
                   "task": "Identify the remedy available to a party for breach of contract given a specific scenario."
                 }
               ]
@@ -2236,7 +2236,7 @@
                   "task": "Explain the difference between a secured and unsecured creditor and the requirements needed to perfect a security interest."
                 },
                 {
-                  "skill": "Remembering and Understanding",
+                  "skill": "Application",
                   "task": "Identify rights, duties or liabilities of debtors, creditors or guarantors given a specific scenario."
                 }
               ]
@@ -2256,7 +2256,7 @@
                   "task": "Summarize the federal laws and regulations for qualified health care plans, including required business mandates and premium tax credits."
                 },
                 {
-                  "skill": "Remembering and Understanding",
+                  "skill": "Application",
                   "task": "Explain the federal laws and regulations related to employment taxes from both an employer and employee perspective."
                 },
                 {
@@ -2272,7 +2272,7 @@
                   "task": "Summarize the federal laws and regulations prohibiting bribery of foreign government officials, including payments made to generate preferential treatment from a foreign government."
                 },
                 {
-                  "skill": "Remembering and Understanding",
+                  "skill": "Application",
                   "task": "Identify compliance issues with various federal laws and regulations (employment tax, qualified health plans, bankruptcy, worker classifications and anti-bribery) given a specific scenario."
                 }
               ]
@@ -2288,11 +2288,11 @@
               "name": "Selection and formation of business entity and related operation and termination",
               "tasks": [
                 {
-                  "skill": "Application",
+                  "skill": "Remembering and Understanding",
                   "task": "Summarize the processes for formation and termination of various business entities."
                 },
                 {
-                  "skill": "Application",
+                  "skill": "Remembering and Understanding",
                   "task": "Summarize the legal characteristics of various business entities."
                 }
               ]
@@ -2302,11 +2302,11 @@
               "name": "Rights, duties, legal obligations and authority of owners and management",
               "tasks": [
                 {
-                  "skill": "Application",
+                  "skill": "Remembering and Understanding",
                   "task": "Summarize the rights, duties, legal obligations and authority of owners and management."
                 },
                 {
-                  "skill": "Remembering and Understanding",
+                  "skill": "Application",
                   "task": "Identify the rights, duties, legal obligations and authority of owners and management given a specific scenario."
                 }
               ]
@@ -2318,7 +2318,7 @@
     {
       "area": "III",
       "name": "Federal Taxation of Property Transactions",
-      "weight": "5–15%",
+      "weight": "12–22%",
       "groups": [
         {
           "letter": "A",
@@ -2389,7 +2389,7 @@
     {
       "area": "IV",
       "name": "Federal Taxation of Individuals",
-      "weight": "22–32%",
+      "weight": "15–25%",
       "groups": [
         {
           "letter": "A",
@@ -2401,27 +2401,27 @@
               "tasks": [
                 {
                   "skill": "Application",
-                  "task": "Calculate the amounts that should be included in an individual’s gross income as reported on Form 1040 – U.S. Individual Income Tax Return , including wages, interest and dividends, guaranteed payments received from a partnership, fringe benefits, income from a qualified retirement plan and punitive damages."
+                  "task": "Calculate the amounts that should be included in an individual's gross income as reported on Form 1040, including wages, interest and dividends, guaranteed payments received from a partnership, fringe benefits, income from a qualified retirement plan and punitive damages."
                 },
                 {
                   "skill": "Application",
-                  "task": "Calculate the capital gain that should be included in an individual’s gross income as reported on Form 1040 – U.S. Individual Income Tax Return from transactions, including gains from the sale of investments or virtual currencies, assets received as gifts and assets received from a decedent and classify them as long-term or short-term."
+                  "task": "Calculate the capital gain that should be included in an individual's gross income as reported on Form 1040 from transactions, including gains from the sale of investments or virtual currencies, assets received as gifts and assets received from a decedent and classify them as long-term or short-term."
                 },
                 {
                   "skill": "Application",
-                  "task": "Calculate the amounts that should be excluded from an individual’s gross income as reported on Form 1040 – U.S. Individual Income Tax Return , including tax-exempt interest, gifts received and life insurance proceeds."
+                  "task": "Calculate the amounts that should be excluded from an individual's gross income as reported on Form 1040, including tax-exempt interest, gifts received and life insurance proceeds."
                 },
                 {
                   "skill": "Application",
-                  "task": "Calculate the income reported in the year of death for a decedent on Form 1040 – U.S. Individual Income Tax Return ."
+                  "task": "Calculate the income reported in the year of death for a decedent on Form 1040."
                 },
                 {
                   "skill": "Analysis",
-                  "task": "Review Form 1040 – U.S. Individual Income Tax Return and supporting documentation, including any source data used to create the return, to determine the completeness and accuracy of the gross income reported."
+                  "task": "Review Form 1040 and supporting documentation, including any source data used to create the return, to determine the completeness and accuracy of the gross income reported."
                 },
                 {
                   "skill": "Analysis",
-                  "task": "Review and resolve discrepancies identified by automated diagnostic and validation checks to ensure the completeness and accuracy of the gross income reported on Form 1040 – U.S. Individual Income Tax Return based on the source data used to prepare the form."
+                  "task": "Review and resolve discrepancies identified by automated diagnostic and validation checks to ensure the completeness and accuracy of gross income reported on Form 1040 based on the source data used to prepare the form."
                 }
               ]
             }
@@ -2437,7 +2437,7 @@
               "tasks": [
                 {
                   "skill": "Application",
-                  "task": "Use information provided from disregarded and pass-through entities in which an individual has an ownership interest to report an owner’s share of ordinary business income (loss) and separately stated items on an individual’s tax return."
+                  "task": "Use information provided from disregarded and pass-through entities in which an individual has an ownership interest to report an owner's share of ordinary business income (loss) and separately stated items on an individual's tax return."
                 }
               ]
             }
@@ -2445,18 +2445,18 @@
         },
         {
           "letter": "C",
-          "name": "Adjustments and deductions to arrive at adjusted gross income and taxable income",
+          "name": "Adjustments and deductions to arrive at AGI and taxable income",
           "topics": [
             {
               "number": 0,
               "name": "(direct)",
               "tasks": [
                 {
-                  "skill": "Remembering and Understanding",
+                  "skill": "Application",
                   "task": "Identify adjustments allowed in the calculation of adjusted gross income given a specific scenario, including a contribution to a qualified retirement plan, contribution to a health savings plan and self-employment expenses."
                 },
                 {
-                  "skill": "Remembering and Understanding",
+                  "skill": "Application",
                   "task": "Identify deductions from adjusted gross income in the calculation of taxable income given a specific scenario, including medical expenses, qualified residence interest expense, casualty losses and taxes."
                 },
                 {
@@ -2465,11 +2465,11 @@
                 },
                 {
                   "skill": "Analysis",
-                  "task": "Review Form 1040 – U.S. Individual Income Tax Return and supporting documentation, including any source data used to create the return, to determine the accuracy of the adjusted gross income and taxable income reported."
+                  "task": "Review Form 1040 and supporting documentation, including any source data used to create the return, to determine the accuracy of the adjusted gross income and taxable income reported."
                 },
                 {
                   "skill": "Analysis",
-                  "task": "Review and resolve discrepancies identified by automated diagnostic and validation checks to ensure the completeness and accuracy of the adjusted gross income and taxable income reported on Form 1040 – U.S. Individual Income Tax Return based on the source data used to prepare the form."
+                  "task": "Review and resolve discrepancies identified by automated diagnostic and validation checks to ensure the completeness and accuracy of the adjusted gross income and taxable income reported on Form 1040 based on the source data used to prepare the form."
                 }
               ]
             }
@@ -2497,11 +2497,11 @@
                 },
                 {
                   "skill": "Analysis",
-                  "task": "Review Form 1040 – U.S. Individual Income Tax Return and supporting documentation, including any source data used to create the return, to determine the accuracy of the losses reported."
+                  "task": "Review Form 1040 and supporting documentation, including any source data used to create the return, to determine the accuracy of the losses reported."
                 },
                 {
                   "skill": "Analysis",
-                  "task": "Review and resolve discrepancies identified by automated diagnostic and validation checks to ensure the completeness and accuracy of the loss limitations reported on Form 1040 – U.S. Individual Income Tax Return based on the source data used to prepare the form."
+                  "task": "Review and resolve discrepancies identified by automated diagnostic and validation checks to ensure the completeness and accuracy of the loss limitations reported on Form 1040 based on the source data used to prepare the form."
                 }
               ]
             }
@@ -2524,7 +2524,7 @@
                   "task": "Recall relationships meeting the definition of dependent for purposes of determining taxpayer filing status."
                 },
                 {
-                  "skill": "Remembering and Understanding",
+                  "skill": "Application",
                   "task": "Identify taxpayer filing status for tax purposes given a specific scenario."
                 }
               ]
@@ -2549,7 +2549,7 @@
                 },
                 {
                   "skill": "Application",
-                  "task": "Calculate the tax liability based on an individual’s taxable income given a specific scenario, including consideration of the net investment income tax."
+                  "task": "Calculate the tax liability based on an individual's taxable income given a specific scenario, including consideration of the net investment income tax."
                 }
               ]
             }
@@ -2559,8 +2559,8 @@
     },
     {
       "area": "V",
-      "name": "Federal Taxation of Entities (including tax preparation)",
-      "weight": "23–33%",
+      "name": "Federal Taxation of Entities",
+      "weight": "18–28%",
       "groups": [
         {
           "letter": "A",
@@ -2571,7 +2571,7 @@
               "name": "(direct)",
               "tasks": [
                 {
-                  "skill": "Remembering and Understanding",
+                  "skill": "Application",
                   "task": "Identify permanent vs. temporary differences to be reported on Schedule M-3 in a given scenario."
                 },
                 {
@@ -2580,11 +2580,11 @@
                 },
                 {
                   "skill": "Analysis",
-                  "task": "Review an entity’s adjusted book trial balance and supporting documentation to identify and calculate possible book/tax differences."
+                  "task": "Review an entity's adjusted book trial balance and supporting documentation to identify and calculate possible book/tax differences."
                 },
                 {
                   "skill": "Analysis",
-                  "task": "Review a C corporation’s adjusted book trial balance and supporting documentation, including relevant source data used to create the trial balance, to determine the completeness and accuracy of the book/tax differences reported on Form 1120 – U.S. Corporation Income Tax Return."
+                  "task": "Review a C corporation's adjusted book trial balance and supporting documentation, including relevant source data used to create the trial balance, to determine the completeness and accuracy of the book/tax differences reported on Form 1120."
                 }
               ]
             }
@@ -2649,7 +2649,7 @@
                   "task": "Recall S corporation eligibility requirements for tax purposes."
                 },
                 {
-                  "skill": "Remembering and Understanding",
+                  "skill": "Application",
                   "task": "Identify situations in which S corporation status would be revoked or terminated for tax purposes."
                 }
               ]
@@ -2664,29 +2664,29 @@
                 },
                 {
                   "skill": "Application",
-                  "task": "Calculate the impact of current year operations on an S corporation’s accumulated adjustments account."
+                  "task": "Calculate the impact of current year operations on an S corporation's accumulated adjustments account."
                 },
                 {
                   "skill": "Analysis",
-                  "task": "Review federal Form 1120S – U.S. Income Tax Return for an S Corporation and supporting documentation, including any source data used to create the return, to determine the completeness and accuracy of the classification of items as ordinary business income (loss), separately stated or nondeductible."
+                  "task": "Review federal Form 1120S and supporting documentation, including any source data used to create the return, to determine the completeness and accuracy of the classification of items as ordinary business income (loss), separately stated or nondeductible."
                 },
                 {
                   "skill": "Analysis",
-                  "task": "Review and resolve discrepancies identified by automated diagnostic and validation checks to ensure the completeness and accuracy of the ordinary business income (loss) and separately stated items reported on Form 1120S – U.S. Income Tax Return for an S Corporation based on the source data used to prepare the form."
+                  "task": "Review and resolve discrepancies identified by automated diagnostic and validation checks to ensure the completeness and accuracy of the ordinary business income (loss) and separately stated items reported on Form 1120S based on the source data used to prepare the form."
                 }
               ]
             },
             {
               "number": 3,
-              "name": "Basis of shareholder’s interest",
+              "name": "Basis of shareholder's interest",
               "tasks": [
                 {
                   "skill": "Application",
-                  "task": "Calculate a shareholder’s stock basis in an S corporation for tax purposes resulting from business operations, cash contributions by the shareholder and cash distributions to the shareholder."
+                  "task": "Calculate a shareholder's stock basis in an S corporation for tax purposes resulting from business operations, cash contributions by the shareholder and cash distributions to the shareholder."
                 },
                 {
                   "skill": "Application",
-                  "task": "Calculate changes in a shareholder’s debt basis in an S corporation resulting from current year repayment of debt."
+                  "task": "Calculate changes in a shareholder's debt basis in an S corporation resulting from current year repayment of debt."
                 }
               ]
             }
@@ -2706,21 +2706,21 @@
                 },
                 {
                   "skill": "Analysis",
-                  "task": "Review federal Form 1065 – U.S. Return of Partnership Income and supporting documentation, including any source data used to create the return, to determine the completeness and accuracy of the classification of items as ordinary business income (loss), separately stated or nondeductible."
+                  "task": "Review federal Form 1065 and supporting documentation, including any source data used to create the return, to determine the completeness and accuracy of the classification of items as ordinary business income (loss), separately stated or nondeductible."
                 },
                 {
                   "skill": "Analysis",
-                  "task": "Review and resolve discrepancies identified by automated diagnostic and validation checks to ensure the completeness and accuracy of ordinary business income (loss) and separately stated items reported on Form 1065 – U.S. Return of Partnership Income based on the source data used to prepare the form."
+                  "task": "Review and resolve discrepancies identified by automated diagnostic and validation checks to ensure the completeness and accuracy of ordinary business income (loss) and separately stated items reported on Form 1065 based on the source data used to prepare the form."
                 }
               ]
             },
             {
               "number": 2,
-              "name": "Basis of partner’s interest",
+              "name": "Basis of partner's interest",
               "tasks": [
                 {
                   "skill": "Application",
-                  "task": "Calculate the partner’s basis in a partnership for tax purposes resulting from business operations, cash contributions by a partner, cash distributions to a partner and changes in existing partnership liabilities."
+                  "task": "Calculate the partner's basis in a partnership for tax purposes resulting from business operations, cash contributions by a partner, cash distributions to a partner and changes in existing partnership liabilities."
                 }
               ]
             }
