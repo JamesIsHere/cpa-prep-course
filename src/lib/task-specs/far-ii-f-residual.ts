@@ -19,6 +19,8 @@ export const spec: TaskSpec = {
 		"Internal-use software (ASC 350-40): three-stage model (preliminary project, application development, post-implementation), capitalization during development stage only",
 		"Cloud computing arrangements (ASC 350-40): implementation costs for hosted arrangements, service vs license distinction",
 		"Goodwill impairment testing: qualitative assessment option (Step 0), quantitative one-step test (comparing fair value of reporting unit to carrying amount including goodwill), elimination of the old Step 2",
+		"Indefinite-lived intangible asset impairment (ASC 350-30): qualitative assessment option, quantitative test comparing fair value to carrying amount, no amortization — impairment test only",
+		"Initial goodwill recognition in business combinations (ASC 805): measurement as excess of consideration over net identifiable assets acquired, bargain purchase gain when consideration is less than fair value of net assets",
 	],
 
 	keyStandards: [

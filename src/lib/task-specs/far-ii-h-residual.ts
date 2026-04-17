@@ -18,6 +18,9 @@ export const spec: TaskSpec = {
 		"Troubled debt restructuring (ASC 470-60): modification vs exchange, gain/loss recognition for debtor and creditor, effective interest rate recalculation",
 		"Convertible debt: beneficial conversion feature (legacy), ASU 2020-06 simplified model, induced conversion",
 		"Debt covenant concepts: classification of long-term debt as current when covenants are violated, subjective acceleration clauses, waiver accounting",
+		"Bond terminology and fundamentals: stated rate vs effective rate vs market rate, face value vs carrying amount, relationship between coupon rate and market rate for premium/discount pricing",
+		"Accrued interest at bond acquisition: calculation of accrued interest paid by buyer when purchasing between interest dates, effect on first interest receipt",
+		"Fair value option for financial liabilities (ASC 825-10): election to measure liabilities at fair value, own credit risk changes recognized in OCI (ASU 2016-01), distinction from amortized cost measurement",
 	],
 
 	keyStandards: [

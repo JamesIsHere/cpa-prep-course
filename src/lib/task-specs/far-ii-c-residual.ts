@@ -21,6 +21,10 @@ export const spec: TaskSpec = {
 		"Inventory classifications: raw materials, work-in-process, and finished goods for manufacturing entities; merchandise inventory for retailers; supplies; distinction between direct and indirect costs in WIP",
 		"Inventory error mechanics: effect of ending inventory errors on COGS and net income in current and subsequent periods, self-correcting nature over two periods, cumulative effect on retained earnings, balance sheet vs income statement impact timing",
 		"Retail inventory method conceptual understanding: cost-to-retail ratio concept, markups and markdowns treatment (conventional vs FIFO vs average cost), LCM approximation through conventional retail method, when the method is appropriate",
+		"Gross profit method: estimation of ending inventory using historical gross profit percentage, appropriate uses (interim reporting, fire loss claims, reasonableness checks), distinction from retail inventory method",
+		"Purchase commitment losses: recognition of loss when firm non-cancelable purchase commitment exists and market price falls below commitment price, measurement and disclosure requirements",
+		"FOB shipping point vs destination: inventory recognition timing based on transfer of risk/title, cutoff errors when goods are in transit at period-end",
+		"Interest capitalization to inventory (ASC 835-20): qualifying assets for interest capitalization, avoidable interest concept, application to self-constructed assets and inventory produced for own use",
 	],
 
 	keyStandards: [

@@ -22,6 +22,9 @@ export const spec: TaskSpec = {
 		"Indirect effects of accounting changes: direct effects (retrospective) vs indirect effects (prospective only), examples of indirect effects (profit-sharing, royalty recalculations), recognition period for indirect effects",
 		"Preferability and SEC requirements for voluntary principle changes: preferability letter from auditor, justification that new principle is preferable, SEC registrant requirements under ASC 250",
 		"Depreciation error vs estimate change distinction: mathematical error in depreciation calculation (error correction, retrospective restatement) vs revised useful life or salvage value (estimate change, prospective), common exam trap of distinguishing the two",
+		"ASC 250 scope and definitions: what constitutes an accounting change (principle, estimate, reporting entity) vs what does not (initial adoption, correction of error), classification of specific scenarios",
+		"Restatement terminology: definition of restatement as correction of material error in previously issued financial statements, distinction from revision (immaterial errors), Big R vs little r",
+		"Error vs estimate vs principle classification: definitional boundaries — failed accrual as error, non-GAAP to GAAP transition as error or principle change, change in depreciation method as estimate effected by principle change",
 	],
 
 	keyStandards: [

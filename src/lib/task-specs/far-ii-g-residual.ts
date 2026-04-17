@@ -22,6 +22,13 @@ export const spec: TaskSpec = {
 		"Escheat liability: unclaimed property obligations to state governments, measurement and classification, recognition timing based on state dormancy periods",
 		"Refund liability for sales returns (ASC 606): variable consideration constraint, refund liability and return asset recognition, subsequent remeasurement at each reporting period",
 		"Gift card deferred revenue classification: contract liability recognition at issuance, breakage revenue recognition over expected redemption pattern (ASC 606), distinction between homogeneous pool and individual card tracking",
+		"Accrued vs contingent liabilities distinction: accrued liabilities arise from known obligations with estimated amounts, contingent liabilities arise from uncertain future events — conceptual boundary between ASC 450 and routine accruals",
+		"Loss contingency recognition criteria (ASC 450): probable and reasonably estimable threshold for accrual, disclosure for reasonably possible, conceptual overlap with payables group for litigation and warranty",
+		"Warranty liability: assurance-type warranty accrual (ASC 450) vs service-type extended warranty (ASC 606 separate performance obligation), initial measurement and subsequent adjustment",
+		"Income tax payable: current portion of income tax obligation, distinction from deferred tax liabilities, classification as current liability",
+		"Debt extinguishment and defeasance concepts: in-substance defeasance, gain/loss on extinguishment, derecognition criteria — cross-reference with FAR/II/H debt group for detailed treatment",
+		"Contingent consideration from business combinations (ASC 805): classification as liability, subsequent fair value remeasurement through earnings, distinction from general ASC 450 contingencies",
+		"Trade discount analysis: annualized cost of forgoing early payment discounts, effective interest rate concepts for payables management",
 	],
 
 	keyStandards: [

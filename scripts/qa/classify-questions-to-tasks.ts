@@ -96,14 +96,27 @@ async function main() {
 		process.exit(1);
 	}
 
-	// Fetch questions
-	const { data: rows, error } = await sb
-		.from("questions")
-		.select("id,topic,stem,choices,correct_index,explanation,difficulty,cognitive_level")
-		.eq("section_id", sectionId)
-		.eq("topic", topicArg);
-	if (error) throw error;
-	let questions = (rows ?? []) as DbQuestion[];
+	// Fetch questions via pagination (Supabase server-side max_rows=1000)
+	const PAGE_SIZE = 1000;
+	let allRows: DbQuestion[] = [];
+	let page = 0;
+	while (true) {
+		const from = page * PAGE_SIZE;
+		const to = from + PAGE_SIZE - 1;
+		const { data: rows, error } = await sb
+			.from("questions")
+			.select("id,topic,stem,choices,correct_index,explanation,difficulty,cognitive_level")
+			.eq("section_id", sectionId)
+			.eq("topic", topicArg)
+			.order("id")
+			.range(from, to);
+		if (error) throw error;
+		const batch = (rows ?? []) as DbQuestion[];
+		allRows = allRows.concat(batch);
+		if (batch.length < PAGE_SIZE) break;
+		page++;
+	}
+	let questions = allRows;
 	if (limit) questions = questions.slice(0, limit);
 	logStep(`Loaded ${questions.length} questions for topic "${topicArg}"${limit ? ` (limited to ${limit})` : ""}`);
 

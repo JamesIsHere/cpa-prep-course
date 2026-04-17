@@ -1,0 +1,959 @@
+{
+  "section": "far",
+  "generatedAt": "2026-04-17T13:52:49.251Z",
+  "totalQuestions": 95,
+  "pass1Matched": 52,
+  "pass1Homeless": 43,
+  "suggestions": [
+    {
+      "question_id": 31,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests ratio analysis and timing effects on ROA, not statement preparation, adjustment, or discrepancy detection.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": null
+    },
+    {
+      "question_id": 145,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests classification impact on current ratio and covenant compliance, not statement preparation or error correction tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": null
+    },
+    {
+      "question_id": 157,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "This question tests long-lived asset impairment (ASC 360) for PP&E, not inventory accounting.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": null
+    },
+    {
+      "question_id": 163,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "This question tests lease classification and expense patterns under ASC 842, not intangible asset accounting.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 4,
+      "task_bloom": null
+    },
+    {
+      "question_id": 167,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "This question tests consolidation elimination of unrealized intercompany profit, not debt accounting.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": null
+    },
+    {
+      "question_id": 190,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests deferred tax asset valuation allowance assessment, which is income tax accounting not covered by FAR/I/A tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": null
+    },
+    {
+      "question_id": 376,
+      "pin_ref": "FAR/I/A/23",
+      "confidence": "high",
+      "rationale": "Tests GAAP hierarchy knowledge (IFRS vs U.S. GAAP presentation requirements) which fits the conceptual framework residual task.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": null
+    },
+    {
+      "question_id": 420,
+      "pin_ref": "FAR/III/F",
+      "confidence": "high",
+      "rationale": "Question tests lease modification accounting treatment, explicitly covered in the residual task.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 2
+    },
+    {
+      "question_id": 427,
+      "pin_ref": "FAR/III/F",
+      "confidence": "high",
+      "rationale": "Question tests accounting for lease modification reducing scope, explicitly covered in the residual task.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 2
+    },
+    {
+      "question_id": 436,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Fair value option accounting for debt and own-credit-risk treatment in OCI is not covered by any of the representative tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 1098,
+      "pin_ref": "FAR/II/B",
+      "confidence": "high",
+      "rationale": "Tests CECL transition mechanics (cumulative-effect adjustment to retained earnings), which falls under residual's 'CECL conceptual framework (transition, methodology selection, presentation)'.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 1102,
+      "pin_ref": "FAR/II/A",
+      "confidence": "high",
+      "rationale": "Question tests compensating balance presentation, which is explicitly listed in the residual task scope.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 2
+    },
+    {
+      "question_id": 1103,
+      "pin_ref": "FAR/II/B",
+      "confidence": "high",
+      "rationale": "Tests CECL methodology selection (identifying the prohibited incurred loss model), explicitly covered by residual's 'CECL conceptual framework (transition, methodology selection, presentation)'.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 1151,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests trading securities accounting (ASC 320), not fair value measurement framework (ASC 820).",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": null
+    },
+    {
+      "question_id": 1282,
+      "pin_ref": "FAR/III/E",
+      "confidence": "medium",
+      "rationale": "Tests fair value definition, fits residual as fundamental fair value measurement concept beyond specific representative tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 1866,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests subsequent events classification (Type I vs Type II), a specific accounting topic not covered by these tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 1870,
+      "pin_ref": "FAR/I/A/1/2",
+      "confidence": "high",
+      "rationale": "Tests ability to identify errors requiring balance sheet adjustment (accrued salaries omission vs. estimate changes).",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 2
+    },
+    {
+      "question_id": 1874,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests disclosure requirements for voluntary accounting changes, not statement preparation or adjustment tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 1968,
+      "pin_ref": "FAR/II/C",
+      "confidence": "medium",
+      "rationale": "Gross profit method calculation is an inventory estimation technique not covered by the four representative tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 2
+    },
+    {
+      "question_id": 1969,
+      "pin_ref": "FAR/II/C",
+      "confidence": "medium",
+      "rationale": "Conceptual understanding of gross profit method usage falls under inventory estimation techniques in the residual.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": 2
+    },
+    {
+      "question_id": 1972,
+      "pin_ref": "FAR/II/C",
+      "confidence": "medium",
+      "rationale": "Purchase commitment loss recognition is inventory-related content beyond the four representative tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 2
+    },
+    {
+      "question_id": 1982,
+      "pin_ref": "FAR/II/C",
+      "confidence": "medium",
+      "rationale": "FOB shipping point ownership determination addresses inventory inclusion rules not covered by representative tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 2
+    },
+    {
+      "question_id": 2040,
+      "pin_ref": "FAR/II/F",
+      "confidence": "medium",
+      "rationale": "Indefinite-lived intangible impairment testing is conceptually similar to goodwill impairment methodology mentioned in the residual task.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 2041,
+      "pin_ref": "FAR/II/F",
+      "confidence": "medium",
+      "rationale": "Goodwill recognition in business combinations is intangible asset content beyond the three representative tasks, related to the residual's goodwill coverage.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 2059,
+      "pin_ref": "FAR/III/F",
+      "confidence": "high",
+      "rationale": "Question tests lessee disclosure requirements, explicitly covered in the residual task.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": 2
+    },
+    {
+      "question_id": 2064,
+      "pin_ref": "FAR/III/F",
+      "confidence": "high",
+      "rationale": "Question tests ROU asset amortization method for finance leases, explicitly covered in the residual task.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": 2
+    },
+    {
+      "question_id": 2067,
+      "pin_ref": "FAR/III/F",
+      "confidence": "high",
+      "rationale": "Question tests lease definition criteria and identified asset concept, explicitly covered in the residual task.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": 2
+    },
+    {
+      "question_id": 2069,
+      "pin_ref": "FAR/III/F",
+      "confidence": "high",
+      "rationale": "Question tests lease modification accounting when adding scope at market rate, explicitly covered in the residual task.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 2
+    },
+    {
+      "question_id": 2126,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests conceptual understanding of callable preferred stock features, which is not covered by the journal entry task or the specific residual topics listed.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": null
+    },
+    {
+      "question_id": 2256,
+      "pin_ref": "FAR/II/B",
+      "confidence": "high",
+      "rationale": "Tests present value calculation for noninterest-bearing note receivable, covered by residual's 'notes receivable valuation and interest'.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 2260,
+      "pin_ref": "FAR/II/A",
+      "confidence": "high",
+      "rationale": "Question tests credit facility disclosure (undrawn line of credit), which is explicitly listed in the residual task scope.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 2
+    },
+    {
+      "question_id": 2262,
+      "pin_ref": "FAR/II/B",
+      "confidence": "high",
+      "rationale": "Tests accrued interest calculation and journal entry for note receivable, covered by residual's 'notes receivable valuation and interest'.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 2268,
+      "pin_ref": "FAR/II/A",
+      "confidence": "high",
+      "rationale": "Question tests restricted cash classification (current vs. noncurrent), which is explicitly listed in the residual task scope.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 2
+    },
+    {
+      "question_id": 2288,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Healthcare-specific revenue recognition (contractual adjustments) is not covered by general NFP statement preparation tasks or the residual's illustrative list.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 4716,
+      "pin_ref": "FAR/I/A/23",
+      "confidence": "high",
+      "rationale": "Tests GAAP hierarchy knowledge (GASB vs FASB jurisdiction) which directly fits the conceptual framework residual task.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": null
+    },
+    {
+      "question_id": 4735,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Loss contingency accrual criteria (ASC 450-20) is not covered by ARO, AP/accrued calculation, exit liabilities, or reconciliation tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": null
+    },
+    {
+      "question_id": 4743,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Conceptual distinction between accrued and contingent liabilities does not fit the calculation/journal entry focus of task 2 or other specific tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 4744,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Trade credit discount cost analysis is financial management of AP, not carrying amount calculation, journal entries, or reconciliation.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": null
+    },
+    {
+      "question_id": 4748,
+      "pin_ref": "FAR/III/A",
+      "confidence": "high",
+      "rationale": "Tests classification of accounting change types (principle vs estimate vs error), which fits the residual's coverage of conceptual distinctions beyond calculating adjustments.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 4757,
+      "pin_ref": "FAR/III/A",
+      "confidence": "high",
+      "rationale": "Tests identification of error vs other change types, fitting the residual's coverage of classification concepts and restatement terminology.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 4760,
+      "pin_ref": "FAR/III/A",
+      "confidence": "medium",
+      "rationale": "Tests classification of non-GAAP to GAAP transition as error correction, fitting residual's conceptual coverage of change type distinctions.",
+      "pass": 1,
+      "bloom_overshoot": true,
+      "question_bloom": 4,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 5253,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests error correction vs. estimate change for a for-profit corporation under ASC 250, not state/local government accounting.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": null
+    },
+    {
+      "question_id": 7646,
+      "pin_ref": "FAR/I/D",
+      "confidence": "medium",
+      "rationale": "EPS presentation for discontinued operations is public company content beyond the three representative tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 11583,
+      "pin_ref": "FAR/I/A/23",
+      "confidence": "medium",
+      "rationale": "Tests foundational working capital definition underlying financial reporting, fits conceptual framework knowledge.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11663,
+      "pin_ref": "FAR/III/A",
+      "confidence": "medium",
+      "rationale": "Tests scope determination of ASC 250, which is conceptual framework knowledge fitting the residual's coverage beyond calculation tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 11666,
+      "pin_ref": "FAR/III/A",
+      "confidence": "high",
+      "rationale": "Tests restatement terminology and definition, directly fitting the residual's mention of restatement materiality criteria concepts.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 11672,
+      "pin_ref": "FAR/I/A/6",
+      "confidence": "medium",
+      "rationale": "Tests push-down accounting in acquisitions, which is consolidation-related content beyond the three specific preparation/adjustment/detection tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 11698,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests ASC 805 treatment of stock issuance costs in a business combination, not consolidated statement preparation mechanics.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11704,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests contingent consideration remeasurement under ASC 805-30-35 (business combination accounting), not ASC 450 loss contingencies.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 4,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11725,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests recognition of contingencies assumed in business combinations under ASC 805-20-25, which explicitly overrides ASC 450 probability thresholds.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 4,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11729,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests calculation of contingent/variable lease payments under ASC 842, not loss contingencies under ASC 450.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11810,
+      "pin_ref": "FAR/III/D",
+      "confidence": "medium",
+      "rationale": "Interim period tax accounting (AETR methodology and quarterly allocation) is specialized income tax content not explicitly covered by the five representative tasks.",
+      "pass": 1,
+      "bloom_overshoot": true,
+      "question_bloom": 4,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 11824,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Investment return presentation rules (net of external expenses) are not addressed by statement preparation tasks or the residual's scope.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11828,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Exchange vs contribution bifurcation is fundamental revenue classification not covered by statement preparation tasks or the residual's listed topics.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11830,
+      "pin_ref": "FAR/I/B",
+      "confidence": "medium",
+      "rationale": "Donated inventory measurement fits the residual's pattern of 'donated services/facilities recognition rules' as NFP content beyond core statement preparation.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 11842,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Liquidity disclosure requirements (ASU 2016-14) are not covered by statement preparation tasks or the residual's listed topics.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11845,
+      "pin_ref": "FAR/I/B/2/4",
+      "confidence": "high",
+      "rationale": "Joint cost allocation (audience criterion) directly determines functional expense classification, which is the core of task 2/4.",
+      "pass": 1,
+      "bloom_overshoot": true,
+      "question_bloom": 3,
+      "task_bloom": 2
+    },
+    {
+      "question_id": 11962,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Recall of stated rate definition is foundational bond terminology not addressed by the modification, TDR, or calculation-focused tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11966,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Accrued interest calculation from investor/buyer perspective; all representative tasks address issuer debt accounting only.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11974,
+      "pin_ref": "FAR/II/A",
+      "confidence": "high",
+      "rationale": "Question tests imprest petty cash system concepts, which is explicitly listed in the residual task scope.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": 2
+    },
+    {
+      "question_id": 11980,
+      "pin_ref": "FAR/II/B",
+      "confidence": "high",
+      "rationale": "Tests effective interest method for noninterest-bearing note (Year 2 interest income), covered by residual's 'notes receivable valuation and interest'.",
+      "pass": 1,
+      "bloom_overshoot": true,
+      "question_bloom": 4,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 11986,
+      "pin_ref": "FAR/II/B",
+      "confidence": "high",
+      "rationale": "Tests credit risk concentration disclosure requirements, explicitly covered by residual's 'credit risk concentration disclosure'.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 11991,
+      "pin_ref": "FAR/II/B",
+      "confidence": "high",
+      "rationale": "Tests CECL forecast period reversion methodology (historical loss information), covered by residual's 'CECL conceptual framework (transition, methodology selection, presentation)'.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 11993,
+      "pin_ref": "FAR/II/B",
+      "confidence": "high",
+      "rationale": "Tests CECL DCF method for calculating day-one allowance, covered by residual's 'CECL conceptual framework (transition, methodology selection, presentation)'.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 11998,
+      "pin_ref": "FAR/II/B",
+      "confidence": "high",
+      "rationale": "Tests allowance for credit losses presentation as contra asset, covered by residual's 'CECL conceptual framework (transition, methodology selection, presentation)'.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 12002,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests classification of mandatorily redeemable preferred stock under ASC 480, which is not covered by the journal entry task or the specific residual topics listed.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 12046,
+      "pin_ref": "FAR/II/D",
+      "confidence": "medium",
+      "rationale": "Question tests interest capitalization period rules during PP&E construction, which falls under residual PP&E content not covered by the seven specific tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 12051,
+      "pin_ref": "FAR/II/D",
+      "confidence": "medium",
+      "rationale": "Question tests treatment of interest income during PP&E construction capitalization, which falls under residual PP&E content not covered by the seven specific tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 12068,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Bargain purchase gain recognition is business combination accounting (ASC 805), not intangible asset measurement or impairment testing.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 12108,
+      "pin_ref": "FAR/II/C",
+      "confidence": "low",
+      "rationale": "Interest capitalization on aging inventory is specialized inventory content, but question's L4 exceeds residual's L2 ceiling.",
+      "pass": 1,
+      "bloom_overshoot": true,
+      "question_bloom": 4,
+      "task_bloom": 2
+    },
+    {
+      "question_id": 12135,
+      "pin_ref": "FAR/III/F",
+      "confidence": "high",
+      "rationale": "Question tests cash flow classification of finance lease payments, explicitly covered in the residual task.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 2
+    },
+    {
+      "question_id": 12153,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Contingent consideration remeasurement is ASC 805 business combination accounting, not payables/accrued liabilities under FAR/II/G scope.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 4,
+      "task_bloom": null
+    },
+    {
+      "question_id": 12156,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Warranty treatment distinction is analytical comparison of ASC 460 vs ASC 606, not the calculation/journal entry application in task 2.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": null
+    },
+    {
+      "question_id": 12163,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Income tax payable definition is ASC 740 income tax accounting, not covered by payables/accrued liabilities tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": null
+    },
+    {
+      "question_id": 12177,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "In-substance defeasance is long-term debt extinguishment (ASC 405-20-40), not payables or accrued liabilities.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": null
+    },
+    {
+      "question_id": 12179,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Loss contingency disclosure criteria (ASC 450-20) is not covered by the specific payables/accrued liabilities tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 12211,
+      "pin_ref": "FAR/I/A/23",
+      "confidence": "high",
+      "rationale": "Tests SFAC No. 5 expense recognition and matching principle, core conceptual framework knowledge underlying financial reporting.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 12230,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests ASC 820 fair value measurement methodology using the income approach, not covered by any financial statement preparation task.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 12231,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests ASC 270 interim reporting principles for expense allocation, a specialized topic not covered by statement preparation tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 4,
+      "task_bloom": null
+    },
+    {
+      "question_id": 12234,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests tax-basis special purpose framework revenue recognition, not GAAP financial statement preparation.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 12236,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests SEC regulatory requirements for Inline XBRL filings, not financial statement preparation or GAAP knowledge.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": null
+    },
+    {
+      "question_id": 12274,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests ASC 606 revenue disaggregation disclosure requirements, not covered by note adjustment or comparison tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 12276,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests ASC 205-30 liquidation basis measurement principles, a specialized alternative basis not covered by standard statement preparation tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 4,
+      "task_bloom": null
+    },
+    {
+      "question_id": 12280,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests ASC 280 segment reporting quantitative thresholds, not covered by note adjustment or comparison tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 4,
+      "task_bloom": null
+    },
+    {
+      "question_id": 12317,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests direct method cash flow statement presentation while task list only covers indirect method preparation.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": null
+    },
+    {
+      "question_id": 12340,
+      "pin_ref": "FAR/III/A",
+      "confidence": "medium",
+      "rationale": "Tests scope exclusions from ASC 250, fitting residual's conceptual framework coverage beyond representative calculation tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 12341,
+      "pin_ref": "FAR/III/A/0/1",
+      "confidence": "high",
+      "rationale": "Requires calculating the correcting journal entry amount and net effect on retained earnings for a patent expensing error, directly matching the calculation task.",
+      "pass": 1,
+      "bloom_overshoot": true,
+      "question_bloom": 4,
+      "task_bloom": 2
+    },
+    {
+      "question_id": 12380,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests goodwill impairment testing procedure under ASU 2011-08, which is not covered by any FAR/I/A task focused on statement preparation, adjustment, or detection.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": null
+    },
+    {
+      "question_id": 12526,
+      "pin_ref": "FAR/I/D",
+      "confidence": "medium",
+      "rationale": "DRIP shares weighted-average methodology is basic EPS content not covered by the dilutive securities task.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 12533,
+      "pin_ref": "FAR/I/D",
+      "confidence": "medium",
+      "rationale": "Bonus issue retroactive treatment for weighted-average shares is public company EPS content beyond the three tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 12546,
+      "pin_ref": "FAR/I/D",
+      "confidence": "medium",
+      "rationale": "Stock dividend retroactive treatment for EPS is public company content not covered by the dilutive securities task.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 12585,
+      "pin_ref": "FAR/I/D",
+      "confidence": "medium",
+      "rationale": "Stock dividend retroactive adjustment for weighted-average shares is basic EPS methodology beyond the three tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 15122,
+      "pin_ref": "FAR/I/F",
+      "confidence": "high",
+      "rationale": "Question tests interpretation of what a quality of earnings ratio value indicates, fitting the residual's interpretation category.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": 3
+    },
+    {
+      "question_id": 15129,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests conceptual understanding of accrual vs. cash accounting, not ratio identification, calculation, or interpretation.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": null
+    },
+    {
+      "question_id": 15166,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests fundamental debt vs equity classification distinction, which is a prerequisite to measurement tasks but not covered by any representative task.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": null
+    }
+  ]
+}

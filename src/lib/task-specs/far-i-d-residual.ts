@@ -18,6 +18,8 @@ export const spec: TaskSpec = {
 		"Diluted EPS mechanics: treasury stock method for options/warrants, if-converted method for convertible securities, anti-dilutive securities exclusion, contingently issuable shares",
 		"Weighted-average shares: computation methodology, stock splits and dividends retroactive adjustment, shares issued/retired mid-period",
 		"SEC reporting requirements: Form 10-K and 10-Q content, Management Discussion and Analysis, XBRL inline filing requirements",
+		"Basic EPS denominator mechanics: DRIP (dividend reinvestment plan) share weighting, bonus issue retroactive treatment, stock dividend size thresholds affecting retroactive vs prospective treatment",
+		"EPS presentation for discontinued operations: separate EPS disclosure for continuing vs discontinued operations, presentation requirements on the income statement",
 	],
 
 	keyStandards: [

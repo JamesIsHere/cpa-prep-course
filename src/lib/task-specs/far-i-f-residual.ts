@@ -12,6 +12,11 @@ import type { TaskSpec } from "./types";
 // interpretive layer above computation: what accounting changes do to
 // ratios, cross-period comparability adjustments, fraud indicators from
 // ratio trends, and analytical methodology critique.
+//
+// 3rd classifier run (2026-04-17): also picks up conceptual ratio
+// questions testing definitions, operating cycle concepts, and accrual
+// vs cash-basis differences that are prerequisite knowledge for ratio
+// analysis but sit below L3.
 
 export const spec: TaskSpec = {
 	aicpaRef: "FAR/I/F",
@@ -29,6 +34,9 @@ export const spec: TaskSpec = {
 		"Analyze the effect of specific transactions on ratios (e.g., treasury stock repurchase effect on book value per share, allowance method effect on current ratio, depreciation method effect on asset turnover)",
 		"Critique analytical methodology: limitations of ratio analysis, why a given ratio comparison is or is not valid, the role of qualitative factors alongside quantitative metrics",
 		"Working capital analysis beyond computation: interpreting changes in working capital components, cash conversion cycle concepts, operating cycle analysis",
+		"Ratio definitions and taxonomy: what each ratio measures, which category it belongs to (profitability, liquidity, solvency, activity/efficiency), and what a given ratio value signals",
+		"Operating cycle and cash conversion cycle concepts: definitions, component relationships, and why accrual accounting creates differences between net income and operating cash flow",
+		"Quality of earnings concepts: what a quality-of-earnings ratio indicates, distinguishing sustainable vs. transient earnings, cash-basis vs. accrual-basis earnings quality",
 	],
 
 	keyStandards: [

@@ -38,12 +38,14 @@ const sectionArg = process.argv.find((a) => a.startsWith("--section="))?.split("
 const groupFilter = process.argv.find((a) => a.startsWith("--group="))?.split("=")[1];
 const limitArg = process.argv.find((a) => a.startsWith("--limit="))?.split("=")[1];
 const batchSizeArg = process.argv.find((a) => a.startsWith("--batch-size="))?.split("=")[1];
+const idsArg = process.argv.find((a) => a.startsWith("--ids="))?.split("=")[1];
 const limit = limitArg ? parseInt(limitArg, 10) : null;
+const idsFilter = idsArg ? new Set(idsArg.split(",").map(Number)) : null;
 const BATCH_SIZE = batchSizeArg ? parseInt(batchSizeArg, 10) : 10;
 const BATCH_TIMEOUT_MS = 180_000;
 
 if (!sectionArg) {
-	console.error("Usage: npx tsx scripts/qa/classify-section.ts --section=far [--group=FAR/I/A] [--limit=N] [--batch-size=N]");
+	console.error("Usage: npx tsx scripts/qa/classify-section.ts --section=far [--group=FAR/I/A] [--limit=N] [--batch-size=N] [--ids=1,2,3]");
 	process.exit(1);
 }
 
@@ -312,16 +314,30 @@ async function main() {
 	}
 	logStep(`Topic→group mapping: ${Object.keys(topicToGroup).length} topics mapped`);
 
-	// Fetch ALL questions for the section (Supabase defaults to 1000 row limit)
-	const { data: rows, error } = await sb
-		.from("questions")
-		.select("id,topic,stem,choices,correct_index,explanation,difficulty,cognitive_level")
-		.eq("section_id", sectionId)
-		.limit(5000);
-	if (error) throw error;
-	let questions = (rows ?? []) as DbQuestion[];
+	// Fetch ALL questions for the section via pagination
+	// (Supabase server-side max_rows=1000 overrides .limit(), so we paginate)
+	const PAGE_SIZE = 1000;
+	let allRows: DbQuestion[] = [];
+	let page = 0;
+	while (true) {
+		const from = page * PAGE_SIZE;
+		const to = from + PAGE_SIZE - 1;
+		const { data: rows, error } = await sb
+			.from("questions")
+			.select("id,topic,stem,choices,correct_index,explanation,difficulty,cognitive_level")
+			.eq("section_id", sectionId)
+			.order("id")
+			.range(from, to);
+		if (error) throw error;
+		const batch = (rows ?? []) as DbQuestion[];
+		allRows = allRows.concat(batch);
+		if (batch.length < PAGE_SIZE) break;
+		page++;
+	}
+	let questions = allRows;
+	if (idsFilter) questions = questions.filter((q) => idsFilter.has(q.id));
 	if (limit) questions = questions.slice(0, limit);
-	logStep(`Loaded ${questions.length} questions for section ${sectionArg}`);
+	logStep(`Loaded ${questions.length} questions for section ${sectionArg} (${page + 1} pages)${idsFilter ? ` [filtered to ${idsFilter.size} IDs]` : ""}`);
 
 	// Pre-filter questions to groups via topic → lesson-spec → primaryRef
 	const questionsByGroup: Record<string, DbQuestion[]> = {};

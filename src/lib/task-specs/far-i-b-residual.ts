@@ -25,6 +25,11 @@ export const spec: TaskSpec = {
 		"Conditional contribution criteria (ASU 2018-08): barrier vs right-of-return distinction, measurable performance or other barrier, recognition timing upon condition satisfaction",
 		"Net asset classification for board designations: without donor restrictions classification despite internal designation, presentation on statement of financial position, distinction from donor-restricted",
 		"Pledge discount rate selection: present value measurement for unconditional promises to give, risk-adjusted discount rate, amortization of discount as contribution revenue",
+		"Healthcare NFP revenue recognition: patient service revenue, contractual adjustments with third-party payers, charity care reporting, net vs gross presentation",
+		"Investment return presentation (ASU 2016-14): investment return reported net of external and direct internal expenses, presentation on statement of activities, endowment investment return classification",
+		"Membership dues revenue: bifurcation between exchange transaction and contribution components, recognition timing, reciprocal vs nonreciprocal transfer analysis",
+		"Joint cost allocation (ASC 958-720): audience criterion, purpose criterion, content criterion — all three required for allocation; costs that fail criteria expensed as fundraising",
+		"Liquidity disclosure requirements (ASU 2016-14): qualitative and quantitative information about availability of financial assets to meet cash needs within one year, board designations and contractual limitations",
 	],
 
 	keyStandards: [
