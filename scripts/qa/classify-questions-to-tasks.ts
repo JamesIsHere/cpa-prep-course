@@ -30,7 +30,6 @@ import { createClient } from "@supabase/supabase-js";
 import { writeFileSync } from "fs";
 import { spawnSync } from "child_process";
 import { taskSpecsByGroup } from "../../src/lib/task-specs/index";
-import type { TaskSpec } from "../../src/lib/task-specs/index";
 
 const topicArg = process.argv
 	.find((a) => a.startsWith("--topic="))

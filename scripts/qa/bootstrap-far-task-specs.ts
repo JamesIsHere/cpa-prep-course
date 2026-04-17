@@ -173,23 +173,6 @@ function matchGroupTasks(
 	return result;
 }
 
-function findTaskInGroup(
-	area: string,
-	groupLetter: string,
-	taskText: string,
-): { topicNum: number; taskIdx: number; canonicalSkill: string; canonicalTask: string } | null {
-	// Single-task lookup using the group matching infrastructure
-	const matches = matchGroupTasks(area, groupLetter, [taskText]);
-	const m = matches.get(0);
-	if (!m) return null;
-	return {
-		topicNum: m.topicNum,
-		taskIdx: m.taskIdx,
-		canonicalSkill: m.skill,
-		canonicalTask: m.task,
-	};
-}
-
 // Group CSV rows by AICPA group for batch matching
 const byGroup: Record<string, Array<{ idx: number; rec: typeof records[0] }>> = {};
 for (let i = 0; i < records.length; i++) {
