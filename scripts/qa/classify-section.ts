@@ -286,11 +286,12 @@ async function main() {
 	}
 	logStep(`Topic→group mapping: ${Object.keys(topicToGroup).length} topics mapped`);
 
-	// Fetch ALL questions for the section
+	// Fetch ALL questions for the section (Supabase defaults to 1000 row limit)
 	const { data: rows, error } = await sb
 		.from("questions")
 		.select("id,topic,stem,choices,correct_index,explanation,difficulty,cognitive_level")
-		.eq("section_id", sectionId);
+		.eq("section_id", sectionId)
+		.limit(5000);
 	if (error) throw error;
 	let questions = (rows ?? []) as DbQuestion[];
 	if (limit) questions = questions.slice(0, limit);
