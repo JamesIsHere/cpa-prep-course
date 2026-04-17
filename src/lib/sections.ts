@@ -3,6 +3,8 @@ export interface Lesson {
 	title: string;
 	contentPath: string;
 	isFree: boolean;
+	/** AICPA blueprint anchor (group or topic level). Populated per Direction W. */
+	aicpaRef?: string;
 }
 
 export interface Section {
