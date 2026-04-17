@@ -1,0 +1,309 @@
+{
+  "section": "far",
+  "generatedAt": "2026-04-17T03:35:07.067Z",
+  "totalQuestions": 30,
+  "pass1Matched": 7,
+  "pass1Homeless": 23,
+  "suggestions": [
+    {
+      "question_id": 472,
+      "pin_ref": "FAR/I/B/1/2",
+      "confidence": "medium",
+      "rationale": "Question tests proper net asset classification of underwater endowments under UPMIFA, which is fundamental to preparing a statement of financial position correctly.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 2
+    },
+    {
+      "question_id": 11402,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests interfund reimbursement elimination mechanics in consolidation, not measurement focus/basis recall or fund determination.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11404,
+      "pin_ref": "FAR/I/C/2/1",
+      "confidence": "high",
+      "rationale": "Directly tests determination of appropriate fund type (internal service vs enterprise fund classification).",
+      "pass": 1,
+      "bloom_overshoot": true,
+      "question_bloom": 4,
+      "task_bloom": 2
+    },
+    {
+      "question_id": 11406,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests GASB 68 pension accounting mechanics and deferred outflow treatment, not measurement focus/basis or fund determination.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11408,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests net position classification mechanics (restricted vs committed vs assigned), not measurement focus/basis or fund determination.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11411,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests operating vs nonoperating expense classification for lease components in proprietary funds, not measurement focus/basis or fund determination.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11415,
+      "pin_ref": null,
+      "confidence": "medium",
+      "rationale": "Tests application of modified accrual revenue recognition, but Task 1 is about recalling which basis is used, not applying it.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11423,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests GASB 65 bond issuance cost treatment across fund types, not measurement focus/basis recall or fund determination.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11424,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests special item classification on government-wide statements, not measurement focus/basis or fund determination.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11427,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests GASB 54 fund balance spending order mechanics with formal policy override, not measurement focus/basis or fund determination.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 4,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11429,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests grant classification (operating/nonoperating/capital) in proprietary fund statements, not measurement focus/basis or fund determination.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11430,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests capital asset depreciation rules under GASB 34, not measurement focus or basis of accounting recall, nor fund determination.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11431,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests definition of custodial credit risk under GASB 40 disclosure standards, not measurement focus/basis or fund determination.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11432,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests BANs reporting treatment within a fund (fund liability vs long-term debt), not which fund to use for an activity.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11434,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests landfill closure liability calculation under GASB 18, not measurement focus/basis or fund determination.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11437,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests application of modified accrual to RAN transactions, not recall of what measurement focus/basis of accounting are, nor fund determination.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11439,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests evaluation of internal service fund premium reasonableness under GASB 10, not measurement focus/basis or fund determination.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 4,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11441,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests net position classification under GASB 46, not measurement focus/basis recall or fund determination.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11442,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests identification of public entity risk pools under GASB 10, not measurement focus/basis or fund determination.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11453,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests in-substance defeasance reporting under GASB 86, not measurement focus/basis or fund determination.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11455,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests accounting change treatment under GASB 62, not measurement focus/basis or fund determination.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11490,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests recall of historical terminology (OCBOA vs SPF), not financial statement titles or preparation methods covered by any listed task.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11542,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests conceptual understanding of measurement bases (NRV vs. fair value), not preparation/adjustment/correction of financial statements.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11597,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests knowledge of presentation rules for extraordinary items, not preparation/adjustment of income statement from source data.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11831,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests analysis of agency vs. contribution classification under ASC 958-605, requiring evaluation of variance power and discretion—higher-order reasoning not covered by the mechanical statement preparation tasks (all L1-L2).",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 4,
+      "task_bloom": null
+    },
+    {
+      "question_id": 11968,
+      "pin_ref": "FAR/II/H/1/3",
+      "confidence": "high",
+      "rationale": "Question directly tests calculation and understanding of interest expense for bonds issued at a premium using the effective interest method, which exactly matches the task description.",
+      "pass": 1,
+      "bloom_overshoot": true,
+      "question_bloom": 3,
+      "task_bloom": 2
+    },
+    {
+      "question_id": 12064,
+      "pin_ref": "FAR/II/F/0/2",
+      "confidence": "medium",
+      "rationale": "Residual value determination is a prerequisite component for calculating amortization of finite-lived intangible assets, which falls under Task 2's scope.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 2
+    },
+    {
+      "question_id": 12321,
+      "pin_ref": "FAR/I/A/5/1",
+      "confidence": "high",
+      "rationale": "Question tests classification knowledge essential to preparing a statement of cash flows.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": 2
+    },
+    {
+      "question_id": 12322,
+      "pin_ref": "FAR/I/A/5/1",
+      "confidence": "high",
+      "rationale": "Question tests how to report a sale-leaseback transaction amount, directly required for preparing a statement of cash flows.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 2
+    },
+    {
+      "question_id": 12324,
+      "pin_ref": "FAR/I/A/5/1",
+      "confidence": "high",
+      "rationale": "Question tests classification of escrow deposits, fundamental to preparing a statement of cash flows.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 2
+    }
+  ]
+}
