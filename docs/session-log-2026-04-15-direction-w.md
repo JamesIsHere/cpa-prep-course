@@ -61,7 +61,60 @@ system. Key decisions:
 - No unpushed migrations
 - All unit tests passing (66/66 task-spec tests)
 
+## Continued same session (post-crash recovery into implementation)
+
+### Phase 1A: Schema Foundation (complete)
+- Step 1: `git mv topic-specs/ → lesson-specs/` + all import paths
+- Step 2: `TopicSpec → LessonSpec`, `inheritedFromTopicSpec → lessonSpec`, all function renames
+- Step 3: Extended blueprint-task-resolver for 3/4/5-part refs (`isValidRef`, `refLevel`)
+- Step 4: Added `primaryRef` + `secondaryRefs` to LessonSpec type, renamed `blueprintRef`
+- Step 5: Added optional `aicpaRef` to Lesson type in sections.ts
+- Step 6: DB migration 01064 — created_at, updated_at, pin_ref, pinned_at on questions
+
+### Phase 1B: FAR Bootstrap (complete)
+- Step 7: Bootstrap script generated 113 FAR task-spec files from CSV using greedy bipartite
+  matching (word similarity) to resolve CSV task text → AICPA JSON. Zero duplicates.
+- Step 8: Generated 22 FAR lesson-spec scaffolds. Fixed far-lessee-accounting → far-leases mismatch.
+- Step 9: Archived FAR CSV to docs/archive/, deprecated sync-alignment for FAR.
+
+### Phase 1C: Classifier Rebuild (complete)
+- New `scripts/qa/classify-section.ts` — two-pass section-wide cascade
+- Loads task-specs from files (no registry needed), pre-filters questions to AICPA groups
+  via lesson-spec topic→primaryRef mapping
+- Tested on 30 FAR questions: 7 matched, 23 homeless (mostly gov GASB content), 2 overshoots
+- Fixed Supabase 1000-row default limit bug
+
+### Phase 1D: Full FAR Classification (running)
+- Kicked off full run on ~1,000 FAR questions (1,539 total but hit 1000-row limit before fix)
+- Running at ~50-60s/batch, estimated ~2 hours total
+- Partial saves to docs/classify-far.partial.json
+- Will need re-run for remaining ~539 questions after the limit fix
+
+### Coherence check (post-implementation)
+- All 469 tests passing (17 files)
+- Lint: 0 errors, 0 warnings
+- All import paths verified, 0 stale topic-specs references
+- All 122 task-spec lessonSpec refs resolve to existing files
+- 23 key CLAUDE.md file paths verified
+- Pushed to remote (20+ commits)
+
+### Commits (implementation phase)
+| Hash      | Description |
+|-----------|-------------|
+| (rename)  | topic-specs → lesson-specs directory |
+| (rename)  | TopicSpec → LessonSpec types |
+| `46d1b4b` | Multi-level blueprint resolver |
+| `7fdb679` | primaryRef + secondaryRefs on LessonSpec |
+| `e45a982` | aicpaRef on Lesson + DB migration 01064 |
+| (bootstrap)| 113 FAR task-spec files from CSV |
+| (lesson)  | 22 FAR lesson-spec scaffolds + CSV archived |
+| (lint)    | Fix unused imports |
+| (classify)| Direction W classifier + test output |
+| `609b2ef` | Fix Supabase 1000-row limit |
+
 ## Next session priorities
-1. Start Phase 1A from the plan doc (rename topic-specs → lesson-specs)
-2. Extend blueprint-task-resolver for 3/4/5-part refs
-3. Begin FAR task-spec bootstrap from CSV seed data
+1. Check Phase 1D results (full FAR classification)
+2. Re-run classifier for remaining ~539 FAR questions (limit fix applied)
+3. Review the coverage report — identify which groups have high homeless rates
+4. Begin authoring inScope on FAR task-specs (start with groups that have good match rates)
+5. Update session memory with final Phase 1D numbers
