@@ -22,5 +22,5 @@ export const spec: TaskSpec = {
 	targetCount: 3,
 	difficultyMix: { easy: 30, medium: 50, hard: 20 },
 
-	lessonSpec: "",
+	lessonSpec: "reg-federal-tax-procedures",
 };
