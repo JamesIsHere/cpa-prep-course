@@ -52,6 +52,32 @@ import { spec as audMisstatementsAndControlDeficiencies } from "./aud-misstateme
 import { spec as regIndividualTaxationCredits } from "./reg-individual-taxation-credits";
 import { spec as regEstateAndGiftTax } from "./reg-estate-and-gift-tax";
 import { spec as barStockCompensationAndBusinessCombinations } from "./bar-stock-compensation-and-business-combinations";
+import { spec as audEthicsAndIndependence } from "./aud-ethics-and-independence";
+import { spec as audProfessionalSkepticism } from "./aud-professional-skepticism";
+import { spec as audNatureAndScope } from "./aud-nature-and-scope";
+import { spec as audTermsOfEngagement } from "./aud-terms-of-engagement";
+import { spec as audEngagementDocumentation } from "./aud-engagement-documentation";
+import { spec as audCommunicationWithManagement } from "./aud-communication-with-management";
+import { spec as audUnderstandingTheEntity } from "./aud-understanding-the-entity";
+import { spec as audSpecificAreasOfRisk } from "./aud-specific-areas-of-risk";
+import { spec as audAnalyticalProcedures } from "./aud-analytical-procedures";
+import { spec as audSpecificMatters } from "./aud-specific-matters";
+import { spec as audAuditMisstatements } from "./aud-audit-misstatements";
+import { spec as audWrittenRepresentations } from "./aud-written-representations";
+import { spec as audSubsequentEvents } from "./aud-subsequent-events";
+import { spec as audReviewAndCompilation } from "./aud-review-and-compilation";
+import { spec as audGovernmentAuditing } from "./aud-government-auditing";
+import { spec as audOtherReporting } from "./aud-other-reporting";
+import { spec as tcpIndividualTaxPlanning } from "./tcp-individual-tax-planning";
+import { spec as tcpWealthTransferAndGifting } from "./tcp-wealth-transfer-and-gifting";
+import { spec as tcpRetirementAndFinancialPlanning } from "./tcp-retirement-and-financial-planning";
+import { spec as tcpSCorporationTaxation } from "./tcp-s-corporation-taxation";
+import { spec as tcpTrustsAndEstates } from "./tcp-trusts-and-estates";
+import { spec as tcpTaxExemptOrganizations } from "./tcp-tax-exempt-organizations";
+import { spec as tcpSCorporationTaxPlanning } from "./tcp-s-corporation-tax-planning";
+import { spec as tcpPartnershipTaxPlanning } from "./tcp-partnership-tax-planning";
+import { spec as tcpNontaxableDispositions } from "./tcp-nontaxable-dispositions";
+import { spec as tcpGainsLossesAndNetting } from "./tcp-gains-losses-and-netting";
 
 const SPECS: Record<string, LessonSpec> = {
 	[barProspective.topic]: barProspective,
@@ -97,6 +123,32 @@ const SPECS: Record<string, LessonSpec> = {
 	[regIndividualTaxationCredits.topic]: regIndividualTaxationCredits,
 	[regEstateAndGiftTax.topic]: regEstateAndGiftTax,
 	[barStockCompensationAndBusinessCombinations.topic]: barStockCompensationAndBusinessCombinations,
+	[audEthicsAndIndependence.topic]: audEthicsAndIndependence,
+	[audProfessionalSkepticism.topic]: audProfessionalSkepticism,
+	[audNatureAndScope.topic]: audNatureAndScope,
+	[audTermsOfEngagement.topic]: audTermsOfEngagement,
+	[audEngagementDocumentation.topic]: audEngagementDocumentation,
+	[audCommunicationWithManagement.topic]: audCommunicationWithManagement,
+	[audUnderstandingTheEntity.topic]: audUnderstandingTheEntity,
+	[audSpecificAreasOfRisk.topic]: audSpecificAreasOfRisk,
+	[audAnalyticalProcedures.topic]: audAnalyticalProcedures,
+	[audSpecificMatters.topic]: audSpecificMatters,
+	[audAuditMisstatements.topic]: audAuditMisstatements,
+	[audWrittenRepresentations.topic]: audWrittenRepresentations,
+	[audSubsequentEvents.topic]: audSubsequentEvents,
+	[audReviewAndCompilation.topic]: audReviewAndCompilation,
+	[audGovernmentAuditing.topic]: audGovernmentAuditing,
+	[audOtherReporting.topic]: audOtherReporting,
+	[tcpIndividualTaxPlanning.topic]: tcpIndividualTaxPlanning,
+	[tcpWealthTransferAndGifting.topic]: tcpWealthTransferAndGifting,
+	[tcpRetirementAndFinancialPlanning.topic]: tcpRetirementAndFinancialPlanning,
+	[tcpSCorporationTaxation.topic]: tcpSCorporationTaxation,
+	[tcpTrustsAndEstates.topic]: tcpTrustsAndEstates,
+	[tcpTaxExemptOrganizations.topic]: tcpTaxExemptOrganizations,
+	[tcpSCorporationTaxPlanning.topic]: tcpSCorporationTaxPlanning,
+	[tcpPartnershipTaxPlanning.topic]: tcpPartnershipTaxPlanning,
+	[tcpNontaxableDispositions.topic]: tcpNontaxableDispositions,
+	[tcpGainsLossesAndNetting.topic]: tcpGainsLossesAndNetting,
 };
 
 /** Look up the topic spec for a given questions.topic value. Returns undefined if none. */
