@@ -1,0 +1,26 @@
+import type { TaskSpec } from "./types";
+import { SKILL_TO_BLOOM } from "./types";
+
+// TCP/II/C/1/4 — Scaffold task-spec (auto-generated).
+
+export const spec: TaskSpec = {
+	aicpaRef: "TCP/II/C/1/4",
+	section: "tcp",
+
+	aicpaTask: "Review a partner’s basis schedule in a partnership for tax purposes and supporting documentation, including any source data used to create the schedule, to determine the accuracy of transactions reflected.",
+	aicpaSkill: "Analysis",
+	bloomLevel: SKILL_TO_BLOOM["Analysis"],
+
+	inScope: [],
+
+	keyStandards: [],
+
+	commonMisconceptions: [],
+
+	bannedTerms: [],
+
+	targetCount: 3,
+	difficultyMix: { easy: 30, medium: 50, hard: 20 },
+
+	lessonSpec: "",
+};
