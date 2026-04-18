@@ -49,6 +49,7 @@ import type { LessonSpec } from "./types";
 
 export const spec: LessonSpec = {
 	topic: "Foreign Currency Transactions",
+	topicAliases: ["Advanced Consolidations"],
 	section: "bar",
 	primaryRef: "BAR/II/G",
 	secondaryRefs: [],

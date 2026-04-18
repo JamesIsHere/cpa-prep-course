@@ -304,7 +304,9 @@ async function main() {
 		(f) => f.startsWith(`${sectionArg}-`) && f.endsWith(".ts") && !f.startsWith("_"),
 	);
 	for (const f of lsFiles) {
-		const content = readFileSync(resolve(lsDir, f), "utf-8");
+		const raw = readFileSync(resolve(lsDir, f), "utf-8");
+		// Strip single-line comments to avoid matching topic/ref in comment text
+		const content = raw.replace(/\/\/.*$/gm, "");
 		const topicMatch = content.match(/topic:\s*"([^"]+)"/);
 		const refMatch = content.match(/primaryRef:\s*"([^"]+)"/);
 		if (topicMatch && refMatch) {

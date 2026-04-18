@@ -35,6 +35,7 @@ import type { LessonSpec } from "./types";
 
 export const spec: LessonSpec = {
 	topic: "Risk Assessment",
+	topicAliases: ["Responding to Assessed Risks"],
 	section: "aud",
 	primaryRef: "AUD/II/E/0",
 	secondaryRefs: [],

@@ -8,6 +8,7 @@ import type { LessonSpec } from "./types";
 
 export const spec: LessonSpec = {
 	topic: "Tests of Controls",
+	topicAliases: ["Substantive Procedures"],
 	section: "aud",
 	primaryRef: "AUD/III/D/1",
 	secondaryRefs: [],
