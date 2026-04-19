@@ -1,13 +1,19 @@
 import type { LessonSpec } from "./types";
 
-// AUD/II/G — Specific areas of engagement risk.
-// Covers accounting estimates, fair value measurements, related
-// party transactions, going concern, and other specific risk areas.
+// AUD/III/E — Specific matters that require special consideration.
+// Covers auditing accounting estimates, fair value measurements,
+// investments in securities, inventory, litigation/claims/assessments,
+// going concern, and Uniform Guidance single audits.
+// Re-anchored 2026-04-19 from II/G (engagement risk, narrow 4-task group)
+// to III/E (6 topics matching the bank's content: estimates, investments,
+// inventory, litigation, going concern, single audits). Classifier
+// rationales on 52 homeless questions explicitly cited going-concern and
+// opening-balance content not covered by any II/G task.
 
 export const spec: LessonSpec = {
 	topic: "Specific Areas and Transactions",
 	section: "aud",
-	primaryRef: "AUD/II/G",
+	primaryRef: "AUD/III/E",
 	secondaryRefs: [],
 
 	inScope: [

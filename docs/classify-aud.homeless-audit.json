@@ -1,44 +1,23 @@
 {
+  "generatedAt": "2026-04-19T21:27:09.448Z",
+  "section": "aud",
+  "totalHomeless": 297,
   "rows": [
     {
-      "topic": "Misstatements and Control Deficiencies",
-      "grp": "AUD/IV/B",
-      "count": 61,
-      "hasTasks": true,
-      "taskCount": 4
-    },
-    {
       "topic": "Specific Areas and Transactions",
-      "grp": "AUD/II/G",
-      "count": 52,
+      "grp": "AUD/III/E",
+      "count": 34,
+      "total_in_topic": 65,
+      "homeless_rate": 52.3,
       "hasTasks": true,
-      "taskCount": 7
-    },
-    {
-      "topic": "Analytical Procedures",
-      "grp": "AUD/III/A",
-      "count": 49,
-      "hasTasks": true,
-      "taskCount": 8
-    },
-    {
-      "topic": "Attestation Engagements",
-      "grp": "AUD/IV/E",
-      "count": 35,
-      "hasTasks": true,
-      "taskCount": 7
-    },
-    {
-      "topic": "Modifications to the Auditor Report",
-      "grp": "AUD/IV/E",
-      "count": 33,
-      "hasTasks": true,
-      "taskCount": 7
+      "taskCount": 9
     },
     {
       "topic": "Government Auditing Standards",
       "grp": "AUD/IV/D",
       "count": 30,
+      "total_in_topic": 34,
+      "homeless_rate": 88.2,
       "hasTasks": true,
       "taskCount": 2
     },
@@ -46,6 +25,8 @@
       "topic": "Written Representations",
       "grp": "AUD/III/G",
       "count": 27,
+      "total_in_topic": 63,
+      "homeless_rate": 42.9,
       "hasTasks": true,
       "taskCount": 1
     },
@@ -53,6 +34,8 @@
       "topic": "Substantive Procedures",
       "grp": "AUD/III/D",
       "count": 23,
+      "total_in_topic": 58,
+      "homeless_rate": 39.7,
       "hasTasks": true,
       "taskCount": 13
     },
@@ -60,6 +43,8 @@
       "topic": "Audit Planning",
       "grp": "AUD/II/A",
       "count": 15,
+      "total_in_topic": 53,
+      "homeless_rate": 28.3,
       "hasTasks": true,
       "taskCount": 3
     },
@@ -67,13 +52,26 @@
       "topic": "Using the Work of Others",
       "grp": "AUD/II/F",
       "count": 15,
+      "total_in_topic": 64,
+      "homeless_rate": 23.4,
       "hasTasks": true,
       "taskCount": 3
+    },
+    {
+      "topic": "Attestation Engagements",
+      "grp": "AUD/IV/B",
+      "count": 14,
+      "total_in_topic": 37,
+      "homeless_rate": 37.8,
+      "hasTasks": true,
+      "taskCount": 4
     },
     {
       "topic": "Audit Evidence",
       "grp": "AUD/III/B",
       "count": 14,
+      "total_in_topic": 64,
+      "homeless_rate": 21.9,
       "hasTasks": true,
       "taskCount": 2
     },
@@ -81,6 +79,8 @@
       "topic": "Tests of Controls",
       "grp": "AUD/III/D",
       "count": 14,
+      "total_in_topic": 60,
+      "homeless_rate": 23.3,
       "hasTasks": true,
       "taskCount": 13
     },
@@ -88,6 +88,8 @@
       "topic": "Professional Responsibilities",
       "grp": "AUD/I/A",
       "count": 13,
+      "total_in_topic": 37,
+      "homeless_rate": 35.1,
       "hasTasks": true,
       "taskCount": 10
     },
@@ -95,6 +97,8 @@
       "topic": "Nature and Scope of Engagements",
       "grp": "AUD/I/C",
       "count": 13,
+      "total_in_topic": 32,
+      "homeless_rate": 40.6,
       "hasTasks": true,
       "taskCount": 3
     },
@@ -102,6 +106,8 @@
       "topic": "Understanding the Entity and Environment",
       "grp": "AUD/II/B",
       "count": 13,
+      "total_in_topic": 64,
+      "homeless_rate": 20.3,
       "hasTasks": true,
       "taskCount": 5
     },
@@ -109,6 +115,8 @@
       "topic": "Professional Skepticism and Judgment",
       "grp": "AUD/I/B",
       "count": 10,
+      "total_in_topic": 38,
+      "homeless_rate": 26.3,
       "hasTasks": true,
       "taskCount": 2
     },
@@ -116,20 +124,44 @@
       "topic": "Review and Compilation",
       "grp": "AUD/IV/C",
       "count": 9,
+      "total_in_topic": 37,
+      "homeless_rate": 24.3,
       "hasTasks": true,
       "taskCount": 5
+    },
+    {
+      "topic": "Misstatements and Control Deficiencies",
+      "grp": "AUD/III/F",
+      "count": 9,
+      "total_in_topic": 61,
+      "homeless_rate": 14.8,
+      "hasTasks": true,
+      "taskCount": 4
     },
     {
       "topic": "Review/Compilation Engagements",
       "grp": "AUD/IV/C",
       "count": 8,
+      "total_in_topic": 31,
+      "homeless_rate": 25.8,
       "hasTasks": true,
       "taskCount": 5
+    },
+    {
+      "topic": "Analytical Procedures",
+      "grp": "AUD/III/D",
+      "count": 8,
+      "total_in_topic": 65,
+      "homeless_rate": 12.3,
+      "hasTasks": true,
+      "taskCount": 13
     },
     {
       "topic": "Materiality",
       "grp": "AUD/II/D",
       "count": 7,
+      "total_in_topic": 61,
+      "homeless_rate": 11.5,
       "hasTasks": true,
       "taskCount": 5
     },
@@ -137,6 +169,8 @@
       "topic": "Responding to Assessed Risks",
       "grp": "AUD/II/E",
       "count": 7,
+      "total_in_topic": 64,
+      "homeless_rate": 10.9,
       "hasTasks": true,
       "taskCount": 11
     },
@@ -144,6 +178,8 @@
       "topic": "Internal Controls",
       "grp": "AUD/II/C",
       "count": 5,
+      "total_in_topic": 61,
+      "homeless_rate": 8.2,
       "hasTasks": true,
       "taskCount": 13
     },
@@ -151,6 +187,8 @@
       "topic": "Independence",
       "grp": "AUD/I/A",
       "count": 3,
+      "total_in_topic": 37,
+      "homeless_rate": 8.1,
       "hasTasks": true,
       "taskCount": 10
     },
@@ -158,6 +196,8 @@
       "topic": "Quality Management",
       "grp": "AUD/I/G",
       "count": 2,
+      "total_in_topic": 38,
+      "homeless_rate": 5.3,
       "hasTasks": true,
       "taskCount": 2
     },
@@ -165,6 +205,8 @@
       "topic": "Risk Assessment",
       "grp": "AUD/II/E",
       "count": 1,
+      "total_in_topic": 64,
+      "homeless_rate": 1.6,
       "hasTasks": true,
       "taskCount": 11
     },
@@ -172,6 +214,8 @@
       "topic": "Audit Sampling",
       "grp": "AUD/III/C",
       "count": 1,
+      "total_in_topic": 52,
+      "homeless_rate": 1.9,
       "hasTasks": true,
       "taskCount": 4
     },
@@ -179,6 +223,8 @@
       "topic": "Audit Reports",
       "grp": "AUD/IV/A",
       "count": 1,
+      "total_in_topic": 37,
+      "homeless_rate": 2.7,
       "hasTasks": true,
       "taskCount": 6
     },
@@ -186,6 +232,8 @@
       "topic": "Terms of Engagement",
       "grp": "AUD/I/D",
       "count": 1,
+      "total_in_topic": 38,
+      "homeless_rate": 2.6,
       "hasTasks": true,
       "taskCount": 5
     }
@@ -220,12 +268,14 @@
     "AUD/IV/E": 7
   },
   "topicToGroup": {
-    "Analytical Procedures": "AUD/III/A",
+    "Analytical Procedures": "AUD/III/D",
+    "Attestation Engagements": "AUD/IV/B",
     "Audit Evidence": "AUD/III/B",
     "Evaluating Audit Misstatements": "AUD/III/F",
     "Accumulating Misstatements": "AUD/III/F",
     "Audit Planning": "AUD/II/A",
     "Audit Reports": "AUD/IV/A",
+    "Modifications to the Auditor Report": "AUD/IV/A",
     "Audit Sampling": "AUD/III/C",
     "Communication with Management and Governance": "AUD/I/F",
     "Engagement Documentation": "AUD/I/E",
@@ -235,19 +285,17 @@
     "Government Auditing Standards": "AUD/IV/D",
     "Internal Controls": "AUD/II/C",
     "Materiality": "AUD/II/D",
-    "Misstatements and Control Deficiencies": "AUD/IV/B",
+    "Misstatements and Control Deficiencies": "AUD/III/F",
     "Nature and Scope of Engagements": "AUD/I/C",
     "Other Reporting Considerations": "AUD/IV/E",
-    "Modifications to the Auditor Report": "AUD/IV/E",
     "Other Information and Supplementary Information": "AUD/IV/E",
-    "Attestation Engagements": "AUD/IV/E",
     "Professional Skepticism and Judgment": "AUD/I/B",
     "Quality Management": "AUD/I/G",
     "Review and Compilation": "AUD/IV/C",
     "Review/Compilation Engagements": "AUD/IV/C",
     "Risk Assessment": "AUD/II/E",
     "Responding to Assessed Risks": "AUD/II/E",
-    "Specific Areas and Transactions": "AUD/II/G",
+    "Specific Areas and Transactions": "AUD/III/E",
     "Specific Audit Considerations": "AUD/III/E",
     "Litigation and Claims": "AUD/III/E",
     "Subsequent Events in Auditing": "AUD/III/H",

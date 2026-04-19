@@ -4,13 +4,13 @@ Generated: 2026-04-19
 
 ## Summary
 
-- Questions classified: **72**
+- Questions classified: **130**
 - Task-specs available: **144**
-- Matched (has pin_ref): **58** (81%)
-- Homeless (no pin_ref): **14** (19%)
-- Confidence: **48 high**, 9 medium, 1 low
-- Bloom's overshoot: **25** (35%)
-- Foundational recall: **11** (15%)
+- Matched (has pin_ref): **88** (68%)
+- Homeless (no pin_ref): **43** (33%)
+- Confidence: **65 high**, 20 medium, 3 low
+- Bloom's overshoot: **29** (22%)
+- Foundational recall: **26** (20%)
 
 ## Per-group coverage
 
@@ -33,13 +33,13 @@ Generated: 2026-04-19
 | AUD/III/A | 8 | 0 | — | 0 |
 | AUD/III/B | 2 | 0 | — | 0 |
 | AUD/III/C | 4 | 0 | — | 0 |
-| AUD/III/D | 13 | 0 | — | 0 |
-| AUD/III/E | 9 | 0 | — | 0 |
+| AUD/III/D | 13 | 57 | — | 12 |
+| AUD/III/E | 9 | 31 | — | 17 |
 | AUD/III/F | 4 | 0 | — | 0 |
 | AUD/III/G | 1 | 0 | — | 0 |
 | AUD/III/H | 3 | 0 | — | 0 |
-| AUD/IV/A | 6 | 35 | — | 18 |
-| AUD/IV/B | 4 | 23 | — | 7 |
+| AUD/IV/A | 6 | 0 | — | 0 |
+| AUD/IV/B | 4 | 0 | — | 0 |
 | AUD/IV/C | 5 | 0 | — | 0 |
 | AUD/IV/D | 2 | 0 | — | 0 |
 | AUD/IV/E | 7 | 0 | — | 0 |

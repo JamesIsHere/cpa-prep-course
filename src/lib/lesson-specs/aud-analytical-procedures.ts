@@ -1,13 +1,17 @@
 import type { LessonSpec } from "./types";
 
-// AUD/III/A — Analytical procedures.
+// AUD/III/D — Procedures to obtain sufficient appropriate evidence.
 // Covers the use of analytical procedures in planning, as substantive
 // procedures, and as required in the overall review at the end of the audit.
+// Re-anchored 2026-04-19 from III/A (data analytics) to III/D — the AICPA
+// blueprint places classical analytical procedures under III/D topic 2
+// (4 application/evaluation-level tasks). III/A is a data-analytics group,
+// and the classifier was rejecting AU-C 520 content there.
 
 export const spec: LessonSpec = {
 	topic: "Analytical Procedures",
 	section: "aud",
-	primaryRef: "AUD/III/A",
+	primaryRef: "AUD/III/D",
 	secondaryRefs: [],
 
 	inScope: [

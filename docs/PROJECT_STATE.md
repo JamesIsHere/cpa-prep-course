@@ -8,7 +8,7 @@
 >
 > **Freshness rule:** every claim in this file is either (a) a verifiable fact backed by a command or file, or (b) an opinion tagged with a date and the session that wrote it. No stale aspirations.
 
-Last updated: 2026-04-19 (session that found routing-over-authoring as the classifier lift lever)
+Last updated: 2026-04-19 (iter-4 routing: AUD 75.0% → 79.1%, +59 matches from 2 re-anchors, 0 regressions)
 
 ---
 
@@ -36,14 +36,17 @@ Last updated: 2026-04-19 (session that found routing-over-authoring as the class
 - **Known taxonomy issue:** ISC has 791 questions in DB topic strings that are declared in `blueprint.ts` but not routed to any AICPA group via the group → `questionTopics` traversal path. Source of the issue is unknown as of this writing — the topics are in blueprint.ts somewhere but not linked from an AICPA group node. Needs investigation.
 - Verified via `scripts/qa/audit-taxonomy.ts` and `scripts/qa/audit-task-coverage.ts` on 2026-04-15.
 
-**AUD classification status (2026-04-19):**
+**AUD classification status (2026-04-19, iter-4):**
 - **AUD baseline match rate was 68.0%** (classifier silently dropping `inScope` from its prompt — fixed commit `0718c8d`).
-- **AUD now at 75.0%** (1068 / 1424 matched) after 3 lesson-spec re-anchors — commit `e4a8675`:
+- **Iter 2-3: 68.0% → 75.0%** after 3 lesson-spec re-anchors — commit `e4a8675`:
   - Misstatements and Control Deficiencies: IV/B → III/F
   - Modifications to the Auditor Report: IV/E alias → IV/A alias
   - Attestation Engagements: IV/E alias → new IV/B lesson-spec
-- **Key finding:** routing fixes delivered +106 matches from 3 edits. Iter-1 inScope authoring on 73 task-specs across 13 groups delivered -6 (noise). See `memory/feedback_routing_over_authoring.md`.
-- **Remaining homeless (357, 25%):** top candidates are Specific Areas and Transactions (52, mixed topic), Analytical Procedures (49, under-specced), Government Auditing Standards (30, 2-task under-specced), Written Representations (27, 1-task under-specced).
+- **Iter 4: 75.0% → 79.1%** (1127 / 1425 matched) after 2 more re-anchors, 0 regressions:
+  - Analytical Procedures: III/A (data analytics) → III/D (AICPA AP topic, 4 tasks)
+  - Specific Areas and Transactions: II/G (narrow engagement risk) → III/E (6 topics covering estimates / investments / inventory / litigation / going concern / single audits)
+- **Key finding:** routing fixes delivered +159 matches from 5 edits over 2 sessions. Iter-1 inScope authoring on 73 task-specs across 13 groups delivered -6 (noise). See `memory/feedback_routing_over_authoring.md`.
+- **Remaining homeless (298, 21%):** top candidates are Specific Areas and Transactions (34 residual at III/E), Government Auditing Standards (30 @ IV/D, 2-task under-specced), Written Representations (27 @ III/G, 1-task under-specced), Substantive Procedures (23 @ III/D). The remaining big clusters are **under-specced groups** (IV/D, III/G) and residual off-topic content; further routing lift likely requires authoring new task-specs, not re-anchoring.
 
 **The structural finding from Wave B (bank audit, 2026-04-15):**
 - **AICPA representative tasks have zero L1 (Remembering) content.** All 648 tasks are at Application, Analysis, or Evaluation level.
@@ -121,6 +124,7 @@ Last updated: 2026-04-19 (session that found routing-over-authoring as the class
 | 2026-04-15 | Representative-task coverage per section and per group | `scripts/qa/audit-task-coverage.ts` | Bloom's misalignment: ~2,500 L1 questions for 0 L1 tasks. ISC routing gap: 791 questions unrouted to AICPA groups. Distribution spread: 3-93 q/task |
 | 2026-04-15 | Drift census v4 against 43 specs' universal ban set | `scripts/qa/drift-census.ts` | 672 flagged in 52 unspecced topics. Biggest cluster: ISC IT-governance (~400 flags in 8 topics) |
 | 2026-04-15 | Migration ledger sync | `npm run migrate:status` | 1,049 applied / 1,044 on disk (delta to investigate) |
+| 2026-04-19 | AUD iter-4 routing lift (selective reclassification of 130 questions in 2 re-anchored topics) | `scripts/qa/classify-section.ts --section=aud --ids=<130>` + merge | 88 matched / 42 homeless on subset; full-bank 75.0% → 79.1% (+59 matches, 0 regressions) |
 
 **Recently verified and trusted:**
 - Correctness of 8,469 questions via `verify-correctness.ts` (iterative verification campaign documented in `docs/verification-progress.md`)
