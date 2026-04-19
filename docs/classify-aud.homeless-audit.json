@@ -1,0 +1,261 @@
+{
+  "rows": [
+    {
+      "topic": "Misstatements and Control Deficiencies",
+      "grp": "AUD/IV/B",
+      "count": 61,
+      "hasTasks": true,
+      "taskCount": 4
+    },
+    {
+      "topic": "Specific Areas and Transactions",
+      "grp": "AUD/II/G",
+      "count": 52,
+      "hasTasks": true,
+      "taskCount": 7
+    },
+    {
+      "topic": "Analytical Procedures",
+      "grp": "AUD/III/A",
+      "count": 49,
+      "hasTasks": true,
+      "taskCount": 8
+    },
+    {
+      "topic": "Attestation Engagements",
+      "grp": "AUD/IV/E",
+      "count": 35,
+      "hasTasks": true,
+      "taskCount": 7
+    },
+    {
+      "topic": "Modifications to the Auditor Report",
+      "grp": "AUD/IV/E",
+      "count": 33,
+      "hasTasks": true,
+      "taskCount": 7
+    },
+    {
+      "topic": "Government Auditing Standards",
+      "grp": "AUD/IV/D",
+      "count": 30,
+      "hasTasks": true,
+      "taskCount": 2
+    },
+    {
+      "topic": "Written Representations",
+      "grp": "AUD/III/G",
+      "count": 27,
+      "hasTasks": true,
+      "taskCount": 1
+    },
+    {
+      "topic": "Substantive Procedures",
+      "grp": "AUD/III/D",
+      "count": 23,
+      "hasTasks": true,
+      "taskCount": 13
+    },
+    {
+      "topic": "Audit Planning",
+      "grp": "AUD/II/A",
+      "count": 15,
+      "hasTasks": true,
+      "taskCount": 3
+    },
+    {
+      "topic": "Using the Work of Others",
+      "grp": "AUD/II/F",
+      "count": 15,
+      "hasTasks": true,
+      "taskCount": 3
+    },
+    {
+      "topic": "Audit Evidence",
+      "grp": "AUD/III/B",
+      "count": 14,
+      "hasTasks": true,
+      "taskCount": 2
+    },
+    {
+      "topic": "Tests of Controls",
+      "grp": "AUD/III/D",
+      "count": 14,
+      "hasTasks": true,
+      "taskCount": 13
+    },
+    {
+      "topic": "Professional Responsibilities",
+      "grp": "AUD/I/A",
+      "count": 13,
+      "hasTasks": true,
+      "taskCount": 10
+    },
+    {
+      "topic": "Nature and Scope of Engagements",
+      "grp": "AUD/I/C",
+      "count": 13,
+      "hasTasks": true,
+      "taskCount": 3
+    },
+    {
+      "topic": "Understanding the Entity and Environment",
+      "grp": "AUD/II/B",
+      "count": 13,
+      "hasTasks": true,
+      "taskCount": 5
+    },
+    {
+      "topic": "Professional Skepticism and Judgment",
+      "grp": "AUD/I/B",
+      "count": 10,
+      "hasTasks": true,
+      "taskCount": 2
+    },
+    {
+      "topic": "Review and Compilation",
+      "grp": "AUD/IV/C",
+      "count": 9,
+      "hasTasks": true,
+      "taskCount": 5
+    },
+    {
+      "topic": "Review/Compilation Engagements",
+      "grp": "AUD/IV/C",
+      "count": 8,
+      "hasTasks": true,
+      "taskCount": 5
+    },
+    {
+      "topic": "Materiality",
+      "grp": "AUD/II/D",
+      "count": 7,
+      "hasTasks": true,
+      "taskCount": 5
+    },
+    {
+      "topic": "Responding to Assessed Risks",
+      "grp": "AUD/II/E",
+      "count": 7,
+      "hasTasks": true,
+      "taskCount": 11
+    },
+    {
+      "topic": "Internal Controls",
+      "grp": "AUD/II/C",
+      "count": 5,
+      "hasTasks": true,
+      "taskCount": 13
+    },
+    {
+      "topic": "Independence",
+      "grp": "AUD/I/A",
+      "count": 3,
+      "hasTasks": true,
+      "taskCount": 10
+    },
+    {
+      "topic": "Quality Management",
+      "grp": "AUD/I/G",
+      "count": 2,
+      "hasTasks": true,
+      "taskCount": 2
+    },
+    {
+      "topic": "Risk Assessment",
+      "grp": "AUD/II/E",
+      "count": 1,
+      "hasTasks": true,
+      "taskCount": 11
+    },
+    {
+      "topic": "Audit Sampling",
+      "grp": "AUD/III/C",
+      "count": 1,
+      "hasTasks": true,
+      "taskCount": 4
+    },
+    {
+      "topic": "Audit Reports",
+      "grp": "AUD/IV/A",
+      "count": 1,
+      "hasTasks": true,
+      "taskCount": 6
+    },
+    {
+      "topic": "Terms of Engagement",
+      "grp": "AUD/I/D",
+      "count": 1,
+      "hasTasks": true,
+      "taskCount": 5
+    }
+  ],
+  "taskGroupCount": {
+    "AUD/I/A": 10,
+    "AUD/I/B": 2,
+    "AUD/I/C": 3,
+    "AUD/I/D": 5,
+    "AUD/I/E": 3,
+    "AUD/I/F": 4,
+    "AUD/I/G": 2,
+    "AUD/II/A": 3,
+    "AUD/II/B": 5,
+    "AUD/II/C": 13,
+    "AUD/II/D": 5,
+    "AUD/II/E": 11,
+    "AUD/II/F": 3,
+    "AUD/II/G": 7,
+    "AUD/III/A": 8,
+    "AUD/III/B": 2,
+    "AUD/III/C": 4,
+    "AUD/III/D": 13,
+    "AUD/III/E": 9,
+    "AUD/III/F": 4,
+    "AUD/III/G": 1,
+    "AUD/III/H": 3,
+    "AUD/IV/A": 6,
+    "AUD/IV/B": 4,
+    "AUD/IV/C": 5,
+    "AUD/IV/D": 2,
+    "AUD/IV/E": 7
+  },
+  "topicToGroup": {
+    "Analytical Procedures": "AUD/III/A",
+    "Audit Evidence": "AUD/III/B",
+    "Evaluating Audit Misstatements": "AUD/III/F",
+    "Accumulating Misstatements": "AUD/III/F",
+    "Audit Planning": "AUD/II/A",
+    "Audit Reports": "AUD/IV/A",
+    "Audit Sampling": "AUD/III/C",
+    "Communication with Management and Governance": "AUD/I/F",
+    "Engagement Documentation": "AUD/I/E",
+    "Ethics and Independence": "AUD/I/A",
+    "Independence": "AUD/I/A",
+    "Professional Responsibilities": "AUD/I/A",
+    "Government Auditing Standards": "AUD/IV/D",
+    "Internal Controls": "AUD/II/C",
+    "Materiality": "AUD/II/D",
+    "Misstatements and Control Deficiencies": "AUD/IV/B",
+    "Nature and Scope of Engagements": "AUD/I/C",
+    "Other Reporting Considerations": "AUD/IV/E",
+    "Modifications to the Auditor Report": "AUD/IV/E",
+    "Other Information and Supplementary Information": "AUD/IV/E",
+    "Attestation Engagements": "AUD/IV/E",
+    "Professional Skepticism and Judgment": "AUD/I/B",
+    "Quality Management": "AUD/I/G",
+    "Review and Compilation": "AUD/IV/C",
+    "Review/Compilation Engagements": "AUD/IV/C",
+    "Risk Assessment": "AUD/II/E",
+    "Responding to Assessed Risks": "AUD/II/E",
+    "Specific Areas and Transactions": "AUD/II/G",
+    "Specific Audit Considerations": "AUD/III/E",
+    "Litigation and Claims": "AUD/III/E",
+    "Subsequent Events in Auditing": "AUD/III/H",
+    "Terms of Engagement": "AUD/I/D",
+    "Tests of Controls": "AUD/III/D",
+    "Substantive Procedures": "AUD/III/D",
+    "Understanding the Entity and Environment": "AUD/II/B",
+    "Using the Work of Others": "AUD/II/F",
+    "Written Representations": "AUD/III/G"
+  }
+}

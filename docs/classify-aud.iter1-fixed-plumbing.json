@@ -1,10 +1,9 @@
 {
   "section": "aud",
-  "generatedAt": "2026-04-19T08:36:56.707Z",
+  "generatedAt": "2026-04-19T06:49:19.318Z",
   "totalQuestions": 1424,
-  "pass1Matched": 1068,
-  "pass1Homeless": 357,
-  "resumeNotes": "Iter 3: iter 2 (III/F re-route) + IV/A (Modifications) + IV/B (Attestation) re-routes",
+  "pass1Matched": 962,
+  "pass1Homeless": 452,
   "suggestions": [
     {
       "question_id": 1,
@@ -238,23 +237,23 @@
     },
     {
       "question_id": 25,
-      "pin_ref": "AUD/IV/B/1/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests knowledge of examination report conclusion form (positive opinion), which is form and content of examination reports.",
+      "rationale": "Question tests AT-C 205 attestation examination conclusions, but all AUD/IV/E tasks address financial statement audit reporting, GAGAS, or single audit—no attestation engagement coverage.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 26,
-      "pin_ref": "AUD/IV/B/2/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests understanding of AUP engagement characteristic (restricted-use requirement), which is a factor practitioners consider for AUP reports.",
+      "rationale": "Question tests AT-C 215 agreed-upon procedures engagement characteristics, but task list covers only audit and review reporting contexts—no AUP coverage.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 27,
@@ -668,23 +667,23 @@
     },
     {
       "question_id": 134,
-      "pin_ref": "AUD/IV/B/1/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests identification of attestation standards (SSAE) governing compliance examinations, which is a factor for examination engagements.",
+      "rationale": "Question tests SSAE attestation standards for compliance examinations (AT-C sections), but task list addresses only audit reporting under GAAS and GAGAS—no attestation engagement coverage.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 135,
-      "pin_ref": "AUD/IV/B/1/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests required content of review report on prospective statements (negative assurance plus caveat), which is form and content of review reports.",
+      "rationale": "Question tests AT-C 305 prospective financial statement review reporting requirements, but task list covers only historical financial statement audit and review contexts—no prospective statement coverage.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 136,
@@ -1628,79 +1627,79 @@
     },
     {
       "question_id": 349,
-      "pin_ref": "AUD/IV/B/1/1",
-      "confidence": "medium",
-      "rationale": "Tests identification of suitable criteria for compliance examination, which is a factor practitioners consider per task scope.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests AT-C 315 compliance attestation suitable criteria identification, but task list addresses only audit and government reporting contexts—no compliance attestation coverage.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 350,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests SOC 2 Trust Services Criteria under AT-C 205, but task list covers only financial statement audit reporting and government auditing—no SOC report coverage.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": null
+    },
+    {
+      "question_id": 351,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests SOC 2 vs SOC 3 distribution differences under AT-C 205, but task list addresses only audit and review reporting on financial statements—no SOC report coverage.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 352,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests AT-C 305 financial forecast distribution rules, but task list covers only audit and review reporting on historical financial statements—no prospective statement coverage.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": null
+    },
+    {
+      "question_id": 353,
+      "pin_ref": "AUD/IV/E/5/2",
+      "confidence": "high",
+      "rationale": "Question tests Single Audit Act $750,000 threshold requirement, directly matching task's scope of understanding single audit reporting requirements under Uniform Guidance.",
       "pass": 1,
       "bloom_overshoot": true,
       "question_bloom": 2,
       "task_bloom": 1
     },
     {
-      "question_id": 350,
-      "pin_ref": "AUD/IV/B/1/1",
-      "confidence": "medium",
-      "rationale": "Tests determination of criteria for SOC 2 examination (Trust Services Criteria), which relates to suitability of criteria factor.",
+      "question_id": 354,
+      "pin_ref": "AUD/IV/E/5/1",
+      "confidence": "high",
+      "rationale": "Question tests GAGAS requirement to report on internal control and compliance beyond GAAS, directly matching task's scope of identifying Government Auditing Standards reporting requirements.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
       "task_bloom": 1
     },
     {
-      "question_id": 351,
-      "pin_ref": "AUD/IV/B/1/2",
-      "confidence": "high",
-      "rationale": "Tests difference between SOC 2 and SOC 3 report distribution (general-use vs restricted-use), which is form and content of examination reports.",
-      "pass": 1,
-      "bloom_overshoot": false,
-      "question_bloom": 2,
-      "task_bloom": 2
-    },
-    {
-      "question_id": 352,
-      "pin_ref": "AUD/IV/B/1/2",
-      "confidence": "medium",
-      "rationale": "Tests distribution rules for financial forecasts (general or limited use), which relates to restricted-use vs general-use report factors.",
-      "pass": 1,
-      "bloom_overshoot": false,
-      "question_bloom": 1,
-      "task_bloom": 2
-    },
-    {
-      "question_id": 353,
-      "pin_ref": null,
-      "confidence": "high",
-      "rationale": "Tests Single Audit Act requirements for federal awards, which is government auditing not covered by attestation engagement tasks.",
-      "pass": 1,
-      "bloom_overshoot": false,
-      "question_bloom": 2,
-      "task_bloom": null
-    },
-    {
-      "question_id": 354,
-      "pin_ref": null,
-      "confidence": "high",
-      "rationale": "Tests GAGAS (Yellow Book) reporting requirements, which is government auditing not covered by attestation engagement tasks.",
-      "pass": 1,
-      "bloom_overshoot": false,
-      "question_bloom": 1,
-      "task_bloom": null
-    },
-    {
       "question_id": 355,
-      "pin_ref": "AUD/IV/B/2/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests form and content of AUP report (procedures and findings, no opinion/assurance), which directly matches task scope.",
+      "rationale": "Question tests agreed-upon procedures reporting under AT-C 215; none of the AUD/IV/E tasks cover attestation engagements.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 356,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests prospective financial statements (AT-C 305), which is not covered by any of the four tasks in this group.",
+      "rationale": "Question tests prospective financial statements under AT-C 305; none of the AUD/IV/E tasks cover attestation on forecasts or projections.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -1710,7 +1709,7 @@
       "question_id": 357,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests SOC 2 and Trust Services Criteria, which are not mentioned in any of the four task-specs.",
+      "rationale": "Question tests SOC 2 Trust Services Criteria; none of the AUD/IV/E tasks cover SOC reporting.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -6179,8 +6178,8 @@
     {
       "question_id": 1817,
       "pin_ref": null,
-      "confidence": "medium",
-      "rationale": "Question tests codification knowledge (which AT-C section) rather than factors for issuing reports or report content.",
+      "confidence": "high",
+      "rationale": "Question tests codification of SSAEs as AT-C sections; none of the AUD/IV/E tasks cover attestation standards framework.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -6189,8 +6188,8 @@
     {
       "question_id": 1818,
       "pin_ref": null,
-      "confidence": "medium",
-      "rationale": "Question tests identifying the three types of attestation engagements as framework knowledge, not factors for report issuance.",
+      "confidence": "high",
+      "rationale": "Question tests types of attestation engagements under SSAEs; none of the AUD/IV/E tasks cover attestation engagement types.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -6198,19 +6197,19 @@
     },
     {
       "question_id": 1819,
-      "pin_ref": "AUD/IV/B/1/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests level of assurance in examination engagement, which is explicitly listed as in-scope factor under task 1/1.",
+      "rationale": "Question tests assurance level in examination engagements; none of the AUD/IV/E tasks cover attestation examinations.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 1821,
       "pin_ref": null,
-      "confidence": "medium",
-      "rationale": "Question tests codification knowledge (which AT-C section governs examinations) rather than factors or report content.",
+      "confidence": "high",
+      "rationale": "Question tests AT-C 205 section reference for examinations; none of the AUD/IV/E tasks cover attestation standards.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -6218,49 +6217,49 @@
     },
     {
       "question_id": 1822,
-      "pin_ref": "AUD/IV/B/1/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests form of examination opinion language, which directly matches task 1/2 scope on examination report content.",
+      "rationale": "Question tests form of examination opinion; none of the AUD/IV/E tasks cover attestation examination reporting.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 1823,
-      "pin_ref": "AUD/IV/B/1/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests form of review conclusion (negative assurance), which directly matches task 1/2 scope on review report content.",
+      "rationale": "Question tests review-level attestation conclusion form; none of the AUD/IV/E tasks cover attestation reviews.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 1824,
-      "pin_ref": "AUD/IV/B/2/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests content of AUP engagement (findings, no assurance), which directly matches task 2/2 on AUP report content.",
+      "rationale": "Question tests AUP assurance level; none of the AUD/IV/E tasks cover agreed-upon procedures engagements.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 1825,
-      "pin_ref": "AUD/IV/B/2/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests general-use provisions of revised AT-C 215 for AUP reports, which is explicitly listed in task 2/2 in-scope content.",
+      "rationale": "Question tests AT-C 215 agreed-upon procedures report distribution rules; no task covers attestation engagements.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 1826,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question covers prospective financial statements (AT-C 305 forecasts and projections), which is not addressed by any of the four tasks.",
+      "rationale": "Question tests AT-C 305 prospective financial statement types; no task covers prospective information.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -6270,7 +6269,7 @@
       "question_id": 1828,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests general-use vs limited-use distinction for prospective financial statements (AT-C 305), not covered by these tasks.",
+      "rationale": "Question tests AT-C 305 general-use vs limited-use prospective statements; no task covers this topic.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -6280,7 +6279,7 @@
       "question_id": 1829,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests required caveat in examination report on financial forecast (AT-C 305), which none of the four tasks address.",
+      "rationale": "Question tests AT-C 305 examination report caveat on forecasts; no task covers prospective financial information.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -6290,7 +6289,7 @@
       "question_id": 1830,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question covers pro forma financial information (AT-C 310), which is not within scope of any of the four tasks.",
+      "rationale": "Question tests AT-C 310 pro forma financial information standards; no task covers pro forma reporting.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -6300,7 +6299,7 @@
       "question_id": 1831,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests examination of pro forma financial information (AT-C 310), not covered by the four tasks provided.",
+      "rationale": "Question tests AT-C 310 examination requirements for pro forma information; no task covers this attestation topic.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -6310,7 +6309,7 @@
       "question_id": 1832,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question covers compliance attestation engagements (AT-C 315), which is not addressed by any of the four tasks.",
+      "rationale": "Question tests identifying compliance attestation under AT-C standards; no task covers compliance attestation.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -6320,7 +6319,7 @@
       "question_id": 1833,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests opinion modifications in compliance examination (AT-C 315), not covered by these tasks.",
+      "rationale": "Question tests AT-C 315 compliance examination opinion modification; no task covers compliance attestation.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -6328,93 +6327,93 @@
     },
     {
       "question_id": 1835,
-      "pin_ref": "AUD/IV/B/1/1",
-      "confidence": "medium",
-      "rationale": "Question tests suitable criteria characteristics for assertion-based examination, which task 1/1 lists as a factor affecting practitioner's report.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests AT-C 105 suitable criteria characteristics for attestation; no task covers general attestation concepts.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 1836,
-      "pin_ref": "AUD/IV/B/2/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests core nature of AUP engagements (perform procedures, report findings, no opinion), directly matching task 2/2 in-scope content.",
+      "rationale": "Question tests AT-C 215 agreed-upon procedures engagement nature; no task covers AUP engagements.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 1837,
-      "pin_ref": "AUD/IV/B/2/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests form/content of AUP report when findings are discovered—practitioner must report findings factually without opinion or recommendations per AT-C 215.",
+      "rationale": "Question tests agreed-upon procedures (AUP) reporting under AT-C 215; no task-spec covers AUP attestation engagements.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 1838,
-      "pin_ref": "AUD/IV/B/1/1",
-      "confidence": "medium",
-      "rationale": "Tests identification of attestation engagement type and applicable standard (AT-C 205 examination) for cybersecurity assertion, which relates to understanding engagement types.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 2,
-      "task_bloom": 1
-    },
-    {
-      "question_id": 1839,
-      "pin_ref": "AUD/IV/B/1/1",
-      "confidence": "low",
-      "rationale": "Tests factors for examining prospective financials (assumption evaluation under AT-C 305), which could fall under general examination engagement factors but is specialized.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 4,
-      "task_bloom": 1
-    },
-    {
-      "question_id": 1840,
-      "pin_ref": "AUD/IV/B/1/1",
-      "confidence": "medium",
-      "rationale": "Tests understanding of SOC 2 examination subject matter (Trust Services Criteria controls), which relates to identifying attestation engagement types and scope.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 2,
-      "task_bloom": 1
-    },
-    {
-      "question_id": 1844,
-      "pin_ref": "AUD/IV/B/1/1",
-      "confidence": "medium",
-      "rationale": "Tests prerequisite factors for pro forma examination (historical statements must be audited/reviewed per AT-C 320), which are factors affecting the engagement.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 2,
-      "task_bloom": 1
-    },
-    {
-      "question_id": 1845,
-      "pin_ref": "AUD/IV/B/2/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests form/content of AUP report when fraud indicators discovered—practitioner reports factual findings including potential fraud evidence per AT-C 215.",
+      "rationale": "Question tests examination engagements under AT-C 205 for cybersecurity assertions; no task-spec covers attestation examinations.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
+    },
+    {
+      "question_id": 1839,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests prospective financial statement examinations under AT-C 305; no task-spec covers prospective financial information.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 4,
+      "task_bloom": null
+    },
+    {
+      "question_id": 1840,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests SOC 2 examination engagements under AT-C 205; no task-spec covers SOC reporting or service organization controls.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 1844,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests pro forma financial information attestation under AT-C 320; no task-spec covers pro forma reporting.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 1845,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests practitioner obligations in AUP engagements when fraud indicators found; no task-spec covers AUP engagements.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
     },
     {
       "question_id": 1846,
-      "pin_ref": "AUD/IV/B/1/1",
-      "confidence": "medium",
-      "rationale": "Tests conceptual understanding of criteria in attestation engagements (GRI standards as evaluation benchmarks), which relates to factors affecting practitioner's report including suitability of criteria.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests attestation engagement terminology (subject matter vs. criteria); no task-spec covers attestation engagement structure.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 4406,
@@ -8588,203 +8587,203 @@
     },
     {
       "question_id": 4665,
-      "pin_ref": "AUD/IV/A/0/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests identifying when a qualified opinion is appropriate based on materiality and pervasiveness criteria.",
+      "rationale": "Question tests qualified opinion criteria under AU-C 705 for GAAP departures; no task-spec covers modified audit opinions.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 4666,
-      "pin_ref": "AUD/IV/A/0/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests identifying when an adverse opinion is appropriate based on material and pervasive misstatements.",
+      "rationale": "Question tests adverse opinion criteria under AU-C 705 for material and pervasive misstatements; no task-spec covers modified opinions.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 4667,
-      "pin_ref": "AUD/IV/A/0/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests identifying when a disclaimer of opinion is appropriate due to scope limitations.",
+      "rationale": "Question tests disclaimer of opinion criteria under AU-C 705 for scope limitations; no task-spec covers modified opinions.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 4668,
-      "pin_ref": "AUD/IV/A/0/4",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of the purpose and appropriate use of emphasis-of-matter paragraphs.",
+      "rationale": "Question tests general purpose of emphasis-of-matter paragraphs for litigation disclosure; no task covers general emphasis-of-matter usage outside specific contexts.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 4669,
-      "pin_ref": "AUD/IV/A/0/4",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests distinguishing between emphasis-of-matter and other-matter paragraphs and their appropriate uses.",
+      "rationale": "Question tests definitional distinction between emphasis-of-matter and other-matter paragraphs in general; Task 2 covers other information in documents specifically, not the general distinction.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 4670,
-      "pin_ref": "AUD/IV/A/0/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests identifying the appropriate opinion type for an omitted disclosure based on materiality and pervasiveness.",
+      "rationale": "Question tests audit opinion modification for omitted disclosure (GAAP departure); no task covers general reporting on framework departures or opinion types.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 4671,
-      "pin_ref": "AUD/IV/A/0/5",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests determining the required content and form of a qualified opinion report including required paragraphs.",
+      "rationale": "Question tests structure of qualified opinion report (basis for qualified opinion paragraph); no task covers audit report structure or mechanics of modified opinions.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 4672,
-      "pin_ref": "AUD/IV/A/0/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests identifying the appropriate opinion type for a scope limitation based on materiality and pervasiveness.",
+      "rationale": "Question tests opinion type for scope limitation (qualified vs disclaimer based on pervasiveness); no task covers reporting on scope limitations.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 4673,
-      "pin_ref": "AUD/IV/A/0/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests identifying situations that result in a disclaimer of opinion due to pervasive scope limitations.",
+      "rationale": "Question tests circumstances requiring disclaimer of opinion (pervasive scope limitations affecting multiple accounts); no task covers disclaimer criteria.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 4674,
-      "pin_ref": "AUD/IV/A/0/5",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests determining the appropriate wording and form of the opinion paragraph in a qualified opinion report.",
+      "rationale": "Question tests specific language for qualified opinion ('except for' phrasing); no task covers audit opinion wording or report language.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 4675,
-      "pin_ref": "AUD/IV/A/0/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question directly asks which type of opinion to issue given material and pervasive misstatement circumstances.",
+      "rationale": "Question tests when to issue adverse opinion (material and pervasive misstatement); no task covers adverse opinion criteria or general GAAP departure reporting.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 4676,
-      "pin_ref": "AUD/IV/A/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of pervasiveness, a key factor auditors consider when forming an opinion.",
+      "rationale": "Question tests definition of 'pervasiveness' concept in modified opinions; no task covers pervasiveness criteria or modified opinion theory.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 4677,
-      "pin_ref": "AUD/IV/A/0/5",
+      "pin_ref": "AUD/IV/E/1/1",
       "confidence": "high",
-      "rationale": "Question requires determining appropriate report form and content including emphasis-of-matter use for accounting change.",
+      "rationale": "Question tests reporting on change in accounting principle (FIFO to weighted average), which directly maps to Task 1's focus on changes in accounting principle affecting consistency and requiring emphasis-of-matter consideration.",
       "pass": 1,
-      "bloom_overshoot": false,
+      "bloom_overshoot": true,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": 1
     },
     {
       "question_id": 4678,
-      "pin_ref": "AUD/IV/A/0/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question asks which opinion type results from scope limitation based on materiality and pervasiveness.",
+      "rationale": "Question tests scope limitations leading to modified opinions, which is not covered by any of the seven tasks in this group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 4679,
-      "pin_ref": "AUD/IV/A/0/5",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests knowledge of adverse opinion report content and scope of coverage.",
+      "rationale": "Question tests general adverse opinion principles (scope of opinion), not covered by the specific tasks in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 4680,
-      "pin_ref": "AUD/IV/A/0/5",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question requires determining appropriate report type and content when disclosure is omitted.",
+      "rationale": "Question tests qualified opinion for omitted disclosures, which is not addressed by any of the seven tasks.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 4681,
-      "pin_ref": "AUD/IV/A/0/5",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of the purpose and content of the basis for opinion paragraph.",
+      "rationale": "Question tests purpose of basis for opinion paragraph, a general reporting structure topic not covered by these tasks.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 4682,
-      "pin_ref": "AUD/IV/A/0/5",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question requires determining appropriate report form when misstatement affects only one financial statement.",
+      "rationale": "Question tests differential opinions on individual statements versus all statements, not covered by any task.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 4683,
-      "pin_ref": "AUD/IV/A/0/4",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests identification of appropriate versus inappropriate uses of emphasis-of-matter paragraphs.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 2,
-      "task_bloom": 1
-    },
-    {
-      "question_id": 4684,
-      "pin_ref": "AUD/IV/A/0/5",
-      "confidence": "high",
-      "rationale": "Question tests knowledge of required content and form for disclaimer of opinion reports.",
+      "rationale": "Question tests emphasis-of-matter paragraph usage broadly, not specifically the consistency factors in Task [1].",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
+    },
+    {
+      "question_id": 4684,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests disclaimer of opinion report format requirements, not covered by any of the seven tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
     },
     {
       "question_id": 4685,
@@ -8998,49 +8997,49 @@
     },
     {
       "question_id": 5006,
-      "pin_ref": "AUD/III/F/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests classification and accumulation of misstatements under AU-C 450, specifically the clearly trivial threshold.",
+      "rationale": "Question tests accumulating misstatements in a regular audit (AU-C 450), not attestation engagement reports.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5011,
-      "pin_ref": "AUD/III/F/0/4",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests severity evaluation of control deficiencies using the prudent official test from AU-C 265.",
+      "rationale": "Question tests control deficiency evaluation in a regular audit (AU-C 265), not attestation engagement reports.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 4
+      "task_bloom": null
     },
     {
       "question_id": 5014,
-      "pin_ref": "AUD/III/F/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests knowledge of the summary of uncorrected misstatements document required by AU-C 450.",
+      "rationale": "Question tests misstatement accumulation in a regular audit (AU-C 450), not attestation engagement reports.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5015,
-      "pin_ref": "AUD/III/F/0/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests application of iron curtain vs rollover approaches for evaluating cumulative uncorrected misstatements.",
+      "rationale": "Question tests iron curtain vs rollover approaches in regular audits (AU-C 450), not attestation engagement reports.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5016,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests communication timing requirement under AU-C 265, not evaluation of deficiencies or misstatements.",
+      "rationale": "Question tests timing of control deficiency communication in regular audits (AU-C 265), not attestation engagement reports.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -9048,19 +9047,19 @@
     },
     {
       "question_id": 5018,
-      "pin_ref": "AUD/III/F/0/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests evaluation of corrected misstatements as indicators of control deficiencies per AU-C 450.08.",
+      "rationale": "Question tests control deficiency evaluation in regular audits (AU-C 265/450), not attestation engagement reports.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5021,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests subsequent discovery of facts under AU-C 560, not ongoing audit misstatement evaluation.",
+      "rationale": "Question tests subsequent events procedures in regular audits (AU-C 560), not attestation engagement reports.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -9068,29 +9067,29 @@
     },
     {
       "question_id": 5023,
-      "pin_ref": "AUD/III/F/0/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests qualitative factors in evaluating uncorrected misstatements under AU-C 450.A16-.A17.",
+      "rationale": "Question tests qualitative misstatement factors in regular audits (AU-C 450), not attestation engagement reports.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5025,
-      "pin_ref": "AUD/III/F/0/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests impact of uncorrected misstatements exceeding materiality on audit opinion under AU-C 705.",
+      "rationale": "Question tests opinion modification in regular audits (AU-C 705), not attestation engagement reports.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5026,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests fraud response procedures under AU-C 240, not misstatement or control deficiency evaluation.",
+      "rationale": "Question tests fraud implications in regular audits (AU-C 240), not attestation engagement reports.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 4,
@@ -9098,49 +9097,49 @@
     },
     {
       "question_id": 5028,
-      "pin_ref": "AUD/III/F/0/4",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests knowledge of the three-tier severity classification framework (deficiency/significant deficiency/material weakness) central to evaluating internal control deficiencies.",
+      "rationale": "Question tests AU-C 265 control deficiency severity classification in financial statement audits, not attestation engagement reporting factors.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 4
+      "task_bloom": null
     },
     {
       "question_id": 5029,
-      "pin_ref": "AUD/III/F/0/4",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Requires evaluating whether a compensating control sufficiently reduces the severity of a deficiency, directly aligned with task 4's focus on severity assessment and compensating controls.",
+      "rationale": "Question tests evaluating compensating controls for control deficiencies in audits per AU-C 265, not attestation engagement considerations.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 4
+      "task_bloom": null
     },
     {
       "question_id": 5035,
-      "pin_ref": "AUD/III/F/0/3",
-      "confidence": "medium",
-      "rationale": "Addresses the relationship between a material misstatement and the underlying material weakness that caused it, fitting task 3's scope of evaluating misstatements as indicators of control deficiencies.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests successor auditor responsibilities for prior-year misstatements per AU-C 510/560, not attestation report issuance.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5037,
-      "pin_ref": "AUD/III/F/0/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests evaluation of aggregate uncorrected misstatements against materiality and their impact on the audit opinion, core to task 2's scope.",
+      "rationale": "Question tests audit opinion modification per AU-C 705 for uncorrected misstatements, not attestation engagement report form/content.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5042,
       "pin_ref": null,
-      "confidence": "medium",
-      "rationale": "Tests identification of management bias in accounting estimates (AU-C 540), not covered by any task focused on misstatement summaries or control deficiency evaluation.",
+      "confidence": "high",
+      "rationale": "Question tests evaluating management bias in audit estimates per AU-C 540, not attestation engagement factors.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -9148,19 +9147,19 @@
     },
     {
       "question_id": 5092,
-      "pin_ref": "AUD/III/F/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests classification of misstatements (error vs fraud), directly relevant to preparing summaries with factual/judgmental/projected classifications per task 1.",
+      "rationale": "Question tests error vs fraud classification in audits per AU-C 240, not attestation engagement reporting.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5109,
       "pin_ref": null,
-      "confidence": "medium",
-      "rationale": "Tests procedural knowledge of AU-C 265 communication timing requirements (60-day deadline), not covered by tasks focused on evaluation or effect determination.",
+      "confidence": "high",
+      "rationale": "Question tests AU-C 265 timing requirements for communicating control deficiencies in audits, not attestation report timing.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -9168,19 +9167,19 @@
     },
     {
       "question_id": 5292,
-      "pin_ref": "AUD/III/F/0/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests iron curtain vs rollover approaches for evaluating reversing misstatements, explicitly listed in task 2's in-scope items.",
+      "rationale": "Question tests iron curtain approach for uncorrected misstatements per AU-C 450 in audits, not attestation engagement considerations.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5297,
       "pin_ref": null,
-      "confidence": "medium",
-      "rationale": "Tests AU-C 265 communication obligations for deficiencies below significant deficiency threshold, not covered by tasks focused on evaluation or misstatement effects.",
+      "confidence": "high",
+      "rationale": "Question tests AU-C 265 communication obligations for control deficiencies in audits, not attestation engagement communication requirements.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -9188,29 +9187,29 @@
     },
     {
       "question_id": 5306,
-      "pin_ref": "AUD/III/F/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests the clearly trivial threshold and accumulation requirements for misstatements, core to preparing summaries of uncorrected misstatements per task 1.",
+      "rationale": "Question tests clearly trivial threshold for misstatements per AU-C 450 in audits, not attestation engagement materiality considerations.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5309,
-      "pin_ref": "AUD/III/F/0/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests evaluation of fraud-related misstatement as indicator of IC deficiency severity, directly matching task 3's scope on evaluating misstatements as indicators of control deficiencies.",
+      "rationale": "Question tests control deficiency evaluation under AU-C 265, not attestation engagement reporting.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5327,
       "pin_ref": null,
-      "confidence": "medium",
-      "rationale": "Evaluating management's remediation plan for a material weakness is not within the scope of any task; tasks 3-4 focus on evaluating deficiencies during the audit, not post-audit remediation assessment.",
+      "confidence": "high",
+      "rationale": "Question tests material weakness communication and management response under AU-C 265, not attestation engagement reporting.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 4,
@@ -9218,359 +9217,359 @@
     },
     {
       "question_id": 6105,
-      "pin_ref": "AUD/III/F/0/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests understanding of prior-year uncorrected misstatement turnaround effects on current-year financial statements, directly matching task 2's scope on rollover approach evaluation.",
+      "rationale": "Question tests prior-period misstatement turnaround effects under AU-C 450, not attestation engagement reporting.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6109,
-      "pin_ref": "AUD/III/F/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests classification of factual vs judgmental vs projected misstatements, explicitly listed in task 1's scope on preparing summaries of misstatements.",
+      "rationale": "Question tests factual misstatement classification under AU-C 450, not attestation engagement reporting.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6139,
-      "pin_ref": "AUD/III/F/0/4",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests evaluation of control deficiency severity with compensating controls, directly matching task 4's scope on severity assessment factors including compensating controls.",
+      "rationale": "Question tests compensating controls and deficiency severity under AU-C 265, not attestation engagement reporting.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 4
+      "task_bloom": null
     },
     {
       "question_id": 6146,
-      "pin_ref": "AUD/III/F/0/2",
-      "confidence": "medium",
-      "rationale": "Tests evaluation of misstatement patterns indicating systematic bias and potential additional errors, aligning with task 2's scope on evaluating aggregate effects of uncorrected misstatements.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests pattern analysis of misstatements under AU-C 450, not attestation engagement reporting.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6148,
-      "pin_ref": "AUD/III/F/0/2",
-      "confidence": "medium",
-      "rationale": "Tests evaluation of judgmental misstatement and management bias assessment, fitting task 2's scope on determining effects of uncorrected misstatements on financial statements.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests management bias in accounting estimates under AU-C 540, not attestation engagement reporting.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6155,
-      "pin_ref": "AUD/III/F/0/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests qualitative materiality evaluation of uncorrected misstatement involving CEO expenses, matching task 2's scope on materiality thresholds and opinion impact assessment.",
+      "rationale": "Question tests qualitative materiality evaluation under AU-C 450 and related-party concerns, not attestation engagement reporting.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6166,
-      "pin_ref": "AUD/III/F/0/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests understanding that management representation does not override auditor's independent assessment of materiality, directly matching task 2's scope on written representations regarding uncorrected misstatements.",
+      "rationale": "Question tests auditor independence in evaluating uncorrected misstatements under AU-C 450, not attestation engagement reporting.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6178,
-      "pin_ref": "AUD/III/F/0/3",
-      "confidence": "medium",
-      "rationale": "Tests evaluation of management override as fraud indicator and control deficiency, matching task 3's scope on evaluating misstatements as indicators of IC deficiencies and assessing material weakness classification.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests fraud evaluation and control override under AU-C 240/265, not attestation engagement reporting.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6184,
-      "pin_ref": "AUD/III/F/0/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests evaluation of uncorrected misstatement considering qualitative factors (management compensation trigger) despite small quantitative size.",
+      "rationale": "This question tests evaluating misstatements and materiality in a financial statement audit (AU-C 450), not attestation engagement reporting.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6186,
-      "pin_ref": "AUD/III/F/0/4",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests communication requirements for unremediated significant deficiencies identified in prior year.",
+      "rationale": "This question tests communicating control deficiencies in a financial statement audit (AU-C 265), not attestation engagement reporting.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 4
+      "task_bloom": null
     },
     {
       "question_id": 6188,
-      "pin_ref": "AUD/III/F/0/4",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests evaluation and classification of entity-level control environment deficiencies related to tone at the top.",
+      "rationale": "This question tests classifying control environment deficiencies in a financial statement audit (AU-C 265), not attestation engagement factors.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 4
+      "task_bloom": null
     },
     {
       "question_id": 6189,
-      "pin_ref": "AUD/III/F/0/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests evaluation of whether uncorrected misstatements exceeding materiality are pervasive, determining impact on audit opinion.",
+      "rationale": "This question tests evaluating materiality and pervasiveness for audit opinion modification (AU-C 705), not attestation reporting.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6193,
-      "pin_ref": "AUD/III/F/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests mechanical application of ratio method to calculate projected misstatements for summary of audit differences.",
+      "rationale": "This question tests audit sampling projection methods (AU-C 530), not attestation engagement procedures or reporting.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6194,
-      "pin_ref": "AUD/III/F/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests classification of factual vs projected misstatements in the summary of audit differences.",
+      "rationale": "This question tests classifying misstatements as factual vs. projected in an audit (AU-C 450/530), not attestation engagement content.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6195,
-      "pin_ref": "AUD/III/F/0/4",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests auditor's communication obligations for control deficiencies that do not rise to significant deficiency level.",
+      "rationale": "This question tests communicating lesser control deficiencies in a financial statement audit (AU-C 265), not attestation reporting obligations.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 4
+      "task_bloom": null
     },
     {
       "question_id": 6201,
-      "pin_ref": "AUD/III/F/0/4",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests classification of control deficiencies as entity-level (risk assessment process) vs process-level (transaction control).",
+      "rationale": "This question tests classifying entity-level vs. process-level control deficiencies (AU-C 265), not attestation engagement factors.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 4
+      "task_bloom": null
     },
     {
       "question_id": 6206,
-      "pin_ref": "AUD/III/F/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests application of clearly trivial threshold in determining which misstatements must be accumulated in summary of audit differences.",
+      "rationale": "This question tests the clearly trivial threshold for accumulating misstatements (AU-C 450), not attestation engagement reporting.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6210,
-      "pin_ref": "AUD/III/F/0/3",
-      "confidence": "medium",
-      "rationale": "Tests evaluation of intentional misstatement as indicator of internal control deficiency requiring reassessment of audit strategy and fraud risk.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "This question tests evaluating intentional misstatements and fraud risk in an audit (AU-C 240/450), not attestation engagement considerations.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6213,
-      "pin_ref": "AUD/III/F/0/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests determining the effect of uncorrected misstatements exceeding materiality on the audit opinion.",
+      "rationale": "Question addresses financial statement audit opinion modification under AU-C 705, not attestation engagement reporting.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6217,
-      "pin_ref": "AUD/III/F/0/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests evaluating uncorrected misstatements considering qualitative factors (covenant breach) beyond quantitative materiality.",
+      "rationale": "Question addresses qualitative materiality evaluation in financial statement audits under AU-C 450, not attestation engagements.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6219,
-      "pin_ref": "AUD/III/F/0/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests evaluating a disclosure omission as a potential material misstatement when auditor's assessment differs from management's.",
+      "rationale": "Question addresses disclosure misstatement evaluation in financial statement audits under AU-C 450, not attestation reporting.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6225,
-      "pin_ref": "AUD/III/F/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests classifying a misstatement as factual, judgmental, or projected for the summary of audit differences.",
+      "rationale": "Question addresses misstatement classification in financial statement audits under AU-C 450, not attestation engagements.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6233,
-      "pin_ref": "AUD/III/F/0/4",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests evaluating severity of a segregation-of-duties deficiency to classify as deficiency, significant deficiency, or material weakness.",
+      "rationale": "Question addresses internal control deficiency communication under AU-C 265 in financial statement audits, not attestation reporting.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 4
+      "task_bloom": null
     },
     {
       "question_id": 6234,
-      "pin_ref": "AUD/III/F/0/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests evaluating uncorrected misstatements in aggregate and considering directional patterns indicating possible management bias.",
+      "rationale": "Question addresses management bias evaluation in financial statement audits under AU-C 450, not attestation engagements.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6259,
-      "pin_ref": "AUD/III/F/0/2",
-      "confidence": "medium",
-      "rationale": "Tests evaluating the effect of a corrected fraud misstatement on the audit opinion, though control deficiency communication is also relevant.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question addresses financial statement audit opinion after fraud correction under AU-C 700, not attestation reporting.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6303,
-      "pin_ref": "AUD/III/F/0/4",
-      "confidence": "medium",
-      "rationale": "Tests identifying and classifying a segregation-of-duties weakness as a control deficiency.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question addresses control deficiency identification under AU-C 265 in financial statement audits, not attestation engagements.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 4
+      "task_bloom": null
     },
     {
       "question_id": 6338,
-      "pin_ref": "AUD/III/F/0/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests evaluating the effect of prior-period uncorrected misstatements that reverse into current-year financial statements.",
+      "rationale": "Question addresses prior-period misstatement evaluation in financial statement audits under AU-C 450, not attestation reporting.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6393,
-      "pin_ref": "AUD/III/F/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests classifying a fraudulent misstatement as factual (vs. projected or judgmental) for the summary of audit differences.",
+      "rationale": "Question addresses fraudulent misstatement classification in financial statement audits under AU-C 240/450, not attestation engagements.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6406,
-      "pin_ref": "AUD/III/F/0/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests evaluation of prior-period uncorrected misstatement effects on current-year financial statements, directly matching task's scope on evaluating uncorrected misstatements in aggregate.",
+      "rationale": "Question tests AU-C 450 misstatement evaluation in an audit context, not attestation engagement reporting.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6409,
-      "pin_ref": "AUD/III/F/0/4",
-      "confidence": "medium",
-      "rationale": "Question focuses on classifying deficiency severity (significant deficiency or material weakness), which is explicitly in scope for task 4 under severity evaluation.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests AU-C 265 internal control deficiency evaluation in an audit, not attestation engagement factors or reporting.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 4
+      "task_bloom": null
     },
     {
       "question_id": 6412,
-      "pin_ref": "AUD/III/F/0/1",
-      "confidence": "medium",
-      "rationale": "Question addresses whether disclosure omissions qualify as misstatements requiring documentation, aligning with task's scope on classification and accumulation of misstatements.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests AU-C 450 disclosure misstatement evaluation in an audit, not attestation engagement reporting.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6413,
-      "pin_ref": "AUD/III/F/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question directly tests understanding of projected misstatements versus known misstatements, which is explicitly in scope under factual vs projected misstatement classification.",
+      "rationale": "Question tests AU-C 450 known vs projected misstatement concepts in audit sampling, not attestation engagement reporting.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6414,
-      "pin_ref": "AUD/III/F/0/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests obtaining written representations from management regarding uncorrected misstatements, explicitly listed in task 2's scope.",
+      "rationale": "Question tests AU-C 580 management representation letter for uncorrected misstatements in an audit, not attestation engagement reporting.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6422,
-      "pin_ref": "AUD/III/F/0/4",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question requires evaluating segregation of duties deficiency severity considering magnitude and likelihood, directly matching task's severity evaluation scope.",
+      "rationale": "Question tests AU-C 265 severity evaluation of internal control deficiencies in an audit, not attestation engagement factors.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 4
+      "task_bloom": null
     },
     {
       "question_id": 6431,
-      "pin_ref": "AUD/III/F/0/4",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests evaluating whether compensating controls reduce deficiency severity, explicitly covered in task 4's factors for severity assessment.",
+      "rationale": "Question tests AU-C 265 professional judgment in classifying control deficiencies in an audit, not attestation engagement reporting.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 4
+      "task_bloom": null
     },
     {
       "question_id": 6458,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests procedural timing requirement for communicating control deficiencies, which is not covered by any of the four tasks focused on evaluation and documentation.",
+      "rationale": "Question tests AU-C 265 timing requirements for communicating control deficiencies in an audit, not attestation engagement reporting.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -9578,29 +9577,29 @@
     },
     {
       "question_id": 6465,
-      "pin_ref": "AUD/III/F/0/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests evaluating pattern of uncorrected misstatements for management bias and impact on materiality assessment, directly in scope for task 2.",
+      "rationale": "Question tests AU-C 450 management bias consideration in misstatement evaluation during an audit, not attestation engagement reporting.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6482,
-      "pin_ref": "AUD/III/F/0/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests obtaining management representation acknowledging uncorrected misstatements are immaterial, explicitly in scope for task 2.",
+      "rationale": "Question tests AU-C 580 management representation letter content for uncorrected misstatements in an audit, not attestation engagement reporting.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 6486,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests AU-C 265 communication timing requirements for significant deficiencies, which is not covered by any of the four tasks (tasks focus on misstatements or control deficiency evaluation for audit procedure planning, not communication requirements).",
+      "rationale": "Question tests AU-C 265 timing for communicating significant deficiencies in a financial statement audit, but all four tasks cover AT-C attestation engagements (examination/review/AUP reports), not audit communications.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -12838,153 +12837,153 @@
     },
     {
       "question_id": 13973,
-      "pin_ref": "AUD/IV/A/0/5",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests knowledge of audit report section sequencing, which is part of determining the appropriate form and content of an auditor's report.",
+      "rationale": "Question tests standard audit report format (opinion-first structure), which is not covered by any of the specialized reporting tasks provided.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13974,
-      "pin_ref": "AUD/IV/A/0/5",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question requires determining what opinion type to issue when going concern disclosures are inadequate, which is determining the appropriate form and content of an auditor's report.",
+      "rationale": "Question tests opinion modification for going concern disclosure inadequacy, which is not addressed by any of the provided task-specs.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13975,
-      "pin_ref": "AUD/IV/A/0/5",
-      "confidence": "high",
-      "rationale": "Question tests determining the appropriate use of an other-matter paragraph when updating a prior-year opinion, which directly maps to task 5's scope.",
+      "pin_ref": null,
+      "confidence": "medium",
+      "rationale": "Question tests mechanics of updating prior-year opinions and other-matter paragraph use in comparative reporting, not covered by the comparability task's identification focus.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13976,
-      "pin_ref": "AUD/IV/A/0/5",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question asks about a required element of audit report form (title wording), which is part of determining the appropriate form and content of the report.",
+      "rationale": "Tests basic audit report format requirements (title) not covered by any task-spec addressing specialized reporting contexts.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13977,
-      "pin_ref": "AUD/IV/A/0/5",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question requires determining opinion type based on evaluating aggregate pervasiveness of multiple misstatements, which is determining appropriate form and content including opinion.",
+      "rationale": "Tests opinion selection based on pervasiveness evaluation, not covered by task-specs focused on specialized reporting scenarios.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13979,
-      "pin_ref": "AUD/IV/A/0/5",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests determining what opinion combination to express on comparative financial statements when different periods have different issues.",
+      "rationale": "Tests comparative reporting mechanics (different opinions per period) rather than identifying factors affecting comparability per AUD/IV/E/1/1.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13980,
-      "pin_ref": "AUD/IV/A/0/5",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question asks about specific wording in the opinion paragraph for an adverse opinion, which is determining the appropriate form and content of the report.",
+      "rationale": "Tests specific wording in adverse opinion paragraph, not covered by specialized reporting task-specs.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13981,
-      "pin_ref": "AUD/IV/A/0/5",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests knowledge of section title requirements in a qualified opinion report, which is determining appropriate form and content of the report.",
+      "rationale": "Tests audit report section titles for qualified opinions, not covered by task-specs addressing specialized contexts.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13982,
-      "pin_ref": "AUD/IV/A/0/1",
-      "confidence": "medium",
-      "rationale": "Question tests knowledge of the time period for going concern evaluation, which is a factor the auditor considers when forming an opinion on financial statements.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests going concern evaluation period, not addressed by any provided task-spec for AUD/IV/E.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13983,
-      "pin_ref": "AUD/IV/A/0/5",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question requires determining required modifications to the Auditor's Responsibilities section in a disclaimer of opinion, which is determining appropriate form and content.",
+      "rationale": "Tests required modifications to auditor's responsibilities section in disclaimer, not covered by specialized reporting task-specs.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13984,
-      "pin_ref": "AUD/IV/A/0/5",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests determining appropriate use of other-matter paragraph for predecessor auditor comparatives, directly matching task's scope of report form and content.",
+      "rationale": "Tests predecessor auditor reporting mechanics, not the substantive factors affecting comparability per AUD/IV/E/1/1.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13985,
-      "pin_ref": "AUD/IV/A/0/5",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question addresses CAM requirements as part of audit report content determination under different standards.",
+      "rationale": "Tests Critical Audit Matters requirements (PCAOB vs GAAS), not covered by any provided task-spec.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13986,
-      "pin_ref": "AUD/IV/A/0/5",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of proper report dating as part of determining appropriate form and content of auditor's report.",
+      "rationale": "Tests auditor's report dating requirements, not addressed by specialized reporting task-specs provided.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13988,
-      "pin_ref": "AUD/IV/A/0/5",
+      "pin_ref": "AUD/IV/E/6/1",
       "confidence": "high",
-      "rationale": "Question directly tests determining appropriate use of other-matter paragraph for restricted-use reports.",
+      "rationale": "Special-purpose report with restricted-use other-matter paragraph matches task on reporting for special purpose frameworks including restricted-use reports.",
       "pass": 1,
-      "bloom_overshoot": false,
+      "bloom_overshoot": true,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": 1
     },
     {
       "question_id": 13989,
-      "pin_ref": "AUD/IV/A/0/5",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question requires determining complete report structure combining component auditor reference and qualified opinion, testing comprehensive report form and content knowledge.",
+      "rationale": "Group audit reference to component auditor combined with modified opinion does not fit any of the seven tasks covering consistency, other information, interim reviews, supplementary information, GAGAS, or special purpose frameworks.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13992,

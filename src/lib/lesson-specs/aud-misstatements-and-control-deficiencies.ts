@@ -8,7 +8,7 @@ import type { LessonSpec } from "./types";
 export const spec: LessonSpec = {
 	topic: "Misstatements and Control Deficiencies",
 	section: "aud",
-	primaryRef: "AUD/IV/B",
+	primaryRef: "AUD/III/F",
 	secondaryRefs: [],
 
 	inScope: [
@@ -142,5 +142,5 @@ export const spec: LessonSpec = {
 	],
 
 	notes:
-		"Misstatements and Control Deficiencies (AUD/IV/B) owns AU-C 450 misstatement evaluation (factual/judgmental/projected types, clearly trivial threshold, schedule of uncorrected misstatements, iron curtain vs rollover, qualitative factors) AND AU-C 265 control deficiency evaluation (significant deficiency vs material weakness, severity framework, written communication requirements and timing). Census v3 flagged 5/64 at 7.8% — `tolerable misstatement` (3), `AS 2201` (2), `sampling risk` (1). Out of scope: AU-C 315 IC understanding (Internal Controls), AU-C 330 TOC (Tests of Controls), AU-C 320 materiality at depth (Materiality), AU-C 530 sampling mechanics (Audit Sampling), AU-C 240 fraud (Risk Assessment), AU-C 700/705/706 reporting (Audit Reports), AU-C 260 governance communication at depth, PCAOB AS 2201/2805, Quality Management, Using the Work of Others, IFAC standards.",
+		"Misstatements and Control Deficiencies (AUD/III/F) owns AU-C 450 misstatement evaluation (factual/judgmental/projected types, clearly trivial threshold, schedule of uncorrected misstatements, iron curtain vs rollover, qualitative factors) AND AU-C 265 control deficiency evaluation (significant deficiency vs material weakness, severity framework, written communication requirements and timing). AUD/III/F task-specs cover: summary of corrected/uncorrected misstatements, effect on FS, effect on ICFR assessment, evaluate deficiencies for audit procedure impact. Previously anchored to AUD/IV/B (attestation reports) which was a misalignment — 61 DB questions homeless at IV/B; III/F is the correct AICPA anchor. Census v3 flagged 5/64 at 7.8% — `tolerable misstatement` (3), `AS 2201` (2), `sampling risk` (1). Out of scope: AU-C 315 IC understanding (Internal Controls), AU-C 330 TOC (Tests of Controls), AU-C 320 materiality at depth (Materiality), AU-C 530 sampling mechanics (Audit Sampling), AU-C 240 fraud (Risk Assessment), AU-C 700/705/706 reporting (Audit Reports), AU-C 260 governance communication at depth, PCAOB AS 2201/2805, Quality Management, Using the Work of Others, IFAC standards.",
 };

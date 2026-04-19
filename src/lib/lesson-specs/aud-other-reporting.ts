@@ -7,7 +7,7 @@ import type { LessonSpec } from "./types";
 
 export const spec: LessonSpec = {
 	topic: "Other Reporting Considerations",
-	topicAliases: ["Modifications to the Auditor Report", "Other Information and Supplementary Information", "Attestation Engagements"],
+	topicAliases: ["Other Information and Supplementary Information"],
 	section: "aud",
 	primaryRef: "AUD/IV/E",
 	secondaryRefs: [],
