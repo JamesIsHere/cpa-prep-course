@@ -8,7 +8,7 @@
 >
 > **Freshness rule:** every claim in this file is either (a) a verifiable fact backed by a command or file, or (b) an opinion tagged with a date and the session that wrote it. No stale aspirations.
 
-Last updated: 2026-04-15 (session that uncovered the Wave B Bloom's alignment finding)
+Last updated: 2026-04-19 (session that found routing-over-authoring as the classifier lift lever)
 
 ---
 
@@ -35,6 +35,15 @@ Last updated: 2026-04-15 (session that uncovered the Wave B Bloom's alignment fi
 - **Known taxonomy issue:** REG Individual Taxation proliferation. Five variants (`Credits`, `Credits/AMT`, `Deductions`, `Filing/Credits`, `Income`) covering 319 questions. Two of them (`Credits` and `Credits/AMT`) share the same blueprint anchor REG/IV/C.
 - **Known taxonomy issue:** ISC has 791 questions in DB topic strings that are declared in `blueprint.ts` but not routed to any AICPA group via the group → `questionTopics` traversal path. Source of the issue is unknown as of this writing — the topics are in blueprint.ts somewhere but not linked from an AICPA group node. Needs investigation.
 - Verified via `scripts/qa/audit-taxonomy.ts` and `scripts/qa/audit-task-coverage.ts` on 2026-04-15.
+
+**AUD classification status (2026-04-19):**
+- **AUD baseline match rate was 68.0%** (classifier silently dropping `inScope` from its prompt — fixed commit `0718c8d`).
+- **AUD now at 75.0%** (1068 / 1424 matched) after 3 lesson-spec re-anchors — commit `e4a8675`:
+  - Misstatements and Control Deficiencies: IV/B → III/F
+  - Modifications to the Auditor Report: IV/E alias → IV/A alias
+  - Attestation Engagements: IV/E alias → new IV/B lesson-spec
+- **Key finding:** routing fixes delivered +106 matches from 3 edits. Iter-1 inScope authoring on 73 task-specs across 13 groups delivered -6 (noise). See `memory/feedback_routing_over_authoring.md`.
+- **Remaining homeless (357, 25%):** top candidates are Specific Areas and Transactions (52, mixed topic), Analytical Procedures (49, under-specced), Government Auditing Standards (30, 2-task under-specced), Written Representations (27, 1-task under-specced).
 
 **The structural finding from Wave B (bank audit, 2026-04-15):**
 - **AICPA representative tasks have zero L1 (Remembering) content.** All 648 tasks are at Application, Analysis, or Evaluation level.
