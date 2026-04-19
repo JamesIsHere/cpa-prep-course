@@ -8,7 +8,7 @@
 >
 > **Freshness rule:** every claim in this file is either (a) a verifiable fact backed by a command or file, or (b) an opinion tagged with a date and the session that wrote it. No stale aspirations.
 
-Last updated: 2026-04-19 (iter-4 routing: AUD 75.0% → 79.1%, +59 matches from 2 re-anchors, 0 regressions)
+Last updated: 2026-04-19 (evening — ISC iter-1+2 routing: 43.3% → 60.7%, +253 matches from 4 re-anchors; discrepancy queue item #3 closed as mis-diagnosed)
 
 ---
 
@@ -33,7 +33,7 @@ Last updated: 2026-04-19 (iter-4 routing: AUD 75.0% → 79.1%, +59 matches from 
 **Taxonomy:**
 - **130 distinct DB topic strings**, all 130 declared in `blueprint.ts`. Zero orphans, zero empty declared topics, zero cross-section contamination.
 - **Known taxonomy issue:** REG Individual Taxation proliferation. Five variants (`Credits`, `Credits/AMT`, `Deductions`, `Filing/Credits`, `Income`) covering 319 questions. Two of them (`Credits` and `Credits/AMT`) share the same blueprint anchor REG/IV/C.
-- **Known taxonomy issue:** ISC has 791 questions in DB topic strings that are declared in `blueprint.ts` but not routed to any AICPA group via the group → `questionTopics` traversal path. Source of the issue is unknown as of this writing — the topics are in blueprint.ts somewhere but not linked from an AICPA group node. Needs investigation.
+- **~~Known taxonomy issue:~~ ~~ISC has 791 questions...~~** ~~unrouted~~ — **RETIRED 2026-04-19.** The original claim in discrepancy queue #3 was mis-diagnosed. All 1,457 ISC questions DO route to AICPA groups via lesson-spec topic→group mapping (verified via `scripts/qa/audit-homeless.ts --section=isc`). The 826 "homeless" that looked unrouted were classifier-rejected, not structurally unmapped. Fixed via iter-1+2 routing (commits `9421a17`, `a7a0227`).
 - Verified via `scripts/qa/audit-taxonomy.ts` and `scripts/qa/audit-task-coverage.ts` on 2026-04-15.
 
 **AUD classification status (2026-04-19, iter-4):**
@@ -47,6 +47,22 @@ Last updated: 2026-04-19 (iter-4 routing: AUD 75.0% → 79.1%, +59 matches from 
   - Specific Areas and Transactions: II/G (narrow engagement risk) → III/E (6 topics covering estimates / investments / inventory / litigation / going concern / single audits)
 - **Key finding:** routing fixes delivered +159 matches from 5 edits over 2 sessions. Iter-1 inScope authoring on 73 task-specs across 13 groups delivered -6 (noise). See `memory/feedback_routing_over_authoring.md`.
 - **Remaining homeless (298, 21%):** top candidates are Specific Areas and Transactions (34 residual at III/E), Government Auditing Standards (30 @ IV/D, 2-task under-specced), Written Representations (27 @ III/G, 1-task under-specced), Substantive Procedures (23 @ III/D). The remaining big clusters are **under-specced groups** (IV/D, III/G) and residual off-topic content; further routing lift likely requires authoring new task-specs, not re-anchoring.
+
+**ISC classification status (2026-04-19, iter-2):**
+- **ISC baseline match rate was 43.3%** (same classifier plumbing fix as AUD; empty inScope at scaffold baselines).
+- **Iter 1: 43.3% → 56.1%** after 3 re-anchors (commit `9421a17`):
+  - Incident Response and Recovery: II/B → new II/D lesson-spec
+  - System Availability and Change Management: II/A → I/A
+  - Change Management: II/A → I/A
+- **Iter 2: 56.1% → 60.7%** (884 / 1457 matched) after 1 re-anchor (commit `a7a0227`):
+  - Data Protection Technologies: II/B → II/C (II/C has explicit DLP task + encryption fundamentals + data management for confidentiality)
+- **Cumulative lift:** +253 matches from 4 edits. Regressions: 3 (negligible vs 252 gains).
+- **Remaining homeless (570, 39%):** top clusters appear to be **bank-content-overshoots-AICPA-scope** rather than routing issues:
+  - Security and Control Frameworks @ II/A: 71 (ITIL, NIST RMF, ALE not in AICPA II/A's 8 tasks)
+  - IT Audit Frameworks @ II/A: 64 (same pattern)
+  - SOC Testing Controls @ III/A: 59 (sampling methodology / deviation evaluation not in AICPA III/A)
+  - Incident Response residual @ II/D: 57 (43 of 100 matched; remainder may be overshoot of 4-task group)
+  - IT General Controls @ I/A: 51 (general ITGC concepts not in I/A's 4 topics)
 
 **The structural finding from Wave B (bank audit, 2026-04-15):**
 - **AICPA representative tasks have zero L1 (Remembering) content.** All 648 tasks are at Application, Analysis, or Evaluation level.
@@ -125,6 +141,8 @@ Last updated: 2026-04-19 (iter-4 routing: AUD 75.0% → 79.1%, +59 matches from 
 | 2026-04-15 | Drift census v4 against 43 specs' universal ban set | `scripts/qa/drift-census.ts` | 672 flagged in 52 unspecced topics. Biggest cluster: ISC IT-governance (~400 flags in 8 topics) |
 | 2026-04-15 | Migration ledger sync | `npm run migrate:status` | 1,049 applied / 1,044 on disk (delta to investigate) |
 | 2026-04-19 | AUD iter-4 routing lift (selective reclassification of 130 questions in 2 re-anchored topics) | `scripts/qa/classify-section.ts --section=aud --ids=<130>` + merge | 88 matched / 42 homeless on subset; full-bank 75.0% → 79.1% (+59 matches, 0 regressions) |
+| 2026-04-19 | ISC iter-1 routing lift (3 re-anchors: II/B→II/D, II/A→I/A×2) | selective reclassify 271 qs + merge | 190 matched / 81 homeless on subset; full-bank 43.3% → 56.1% (+187 matches, 3 regressions) |
+| 2026-04-19 | ISC iter-2 routing lift (Data Protection Technologies II/B → II/C) | selective reclassify 97 qs + merge | 94 matched / 3 homeless on subset; full-bank 56.1% → 60.7% (+66 matches, 0 regressions) |
 
 **Recently verified and trusted:**
 - Correctness of 8,469 questions via `verify-correctness.ts` (iterative verification campaign documented in `docs/verification-progress.md`)
@@ -148,7 +166,7 @@ This is a living inventory of known discrepancies between artifacts, known tech 
 |---|---|---|---|---|
 | ~~1~~ | ~~blueprint.ts ↔ AICPA JSON group-letter divergence~~ | ~~Task-spec anchoring~~ | ~~See resolution~~ | **CLOSED 2026-04-15** — `docs/blueprint-coordinate-systems.md` declares AICPA JSON authoritative for task-spec refs, blueprint.ts is Slayer-lesson view, no letter cross-matching permitted. Task-spec validator will enforce in Phase 1. `audit-task-coverage.ts` latent bug on per-group numbers is documented; section-level numbers remain valid. |
 | ~~2~~ | ~~87 scaffolder stub files in `src/lib/topic-specs/`~~ | ~~Clean-end-state rule~~ | ~~See resolution~~ | **CLOSED 2026-04-15** — 86 stub files deleted (one count-off between extract and delete scripts is immaterial). Metadata extracted to `docs/topic-specs-backlog.md` with explicit warning that the scaffolder's blueprintRef guesses are untrustworthy and that these refs use blueprint.ts coordinates (not AICPA JSON). `src/lib/topic-specs/` now contains 43 authored specs + 4 utility files (index.ts, types.ts, blueprint-task-resolver.ts, _isc-soc-base.ts). Drift test still 221/221. |
-| 3 | 791 ISC questions in DB topic strings that blueprint.ts declares but doesn't route through any AICPA group via `questionTopics` traversal | Phase 3 re-tagging for ISC content | Investigate blueprint.ts ISC area/group structure; either fix routing or re-anchor ISC topic strings to AICPA JSON directly via task-specs | open |
+| ~~3~~ | ~~791 ISC questions... not routed to any AICPA group~~ | ~~Phase 3 re-tagging~~ | ~~Investigate blueprint.ts ISC area/group structure~~ | **CLOSED 2026-04-19** — Mis-diagnosed. All 1,457 ISC questions DO route to AICPA groups via lesson-spec topic→group mapping. The 826 "homeless" at baseline were classifier-rejected, not structurally unmapped. Four of those routings were wrong (II/B Security routed incident response questions, II/A Frameworks routed availability/change management questions, II/B Security routed data-protection-technology questions). Fixed via iter-1 commit `9421a17` and iter-2 commit `a7a0227` — +253 matches. Remaining 570 homeless at ISC are bank-content-overshoots-AICPA-scope, not routing issues. |
 | 4 | REG Individual Taxation proliferation — 5 topic strings (`Credits`, `Credits/AMT`, `Deductions`, `Filing/Credits`, `Income`) covering 319 questions, two of them sharing the same blueprint anchor REG/IV/C | Phase 3 re-tagging for REG individual content | Decide: merge variants via data migration, OR split with canonical strings. Likely decided via Phase 3 findings. | open |
 | 5 | 4 slash-named mixed-content topics: `Individual Taxation: Credits/AMT` (66 qs), `Individual Taxation: Filing/Credits` (68 qs), `Property Transactions: Gains/Losses` (43 qs), `Review/Compilation Engagements` (31 qs) | Phase 3 re-tagging | Three are probably benign AICPA standard naming (Gains/Losses, Review/Compilation). Credits/AMT and Filing/Credits are genuine mixed-content artifacts. Resolve alongside #4. | open |
 | 6 | ~2,500 questions at Bloom's L1 while AICPA representative tasks have zero L1 content | AICPA-aligned Bloom's distribution end state | Phase 4: re-level by rewriting stems to demand application, OR delete and regenerate from task-spec | open |
