@@ -15,7 +15,6 @@ export const spec: LessonSpec = {
 	topic: "Security Controls and Monitoring",
 	topicAliases: [
 		"Threats, Attacks, and Vulnerabilities",
-		"Data Protection Technologies",
 	],
 	section: "isc",
 	primaryRef: "ISC/II/B",

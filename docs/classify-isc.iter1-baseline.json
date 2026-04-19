@@ -1,8 +1,8 @@
 {
   "section": "isc",
-  "generatedAt": "2026-04-19T22:31:04.288Z",
+  "generatedAt": "2026-04-19T22:17:57.246Z",
   "totalQuestions": 1452,
-  "resumeNotes": "ISC iter-2: Data Protection Technologies II/B → II/C",
+  "resumeNotes": "ISC iter-1 routing: II/B → II/D (Incident Response) + II/A → I/A (Availability + Change Management)",
   "suggestions": [
     {
       "question_id": 746,
@@ -6976,39 +6976,39 @@
     },
     {
       "question_id": 4926,
-      "pin_ref": "ISC/II/C/0/4",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of DLP system types (network vs. endpoint), directly matching the task to explain DLP.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 2,
-      "task_bloom": 1
-    },
-    {
-      "question_id": 4927,
-      "pin_ref": "ISC/II/C/0/6",
-      "confidence": "high",
-      "rationale": "Question tests controls for securely deleting confidential data per NIST SP 800-88, matching task on data management practices including deletion.",
+      "rationale": "Question tests knowledge of Data Loss Prevention (DLP) technology types, which are not covered in ISC/II/B tasks.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
+    },
+    {
+      "question_id": 4927,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question covers media sanitization methods per NIST SP 800-88, which are not addressed in ISC/II/B tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
     },
     {
       "question_id": 4929,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of format-preserving encryption as an encryption technique for protecting data while preserving format.",
+      "rationale": "Question tests knowledge of format-preserving encryption (FPE) technology, which is not covered in ISC/II/B tasks.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 4932,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests AICPA audit independence threats, not IT confidentiality or privacy controls.",
+      "rationale": "Question addresses audit independence and familiarity threats, which are not covered by ISC/II/B cybersecurity tasks.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -7018,7 +7018,7 @@
       "question_id": 4933,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests AICPA audit independence (self-review threat), not IT confidentiality or privacy systems.",
+      "rationale": "Question addresses audit independence and self-review threats, which are not covered by ISC/II/B cybersecurity tasks.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -7026,33 +7026,33 @@
     },
     {
       "question_id": 4935,
-      "pin_ref": "ISC/II/C/0/6",
-      "confidence": "medium",
-      "rationale": "DPIA is a data management practice for privacy regulation compliance, matching task on practices for data subject to privacy regulations.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question addresses Data Protection Impact Assessments (DPIA) and privacy risk assessment, which are not covered by any ISC/II/B task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 4938,
-      "pin_ref": "ISC/II/C/0/4",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of DLP content inspection techniques (regex pattern matching), directly matching the explain DLP task.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 2,
-      "task_bloom": 1
-    },
-    {
-      "question_id": 4939,
-      "pin_ref": "ISC/II/C/0/6",
-      "confidence": "high",
-      "rationale": "Question tests controls for securely storing confidential data, specifically key management separation from encrypted data.",
+      "rationale": "Question addresses DLP content inspection techniques using regex patterns, which are not covered by ISC/II/B tasks focused on cyber-attack controls.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
+    },
+    {
+      "question_id": 4939,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question addresses cryptographic key management practices, which are not covered by any ISC/II/B task.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
     },
     {
       "question_id": 4946,
@@ -7236,19 +7236,19 @@
     },
     {
       "question_id": 5756,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of HSM as cryptographic infrastructure for key management, matching encryption fundamentals task.",
+      "rationale": "Question addresses hardware security modules (HSM) and cryptographic appliances, which are not covered by any ISC/II/B task.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5757,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": "ISC/II/B/1/6",
       "confidence": "medium",
-      "rationale": "Question tests analysis of encryption technique (FHE) limitations and residual risks, best fit is encryption techniques task despite bloom overshoot.",
+      "rationale": "Question addresses inference attack risks in cloud analytics environments, which aligns with identifying cybersecurity risks related to cloud environments.",
       "pass": 1,
       "bloom_overshoot": true,
       "question_bloom": 3,
@@ -7256,79 +7256,79 @@
     },
     {
       "question_id": 5759,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of symmetric vs asymmetric encryption fundamentals.",
+      "rationale": "Question addresses identifying symmetric encryption types and fundamentals, which are not covered by any ISC/II/B task.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5760,
-      "pin_ref": "ISC/II/C/0/6",
-      "confidence": "medium",
-      "rationale": "Question analyzes differential privacy as a data management practice for privacy-regulated data.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question addresses differential privacy techniques and their effects on data utility, which are not covered by any ISC/II/B task.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5761,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of PKI trust chains and certificate infrastructure fundamentals.",
+      "rationale": "Question addresses PKI certificate trust chain configuration, which is not covered by ISC/II/B tasks focused on authentication techniques rather than PKI infrastructure.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5763,
-      "pin_ref": "ISC/II/C/0/1",
-      "confidence": "medium",
-      "rationale": "Question tests recall of fundamental data protection states underlying encryption and security controls.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests knowledge of data protection states (at rest, in transit, in use) which is not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5764,
-      "pin_ref": "ISC/II/C/0/1",
-      "confidence": "high",
-      "rationale": "Question analyzes trade-offs between two encryption techniques (TDE vs column-level encryption).",
+      "pin_ref": "ISC/II/B/2/6",
+      "confidence": "medium",
+      "rationale": "Question requires analyzing appropriate encryption controls (TDE vs column-level) to mitigate risk, matching task on determining preventive/detective/corrective controls.",
       "pass": 1,
       "bloom_overshoot": true,
       "question_bloom": 3,
-      "task_bloom": 1
+      "task_bloom": 2
     },
     {
       "question_id": 5769,
-      "pin_ref": "ISC/II/C/0/1",
-      "confidence": "high",
-      "rationale": "Question tests understanding of end-to-end encryption as an encryption technique and application.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 2,
-      "task_bloom": 1
-    },
-    {
-      "question_id": 5770,
-      "pin_ref": "ISC/II/C/0/6",
+      "pin_ref": "ISC/II/B/2/6",
       "confidence": "medium",
-      "rationale": "Question tests understanding of data discovery as a foundational data management practice for protecting confidential data.",
+      "rationale": "Question asks to identify end-to-end encryption as a preventive control technology, matching task on determining common controls.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
       "task_bloom": 2
     },
     {
-      "question_id": 5772,
-      "pin_ref": "ISC/II/C/0/7",
+      "question_id": 5770,
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question requires detecting a deficiency in control design (DAM alert threshold needs tuning for legitimate operations).",
+      "rationale": "Question tests identifying data discovery and classification capabilities, which is not covered by any task in this threat/control group.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 5772,
+      "pin_ref": "ISC/II/B/3/3",
+      "confidence": "high",
+      "rationale": "Question requires detecting a deficiency in DAM control design (threshold tuning issue), directly matching task on detecting deficiencies in control suitability and operation.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
@@ -7336,39 +7336,39 @@
     },
     {
       "question_id": 5773,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of key escrow as a key management practice within encryption fundamentals.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 2,
-      "task_bloom": 1
-    },
-    {
-      "question_id": 5777,
-      "pin_ref": "ISC/II/C/0/3",
-      "confidence": "medium",
-      "rationale": "Question analyzes digital watermarking as a protection method for confidential data, similar to obfuscation and tokenization.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 3,
-      "task_bloom": 1
-    },
-    {
-      "question_id": 5779,
-      "pin_ref": "ISC/II/C/0/6",
-      "confidence": "high",
-      "rationale": "Tests determining controls for secure storage of confidential data through encryption key separation strategy.",
+      "rationale": "Question tests knowledge of key escrow practice in cryptographic key management, which is not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 5777,
+      "pin_ref": "ISC/II/B/2/6",
+      "confidence": "medium",
+      "rationale": "Question analyzes watermarking as a detective control for attribution versus access logging, matching task on determining appropriate controls.",
+      "pass": 1,
+      "bloom_overshoot": true,
+      "question_bloom": 3,
       "task_bloom": 2
     },
     {
+      "question_id": 5779,
+      "pin_ref": "ISC/II/B/2/3",
+      "confidence": "high",
+      "rationale": "Question tests understanding of defense-in-depth principle through key-data separation example, directly matching task on explaining layered security and defense-in-depth concepts.",
+      "pass": 1,
+      "bloom_overshoot": true,
+      "question_bloom": 2,
+      "task_bloom": 1
+    },
+    {
       "question_id": 5780,
-      "pin_ref": "ISC/II/C/0/6",
+      "pin_ref": "ISC/II/B/2/6",
       "confidence": "medium",
-      "rationale": "Tests determining how controls for secure transmission operate by analyzing certificate pinning behavior.",
+      "rationale": "Question analyzes certificate pinning as a preventive control against man-in-the-middle attacks, matching task on determining appropriate controls.",
       "pass": 1,
       "bloom_overshoot": true,
       "question_bloom": 3,
@@ -7376,189 +7376,189 @@
     },
     {
       "question_id": 5784,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests understanding of encryption fundamentals by identifying the function of Diffie-Hellman key exchange.",
+      "rationale": "Question tests knowledge of Diffie-Hellman key exchange cryptographic function, which is not covered by any task in this group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5785,
-      "pin_ref": "ISC/II/C/0/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests identifying methods for protection of confidential data by recognizing steganography as a concealment technique.",
+      "rationale": "Steganography as a data concealment technique is not covered by any task in this group, which focuses on threat identification and security controls.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5786,
-      "pin_ref": "ISC/II/C/0/6",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests determining controls for secure key storage by identifying HSM as the appropriate technology.",
+      "rationale": "Hardware Security Module (HSM) for cryptographic key management is not addressed by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5787,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests explaining encryption fundamentals by distinguishing between one-way hashing and reversible encryption.",
+      "rationale": "Fundamental distinctions between hashing and encryption are not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5788,
-      "pin_ref": "ISC/II/C/0/6",
-      "confidence": "medium",
-      "rationale": "Tests determining controls by analyzing operational impact of key rotation strategy on secure data storage.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Operational impacts of cryptographic key rotation strategies are not addressed by any task in this group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5789,
-      "pin_ref": "ISC/II/C/0/6",
-      "confidence": "medium",
-      "rationale": "Tests determining controls by analyzing which encryption approach better addresses specific threat models for secure storage.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Database encryption implementation choices (TDE vs. column-level) are not covered by any task in this group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5790,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests explaining encryption techniques and applications by identifying end-to-end encryption model.",
+      "rationale": "End-to-end encryption architecture models are not addressed by any task in this group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5791,
-      "pin_ref": "ISC/II/C/0/6",
-      "confidence": "medium",
-      "rationale": "Tests determining controls for privacy-preserving data publication by identifying differential privacy technique.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Differential privacy and privacy-preserving analytics techniques are not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5792,
-      "pin_ref": "ISC/II/C/0/6",
-      "confidence": "medium",
-      "rationale": "Question requires determining which encryption key management control best meets regulatory custody requirements.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Cloud key management strategies (BYOK/HYOK) are not addressed by any task in this group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5793,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question directly tests understanding of symmetric encryption fundamentals.",
+      "rationale": "Symmetric encryption fundamentals are not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5794,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests application of encryption technique knowledge to identify TEE technology.",
+      "rationale": "Trusted Execution Environment (TEE) technology for data-in-use protection is not addressed by any task in this group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5795,
-      "pin_ref": "ISC/II/C/0/6",
-      "confidence": "medium",
-      "rationale": "Question requires determining appropriate controls for processing confidential data without exposure.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Advanced cryptographic techniques like homomorphic encryption are not covered in the ISC/II/B task list.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5797,
-      "pin_ref": "ISC/II/C/0/4",
-      "confidence": "medium",
-      "rationale": "Question analyzes digital watermarking as a data loss prevention technique and its limitations.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Digital watermarking for data leakage tracing is not addressed in the ISC/II/B task specifications.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5798,
-      "pin_ref": "ISC/II/C/0/6",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests application of key escrow as a control for managing confidential data access.",
+      "rationale": "Cryptographic key management and key escrow systems are not covered in the ISC/II/B task list.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5801,
-      "pin_ref": "ISC/II/C/0/1",
-      "confidence": "medium",
-      "rationale": "Question analyzes consequences of certificate pinning encryption technique implementation.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Certificate pinning implementation details and consequences are not addressed in the ISC/II/B tasks.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5802,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests application of TLS certificate chain validation fundamentals.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 2,
-      "task_bloom": 1
-    },
-    {
-      "question_id": 5805,
-      "pin_ref": "ISC/II/C/0/1",
-      "confidence": "high",
-      "rationale": "Question analyzes differences between SFTP and FTPS encryption techniques for secure file transfer.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 3,
-      "task_bloom": 1
-    },
-    {
-      "question_id": 5806,
-      "pin_ref": "ISC/II/C/0/6",
-      "confidence": "high",
-      "rationale": "Question tests determination of proper data management practice for securely deleting expired confidential records.",
+      "rationale": "TLS certificate chain validation processes are not covered in the ISC/II/B task specifications.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
+    },
+    {
+      "question_id": 5805,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Protocol-level comparison of SFTP vs FTPS technical details is not addressed in the ISC/II/B tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": null
+    },
+    {
+      "question_id": 5806,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Data retention schedules and secure destruction procedures are not covered in the ISC/II/B task list.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
     },
     {
       "question_id": 5807,
-      "pin_ref": "ISC/II/C/0/3",
-      "confidence": "high",
-      "rationale": "Steganography is a data obfuscation method for protecting confidential data, directly matching the task's examples of data obfuscation and tokenization.",
+      "pin_ref": "ISC/II/B/1/3",
+      "confidence": "medium",
+      "rationale": "Steganography is a covert channel technique used in this data exfiltration attack scenario.",
       "pass": 1,
       "bloom_overshoot": true,
       "question_bloom": 2,
@@ -7566,49 +7566,49 @@
     },
     {
       "question_id": 5808,
-      "pin_ref": "ISC/II/C/0/1",
-      "confidence": "high",
-      "rationale": "Full-disk encryption (BitLocker) is a fundamental encryption application for protecting data at rest.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 2,
-      "task_bloom": 1
-    },
-    {
-      "question_id": 5813,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": "ISC/II/B/2/6",
       "confidence": "medium",
-      "rationale": "Zero-knowledge proofs are an advanced encryption technique/application for privacy-preserving verification.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 4,
-      "task_bloom": 1
-    },
-    {
-      "question_id": 5818,
-      "pin_ref": "ISC/II/C/0/6",
-      "confidence": "high",
-      "rationale": "IPsec VPN is a control for securely transmitting confidential data between remote endpoints and corporate networks.",
+      "rationale": "Full-disk encryption is a preventive control (device hardening) that protects against offline data extraction.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
       "task_bloom": 2
     },
     {
-      "question_id": 5822,
-      "pin_ref": "ISC/II/C/0/6",
-      "confidence": "medium",
-      "rationale": "Analyzing TLS architecture with server-side decryption involves determining controls for secure transmission of confidential data.",
+      "question_id": 5813,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Zero-knowledge proofs and advanced privacy-preserving cryptography are not covered in the ISC/II/B tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 4,
+      "task_bloom": null
+    },
+    {
+      "question_id": 5818,
+      "pin_ref": "ISC/II/B/2/1",
+      "confidence": "high",
+      "rationale": "Question directly tests VPN as a remote access protection method, which is explicitly listed in the task examples.",
       "pass": 1,
       "bloom_overshoot": true,
+      "question_bloom": 2,
+      "task_bloom": 1
+    },
+    {
+      "question_id": 5822,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question analyzes encryption architecture design vulnerabilities, which does not map to any task focused on identifying threats, controls, or performing SOC procedures.",
+      "pass": 1,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5823,
-      "pin_ref": "ISC/II/C/0/6",
+      "pin_ref": "ISC/II/B/2/7",
       "confidence": "high",
-      "rationale": "Bcrypt password hashing is a control for securely storing confidential authentication data.",
+      "rationale": "Question tests understanding of password hashing as an authentication technique, directly covered by the password management example in this task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -7616,9 +7616,9 @@
     },
     {
       "question_id": 5824,
-      "pin_ref": "ISC/II/C/0/6",
+      "pin_ref": "ISC/II/B/2/8",
       "confidence": "medium",
-      "rationale": "Data classification is a data management practice for controlling access to confidential information based on sensitivity levels.",
+      "rationale": "Question analyzes how misclassification undermines access controls, fitting the task's focus on authorization controls in specific scenarios.",
       "pass": 1,
       "bloom_overshoot": true,
       "question_bloom": 3,
@@ -7626,49 +7626,49 @@
     },
     {
       "question_id": 5827,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Defining the characteristic of symmetric encryption (same key for encryption/decryption) tests fundamental encryption knowledge.",
+      "rationale": "Question tests fundamental encryption concepts (symmetric vs asymmetric), which is not covered by any task in this group focused on threats, controls, and procedures.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5829,
-      "pin_ref": "ISC/II/C/0/3",
-      "confidence": "medium",
-      "rationale": "Digital watermarking is a method for protecting confidential data by embedding unique identifiers for traceability.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question analyzes digital watermarking for leak investigation, which does not map to any task in this threat/control/procedure-focused group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5831,
-      "pin_ref": "ISC/II/C/0/6",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "SFTP is a control for securely transmitting confidential data by encrypting both content and credentials.",
+      "rationale": "Question tests file transfer protocol encryption (SFTP vs FTP), which is not covered by tasks focused on remote network access, threats, or controls.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5837,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of cryptographic key lifecycle fundamentals, directly aligned with explaining encryption fundamentals.",
+      "rationale": "Question tests understanding of cryptographic key lifecycle management, which is not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5838,
-      "pin_ref": "ISC/II/C/0/6",
-      "confidence": "high",
-      "rationale": "Question requires determining how a control (salting) protects confidential data (passwords) during storage, matching L2 application level.",
+      "pin_ref": "ISC/II/B/2/7",
+      "confidence": "medium",
+      "rationale": "Question tests password salting as part of password management techniques, fitting the task's authentication technologies scope.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -7676,9 +7676,9 @@
     },
     {
       "question_id": 5840,
-      "pin_ref": "ISC/II/C/0/6",
-      "confidence": "high",
-      "rationale": "Question requires determining how IRM controls manage secure transmission and access to confidential documents.",
+      "pin_ref": "ISC/II/B/2/8",
+      "confidence": "medium",
+      "rationale": "Question tests IRM policy enforcement as an authorization control mechanism, fitting the task's focus on access control implementation.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -7686,9 +7686,9 @@
     },
     {
       "question_id": 5841,
-      "pin_ref": "ISC/II/C/0/6",
+      "pin_ref": "ISC/II/B/2/6",
       "confidence": "high",
-      "rationale": "Question requires determining appropriate detection controls to prevent confidential data exfiltration via steganography.",
+      "rationale": "Question asks which detection technique identifies steganography, directly matching task 16's scope of determining detective controls.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -7696,39 +7696,39 @@
     },
     {
       "question_id": 5843,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of fundamental data state terminology (data at rest) within encryption context.",
+      "rationale": "Question tests basic data state terminology without mapping to any task's scope of threats, controls, or authentication.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5844,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of key escrow as a fundamental encryption key management concept.",
+      "rationale": "Question asks for key escrow definition, not covered by any task's description of threats, controls, or authentication techniques.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5845,
-      "pin_ref": "ISC/II/C/0/1",
-      "confidence": "high",
-      "rationale": "Question tests understanding of digital certificates and PKI as fundamental encryption infrastructure concepts.",
+      "pin_ref": "ISC/II/B/2/7",
+      "confidence": "medium",
+      "rationale": "Question tests understanding of digital certificates for authentication; task 17 lists digital signatures as an authentication technology.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": 2
     },
     {
       "question_id": 5846,
-      "pin_ref": "ISC/II/C/0/6",
+      "pin_ref": "ISC/II/B/2/7",
       "confidence": "high",
-      "rationale": "Question requires applying knowledge to determine appropriate control (hashing) for securely storing confidential data (passwords).",
+      "rationale": "Question identifies hashing as the password storage technique, directly matching task 17's password management authentication scope.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -7736,89 +7736,89 @@
     },
     {
       "question_id": 5847,
-      "pin_ref": "ISC/II/C/0/6",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question requires evaluating and selecting appropriate technology (HSM) as control for managing cryptographic keys securely.",
+      "rationale": "Question tests knowledge of HSM for cryptographic key management, not covered by any task's authentication or control scope.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5848,
-      "pin_ref": "ISC/II/C/0/6",
-      "confidence": "medium",
-      "rationale": "Question requires determining key management controls for protecting regulated data, though cognitive level (L4) significantly exceeds task level (L2).",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question requires evaluating key management strategies (L4), exceeding all task scopes and Bloom's levels in this group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5849,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of key rotation as an encryption key management technique.",
+      "rationale": "Question tests key rotation practice knowledge, not covered by any task's scope of threats, controls, or authentication.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5850,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question evaluates knowledge of homomorphic encryption as an advanced encryption technique allowing computation on ciphertext.",
+      "rationale": "Question requires evaluating advanced encryption technology (L4), exceeding all task scopes and Bloom's levels in this group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5851,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question assesses understanding of zero-knowledge proofs as a cryptographic technique for proving statements without revealing data.",
+      "rationale": "Question requires evaluating cryptographic protocols (L4), exceeding all task scopes and Bloom's levels in this group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5852,
-      "pin_ref": "ISC/II/C/0/6",
+      "pin_ref": "ISC/II/B/3/3",
       "confidence": "medium",
-      "rationale": "Question analyzes control effectiveness of DAM and DLP for securing confidential data, identifying residual exfiltration risk.",
+      "rationale": "Question analyzes a deficiency in DAM control design (monitor-only mode leaving residual insider risk), which aligns with detecting control design deficiencies in security systems.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": 3
     },
     {
       "question_id": 5853,
-      "pin_ref": "ISC/II/C/0/6",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question evaluates controls for securely transmitting data subject to privacy regulations (GDPR cross-border transfer requirements).",
+      "rationale": "Question tests GDPR cross-border data transfer compliance, which is a privacy regulation issue not covered by the threat identification or security control tasks in this group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5856,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of transparent data encryption (TDE) as a data-at-rest encryption technique.",
+      "rationale": "Question identifies a specific database encryption technology (TDE), which is not covered by the network/device protection or control determination tasks in this group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5859,
-      "pin_ref": "ISC/II/C/0/1",
-      "confidence": "high",
-      "rationale": "Question evaluates knowledge of full disk encryption (FDE) as a comprehensive volume-level encryption technique.",
+      "pin_ref": "ISC/II/B/2/1",
+      "confidence": "medium",
+      "rationale": "Full disk encryption is an endpoint security measure that protects devices, falling under the task's scope of identifying ways to protect devices including endpoint security and system hardening.",
       "pass": 1,
       "bloom_overshoot": true,
       "question_bloom": 2,
@@ -7826,19 +7826,19 @@
     },
     {
       "question_id": 5860,
-      "pin_ref": "ISC/II/C/0/1",
-      "confidence": "high",
-      "rationale": "Question assesses understanding of end-to-end encryption limitations, specifically metadata exposure and traffic analysis implications.",
+      "pin_ref": "ISC/II/B/3/3",
+      "confidence": "medium",
+      "rationale": "Question analyzes the security limitation of E2EE (metadata exposure enabling traffic analysis), which is detecting a deficiency in the control's design for protecting communication confidentiality.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 1
+      "task_bloom": 3
     },
     {
       "question_id": 5861,
       "pin_ref": null,
-      "confidence": "medium",
-      "rationale": "Digital watermarking for forensic attribution does not clearly align with any task focused on encryption, DLP explanation, or SDLC protection methods.",
+      "confidence": "high",
+      "rationale": "Question identifies digital watermarking as a forensic data protection technique, which is not covered by the threat, control, or testing tasks in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
@@ -7846,39 +7846,39 @@
     },
     {
       "question_id": 5862,
-      "pin_ref": "ISC/II/C/0/6",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question evaluates selection of SFTP as a control for securely transmitting confidential data using SSH encryption.",
+      "rationale": "Question determines the appropriate secure file transfer protocol (SFTP), which is a transmission security technology not specifically covered by the network protection or control tasks in this group.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 5863,
+      "pin_ref": "ISC/II/B/2/7",
+      "confidence": "medium",
+      "rationale": "Cryptographic salting is a password management technique used to strengthen password storage security, which falls under the authentication techniques and password management scope of this task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
       "task_bloom": 2
     },
     {
-      "question_id": 5863,
-      "pin_ref": "ISC/II/C/0/1",
-      "confidence": "high",
-      "rationale": "Question tests understanding of cryptographic salt as an encryption technique for password hashing.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 2,
-      "task_bloom": 1
-    },
-    {
       "question_id": 5864,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests recall of symmetric encryption fundamentals (single shared key for encrypt/decrypt).",
+      "rationale": "Question identifies basic symmetric encryption concepts, which are foundational cryptography principles not covered by the threat identification or security control tasks in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5865,
-      "pin_ref": "ISC/II/C/0/1",
-      "confidence": "high",
-      "rationale": "Question tests understanding of TPM hardware providing secure cryptographic key storage.",
+      "pin_ref": "ISC/II/B/2/1",
+      "confidence": "medium",
+      "rationale": "TPM provides hardware-based endpoint security for cryptographic key storage, which is a device protection measure covered by endpoint security and system hardening in this task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -7886,59 +7886,59 @@
     },
     {
       "question_id": 5867,
-      "pin_ref": "ISC/II/C/0/1",
-      "confidence": "medium",
-      "rationale": "Question tests foundational knowledge of data states requiring encryption and protection controls.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests fundamental knowledge of data states (at rest, in transit, in use) which is not explicitly covered by any ISC/II/B task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5868,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of digital certificates and PKI encryption fundamentals.",
+      "rationale": "Question tests PKI fundamentals (what a certificate binds) rather than determining appropriate authentication techniques as in task 17.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5869,
-      "pin_ref": "ISC/II/C/0/7",
-      "confidence": "high",
-      "rationale": "Question requires analyzing a deficiency in IRM control design (inability to prevent analog capture).",
+      "pin_ref": null,
+      "confidence": "medium",
+      "rationale": "Question analyzes inherent limitations of digital rights controls, which is not specifically addressed by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 3
+      "task_bloom": null
     },
     {
       "question_id": 5870,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": "ISC/II/B/2/6",
       "confidence": "high",
-      "rationale": "Question tests application of certificate pinning as an encryption technique for secure communications.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 2,
-      "task_bloom": 1
-    },
-    {
-      "question_id": 5871,
-      "pin_ref": "ISC/II/C/0/6",
-      "confidence": "high",
-      "rationale": "Question tests determination of data management practice (automated discovery/classification) for protecting confidential data.",
+      "rationale": "Certificate pinning is a preventive control to mitigate man-in-the-middle attacks, matching task 16's focus on determining controls to mitigate cyber-attacks.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
       "task_bloom": 2
     },
     {
+      "question_id": 5871,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Automated data discovery and classification is a data governance capability not covered by the security threat and control tasks in this group.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
       "question_id": 5872,
-      "pin_ref": "ISC/II/C/0/6",
+      "pin_ref": "ISC/II/B/2/6",
       "confidence": "medium",
-      "rationale": "Question analyzes network segmentation control effectiveness for protecting confidential EHR data from lateral movement.",
+      "rationale": "Network segmentation is a preventive control that mitigates lateral movement risk during attacks, matching task 16's focus on controls.",
       "pass": 1,
       "bloom_overshoot": true,
       "question_bloom": 3,
@@ -7946,9 +7946,9 @@
     },
     {
       "question_id": 5873,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": "ISC/II/B/1/4",
       "confidence": "high",
-      "rationale": "Question tests recall of steganography as a data hiding technique within encryption fundamentals.",
+      "rationale": "Steganography is a covert channel technique used in cyber-attacks, directly matching task 4's focus on identifying attack techniques including covert channels.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -7956,39 +7956,39 @@
     },
     {
       "question_id": 5874,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests encryption key lifecycle fundamentals (NIST SP 800-57 key states: active, deactivated), which directly aligns with explaining encryption fundamentals and techniques.",
+      "rationale": "Cryptographic key lifecycle management and key states are not covered by any task in this security threats and controls group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5875,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests understanding of secure multiparty computation (SMPC) as an encryption technique for collaborative analysis while preserving confidentiality.",
+      "rationale": "Secure multiparty computation is a privacy-enhancing cryptographic technology not addressed by any task in this group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5876,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests encryption key management techniques (HSM vs cloud KMS) and application of cryptographic protection requirements under PCI DSS.",
+      "rationale": "Evaluating HSM versus cloud KMS for compliance-driven key management is not covered by any task in this group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5878,
-      "pin_ref": "ISC/II/C/0/6",
-      "confidence": "high",
-      "rationale": "Tests determining appropriate controls (SFTP with SSH authentication) to securely transmit confidential financial data.",
+      "pin_ref": "ISC/II/B/2/6",
+      "confidence": "medium",
+      "rationale": "Question asks to determine the appropriate protocol (preventive control) for secure file transmission, matching Task 16's focus on determining controls to mitigate cyber-attack risks.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -7996,133 +7996,133 @@
     },
     {
       "question_id": 5879,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests fully homomorphic encryption as an advanced encryption technique enabling computation on encrypted data without decryption.",
+      "rationale": "Question covers fully homomorphic encryption for computation on encrypted data, an advanced cryptographic technique not addressed by any task in this group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5881,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests encryption key lifecycle fundamentals, specifically the requirement to retain expired keys for decrypting historical data after key rotation.",
+      "rationale": "Question addresses encryption key rotation lifecycle and key archival requirements, which are not covered by any task in this threat/control-focused group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5882,
-      "pin_ref": "ISC/II/C/0/7",
+      "pin_ref": "ISC/II/B/1/10",
       "confidence": "medium",
-      "rationale": "Tests detecting potential deviations in control operation (anomalous database queries indicating possible data exfiltration) related to confidentiality protection.",
+      "rationale": "Question asks to analyze database monitoring alerts to determine if bulk queries indicate a specific cybersecurity threat (data exfiltration) to the organization's application.",
       "pass": 1,
-      "bloom_overshoot": false,
+      "bloom_overshoot": true,
       "question_bloom": 3,
-      "task_bloom": 3
+      "task_bloom": 2
     },
     {
       "question_id": 5884,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests encryption key management techniques (BYOK model) and understanding of organizational control over cryptographic key generation and lifecycle.",
+      "rationale": "Question covers Bring Your Own Key encryption model benefits and key management control, which are not addressed by any task in this group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5885,
-      "pin_ref": "ISC/II/C/0/3",
-      "confidence": "medium",
-      "rationale": "Tests differential privacy as a data obfuscation method for protecting confidential patient data during release for research purposes.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question addresses differential privacy epsilon parameter trade-offs, a privacy-preserving technique not covered by any task in this cybersecurity threat/control group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5886,
-      "pin_ref": "ISC/II/C/0/1",
-      "confidence": "high",
-      "rationale": "Tests full disk encryption as a fundamental encryption application for protecting data at rest on lost or stolen devices.",
+      "pin_ref": "ISC/II/B/2/6",
+      "confidence": "medium",
+      "rationale": "Question asks what control full disk encryption provides against device theft, matching Task 16's focus on determining preventive controls (device hardening example) to mitigate risks.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": 2
     },
     {
       "question_id": 5892,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests evaluation of secure multiparty computation as an encryption technique for protecting data during joint computation, directly matching task on encryption techniques and applications.",
+      "rationale": "Question evaluates secure multiparty computation versus traditional data-sharing, an advanced cryptographic protocol not addressed by any task in this group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5894,
-      "pin_ref": "ISC/II/C/0/6",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests application of controls to maintain secure transmission of confidential data via TLS certificate renewal, matching task on determining controls for secure data transmission.",
+      "rationale": "Question addresses TLS certificate lifecycle management and renewal procedures, which are not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5895,
-      "pin_ref": "ISC/II/C/0/4",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests analysis of operational consequences when DLP policies are not tuned, directly matching task on explaining Data Loss Prevention systems.",
+      "rationale": "Question covers DLP system tuning and alert fatigue management, operational security tool management not addressed by any task in this group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5896,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of confidential computing as an encryption technique for protecting data in use, matching task on encryption fundamentals and applications.",
+      "rationale": "Question tests data protection state classification (in-use vs at-rest vs in-transit), which is not addressed by any task in ISC/II/B.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5897,
-      "pin_ref": "ISC/II/C/0/6",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests application of automated data classification technology as a control for identifying and managing confidential data, matching task on data management practices.",
+      "rationale": "Question tests automated data classification technology, which is not covered by any task in ISC/II/B.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 5902,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests analysis of Transparent Data Encryption limitations as an encryption technique for data at rest, matching task on encryption techniques and applications.",
+      "rationale": "Question tests analysis of database encryption (TDE) limitations, which is not addressed by any task in ISC/II/B.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 5903,
-      "pin_ref": "ISC/II/C/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of self-encrypting drive technology as a hardware encryption technique for data at rest, matching task on encryption fundamentals.",
+      "rationale": "Question tests recall of self-encrypting drive definition, which is not covered by any task in ISC/II/B.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 7800,

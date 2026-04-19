@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-04-19T22:18:11.652Z",
+  "generatedAt": "2026-04-19T22:31:11.524Z",
   "section": "isc",
-  "totalHomeless": 636,
+  "totalHomeless": 570,
   "rows": [
     {
       "topic": "Security and Control Frameworks",
@@ -11,15 +11,6 @@
       "homeless_rate": 74.7,
       "hasTasks": true,
       "taskCount": 8
-    },
-    {
-      "topic": "Data Protection Technologies",
-      "grp": "ISC/II/B",
-      "count": 69,
-      "total_in_topic": 97,
-      "homeless_rate": 71.1,
-      "hasTasks": true,
-      "taskCount": 21
     },
     {
       "topic": "IT Audit Frameworks",
@@ -164,6 +155,15 @@
       "homeless_rate": 6.8,
       "hasTasks": true,
       "taskCount": 5
+    },
+    {
+      "topic": "Data Protection Technologies",
+      "grp": "ISC/II/C",
+      "count": 3,
+      "total_in_topic": 97,
+      "homeless_rate": 3.1,
+      "hasTasks": true,
+      "taskCount": 8
     }
   ],
   "taskGroupCount": {
@@ -178,6 +178,7 @@
   },
   "topicToGroup": {
     "Privacy Requirements and Data Protection": "ISC/II/C",
+    "Data Protection Technologies": "ISC/II/C",
     "Data Management and Lifecycle": "ISC/I/B",
     "Incident Response and Recovery": "ISC/II/D",
     "IT Infrastructure and Architecture": "ISC/I/A",
@@ -189,7 +190,6 @@
     "IT Audit Frameworks": "ISC/II/A",
     "Security Controls and Monitoring": "ISC/II/B",
     "Threats, Attacks, and Vulnerabilities": "ISC/II/B",
-    "Data Protection Technologies": "ISC/II/B",
     "SOC Engagements": "ISC/III/A",
     "SOC Report Content and Structure": "ISC/III/B",
     "SOC Reporting and Trust Services Criteria": "ISC/III/B",

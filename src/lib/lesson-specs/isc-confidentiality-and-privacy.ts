@@ -2,19 +2,32 @@ import type { LessonSpec } from "./types";
 
 // ISC Area II, Group C — Confidentiality and privacy. Covers privacy
 // regulations, data protection principles, personally identifiable
-// information (PII) handling, and the organizational controls that protect
-// confidential information. DB topic: "Privacy Requirements and Data
-// Protection" (95 Qs).
+// information (PII) handling, and the organizational controls and
+// technologies that protect confidential information. DB topics:
+// "Privacy Requirements and Data Protection" and "Data Protection
+// Technologies".
+//
+// Note 2026-04-19: "Data Protection Technologies" was previously
+// routed to II/B (Security) where 69/97 were homeless. II/C has an
+// explicit DLP task + "Explain encryption fundamentals, techniques
+// and applications" + "Identify methods for the protection of
+// confidential data" + "Determine controls and data management
+// practices to securely collect, process, store, transmit and delete
+// confidential information" — DPL, media sanitization, and FPE
+// questions all map here cleanly.
 //
 // Scope line: CPA-exam ISC depth — understanding privacy principles,
 // major regulations at the awareness level (not article/section citations),
 // the relationship between privacy and the SOC 2 Privacy and
 // Confidentiality trust services criteria, and the organizational controls
-// that implement privacy commitments. NOT privacy-law-practice depth or
-// data protection officer (DPO) operational procedures.
+// and technologies that implement privacy commitments. NOT privacy-law-
+// practice depth or data protection officer (DPO) operational procedures.
 
 export const spec: LessonSpec = {
 	topic: "Privacy Requirements and Data Protection",
+	topicAliases: [
+		"Data Protection Technologies",
+	],
 	section: "isc",
 	primaryRef: "ISC/II/C",
 	secondaryRefs: [],
