@@ -62,6 +62,7 @@ interface TaskSpecMeta {
 	bloomLevel: number;
 	lessonSpec: string;
 	groupRef: string;
+	inScope: string[];
 }
 
 function loadTaskSpecsFromFiles(section: string): TaskSpecMeta[] {
@@ -108,6 +109,16 @@ function loadTaskSpecsFromFiles(section: string): TaskSpecMeta[] {
 			bloomLevel = bloomMatch ? parseInt(bloomMatch[1], 10) : 2;
 		}
 
+		// Extract inScope array (block-form TS array literal with string items).
+		// Matches: inScope: [ "a", "b", ... ], possibly multi-line.
+		const inScope: string[] = [];
+		const inScopeBlock = content.match(/inScope:\s*\[([\s\S]*?)\]\s*,/);
+		if (inScopeBlock) {
+			for (const m of inScopeBlock[1].matchAll(/"((?:[^"\\]|\\.)*)"/g)) {
+				inScope.push(m[1].replace(/\\"/g, '"'));
+			}
+		}
+
 		specs.push({
 			aicpaRef: ref,
 			aicpaTask,
@@ -115,6 +126,7 @@ function loadTaskSpecsFromFiles(section: string): TaskSpecMeta[] {
 			bloomLevel,
 			lessonSpec: lessonMatch[1],
 			groupRef,
+			inScope,
 		});
 	}
 
@@ -151,9 +163,13 @@ function classifyBatch(
 	groupLabel: string,
 ): PinSuggestion[] {
 	const specSummary = specs
-		.map((s, i) =>
-			`[${i + 1}] ${s.aicpaRef} | L${s.bloomLevel} | ${s.aicpaSkill}\n   Task: ${s.aicpaTask}`,
-		)
+		.map((s, i) => {
+			const scope =
+				s.inScope.length > 0
+					? `\n   In scope:\n${s.inScope.map((x) => `     • ${x}`).join("\n")}`
+					: "";
+			return `[${i + 1}] ${s.aicpaRef} | L${s.bloomLevel} | ${s.aicpaSkill}\n   Task: ${s.aicpaTask}${scope}`;
+		})
 		.join("\n\n");
 
 	const questionBlock = questions
