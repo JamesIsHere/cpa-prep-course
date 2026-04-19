@@ -11,7 +11,13 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Going concern evaluation: indicators of substantial doubt about ability to continue as a going concern (AU-C 570)",
+		"Financial indicators of going concern doubt: recurring losses, negative cash flows, working capital deficiency, loan defaults",
+		"Operating indicators: loss of key customers/suppliers, labor difficulties, legal proceedings, regulatory actions",
+		"Management's plans to mitigate going concern: evaluation of feasibility and adequacy of planned actions",
+		"Auditor reporting responsibilities when substantial doubt exists: emphasis-of-matter paragraph, adequate disclosure",
+	],
 
 	keyStandards: [],
 

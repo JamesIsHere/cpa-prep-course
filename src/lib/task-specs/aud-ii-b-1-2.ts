@@ -11,7 +11,13 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Business cycle phases (trough, expansion, peak, recession) and their impact on audit risk assessment",
+		"Leading economic indicators: consumer confidence, building permits, stock market, manufacturer orders",
+		"Coincident indicators: industrial production, personal income, employment levels",
+		"Lagging indicators: CPI, unemployment duration, commercial lending, labor cost per unit of output",
+		"Impact of federal funds rate, bond yields, and monetary policy on entity operations and financial statements",
+	],
 
 	keyStandards: [],
 

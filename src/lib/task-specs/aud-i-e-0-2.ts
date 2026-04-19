@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Assembly of final engagement file: 60-day deadline after report release date (AU-C 230)",
+		"Documentation retention requirements: minimum 5-year retention period for audit workpapers",
+		"Additions to documentation after report date: documentation completion vs changes to existing documentation",
+		"Audit file locking and access controls after assembly, prohibition on deletion of documentation",
+	],
 
 	keyStandards: [],
 

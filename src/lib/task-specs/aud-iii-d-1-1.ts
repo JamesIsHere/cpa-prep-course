@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Observation as audit evidence: watching entity personnel perform processes or controls in real time",
+		"Inspection of records and documents: examining physical assets, contracts, invoices, agreements",
+		"Limitations of observation evidence: point-in-time only, entity behavior may change when observed",
+		"Inspection of tangible assets: physical examination for existence, condition, and completeness",
+	],
 
 	keyStandards: [],
 

@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"AUP report content: procedures performed, findings obtained, no opinion/conclusion, intended use restriction (AT-C 215)",
+		"AUP report elements: title, addressee, subject matter description, procedures listed, findings for each procedure",
+		"Distinction between findings and recommendations in AUP reports: practitioner reports findings only",
+		"General-use AUP reports under revised AT-C 215: conditions permitting general use, regulatory requirements",
+	],
 
 	keyStandards: [],
 

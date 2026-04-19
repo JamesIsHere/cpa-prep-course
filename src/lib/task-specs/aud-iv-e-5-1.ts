@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Government Auditing Standards (Yellow Book/GAGAS): additional reporting on internal control and compliance",
+		"Reporting on internal control over financial reporting under GAGAS: significant deficiencies and material weaknesses",
+		"Compliance reporting under GAGAS: testing compliance with laws, regulations, contracts, grant agreements",
+		"Relationship between GAGAS report and standard audit report: supplemental reports required beyond AU-C standards",
+	],
 
 	keyStandards: [],
 

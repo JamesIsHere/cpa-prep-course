@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Drafting written communication of significant deficiencies and material weaknesses: required elements and language",
+		"Content of control deficiency letter: description of deficiency, potential effects, severity level designation",
+		"Prohibition on reporting that no significant deficiencies were identified during the audit",
+		"Management response inclusion and follow-up on previously communicated deficiencies",
+	],
 
 	keyStandards: [],
 

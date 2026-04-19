@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Reviewing the work of a management's specialist used in developing accounting estimates: competence, objectivity, scope",
+		"Evaluating detailed support for estimates: data sources, calculation methods, assumption reasonableness",
+		"Identifying contradictory information: evidence that conflicts with management's assumptions or conclusions",
+		"Using an auditor's specialist to evaluate complex estimates: engagement terms, competency assessment, reliance",
+	],
 
 	keyStandards: [],
 

@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Consistency of financial statements: change in accounting principle, correction of material misstatement, reclassification (AU-C 708)",
+		"Comparability vs consistency: consistency refers to accounting methods, comparability to presentation and classification",
+		"Emphasis-of-matter paragraph for consistency: required when change in accounting principle materially affects comparability",
+		"Reporting on correction of material misstatement in previously issued financial statements: restatement disclosures",
+	],
 
 	keyStandards: [],
 

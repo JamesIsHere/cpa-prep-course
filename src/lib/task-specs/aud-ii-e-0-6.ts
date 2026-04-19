@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Attestation engagement procedures: examination, review, agreed-upon procedures — determining appropriate scope (AT-C sections)",
+		"Selecting procedures to satisfy attestation engagement objectives based on subject matter and criteria",
+		"Sufficiency and appropriateness of evidence in attestation engagements: relevant criteria, suitable subject matter",
+		"Attestation risk model: engagement risk, inherent risk, control risk, detection risk in non-audit attestation contexts",
+	],
 
 	keyStandards: [],
 

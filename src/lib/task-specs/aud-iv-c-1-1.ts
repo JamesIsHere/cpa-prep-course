@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Preparation engagement requirements (AR-C 70): accountant assists management in presenting financial statements",
+		"No assurance provided in preparation engagements: no report required, disclaimer on each page or in report",
+		"Preparation engagement considerations: understanding of industry, applicable framework, significant accounting policies",
+		"Preparation vs compilation: key differences in engagement terms, reporting requirements, and assurance level",
+	],
 
 	keyStandards: [],
 

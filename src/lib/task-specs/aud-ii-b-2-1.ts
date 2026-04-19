@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Sarbanes-Oxley Act corporate governance requirements: audit committee composition, independence, financial expert",
+		"SOX Section 302 management certifications of financial statements and internal controls",
+		"SOX Section 404 management assessment of internal control over financial reporting (ICFR)",
+		"PCAOB oversight, auditor independence restrictions, and prohibited non-audit services under SOX",
+	],
 
 	keyStandards: [],
 

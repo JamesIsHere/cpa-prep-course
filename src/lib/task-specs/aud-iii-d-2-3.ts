@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Final analytical procedures (AU-C 520): overall review near audit completion to assess financial statement consistency",
+		"Reading financial statements and considering adequacy of evidence gathered during the audit",
+		"Identifying previously unrecognized risks or unusual relationships requiring additional investigation",
+		"Final analytical procedures vs planning analytical procedures: purpose, timing, and required actions on differences",
+	],
 
 	keyStandards: [],
 

@@ -11,7 +11,13 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Sources of audit evidence: internal vs external, auditor-generated vs entity-generated, direct vs indirect (AU-C 500)",
+		"Relevance and reliability of audit evidence: hierarchy of evidence quality, corroborating vs contradictory evidence",
+		"Professional skepticism in evaluating evidence: questioning authenticity, considering source bias, fraud indicators",
+		"Evidence from management's specialists vs external sources: reliability assessment, independence considerations",
+		"Sufficiency (quantity) and appropriateness (quality) of evidence as basis for audit opinion",
+	],
 
 	keyStandards: [],
 

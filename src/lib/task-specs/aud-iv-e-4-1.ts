@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Supplementary information accompanying financial statements: required supplementary information (RSI) vs other supplementary information (AU-C 725/730)",
+		"Auditor's reporting on supplementary information: in-relation-to opinion, separate report, or disclaimer",
+		"Required supplementary information (RSI): GASB pension schedules, management discussion and analysis — limited procedures",
+		"Other supplementary information: combining statements, statistical data — auditor may report in relation to basic financial statements",
+	],
 
 	keyStandards: [],
 

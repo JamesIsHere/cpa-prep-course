@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Analysis",
 	bloomLevel: SKILL_TO_BLOOM["Analysis"],
 
-	inScope: [],
+	inScope: [
+		"Analyzing confirmation exceptions: reconciling differences between confirmation response and entity records",
+		"Nonresponses to confirmations: alternative procedures (examine subsequent receipts, shipping documents, other evidence)",
+		"Evaluating reliability of confirmation responses: management interference, oral confirmations, fax/email risks",
+		"Determining need for additional procedures based on confirmation results: expanding sample, changing approach",
+	],
 
 	keyStandards: [],
 

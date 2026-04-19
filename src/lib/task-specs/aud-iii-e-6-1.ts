@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Single Audit Act compliance testing: federal awards, Uniform Guidance (2 CFR 200), major program determination",
+		"Testing compliance with statutes, regulations, terms and conditions of federal awards",
+		"Compliance supplement requirements: types of compliance requirements (allowable costs, eligibility, matching, reporting)",
+		"Questioned costs identification and reporting in single audit engagements",
+	],
 
 	keyStandards: [],
 

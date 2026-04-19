@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Tests of details: vouching, tracing, scanning, and other procedures to identify potential misstatements",
+		"Vouching (existence/occurrence direction) vs tracing (completeness direction) and appropriate assertion coverage",
+		"Exception analysis in tests of details: evaluating whether exceptions indicate systematic misstatement or isolated error",
+		"Selecting items for testing: statistical vs nonstatistical sampling, targeting high-risk transactions, stratification",
+	],
 
 	keyStandards: [],
 

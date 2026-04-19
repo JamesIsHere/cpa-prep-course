@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Analysis",
 	bloomLevel: SKILL_TO_BLOOM["Analysis"],
 
-	inScope: [],
+	inScope: [
+		"Analyzing interview responses: evaluating consistency, plausibility, and completeness of management representations",
+		"Effective follow-up questioning: probing contradictions, unexpected responses, and non-financial personnel perspectives",
+		"Interviewing non-financial personnel: operations, IT, legal, HR staff for corroborating evidence about controls and risks",
+		"Evaluating motivations and bias in interviewee responses: management incentives, self-interest, knowledge limitations",
+	],
 
 	keyStandards: [],
 

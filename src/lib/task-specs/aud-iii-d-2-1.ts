@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Suitability of substantive analytical procedures: predictability of relationships, precision of expectation, reliability of data (AU-C 520)",
+		"When substantive analytical procedures are appropriate: stable relationships, reliable data, disaggregated data available",
+		"Assertions better suited for analytical procedures vs tests of details: completeness, valuation, reasonableness",
+		"Risk considerations in choosing analytical procedures: higher risk assertions generally require more precise expectations",
+	],
 
 	keyStandards: [],
 

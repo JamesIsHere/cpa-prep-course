@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Evaluating effect of uncorrected misstatements individually and in aggregate on financial statements (AU-C 450)",
+		"Iron curtain approach vs rollover approach for evaluating uncorrected misstatements",
+		"Impact of uncorrected misstatements on materiality thresholds and the auditor's opinion",
+		"Obtaining written representations from management regarding uncorrected misstatements",
+	],
 
 	keyStandards: [],
 

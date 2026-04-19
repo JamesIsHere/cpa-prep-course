@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Tests of operating effectiveness of internal controls: selecting items, performing test, evaluating exceptions",
+		"Control exceptions analysis: determining whether exception indicates a deficiency or isolated occurrence",
+		"Nature of control testing: manual vs automated controls, frequency-based vs continuous controls",
+		"Integrated audit considerations: testing controls for both financial statement audit and ICFR audit (AS 2201)",
+	],
 
 	keyStandards: [],
 

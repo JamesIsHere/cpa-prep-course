@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Inventory observation procedures: physical count attendance, test counts, roll-forward/roll-back techniques (AU-C 501)",
+		"Confirming inventory held by others: third-party warehouses, consignment inventory, public warehouses",
+		"Evaluating existence and condition of inventory: obsolescence, damage, slow-moving items",
+		"Reconciling physical count results to inventory records: investigating and resolving count differences",
+	],
 
 	keyStandards: [],
 

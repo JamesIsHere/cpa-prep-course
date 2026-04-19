@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Summary of audit differences (SAD): accumulating corrected and uncorrected misstatements identified during the audit (AU-C 450)",
+		"Factual misstatements vs judgmental misstatements vs projected misstatements: classification and documentation",
+		"Communication of corrected misstatements to those charged with governance",
+		"Tracking misstatements by financial statement line item, nature (over/understatement), and audit area",
+	],
 
 	keyStandards: [],
 

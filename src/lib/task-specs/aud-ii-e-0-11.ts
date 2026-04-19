@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Audit data analytics: using automated tools to identify transactions with higher risk of material misstatement",
+		"Interpreting data analytics outputs: reports, visualizations, outlier identification, trend analysis for audit planning",
+		"Journal entry testing using data analytics: identifying unusual entries, entries near period-end, management override indicators",
+		"Using data analytics results to develop responsive audit procedures: targeted testing, expanded sample selection",
+	],
 
 	keyStandards: [],
 

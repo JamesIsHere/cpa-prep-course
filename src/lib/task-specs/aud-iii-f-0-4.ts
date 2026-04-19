@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Evaluation",
 	bloomLevel: SKILL_TO_BLOOM["Evaluation"],
 
-	inScope: [],
+	inScope: [
+		"Severity evaluation of internal control deficiencies: deficiency → significant deficiency → material weakness (AU-C 265)",
+		"Factors in severity assessment: magnitude of potential misstatement, likelihood of occurrence, compensating controls",
+		"Impact of control deficiency severity on nature, timing, and extent of substantive audit procedures",
+		"Reassessing audit strategy when material weakness is identified: additional testing, expanded scope, revised risk assessment",
+	],
 
 	keyStandards: [],
 

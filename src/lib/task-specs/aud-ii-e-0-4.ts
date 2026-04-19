@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Tests of controls: inquiry, observation, inspection, reperformance to assess operating effectiveness (AU-C 330)",
+		"When tests of controls are required: planned reliance on controls, substantive procedures alone insufficient",
+		"Evaluating design and implementation of controls vs testing operating effectiveness",
+		"Sample size and timing considerations for tests of controls: extent of reliance, period of reliance, frequency of control operation",
+	],
 
 	keyStandards: [],
 

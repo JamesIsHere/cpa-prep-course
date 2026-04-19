@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Analysis",
 	bloomLevel: SKILL_TO_BLOOM["Analysis"],
 
-	inScope: [],
+	inScope: [
+		"Determining appropriate treatment of subsequent events: adjustment to financial statements vs note disclosure",
+		"Evaluating whether Type I events are properly reflected in account balances and estimates",
+		"Evaluating adequacy of Type II disclosures: pro forma financial data, nature and estimated financial effect",
+		"Impact of subsequent events on auditor's report: emphasis-of-matter paragraph, report dating considerations",
+	],
 
 	keyStandards: [],
 

@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Determining nature and scope of internal audit work usable by external auditor: risk areas, control testing, substantive procedures",
+		"Scoping specialist work: engagement terms, field of expertise, assumptions and methods to be used",
+		"Component auditor scope: materiality allocation, risk communication, required procedures at component level",
+		"IT auditor work: scope of IT general controls testing, application controls, automated audit procedures",
+	],
 
 	keyStandards: [],
 

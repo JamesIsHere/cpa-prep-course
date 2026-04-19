@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Evaluation",
 	bloomLevel: SKILL_TO_BLOOM["Evaluation"],
 
-	inScope: [],
+	inScope: [
+		"Investigating significant differences from analytical procedures: obtaining explanations, corroborating with additional evidence",
+		"Evaluating unexpected fluctuations or absence of expected fluctuations as potential misstatement indicators",
+		"Management explanations for analytical procedure differences: corroboration requirements, skepticism",
+		"Determining whether differences indicate material misstatement: quantitative and qualitative evaluation",
+	],
 
 	keyStandards: [],
 

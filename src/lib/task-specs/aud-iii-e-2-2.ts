@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Testing management's assumptions for investment valuation: discount rates, growth rates, market comparables",
+		"Evaluating adjustments to investment fair values: unrealized gains/losses, impairment write-downs",
+		"Confirming existence and ownership of securities: custodian confirmations, broker statements",
+		"Testing classification of investments: trading, available-for-sale, held-to-maturity and reclassification rules",
+	],
 
 	keyStandards: [],
 

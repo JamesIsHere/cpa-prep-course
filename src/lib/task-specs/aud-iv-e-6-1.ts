@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Special purpose framework financial statements: cash basis, tax basis, regulatory basis, contractual basis, other basis (AU-C 800)",
+		"Reporting on special purpose frameworks: alert paragraph restricting distribution, description of framework in report",
+		"Cash basis and tax basis financial statements: common departures, presentation requirements, required disclosures",
+		"Contractual and regulatory basis reporting: restricted-use reports, adequacy of informative disclosures within the framework",
+	],
 
 	keyStandards: [],
 

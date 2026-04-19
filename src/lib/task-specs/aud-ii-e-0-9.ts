@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Analysis",
 	bloomLevel: SKILL_TO_BLOOM["Analysis"],
 
-	inScope: [],
+	inScope: [
+		"Assertion-level risk assessment: linking identified risks to specific assertions for significant accounts and disclosures",
+		"Inherent risk factors at assertion level: complexity, subjectivity, change, susceptibility to fraud",
+		"Considering planned control reliance when assessing assertion-level RMM: impact on substantive testing scope",
+		"Spectrum of inherent risk: assessing where risks fall on the lower-to-higher scale for each assertion",
+	],
 
 	keyStandards: [],
 

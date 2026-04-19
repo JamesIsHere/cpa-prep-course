@@ -11,7 +11,13 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"External factors impacting inherent risk: economic conditions, industry trends, regulatory environment, technology changes",
+		"Environmental and sustainability factors affecting entity operations and financial reporting risk",
+		"Supply chain disruptions and their impact on entity operations, inventory valuation, and going concern",
+		"Government policy and regulatory changes affecting financial reporting framework and compliance obligations",
+		"Industry-specific risk factors: competitive pressures, technological obsolescence, cyclical demand patterns",
+	],
 
 	keyStandards: [],
 

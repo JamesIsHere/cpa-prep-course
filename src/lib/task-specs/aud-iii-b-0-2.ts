@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Analysis",
 	bloomLevel: SKILL_TO_BLOOM["Analysis"],
 
-	inScope: [],
+	inScope: [
+		"Concluding on sufficiency of evidence: whether planned procedure objectives are met, need for additional evidence",
+		"Evaluating cumulative evidence: consistency of evidence from multiple sources supporting or contradicting assertions",
+		"Impact of insufficient evidence on auditor's report: scope limitation, qualified opinion, disclaimer of opinion",
+		"Documentation of evidence evaluation: rationale for sufficiency conclusions, link between evidence and assertions tested",
+	],
 
 	keyStandards: [],
 

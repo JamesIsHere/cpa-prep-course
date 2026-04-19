@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Performing substantive analytical procedures: developing independent expectation, comparing to recorded amount, investigating differences",
+		"Types of analytical procedures: trend analysis, ratio analysis, reasonableness testing, regression analysis",
+		"Setting acceptable threshold of difference: precision of expectation based on risk level and materiality",
+		"Data reliability for developing expectations: internal vs external data, audited vs unaudited sources",
+	],
 
 	keyStandards: [],
 

@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Recalculation as audit procedure: independently checking mathematical accuracy of documents, records, schedules",
+		"Manual recalculation vs using automated tools (CAATs, spreadsheets) to verify mathematical accuracy",
+		"Recalculation of depreciation, amortization, tax provisions, pension liabilities, and other computed amounts",
+		"Recalculation as test of detail vs test of control: verifying entity's calculations for accuracy",
+	],
 
 	keyStandards: [],
 

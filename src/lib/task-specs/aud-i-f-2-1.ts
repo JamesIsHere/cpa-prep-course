@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Required written communication of significant deficiencies and material weaknesses to governance and management (AU-C 265)",
+		"Timing of internal control deficiency communications: within 60 days of report release date",
+		"Severity classification: deficiency vs significant deficiency vs material weakness — definitions and escalation criteria",
+		"Distinction between communicating to those charged with governance vs management for control deficiencies",
+	],
 
 	keyStandards: [],
 

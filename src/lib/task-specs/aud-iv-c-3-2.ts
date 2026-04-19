@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Review report form and content: title, addressee, introductory paragraph, limited assurance conclusion (AR-C 90)",
+		"Modified review report: departure from applicable framework, scope limitation, inadequate disclosure",
+		"Review report conclusion language: 'not aware of any material modifications' negative assurance phrasing",
+		"Comparative financial statement reviews: continuing accountant vs successor accountant reporting responsibilities",
+	],
 
 	keyStandards: [],
 

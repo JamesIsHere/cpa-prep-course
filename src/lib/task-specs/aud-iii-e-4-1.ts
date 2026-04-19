@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Audit procedures for litigation, claims, and assessments: inquiry of management, review of board minutes, attorney letter (AU-C 501)",
+		"Letter of audit inquiry to entity's legal counsel: scope, content requirements, evaluating attorney responses",
+		"Related party transactions: identification procedures, disclosure requirements, arm's-length assessment (AU-C 550)",
+		"Evaluating loss contingencies: probable vs reasonably possible vs remote classification, accrual vs disclosure",
+	],
 
 	keyStandards: [],
 

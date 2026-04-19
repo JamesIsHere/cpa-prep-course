@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Subsequently discovered facts after report issuance: auditor's responsibilities under AU-C 560",
+		"Impact on auditor's report when facts discovered after issuance indicate financial statements require revision",
+		"Dual dating of auditor's report when subsequently discovered facts affect specific disclosures",
+		"Procedures when management refuses to revise financial statements after subsequently discovered facts",
+	],
 
 	keyStandards: [],
 

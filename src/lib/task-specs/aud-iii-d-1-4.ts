@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Inquiry as audit procedure: obtaining information from knowledgeable persons inside and outside the entity",
+		"Types of inquiry: formal written vs informal oral, open-ended vs closed questions, corroborative inquiry",
+		"Inquiry of management and others: fraud awareness, unusual transactions, accounting policy changes, litigation",
+		"Limitations of inquiry alone: must be corroborated with other audit procedures for sufficient evidence",
+	],
 
 	keyStandards: [],
 

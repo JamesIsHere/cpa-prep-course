@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Factors for using others' work: competence, objectivity, and due professional care of internal auditors, specialists, component auditors",
+		"Internal audit function: evaluating organizational status, objectivity, competence, systematic approach (AU-C 610)",
+		"Auditor's specialist vs management's specialist: competence, capabilities, objectivity assessment (AU-C 620)",
+		"Component auditor and referred-to auditor: factors affecting extent of involvement and reliance in group audits",
+	],
 
 	keyStandards: [],
 

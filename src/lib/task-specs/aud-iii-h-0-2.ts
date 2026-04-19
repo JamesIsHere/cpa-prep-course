@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Subsequent events procedures: inquiries, reading minutes, reviewing subsequent interim statements (AU-C 560)",
+		"Type I (recognized) subsequent events: conditions existing at balance sheet date requiring adjustment",
+		"Type II (nonrecognized) subsequent events: conditions arising after balance sheet date requiring disclosure only",
+		"Subsequent events review period: balance sheet date through date of auditor's report",
+	],
 
 	keyStandards: [],
 

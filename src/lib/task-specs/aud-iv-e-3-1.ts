@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Review of interim financial information: inquiry and analytical procedures, limited assurance (AU-C 930)",
+		"Interim review reporting: report on review, modifications for departures, scope limitations",
+		"Relationship between annual audit and interim review: knowledge obtained during audit informs interim review",
+		"Interim review procedures: reading minutes, inquiring about changes in accounting practices, analytical comparisons",
+	],
 
 	keyStandards: [],
 

@@ -11,7 +11,13 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Understanding entity nature for risk assessment: operations, ownership structure, governance, business model",
+		"Entity's investment and financing activities: capital structure, debt covenants, related party transactions",
+		"Selection and application of accounting policies: significant estimates, revenue recognition methods, complex transactions",
+		"Entity's objectives and strategies: expansion plans, market positioning, technology adoption including AI",
+		"Governance structure impact on risk: board composition, management oversight, tone at the top, antifraud programs",
+	],
 
 	keyStandards: [],
 

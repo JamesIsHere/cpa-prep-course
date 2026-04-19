@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Preparing workpapers documenting nature, timing, extent of procedures and results: sufficient for experienced auditor review",
+		"Documentation of significant professional judgments: materiality determinations, risk assessments, key audit decisions",
+		"Recording significant findings and issues: identified misstatements, control deficiencies, disagreements with management",
+		"Workpaper organization: lead schedules, supporting schedules, tickmark legends, cross-referencing between related documents",
+	],
 
 	keyStandards: [],
 

@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Single audit reporting: compliance and internal control over compliance for major federal programs (Uniform Guidance)",
+		"Schedule of findings and questioned costs: format, content, prior-year findings follow-up",
+		"Report on compliance for major programs: unmodified, qualified, adverse, or disclaimer opinions",
+		"Data collection form and reporting package submission requirements for single audits",
+	],
 
 	keyStandards: [],
 

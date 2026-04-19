@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Microeconomic concepts relevant to audit risk: supply and demand, price elasticity, profit maximization",
+		"Marginal cost and marginal revenue analysis in understanding entity's competitive position and financial performance",
+		"Market structures (perfect competition, monopoly, oligopoly) and their impact on entity operations and risk",
+		"Economic factors affecting entity profitability: cost behavior, break-even analysis, economies of scale",
+	],
 
 	keyStandards: [],
 

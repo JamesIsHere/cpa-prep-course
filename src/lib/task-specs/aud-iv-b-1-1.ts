@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Attestation engagement types: examination vs review — levels of assurance, scope of procedures (AT-C sections)",
+		"Assertion-based vs direct examination engagements: responsible party assertions, practitioner's subject matter evaluation",
+		"Factors affecting practitioner's report: suitability of criteria, sufficiency of evidence, scope limitations",
+		"Practitioner independence, competence, and due care requirements for attestation engagements",
+	],
 
 	keyStandards: [],
 

@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Fraud triangle: pressure/incentive, opportunity, rationalization — identifying factors that increase fraud risk (AU-C 240)",
+		"Fraudulent financial reporting risk factors: aggressive revenue recognition, management override, unusual transactions",
+		"Misappropriation of assets risk factors: inadequate segregation of duties, lack of physical safeguards, poor controls over disbursements",
+		"Required fraud inquiries: management, those charged with governance, internal audit about known or suspected fraud",
+	],
 
 	keyStandards: [],
 

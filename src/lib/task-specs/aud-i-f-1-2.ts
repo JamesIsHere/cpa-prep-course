@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Preparing governance communication materials: presentation of audit scope, timeline, and key risk areas",
+		"Supporting schedules for governance communications: fee arrangements, engagement team composition, planned reliance on controls",
+		"Written vs oral communications with those charged with governance about scope and timing",
+		"Two-way communication process: obtaining governance input on risk areas, fraud concerns, and entity operations",
+	],
 
 	keyStandards: [],
 

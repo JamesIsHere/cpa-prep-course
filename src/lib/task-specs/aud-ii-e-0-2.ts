@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Risk of material misstatement (RMM) assessment at financial statement level and assertion level (AU-C 315)",
+		"Inherent risk assessment: susceptibility of assertions to misstatement before considering controls",
+		"Control risk assessment: risk that entity's internal controls will not prevent or detect material misstatement",
+		"Assertion-level risk for transaction classes, account balances, and disclosures: existence, completeness, valuation, rights, presentation",
+	],
 
 	keyStandards: [],
 

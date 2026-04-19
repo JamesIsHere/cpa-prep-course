@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Elements of audit documentation: nature/timing/extent of procedures performed, results obtained, conclusions reached (AU-C 230)",
+		"Working paper content requirements: sufficient detail for an experienced auditor with no prior connection to understand the work",
+		"Documentation of significant findings, professional judgments, and conclusions in audit workpapers",
+		"Physical vs electronic audit documentation formats, indexing, cross-referencing of workpapers",
+	],
 
 	keyStandards: [],
 

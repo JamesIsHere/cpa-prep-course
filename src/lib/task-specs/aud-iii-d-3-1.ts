@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"External confirmation procedures: positive vs negative confirmations, blank vs pre-populated confirmation forms (AU-C 505)",
+		"Confirming accounts receivable, bank balances, loans payable, investments held by custodians",
+		"Electronic confirmations and intermediary confirmation services: reliability and authentication considerations",
+		"Maintaining control over confirmation process: direct communication between auditor and confirming party",
+	],
 
 	keyStandards: [],
 

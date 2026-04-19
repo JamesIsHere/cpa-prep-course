@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Overall responses to financial statement-level risks: professional skepticism, senior personnel assignment, unpredictability (AU-C 330)",
+		"Adjusting nature, timing, extent of procedures based on assessed risk: more persuasive evidence for higher risk",
+		"Control environment considerations: tone at the top impact on overall audit strategy and response",
+		"Engagement team supervision and review adjustments when financial statement-level risks are elevated",
+	],
 
 	keyStandards: [],
 

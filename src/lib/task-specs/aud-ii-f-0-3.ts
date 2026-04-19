@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Performing procedures to evaluate others' work: reperformance, review of workpapers, testing a sample of their work",
+		"Documenting extent of reliance on internal audit, specialists, and component auditors in the audit file",
+		"Supervision and direction of component auditors: group engagement team responsibilities (AU-C 600)",
+		"Evaluating adequacy and appropriateness of specialist's work: relevance of findings to audit assertions",
+	],
 
 	keyStandards: [],
 

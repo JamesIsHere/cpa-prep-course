@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Evaluating identified misstatements as indicators of internal control deficiencies over financial reporting",
+		"Aggregating misstatements to assess whether they indicate a significant deficiency or material weakness",
+		"Relationship between misstatement patterns and control environment weaknesses: compensating controls, design vs operating failures",
+		"Impact of identified control deficiencies on the auditor's further planned procedures and risk reassessment",
+	],
 
 	keyStandards: [],
 

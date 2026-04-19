@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Analysis",
 	bloomLevel: SKILL_TO_BLOOM["Analysis"],
 
-	inScope: [],
+	inScope: [
+		"Engagement team brainstorming session: discussing susceptibility to material misstatement due to fraud or error (AU-C 240/315)",
+		"Combining knowledge of team members to assess financial statement-level risks and develop overall response",
+		"Communication among engagement team about identified risks: ongoing throughout the audit, not just at planning",
+		"Professional skepticism in team discussions: questioning assumptions, considering management incentives and pressures",
+	],
 
 	keyStandards: [],
 

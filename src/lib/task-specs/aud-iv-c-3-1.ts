@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Review engagement reporting factors: limited assurance, inquiry and analytical procedures basis (AR-C 90)",
+		"Review report requirements: conclusion on material modifications, management and accountant responsibilities",
+		"Independence requirement for review engagements: accountant must be independent to perform a review",
+		"Going concern and other emphasis matters in review engagement reports: additional paragraph considerations",
+	],
 
 	keyStandards: [],
 

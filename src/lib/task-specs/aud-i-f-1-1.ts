@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Required communications about planned scope and timing of the audit to those charged with governance (AU-C 260)",
+		"Communication of auditor responsibilities, planned audit approach, and significant audit risks to management and governance",
+		"Timing of required communications: before or during audit fieldwork vs at audit completion",
+		"Matters to communicate: overall audit strategy, use of internal audit, materiality levels, areas of significant risk",
+	],
 
 	keyStandards: [],
 

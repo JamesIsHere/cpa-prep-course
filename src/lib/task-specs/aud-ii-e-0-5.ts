@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Designing substantive procedures responsive to assessed risk at the assertion level (AU-C 330)",
+		"Tests of details vs substantive analytical procedures: selecting appropriate mix based on assertion and risk",
+		"Financial statement assertions: existence/occurrence, completeness, valuation/allocation, rights/obligations, presentation/disclosure",
+		"Linking specific substantive procedures to identified risks for each significant class of transactions and account",
+	],
 
 	keyStandards: [],
 

@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Compilation engagement reporting factors: accountant's independence, departures from applicable framework (AR-C 80)",
+		"Compilation report requirements: no assurance expressed, management responsibility stated, accountant responsibility described",
+		"Impact of lack of independence on compilation report: required disclosure of non-independence without reason",
+		"Departures from applicable financial reporting framework in compilations: known departure disclosure requirements",
+	],
 
 	keyStandards: [],
 

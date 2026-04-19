@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Agreed-upon procedures (AUP) engagement factors: specified parties, procedures agreed to, findings format (AT-C 215)",
+		"AUP engagement preconditions: agreeing on procedures with specified parties, no opinion or conclusion expressed",
+		"Practitioner independence requirements for AUP engagements vs examination/review engagements",
+		"Restricted-use requirement for AUP reports: distribution limited to specified parties who agreed to procedures",
+	],
 
 	keyStandards: [],
 

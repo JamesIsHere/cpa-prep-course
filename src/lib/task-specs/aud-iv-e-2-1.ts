@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Other information in documents containing audited financial statements: annual reports, regulatory filings (AU-C 720)",
+		"Auditor's responsibility: read other information for material inconsistency with financial statements or material misstatement of fact",
+		"Actions when material inconsistency identified: determine whether financial statements or other information requires revision",
+		"No separate opinion on other information: auditor's report may include other-matter paragraph referencing review of other information",
+	],
 
 	keyStandards: [],
 

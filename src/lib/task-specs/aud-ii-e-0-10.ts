@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Analysis",
 	bloomLevel: SKILL_TO_BLOOM["Analysis"],
 
-	inScope: [],
+	inScope: [
+		"Analyzing cumulative and individual misstatement risk to design audit procedures: tolerable misstatement, performance materiality",
+		"Risk analysis informing audit program design: nature (type of procedure), timing (interim vs year-end), extent (sample size)",
+		"Relationship between RMM assessment and detection risk: inverse relationship, acceptable level of detection risk",
+		"Significant risks requiring special audit consideration: revenue recognition fraud, management override, related parties",
+	],
 
 	keyStandards: [],
 

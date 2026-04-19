@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Recalculation and reperformance of accounting estimates: validating methods, data inputs, and key assumptions (AU-C 540)",
+		"Auditing fair value estimates: testing valuation models, discount rates, projected cash flows, market comparables",
+		"Evaluating management bias in significant accounting estimates with higher inherent risk or complexity",
+		"Developing independent estimates or ranges to corroborate management's estimate",
+	],
 
 	keyStandards: [],
 

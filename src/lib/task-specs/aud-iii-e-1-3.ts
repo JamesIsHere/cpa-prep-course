@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Analysis",
 	bloomLevel: SKILL_TO_BLOOM["Analysis"],
 
-	inScope: [],
+	inScope: [
+		"Concluding on reasonableness of accounting estimates with lower inherent risk: allowance for doubtful accounts, warranty reserves",
+		"Retrospective review of prior-period estimates: comparing estimates to subsequent actual outcomes",
+		"Assessing whether estimation uncertainty is adequately disclosed in the financial statements",
+		"Distinguishing lower-risk estimates from higher-risk estimates and calibrating audit response accordingly",
+	],
 
 	keyStandards: [],
 
