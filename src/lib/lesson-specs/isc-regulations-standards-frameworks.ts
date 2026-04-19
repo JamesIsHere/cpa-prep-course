@@ -4,17 +4,21 @@ import type { LessonSpec } from "./types";
 // to information systems. Covers the landscape of IT governance and audit
 // frameworks, security standards, and regulatory requirements that CPAs
 // need to understand at the awareness-and-application level. DB topics:
-// "Security and Control Frameworks" (95 Qs), "IT Audit Frameworks" (85 Qs),
-// "System Availability and Change Management" (86 Qs), and "Change
-// Management" (85 Qs) — the latter two map here for their framework and
-// governance aspects.
+// "Security and Control Frameworks" and "IT Audit Frameworks".
+//
+// Note 2026-04-19: "System Availability and Change Management" and
+// "Change Management" were previously aliased here but moved to
+// `isc-information-systems.ts` at ISC/I/A after a homeless audit found
+// 100% of those questions (171) were homeless at II/A. ISC/I/A has
+// dedicated topics for Availability (topic 3, 6 tasks) and Change
+// management (topic 4, 8 tasks); II/A tasks cover only framework-level
+// concepts that don't match NIST SP 800-34 RPO/backup content or ITIL
+// change management operational practices.
 
 export const spec: LessonSpec = {
 	topic: "Security and Control Frameworks",
 	topicAliases: [
 		"IT Audit Frameworks",
-		"System Availability and Change Management",
-		"Change Management",
 	],
 	section: "isc",
 	primaryRef: "ISC/II/A",

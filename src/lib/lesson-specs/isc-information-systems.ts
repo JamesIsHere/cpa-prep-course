@@ -3,10 +3,21 @@ import type { LessonSpec } from "./types";
 // ISC Area I, Group A — Information systems. Covers the IT infrastructure
 // and architecture that underpins accounting information systems, including
 // hardware components, operating systems, network architecture, database
-// management systems, ERP platforms, and IT general controls (ITGCs).
-// Three DB topics collapse into this single AICPA group: "IT Infrastructure
-// and Architecture" (82 Qs), "ERP and Accounting Information Systems" (78 Qs),
-// and "IT General Controls" (79 Qs) — 239 questions total.
+// management systems, ERP platforms, IT general controls (ITGCs),
+// system availability / contingency planning, and change management.
+//
+// Five DB topics route here: "IT Infrastructure and Architecture",
+// "ERP and Accounting Information Systems", "IT General Controls",
+// "System Availability and Change Management", and "Change Management".
+// ISC/I/A has 4 AICPA topics covering each of these areas:
+// topic 1 (IT infrastructure, 4 tasks), topic 2 (ERP/AIS, 5 tasks),
+// topic 3 (Availability, 6 tasks), topic 4 (Change management, 8 tasks).
+//
+// Note 2026-04-19: "System Availability and Change Management" and
+// "Change Management" were previously routed to II/A (Frameworks) where
+// 100% of 171 questions were homeless because II/A tasks cover only
+// framework-level concepts. Moved here to match AICPA's dedicated
+// topics 3 and 4.
 //
 // Scope line: CPA-exam ISC depth — conceptual understanding of IT
 // components, their roles in accounting systems, and how ITGCs (access
@@ -19,6 +30,8 @@ export const spec: LessonSpec = {
 	topicAliases: [
 		"ERP and Accounting Information Systems",
 		"IT General Controls",
+		"System Availability and Change Management",
+		"Change Management",
 	],
 	section: "isc",
 	primaryRef: "ISC/I/A",

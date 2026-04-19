@@ -1,25 +1,25 @@
 import type { LessonSpec } from "./types";
 
-// ISC Area II, Group B — Security + Group D — Incident response.
-// This lesson-spec covers the security domain broadly: security controls,
-// threat landscape, vulnerability management, data protection technologies,
-// and incident response and recovery. DB topics: "Security Controls and
-// Monitoring" (93 Qs), "Threats, Attacks, and Vulnerabilities" (97 Qs),
-// "Data Protection Technologies" (97 Qs), and "Incident Response and
-// Recovery" (100 Qs) — 387 questions total. ISC/II/D (incident response)
-// is merged here because its DB topic ("Incident Response and Recovery")
-// is shared with ISC/II/B and the content is tightly coupled.
+// ISC Area II, Group B — Security.
+// Covers the security domain: security controls, threat landscape,
+// vulnerability management, and data protection technologies.
+// DB topics: "Security Controls and Monitoring", "Threats, Attacks,
+// and Vulnerabilities", "Data Protection Technologies".
+//
+// Note 2026-04-19: "Incident Response and Recovery" was previously
+// aliased here but split out to `isc-incident-response.ts` at ISC/II/D
+// after a homeless audit found 96/100 questions matched no II/B task
+// (they belong at II/D's incident response tasks).
 
 export const spec: LessonSpec = {
 	topic: "Security Controls and Monitoring",
 	topicAliases: [
 		"Threats, Attacks, and Vulnerabilities",
 		"Data Protection Technologies",
-		"Incident Response and Recovery",
 	],
 	section: "isc",
 	primaryRef: "ISC/II/B",
-	secondaryRefs: ["ISC/II/D"],
+	secondaryRefs: [],
 
 	inScope: [
 		"Security controls classification: preventive (stop threats before they occur — firewalls, access controls, encryption), detective (identify threats during or after — IDS, log monitoring, anomaly detection), corrective (remediate after — patches, incident response, system restoration), and the defense-in-depth principle of layering controls",

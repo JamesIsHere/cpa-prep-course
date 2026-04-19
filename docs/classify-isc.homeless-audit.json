@@ -1,0 +1,199 @@
+{
+  "generatedAt": "2026-04-19T22:18:11.652Z",
+  "section": "isc",
+  "totalHomeless": 636,
+  "rows": [
+    {
+      "topic": "Security and Control Frameworks",
+      "grp": "ISC/II/A",
+      "count": 71,
+      "total_in_topic": 95,
+      "homeless_rate": 74.7,
+      "hasTasks": true,
+      "taskCount": 8
+    },
+    {
+      "topic": "Data Protection Technologies",
+      "grp": "ISC/II/B",
+      "count": 69,
+      "total_in_topic": 97,
+      "homeless_rate": 71.1,
+      "hasTasks": true,
+      "taskCount": 21
+    },
+    {
+      "topic": "IT Audit Frameworks",
+      "grp": "ISC/II/A",
+      "count": 64,
+      "total_in_topic": 85,
+      "homeless_rate": 75.3,
+      "hasTasks": true,
+      "taskCount": 8
+    },
+    {
+      "topic": "SOC Testing Controls",
+      "grp": "ISC/III/A",
+      "count": 59,
+      "total_in_topic": 60,
+      "homeless_rate": 98.3,
+      "hasTasks": true,
+      "taskCount": 16
+    },
+    {
+      "topic": "Incident Response and Recovery",
+      "grp": "ISC/II/D",
+      "count": 57,
+      "total_in_topic": 100,
+      "homeless_rate": 57,
+      "hasTasks": true,
+      "taskCount": 4
+    },
+    {
+      "topic": "IT General Controls",
+      "grp": "ISC/I/A",
+      "count": 51,
+      "total_in_topic": 79,
+      "homeless_rate": 64.6,
+      "hasTasks": true,
+      "taskCount": 23
+    },
+    {
+      "topic": "Privacy Requirements and Data Protection",
+      "grp": "ISC/II/C",
+      "count": 45,
+      "total_in_topic": 95,
+      "homeless_rate": 47.4,
+      "hasTasks": true,
+      "taskCount": 8
+    },
+    {
+      "topic": "Data Management and Lifecycle",
+      "grp": "ISC/I/B",
+      "count": 37,
+      "total_in_topic": 86,
+      "homeless_rate": 43,
+      "hasTasks": true,
+      "taskCount": 6
+    },
+    {
+      "topic": "SOC Reporting and Trust Services Criteria",
+      "grp": "ISC/III/B",
+      "count": 37,
+      "total_in_topic": 58,
+      "homeless_rate": 63.8,
+      "hasTasks": true,
+      "taskCount": 5
+    },
+    {
+      "topic": "Security Controls and Monitoring",
+      "grp": "ISC/II/B",
+      "count": 33,
+      "total_in_topic": 93,
+      "homeless_rate": 35.5,
+      "hasTasks": true,
+      "taskCount": 21
+    },
+    {
+      "topic": "ERP and Accounting Information Systems",
+      "grp": "ISC/I/A",
+      "count": 25,
+      "total_in_topic": 78,
+      "homeless_rate": 32.1,
+      "hasTasks": true,
+      "taskCount": 23
+    },
+    {
+      "topic": "SOC Report Content and Structure",
+      "grp": "ISC/III/B",
+      "count": 20,
+      "total_in_topic": 59,
+      "homeless_rate": 33.9,
+      "hasTasks": true,
+      "taskCount": 5
+    },
+    {
+      "topic": "SOC Engagements",
+      "grp": "ISC/III/A",
+      "count": 19,
+      "total_in_topic": 58,
+      "homeless_rate": 32.8,
+      "hasTasks": true,
+      "taskCount": 16
+    },
+    {
+      "topic": "Change Management",
+      "grp": "ISC/I/A",
+      "count": 18,
+      "total_in_topic": 85,
+      "homeless_rate": 21.2,
+      "hasTasks": true,
+      "taskCount": 23
+    },
+    {
+      "topic": "IT Infrastructure and Architecture",
+      "grp": "ISC/I/A",
+      "count": 11,
+      "total_in_topic": 82,
+      "homeless_rate": 13.4,
+      "hasTasks": true,
+      "taskCount": 23
+    },
+    {
+      "topic": "Threats, Attacks, and Vulnerabilities",
+      "grp": "ISC/II/B",
+      "count": 10,
+      "total_in_topic": 97,
+      "homeless_rate": 10.3,
+      "hasTasks": true,
+      "taskCount": 21
+    },
+    {
+      "topic": "System Availability and Change Management",
+      "grp": "ISC/I/A",
+      "count": 6,
+      "total_in_topic": 86,
+      "homeless_rate": 7,
+      "hasTasks": true,
+      "taskCount": 23
+    },
+    {
+      "topic": "SOC Reporting",
+      "grp": "ISC/III/B",
+      "count": 4,
+      "total_in_topic": 59,
+      "homeless_rate": 6.8,
+      "hasTasks": true,
+      "taskCount": 5
+    }
+  ],
+  "taskGroupCount": {
+    "ISC/I/A": 23,
+    "ISC/I/B": 6,
+    "ISC/II/A": 8,
+    "ISC/II/B": 21,
+    "ISC/II/C": 8,
+    "ISC/II/D": 4,
+    "ISC/III/A": 16,
+    "ISC/III/B": 5
+  },
+  "topicToGroup": {
+    "Privacy Requirements and Data Protection": "ISC/II/C",
+    "Data Management and Lifecycle": "ISC/I/B",
+    "Incident Response and Recovery": "ISC/II/D",
+    "IT Infrastructure and Architecture": "ISC/I/A",
+    "ERP and Accounting Information Systems": "ISC/I/A",
+    "IT General Controls": "ISC/I/A",
+    "System Availability and Change Management": "ISC/I/A",
+    "Change Management": "ISC/I/A",
+    "Security and Control Frameworks": "ISC/II/A",
+    "IT Audit Frameworks": "ISC/II/A",
+    "Security Controls and Monitoring": "ISC/II/B",
+    "Threats, Attacks, and Vulnerabilities": "ISC/II/B",
+    "Data Protection Technologies": "ISC/II/B",
+    "SOC Engagements": "ISC/III/A",
+    "SOC Report Content and Structure": "ISC/III/B",
+    "SOC Reporting and Trust Services Criteria": "ISC/III/B",
+    "SOC Reporting": "ISC/III/B",
+    "SOC Testing Controls": "ISC/III/A"
+  }
+}

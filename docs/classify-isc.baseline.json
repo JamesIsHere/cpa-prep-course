@@ -1,8 +1,9 @@
 {
   "section": "isc",
-  "generatedAt": "2026-04-19T22:17:57.246Z",
+  "generatedAt": "2026-04-18T23:53:25.101Z",
   "totalQuestions": 1452,
-  "resumeNotes": "ISC iter-1 routing: II/B → II/D (Incident Response) + II/A → I/A (Availability + Change Management)",
+  "pass1Matched": 631,
+  "pass1Homeless": 821,
   "suggestions": [
     {
       "question_id": 746,
@@ -426,143 +427,143 @@
     },
     {
       "question_id": 788,
-      "pin_ref": "ISC/I/A/3/1",
-      "confidence": "medium",
-      "rationale": "RPO is a key metric and consideration in disaster recovery planning, which this task covers.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests NIST SP 800-34 contingency planning concepts (RPO), which is not covered by any of the 8 task-specs.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 789,
-      "pin_ref": "ISC/I/A/3/5",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "The question directly addresses backup frequency in relation to recovery objectives (RPO), which falls under recovery considerations for backup types.",
+      "rationale": "Question tests NIST SP 800-34 contingency planning (RPO/backup relationship), which is not covered by any task-spec.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 790,
-      "pin_ref": "ISC/I/A/4/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Understanding the first step in change management (submitting a change request) is part of explaining change management processes and practices.",
+      "rationale": "Question tests ITIL 4 change management procedures, which is not covered by any of the 8 task-specs.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 791,
-      "pin_ref": "ISC/I/A/4/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "The question tests understanding of risk considerations in change management, which this task explicitly addresses.",
+      "rationale": "Question tests ITIL 4 Change Advisory Board considerations, which is not covered by any task-spec.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 792,
-      "pin_ref": "ISC/I/A/4/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Defining emergency changes is part of explaining change management processes and practices.",
+      "rationale": "Question tests ITIL 4 emergency change classification, which is not covered by any of the 8 task-specs.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 793,
-      "pin_ref": "ISC/I/A/3/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "System recovery prioritization is a key consideration for disaster recovery and business continuity plans.",
+      "rationale": "Question tests NIST SP 800-34 system tiering for recovery, which is not covered by any task-spec.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 794,
-      "pin_ref": "ISC/I/A/4/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Regression testing is explicitly one of the types of tests performed in software change management.",
+      "rationale": "Question tests regression testing in change management (COBIT BAI07), too specific for ISC/II/A/0/8 which covers governance principles.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 795,
-      "pin_ref": "ISC/I/A/4/6",
-      "confidence": "medium",
-      "rationale": "Evaluating whether emergency change controls are being circumvented falls under testing change control policy implementation.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests change management audit analysis (ITIL/COBIT BAI06), too specific for ISC/II/A/0/8 which covers governance principles.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 796,
-      "pin_ref": "ISC/I/A/3/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "DR testing types and approaches are key considerations for disaster recovery plans.",
+      "rationale": "Question tests NIST SP 800-34 disaster recovery testing types, which is not covered by any task-spec.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 797,
-      "pin_ref": "ISC/I/A/3/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Understanding data loss risks of asynchronous replication directly relates to explaining replication objectives and limitations.",
+      "rationale": "Question tests NIST SP 800-34 asynchronous replication risks, which is not covered by any of the 8 task-specs.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 798,
-      "pin_ref": "ISC/I/A/4/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of CMDB purpose (tracking IT assets, configurations, interdependencies), which aligns with task's coverage of change management documentation including system component inventory and baseline configuration.",
+      "rationale": "Tests CMDB/ITIL configuration management concepts not covered by any ISC/II/A task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 799,
-      "pin_ref": "ISC/I/A/3/4",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests recall of the system availability formula (MTBF/(MTBF+MTTR)), which directly matches the task requiring recall of measures of system availability.",
+      "rationale": "Tests operational availability calculation (MTBF/MTTR), not COBIT governance principles.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 800,
-      "pin_ref": "ISC/I/A/4/4",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of parallel conversion as a system conversion approach, which is explicitly listed in the task's examples (direct, parallel, pilot).",
+      "rationale": "Tests change management methodology (parallel testing), not COBIT governance principles.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 801,
-      "pin_ref": "ISC/I/A/4/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of separation of development, testing, and production environments, which is the core focus of this task.",
+      "rationale": "Tests environment separation practice in change management, not COBIT governance principles.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 802,
@@ -1126,59 +1127,59 @@
     },
     {
       "question_id": 858,
-      "pin_ref": "ISC/II/D/0/3",
-      "confidence": "medium",
-      "rationale": "Question tests knowledge of incident response plan phases (Preparation, Detection, etc.), which are steps/methods commonly included in IR plans per task 3.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question asks about NIST incident response phases; no task covers incident response methodology or phases.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 859,
-      "pin_ref": "ISC/II/D/0/3",
-      "confidence": "medium",
-      "rationale": "Question tests understanding of containment phase purpose, which is a step/method component of incident response plans covered by task 3.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question asks about containment phase goals in incident response; no task covers incident response containment strategies.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 860,
-      "pin_ref": "ISC/II/D/0/3",
-      "confidence": "medium",
-      "rationale": "Question tests knowledge of post-incident activity phase purpose, which is a step/timeline component of incident response plans per task 3.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests knowledge of NIST SP 800-61 incident response phases; no task in ISC/II/B covers incident response lifecycle or post-incident activities.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 861,
-      "pin_ref": "ISC/II/D/0/3",
-      "confidence": "medium",
-      "rationale": "Question tests understanding of communication roles during incidents, which are roles/responsibilities commonly included in IR plans per task 3.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question addresses external communication protocols during incident response; no task in ISC/II/B covers incident communication management.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 862,
-      "pin_ref": "ISC/II/D/0/3",
-      "confidence": "medium",
-      "rationale": "Question tests understanding of evidence preservation rationale, which is a method/step commonly included in incident response plans per task 3.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests understanding of forensic evidence preservation during incident response; no task in ISC/II/B addresses digital forensics or evidence handling.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 863,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question addresses disaster recovery metrics (RPO) and backup strategies, which are business continuity topics not covered by any incident response task.",
+      "rationale": "Question tests understanding of Recovery Point Objective (RPO) in business continuity; no task in ISC/II/B covers disaster recovery or continuity metrics.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -1186,19 +1187,19 @@
     },
     {
       "question_id": 864,
-      "pin_ref": "ISC/II/D/0/3",
-      "confidence": "medium",
-      "rationale": "Question tests understanding of eradication phase objectives, which is a step/method component of incident response plans covered by task 3.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question addresses the eradication phase of incident response; no task in ISC/II/B covers incident response phases or remediation procedures.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 865,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question addresses disaster recovery site strategies (hot/cold/warm sites) and RTO, which are business continuity topics not covered by any incident response task.",
+      "rationale": "Question tests knowledge of disaster recovery site strategies and RTO; no task in ISC/II/B addresses business continuity infrastructure.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -1206,19 +1207,19 @@
     },
     {
       "question_id": 866,
-      "pin_ref": "ISC/II/D/0/3",
-      "confidence": "medium",
-      "rationale": "Question tests understanding of post-incident review outcomes, which relates to methods/steps included in incident response plans per task 3.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question addresses post-incident review outcomes and lessons learned; while Task 19 involves documenting findings, it concerns SOC assessments not incident response improvement.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 867,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question addresses disaster recovery metrics (RTO, MTD) and recovery capability gaps, which are business continuity topics not covered by any incident response task.",
+      "rationale": "Question tests understanding of RTO vs MTD gap analysis in business continuity planning; no task in ISC/II/B covers continuity planning metrics.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -1226,19 +1227,19 @@
     },
     {
       "question_id": 868,
-      "pin_ref": "ISC/II/D/0/3",
-      "confidence": "medium",
-      "rationale": "Forensic imaging procedures are methods/steps commonly documented in incident response plans.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question addresses forensic imaging to preserve evidence during incident response; no task in ISC/II/B covers digital forensics procedures.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 870,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tabletop exercises test IR plan effectiveness, not covered by tasks focused on plan contents or compliance testing.",
+      "rationale": "Question tests knowledge of tabletop exercises for incident response readiness; no task in ISC/II/B covers incident response testing or exercises.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -1246,9 +1247,9 @@
     },
     {
       "question_id": 871,
-      "pin_ref": "ISC/II/D/0/3",
+      "pin_ref": "ISC/II/B/2/6",
       "confidence": "medium",
-      "rationale": "Recovery verification procedures are methods/steps commonly included in incident response plans.",
+      "rationale": "Question asks to determine appropriate detective/corrective controls (scanning, verification, isolated testing) after ransomware attack, which aligns with determining controls to mitigate cyber-attack risk.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -1906,43 +1907,43 @@
     },
     {
       "question_id": 1292,
-      "pin_ref": "ISC/I/A/4/1",
-      "confidence": "medium",
-      "rationale": "Question tests understanding of emergency change as a type of change management process, which falls under explaining the purpose and practices of change management.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests ITIL emergency change management concepts, which are not covered by any available task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 1293,
-      "pin_ref": "ISC/I/A/4/1",
-      "confidence": "medium",
-      "rationale": "Question tests understanding of post-implementation review as a critical change management practice following emergency changes, which relates to change management processes and risk identification.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests ITIL post-implementation review controls for emergency changes, which are not covered by any available task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 1294,
-      "pin_ref": "ISC/I/A/4/6",
-      "confidence": "medium",
-      "rationale": "Question requires analyzing change management metrics to detect process dysfunction, which aligns with testing the implementation of change control policies, though the question's analysis level exceeds the task's application level.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests ITIL change management process dysfunction analysis, not any of the eight frameworks (HIPAA, GDPR, PCI DSS, NIST CSF/Privacy/800-53, CIS, COBIT) covered by ISC/II/A tasks.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 1295,
-      "pin_ref": "ISC/I/A/4/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of CMDB as a change management tool that maintains system component inventory and configuration baselines, which is explicitly covered in the task's documentation examples.",
+      "rationale": "Question tests ITIL CMDB configuration management concepts, not any of the eight frameworks covered by ISC/II/A tasks.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 1296,
@@ -3046,403 +3047,403 @@
     },
     {
       "question_id": 3535,
-      "pin_ref": "ISC/I/A/3/1",
-      "confidence": "medium",
-      "rationale": "Question tests recall that Business Impact Analysis is the first step in BCP development, which is a key consideration for business continuity planning covered by this task.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests NIST SP 800-34 business continuity planning (BIA first step), which is not covered by any ISC/II/A task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3536,
-      "pin_ref": "ISC/I/A/3/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of RTO and RPO as key Business Impact Analysis metrics, which directly relates to summarizing BIA steps and outputs.",
+      "rationale": "Question tests NIST SP 800-34 disaster recovery metrics (RTO/RPO definitions), which is not covered by any ISC/II/A task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 3537,
-      "pin_ref": "ISC/I/A/3/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of DR site types and recovery time characteristics, which are key considerations for disaster recovery plans.",
+      "rationale": "Question tests NIST SP 800-34 disaster recovery site types (hot/warm/cold), which is not covered by any ISC/II/A task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3538,
-      "pin_ref": "ISC/I/A/3/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question directly tests understanding of replication objectives and characteristics (synchronous vs. asynchronous) to achieve RPO targets.",
+      "rationale": "Question tests NIST SP 800-34 replication strategies for RPO, which is not covered by any ISC/II/A task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3539,
-      "pin_ref": "ISC/I/A/3/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of tabletop exercises, which are a key testing method within business continuity planning scope.",
+      "rationale": "Question tests NIST SP 800-34 BCP testing methodology (tabletop exercises), which is not covered by any ISC/II/A task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3540,
-      "pin_ref": "ISC/I/A/1/1",
-      "confidence": "medium",
-      "rationale": "Question asks about understanding the purpose of server clustering (IT architecture component) for availability, fits with explaining purpose of key components.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests NIST SP 800-34 high availability concepts (server clustering), which is not covered by any ISC/II/A task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3541,
-      "pin_ref": "ISC/I/A/1/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of load balancer function, which is a key network infrastructure component in IT architecture.",
+      "rationale": "Question tests technical load balancer function (cites SP 800-53 SC-5 control) but does not test Task 6's focus on the framework's purpose/applicability/target audience/organizational responsibilities.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3542,
-      "pin_ref": "ISC/I/A/4/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of CAB's purpose in assessing risk and impact, which is core to change management processes.",
+      "rationale": "Question tests ITIL Change Advisory Board purpose under change enablement, not any of the eight frameworks covered by ISC/II/A tasks.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3543,
-      "pin_ref": "ISC/I/A/4/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of standard change management workflow sequence, which is foundational knowledge of change management processes.",
+      "rationale": "Question tests ITIL 4 change management workflow sequence; none of the 8 tasks cover ITIL or change management processes.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3544,
-      "pin_ref": "ISC/I/A/4/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of change impact assessment components including risk identification, which the task explicitly mentions.",
+      "rationale": "Question tests change impact assessment components under ITIL 4; none of the 8 tasks cover ITIL or change management.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3545,
-      "pin_ref": "ISC/I/A/4/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of what constitutes an unauthorized change within change management practices and required controls.",
+      "rationale": "Question tests definition of unauthorized change in ITIL 4; none of the 8 tasks cover ITIL or change management.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3547,
-      "pin_ref": "ISC/I/A/3/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of RTO definition, which is a fundamental key consideration in disaster recovery planning.",
+      "rationale": "Question tests RTO definition in disaster recovery planning (NIST SP 800-34); none of the 8 tasks cover disaster recovery.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3548,
-      "pin_ref": "ISC/I/A/1/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "N+1 redundancy is a key concept about IT infrastructure server components.",
+      "rationale": "Question tests N+1 redundancy concept in IT infrastructure; none of the 8 tasks cover infrastructure redundancy or disaster recovery.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3549,
-      "pin_ref": "ISC/I/A/4/1",
-      "confidence": "medium",
-      "rationale": "Post-implementation review is a change management practice, though not explicitly mentioned in the task.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests post-implementation review purpose under ITIL 4; none of the 8 tasks cover ITIL or change management.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3550,
-      "pin_ref": "ISC/I/A/4/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Standard changes are a fundamental change management process type.",
+      "rationale": "Question tests standard change definition in ITIL 4; none of the 8 tasks cover ITIL or change management.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3551,
-      "pin_ref": "ISC/I/A/4/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Emergency changes are a change management process variation requiring explanation.",
+      "rationale": "Question tests emergency change characteristics under ITIL 4; Task 8 covers COBIT governance principles, not BAI06 change management processes.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3552,
-      "pin_ref": "ISC/I/A/4/6",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Auditor testing change control policies by evaluating emergency change rate metrics.",
+      "rationale": "Question tests analysis of change management metrics (L2 Application); Task 8 covers COBIT governance principles (L1), not BAI06 metrics analysis.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 3553,
-      "pin_ref": "ISC/I/A/3/1",
-      "confidence": "medium",
-      "rationale": "Understanding recovery layers is a key consideration for disaster recovery plans.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests disaster recovery testing concepts (infrastructure vs application recovery); none of the 8 tasks cover disaster recovery.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3554,
-      "pin_ref": "ISC/I/A/3/4",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "MTBF and MTTR are explicit examples of system availability measures.",
+      "rationale": "Question tests availability metrics (MTBF/MTTR) which are not covered by any of the privacy/security framework recall tasks.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3555,
-      "pin_ref": "ISC/I/A/4/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Rollback procedures are explicitly mentioned in the task's documentation examples.",
+      "rationale": "Question tests change management rollback procedures which are not covered by any of the privacy/security framework recall tasks.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3556,
-      "pin_ref": "ISC/I/A/3/1",
-      "confidence": "medium",
-      "rationale": "RTO and MTD relationship is a key consideration for disaster recovery planning.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests disaster recovery metrics (MTD/RTO) which are not covered by any of the privacy/security framework recall tasks.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3557,
-      "pin_ref": "ISC/I/A/4/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Release management is a change management practice for coordinating deployments.",
+      "rationale": "Question tests release management process (COBIT BAI07) which is operational, not the governance principles covered in task 8.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3558,
-      "pin_ref": "ISC/I/A/4/5",
-      "confidence": "medium",
-      "rationale": "Question tests applying patch management compensating controls when immediate patching is not feasible, matching task 4/5's patch management scope.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests patch management and compensating controls which are not covered by any of the privacy/security framework recall tasks.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3559,
-      "pin_ref": "ISC/I/A/3/1",
-      "confidence": "medium",
-      "rationale": "Question tests understanding key DR planning considerations (shared infrastructure dependencies undermining geographic separation), which falls under task 3/1's scope.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests disaster recovery site dependencies which are not covered by any of the privacy/security framework recall tasks.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3560,
-      "pin_ref": "ISC/I/A/3/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question directly tests identifying BIA outputs (MTD determination from business impact analysis), exactly matching task 3/3.",
+      "rationale": "Question tests business impact analysis and recovery metrics which are not covered by any of the privacy/security framework recall tasks.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 3561,
-      "pin_ref": "ISC/I/A/3/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests recalling what a full-interruption DR test involves, which is a key consideration in DR planning covered by task 3/1.",
+      "rationale": "Question tests disaster recovery test types which are not covered by any of the privacy/security framework recall tasks.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3562,
-      "pin_ref": "ISC/I/A/4/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding the purpose of change management practices (tested rollback procedures), directly matching task 4/1.",
+      "rationale": "Question tests change management rollback testing (COBIT BAI06) which is operational, not the governance principles covered in task 8.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3563,
-      "pin_ref": "ISC/I/A/3/2",
-      "confidence": "medium",
-      "rationale": "Question tests understanding RAID as a replication/mirroring technique for availability, matching task 3/2's scope.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests storage redundancy technology (RAID) which is not covered by any of the privacy/security framework recall tasks.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3564,
-      "pin_ref": "ISC/I/A/4/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding appropriate change management responses (root cause analysis when success rates decline), matching task 4/1.",
+      "rationale": "Question tests operational change management and root cause analysis, not recall of any listed framework's scope or principles.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3565,
-      "pin_ref": "ISC/I/A/1/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding cloud computing capabilities (auto-scaling), which is part of explaining cloud computing models in task 1/2.",
+      "rationale": "Question tests cloud computing infrastructure concepts (NIST SP 800-145), which is not covered by any task in this list.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3566,
-      "pin_ref": "ISC/I/A/4/6",
-      "confidence": "medium",
-      "rationale": "Question tests evaluating change control policy implementation by identifying unauthorized changes, matching task 4/6's scope of testing change control policies.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question requires L4 evaluation of control deficiencies using COBIT controls, not L1 recall of COBIT governance principles.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 3567,
-      "pin_ref": "ISC/I/A/3/5",
-      "confidence": "medium",
-      "rationale": "Question tests determining if backup frequency and warm site recovery time meet RPO/RTO objectives, matching task 3/5's scope of determining backup appropriateness including recovery considerations.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests application of DR concepts (RPO/RTO from NIST SP 800-34), which is not covered by any task in this list.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 3568,
-      "pin_ref": "ISC/I/A/4/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of configuration documentation (system component inventory in CMDB) and risks of undocumented systems, directly aligned with task's focus on documentation types including system component inventory.",
+      "rationale": "Question tests configuration management risks, not recall of COBIT governance system principles.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3569,
-      "pin_ref": "ISC/I/A/3/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question asks to recall definition of cold site, a key consideration in disaster recovery planning covered by this task's scope of DR concepts.",
+      "rationale": "Question tests disaster recovery site definitions (NIST SP 800-34), which is not covered by any task in this list.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3569,
-      "pin_ref": "ISC/I/A/3/1",
-      "confidence": "high",
-      "rationale": "Question asks to recall definition of cold site, a key consideration in disaster recovery planning covered by this task's scope of DR concepts.",
+      "pin_ref": null,
+      "confidence": "medium",
+      "rationale": "Question asks about a specific control (PE-11) within SP 800-53, not the framework's purpose/applicability/responsibilities per task 6.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3570,
-      "pin_ref": "ISC/I/A/3/1",
-      "confidence": "medium",
-      "rationale": "Question tests understanding of what interdependency analysis reveals, which is a key consideration in DR/BCP planning covered by this task.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests business continuity interdependency analysis (NIST SP 800-34), which is not covered by any task in this list.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3571,
-      "pin_ref": "ISC/I/A/4/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of how change management processes should vary based on risk/criticality, directly aligned with task's focus on change management practices and associated risks.",
+      "rationale": "Question tests change management practices based on criticality, not recall of COBIT governance principles.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3572,
-      "pin_ref": "ISC/I/A/1/1",
-      "confidence": "medium",
-      "rationale": "Question asks to explain purpose of UPS, which is a key infrastructure component supporting IT architecture, fitting task's focus on explaining purposes of IT architecture components.",
+      "pin_ref": null,
+      "confidence": "low",
+      "rationale": "Missing from classifier output (batch error or timeout)",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3573,
-      "pin_ref": "ISC/I/A/3/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question directly asks about benefit/objective of synchronous mirroring, which is exactly what this task addresses.",
+      "rationale": "Question tests disaster recovery technology concepts (NIST SP 800-34), which is not covered by any task in this list.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3574,
-      "pin_ref": "ISC/I/A/4/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of risks when staging and production environments diverge, aligned with task's focus on explaining different environments and their proper use.",
+      "rationale": "Question covers NIST SP 800-128 configuration management and drift, which is not addressed by any available task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 3575,
@@ -4508,7 +4509,7 @@
       "question_id": 3682,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests knowledge of NIST IR lifecycle framework structure, not IR plan contents or compliance.",
+      "rationale": "Question tests knowledge of NIST SP 800-61 incident response lifecycle phases, which is not covered by any ISC/II/B task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -4518,7 +4519,7 @@
       "question_id": 3683,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests knowledge of IR lifecycle phases, not IR plan contents or compliance procedures.",
+      "rationale": "Tests NIST SP 800-61 incident response preparation phase, which is not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -4528,7 +4529,7 @@
       "question_id": 3684,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests ability to identify IR lifecycle phases, not IR plan contents or compliance.",
+      "rationale": "Tests NIST SP 800-61 detection and analysis phase of incident response, which is not addressed by any task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -4536,19 +4537,19 @@
     },
     {
       "question_id": 3685,
-      "pin_ref": "ISC/II/D/0/3",
-      "confidence": "medium",
-      "rationale": "Containment procedures are steps/methods commonly documented in incident response plans.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests incident response containment procedures (isolating infected systems), which is not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 3686,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests understanding of containment strategy concepts, not IR plan contents or procedures.",
+      "rationale": "Tests distinction between short-term and long-term containment in incident response, which is not addressed by any task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -4556,29 +4557,29 @@
     },
     {
       "question_id": 3687,
-      "pin_ref": "ISC/II/D/0/3",
-      "confidence": "medium",
-      "rationale": "Recovery activities are steps/methods commonly included in incident response plans.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests incident response recovery phase activities (system restoration from backups), which is not covered by any task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 3689,
-      "pin_ref": "ISC/II/D/0/3",
-      "confidence": "medium",
-      "rationale": "Evidence collection procedures based on volatility are methods commonly documented in incident response plans.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests digital forensics order of volatility principles, which is not addressed by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 3690,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests forensic imaging procedures, not incident response planning or event/incident classification.",
+      "rationale": "Tests forensic imaging versus standard backup procedures, which is not covered by any task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -4588,7 +4589,7 @@
       "question_id": 3691,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests forensic chain of custody requirements, not incident response planning tasks.",
+      "rationale": "Tests chain of custody principles in digital forensics, which is not addressed by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -4598,7 +4599,7 @@
       "question_id": 3692,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests forensic evidence collection order of volatility, not incident response planning.",
+      "rationale": "Tests evidence collection sequencing based on volatility in digital forensics, which is not covered by any task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -4606,29 +4607,29 @@
     },
     {
       "question_id": 3693,
-      "pin_ref": "ISC/II/D/0/1",
-      "confidence": "medium",
-      "rationale": "Question tests understanding that PII leaving organizational control constitutes a breach/incident regardless of access, directly testing event vs incident distinction.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 2,
-      "task_bloom": 1
-    },
-    {
-      "question_id": 3694,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests incident severity classification criteria, not covered by the four available tasks.",
+      "rationale": "Tests breach notification classification for unauthorized PII disclosure, which is not addressed by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
       "task_bloom": null
     },
     {
+      "question_id": 3694,
+      "pin_ref": "ISC/II/B/1/10",
+      "confidence": "medium",
+      "rationale": "Question asks candidate to determine severity of a specific cybersecurity threat (C2 communication) in the organization's network environment, matching task's focus on determining specific threats.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": 2
+    },
+    {
       "question_id": 3695,
       "pin_ref": null,
-      "confidence": "medium",
-      "rationale": "Question tests IR preparation best practices (pre-established relationships), not IR plan content summarization or testing.",
+      "confidence": "high",
+      "rationale": "Question tests incident response preparation and pre-established external relationships, which is not covered by any task in this group focused on threats and risk mitigation controls.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -4637,8 +4638,8 @@
     {
       "question_id": 3696,
       "pin_ref": null,
-      "confidence": "medium",
-      "rationale": "Question tests purpose of tabletop exercises, not IR plan contents or auditing actual incident responses.",
+      "confidence": "high",
+      "rationale": "Question tests understanding of tabletop exercises for incident response testing, which is not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -4648,7 +4649,7 @@
       "question_id": 3697,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests evaluation of MTTD/MTTR metrics, not covered by the four available tasks.",
+      "rationale": "Question tests evaluation of incident response metrics (MTTD/MTTR), which is not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -4656,19 +4657,19 @@
     },
     {
       "question_id": 3698,
-      "pin_ref": "ISC/II/D/0/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests knowledge of IR plan phases (eradication), which are fundamental steps commonly included in IR plans.",
+      "rationale": "Question tests knowledge of incident response eradication phase objectives, which is not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 3699,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests forensic hash verification procedures, not incident response planning tasks.",
+      "rationale": "Question tests digital forensics evidence integrity verification techniques, which is not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -4676,19 +4677,19 @@
     },
     {
       "question_id": 3700,
-      "pin_ref": "ISC/II/D/0/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests knowledge of communication/notification requirements, which are explicitly listed as common IR plan contents in the task description.",
+      "rationale": "Question tests knowledge of incident response plan components and notification requirements, which is not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 3701,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests forensic evidence classification (volatile vs non-volatile), which is technical forensic knowledge not covered by IR plan contents or testing tasks.",
+      "rationale": "Question tests understanding of volatile vs non-volatile digital evidence types, which is not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -4696,93 +4697,93 @@
     },
     {
       "question_id": 3702,
-      "pin_ref": "ISC/II/D/0/4",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests knowledge of IR testing methods (full-scale simulation vs tabletop exercise), directly matching the task about performing procedures to test IR response.",
+      "rationale": "Question tests understanding of incident response exercise types and methodologies, which is not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 3703,
-      "pin_ref": "ISC/II/D/0/3",
-      "confidence": "medium",
-      "rationale": "Question tests knowledge of attack timelines as an IR analysis artifact; timelines are explicitly mentioned as common IR plan contents in the task description.",
-      "pass": 1,
-      "bloom_overshoot": false,
-      "question_bloom": 1,
-      "task_bloom": 2
-    },
-    {
-      "question_id": 3704,
-      "pin_ref": "ISC/II/D/0/3",
-      "confidence": "medium",
-      "rationale": "Question tests evidence handling procedures which are methods commonly included in IR plans per NIST SP 800-61 Section 3.2.6.",
-      "pass": 1,
-      "bloom_overshoot": false,
-      "question_bloom": 1,
-      "task_bloom": 2
-    },
-    {
-      "question_id": 3705,
-      "pin_ref": "ISC/II/D/0/3",
-      "confidence": "medium",
-      "rationale": "Question tests evaluation of lessons-learned recommendations, which are part of IR plan steps and post-incident processes.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 4,
-      "task_bloom": 2
-    },
-    {
-      "question_id": 3706,
-      "pin_ref": "ISC/II/D/0/3",
-      "confidence": "high",
-      "rationale": "Question tests knowledge of incident commander role, and roles/responsibilities are explicitly listed as common IR plan contents in the task description.",
-      "pass": 1,
-      "bloom_overshoot": false,
-      "question_bloom": 1,
-      "task_bloom": 2
-    },
-    {
-      "question_id": 3707,
-      "pin_ref": "ISC/II/D/0/3",
-      "confidence": "medium",
-      "rationale": "Question tests knowledge of recovery verification procedures, which are steps/methods commonly included in IR plans.",
-      "pass": 1,
-      "bloom_overshoot": false,
-      "question_bloom": 2,
-      "task_bloom": 2
-    },
-    {
-      "question_id": 3708,
-      "pin_ref": "ISC/II/D/0/3",
-      "confidence": "high",
-      "rationale": "Question tests knowledge of escalation matrix purpose, which directly relates to roles, responsibilities, and notification procedures in IR plans.",
-      "pass": 1,
-      "bloom_overshoot": false,
-      "question_bloom": 1,
-      "task_bloom": 2
-    },
-    {
-      "question_id": 3709,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests knowledge of threat actor techniques (living off the land), which is threat intelligence knowledge not covered by IR plan or testing tasks.",
+      "rationale": "Question tests knowledge of incident forensics timeline reconstruction terminology, which is not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
       "task_bloom": null
     },
     {
-      "question_id": 3710,
-      "pin_ref": "ISC/II/D/0/3",
-      "confidence": "medium",
-      "rationale": "Tests understanding of evidence preservation methods/steps within IR procedures, which are contents commonly included in IR plans.",
+      "question_id": 3704,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question covers digital forensics and evidence handling procedures, which are not addressed in any ISC/II/B task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 2
+      "task_bloom": null
+    },
+    {
+      "question_id": 3705,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests incident response lessons-learned and process improvement recommendations, which are not covered in ISC/II/B tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 4,
+      "task_bloom": null
+    },
+    {
+      "question_id": 3706,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question addresses incident response team roles and incident command structure, which are not covered in ISC/II/B tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": null
+    },
+    {
+      "question_id": 3707,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question covers incident recovery and system restoration procedures, which are not addressed in ISC/II/B tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 3708,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests knowledge of incident response planning and escalation matrices, which are not covered in ISC/II/B tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": null
+    },
+    {
+      "question_id": 3709,
+      "pin_ref": "ISC/II/B/1/3",
+      "confidence": "medium",
+      "rationale": "Question asks to identify 'living off the land' as a cyber-attack technique, matching task 1/3's requirement to identify attack techniques.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": 1
+    },
+    {
+      "question_id": 3710,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question covers forensic evidence preservation during incident response, which is not addressed in ISC/II/B tasks.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 1,
+      "task_bloom": null
     },
     {
       "question_id": 3711,
@@ -6846,39 +6847,39 @@
     },
     {
       "question_id": 4906,
-      "pin_ref": "ISC/I/A/4/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question asks to identify which document initiates change process; task explicitly lists change requests as key documentation in change management.",
+      "rationale": "Question tests change management operational practices, not COBIT governance system principles; also cognitive_level=2 exceeds all L1 tasks.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 4907,
-      "pin_ref": "ISC/I/A/4/6",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question requires applying separation of duties principle in change deployment, directly covered by task's focus on testing change control policies including separation of duties.",
+      "rationale": "Question tests separation of duties in change deployment, not governance system principles; cognitive_level=2 exceeds all L1 tasks.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 4909,
-      "pin_ref": "ISC/I/A/4/6",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question requires analyzing audit findings about unauthorized changes, aligned with task's focus on testing change control authorization policies and monitoring compliance.",
+      "rationale": "Question tests change management metrics, not governance system principles; cognitive_level=2 exceeds all L1 tasks.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 4910,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests overall audit objectives and reasonable assurance under AU-C 200, which is AUD content, not IT infrastructure.",
+      "rationale": "Question tests auditing standards (AU-C 200) and reasonable assurance, not privacy/security frameworks covered in ISC/II/A tasks.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -6888,7 +6889,7 @@
       "question_id": 4911,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests financial statement assertions (completeness) under AU-C 315, which is AUD content, not IT infrastructure.",
+      "rationale": "Question tests financial statement assertions (AU-C 315), not privacy/security frameworks covered in ISC/II/A tasks.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -6898,7 +6899,7 @@
       "question_id": 4912,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests financial statement assertions (existence) during inventory observation under AU-C 501, which is AUD content, not IT infrastructure.",
+      "rationale": "Question tests existence assertion in audit evidence procedures (AU-C 501), not privacy/security frameworks covered in ISC/II/A tasks.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -6908,7 +6909,7 @@
       "question_id": 4913,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests the definition of reasonable assurance under AU-C 200, which is AUD content, not IT infrastructure.",
+      "rationale": "Question tests definition of reasonable assurance in auditing (AU-C 200), not privacy/security frameworks covered in ISC/II/A tasks.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -6918,7 +6919,7 @@
       "question_id": 4919,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests general audit methodology for evaluating control deviations under AU-C 315, not IT-specific change management design.",
+      "rationale": "Question tests control deviation evaluation (AU-C 315), not privacy/security frameworks covered in ISC/II/A tasks.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -6926,53 +6927,53 @@
     },
     {
       "question_id": 4921,
-      "pin_ref": "ISC/I/A/4/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of risks associated with omitting post-implementation reviews in change management processes per COBIT BAI06.",
+      "rationale": "Question tests change management post-implementation review concepts, not COBIT governance principles recall as specified in ISC/II/A/0/8.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 4922,
-      "pin_ref": "ISC/I/A/4/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of change management's role within the ITGC framework per COBIT BAI06 and AU-C 315.",
+      "rationale": "Question tests change management as ITGC operational category, not COBIT governance principles recall as specified in ISC/II/A/0/8.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 4923,
-      "pin_ref": "ISC/I/A/4/4",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of phased conversion approach advantages when implementing new systems per COBIT BAI06 and ITIL practices.",
+      "rationale": "Question tests phased rollout deployment strategy, not privacy/security frameworks covered in ISC/II/A tasks.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 4924,
-      "pin_ref": "ISC/I/A/4/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests identification of risks associated with emergency change control weaknesses per COBIT BAI06 and ITIL standards.",
+      "rationale": "Question tests emergency change control weaknesses, not privacy/security frameworks covered in ISC/II/A tasks.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 4925,
-      "pin_ref": "ISC/I/A/4/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of critical documentation (rollback procedures) required in release management per ITIL practices.",
+      "rationale": "Question tests release management planning elements, not privacy/security frameworks covered in ISC/II/A tasks.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 4926,
@@ -8128,7 +8129,7 @@
       "question_id": 7800,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question addresses disaster recovery planning (BIA for DR), not incident response—no task covers DR planning.",
+      "rationale": "Question tests disaster recovery planning sequence (BIA before DR plan), which is not addressed by any task in ISC/II/B.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -8136,29 +8137,29 @@
     },
     {
       "question_id": 7801,
-      "pin_ref": "ISC/II/D/0/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests knowledge of regulatory notification timelines, which are steps/timelines commonly included in IR plans.",
+      "rationale": "Question tests GDPR breach notification requirements, which is not covered by any task in ISC/II/B.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 7802,
-      "pin_ref": "ISC/II/D/0/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests understanding of containment approaches (short-term vs. long-term), which are methods/steps in IR plans.",
+      "rationale": "Question tests incident response containment phase classification, which is not addressed by any task in ISC/II/B.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 7803,
       "pin_ref": null,
-      "confidence": "medium",
-      "rationale": "Tests forensic tool knowledge (write blocker) which is too narrow/specialized for the available IR task-specs.",
+      "confidence": "high",
+      "rationale": "Question tests forensic investigation tool identification (write blocker), which is not covered by any task in ISC/II/B.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -8168,7 +8169,7 @@
       "question_id": 7804,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question addresses disaster recovery testing strategies, not incident response—no task covers DR testing.",
+      "rationale": "Question tests evaluation of disaster recovery testing approaches, which is not addressed by any task in ISC/II/B.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 4,
@@ -8178,7 +8179,7 @@
       "question_id": 7805,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question addresses disaster recovery site infrastructure (warm site), not incident response—no task covers DR sites.",
+      "rationale": "Question tests disaster recovery site type classification, which is not covered by any task in ISC/II/B.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -8186,29 +8187,29 @@
     },
     {
       "question_id": 7806,
-      "pin_ref": "ISC/II/D/0/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests knowledge of cyber insurance notification requirements, which is essential to using insurance as incident mitigation.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 2,
-      "task_bloom": 1
-    },
-    {
-      "question_id": 7807,
-      "pin_ref": "ISC/II/D/0/3",
-      "confidence": "high",
-      "rationale": "Tests understanding of legal counsel's role in IR, which falls under roles/responsibilities commonly included in IR plans.",
+      "rationale": "Cyber insurance notification protocols are not covered by any ISC/II/B task; the task list focuses on threats, controls, and SOC 2 procedures, not insurance requirements.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
+    },
+    {
+      "question_id": 7807,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Legal counsel engagement and attorney-client privilege in incident response are not addressed by any task in ISC/II/B.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
     },
     {
       "question_id": 7808,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question addresses business impact analysis for disaster recovery planning, not incident response—no task covers DR planning.",
+      "rationale": "Business impact analysis and disaster recovery planning are not covered by the ISC/II/B task list, which focuses on threats, controls, and SOC 2 testing.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -8218,7 +8219,7 @@
       "question_id": 7809,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests disaster recovery concepts (failover mechanisms), not incident response to security incidents.",
+      "rationale": "Disaster recovery failover mechanisms are not addressed by any task in ISC/II/B.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -8226,29 +8227,29 @@
     },
     {
       "question_id": 7810,
-      "pin_ref": "ISC/II/D/0/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests IR team composition and roles, which are explicitly covered in task [3] contents (roles, responsibilities).",
+      "rationale": "Incident response team composition (legal, communications, HR roles) is not covered by any task in ISC/II/B.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 7811,
-      "pin_ref": "ISC/II/D/0/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests IR process phases (PICERL), which are part of IR plan steps/methods covered in task [3].",
+      "rationale": "PICERL incident response framework phases are not addressed by any task in ISC/II/B.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 7812,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests business impact analysis and disaster recovery planning (RTO/MTD), not incident response.",
+      "rationale": "RTO and MTD determination from BIA findings are disaster recovery concepts not covered by ISC/II/B tasks.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
@@ -8258,7 +8259,7 @@
       "question_id": 7813,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests disaster recovery site types (cold/warm/hot sites), not incident response to security incidents.",
+      "rationale": "Disaster recovery site types (cold site) are not addressed by any task in ISC/II/B.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -8268,7 +8269,7 @@
       "question_id": 7814,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests regulatory breach notification requirements across frameworks, not IR plan contents or insurance mitigation.",
+      "rationale": "HIPAA and GDPR breach notification timelines are regulatory compliance topics not covered by ISC/II/B tasks.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 4,
@@ -8277,8 +8278,8 @@
     {
       "question_id": 7815,
       "pin_ref": null,
-      "confidence": "medium",
-      "rationale": "Question tests IR containment strategy execution and decision-making criteria, not plan documentation or compliance testing.",
+      "confidence": "high",
+      "rationale": "Incident containment strategy decision-making during an active attack is not covered by ISC/II/B tasks, which focus on control determination rather than IR operational decisions.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
@@ -8288,7 +8289,7 @@
       "question_id": 7816,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests digital forensics technical knowledge (order of volatility), not IR plans or insurance.",
+      "rationale": "Digital forensics evidence volatility is not covered by any task in this group; the tasks focus on threats, controls, and SOC procedures, not forensic evidence handling.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -8296,19 +8297,19 @@
     },
     {
       "question_id": 7817,
-      "pin_ref": "ISC/II/D/0/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests IR playbook selection, which is part of IR plan methods/steps covered in task [3].",
+      "rationale": "Incident response playbook selection for insider threats is not covered by any task in this group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 7818,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests business impact analysis methodology for disaster recovery planning, not incident response.",
+      "rationale": "Business impact analysis (BIA) and holistic impact assessment are not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 4,
@@ -8318,7 +8319,7 @@
       "question_id": 7819,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests disaster recovery testing procedures, which are not covered by any of the four incident response tasks.",
+      "rationale": "Disaster recovery testing methods (parallel test vs. full interruption) are not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
@@ -8326,19 +8327,19 @@
     },
     {
       "question_id": 7820,
-      "pin_ref": "ISC/II/D/0/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question directly tests knowledge of what an incident response plan contains (roles, responsibilities, communication, escalation), matching task 3's focus on summarizing IR plan contents.",
+      "rationale": "The purpose and components of an incident response plan are not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 7821,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests SEC regulatory disclosure requirements for cybersecurity incidents, which are not covered by any of the four incident response tasks.",
+      "rationale": "SEC cybersecurity disclosure requirements (Form 8-K timeline) are not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -8348,7 +8349,7 @@
       "question_id": 7822,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests documentation practices during active incident response execution, not IR plan contents or testing procedures covered by the available tasks.",
+      "rationale": "Maintaining contemporaneous documentation during incident response is not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
@@ -8358,7 +8359,7 @@
       "question_id": 7823,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests HIPAA breach notification regulatory requirements, which are not covered by any of the four incident response tasks.",
+      "rationale": "HIPAA breach notification requirements are not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -8368,7 +8369,7 @@
       "question_id": 7824,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests disaster recovery strategy evaluation against BIA requirements (RTO/RPO), which is outside the scope of the four incident response tasks.",
+      "rationale": "Evaluating RTO/RPO gaps between BIA requirements and DR strategy capability is not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 4,
@@ -8378,7 +8379,7 @@
       "question_id": 7825,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests forensic malware analysis procedures during incident response, which are not covered by any of the four available tasks.",
+      "rationale": "Isolated malware analysis procedures are not covered by any task in this group; task [11]'s isolation focus is on remote access protection, not forensic analysis.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
@@ -8388,7 +8389,7 @@
       "question_id": 7826,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests multi-jurisdiction breach notification compliance strategy, which is not covered by any of the four incident response tasks.",
+      "rationale": "Breach notification deadlines and multi-jurisdictional compliance are not addressed by any task in ISC/II/B.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
@@ -8398,7 +8399,7 @@
       "question_id": 7827,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests disaster recovery test type identification, which is outside the scope of the four incident response tasks.",
+      "rationale": "Disaster recovery testing methodologies are not covered by any task in ISC/II/B.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -8406,19 +8407,19 @@
     },
     {
       "question_id": 7828,
-      "pin_ref": null,
-      "confidence": "high",
-      "rationale": "Question tests SIEM system detection/alerting role, which is not covered by the four tasks focused on event/incident differences, insurance, IR plan contents, and IR testing.",
+      "pin_ref": "ISC/II/B/2/6",
+      "confidence": "medium",
+      "rationale": "SIEM as a detective control using log analysis fits task [16]'s scope of identifying detective controls, though the question tests basic understanding rather than scenario-based determination.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": null
+      "task_bloom": 2
     },
     {
       "question_id": 7829,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "This question tests business impact analysis (BIA) prioritization in disaster recovery planning, not incident response procedures or plan contents.",
+      "rationale": "Business impact analysis and recovery prioritization are not addressed by any task in ISC/II/B.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
@@ -8428,7 +8429,7 @@
       "question_id": 7890,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "This question tests the sequencing of disaster recovery planning activities (BIA before DR site selection), not incident response.",
+      "rationale": "Business impact analysis sequencing and disaster recovery planning are not covered by any task in ISC/II/B.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
@@ -8438,7 +8439,7 @@
       "question_id": 7891,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "This question tests forensic evidence preservation procedures (write blockers), which is not covered by any of the four incident response tasks.",
+      "rationale": "Digital forensics evidence preservation techniques are not addressed by any task in ISC/II/B.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -8448,7 +8449,7 @@
       "question_id": 7892,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "This question tests GDPR regulatory notification requirements, not incident response plan contents or testing procedures.",
+      "rationale": "GDPR breach notification timelines and regulatory compliance are not covered by any task in ISC/II/B.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
@@ -8458,7 +8459,7 @@
       "question_id": 7893,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "This question tests disaster recovery site classification (warm site), not incident response plan contents or procedures.",
+      "rationale": "Disaster recovery site classifications and infrastructure are not addressed by any task in ISC/II/B.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -8468,7 +8469,7 @@
       "question_id": 7894,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "This question tests disaster recovery testing methodology (parallel test), not incident response plan testing or contents.",
+      "rationale": "Disaster recovery testing types and methodologies are not covered by any task in ISC/II/B.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -8477,8 +8478,8 @@
     {
       "question_id": 7896,
       "pin_ref": null,
-      "confidence": "medium",
-      "rationale": "This question tests incident response strategy (attorney-client privilege) rather than summarizing IRP documentation contents, though legal roles might appear in IRPs.",
+      "confidence": "high",
+      "rationale": "Incident response legal procedures and attorney-client privilege are not addressed by any task in ISC/II/B.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -8488,7 +8489,7 @@
       "question_id": 7897,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "This question tests BIA-driven disaster recovery investment prioritization (RTO vs MTD analysis), not incident response procedures.",
+      "rationale": "BIA-driven DR planning and RTO/MTD analysis are not addressed by any task in this group, which focuses on threats, attacks, and preventive controls.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 4,
@@ -8496,19 +8497,19 @@
     },
     {
       "question_id": 7898,
-      "pin_ref": "ISC/II/D/0/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "This question tests when to notify cyber insurance carriers after a ransomware attack, directly addressing the use of insurance as a breach mitigation strategy.",
+      "rationale": "Cyber insurance notification timing is not covered by any task in this group, which addresses threat identification and technical security controls.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 7899,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "This question tests disaster recovery testing methodology (full interruption test), not incident response plan testing or contents.",
+      "rationale": "DR testing methodologies (full interruption, parallel, tabletop) are not addressed by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
@@ -8518,7 +8519,7 @@
       "question_id": 7900,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests HIPAA breach notification requirements, not incident response plan contents or insurance mitigation.",
+      "rationale": "HIPAA breach notification requirements are regulatory compliance topics not covered by any task in this threat-focused group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
@@ -8526,29 +8527,29 @@
     },
     {
       "question_id": 7901,
-      "pin_ref": "ISC/II/D/0/3",
-      "confidence": "medium",
-      "rationale": "Tests understanding of containment methods/steps (short-term vs long-term) that would be documented in IR plans.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Incident response containment phases are not addressed by any task in this group, which focuses on threat classification and security controls.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 7902,
-      "pin_ref": "ISC/II/D/0/3",
-      "confidence": "medium",
-      "rationale": "Tests IR methodology sequencing (containment before eradication), which represents methods/steps in IR plans.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "IR phase sequencing and the relationship between containment and eradication are not covered by any task in this group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 7903,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests disaster recovery failover concept, not incident response planning or execution.",
+      "rationale": "Failover concepts and DR site operations are not addressed by any task in this threat and control-focused group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -8556,29 +8557,29 @@
     },
     {
       "question_id": 7904,
-      "pin_ref": "ISC/II/D/0/3",
-      "confidence": "medium",
-      "rationale": "Tests understanding of IR phases/methods (identification) that would be included in IR plan procedures.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "SIEM correlation and IR phase identification are not covered by tasks that focus on threat types and preventive controls rather than IR methodology.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 7905,
-      "pin_ref": "ISC/II/D/0/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Directly tests knowledge of playbooks as IR plan contents, which are incident-specific response procedures.",
+      "rationale": "IR playbook selection for BEC scenarios involves incident response procedures not addressed by tasks focused on identifying attack types at a definitional level.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 7906,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests disaster recovery site types, not incident response planning or execution.",
+      "rationale": "DR site classifications (hot/warm/cold) are not addressed by any task in this threat and control-focused group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -8588,7 +8589,7 @@
       "question_id": 7907,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests SEC regulatory disclosure requirements, not incident response plan contents or insurance.",
+      "rationale": "SEC Form 8-K disclosure requirements are regulatory/legal compliance, not covered by any task in this ISC/II/B group focused on technical threats and controls.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -8596,19 +8597,19 @@
     },
     {
       "question_id": 7908,
-      "pin_ref": "ISC/II/D/0/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Directly tests IR team roles/responsibilities, which are core IR plan contents per NIST SP 800-61.",
+      "rationale": "Incident response team composition per NIST SP 800-61 is organizational structure/governance, not addressed by tasks focused on threats, controls, and SOC assessments.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 7909,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests business impact analysis for disaster recovery budget allocation, not incident response.",
+      "rationale": "BIA-driven disaster recovery budget allocation is business continuity planning, not covered by tasks focused on cybersecurity threats and protective controls.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 4,
@@ -8618,7 +8619,7 @@
       "question_id": 7910,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests disaster recovery testing types, not incident response procedures.",
+      "rationale": "Disaster recovery test types (simulation vs. full interruption vs. tabletop) are business continuity methodology, not addressed by tasks in this threat/control-focused group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -8628,7 +8629,7 @@
       "question_id": 7911,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests disaster recovery planning metrics (MTD), not incident response.",
+      "rationale": "Maximum Tolerable Downtime (MTD) definition is a disaster recovery planning metric, not covered by tasks focused on cybersecurity threats and controls.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -8636,39 +8637,39 @@
     },
     {
       "question_id": 7912,
-      "pin_ref": "ISC/II/D/0/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests knowledge of containment procedures as part of incident response plan steps.",
+      "rationale": "Incident response procedure sequence (containment before eradication) per NIST SP 800-61 is IR methodology, not determining controls to mitigate attacks (task 2/6).",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 7913,
-      "pin_ref": "ISC/II/D/0/3",
-      "confidence": "medium",
-      "rationale": "Question tests forensic evidence collection procedures commonly included in incident response plans.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Digital forensics evidence collection order (volatility-based) is forensic methodology, not addressed by any task in this threat/control-focused group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 7914,
-      "pin_ref": "ISC/II/D/0/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question directly tests the definition of a security incident versus other events.",
+      "rationale": "Security incident definition (CIA compromise) is a foundational concept not explicitly covered by tasks focused on threat types, controls, and SOC procedures.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 7915,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests disaster recovery planning (RTO/BIA), not incident response.",
+      "rationale": "RTO assignment based on BIA financial impact is disaster recovery prioritization, not covered by tasks focused on cybersecurity threats and controls.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
@@ -8676,29 +8677,29 @@
     },
     {
       "question_id": 7916,
-      "pin_ref": "ISC/II/D/0/3",
-      "confidence": "medium",
-      "rationale": "Question tests regulatory notification timelines commonly included in incident response plans.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Multi-regulatory breach notification timelines (GDPR/SEC/HIPAA) are legal/regulatory compliance, not addressed by tasks focused on technical threats and controls.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 7917,
-      "pin_ref": "ISC/II/D/0/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests knowledge of incident response lifecycle phases and recovery steps.",
+      "rationale": "Incident response recovery phase procedures are not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 7918,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests disaster recovery plan testing deficiencies, not incident response.",
+      "rationale": "Disaster recovery plan testing requirements are not addressed by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 4,
@@ -8706,29 +8707,29 @@
     },
     {
       "question_id": 7919,
-      "pin_ref": "ISC/II/D/0/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests post-incident review timing as part of incident response plan procedures.",
+      "rationale": "Post-incident review timing and procedures are not covered by any task in this group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 12600,
-      "pin_ref": "ISC/I/A/4/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Task explicitly lists rollback procedures as documentation used in change management; question tests which documentation is critical before executing a change.",
+      "rationale": "Tests application of change management rollback planning (COBIT BAI06 operational process), not recall of COBIT governance system principles.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 12601,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "No task addresses Change Advisory Board composition or stakeholder representation in change governance.",
+      "rationale": "Tests understanding of CAB composition in change management (operational), not recall of COBIT governance principles from Task 8.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -8737,8 +8738,8 @@
     {
       "question_id": 12602,
       "pin_ref": null,
-      "confidence": "medium",
-      "rationale": "No task addresses analyzing change backlog metrics or implementation capacity constraints as a risk indicator.",
+      "confidence": "high",
+      "rationale": "Tests analysis of change backlog metrics, not recall of any framework listed in the available tasks.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
@@ -8747,8 +8748,8 @@
     {
       "question_id": 12603,
       "pin_ref": null,
-      "confidence": "medium",
-      "rationale": "No task addresses change management performance metrics or KPIs like mean time to implement.",
+      "confidence": "high",
+      "rationale": "Tests recall of a change management metric definition, but this operational metric is not covered by Task 8's governance principles scope.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -8756,219 +8757,219 @@
     },
     {
       "question_id": 12604,
-      "pin_ref": "ISC/I/A/4/7",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Task covers testing controls to maintain configuration parameters; question asks auditor to detect configuration control failure via CMDB discrepancy.",
+      "rationale": "Tests understanding of CMDB discrepancies in configuration management (NIST SP 800-128), which is not covered by any available task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 12605,
-      "pin_ref": "ISC/I/A/4/5",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Task explicitly addresses patch management including monitoring phase; question tests identification of monitoring control failure.",
+      "rationale": "Tests understanding of patch management monitoring (NIST SP 800-40), which is not covered by any available task.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 12606,
-      "pin_ref": "ISC/I/A/4/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Task explicitly lists version control as a tool in change management; question tests understanding of version control's audit benefit.",
+      "rationale": "Tests understanding of version control audit capabilities in change management, not covered by any available task.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 12607,
-      "pin_ref": "ISC/I/A/4/1",
-      "confidence": "medium",
-      "rationale": "Task covers purpose of change management practices; maintenance windows are a core practice for minimizing disruption during changes.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests recall of maintenance window purpose (COBIT BAI06 operational practice), not COBIT governance principles from Task 8.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 12608,
-      "pin_ref": "ISC/I/A/4/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Task explicitly lists types of tests including regression testing; question evaluates testing control failure and recommends regression testing for shared components.",
+      "rationale": "Tests analysis and recommendation for regression testing failures, not recall of any framework from available tasks.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 12609,
-      "pin_ref": "ISC/I/A/4/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Task explicitly lists acceptance testing as a type of test performed; question tests understanding of UAT's purpose in validating business requirements.",
+      "rationale": "Tests understanding of UAT purpose in change management (COBIT BAI07), not governance principles from Task 8.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 12610,
-      "pin_ref": "ISC/I/A/4/6",
-      "confidence": "medium",
-      "rationale": "Tests application of change classification criteria (standard vs emergency), which falls under testing change control policies including acceptance criteria and authorization.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests operational change management classification (COBIT BAI06.01), not covered by high-level governance principles in task 8.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 12611,
-      "pin_ref": "ISC/I/A/4/6",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Evaluates proper invocation of emergency change process during a freeze, directly testing change control policies for emergency situations.",
+      "rationale": "Tests change freeze exception decision-making, operational process detail not covered by any provided task.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 12612,
-      "pin_ref": "ISC/I/A/4/2",
-      "confidence": "medium",
-      "rationale": "Asks for definition of configuration item, which relates to documentation used in change management including system component inventory mentioned in this task.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Asks for definition of configuration item from NIST SP 800-128; task 6 covers SP 800-53, not configuration management.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 12613,
-      "pin_ref": "ISC/I/A/4/6",
-      "confidence": "medium",
-      "rationale": "Tests whether impact analysis should drive expanded testing scope, which falls under testing design of change control policies including testing requirements.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests application of impact analysis in change management, operational detail beyond task 8's governance principles scope.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 12614,
-      "pin_ref": "ISC/I/A/4/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Directly asks for the purpose of risk assessment in change approval, which explicitly fits explaining change management processes including identification of associated risks.",
+      "rationale": "Tests understanding of risk assessment purpose in change approval, operational process not covered by task 8.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 12615,
-      "pin_ref": "ISC/I/A/4/6",
-      "confidence": "medium",
-      "rationale": "Requires evaluating whether emergency change process is being abused and recommending corrective action, which is testing change control policy effectiveness.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests analysis of emergency change trends and audit response, operational detail beyond any provided task.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 12616,
-      "pin_ref": "ISC/I/A/4/6",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Identifies violation of environment separation and access restriction controls, which are explicitly mentioned in testing change control policies.",
+      "rationale": "Tests understanding of environment separation controls, operational ITGC detail not covered by governance principles in task 8.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 12617,
-      "pin_ref": "ISC/I/A/4/6",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Tests understanding that deviations from standard change templates require reclassification and additional authorization, core elements of change control policies.",
+      "rationale": "Tests application of standard change template rules, operational change management detail not in scope of any task.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 12618,
-      "pin_ref": "ISC/I/A/4/1",
-      "confidence": "medium",
-      "rationale": "Tests understanding of when SDLC outputs must enter formal change management process, which relates to explaining change management processes and practices.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests understanding of SDLC-to-change-management handoff, operational process integration not covered by any task.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 12619,
-      "pin_ref": "ISC/I/A/4/6",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Auditor must verify whether automated changes follow proper authorization framework, which is testing design and implementation of change control policies.",
+      "rationale": "Tests audit evaluation of automated changes, operational control detail beyond task 8's governance principles.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 12620,
-      "pin_ref": "ISC/I/A/4/6",
-      "confidence": "medium",
-      "rationale": "Question tests understanding of access restrictions in change control policies, specifically that emergency access should be revoked after resolution.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests application of COBIT operational access controls (DSS06.03), not recall of governance system principles from task 8.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 12621,
-      "pin_ref": "ISC/I/A/4/1",
-      "confidence": "low",
-      "rationale": "Question requires analyzing change scheduling dependencies, which falls under general change management practices though not explicitly listed in tasks.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests L3 application of COBIT change management scheduling practices, not L1 recall of governance principles.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 12623,
-      "pin_ref": "ISC/I/A/4/1",
-      "confidence": "low",
-      "rationale": "Question tests understanding of post-implementation review requirements, which is a change management practice though not explicitly mentioned in tasks.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests L3 evaluation of post-implementation review requirements, not L1 recall of COBIT governance principles.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 12624,
-      "pin_ref": "ISC/I/A/4/5",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question directly tests patch prioritization based on risk assessment, which is explicitly listed in the patch management task.",
+      "rationale": "Tests NIST SP 800-40 patch management prioritization, which is not covered in any available task-spec.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 12625,
-      "pin_ref": "ISC/I/A/4/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests identification of risks when change management scope is limited, directly matching the task's focus on identifying associated risks.",
+      "rationale": "Tests L2 application of change management scope concepts, not L1 recall of governance principles.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 12626,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests ITIL service desk ticket classification (RICE framework), which is not covered by any infrastructure or change management task.",
+      "rationale": "Tests ITIL/RICE framework classification, which is not covered in any available task-spec.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -8976,33 +8977,33 @@
     },
     {
       "question_id": 12627,
-      "pin_ref": "ISC/I/A/4/5",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests patch testing procedures before deployment, which is explicitly included in the patch management task examples.",
+      "rationale": "Tests NIST SP 800-40 patch testing procedures, which is not covered in any available task-spec.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 12628,
-      "pin_ref": "ISC/I/A/4/6",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests detection of segregation of duties violation in change control, which is explicitly listed as an example in this task.",
+      "rationale": "Tests L3 application of segregation of duties in change management, not L1 recall of governance principles.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 12629,
-      "pin_ref": "ISC/I/A/4/1",
-      "confidence": "medium",
-      "rationale": "Question tests understanding of change management metrics, which relates to explaining change management processes and practices.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests recall of a specific COBIT metric definition, not recall of governance system principles from task 8.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 12754,
@@ -11606,29 +11607,29 @@
     },
     {
       "question_id": 13529,
-      "pin_ref": "ISC/I/A/4/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests knowledge of change management documentation (FSC), which is explicitly covered by this task's focus on documentation types.",
+      "rationale": "Question tests ITIL/ITSM change management concepts not covered in any task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13530,
-      "pin_ref": "ISC/I/A/4/6",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests detecting configuration drift from unauthorized changes bypassing change management, which aligns with testing change control policy implementation.",
+      "rationale": "Question tests COBIT DSS domain application, not governance principles in Task 8.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13531,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question requires evaluating and recommending integration of parallel change governance processes (L4 Evaluation), which no available task addresses.",
+      "rationale": "Question tests change management process integration, not framework component recall.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 4,
@@ -11636,29 +11637,29 @@
     },
     {
       "question_id": 13532,
-      "pin_ref": "ISC/I/A/4/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of ITIL change models as part of change management processes and practices.",
+      "rationale": "Question tests ITIL change model terminology; none of the 8 available tasks cover ITIL change management.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13533,
-      "pin_ref": "ISC/I/A/4/6",
-      "confidence": "medium",
-      "rationale": "Question tests understanding that rollback testing is a required change control policy element (testing requirement falls under change control policies).",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests NIST SP 800-128 and ITIL rollback plan testing; none of the 8 available tasks cover change management processes.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13534,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question requires evaluating escalation scenarios and determining best governance action (L4 Evaluation), which no available task addresses.",
+      "rationale": "Question tests COBIT APO09 change governance escalation; task 8 covers COBIT governance principles, not APO09 operational processes.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 4,
@@ -11666,39 +11667,39 @@
     },
     {
       "question_id": 13535,
-      "pin_ref": "ISC/I/A/4/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests applying ITIL RICE framework to classify requests, which is part of understanding change management processes and practices.",
+      "rationale": "Question tests ITIL RICE framework classification; none of the 8 available tasks cover ITIL service management.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13536,
-      "pin_ref": "ISC/I/A/4/8",
-      "confidence": "medium",
-      "rationale": "Question analyzes a change implementation failure to identify which documented process step was inadequately performed, aligning with walkthrough and comparison task.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests COBIT BAI06 change implementation with training/communication; none of the 8 available tasks cover change management processes.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13537,
-      "pin_ref": "ISC/I/A/4/6",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question identifies control deficiency when changes bypass required testing environments, which aligns with testing change control policies including testing requirements.",
+      "rationale": "Question tests ITIL change authorization and SDLC testing controls; none of the 8 available tasks cover change management.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13538,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question requires evaluating competing governance approaches and recommending risk-based solution (L4 Evaluation), which no available task addresses.",
+      "rationale": "Question tests COBIT APO09 risk-based approach to CI/CD controls; task 8 covers governance principles, not operational change processes.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 4,
@@ -11706,39 +11707,39 @@
     },
     {
       "question_id": 13539,
-      "pin_ref": "ISC/I/A/4/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests recalling the definition and role of change owner within change management processes and practices.",
+      "rationale": "Question tests ITIL change owner role definition; none of the 8 available tasks cover ITIL change management terminology.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13540,
-      "pin_ref": "ISC/I/A/4/1",
-      "confidence": "medium",
-      "rationale": "Question tests understanding of risks created by deferred change implementation, which aligns with explaining purpose of change management and identifying associated risks.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests COBIT DSS05 security services risk from deferred patches; task 8 covers governance principles, not DSS05 operational domain.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13541,
-      "pin_ref": "ISC/I/A/4/6",
-      "confidence": "medium",
-      "rationale": "Question requires analyzing a failed migration to identify deficient validation testing control within change management, which aligns with testing design and implementation of change control policies including testing requirements.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests COBIT BAI06 data migration validation controls; none of the 8 available tasks cover change management processes.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13542,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question focuses on post-implementation review and change closure procedures, which are not described in any of the available task-specs for this group.",
+      "rationale": "Question tests ITIL change management post-implementation review requirements, which is not covered by any task in this L1 framework recall list.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
@@ -11746,59 +11747,59 @@
     },
     {
       "question_id": 13543,
-      "pin_ref": "ISC/I/A/4/4",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question directly tests knowledge of system conversion approaches (parallel testing vs pilot testing), which is exactly what this task describes.",
+      "rationale": "Question tests ITIL/SDLC deployment testing strategies (parallel vs pilot), which is not covered by any task in this framework recall list.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13544,
-      "pin_ref": "ISC/I/A/4/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of change management philosophy and purpose as reflected in ITIL terminology evolution from control to enablement.",
+      "rationale": "Question tests ITIL 4 terminology and philosophy regarding change enablement, which is not covered by any task in this framework recall list.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13545,
-      "pin_ref": "ISC/I/A/4/2",
-      "confidence": "medium",
-      "rationale": "Question tests understanding of required change management documentation elements for audit trail, which aligns with explaining documentation used in change management.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question applies COBIT MEA02 to change management audit trail scenario; task 8 covers only high-level COBIT governance principles, not specific control application.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13546,
-      "pin_ref": "ISC/I/A/4/1",
-      "confidence": "medium",
-      "rationale": "Question tests understanding of change coordination and conflict identification as a core purpose of change management processes.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests ITIL change collision analysis concept, which is not covered by any task in this framework recall list.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13547,
-      "pin_ref": "ISC/I/A/4/6",
-      "confidence": "medium",
-      "rationale": "Question requires evaluating whether standard change model definitions are appropriately designed to ensure proper oversight, which aligns with testing design of change control policies.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question evaluates change management program maturity and standard change model misuse, which is not covered by any task in this framework recall list.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13548,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question addresses SDLC requirements documentation and stakeholder sign-off, which are not covered in the IT infrastructure and change management tasks for this group.",
+      "rationale": "Question tests SDLC requirements phase controls and documentation requirements, which is not covered by any task in this framework recall list.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
@@ -11806,49 +11807,49 @@
     },
     {
       "question_id": 13549,
-      "pin_ref": "ISC/I/A/4/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests application of change risk categorization principles based on potential impact, which is part of identifying associated risks in change management.",
+      "rationale": "Question tests ITIL change risk categorization based on business impact, which is not covered by any task in this framework recall list.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13550,
-      "pin_ref": "ISC/I/A/4/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of the purpose of post-implementation review, a key change management practice covered by this task's scope of explaining change management processes.",
+      "rationale": "Question tests post-implementation review purpose in change management, which is not covered by any task in this framework recall list.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13551,
-      "pin_ref": "ISC/I/A/4/3",
-      "confidence": "medium",
-      "rationale": "Question asks to identify smoke testing as a post-deployment validation type, which falls under explaining types of tests performed in different environments.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests SDLC smoke testing concept in deployment validation, which is not covered by any task in this framework recall list.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13552,
-      "pin_ref": "ISC/I/A/4/6",
-      "confidence": "medium",
-      "rationale": "Question requires analyzing a scenario to identify which change control policy (deployment artifact immutability) was violated, aligning with testing design of change control policies.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests application of change management controls (deployment artifact immutability), not recall of any framework covered in ISC/II/A tasks.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13553,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests knowledge of SDLC planning phase deliverables, which is not covered by any task in this group focused on infrastructure, ERP, continuity, and change management.",
+      "rationale": "Question tests knowledge of SDLC phase deliverables, which is not covered by any ISC/II/A task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -11858,7 +11859,7 @@
       "question_id": 13554,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question requires calculating change management success rate metrics, which is not covered by any task in this group.",
+      "rationale": "Question tests calculation of change management metrics, not covered by any ISC/II/A task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -11866,19 +11867,19 @@
     },
     {
       "question_id": 13555,
-      "pin_ref": "ISC/I/A/4/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question asks to explain why development, testing, and production environments must be separated, directly aligned with task covering explanation of different environments used.",
+      "rationale": "Question tests understanding of environment separation controls, not covered by any ISC/II/A task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13556,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question requires evaluating integration strategies for two different change management frameworks, which is not covered by any task and exceeds the L3 maximum task level.",
+      "rationale": "Question requires synthesis of change management approaches (L4), not recall of COBIT governance principles (task 8 is L1).",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 4,
@@ -11886,23 +11887,23 @@
     },
     {
       "question_id": 13557,
-      "pin_ref": "ISC/I/A/4/5",
-      "confidence": "medium",
-      "rationale": "Question tests application of BIA classifications to prioritize patch deployment, aligning with task covering patch management including prioritizing practices.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests application of BIA classifications to patch prioritization, not covered by any ISC/II/A task.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13558,
-      "pin_ref": "ISC/I/A/1/3",
-      "confidence": "medium",
-      "rationale": "Question requires analyzing how to address SaaS vendor change management risk through contractual provisions, relating to summarizing cloud service provider roles and responsibilities.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests evaluation of SaaS change management controls, not covered by any ISC/II/A task.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13589,
@@ -12206,139 +12207,139 @@
     },
     {
       "question_id": 13619,
-      "pin_ref": "ISC/I/A/4/2",
-      "confidence": "medium",
-      "rationale": "Question requires analyzing which change management tool supports investigation of past modifications, with version control explicitly listed in this task's scope of tools to explain.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests application of version control for change investigation, not covered by any ISC/II/A task.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13620,
-      "pin_ref": "ISC/I/A/4/3",
-      "confidence": "medium",
-      "rationale": "Question tests understanding that acceptance testing (UAT) is the critical gate before deployment, which aligns with explaining types of tests performed in SDLC.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests knowledge of SDLC testing phase gates (UAT), not covered by any ISC/II/A task.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13621,
-      "pin_ref": "ISC/I/A/3/2",
-      "confidence": "medium",
-      "rationale": "Question tests application of mirroring/replication concepts by comparing active-passive to active-active failover architectures for availability objectives.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests understanding of failover architecture options, not covered by any ISC/II/A task.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13622,
-      "pin_ref": "ISC/I/A/4/5",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question directly tests patch management prioritization based on vulnerability severity and active exploits, which is explicitly mentioned in the task.",
+      "rationale": "Patch management and vulnerability prioritization (NIST SP 800-40) are not covered by any task in this group.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13623,
-      "pin_ref": "ISC/I/A/3/3",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of BIA outputs by identifying that quantifying financial impact establishes recovery priorities, which is a key step in business impact analysis.",
+      "rationale": "Business Impact Analysis and disaster recovery planning (NIST SP 800-34) are not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13624,
-      "pin_ref": "ISC/I/A/4/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of change management approval processes and the segregation of duties principle that requestors cannot approve their own changes.",
+      "rationale": "Change management operational controls (COBIT BAI06) are not covered; task 8 addresses governance principles only.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13625,
-      "pin_ref": "ISC/I/A/4/8",
-      "confidence": "medium",
-      "rationale": "Question requires analyzing change log data to compare actual deployment timing against documented maintenance window policy and identify control deviations.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Change management control deviations (COBIT BAI06) are not covered; task 8 addresses governance principles only.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13626,
-      "pin_ref": "ISC/I/A/3/6",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests ability to detect a deficiency in DR design (single cloud provider creating common-mode failure risk) related to availability controls.",
+      "rationale": "Disaster recovery planning and provider risk (NIST SP 800-34) are not covered by any task in this group.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 3
+      "task_bloom": null
     },
     {
       "question_id": 13627,
-      "pin_ref": "ISC/I/A/4/1",
-      "confidence": "medium",
-      "rationale": "Question tests understanding of change management metrics by identifying that mean time to implement explains growing backlog when request volume is stable.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 2,
-      "task_bloom": 1
-    },
-    {
-      "question_id": 13628,
-      "pin_ref": "ISC/I/A/3/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of BCP scope by identifying that it must include people, facilities, and communications beyond just IT disaster recovery.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 2,
-      "task_bloom": 1
-    },
-    {
-      "question_id": 13629,
-      "pin_ref": "ISC/I/A/4/3",
-      "confidence": "medium",
-      "rationale": "Question tests understanding that all requirements need corresponding test cases by analyzing a requirements traceability matrix gap in SDLC testing.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 3,
-      "task_bloom": 1
-    },
-    {
-      "question_id": 13630,
-      "pin_ref": "ISC/I/A/4/6",
-      "confidence": "medium",
-      "rationale": "Testing change control policies including access restrictions and post-implementation review aligns with emergency access revocation and documentation requirements.",
+      "rationale": "Change management metrics and backlog analysis (COBIT BAI06) are not covered; task 8 addresses governance principles only.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
+    },
+    {
+      "question_id": 13628,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Business continuity planning beyond IT (NIST SP 800-34) is not covered by any task in this group.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 13629,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "SDLC testing and requirements traceability (COBIT BAI07) are not covered; task 8 addresses governance principles only.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": null
+    },
+    {
+      "question_id": 13630,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Emergency access controls and post-implementation review (COBIT DSS05) are not covered; task 8 addresses governance principles only.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
     },
     {
       "question_id": 13631,
-      "pin_ref": "ISC/I/A/4/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Task explicitly covers documentation used in change management including change requests, which is precisely what the question addresses.",
+      "rationale": "Change request documentation requirements (COBIT BAI06) are not covered; task 8 addresses governance principles only.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13632,
       "pin_ref": null,
-      "confidence": "low",
-      "rationale": "Question requires L3 analysis of change management metrics and root cause determination, but all change management tasks are L1-L2 and focus on explaining or testing, not analyzing effectiveness.",
+      "confidence": "high",
+      "rationale": "Tests L3 application of change management root-cause analysis; available tasks only cover L1 recall of framework principles.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
@@ -12346,29 +12347,29 @@
     },
     {
       "question_id": 13633,
-      "pin_ref": "ISC/I/A/4/6",
-      "confidence": "medium",
-      "rationale": "Detecting environment separation and access control deficiencies fits testing change control policies including separation of duties and access restrictions.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests L3 application of environment separation controls; available tasks only cover L1 recall of framework principles.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13634,
-      "pin_ref": "ISC/I/A/4/8",
-      "confidence": "medium",
-      "rationale": "Identifying gap between observed practice (scripts on laptop) and documented policy (centralized archive) aligns with comparing observed to documented procedures.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests L3 application of change management rollback controls; available tasks only cover L1 recall of framework principles.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13635,
       "pin_ref": null,
-      "confidence": "low",
-      "rationale": "Question requires L4 evaluation of DR testing strategy progression, but available tasks cover only L1-L3 activities (recalling, summarizing, detecting deficiencies in SOC 2 contexts).",
+      "confidence": "high",
+      "rationale": "Tests L4 evaluation of DR testing strategies; available tasks only cover L1 recall of framework principles.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 4,
@@ -12376,39 +12377,39 @@
     },
     {
       "question_id": 13636,
-      "pin_ref": "ISC/I/A/4/4",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Task covers explaining conversion approaches when moving to production, which directly describes the deployment phase purpose.",
+      "rationale": "Tests L1 recall of SDLC deployment phase purpose; available tasks do not cover SDLC phases.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13637,
-      "pin_ref": "ISC/I/A/3/6",
-      "confidence": "low",
-      "rationale": "Detecting deficiency in availability planning (missed system dependencies affecting recovery) loosely fits detecting deficiencies in availability controls, though not in SOC 2 context.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Tests L4 analysis of BIA system interdependencies; available tasks only cover L1 recall of framework principles.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 3
+      "task_bloom": null
     },
     {
       "question_id": 13638,
-      "pin_ref": "ISC/I/A/4/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Task explicitly lists rollback procedures as documentation used in change management, directly matching the question focus.",
+      "rationale": "Tests L1 recall of rollback plan purpose in change management; available tasks do not cover change management.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13639,
       "pin_ref": null,
-      "confidence": "low",
-      "rationale": "Question asks about SDLC maintenance phase definition; available tasks cover change management activities (patches, changes) but not SDLC phase taxonomy.",
+      "confidence": "high",
+      "rationale": "Tests L1 recall of SDLC maintenance phase activities; available tasks do not cover SDLC phases.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -12416,19 +12417,19 @@
     },
     {
       "question_id": 13640,
-      "pin_ref": "ISC/I/A/3/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests understanding of geographic replication objectives for disaster protection, directly matching the task on mirroring and replication.",
+      "rationale": "Tests L1 recall of geographic redundancy purpose; available tasks do not cover geographic redundancy or NIST SP 800-34.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13641,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question requires L4 evaluation of change management metrics to identify capacity constraints; no task addresses metrics analysis at this level.",
+      "rationale": "Tests L4 evaluation of change management metrics and backlog interpretation; available tasks only cover L1 recall of framework principles.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 4,
@@ -12436,29 +12437,29 @@
     },
     {
       "question_id": 13642,
-      "pin_ref": "ISC/I/A/4/7",
-      "confidence": "medium",
-      "rationale": "Question tests analysis of configuration discrepancies; task covers testing controls to monitor configuration parameters but at L2.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests analyzing COBIT DSS05.05 in an operational audit scenario (L3 Analysis), while all tasks test L1 recall of framework principles.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13643,
-      "pin_ref": "ISC/I/A/4/5",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests application of patch testing requirements by identifying which control was violated; directly maps to patch management task.",
+      "rationale": "Question tests applying NIST SP 800-40 patch management controls (L2 Application), while Task 6 only covers NIST SP 800-53 recall.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13644,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question requires L4 evaluation of DR plan readiness across multiple dimensions; highest DR task is L3 and specific to SOC 2.",
+      "rationale": "Question evaluates disaster recovery plan adequacy (L4 Evaluation) but no task covers DR/BCP frameworks.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 4,
@@ -12467,8 +12468,8 @@
     {
       "question_id": 13645,
       "pin_ref": null,
-      "confidence": "medium",
-      "rationale": "Question tests data migration validation controls during deployment; no task specifically addresses data migration validation procedures.",
+      "confidence": "high",
+      "rationale": "Question applies COBIT BAI07.05 data migration controls (L2 Application) but no task covers SDLC or specific BAI objectives.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -12476,23 +12477,23 @@
     },
     {
       "question_id": 13646,
-      "pin_ref": "ISC/I/A/4/8",
-      "confidence": "medium",
-      "rationale": "Question requires analyzing UAT procedure deviation (IT vs business users); task covers comparing observed vs documented procedures but at L2.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question analyzes UAT control failure using COBIT BAI07.03 (L3 Analysis) but Task 8 only covers high-level governance principles recall.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 13647,
-      "pin_ref": "ISC/I/A/1/1",
-      "confidence": "medium",
-      "rationale": "Question tests understanding of server clustering purpose; task covers explaining IT architecture components including server configurations.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests recalling clustering definition (L1) but no task covers high availability infrastructure concepts.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 13652,
@@ -14236,79 +14237,79 @@
     },
     {
       "question_id": 15681,
-      "pin_ref": "ISC/I/A/4/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question asks for baseline configuration definition; task explicitly lists baseline configuration as a type of documentation in change management.",
+      "rationale": "Question tests ITIL configuration management baseline concept, not covered by any task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 15682,
-      "pin_ref": "ISC/I/A/4/2",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests knowledge of back-out criteria terminology; task covers rollback procedures as a type of change management documentation.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 2,
-      "task_bloom": 1
-    },
-    {
-      "question_id": 15683,
-      "pin_ref": "ISC/I/A/4/1",
-      "confidence": "medium",
-      "rationale": "Question requires identifying risk of a firewall change and determining appropriate approval tier, which relates to change management risk identification, though question's analysis level exceeds task's understanding level.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 3,
-      "task_bloom": 1
-    },
-    {
-      "question_id": 15684,
-      "pin_ref": "ISC/I/A/4/6",
-      "confidence": "medium",
-      "rationale": "Question asks candidate to identify control failure when change approval gates are bypassed, which tests whether change control authorization policies are operating effectively.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 3,
-      "task_bloom": 2
-    },
-    {
-      "question_id": 15685,
-      "pin_ref": "ISC/I/A/4/1",
-      "confidence": "high",
-      "rationale": "Question tests understanding that post-deployment maintenance phase changes require formal change management controls, which directly relates to explaining change management purpose and practices.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 2,
-      "task_bloom": 1
-    },
-    {
-      "question_id": 15686,
-      "pin_ref": "ISC/I/A/3/5",
-      "confidence": "medium",
-      "rationale": "Question requires determining appropriate DR site configurations based on RTO requirements, which parallels task's focus on determining appropriateness of recovery technologies given recovery considerations.",
-      "pass": 1,
-      "bloom_overshoot": true,
-      "question_bloom": 4,
-      "task_bloom": 2
-    },
-    {
-      "question_id": 15687,
-      "pin_ref": "ISC/I/A/3/5",
-      "confidence": "high",
-      "rationale": "Question tests whether backup frequency meets stated RPO objective, which directly assesses appropriateness of backup configuration including recovery considerations.",
+      "rationale": "Question tests ITIL change management back-out criteria, not covered by any task.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 2
+      "task_bloom": null
+    },
+    {
+      "question_id": 15683,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests applying COBIT change management tier classifications at L3, but all tasks are L1 recall of framework overviews with no change management task.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": null
+    },
+    {
+      "question_id": 15684,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests identifying control failures in change lifecycle at L3, but no task covers change management operational controls.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 3,
+      "task_bloom": null
+    },
+    {
+      "question_id": 15685,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests understanding SDLC maintenance phase controls at L2, but task 8 covers only high-level COBIT governance principles at L1.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
+    },
+    {
+      "question_id": 15686,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests evaluating DR site strategies using NIST SP 800-34 at L4, but no task covers contingency planning (task 6 is SP 800-53, not 800-34).",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 4,
+      "task_bloom": null
+    },
+    {
+      "question_id": 15687,
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests applying RPO concepts from NIST SP 800-34 at L2, but no task covers contingency planning or backup requirements.",
+      "pass": 1,
+      "bloom_overshoot": false,
+      "question_bloom": 2,
+      "task_bloom": null
     },
     {
       "question_id": 15688,
       "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question requires analyzing system requirements (concurrent load vs consistency) and selecting appropriate HA clustering architectures (active-active vs active-passive); no task addresses HA architecture design patterns.",
+      "rationale": "Question tests analyzing high availability architectures using NIST SP 800-34 at L3, but no task covers system resilience or availability design.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 3,
@@ -14316,53 +14317,53 @@
     },
     {
       "question_id": 15689,
-      "pin_ref": "ISC/I/A/3/1",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question asks for primary purpose of BIA, which is a core component of understanding the scope and purpose of business continuity planning.",
+      "rationale": "Question tests recalling BIA purpose from NIST SP 800-34 at L1, but no task covers business continuity or contingency planning concepts.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 15690,
-      "pin_ref": "ISC/I/A/4/5",
+      "pin_ref": null,
       "confidence": "high",
-      "rationale": "Question tests application of patch prioritization criteria (severity and exposure), which directly relates to task's explicit mention of prioritizing as part of patch management.",
+      "rationale": "Question tests applying patch prioritization criteria from NIST SP 800-40 at L2, but no task covers patch management or vulnerability remediation.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 2,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 15691,
-      "pin_ref": "ISC/I/A/3/1",
-      "confidence": "medium",
-      "rationale": "Question requires evaluating DR solutions to identify that geographic redundancy addresses site-level failures, which relates to understanding key considerations for disaster recovery planning.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests evaluating geographic redundancy using NIST SP 800-34 at L4, but no task covers DR architecture or site-level failure protection.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 4,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 15692,
-      "pin_ref": "ISC/I/A/3/2",
-      "confidence": "medium",
-      "rationale": "Question asks what server clustering provides (automatic failover for high availability), which relates to understanding objectives of replication and redundancy technologies.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests recalling server clustering concepts from NIST SP 800-34 at L1, but no task covers high availability architecture or clustering.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
-      "task_bloom": 1
+      "task_bloom": null
     },
     {
       "question_id": 15693,
-      "pin_ref": "ISC/I/A/4/6",
-      "confidence": "medium",
-      "rationale": "Question evaluates whether change control policies (authorization and testing) were properly followed in a specific scenario.",
+      "pin_ref": null,
+      "confidence": "high",
+      "rationale": "Question tests analysis of change management control gaps and authorization procedures, but all 8 tasks are L1 recall tasks about framework overviews (HIPAA, GDPR, PCI DSS, NIST, CIS, COBIT governance principles) with no task addressing change management processes or operational controls.",
       "pass": 1,
-      "bloom_overshoot": true,
+      "bloom_overshoot": false,
       "question_bloom": 3,
-      "task_bloom": 2
+      "task_bloom": null
     },
     {
       "question_id": 15716,
