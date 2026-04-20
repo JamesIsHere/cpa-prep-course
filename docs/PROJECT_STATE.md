@@ -8,15 +8,16 @@
 >
 > **Freshness rule:** every claim in this file is either (a) a verifiable fact backed by a command or file, or (b) an opinion tagged with a date and the session that wrote it. No stale aspirations.
 
-Last updated: 2026-04-19 (late evening — full routing-first survey across all 6 sections complete. Section-pattern matrix established: AUD/ISC style vs REG/BAR/TCP style. REG/BAR discovered to be AICPA-2026-narrower-than-bank.)
+Last updated: 2026-04-20 (Phase 1E FAR pinning complete. 1414/1539 FAR questions pinned in DB at 91.9% match. Prior "97.3% FAR" memory was inflated — true figure 91.9%. Full 1539-question classifier run now on disk at docs/classify-far.json.)
 
 ---
 
 ## 1. Current state (facts, verifiable)
 
 **The bank:**
-- **8,612 questions** live in DB. Verified via `npm run migrate:status`.
+- **8,612 questions** live in DB. Verified via `npm run migrate:status` on 2026-04-20.
 - **Per-section counts:** AUD 1424 / FAR 1539 / REG 1397 / BAR 1509 / ISC 1452 / TCP 1291.
+- **Pin state (Phase 1E):** FAR fully pinned 2026-04-20 (1414/1539 = 91.9% matched; 125 at pin_ref = NULL as homeless/off-blueprint). AUD/ISC/BAR/TCP/REG have classifier suggestions in docs/classify-*.json but **not yet pinned to DB**. Verified via `scripts/qa/verify-pins.ts`.
 - **Composite quality score:** 9.3/10 avg. 0 critical, 0 moderate, 8612 acceptable. Verified via `npm run qa -- --output=json` on 2026-04-15.
 - **Correctness verification:** 8,469 of 8,612 (98.3%) have passed `verify-correctness.ts`. All verdicts **pass**; zero fail, zero review. 143 recent additions unverified. Verified via `docs/verified-ids.json`.
 - **Citation coverage:** 99.3% globally. Gaps: BAR 28, TCP 32, REG 3. AUD/FAR/ISC at 100%.
@@ -174,6 +175,8 @@ Key structural findings:
 | 2026-04-19 | REG iter-1 routing (Credits/AMT IV/D+IV/E → IV/F) | selective reclassify 185 qs + merge | 17 matched / 168 homeless; full-bank 41.2% → 42.4% (+17 matches, 0 regressions). Revealed AICPA-2026-narrower-than-bank pattern. |
 | 2026-04-19 | BAR iter-1 proof (Interfund Transactions III/C → III/B) | selective reclassify 67 qs + merge | 19 matched / 48 homeless; full-bank 58.8% → 59.8% (+16 matches, 3 regressions). Confirmed REG-style ceiling. |
 | 2026-04-19 | TCP iter-1 (Related Party IV/B → IV/C + Owner-Entity IV/C → II/A) | selective reclassify 140 qs + merge | 45 matched / 95 homeless; full-bank 52.9% → 55.0% (+28 net, 14 regressions). Mixed pattern. |
+| 2026-04-20 | FAR classifier coverage gap + completion | `scripts/qa/check-classifier-coverage.ts --section=far` → classify 539 missing IDs → merge | Found 539/1539 unclassified. Fresh run: 509 matched / 30 homeless. Merged total 1414/1539 = 91.9% (prior "97.3%" memory was wrong). |
+| 2026-04-20 | FAR pin migration applied | migration 01066 via `npm run migrate` + `scripts/qa/verify-pins.ts --section=far` | 1414 rows updated across 106 pin_refs; DB state matches classify-far.json exactly (1414 pinned, 125 null). |
 
 **Recently verified and trusted:**
 - Correctness of 8,469 questions via `verify-correctness.ts` (iterative verification campaign documented in `docs/verification-progress.md`)
