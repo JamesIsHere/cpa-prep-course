@@ -1,7 +1,7 @@
 // Print comma-separated question IDs for one or more topics in a section.
 // Usage: npx tsx scripts/qa/get-topic-ids.ts --section=aud --topics="Analytical Procedures,Specific Areas and Transactions"
 
-import { fetchAllQuestions } from "./db-client.ts";
+import { fetchAllQuestions } from "./db-client";
 
 const args = process.argv.slice(2);
 const section = args.find((a) => a.startsWith("--section="))?.split("=")[1];

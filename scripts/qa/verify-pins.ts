@@ -4,7 +4,7 @@
 import { readFileSync } from "fs";
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
-import { supabase } from "./db-client.ts";
+import { supabase } from "./db-client";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "../..");

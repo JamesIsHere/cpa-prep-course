@@ -7,7 +7,7 @@
 import { readFileSync, readdirSync, writeFileSync } from "fs";
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
-import { fetchAllQuestions } from "./db-client.ts";
+import { fetchAllQuestions } from "./db-client";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "../..");
