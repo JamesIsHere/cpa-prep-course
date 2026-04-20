@@ -40,6 +40,15 @@ describe("startQuizSchema", () => {
 		const result = startQuizSchema.safeParse({ sectionCode: "aud", count: 0 });
 		expect(result.success).toBe(false);
 	});
+
+	it("accepts optional pinnedOnly flag", () => {
+		const result = startQuizSchema.safeParse({
+			sectionCode: "far",
+			count: 10,
+			pinnedOnly: true,
+		});
+		expect(result.success).toBe(true);
+	});
 });
 
 describe("submitQuizSchema", () => {
@@ -87,6 +96,14 @@ describe("startExamSchema", () => {
 	it("rejects empty sectionCode", () => {
 		const result = startExamSchema.safeParse({ sectionCode: "" });
 		expect(result.success).toBe(false);
+	});
+
+	it("accepts optional pinnedOnly flag", () => {
+		const result = startExamSchema.safeParse({
+			sectionCode: "far",
+			pinnedOnly: true,
+		});
+		expect(result.success).toBe(true);
 	});
 });
 

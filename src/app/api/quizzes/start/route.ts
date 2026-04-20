@@ -31,7 +31,7 @@ export async function POST(request: Request) {
 		);
 	}
 
-	const { sectionCode, count, topics } = result.data;
+	const { sectionCode, count, topics, pinnedOnly } = result.data;
 
 	// Look up section
 	const { data: section } = await supabase
@@ -92,6 +92,7 @@ export async function POST(request: Request) {
 			p_count: count,
 			p_topics: topics && topics.length > 0 ? topics : null,
 			p_difficulties: difficulties,
+			p_pinned_only: pinnedOnly ?? false,
 		},
 	);
 

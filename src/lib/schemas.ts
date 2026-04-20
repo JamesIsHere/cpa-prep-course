@@ -4,6 +4,7 @@ export const startQuizSchema = z.object({
 	sectionCode: z.string().min(2, "Section code is required"),
 	count: z.number().int().min(1).max(30, "Maximum 30 questions per quiz"),
 	topics: z.array(z.string()).optional(),
+	pinnedOnly: z.boolean().optional(),
 });
 
 export const quizAnswerSchema = z.object({
@@ -32,6 +33,7 @@ export const explanationDwellSchema = z.object({
 
 export const startExamSchema = z.object({
 	sectionCode: z.string().min(2, "Section code is required"),
+	pinnedOnly: z.boolean().optional(),
 });
 
 export const activeSectionSchema = z.object({

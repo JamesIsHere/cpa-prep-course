@@ -31,7 +31,7 @@ export async function POST(request: Request) {
 		);
 	}
 
-	const { sectionCode } = validation.data;
+	const { sectionCode, pinnedOnly } = validation.data;
 
 	// Look up section
 	const { data: section } = await supabase
@@ -63,10 +63,14 @@ export async function POST(request: Request) {
 	}
 
 	// Count questions in section to determine exam size
-	const { count: questionCount, error: countError } = await supabase
+	let countQuery = supabase
 		.from("questions")
 		.select("id", { count: "exact", head: true })
 		.eq("section_id", section.id);
+	if (pinnedOnly) {
+		countQuery = countQuery.not("pin_ref", "is", null);
+	}
+	const { count: questionCount, error: countError } = await countQuery;
 
 	if (countError || !questionCount || questionCount === 0) {
 		return NextResponse.json(
@@ -82,6 +86,7 @@ export async function POST(request: Request) {
 			p_section_id: section.id,
 			p_count: questionCount,
 			p_topics: null,
+			p_pinned_only: pinnedOnly ?? false,
 		},
 	);
 
