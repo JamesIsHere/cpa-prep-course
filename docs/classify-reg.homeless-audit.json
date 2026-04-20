@@ -1,0 +1,274 @@
+{
+  "generatedAt": "2026-04-20T00:45:21.774Z",
+  "section": "reg",
+  "totalHomeless": 805,
+  "rows": [
+    {
+      "topic": "Estate and Gift Tax",
+      "grp": "REG/V/E",
+      "count": 78,
+      "total_in_topic": 78,
+      "homeless_rate": 100,
+      "hasTasks": true,
+      "taskCount": 1
+    },
+    {
+      "topic": "Tax-Exempt Organizations",
+      "grp": "REG/V/F",
+      "count": 67,
+      "total_in_topic": 77,
+      "homeless_rate": 87,
+      "hasTasks": true,
+      "taskCount": 1
+    },
+    {
+      "topic": "Alternative Minimum Tax",
+      "grp": "REG/IV/F",
+      "count": 64,
+      "total_in_topic": 65,
+      "homeless_rate": 98.5,
+      "hasTasks": true,
+      "taskCount": 3
+    },
+    {
+      "topic": "Government Regulation of Business",
+      "grp": "REG/II/D",
+      "count": 57,
+      "total_in_topic": 58,
+      "homeless_rate": 98.3,
+      "hasTasks": true,
+      "taskCount": 6
+    },
+    {
+      "topic": "Individual Taxation: Credits/AMT",
+      "grp": "REG/IV/F",
+      "count": 55,
+      "total_in_topic": 66,
+      "homeless_rate": 83.3,
+      "hasTasks": true,
+      "taskCount": 3
+    },
+    {
+      "topic": "Individual Taxation: Credits",
+      "grp": "REG/IV/F",
+      "count": 49,
+      "total_in_topic": 54,
+      "homeless_rate": 90.7,
+      "hasTasks": true,
+      "taskCount": 3
+    },
+    {
+      "topic": "Like-Kind Exchanges",
+      "grp": "REG/III/A",
+      "count": 48,
+      "total_in_topic": 48,
+      "homeless_rate": 100,
+      "hasTasks": true,
+      "taskCount": 5
+    },
+    {
+      "topic": "Individual Taxation: Filing/Credits",
+      "grp": "REG/IV/E",
+      "count": 47,
+      "total_in_topic": 68,
+      "homeless_rate": 69.1,
+      "hasTasks": true,
+      "taskCount": 3
+    },
+    {
+      "topic": "C Corporations",
+      "grp": "REG/V/B",
+      "count": 47,
+      "total_in_topic": 71,
+      "homeless_rate": 66.2,
+      "hasTasks": true,
+      "taskCount": 6
+    },
+    {
+      "topic": "Property Transactions: Gains/Losses",
+      "grp": "REG/III/B",
+      "count": 43,
+      "total_in_topic": 43,
+      "homeless_rate": 100,
+      "hasTasks": true,
+      "taskCount": 5
+    },
+    {
+      "topic": "Individual Taxation: Income",
+      "grp": "REG/IV/A",
+      "count": 37,
+      "total_in_topic": 67,
+      "homeless_rate": 55.2,
+      "hasTasks": true,
+      "taskCount": 6
+    },
+    {
+      "topic": "Agency and Regulation",
+      "grp": "REG/II/A",
+      "count": 34,
+      "total_in_topic": 60,
+      "homeless_rate": 56.7,
+      "hasTasks": true,
+      "taskCount": 4
+    },
+    {
+      "topic": "Partnerships",
+      "grp": "REG/V/D",
+      "count": 33,
+      "total_in_topic": 52,
+      "homeless_rate": 63.5,
+      "hasTasks": true,
+      "taskCount": 4
+    },
+    {
+      "topic": "Legal Duties and Responsibilities",
+      "grp": "REG/I/D",
+      "count": 33,
+      "total_in_topic": 45,
+      "homeless_rate": 73.3,
+      "hasTasks": true,
+      "taskCount": 4
+    },
+    {
+      "topic": "S Corporations",
+      "grp": "REG/V/C",
+      "count": 22,
+      "total_in_topic": 83,
+      "homeless_rate": 26.5,
+      "hasTasks": true,
+      "taskCount": 9
+    },
+    {
+      "topic": "Business Structures",
+      "grp": "REG/II/E",
+      "count": 20,
+      "total_in_topic": 60,
+      "homeless_rate": 33.3,
+      "hasTasks": true,
+      "taskCount": 4
+    },
+    {
+      "topic": "Property Transactions: Basis",
+      "grp": "REG/III/A",
+      "count": 16,
+      "total_in_topic": 47,
+      "homeless_rate": 34,
+      "hasTasks": true,
+      "taskCount": 5
+    },
+    {
+      "topic": "Federal Tax Procedures",
+      "grp": "REG/I/C",
+      "count": 15,
+      "total_in_topic": 40,
+      "homeless_rate": 37.5,
+      "hasTasks": true,
+      "taskCount": 9
+    },
+    {
+      "topic": "Tax Procedures",
+      "grp": "REG/I/C",
+      "count": 13,
+      "total_in_topic": 44,
+      "homeless_rate": 29.5,
+      "hasTasks": true,
+      "taskCount": 9
+    },
+    {
+      "topic": "Business Law: Contracts",
+      "grp": "REG/II/B",
+      "count": 10,
+      "total_in_topic": 60,
+      "homeless_rate": 16.7,
+      "hasTasks": true,
+      "taskCount": 10
+    },
+    {
+      "topic": "Professional Ethics in Tax",
+      "grp": "REG/I/A",
+      "count": 7,
+      "total_in_topic": 45,
+      "homeless_rate": 15.6,
+      "hasTasks": true,
+      "taskCount": 5
+    },
+    {
+      "topic": "Circular 230",
+      "grp": "REG/I/A",
+      "count": 5,
+      "total_in_topic": 42,
+      "homeless_rate": 11.9,
+      "hasTasks": true,
+      "taskCount": 5
+    },
+    {
+      "topic": "Individual Taxation: Deductions",
+      "grp": "REG/IV/C",
+      "count": 4,
+      "total_in_topic": 64,
+      "homeless_rate": 6.3,
+      "hasTasks": true,
+      "taskCount": 5
+    },
+    {
+      "topic": "Debtor-Creditor Relationships",
+      "grp": "REG/II/C",
+      "count": 1,
+      "total_in_topic": 60,
+      "homeless_rate": 1.7,
+      "hasTasks": true,
+      "taskCount": 4
+    }
+  ],
+  "taskGroupCount": {
+    "REG/I/A": 5,
+    "REG/I/B": 1,
+    "REG/I/C": 9,
+    "REG/I/D": 4,
+    "REG/II/A": 4,
+    "REG/II/B": 10,
+    "REG/II/C": 4,
+    "REG/II/D": 6,
+    "REG/II/E": 4,
+    "REG/III/A": 5,
+    "REG/III/B": 5,
+    "REG/IV/A": 6,
+    "REG/IV/B": 1,
+    "REG/IV/C": 5,
+    "REG/IV/D": 5,
+    "REG/IV/E": 3,
+    "REG/IV/F": 3,
+    "REG/V/A": 4,
+    "REG/V/B": 6,
+    "REG/V/C": 9,
+    "REG/V/D": 4,
+    "REG/V/E": 1,
+    "REG/V/F": 1
+  },
+  "topicToGroup": {
+    "Agency and Regulation": "REG/II/A",
+    "C Corporations": "REG/V/B",
+    "Business Law: Contracts": "REG/II/B",
+    "Business Structures": "REG/II/E",
+    "Circular 230": "REG/I/A",
+    "Professional Ethics in Tax": "REG/I/A",
+    "Property Transactions: Gains/Losses": "REG/III/B",
+    "Debtor-Creditor Relationships": "REG/II/C",
+    "Estate and Gift Tax": "REG/V/E",
+    "Government Regulation of Business": "REG/II/D",
+    "Federal Tax Procedures": "REG/I/C",
+    "Tax Procedures": "REG/I/C",
+    "Individual Taxation: Filing/Credits": "REG/IV/E",
+    "Individual Taxation: Income": "REG/IV/A",
+    "Individual Taxation: Credits": "REG/IV/F",
+    "Alternative Minimum Tax": "REG/IV/F",
+    "Individual Taxation: Deductions": "REG/IV/C",
+    "Legal Duties and Responsibilities": "REG/I/D",
+    "Individual Taxation: Credits/AMT": "REG/IV/F",
+    "Partnerships": "REG/V/D",
+    "Property Transactions: Basis": "REG/III/A",
+    "Like-Kind Exchanges": "REG/III/A",
+    "S Corporations": "REG/V/C",
+    "Tax-Exempt Organizations": "REG/V/F"
+  }
+}

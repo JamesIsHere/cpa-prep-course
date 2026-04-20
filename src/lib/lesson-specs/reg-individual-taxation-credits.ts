@@ -1,17 +1,24 @@
 import type { LessonSpec } from "./types";
 
-// Forty-first authored spec — twenty-fourth of Stage 3. Census v3
-// rank #14: 67 questions, 5 flagged (7.5%) on `Section 904` (5).
-// Clean rightful-owner for FTC limitation — the Individual Deductions
-// spec and Multi-Jurisdictional Tax Planning spec both push §904 out
-// as "international tax adjacent" territory. The AICPA REG/IV/D
-// blueprint task explicitly lists the Foreign Tax Credit for
-// individuals.
+// REG/IV/F — Computation of tax and credits. Covers individual tax
+// credits (CTC, EIC, AOC, LLC, FTC, Dependent Care, Retirement
+// Savings), AMT, and the computation of tax liability.
+//
+// Note 2026-04-19: Re-anchored from IV/D (Loss limitations) to IV/F
+// after a REG homeless audit found 100% (54/54) of "Individual
+// Taxation: Credits" questions homeless at IV/D. IV/D tasks cover
+// capital/ordinary loss netting, wash-sale disallowance, and hobby-
+// loss rules — not credits. IV/F has explicit tasks on refundable-vs-
+// nonrefundable credits, safe-harbor estimated tax, and tax liability
+// computation including AMT. "Alternative Minimum Tax" alias also
+// moved here from IV/E (Filing status) — AMT computation is part of
+// the tax-liability calculation, not filing status determination.
 
 export const spec: LessonSpec = {
 	topic: "Individual Taxation: Credits",
+	topicAliases: ["Alternative Minimum Tax"],
 	section: "reg",
-	primaryRef: "REG/IV/D",
+	primaryRef: "REG/IV/F",
 	secondaryRefs: [],
 
 	inScope: [

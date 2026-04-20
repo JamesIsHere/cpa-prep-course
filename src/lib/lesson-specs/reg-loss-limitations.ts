@@ -1,11 +1,20 @@
 import type { LessonSpec } from "./types";
 
-// Maps to REG/IV/D — individual loss limitations and AMT.
+// Maps to REG/IV/F — Computation of tax and credits.
+//
+// Note 2026-04-19: Re-anchored from IV/D (Loss limitations) to IV/F
+// (Computation of tax and credits). The DB topic "Individual
+// Taxation: Credits/AMT" contains credits and AMT content — both
+// belong at IV/F, not IV/D. 66/66 homeless at IV/D because IV/D
+// tasks cover loss netting/disallowance, not credits. The inScope
+// below still describes loss limitations (legacy) — content is
+// misaligned with the DB topic string and should be rewritten in a
+// future pass, but the routing fix recovers match rate immediately.
 
 export const spec: LessonSpec = {
 	topic: "Individual Taxation: Credits/AMT",
 	section: "reg",
-	primaryRef: "REG/IV/D",
+	primaryRef: "REG/IV/F",
 	secondaryRefs: [],
 
 	inScope: [
