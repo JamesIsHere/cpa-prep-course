@@ -2,7 +2,7 @@
   "section": "bar",
   "generatedAt": "2026-04-20T01:16:54.092Z",
   "totalQuestions": 1509,
-  "resumeNotes": "BAR iter-1 (proof): Interfund Transactions III/C → III/B — 19/67 matched (24% conversion), confirms REG-pattern",
+  "resumeNotes": "BAR iter-1 (proof): Interfund Transactions III/C → III/B — 19/67 matched (24% conversion), confirms REG-pattern | Deduped 2 duplicate entries 2026-04-20",
   "suggestions": [
     {
       "question_id": 601,
@@ -12105,16 +12105,6 @@
       "task_bloom": null
     },
     {
-      "question_id": 14770,
-      "pin_ref": null,
-      "confidence": "high",
-      "rationale": "Question tests J-curve effect in international trade theory, which is macroeconomic trade dynamics not covered by business strategy or currency risk tasks.",
-      "pass": 1,
-      "bloom_overshoot": false,
-      "question_bloom": 3,
-      "task_bloom": null
-    },
-    {
       "question_id": 14771,
       "pin_ref": null,
       "confidence": "high",
@@ -13279,16 +13269,6 @@
       "pin_ref": "BAR/I/A/1/3",
       "confidence": "medium",
       "rationale": "Question asks for working capital formula definition, fitting the liquidity measure category in task 1/3, though question tests definition rather than interpretation.",
-      "pass": 1,
-      "bloom_overshoot": false,
-      "question_bloom": 2,
-      "task_bloom": 3
-    },
-    {
-      "question_id": 14933,
-      "pin_ref": "BAR/I/A/1/3",
-      "confidence": "medium",
-      "rationale": "Question calculates fixed asset turnover ratio, fitting the performance ratio category in task 1/3.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -15114,5 +15094,7 @@
       "question_bloom": 2,
       "task_bloom": 2
     }
-  ]
+  ],
+  "pass1Matched": 903,
+  "pass1Homeless": 606
 }

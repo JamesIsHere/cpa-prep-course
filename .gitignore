@@ -75,5 +75,9 @@ docs/cpa-codebase-guide.pdf
 # verified-ids.json backup snapshots — daily filesystem backup covers recovery
 docs/verified-ids.json.pre-*.bak
 
+# classifier incremental-save files — regenerated on every classify-section.ts
+# run, not meaningful state. The final classify-<section>.json is authoritative.
+docs/classify-*.partial.json
+
 .vercel
 .env*.local

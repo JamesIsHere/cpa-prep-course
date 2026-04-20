@@ -25,7 +25,6 @@ import { fileURLToPath } from "url";
 import { spawnSync } from "child_process";
 import {
 	resolveTaskRef,
-	resolveBlueprintRef,
 	isValidRef,
 	refLevel,
 } from "../../src/lib/lesson-specs/blueprint-task-resolver";
@@ -76,7 +75,6 @@ function loadTaskSpecsFromFiles(section: string): TaskSpecMeta[] {
 	for (const f of files) {
 		const content = readFileSync(resolve(dir, f), "utf-8");
 		const refMatch = content.match(/aicpaRef:\s*"([^"]+)"/);
-		const taskMatch = content.match(/aicpaTask:\s*\n?\s*"([^"]+(?:"[^"]*"[^"]*)*?)"/s);
 		const skillMatch = content.match(/aicpaSkill:\s*"([^"]+)"/);
 		const lessonMatch = content.match(/lessonSpec:\s*"([^"]+)"/);
 		if (!refMatch || !skillMatch || !lessonMatch) continue;

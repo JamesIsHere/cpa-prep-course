@@ -2,7 +2,7 @@
   "section": "aud",
   "generatedAt": "2026-04-19T21:26:45.835Z",
   "totalQuestions": 1424,
-  "resumeNotes": "Iter 4: III/A (Analytical Procedures) → III/D + II/G (Specific Areas) → III/E re-routes",
+  "resumeNotes": "Iter 4: III/A (Analytical Procedures) → III/D + II/G (Specific Areas) → III/E re-routes | Deduped 1 duplicate entries 2026-04-20",
   "suggestions": [
     {
       "question_id": 1,
@@ -14075,16 +14075,6 @@
       "task_bloom": null
     },
     {
-      "question_id": 15810,
-      "pin_ref": null,
-      "confidence": "high",
-      "rationale": "Question tests management override procedures via journal entry testing, which is not covered by any task in this group (estimates, investments, inventory, litigation, going concern, federal awards).",
-      "pass": 1,
-      "bloom_overshoot": false,
-      "question_bloom": 2,
-      "task_bloom": null
-    },
-    {
       "question_id": 15811,
       "pin_ref": null,
       "confidence": "high",
@@ -14254,5 +14244,7 @@
       "question_bloom": 1,
       "task_bloom": null
     }
-  ]
+  ],
+  "pass1Matched": 1127,
+  "pass1Homeless": 297
 }

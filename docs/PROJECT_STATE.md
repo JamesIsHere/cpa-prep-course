@@ -86,11 +86,13 @@ Key structural findings:
 
 **REG + BAR acceptance decision (2026-04-19):** **REG and BAR are no longer active routing-audit targets.** Current routing state (REG 42.4%, BAR 59.8%) is accepted as the end state achievable via lesson-spec re-anchoring. Further match-rate improvement on these sections requires content-level work — either rewriting ~300+ off-blueprint REG questions to fit 2026 AICPA scope, or reassigning ~186 BAR questions to FAR via DB migration. Those are deferred as separate work streams, not routing cleanup. For Direction W's immediate purposes, the homeless questions on these sections are tagged "off-blueprint overshoot" — they will carry a pin_ref of null and be excluded from task-level coverage analysis, not treated as classifier failures. AUD/ISC/TCP remain candidates for further routing work if desired.
 
-**The structural finding from Wave B (bank audit, 2026-04-15):**
-- **AICPA representative tasks have zero L1 (Remembering) content.** All 648 tasks are at Application, Analysis, or Evaluation level.
-- **The bank has 20-39% of its questions at L1.** Roughly 2,500 questions are testing a Bloom's level that the AICPA exam does not test.
-- **Group-level coverage is radically uneven:** 3-93 questions per representative task, where even distribution would be ~12-14.
+**The structural finding from Wave B (bank audit, 2026-04-15) — CORRECTED 2026-04-20:**
+- **~~AICPA representative tasks have zero L1 (Remembering) content.~~** ❌ WRONG. This claim was a bug in `scripts/qa/audit-task-coverage.ts` (queue item #12 — `SKILL_TO_BLOOM` mapped `"Remembering"` and `"Understanding"` as separate keys, but AICPA JSON uses the combined label `"Remembering and Understanding"`; lookup silently defaulted to L2). Fixed 2026-04-20. **Actual AICPA L1 share: 25-59% per section** (AUD 46%, BAR 35%, FAR 25%, ISC 59%, REG 33%, TCP 28%).
+- **~~The bank has 20-39% of its questions at L1; ~2,500 excess L1.~~** ❌ ALSO WRONG direction. Actual per-section L1 is 20-39% but that is close to or slightly UNDER AICPA target. ISC in particular is under-L1 by 20 pts (AICPA wants 59% L1, bank has 39%).
+- **Group-level coverage is radically uneven:** 3-93 questions per representative task, where even distribution would be ~12-14. (This finding stands — it's a separate signal from Bloom's.)
 - **Cognitive level column** is fully populated (no heuristic fallbacks). Verified via QA run.
+
+**Implication:** The "re-level 2,500 L1 questions" rationale for task-driven rearchitecture is void. Bank Bloom's distribution is approximately on-target (slightly under-L1 in some sections). Any rearchitecture argument must rely on the other findings (group-level coverage unevenness, distinct failure modes per section, pin gap).
 
 ---
 
@@ -209,7 +211,7 @@ This is a living inventory of known discrepancies between artifacts, known tech 
 | 9 | Migration ledger delta: 1,049 applied in DB / 1,044 on disk = 5 unexplained applied migrations | Clean-end-state rule "ledger in sync" | Investigate the 5 applied-but-missing migrations; either recover files from git history or record as historical ghosts in a note | open |
 | 10 | 43 existing topic-specs running in parallel with new task-specs during Phases 1-5 | End-state rule "one architecture" | Phase 6: fold topic-spec scope/bans into task-specs as ancestor data (`inheritedFromTopicSpec` field), then delete topic-specs | open |
 | 11 | Known-incomplete verification: 143 recent questions (30 REG + 15 BAR + 98 TCP) have not been through `verify-correctness.ts` | Clean-end-state rule "every question verified against current standards" | Run catch-up verification against these IDs in a dedicated pass; may be absorbed into Phase 3 re-tagging | open |
-| 12 | `audit-task-coverage.ts` `SKILL_TO_BLOOM` bug — maps `"Remembering"` and `"Understanding"` as separate keys, but AICPA JSON uses the combined label `"Remembering and Understanding"`. Lookup returns undefined, defaults to L2, so every L1 AICPA task was silently counted as L2. The Wave B audit's "AICPA has zero L1 content" claim is therefore WRONG; the real AICPA L1 task count is some meaningful fraction (example: REG/V/C topic 1 has 3 L1 tasks for S-corp eligibility recall). The Bank-has-2,500-L1-overshoot finding's *direction* is likely correct but its *magnitude* is inflated. | Wave B findings citation / future audit reruns | Fix `SKILL_TO_BLOOM` to map `"Remembering and Understanding"` → 1. Re-run `audit-task-coverage.ts`. Publish corrected Bloom's alignment numbers. Update PROJECT_STATE.md Wave B summary. | open — found 2026-04-15 during Phase 1 pilot prep |
+| ~~12~~ | ~~`audit-task-coverage.ts` `SKILL_TO_BLOOM` bug~~ | ~~Wave B findings citation~~ | ~~Fix + re-run~~ | **CLOSED 2026-04-20** — `SKILL_TO_BLOOM` now maps `"Remembering and Understanding"` → 1. Re-ran `audit-task-coverage.ts`. The fix REVERSED the Wave B Bloom's finding: AICPA L1 share is 25-59% per section (not 0%), and the bank is close to or slightly UNDER target (not 2,500 excess). §1 Wave B summary updated with corrected numbers. |
 
 ### Closed
 

@@ -79,9 +79,13 @@ async function main() {
 	// Count tasks + classify by skill level from the JSON.
 	// Slayer blueprint maps each group to a list of questionTopics; we sum
 	// questions across those topics to get the group's question count.
+	// The AICPA JSON uses the literal combined label "Remembering and
+	// Understanding" for the L1 category (not two separate "Remembering"
+	// and "Understanding" keys). Prior keys never matched → every L1 task
+	// silently defaulted to L2 via the `?? 2` fallback on line 113, which
+	// inflated the "bank has too much L1" finding in Wave B.
 	const SKILL_TO_BLOOM: Record<string, number> = {
-		Remembering: 1,
-		Understanding: 1,
+		"Remembering and Understanding": 1,
 		Application: 2,
 		Analysis: 3,
 		Evaluation: 4,

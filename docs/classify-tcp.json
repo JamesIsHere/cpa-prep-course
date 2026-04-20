@@ -2,7 +2,7 @@
   "section": "tcp",
   "generatedAt": "2026-04-20T01:55:04.428Z",
   "totalQuestions": 1291,
-  "resumeNotes": "TCP iter-1: Related Party IV/B → IV/C + Owner-Entity IV/C → II/A",
+  "resumeNotes": "TCP iter-1: Related Party IV/B → IV/C + Owner-Entity IV/C → II/A | Deduped 1 duplicate entries 2026-04-20",
   "suggestions": [
     {
       "question_id": 896,
@@ -11845,16 +11845,6 @@
       "task_bloom": null
     },
     {
-      "question_id": 15799,
-      "pin_ref": null,
-      "confidence": "high",
-      "rationale": "Tests procedural timing rules for S corporation election filing, not entity type identification or tax implications comparison.",
-      "pass": 1,
-      "bloom_overshoot": false,
-      "question_bloom": 2,
-      "task_bloom": null
-    },
-    {
       "question_id": 15815,
       "pin_ref": "TCP/III/B/0/2",
       "confidence": "medium",
@@ -12924,5 +12914,7 @@
       "question_bloom": 4,
       "task_bloom": 2
     }
-  ]
+  ],
+  "pass1Matched": 711,
+  "pass1Homeless": 580
 }

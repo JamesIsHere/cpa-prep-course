@@ -2,7 +2,7 @@
   "section": "isc",
   "generatedAt": "2026-04-19T22:31:04.288Z",
   "totalQuestions": 1452,
-  "resumeNotes": "ISC iter-2: Data Protection Technologies II/B → II/C",
+  "resumeNotes": "ISC iter-2: Data Protection Technologies II/B → II/C | Deduped 5 duplicate entries 2026-04-20",
   "suggestions": [
     {
       "question_id": 746,
@@ -1469,16 +1469,6 @@
       "pin_ref": "ISC/III/B/0/5",
       "confidence": "high",
       "rationale": "Understanding who prepares the system description is core to determining appropriate SOC report form and content.",
-      "pass": 1,
-      "bloom_overshoot": false,
-      "question_bloom": 2,
-      "task_bloom": 2
-    },
-    {
-      "question_id": 893,
-      "pin_ref": "ISC/III/B/0/5",
-      "confidence": "high",
-      "rationale": "Required elements of system description directly relate to determining appropriate form and content of SOC reports.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -3369,16 +3359,6 @@
       "pin_ref": "ISC/I/A/4/2",
       "confidence": "high",
       "rationale": "Question tests understanding of configuration documentation (system component inventory in CMDB) and risks of undocumented systems, directly aligned with task's focus on documentation types including system component inventory.",
-      "pass": 1,
-      "bloom_overshoot": false,
-      "question_bloom": 1,
-      "task_bloom": 1
-    },
-    {
-      "question_id": 3569,
-      "pin_ref": "ISC/I/A/3/1",
-      "confidence": "high",
-      "rationale": "Question asks to recall definition of cold site, a key consideration in disaster recovery planning covered by this task's scope of DR concepts.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 1,
@@ -9855,16 +9835,6 @@
       "task_bloom": null
     },
     {
-      "question_id": 12964,
-      "pin_ref": null,
-      "confidence": "high",
-      "rationale": "Question tests asset inventory as prerequisite for risk identification; no task covers risk assessment process requirements.",
-      "pass": 1,
-      "bloom_overshoot": false,
-      "question_bloom": 3,
-      "task_bloom": null
-    },
-    {
       "question_id": 12965,
       "pin_ref": null,
       "confidence": "high",
@@ -10519,16 +10489,6 @@
       "pin_ref": null,
       "confidence": "high",
       "rationale": "Question tests quantitative risk analysis using ALE calculations, which is not addressed by any of the framework recall tasks.",
-      "pass": 1,
-      "bloom_overshoot": false,
-      "question_bloom": 2,
-      "task_bloom": null
-    },
-    {
-      "question_id": 13289,
-      "pin_ref": null,
-      "confidence": "high",
-      "rationale": "Question tests application control classifications (processing controls, hash totals), which none of the framework-focused tasks cover.",
       "pass": 1,
       "bloom_overshoot": false,
       "question_bloom": 2,
@@ -13785,16 +13745,6 @@
       "task_bloom": null
     },
     {
-      "question_id": 13864,
-      "pin_ref": null,
-      "confidence": "high",
-      "rationale": "Batch job restart/recovery with checkpoint controls are computer operations concepts not covered by ISC/I/A tasks.",
-      "pass": 1,
-      "bloom_overshoot": false,
-      "question_bloom": 3,
-      "task_bloom": null
-    },
-    {
       "question_id": 13865,
       "pin_ref": null,
       "confidence": "high",
@@ -14574,5 +14524,7 @@
       "question_bloom": 1,
       "task_bloom": 1
     }
-  ]
+  ],
+  "pass1Matched": 882,
+  "pass1Homeless": 570
 }
