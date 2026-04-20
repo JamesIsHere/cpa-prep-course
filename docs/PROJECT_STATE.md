@@ -19,7 +19,7 @@ Last updated: 2026-04-20 (Phase 1E complete for all 6 sections. 5,629 / 8,612 = 
 - **Per-section counts:** AUD 1424 / FAR 1539 / REG 1397 / BAR 1509 / ISC 1452 / TCP 1291.
 - **Pin state (Phase 1E):** All 6 sections pinned to DB 2026-04-20. Migrations 01066-01071. Overall 5,629 / 8,612 = **65.4% pinned** (rest at pin_ref = NULL as homeless/off-blueprint). Per-section: FAR 1414/1539 (91.9%), AUD 1127/1424 (79.1%), ISC 882/1452 (60.7%), BAR 903/1509 (59.8%), TCP 711/1291 (55.1%), REG 592/1397 (42.4%). 460 distinct pin_refs across the bank. Verified via `scripts/qa/verify-pins.ts`.
 - **Composite quality score:** 9.3/10 avg. 0 critical, 0 moderate, 8612 acceptable. Verified via `npm run qa -- --output=json` on 2026-04-15.
-- **Correctness verification:** 8,469 of 8,612 (98.3%) have passed `verify-correctness.ts`. All verdicts **pass**; zero fail, zero review. 143 recent additions unverified. Verified via `docs/verified-ids.json`.
+- **Correctness verification:** **100% of bank has a verdict** (8,609 pass + 3 review). Updated 2026-04-20 after verifying the 143+ previously-unverified recent additions in REG (30), BAR (26), TCP (98). 3 TCP questions flagged for review (Q15956 pre-TCJA §863(b) rules; Q15992 internally-contradictory §351 note-as-security; Q15993 §362(e)(2) allocation error). Zero fails. Verified via `docs/verified-ids.json`.
 - **Citation coverage:** 99.3% globally. Gaps: BAR 28, TCP 32, REG 3. AUD/FAR/ISC at 100%.
 - **Difficulty distribution:** 5 of 6 sections within 5 pts of 30/50/20. ISC is 40/44/17 (easy-heavy by 10 pts).
 - **Duplicates:** 1 pair. Negligible.
@@ -123,6 +123,7 @@ Key structural findings:
 9. **63 citation gaps** in BAR (28), TCP (32), REG (3).
 10. **2 pre-existing lint errors** in `scripts/qa/fetch-flagged.ts` (1 `any`) and unused-var warnings.
 11. **7 untracked files** sitting in the working tree (backups, market research, codebase guide drafts) — decide to gitignore, delete, or commit.
+12. **3 TCP questions flagged `review` in verified-ids.json** (2026-04-20) — Q15956 (pre-TCJA §863(b) content), Q15992 (internally-contradictory §351 note-as-security), Q15993 (§362(e)(2) calculation error). Decide: delete as flawed recent content, or rewrite in place.
 
 ---
 
@@ -210,7 +211,7 @@ This is a living inventory of known discrepancies between artifacts, known tech 
 | ~~8~~ | ~~7 untracked files in working tree~~ | ~~Clean-end-state rule "zero untracked files"~~ | ~~See resolution~~ | **CLOSED 2026-04-15** — `.bak` files deleted; `market-research/`, `docs/cpa-codebase-guide.*`, and `docs/verified-ids.json.pre-*.bak` added to `.gitignore`; `alignment/csv/far-framework-traceability-final.xlsx` committed. `git status` now clean. |
 | 9 | Migration ledger delta: 1,049 applied in DB / 1,044 on disk = 5 unexplained applied migrations | Clean-end-state rule "ledger in sync" | Investigate the 5 applied-but-missing migrations; either recover files from git history or record as historical ghosts in a note | open |
 | 10 | 43 existing topic-specs running in parallel with new task-specs during Phases 1-5 | End-state rule "one architecture" | Phase 6: fold topic-spec scope/bans into task-specs as ancestor data (`inheritedFromTopicSpec` field), then delete topic-specs | open |
-| 11 | Known-incomplete verification: 143 recent questions (30 REG + 15 BAR + 98 TCP) have not been through `verify-correctness.ts` | Clean-end-state rule "every question verified against current standards" | Run catch-up verification against these IDs in a dedicated pass; may be absorbed into Phase 3 re-tagging | open |
+| ~~11~~ | ~~Known-incomplete verification: 143 recent questions~~ | ~~Clean-end-state rule~~ | ~~Catch-up verification~~ | **CLOSED 2026-04-20** — Ran `verify-correctness.ts` on all 154 recent additions (30 REG + 26 BAR + 98 TCP — slightly more than the "143" snapshot because BAR had accepted more recent questions). Result: 151 pass, 0 fail, 3 review. verified-ids.json now has a verdict for every DB question (100%). 3 TCP reviews tracked as separate follow-up item: Q15956 pre-TCJA content, Q15992 internally-contradictory, Q15993 §362(e)(2) calculation error. |
 | ~~12~~ | ~~`audit-task-coverage.ts` `SKILL_TO_BLOOM` bug~~ | ~~Wave B findings citation~~ | ~~Fix + re-run~~ | **CLOSED 2026-04-20** — `SKILL_TO_BLOOM` now maps `"Remembering and Understanding"` → 1. Re-ran `audit-task-coverage.ts`. The fix REVERSED the Wave B Bloom's finding: AICPA L1 share is 25-59% per section (not 0%), and the bank is close to or slightly UNDER target (not 2,500 excess). §1 Wave B summary updated with corrected numbers. |
 
 ### Closed
