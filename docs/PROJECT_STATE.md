@@ -19,7 +19,7 @@ Last updated: 2026-04-20 (Phase 1E complete for all 6 sections. 5,629 / 8,612 = 
 - **Per-section counts:** AUD 1424 / FAR 1539 / REG 1397 / BAR 1509 / ISC 1452 / TCP 1291.
 - **Pin state (Phase 1E):** All 6 sections pinned to DB 2026-04-20. Migrations 01066-01071. Overall 5,629 / 8,612 = **65.4% pinned** (rest at pin_ref = NULL as homeless/off-blueprint). Per-section: FAR 1414/1539 (91.9%), AUD 1127/1424 (79.1%), ISC 882/1452 (60.7%), BAR 903/1509 (59.8%), TCP 711/1291 (55.1%), REG 592/1397 (42.4%). 460 distinct pin_refs across the bank. Verified via `scripts/qa/verify-pins.ts`.
 - **Composite quality score:** 9.3/10 avg. 0 critical, 0 moderate, 8612 acceptable. Verified via `npm run qa -- --output=json` on 2026-04-15.
-- **Correctness verification:** **100% of bank has a verdict** (8,609 pass + 3 review). Updated 2026-04-20 after verifying the 143+ previously-unverified recent additions in REG (30), BAR (26), TCP (98). 3 TCP questions flagged for review (Q15956 pre-TCJA §863(b) rules; Q15992 internally-contradictory §351 note-as-security; Q15993 §362(e)(2) allocation error). Zero fails. Verified via `docs/verified-ids.json`.
+- **Correctness verification:** **100% of bank passes verify-correctness** (8,612 pass / 0 review / 0 fail). Updated 2026-04-20. Previously-unverified 154 recent additions ran through verifier: 151 pass directly, 3 TCP flagged for review and fixed in-place via migration 01072 (Q15956 reframed to post-TCJA §863(b); Q15992 rekeyed both-notes-are-boot; Q15993 corrected §362(e)(2) allocation arithmetic). Re-verify confirmed all 3 now pass. Verified via `docs/verified-ids.json`.
 - **Citation coverage:** 99.3% globally. Gaps: BAR 28, TCP 32, REG 3. AUD/FAR/ISC at 100%.
 - **Difficulty distribution:** 5 of 6 sections within 5 pts of 30/50/20. ISC is 40/44/17 (easy-heavy by 10 pts).
 - **Duplicates:** 1 pair. Negligible.
@@ -123,7 +123,7 @@ Key structural findings:
 9. **63 citation gaps** in BAR (28), TCP (32), REG (3).
 10. **2 pre-existing lint errors** in `scripts/qa/fetch-flagged.ts` (1 `any`) and unused-var warnings.
 11. **7 untracked files** sitting in the working tree (backups, market research, codebase guide drafts) — decide to gitignore, delete, or commit.
-12. **3 TCP questions flagged `review` in verified-ids.json** (2026-04-20) — Q15956 (pre-TCJA §863(b) content), Q15992 (internally-contradictory §351 note-as-security), Q15993 (§362(e)(2) calculation error). Decide: delete as flawed recent content, or rewrite in place.
+12. ~~**3 TCP questions flagged `review` in verified-ids.json**~~ — **CLOSED 2026-04-20** via migration 01072 (commit `15a4d5c`). All 3 fixed in place, re-verified, promoted to pass. Bank now at 100% pass.
 
 ---
 
