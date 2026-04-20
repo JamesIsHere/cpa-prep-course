@@ -24,12 +24,13 @@ Last updated: 2026-04-20 (Phase 1F: opt-in pinned-only filter wired into quiz + 
 - **Difficulty distribution:** 5 of 6 sections within 5 pts of 30/50/20. ISC is 40/44/17 (easy-heavy by 10 pts).
 - **Duplicates:** 1 pair. Negligible.
 
-**Topic-specs infrastructure:**
-- **43 authored specs** registered in `src/lib/topic-specs/index.ts`. All at 0 drift. Drift test 221/221.
-- **87 unauthored scaffolder stubs** on disk in `src/lib/topic-specs/` (unregistered, empty arrays, STUB banner). These are an implicit to-do list, not broken code.
-- **1 shared base module** (`_isc-soc-base.ts`) used by 5 ISC SOC specs.
-- **Spec coverage:** the 43 specs protect ~36% of the bank's questions. The other ~64% are unspecced and unprotected against topic-drift via specs.
-- Verified via `scripts/qa/audit-topic-specs-coupling.ts` on 2026-04-15.
+**Lesson-specs + task-specs infrastructure (renamed from topic-specs under Strategy Z):**
+- **128 lesson-specs** in `src/lib/lesson-specs/` — Slayer pedagogical layer. Each lesson has `primaryRef` + optional `secondaryRefs` anchoring it to AICPA tasks.
+- **676 task-specs** in `src/lib/task-specs/` — AICPA representative tasks (5-part refs: section/area/group/topic/task). The authoritative unit for coverage analysis.
+- **2 shared base modules**: `_isc-soc-base.ts` (ISC SOC lessons), `_reg-s-corps-base.ts` (REG S-corp lessons).
+- **Drift test**: `tests/unit/lesson-specs.test.ts` — validates primaryRef resolution in AICPA JSON, section-prefix match, and non-empty scope shape.
+- **Coverage metric**: `scripts/qa/task-coverage.ts` — the current authoritative tracker (replaces the retired `audit-topic-specs-coupling.ts`). Per-task status (empty / gap / on-target / surplus) + orphan pin_refs.
+- Verified via `scripts/qa/task-coverage.ts` on 2026-04-20: 104/673 task-specs at target, 215 empty, 92 gap, 262 surplus, 14 orphans bank-wide.
 
 **Taxonomy:**
 - **130 distinct DB topic strings**, all 130 declared in `blueprint.ts`. Zero orphans, zero empty declared topics, zero cross-section contamination.

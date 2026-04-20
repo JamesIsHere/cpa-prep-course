@@ -1,15 +1,13 @@
-// Drift-prevention test for the topic-spec layer. Validates that every registered spec
-// is internally consistent with the two upstream sources of truth:
+// Drift-prevention test for the lesson-spec layer. Validates that every registered
+// spec is internally consistent with its AICPA anchor and has non-trivial scope.
 //
-//   1. `src/lib/blueprint.ts` — Slayer's questionTopics tagging vocabulary
-//   2. `alignment/aicpa-blueprint-tasks.json` — AICPA's canonical representative tasks
-//
-// Specs are the bridge between Slayer's structural reorganization and the AICPA blueprint.
-// If either upstream source moves, this test catches the resulting spec staleness before
-// it ships to the generator or the validator.
+// Historical note: this file was `tests/unit/topic-specs.test.ts` before the
+// Strategy Z rename. Under the old model, `spec.topic` had to match a DB
+// `questionTopics[]` entry; under lesson-specs, `spec.topic` is a Slayer lesson
+// name and does not need to round-trip to the DB taxonomy. That assertion was
+// removed when the rename landed.
 
 import { describe, expect, it } from "vitest";
-import { cpaBlueprint } from "@/lib/blueprint";
 import {
 	allLessonSpecs,
 	getLessonSpec,
@@ -17,32 +15,14 @@ import {
 } from "@/lib/lesson-specs";
 import { resolveBlueprintRef } from "@/lib/lesson-specs/blueprint-task-resolver";
 
-// Build the union of all questionTopics across all blueprint groups, once.
-function allQuestionTopics(): Set<string> {
-	const set = new Set<string>();
-	for (const sec of cpaBlueprint) {
-		for (const area of sec.areas) {
-			for (const group of area.groups) {
-				for (const t of group.questionTopics ?? []) set.add(t);
-			}
-		}
-	}
-	return set;
-}
-
-describe("topic-specs: drift prevention", () => {
+describe("lesson-specs: drift prevention", () => {
 	const specs = allLessonSpecs();
-	const blueprintTopics = allQuestionTopics();
 
 	it("at least one spec is registered (sanity)", () => {
 		expect(specs.length).toBeGreaterThan(0);
 	});
 
 	describe.each(specs)("spec for $topic", (spec) => {
-		it("topic exists in some questionTopics[] in blueprint.ts", () => {
-			expect(blueprintTopics.has(spec.topic)).toBe(true);
-		});
-
 		it("primaryRef resolves in alignment/aicpa-blueprint-tasks.json", () => {
 			const node = resolveBlueprintRef(spec.primaryRef);
 			expect(node).not.toBeNull();
@@ -80,7 +60,7 @@ describe("topic-specs: drift prevention", () => {
 	});
 });
 
-describe("topic-specs: primaryRef resolver basics", () => {
+describe("lesson-specs: primaryRef resolver basics", () => {
 	it("resolves a known good ref (BAR/I/B/1)", () => {
 		const node = resolveBlueprintRef("BAR/I/B/1");
 		expect(node).not.toBeNull();

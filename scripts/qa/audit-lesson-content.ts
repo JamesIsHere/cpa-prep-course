@@ -1,9 +1,9 @@
 // Audit every question tagged with a given topic against a banned-terms list
-// derived from its topic-spec outOfScope. Produces a markdown report of flagged
+// derived from its lesson-spec outOfScope. Produces a markdown report of flagged
 // questions with matching term and ~80-char context snippets.
 //
 // Usage:
-//   npx tsx scripts/qa/audit-topic-content.ts \
+//   npx tsx scripts/qa/audit-lesson-content.ts \
 //     --topic="International Tax" \
 //     --section=tcp \
 //     [--terms=path/to/terms.json] \
@@ -11,7 +11,7 @@
 //
 // Term source resolution (first match wins):
 //   1. --terms=<path>    Explicit JSON file override (legacy; still supported)
-//   2. spec.bannedTerms  Inline on the topic-spec (preferred going forward —
+//   2. spec.bannedTerms  Inline on the lesson-spec (preferred going forward —
 //                        keeps the banned terms in the same file as the spec
 //                        they belong to, so audits and the spec-aware
 //                        validator cannot drift out of sync)
@@ -20,7 +20,7 @@
 // running an audit on a topic with no banned-terms configured is almost
 // always user error.
 //
-// BannedTerm shape (see src/lib/topic-specs/types.ts for the canonical
+// BannedTerm shape (see src/lib/lesson-specs/types.ts for the canonical
 // definition):
 //   { term: "GILTI", pattern?: "\\bGILTI\\b", category?: "named provision",
 //     why?: "AICPA 2026 Blueprint restricts TCP/II/A/4 to sourcing concepts..." }
@@ -143,7 +143,7 @@ async function main() {
 
 	if (!topic || !sectionCode) {
 		console.error(
-			'Usage: npx tsx scripts/qa/audit-topic-content.ts --topic="Name" --section=<code> [--terms=<path>] [--out=<path>]',
+			'Usage: npx tsx scripts/qa/audit-lesson-content.ts --topic="Name" --section=<code> [--terms=<path>] [--out=<path>]',
 		);
 		process.exit(2);
 	}
@@ -152,7 +152,7 @@ async function main() {
 	const spec = getLessonSpec(topic);
 	if (!spec) {
 		console.error(
-			`No topic spec found for "${topic}". Author a spec in src/lib/topic-specs/ first.`,
+			`No topic spec found for "${topic}". Author a spec in src/lib/lesson-specs/ first.`,
 		);
 		process.exit(2);
 	}
@@ -226,7 +226,7 @@ async function main() {
 	lines.push(`# Topic audit — ${topic} (${sectionCode.toUpperCase()})`);
 	lines.push("");
 	lines.push(`Spec anchor: \`${spec.primaryRef}\``);
-	lines.push(`Spec file: \`src/lib/topic-specs/${sectionCode.toLowerCase()}-${slugify(topic)}.ts\``);
+	lines.push(`Spec file: \`src/lib/lesson-specs/${sectionCode.toLowerCase()}-${slugify(topic)}.ts\``);
 	lines.push(`Terms source: \`${source}\` (${terms.length} terms)`);
 	lines.push("");
 	lines.push("## Summary");
