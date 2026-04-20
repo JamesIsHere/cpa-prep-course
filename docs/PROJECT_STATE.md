@@ -8,7 +8,7 @@
 >
 > **Freshness rule:** every claim in this file is either (a) a verifiable fact backed by a command or file, or (b) an opinion tagged with a date and the session that wrote it. No stale aspirations.
 
-Last updated: 2026-04-20 (Phase 1E complete for all 6 sections. 5,629 / 8,612 = 65.4% pinned across bank. Migrations 01066-01071.)
+Last updated: 2026-04-20 (Phase 1F: opt-in pinned-only filter wired into quiz + exam RPC; task-coverage analysis tool built. 104/673 task-specs at target, 215 empty.)
 
 ---
 
@@ -36,6 +36,13 @@ Last updated: 2026-04-20 (Phase 1E complete for all 6 sections. 5,629 / 8,612 = 
 - **Known taxonomy issue:** REG Individual Taxation proliferation. Five variants (`Credits`, `Credits/AMT`, `Deductions`, `Filing/Credits`, `Income`) covering 319 questions. Two of them (`Credits` and `Credits/AMT`) share the same blueprint anchor REG/IV/C.
 - **~~Known taxonomy issue:~~ ~~ISC has 791 questions...~~** ~~unrouted~~ — **RETIRED 2026-04-19.** The original claim in discrepancy queue #3 was mis-diagnosed. All 1,457 ISC questions DO route to AICPA groups via lesson-spec topic→group mapping (verified via `scripts/qa/audit-homeless.ts --section=isc`). The 826 "homeless" that looked unrouted were classifier-rejected, not structurally unmapped. Fixed via iter-1+2 routing (commits `9421a17`, `a7a0227`).
 - Verified via `scripts/qa/audit-taxonomy.ts` and `scripts/qa/audit-task-coverage.ts` on 2026-04-15.
+
+**Phase 1F (2026-04-20) — Pinned-only filter + task-coverage analysis:**
+- **`get_random_questions` RPC** extended with optional `p_pinned_only boolean DEFAULT false` (migration 01074). Off-by-default preserves existing quiz behavior. Quiz + exam start routes accept optional `pinnedOnly` field on the body schema.
+- **`scripts/qa/task-coverage.ts`** loads all 673 task-specs, queries DB pin counts, reports per-task status (empty/gap/on-target/surplus) + orphan pin_refs not in any task-spec file.
+- **Key coverage finding:** only 104/673 task-specs (15.5%) are at target (pinned ≥ 3). 215 are empty (0 pins), 92 are under-target, 262 are surplus (≥2x target). The bank has the VOLUME but not the DISTRIBUTION — 65% of the target shape is unfilled while another 40% of tasks have surplus questions that could in principle be pulled to the gaps (if content is close enough).
+- **Orphan pin_refs: 14 total** (FAR 9, TCP 5, all other sections 0). Low number means the task-spec corpus covers nearly every pin_ref that the classifier emitted — gaps are real per-task gaps, not missing spec files.
+- **UI surface for `pinnedOnly` deferred.** API plumbing only; no student-visible toggle. When ready, flip per-section (FAR is the natural first section at 91.9% pinned).
 
 **AUD classification status (2026-04-19, iter-4):**
 - **AUD baseline match rate was 68.0%** (classifier silently dropping `inScope` from its prompt — fixed commit `0718c8d`).
@@ -100,7 +107,9 @@ Key structural findings:
 
 **Highest-impact structural work (the rearchitect path):**
 
-1. **Task-driven rearchitecture** (decision pending — see §4). Representative tasks become the unit of work instead of topics. 648 task-specs instead of 130 topic-specs. Re-tag existing questions against tasks. Re-level L1 content. Re-generate gaps. Multi-week project.
+0. **Fill 215 empty task-specs + 92 gap task-specs.** Surfaced 2026-04-20 by `scripts/qa/task-coverage.ts`. A bank-wide redistribution from 262 surplus tasks into the 307 under-target tasks is the natural next action: either re-pin overflow content where the topic matches, author targeted generation batches for truly-missing tasks, or both. Per-section hotspots: REG 41 empty + 17 gap, TCP 41 empty + 15 gap, AUD 48 empty + 13 gap — these three sections hold 175 of the 307 under-target tasks.
+
+1. **Task-driven rearchitecture** (decision pending — see §4). Representative tasks become the unit of work instead of topics. 648 task-specs instead of 130 topic-specs. Re-tag existing questions against tasks. Re-level L1 content. Re-generate gaps. Multi-week project. **One of its two pillars (the "2,500 L1 overshoot" thesis) was voided 2026-04-20 by the `SKILL_TO_BLOOM` bug fix.** The case for this rearchitecture is now weaker; the remaining rationale is distribution unevenness (which #0 above addresses more directly).
 
 **High-value remaining Stage 3 work (if rearchitecture is deferred):**
 
@@ -185,6 +194,8 @@ Key structural findings:
 | 2026-04-20 | Verify 154 previously-unverified questions (30 REG + 26 BAR + 98 TCP) | `npm run verify -- --ids=<154>` + manual promotion to verified-ids.json | 151 pass, 3 TCP flagged review (later fixed + promoted to pass). 100% verdict coverage on bank. |
 | 2026-04-20 | Fix 3 flagged-review TCP questions | migration 01072 + `npm run verify -- --ids=15956,15992,15993` | 3 pass after rewrite. Bank now at 100% pass / 0 review / 0 fail. |
 | 2026-04-20 | Investigate migration ledger 5-delta | query `applied_migrations` + git log | Found 5 phantom rows: 3 unfilled scaffolds deleted in commit d6da50c + 2 renumbered migrations double-tracked. Cleaned via migration 01073. Ledger now 1054 on disk = 1054 applied. |
+| 2026-04-20 | Phase 1F: RPC pinned-only filter | migration 01074 + live RPC smoke test | Unfiltered call returned 20/200 null pin_ref; `p_pinned_only=true` returned 0/200 null. Filter works. No breaking change for existing callers (default false). |
+| 2026-04-20 | Phase 1F: task-coverage analysis | `scripts/qa/task-coverage.ts` | 673 specs loaded, 104 on-target (15.5%), 92 gap, 215 empty, 262 surplus, 14 orphan pin_refs bank-wide. |
 
 **Recently verified and trusted:**
 - Correctness of all 8,612 questions via `verify-correctness.ts` (100% pass as of 2026-04-20)
