@@ -21,8 +21,21 @@ async function main() {
 	const classify = JSON.parse(
 		readFileSync(resolve(root, `docs/classify-${section}.json`), "utf-8"),
 	);
-	const expected = (classify.suggestions as { pin_ref: string | null }[]).filter((s) => s.pin_ref).length;
-	const expectedHomeless = (classify.suggestions as { pin_ref: string | null }[]).filter((s) => !s.pin_ref).length;
+	// Dedup by question_id (classifier files can carry multiple entries for
+	// the same ID from merged partial runs; all entries for a given ID have
+	// identical pin_ref by construction of the merge logic). The DB has one
+	// row per ID, so we compare against unique-ID counts.
+	const uniqById = new Map<number, { pin_ref: string | null }>();
+	for (const s of classify.suggestions as { question_id: number; pin_ref: string | null }[]) {
+		uniqById.set(s.question_id, s);
+	}
+	const uniq = [...uniqById.values()];
+	const expected = uniq.filter((s) => s.pin_ref).length;
+	const expectedHomeless = uniq.filter((s) => !s.pin_ref).length;
+	const rawTotal = (classify.suggestions as unknown[]).length;
+	if (rawTotal !== uniq.length) {
+		console.log(`(classifier file has ${rawTotal - uniq.length} duplicate entry/ies — deduped for comparison)`);
+	}
 
 	const { data: sec } = await supabase
 		.from("sections")
