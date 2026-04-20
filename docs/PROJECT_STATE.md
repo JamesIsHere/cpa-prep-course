@@ -8,7 +8,7 @@
 >
 > **Freshness rule:** every claim in this file is either (a) a verifiable fact backed by a command or file, or (b) an opinion tagged with a date and the session that wrote it. No stale aspirations.
 
-Last updated: 2026-04-20 (Phase 1E FAR pinning complete. 1414/1539 FAR questions pinned in DB at 91.9% match. Prior "97.3% FAR" memory was inflated — true figure 91.9%. Full 1539-question classifier run now on disk at docs/classify-far.json.)
+Last updated: 2026-04-20 (Phase 1E complete for all 6 sections. 5,629 / 8,612 = 65.4% pinned across bank. Migrations 01066-01071.)
 
 ---
 
@@ -17,7 +17,7 @@ Last updated: 2026-04-20 (Phase 1E FAR pinning complete. 1414/1539 FAR questions
 **The bank:**
 - **8,612 questions** live in DB. Verified via `npm run migrate:status` on 2026-04-20.
 - **Per-section counts:** AUD 1424 / FAR 1539 / REG 1397 / BAR 1509 / ISC 1452 / TCP 1291.
-- **Pin state (Phase 1E):** FAR fully pinned 2026-04-20 (1414/1539 = 91.9% matched; 125 at pin_ref = NULL as homeless/off-blueprint). AUD/ISC/BAR/TCP/REG have classifier suggestions in docs/classify-*.json but **not yet pinned to DB**. Verified via `scripts/qa/verify-pins.ts`.
+- **Pin state (Phase 1E):** All 6 sections pinned to DB 2026-04-20. Migrations 01066-01071. Overall 5,629 / 8,612 = **65.4% pinned** (rest at pin_ref = NULL as homeless/off-blueprint). Per-section: FAR 1414/1539 (91.9%), AUD 1127/1424 (79.1%), ISC 882/1452 (60.7%), BAR 903/1509 (59.8%), TCP 711/1291 (55.1%), REG 592/1397 (42.4%). 460 distinct pin_refs across the bank. Verified via `scripts/qa/verify-pins.ts`.
 - **Composite quality score:** 9.3/10 avg. 0 critical, 0 moderate, 8612 acceptable. Verified via `npm run qa -- --output=json` on 2026-04-15.
 - **Correctness verification:** 8,469 of 8,612 (98.3%) have passed `verify-correctness.ts`. All verdicts **pass**; zero fail, zero review. 143 recent additions unverified. Verified via `docs/verified-ids.json`.
 - **Citation coverage:** 99.3% globally. Gaps: BAR 28, TCP 32, REG 3. AUD/FAR/ISC at 100%.
