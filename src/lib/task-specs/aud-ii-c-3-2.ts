@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Walkthrough procedure: tracing a single transaction end-to-end through a significant process to confirm understanding of design",
+		"Documentation methods: process flowcharts, narrative descriptions, process diagrams, and the when/why of each",
+		"Purpose of a walkthrough — confirm the auditor's understanding and obtain evidence of design/implementation; it is not a test of operating effectiveness",
+		"Distinguishing walkthroughs from tests of controls: scope is ONE transaction, not a sample; focus is design/flow confirmation, not effectiveness over a period",
+	],
 
 	keyStandards: [],
 

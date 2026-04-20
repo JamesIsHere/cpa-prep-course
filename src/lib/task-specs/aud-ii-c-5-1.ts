@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Inherent limitations of internal control: human error, faulty judgment, breakdowns, circumvention by collusion, cost-benefit constraints",
+		"Reasonable (not absolute) assurance — why even well-designed IC cannot eliminate risk of material misstatement",
+		"Classification of identified deficiencies: control deficiency, significant deficiency, material weakness; thresholds and reporting obligations (AU-C 265)",
+		"How residual risk after IC evaluation drives the planned nature/timing/extent of substantive procedures",
+	],
 
 	keyStandards: [],
 

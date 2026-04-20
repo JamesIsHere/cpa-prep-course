@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Identifying when a user entity relies on a service organization (payroll processor, claims processor, cloud/SaaS hosting, custodian, collections)",
+		"Purpose of the SOC 1 Type 2 report: evidence of DESIGN plus OPERATING EFFECTIVENESS of the service organization's controls over a specified period",
+		"Type 1 vs Type 2 distinction: Type 1 = design only, point-in-time; Type 2 = design + operating effectiveness across a period",
+		"Complementary User Entity Controls (CUECs) — controls the user entity must have in place for the service organization's controls to be effective; identifying and testing CUECs",
+	],
 
 	keyStandards: [],
 

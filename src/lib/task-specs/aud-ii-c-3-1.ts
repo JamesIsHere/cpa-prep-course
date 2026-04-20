@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Identifying significant business processes (revenue/receivables, purchases/payables, payroll, inventory, cash, financial-reporting close)",
+		"Mapping end-to-end data flows: initiation → authorization → recording → reporting → disclosure for each significant process",
+		"Determining which processes directly or indirectly affect account balances, transaction classes, or disclosures that are material to the financial statements",
+		"Scoping process boundaries for audit planning — which cycles require detailed documentation versus which can be covered at entity level",
+	],
 
 	keyStandards: [],
 

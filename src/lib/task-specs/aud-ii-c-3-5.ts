@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Analysis",
 	bloomLevel: SKILL_TO_BLOOM["Analysis"],
 
-	inScope: [],
+	inScope: [
+		"Forming a conclusion on whether identified transaction-level controls are suitably designed AND have been placed in operation (D&I conclusion)",
+		"Consequences of an adverse D&I conclusion: inability to rely on controls, increased substantive procedures, higher assessed control risk, communication of deficiencies",
+		"Analysis-level judgment: weighing evidence from walkthroughs, inquiry, observation, and inspection to reach a supportable conclusion",
+		"Distinction from operating-effectiveness conclusion (which comes later and asks whether controls worked consistently during the period under audit)",
+	],
 
 	keyStandards: [],
 

@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Identifying the specific automated and manual controls operating within a transaction flow (e.g., the three-way match, reconciliation, credit limit check, approval thresholds)",
+		"Classifying controls: preventive vs detective; manual vs automated; primary vs compensating; key vs non-key",
+		"Documenting control descriptions, control owners, frequency, and evidence of operation — the artifacts that feed subsequent D&I and operating-effectiveness testing",
+		"Linking each identified control to the assertion and risk of material misstatement it addresses (completeness, accuracy, reliability of underlying data)",
+	],
 
 	keyStandards: [],
 

@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Using the SOC 1 Type 2 report as audit evidence — evaluating the service auditor's independence and professional competence before relying on it",
+		"Reconciling coverage: does the SOC 1 Type 2 period match the user-entity audit period? Procedures for gap coverage (bridge letters, inquiries, additional testing)",
+		"Carve-out vs inclusive presentation of sub-service organizations; how each affects the scope of reliance and additional procedures",
+		"Impact on nature/timing/extent of user-entity substantive procedures when controls are effective versus when CUECs or sub-service-org exceptions exist",
+	],
 
 	keyStandards: [],
 

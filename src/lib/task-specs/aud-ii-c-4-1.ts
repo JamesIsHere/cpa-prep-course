@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"SOC 1 engagements: report on the effectiveness of a service organization's controls relevant to a user entity's internal control over financial reporting (ICFR)",
+		"SOC 2 engagements: report on controls relevant to the Trust Services Criteria (security, availability, processing integrity, confidentiality, privacy)",
+		"Intended users: SOC 1 = user-entity auditors; SOC 2 = broader stakeholders (management, regulators, customers, business partners)",
+		"When each is appropriate — a financial-statement audit typically needs SOC 1; an IT-governance or vendor-risk assessment typically needs SOC 2",
+	],
 
 	keyStandards: [],
 

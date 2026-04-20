@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
-	inScope: [],
+	inScope: [
+		"Procedures used to obtain understanding (not test effectiveness): inquiry of management and IT personnel, inspection of policies/organization charts, observation of control environment behavior",
+		"Assessing how the entity has responded to IT risks — emerging tech including AI, cloud hosting, reliance on service organizations, change in IT environment",
+		"Identifying and performing D&I testing on ITGCs supporting significant IT applications (logical access, change management, operations)",
+		"Documenting the understanding obtained (flow of information, IT environment map) — contrasted with tests of operating effectiveness performed later",
+	],
 
 	keyStandards: [],
 

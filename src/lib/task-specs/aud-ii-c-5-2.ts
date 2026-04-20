@@ -11,7 +11,12 @@ export const spec: TaskSpec = {
 	aicpaSkill: "Remembering and Understanding",
 	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
 
-	inScope: [],
+	inScope: [
+		"Management override as the presumed fraud risk under AU-C 240 — why it applies to every audit regardless of perceived integrity",
+		"Required override-detection procedures: testing journal entries (especially non-standard, period-end, unusual combinations), reviewing significant accounting estimates for bias, evaluating business rationale for significant unusual transactions",
+		"Control-environment warning signs that elevate override risk: weak tone at the top, concentration of authority, aggressive incentive structures, override of existing controls",
+		"Impact on substantive procedures: heightened professional skepticism, engagement-partner involvement, unpredictable audit procedures",
+	],
 
 	keyStandards: [],
 
