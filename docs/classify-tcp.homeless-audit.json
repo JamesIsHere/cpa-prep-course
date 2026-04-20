@@ -1,0 +1,192 @@
+{
+  "generatedAt": "2026-04-20T01:55:22.907Z",
+  "section": "tcp",
+  "totalHomeless": 580,
+  "rows": [
+    {
+      "topic": "Individual Tax Planning: Compensation",
+      "grp": "TCP/I/A",
+      "count": 71,
+      "total_in_topic": 126,
+      "homeless_rate": 56.3,
+      "hasTasks": true,
+      "taskCount": 10
+    },
+    {
+      "topic": "Wealth Transfer and Gifting Strategies",
+      "grp": "TCP/I/C",
+      "count": 70,
+      "total_in_topic": 129,
+      "homeless_rate": 54.3,
+      "hasTasks": true,
+      "taskCount": 4
+    },
+    {
+      "topic": "Owner-Entity Transactions",
+      "grp": "TCP/II/A",
+      "count": 61,
+      "total_in_topic": 74,
+      "homeless_rate": 82.4,
+      "hasTasks": true,
+      "taskCount": 16
+    },
+    {
+      "topic": "Advanced Basis Calculations",
+      "grp": "TCP/II/C",
+      "count": 51,
+      "total_in_topic": 85,
+      "homeless_rate": 60,
+      "hasTasks": true,
+      "taskCount": 11
+    },
+    {
+      "topic": "Capital Structure Tax Planning",
+      "grp": "TCP/III/B",
+      "count": 45,
+      "total_in_topic": 50,
+      "homeless_rate": 90,
+      "hasTasks": true,
+      "taskCount": 5
+    },
+    {
+      "topic": "Entity Formation and Restructuring",
+      "grp": "TCP/II/A",
+      "count": 45,
+      "total_in_topic": 60,
+      "homeless_rate": 75,
+      "hasTasks": true,
+      "taskCount": 16
+    },
+    {
+      "topic": "Nontaxable Dispositions",
+      "grp": "TCP/IV/A",
+      "count": 41,
+      "total_in_topic": 66,
+      "homeless_rate": 62.1,
+      "hasTasks": true,
+      "taskCount": 2
+    },
+    {
+      "topic": "Passive Activity and At-Risk Rules",
+      "grp": "TCP/I/B",
+      "count": 35,
+      "total_in_topic": 93,
+      "homeless_rate": 37.6,
+      "hasTasks": true,
+      "taskCount": 4
+    },
+    {
+      "topic": "Related Party Transactions",
+      "grp": "TCP/IV/C",
+      "count": 34,
+      "total_in_topic": 66,
+      "homeless_rate": 51.5,
+      "hasTasks": true,
+      "taskCount": 4
+    },
+    {
+      "topic": "Entity Choice and Planning",
+      "grp": "TCP/III/A",
+      "count": 23,
+      "total_in_topic": 48,
+      "homeless_rate": 47.9,
+      "hasTasks": true,
+      "taskCount": 4
+    },
+    {
+      "topic": "Entity Tax Compliance: NOLs and Consolidated Returns",
+      "grp": "TCP/II/A",
+      "count": 22,
+      "total_in_topic": 98,
+      "homeless_rate": 22.4,
+      "hasTasks": true,
+      "taskCount": 16
+    },
+    {
+      "topic": "Entity Formation and Liquidation",
+      "grp": "TCP/II/A",
+      "count": 22,
+      "total_in_topic": 86,
+      "homeless_rate": 25.6,
+      "hasTasks": true,
+      "taskCount": 16
+    },
+    {
+      "topic": "International Tax",
+      "grp": "TCP/II/A",
+      "count": 21,
+      "total_in_topic": 105,
+      "homeless_rate": 20,
+      "hasTasks": true,
+      "taskCount": 16
+    },
+    {
+      "topic": "Trusts and Estates",
+      "grp": "TCP/II/D",
+      "count": 17,
+      "total_in_topic": 50,
+      "homeless_rate": 34,
+      "hasTasks": true,
+      "taskCount": 5
+    },
+    {
+      "topic": "Retirement Plans and Education Savings",
+      "grp": "TCP/I/D",
+      "count": 11,
+      "total_in_topic": 131,
+      "homeless_rate": 8.4,
+      "hasTasks": true,
+      "taskCount": 7
+    },
+    {
+      "topic": "Multi-Jurisdictional Tax Planning",
+      "grp": "TCP/III/B",
+      "count": 11,
+      "total_in_topic": 24,
+      "homeless_rate": 45.8,
+      "hasTasks": true,
+      "taskCount": 5
+    }
+  ],
+  "taskGroupCount": {
+    "TCP/I/A": 10,
+    "TCP/I/B": 4,
+    "TCP/I/C": 4,
+    "TCP/I/D": 7,
+    "TCP/II/A": 16,
+    "TCP/II/B": 8,
+    "TCP/II/C": 11,
+    "TCP/II/D": 5,
+    "TCP/II/E": 3,
+    "TCP/III/A": 4,
+    "TCP/III/B": 5,
+    "TCP/III/C": 4,
+    "TCP/III/D": 3,
+    "TCP/IV/A": 2,
+    "TCP/IV/B": 8,
+    "TCP/IV/C": 4
+  },
+  "topicToGroup": {
+    "Advanced Basis Calculations": "TCP/II/C",
+    "Capital Structure Tax Planning": "TCP/III/B",
+    "Entity Choice and Planning": "TCP/III/A",
+    "Entity Formation and Liquidation": "TCP/II/A",
+    "Entity Formation and Restructuring": "TCP/II/A",
+    "Entity Tax Compliance: NOLs and Consolidated Returns": "TCP/II/A",
+    "Gains, Losses, and Netting": "TCP/IV/B",
+    "Individual Tax Planning: Compensation": "TCP/I/A",
+    "International Tax": "TCP/II/A",
+    "Multi-Jurisdictional Tax Planning": "TCP/III/B",
+    "Nontaxable Dispositions": "TCP/IV/A",
+    "Owner-Entity Transactions": "TCP/II/A",
+    "Partnership Tax Planning": "TCP/III/D",
+    "Passive Activity and At-Risk Rules": "TCP/I/B",
+    "Related Party Transactions": "TCP/IV/C",
+    "Retirement Plans and Education Savings": "TCP/I/D",
+    "S Corporation Tax Planning": "TCP/III/C",
+    "S Corporation Taxation": "TCP/II/B",
+    "Tax-Exempt Organizations": "TCP/II/E",
+    "Trusts and Estates": "TCP/II/D",
+    "Wealth Transfer and Gifting Strategies": "TCP/I/C"
+  }
+}

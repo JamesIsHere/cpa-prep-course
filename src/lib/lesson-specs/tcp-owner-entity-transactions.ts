@@ -43,10 +43,23 @@ import type { LessonSpec } from "./types";
 //   - Self-employment tax computation mechanics (individual taxation topic)
 //   - Reasonable compensation multi-factor case-law tests (Mulherin, Elliotts)
 
+// Note 2026-04-19: Re-anchored from IV/C (Related party transactions
+// — 4 tasks on §267/imputed interest) to II/A (C corporations —
+// 16 tasks including shareholder-corp loans, nonliquidating/liquidating
+// distributions, E&P excess cash distributions, and stock contributions).
+// Homeless audit found 61/74 questions homeless at IV/C because
+// IV/C's tasks are narrowly about related-party determinations; the
+// Owner-Entity content tests constructive dividends, Section 302
+// stock redemptions, and shareholder-corp loan characterization —
+// all C-corp transactions. The lesson-spec still aggregates related
+// themes across other entity types (S-corp, partnership) via its
+// thematic inScope; anchoring at the largest single-fit group (II/A)
+// maximizes classifier match while keeping the pedagogical breadth.
+
 export const spec: LessonSpec = {
 	topic: "Owner-Entity Transactions",
 	section: "tcp",
-	primaryRef: "TCP/IV/C",
+	primaryRef: "TCP/II/A",
 	secondaryRefs: [],
 
 	inScope: [

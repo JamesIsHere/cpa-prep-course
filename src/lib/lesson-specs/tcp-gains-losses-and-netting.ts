@@ -3,16 +3,19 @@ import type { LessonSpec } from "./types";
 // TCP/IV/B — "Amount and character of gains and losses on asset
 // disposition and netting process."
 //
-// DB topic: "Related Party Transactions" (66 questions) — the DB topic
-// name is a partial misnomer inherited from the original topic structure.
-// The AICPA group is broader: it covers gain/loss characterization,
-// capital gain netting, §1231 hotchpot, and depreciation recapture.
+// Covers gain/loss characterization, capital gain netting, §1231
+// hotchpot, and depreciation recapture.
 //
 // 8 task-specs in this group — the largest in TCP Area IV.
+//
+// Note 2026-04-19: "Related Party Transactions" alias removed. That
+// DB topic routes to its own lesson-spec at IV/C (Related party
+// transactions, 4 tasks explicitly matching §267 content and
+// imputed interest). The IV/B netting tasks didn't cover §267
+// disallowance specifically (62/66 were homeless here).
 
 export const spec: LessonSpec = {
 	topic: "Gains, Losses, and Netting",
-	topicAliases: ["Related Party Transactions"],
 	section: "tcp",
 	primaryRef: "TCP/IV/B",
 	secondaryRefs: [],
