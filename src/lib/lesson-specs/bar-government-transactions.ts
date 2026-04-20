@@ -1,15 +1,28 @@
 import type { LessonSpec } from "./types";
 
-// BAR/III/C — Government transactions and balances.
-// 7 representative tasks across 4 topics: net position balances, fund
-// balances, capital assets, and long-term liabilities (including pension
-// and OPEB).
+// BAR/III/B — Deriving government-wide financial statements and
+// reconciliation requirements.
+//
+// Note 2026-04-19: Re-anchored from III/C (government entity
+// transactions) to III/B after a homeless audit found 64/67
+// "Interfund Transactions" questions homeless at III/C. Samples
+// explicitly test reciprocal/nonreciprocal classification and
+// elimination in government-wide statements — that is the
+// reconciliation/conversion content covered by III/B's 2 tasks
+// (prepare worksheets to convert fund to government-wide; prepare
+// fund balance reconciliation schedules). III/C tasks cover net
+// position / fund balance / capital asset / long-term liability
+// calculations, not interfund activity.
+//
+// "Income Taxes Advanced" alias removed: ASC 740 corporate income
+// taxes are not in BAR 2026 (live in FAR). Leaving unmapped so
+// those 48 questions surface in pass 2 as off-blueprint rather
+// than mis-routing them.
 
 export const spec: LessonSpec = {
 	topic: "Interfund Transactions",
-	topicAliases: ["Income Taxes Advanced"],
 	section: "bar",
-	primaryRef: "BAR/III/C",
+	primaryRef: "BAR/III/B",
 	secondaryRefs: [],
 
 	inScope: [

@@ -1,0 +1,218 @@
+{
+  "generatedAt": "2026-04-20T01:17:10.477Z",
+  "section": "bar",
+  "totalHomeless": 606,
+  "rows": [
+    {
+      "topic": "Pension and Postretirement Benefits",
+      "grp": "BAR/II/K",
+      "count": 138,
+      "total_in_topic": 142,
+      "homeless_rate": 97.2,
+      "hasTasks": true,
+      "taskCount": 4
+    },
+    {
+      "topic": "Financial Valuation Methods",
+      "grp": "BAR/I/B",
+      "count": 81,
+      "total_in_topic": 147,
+      "homeless_rate": 55.1,
+      "hasTasks": true,
+      "taskCount": 25
+    },
+    {
+      "topic": "Risk Management and Economics",
+      "grp": "BAR/I/B",
+      "count": 49,
+      "total_in_topic": 125,
+      "homeless_rate": 39.2,
+      "hasTasks": true,
+      "taskCount": 25
+    },
+    {
+      "topic": "Financial Statement Analysis",
+      "grp": "BAR/I/A",
+      "count": 48,
+      "total_in_topic": 180,
+      "homeless_rate": 26.7,
+      "hasTasks": true,
+      "taskCount": 13
+    },
+    {
+      "topic": "Interfund Transactions",
+      "grp": "BAR/III/B",
+      "count": 48,
+      "total_in_topic": 67,
+      "homeless_rate": 71.6,
+      "hasTasks": true,
+      "taskCount": 2
+    },
+    {
+      "topic": "Income Taxes Advanced",
+      "grp": "UNMAPPED",
+      "count": 48,
+      "total_in_topic": 48,
+      "homeless_rate": 100,
+      "hasTasks": false,
+      "taskCount": 0
+    },
+    {
+      "topic": "Capital Structure and Valuation",
+      "grp": "BAR/I/B",
+      "count": 29,
+      "total_in_topic": 115,
+      "homeless_rate": 25.2,
+      "hasTasks": true,
+      "taskCount": 25
+    },
+    {
+      "topic": "Prospective Analysis and Forecasting",
+      "grp": "BAR/I/B",
+      "count": 27,
+      "total_in_topic": 132,
+      "homeless_rate": 20.5,
+      "hasTasks": true,
+      "taskCount": 25
+    },
+    {
+      "topic": "Intangible Assets Advanced",
+      "grp": "BAR/II/A",
+      "count": 27,
+      "total_in_topic": 50,
+      "homeless_rate": 54,
+      "hasTasks": true,
+      "taskCount": 2
+    },
+    {
+      "topic": "Stock Compensation and Business Combinations",
+      "grp": "BAR/II/F",
+      "count": 24,
+      "total_in_topic": 48,
+      "homeless_rate": 50,
+      "hasTasks": true,
+      "taskCount": 4
+    },
+    {
+      "topic": "Foreign Currency Transactions",
+      "grp": "BAR/II/G",
+      "count": 23,
+      "total_in_topic": 43,
+      "homeless_rate": 53.5,
+      "hasTasks": true,
+      "taskCount": 4
+    },
+    {
+      "topic": "Advanced Consolidations",
+      "grp": "BAR/II/G",
+      "count": 19,
+      "total_in_topic": 49,
+      "homeless_rate": 38.8,
+      "hasTasks": true,
+      "taskCount": 4
+    },
+    {
+      "topic": "Advanced Revenue and Intangibles",
+      "grp": "BAR/II/C",
+      "count": 13,
+      "total_in_topic": 47,
+      "homeless_rate": 27.7,
+      "hasTasks": true,
+      "taskCount": 2
+    },
+    {
+      "topic": "State and Local Government Reporting",
+      "grp": "BAR/III/A",
+      "count": 8,
+      "total_in_topic": 71,
+      "homeless_rate": 11.3,
+      "hasTasks": true,
+      "taskCount": 18
+    },
+    {
+      "topic": "Fund-to-Government-Wide Reconciliation",
+      "grp": "BAR/III/B",
+      "count": 8,
+      "total_in_topic": 67,
+      "homeless_rate": 11.9,
+      "hasTasks": true,
+      "taskCount": 2
+    },
+    {
+      "topic": "Business Combinations",
+      "grp": "BAR/II/F",
+      "count": 6,
+      "total_in_topic": 36,
+      "homeless_rate": 16.7,
+      "hasTasks": true,
+      "taskCount": 4
+    },
+    {
+      "topic": "Internal-Use Software and Cloud Computing",
+      "grp": "BAR/II/B",
+      "count": 5,
+      "total_in_topic": 38,
+      "homeless_rate": 13.2,
+      "hasTasks": true,
+      "taskCount": 2
+    },
+    {
+      "topic": "Advanced Lease Transactions",
+      "grp": "BAR/II/I",
+      "count": 4,
+      "total_in_topic": 54,
+      "homeless_rate": 7.4,
+      "hasTasks": true,
+      "taskCount": 5
+    },
+    {
+      "topic": "Derivatives and Hedging",
+      "grp": "BAR/II/H",
+      "count": 1,
+      "total_in_topic": 50,
+      "homeless_rate": 2,
+      "hasTasks": true,
+      "taskCount": 4
+    }
+  ],
+  "taskGroupCount": {
+    "BAR/I/A": 13,
+    "BAR/I/B": 25,
+    "BAR/II/A": 2,
+    "BAR/II/B": 2,
+    "BAR/II/C": 2,
+    "BAR/II/D": 3,
+    "BAR/II/E": 2,
+    "BAR/II/F": 4,
+    "BAR/II/G": 4,
+    "BAR/II/H": 4,
+    "BAR/II/I": 5,
+    "BAR/II/J": 4,
+    "BAR/II/K": 4,
+    "BAR/III/A": 18,
+    "BAR/III/B": 2,
+    "BAR/III/C": 7
+  },
+  "topicToGroup": {
+    "Advanced Lease Transactions": "BAR/II/I",
+    "Business Combinations": "BAR/II/F",
+    "Capital Structure and Valuation": "BAR/I/B",
+    "Derivatives and Hedging": "BAR/II/H",
+    "Pension and Postretirement Benefits": "BAR/II/K",
+    "Financial Statement Analysis": "BAR/I/A",
+    "Financial Valuation Methods": "BAR/I/B",
+    "Foreign Currency Transactions": "BAR/II/G",
+    "Advanced Consolidations": "BAR/II/G",
+    "Fund-to-Government-Wide Reconciliation": "BAR/III/B",
+    "State and Local Government Reporting": "BAR/III/A",
+    "Interfund Transactions": "BAR/III/B",
+    "Intangible Assets Advanced": "BAR/II/A",
+    "Internal-Use Software and Cloud Computing": "BAR/II/B",
+    "Prospective Analysis and Forecasting": "BAR/I/B",
+    "Public Company Reporting": "BAR/II/J",
+    "Research and Development Costs": "BAR/II/E",
+    "Advanced Revenue and Intangibles": "BAR/II/C",
+    "Risk Management and Economics": "BAR/I/B",
+    "Stock Compensation and Business Combinations": "BAR/II/F"
+  }
+}
