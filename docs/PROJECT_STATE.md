@@ -83,6 +83,8 @@ Key structural findings:
 - BAR: some content is wrong-section (should be FAR), some overshoots. Solution = section reassignment + accept overshoot.
 - TCP: mix of both. Some routing wins, some overshoot.
 
+**REG + BAR acceptance decision (2026-04-19):** **REG and BAR are no longer active routing-audit targets.** Current routing state (REG 42.4%, BAR 59.8%) is accepted as the end state achievable via lesson-spec re-anchoring. Further match-rate improvement on these sections requires content-level work — either rewriting ~300+ off-blueprint REG questions to fit 2026 AICPA scope, or reassigning ~186 BAR questions to FAR via DB migration. Those are deferred as separate work streams, not routing cleanup. For Direction W's immediate purposes, the homeless questions on these sections are tagged "off-blueprint overshoot" — they will carry a pin_ref of null and be excluded from task-level coverage analysis, not treated as classifier failures. AUD/ISC/TCP remain candidates for further routing work if desired.
+
 **The structural finding from Wave B (bank audit, 2026-04-15):**
 - **AICPA representative tasks have zero L1 (Remembering) content.** All 648 tasks are at Application, Analysis, or Evaluation level.
 - **The bank has 20-39% of its questions at L1.** Roughly 2,500 questions are testing a Bloom's level that the AICPA exam does not test.
@@ -105,14 +107,19 @@ Key structural findings:
 
 **Taxonomy cleanup:**
 
-5. **REG Individual Taxation proliferation fix** — decide between merging 5 variants via data migration, or embracing them with overlapping specs.
-6. **ISC orphan topic investigation** — figure out why 791 ISC questions aren't routed through blueprint.ts to an AICPA group.
+5. **REG Individual Taxation proliferation fix** — decide between merging 5 variants via data migration, or embracing them with overlapping specs. (Context: REG is accepted at 42.4% match; this cleanup is no longer blocking match-rate work but remains valid taxonomy hygiene.)
+6. ~~**ISC orphan topic investigation**~~ — **CLOSED 2026-04-19** via discrepancy #3 retirement. Topics ARE routed; the 826 "homeless" at baseline were classifier-rejected, not structurally unmapped. Fixed via ISC iter-1+2.
+
+**Deferred content-level work (if/when Direction W needs higher match rates on REG/BAR):**
+
+7. **REG off-blueprint content** — ~300+ questions covering Estate/Gift, Securities Act/Rule 10b-5, Like-Kind Exchange methodology, and deep Credits/AMT mechanics that 2026 AICPA REG does not test. Options: rewrite to 2026 scope, delete, or relocate to TCP (for Estate/Gift) / BAR (for Securities Act). Multi-week content authoring project.
+8. **BAR section-misplacement** — 186 questions tagged BAR but covering FAR content (Pension/Postretirement 138 sponsor-side ASC 715 + Income Taxes Advanced 48 ASC 740). Options: DB section reassignment migration, or rewrite to fit BAR II/K (plan-side benefit FS) + BAR II/J (public company topics).
 
 **Hygiene (low priority):**
 
-7. **63 citation gaps** in BAR (28), TCP (32), REG (3).
-8. **2 pre-existing lint errors** in `scripts/qa/fetch-flagged.ts` (1 `any`) and unused-var warnings.
-9. **7 untracked files** sitting in the working tree (backups, market research, codebase guide drafts) — decide to gitignore, delete, or commit.
+9. **63 citation gaps** in BAR (28), TCP (32), REG (3).
+10. **2 pre-existing lint errors** in `scripts/qa/fetch-flagged.ts` (1 `any`) and unused-var warnings.
+11. **7 untracked files** sitting in the working tree (backups, market research, codebase guide drafts) — decide to gitignore, delete, or commit.
 
 ---
 
@@ -124,6 +131,8 @@ Key structural findings:
 - **"Shared-base pattern for AUD process cluster"** — considered during Stage 3 #18-26, rejected because each AUD topic needed idiosyncratic ban loosening. Kept as 5 independent specs. See `supabase/migrations/01061_aud_cluster_spec_cleanup.sql` header for rationale.
 - **"Session logs always"** — feedback rule in memory. Adhered to: every substantive session gets a session log in `docs/` before wrap.
 - **"Single pipeline loop, enforce quality at generation"** — feedback rule in memory. Topic specs are the first step toward this; task-specs are the intended completion.
+- **"Continue REG routing audits after iter-1 lift was 9%"** — considered, rejected 2026-04-19. REG iter-1 revealed AICPA 2026 scope is substantially narrower than bank content (300+ off-blueprint questions). Further routing edits would yield sub-10% conversion with regression risk. Accepted REG at 42.4%.
+- **"Continue BAR routing audits after iter-1 proof was 24% net"** — considered, rejected 2026-04-19. BAR's biggest clusters (Pension 138, Income Taxes Advanced 48) are section-level misplacements (content belongs in FAR, not BAR). Routing within BAR can't fix these. Accepted BAR at 59.8%.
 
 ---
 
