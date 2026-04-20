@@ -1,6 +1,6 @@
 # Question Curation Plan
 
-> Auto-synced from live DB on 2026-04-17 via `npm run sync-counts`
+> Auto-synced from live DB on 2026-04-20 via `npm run sync-counts`
 
 Per-section target: 1,500 questions. Distributed by AICPA Blueprint area weights.
 
@@ -72,28 +72,28 @@ For each section:
 
 | Area | Topic | Current | Target | Trim | Generate |
 |------|-------|---------|--------|------|----------|
-| 1 | Consolidations | 58 | 66 |  |  |
+| 1 | Consolidations | 61 | 66 |  |  |
 | 1 | Financial Reporting: For-Profit | 158 | 67 |  |  |
 | 1 | Financial Statement Ratios | 90 | 66 |  |  |
 | 1 | Not-for-Profit Accounting | 58 | 66 |  |  |
 | 1 | Public Company Reporting | 65 | 66 |  |  |
 | 1 | Special Purpose Frameworks | 79 | 66 |  |  |
-| 1 | State and Local Government | 186 | 66 |  |  |
+| 1 | State and Local Government | 185 | 66 |  |  |
 | 1 | Statement of Cash Flows | 80 | 67 |  |  |
 | 2 | Cash and Cash Equivalents | 16 | 58 |  |  |
-| 2 | Debt | 52 | 58 |  |  |
+| 2 | Debt | 51 | 58 |  |  |
 | 2 | Equity | 51 | 58 |  |  |
-| 2 | Intangible Assets | 51 | 58 |  |  |
-| 2 | Inventory | 51 | 58 |  |  |
+| 2 | Intangible Assets | 50 | 58 |  |  |
+| 2 | Inventory | 50 | 58 |  |  |
 | 2 | Investments | 59 | 58 |  |  |
 | 2 | Payables and Accrued Liabilities | 50 | 58 |  |  |
-| 2 | Property, Plant and Equipment | 49 | 58 |  |  |
+| 2 | Property, Plant and Equipment | 50 | 58 |  |  |
 | 2 | Trade Receivables | 36 | 58 |  |  |
-| 3 | Accounting Changes and Error Corrections | 58 | 64 |  |  |
-| 3 | Contingencies | 58 | 64 |  |  |
+| 3 | Accounting Changes and Error Corrections | 59 | 64 |  |  |
+| 3 | Contingencies | 55 | 64 |  |  |
 | 3 | Fair Value | 57 | 64 |  |  |
 | 3 | Income Taxes | 58 | 64 |  |  |
-| 3 | Leases | 37 | 64 |  |  |
+| 3 | Leases | 39 | 64 |  |  |
 | 3 | Revenue Recognition | 53 | 64 |  |  |
 | 3 | Subsequent Events | 29 | 64 |  |  |
 

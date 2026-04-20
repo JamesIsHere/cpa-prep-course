@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-17T02:53:24.314Z",
+  "generatedAt": "2026-04-20T06:44:00.026Z",
   "totalTarget": 9000,
   "batchSize": 30,
   "difficultyTargets": {
@@ -761,20 +761,20 @@
             30,
             40
           ],
-          "currentCount": 58,
+          "currentCount": 61,
           "targetCount": 66,
           "toGenerate": 0,
           "toTrim": 0,
           "batches": 0,
           "difficulty": {
             "easy": 2,
-            "medium": 4,
-            "hard": 2
+            "medium": 3,
+            "hard": 0
           },
           "blooms": {
-            "l1": 2,
-            "l2": 3,
-            "l3": 2,
+            "l1": 1,
+            "l2": 2,
+            "l3": 1,
             "l4": 1
           }
         },
@@ -911,7 +911,7 @@
             30,
             40
           ],
-          "currentCount": 186,
+          "currentCount": 185,
           "targetCount": 66,
           "toGenerate": 0,
           "toTrim": 0,
@@ -986,21 +986,21 @@
             30,
             40
           ],
-          "currentCount": 52,
+          "currentCount": 51,
           "targetCount": 58,
           "toGenerate": 0,
           "toTrim": 0,
           "batches": 0,
           "difficulty": {
             "easy": 2,
-            "medium": 3,
+            "medium": 4,
             "hard": 1
           },
           "blooms": {
             "l1": 2,
             "l2": 2,
             "l3": 2,
-            "l4": 0
+            "l4": 1
           }
         },
         {
@@ -1036,7 +1036,7 @@
             30,
             40
           ],
-          "currentCount": 51,
+          "currentCount": 50,
           "targetCount": 58,
           "toGenerate": 0,
           "toTrim": 0,
@@ -1044,11 +1044,11 @@
           "difficulty": {
             "easy": 2,
             "medium": 4,
-            "hard": 1
+            "hard": 2
           },
           "blooms": {
             "l1": 2,
-            "l2": 2,
+            "l2": 3,
             "l3": 2,
             "l4": 1
           }
@@ -1061,7 +1061,7 @@
             30,
             40
           ],
-          "currentCount": 51,
+          "currentCount": 50,
           "targetCount": 58,
           "toGenerate": 0,
           "toTrim": 0,
@@ -1069,11 +1069,11 @@
           "difficulty": {
             "easy": 2,
             "medium": 4,
-            "hard": 1
+            "hard": 2
           },
           "blooms": {
             "l1": 2,
-            "l2": 2,
+            "l2": 3,
             "l3": 2,
             "l4": 1
           }
@@ -1136,21 +1136,21 @@
             30,
             40
           ],
-          "currentCount": 49,
+          "currentCount": 50,
           "targetCount": 58,
           "toGenerate": 0,
           "toTrim": 0,
           "batches": 0,
           "difficulty": {
-            "easy": 3,
-            "medium": 5,
-            "hard": 1
+            "easy": 2,
+            "medium": 4,
+            "hard": 2
           },
           "blooms": {
             "l1": 2,
             "l2": 3,
             "l3": 2,
-            "l4": 2
+            "l4": 1
           }
         },
         {
@@ -1186,7 +1186,7 @@
             25,
             35
           ],
-          "currentCount": 58,
+          "currentCount": 59,
           "targetCount": 64,
           "toGenerate": 0,
           "toTrim": 0,
@@ -1194,13 +1194,13 @@
           "difficulty": {
             "easy": 2,
             "medium": 3,
-            "hard": 1
+            "hard": 0
           },
           "blooms": {
-            "l1": 2,
+            "l1": 1,
             "l2": 2,
-            "l3": 2,
-            "l4": 0
+            "l3": 1,
+            "l4": 1
           }
         },
         {
@@ -1211,21 +1211,21 @@
             25,
             35
           ],
-          "currentCount": 58,
+          "currentCount": 55,
           "targetCount": 64,
           "toGenerate": 0,
           "toTrim": 0,
           "batches": 0,
           "difficulty": {
-            "easy": 2,
-            "medium": 3,
+            "easy": 3,
+            "medium": 5,
             "hard": 1
           },
           "blooms": {
             "l1": 2,
-            "l2": 2,
+            "l2": 3,
             "l3": 2,
-            "l4": 0
+            "l4": 2
           }
         },
         {
@@ -1286,20 +1286,20 @@
             25,
             35
           ],
-          "currentCount": 37,
+          "currentCount": 39,
           "targetCount": 64,
           "toGenerate": 0,
           "toTrim": 0,
           "batches": 0,
           "difficulty": {
             "easy": 8,
-            "medium": 14,
-            "hard": 5
+            "medium": 13,
+            "hard": 4
           },
           "blooms": {
-            "l1": 7,
+            "l1": 6,
             "l2": 9,
-            "l3": 7,
+            "l3": 6,
             "l4": 4
           }
         },

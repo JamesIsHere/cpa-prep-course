@@ -35,7 +35,7 @@ export type CpaBlueprint = BlueprintSection[];
 // --- Question counts by topic (synced from live DB via `npm run sync-counts`) ---
 
 export const questionCounts: Record<string, number> = {
-	// AUD (1,424 total — synced with live DB 2026-04-17)
+	// AUD (1,424 total — synced with live DB 2026-04-20)
 	"Analytical Procedures": 65,
 	"Attestation Engagements": 37,
 	"Audit Evidence": 64,
@@ -65,32 +65,32 @@ export const questionCounts: Record<string, number> = {
 	"Understanding the Entity and Environment": 64,
 	"Using the Work of Others": 64,
 	"Written Representations": 63,
-	// FAR (1,539 total — synced with live DB 2026-04-17)
-	"Accounting Changes and Error Corrections": 58,
+	// FAR (1,539 total — synced with live DB 2026-04-20)
+	"Accounting Changes and Error Corrections": 59,
 	"Cash and Cash Equivalents": 16,
-	Consolidations: 58,
-	Contingencies: 58,
-	Debt: 52,
+	Consolidations: 61,
+	Contingencies: 55,
+	Debt: 51,
 	Equity: 51,
 	"Fair Value": 57,
 	"Financial Reporting: For-Profit": 158,
 	"Financial Statement Ratios": 90,
 	"Income Taxes": 58,
-	"Intangible Assets": 51,
-	Inventory: 51,
+	"Intangible Assets": 50,
+	Inventory: 50,
 	Investments: 59,
-	Leases: 37,
+	Leases: 39,
 	"Not-for-Profit Accounting": 58,
 	"Payables and Accrued Liabilities": 50,
-	"Property, Plant and Equipment": 49,
+	"Property, Plant and Equipment": 50,
 	"Public Company Reporting": 65,
 	"Revenue Recognition": 53,
 	"Special Purpose Frameworks": 79,
-	"State and Local Government": 186,
+	"State and Local Government": 185,
 	"Statement of Cash Flows": 80,
 	"Subsequent Events": 29,
 	"Trade Receivables": 36,
-	// REG (1,397 total — synced with live DB 2026-04-17)
+	// REG (1,397 total — synced with live DB 2026-04-20)
 	"Agency and Regulation": 60,
 	"Alternative Minimum Tax": 65,
 	"Business Law: Contracts": 60,
@@ -115,7 +115,7 @@ export const questionCounts: Record<string, number> = {
 	"S Corporations": 83,
 	"Tax Procedures": 44,
 	"Tax-Exempt Organizations": 77,
-	// BAR (1,509 total — synced with live DB 2026-04-17)
+	// BAR (1,509 total — synced with live DB 2026-04-20)
 	"Advanced Consolidations": 49,
 	"Advanced Lease Transactions": 54,
 	"Advanced Revenue and Intangibles": 47,
@@ -135,7 +135,7 @@ export const questionCounts: Record<string, number> = {
 	"Risk Management and Economics": 125,
 	"State and Local Government Reporting": 71,
 	"Stock Compensation and Business Combinations": 48,
-	// ISC (1,452 total — synced with live DB 2026-04-17)
+	// ISC (1,452 total — synced with live DB 2026-04-20)
 	"Change Management": 85,
 	"Data Management and Lifecycle": 86,
 	"Data Protection Technologies": 97,
@@ -154,7 +154,7 @@ export const questionCounts: Record<string, number> = {
 	"SOC Testing Controls": 60,
 	"System Availability and Change Management": 86,
 	"Threats, Attacks, and Vulnerabilities": 97,
-	// TCP (1,291 total — synced with live DB 2026-04-17)
+	// TCP (1,291 total — synced with live DB 2026-04-20)
 	"Advanced Basis Calculations": 85,
 	"Capital Structure Tax Planning": 50,
 	"Entity Choice and Planning": 48,
