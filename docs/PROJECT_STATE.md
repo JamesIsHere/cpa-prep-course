@@ -8,7 +8,7 @@
 >
 > **Freshness rule:** every claim in this file is either (a) a verifiable fact backed by a command or file, or (b) an opinion tagged with a date and the session that wrote it. No stale aspirations.
 
-Last updated: 2026-04-19 (evening — ISC iter-1+2 routing: 43.3% → 60.7%, +253 matches from 4 re-anchors; discrepancy queue item #3 closed as mis-diagnosed)
+Last updated: 2026-04-19 (late evening — full routing-first survey across all 6 sections complete. Section-pattern matrix established: AUD/ISC style vs REG/BAR/TCP style. REG/BAR discovered to be AICPA-2026-narrower-than-bank.)
 
 ---
 
@@ -63,6 +63,25 @@ Last updated: 2026-04-19 (evening — ISC iter-1+2 routing: 43.3% → 60.7%, +25
   - SOC Testing Controls @ III/A: 59 (sampling methodology / deviation evaluation not in AICPA III/A)
   - Incident Response residual @ II/D: 57 (43 of 100 matched; remainder may be overshoot of 4-task group)
   - IT General Controls @ I/A: 51 (general ITGC concepts not in I/A's 4 topics)
+
+**REG / BAR / TCP classification status (2026-04-19, iter-1 each):**
+
+| Section | Baseline | After iter-1 | Δ | Edits | Conversion | Pattern |
+|---------|----------|--------------|---|-------|-----------|---------|
+| REG     | 41.2%    | 42.4%        | +17 | 3 | 9% | Over-scope (AICPA 2026 narrower than bank) |
+| BAR     | 58.8%    | 59.8%        | +16 (−3 reg) | 1 | 24% | Mostly over-scope + ~186 section-misplaced questions (Pension 138 + ITaxA 48 are FAR content tagged as BAR) |
+| TCP     | 52.9%    | 55.0%        | +28 (−14 reg) | 2 | 20% | Mixed — transposition fixes worked, but ceiling exists |
+
+Key structural findings:
+- **REG**: ~300+ bank questions cover content outside REG 2026 AICPA scope. Estate/Gift Tax (78) moved to TCP in 2026. Securities Act / Rule 10b-5 (57) not in REG 2026. Like-Kind Exchange methodology (48) beyond III/A's basis tasks. Credits/AMT mechanics beyond IV/F's 3 narrow tasks.
+- **BAR**: ~186 bank questions are section-level misplaced (Pension and Postretirement Benefits 138 + Income Taxes Advanced 48 belong in FAR per 2026 reorganization). Routing within BAR can't fix these — requires DB section reassignment or acceptance.
+- **TCP**: IV/B ↔ IV/C transposition was a clean routing win. Remaining homeless has modest additional routing upside.
+
+**Routing-first lens conclusion:** Different failure modes across sections require different treatments:
+- AUD/ISC: routing fixes content-correctly-scoped-but-mis-routed. High leverage.
+- REG: bank overshoots AICPA 2026. Routing has low ceiling. Solution = content-level rewrite or accept off-blueprint.
+- BAR: some content is wrong-section (should be FAR), some overshoots. Solution = section reassignment + accept overshoot.
+- TCP: mix of both. Some routing wins, some overshoot.
 
 **The structural finding from Wave B (bank audit, 2026-04-15):**
 - **AICPA representative tasks have zero L1 (Remembering) content.** All 648 tasks are at Application, Analysis, or Evaluation level.
@@ -143,6 +162,9 @@ Last updated: 2026-04-19 (evening — ISC iter-1+2 routing: 43.3% → 60.7%, +25
 | 2026-04-19 | AUD iter-4 routing lift (selective reclassification of 130 questions in 2 re-anchored topics) | `scripts/qa/classify-section.ts --section=aud --ids=<130>` + merge | 88 matched / 42 homeless on subset; full-bank 75.0% → 79.1% (+59 matches, 0 regressions) |
 | 2026-04-19 | ISC iter-1 routing lift (3 re-anchors: II/B→II/D, II/A→I/A×2) | selective reclassify 271 qs + merge | 190 matched / 81 homeless on subset; full-bank 43.3% → 56.1% (+187 matches, 3 regressions) |
 | 2026-04-19 | ISC iter-2 routing lift (Data Protection Technologies II/B → II/C) | selective reclassify 97 qs + merge | 94 matched / 3 homeless on subset; full-bank 56.1% → 60.7% (+66 matches, 0 regressions) |
+| 2026-04-19 | REG iter-1 routing (Credits/AMT IV/D+IV/E → IV/F) | selective reclassify 185 qs + merge | 17 matched / 168 homeless; full-bank 41.2% → 42.4% (+17 matches, 0 regressions). Revealed AICPA-2026-narrower-than-bank pattern. |
+| 2026-04-19 | BAR iter-1 proof (Interfund Transactions III/C → III/B) | selective reclassify 67 qs + merge | 19 matched / 48 homeless; full-bank 58.8% → 59.8% (+16 matches, 3 regressions). Confirmed REG-style ceiling. |
+| 2026-04-19 | TCP iter-1 (Related Party IV/B → IV/C + Owner-Entity IV/C → II/A) | selective reclassify 140 qs + merge | 45 matched / 95 homeless; full-bank 52.9% → 55.0% (+28 net, 14 regressions). Mixed pattern. |
 
 **Recently verified and trusted:**
 - Correctness of 8,469 questions via `verify-correctness.ts` (iterative verification campaign documented in `docs/verification-progress.md`)
