@@ -302,17 +302,14 @@ async function main() {
 	const groupRefs = Object.keys(specsByGroup).sort();
 	logStep(`${groupRefs.length} AICPA groups: ${groupRefs.join(", ")}`);
 
-	// Filter to one group if requested
-	const activeGroups = groupFilter
-		? groupRefs.filter((g) => g === groupFilter)
-		: groupRefs;
-	if (activeGroups.length === 0) {
-		console.error(`No task-specs found for group ${groupFilter}`);
-		process.exit(1);
-	}
-
-	// Build topic → groupRef mapping from lesson-spec files
-	const topicToGroup: Record<string, string> = {};
+	// Build topic → groupRefs mapping from lesson-spec files.
+	// A lesson's primaryRef is always included. secondaryRefs are added for
+	// cross-cutting lessons that span multiple AICPA groups (e.g., TCP
+	// Owner-Entity Transactions covers C-corp, S-corp, and partnership
+	// owner-transaction rules). When a topic maps to multiple groups, its
+	// questions are classified against the union of task-specs from all
+	// those groups in a single batch.
+	const topicToGroups: Record<string, string[]> = {};
 	const lsDir = resolve(root, "src/lib/lesson-specs");
 	const lsFiles = readdirSync(lsDir).filter(
 		(f) => f.startsWith(`${sectionArg}-`) && f.endsWith(".ts") && !f.startsWith("_"),
@@ -323,21 +320,28 @@ async function main() {
 		const content = raw.replace(/\/\/.*$/gm, "");
 		const topicMatch = content.match(/topic:\s*"([^"]+)"/);
 		const refMatch = content.match(/primaryRef:\s*"([^"]+)"/);
-		if (topicMatch && refMatch) {
-			const groupRef = refMatch[1].split("/").slice(0, 3).join("/");
-			topicToGroup[topicMatch[1]] = groupRef;
+		if (!topicMatch || !refMatch) continue;
+
+		const groups: string[] = [refMatch[1].split("/").slice(0, 3).join("/")];
+		const secBlock = content.match(/secondaryRefs:\s*\[([\s\S]*?)\]/);
+		if (secBlock) {
+			for (const m of secBlock[1].matchAll(/"([^"]+)"/g)) {
+				const g = m[1].split("/").slice(0, 3).join("/");
+				if (!groups.includes(g)) groups.push(g);
+			}
 		}
-		// Also read topicAliases if present
+		topicToGroups[topicMatch[1]] = groups;
+
+		// topicAliases inherit the same group set
 		const aliasBlock = content.match(/topicAliases:\s*\[([\s\S]*?)\]/);
-		if (aliasBlock && refMatch) {
-			const groupRef = refMatch[1].split("/").slice(0, 3).join("/");
-			const aliases = [...aliasBlock[1].matchAll(/"([^"]+)"/g)].map((m) => m[1]);
-			for (const alias of aliases) {
-				topicToGroup[alias] = groupRef;
+		if (aliasBlock) {
+			for (const m of aliasBlock[1].matchAll(/"([^"]+)"/g)) {
+				topicToGroups[m[1]] = groups;
 			}
 		}
 	}
-	logStep(`Topic→group mapping: ${Object.keys(topicToGroup).length} topics mapped`);
+	const multiGroupCount = Object.values(topicToGroups).filter((g) => g.length > 1).length;
+	logStep(`Topic→groups mapping: ${Object.keys(topicToGroups).length} topics mapped (${multiGroupCount} multi-group via secondaryRefs)`);
 
 	// Fetch ALL questions for the section via pagination
 	// (Supabase server-side max_rows=1000 overrides .limit(), so we paginate)
@@ -364,40 +368,62 @@ async function main() {
 	if (limit) questions = questions.slice(0, limit);
 	logStep(`Loaded ${questions.length} questions for section ${sectionArg} (${page + 1} pages)${idsFilter ? ` [filtered to ${idsFilter.size} IDs]` : ""}`);
 
-	// Pre-filter questions to groups via topic → lesson-spec → primaryRef
-	const questionsByGroup: Record<string, DbQuestion[]> = {};
+	// Pre-filter questions into classification batches. Each batch key is the
+	// sorted-joined group-set that a question's topic maps to. Single-group
+	// topics produce single-element keys (identical to prior behavior).
+	// Multi-group topics (secondaryRefs populated) produce compound keys whose
+	// specs are the union of all contributing groups' task-specs.
+	interface ClassifyBatch {
+		groups: string[];
+		specs: TaskSpecMeta[];
+		questions: DbQuestion[];
+	}
+	const batchesByKey: Record<string, ClassifyBatch> = {};
 	const unmappedQuestions: DbQuestion[] = [];
 	for (const q of questions) {
-		const groupRef = topicToGroup[q.topic];
-		if (groupRef && specsByGroup[groupRef]) {
-			(questionsByGroup[groupRef] ??= []).push(q);
-		} else {
+		const groups = topicToGroups[q.topic];
+		const validGroups = (groups ?? []).filter((g) => specsByGroup[g]);
+		if (validGroups.length === 0) {
 			unmappedQuestions.push(q);
+			continue;
 		}
+		const key = [...validGroups].sort().join("|");
+		if (!batchesByKey[key]) {
+			const specs = validGroups.flatMap((g) => specsByGroup[g]);
+			batchesByKey[key] = { groups: validGroups, specs, questions: [] };
+		}
+		batchesByKey[key].questions.push(q);
 	}
-	logStep(`Pre-filtered: ${questions.length - unmappedQuestions.length} questions mapped to groups, ${unmappedQuestions.length} unmapped`);
+	logStep(
+		`Pre-filtered: ${questions.length - unmappedQuestions.length} questions mapped to ${Object.keys(batchesByKey).length} classification batches (${unmappedQuestions.length} unmapped)`,
+	);
 
-	// ── Pass 1: task-level classification by group ──────────────
+	// Apply --group=X filter (a batch qualifies if X is in its group set)
+	const activeEntries = Object.entries(batchesByKey)
+		.filter(([, b]) => !groupFilter || b.groups.includes(groupFilter))
+		.sort(([a], [b]) => a.localeCompare(b));
+	if (groupFilter && activeEntries.length === 0) {
+		console.error(`No classification batches include group ${groupFilter}`);
+		process.exit(1);
+	}
+
+	// ── Pass 1: task-level classification by lesson batch ──────────────
 	const allSuggestions: PinSuggestion[] = [];
 	let batchCount = 0;
 
-	for (const groupRef of activeGroups) {
-		const specs = specsByGroup[groupRef];
-		const groupQuestions = questionsByGroup[groupRef] ?? [];
-		if (groupQuestions.length === 0) {
-			logStep(`\nPass 1 — Group ${groupRef}: 0 questions, skipping`);
-			continue;
-		}
+	for (const [, batchInfo] of activeEntries) {
+		const { groups, specs, questions: batchQuestions } = batchInfo;
+		if (batchQuestions.length === 0) continue;
+		const groupLabel = groups.length === 1 ? groups[0] : `${groups.join(" + ")} (multi-group lesson)`;
+		logStep(`\nPass 1 — ${groupLabel} (${specs.length} tasks, ${batchQuestions.length} questions)`);
 
-		logStep(`\nPass 1 — Group ${groupRef} (${specs.length} tasks, ${groupQuestions.length} questions)`);
-
-		for (let i = 0; i < groupQuestions.length; i += BATCH_SIZE) {
-			const batch = groupQuestions.slice(i, i + BATCH_SIZE);
+		for (let i = 0; i < batchQuestions.length; i += BATCH_SIZE) {
+			const batch = batchQuestions.slice(i, i + BATCH_SIZE);
 			batchCount++;
 			const t0 = Date.now();
 			logStep(`  Batch ${batchCount} (${batch.length} questions) — spawning claude...`);
 
-			const results = classifyBatch(batch, specs, groupRef);
+			const results = classifyBatch(batch, specs, groupLabel);
 			const elapsed = ((Date.now() - t0) / 1000).toFixed(1);
 			logStep(`  Batch ${batchCount} returned in ${elapsed}s (${results.length} results)`);
 
@@ -497,7 +523,10 @@ async function main() {
 	md += `## Per-group coverage\n\n`;
 	md += `| Group | Task-specs | Matched | Homeless | Overshoot |\n`;
 	md += `|---|---|---|---|---|\n`;
-	for (const groupRef of activeGroups) {
+	const reportGroups = groupFilter
+		? groupRefs.filter((g) => g === groupFilter)
+		: groupRefs;
+	for (const groupRef of reportGroups) {
 		const specs = specsByGroup[groupRef];
 		const groupSuggestions = allSuggestions.filter(
 			(s) => s.pin_ref && s.pin_ref.startsWith(groupRef),

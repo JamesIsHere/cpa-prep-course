@@ -60,7 +60,11 @@ export const spec: LessonSpec = {
 	topic: "Owner-Entity Transactions",
 	section: "tcp",
 	primaryRef: "TCP/II/A",
-	secondaryRefs: [],
+	// 2026-04-20: populated to unlock classifier multi-group routing — prior to
+	// this, the classifier silently ignored secondaryRefs and forced all
+	// topic questions into II/A. Owner-Entity spans these groups per the
+	// lesson's thematic design comment above.
+	secondaryRefs: ["TCP/II/B", "TCP/II/C", "TCP/III/D", "TCP/IV/C"],
 
 	inScope: [
 		"Guaranteed payments to partners at the concept level: payments to a partner for services rendered or capital provided without regard to partnership income; treated as ordinary income to the receiving partner; deductible by the partnership in computing ordinary business income; subject to self-employment tax in the partner's hands; reported separately on Schedule K-1",
