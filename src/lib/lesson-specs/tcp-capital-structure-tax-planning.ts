@@ -60,6 +60,15 @@ export const spec: LessonSpec = {
 	topic: "Capital Structure Tax Planning",
 	section: "tcp",
 	primaryRef: "TCP/III/B",
+	// 2026-04-20: secondaryRefs left empty after probe. The lesson's own
+	// comment notes there is no dedicated capital-structure group in the
+	// AICPA 2026 TCP blueprint — §163(j) interest limitation is Slayer-
+	// specific framing. Adding III/C (S-corp planning) and III/D
+	// (partnership planning) as secondary routes on a probe run caused
+	// 5 previously-pinned questions to flip to homeless because the new
+	// groups' task-specs don't cover interest expense; the signal got
+	// diluted, not expanded. Left single-group until a genuine multi-
+	// group match exists.
 	secondaryRefs: [],
 
 	inScope: [

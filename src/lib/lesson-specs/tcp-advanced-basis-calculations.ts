@@ -78,7 +78,10 @@ export const spec: LessonSpec = {
 	topic: "Advanced Basis Calculations",
 	section: "tcp",
 	primaryRef: "TCP/II/C",
-	secondaryRefs: [],
+	// 2026-04-20: populated for classifier multi-group routing. S-corp
+	// shareholder basis (II/B/1) lives alongside partnership basis (II/C)
+	// in Slayer's integrated basis lesson — see comment above.
+	secondaryRefs: ["TCP/II/B"],
 
 	inScope: [
 		"S corporation shareholder stock basis adjustment ordering rules: (1) separately stated and nonseparately computed income items increase basis; (2) tax-exempt income increases basis; (3) nondeductible non-capital expenses decrease basis; (4) distributions decrease basis; (5) separately stated and nonseparately computed loss items decrease basis last. Basis cannot go below zero; the ordering matters because income increases basis before distributions reduce it, which can prevent distributions from being taxable.",
