@@ -10,7 +10,7 @@ export const spec: TaskSpec = {
 	section: "reg",
 
 	aicpaTask:
-		"Review and resolve discrepancies identified by automated diagnostic and validation checks to ensure the completeness and accuracy of the ordinary business income (loss) and separately stated items reported on Form 1120S – U.S. Income Tax Return for an S Corporation based on the source data used to prepare the form.",
+		"Review and resolve discrepancies identified by automated diagnostic and validation checks to ensure the completeness and accuracy of the ordinary business income (loss) and separately stated items reported on Form 1120S based on the source data used to prepare the form.",
 	aicpaSkill: "Analysis",
 	bloomLevel: SKILL_TO_BLOOM["Analysis"],
 

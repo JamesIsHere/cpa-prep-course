@@ -10,7 +10,7 @@ export const spec: TaskSpec = {
 	section: "reg",
 
 	aicpaTask:
-		"Calculate the impact of current year operations on an S corporation\u2019s accumulated adjustments account.",
+		"Calculate the impact of current year operations on an S corporation's accumulated adjustments account.",
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 

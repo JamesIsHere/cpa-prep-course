@@ -10,7 +10,7 @@ export const spec: TaskSpec = {
 	section: "reg",
 
 	aicpaTask:
-		"Calculate a shareholder\u2019s stock basis in an S corporation for tax purposes resulting from business operations, cash contributions by the shareholder and cash distributions to the shareholder.",
+		"Calculate a shareholder's stock basis in an S corporation for tax purposes resulting from business operations, cash contributions by the shareholder and cash distributions to the shareholder.",
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 

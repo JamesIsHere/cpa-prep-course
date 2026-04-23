@@ -11,8 +11,8 @@ export const spec: TaskSpec = {
 
 	aicpaTask:
 		"Identify situations in which S corporation status would be revoked or terminated for tax purposes.",
-	aicpaSkill: "Remembering and Understanding",
-	bloomLevel: SKILL_TO_BLOOM["Remembering and Understanding"],
+	aicpaSkill: "Application",
+	bloomLevel: SKILL_TO_BLOOM["Application"],
 
 	inScope: [
 		"Voluntary revocation: shareholders holding more than 50% of the outstanding stock (including nonvoting shares) must consent to the revocation. Effective date rules: prospective from the date specified, or if made within the first 2.5 months of the tax year without a specified date, retroactive to the first day of the current year",

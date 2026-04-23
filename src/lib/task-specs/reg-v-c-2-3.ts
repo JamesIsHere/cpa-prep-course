@@ -10,7 +10,7 @@ export const spec: TaskSpec = {
 	section: "reg",
 
 	aicpaTask:
-		"Review federal Form 1120S – U.S. Income Tax Return for an S Corporation and supporting documentation, including any source data used to create the return, to determine the completeness and accuracy of the classification of items as ordinary business income (loss), separately stated or nondeductible.",
+		"Review federal Form 1120S and supporting documentation, including any source data used to create the return, to determine the completeness and accuracy of the classification of items as ordinary business income (loss), separately stated or nondeductible.",
 	aicpaSkill: "Analysis",
 	bloomLevel: SKILL_TO_BLOOM["Analysis"],
 

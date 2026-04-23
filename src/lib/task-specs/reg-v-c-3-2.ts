@@ -10,7 +10,7 @@ export const spec: TaskSpec = {
 	section: "reg",
 
 	aicpaTask:
-		"Calculate changes in a shareholder\u2019s debt basis in an S corporation resulting from current year repayment of debt.",
+		"Calculate changes in a shareholder's debt basis in an S corporation resulting from current year repayment of debt.",
 	aicpaSkill: "Application",
 	bloomLevel: SKILL_TO_BLOOM["Application"],
 
