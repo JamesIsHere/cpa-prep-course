@@ -8,7 +8,7 @@
 >
 > **Freshness rule:** every claim in this file is either (a) a verifiable fact backed by a command or file, or (b) an opinion tagged with a date and the session that wrote it. No stale aspirations.
 
-Last updated: 2026-04-20 (Phase 1F: opt-in pinned-only filter wired into quiz + exam RPC; task-coverage analysis tool built. 104/673 task-specs at target, 215 empty.)
+Last updated: 2026-04-21 (Multi-group classifier routing via `secondaryRefs`. Migration 01075 applied +34 TCP pins from 2 cross-cutting lessons. Full REG re-classify confirmed null: REG at 42.4% is close to routing-only ceiling.)
 
 ---
 
@@ -17,7 +17,7 @@ Last updated: 2026-04-20 (Phase 1F: opt-in pinned-only filter wired into quiz + 
 **The bank:**
 - **8,612 questions** live in DB. Verified via `npm run migrate:status` on 2026-04-20.
 - **Per-section counts:** AUD 1424 / FAR 1539 / REG 1397 / BAR 1509 / ISC 1452 / TCP 1291.
-- **Pin state (Phase 1E):** All 6 sections pinned to DB 2026-04-20. Migrations 01066-01071. Overall 5,629 / 8,612 = **65.4% pinned** (rest at pin_ref = NULL as homeless/off-blueprint). Per-section: FAR 1414/1539 (91.9%), AUD 1127/1424 (79.1%), ISC 882/1452 (60.7%), BAR 903/1509 (59.8%), TCP 711/1291 (55.1%), REG 592/1397 (42.4%). 460 distinct pin_refs across the bank. Verified via `scripts/qa/verify-pins.ts`.
+- **Pin state:** All 6 sections pinned to DB. Migrations 01066-01071 (Phase 1E) + 01075 (2026-04-21, TCP multi-group recoveries +34). Overall **5,663 / 8,612 = 65.8% pinned**. Per-section: FAR 1414/1539 (91.9%), AUD 1127/1424 (79.1%), ISC 882/1452 (60.7%), BAR 903/1509 (59.8%), **TCP 745/1291 (57.7%)**, REG 592/1397 (42.4%). Verified via `scripts/qa/task-coverage.ts` 2026-04-21.
 - **Composite quality score:** 9.3/10 avg. 0 critical, 0 moderate, 8612 acceptable. Verified via `npm run qa -- --output=json` on 2026-04-15.
 - **Correctness verification:** **100% of bank passes verify-correctness** (8,612 pass / 0 review / 0 fail). Updated 2026-04-20. Previously-unverified 154 recent additions ran through verifier: 151 pass directly, 3 TCP flagged for review and fixed in-place via migration 01072 (Q15956 reframed to post-TCJA §863(b); Q15992 rekeyed both-notes-are-boot; Q15993 corrected §362(e)(2) allocation arithmetic). Re-verify confirmed all 3 now pass. Verified via `docs/verified-ids.json`.
 - **Citation coverage:** 99.3% globally. Gaps: BAR 28, TCP 32, REG 3. AUD/FAR/ISC at 100%.
@@ -197,15 +197,20 @@ Key structural findings:
 | 2026-04-20 | Investigate migration ledger 5-delta | query `applied_migrations` + git log | Found 5 phantom rows: 3 unfilled scaffolds deleted in commit d6da50c + 2 renumbered migrations double-tracked. Cleaned via migration 01073. Ledger now 1054 on disk = 1054 applied. |
 | 2026-04-20 | Phase 1F: RPC pinned-only filter | migration 01074 + live RPC smoke test | Unfiltered call returned 20/200 null pin_ref; `p_pinned_only=true` returned 0/200 null. Filter works. No breaking change for existing callers (default false). |
 | 2026-04-20 | Phase 1F: task-coverage analysis | `scripts/qa/task-coverage.ts` | 673 specs loaded, 104 on-target (15.5%), 92 gap, 215 empty, 262 surplus, 14 orphan pin_refs bank-wide. |
+| 2026-04-21 | AUD/II/C inScope authoring probe | 13 task-specs authored + classifier run on 61 IC questions | Redistribution-via-authoring hypothesis falsified: 3 of 4 empty tasks stayed empty; 7 homeless rationales revealed D&I-vs-TOE section-routing issue. Authoring kept (precision improvement) but mechanism does not fill empty tasks. |
+| 2026-04-21 | Classifier multi-group enhancement | commit `20bae6e` + TCP Owner-Entity probe (74 qs) | `secondaryRefs` now read by classifier. Owner-Entity pinned 13 → 37 (+24 via IV/C, III/D, II/B, II/C). Populated on `tcp-owner-entity-transactions`. |
+| 2026-04-21 | TCP sample-of-2 secondaryRefs probe | Advanced Basis + Capital Structure, 135 qs | ABC +3 net (II/B secondary delivers 6 real pins, kept). Capital Structure -5 backfire (III/C/III/D don't cover §163(j); reverted). Refined criterion coined: verify target group's `aicpaTask` text covers content before adding. |
+| 2026-04-21 | Migration 01075 apply TCP wins to DB | conservative NULL→pin only | +34 pins (24 OE + 10 ABC across 13 refs). TCP 55.1% → 57.7%. No clobber of existing pins. |
+| 2026-04-21 | Full REG re-classify (free-lunch test) | 1397 qs, ~3 hours | Net +2 (594 matched vs 592 baseline). Classifier has ~3-4% non-determinism on identical input. Of 5 existing REG `secondaryRefs`, only Filing/Credits + Income delivered cross-group pins (3 each = 6 attributable). Circular 230 / Agency / Tax-Exempt Orgs delivered zero. 3-of-5 existing REG secondaryRefs don't reflect real content spans. Decision: did not apply any migration; null-result recorded. REG 42.4% accepted as close to routing-only ceiling. |
 
 **Recently verified and trusted:**
 - Correctness of all 8,612 questions via `verify-correctness.ts` (100% pass as of 2026-04-20)
-- All 43 topic specs via `npm test -- topic-specs` (221 assertions, all pass)
-- Pin state across all 6 sections via `scripts/qa/verify-pins.ts` (DB matches classifier suggestions exactly)
-- Migration ledger in sync (1054 on-disk = 1054 applied)
+- Pin state across all 6 sections via `scripts/qa/task-coverage.ts` (DB state 2026-04-21)
+- Migration ledger in sync (1056 on-disk = 1056 applied)
+- Classifier `secondaryRefs` mechanism lives in `classify-section.ts` and is exercised by Owner-Entity, Advanced Basis, and the 5 pre-existing REG lessons
 
 **Not yet verified:**
-- (none — all section-level state verified as of 2026-04-20)
+- (none — all section-level state verified as of 2026-04-21)
 - The verifier itself — whether it's rigorous enough to trust. No meta-review has been performed.
 
 ---
