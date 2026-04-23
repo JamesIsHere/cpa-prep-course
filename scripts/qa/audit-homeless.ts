@@ -13,11 +13,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "../..");
 
 const args = process.argv.slice(2);
-const sectionArg = args.find((a) => a.startsWith("--section="))?.split("=")[1];
-if (!sectionArg) {
+const sectionRaw = args.find((a) => a.startsWith("--section="))?.split("=")[1];
+if (!sectionRaw) {
 	console.error("Usage: npx tsx scripts/qa/audit-homeless.ts --section=<code>");
 	process.exit(1);
 }
+const sectionArg: string = sectionRaw;
 
 // 1) Load classifier output
 const classifyPath = resolve(root, `docs/classify-${sectionArg}.json`);

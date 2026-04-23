@@ -31,11 +31,11 @@ import { writeFileSync } from "fs";
 import { spawnSync } from "child_process";
 import { taskSpecsByGroup } from "../../src/lib/task-specs/index";
 
-const topicArg = process.argv
+const topicRaw = process.argv
 	.find((a) => a.startsWith("--topic="))
 	?.split("=")[1]
 	?.replace(/^"|"$/g, "");
-const sectionArg = process.argv
+const sectionRaw = process.argv
 	.find((a) => a.startsWith("--section="))
 	?.split("=")[1];
 const groupArg =
@@ -49,12 +49,14 @@ function logStep(msg: string) {
 	process.stderr.write(`[${ts}] ${msg}\n`);
 }
 
-if (!topicArg || !sectionArg) {
+if (!topicRaw || !sectionRaw) {
 	console.error(
 		"Usage: npx tsx scripts/qa/classify-questions-to-tasks.ts --topic=\"S Corporations\" --section=reg [--group=REG/V/C]",
 	);
 	process.exit(1);
 }
+const topicArg: string = topicRaw;
+const sectionArg: string = sectionRaw;
 
 interface DbQuestion {
 	id: number;

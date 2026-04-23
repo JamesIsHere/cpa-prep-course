@@ -170,6 +170,14 @@ export interface TaskSpec {
 	slayerLessonSlug?: string;
 
 	/**
+	 * Optional task-level banned-term overrides. Most task-specs pull
+	 * bannedTerms from a shared group-level base (see GroupScopeBase below),
+	 * but scaffold task-specs carry an empty array literal and some
+	 * authored task-specs inline custom terms not covered by the base.
+	 */
+	bannedTerms?: BannedTerm[];
+
+	/**
 	 * Freeform editorial notes — scope edges, authoring rationale, things to
 	 * flag in audit reviews, etc.
 	 */

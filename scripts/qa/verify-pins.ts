@@ -9,13 +9,14 @@ import { supabase } from "./db-client";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "../..");
 
-const section = process.argv
+const sectionRaw = process.argv
 	.find((a) => a.startsWith("--section="))
 	?.split("=")[1];
-if (!section) {
+if (!sectionRaw) {
 	console.error("Usage: --section=<code>");
 	process.exit(1);
 }
+const section: string = sectionRaw;
 
 async function main() {
 	const classify = JSON.parse(
