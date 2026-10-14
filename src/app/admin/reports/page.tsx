@@ -43,22 +43,21 @@ export default function AdminReportsPage() {
 	const [resolvingId, setResolvingId] = useState<number | null>(null);
 
 	useEffect(() => {
-		fetchReports();
-	}, []);
-
-	async function fetchReports() {
-		setLoading(true);
-		try {
-			const res = await fetch("/api/admin/reports");
-			if (!res.ok) throw new Error("Failed to fetch");
-			const data = await res.json();
-			setReports(data);
-		} catch {
-			// silently fail
-		} finally {
-			setLoading(false);
+		// loading starts true, so no synchronous setLoading(true) is needed here
+		async function fetchReports() {
+			try {
+				const res = await fetch("/api/admin/reports");
+				if (!res.ok) throw new Error("Failed to fetch");
+				const data = await res.json();
+				setReports(data);
+			} catch {
+				// silently fail
+			} finally {
+				setLoading(false);
+			}
 		}
-	}
+		void fetchReports();
+	}, []);
 
 	async function resolveReport(reportId: number, resolution: string) {
 		setResolvingId(reportId);

@@ -34,14 +34,27 @@ export default function ReviewClient({
 	const [reviewed, setReviewed] = useState(initialReviewed);
 	const [loading, setLoading] = useState(false);
 
-	// Reset state when initial data changes (filter change)
-	useEffect(() => {
+	// Reset state when initial data changes (filter change). Adjusting state
+	// during render instead of in an effect avoids an extra render pass.
+	const [prevInitial, setPrevInitial] = useState({
+		initialQuestions,
+		initialHasMore,
+		initialTotal,
+		initialReviewed,
+	});
+	if (
+		prevInitial.initialQuestions !== initialQuestions ||
+		prevInitial.initialHasMore !== initialHasMore ||
+		prevInitial.initialTotal !== initialTotal ||
+		prevInitial.initialReviewed !== initialReviewed
+	) {
+		setPrevInitial({ initialQuestions, initialHasMore, initialTotal, initialReviewed });
 		setQuestions(initialQuestions);
 		setHasMore(initialHasMore);
 		setTotal(initialTotal);
 		setReviewed(initialReviewed);
 		setCurrentIndex(0);
-	}, [initialQuestions, initialHasMore, initialTotal, initialReviewed]);
+	}
 
 	const currentQuestion = questions[currentIndex] ?? null;
 
@@ -86,7 +99,12 @@ export default function ReviewClient({
 	// Navigate
 	function goNext() {
 		if (currentIndex < questions.length - 1) {
-			setCurrentIndex((i) => i + 1);
+			const next = currentIndex + 1;
+			setCurrentIndex(next);
+			// Prefetch the next page when within 3 of the end
+			if (next >= questions.length - 3 && hasMore && !loading) {
+				void fetchMore();
+			}
 		} else if (hasMore) {
 			fetchMore();
 		}
@@ -97,14 +115,6 @@ export default function ReviewClient({
 			setCurrentIndex((i) => i - 1);
 		}
 	}
-
-	// Auto-fetch when near end
-	useEffect(() => {
-		if (currentIndex >= questions.length - 3 && hasMore && !loading) {
-			void fetchMore();
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [currentIndex, questions.length, hasMore, loading]);
 
 	// Keyboard shortcuts
 	useEffect(() => {

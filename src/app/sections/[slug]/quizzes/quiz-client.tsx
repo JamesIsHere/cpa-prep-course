@@ -46,7 +46,8 @@ export default function QuizClient({
 	const [error, setError] = useState<string | null>(null);
 
 	// Per-question dwell time tracking
-	const questionShownAtRef = useRef<number>(Date.now());
+	// Set to Date.now() whenever a quiz starts; 0 until then
+	const questionShownAtRef = useRef<number>(0);
 	const dwellTimesRef = useRef<Map<number, number>>(new Map());
 
 	const flushDwell = useCallback(() => {

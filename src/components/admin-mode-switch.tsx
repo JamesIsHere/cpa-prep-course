@@ -3,6 +3,8 @@
 export default function AdminModeSwitch() {
 	function switchToReview() {
 		document.cookie = "admin_mode=; path=/; max-age=0";
+		// Full reload on purpose: server must re-read the admin_mode cookie
+		// eslint-disable-next-line @next/next/no-location-assign-relative-destination
 		window.location.href = "/admin-gate";
 	}
 

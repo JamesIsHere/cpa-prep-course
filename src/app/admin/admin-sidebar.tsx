@@ -59,6 +59,8 @@ export default function AdminSidebar() {
 					type="button"
 					onClick={() => {
 						document.cookie = "admin_mode=study; path=/; max-age=86400; SameSite=Lax";
+						// Full reload on purpose: server must re-read the admin_mode cookie
+						// eslint-disable-next-line @next/next/no-location-assign-relative-destination
 						window.location.href = "/dashboard";
 					}}
 					className="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-gray-400 hover:text-gray-600 hover:bg-gray-50 transition-colors w-full"
